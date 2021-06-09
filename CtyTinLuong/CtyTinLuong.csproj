@@ -204,6 +204,12 @@
     <Compile Include="frmPrint_Nhap_Xuat_Kho.Designer.cs">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TBX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TBX.Designer.cs">
+      <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TGD_TQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1714,6 +1720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TBX.resx">
+      <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TGD_TQ.resx">
       <DependentUpon>Tr_frmPrintBTTL_TGD_TQ.cs</DependentUpon>

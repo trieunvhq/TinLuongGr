@@ -50,15 +50,15 @@
             this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_TBX = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TGD_TD = new DevExpress.XtraNavBar.NavBarItem();
-            this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
+            this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,8 +216,8 @@
             this.navBarItem9,
             this.navBarItem14,
             this.navBarItem17,
-            this.navBarItem15,
-            this.navBarItem16,
+            this.navBTTL_TGD,
+            this.navBTTL_TBX,
             this.navBarItem18,
             this.navTTL_TGD,
             this.navBTTL_TGD_TD,
@@ -236,25 +236,26 @@
             this.navBarGroup2.Caption = "Chấm công";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem18)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
-            // navBarItem15
+            // navBTTL_TGD
             // 
-            this.navBarItem15.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.navBarItem15.Appearance.Options.UseForeColor = true;
-            this.navBarItem15.Caption = "Chấm công tổ gấp dán";
-            this.navBarItem15.Name = "navBarItem15";
-            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            this.navBTTL_TGD.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBTTL_TGD.Appearance.Options.UseForeColor = true;
+            this.navBTTL_TGD.Caption = "Tổ Gấp dán";
+            this.navBTTL_TGD.Name = "navBTTL_TGD";
+            this.navBTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
-            // navBarItem16
+            // navBTTL_TBX
             // 
-            this.navBarItem16.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.navBarItem16.Appearance.Options.UseForeColor = true;
-            this.navBarItem16.Caption = "navBarItem16";
-            this.navBarItem16.Name = "navBarItem16";
+            this.navBTTL_TBX.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navBTTL_TBX.Appearance.Options.UseForeColor = true;
+            this.navBTTL_TBX.Caption = "Tổ Bốc xếp";
+            this.navBTTL_TBX.Name = "navBTTL_TBX";
+            this.navBTTL_TBX.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TBX_LinkClicked);
             // 
             // navBarItem18
             // 
@@ -294,16 +295,6 @@
             this.navBTTL_TGD_TD.Name = "navBTTL_TGD_TD";
             this.navBTTL_TGD_TD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TGD_TD_LinkClicked);
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl1.Location = new System.Drawing.Point(173, 12);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(971, 621);
-            this.panelControl1.TabIndex = 70;
-            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -319,6 +310,16 @@
             this.navChamCom_TGD.Caption = "Tổ Gấn dán";
             this.navChamCom_TGD.Name = "navChamCom_TGD";
             this.navChamCom_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCom_TGD_LinkClicked);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Location = new System.Drawing.Point(173, 12);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(971, 621);
+            this.panelControl1.TabIndex = 70;
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -362,8 +363,8 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem17;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem15;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem16;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TGD;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX;
         private DevExpress.XtraNavBar.NavBarItem navBarItem18;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navTTL_TGD;
