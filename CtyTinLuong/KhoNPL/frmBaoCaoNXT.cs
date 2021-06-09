@@ -186,8 +186,8 @@ namespace CtyTinLuong
 
                     if (dtnhapkho.Rows.Count > 0) // có nhập
                     {
-                        soluongnhap = Convert.ToDouble(dtxuatkho.Rows[0]["SoLuongNhap_TrongKy"].ToString());
-                        giatrinhap = Convert.ToDouble(dtxuatkho.Rows[0]["GiaTriNhap_TrongKy"].ToString());
+                        soluongnhap = Convert.ToDouble(dtnhapkho.Rows[0]["SoLuongNhap_TrongKy"].ToString());
+                        giatrinhap = Convert.ToDouble(dtnhapkho.Rows[0]["GiaTriNhap_TrongKy"].ToString());
                     }
                     else // không có nhập
                     {
