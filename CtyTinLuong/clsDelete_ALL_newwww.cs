@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 namespace CtyTinLuong
 {
     public partial class clsDelete_ALL_newwww : clsDBInteractionBase
-    {
+    {//
         public void HUU_Delete_ALL()
         {
 
