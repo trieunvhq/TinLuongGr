@@ -39,6 +39,7 @@ namespace CtyTinLuong
 
         public void LoadData(bool islandau)
         {
+            SanLuong.Visible = false;
             isload = true;
             if (islandau)
             {
