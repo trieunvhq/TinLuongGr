@@ -7,7 +7,7 @@ namespace CtyTinLuong
 {
     public partial class clsDelete_ALL_newwww : clsDBInteractionBase
     {//xxxx
-        //tessssssssssssssssss
+        //222222222222
         public void HUU_Delete_ALL()
         {
 
