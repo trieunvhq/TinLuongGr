@@ -164,5 +164,25 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
+        { 
+            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
+
+        private void navBarItem15_LinkClicked_1(object sender, NavBarLinkEventArgs e)
+        {
+            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
     }
 }
