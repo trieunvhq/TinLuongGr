@@ -149,7 +149,7 @@ namespace CtyTinLuong
 
                 using (clsThin clsThin_ = new clsThin())
                 {
-                    DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
+                    DataTable dt_ = clsThin_.T_NhanSu_SF("0");
 
                     cbBoPhan.DisplayMember = "TenBoPhan";
                     cbBoPhan.ValueMember = "ID_BoPhan";
@@ -233,7 +233,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()));
+                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
                       
                     if(_id_vthh==0)
                     {
@@ -364,7 +364,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
-                    int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString()); 
+                    int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_CongNhan"].ToString()); 
                     if (ds_id_congnhan.Contains(id_nhansu_))
                     {
 
@@ -388,8 +388,7 @@ namespace CtyTinLuong
                         _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
                         _ravi["Ngay30"] = 0;  _ravi["Ngay31"] = 0;
 
-                        _ravi["SanLuong"] = 0;
-                        _ravi["ID_NhanSu"] = id_nhansu_;
+                        _ravi["SanLuong"] = 0; 
                         _ravi["Tong"] = 0;
                         _ravi["GuiDuLieu"] = false;
                         _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
@@ -728,7 +727,7 @@ namespace CtyTinLuong
                         isGuiThanhCong = true;
                     }
                     clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                        Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
+                        Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()),
                         _thang,
                         _nam,
                         id_vthh_,

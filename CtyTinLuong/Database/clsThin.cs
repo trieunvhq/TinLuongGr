@@ -310,7 +310,7 @@ namespace CtyTinLuong
             , float fNgay14, float fNgay15, float fNgay16, float fNgay17, float fNgay18, float fNgay19
             , float fNgay20, float fNgay21, float fNgay22, float fNgay23, float fNgay24, float fNgay25
             , float fNgay26, float fNgay27, float fNgay28, float fNgay29, float fNgay30, float fNgay31
-            , float fSanLuong, bool bGuiDuLieu)
+            , float fSanLuong, bool bGuiDuLieu, bool IsTangCa, int id_bophan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I]";
@@ -364,6 +364,8 @@ namespace CtyTinLuong
 
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@fSanLuong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, fSanLuong));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@bGuiDuLieu", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bGuiDuLieu));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bIsTangCa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, IsTangCa));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
 
 
                 // Open connection.
@@ -498,5 +500,6 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+         
     }
 }
