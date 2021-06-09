@@ -265,7 +265,7 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable T_BTTL_TGD_SF(int nam, int thang)
+        public DataTable T_BTTL_TGD_SF(int nam, int thang, int id_bophan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[T_BTTL_TGD_SF]";
@@ -281,6 +281,7 @@ namespace CtyTinLuong
             {
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@id_bophan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
 
                 // Open connection.
                 m_scoMainConnection.Open();
@@ -293,6 +294,42 @@ namespace CtyTinLuong
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
                 throw new Exception("clsCpn_bp::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable T_BTTL_TGD_Mau()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_BTTL_TGD_Mau]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("cpn_bp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("T_BTTL_TGD_Mau::SelectAll::Error occured.", ex);
             }
             finally
             {

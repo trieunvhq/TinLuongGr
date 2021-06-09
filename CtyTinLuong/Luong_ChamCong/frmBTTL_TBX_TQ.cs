@@ -19,11 +19,13 @@ namespace CtyTinLuong
 {
     public partial class frmBTTL_TBX_TQ : Form
     {
+        private string tenbophan = "tổ bốc xếp";
+
         public int miiID_chiTietChamCong, miiD_DinhMuc_Luong, miID_congNhan;
         public int miiID_ChamCong;
         public string msTenNhanVien;
 
-        public int _nam, _thang;
+        public int _nam, _thang, _id_bophan;
         public string _ten_vthh;
         private DataTable _data;
         private bool isload = true;
@@ -45,6 +47,20 @@ namespace CtyTinLuong
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                    if (dt_ != null && dt_.Rows.Count == 1)
+                    {
+                        _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                    }
+                    else
+                    {
+                        _id_bophan = 0;
+                    }
+                }
+
             }
             else
             {
@@ -63,8 +79,8 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang);
-                data_moi_ = clsThin_.T_BTTL_TGD_SF(_nam, _thang);
+                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang,_id_bophan);
+                data_moi_ = clsThin_.T_BTTL_TGD_Mau();
 
                 data_moi_.Rows.Clear();
                 double TongLuong_ = 0;
