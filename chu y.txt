@@ -1,0 +1,18 @@
+thiết lạp ban đầu với kho
+ID_NhapKho=0
+Không có dữ liệu bảng tb_NhapKho
+
+
+khi insert dữ liệu ban đầu phải cho muahang, ban hang vao
+insert Chi tiết biến động TK kế toán
+TrangThai_MuaHang1_BanHang2_VAT3_
+
+đi vay=1 coi nhu ncc
+
+vat=3
+con lai =0
+
+
+Huutq-88
+Huutq@88
+C:\Users\HUU\Documents\GitHub\TinLuong
