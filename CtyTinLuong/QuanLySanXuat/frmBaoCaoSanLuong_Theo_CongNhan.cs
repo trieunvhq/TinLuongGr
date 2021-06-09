@@ -29,13 +29,80 @@ namespace CtyTinLuong
         {
 
             grid_ChiTiet.DataSource = null;
-            
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();            
+
+            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
 
             DataTable dtxxxx = new DataTable();
             dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan_HUU(iiID_CongNhan, xxtungay, xxdenngay);
-          
-            grid_ChiTiet.DataSource = dtxxxx;
+
+            DataTable dt2xx = new DataTable();
+
+            dt2xx.Columns.Add("MaVT", typeof(string));
+            dt2xx.Columns.Add("TenVTHH", typeof(string));
+            dt2xx.Columns.Add("DonViTinh", typeof(string));
+            dt2xx.Columns.Add("SanLuong_Thuong", typeof(string));
+            dt2xx.Columns.Add("SanLuong_TangCa", typeof(string));
+            dt2xx.Columns.Add("DinhMuc_KhongTang", typeof(double));
+            dt2xx.Columns.Add("DinhMuc_Tang", typeof(double));
+            dt2xx.Columns.Add("ThanhTien", typeof(double));
+
+            DataRow _ravi_1 = dt2xx.NewRow();
+
+            int id_vthh_cu_ = 0;
+
+            for (int k = 0; k < dtxxxx.Rows.Count; k++)
+            {
+                int xxID_VTHH = Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
+                //double snluong_thuong = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
+                //double snluong_tangca = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
+                double xxsanluong_thuong = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                double xxsanluong_tang = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_TangCa)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                double xxthanhtien = Convert.ToDouble(dtxxxx.Compute("sum(ThanhTien)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                int id_vthh_ = 0;
+                if (k < dtxxxx.Rows.Count - 1)
+                {
+                    id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
+                    if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
+                    {
+                        _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
+                        _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                        _ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
+                        _ravi_1["SanLuong_Thuong"] = xxsanluong_thuong;
+                        _ravi_1["SanLuong_TangCa"] = xxsanluong_tang;
+                        _ravi_1["DinhMuc_KhongTang"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
+                        _ravi_1["DinhMuc_Tang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
+                        _ravi_1["ThanhTien"] = xxthanhtien;
+                        dt2xx.Rows.Add(_ravi_1);
+                        _ravi_1 = dt2xx.NewRow();
+                        id_vthh_cu_ = id_vthh_;
+                    }
+                    else
+                    { }
+                }
+                else
+                {
+                    _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
+                    _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                    _ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
+                    _ravi_1["SanLuong_Thuong"] = xxsanluong_thuong;
+                    _ravi_1["SanLuong_TangCa"] = xxsanluong_tang;
+                    _ravi_1["DinhMuc_KhongTang"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
+                    _ravi_1["DinhMuc_Tang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
+                    _ravi_1["ThanhTien"] = xxthanhtien;
+
+
+                    dt2xx.Rows.Add(_ravi_1);
+
+
+
+                    _ravi_1 = dt2xx.NewRow();
+
+                }
+
+            }
+
+            grid_ChiTiet.DataSource = dt2xx;
+
 
         }
 
