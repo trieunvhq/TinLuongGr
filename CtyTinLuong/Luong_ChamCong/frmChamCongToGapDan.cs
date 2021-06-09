@@ -107,7 +107,7 @@ namespace CtyTinLuong
             {
                 DateTime dtnow = DateTime.Now;
                 txtNam.Text = dtnow.Year.ToString();
-                txtThang.Text = dtnow.Month.ToString(); 
+                txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
                 if (ngaycuathang_ == 28)
@@ -149,7 +149,7 @@ namespace CtyTinLuong
 
                 using (clsThin clsThin_ = new clsThin())
                 {
-                    DataTable dt_ = clsThin_.T_NhanSu_SF("0");
+                    DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
 
                     cbBoPhan.DisplayMember = "TenBoPhan";
                     cbBoPhan.ValueMember = "ID_BoPhan";
@@ -162,8 +162,8 @@ namespace CtyTinLuong
 
                     DataRow row = _dataLoaiHang.NewRow();
                     row["ID_VTHH"] = 0;
-                    row["TenVTHH"] = "-->Tất cả"; 
-                    _dataLoaiHang.Rows.InsertAt(row,0);
+                    row["TenVTHH"] = "-->Tất cả";
+                    _dataLoaiHang.Rows.InsertAt(row, 0);
                     cbLoaiHangSX.DataSource = _dataLoaiHang;
                     cbLoaiHangSX.DisplayMember = "TenVTHH";
                     cbLoaiHangSX.ValueMember = "ID_VTHH";
@@ -183,7 +183,7 @@ namespace CtyTinLuong
                         else
                         {
                             _ten_vthh = cbLoaiHangSX.Text;
-                        } 
+                        }
                     }
                     catch { }
                 }
@@ -192,7 +192,7 @@ namespace CtyTinLuong
             {
             }
             _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month; 
+            _thang = DateTime.Now.Month;
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -233,9 +233,9 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
-                      
-                    if(_id_vthh==0)
+                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()));
+
+                    if (_id_vthh == 0)
                     {
                         int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                         _data.Rows[i]["ID_VTHH"] = id_vthh_;
@@ -255,33 +255,33 @@ namespace CtyTinLuong
                     Ngay6 = Convert.ToInt32(_data.Rows[i]["Ngay6"].ToString());
                     Ngay7 = Convert.ToInt32(_data.Rows[i]["Ngay7"].ToString());
                     Ngay8 = Convert.ToInt32(_data.Rows[i]["Ngay8"].ToString());
-                   Ngay9 = Convert.ToInt32(_data.Rows[i]["Ngay9"].ToString());
-                   Ngay10 = Convert.ToInt32(_data.Rows[i]["Ngay10"].ToString());
-                   Ngay11 =  Convert.ToInt32(_data.Rows[i]["Ngay11"].ToString());
-                   Ngay12 =  Convert.ToInt32(_data.Rows[i]["Ngay12"].ToString());
-                   Ngay13 =  Convert.ToInt32(_data.Rows[i]["Ngay13"].ToString());
-                   Ngay14 =  Convert.ToInt32(_data.Rows[i]["Ngay14"].ToString());
-                   Ngay15 =  Convert.ToInt32(_data.Rows[i]["Ngay15"].ToString());
-                   Ngay16 =  Convert.ToInt32(_data.Rows[i]["Ngay16"].ToString());
-                   Ngay17 =  Convert.ToInt32(_data.Rows[i]["Ngay17"].ToString());
-                   Ngay18 =  Convert.ToInt32(_data.Rows[i]["Ngay18"].ToString());
-                   Ngay19 =  Convert.ToInt32(_data.Rows[i]["Ngay19"].ToString());
-                   Ngay20 =  Convert.ToInt32(_data.Rows[i]["Ngay20"].ToString());
-                   Ngay21 =  Convert.ToInt32(_data.Rows[i]["Ngay21"].ToString());
-                   Ngay22 =  Convert.ToInt32(_data.Rows[i]["Ngay22"].ToString());
-                   Ngay23 =  Convert.ToInt32(_data.Rows[i]["Ngay23"].ToString());
-                   Ngay24 =  Convert.ToInt32(_data.Rows[i]["Ngay24"].ToString());
-                   Ngay25 =  Convert.ToInt32(_data.Rows[i]["Ngay25"].ToString());
-                   Ngay26 =  Convert.ToInt32(_data.Rows[i]["Ngay26"].ToString());
-                   Ngay27 =  Convert.ToInt32(_data.Rows[i]["Ngay27"].ToString());
-                   Ngay28 =  Convert.ToInt32(_data.Rows[i]["Ngay28"].ToString());
-                   Ngay29 =  Convert.ToInt32(_data.Rows[i]["Ngay29"].ToString());
-                   Ngay30 =  Convert.ToInt32(_data.Rows[i]["Ngay30"].ToString());
-                   Ngay31 =  Convert.ToInt32(_data.Rows[i]["Ngay31"].ToString());
+                    Ngay9 = Convert.ToInt32(_data.Rows[i]["Ngay9"].ToString());
+                    Ngay10 = Convert.ToInt32(_data.Rows[i]["Ngay10"].ToString());
+                    Ngay11 = Convert.ToInt32(_data.Rows[i]["Ngay11"].ToString());
+                    Ngay12 = Convert.ToInt32(_data.Rows[i]["Ngay12"].ToString());
+                    Ngay13 = Convert.ToInt32(_data.Rows[i]["Ngay13"].ToString());
+                    Ngay14 = Convert.ToInt32(_data.Rows[i]["Ngay14"].ToString());
+                    Ngay15 = Convert.ToInt32(_data.Rows[i]["Ngay15"].ToString());
+                    Ngay16 = Convert.ToInt32(_data.Rows[i]["Ngay16"].ToString());
+                    Ngay17 = Convert.ToInt32(_data.Rows[i]["Ngay17"].ToString());
+                    Ngay18 = Convert.ToInt32(_data.Rows[i]["Ngay18"].ToString());
+                    Ngay19 = Convert.ToInt32(_data.Rows[i]["Ngay19"].ToString());
+                    Ngay20 = Convert.ToInt32(_data.Rows[i]["Ngay20"].ToString());
+                    Ngay21 = Convert.ToInt32(_data.Rows[i]["Ngay21"].ToString());
+                    Ngay22 = Convert.ToInt32(_data.Rows[i]["Ngay22"].ToString());
+                    Ngay23 = Convert.ToInt32(_data.Rows[i]["Ngay23"].ToString());
+                    Ngay24 = Convert.ToInt32(_data.Rows[i]["Ngay24"].ToString());
+                    Ngay25 = Convert.ToInt32(_data.Rows[i]["Ngay25"].ToString());
+                    Ngay26 = Convert.ToInt32(_data.Rows[i]["Ngay26"].ToString());
+                    Ngay27 = Convert.ToInt32(_data.Rows[i]["Ngay27"].ToString());
+                    Ngay28 = Convert.ToInt32(_data.Rows[i]["Ngay28"].ToString());
+                    Ngay29 = Convert.ToInt32(_data.Rows[i]["Ngay29"].ToString());
+                    Ngay30 = Convert.ToInt32(_data.Rows[i]["Ngay30"].ToString());
+                    Ngay31 = Convert.ToInt32(_data.Rows[i]["Ngay31"].ToString());
                     //
-                    _data.Rows[i]["Ngay1"] = Ngay1.ToString("N0");  
+                    _data.Rows[i]["Ngay1"] = Ngay1.ToString("N0");
                     _data.Rows[i]["Ngay2"] = Ngay2.ToString("N0");
-                    _data.Rows[i]["Ngay3"] = Ngay3.ToString("N0"); 
+                    _data.Rows[i]["Ngay3"] = Ngay3.ToString("N0");
                     _data.Rows[i]["Ngay4"] = Ngay4.ToString("N0");
                     _data.Rows[i]["Ngay5"] = Ngay5.ToString("N0");
                     _data.Rows[i]["Ngay6"] = Ngay6.ToString("N0");
@@ -342,7 +342,7 @@ namespace CtyTinLuong
                     Tong_Ngay29 += Ngay29;
                     Tong_Ngay30 += Ngay30;
                     Tong_Ngay31 += Ngay31;
-                } 
+                }
             }
             LoadCongNhanVaoBang(_id_bophan);
 
@@ -364,7 +364,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
-                    int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_CongNhan"].ToString()); 
+                    int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString());
                     if (ds_id_congnhan.Contains(id_nhansu_))
                     {
 
@@ -376,19 +376,20 @@ namespace CtyTinLuong
                         _ravi["ID_CongNhan"] = id_nhansu_;
                         _ravi["Thang"] = _thang;
                         _ravi["Nam"] = _nam;
-                        _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0;  _ravi["Ngay3"] = 0;
+                        _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
                         _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
                         _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
-                        _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0; 
+                        _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
                         _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
                         _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
                         _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
                         _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
                         _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
                         _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
-                        _ravi["Ngay30"] = 0;  _ravi["Ngay31"] = 0;
+                        _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
 
-                        _ravi["SanLuong"] = 0; 
+                        _ravi["SanLuong"] = 0;
+                        _ravi["ID_NhanSu"] = id_nhansu_;
                         _ravi["Tong"] = 0;
                         _ravi["GuiDuLieu"] = false;
                         _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
@@ -411,7 +412,7 @@ namespace CtyTinLuong
             //{
             //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
             //}
-            gridThin.EditValueChanged +=(o,e)=> {
+            gridThin.EditValueChanged += (o, e) => {
 
             };
             // dat doan cuoi nay đi
@@ -456,7 +457,7 @@ namespace CtyTinLuong
             _ravi2["Ngay31"] = Tong_Ngay31.ToString("N0");
 
 
-            _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2+ Tong_Ngay3+ Tong_Ngay4 + Tong_Ngay5
+            _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
                 + Tong_Ngay6 + Tong_Ngay7 + Tong_Ngay8 + Tong_Ngay9 + Tong_Ngay10
                 + Tong_Ngay11 + Tong_Ngay12 + Tong_Ngay13 + Tong_Ngay14 + Tong_Ngay15
                 + Tong_Ngay16 + Tong_Ngay17 + Tong_Ngay18 + Tong_Ngay19 + Tong_Ngay20
@@ -481,7 +482,7 @@ namespace CtyTinLuong
         private void frmChamCongToGapDan_Load(object sender, EventArgs e)
         {
         }
-         
+
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             int index_ = e.RowHandle;
@@ -539,8 +540,9 @@ namespace CtyTinLuong
                 _thang = Convert.ToInt32(txtThang.Text);
                 LoadData(false);
             }
-            catch {
-                MessageBox.Show("Tháng không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            catch
+            {
+                MessageBox.Show("Tháng không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void HoanThanhNam()
@@ -552,7 +554,7 @@ namespace CtyTinLuong
             }
             catch
             {
-                MessageBox.Show( "Năm không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Năm không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -578,18 +580,18 @@ namespace CtyTinLuong
         {
             //miiID_chiTietChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
             //miiD_DinhMuc_Luong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
-           // miID_congNhan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
-           
-           // msTenNhanVien = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
+            // miID_congNhan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
+
+            // msTenNhanVien = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
             frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(this);
             ff.Show();
         }
-          
+
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
             //GuiDuLieuBangLuong();
 
-            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7, 2021);
             ff.Show();
         }
 
@@ -603,7 +605,7 @@ namespace CtyTinLuong
             lbChinhSua.Text = "Chỉnh sửa";
             txtDinhMuc.ForeColor = Color.Black;
             _id_vthh = (int)cbLoaiHangSX.SelectedValue;
-            if(_id_vthh==0)
+            if (_id_vthh == 0)
             {
                 _ten_vthh = "";
             }
@@ -614,12 +616,13 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 int nam_, thang_;
-                try {
+                try
+                {
                     thang_ = Convert.ToInt32(txtThang.Text);
                 }
                 catch
                 {
-                    MessageBox.Show( "Tháng không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tháng không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 try
@@ -628,17 +631,17 @@ namespace CtyTinLuong
                 }
                 catch
                 {
-                    MessageBox.Show( "Năm không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Năm không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }  
-                if(_id_vthh==0)
+                }
+                if (_id_vthh == 0)
                 {
                     _id_dinhmuc_togapdan = 0;
                     txtDinhMuc.Text = "-->Tất cả";
                 }
                 else
                 {
-                    DataRow row_ = ((DataRowView)cbLoaiHangSX.SelectedItem).Row; 
+                    DataRow row_ = ((DataRowView)cbLoaiHangSX.SelectedItem).Row;
                     _id_dinhmuc_togapdan = Convert.ToInt32(row_["ID_DinhMuc_Luong_SanLuong"].ToString());
                     txtDinhMuc.Text = row_["DienGiai"].ToString() + " (" + row_["MaDinhMuc"].ToString() + ")";
                 }
@@ -683,7 +686,7 @@ namespace CtyTinLuong
                     else
                         result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
-            catch 
+            catch
             {
                 try
                 {
@@ -727,7 +730,7 @@ namespace CtyTinLuong
                         isGuiThanhCong = true;
                     }
                     clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                        Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()),
+                        Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
                         _thang,
                         _nam,
                         id_vthh_,
@@ -763,7 +766,7 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true);
+                        0, true,false,_id_bophan);
                 }
                 if (isGuiThanhCong)
                 {
@@ -771,11 +774,11 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    MessageBox.Show( "Chưa chọn loại hàng hóa","Lỗi",
-       MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    MessageBox.Show("Chưa chọn loại hàng hóa", "Lỗi",
+       MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-               
+
 
         }
     }
