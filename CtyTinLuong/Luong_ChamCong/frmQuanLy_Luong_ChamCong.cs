@@ -167,7 +167,7 @@ namespace CtyTinLuong
 
         private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
         { 
-            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT() { TopLevel = false, TopMost = true };
+            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ() { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -177,7 +177,7 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
-            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ() { TopLevel = false, TopMost = true };
+            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT() { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);

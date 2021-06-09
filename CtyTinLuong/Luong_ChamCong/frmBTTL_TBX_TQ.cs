@@ -29,7 +29,7 @@ namespace CtyTinLuong
         public string _ten_vthh;
         private DataTable _data;
         private bool isload = true;
-
+        private double _dinhmuc_tangca = 0, _dinhmuc_cong = 0;
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmBTTL_TBX_TQ()
@@ -60,6 +60,13 @@ namespace CtyTinLuong
                         MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
                         return;
                     }
+                    ///
+                    dt_ = clsThin_.T_DM_SO(_nam, _thang, _id_bophan);
+                    if(dt_!=null && dt_.Rows.Count >1)
+                    {
+                        _dinhmuc_cong = Convert.ToDouble(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
+                        _dinhmuc_tangca = Convert.ToDouble(dt_.Rows[0]["DinhMuc_Tang"].ToString());
+                    }
                 }
 
             }
@@ -69,121 +76,81 @@ namespace CtyTinLuong
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
 
-            int tongluong_ = 0;
-            int songayan_ = 0;
-            int trutiencom_ = 0;
-            int tongtien_ = 0;
-            int tamung_ = 0;
-            int thucnhan_ = 0;
-            DataTable data_moi_ = new DataTable();
+            double TongLuong = 0;
 
+            double songayan = 0;
+            double LuongTrachNhiem = 0;
+            double tongtien = 0;
+            double tamung = 0;
+            double thucnhan = 0;
 
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang,_id_bophan);
-                data_moi_ = clsThin_.T_BTTL_TGD_Mau();
+             
 
-                data_moi_.Rows.Clear();
-                double TongLuong_ = 0;
-                int ID_CongNhan_Cu = 0;
-                if (_data != null && _data.Rows.Count > 0)
-                {
-                    ID_CongNhan_Cu = Convert.ToInt32(_data.Rows[0]["ID_CongNhan"].ToString());
-                }
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    int ID_CongNhan_;
-                    if (i < _data.Rows.Count - 1)
+                    double dongia_;
+                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString()); 
+                    bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
+                    if (istangca_)
                     {
-                        ID_CongNhan_ = Convert.ToInt32(_data.Rows[i + 1]["ID_CongNhan"].ToString());
+                        dongia_ = _dinhmuc_tangca;
+                        _data.Rows[i]["TenVTHH"] = "Tăng ca";
+
                     }
                     else
                     {
-                        ID_CongNhan_ = 0;
+                        dongia_ = _dinhmuc_cong;
+                        _data.Rows[i]["TenVTHH"] = "Công nhật";
                     }
-
-                    tongluong_ += Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString());
-                    songayan_ += Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString());
-                    trutiencom_ += Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString());
-                    tongtien_ += Convert.ToInt32(_data.Rows[i]["TongTien"].ToString());
-                    tamung_ += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
-                    thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
-                    thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
-                    //  
-                    double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
-                    //_data.Rows[i]["DonGia"] = dongia_.ToString("N0");
-
-
-
-
-                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+                    //
+                     
 
-                    TongLuong_ += (dongia_ * sanluong_);
+                    TongLuong += (dongia_ * sanluong_);
+                    _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
-                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
-                    if (ID_CongNhan_ != ID_CongNhan_Cu)
-                    {
-                        DataRow _ravi2 = data_moi_.NewRow();
-                        _ravi2["ID_CongNhan"] = ID_CongNhan_;
-                        _ravi2["Thang"] = _thang;
-                        _ravi2["Nam"] = _nam;
-                        _ravi2["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-
-                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
-                        _ravi2["TongLuong"] = TongLuong_.ToString("N0");
-
-                        ID_CongNhan_Cu = ID_CongNhan_;
-
-                        _ravi2["TongTien"] = (TongLuong_ - TruTienCom_).ToString("N0");
-                        _ravi2["ThucNhan"] = (TongLuong_ - TruTienCom_ - TamUng_).ToString("N0");
-
-                        if (TruTienCom_ == 0)
-                            _ravi2["TruTienCom"] = "";
-                        else
-                            _ravi2["TruTienCom"] = TruTienCom_.ToString("N0");
-
-                        if (SoNgayAn_ == 0)
-                            _ravi2["SoNgayAn"] = "";
-                        else
-                            _ravi2["SoNgayAn"] = SoNgayAn_.ToString("N0");
-
-                        if (TamUng_ == 0)
-                            _ravi2["TamUng"] = "";
-                        else
-                            _ravi2["TamUng"] = TruTienCom_.ToString("N0");
-                        data_moi_.Rows.Add(_ravi2);
-
-                        TongLuong_ = 0;
-                    }
+                    double LuongTrachNhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                    LuongTrachNhiem += LuongTrachNhiem_;
+                    if (LuongTrachNhiem_ == 0)
+                        _data.Rows[i]["LuongTrachNhiem"] = "";
                     else
-                    {
-                        _data.Rows[i]["TongLuong"] = "";
-                        _data.Rows[i]["TruTienCom"] = "";
-                        _data.Rows[i]["SoNgayAn"] = "";
-                        _data.Rows[i]["TongTien"] = "";
+                        _data.Rows[i]["LuongTrachNhiem"] = LuongTrachNhiem_.ToString("N0");
+
+                    double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                    tamung += TamUng_;
+                    if (TamUng_ == 0)
                         _data.Rows[i]["TamUng"] = "";
-                    }
-                    _data.Rows[i]["ThanhTien"] = (dongia_ * sanluong_).ToString("N0");
+                    else
+                        _data.Rows[i]["TamUng"] = TamUng_.ToString("N0");
+
+
+
+                    tongtien += ((dongia_ * sanluong_) - TamUng_);
+                    _data.Rows[i]["TongTien"] = ((dongia_ * sanluong_) + LuongTrachNhiem_).ToString("N0");
+
+                    thucnhan += ((dongia_ * sanluong_) - +LuongTrachNhiem_ - TamUng_);
+                    _data.Rows[i]["ThucNhan"] = ((dongia_ * sanluong_) - +LuongTrachNhiem_ - TamUng_).ToString("N0");
+
+                    
 
                 }
             }
 
-            DataRow _ravi = data_moi_.NewRow();
+            DataRow _ravi = _data.NewRow();
             _ravi["ID_CongNhan"] = 0;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["TenNhanVien"] = "TỔNG";
-            _ravi["TongLuong"] = tongluong_.ToString("N0");
-            _ravi["SoNgayAn"] = songayan_.ToString("N0");
-            _ravi["TruTienCom"] = trutiencom_.ToString("N0");
-            _ravi["TongTien"] = tongtien_.ToString("N0");
-            _ravi["TamUng"] = tamung_.ToString("N0");
-            _ravi["ThucNhan"] = thucnhan_.ToString("N0");
+            _ravi["TongLuong"] = TongLuong.ToString("N0"); 
+            _ravi["TongTien"] = tongtien.ToString("N0");
+            _ravi["TamUng"] = tamung.ToString("N0");
+            _ravi["ThucNhan"] = thucnhan.ToString("N0");
 
-            data_moi_.Rows.Add(_ravi);
-            gridControl1.DataSource = data_moi_;
+            _data.Rows.Add(_ravi);
+            gridControl1.DataSource = _data;
             //  
             isload = false;
         }
