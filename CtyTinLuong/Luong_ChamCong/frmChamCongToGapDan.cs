@@ -233,7 +233,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()));
+                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
 
                     if (_id_vthh == 0)
                     {
@@ -389,7 +389,6 @@ namespace CtyTinLuong
                         _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
 
                         _ravi["SanLuong"] = 0;
-                        _ravi["ID_NhanSu"] = id_nhansu_;
                         _ravi["Tong"] = 0;
                         _ravi["GuiDuLieu"] = false;
                         _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
@@ -589,10 +588,10 @@ namespace CtyTinLuong
 
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            //GuiDuLieuBangLuong();
+            GuiDuLieuBangLuong();
 
-            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7, 2021);
-            ff.Show();
+            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7, 2021);
+            //ff.Show();
         }
 
         private int _id_dinhmuc_togapdan;
@@ -730,7 +729,7 @@ namespace CtyTinLuong
                         isGuiThanhCong = true;
                     }
                     clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                        Convert.ToInt32(_data.Rows[i]["ID_NhanSu"].ToString()),
+                        Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()),
                         _thang,
                         _nam,
                         id_vthh_,

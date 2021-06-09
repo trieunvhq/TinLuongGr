@@ -47,7 +47,6 @@ namespace CtyTinLuong
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-
                 using (clsThin clsThin_ = new clsThin())
                 {
                     DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
@@ -58,6 +57,8 @@ namespace CtyTinLuong
                     else
                     {
                         _id_bophan = 0;
+                        MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+                        return;
                     }
                 }
 

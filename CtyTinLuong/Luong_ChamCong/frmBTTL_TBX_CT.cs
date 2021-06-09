@@ -58,6 +58,8 @@ namespace CtyTinLuong
                     else
                     {
                         _id_bophan = 0;
+                        MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+                        return;
                     }
                 }
             }

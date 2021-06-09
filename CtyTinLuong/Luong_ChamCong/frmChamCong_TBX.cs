@@ -459,8 +459,8 @@ namespace CtyTinLuong
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 if (_data.Rows.Count > index_)
                 {
-                    int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
-                    _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
+                    double temp_ = Convert.ToDouble(_data.Rows[index_][name_].ToString());
+                    _data.Rows[index_]["Tong"] = temp_ + Convert.ToDouble(_data.Rows[index_]["Tong"].ToString());
                 }
 
             }
