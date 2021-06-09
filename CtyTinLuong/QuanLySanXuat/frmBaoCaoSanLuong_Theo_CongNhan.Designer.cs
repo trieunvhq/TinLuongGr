@@ -467,7 +467,7 @@
             this.clTenVTHH.Name = "clTenVTHH";
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 3;
+            this.clTenVTHH.VisibleIndex = 2;
             this.clTenVTHH.Width = 302;
             // 
             // memoTenVTHH
@@ -484,7 +484,7 @@
             this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Thuong.OptionsColumn.FixedWidth = true;
             this.clSanLuong_Thuong.Visible = true;
-            this.clSanLuong_Thuong.VisibleIndex = 5;
+            this.clSanLuong_Thuong.VisibleIndex = 4;
             this.clSanLuong_Thuong.Width = 80;
             // 
             // clSanLuong_TangCa
@@ -497,7 +497,7 @@
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
             this.clSanLuong_TangCa.Visible = true;
-            this.clSanLuong_TangCa.VisibleIndex = 6;
+            this.clSanLuong_TangCa.VisibleIndex = 5;
             this.clSanLuong_TangCa.Width = 80;
             // 
             // clID_DinhMuc_Luong
@@ -522,7 +522,7 @@
             this.clDinhMuc_KhongTang.OptionsColumn.AllowEdit = false;
             this.clDinhMuc_KhongTang.OptionsColumn.FixedWidth = true;
             this.clDinhMuc_KhongTang.Visible = true;
-            this.clDinhMuc_KhongTang.VisibleIndex = 8;
+            this.clDinhMuc_KhongTang.VisibleIndex = 7;
             this.clDinhMuc_KhongTang.Width = 90;
             // 
             // clDinhMuc_Tang
@@ -539,7 +539,7 @@
             this.clDinhMuc_Tang.OptionsColumn.AllowEdit = false;
             this.clDinhMuc_Tang.OptionsColumn.FixedWidth = true;
             this.clDinhMuc_Tang.Visible = true;
-            this.clDinhMuc_Tang.VisibleIndex = 7;
+            this.clDinhMuc_Tang.VisibleIndex = 6;
             this.clDinhMuc_Tang.Width = 90;
             // 
             // clThanhTien
@@ -558,7 +558,7 @@
             this.clThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:#,##0.00}")});
             this.clThanhTien.Visible = true;
-            this.clThanhTien.VisibleIndex = 9;
+            this.clThanhTien.VisibleIndex = 8;
             this.clThanhTien.Width = 120;
             // 
             // clMaVT
@@ -569,7 +569,7 @@
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.OptionsColumn.FixedWidth = true;
             this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 2;
+            this.clMaVT.VisibleIndex = 1;
             this.clMaVT.Width = 71;
             // 
             // clDonViTinh
@@ -580,7 +580,7 @@
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
             this.clDonViTinh.OptionsColumn.FixedWidth = true;
             this.clDonViTinh.Visible = true;
-            this.clDonViTinh.VisibleIndex = 4;
+            this.clDonViTinh.VisibleIndex = 3;
             this.clDonViTinh.Width = 54;
             // 
             // clNgaySanXuat
@@ -596,8 +596,6 @@
             this.clNgaySanXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNgaySanXuat.Name = "clNgaySanXuat";
             this.clNgaySanXuat.OptionsColumn.AllowEdit = false;
-            this.clNgaySanXuat.Visible = true;
-            this.clNgaySanXuat.VisibleIndex = 1;
             this.clNgaySanXuat.Width = 114;
             // 
             // btprint_ALL
