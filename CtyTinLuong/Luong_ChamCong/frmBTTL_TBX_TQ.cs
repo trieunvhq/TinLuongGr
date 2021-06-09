@@ -47,6 +47,10 @@ namespace CtyTinLuong
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+                 
+                _nam = DateTime.Now.Year;
+                _thang = DateTime.Now.Month;
+
                 using (clsThin clsThin_ = new clsThin())
                 {
                     DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
@@ -62,7 +66,7 @@ namespace CtyTinLuong
                     }
                     ///
                     dt_ = clsThin_.T_DM_SO(_nam, _thang, _id_bophan);
-                    if(dt_!=null && dt_.Rows.Count >1)
+                    if(dt_!=null && dt_.Rows.Count ==1)
                     {
                         _dinhmuc_cong = Convert.ToDouble(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
                         _dinhmuc_tangca = Convert.ToDouble(dt_.Rows[0]["DinhMuc_Tang"].ToString());
@@ -73,8 +77,6 @@ namespace CtyTinLuong
             else
             {
             }
-            _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
 
             double TongLuong = 0;
 
@@ -107,7 +109,7 @@ namespace CtyTinLuong
                     }
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
                     //
-                     
+                    _data.Rows[i]["STT"] = (i / 2) + 1;
 
                     TongLuong += (dongia_ * sanluong_);
                     _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
@@ -144,10 +146,41 @@ namespace CtyTinLuong
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["TenNhanVien"] = "TỔNG";
-            _ravi["TongLuong"] = TongLuong.ToString("N0"); 
-            _ravi["TongTien"] = tongtien.ToString("N0");
-            _ravi["TamUng"] = tamung.ToString("N0");
-            _ravi["ThucNhan"] = thucnhan.ToString("N0");
+            if(TongLuong==0)
+            {
+                _ravi["TongLuong"] ="";
+            }
+            else
+            {
+                _ravi["TongLuong"] = TongLuong.ToString("N0");
+            }
+            // 
+            if (tongtien == 0)
+            {
+                _ravi["TongTien"] = "";
+            }
+            else
+            {
+                _ravi["TongTien"] = tongtien.ToString("N0");
+            }
+            // 
+            if (tamung == 0)
+            {
+                _ravi["TamUng"] = "";
+            }
+            else
+            {
+                _ravi["TamUng"] = tamung.ToString("N0");
+            }
+            // 
+            if (thucnhan == 0)
+            {
+                _ravi["ThucNhan"] = "";
+            }
+            else
+            {
+                _ravi["ThucNhan"] = thucnhan.ToString("N0");
+            } 
 
             _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;
