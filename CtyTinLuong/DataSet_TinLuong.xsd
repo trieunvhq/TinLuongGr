@@ -339,7 +339,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:string" minOccurs="0" />
-              <xs:element name="NgayThang" msprop:Generator_ColumnVarNameInTable="columnNgayThang" msprop:Generator_ColumnPropNameInRow="NgayThang" msprop:Generator_ColumnPropNameInTable="NgayThangColumn" msprop:Generator_UserColumnName="NgayThang" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayChungTu" msprop:Generator_ColumnVarNameInTable="columnNgayChungTu" msprop:Generator_ColumnPropNameInRow="NgayChungTu" msprop:Generator_ColumnPropNameInTable="NgayChungTuColumn" msprop:Generator_UserColumnName="NgayChungTu" type="xs:string" minOccurs="0" />
               <xs:element name="SoChungTu" msprop:Generator_ColumnVarNameInTable="columnSoChungTu" msprop:Generator_ColumnPropNameInRow="SoChungTu" msprop:Generator_ColumnPropNameInTable="SoChungTuColumn" msprop:Generator_UserColumnName="SoChungTu" type="xs:string" minOccurs="0" />
               <xs:element name="DienGiai" msprop:Generator_ColumnVarNameInTable="columnDienGiai" msprop:Generator_ColumnPropNameInRow="DienGiai" msprop:Generator_ColumnPropNameInTable="DienGiaiColumn" msprop:Generator_UserColumnName="DienGiai" type="xs:string" minOccurs="0" />
               <xs:element name="MaVT" msprop:Generator_ColumnVarNameInTable="columnMaVT" msprop:Generator_ColumnPropNameInRow="MaVT" msprop:Generator_ColumnPropNameInTable="MaVTColumn" msprop:Generator_UserColumnName="MaVT" type="xs:string" minOccurs="0" />

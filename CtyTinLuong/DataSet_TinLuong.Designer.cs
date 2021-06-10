@@ -7662,7 +7662,7 @@ namespace CtyTinLuong {
             
             private global::System.Data.DataColumn columnSTT;
             
-            private global::System.Data.DataColumn columnNgayThang;
+            private global::System.Data.DataColumn columnNgayChungTu;
             
             private global::System.Data.DataColumn columnSoChungTu;
             
@@ -7733,9 +7733,9 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NgayThangColumn {
+            public global::System.Data.DataColumn NgayChungTuColumn {
                 get {
-                    return this.columnNgayThang;
+                    return this.columnNgayChungTu;
                 }
             }
             
@@ -7880,11 +7880,11 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbBan_MuaHangRow AddtbBan_MuaHangRow(string STT, string NgayThang, string SoChungTu, string DienGiai, string MaVT, string TenVTHH, string DonViTinh, string SoLuong, string DonGia, string ThanhTien, string TienUSD, string TiGia, string QuyDoiVND, string TienVAT, string GhiChu) {
+            public tbBan_MuaHangRow AddtbBan_MuaHangRow(string STT, string NgayChungTu, string SoChungTu, string DienGiai, string MaVT, string TenVTHH, string DonViTinh, string SoLuong, string DonGia, string ThanhTien, string TienUSD, string TiGia, string QuyDoiVND, string TienVAT, string GhiChu) {
                 tbBan_MuaHangRow rowtbBan_MuaHangRow = ((tbBan_MuaHangRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
-                        NgayThang,
+                        NgayChungTu,
                         SoChungTu,
                         DienGiai,
                         MaVT,
@@ -7921,7 +7921,7 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnSTT = base.Columns["STT"];
-                this.columnNgayThang = base.Columns["NgayThang"];
+                this.columnNgayChungTu = base.Columns["NgayChungTu"];
                 this.columnSoChungTu = base.Columns["SoChungTu"];
                 this.columnDienGiai = base.Columns["DienGiai"];
                 this.columnMaVT = base.Columns["MaVT"];
@@ -7942,8 +7942,8 @@ namespace CtyTinLuong {
             private void InitClass() {
                 this.columnSTT = new global::System.Data.DataColumn("STT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTT);
-                this.columnNgayThang = new global::System.Data.DataColumn("NgayThang", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNgayThang);
+                this.columnNgayChungTu = new global::System.Data.DataColumn("NgayChungTu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNgayChungTu);
                 this.columnSoChungTu = new global::System.Data.DataColumn("SoChungTu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoChungTu);
                 this.columnDienGiai = new global::System.Data.DataColumn("DienGiai", typeof(string), null, global::System.Data.MappingType.Element);
@@ -14933,17 +14933,17 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NgayThang {
+            public string NgayChungTu {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.NgayThangColumn]));
+                        return ((string)(this[this.tabletbBan_MuaHang.NgayChungTuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NgayThang\' in table \'tbBan_MuaHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NgayChungTu\' in table \'tbBan_MuaHang\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbBan_MuaHang.NgayThangColumn] = value;
+                    this[this.tabletbBan_MuaHang.NgayChungTuColumn] = value;
                 }
             }
             
@@ -15169,14 +15169,14 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNgayThangNull() {
-                return this.IsNull(this.tabletbBan_MuaHang.NgayThangColumn);
+            public bool IsNgayChungTuNull() {
+                return this.IsNull(this.tabletbBan_MuaHang.NgayChungTuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNgayThangNull() {
-                this[this.tabletbBan_MuaHang.NgayThangColumn] = global::System.Convert.DBNull;
+            public void SetNgayChungTuNull() {
+                this[this.tabletbBan_MuaHang.NgayChungTuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
