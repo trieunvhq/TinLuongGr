@@ -87,7 +87,7 @@ namespace CtyTinLuong
         {
 
 
-            Xtra_banKeHoaDonBanHang xtr111 = new Xtra_banKeHoaDonBanHang();
+            Xtra_SoTongHop_banHang xtr111 = new Xtra_SoTongHop_banHang();
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbBan_MuaHang.Clone();
@@ -96,20 +96,21 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbBan_MuaHang.NewRow();
-                _ravi["STT"] = (i + 1).ToString();
-                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["ThanhTien"].ToString());
+                
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["TienVAT"] = Convert.ToDouble(dt3.Rows[i]["TienVAT"].ToString());
-                _ravi["NgayChungTu"] = dt3.Rows[i]["NgayChungTu"].ToString();
+                _ravi["TenKH"] = dt3.Rows[i]["TenKH"].ToString();
+                _ravi["SoLuong"] = dt3.Rows[i]["SoLuong"].ToString();
+                _ravi["DonGia"] = dt3.Rows[i]["DonGia"].ToString();
+                _ravi["ThanhTien"] = dt3.Rows[i]["ThanhTien"].ToString();
+                _ravi["TiGia"] = dt3.Rows[i]["TiGia"].ToString();
+                _ravi["TongTienUSD"] = dt3.Rows[i]["TongTienUSD"].ToString();
+                _ravi["TongTienVND"] = dt3.Rows[i]["TongTienVND"].ToString();
+                _ravi["QuyDoiVND"] = dt3.Rows[i]["QuyDoiVND"].ToString();
                 _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                _ravi["TongTien_CoVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_CoVAT"].ToString());
-                _ravi["TongTien_ChuaVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_ChuaVAT"].ToString());
-                _ravi["QuyDoiVND"] = Convert.ToDouble(dt3.Rows[i]["QuyDoiVND"].ToString());
+                _ravi["NgayChungTu"] = dt3.Rows[i]["NgayChungTu"].ToString();
+             
                 ds.tbBan_MuaHang.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;

@@ -82,6 +82,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -145,7 +147,7 @@
             // 
             this.btPrint_ALL.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_ALL.Appearance.Options.UseFont = true;
-            this.btPrint_ALL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btPrint_ALL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_ALL.ImageOptions.Image")));
             this.btPrint_ALL.Location = new System.Drawing.Point(535, 624);
             this.btPrint_ALL.Name = "btPrint_ALL";
             this.btPrint_ALL.Size = new System.Drawing.Size(151, 22);
@@ -187,7 +189,9 @@
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn11});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.AllowHtmlDrawHeaders = true;
@@ -733,6 +737,22 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "TiGia";
+            this.gridColumn5.FieldName = "TiGia";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 8;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "QuyDoiVND";
+            this.gridColumn11.FieldName = "QuyDoiVND";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 9;
+            // 
             // BanHang_SoTongHopbanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -827,5 +847,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.SimpleButton btPrint_ALL;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
     }
 }
