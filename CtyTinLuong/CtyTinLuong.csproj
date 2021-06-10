@@ -1728,6 +1728,9 @@
     <EmbeddedResource Include="BanHang\BanHang_FrmThamChieuKeHoachSanXuat.resx">
       <DependentUpon>BanHang_FrmThamChieuKeHoachSanXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\BanHang_SoTongHopbanHang.resx">
+      <DependentUpon>BanHang_SoTongHopbanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\frmCaiDatBangGia_BanHang.resx">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </EmbeddedResource>
