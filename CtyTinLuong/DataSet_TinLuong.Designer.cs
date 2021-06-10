@@ -7937,22 +7937,22 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbBan_MuaHangRow AddtbBan_MuaHangRow(
                         string STT, 
-                        string NgayChungTu, 
+                        System.DateTime NgayChungTu, 
                         string SoChungTu, 
                         string DienGiai, 
                         string MaVT, 
                         string TenVTHH, 
                         string DonViTinh, 
                         string SoLuong, 
-                        string DonGia, 
-                        string ThanhTien, 
+                        double DonGia, 
+                        double ThanhTien, 
                         string TienUSD, 
-                        string TiGia, 
-                        string QuyDoiVND, 
-                        string TienVAT, 
+                        double TiGia, 
+                        double QuyDoiVND, 
+                        double TienVAT, 
                         string GhiChu, 
-                        string TongTien_ChuaVAT, 
-                        string TongTien_CoVAT) {
+                        double TongTien_ChuaVAT, 
+                        double TongTien_CoVAT) {
                 tbBan_MuaHangRow rowtbBan_MuaHangRow = ((tbBan_MuaHangRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -8018,7 +8018,7 @@ namespace CtyTinLuong {
             private void InitClass() {
                 this.columnSTT = new global::System.Data.DataColumn("STT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTT);
-                this.columnNgayChungTu = new global::System.Data.DataColumn("NgayChungTu", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnNgayChungTu = new global::System.Data.DataColumn("NgayChungTu", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgayChungTu);
                 this.columnSoChungTu = new global::System.Data.DataColumn("SoChungTu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoChungTu);
@@ -8032,23 +8032,23 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnDonViTinh);
                 this.columnSoLuong = new global::System.Data.DataColumn("SoLuong", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuong);
-                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDonGia);
-                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThanhTien);
                 this.columnTienUSD = new global::System.Data.DataColumn("TienUSD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTienUSD);
-                this.columnTiGia = new global::System.Data.DataColumn("TiGia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTiGia = new global::System.Data.DataColumn("TiGia", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTiGia);
-                this.columnQuyDoiVND = new global::System.Data.DataColumn("QuyDoiVND", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnQuyDoiVND = new global::System.Data.DataColumn("QuyDoiVND", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuyDoiVND);
-                this.columnTienVAT = new global::System.Data.DataColumn("TienVAT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTienVAT = new global::System.Data.DataColumn("TienVAT", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTienVAT);
                 this.columnGhiChu = new global::System.Data.DataColumn("GhiChu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGhiChu);
-                this.columnTongTien_ChuaVAT = new global::System.Data.DataColumn("TongTien_ChuaVAT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTongTien_ChuaVAT = new global::System.Data.DataColumn("TongTien_ChuaVAT", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien_ChuaVAT);
-                this.columnTongTien_CoVAT = new global::System.Data.DataColumn("TongTien_CoVAT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTongTien_CoVAT = new global::System.Data.DataColumn("TongTien_CoVAT", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien_CoVAT);
             }
             
@@ -15358,10 +15358,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NgayChungTu {
+            public System.DateTime NgayChungTu {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.NgayChungTuColumn]));
+                        return ((global::System.DateTime)(this[this.tabletbBan_MuaHang.NgayChungTuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NgayChungTu\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15470,10 +15470,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DonGia {
+            public double DonGia {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.DonGiaColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.DonGiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DonGia\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15486,10 +15486,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ThanhTien {
+            public double ThanhTien {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.ThanhTienColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.ThanhTienColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ThanhTien\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15518,10 +15518,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TiGia {
+            public double TiGia {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.TiGiaColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.TiGiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TiGia\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15534,10 +15534,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string QuyDoiVND {
+            public double QuyDoiVND {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.QuyDoiVNDColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.QuyDoiVNDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'QuyDoiVND\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15550,10 +15550,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TienVAT {
+            public double TienVAT {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.TienVATColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.TienVATColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TienVAT\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15582,10 +15582,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TongTien_ChuaVAT {
+            public double TongTien_ChuaVAT {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.TongTien_ChuaVATColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.TongTien_ChuaVATColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TongTien_ChuaVAT\' in table \'tbBan_MuaHang\' is DBNull.", e);
@@ -15598,10 +15598,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TongTien_CoVAT {
+            public double TongTien_CoVAT {
                 get {
                     try {
-                        return ((string)(this[this.tabletbBan_MuaHang.TongTien_CoVATColumn]));
+                        return ((double)(this[this.tabletbBan_MuaHang.TongTien_CoVATColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TongTien_CoVAT\' in table \'tbBan_MuaHang\' is DBNull.", e);

@@ -68,15 +68,10 @@ namespace CtyTinLuong
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
                 _ravi["TienVAT"] = Convert.ToDouble(dt3.Rows[i]["TienVAT"].ToString());
-
-                _ravi["NgayChungTu"] = Convert.ToDouble(dt3.Rows[i]["NgayChungTu"].ToString());
-
-                _ravi["SoChungTu"] = Convert.ToDouble(dt3.Rows[i]["SoChungTu"].ToString());
-
-                _ravi["DienGiai"] = Convert.ToDouble(dt3.Rows[i]["DienGiai"].ToString());
-
+                _ravi["NgayChungTu"] =dt3.Rows[i]["NgayChungTu"].ToString();
+                _ravi["SoChungTu"] =dt3.Rows[i]["SoChungTu"].ToString();
+                _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
                 _ravi["TongTien_CoVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_CoVAT"].ToString());
-
                 _ravi["TongTien_ChuaVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_ChuaVAT"].ToString());
                 _ravi["QuyDoiVND"] = Convert.ToDouble(dt3.Rows[i]["QuyDoiVND"].ToString());
                 ds.tbBan_MuaHang.Rows.Add(_ravi);
