@@ -1566,6 +1566,12 @@
     <Compile Include="Xtra_BanHang.Designer.cs">
       <DependentUpon>Xtra_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_banKeHoaDonBanHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_banKeHoaDonBanHang.Designer.cs">
+      <DependentUpon>Xtra_banKeHoaDonBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2365,6 +2371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BanHang.resx">
       <DependentUpon>Xtra_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_banKeHoaDonBanHang.resx">
+      <DependentUpon>Xtra_banKeHoaDonBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.resx">
       <DependentUpon>Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu.cs</DependentUpon>
