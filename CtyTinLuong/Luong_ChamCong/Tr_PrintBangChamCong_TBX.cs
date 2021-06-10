@@ -275,6 +275,7 @@ setThu();
                     Ds_Ngay_Footer[i].WidthF = (float)26.533;
                     tmp += (float)26.533;
                 }
+                xrTableCell8.Text = Ds_Ngay[0].HeightF.ToString();
                 xrTableCell3.WidthF = tmp;
                 tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF;
 
@@ -368,6 +369,10 @@ setThu();
                     Ds_Ngay_Footer[i].ForeColor = Color.Red;
                 }
             }
+            float tmp_high = (float)(xrTable1.HeightF);
+
+            if ((float)(pHight.Value) > 0) xrTable1.HeightF = (float)(pHight.Value);
+
         }
     }
 }
