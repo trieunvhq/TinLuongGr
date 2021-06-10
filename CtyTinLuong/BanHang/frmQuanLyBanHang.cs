@@ -94,10 +94,7 @@ namespace CtyTinLuong
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCBanHang_ChiTiet_ALL ucc = new UCBanHang_ChiTiet_ALL();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            
         }
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -126,6 +123,14 @@ namespace CtyTinLuong
         {
             BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
             ff.Show();
+        }
+
+        private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UCBanHang_ChiTiet_ALL ucc = new UCBanHang_ChiTiet_ALL();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
         }
     }
 }
