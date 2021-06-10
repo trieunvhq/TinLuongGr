@@ -37,6 +37,8 @@
             this.navMuaHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navChiTiet_ALL = new DevExpress.XtraNavBar.NavBarItem();
+            this.navPhaiTraNguoiBan = new DevExpress.XtraNavBar.NavBarItem();
+            this.navDoiChieuCongNo = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
@@ -50,9 +52,6 @@
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navPhaiTraNguoiBan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navDoiChieuCongNo = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -83,8 +82,7 @@
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1,
-            this.navBarGroup2});
+            this.navBarGroup1});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem4,
             this.navBarItem5,
@@ -138,6 +136,17 @@
             this.navChiTiet_ALL.Caption = "Chi tiết _ALL";
             this.navChiTiet_ALL.Name = "navChiTiet_ALL";
             this.navChiTiet_ALL.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChiTiet_ALL_LinkClicked);
+            // 
+            // navPhaiTraNguoiBan
+            // 
+            this.navPhaiTraNguoiBan.Caption = "Phải trả người bán";
+            this.navPhaiTraNguoiBan.Name = "navPhaiTraNguoiBan";
+            this.navPhaiTraNguoiBan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navPhaiTraNguoiBan_LinkClicked);
+            // 
+            // navDoiChieuCongNo
+            // 
+            this.navDoiChieuCongNo.Caption = "Đối chiếu công nợ";
+            this.navDoiChieuCongNo.Name = "navDoiChieuCongNo";
             // 
             // navBarItem4
             // 
@@ -220,25 +229,6 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
-            // navBarGroup2
-            // 
-            this.navBarGroup2.Caption = "Báo cáo";
-            this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navPhaiTraNguoiBan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navDoiChieuCongNo)});
-            this.navBarGroup2.Name = "navBarGroup2";
-            // 
-            // navPhaiTraNguoiBan
-            // 
-            this.navPhaiTraNguoiBan.Caption = "Phải trả người bán";
-            this.navPhaiTraNguoiBan.Name = "navPhaiTraNguoiBan";
-            // 
-            // navDoiChieuCongNo
-            // 
-            this.navDoiChieuCongNo.Caption = "Đối chiếu công nợ";
-            this.navDoiChieuCongNo.Name = "navDoiChieuCongNo";
-            // 
             // frmMuaHang2222
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,7 +277,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navChiTiet_ALL;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navPhaiTraNguoiBan;
         private DevExpress.XtraNavBar.NavBarItem navDoiChieuCongNo;
     }

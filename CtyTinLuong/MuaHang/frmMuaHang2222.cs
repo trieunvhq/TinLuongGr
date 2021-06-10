@@ -92,5 +92,11 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
         }
+
+        private void navPhaiTraNguoiBan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            CtyTinLuong.MuaHang.MuaHang_PhaiTraNguoiBan FF = new CtyTinLuong.MuaHang.MuaHang_PhaiTraNguoiBan();
+            FF.Show();
+        }
     }
 }
