@@ -29,7 +29,7 @@ namespace CtyTinLuong
             }
             catch
             { }
-
+            pNgayThang.Value = "Từ ngày " + BanHang_frmBangKeHoaDonBanHang.mdatungay.ToString("dd/MM/yyyy") + " đến ngày " + BanHang_frmBangKeHoaDonBanHang.mdadenngay.ToString("dd/MM/yyyy") + "";
         }
     }
 }
