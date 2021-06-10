@@ -197,6 +197,9 @@
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.pNgay = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
+            this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -2190,6 +2193,8 @@
             // 
             // xrLabel24
             // 
+            this.xrLabel24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pLapBieu]")});
             this.xrLabel24.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(737.5327F, 111.8343F);
             this.xrLabel24.Multiline = true;
@@ -2216,6 +2221,8 @@
             // 
             // xrLabel22
             // 
+            this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pTongHop]")});
             this.xrLabel22.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(392.7083F, 111.8343F);
             this.xrLabel22.Multiline = true;
@@ -2242,6 +2249,8 @@
             // 
             // xrLabel20
             // 
+            this.xrLabel20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pGiamDoc]")});
             this.xrLabel20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(44.19934F, 111.8343F);
             this.xrLabel20.Multiline = true;
@@ -2278,6 +2287,24 @@
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
             this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pGiamDoc
+            // 
+            this.pGiamDoc.Description = "Parameter1";
+            this.pGiamDoc.Name = "pGiamDoc";
+            this.pGiamDoc.ValueInfo = "Phạm Thị Đông";
+            // 
+            // pTongHop
+            // 
+            this.pTongHop.Description = "Parameter1";
+            this.pTongHop.Name = "pTongHop";
+            this.pTongHop.ValueInfo = "Phạm Kim Diện";
+            // 
+            // pLapBieu
+            // 
+            this.pLapBieu.Description = "Parameter1";
+            this.pLapBieu.Name = "pLapBieu";
+            this.pLapBieu.ValueInfo = "Phạm Thị Lành";
+            // 
             // Tr_PrintChamCongTGD
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2295,7 +2322,10 @@
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.pNgay});
+            this.pNgay,
+            this.pGiamDoc,
+            this.pTongHop,
+            this.pLapBieu});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -2476,5 +2506,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel19;
         private DevExpress.XtraReports.Parameters.Parameter pNgay;
         private DataSet_TinLuong dataSet_TinLuong1;
+        private DevExpress.XtraReports.Parameters.Parameter pGiamDoc;
+        private DevExpress.XtraReports.Parameters.Parameter pTongHop;
+        private DevExpress.XtraReports.Parameters.Parameter pLapBieu;
     }
 }
