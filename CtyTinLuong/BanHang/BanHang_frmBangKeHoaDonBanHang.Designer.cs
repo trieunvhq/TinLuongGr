@@ -501,9 +501,9 @@
             // btPrint
             // 
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(1038, 624);
+            this.btPrint.Location = new System.Drawing.Point(974, 624);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(66, 22);
+            this.btPrint.Size = new System.Drawing.Size(107, 22);
             this.btPrint.StyleController = this.dataLayoutControl1;
             this.btPrint.TabIndex = 96;
             this.btPrint.Text = "Print";
@@ -513,9 +513,9 @@
             // 
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(1108, 624);
+            this.btThoat.Location = new System.Drawing.Point(1085, 624);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(74, 22);
+            this.btThoat.Size = new System.Drawing.Size(97, 22);
             this.btThoat.StyleController = this.dataLayoutControl1;
             this.btThoat.TabIndex = 95;
             this.btThoat.Text = "Thoát";
@@ -886,18 +886,18 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btThoat;
-            this.layoutControlItem6.Location = new System.Drawing.Point(1106, 622);
+            this.layoutControlItem6.Location = new System.Drawing.Point(1083, 622);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(78, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(101, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btPrint;
-            this.layoutControlItem7.Location = new System.Drawing.Point(1036, 622);
+            this.layoutControlItem7.Location = new System.Drawing.Point(972, 622);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(70, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(111, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -906,7 +906,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(369, 622);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(667, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(603, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8

@@ -213,21 +213,16 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)grid_banHang.DataSource;
-            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
+
+            clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang();
+            mdtPrint = cls.SelectAll_ngayThang(dteTuNgay.DateTime, dteDenNgay.DateTime);
             if (mdtPrint.Rows.Count > 0)
             {
                 mbPrint = true;
-               
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
                 ff.Show();
-
             }
         }
 
