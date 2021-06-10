@@ -781,8 +781,6 @@
             // 
             // xrlbThang
             // 
-            this.xrlbThang.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pMonth]")});
             this.xrlbThang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
             this.xrlbThang.LocationFloat = new DevExpress.Utils.PointFloat(497.2674F, 40.90279F);
             this.xrlbThang.Multiline = true;
@@ -796,8 +794,6 @@
             // 
             // xrlbNam
             // 
-            this.xrlbNam.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pYear]")});
             this.xrlbNam.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
             this.xrlbNam.LocationFloat = new DevExpress.Utils.PointFloat(583.7916F, 40.90279F);
             this.xrlbNam.Multiline = true;
