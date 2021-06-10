@@ -370,12 +370,12 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        frmQuanLy_Luong_ChamCong _frmQuanLy_Luong_ChamCong;
+        //frmQuanLy_Luong_ChamCong _frmQuanLy_Luong_ChamCong;
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
-            _frmQuanLy_Luong_ChamCong = new CtyTinLuong.frmQuanLy_Luong_ChamCong(this);
+            frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
             //this.Hide();hide
-            _frmQuanLy_Luong_ChamCong.Show();
+            ff.Show();
         }
 
         private void btnQuyNganHang_Click(object sender, EventArgs e)

@@ -13,10 +13,10 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLy_Luong_ChamCong : Form
     {
-        frmMain _frmMain;
-        public frmQuanLy_Luong_ChamCong(frmMain frm)
+        //frmMain _frmMain;
+        public frmQuanLy_Luong_ChamCong()
         {
-            _frmMain = frm;
+            //_frmMain = frm;
             InitializeComponent();
 
            
@@ -38,11 +38,6 @@ namespace CtyTinLuong
             uccc_DaNhapKho.BringToFront();
         }
 
-        private void btThooat_Click(object sender, EventArgs e)
-        {
-            // _frmMain.Show();
-            this.Close();
-        }
 
         private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -88,11 +83,11 @@ namespace CtyTinLuong
 
         }
 
-        private void frmQuanLy_Luong_ChamCong_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //  _frmMain.Show();
-            this.Close();
-        }
+        //private void frmQuanLy_Luong_ChamCong_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    //  _frmMain.Show();
+        //    this.Close();
+        //}
 
         private void navTTL_TGD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         { 

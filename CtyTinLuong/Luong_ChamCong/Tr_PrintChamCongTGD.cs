@@ -260,72 +260,21 @@ namespace CtyTinLuong.Luong_ChamCong
                     _flag_29 = "deleted";
                 }
 
-
                 //
-                hoTen.WidthF = (float)140.98;
-                cong.WidthF = (float)64.84;
-                Ngay1.WidthF = (float)26.97299;
-                Ngay2.WidthF = ng2.WidthF;
-                Ngay3.WidthF = ng3.WidthF;
-                Ngay4.WidthF = ng4.WidthF;
-                Ngay5.WidthF = ng5.WidthF;
-                Ngay6.WidthF = ng6.WidthF;
-                Ngay7.WidthF = ng7.WidthF;
-                Ngay8.WidthF = ng8.WidthF;
-                Ngay9.WidthF = ng9.WidthF;
-                Ngay10.WidthF = ng10.WidthF;
-                Ngay11.WidthF = ng11.WidthF;
-                Ngay12.WidthF = ng12.WidthF;
-                Ngay13.WidthF = ng13.WidthF;
-                Ngay14.WidthF = ng14.WidthF;
-                Ngay15.WidthF = ng15.WidthF;
-                Ngay16.WidthF = ng16.WidthF;
-                Ngay17.WidthF = ng17.WidthF;
-                Ngay18.WidthF = ng18.WidthF;
-                Ngay19.WidthF = ng19.WidthF;
-                Ngay20.WidthF = ng20.WidthF;
-                Ngay21.WidthF = ng21.WidthF;
-                Ngay22.WidthF = ng22.WidthF;
-                Ngay23.WidthF = ng23.WidthF;
-                Ngay24.WidthF = ng24.WidthF;
-                Ngay25.WidthF = ng25.WidthF;
-                Ngay26.WidthF = ng26.WidthF;
-                Ngay27.WidthF = ng27.WidthF;
-                Ngay28.WidthF = ng28.WidthF;
-                TongCel.WidthF = (float)42.89;
-
                 //
-                nameTong.WidthF = (float)140.98;
-                congFooter.WidthF = (float)64.84;
-                tg1.WidthF = Ngay1.WidthF;
-                tg2.WidthF = Ngay2.WidthF;
-                tg3.WidthF = Ngay3.WidthF;
-                tg4.WidthF = Ngay4.WidthF;
-                tg5.WidthF = Ngay5.WidthF;
-                tg6.WidthF = Ngay6.WidthF;
-                tg7.WidthF = Ngay7.WidthF;
-                tg8.WidthF = Ngay8.WidthF;
-                tg9.WidthF = Ngay9.WidthF;
-                tg10.WidthF = Ngay10.WidthF;
-                tg11.WidthF = Ngay11.WidthF;
-                tg12.WidthF = Ngay12.WidthF;
-                tg13.WidthF = Ngay13.WidthF;
-                tg14.WidthF = Ngay14.WidthF;
-                tg15.WidthF = Ngay15.WidthF;
-                tg16.WidthF = Ngay16.WidthF;
-                tg17.WidthF = Ngay17.WidthF;
-                tg18.WidthF = Ngay18.WidthF;
-                tg19.WidthF = Ngay19.WidthF;
-                tg20.WidthF = Ngay20.WidthF;
-                tg21.WidthF = Ngay21.WidthF;
-                tg22.WidthF = Ngay22.WidthF;
-                tg23.WidthF = Ngay23.WidthF;
-                tg24.WidthF = Ngay24.WidthF;
-                tg25.WidthF = Ngay25.WidthF;
-                tg26.WidthF = Ngay26.WidthF;
-                tg27.WidthF = Ngay27.WidthF;
-                tg28.WidthF = Ngay28.WidthF;
-                tgSum.WidthF = (float)42.89;
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)139.93;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)128.31;
+                //
+                float tmp = 0;
+                for (int i = 0; i < ngaycuathang_; ++i)
+                {
+                    Ds_NgayTitle[i].WidthF = (float)27.233;
+                    Ds_Ngay_Header[i].WidthF = (float)27.233;
+                    Ds_Ngay[i].WidthF = (float)27.233;
+                    Ds_Ngay_Footer[i].WidthF = (float)27.233;
+                    tmp += (float)27.233;
+                }
+                xrTableCell3.WidthF = tmp;
             }
             else if (ngaycuathang_ == 29)
             {
@@ -347,72 +296,20 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                hoTen.WidthF = (float)140.98;
-                cong.WidthF = (float)64.84;
-                Ngay1.WidthF = (float)26.0099;
-                Ngay2.WidthF = ng2.WidthF;
-                Ngay3.WidthF = ng3.WidthF;
-                Ngay4.WidthF = ng4.WidthF;
-                Ngay5.WidthF = ng5.WidthF;
-                Ngay6.WidthF = ng6.WidthF;
-                Ngay7.WidthF = ng7.WidthF;
-                Ngay8.WidthF = ng8.WidthF;
-                Ngay9.WidthF = ng9.WidthF;
-                Ngay10.WidthF = ng10.WidthF;
-                Ngay11.WidthF = ng11.WidthF;
-                Ngay12.WidthF = ng12.WidthF;
-                Ngay13.WidthF = ng13.WidthF;
-                Ngay14.WidthF = ng14.WidthF;
-                Ngay15.WidthF = ng15.WidthF;
-                Ngay16.WidthF = ng16.WidthF;
-                Ngay17.WidthF = ng17.WidthF;
-                Ngay18.WidthF = ng18.WidthF;
-                Ngay19.WidthF = ng19.WidthF;
-                Ngay20.WidthF = ng20.WidthF;
-                Ngay21.WidthF = ng21.WidthF;
-                Ngay22.WidthF = ng22.WidthF;
-                Ngay23.WidthF = ng23.WidthF;
-                Ngay24.WidthF = ng24.WidthF;
-                Ngay25.WidthF = ng25.WidthF;
-                Ngay26.WidthF = ng26.WidthF;
-                Ngay27.WidthF = ng27.WidthF;
-                Ngay28.WidthF = ng28.WidthF;
-                Ngay29.WidthF = ng29.WidthF;
-                TongCel.WidthF = (float)42.89;
-
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
+                //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
-                nameTong.WidthF = (float)140.98;
-                congFooter.WidthF = (float)64.84;
-                tg1.WidthF = Ngay1.WidthF;
-                tg2.WidthF = Ngay2.WidthF;
-                tg3.WidthF = Ngay3.WidthF;
-                tg4.WidthF = Ngay4.WidthF;
-                tg5.WidthF = Ngay5.WidthF;
-                tg6.WidthF = Ngay6.WidthF;
-                tg7.WidthF = Ngay7.WidthF;
-                tg8.WidthF = Ngay8.WidthF;
-                tg9.WidthF = Ngay9.WidthF;
-                tg10.WidthF = Ngay10.WidthF;
-                tg11.WidthF = Ngay11.WidthF;
-                tg12.WidthF = Ngay12.WidthF;
-                tg13.WidthF = Ngay13.WidthF;
-                tg14.WidthF = Ngay14.WidthF;
-                tg15.WidthF = Ngay15.WidthF;
-                tg16.WidthF = Ngay16.WidthF;
-                tg17.WidthF = Ngay17.WidthF;
-                tg18.WidthF = Ngay18.WidthF;
-                tg19.WidthF = Ngay19.WidthF;
-                tg20.WidthF = Ngay20.WidthF;
-                tg21.WidthF = Ngay21.WidthF;
-                tg22.WidthF = Ngay22.WidthF;
-                tg23.WidthF = Ngay23.WidthF;
-                tg24.WidthF = Ngay24.WidthF;
-                tg25.WidthF = Ngay25.WidthF;
-                tg26.WidthF = Ngay26.WidthF;
-                tg27.WidthF = Ngay27.WidthF;
-                tg28.WidthF = Ngay28.WidthF;
-                tg29.WidthF = Ngay29.WidthF;
-                tgSum.WidthF = (float)42.89;
+                float tmp = 0;
+                for (int i = 0; i < ngaycuathang_; ++i)
+                {
+                    Ds_NgayTitle[i].WidthF = (float)26.2101111;
+                    Ds_Ngay_Header[i].WidthF = (float)26.2101111;
+                    Ds_Ngay[i].WidthF = (float)26.2101111;
+                    Ds_Ngay_Footer[i].WidthF = (float)26.2101111;
+                    tmp += (float)26.2101111;
+                }
+                xrTableCell3.WidthF = tmp;
             }
             else if (ngaycuathang_ == 30)
             {
@@ -430,100 +327,17 @@ namespace CtyTinLuong.Luong_ChamCong
                 congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
                 //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
+                float tmp = 0;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-                    Ds_NgayTitle[i].WidthF = (float)25.247899;
-                    Ds_Ngay_Header[i].WidthF = (float)25.247899;
-                }
-                //ng1.WidthF = ng2.WidthF = ng3.WidthF = ng4.WidthF = ng5.WidthF;
-                //Ngay6.WidthF = ng6.WidthF;
-                //Ngay7.WidthF = ng7.WidthF;
-                //Ngay8.WidthF = ng8.WidthF;
-                //Ngay9.WidthF = ng9.WidthF;
-                //Ngay10.WidthF = ng10.WidthF;
-                //Ngay11.WidthF = ng11.WidthF;
-                //Ngay12.WidthF = ng12.WidthF;
-                //Ngay13.WidthF = ng13.WidthF;
-                //Ngay14.WidthF = ng14.WidthF;
-                //Ngay15.WidthF = ng15.WidthF;
-                //Ngay16.WidthF = ng16.WidthF;
-                //Ngay17.WidthF = ng17.WidthF;
-                //Ngay18.WidthF = ng18.WidthF;
-                //Ngay19.WidthF = ng19.WidthF;
-                //Ngay20.WidthF = ng20.WidthF;
-                //Ngay21.WidthF = ng21.WidthF;
-                //Ngay22.WidthF = ng22.WidthF;
-                //Ngay23.WidthF = ng23.WidthF;
-                //Ngay24.WidthF = ng24.WidthF;
-                //Ngay25.WidthF = ng25.WidthF;
-                //Ngay26.WidthF = ng26.WidthF;
-                //Ngay27.WidthF = ng27.WidthF;
-                //Ngay28.WidthF = ng28.WidthF;
-                //Ngay29.WidthF = ng29.WidthF;
-                //Ngay30.WidthF = ng30.WidthF;
-                //
-                Ngay1.WidthF = ng1.WidthF;
-                Ngay2.WidthF = ng2.WidthF;
-                Ngay3.WidthF = ng3.WidthF;
-                Ngay4.WidthF = ng4.WidthF;
-                Ngay5.WidthF = ng5.WidthF;
-                Ngay6.WidthF = ng6.WidthF;
-                Ngay7.WidthF = ng7.WidthF;
-                Ngay8.WidthF = ng8.WidthF;
-                Ngay9.WidthF = ng9.WidthF;
-                Ngay10.WidthF = ng10.WidthF;
-                Ngay11.WidthF = ng11.WidthF;
-                Ngay12.WidthF = ng12.WidthF;
-                Ngay13.WidthF = ng13.WidthF;
-                Ngay14.WidthF = ng14.WidthF;
-                Ngay15.WidthF = ng15.WidthF;
-                Ngay16.WidthF = ng16.WidthF;
-                Ngay17.WidthF = ng17.WidthF;
-                Ngay18.WidthF = ng18.WidthF;
-                Ngay19.WidthF = ng19.WidthF;
-                Ngay20.WidthF = ng20.WidthF;
-                Ngay21.WidthF = ng21.WidthF;
-                Ngay22.WidthF = ng22.WidthF;
-                Ngay23.WidthF = ng23.WidthF;
-                Ngay24.WidthF = ng24.WidthF;
-                Ngay25.WidthF = ng25.WidthF;
-                Ngay26.WidthF = ng26.WidthF;
-                Ngay27.WidthF = ng27.WidthF;
-                Ngay28.WidthF = ng28.WidthF;
-                Ngay29.WidthF = ng29.WidthF;
-                Ngay30.WidthF = ng30.WidthF;
 
-                //
-                tg1.WidthF = Ngay1.WidthF;
-                tg2.WidthF = Ngay2.WidthF;
-                tg3.WidthF = Ngay3.WidthF;
-                tg4.WidthF = Ngay4.WidthF;
-                tg5.WidthF = Ngay5.WidthF;
-                tg6.WidthF = Ngay6.WidthF;
-                tg7.WidthF = Ngay7.WidthF;
-                tg8.WidthF = Ngay8.WidthF;
-                tg9.WidthF = Ngay9.WidthF;
-                tg10.WidthF = Ngay10.WidthF;
-                tg11.WidthF = Ngay11.WidthF;
-                tg12.WidthF = Ngay12.WidthF;
-                tg13.WidthF = Ngay13.WidthF;
-                tg14.WidthF = Ngay14.WidthF;
-                tg15.WidthF = Ngay15.WidthF;
-                tg16.WidthF = Ngay16.WidthF;
-                tg17.WidthF = Ngay17.WidthF;
-                tg18.WidthF = Ngay18.WidthF;
-                tg19.WidthF = Ngay19.WidthF;
-                tg20.WidthF = Ngay20.WidthF;
-                tg21.WidthF = Ngay21.WidthF;
-                tg22.WidthF = Ngay22.WidthF;
-                tg23.WidthF = Ngay23.WidthF;
-                tg24.WidthF = Ngay24.WidthF;
-                tg25.WidthF = Ngay25.WidthF;
-                tg26.WidthF = Ngay26.WidthF;
-                tg27.WidthF = Ngay27.WidthF;
-                tg28.WidthF = Ngay28.WidthF;
-                tg29.WidthF = Ngay29.WidthF;
-                tg30.WidthF = Ngay30.WidthF;
+                    Ds_NgayTitle[i].WidthF = (float)25.260899;
+                    Ds_Ngay_Header[i].WidthF = (float)25.260899;
+                    Ds_Ngay[i].WidthF = (float)25.260899;
+                    Ds_Ngay_Footer[i].WidthF = (float)25.260899;
+                    tmp += (float)25.260899;
+                }
+                xrTableCell3.WidthF = tmp;
             }
             else if (ngaycuathang_ == 31)
             {

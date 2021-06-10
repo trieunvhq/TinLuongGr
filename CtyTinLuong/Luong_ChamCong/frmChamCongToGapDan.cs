@@ -594,6 +594,12 @@ namespace CtyTinLuong
             //ff.Show();
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD(6, 2021);
+            ff.Show();
+        }
+
         private int _id_dinhmuc_togapdan;
 
         private void cbLoaiHangSX_SelectedIndexChanged(object sender, EventArgs e)
