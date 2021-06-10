@@ -121,5 +121,11 @@ namespace CtyTinLuong
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
             ff.Show();
         }
+
+        private void navbangKeHoaDonBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            CtyTinLuong.BanHang.BanHang_frmBangKeHoaDonBanHang ff = new CtyTinLuong.BanHang.BanHang_frmBangKeHoaDonBanHang();
+            ff.Show();
+        }
     }
 }
