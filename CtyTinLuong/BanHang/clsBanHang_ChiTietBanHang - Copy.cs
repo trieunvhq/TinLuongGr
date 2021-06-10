@@ -10,12 +10,50 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	/// <summary>
-	/// Purpose: Data Access class for the table 'BanHang_ChiTietBanHang'.
-	/// </summary>
-	public partial class clsBanHang_ChiTietBanHang : clsDBInteractionBase
+    /// <summary>
+    /// Purpose: Data Access class for the table 'BanHang_ChiTietBanHang'.
+    /// </summary>
+    /// //pr_BanHang_ChiTietBanHang_SelectAll_ngayThang
+    /// 
+  
+    public partial class clsBanHang_ChiTietBanHang : clsDBInteractionBase
 	{
-        //pr_BanHang_ChiTietBanHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH
+        //pr_BanHang_ChiTietBanHang_SelectAll_ngayThang
+        public DataTable SelectAll_ngayThang(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_BanHang_ChiTietBanHang_SelectAll_ngayThang]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_BanHang_ChiTietBanHang_SelectAll_ngayThang");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang_));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_BanHang_ChiTietBanHang_SelectAll_ngayThang", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
