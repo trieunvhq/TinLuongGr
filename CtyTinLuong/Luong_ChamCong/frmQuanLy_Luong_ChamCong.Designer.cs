@@ -217,8 +217,8 @@
             this.navBTTL_TBX_TQ});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 155;
-            this.navBarControl1.Size = new System.Drawing.Size(155, 606);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 171;
+            this.navBarControl1.Size = new System.Drawing.Size(171, 681);
             this.navBarControl1.TabIndex = 66;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -323,9 +323,9 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl1.Location = new System.Drawing.Point(173, 12);
+            this.panelControl1.Location = new System.Drawing.Point(181, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1165, 684);
+            this.panelControl1.Size = new System.Drawing.Size(1157, 684);
             this.panelControl1.TabIndex = 70;
             // 
             // frmQuanLy_Luong_ChamCong
@@ -341,7 +341,6 @@
             this.Name = "frmQuanLy_Luong_ChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chấm công";
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmQuanLy_Luong_ChamCong_FormClosed);
             this.Load += new System.EventHandler(this.frmQuanLy_Luong_ChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.ResumeLayout(false);
