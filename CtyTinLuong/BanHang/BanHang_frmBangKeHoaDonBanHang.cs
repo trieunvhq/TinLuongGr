@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,10 @@ namespace CtyTinLuong
 {
     public partial class BanHang_frmBangKeHoaDonBanHang : Form
     {
-          private int _SoTrang = 1, _SoDong=20;
+        public static DateTime mdatungay,mdadenngay;
+        public static DataTable mdtPrint;
+        public static bool mbPrint;
+        private int _SoTrang = 1, _SoDong=20;
         private bool isload = false;
 
         private void HienThi_Gridcontrol_2(int xxID_banHang)
@@ -205,6 +209,26 @@ namespace CtyTinLuong
         private void grid_ChiTiet_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)grid_banHang.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint = true;
+               
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                ff.Show();
+
+            }
         }
 
         private void gridView_Chitiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
