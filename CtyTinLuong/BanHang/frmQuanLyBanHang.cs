@@ -127,10 +127,8 @@ namespace CtyTinLuong
 
         private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCBanHang_ChiTiet_ALL ucc = new UCBanHang_ChiTiet_ALL();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
+            ucc.Show();
         }
     }
 }

@@ -129,6 +129,12 @@
     <Compile Include="BanHang\BanHang_frmBangKeHoaDonBanHang.Designer.cs">
       <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\BanHang_SoTongHopbanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHang_SoTongHopbanHang.Designer.cs">
+      <DependentUpon>BanHang_SoTongHopbanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy - Copy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy - Copy.cs" />
