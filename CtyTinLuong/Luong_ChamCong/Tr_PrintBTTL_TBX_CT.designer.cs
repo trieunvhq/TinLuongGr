@@ -418,9 +418,9 @@
             // 
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
-            this.xrTableCell13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 10, 0, 100F);
+            this.xrTableCell13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 3, 0, 100F);
             this.xrTableCell13.StylePriority.UsePadding = false;
-            this.xrTableCell13.Text = "TỔNG LƯƠNG";
+            this.xrTableCell13.Text = "\r\nTỔNG LƯƠNG";
             this.xrTableCell13.Weight = 1.4285714183831528D;
             // 
             // xrTableCell3
@@ -445,9 +445,9 @@
             // 
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
-            this.xrTableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 10, 0, 100F);
+            this.xrTableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 3, 0, 100F);
             this.xrTableCell5.StylePriority.UsePadding = false;
-            this.xrTableCell5.Text = "TRỪ TẠM ỨNG";
+            this.xrTableCell5.Text = "\r\nTRỪ TẠM ỨNG";
             this.xrTableCell5.Weight = 1.3636363518586967D;
             // 
             // xrTableCell8

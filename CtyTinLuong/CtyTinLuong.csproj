@@ -241,6 +241,12 @@
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_CT.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_TBX_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_TQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_TQ.designer.cs">
+      <DependentUpon>Tr_frmPrintBTTL_TBX_TQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintBangChamCong_TBX.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -282,6 +288,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT.designer.cs">
       <DependentUpon>Tr_PrintBTTL_TGD_CT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TBX_TQ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TBX_TQ.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_TBX_TQ.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ.cs">
       <SubType>Component</SubType>
@@ -1800,6 +1812,9 @@
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_CT.resx">
       <DependentUpon>Tr_frmPrintBTTL_TBX_CT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_TQ.resx">
+      <DependentUpon>Tr_frmPrintBTTL_TBX_TQ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBangChamCong_TBX.resx">
       <DependentUpon>Tr_PrintBangChamCong_TBX.cs</DependentUpon>
     </EmbeddedResource>
@@ -1820,6 +1835,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT.resx">
       <DependentUpon>Tr_PrintBTTL_TGD_CT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TBX_TQ.resx">
+      <DependentUpon>Tr_PrintBTTL_TBX_TQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ.resx">
       <DependentUpon>Tr_PrintBTTL_TGD_TQ.cs</DependentUpon>
