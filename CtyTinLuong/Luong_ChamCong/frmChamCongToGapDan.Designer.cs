@@ -40,7 +40,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCongToGapDan));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -147,25 +146,12 @@
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
             this.btGuiDuLieu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(1008, 609);
+            this.btGuiDuLieu.Location = new System.Drawing.Point(944, 627);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
             this.btGuiDuLieu.Size = new System.Drawing.Size(163, 23);
             this.btGuiDuLieu.TabIndex = 118;
             this.btGuiDuLieu.Text = "Gửi dữ liệu bảng lương ";
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(21, -22);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(142, 13);
-            this.labelControl1.TabIndex = 117;
-            this.labelControl1.Text = "Chấm công cho bộ phận : ";
             // 
             // repositoryItemButtonEdit1
             // 
@@ -180,7 +166,7 @@
             this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(1177, 609);
+            this.btThoat.Location = new System.Drawing.Point(1113, 627);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(75, 23);
             this.btThoat.TabIndex = 116;
@@ -191,7 +177,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(315, 609);
+            this.label1.Location = new System.Drawing.Point(251, 627);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(669, 13);
             this.label1.TabIndex = 121;
@@ -202,7 +188,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(315, 622);
+            this.label2.Location = new System.Drawing.Point(251, 640);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 13);
             this.label2.TabIndex = 122;
@@ -285,9 +271,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 13);
+            this.label5.Size = new System.Drawing.Size(119, 13);
             this.label5.TabIndex = 126;
-            this.label5.Text = "Loại hàng sản xuất :";
+            this.label5.Text = "Loại hàng sản xuất:";
             // 
             // label6
             // 
@@ -1380,8 +1366,8 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.Location = new System.Drawing.Point(10, 61);
             this.gridControl1.MainView = this.gridView1;
@@ -1395,7 +1381,7 @@
             this.repositoryItemLookUpEdit1,
             this.comboThin,
             this.gridThin});
-            this.gridControl1.Size = new System.Drawing.Size(1245, 545);
+            this.gridControl1.Size = new System.Drawing.Size(1181, 563);
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1474,9 +1460,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label8.Location = new System.Drawing.Point(20, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 13);
+            this.label8.Size = new System.Drawing.Size(153, 13);
             this.label8.TabIndex = 131;
-            this.label8.Text = "Chấm công cho bộ phận : ";
+            this.label8.Text = "Chấm công cho bộ phận: ";
             // 
             // txtDinhMuc
             // 
@@ -1503,7 +1489,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1264, 642);
+            this.ClientSize = new System.Drawing.Size(1200, 660);
             this.ControlBox = false;
             this.Controls.Add(this.lbChinhSua);
             this.Controls.Add(this.txtDinhMuc);
@@ -1518,7 +1504,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btGuiDuLieu);
-            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gridControl1);
@@ -1556,7 +1541,6 @@
 
         #endregion
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.Label label1;

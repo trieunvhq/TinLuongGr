@@ -105,7 +105,7 @@
             // btThooat
             // 
             this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(1285, 624);
+            this.btThooat.Location = new System.Drawing.Point(12, 624);
             this.btThooat.Name = "btThooat";
             this.btThooat.Size = new System.Drawing.Size(75, 23);
             this.btThooat.TabIndex = 67;
@@ -249,7 +249,7 @@
             // 
             this.navBTTL_TGD.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navBTTL_TGD.Appearance.Options.UseForeColor = true;
-            this.navBTTL_TGD.Caption = "Tổ Gấp dán";
+            this.navBTTL_TGD.Caption = "Tổ Gấp Dán";
             this.navBTTL_TGD.Name = "navBTTL_TGD";
             this.navBTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
@@ -257,7 +257,7 @@
             // 
             this.navBTTL_TBX.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navBTTL_TBX.Appearance.Options.UseForeColor = true;
-            this.navBTTL_TBX.Caption = "Tổ Bốc xếp";
+            this.navBTTL_TBX.Caption = "Tổ Bốc Xếp";
             this.navBTTL_TBX.Name = "navBTTL_TBX";
             this.navBTTL_TBX.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TBX_LinkClicked);
             // 
@@ -336,7 +336,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Location = new System.Drawing.Point(173, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(971, 621);
+            this.panelControl1.Size = new System.Drawing.Size(1165, 684);
             this.panelControl1.TabIndex = 70;
             // 
             // frmQuanLy_Luong_ChamCong
@@ -344,11 +344,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1156, 636);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1350, 699);
             this.Controls.Add(this.btThooat);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmQuanLy_Luong_ChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chấm công";
