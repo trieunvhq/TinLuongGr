@@ -274,6 +274,12 @@ namespace CtyTinLuong
             HoanThanhNam();
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT(_thang, _nam);
+            ff.Show();
+        }
+
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (isload)
