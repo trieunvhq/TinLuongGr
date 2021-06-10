@@ -799,8 +799,6 @@
             this.ReportFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dataSet_TinLuong1});
-            this.DataMember = "tbBTTL_TGD_CT";
-            this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(55, 39, 55, 55);
             this.PageHeight = 827;
