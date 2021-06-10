@@ -51,6 +51,8 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navbangKeHoaDonBanHang = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -151,7 +153,8 @@
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1});
+            this.navBarGroup1,
+            this.navBarGroup2});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem4,
             this.navBarItem5,
@@ -170,7 +173,8 @@
             this.navBarItem13,
             this.navBarItem14,
             this.navBarItem2,
-            this.navBarItem16});
+            this.navBarItem16,
+            this.navbangKeHoaDonBanHang});
             this.navBarControl1.Location = new System.Drawing.Point(6, 14);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -221,6 +225,20 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Caption = "Báo cáo";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navbangKeHoaDonBanHang)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            // 
+            // navbangKeHoaDonBanHang
+            // 
+            this.navbangKeHoaDonBanHang.Caption = "Bảng kê hoá đơn bán hàng";
+            this.navbangKeHoaDonBanHang.Name = "navbangKeHoaDonBanHang";
+            this.navbangKeHoaDonBanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navbangKeHoaDonBanHang_LinkClicked);
+            // 
             // frmQuanLyBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,5 +287,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraNavBar.NavBarItem navbangKeHoaDonBanHang;
     }
 }
