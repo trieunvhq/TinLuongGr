@@ -7729,6 +7729,14 @@ namespace CtyTinLuong {
             
             private global::System.Data.DataColumn columnTongTien_CoVAT;
             
+            private global::System.Data.DataColumn columnTenKH;
+            
+            private global::System.Data.DataColumn columnTongTienVND;
+            
+            private global::System.Data.DataColumn columnTongTienUSD;
+            
+            private global::System.Data.DataColumn columnMaKH;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbBan_MuaHangDataTable() {
@@ -7900,6 +7908,38 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TenKHColumn {
+                get {
+                    return this.columnTenKH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongTienVNDColumn {
+                get {
+                    return this.columnTongTienVND;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongTienUSDColumn {
+                get {
+                    return this.columnTongTienUSD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MaKHColumn {
+                get {
+                    return this.columnMaKH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7952,7 +7992,11 @@ namespace CtyTinLuong {
                         double TienVAT, 
                         string GhiChu, 
                         double TongTien_ChuaVAT, 
-                        double TongTien_CoVAT) {
+                        double TongTien_CoVAT, 
+                        string TenKH, 
+                        double TongTienVND, 
+                        double TongTienUSD, 
+                        string MaKH) {
                 tbBan_MuaHangRow rowtbBan_MuaHangRow = ((tbBan_MuaHangRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -7971,7 +8015,11 @@ namespace CtyTinLuong {
                         TienVAT,
                         GhiChu,
                         TongTien_ChuaVAT,
-                        TongTien_CoVAT};
+                        TongTien_CoVAT,
+                        TenKH,
+                        TongTienVND,
+                        TongTienUSD,
+                        MaKH};
                 rowtbBan_MuaHangRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbBan_MuaHangRow);
                 return rowtbBan_MuaHangRow;
@@ -8011,6 +8059,10 @@ namespace CtyTinLuong {
                 this.columnGhiChu = base.Columns["GhiChu"];
                 this.columnTongTien_ChuaVAT = base.Columns["TongTien_ChuaVAT"];
                 this.columnTongTien_CoVAT = base.Columns["TongTien_CoVAT"];
+                this.columnTenKH = base.Columns["TenKH"];
+                this.columnTongTienVND = base.Columns["TongTienVND"];
+                this.columnTongTienUSD = base.Columns["TongTienUSD"];
+                this.columnMaKH = base.Columns["MaKH"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8050,6 +8102,14 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnTongTien_ChuaVAT);
                 this.columnTongTien_CoVAT = new global::System.Data.DataColumn("TongTien_CoVAT", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien_CoVAT);
+                this.columnTenKH = new global::System.Data.DataColumn("TenKH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenKH);
+                this.columnTongTienVND = new global::System.Data.DataColumn("TongTienVND", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongTienVND);
+                this.columnTongTienUSD = new global::System.Data.DataColumn("TongTienUSD", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongTienUSD);
+                this.columnMaKH = new global::System.Data.DataColumn("MaKH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaKH);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15614,6 +15674,70 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TenKH {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbBan_MuaHang.TenKHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenKH\' in table \'tbBan_MuaHang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBan_MuaHang.TenKHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TongTienVND {
+                get {
+                    try {
+                        return ((double)(this[this.tabletbBan_MuaHang.TongTienVNDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongTienVND\' in table \'tbBan_MuaHang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBan_MuaHang.TongTienVNDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TongTienUSD {
+                get {
+                    try {
+                        return ((double)(this[this.tabletbBan_MuaHang.TongTienUSDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongTienUSD\' in table \'tbBan_MuaHang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBan_MuaHang.TongTienUSDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MaKH {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbBan_MuaHang.MaKHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaKH\' in table \'tbBan_MuaHang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBan_MuaHang.MaKHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSTTNull() {
                 return this.IsNull(this.tabletbBan_MuaHang.STTColumn);
             }
@@ -15814,6 +15938,54 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTongTien_CoVATNull() {
                 this[this.tabletbBan_MuaHang.TongTien_CoVATColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTenKHNull() {
+                return this.IsNull(this.tabletbBan_MuaHang.TenKHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTenKHNull() {
+                this[this.tabletbBan_MuaHang.TenKHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongTienVNDNull() {
+                return this.IsNull(this.tabletbBan_MuaHang.TongTienVNDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongTienVNDNull() {
+                this[this.tabletbBan_MuaHang.TongTienVNDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongTienUSDNull() {
+                return this.IsNull(this.tabletbBan_MuaHang.TongTienUSDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongTienUSDNull() {
+                this[this.tabletbBan_MuaHang.TongTienUSDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaKHNull() {
+                return this.IsNull(this.tabletbBan_MuaHang.MaKHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaKHNull() {
+                this[this.tabletbBan_MuaHang.MaKHColumn] = global::System.Convert.DBNull;
             }
         }
         
