@@ -36,6 +36,7 @@
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navMuaHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChiTiet_ALL = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
@@ -49,7 +50,9 @@
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navChiTiet_ALL = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navPhaiTraNguoiBan = new DevExpress.XtraNavBar.NavBarItem();
+            this.navDoiChieuCongNo = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +83,8 @@
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1});
+            this.navBarGroup1,
+            this.navBarGroup2});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem4,
             this.navBarItem5,
@@ -97,7 +101,9 @@
             this.navBarItemDinhMucNPL,
             this.navBarItem8,
             this.navBarItem1,
-            this.navChiTiet_ALL});
+            this.navChiTiet_ALL,
+            this.navPhaiTraNguoiBan,
+            this.navDoiChieuCongNo});
             this.navBarControl1.Location = new System.Drawing.Point(6, 14);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -126,6 +132,12 @@
             this.navBarItem1.Caption = "Trả lại hàng mua";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_3);
+            // 
+            // navChiTiet_ALL
+            // 
+            this.navChiTiet_ALL.Caption = "Chi tiết _ALL";
+            this.navChiTiet_ALL.Name = "navChiTiet_ALL";
+            this.navChiTiet_ALL.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChiTiet_ALL_LinkClicked);
             // 
             // navBarItem4
             // 
@@ -208,11 +220,24 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
-            // navChiTiet_ALL
+            // navBarGroup2
             // 
-            this.navChiTiet_ALL.Caption = "Chi tiết _ALL";
-            this.navChiTiet_ALL.Name = "navChiTiet_ALL";
-            this.navChiTiet_ALL.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChiTiet_ALL_LinkClicked);
+            this.navBarGroup2.Caption = "Báo cáo";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navPhaiTraNguoiBan),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navDoiChieuCongNo)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            // 
+            // navPhaiTraNguoiBan
+            // 
+            this.navPhaiTraNguoiBan.Caption = "Phải trả người bán";
+            this.navPhaiTraNguoiBan.Name = "navPhaiTraNguoiBan";
+            // 
+            // navDoiChieuCongNo
+            // 
+            this.navDoiChieuCongNo.Caption = "Đối chiếu công nợ";
+            this.navDoiChieuCongNo.Name = "navDoiChieuCongNo";
             // 
             // frmMuaHang2222
             // 
@@ -262,5 +287,8 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navChiTiet_ALL;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraNavBar.NavBarItem navPhaiTraNguoiBan;
+        private DevExpress.XtraNavBar.NavBarItem navDoiChieuCongNo;
     }
 }
