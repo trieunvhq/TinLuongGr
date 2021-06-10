@@ -2289,19 +2289,19 @@
             // 
             // pGiamDoc
             // 
-            this.pGiamDoc.Description = "Parameter1";
+            this.pGiamDoc.Description = "Giám đốc";
             this.pGiamDoc.Name = "pGiamDoc";
             this.pGiamDoc.ValueInfo = "Phạm Thị Đông";
             // 
             // pTongHop
             // 
-            this.pTongHop.Description = "Parameter1";
+            this.pTongHop.Description = "Tổng hợp";
             this.pTongHop.Name = "pTongHop";
             this.pTongHop.ValueInfo = "Phạm Kim Diện";
             // 
             // pLapBieu
             // 
-            this.pLapBieu.Description = "Parameter1";
+            this.pLapBieu.Description = "Lập biểu";
             this.pLapBieu.Name = "pLapBieu";
             this.pLapBieu.ValueInfo = "Phạm Thị Lành";
             // 
