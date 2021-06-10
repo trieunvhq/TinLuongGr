@@ -93,12 +93,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BanHang\BanHang_frmBangKeHoaDonBanHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BanHang\BanHang_frmBangKeHoaDonBanHang.Designer.cs">
-      <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="BanHang\clsBanHang_BangGia - Copy.cs" />
     <Compile Include="BanHang\clsBanHang_BangGia.cs" />
     <Compile Include="BanHang\clsBanHang_ChiTietBanHang - Copy.cs" />
@@ -128,6 +122,12 @@
     </Compile>
     <Compile Include="BanHang\BanHang_frmChiTietMotVatTu.Designer.cs">
       <DependentUpon>BanHang_frmChiTietMotVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\BanHang_frmBangKeHoaDonBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHang_frmBangKeHoaDonBanHang.Designer.cs">
+      <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy - Copy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy.cs" />
@@ -1698,9 +1698,6 @@
     <Compile Include="Xtra_XuatKho_DaiLy_NhieuKho.Designer.cs">
       <DependentUpon>Xtra_XuatKho_DaiLy_NhieuKho.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BanHang\BanHang_frmBangKeHoaDonBanHang.resx">
-      <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_frmChiTietMotVatTu.resx">
       <DependentUpon>BanHang_frmChiTietMotVatTu.cs</DependentUpon>
     </EmbeddedResource>
@@ -1721,6 +1718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_FrmChiTietBanHang_Newwwwwwww.resx">
       <DependentUpon>BanHang_FrmChiTietBanHang_Newwwwwwww.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\BanHang_frmBangKeHoaDonBanHang.resx">
+      <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.resx">
       <DependentUpon>CaiDatBanDau_ChonTaiKhoanNganHang.cs</DependentUpon>

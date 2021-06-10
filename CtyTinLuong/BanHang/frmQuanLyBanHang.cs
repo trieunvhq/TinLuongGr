@@ -124,7 +124,7 @@ namespace CtyTinLuong
 
         private void navbangKeHoaDonBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            CtyTinLuong.BanHang.BanHang_frmBangKeHoaDonBanHang ff = new CtyTinLuong.BanHang.BanHang_frmBangKeHoaDonBanHang();
+            BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
             ff.Show();
         }
     }
