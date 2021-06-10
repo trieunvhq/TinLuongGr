@@ -353,6 +353,8 @@
               <xs:element name="QuyDoiVND" msprop:Generator_ColumnVarNameInTable="columnQuyDoiVND" msprop:Generator_ColumnPropNameInRow="QuyDoiVND" msprop:Generator_ColumnPropNameInTable="QuyDoiVNDColumn" msprop:Generator_UserColumnName="QuyDoiVND" type="xs:string" minOccurs="0" />
               <xs:element name="TienVAT" msprop:Generator_ColumnVarNameInTable="columnTienVAT" msprop:Generator_ColumnPropNameInRow="TienVAT" msprop:Generator_ColumnPropNameInTable="TienVATColumn" msprop:Generator_UserColumnName="TienVAT" type="xs:string" minOccurs="0" />
               <xs:element name="GhiChu" msprop:Generator_ColumnVarNameInTable="columnGhiChu" msprop:Generator_ColumnPropNameInRow="GhiChu" msprop:Generator_ColumnPropNameInTable="GhiChuColumn" msprop:Generator_UserColumnName="GhiChu" type="xs:string" minOccurs="0" />
+              <xs:element name="TongTien_ChuaVAT" msprop:Generator_ColumnVarNameInTable="columnTongTien_ChuaVAT" msprop:Generator_ColumnPropNameInRow="TongTien_ChuaVAT" msprop:Generator_ColumnPropNameInTable="TongTien_ChuaVATColumn" msprop:Generator_UserColumnName="TongTien_ChuaVAT" type="xs:string" minOccurs="0" />
+              <xs:element name="TongTien_CoVAT" msprop:Generator_ColumnVarNameInTable="columnTongTien_CoVAT" msprop:Generator_ColumnPropNameInRow="TongTien_CoVAT" msprop:Generator_ColumnPropNameInTable="TongTien_CoVATColumn" msprop:Generator_UserColumnName="TongTien_CoVAT" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
