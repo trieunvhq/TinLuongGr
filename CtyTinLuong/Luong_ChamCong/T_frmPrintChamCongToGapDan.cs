@@ -24,11 +24,11 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void T_frmPrintChamCongToGapDan_Load(object sender, EventArgs e)
         {
-            T_PrintChamCongToGapDan xtr111 = new T_PrintChamCongToGapDan();
+            T_PrintChamCongToGapDan xtr111 = new T_PrintChamCongToGapDan(_thang, _nam);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
-            ds.tbCongNhatChamCongToGapDan.Clone();
-            ds.tbCongNhatChamCongToGapDan.Clear();
+            //ds.tbCongNhatChamCongToGapDan.Clone();
+            //ds.tbCongNhatChamCongToGapDan.Clear();
             clsThin cls1 = new clsThin();
 
             DataTable dt3 = cls1.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, 18, 0, "");

@@ -9,10 +9,17 @@ namespace CtyTinLuong.Luong_ChamCong
 {
     public partial class T_PrintChamCongToGapDan : DevExpress.XtraReports.UI.XtraReport
     {
+        private int _thang;
+        private int _nam;
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
-        public T_PrintChamCongToGapDan()
+        List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
+
+        public T_PrintChamCongToGapDan(int thang, int nam)
         {
+            _thang = thang;
+            _nam = nam;
+
             InitializeComponent();
             Ds_Ngay.Add(Ngay1);
             Ds_Ngay.Add(Ngay2);
@@ -78,16 +85,54 @@ namespace CtyTinLuong.Luong_ChamCong
             Ds_Ngay_Header.Add(ng30);
             Ds_Ngay_Header.Add(ng31);
 
-            if (DateTime.Now.Month <= 9) pMonth.Value = "0" + DateTime.Now.Month.ToString();
-            else pMonth.Value = DateTime.Now.Month.ToString();
-            pYear.Value = DateTime.Now.Year;
+            //
+            Ds_Ngay_Footer.Add(tg1);
+            Ds_Ngay_Footer.Add(tg2);
+            Ds_Ngay_Footer.Add(tg3);
+            Ds_Ngay_Footer.Add(tg4);
+            Ds_Ngay_Footer.Add(tg5);
+            Ds_Ngay_Footer.Add(tg6);
+            Ds_Ngay_Footer.Add(tg7);
+            Ds_Ngay_Footer.Add(tg8);
+            Ds_Ngay_Footer.Add(tg9);
+            Ds_Ngay_Footer.Add(tg10);
+            Ds_Ngay_Footer.Add(tg11);
+            Ds_Ngay_Footer.Add(tg12);
+            Ds_Ngay_Footer.Add(tg13);
+            Ds_Ngay_Footer.Add(tg14);
+            Ds_Ngay_Footer.Add(tg15);
+            Ds_Ngay_Footer.Add(tg16);
+            Ds_Ngay_Footer.Add(tg17);
+            Ds_Ngay_Footer.Add(tg18);
+            Ds_Ngay_Footer.Add(tg19);
+            Ds_Ngay_Footer.Add(tg20);
+            Ds_Ngay_Footer.Add(tg21);
+            Ds_Ngay_Footer.Add(tg22);
+            Ds_Ngay_Footer.Add(tg23);
+            Ds_Ngay_Footer.Add(tg24);
+            Ds_Ngay_Footer.Add(tg25);
+            Ds_Ngay_Footer.Add(tg26);
+            Ds_Ngay_Footer.Add(tg27);
+            Ds_Ngay_Footer.Add(tg28);
+            Ds_Ngay_Footer.Add(tg29);
+            Ds_Ngay_Footer.Add(tg30);
+            Ds_Ngay_Footer.Add(tg31);
+
+
             //setThu();
-           // setMauTableDetail();
+            // setMauTableDetail();
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             setThu();
+
+            //Load label ngay thang nam header:
+            if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();
+            else xrlbThang.Text = _thang.ToString();
+            xrlbNam.Text = _nam.ToString();
+
+            //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgay.Value);
             if (d.Day > 9)
             {
@@ -121,6 +166,8 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
             }
 
+            //lbNgayThangNam.Text = ng2.WidthF.ToString();
+
         }
 
         private string LayThu(DateTime date)
@@ -145,7 +192,6 @@ namespace CtyTinLuong.Luong_ChamCong
             return "";
         }
 
-        private string _flag_28 = "undelete";
         private string _flag_29 = "undelete";
         private string _flag_30 = "undelete";
         private string _flag_31 = "undelete";
@@ -154,20 +200,192 @@ namespace CtyTinLuong.Luong_ChamCong
         public void setThu()
         {
             //DateTime dtnow = DateTime.Now;
-            // 
-            int thang = Convert.ToInt32(pMonth.Value);
-            int nam = Convert.ToInt32(pYear.Value);
+            //
 
-            int ngaycuathang_ = (((new DateTime(nam, thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+            int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
 
             //
             if (ngaycuathang_ == 28)
             {
+                if (_flag_31 == "undelete")
+                {
+                    Tr_xrTbHeader.DeleteColumn(ng31);
+                    xrTable1.DeleteColumn(Ngay31);
+                    xrTable2.DeleteColumn(tg31);
+                    _flag_31 = "deleted";
+                }
 
+                //
+                if (_flag_30 == "undelete")
+                {
+                    Tr_xrTbHeader.DeleteColumn(ng30);
+                    xrTable1.DeleteColumn(Ngay30);
+                    xrTable2.DeleteColumn(tg30);
+                    _flag_30 = "deleted";
+                }
+
+                //
+                if (_flag_29 == "undelete")
+                {
+                    Tr_xrTbHeader.DeleteColumn(ng29);
+                    xrTable1.DeleteColumn(Ngay29);
+                    xrTable2.DeleteColumn(tg29);
+                    _flag_29 = "deleted";
+                }
+
+
+                //
+                hoTen.WidthF = (float)140.98;
+                cong.WidthF = (float)64.84;
+                Ngay1.WidthF = (float)26.97299;
+                Ngay2.WidthF = ng2.WidthF;
+                Ngay3.WidthF = ng3.WidthF;
+                Ngay4.WidthF = ng4.WidthF;
+                Ngay5.WidthF = ng5.WidthF;
+                Ngay6.WidthF = ng6.WidthF;
+                Ngay7.WidthF = ng7.WidthF;
+                Ngay8.WidthF = ng8.WidthF;
+                Ngay9.WidthF = ng9.WidthF;
+                Ngay10.WidthF = ng10.WidthF;
+                Ngay11.WidthF = ng11.WidthF;
+                Ngay12.WidthF = ng12.WidthF;
+                Ngay13.WidthF = ng13.WidthF;
+                Ngay14.WidthF = ng14.WidthF;
+                Ngay15.WidthF = ng15.WidthF;
+                Ngay16.WidthF = ng16.WidthF;
+                Ngay17.WidthF = ng17.WidthF;
+                Ngay18.WidthF = ng18.WidthF;
+                Ngay19.WidthF = ng19.WidthF;
+                Ngay20.WidthF = ng20.WidthF;
+                Ngay21.WidthF = ng21.WidthF;
+                Ngay22.WidthF = ng22.WidthF;
+                Ngay23.WidthF = ng23.WidthF;
+                Ngay24.WidthF = ng24.WidthF;
+                Ngay25.WidthF = ng25.WidthF;
+                Ngay26.WidthF = ng26.WidthF;
+                Ngay27.WidthF = ng27.WidthF;
+                Ngay28.WidthF = ng28.WidthF;
+                TongCel.WidthF = (float)42.89;
+
+                //
+                nameTong.WidthF = (float)140.98;
+                nameCong.WidthF = (float)64.84;
+                tg1.WidthF = Ngay1.WidthF;
+                tg2.WidthF = Ngay2.WidthF;
+                tg3.WidthF = Ngay3.WidthF;
+                tg4.WidthF = Ngay4.WidthF;
+                tg5.WidthF = Ngay5.WidthF;
+                tg6.WidthF = Ngay6.WidthF;
+                tg7.WidthF = Ngay7.WidthF;
+                tg8.WidthF = Ngay8.WidthF;
+                tg9.WidthF = Ngay9.WidthF;
+                tg10.WidthF = Ngay10.WidthF;
+                tg11.WidthF = Ngay11.WidthF;
+                tg12.WidthF = Ngay12.WidthF;
+                tg13.WidthF = Ngay13.WidthF;
+                tg14.WidthF = Ngay14.WidthF;
+                tg15.WidthF = Ngay15.WidthF;
+                tg16.WidthF = Ngay16.WidthF;
+                tg17.WidthF = Ngay17.WidthF;
+                tg18.WidthF = Ngay18.WidthF;
+                tg19.WidthF = Ngay19.WidthF;
+                tg20.WidthF = Ngay20.WidthF;
+                tg21.WidthF = Ngay21.WidthF;
+                tg22.WidthF = Ngay22.WidthF;
+                tg23.WidthF = Ngay23.WidthF;
+                tg24.WidthF = Ngay24.WidthF;
+                tg25.WidthF = Ngay25.WidthF;
+                tg26.WidthF = Ngay26.WidthF;
+                tg27.WidthF = Ngay27.WidthF;
+                tg28.WidthF = Ngay28.WidthF;
+                tgSum.WidthF = (float)42.89;
             }
             else if (ngaycuathang_ == 29)
             {
+                if (_flag_31 == "undelete")
+                {
+                    Tr_xrTbHeader.DeleteColumn(ng31);
+                    xrTable1.DeleteColumn(Ngay31);
+                    xrTable2.DeleteColumn(tg31);
+                    _flag_31 = "deleted";
+                }
 
+                //
+                if (_flag_30 == "undelete")
+                {
+                    Tr_xrTbHeader.DeleteColumn(ng30);
+                    xrTable1.DeleteColumn(Ngay30);
+                    xrTable2.DeleteColumn(tg30);
+                    _flag_30 = "deleted";
+                }
+
+                //
+                hoTen.WidthF = (float)140.98;
+                cong.WidthF = (float)64.84;
+                Ngay1.WidthF = (float)26.0099;
+                Ngay2.WidthF = ng2.WidthF;
+                Ngay3.WidthF = ng3.WidthF;
+                Ngay4.WidthF = ng4.WidthF;
+                Ngay5.WidthF = ng5.WidthF;
+                Ngay6.WidthF = ng6.WidthF;
+                Ngay7.WidthF = ng7.WidthF;
+                Ngay8.WidthF = ng8.WidthF;
+                Ngay9.WidthF = ng9.WidthF;
+                Ngay10.WidthF = ng10.WidthF;
+                Ngay11.WidthF = ng11.WidthF;
+                Ngay12.WidthF = ng12.WidthF;
+                Ngay13.WidthF = ng13.WidthF;
+                Ngay14.WidthF = ng14.WidthF;
+                Ngay15.WidthF = ng15.WidthF;
+                Ngay16.WidthF = ng16.WidthF;
+                Ngay17.WidthF = ng17.WidthF;
+                Ngay18.WidthF = ng18.WidthF;
+                Ngay19.WidthF = ng19.WidthF;
+                Ngay20.WidthF = ng20.WidthF;
+                Ngay21.WidthF = ng21.WidthF;
+                Ngay22.WidthF = ng22.WidthF;
+                Ngay23.WidthF = ng23.WidthF;
+                Ngay24.WidthF = ng24.WidthF;
+                Ngay25.WidthF = ng25.WidthF;
+                Ngay26.WidthF = ng26.WidthF;
+                Ngay27.WidthF = ng27.WidthF;
+                Ngay28.WidthF = ng28.WidthF;
+                Ngay29.WidthF = ng29.WidthF;
+                TongCel.WidthF = (float)42.89;
+
+                //
+                nameTong.WidthF = (float)140.98;
+                nameCong.WidthF = (float)64.84;
+                tg1.WidthF = Ngay1.WidthF;
+                tg2.WidthF = Ngay2.WidthF;
+                tg3.WidthF = Ngay3.WidthF;
+                tg4.WidthF = Ngay4.WidthF;
+                tg5.WidthF = Ngay5.WidthF;
+                tg6.WidthF = Ngay6.WidthF;
+                tg7.WidthF = Ngay7.WidthF;
+                tg8.WidthF = Ngay8.WidthF;
+                tg9.WidthF = Ngay9.WidthF;
+                tg10.WidthF = Ngay10.WidthF;
+                tg11.WidthF = Ngay11.WidthF;
+                tg12.WidthF = Ngay12.WidthF;
+                tg13.WidthF = Ngay13.WidthF;
+                tg14.WidthF = Ngay14.WidthF;
+                tg15.WidthF = Ngay15.WidthF;
+                tg16.WidthF = Ngay16.WidthF;
+                tg17.WidthF = Ngay17.WidthF;
+                tg18.WidthF = Ngay18.WidthF;
+                tg19.WidthF = Ngay19.WidthF;
+                tg20.WidthF = Ngay20.WidthF;
+                tg21.WidthF = Ngay21.WidthF;
+                tg22.WidthF = Ngay22.WidthF;
+                tg23.WidthF = Ngay23.WidthF;
+                tg24.WidthF = Ngay24.WidthF;
+                tg25.WidthF = Ngay25.WidthF;
+                tg26.WidthF = Ngay26.WidthF;
+                tg27.WidthF = Ngay27.WidthF;
+                tg28.WidthF = Ngay28.WidthF;
+                tg29.WidthF = Ngay29.WidthF;
+                tgSum.WidthF = (float)42.89;
             }
             else if (ngaycuathang_ == 30)
             {
@@ -175,7 +393,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     Tr_xrTbHeader.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable2.DeleteColumn(tg31); 
+                    xrTable2.DeleteColumn(tg31);
 
                     _flag_31 = "deleted";
                 }
@@ -183,533 +401,299 @@ namespace CtyTinLuong.Luong_ChamCong
                 //
                 hoTen.WidthF = (float)140.98;
                 cong.WidthF = (float)64.84;
-                Ngay1.WidthF = (float)25.1;
-                Ngay2.WidthF = (float)25.1;
-                Ngay3.WidthF = (float)25.1;
-                Ngay4.WidthF = (float)25.1;
-                Ngay5.WidthF = (float)25.1;
-                Ngay6.WidthF = (float)25.1;
-                Ngay7.WidthF = (float)25.1;
-                Ngay8.WidthF = (float)25.1;
-                Ngay9.WidthF = (float)25.1;
-                Ngay10.WidthF = (float)25.1;
-                Ngay11.WidthF = (float)24.5;
-                Ngay12.WidthF = (float)25.1;
-                Ngay13.WidthF = (float)25.5;
-                Ngay14.WidthF = (float)25.1;
-                Ngay15.WidthF = (float)25.1;
-                Ngay16.WidthF = (float)25.1;
-                Ngay17.WidthF = (float)25.1;
-                Ngay18.WidthF = (float)25.1;
-                Ngay19.WidthF = (float)25.1;
-                Ngay20.WidthF = (float)25.1;
-                Ngay21.WidthF = (float)25.1;
-                Ngay22.WidthF = (float)25.1;
-                Ngay23.WidthF = (float)25.1;
-                Ngay24.WidthF = (float)25.1;
-                Ngay25.WidthF = (float)25.1;
-                Ngay26.WidthF = (float)25.1;
-                Ngay27.WidthF = (float)25.1;
-                Ngay28.WidthF = (float)25.1;
-                Ngay29.WidthF = (float)25.1;
-                Ngay30.WidthF = (float)25.1;
+                Ngay1.WidthF = (float)25.1299;
+                Ngay2.WidthF = ng2.WidthF;
+                Ngay3.WidthF = ng3.WidthF;
+                Ngay4.WidthF = ng4.WidthF;
+                Ngay5.WidthF = ng5.WidthF;
+                Ngay6.WidthF = ng6.WidthF;
+                Ngay7.WidthF = ng7.WidthF;
+                Ngay8.WidthF = ng8.WidthF;
+                Ngay9.WidthF = ng9.WidthF;
+                Ngay10.WidthF = ng10.WidthF;
+                Ngay11.WidthF = ng11.WidthF;
+                Ngay12.WidthF = ng12.WidthF;
+                Ngay13.WidthF = ng13.WidthF;
+                Ngay14.WidthF = ng14.WidthF;
+                Ngay15.WidthF = ng15.WidthF;
+                Ngay16.WidthF = ng16.WidthF;
+                Ngay17.WidthF = ng17.WidthF;
+                Ngay18.WidthF = ng18.WidthF;
+                Ngay19.WidthF = ng19.WidthF;
+                Ngay20.WidthF = ng20.WidthF;
+                Ngay21.WidthF = ng21.WidthF;
+                Ngay22.WidthF = ng22.WidthF;
+                Ngay23.WidthF = ng23.WidthF;
+                Ngay24.WidthF = ng24.WidthF;
+                Ngay25.WidthF = ng25.WidthF;
+                Ngay26.WidthF = ng26.WidthF;
+                Ngay27.WidthF = ng27.WidthF;
+                Ngay28.WidthF = ng28.WidthF;
+                Ngay29.WidthF = ng29.WidthF;
+                Ngay30.WidthF = ng30.WidthF;
                 TongCel.WidthF = (float)42.89;
 
                 //
                 nameTong.WidthF = (float)140.98;
                 nameCong.WidthF = (float)64.84;
-                tg1.WidthF = (float)25.1;
-                tg2.WidthF = (float)25.1;
-                tg3.WidthF = (float)25.1;
-                tg4.WidthF = (float)25.1;
-                tg5.WidthF = (float)25.1;
-                tg6.WidthF = (float)25.1;
-                tg7.WidthF = (float)25.1;
-                tg8.WidthF = (float)25.1;
-                tg9.WidthF = (float)25.1;
-                tg10.WidthF = (float)25.1;
-                tg11.WidthF = (float)24.5;
-                tg12.WidthF = (float)25.1;
-                tg13.WidthF = (float)25.5;
-                tg14.WidthF = (float)25.1;
-                tg15.WidthF = (float)25.1;
-                tg16.WidthF = (float)25.1;
-                tg17.WidthF = (float)25.1;
-                tg18.WidthF = (float)25.1;
-                tg19.WidthF = (float)25.1;
-                tg20.WidthF = (float)25.1;
-                tg21.WidthF = (float)25.1;
-                tg22.WidthF = (float)25.1;
-                tg23.WidthF = (float)25.1;
-                tg24.WidthF = (float)25.1;
-                tg25.WidthF = (float)25.1;
-                tg26.WidthF = (float)25.1;
-                tg27.WidthF = (float)25.1;
-                tg28.WidthF = (float)25.1;
-                tg29.WidthF = (float)25.1;
-                tg30.WidthF = (float)25.1;
+                tg1.WidthF = Ngay1.WidthF;
+                tg2.WidthF = Ngay2.WidthF;
+                tg3.WidthF = Ngay3.WidthF;
+                tg4.WidthF = Ngay4.WidthF;
+                tg5.WidthF = Ngay5.WidthF;
+                tg6.WidthF = Ngay6.WidthF;
+                tg7.WidthF = Ngay7.WidthF;
+                tg8.WidthF = Ngay8.WidthF;
+                tg9.WidthF = Ngay9.WidthF;
+                tg10.WidthF = Ngay10.WidthF;
+                tg11.WidthF = Ngay11.WidthF;
+                tg12.WidthF = Ngay12.WidthF;
+                tg13.WidthF = Ngay13.WidthF;
+                tg14.WidthF = Ngay14.WidthF;
+                tg15.WidthF = Ngay15.WidthF;
+                tg16.WidthF = Ngay16.WidthF;
+                tg17.WidthF = Ngay17.WidthF;
+                tg18.WidthF = Ngay18.WidthF;
+                tg19.WidthF = Ngay19.WidthF;
+                tg20.WidthF = Ngay20.WidthF;
+                tg21.WidthF = Ngay21.WidthF;
+                tg22.WidthF = Ngay22.WidthF;
+                tg23.WidthF = Ngay23.WidthF;
+                tg24.WidthF = Ngay24.WidthF;
+                tg25.WidthF = Ngay25.WidthF;
+                tg26.WidthF = Ngay26.WidthF;
+                tg27.WidthF = Ngay27.WidthF;
+                tg28.WidthF = Ngay28.WidthF;
+                tg29.WidthF = Ngay29.WidthF;
+                tg30.WidthF = Ngay30.WidthF;
                 tgSum.WidthF = (float)42.89;
-
             }
             else if (ngaycuathang_ == 31)
             {
-                if (_flag_31 == "deleted")
-                {
-                    _flag_31 = "undelete";
-                }
+                //nothing
             }
 
             //Tô màu Chủ nhật:
             for (int i = 0; i < ngaycuathang_; ++i)
             {
-                Ds_Ngay_Header[i].Text = LayThu(new DateTime(nam, thang, (i + 1)));
+                Ds_Ngay_Header[i].Text = LayThu(new DateTime(_nam, _thang, (i + 1)));
                 if (Ds_Ngay_Header[i].Text.Contains("CN"))
                 {
                     Ds_Ngay_Header[i].BackColor = Color.LightGray;
-                    Ds_Ngay_Header[i].BackColor = Color.LightGray;
                     Ds_Ngay_Header[i].ForeColor = Color.Red;
-                    Ds_Ngay_Header[i].ForeColor = Color.Red;
-                }
-            }
 
-            for (int i = 0; i < ngaycuathang_; ++i)
-            {
-                string thu_ = LayThu(new DateTime(nam, thang, (i + 1)));
-                if (thu_.Contains("CN"))
-                {
+                    //detail
                     Ds_Ngay[i].BackColor = Color.LightGray;
                     Ds_Ngay[i].ForeColor = Color.Red;
+
+                    //footer
+                    Ds_Ngay_Footer[i].BackColor = Color.LightGray;
+                    Ds_Ngay_Footer[i].ForeColor = Color.Red;
                 }
             }
-
-            
-            //TongCel.WidthF = (float)42.39;
-            //KyNhan.WidthF = (float)54.22 + (float)24.28;
-
-            if (ngaycuathang_ == 28)
-            {
-            }
-            else if (ngaycuathang_ == 29)
-            {
-            }
-            else if (ngaycuathang_ == 30)
-            {
-            }
-            else if (ngaycuathang_ == 31)
-            {
-                //cong.WidthF = (float)64.84;
-                //hoTen.WidthF = (float)140.98;
-                //TongCel.WidthF = (float)42.39;
-                //TongCel.WidthF = (float)54.22;
-            }
-            ////
-            //DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
-            //int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-            //string thu_ = LayThu(date_);
-
-            //ng1.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (1)));
-            //if (ng1.Text.Contains("CN"))
-            //{
-            //    ng1.BackColor = Color.LightGray;
-            //}
-
-            //ng2.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (2)));
-            //if (ng2.Text.Contains("CN"))
-            //{
-            //    ng2.BackColor = Color.LightGray;
-            //}
-
-            //ng3.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (3)));
-            //if (ng3.Text.Contains("CN"))
-            //{
-            //    ng3.BackColor = Color.LightGray;
-            //}
-
-
-            //ng4.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (4)));
-            //if (ng4.Text.Contains("CN"))
-            //{
-            //    ng4.BackColor = Color.LightGray;
-            //}
-
-
-            //ng5.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (5)));
-            //if (ng5.Text.Contains("CN"))
-            //{
-            //    ng5.BackColor = Color.LightGray;
-            //}
-
-
-            //ng6.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (6)));
-            //if (ng6.Text.Contains("CN"))
-            //{
-            //    ng6.BackColor = Color.LightGray;
-            //}
-
-
-            //ng7.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (7)));
-            //if (ng7.Text.Contains("CN"))
-            //{
-            //    ng7.BackColor = Color.LightGray;
-            //}
-
-
-            //ng8.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (8)));
-            //if (ng8.Text.Contains("CN"))
-            //{
-            //    ng8.BackColor = Color.LightGray;
-            //}
-
-
-            //ng9.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (9)));
-            //if (ng9.Text.Contains("CN"))
-            //{
-            //    ng9.BackColor = Color.LightGray;
-            //}
-
-            //ng10.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (10)));
-            //if (ng10.Text.Contains("CN"))
-            //{
-            //    ng10.BackColor = Color.LightGray;
-            //}
-
-            //ng11.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (11)));
-            //if (ng11.Text.Contains("CN"))
-            //{
-            //    ng11.BackColor = Color.LightGray;
-            //}
-
-            //ng12.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (12)));
-            //if (ng12.Text.Contains("CN"))
-            //{
-            //    ng12.BackColor = Color.LightGray;
-            //}
-
-            //ng13.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (13)));
-            //if (ng13.Text.Contains("CN"))
-            //{
-            //    ng13.BackColor = Color.LightGray;
-            //}
-
-
-            //ng14.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (14)));
-            //if (ng14.Text.Contains("CN"))
-            //{
-            //    ng14.BackColor = Color.LightGray;
-            //}
-
-
-            //ng15.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (15)));
-            //if (ng15.Text.Contains("CN"))
-            //{
-            //    ng15.BackColor = Color.LightGray;
-            //}
-
-
-            //ng16.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (16)));
-            //if (ng16.Text.Contains("CN"))
-            //{
-            //    ng16.BackColor = Color.LightGray;
-            //}
-
-
-            //ng17.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (17)));
-            //if (ng17.Text.Contains("CN"))
-            //{
-            //    ng17.BackColor = Color.LightGray;
-            //}
-
-
-            //ng18.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (18)));
-            //if (ng18.Text.Contains("CN"))
-            //{
-            //    ng18.BackColor = Color.LightGray;
-            //}
-
-
-            //ng19.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (19)));
-            //if (ng19.Text.Contains("CN"))
-            //{
-            //    ng19.BackColor = Color.LightGray;
-            //}
-
-            //ng20.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (20)));
-            //if (ng20.Text.Contains("CN"))
-            //{
-            //    ng20.BackColor = Color.LightGray;
-            //}
-
-
-            //ng21.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (21)));
-            //if (ng21.Text.Contains("CN"))
-            //{
-            //    ng21.BackColor = Color.LightGray;
-            //}
-
-            //ng22.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (22)));
-            //if (ng22.Text.Contains("CN"))
-            //{
-            //    ng22.BackColor = Color.LightGray;
-            //}
-
-            //ng23.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (23)));
-            //if (ng23.Text.Contains("CN"))
-            //{
-            //    ng23.BackColor = Color.LightGray;
-            //}
-
-
-            //ng24.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (24)));
-            //if (ng24.Text.Contains("CN"))
-            //{
-            //    ng24.BackColor = Color.LightGray;
-            //}
-
-
-            //ng25.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (25)));
-            //if (ng25.Text.Contains("CN"))
-            //{
-            //    ng25.BackColor = Color.LightGray;
-            //}
-
-
-            //ng26.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (26)));
-            //if (ng26.Text.Contains("CN"))
-            //{
-            //    ng26.BackColor = Color.LightGray;
-            //}
-
-
-            //ng27.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (27)));
-            //if (ng27.Text.Contains("CN"))
-            //{
-            //    ng27.BackColor = Color.LightGray;
-            //}
-
-
-            //ng28.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (28)));
-            //if (ng28.Text.Contains("CN"))
-            //{
-            //    ng28.BackColor = Color.LightGray;
-            //}
-
-
-            //ng29.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (29)));
-            //if (ng29.Text.Contains("CN"))
-            //{
-            //    ng29.BackColor = Color.LightGray;
-            //}
-
-            //ng30.Text = LayThu(new DateTime(dtnow.Year, dtnow.Month, (30)));
-            //if (ng30.Text.Contains("CN"))
-            //{
-            //    ng30.BackColor = Color.LightGray;
-            //}
-
         }
 
         //set mau bang du lieu:
         public void setMauTableDetail2()
         {
-            DateTime dtnow = DateTime.Now;
-            DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
-            int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+            DateTime date_ = new DateTime(_nam, _thang, 1);
+            int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
             string thu_ = "";
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (1)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (1)));
             if (thu_.Contains("CN"))
             {
                 Ngay1.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (2)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (2)));
             if (thu_.Contains("CN"))
             {
                 Ngay2.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (3)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (3)));
             if (thu_.Contains("CN"))
             {
                 Ngay3.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (4)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (4)));
             if (thu_.Contains("CN"))
             {
                 Ngay4.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (5)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (5)));
             if (thu_.Contains("CN"))
             {
                 Ngay5.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (6)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (6)));
             if (thu_.Contains("CN"))
             {
                 Ngay6.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (7)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (7)));
             if (thu_.Contains("CN"))
             {
                 Ngay7.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (8)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (8)));
             if (thu_.Contains("CN"))
             {
                 Ngay8.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (9)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (9)));
             if (thu_.Contains("CN"))
             {
                 Ngay9.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (10)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (10)));
             if (thu_.Contains("CN"))
             {
                 Ngay10.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (11)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (11)));
             if (thu_.Contains("CN"))
             {
                 Ngay11.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (12)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (12)));
             if (thu_.Contains("CN"))
             {
                 Ngay12.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (13)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (13)));
             if (thu_.Contains("CN"))
             {
                 Ngay13.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (14)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (14)));
             if (thu_.Contains("CN"))
             {
                 Ngay14.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (15)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (15)));
             if (thu_.Contains("CN"))
             {
                 Ngay15.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (16)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (16)));
             if (thu_.Contains("CN"))
             {
                 Ngay16.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (17)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (17)));
             if (thu_.Contains("CN"))
             {
                 Ngay17.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (18)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (18)));
             if (thu_.Contains("CN"))
             {
                 Ngay18.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (19)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (19)));
             if (thu_.Contains("CN"))
             {
                 Ngay19.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (20)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (20)));
             if (thu_.Contains("CN"))
             {
                 Ngay20.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (21)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (21)));
             if (thu_.Contains("CN"))
             {
                 Ngay21.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (22)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (22)));
             if (thu_.Contains("CN"))
             {
                 Ngay22.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (23)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (23)));
             if (thu_.Contains("CN"))
             {
                 Ngay23.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (24)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (24)));
             if (thu_.Contains("CN"))
             {
                 Ngay24.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (25)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (25)));
             if (thu_.Contains("CN"))
             {
                 Ngay25.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (26)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (26)));
             if (thu_.Contains("CN"))
             {
                 Ngay26.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (27)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (27)));
             if (thu_.Contains("CN"))
             {
                 Ngay27.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (28)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (28)));
             if (thu_.Contains("CN"))
             {
                 Ngay28.BackColor = Color.LightGray;
             }
 
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (29)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (29)));
             if (thu_.Contains("CN"))
             {
                 Ngay29.BackColor = Color.LightGray;
             }
 
-            thu_ = LayThu(new DateTime(dtnow.Year, dtnow.Month, (30)));
+            thu_ = LayThu(new DateTime(_nam, _thang, (30)));
             if (thu_.Contains("CN"))
             {
                 Ngay30.BackColor = Color.LightGray;
