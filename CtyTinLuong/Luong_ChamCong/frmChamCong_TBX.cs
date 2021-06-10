@@ -744,6 +744,12 @@ namespace CtyTinLuong
             }
             return (float)result;
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
