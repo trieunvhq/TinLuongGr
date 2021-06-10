@@ -1698,6 +1698,12 @@
     <Compile Include="QuanLySanXuat\Xtra_SanLuong_DOT_DAP_RutGon.Designer.cs">
       <DependentUpon>Xtra_SanLuong_DOT_DAP_RutGon.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\Xtra_SoTongHop_banHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BanHang\Xtra_SoTongHop_banHang.Designer.cs">
+      <DependentUpon>Xtra_SoTongHop_banHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1748,6 +1754,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_frmBangKeHoaDonBanHang.resx">
       <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang.resx">
+      <DependentUpon>Xtra_SoTongHop_banHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.resx">
       <DependentUpon>CaiDatBanDau_ChonTaiKhoanNganHang.cs</DependentUpon>
