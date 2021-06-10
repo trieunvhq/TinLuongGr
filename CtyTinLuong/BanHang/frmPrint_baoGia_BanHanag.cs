@@ -82,6 +82,42 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
+
+        private void Print_BanHang_SoTongHopbanHang_ALL(DataTable dt3)
+        {
+
+
+            Xtra_banKeHoaDonBanHang xtr111 = new Xtra_banKeHoaDonBanHang();
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbBan_MuaHang.Clone();
+            ds.tbBan_MuaHang.Clear();
+
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbBan_MuaHang.NewRow();
+                _ravi["STT"] = (i + 1).ToString();
+                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
+                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["ThanhTien"].ToString());
+                _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
+                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                _ravi["TienVAT"] = Convert.ToDouble(dt3.Rows[i]["TienVAT"].ToString());
+                _ravi["NgayChungTu"] = dt3.Rows[i]["NgayChungTu"].ToString();
+                _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                _ravi["TongTien_CoVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_CoVAT"].ToString());
+                _ravi["TongTien_ChuaVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_ChuaVAT"].ToString());
+                _ravi["QuyDoiVND"] = Convert.ToDouble(dt3.Rows[i]["QuyDoiVND"].ToString());
+                ds.tbBan_MuaHang.Rows.Add(_ravi);
+            }
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbBan_MuaHang;
+            xtr111.DataMember = "tbBan_MuaHang";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
         public frmPrint_baoGia_BanHanag()
         {
             InitializeComponent();
@@ -93,12 +129,16 @@ namespace CtyTinLuong
                 Print_BaoGia(frmCaiDatBangGia_BanHang.mdtPrint);
             if (BanHang_frmBangKeHoaDonBanHang.mbPrint == true)
                 Print_BanHang_frmBangKeHoaDonBanHang(BanHang_frmBangKeHoaDonBanHang.mdtPrint);
+            if (BanHang_SoTongHopbanHang.mbPrint_ALL == true)
+                Print_BanHang_SoTongHopbanHang_ALL(BanHang_SoTongHopbanHang.mdtPrint);
         }
 
         private void frmPrint_baoGia_BanHanag_FormClosed(object sender, FormClosedEventArgs e)
         {
             frmCaiDatBangGia_BanHang.mbPrint = false;
             BanHang_frmBangKeHoaDonBanHang.mbPrint = false;
+            BanHang_SoTongHopbanHang.mbPrint_ALL = false;
+            BanHang_SoTongHopbanHang.mbPrint_RutGon = false;
         }
     }
 }

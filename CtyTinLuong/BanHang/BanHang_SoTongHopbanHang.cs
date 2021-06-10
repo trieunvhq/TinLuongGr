@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,8 @@ namespace CtyTinLuong
     {
         public static DateTime mdatungay, mdadenngay;
         public static DataTable mdtPrint;
-        public static bool mbPrint;
+        public static bool mbPrint_RutGon = false;
+        public static bool mbPrint_ALL = false;
        
         private void Hienthigridcontrol2(int xxID_VTHH, DateTime xxtungay, DateTime xxdenngay)
         {
@@ -134,6 +136,28 @@ namespace CtyTinLuong
                 Hienthigridcontrol2(iiDI, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
             
+        }
+
+        private void btPrint_ALL_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_RutGon = false;
+                mbPrint_ALL = true;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
+                ff.Show();
+
+            }
+
         }
 
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)
