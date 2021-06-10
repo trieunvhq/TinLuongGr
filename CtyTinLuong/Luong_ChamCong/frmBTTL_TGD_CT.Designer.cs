@@ -116,9 +116,9 @@
             this.btGuiDuLieu.Appearance.Options.UseFont = true;
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
             this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(808, 614);
+            this.btGuiDuLieu.Location = new System.Drawing.Point(808, 620);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(174, 37);
+            this.btGuiDuLieu.Size = new System.Drawing.Size(174, 29);
             this.btGuiDuLieu.TabIndex = 118;
             this.btGuiDuLieu.Text = "Gửi dữ liệu bảng lương ";
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
@@ -138,9 +138,9 @@
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(1073, 614);
+            this.btThoat.Location = new System.Drawing.Point(1073, 620);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 36);
+            this.btThoat.Size = new System.Drawing.Size(75, 28);
             this.btThoat.TabIndex = 116;
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -807,9 +807,9 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(989, 614);
+            this.btnPrint.Location = new System.Drawing.Point(989, 620);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(78, 37);
+            this.btnPrint.Size = new System.Drawing.Size(78, 29);
             this.btnPrint.TabIndex = 140;
             this.btnPrint.Text = "Print";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);

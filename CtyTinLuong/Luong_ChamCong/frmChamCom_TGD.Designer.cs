@@ -146,9 +146,9 @@
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
             this.btGuiDuLieu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(809, 615);
+            this.btGuiDuLieu.Location = new System.Drawing.Point(809, 618);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(174, 37);
+            this.btGuiDuLieu.Size = new System.Drawing.Size(174, 32);
             this.btGuiDuLieu.TabIndex = 118;
             this.btGuiDuLieu.Text = "Gửi dữ liệu bảng lương ";
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
@@ -183,9 +183,9 @@
             this.btThoat.Appearance.Options.UseForeColor = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(1073, 615);
+            this.btThoat.Location = new System.Drawing.Point(1073, 618);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 37);
+            this.btThoat.Size = new System.Drawing.Size(75, 32);
             this.btThoat.TabIndex = 116;
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -194,7 +194,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(211, 627);
+            this.label1.Location = new System.Drawing.Point(124, 621);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(669, 13);
             this.label1.TabIndex = 121;
@@ -205,7 +205,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 640);
+            this.label2.Location = new System.Drawing.Point(124, 634);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 13);
             this.label2.TabIndex = 122;
@@ -214,7 +214,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(21, 643);
+            this.linkLabel1.Location = new System.Drawing.Point(21, 620);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(88, 13);
             this.linkLabel1.TabIndex = 123;
@@ -1487,9 +1487,9 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(989, 615);
+            this.btnPrint.Location = new System.Drawing.Point(989, 618);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(78, 37);
+            this.btnPrint.Size = new System.Drawing.Size(78, 32);
             this.btnPrint.TabIndex = 141;
             this.btnPrint.Text = "Print";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
