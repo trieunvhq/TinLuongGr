@@ -96,9 +96,11 @@
             this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTbHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -146,6 +148,8 @@
             // 
             // xrTableCell14
             // 
+            this.xrTableCell14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[STT]")});
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
@@ -154,6 +158,8 @@
             // 
             // xrTableCell15
             // 
+            this.xrTableCell15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TenNhanVien]")});
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
@@ -777,6 +783,11 @@
             this.pLapBieu.Description = "Lập Biểu";
             this.pLapBieu.Name = "pLapBieu";
             // 
+            // dataSet_TinLuong1
+            // 
+            this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
+            this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Tr_PrintBTTL_TGD_CT
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -786,6 +797,10 @@
             this.ReportHeader,
             this.PageHeader,
             this.ReportFooter});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.dataSet_TinLuong1});
+            this.DataMember = "tbBTTL_TGD_CT";
+            this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(55, 39, 55, 55);
             this.PageHeight = 827;
@@ -800,6 +815,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTbHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -874,5 +890,6 @@
         private DevExpress.XtraReports.Parameters.Parameter pGiamDoc;
         private DevExpress.XtraReports.Parameters.Parameter pTongHop;
         private DevExpress.XtraReports.Parameters.Parameter pLapBieu;
+        private DataSet_TinLuong dataSet_TinLuong1;
     }
 }
