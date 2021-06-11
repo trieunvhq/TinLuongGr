@@ -27,7 +27,16 @@ namespace CtyTinLuong
             gridNhomDoiTuong.Properties.DisplayMember = "SoTaiKhoanMe"; //
             gridNhomDoiTuong.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
         }
-     
+        public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
+        {
+            gridControl1.DataSource = null;
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            DataTable dt = cls.Select_DISTINCT_W_ID_TaiKhoanKeToanCon_COngNo_ALL(); 
+            gridControl1.DataSource = dt;
+
+
+           
+        }
         public void HienThi(DateTime xxxxtungayxx, DateTime xxxdenngayxxx)
         {
             DataTable dt2 = new DataTable();
@@ -222,7 +231,7 @@ namespace CtyTinLuong
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-            HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            LoadData(1,dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
