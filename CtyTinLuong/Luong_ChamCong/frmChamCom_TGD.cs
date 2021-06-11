@@ -91,7 +91,7 @@ namespace CtyTinLuong
         {
             isload = true; 
 
-            txtTimKiem.Text = "";
+            cbNhanVien.Text = "";
 
             if (islandau)
             {
@@ -148,8 +148,8 @@ namespace CtyTinLuong
                     cbBoPhan.SelectedValue = 18;
                     cbBoPhan.Enabled = true;
 
-                    txtTimKiem.DisplayMember = "TenNhanVien";
-                    txtTimKiem.ValueMember = "ID_NhanSu";
+                    cbNhanVien.DisplayMember = "TenNhanVien";
+                    cbNhanVien.ValueMember = "ID_NhanSu";
                      
                     try
                     { 
@@ -167,8 +167,7 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.T_ChamCong_SF(_nam, _thang, _id_bophan);
-                ds_id_congnhan = new List<int>();
-
+                
                 int Ngay1 = 0;
                 int Ngay2 = 0;
                 int Ngay3 = 0;
@@ -202,9 +201,7 @@ namespace CtyTinLuong
                 int Ngay31 = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
-                {
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
-                       
+                { 
                     Ngay1 = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
                     Ngay2 = Convert.ToInt32(_data.Rows[i]["Ngay2"].ToString());
                     Ngay3 = Convert.ToInt32(_data.Rows[i]["Ngay3"].ToString());
@@ -352,8 +349,7 @@ namespace CtyTinLuong
             //
             gridControl1.DataSource = _data;
             isload = false;
-        }
-        private List<int> ds_id_congnhan = new List<int>(); 
+        } 
         private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew)
         {
             int stt_ = 0;
@@ -380,39 +376,32 @@ namespace CtyTinLuong
 
             }
             // 
-            if (ds_id_congnhan.Contains(id_nhansu_))
-            {
+            DataRow _ravi = _data.NewRow();
+            _ravi["ID_ChamCom"] = 0;
+            _ravi["ID_CongNhan"] = id_nhansu_;
+            _ravi["Thang"] = _thang;
+            _ravi["Nam"] = _nam;
+            _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
+            _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
+            _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
+            _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
+            _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
+            _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
+            _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
+            _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
+            _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
+            _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
+            _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
 
-            }
-            else
-            {
-                DataRow _ravi = _data.NewRow();
-                _ravi["ID_ChamCom"] = 0;
-                _ravi["ID_CongNhan"] = id_nhansu_;
-                _ravi["Thang"] = _thang;
-                _ravi["Nam"] = _nam;
-                _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
-                _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
-                _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
-                _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
-                _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
-                _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
-                _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
-                _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
-                _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
-                _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
-                _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
-
-                _ravi["Tong"] = 0;
-                _ravi["GuiDuLieu"] = false;
-                _ravi["MaNhanVien"] = "";
-                _ravi["TenNhanVien"] = ten_;
+            _ravi["Tong"] = 0;
+            _ravi["GuiDuLieu"] = false;
+            _ravi["MaNhanVien"] = "";
+            _ravi["TenNhanVien"] = ten_;
 
 
-                ++stt_;
-                _ravi["STT"] = (stt_);
-                _data.Rows.Add(_ravi);
-            }
+            ++stt_;
+            _ravi["STT"] = (stt_);
+            _data.Rows.Add(_ravi);
             //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
             //{
             //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
@@ -621,51 +610,17 @@ namespace CtyTinLuong
                 }
             }
             return (float)result;
-        }
-        private int _id_congnhan = 0;
-        private void txtTimKiem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-            _id_congnhan = (int)txtTimKiem.SelectedValue;
-            if(_id_congnhan==0)
-            {
-                btnThemNhanVien.Enabled = false;
-            }
-            else
-            {
-                btnThemNhanVien.Enabled = true;
-            }
-        }
-
-        private void cbBoPhan_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-            _id_bophan = (int)cbBoPhan.SelectedValue; 
-            using (clsThin clsThin_ = new clsThin())
-            {
-                DataTable dt_ = clsThin_.T_NhanSu_SF(_id_bophan + ",");
-
-                isload = true;
-                for (int i = 0; i < dt_.Rows.Count; ++i)
-                {
-                    int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString());
-                    txtTimKiem.DataSource = dt_;
-                    _id_congnhan = 0;
-                    txtTimKiem.Text = "";
-                }
-                isload = false;
-            }
-        }
+        }   
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
-            if (_id_congnhan == 0)
+            int id_congnhan_ = (int)cbNhanVien.SelectedValue;
+            if (id_congnhan_ == 0)
             { 
             }
             else
-            {
-                _id_congnhan = (int)txtTimKiem.SelectedValue; 
-                ThemMotCongNhanVaoBang(_id_congnhan, txtTimKiem.Text,true); 
+            { 
+                ThemMotCongNhanVaoBang(id_congnhan_, cbNhanVien.Text,true); 
             }
         }
 

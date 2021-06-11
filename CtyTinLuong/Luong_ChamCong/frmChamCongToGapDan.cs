@@ -148,16 +148,7 @@ namespace CtyTinLuong
                 }
 
                 using (clsThin clsThin_ = new clsThin())
-                {
-                    DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
-
-                    cbBoPhan.DisplayMember = "TenBoPhan";
-                    cbBoPhan.ValueMember = "ID_BoPhan";
-                    cbBoPhan.DataSource = dt_;
-                    cbBoPhan.SelectedValue = 18;
-                    cbBoPhan.Enabled = true;
-
-
+                {  
                     _dataLoaiHang = clsThin_.T_LoaiHangSX_SF(-1);
 
                     DataRow row = _dataLoaiHang.NewRow();
@@ -174,8 +165,7 @@ namespace CtyTinLuong
 
                     try
                     {
-                        _id_vthh = (int)cbLoaiHangSX.SelectedValue;
-                        _id_bophan = (int)cbBoPhan.SelectedValue;
+                        _id_vthh = (int)cbLoaiHangSX.SelectedValue; 
                         if (_id_vthh == 0)
                         {
                             _ten_vthh = "";
@@ -598,6 +588,132 @@ namespace CtyTinLuong
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD(6, 2021);
             ff.Show();
+        }
+
+        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        {
+            int id_congnhan_ = (int)cbNhanVien.SelectedValue;
+            if (id_congnhan_ == 0)
+            {
+            }
+            else
+            { 
+                ThemMotCongNhanVaoBang(id_congnhan_, cbNhanVien.Text, true);
+            }
+        }
+
+        private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew)
+        {
+            int stt_ = 0;
+            //
+            if (_data != null && _data.Rows.Count > 1)
+            {
+                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 2]["STT"].ToString());
+            }
+            for (int i = 0; i < _data.Rows.Count; ++i)
+            {
+                if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
+                {
+                    MessageBox.Show("Đã tồn tại công nhân này trong bảng");
+                    return;
+                }
+            }
+
+            if (isNew && _data != null && _data.Rows.Count > 0)
+            {
+                _data.Rows.RemoveAt(_data.Rows.Count - 1);
+            }
+            else
+            {
+
+            }
+            // 
+            DataRow _ravi = _data.NewRow();
+            _ravi["ID_ChamCom"] = 0;
+            _ravi["ID_CongNhan"] = id_nhansu_;
+            _ravi["Thang"] = _thang;
+            _ravi["Nam"] = _nam;
+            _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
+            _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
+            _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
+            _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
+            _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
+            _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
+            _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
+            _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
+            _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
+            _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
+            _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
+
+            _ravi["Tong"] = 0;
+            _ravi["GuiDuLieu"] = false;
+            _ravi["MaNhanVien"] = "";
+            _ravi["TenNhanVien"] = ten_;
+
+
+            ++stt_;
+            _ravi["STT"] = (stt_);
+            _data.Rows.Add(_ravi);
+            //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
+            //{
+            //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
+            //}
+            gridThin.EditValueChanged += (o, e) => {
+
+            };
+            // dat doan cuoi nay đi
+
+
+            DataRow _ravi2 = _data.NewRow();
+            _ravi2["ID_ChamCom"] = 0;
+            _ravi2["ID_CongNhan"] = 0;
+            _ravi2["Thang"] = _thang;
+            _ravi2["Nam"] = _nam;
+            _ravi2["TenNhanVien"] = "TỔNG";
+            _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
+            _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
+            _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
+            _ravi2["Ngay4"] = Tong_Ngay4.ToString("N0");
+            _ravi2["Ngay5"] = Tong_Ngay5.ToString("N0");
+            _ravi2["Ngay6"] = Tong_Ngay6.ToString("N0");
+            _ravi2["Ngay7"] = Tong_Ngay7.ToString("N0");
+            _ravi2["Ngay8"] = Tong_Ngay8.ToString("N0");
+            _ravi2["Ngay9"] = Tong_Ngay9.ToString("N0");
+            _ravi2["Ngay10"] = Tong_Ngay10.ToString("N0");
+            _ravi2["Ngay11"] = Tong_Ngay11.ToString("N0");
+            _ravi2["Ngay12"] = Tong_Ngay12.ToString("N0");
+            _ravi2["Ngay13"] = Tong_Ngay13.ToString("N0");
+            _ravi2["Ngay14"] = Tong_Ngay14.ToString("N0");
+            _ravi2["Ngay15"] = Tong_Ngay15.ToString("N0");
+            _ravi2["Ngay16"] = Tong_Ngay16.ToString("N0");
+            _ravi2["Ngay17"] = Tong_Ngay17.ToString("N0");
+            _ravi2["Ngay18"] = Tong_Ngay18.ToString("N0");
+            _ravi2["Ngay19"] = Tong_Ngay19.ToString("N0");
+            _ravi2["Ngay20"] = Tong_Ngay20.ToString("N0");
+            _ravi2["Ngay21"] = Tong_Ngay21.ToString("N0");
+            _ravi2["Ngay22"] = Tong_Ngay22.ToString("N0");
+            _ravi2["Ngay23"] = Tong_Ngay23.ToString("N0");
+            _ravi2["Ngay24"] = Tong_Ngay24.ToString("N0");
+            _ravi2["Ngay25"] = Tong_Ngay25.ToString("N0");
+            _ravi2["Ngay26"] = Tong_Ngay26.ToString("N0");
+            _ravi2["Ngay27"] = Tong_Ngay27.ToString("N0");
+            _ravi2["Ngay28"] = Tong_Ngay28.ToString("N0");
+            _ravi2["Ngay29"] = Tong_Ngay29.ToString("N0");
+            _ravi2["Ngay30"] = Tong_Ngay30.ToString("N0");
+            _ravi2["Ngay31"] = Tong_Ngay31.ToString("N0");
+
+
+            _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
+                + Tong_Ngay6 + Tong_Ngay7 + Tong_Ngay8 + Tong_Ngay9 + Tong_Ngay10
+                + Tong_Ngay11 + Tong_Ngay12 + Tong_Ngay13 + Tong_Ngay14 + Tong_Ngay15
+                + Tong_Ngay16 + Tong_Ngay17 + Tong_Ngay18 + Tong_Ngay19 + Tong_Ngay20
+                + Tong_Ngay21 + Tong_Ngay22 + Tong_Ngay23 + Tong_Ngay24 + Tong_Ngay25
+                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString("N0");
+
+
+            _data.Rows.Add(_ravi2);
+            //
+            gridControl1.DataSource = _data;
         }
 
         private int _id_dinhmuc_togapdan;

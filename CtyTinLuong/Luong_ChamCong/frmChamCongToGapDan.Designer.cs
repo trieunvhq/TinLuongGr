@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.cbBoPhan = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtThang = new System.Windows.Forms.TextBox();
@@ -118,10 +117,12 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtDinhMuc = new System.Windows.Forms.TextBox();
             this.lbChinhSua = new System.Windows.Forms.LinkLabel();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.cbNhanVien = new System.Windows.Forms.ComboBox();
+            this.btnThemNhanVien = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -209,20 +210,11 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Thêm công nhân";
             // 
-            // cbBoPhan
-            // 
-            this.cbBoPhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBoPhan.FormattingEnabled = true;
-            this.cbBoPhan.Location = new System.Drawing.Point(170, 7);
-            this.cbBoPhan.Name = "cbBoPhan";
-            this.cbBoPhan.Size = new System.Drawing.Size(347, 21);
-            this.cbBoPhan.TabIndex = 125;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(555, 11);
+            this.label3.Location = new System.Drawing.Point(19, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 126;
@@ -232,7 +224,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(701, 11);
+            this.label4.Location = new System.Drawing.Point(165, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 127;
@@ -241,7 +233,7 @@
             // txtThang
             // 
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(631, 7);
+            this.txtThang.Location = new System.Drawing.Point(95, -2);
             this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 20);
@@ -252,7 +244,7 @@
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(757, 8);
+            this.txtNam.Location = new System.Drawing.Point(221, -1);
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(78, 20);
@@ -1458,17 +1450,6 @@
             // 
             this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(20, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 13);
-            this.label8.TabIndex = 131;
-            this.label8.Text = "Chấm công cho bộ phận: ";
-            // 
             // txtDinhMuc
             // 
             this.txtDinhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1501,6 +1482,35 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // cbNhanVien
+            // 
+            this.cbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNhanVien.FormattingEnabled = true;
+            this.cbNhanVien.Location = new System.Drawing.Point(631, 2);
+            this.cbNhanVien.Name = "cbNhanVien";
+            this.cbNhanVien.Size = new System.Drawing.Size(204, 21);
+            this.cbNhanVien.TabIndex = 139;
+            // 
+            // btnThemNhanVien
+            // 
+            this.btnThemNhanVien.Location = new System.Drawing.Point(848, 2);
+            this.btnThemNhanVien.Name = "btnThemNhanVien";
+            this.btnThemNhanVien.Size = new System.Drawing.Size(130, 23);
+            this.btnThemNhanVien.TabIndex = 138;
+            this.btnThemNhanVien.Text = "Thêm nhân viên";
+            this.btnThemNhanVien.UseVisualStyleBackColor = true;
+            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(518, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.TabIndex = 137;
+            this.label7.Text = "Thêm nhân viên :";
+            // 
             // frmChamCongToGapDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1508,11 +1518,12 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1160, 660);
             this.ControlBox = false;
+            this.Controls.Add(this.cbNhanVien);
+            this.Controls.Add(this.btnThemNhanVien);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lbChinhSua);
             this.Controls.Add(this.txtDinhMuc);
-            this.Controls.Add(this.cbBoPhan);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.cbLoaiHangSX);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -1564,7 +1575,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ComboBox cbBoPhan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtThang;
@@ -1629,7 +1639,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clGuiDuLieu;
         private DevExpress.XtraGrid.Columns.GridColumn Tong;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDinhMuc;
         private System.Windows.Forms.LinkLabel lbChinhSua;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
@@ -1641,5 +1650,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private System.Windows.Forms.ComboBox cbNhanVien;
+        private System.Windows.Forms.Button btnThemNhanVien;
+        private System.Windows.Forms.Label label7;
     }
 }
