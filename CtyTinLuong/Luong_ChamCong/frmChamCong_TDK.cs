@@ -16,7 +16,7 @@ namespace CtyTinLuong
     {
         private string tenbophan = "Tổ Đóng kiện";
         public int _nam, _thang, _id_bophan;
-        public string _ten_vthh;
+        public string _TenVTHH;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -305,7 +305,7 @@ namespace CtyTinLuong
             _ravi2["ID_CongNhan"] = 0;
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
-            _ravi2["Ten_VTHH"] = "TỔNG";
+            _ravi2["TenVTHH"] = "TỔNG";
             _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
             _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
             _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
@@ -499,6 +499,14 @@ namespace CtyTinLuong
         {
             int stt_ = 0;
             //
+            if (isNew && _data != null && _data.Rows.Count > 0)
+            {
+                _data.Rows.RemoveAt(_data.Rows.Count - 1);
+            }
+            else
+            {
+
+            }
             if (_data != null && _data.Rows.Count > 1)
             {
                 stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 2]["STT"].ToString());
@@ -512,19 +520,12 @@ namespace CtyTinLuong
                 }
             }
 
-            if (isNew && _data != null && _data.Rows.Count > 0)
-            {
-                _data.Rows.RemoveAt(_data.Rows.Count - 1);
-            }
-            else
-            {
-
-            }
+            
             // 
             DataRow _ravi = _data.NewRow(); 
             _ravi["ID_CongNhan"] = 0;
             _ravi["ID_VTHH"] = id_vthh_;
-            _ravi["Ten_VTHH"] =ten_;
+            _ravi["TenVTHH"] =ten_;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
@@ -562,7 +563,7 @@ namespace CtyTinLuong
             _ravi2["ID_CongNhan"] = 0;
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
-            _ravi2["Ten_VTHH"] = "TỔNG";
+            _ravi2["TenVTHH"] = "TỔNG";
             _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
             _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
             _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
