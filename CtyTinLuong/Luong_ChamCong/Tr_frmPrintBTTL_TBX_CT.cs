@@ -143,7 +143,7 @@ namespace CtyTinLuong.Luong_ChamCong
             _ravi["ID_CongNhan"] = 0;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
-            _ravi["TenNhanVien"] = "TỔNG";
+            _ravi["TenNhanVien"] = "Tổng";
             if (TongLuong == 0)
             {
                 _ravi["TongLuong"] = "";
