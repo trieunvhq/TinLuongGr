@@ -254,7 +254,7 @@
             // 
             this.navChamCong_TDK.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navChamCong_TDK.Appearance.Options.UseForeColor = true;
-            this.navChamCong_TDK.Caption = "navBarItem18";
+            this.navChamCong_TDK.Caption = "Tổ Đóng kiện";
             this.navChamCong_TDK.Name = "navChamCong_TDK";
             this.navChamCong_TDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TDK_LinkClicked);
             // 

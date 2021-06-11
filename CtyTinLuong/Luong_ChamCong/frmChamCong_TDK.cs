@@ -16,7 +16,7 @@ namespace CtyTinLuong
     {
         private string tenbophan = "Tổ Đóng kiện";
         public int _nam, _thang, _id_bophan;
-        public string _ten_vthh;
+        public string _TenVTHH;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -161,9 +161,8 @@ namespace CtyTinLuong
             else
             {
             }
-            _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
-
+            _thang = Convert.ToInt16(txtThang.Text);
+            _nam = Convert.ToInt16(txtNam.Text);
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
@@ -305,7 +304,7 @@ namespace CtyTinLuong
             _ravi2["ID_CongNhan"] = 0;
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
-            _ravi2["Ten_VTHH"] = "TỔNG";
+            _ravi2["TenVTHH"] = "TỔNG";
             _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
             _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
             _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
@@ -419,8 +418,7 @@ namespace CtyTinLuong
         private void HoanThanhThang()
         {
             try
-            {
-                _thang = Convert.ToInt32(txtThang.Text);
+            { 
                 LoadData(false);
             }
             catch
@@ -431,8 +429,7 @@ namespace CtyTinLuong
         private void HoanThanhNam()
         {
             try
-            {
-                _nam = Convert.ToInt32(txtNam.Text);
+            { 
                 LoadData(false);
             }
             catch
@@ -503,7 +500,7 @@ namespace CtyTinLuong
             {
                 stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 2]["STT"].ToString());
             }
-            for (int i = 0; i < _data.Rows.Count; ++i)
+            for (int i = 0; i < _data.Rows.Count-1; ++i)
             {
                 if (id_vthh_ == Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()))
                 {
@@ -520,11 +517,12 @@ namespace CtyTinLuong
             {
 
             }
+
             // 
             DataRow _ravi = _data.NewRow(); 
             _ravi["ID_CongNhan"] = 0;
             _ravi["ID_VTHH"] = id_vthh_;
-            _ravi["Ten_VTHH"] =ten_;
+            _ravi["TenVTHH"] =ten_;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
@@ -562,7 +560,7 @@ namespace CtyTinLuong
             _ravi2["ID_CongNhan"] = 0;
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
-            _ravi2["Ten_VTHH"] = "TỔNG";
+            _ravi2["TenVTHH"] = "TỔNG";
             _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
             _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
             _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
@@ -669,7 +667,7 @@ namespace CtyTinLuong
                         _thang,
                         _nam,
                         id_vthh_,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString()),
+                        0,
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString()),
