@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class UCNganHang_PhaiTraNguoiBan : UserControl
+    public partial class NganHang_PhaiTraNguoiBan : Form
     {
-        public UCNganHang_PhaiTraNguoiBan()
+        public NganHang_PhaiTraNguoiBan()
         {
             InitializeComponent();
-        }
-
-        private void UCNganHang_PhaiTraNguoiBan_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

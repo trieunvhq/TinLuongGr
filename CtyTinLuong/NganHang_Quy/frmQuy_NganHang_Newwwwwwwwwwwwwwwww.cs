@@ -140,10 +140,8 @@ namespace CtyTinLuong
 
         private void navPhaitraNguoiBan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCNganHang_PhaiTraNguoiBan ucc = new UCNganHang_PhaiTraNguoiBan();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            NganHang_PhaiTraNguoiBan ucc = new NganHang_PhaiTraNguoiBan();
+            ucc.Show();
         }
     }
 }

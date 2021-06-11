@@ -307,6 +307,12 @@
     <Compile Include="Luong_ChamCong\Tr_PrintChamCongTGD.designer.cs">
       <DependentUpon>Tr_PrintChamCongTGD.cs</DependentUpon>
     </Compile>
+    <Compile Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.Designer.cs">
+      <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1589,12 +1595,6 @@
     </Compile>
     <Compile Include="KhoBanThanhPham\UCBTP_NhapKho_LSX_I_C_D.Designer.cs">
       <DependentUpon>UCBTP_NhapKho_LSX_I_C_D.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NganHang_Quy\UCNganHang_PhaiTraNguoiBan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="NganHang_Quy\UCNganHang_PhaiTraNguoiBan.Designer.cs">
-      <DependentUpon>UCNganHang_PhaiTraNguoiBan.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
