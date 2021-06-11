@@ -18,23 +18,16 @@ namespace CtyTinLuong
         public static double mdbNoDauKy, mdbCoDauKy;
         public static bool mPrtint_CongNo_NganHang;
         public static DataTable mdt_ChiTiet_Print;
-        public static DateTime GetFistDayInMonth(int year, int month)
+        private void Load_Lockup()
         {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            return aDateTime;
+            clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+            DataTable dt = cls.SelectAll();
+            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            gridNhomDoiTuong.Properties.DataSource = dt;
+            gridNhomDoiTuong.Properties.DisplayMember = "SoTaiKhoanMe"; //
+            gridNhomDoiTuong.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
         }
-        public static DateTime GetLastDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
-            return retDateTime;
-        }
-        public static DateTime GetFirstDayInYear(int year)
-        {
-            DateTime aDateTime = new DateTime(year, 1, 1);
-            return aDateTime;
-        }
-
+     
         public void HienThi(DateTime xxxxtungayxx, DateTime xxxdenngayxxx)
         {
             DataTable dt2 = new DataTable();
@@ -209,6 +202,15 @@ namespace CtyTinLuong
 
         }
 
+        private void gridNhomDoiTuong_EditValueChanged(object sender, EventArgs e)
+        {
+            int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+            clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+            cls.iID_TaiKhoanKeToanMe = xxid;
+            DataTable dt = cls.SelectOne();
+            txtTenTKMe.Text = cls.sTenTaiKhoanMe.Value;
+        }
+
         public frmChiTietBienDongTaiKhoan()
         {
             InitializeComponent();
@@ -216,15 +218,11 @@ namespace CtyTinLuong
 
         private void frmChiTietBienDongTaiKhoan_Load(object sender, EventArgs e)
         {
-            DateTime ngaydautien, ngaycuoicung;
-            DateTime ngayhomnay = DateTime.Today;
-            int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
-            int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
-            ngaydautien = GetFistDayInMonth(nam, thang);
-            ngaycuoicung = GetLastDayInMonth(nam, thang);
-            dteDenNgay.EditValue = ngaycuoicung;
-            dteTuNgay.EditValue = ngaydautien;
-            HienThi(ngaydautien, ngaycuoicung);
+            Load_Lockup();
+            clsNgayThang cls = new clsNgayThang();
+            dteDenNgay.EditValue = DateTime.Today;
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
