@@ -499,19 +499,11 @@ namespace CtyTinLuong
         {
             int stt_ = 0;
             //
-            if (isNew && _data != null && _data.Rows.Count > 0)
-            {
-                _data.Rows.RemoveAt(_data.Rows.Count - 1);
-            }
-            else
-            {
-
-            }
             if (_data != null && _data.Rows.Count > 1)
             {
                 stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 2]["STT"].ToString());
             }
-            for (int i = 0; i < _data.Rows.Count; ++i)
+            for (int i = 0; i < _data.Rows.Count-1; ++i)
             {
                 if (id_vthh_ == Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()))
                 {
@@ -520,7 +512,15 @@ namespace CtyTinLuong
                 }
             }
 
-            
+            if (isNew && _data != null && _data.Rows.Count > 0)
+            {
+                _data.Rows.RemoveAt(_data.Rows.Count - 1);
+            }
+            else
+            {
+
+            }
+
             // 
             DataRow _ravi = _data.NewRow(); 
             _ravi["ID_CongNhan"] = 0;
