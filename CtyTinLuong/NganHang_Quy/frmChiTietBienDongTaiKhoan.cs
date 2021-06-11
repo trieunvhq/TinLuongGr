@@ -230,7 +230,7 @@ namespace CtyTinLuong
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
             DateTime ngaychon = dteTuNgay.DateTime;
-            if(ngaychon<=ngaynhonhat)
+            if(ngaychon<ngaynhonhat)
             {
                 MessageBox.Show("Chọn ngày lớn hơn ngày thiết lập phần mềm");
                 dteTuNgay.EditValue = ngaynhonhat;
