@@ -26,12 +26,12 @@ namespace CtyTinLuong.Luong_ChamCong
         {
              Tr_PrintBTTL_TBX_TQ xtr111 = new Tr_PrintBTTL_TBX_TQ(_thang, _nam);
 
-            DataSet_TinLuong ds = new DataSet_TinLuong();
+            //DataSet_TinLuong ds = new DataSet_TinLuong();
             //ds.tbCongNhatChamCongToGapDan.Clone();
             //ds.tbCongNhatChamCongToGapDan.Clear();
-            clsThin cls1 = new clsThin();
+            //clsThin cls1 = new clsThin();
 
-            DataTable dt3 = cls1.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, 18, 0, "");
+            //DataTable dt3 = cls1.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, 18, 0, "");
 
             xtr111.DataSource = null;
             xtr111.DataSource = LoadData();

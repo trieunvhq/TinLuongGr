@@ -25,7 +25,7 @@ namespace CtyTinLuong.Luong_ChamCong
         {
             Tr_PrintBTTL_TBX_CT xtr111 = new Tr_PrintBTTL_TBX_CT(_thang, _nam);
 
-            DataSet_TinLuong ds = new DataSet_TinLuong();
+            //DataSet_TinLuong ds = new DataSet_TinLuong();
             //ds.tbCongNhatChamCongToGapDan.Clone();
             //ds.tbCongNhatChamCongToGapDan.Clear();
             //clsThin cls1 = new clsThin();
