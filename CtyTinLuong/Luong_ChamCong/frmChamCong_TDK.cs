@@ -161,9 +161,8 @@ namespace CtyTinLuong
             else
             {
             }
-            _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
-
+            _thang = Convert.ToInt16(txtThang.Text);
+            _nam = Convert.ToInt16(txtNam.Text);
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
@@ -419,8 +418,7 @@ namespace CtyTinLuong
         private void HoanThanhThang()
         {
             try
-            {
-                _thang = Convert.ToInt32(txtThang.Text);
+            { 
                 LoadData(false);
             }
             catch
@@ -431,8 +429,7 @@ namespace CtyTinLuong
         private void HoanThanhNam()
         {
             try
-            {
-                _nam = Convert.ToInt32(txtNam.Text);
+            { 
                 LoadData(false);
             }
             catch
@@ -670,7 +667,7 @@ namespace CtyTinLuong
                         _thang,
                         _nam,
                         id_vthh_,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString()),
+                        0,
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString()),
