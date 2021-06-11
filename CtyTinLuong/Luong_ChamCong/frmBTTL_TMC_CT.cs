@@ -19,7 +19,7 @@ namespace CtyTinLuong
 {
     public partial class frmBTTL_TMC_CT : Form
     {
-        private string tenbophan = "Tổ Gấp dán";
+        private string tenbophan = "Tổ Máy cắt";
 
         public int miiID_chiTietChamCong, miiD_DinhMuc_Luong, miID_congNhan;
         public int miiID_ChamCong;
