@@ -204,9 +204,11 @@
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
             this.pHight = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -291,7 +293,7 @@
             // cong
             // 
             this.cong.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TenVTHH]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Cong]")});
             this.cong.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cong.Multiline = true;
             this.cong.Name = "cong";
@@ -300,7 +302,6 @@
             this.cong.StylePriority.UsePadding = false;
             this.cong.StylePriority.UseTextAlignment = false;
             this.cong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.cong.TextFormatString = "{0:#,#}";
             this.cong.Weight = 1.1137042845730119D;
             // 
             // Ngay1
@@ -2363,6 +2364,11 @@
             this.pHight.Type = typeof(float);
             this.pHight.ValueInfo = "0";
             // 
+            // dataSet_TinLuong1
+            // 
+            this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
+            this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Tr_PrintBangChamCong_TBX
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2372,6 +2378,10 @@
             this.ReportHeader,
             this.PageHeader,
             this.ReportFooter});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.dataSet_TinLuong1});
+            this.DataMember = "tbCongNhatChamCongToGapDan";
+            this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(45, 40, 40, 40);
             this.PageHeight = 827;
@@ -2387,6 +2397,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -2569,5 +2580,6 @@
         private DevExpress.XtraReports.Parameters.Parameter pTongHop;
         private DevExpress.XtraReports.Parameters.Parameter pLapBieu;
         private DevExpress.XtraReports.Parameters.Parameter pHight;
+        private DataSet_TinLuong dataSet_TinLuong1;
     }
 }

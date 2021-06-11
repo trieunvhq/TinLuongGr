@@ -332,6 +332,7 @@
               <xs:element name="MaDinhMuc" msprop:Generator_ColumnVarNameInTable="columnMaDinhMuc" msprop:Generator_ColumnPropNameInRow="MaDinhMuc" msprop:Generator_ColumnPropNameInTable="MaDinhMucColumn" msprop:Generator_UserColumnName="MaDinhMuc" type="xs:string" minOccurs="0" />
               <xs:element name="DinhMuc_KhongTang" msprop:Generator_ColumnVarNameInTable="columnDinhMuc_KhongTang" msprop:Generator_ColumnPropNameInRow="DinhMuc_KhongTang" msprop:Generator_ColumnPropNameInTable="DinhMuc_KhongTangColumn" msprop:Generator_UserColumnName="DinhMuc_KhongTang" type="xs:string" minOccurs="0" />
               <xs:element name="DinhMuc_Tang" msprop:Generator_ColumnVarNameInTable="columnDinhMuc_Tang" msprop:Generator_ColumnPropNameInRow="DinhMuc_Tang" msprop:Generator_ColumnPropNameInTable="DinhMuc_TangColumn" msprop:Generator_UserColumnName="DinhMuc_Tang" type="xs:string" minOccurs="0" />
+              <xs:element name="Cong" msprop:Generator_ColumnVarNameInTable="columnCong" msprop:Generator_ColumnPropNameInRow="Cong" msprop:Generator_ColumnPropNameInTable="CongColumn" msprop:Generator_UserColumnName="Cong" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
