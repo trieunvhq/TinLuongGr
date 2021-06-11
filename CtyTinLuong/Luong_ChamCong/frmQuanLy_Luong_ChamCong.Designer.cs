@@ -60,6 +60,7 @@
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.navBTTL_TMC = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,7 +215,8 @@
             this.navTTL_TBX_CT,
             this.navChamCom_TGD,
             this.navBarItem15,
-            this.navBTTL_TBX_TQ});
+            this.navBTTL_TBX_TQ,
+            this.navBTTL_TMC});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 171;
@@ -268,7 +270,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TBX_CT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX_TQ)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX_TQ),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TMC)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -281,25 +284,25 @@
             this.navTTL_TGD.AppearanceHotTracked.Options.UseForeColor = true;
             this.navTTL_TGD.AppearancePressed.ForeColor = System.Drawing.Color.Blue;
             this.navTTL_TGD.AppearancePressed.Options.UseForeColor = true;
-            this.navTTL_TGD.Caption = "Tổ Gấp dán - Chi tiết";
+            this.navTTL_TGD.Caption = "Gấp dán - Chi tiết";
             this.navTTL_TGD.Name = "navTTL_TGD";
             this.navTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTTL_TGD_LinkClicked);
             // 
             // navTTL_TBX_CT
             // 
-            this.navTTL_TBX_CT.Caption = "Tổ Gấp dán - Tổng quan";
+            this.navTTL_TBX_CT.Caption = "Gấp dán - Tổng quan";
             this.navTTL_TBX_CT.Name = "navTTL_TBX_CT";
             this.navTTL_TBX_CT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TGD_TD_LinkClicked);
             // 
             // navBarItem15
             // 
-            this.navBarItem15.Caption = "Tổ Bốc xếp - Chi tiết";
+            this.navBarItem15.Caption = "Bốc xếp - Chi tiết";
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked_1);
             // 
             // navBTTL_TBX_TQ
             // 
-            this.navBTTL_TBX_TQ.Caption = "Tổ Bốc xếp - Tổng quan";
+            this.navBTTL_TBX_TQ.Caption = "Bốc xếp - Tổng quan";
             this.navBTTL_TBX_TQ.Name = "navBTTL_TBX_TQ";
             this.navBTTL_TBX_TQ.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TBX_TD_LinkClicked);
             // 
@@ -328,6 +331,12 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1157, 684);
             this.panelControl1.TabIndex = 70;
+            // 
+            // navBTTL_TMC
+            // 
+            this.navBTTL_TMC.Caption = "Máy cắt";
+            this.navBTTL_TMC.Name = "navBTTL_TMC";
+            this.navBTTL_TMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TMC_LinkClicked);
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -380,5 +389,6 @@
         private DevExpress.XtraNavBar.NavBarItem navChamCom_TGD;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX_TQ;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TMC;
     }
 }
