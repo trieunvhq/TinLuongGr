@@ -18,6 +18,8 @@ namespace CtyTinLuong
         public static double mdbNoDauKy, mdbCoDauKy;
         public static bool mPrtint_CongNo_NganHang;
         public static DataTable mdt_ChiTiet_Print;
+
+        DateTime ngaynhonhat;
         private void Load_Lockup()
         {
             clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
@@ -29,13 +31,66 @@ namespace CtyTinLuong
         }
         public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
+            dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
+            dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
+            dt2.Columns.Add("NoDauKy", typeof(string));
+            dt2.Columns.Add("CoDauKy", typeof(string));
+            dt2.Columns.Add("NoTrongKy", typeof(string));
+            dt2.Columns.Add("CoTrongKy", typeof(string));
+            dt2.Columns.Add("NoCuoiKy", typeof(string));
+            dt2.Columns.Add("CoCuoiKy", typeof(string));
+
             gridControl1.DataSource = null;
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dt = cls.Select_DISTINCT_W_ID_TaiKhoanKeToanCon_COngNo_ALL(); 
-            gridControl1.DataSource = dt;
+            DataTable dt_du_Dau = cls.Sum_Co_No_NgayThang_Du_Dau_HUU(iiID_TKKeToanMe, xxtungay);
+            DataTable dt_PhatSinh = cls.Sum_Co_No_NgayThang_Phat_Sinh_HUU(iiID_TKKeToanMe,xxtungay,xxdenngay);
+            if(dt_PhatSinh.Rows.Count>0)
+            {
+                for (int i = 0; i < dt_PhatSinh.Rows.Count; i++)
+                {
+                    int iiIDID_TaiKhoanKeToanCon;
+                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
+                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
 
+                     iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dt_PhatSinh.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+                    dNoTrongKy = Convert.ToDouble(dt_PhatSinh.Rows[i]["NoTrongKy"].ToString());
+                    dCoTrongKy = Convert.ToDouble(dt_PhatSinh.Rows[i]["CoTrongKy"].ToString());
+                    sTenTaiKhoanCon = dt_PhatSinh.Rows[i]["TenTaiKhoanCon"].ToString();
+                    sSoTaiKhoanCon = dt_PhatSinh.Rows[i]["SoTaiKhoanCon"].ToString();
+                    string expression;
+                    expression = "ID_TaiKhoanKeToanCon =" + iiIDID_TaiKhoanKeToanCon + "";
+                    DataRow[] foundRows;
+                    foundRows = dt_du_Dau.Select(expression);
+                    if (foundRows.Length > 0)
+                    {
+                        dNoDauKy =Convert.ToDouble(foundRows[0]["NoDauKy"].ToString());
+                        dCoDauKy = Convert.ToDouble(foundRows[0]["CoDauKy"].ToString());
+                    }
+                    else
+                    {
+                        dNoDauKy = dCoDauKy = 0;
+                    }
+                    dNoCuoiKy = dNoDauKy + dCoTrongKy;
+                    dCoCuoiKy = dCoDauKy + dCoTrongKy;
+                    DataRow _ravi = dt2.NewRow();
+                    _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;                
 
-           
+                    _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
+                    _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
+                    _ravi["NoDauKy"] = dNoDauKy;
+                    _ravi["CoDauKy"] = dCoDauKy;
+                    _ravi["NoTrongKy"] = dNoTrongKy;
+                    _ravi["CoTrongKy"] = dCoTrongKy;
+                    _ravi["NoCuoiKy"] = dNoCuoiKy;
+                    _ravi["CoCuoiKy"] = dCoCuoiKy;
+                    dt2.Rows.Add(_ravi);
+
+                }
+            }
+
+            gridControl1.DataSource = dt2;
         }
      
 
@@ -53,7 +108,8 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                //HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
@@ -125,6 +181,24 @@ namespace CtyTinLuong
             cls.iID_TaiKhoanKeToanMe = xxid;
             DataTable dt = cls.SelectOne();
             txtTenTKMe.Text = cls.sTenTaiKhoanMe.Value;
+            //LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            DateTime ngaychon = dteTuNgay.DateTime;
+            if(ngaychon<=ngaynhonhat)
+            {
+                MessageBox.Show("Chọn ngày lớn hơn ngày thiết lập phần mềm");
+                dteTuNgay.EditValue = ngaynhonhat;
+                return;
+            }
+           
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
         public frmChiTietBienDongTaiKhoan()
@@ -137,9 +211,19 @@ namespace CtyTinLuong
             Load_Lockup();
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            DateTime ngaydauthang= cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+         
             gridNhomDoiTuong.EditValue = 287;
-            LoadData(287,dteTuNgay.DateTime, dteDenNgay.DateTime);
+            
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            DataTable dtxx = clsxx.Select_ngay_nhoNhat();
+            ngaynhonhat = Convert.ToDateTime(dtxx.Rows[0][0].ToString());
+            dteNgayThietlap.EditValue = ngaynhonhat;
+            if (ngaynhonhat > ngaydauthang)
+                dteTuNgay.EditValue = ngaynhonhat;
+            else dteTuNgay.EditValue = ngaydauthang;
+
+            //LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
