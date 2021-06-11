@@ -118,7 +118,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnThemNhanVien = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.ComboBox();
+            this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
@@ -215,8 +215,7 @@
             this.cbBoPhan.Name = "cbBoPhan";
             this.cbBoPhan.Size = new System.Drawing.Size(205, 21);
             this.cbBoPhan.TabIndex = 125;
-            this.cbBoPhan.SelectedIndexChanged += new System.EventHandler(this.cbBoPhan_SelectedIndexChanged);
-            // 
+             // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1458,15 +1457,14 @@
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
             this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
             // 
-            // txtTimKiem
+            // cbNhanVien
             // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.FormattingEnabled = true;
-            this.txtTimKiem.Location = new System.Drawing.Point(493, 31);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(207, 21);
-            this.txtTimKiem.TabIndex = 135;
-            this.txtTimKiem.SelectedIndexChanged += new System.EventHandler(this.txtTimKiem_SelectedIndexChanged);
+            this.cbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNhanVien.FormattingEnabled = true;
+            this.cbNhanVien.Location = new System.Drawing.Point(493, 31);
+            this.cbNhanVien.Name = "cbNhanVien";
+            this.cbNhanVien.Size = new System.Drawing.Size(207, 21);
+            this.cbNhanVien.TabIndex = 135;
             // 
             // btnPrint
             // 
@@ -1488,7 +1486,7 @@
             this.ClientSize = new System.Drawing.Size(1160, 660);
             this.ControlBox = false;
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.cbNhanVien);
             this.Controls.Add(this.btnThemNhanVien);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbBoPhan);
@@ -1614,7 +1612,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnThemNhanVien;
-        private System.Windows.Forms.ComboBox txtTimKiem;
+        private System.Windows.Forms.ComboBox cbNhanVien;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }
