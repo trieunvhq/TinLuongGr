@@ -227,6 +227,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_TQ.Designer.cs">
       <DependentUpon>frmBTTL_TBX_TQ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_TMC_CT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_TMC_CT.Designer.cs">
+      <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1824,6 +1830,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TBX_TQ.resx">
       <DependentUpon>frmBTTL_TBX_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TMC_CT.resx">
+      <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
       <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
