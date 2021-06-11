@@ -35,12 +35,12 @@ namespace CtyTinLuong
             dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
             dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
             dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
-            dt2.Columns.Add("NoDauKy", typeof(string));
-            dt2.Columns.Add("CoDauKy", typeof(string));
-            dt2.Columns.Add("NoTrongKy", typeof(string));
-            dt2.Columns.Add("CoTrongKy", typeof(string));
-            dt2.Columns.Add("NoCuoiKy", typeof(string));
-            dt2.Columns.Add("CoCuoiKy", typeof(string));
+            dt2.Columns.Add("NoDauKy", typeof(double));
+            dt2.Columns.Add("CoDauKy", typeof(double));
+            dt2.Columns.Add("NoTrongKy", typeof(double));
+            dt2.Columns.Add("CoTrongKy", typeof(double));
+            dt2.Columns.Add("NoCuoiKy", typeof(double));
+            dt2.Columns.Add("CoCuoiKy", typeof(double));
 
             gridControl1.DataSource = null;
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -72,7 +72,7 @@ namespace CtyTinLuong
                     {
                         dNoDauKy = dCoDauKy = 0;
                     }
-                    dNoCuoiKy = dNoDauKy + dCoTrongKy;
+                    dNoCuoiKy = dNoDauKy + dNoTrongKy;
                     dCoCuoiKy = dCoDauKy + dCoTrongKy;
                     DataRow _ravi = dt2.NewRow();
                     _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;                
@@ -89,7 +89,50 @@ namespace CtyTinLuong
 
                 }
             }
+            if (dt_du_Dau.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt_du_Dau.Rows.Count; i++)
+                {
+                    int iiIDID_TaiKhoanKeToanCon;
+                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
+                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
 
+                    iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dt_du_Dau.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+                    dNoDauKy = Convert.ToDouble(dt_du_Dau.Rows[i]["NoDauKy"].ToString());
+                    dCoDauKy = Convert.ToDouble(dt_du_Dau.Rows[i]["CoDauKy"].ToString());
+                    sTenTaiKhoanCon = dt_du_Dau.Rows[i]["TenTaiKhoanCon"].ToString();
+                    sSoTaiKhoanCon = dt_du_Dau.Rows[i]["SoTaiKhoanCon"].ToString();
+                    string expression;
+                    expression = "ID_TaiKhoanKeToanCon =" + iiIDID_TaiKhoanKeToanCon + "";
+                    DataRow[] foundRows;
+                    foundRows = dt_PhatSinh.Select(expression);
+                    if (foundRows.Length > 0)
+                    {
+                       
+                    }
+                    else
+                    {
+                        dNoTrongKy= 0;
+                        dCoTrongKy = 0;
+                        dNoCuoiKy = dNoDauKy + dNoTrongKy;
+                        dCoCuoiKy = dCoDauKy + dCoTrongKy;
+                        DataRow _ravi = dt2.NewRow();
+                        _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
+
+                        _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
+                        _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
+                        _ravi["NoDauKy"] = dNoDauKy;
+                        _ravi["CoDauKy"] = dCoDauKy;
+                        _ravi["NoTrongKy"] = dNoTrongKy;
+                        _ravi["CoTrongKy"] = dCoTrongKy;
+                        _ravi["NoCuoiKy"] = dNoCuoiKy;
+                        _ravi["CoCuoiKy"] = dCoCuoiKy;
+                        dt2.Rows.Add(_ravi);
+                    }
+                   
+
+                }
+            }
             gridControl1.DataSource = dt2;
         }
      
