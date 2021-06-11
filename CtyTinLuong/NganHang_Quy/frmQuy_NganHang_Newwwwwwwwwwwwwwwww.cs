@@ -137,5 +137,13 @@ namespace CtyTinLuong
             frmChiTietBienDongTaiKhoan ff = new CtyTinLuong.frmChiTietBienDongTaiKhoan();
             ff.Show();
         }
+
+        private void navPhaitraNguoiBan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UCNganHang_PhaiTraNguoiBan ucc = new UCNganHang_PhaiTraNguoiBan();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+        }
     }
 }

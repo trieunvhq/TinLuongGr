@@ -37,6 +37,9 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navCongNo = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navPhaitraNguoiBan = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
@@ -68,7 +71,10 @@
             this.navBaoNo,
             this.navPhieuThu,
             this.navPhieuChi,
-            this.navBarItem1});
+            this.navBarItem1,
+            this.navPhaitraNguoiBan,
+            this.navBarItem8,
+            this.navBarItem9});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 157;
@@ -118,7 +124,10 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navPhaitraNguoiBan),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navCongNo
@@ -132,6 +141,22 @@
             this.navBarItem1.Caption = "Chi tiết tài khoản";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
+            // 
+            // navPhaitraNguoiBan
+            // 
+            this.navPhaitraNguoiBan.Caption = "Phải trả người bán";
+            this.navPhaitraNguoiBan.Name = "navPhaitraNguoiBan";
+            this.navPhaitraNguoiBan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navPhaitraNguoiBan_LinkClicked);
+            // 
+            // navBarItem8
+            // 
+            this.navBarItem8.Caption = "navBarItem8";
+            this.navBarItem8.Name = "navBarItem8";
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Caption = "navBarItem9";
+            this.navBarItem9.Name = "navBarItem9";
             // 
             // navBarItem4
             // 
@@ -233,5 +258,8 @@
         private DevExpress.XtraEditors.SimpleButton btThooat;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navPhaitraNguoiBan;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
     }
 }
