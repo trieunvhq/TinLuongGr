@@ -139,8 +139,6 @@
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy - Copy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy.cs" />
-    <Compile Include="CaiDatBanDau\clsNganHang_SoDuBanDau_TaiKhoanKeToan - Copy.cs" />
-    <Compile Include="CaiDatBanDau\clsNganHang_SoDuBanDau_TaiKhoanKeToan.cs" />
     <Compile Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.cs">
       <SubType>Form</SubType>
     </Compile>
