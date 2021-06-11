@@ -1860,6 +1860,9 @@
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintChamCongTGD.resx">
       <DependentUpon>Tr_PrintChamCongTGD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.resx">
+      <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
