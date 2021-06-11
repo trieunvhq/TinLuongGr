@@ -62,8 +62,6 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    DataRow _ravi = ds.tbBTTL_TGD_CT.NewRow();
-
                     int ID_CongNhan_;
                     if (i < _data.Rows.Count - 1)
                     {
@@ -74,12 +72,15 @@ namespace CtyTinLuong.Luong_ChamCong
                         ID_CongNhan_ = 0;
                     }
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
+                    _data.Rows[i]["ID_VTHH"] = id_vthh_;
+                    _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                     tongluong_ += Convert.ToInt32(_data.Rows[i]["TongLuong"].ToString());
                     songayan_ += Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString());
                     trutiencom_ += Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString());
                     tongtien_ += Convert.ToInt32(_data.Rows[i]["TongTien"].ToString());
                     tamung_ += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
+                    thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     //  
                     double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
@@ -92,20 +93,6 @@ namespace CtyTinLuong.Luong_ChamCong
                     TongLuong_ += (dongia_ * sanluong_);
 
                     double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
-
-
-                    _ravi["STT"] = (i + 1).ToString();
-                    _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-
-                    _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
-                    _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["SoNgayAn"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["TruTienCom"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["SanLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
                         double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
@@ -116,41 +103,46 @@ namespace CtyTinLuong.Luong_ChamCong
                         _data.Rows[i]["TongTien"] = (TongLuong_ - TruTienCom_).ToString("N0");
                         _data.Rows[i]["ThucNhan"] = (TongLuong_ - TruTienCom_ - TamUng_).ToString("N0");
 
-                        if (TruTienCom_ == 0)
-                            _data.Rows[i]["TruTienCom"] = "";
-                        else
-                            _data.Rows[i]["TruTienCom"] = TruTienCom_.ToString("N0");
+                       _data.Rows[i]["TruTienCom"] = TruTienCom_;
 
-                        if (SoNgayAn_ == 0)
-                            _data.Rows[i]["SoNgayAn"] = "";
-                        else
-                            _data.Rows[i]["SoNgayAn"] = SoNgayAn_.ToString("N0");
+                        _data.Rows[i]["SoNgayAn"] = SoNgayAn_;
 
-                        if (TamUng_ == 0)
-                            _data.Rows[i]["TamUng"] = "";
-                        else
-                            _data.Rows[i]["TamUng"] = TruTienCom_.ToString("N0");
+                       _data.Rows[i]["TamUng"] = TamUng_;
 
                         TongLuong_ = 0;
                     }
                     else
                     {
-                        _data.Rows[i]["TongLuong"] = "";
-                        _data.Rows[i]["TruTienCom"] = "";
-                        _data.Rows[i]["SoNgayAn"] = "";
-                        _data.Rows[i]["TongTien"] = "";
-                        _data.Rows[i]["TamUng"] = "";
+                        _data.Rows[i]["TongLuong"] = 0;
+                        _data.Rows[i]["TruTienCom"] = 0;
+                        _data.Rows[i]["SoNgayAn"] = 0;
+                        _data.Rows[i]["TongTien"] = 0;
+                        _data.Rows[i]["TamUng"] = 0;
                     }
                     _data.Rows[i]["ThanhTien"] = (dongia_ * sanluong_).ToString("N0");
 
+                    DataRow _ravi = ds.tbBTTL_TGD_CT.NewRow();
+                    _ravi["STT"] = (i + 1).ToString();
+                    _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                    _ravi["TongTien"] = Convert.ToDouble(_data.Rows[i]["TongTien"].ToString());
+                    _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
+                    _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
+                    _ravi["SoNgayAn"] = Convert.ToDouble(_data.Rows[i]["SoNgayAn"].ToString());
+                    _ravi["TruTienCom"] = Convert.ToDouble(_data.Rows[i]["TruTienCom"].ToString());
+                    _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TamUng"].ToString());
+                    _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
+                    _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["DonGia"].ToString());
+                    _ravi["ThanhTien"] = Convert.ToDouble(_data.Rows[i]["ThanhTien"].ToString());
+                    _ravi["SanLuong"] = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    ds.tbBTTL_TGD_CT.Rows.Add(_ravi);
                 }
             }
 
-
             xtr111.DataSource = null;
-            xtr111.DataSource = LoadData();
+            //xtr111.DataSource = LoadData();
 
-
+            xtr111.DataSource = ds.tbBTTL_TGD_CT;
+            xtr111.DataMember = "tbBTTL_TGD_CT";
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }

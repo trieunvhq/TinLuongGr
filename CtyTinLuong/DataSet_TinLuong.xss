@@ -24,7 +24,7 @@
     <Shape ID="DesignTable:tbBan_MuaHang" ZOrder="3" X="997" Y="257" Height="429" Width="162" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="425" />
     <Shape ID="DesignTable:tbBTTL_TGD_TQ" ZOrder="4" X="1047" Y="68" Height="181" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:tbBTTL_TBX_CT" ZOrder="2" X="679" Y="393" Height="200" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:tbBTTL_TGD_CT" ZOrder="1" X="1172" Y="262" Height="238" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
+    <Shape ID="DesignTable:tbBTTL_TGD_CT" ZOrder="1" X="1172" Y="262" Height="257" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
