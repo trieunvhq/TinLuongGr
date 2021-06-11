@@ -51,7 +51,7 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TBX = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChamCong_TDK = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navTTL_TBX_CT = new DevExpress.XtraNavBar.NavBarItem();
@@ -209,7 +209,7 @@
             this.navBarItem17,
             this.navBTTL_TGD,
             this.navBTTL_TBX,
-            this.navBarItem18,
+            this.navChamCong_TDK,
             this.navTTL_TGD,
             this.navTTL_TBX_CT,
             this.navChamCom_TGD,
@@ -231,7 +231,7 @@
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TGD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TBX),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem18)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TDK)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navBTTL_TGD
@@ -250,12 +250,13 @@
             this.navBTTL_TBX.Name = "navBTTL_TBX";
             this.navBTTL_TBX.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TBX_LinkClicked);
             // 
-            // navBarItem18
+            // navChamCong_TDK
             // 
-            this.navBarItem18.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.navBarItem18.Appearance.Options.UseForeColor = true;
-            this.navBarItem18.Caption = "navBarItem18";
-            this.navBarItem18.Name = "navBarItem18";
+            this.navChamCong_TDK.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.navChamCong_TDK.Appearance.Options.UseForeColor = true;
+            this.navChamCong_TDK.Caption = "navBarItem18";
+            this.navChamCong_TDK.Name = "navChamCong_TDK";
+            this.navChamCong_TDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TDK_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -370,7 +371,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TGD;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem18;
+        private DevExpress.XtraNavBar.NavBarItem navChamCong_TDK;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navTTL_TGD;
         private DevExpress.XtraEditors.XtraScrollableControl panelControl1;

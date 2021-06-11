@@ -139,8 +139,6 @@
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy - Copy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy.cs" />
-    <Compile Include="CaiDatBanDau\clsNganHang_SoDuBanDau_TaiKhoanKeToan - Copy.cs" />
-    <Compile Include="CaiDatBanDau\clsNganHang_SoDuBanDau_TaiKhoanKeToan.cs" />
     <Compile Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +227,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_TQ.Designer.cs">
       <DependentUpon>frmBTTL_TBX_TQ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TDK.Designer.cs">
+      <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +310,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintChamCongTGD.designer.cs">
       <DependentUpon>Tr_PrintChamCongTGD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.Designer.cs">
+      <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
@@ -1815,6 +1825,9 @@
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TBX_TQ.resx">
       <DependentUpon>frmBTTL_TBX_TQ.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
+      <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TBX.resx">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
     </EmbeddedResource>
@@ -1853,6 +1866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintChamCongTGD.resx">
       <DependentUpon>Tr_PrintChamCongTGD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.resx">
+      <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">

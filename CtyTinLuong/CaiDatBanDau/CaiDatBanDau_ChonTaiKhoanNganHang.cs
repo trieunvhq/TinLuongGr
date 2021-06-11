@@ -14,36 +14,36 @@ namespace CtyTinLuong
     {
         private void Luu_BoSungCaiDatBanDau_TaiKhoanKeToan()
         {
-            DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-            dttttt2.DefaultView.RowFilter = "Chon = True";
-            DataView dv = dttttt2.DefaultView;
-            DataTable dv3 = dv.ToTable();          
-            if (dv3.Rows.Count > 0)
-            {
-                clsNganHang_SoDuBanDau_TaiKhoanKeToan cls2 = new clsNganHang_SoDuBanDau_TaiKhoanKeToan();             
-                for (int i = 0; i < dv3.Rows.Count; i++)
-                {
-                    string TenTaiKhoanCon = dv3.Rows[i]["TenTaiKhoanCon"].ToString();
-                    string filterExpression = "TenTaiKhoanCon='" + TenTaiKhoanCon + "'";
-                    DataRow[] rows = UCThietLap_TaiKhoanNganHang.mdatatabletbTaiKhoanKeToan.Select(filterExpression);
-                    if (rows.Length == 0)
-                    {
-                        cls2.iID_TaiKhoanKeToanCon = Convert.ToInt16(dv3.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                        cls2.iID_TaiKhoanKeToanMe = Convert.ToInt16(dv3.Rows[i]["ID_TaiKhoanKeToanMe"].ToString());
-                        cls2.fCoKhong = 0;
-                        cls2.fNoKhong = 0;
-                        cls2.bTonTai = true;
-                        cls2.bNgungTheoDoi = false;
-                        cls2.Insert();
-                      
-                    }
-                    else
-                    {
-                    }
-                }
-            }
-            MessageBox.Show("Đã thêm mới");
-            this.Close();
+            //DataTable dttttt2 = (DataTable)gridControl1.DataSource;
+            //dttttt2.DefaultView.RowFilter = "Chon = True";
+            //DataView dv = dttttt2.DefaultView;
+            //DataTable dv3 = dv.ToTable();          
+            //if (dv3.Rows.Count > 0)
+            //{
+            //    clsNganHang_SoDuBanDau_TaiKhoanKeToan cls2 = new clsNganHang_SoDuBanDau_TaiKhoanKeToan();             
+            //    for (int i = 0; i < dv3.Rows.Count; i++)
+            //    {
+            //        string TenTaiKhoanCon = dv3.Rows[i]["TenTaiKhoanCon"].ToString();
+            //        string filterExpression = "TenTaiKhoanCon='" + TenTaiKhoanCon + "'";
+            //        DataRow[] rows = UCThietLap_TaiKhoanNganHang.mdatatabletbTaiKhoanKeToan.Select(filterExpression);
+            //        if (rows.Length == 0)
+            //        {
+            //            cls2.iID_TaiKhoanKeToanCon = Convert.ToInt16(dv3.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+            //            cls2.iID_TaiKhoanKeToanMe = Convert.ToInt16(dv3.Rows[i]["ID_TaiKhoanKeToanMe"].ToString());
+            //            cls2.fCoKhong = 0;
+            //            cls2.fNoKhong = 0;
+            //            cls2.bTonTai = true;
+            //            cls2.bNgungTheoDoi = false;
+            //            cls2.Insert();
+
+            //        }
+            //        else
+            //        {
+            //        }
+            //    }
+            //}
+            //MessageBox.Show("Đã thêm mới");
+            //this.Close();
         }
         private void HienThi()
         {

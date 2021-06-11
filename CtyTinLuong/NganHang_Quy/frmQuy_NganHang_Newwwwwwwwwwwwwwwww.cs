@@ -137,5 +137,11 @@ namespace CtyTinLuong
             frmChiTietBienDongTaiKhoan ff = new CtyTinLuong.frmChiTietBienDongTaiKhoan();
             ff.Show();
         }
+
+        private void navPhaitraNguoiBan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            NganHang_PhaiTraNguoiBan ucc = new NganHang_PhaiTraNguoiBan();
+            ucc.Show();
+        }
     }
 }

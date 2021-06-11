@@ -7,6 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsBanHang_tbBanHang : clsDBInteractionBase
 	{
+        //fdfdfdfd
 		#region Class Member Declarations
 			private SqlBoolean		m_bTrangThaiBanHang, m_bCheck_BaoVe, m_bTrangThai_KhoThanhPham, m_bNgungTheoDoi, m_bTonTai, m_bCheck_LaiXe, m_bTienUSD, m_bDaXong;
 			private SqlDateTime		m_daNgayChungTu;
