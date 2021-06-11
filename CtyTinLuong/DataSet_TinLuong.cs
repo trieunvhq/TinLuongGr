@@ -8,7 +8,7 @@
         {
         }
 
-        partial class tbBTTL_TGD_CTDataTable
+        partial class tbBTTL_TGD_TQDataTable
         {
         }
 
