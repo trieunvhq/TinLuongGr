@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class T_frmPrintChamCongToGapDan : Form
+    public partial class T_frmPrintChamComToGapDan : Form
     {
         private int _thang, _nam;
-        public T_frmPrintChamCongToGapDan(int thang, int nam)
+        public T_frmPrintChamComToGapDan(int thang, int nam)
         {
             _thang = thang;
             _nam = nam;
@@ -24,7 +24,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void T_frmPrintChamCongToGapDan_Load(object sender, EventArgs e)
         {
-            T_PrintChamCongToGapDan xtr111 = new T_PrintChamCongToGapDan(_thang, _nam);
+            T_PrintChamComToGapDan xtr111 = new T_PrintChamComToGapDan(_thang, _nam);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             //ds.tbCongNhatChamCongToGapDan.Clone();

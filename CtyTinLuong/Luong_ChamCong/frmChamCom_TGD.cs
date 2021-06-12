@@ -627,7 +627,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(6, 2021);
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan(6, 2021);
             ff.Show();
         }
 
