@@ -15,7 +15,8 @@ namespace CtyTinLuong
     {
         public static int miiiID_TaiKhoanKeToanCon;
         public static DateTime mdteTuNgay, mdteDenNgay;        
-        public static bool mPrtint_CongNo_NganHang;
+        public static bool mbPrint;
+        public static string msTieuDe, mssoTK_me, msTenTK_me;
         public static DataTable mdt_ChiTiet_Print;
 
       

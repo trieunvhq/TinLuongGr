@@ -11,39 +11,13 @@ namespace CtyTinLuong
     {
        
 
-        private void CongNoNganHang_2()
+        private void Print_frmChiTietBienDongTaiKhoan()
         {
-
-            clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
-            DataTable dt = cls.SelectAll_ID_DangNhap();
-            if (dt.Rows.Count > 0)
-            {
-                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                pKeToanTruong.Value = dt.Rows[5]["HoTen"].ToString();
-                pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
-
-                //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
-                //txtNguoiLap.Text = dt.Rows[1]["HoTen"].ToString();
-                //txtNguoiNhan.Text = dt.Rows[2]["HoTen"].ToString();
-                //txtthuKhonewww.Text = dt.Rows[3]["HoTen"].ToString();
-                //txtTruongPhongKH.Text = dt.Rows[4]["HoTen"].ToString();
-                //txtKeToanTruong.Text = dt.Rows[5]["HoTen"].ToString();
-                //txtGiamDoc.Text = dt.Rows[6]["HoTen"].ToString();
-                //txtCaTruong.Text = dt.Rows[7]["HoTen"].ToString();
-                //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
-            }
-            else
-            {
-                //pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                //pTruongPhong.Value = frmMain.msTruongPhongTH;
-                //pGiamDoc.Value = frmMain.msGiamDoc;
-            }
-
             DateTime denngay = frmChiTietBienDongTaiKhoan.mdteDenNgay;
             DateTime tungay = frmChiTietBienDongTaiKhoan.mdteTuNgay;
-
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
+            pTenTaiKhoan.Value = "Tài khoản: " + frmChiTietBienDongTaiKhoan.mssoTK_me + " - " + frmChiTietBienDongTaiKhoan.msTenTK_me + "";
+            pTieuDe.Value = frmChiTietBienDongTaiKhoan.msTieuDe;
         }
         public Xtra_CongNo_NganHang()
         {
@@ -59,11 +33,24 @@ namespace CtyTinLuong
         private void xrTable1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
            
-            if (frmChiTietBienDongTaiKhoan.mPrtint_CongNo_NganHang == true)
-            {
-                CongNoNganHang_2();
-            }
+          
            
+        }
+
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
+            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            DataTable dt = cls.SelectAll_ID_DangNhap();
+            if (dt.Rows.Count > 0)
+            {
+                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                pKeToan.Value = dt.Rows[5]["HoTen"].ToString();
+                pPhoGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
+
+            }
+            if (frmChiTietBienDongTaiKhoan.mbPrint == true)
+                Print_frmChiTietBienDongTaiKhoan();
         }
     }
 }
