@@ -36,6 +36,9 @@ namespace CtyTinLuong
 
             this.cbNhanVien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanVien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+
+            this.cbBoPhan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbBoPhan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
         }
 
         private string LayThu(DateTime date)

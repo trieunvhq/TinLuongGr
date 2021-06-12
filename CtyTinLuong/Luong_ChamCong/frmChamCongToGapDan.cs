@@ -39,6 +39,12 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
             ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
             ds_grid.Add(Ngay31);
+
+            this.cbLoaiHangSX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbLoaiHangSX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+
+            this.cbNhanVien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbNhanVien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
         }
 
         private string LayThu(DateTime date)

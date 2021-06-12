@@ -35,6 +35,7 @@ namespace CtyTinLuong
         {
             _id_bophan = id_bophan;
             InitializeComponent();
+             
         }
 
         public void LoadData(bool islandau)
