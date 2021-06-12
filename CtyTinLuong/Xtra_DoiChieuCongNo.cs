@@ -21,9 +21,9 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
-                pThuQuy.Value = dt.Rows[10]["HoTen"].ToString();
-                pKeToan.Value = dt.Rows[6]["HoTen"].ToString();
-                pGiamDoc.Value = dt.Rows[7]["HoTen"].ToString();
+                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
+                pPhoGiamDoc.Value = dt.Rows[8]["HoTen"].ToString();
             }
         }
     }
