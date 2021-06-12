@@ -86,9 +86,9 @@ namespace CtyTinLuong
                     dt2xxxx.Rows.Add(_ravi);
                 }
             }
-        
-         
-       
+
+
+
 
 
 
