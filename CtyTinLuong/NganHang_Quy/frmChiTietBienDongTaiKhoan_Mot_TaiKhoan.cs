@@ -109,6 +109,22 @@ namespace CtyTinLuong
                     dt2xxxx.Rows.Add(_ravi);
                 }
             }
+
+            DataRow _ravi_2 = dt2xxxx.NewRow();
+            _ravi_2["DienGiai"] = "Cộng phát sinh trong kỳ";
+            if (Noxx <= Coxx)
+            {
+                _ravi_2["NoTrongKy"] = Noxx- dNoDauKy_0;
+                _ravi_2["CoTrongKy"] = Coxx - dCoDauKy_0;
+            }
+            else
+            {
+                _ravi_2["NoTrongKy"] = Noxx - dNoDauKy_0;
+                _ravi_2["CoTrongKy"] = Coxx- dCoDauKy_0;
+            }
+            dt2xxxx.Rows.Add(_ravi_2);
+            gridControl2.DataSource = dt2xxxx;
+
             DataRow _ravi_cuoi = dt2xxxx.NewRow();
             _ravi_cuoi["DienGiai"] = "Dư cuối kỳ";
             if (Noxx <= Coxx)
