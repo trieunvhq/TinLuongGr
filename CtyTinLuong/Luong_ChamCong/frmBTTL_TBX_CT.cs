@@ -1,6 +1,7 @@
 ﻿using CtyTinLuong.Constants;
 using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -278,6 +279,15 @@ namespace CtyTinLuong
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT(_thang, _nam);
             ff.Show();
+        }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.RowHandle == _data.Rows.Count - 1)
+            {
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            }
         }
 
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)

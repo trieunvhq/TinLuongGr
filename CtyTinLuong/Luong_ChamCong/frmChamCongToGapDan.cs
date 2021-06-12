@@ -1,6 +1,7 @@
 ﻿using CtyTinLuong.Constants;
 using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -803,6 +804,16 @@ namespace CtyTinLuong
             }
             LoadData(false);
         }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        { 
+            GridView view = sender as GridView;
+            if (e.RowHandle == _data.Rows.Count - 1)
+            {
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            }
+        }
+
         private float ConvertToFloat(string s)
         {
             char systemSeparator = Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
