@@ -49,6 +49,9 @@
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
@@ -85,9 +88,6 @@
             this.PTieuDe = new DevExpress.XtraReports.Parameters.Parameter();
             this.pThuQuy = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
@@ -310,10 +310,10 @@
             this.xrLabel10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pNgayThang]")});
             this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 97.79167F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(0F, 97.79167F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(996.9997F, 23F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(1007F, 23F);
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
             this.xrLabel10.Text = "xrLabel6";
@@ -338,6 +338,45 @@
             this.ReportHeader.HeightF = 179.1667F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTaiKhoan]")});
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 120.7917F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(1007F, 26.125F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "Kế toán ";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(717.8456F, 26.125F);
+            this.xrLabel5.Multiline = true;
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(289.1546F, 45.54167F);
+            this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
+            this.xrLabel5.Text = "(Ban hành theo thông tư 133/2016/TT-BTC) ngày 26/6/2016 của Bộ Tài chính";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel6
+            // 
+            this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(717.8455F, 0F);
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(289.1547F, 26.125F);
+            this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "Mẫu số: S20-DNN";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ReportFooter
             // 
@@ -656,7 +695,7 @@
             this.xrTableCell40.StylePriority.UseFont = false;
             this.xrTableCell40.StylePriority.UseTextAlignment = false;
             this.xrTableCell40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell40.Weight = 1.6319882048061656D;
+            this.xrTableCell40.Weight = 1.63198820480617D;
             // 
             // xrTableCell41
             // 
@@ -668,7 +707,7 @@
             this.xrTableCell41.StylePriority.UseTextAlignment = false;
             this.xrTableCell41.Text = "Nợ";
             this.xrTableCell41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell41.Weight = 2.8084222987117342D;
+            this.xrTableCell41.Weight = 2.80842229871173D;
             // 
             // xrTableCell43
             // 
@@ -745,45 +784,6 @@
             // 
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
             this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTaiKhoan]")});
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 120.7917F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(1007F, 26.125F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "Kế toán ";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel5
-            // 
-            this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(717.8456F, 26.125F);
-            this.xrLabel5.Multiline = true;
-            this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(289.1546F, 45.54167F);
-            this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "(Ban hành theo thông tư 133/2016/TT-BTC) ngày 26/6/2016 của Bộ Tài chính";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(717.8455F, 0F);
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(289.1547F, 26.125F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Mẫu số: S20-DNN";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Xtra_CongNo_ChiTiet_Mot_taiKhoan
             // 
