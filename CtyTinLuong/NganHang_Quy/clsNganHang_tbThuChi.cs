@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 namespace CtyTinLuong
 {
 	public partial class clsNganHang_tbThuChi : clsDBInteractionBase
-	{
+	{  //huu
 		#region Class Member Declarations
 			private SqlBoolean		m_bNgungTheoDoi, m_bTienUSD, m_bTonTai, m_bDaGhiSo;
 			private SqlDateTime		m_daNgayChungTu;
@@ -15,6 +15,7 @@ namespace CtyTinLuong
 			private SqlString		m_sSoChungTu, m_sDoiTuong, m_sThamChieu, m_sDienGiai;
 		#endregion
 
+        // huuu
 
 		public clsNganHang_tbThuChi()
 		{
