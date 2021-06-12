@@ -482,8 +482,8 @@
             this.clNoCuoiKy.AppearanceCell.Options.UseTextOptions = true;
             this.clNoCuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoCuoiKy.Caption = "Nợ";
-            this.clNoCuoiKy.DisplayFormat.FormatString = "{0:#,##0}";
-            this.clNoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoCuoiKy.DisplayFormat.FormatString = "{0: N2}";
+            this.clNoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoCuoiKy.FieldName = "NoCuoiKy";
             this.clNoCuoiKy.GroupFormat.FormatString = "{0:#,##0}";
             this.clNoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
@@ -500,7 +500,7 @@
             this.clCoCuoiKy.AppearanceCell.Options.UseTextOptions = true;
             this.clCoCuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoCuoiKy.Caption = "Có";
-            this.clCoCuoiKy.DisplayFormat.FormatString = "{0:#,##0}";
+            this.clCoCuoiKy.DisplayFormat.FormatString = "{0: N2}";
             this.clCoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clCoCuoiKy.FieldName = "CoCuoiKy";
             this.clCoCuoiKy.GroupFormat.FormatString = "{0:#,##0}";
