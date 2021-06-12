@@ -16,7 +16,7 @@ namespace CtyTinLuong
         public static bool mbPrint = false;
 
         public static DataTable mdt_ChiTiet_Print;
-        public static string msSoTaiKhoan, msTenTaiKhoan;
+        public static string msTieuDe;
         public static DateTime mdatungay, mdadenngay;
 
         private void Load_lockUp()
@@ -150,13 +150,11 @@ namespace CtyTinLuong
             int songay = timespsanxxxx.Days;
             DataRow _ravi_Khong = dt2xxxx.NewRow();
             _ravi_Khong["DienGiai"] = "Dư đầu kỳ";
-            //_ravi_Khong["NoCuoiKy"] = frmChiTietBienDongTaiKhoan.mdbNoDauKy;
-            //_ravi_Khong["CoCuoiKy"] = frmChiTietBienDongTaiKhoan.mdbCoDauKy;
+
 
             dt2xxxx.Rows.Add(_ravi_Khong);
             double sotien_No = 0, sotien_Co = 0, Tong_Soluong_No_phatsinh = 0, Tong_Soluong_Co_phatsinh = 0;
-            //sotien_No = frmChiTietBienDongTaiKhoan.mdbNoDauKy;
-            //sotien_Co = frmChiTietBienDongTaiKhoan.mdbCoDauKy;
+           
             for (int i = 0; i <= songay; i++)
             {
 
@@ -244,7 +242,6 @@ namespace CtyTinLuong
                     mbPrint = true;
                     mdatungay = dteTuNgay.DateTime;
                     mdadenngay = dteDenNgay.DateTime;
-
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.Show();
 
