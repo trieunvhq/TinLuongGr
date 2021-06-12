@@ -262,17 +262,17 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 //
                 //
-                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)139.93;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)128.31;
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
                 //
                 float tmp = 0;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-                    Ds_NgayTitle[i].WidthF = (float)27.233;
-                    Ds_Ngay_Header[i].WidthF = (float)27.233;
-                    Ds_Ngay[i].WidthF = (float)27.233;
-                    Ds_Ngay_Footer[i].WidthF = (float)27.233;
-                    tmp += (float)27.233;
+                    Ds_NgayTitle[i].WidthF = (float)28.23;
+                    Ds_Ngay_Header[i].WidthF = (float)28.23;
+                    Ds_Ngay[i].WidthF = (float)28.23;
+                    Ds_Ngay_Footer[i].WidthF = (float)28.23;
+                    tmp += (float)28.23;
                 }
                 xrTableCell3.WidthF = tmp;
             }
@@ -296,18 +296,17 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
-                //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
                 //
                 float tmp = 0;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-                    Ds_NgayTitle[i].WidthF = (float)26.2101111;
-                    Ds_Ngay_Header[i].WidthF = (float)26.2101111;
-                    Ds_Ngay[i].WidthF = (float)26.2101111;
-                    Ds_Ngay_Footer[i].WidthF = (float)26.2101111;
-                    tmp += (float)26.2101111;
+                    Ds_NgayTitle[i].WidthF = (float)27.3101111;
+                    Ds_Ngay_Header[i].WidthF = (float)27.3101111;
+                    Ds_Ngay[i].WidthF = (float)27.3101111;
+                    Ds_Ngay_Footer[i].WidthF = (float)27.3101111;
+                    tmp += (float)27.3101111;
                 }
                 xrTableCell3.WidthF = tmp;
             }
@@ -323,25 +322,38 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
-                //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
                 //
                 float tmp = 0;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
 
-                    Ds_NgayTitle[i].WidthF = (float)25.260899;
-                    Ds_Ngay_Header[i].WidthF = (float)25.260899;
-                    Ds_Ngay[i].WidthF = (float)25.260899;
-                    Ds_Ngay_Footer[i].WidthF = (float)25.260899;
-                    tmp += (float)25.260899;
+                    Ds_NgayTitle[i].WidthF = (float)26.260899;
+                    Ds_Ngay_Header[i].WidthF = (float)26.260899;
+                    Ds_Ngay[i].WidthF = (float)26.260899;
+                    Ds_Ngay_Footer[i].WidthF = (float)26.260899;
+                    tmp += (float)26.260899;
                 }
                 xrTableCell3.WidthF = tmp;
             }
             else if (ngaycuathang_ == 31)
             {
-                //nothing
+                //
+                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
+                //
+                float tmp = 0;
+                for (int i = 0; i < ngaycuathang_; ++i)
+                {
+
+                    Ds_NgayTitle[i].WidthF = (float)25.8;
+                    Ds_Ngay_Header[i].WidthF = (float)25.8;
+                    Ds_Ngay[i].WidthF = (float)25.8;
+                    Ds_Ngay_Footer[i].WidthF = (float)25.8;
+                    tmp += (float)25.8;
+                }
+                xrTableCell3.WidthF = tmp;
             }
 
             //Tô màu Chủ nhật:
