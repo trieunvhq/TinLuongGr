@@ -470,7 +470,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD(6, 2021);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDK ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDK(6, 2021);
             ff.Show();
         }
 

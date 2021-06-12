@@ -12,8 +12,12 @@ namespace CtyTinLuong.Luong_ChamCong
 {
     public partial class Tr_frmPrintChamCong_TDK : Form
     {
-        public Tr_frmPrintChamCong_TDK()
+        private int _thang, _nam;
+
+        public Tr_frmPrintChamCong_TDK(int thang, int nam)
         {
+            _thang = thang;
+            _nam = nam;
             InitializeComponent();
         }
 
