@@ -22,6 +22,7 @@ namespace CtyTinLuong
            
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
         }
+      
 
         private void ChiTiet_CongNoNganHang_MotTaiKhoan_muaHang()
         {

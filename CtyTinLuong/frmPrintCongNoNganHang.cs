@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmPrintCongNoNganHang : Form
     {
-        private void Print_CongNo(DataTable dt3)
+        private void Print_frmChiTietBienDongTaiKhoan(DataTable dt3)
         {
 
             Xtra_CongNo_NganHang xtr111 = new Xtra_CongNo_NganHang();
@@ -101,9 +101,9 @@ namespace CtyTinLuong
             if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint == true)
                 Print_ChiTiet_TAIkHOAN(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdt_ChiTiet_Print);
             if (frmChiTietBienDongTaiKhoan.mPrtint_CongNo_NganHang == true)
-                Print_CongNo(frmChiTietBienDongTaiKhoan.mdt_ChiTiet_Print);
+                Print_frmChiTietBienDongTaiKhoan(frmChiTietBienDongTaiKhoan.mdt_ChiTiet_Print);
             if (MuaHang_frmCongNo.mPrtint_CongNo_NganHang == true)
-                Print_CongNo(MuaHang_frmCongNo.mdt_ChiTiet_Print);
+                Print_frmChiTietBienDongTaiKhoan(MuaHang_frmCongNo.mdt_ChiTiet_Print);
            
         }
 
