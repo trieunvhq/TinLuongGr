@@ -18,7 +18,7 @@ namespace CtyTinLuong
             PTieuDe.Value = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msTieuDe;
             DateTime denngay = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdadenngay;
             DateTime tungay = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdatungay;
-            pSoTaiKhoan.Value = "Số TK: " + frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msSoTaiKhoan + " - frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msTenTaiKhoan";
+            pSoTaiKhoan.Value = "Số TK: " + frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msSoTaiKhoan + " - "+ frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msTenTaiKhoan + "";
            
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
         }
