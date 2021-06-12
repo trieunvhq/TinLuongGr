@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btPrint_PhaiTraNguoiBan = new DevExpress.XtraEditors.SimpleButton();
@@ -141,19 +140,20 @@
             // 
             this.btPrint_PhaiTraNguoiBan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_PhaiTraNguoiBan.Appearance.Options.UseFont = true;
-            this.btPrint_PhaiTraNguoiBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btPrint_PhaiTraNguoiBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_PhaiTraNguoiBan.ImageOptions.Image")));
             this.btPrint_PhaiTraNguoiBan.Location = new System.Drawing.Point(603, 470);
             this.btPrint_PhaiTraNguoiBan.Name = "btPrint_PhaiTraNguoiBan";
             this.btPrint_PhaiTraNguoiBan.Size = new System.Drawing.Size(225, 22);
             this.btPrint_PhaiTraNguoiBan.StyleController = this.layoutControl1;
             this.btPrint_PhaiTraNguoiBan.TabIndex = 113;
             this.btPrint_PhaiTraNguoiBan.Text = "Print _ Sổ phải trả người bán";
+            this.btPrint_PhaiTraNguoiBan.Click += new System.EventHandler(this.btPrint_PhaiTraNguoiBan_Click);
             // 
             // btPrint_DoiChieuCongNo
             // 
             this.btPrint_DoiChieuCongNo.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_DoiChieuCongNo.Appearance.Options.UseFont = true;
-            this.btPrint_DoiChieuCongNo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btPrint_DoiChieuCongNo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_DoiChieuCongNo.ImageOptions.Image")));
             this.btPrint_DoiChieuCongNo.Location = new System.Drawing.Point(381, 470);
             this.btPrint_DoiChieuCongNo.Name = "btPrint_DoiChieuCongNo";
             this.btPrint_DoiChieuCongNo.Size = new System.Drawing.Size(218, 22);
@@ -241,9 +241,9 @@
             // 
             // gridControl2
             // 
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl2.Location = new System.Drawing.Point(3, 53);
             this.gridControl2.MainView = this.bandedGridView1;
             this.gridControl2.Name = "gridControl2";

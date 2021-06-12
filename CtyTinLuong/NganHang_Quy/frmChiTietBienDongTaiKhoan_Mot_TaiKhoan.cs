@@ -218,7 +218,23 @@ namespace CtyTinLuong
             }
         }
 
-        private void btPrint_Click(object sender, EventArgs e)
+      
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load(sender, e);
+        }
+
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null)
+            {
+                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void btPrint_PhaiTraNguoiBan_Click(object sender, EventArgs e)
         {
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
             {
@@ -246,20 +262,6 @@ namespace CtyTinLuong
                     ff.Show();
 
                 }
-            }
-        }
-
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load(sender, e);
-        }
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null)
-            {
-                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
-                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
