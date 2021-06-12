@@ -157,10 +157,10 @@ namespace CtyTinLuong
 
                     dt_ = clsThin_.T_LoaiHangSX_SF(-1);
 
-                    DataRow row = dt_.NewRow();
-                    row["ID_VTHH"] = 0;
-                    row["TenVTHH"] = "-->Tất cả";
-                    dt_.Rows.InsertAt(row, 0);
+                    //DataRow row = dt_.NewRow();
+                    //row["ID_VTHH"] = 0;
+                    //row["TenVTHH"] = "-->Tất cả";
+                    //dt_.Rows.InsertAt(row, 0);
                     cbLoaiHangSX.DataSource = dt_;
                     cbLoaiHangSX.DisplayMember = "TenVTHH";
                     cbLoaiHangSX.ValueMember = "ID_VTHH";

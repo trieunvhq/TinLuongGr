@@ -154,7 +154,6 @@ namespace CtyTinLuong
                     cbNhanSu.ValueMember = "ID_NhanSu";
                     //
                     
-                    dt_.Dispose();
                 }
             }
             else
