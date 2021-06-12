@@ -129,6 +129,8 @@ namespace CtyTinLuong
             //ucc.Show();
         }
 
+
+
     
 
         private void navBarControl1_Click(object sender, EventArgs e)
@@ -289,6 +291,14 @@ namespace CtyTinLuong
         {
             frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
             ucc.Show();
+        }
+
+        private void nbSL_CTL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            SanLuong_ChiTiet_Luong ucc = new SanLuong_ChiTiet_Luong();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
         }
     }
 }
