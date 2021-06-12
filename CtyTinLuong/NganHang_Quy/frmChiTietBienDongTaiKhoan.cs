@@ -18,7 +18,7 @@ namespace CtyTinLuong
         public static bool mPrtint_CongNo_NganHang;
         public static DataTable mdt_ChiTiet_Print;
 
-        DateTime ngaynhonhat;
+      
         private void Load_Lockup()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();

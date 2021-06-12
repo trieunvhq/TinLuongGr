@@ -326,6 +326,7 @@
             this.clNgayChungTu.Caption = "Ngày";
             this.clNgayChungTu.FieldName = "NgayThang";
             this.clNgayChungTu.Name = "clNgayChungTu";
+            this.clNgayChungTu.OptionsColumn.AllowEdit = false;
             this.clNgayChungTu.Visible = true;
             this.clNgayChungTu.Width = 107;
             // 
