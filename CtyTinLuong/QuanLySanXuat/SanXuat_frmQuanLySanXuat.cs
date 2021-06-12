@@ -295,10 +295,8 @@ namespace CtyTinLuong
 
         private void nbSL_CTL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            SanLuong_ChiTiet_Luong ucc = new SanLuong_ChiTiet_Luong();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
+            ff.Show();
         }
     }
 }
