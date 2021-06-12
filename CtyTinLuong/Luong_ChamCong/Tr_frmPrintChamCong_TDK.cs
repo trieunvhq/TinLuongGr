@@ -43,7 +43,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
                     _ravi["STT"] = (i +1).ToString();
-                    _ravi["TenVTHH"] = Convert.ToInt32(_data.Rows[i]["TenVTHH"].ToString());
+                    _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                     _ravi["Ngay1"] = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
                     _ravi["Ngay2"] = Convert.ToInt32(_data.Rows[i]["Ngay2"].ToString());
