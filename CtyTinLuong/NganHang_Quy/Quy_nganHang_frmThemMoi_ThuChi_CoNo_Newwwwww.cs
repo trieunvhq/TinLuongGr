@@ -444,10 +444,10 @@ namespace CtyTinLuong
           
             if (cls1.bDaGhiSo.Value == true)
             {
-                btLuu_Copy.Enabled = false;
+                //btLuu_Copy.Enabled = false;
                 btLuu_Dong.Enabled = false;
-                btLuu_Gui_Copy.Enabled = false;
-                btLuu_Gui_Dong.Enabled = false;
+                //btLuu_Gui_Copy.Enabled = false;
+                //btLuu_Gui_Dong.Enabled = false;
             }
             
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
