@@ -158,9 +158,8 @@ namespace CtyTinLuong
             setThu();
 
             //Load label ngay thang nam header:
-            if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();
-            else xrlbThang.Text = _thang.ToString();
-            xrlbNam.Text = _nam.ToString();
+            if (_thang <= 9) xrLabel2.Text = "BẢNG KẾT QUẢ THÁNG 0" + _thang.ToString() + " NĂM " + _nam.ToString();
+            else xrLabel2.Text = "BẢNG KẾT QUẢ THÁNG " + _thang.ToString() + " NĂM " + _nam.ToString();
 
             //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgay.Value);
@@ -263,7 +262,7 @@ namespace CtyTinLuong
                 //
                 //
                 hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)139.93;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)128.31;
+                //congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)128.31;
                 //
                 float tmp = 0;
                 for (int i = 0; i < ngaycuathang_; ++i)
@@ -297,7 +296,7 @@ namespace CtyTinLuong
 
                 //
                 hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
+                //congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
                 //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
                 float tmp = 0;
@@ -324,7 +323,7 @@ namespace CtyTinLuong
 
                 //
                 hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
+                //congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
                 //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
                 float tmp = 0;

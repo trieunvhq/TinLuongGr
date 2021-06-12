@@ -14,6 +14,7 @@ namespace CtyTinLuong
     public partial class SanLuong_ChiTiet_Luong : Form
     {
         private List<GridColumn> ds_grid = new List<GridColumn>();
+        private int _thang, _nam;
         DateTime ngaydauthang, ngaycuoithang;
         private void Load_LockUp()
         {
@@ -431,6 +432,12 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
+            _nam = Convert.ToInt32(txtNam.Text.ToString());
+            _thang = Convert.ToInt32(txtThang.Text.ToString());
+            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(_thang, _nam);
+            ff.Show();
+
+
             //DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             //CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
             //string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
@@ -449,17 +456,17 @@ namespace CtyTinLuong
             //    msDVT = txtDVT.Text;
             //    clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
             //    DataTable dt3 = new DataTable();
-                //if (xxximay_in_1_Cat_2_dot_3 == 1)
-                //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(miID_VThh, mdatungay, mdadenngay);
-                //else if (xxximay_in_1_Cat_2_dot_3 == 2)
-                //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(miID_VThh, mdatungay, mdadenngay);
+            //if (xxximay_in_1_Cat_2_dot_3 == 1)
+            //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(miID_VThh, mdatungay, mdadenngay);
+            //else if (xxximay_in_1_Cat_2_dot_3 == 2)
+            //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(miID_VThh, mdatungay, mdadenngay);
 
-                //sanluongthuowng = Convert.ToDouble(dt3.Rows[0]["SanLuong_Thuong"].ToString());
-                //sanluongtangca = Convert.ToDouble(dt3.Rows[0]["SanLuong_TangCa"].ToString());
-                //sanluongtong = Convert.ToDouble(dt3.Rows[0]["SanLuong_Tong"].ToString());
-                //phepham = Convert.ToDouble(dt3.Rows[0]["PhePham"].ToString());
-                //frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                //ff.Show();
+            //sanluongthuowng = Convert.ToDouble(dt3.Rows[0]["SanLuong_Thuong"].ToString());
+            //sanluongtangca = Convert.ToDouble(dt3.Rows[0]["SanLuong_TangCa"].ToString());
+            //sanluongtong = Convert.ToDouble(dt3.Rows[0]["SanLuong_Tong"].ToString());
+            //phepham = Convert.ToDouble(dt3.Rows[0]["PhePham"].ToString());
+            //frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+            //ff.Show();
 
             //}
         }
