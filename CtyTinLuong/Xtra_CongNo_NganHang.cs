@@ -9,8 +9,15 @@ namespace CtyTinLuong
 {
     public partial class Xtra_CongNo_NganHang : DevExpress.XtraReports.UI.XtraReport
     {
-       
 
+        private void Print_MuaHang_frmCongNo()
+        {
+            DateTime denngay = MuaHang_frmCongNo.mdteDenNgay;
+            DateTime tungay = MuaHang_frmCongNo.mdteTuNgay;
+            pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
+            pTenTaiKhoan.Value = "Tài khoản: " + MuaHang_frmCongNo.mssoTK_me + " - " + MuaHang_frmCongNo.msTenTK_me + "";
+            pTieuDe.Value = MuaHang_frmCongNo.msTieuDe;
+        }
         private void Print_frmChiTietBienDongTaiKhoan()
         {
             DateTime denngay = frmChiTietBienDongTaiKhoan.mdteDenNgay;
@@ -54,6 +61,8 @@ namespace CtyTinLuong
             }
             if (frmChiTietBienDongTaiKhoan.mbPrint == true)
                 Print_frmChiTietBienDongTaiKhoan();
+            if (MuaHang_frmCongNo.mbPrint == true)
+                Print_MuaHang_frmCongNo();
         }
     }
 }
