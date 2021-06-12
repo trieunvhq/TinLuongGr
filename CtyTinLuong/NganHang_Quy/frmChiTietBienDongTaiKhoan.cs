@@ -186,10 +186,7 @@ namespace CtyTinLuong
             if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString() != "")
             {
                 mdteTuNgay = dteTuNgay.DateTime;
-                mdteDenNgay = dteDenNgay.DateTime;
-                //mdbNoDauKy, mdbCoDauKy;
-               
-                //miTrangThai_MuaHang1_BanHang2_VAT3 = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clTrangThai_MuaHang1_BanHang2_VAT3).ToString());
+                mdteDenNgay = dteDenNgay.DateTime;               
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 frmChiTietBienDongTaiKhoan_Mot_TaiKhoan ff = new frmChiTietBienDongTaiKhoan_Mot_TaiKhoan();
                 ff.Show();

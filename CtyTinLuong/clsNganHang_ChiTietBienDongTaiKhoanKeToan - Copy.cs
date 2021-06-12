@@ -18,9 +18,9 @@ namespace CtyTinLuong
         public DataTable Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU(int xxID_TK_Con, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU]";
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU");
+            DataTable dtToReturn = new DataTable("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -40,7 +40,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU", ex);
+                throw new Exception("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU", ex);
             }
             finally
             {
