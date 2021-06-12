@@ -14,8 +14,8 @@ namespace CtyTinLuong
         private void Print_frmChiTietBienDongTaiKhoan_Mot_TaiKhoan()
         {
 
-           
 
+            PTieuDe.Value = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msTieuDe;
             DateTime denngay = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdadenngay;
             DateTime tungay = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdatungay;
             pSoTaiKhoan.Value = "Số TK: " + frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.msSoTaiKhoan + "";
@@ -43,9 +43,9 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
-                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                pKeToanTruong.Value = dt.Rows[5]["HoTen"].ToString();
-                pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
+                pThuQuy.Value = dt.Rows[10]["HoTen"].ToString();
+                pKeToan.Value = dt.Rows[6]["HoTen"].ToString();
+                pGiamDoc.Value = dt.Rows[7]["HoTen"].ToString();
             }
             else
             {
