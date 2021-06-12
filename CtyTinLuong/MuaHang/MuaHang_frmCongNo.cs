@@ -15,27 +15,11 @@ namespace CtyTinLuong
     {
         public static int miiiID_TaiKhoanKeToanCon;
         public static DateTime mdteTuNgay, mdteDenNgay;
-        public static double mdbNoDauKy, mdbCoDauKy;
-        public static bool mPrtint_CongNo_NganHang;
+        public static bool mbPrint;
+        public static string msTieuDe, mssoTK_me, msTenTK_me;
         public static DataTable mdt_ChiTiet_Print;
-        public static DateTime GetFistDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            return aDateTime;
-        }
-        public static DateTime GetLastDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
-            return retDateTime;
-        }
-        public static DateTime GetFirstDayInYear(int year)
-        {
-            DateTime aDateTime = new DateTime(year, 1, 1);
-            return aDateTime;
-        }
 
-        public void HienThi(DateTime xxxxtungayxx, DateTime xxxdenngayxxx)
+        public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
@@ -48,86 +32,84 @@ namespace CtyTinLuong
             dt2.Columns.Add("NoCuoiKy", typeof(double));
             dt2.Columns.Add("CoCuoiKy", typeof(double));
 
+            gridControl1.DataSource = null;
+
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dt = cls.Select_DISTINCT_W_ID_TaiKhoanKeToanCon_MuaHang(); // có phát sinh mua hàng
-            if (dt.Rows.Count > 0)
+            DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(iiID_TKKeToanMe, xxtungay, xxdenngay);
+
+            if (dtnganhang.Rows.Count > 0)
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
+                for (int i = 0; i < dtnganhang.Rows.Count; i++)
                 {
-                    int ID_TaiKhoanKeToanConxxx = Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                    double No_Khong, Co_Khong;
-                    cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                    cls.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanConxxx;
-                    DataTable dt_khongBandau = cls.SelectAll_Sum_Co_No_W_ID_TaiKhoanKeToanCon_and_Bool_TonDauKy_True();
-                    if (dt_khongBandau.Rows.Count > 0)
+                    int iiIDID_TaiKhoanKeToanCon;
+                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
+                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
+                    double dNo_DauKy, dCo_DauKy, dNo_TrongKy, dCo_TrongKy, dNo_CuoiKy, dCo_CuoiKy;
+                    iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+
+                    dNo_DauKy = Convert.ToDouble(dtnganhang.Rows[i]["No_DauKy"].ToString());
+                    dCo_DauKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_DauKy"].ToString());
+
+                    dNo_TrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_TrongKy"].ToString());
+                    dCo_TrongKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
+
+                    dNo_CuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
+                    dCo_CuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
+
+                    sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
+                    sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();
+                    // đầu kỳ
+                    if (dNo_DauKy <= dCo_DauKy)
                     {
-                        No_Khong = Convert.ToDouble(dt_khongBandau.Rows[0]["No"].ToString());
-                        Co_Khong = Convert.ToDouble(dt_khongBandau.Rows[0]["Co"].ToString());
+                        dNoDauKy = 0;
+                        dCoDauKy = dCo_DauKy - dNo_DauKy;
                     }
                     else
                     {
-                        No_Khong = Co_Khong = 0;
+                        dNoDauKy = -dCo_DauKy + dNo_DauKy;
+                        dCoDauKy = 0;
                     }
-                    cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                    cls.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanConxxx;
-                    cls.daNgayThang = xxxxtungayxx;
-
-                    DataTable dttong = cls.SelectAll_Sum_Co_No_W_ID_TaiKhoanKeToanCon_W_NhoHon_NgayThang_and_Bool_TonDauKy_False(ID_TaiKhoanKeToanConxxx, xxxxtungayxx);
-                    double No_truocKy, Co_truocKy;
-
-                    if (dttong.Rows.Count > 0)
+                    // trong kỳ
+                    if (dNo_TrongKy <= dCo_TrongKy)
                     {
-                        No_truocKy = Convert.ToDouble(dttong.Rows[0]["No"].ToString());
-                        Co_truocKy = Convert.ToDouble(dttong.Rows[0]["Co"].ToString());
+                        dNoTrongKy = 0;
+                        dCoTrongKy = dCo_TrongKy - dNo_TrongKy;
                     }
                     else
                     {
-                        No_truocKy = Co_truocKy = 0;
+                        dNoTrongKy = -dCo_TrongKy + dNo_TrongKy;
+                        dCoTrongKy = 0;
                     }
-                    cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                    cls.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanConxxx;
-                    double No_trongKy, Co_TrongKy;
-                    No_trongKy = Co_TrongKy = 0;
-                    DataTable dttrongky = cls.SelectAll_Sum_W_ID_NgayThang_tuNgay_DenNgay_and_TonDauKy_False(ID_TaiKhoanKeToanConxxx, xxxxtungayxx, xxxdenngayxxx);
-                    try
+                    // cuoi ky
+
+                    if (dNo_CuoiKy <= dCo_CuoiKy)
                     {
-                        if (dttrongky.Rows.Count > 0)
-                        {
-                            No_trongKy = Convert.ToDouble(dttrongky.Rows[0]["No"].ToString());
-                            Co_TrongKy = Convert.ToDouble(dttrongky.Rows[0]["Co"].ToString());
-                        }
+                        dNoCuoiKy = 0;
+                        dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;
                     }
-                    catch
+                    else
                     {
-                        //  No_trongKy = Co_TrongKy = 0;
+                        dNoCuoiKy = -dCo_CuoiKy + dNo_CuoiKy;
+                        dCoCuoiKy = 0;
                     }
-                    double No_CuoiKy, Co_CuoiKy;
-                    No_CuoiKy = No_Khong + No_truocKy + No_trongKy;
-                    Co_CuoiKy = Co_Khong + Co_truocKy + Co_TrongKy;
 
                     DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_TaiKhoanKeToanCon"] = ID_TaiKhoanKeToanConxxx;
-                    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                    clscon.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanConxxx;
-                    DataTable dtcon = clscon.SelectOne();
+                    _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
 
-
-                    _ravi["TenTaiKhoanCon"] = clscon.sTenTaiKhoanCon.Value; ;
-                    _ravi["SoTaiKhoanCon"] = clscon.sSoTaiKhoanCon.Value;
-                    _ravi["NoDauKy"] = No_Khong + No_truocKy;
-                    _ravi["CoDauKy"] = Co_Khong + Co_truocKy;
-                    _ravi["NoTrongKy"] = No_trongKy;
-                    _ravi["CoTrongKy"] = Co_TrongKy;
-                    _ravi["NoCuoiKy"] = No_CuoiKy;
-                    _ravi["CoCuoiKy"] = Co_CuoiKy;
+                    _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
+                    _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
+                    _ravi["NoDauKy"] = dNoDauKy;
+                    _ravi["CoDauKy"] = dCoDauKy;
+                    _ravi["NoTrongKy"] = dNoTrongKy;
+                    _ravi["CoTrongKy"] = dCoTrongKy;
+                    _ravi["NoCuoiKy"] = dNoCuoiKy;
+                    _ravi["CoCuoiKy"] = dCoCuoiKy;
                     dt2.Rows.Add(_ravi);
+
                 }
             }
 
             gridControl1.DataSource = dt2;
-
-
-
         }
 
         public MuaHang_frmCongNo()
@@ -144,7 +126,8 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                int xxid = 287; // 331 phải tra người bán
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
@@ -170,16 +153,18 @@ namespace CtyTinLuong
 
                 if (mdt_ChiTiet_Print.Rows.Count == 0)
                 {
-                    mPrtint_CongNo_NganHang = false;
+
                     MessageBox.Show("Không có dữ liệu");
                 }
 
                 else
                 {
-                    mPrtint_CongNo_NganHang = true;
+                    mbPrint = true;
                     mdteTuNgay = dteTuNgay.DateTime;
                     mdteDenNgay = dteDenNgay.DateTime;
-
+                    mssoTK_me = "331";
+                    msTenTK_me = "Phải trả cho người bán";                  
+                     msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.Show();
 
@@ -192,11 +177,7 @@ namespace CtyTinLuong
             if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString() != "")
             {
                 mdteTuNgay = dteTuNgay.DateTime;
-                mdteDenNgay = dteDenNgay.DateTime;
-                //mdbNoDauKy, mdbCoDauKy;
-                mdbNoDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clNoDauKy).ToString());
-                mdbCoDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clCoDauKy).ToString());
-                //miTrangThai_MuaHang1_BanHang2_VAT3 = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clTrangThai_MuaHang1_BanHang2_VAT3).ToString());
+                mdteDenNgay = dteDenNgay.DateTime;             
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 MuaHang_frmChiTietCongNo_MuaHang ff = new MuaHang_frmChiTietCongNo_MuaHang();
                 ff.Show();
@@ -210,15 +191,13 @@ namespace CtyTinLuong
 
         private void MuaHang_frmCongNo_Load(object sender, EventArgs e)
         {
-            DateTime ngaydautien, ngaycuoicung;
-            DateTime ngayhomnay = DateTime.Today;
-            int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
-            int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
-            ngaydautien = GetFistDayInMonth(nam, thang);
-            ngaycuoicung = GetLastDayInMonth(nam, thang);
-            dteDenNgay.EditValue = ngaycuoicung;
-            dteTuNgay.EditValue = ngaydautien;
-            HienThi(ngaydautien, ngaycuoicung);
+          
+            clsNgayThang cls = new clsNgayThang();
+            dteDenNgay.EditValue = DateTime.Today;
+            DateTime ngaydauthang = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            dteTuNgay.EditValue = ngaydauthang;
+            int xxid = 287; // 331 phải tra người bán
+            LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }

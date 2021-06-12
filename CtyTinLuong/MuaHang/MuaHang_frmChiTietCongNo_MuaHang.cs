@@ -54,15 +54,15 @@ namespace CtyTinLuong
 
             TimeSpan timespsanxxxx = dteDenNgayxx - dteTuNgayxxx;
             int songay = timespsanxxxx.Days;
-            DataRow _ravi_Khong = dt2xxxx.NewRow();
-            _ravi_Khong["DienGiai"] = "Dư đầu kỳ";
-            _ravi_Khong["NoCuoiKy"] = MuaHang_frmCongNo.mdbNoDauKy;
-            _ravi_Khong["CoCuoiKy"] = MuaHang_frmCongNo.mdbCoDauKy;
+            //DataRow _ravi_Khong = dt2xxxx.NewRow();
+            //_ravi_Khong["DienGiai"] = "Dư đầu kỳ";
+            //_ravi_Khong["NoCuoiKy"] = MuaHang_frmCongNo.mdbNoDauKy;
+            //_ravi_Khong["CoCuoiKy"] = MuaHang_frmCongNo.mdbCoDauKy;
 
-            dt2xxxx.Rows.Add(_ravi_Khong);
-            double sotien_No = 0, sotien_Co = 0, Tong_Soluong_No_phatsinh = 0, Tong_Soluong_Co_phatsinh = 0;
-            sotien_No = MuaHang_frmCongNo.mdbNoDauKy;
-            sotien_Co = MuaHang_frmCongNo.mdbCoDauKy;
+            //dt2xxxx.Rows.Add(_ravi_Khong);
+            //double sotien_No = 0, sotien_Co = 0, Tong_Soluong_No_phatsinh = 0, Tong_Soluong_Co_phatsinh = 0;
+            //sotien_No = MuaHang_frmCongNo.mdbNoDauKy;
+            //sotien_Co = MuaHang_frmCongNo.mdbCoDauKy;
             for (int i = 0; i <= songay; i++)
             {
 
@@ -88,29 +88,29 @@ namespace CtyTinLuong
                         _ravi["NoTrongKy"] = sotien_No_Phatsinh;
                         _ravi["CoTrongKy"] = sotien_Co_phatsinh;
 
-                        _ravi["NoCuoiKy"] = sotien_No + sotien_No_Phatsinh;
-                        _ravi["CoCuoiKy"] = sotien_Co + sotien_Co_phatsinh;
+                        //_ravi["NoCuoiKy"] = sotien_No + sotien_No_Phatsinh;
+                        //_ravi["CoCuoiKy"] = sotien_Co + sotien_Co_phatsinh;
 
 
-                        sotien_No = sotien_No + sotien_No_Phatsinh;
-                        sotien_Co = sotien_Co + sotien_Co_phatsinh;
-                        Tong_Soluong_No_phatsinh = Tong_Soluong_No_phatsinh + sotien_No_Phatsinh;
-                        Tong_Soluong_Co_phatsinh = Tong_Soluong_Co_phatsinh + sotien_Co_phatsinh;
-                        dt2xxxx.Rows.Add(_ravi);
+                        //sotien_No = sotien_No + sotien_No_Phatsinh;
+                        //sotien_Co = sotien_Co + sotien_Co_phatsinh;
+                        //Tong_Soluong_No_phatsinh = Tong_Soluong_No_phatsinh + sotien_No_Phatsinh;
+                        //Tong_Soluong_Co_phatsinh = Tong_Soluong_Co_phatsinh + sotien_Co_phatsinh;
+                        //dt2xxxx.Rows.Add(_ravi);
                     }
                 }
                 ngaydautien = ngaydautien.AddDays(1);
             }
 
-            DataRow _ravi_Cuoi = dt2xxxx.NewRow();
-            _ravi_Cuoi["DienGiai"] = "NXT trong kỳ";
-            _ravi_Cuoi["NoTrongKy"] = Tong_Soluong_No_phatsinh;
-            _ravi_Cuoi["CoTrongKy"] = Tong_Soluong_Co_phatsinh;
-            _ravi_Cuoi["NoCuoiKy"] = sotien_No;
-            _ravi_Cuoi["CoCuoiKy"] = sotien_Co;
-            _ravi_Cuoi["DienGiai"] = "Phát sinh trong kỳ";
-            dt2xxxx.Rows.Add(_ravi_Cuoi);
-            gridControl2.DataSource = dt2xxxx;
+            //DataRow _ravi_Cuoi = dt2xxxx.NewRow();
+            //_ravi_Cuoi["DienGiai"] = "NXT trong kỳ";
+            //_ravi_Cuoi["NoTrongKy"] = Tong_Soluong_No_phatsinh;
+            //_ravi_Cuoi["CoTrongKy"] = Tong_Soluong_Co_phatsinh;
+            //_ravi_Cuoi["NoCuoiKy"] = sotien_No;
+            //_ravi_Cuoi["CoCuoiKy"] = sotien_Co;
+            //_ravi_Cuoi["DienGiai"] = "Phát sinh trong kỳ";
+            //dt2xxxx.Rows.Add(_ravi_Cuoi);
+            //gridControl2.DataSource = dt2xxxx;
         }
         public MuaHang_frmChiTietCongNo_MuaHang()
         {
