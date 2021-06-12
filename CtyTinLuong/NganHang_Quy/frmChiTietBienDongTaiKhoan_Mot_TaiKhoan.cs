@@ -18,7 +18,7 @@ namespace CtyTinLuong
         public static DataTable mdt_ChiTiet_Print;
         public static string msSoTaiKhoan, msTenTaiKhoan;
         public static DateTime mdatungay, mdadenngay;
-       
+
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -33,7 +33,7 @@ namespace CtyTinLuong
 
             dt2xxxx.Columns.Add("NgayThang", typeof(DateTime));
             dt2xxxx.Columns.Add("SoChungTu", typeof(string));
-            dt2xxxx.Columns.Add("DienGiai", typeof(string));            
+            dt2xxxx.Columns.Add("DienGiai", typeof(string));
             dt2xxxx.Columns.Add("NoTrongKy", typeof(double));
             dt2xxxx.Columns.Add("CoTrongKy", typeof(double));
             dt2xxxx.Columns.Add("NoCuoiKy", typeof(double));
@@ -45,16 +45,16 @@ namespace CtyTinLuong
             DataTable dtdudau = cls.Sum_Co_No_W_ID_Con_NgayThang_Du_Dau_HUU(iiID_Con, xxtungay);
             DataTable dtphatsinh = cls.Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU(iiID_Con, xxtungay, xxdenngay);
             double dNoDauKy_0, dCoDauKy_0;
-            if (dtdudau.Rows.Count>0)
+            if (dtdudau.Rows.Count > 0)
             {
-                 dNoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["NoDauKy"].ToString());
-                 dCoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["CoDauKy"].ToString());
+                dNoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["NoDauKy"].ToString());
+                dCoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["CoDauKy"].ToString());
             }
             else
             {
                 dNoDauKy_0 = dCoDauKy_0 = 0;
             }
-           
+
             double No_Co_Khong = Math.Abs(dCoDauKy_0 - dNoDauKy_0);
             DataRow _ravi_Khong = dt2xxxx.NewRow();
             _ravi_Khong["DienGiai"] = "Dư đầu kỳ";
@@ -63,7 +63,7 @@ namespace CtyTinLuong
                 _ravi_Khong["NoCuoiKy"] = 0;
                 _ravi_Khong["CoCuoiKy"] = No_Co_Khong;
             }
-           else
+            else
             {
                 _ravi_Khong["NoCuoiKy"] = No_Co_Khong;
                 _ravi_Khong["CoCuoiKy"] = 0;
@@ -72,17 +72,17 @@ namespace CtyTinLuong
             double Noxx = dNoDauKy_0, Coxx = dCoDauKy_0;
             if (dtphatsinh.Rows.Count > 0)
             {
-              
+
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
                     _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
-                    double Noxx_hang= Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
+                    double Noxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
-                                      
-                    if(Noxx_hang<=Coxx_hang)
+
+                    if (Noxx_hang <= Coxx_hang)
                     {
                         _ravi["NoTrongKy"] = 0;
                         _ravi["CoTrongKy"] = Math.Abs(Noxx_hang - Coxx_hang);
@@ -92,7 +92,7 @@ namespace CtyTinLuong
                         _ravi["NoTrongKy"] = Math.Abs(Noxx_hang - Coxx_hang);
                         _ravi["CoTrongKy"] = 0;
                     }
-                   
+
                     Noxx = Noxx + Noxx_hang;
                     Coxx = Coxx + Coxx_hang;
                     if (Noxx <= Coxx)
@@ -105,7 +105,7 @@ namespace CtyTinLuong
                         _ravi["NoCuoiKy"] = Math.Abs(Noxx - Coxx);
                         _ravi["CoCuoiKy"] = 0;
                     }
-                  
+
                     dt2xxxx.Rows.Add(_ravi);
                 }
             }
@@ -254,12 +254,12 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load( sender,  e);
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load(sender, e);
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if(dteTuNgay.DateTime!=null & dteDenNgay.DateTime!=null)
+            if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null)
             {
                 int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
@@ -274,21 +274,15 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             txtTenTK.Text = cls.sTenTaiKhoanCon.Value;
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null)
-            {               
+            {
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
         private void frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load(object sender, EventArgs e)
         {
-            clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
-            cls1.iID_TaiKhoanKeToanCon = frmChiTietBienDongTaiKhoan.miiiID_TaiKhoanKeToanCon;
-            DataTable dt = cls1.SelectOne();
-            msSoTaiKhoan = cls1.sSoTaiKhoanCon.Value;
-            msTenTaiKhoan = cls1.sTenTaiKhoanCon.Value;
-            txtSoTK.Text = cls1.sSoTaiKhoanCon.Value.ToString();
-            txtTenTK.Text = cls1.sTenTaiKhoanCon.Value.ToString();
-            dteDenNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteDenNgay;
+          
+          
             Load_lockUp();
             dteTuNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteTuNgay;
             dteDenNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteDenNgay;
