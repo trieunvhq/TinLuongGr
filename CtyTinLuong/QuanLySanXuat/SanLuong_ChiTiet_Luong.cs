@@ -330,6 +330,7 @@ namespace CtyTinLuong
                 txtHoTen.Text = clsncc.sTenNhanVien.Value;
                 int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
                 LoadData(xxID);
+                HienThiGridcontrol2(xxID);
 
             }
             catch

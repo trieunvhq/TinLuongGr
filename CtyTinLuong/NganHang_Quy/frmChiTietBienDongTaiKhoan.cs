@@ -29,7 +29,7 @@ namespace CtyTinLuong
             gridNhomDoiTuong.Properties.DisplayMember = "SoTaiKhoanMe"; //
             gridNhomDoiTuong.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
         }
-        public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
+        public void LoadData_ccuuuuuuuuuuuu(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
@@ -135,7 +135,74 @@ namespace CtyTinLuong
             }
             gridControl1.DataSource = dt2;
         }
-     
+
+        public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
+        {
+            //DataTable dt2 = new DataTable();
+            //dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
+            //dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
+            //dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
+            //dt2.Columns.Add("NoDauKy", typeof(double));
+            //dt2.Columns.Add("CoDauKy", typeof(double));
+            //dt2.Columns.Add("NoTrongKy", typeof(double));
+            //dt2.Columns.Add("CoTrongKy", typeof(double));
+            //dt2.Columns.Add("NoCuoiKy", typeof(double));
+            //dt2.Columns.Add("CoCuoiKy", typeof(double));
+
+            //gridControl1.DataSource = null;
+
+            //clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            //DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(iiID_TKKeToanMe, xxtungay,xxdenngay);
+            
+            //if (dtnganhang.Rows.Count > 0)
+            //{
+            //    for (int i = 0; i < dtnganhang.Rows.Count; i++)
+            //    {
+            //        int iiIDID_TaiKhoanKeToanCon;
+            //        string sTenTaiKhoanCon, sSoTaiKhoanCon;
+            //        double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
+
+            //        iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+
+            //        dNoTrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_DauKy"].ToString());
+            //        dCoDauKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_DauKy"].ToString());
+
+            //        dCoTrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_TrongKy"].ToString());
+            //        dCoTrongKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
+
+            //        dNoCuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
+            //        dCoCuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
+
+            //        sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
+            //        sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();
+               
+            //            dNoDauKy = Convert.ToDouble(foundRows[0]["NoDauKy"].ToString());
+            //            dCoDauKy = Convert.ToDouble(foundRows[0]["CoDauKy"].ToString());
+            //        }
+            //        else
+            //        {
+            //            dNoDauKy = dCoDauKy = 0;
+            //        }
+            //        dNoCuoiKy = dNoDauKy + dNoTrongKy;
+            //        dCoCuoiKy = dCoDauKy + dCoTrongKy;
+            //        DataRow _ravi = dt2.NewRow();
+            //        _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
+
+            //        _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
+            //        _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
+            //        _ravi["NoDauKy"] = dNoDauKy;
+            //        _ravi["CoDauKy"] = dCoDauKy;
+            //        _ravi["NoTrongKy"] = dNoTrongKy;
+            //        _ravi["CoTrongKy"] = dCoTrongKy;
+            //        _ravi["NoCuoiKy"] = dNoCuoiKy;
+            //        _ravi["CoCuoiKy"] = dCoCuoiKy;
+            //        dt2.Rows.Add(_ravi);
+
+            //    }
+            //}
+            
+            //gridControl1.DataSource = dt2;
+        }
 
         private void btThoat_Click(object sender, EventArgs e)
         {
