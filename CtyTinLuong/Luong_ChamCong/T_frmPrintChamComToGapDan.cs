@@ -90,7 +90,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_ChamCong_SF(_nam, _thang, _id_bophan);
+                _data = clsThin_.T_ChamCom_SF(_nam, _thang, _id_bophan);
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {

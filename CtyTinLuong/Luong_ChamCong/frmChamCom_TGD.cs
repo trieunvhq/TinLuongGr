@@ -176,7 +176,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_ChamCong_SF(_nam, _thang, _id_bophan);
+                _data = clsThin_.T_ChamCom_SF(_nam, _thang, _id_bophan);
                 
                 int Ngay1 = 0;
                 int Ngay2 = 0;
