@@ -195,10 +195,10 @@
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.pNgay = new DevExpress.XtraReports.Parameters.Parameter();
-            this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -271,6 +271,8 @@
             // 
             // hoTen
             // 
+            this.hoTen.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[tbCongNhatChamCongToGapDan].[STT]")});
             this.hoTen.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.hoTen.Multiline = true;
             this.hoTen.Name = "hoTen";
@@ -278,7 +280,7 @@
             this.hoTen.StylePriority.UseFont = false;
             this.hoTen.StylePriority.UsePadding = false;
             this.hoTen.StylePriority.UseTextAlignment = false;
-            this.hoTen.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.hoTen.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.hoTen.Weight = 0.592251943441924D;
             // 
             // cong
@@ -2266,11 +2268,6 @@
             this.pNgay.Type = typeof(System.DateTime);
             this.pNgay.ValueInfo = "2021-01-31";
             // 
-            // dataSet_TinLuong1
-            // 
-            this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
-            this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pGiamDoc
             // 
             this.pGiamDoc.Description = "Giám đốc";
@@ -2288,6 +2285,11 @@
             this.pLapBieu.Description = "Lập biểu";
             this.pLapBieu.Name = "pLapBieu";
             this.pLapBieu.ValueInfo = "Phạm Thị Lành";
+            // 
+            // dataSet_TinLuong1
+            // 
+            this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
+            this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Tr_PrintChamCong_TDK
             // 
