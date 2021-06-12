@@ -21,9 +21,8 @@ namespace CtyTinLuong
         DateTime ngaynhonhat;
         private void Load_Lockup()
         {
-            clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            DataTable dt = cls.Select_ALL_lockup_TK_me();            
             gridNhomDoiTuong.Properties.DataSource = dt;
             gridNhomDoiTuong.Properties.DisplayMember = "SoTaiKhoanMe"; //
             gridNhomDoiTuong.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
