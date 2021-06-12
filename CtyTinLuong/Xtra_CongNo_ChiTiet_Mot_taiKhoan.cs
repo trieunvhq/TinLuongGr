@@ -10,17 +10,8 @@ namespace CtyTinLuong
     public partial class Xtra_CongNo_ChiTiet_Mot_taiKhoan : DevExpress.XtraReports.UI.XtraReport
 
     {
-        private void ChiTiet_CongNoNganHang()
-        {
-
-            DateTime denngay = Quy_NganHang_ChiTiet_CongNho_Newwwwww.mdadenngay;
-            DateTime tungay = Quy_NganHang_ChiTiet_CongNho_Newwwwww.mdatungay;
-            pSoTaiKhoan.Value = "Số TK: "+ Quy_NganHang_ChiTiet_CongNho_Newwwwww.msSoTaiKhoan + "";
-            pTenTaiKhoan.Value = Quy_NganHang_ChiTiet_CongNho_Newwwwww.msTenTaiKhoan;
-            pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
-        }
-
-        private void Print_frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_CongNo()
+       
+        private void Print_frmChiTietBienDongTaiKhoan_Mot_TaiKhoan()
         {
 
            
@@ -61,13 +52,10 @@ namespace CtyTinLuong
 
             }
 
-            if (Quy_NganHang_ChiTiet_CongNho_Newwwwww.mbPrint == true)
+           
+            if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint == true)
             {
-                ChiTiet_CongNoNganHang();
-            }
-            if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint_Congno == true)
-            {
-                Print_frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_CongNo();
+                Print_frmChiTietBienDongTaiKhoan_Mot_TaiKhoan();
             }
             if (MuaHang_frmChiTietCongNo_MuaHang.mbPrint == true)
             {

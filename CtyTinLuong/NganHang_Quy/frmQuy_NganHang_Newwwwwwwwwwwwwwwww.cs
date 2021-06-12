@@ -117,8 +117,7 @@ namespace CtyTinLuong
             //ucc.Dock = DockStyle.Fill;
             //panelControl1.Controls.Add(ucc);
             //ucc.BringToFront();
-            frmCongNho_NganHang ff = new frmCongNho_NganHang();
-            ff.Show();
+          
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

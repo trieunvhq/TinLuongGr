@@ -484,12 +484,6 @@
     <Compile Include="frmPrintCongNoNganHang.Designer.cs">
       <DependentUpon>frmPrintCongNoNganHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="NganHang_Quy\frmCongNho_NganHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NganHang_Quy\frmCongNho_NganHang.Designer.cs">
-      <DependentUpon>frmCongNho_NganHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoThanhPham\frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1509,12 +1503,6 @@
     <Compile Include="KhoThanhPham\UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.Designer.cs">
       <DependentUpon>UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.cs</DependentUpon>
     </Compile>
-    <Compile Include="NganHang_Quy\Quy_NganHang_ChiTiet_CongNho_Newwwwww.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NganHang_Quy\Quy_NganHang_ChiTiet_CongNho_Newwwwww.Designer.cs">
-      <DependentUpon>Quy_NganHang_ChiTiet_CongNho_Newwwwww.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_GapDan_baocao_NXT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2089,12 +2077,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NganHang_Quy\frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.resx">
       <DependentUpon>frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NganHang_Quy\frmCongNho_NganHang.resx">
-      <DependentUpon>frmCongNho_NganHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NganHang_Quy\Quy_NganHang_ChiTiet_CongNho_Newwwwww.resx">
-      <DependentUpon>Quy_NganHang_ChiTiet_CongNho_Newwwwww.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NganHang_Quy\Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.resx">
       <DependentUpon>Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.cs</DependentUpon>

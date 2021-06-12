@@ -13,7 +13,7 @@ namespace CtyTinLuong
 {
     public partial class frmChiTietBienDongTaiKhoan_Mot_TaiKhoan : Form
     {
-        public static bool mbPrint_Congno = false, mbPrint_PhaiTraNguoiBan;
+        public static bool mbPrint;
 
         public static DataTable mdt_ChiTiet_Print;
         public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
@@ -234,34 +234,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btPrint_DoiChieuCongNo_Click(object sender, EventArgs e)
-        {
-            DataTable DatatableABC = (DataTable)gridControl2.DataSource;
-            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdt_ChiTiet_Print = dv1212.ToTable();
-
-            if (mdt_ChiTiet_Print.Rows.Count == 0)
-            {
-
-                MessageBox.Show("Không có dữ liệu");
-            }
-
-            else
-            {
-                msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
-                mbPrint_PhaiTraNguoiBan = false;
-                mbPrint_Congno = true;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                ff.Show();
-
-            }
-        }
-
+     
         private void btPrint_PhaiTraNguoiBan_Click(object sender, EventArgs e)
         {
 
@@ -281,9 +254,18 @@ namespace CtyTinLuong
 
             else
             {
-                msTieuDe = "SỔ CHI TIẾT PHẢI TRẢ CHO NGƯỜI BÁN";
-                mbPrint_PhaiTraNguoiBan = true;
-                mbPrint_Congno = false;
+                int iiDi = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
+                clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+                cls.iID_TaiKhoanKeToanCon = iiDi;
+                DataTable dt = cls.SelectOne();
+                if (cls.iID_TaiKhoanKeToanMe == 287)
+                    msTieuDe = "SỔ CHI TIẾT PHẢI TRẢ CHO NGƯỜI BÁN";
+                else if (cls.iID_TaiKhoanKeToanMe == 268)
+                    msTieuDe = "SỔ CHI TIẾT PHẢI THU CỦA KHÁCH HÀNG";
+                else msTieuDe = "SỔ CHI TIẾT TÀI KHOẢN";
+                msSoTaiKhoan = GridSoTaiKhoan.Text.ToString();
+                msTenTaiKhoan = txtTenTK.Text;
+                mbPrint = true;               
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();

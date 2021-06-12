@@ -33,7 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btPrint_PhaiTraNguoiBan = new DevExpress.XtraEditors.SimpleButton();
-            this.btPrint_DoiChieuCongNo = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btLayDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.GridSoTaiKhoan = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -76,7 +75,6 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupBox1.SuspendLayout();
@@ -101,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +116,6 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btPrint_PhaiTraNguoiBan);
-            this.layoutControl1.Controls.Add(this.btPrint_DoiChieuCongNo);
             this.layoutControl1.Controls.Add(this.btRefresh);
             this.layoutControl1.Controls.Add(this.btLayDuLieu);
             this.layoutControl1.Controls.Add(this.GridSoTaiKhoan);
@@ -141,26 +137,13 @@
             this.btPrint_PhaiTraNguoiBan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_PhaiTraNguoiBan.Appearance.Options.UseFont = true;
             this.btPrint_PhaiTraNguoiBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_PhaiTraNguoiBan.ImageOptions.Image")));
-            this.btPrint_PhaiTraNguoiBan.Location = new System.Drawing.Point(603, 470);
+            this.btPrint_PhaiTraNguoiBan.Location = new System.Drawing.Point(736, 470);
             this.btPrint_PhaiTraNguoiBan.Name = "btPrint_PhaiTraNguoiBan";
-            this.btPrint_PhaiTraNguoiBan.Size = new System.Drawing.Size(225, 22);
+            this.btPrint_PhaiTraNguoiBan.Size = new System.Drawing.Size(103, 22);
             this.btPrint_PhaiTraNguoiBan.StyleController = this.layoutControl1;
             this.btPrint_PhaiTraNguoiBan.TabIndex = 113;
-            this.btPrint_PhaiTraNguoiBan.Text = "Print _ Sổ phải trả (thu)";
+            this.btPrint_PhaiTraNguoiBan.Text = "Print";
             this.btPrint_PhaiTraNguoiBan.Click += new System.EventHandler(this.btPrint_PhaiTraNguoiBan_Click);
-            // 
-            // btPrint_DoiChieuCongNo
-            // 
-            this.btPrint_DoiChieuCongNo.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint_DoiChieuCongNo.Appearance.Options.UseFont = true;
-            this.btPrint_DoiChieuCongNo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_DoiChieuCongNo.ImageOptions.Image")));
-            this.btPrint_DoiChieuCongNo.Location = new System.Drawing.Point(381, 470);
-            this.btPrint_DoiChieuCongNo.Name = "btPrint_DoiChieuCongNo";
-            this.btPrint_DoiChieuCongNo.Size = new System.Drawing.Size(218, 22);
-            this.btPrint_DoiChieuCongNo.StyleController = this.layoutControl1;
-            this.btPrint_DoiChieuCongNo.TabIndex = 112;
-            this.btPrint_DoiChieuCongNo.Text = "Print Đối chiếu công nợ";
-            this.btPrint_DoiChieuCongNo.Click += new System.EventHandler(this.btPrint_DoiChieuCongNo_Click);
             // 
             // btRefresh
             // 
@@ -601,9 +584,9 @@
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(832, 470);
+            this.btThoat.Location = new System.Drawing.Point(843, 470);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(119, 22);
+            this.btThoat.Size = new System.Drawing.Size(108, 22);
             this.btThoat.StyleController = this.layoutControl1;
             this.btThoat.TabIndex = 90;
             this.btThoat.Text = "Thoát";
@@ -622,7 +605,6 @@
             this.layoutControlItem8,
             this.layoutControlItem6,
             this.layoutControlItem9,
-            this.layoutControlItem3,
             this.layoutControlItem10,
             this.emptySpaceItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -633,9 +615,9 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btThoat;
-            this.layoutControlItem2.Location = new System.Drawing.Point(829, 467);
+            this.layoutControlItem2.Location = new System.Drawing.Point(840, 467);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(123, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(112, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -702,21 +684,12 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btPrint_DoiChieuCongNo;
-            this.layoutControlItem3.Location = new System.Drawing.Point(378, 467);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(222, 26);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btPrint_PhaiTraNguoiBan;
-            this.layoutControlItem10.Location = new System.Drawing.Point(600, 467);
+            this.layoutControlItem10.Location = new System.Drawing.Point(733, 467);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(229, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(107, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -725,7 +698,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 467);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(378, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(733, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmChiTietBienDongTaiKhoan_Mot_TaiKhoan
@@ -759,7 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
@@ -813,8 +785,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.SimpleButton btPrint_PhaiTraNguoiBan;
-        private DevExpress.XtraEditors.SimpleButton btPrint_DoiChieuCongNo;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
