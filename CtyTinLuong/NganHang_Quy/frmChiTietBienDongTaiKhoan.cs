@@ -164,16 +164,18 @@ namespace CtyTinLuong
 
                 if (mdt_ChiTiet_Print.Rows.Count == 0)
                 {
-                    mPrtint_CongNo_NganHang = false;
+                  
                     MessageBox.Show("Không có dữ liệu");
                 }
 
                 else
                 {
-                    mPrtint_CongNo_NganHang = true;
+                    mbPrint = true;
                     mdteTuNgay = dteTuNgay.DateTime;
                     mdteDenNgay = dteDenNgay.DateTime;
-
+                    mssoTK_me = gridNhomDoiTuong.Text.ToString();
+                    msTenTK_me = txtTenTKMe.Text;
+                    msTieuDe = "";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.Show();
 
