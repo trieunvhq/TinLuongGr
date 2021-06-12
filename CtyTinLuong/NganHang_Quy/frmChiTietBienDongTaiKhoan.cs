@@ -138,70 +138,95 @@ namespace CtyTinLuong
 
         public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
-            //dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
-            //dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
-            //dt2.Columns.Add("NoDauKy", typeof(double));
-            //dt2.Columns.Add("CoDauKy", typeof(double));
-            //dt2.Columns.Add("NoTrongKy", typeof(double));
-            //dt2.Columns.Add("CoTrongKy", typeof(double));
-            //dt2.Columns.Add("NoCuoiKy", typeof(double));
-            //dt2.Columns.Add("CoCuoiKy", typeof(double));
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
+            dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
+            dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
+            dt2.Columns.Add("NoDauKy", typeof(double));
+            dt2.Columns.Add("CoDauKy", typeof(double));
+            dt2.Columns.Add("NoTrongKy", typeof(double));
+            dt2.Columns.Add("CoTrongKy", typeof(double));
+            dt2.Columns.Add("NoCuoiKy", typeof(double));
+            dt2.Columns.Add("CoCuoiKy", typeof(double));
 
-            //gridControl1.DataSource = null;
+            gridControl1.DataSource = null;
 
-            //clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            //DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(iiID_TKKeToanMe, xxtungay,xxdenngay);
-            
-            //if (dtnganhang.Rows.Count > 0)
-            //{
-            //    for (int i = 0; i < dtnganhang.Rows.Count; i++)
-            //    {
-            //        int iiIDID_TaiKhoanKeToanCon;
-            //        string sTenTaiKhoanCon, sSoTaiKhoanCon;
-            //        double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(iiID_TKKeToanMe, xxtungay, xxdenngay);
 
-            //        iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+            if (dtnganhang.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtnganhang.Rows.Count; i++)
+                {
+                    int iiIDID_TaiKhoanKeToanCon;
+                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
+                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
+                    double dNo_DauKy, dCo_DauKy, dNo_TrongKy, dCo_TrongKy, dNo_CuoiKy, dCo_CuoiKy;
+                    iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
 
-            //        dNoTrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_DauKy"].ToString());
-            //        dCoDauKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_DauKy"].ToString());
+                    dNo_DauKy = Convert.ToDouble(dtnganhang.Rows[i]["No_DauKy"].ToString());
+                    dCo_DauKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_DauKy"].ToString());
 
-            //        dCoTrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_TrongKy"].ToString());
-            //        dCoTrongKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
+                    dNo_TrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_TrongKy"].ToString());
+                    dCo_TrongKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
 
-            //        dNoCuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
-            //        dCoCuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
+                    dNo_CuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
+                    dCo_CuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
 
-            //        sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
-            //        sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();
-               
-            //            dNoDauKy = Convert.ToDouble(foundRows[0]["NoDauKy"].ToString());
-            //            dCoDauKy = Convert.ToDouble(foundRows[0]["CoDauKy"].ToString());
-            //        }
-            //        else
-            //        {
-            //            dNoDauKy = dCoDauKy = 0;
-            //        }
-            //        dNoCuoiKy = dNoDauKy + dNoTrongKy;
-            //        dCoCuoiKy = dCoDauKy + dCoTrongKy;
-            //        DataRow _ravi = dt2.NewRow();
-            //        _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
+                    sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
+                    sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();
+                    // đầu kỳ
+                    if(dNo_DauKy<=dCo_DauKy)
+                    {
+                        dNoDauKy = 0;
+                        dCoDauKy = dCo_DauKy - dNo_DauKy;
+                    }
+                    else
+                    {
+                        dNoDauKy = -dCo_DauKy + dNo_DauKy;
+                        dCoDauKy =0 ;
+                    }
+                    // trong kỳ
+                    if (dNo_TrongKy <= dCo_TrongKy)
+                    {
+                        dNoTrongKy = 0;
+                        dCoTrongKy = dCo_TrongKy - dNo_TrongKy;
+                    }
+                    else
+                    {
+                        dNoTrongKy = -dCo_TrongKy + dNo_TrongKy;
+                        dCoTrongKy = 0;
+                    }
+                    // cuoi ky
 
-            //        _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
-            //        _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
-            //        _ravi["NoDauKy"] = dNoDauKy;
-            //        _ravi["CoDauKy"] = dCoDauKy;
-            //        _ravi["NoTrongKy"] = dNoTrongKy;
-            //        _ravi["CoTrongKy"] = dCoTrongKy;
-            //        _ravi["NoCuoiKy"] = dNoCuoiKy;
-            //        _ravi["CoCuoiKy"] = dCoCuoiKy;
-            //        dt2.Rows.Add(_ravi);
+                    if (dNo_CuoiKy <= dCo_CuoiKy)
+                    {
+                        dNoCuoiKy = 0;
+                        dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;
+                    }
+                    else
+                    {
+                        dNoCuoiKy = -dCo_CuoiKy + dNo_CuoiKy;
+                        dCoCuoiKy = 0;
+                    }
 
-            //    }
-            //}
-            
-            //gridControl1.DataSource = dt2;
+                    DataRow _ravi = dt2.NewRow();
+                _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
+
+                _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
+                _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
+                _ravi["NoDauKy"] = dNoDauKy;
+                _ravi["CoDauKy"] = dCoDauKy;
+                _ravi["NoTrongKy"] = dNoTrongKy;
+                _ravi["CoTrongKy"] = dCoTrongKy;
+                _ravi["NoCuoiKy"] = dNoCuoiKy;
+                _ravi["CoCuoiKy"] = dCoCuoiKy;
+                dt2.Rows.Add(_ravi);
+
+            }
+        }
+
+        gridControl1.DataSource = dt2;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
