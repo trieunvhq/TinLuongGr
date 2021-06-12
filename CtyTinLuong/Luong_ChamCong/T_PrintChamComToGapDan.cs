@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class T_PrintChamComToGapDan : DevExpress.XtraReports.UI.XtraReport
+    public partial class T_PrintChamCongToGapDan : DevExpress.XtraReports.UI.XtraReport
     {
         private int _thang;
         private int _nam;
@@ -15,7 +15,7 @@ namespace CtyTinLuong.Luong_ChamCong
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
 
-        public T_PrintChamComToGapDan(int thang, int nam)
+        public T_PrintChamCongToGapDan(int thang, int nam)
         {
             _thang = thang;
             _nam = nam;

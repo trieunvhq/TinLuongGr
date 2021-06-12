@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong.Luong_ChamCong
 {
-    partial class T_PrintChamComToGapDan
+    partial class T_PrintChamCongToGapDan
     {
         /// <summary>
         /// Required designer variable.
