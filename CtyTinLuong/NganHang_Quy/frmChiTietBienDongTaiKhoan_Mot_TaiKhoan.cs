@@ -35,10 +35,7 @@ namespace CtyTinLuong
 
             dt2xxxx.Columns.Add("NgayThang", typeof(DateTime));
             dt2xxxx.Columns.Add("SoChungTu", typeof(string));
-            dt2xxxx.Columns.Add("DienGiai", typeof(string));
-
-            //dt2xxxx.Columns.Add("NoDauKy", typeof(double));
-            //dt2xxxx.Columns.Add("CoDauKy", typeof(double));
+            dt2xxxx.Columns.Add("DienGiai", typeof(string));            
             dt2xxxx.Columns.Add("NoTrongKy", typeof(double));
             dt2xxxx.Columns.Add("CoTrongKy", typeof(double));
             dt2xxxx.Columns.Add("NoCuoiKy", typeof(double));
@@ -53,7 +50,7 @@ namespace CtyTinLuong
            
             double dNoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["NoDauKy"].ToString());
             double dCoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["CoDauKy"].ToString());
-          
+           
             DataRow _ravi_Khong = dt2xxxx.NewRow();
             _ravi_Khong["DienGiai"] = "Dư đầu kỳ";
             if (dNoDauKy_0 <= dCoDauKy_0)
@@ -73,26 +70,23 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
-                    _ravi["NgayThang"] = ngaydautien;
-                    _ravi["DienGiai"] = dt11new.Rows[k1]["DienGiai"].ToString();
-                    _ravi["SoChungTu"] = dt11new.Rows[k1]["SoChungTu"].ToString();
+                    _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
+                    _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
+                    _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
+                    double Noxx= Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
+                    double Coxx = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
 
-                    _ravi["NoTrongKy"] = sotien_No_Phatsinh;
-                    _ravi["CoTrongKy"] = sotien_Co_phatsinh;
+                    //_ravi["NoTrongKy"] = sotien_No_Phatsinh;
+                    //_ravi["CoTrongKy"] = sotien_Co_phatsinh;
 
-                    _ravi["NoCuoiKy"] = sotien_No + sotien_No_Phatsinh;
-                    _ravi["CoCuoiKy"] = sotien_Co + sotien_Co_phatsinh;
+                    //_ravi["NoCuoiKy"] = sotien_No + sotien_No_Phatsinh;
+                    //_ravi["CoCuoiKy"] = sotien_Co + sotien_Co_phatsinh;
 
                     dt2xxxx.Rows.Add(_ravi);
                 }
             }
-
-
-
-
-
-
-            gridControl2.DataSource = dt2;
+            
+            gridControl2.DataSource = dt2xxxx;
         }
         private void HienThi()
         {
