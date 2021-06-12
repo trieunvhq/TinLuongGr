@@ -16,7 +16,7 @@ namespace CtyTinLuong
         public static bool mbPrint = false;
 
         public static DataTable mdt_ChiTiet_Print;
-        public static string msTieuDe;
+        public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
         public static DateTime mdatungay, mdadenngay;
 
         private void Load_lockUp()
