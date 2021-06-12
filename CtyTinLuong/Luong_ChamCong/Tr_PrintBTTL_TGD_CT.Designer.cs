@@ -77,10 +77,6 @@
             this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
-            this.pNgay = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell27 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -96,6 +92,10 @@
             this.xrTableCell37 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell38 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell39 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.pNgay = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTbHeader)).BeginInit();
@@ -665,28 +665,6 @@
             this.xrLabel19.Text = "Phó giám đốc";
             this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // pNgay
-            // 
-            this.pNgay.Description = "Ngày ký";
-            this.pNgay.Name = "pNgay";
-            this.pNgay.Type = typeof(System.DateTime);
-            this.pNgay.ValueInfo = "2021-01-28";
-            // 
-            // pGiamDoc
-            // 
-            this.pGiamDoc.Description = "Giám Đốc";
-            this.pGiamDoc.Name = "pGiamDoc";
-            // 
-            // pTongHop
-            // 
-            this.pTongHop.Description = "Tổng hợp";
-            this.pTongHop.Name = "pTongHop";
-            // 
-            // pLapBieu
-            // 
-            this.pLapBieu.Description = "Lập Biểu";
-            this.pLapBieu.Name = "pLapBieu";
-            // 
             // xrTable2
             // 
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
@@ -858,6 +836,31 @@
             this.xrTableCell39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
             this.xrTableCell39.StylePriority.UsePadding = false;
             this.xrTableCell39.Weight = 1.025432962069033D;
+            // 
+            // pNgay
+            // 
+            this.pNgay.Description = "Ngày ký";
+            this.pNgay.Name = "pNgay";
+            this.pNgay.Type = typeof(System.DateTime);
+            this.pNgay.ValueInfo = "2021-01-28";
+            // 
+            // pGiamDoc
+            // 
+            this.pGiamDoc.Description = "Giám Đốc";
+            this.pGiamDoc.Name = "pGiamDoc";
+            this.pGiamDoc.ValueInfo = "Phạm Thị Đông";
+            // 
+            // pTongHop
+            // 
+            this.pTongHop.Description = "Tổng hợp";
+            this.pTongHop.Name = "pTongHop";
+            this.pTongHop.ValueInfo = "Phạm Kim Diện";
+            // 
+            // pLapBieu
+            // 
+            this.pLapBieu.Description = "Lập Biểu";
+            this.pLapBieu.Name = "pLapBieu";
+            this.pLapBieu.ValueInfo = "Phạm Thị Lành";
             // 
             // dataSet_TinLuong1
             // 
