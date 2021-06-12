@@ -19,8 +19,7 @@ using System.Windows.Forms;
 namespace CtyTinLuong
 {
     public partial class frmBTTL_TGD_TQ : Form
-    {
-        private string tenbophan = "Tổ Gấp dán";
+    { 
         public int miiID_chiTietChamCong, miiD_DinhMuc_Luong, miID_congNhan;
         public int miiID_ChamCong;
         public string msTenNhanVien;
@@ -32,8 +31,9 @@ namespace CtyTinLuong
 
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmBTTL_TGD_TQ()
+        public frmBTTL_TGD_TQ(int id_bophan)
         {
+            _id_bophan = id_bophan;
             InitializeComponent();
         }
 
@@ -47,21 +47,7 @@ namespace CtyTinLuong
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-                using (clsThin clsThin_ = new clsThin())
-                {
-                    DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
-                    if (dt_ != null && dt_.Rows.Count == 1)
-                    {
-                        _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
-                    }
-                    else
-                    {
-                        _id_bophan = 0;
-                        MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
-                        return;
-                    }
-                }
-
+                 
             }
             else
             {

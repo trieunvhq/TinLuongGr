@@ -54,15 +54,7 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
         }
-
-        private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmChamCongToGapDan frm = new frmChamCongToGapDan() { TopLevel = false, TopMost = true };
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            this.panelControl1.Controls.Add(frm);
-            frm.Show();
-        }
-
+         
         private void navBarItem17_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
@@ -124,10 +116,30 @@ namespace CtyTinLuong
             this.panelControl1.Controls.Add(frm);
             frm.Show();
         }
-
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+                    
+                }
+            }
+            return _id_bophan;
+        }
         private void navBTTL_TGD_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmBTTL_TGD_TQ frm = new frmBTTL_TGD_TQ() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_TGD_TQ frm = new frmBTTL_TGD_TQ(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -147,7 +159,10 @@ namespace CtyTinLuong
 
         private void navBTTL_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmChamCong_TBX frm = new frmChamCong_TBX() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -156,8 +171,11 @@ namespace CtyTinLuong
         }
 
         private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
-        { 
-            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ() { TopLevel = false, TopMost = true };
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -167,7 +185,10 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
-            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -177,7 +198,10 @@ namespace CtyTinLuong
 
         private void navChamCong_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmChamCong_TDK frm = new frmChamCong_TDK() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng kiện");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_TDK frm = new frmChamCong_TDK(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -187,7 +211,10 @@ namespace CtyTinLuong
 
         private void navBTTL_TMC_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Máy cắt");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -197,7 +224,10 @@ namespace CtyTinLuong
 
         private void navChamCong_TGD_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmChamCongToGapDan frm = new frmChamCongToGapDan() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
+            if (id_bophan_ == 0) return;
+
+            frmChamCongToGapDan frm = new frmChamCongToGapDan(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
@@ -207,7 +237,10 @@ namespace CtyTinLuong
 
         private void navChamCong_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmChamCong_TBX frm = new frmChamCong_TBX() { TopLevel = false, TopMost = true };
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_) { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);

@@ -19,10 +19,7 @@ using System.Windows.Forms;
 namespace CtyTinLuong
 {
     public partial class frmChamCongToGapDan : Form
-    {
-
-        private string tenbophan = "Tổ Gấp dán";
-
+    { 
         public int _nam, _thang, _id_bophan, _id_vthh;
         public string _ten_vthh;
         private DataTable _data;
@@ -30,8 +27,9 @@ namespace CtyTinLuong
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmChamCongToGapDan()
+        public frmChamCongToGapDan(int id_bophan)
         {
+            _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -176,19 +174,7 @@ namespace CtyTinLuong
                             _ten_vthh = cbLoaiHangSX.Text;
                         }
                     }
-                    catch { }
-                    //
-                    dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
-                    if (dt_ != null && dt_.Rows.Count == 1)
-                    {
-                        _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
-                    }
-                    else
-                    {
-                        _id_bophan = 0;
-                        MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
-                        return;
-                    }
+                    catch { } 
                 }
             }
             else
