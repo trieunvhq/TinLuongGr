@@ -12,6 +12,9 @@ namespace CtyTinLuong
 {
     public partial class frmPrintCongNoNganHang : Form
     {
+        //MuaHang_frmChiTietCongNo_MuaHang
+       
+
         private void Print_frmChiTietBienDongTaiKhoan(DataTable dt3)
         {
 
@@ -90,7 +93,7 @@ namespace CtyTinLuong
         private void Print_MuaHang_frmChiTietCongNo_MuaHang(DataTable dt3)
         {
 
-            Xtra_CongNo_NganHang xtr111 = new Xtra_CongNo_NganHang();
+            Xtra_DoiChieuCongNo xtr111 = new Xtra_DoiChieuCongNo();
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbCongNo_NganHang.Clone();
