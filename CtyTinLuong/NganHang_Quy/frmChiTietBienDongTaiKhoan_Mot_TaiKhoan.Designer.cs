@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -443,8 +442,10 @@
             this.clNoTrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoTrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clNoTrongKy.Caption = "Nợ";
+            this.clNoTrongKy.DisplayFormat.FormatString = "N";
             this.clNoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoTrongKy.FieldName = "NoTrongKy";
+            this.clNoTrongKy.GroupFormat.FormatString = "N";
             this.clNoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoTrongKy.Name = "clNoTrongKy";
             this.clNoTrongKy.OptionsColumn.AllowEdit = false;
@@ -460,8 +461,10 @@
             this.clCoTrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoTrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clCoTrongKy.Caption = "Có";
+            this.clCoTrongKy.DisplayFormat.FormatString = "N";
             this.clCoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoTrongKy.FieldName = "CoTrongKy";
+            this.clCoTrongKy.GroupFormat.FormatString = "N";
             this.clCoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoTrongKy.Name = "clCoTrongKy";
             this.clCoTrongKy.OptionsColumn.AllowEdit = false;
