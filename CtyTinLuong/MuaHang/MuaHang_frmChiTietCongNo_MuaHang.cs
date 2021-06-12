@@ -198,14 +198,7 @@ namespace CtyTinLuong
             else
             {
                 int iiDi = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
-                clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                cls.iID_TaiKhoanKeToanCon = iiDi;
-                DataTable dt = cls.SelectOne();
-                if (cls.iID_TaiKhoanKeToanMe == 287)
-                    msTieuDe = "SỔ CHI TIẾT PHẢI TRẢ CHO NGƯỜI BÁN";
-                else if (cls.iID_TaiKhoanKeToanMe == 268)
-                    msTieuDe = "SỔ CHI TIẾT PHẢI THU CỦA KHÁCH HÀNG";
-                else msTieuDe = "SỔ CHI TIẾT TÀI KHOẢN";
+                msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                 msSoTaiKhoan = GridSoTaiKhoan.Text.ToString();
                 msTenTaiKhoan = txtTenTK.Text;
                 mbPrint = true;
@@ -225,9 +218,9 @@ namespace CtyTinLuong
         private void MuaHang_frmChiTietCongNo_MuaHang_Load(object sender, EventArgs e)
         {
             Load_lockUp();
-            dteTuNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteTuNgay;
-            dteDenNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteDenNgay;
-            GridSoTaiKhoan.EditValue = frmChiTietBienDongTaiKhoan.miiiID_TaiKhoanKeToanCon;
+            dteTuNgay.EditValue = MuaHang_frmCongNo.mdteTuNgay;
+            dteDenNgay.EditValue = MuaHang_frmCongNo.mdteDenNgay;
+            GridSoTaiKhoan.EditValue = MuaHang_frmCongNo.miiiID_TaiKhoanKeToanCon;
         }
     }
 }
