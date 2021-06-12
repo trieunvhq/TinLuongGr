@@ -271,8 +271,6 @@
             // 
             // hoTen
             // 
-            this.hoTen.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[tbCongNhatChamCongToGapDan].[TenNhanVien]")});
             this.hoTen.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.hoTen.Multiline = true;
             this.hoTen.Name = "hoTen";
