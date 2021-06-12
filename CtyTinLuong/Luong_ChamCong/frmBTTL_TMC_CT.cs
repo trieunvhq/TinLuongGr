@@ -132,7 +132,7 @@ namespace CtyTinLuong
             }
 
             DataRow _ravi = _data.NewRow();
-
+            _ravi["TenNhanVien"] = "Tổng";
             _ravi["sCong"] = _Cong;
             _ravi["sSanLuong"] = _SanLuong.ToString("N0");
             _ravi["sDonGia"] = _DonGia.ToString("N0");

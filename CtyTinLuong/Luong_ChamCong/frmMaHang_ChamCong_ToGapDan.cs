@@ -45,7 +45,7 @@ namespace CtyTinLuong
             else
             {
                 clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan cls1 = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-                cls1.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+                //cls1.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
                 cls1.iThang = _frmChamCongToGapDan._thang;
                 cls1.iNam = _frmChamCongToGapDan._nam;
                 // xoá trước
@@ -58,7 +58,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dv3.Rows.Count; i++)
                 {
-                    cls1.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+                    //cls1.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
                     cls1.iThang = _frmChamCongToGapDan._thang;
                     cls1.iNam = _frmChamCongToGapDan._nam;
                     cls1.iID_VTHH = Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString());
@@ -105,7 +105,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("DinhMuc_Tang", typeof(double));
 
             clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan cls = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-            cls.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+            //cls.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
             cls.iThang = _frmChamCongToGapDan._thang;
             cls.iNam = _frmChamCongToGapDan._nam;
             DataTable dt3 = cls.SelectAll_W_Thang_W_Nam_W_ID_CongNhan();
@@ -248,7 +248,7 @@ namespace CtyTinLuong
             if (txtThang.Text.ToString()!="" & txtNam.Text.ToString()!="")
             {
                 clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan cls = new clsHuu_CongNhat_ChiTiet_ChamCong_ToGapDan();
-                cls.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
+               // cls.iID_CongNhan = _frmChamCongToGapDan.miID_congNhan;
                 cls.iThang = _frmChamCongToGapDan._thang;
                 cls.iNam = _frmChamCongToGapDan._nam;
                 DataTable dt3 = cls.SelectAll_W_Thang_W_Nam_W_ID_CongNhan();
