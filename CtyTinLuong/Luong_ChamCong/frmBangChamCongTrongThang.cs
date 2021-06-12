@@ -1104,8 +1104,29 @@ namespace CtyTinLuong
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmChamCongToGapDan ff = new frmChamCongToGapDan();
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
+            if (id_bophan_ == 0) return;
+
+            frmChamCongToGapDan ff = new frmChamCongToGapDan(id_bophan_);
             ff.Show();
+        }
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+
+                }
+            }
+            return _id_bophan;
         }
     }
 }

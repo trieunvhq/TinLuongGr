@@ -14,8 +14,7 @@ using System.Windows.Forms;
 namespace CtyTinLuong
 {
     public partial class frmChamCong_TDK : Form
-    {
-        private string tenbophan = "Tổ Đóng kiện";
+    { 
         public int _nam, _thang, _id_bophan;
         public string _TenVTHH;
         private DataTable _data;
@@ -23,8 +22,9 @@ namespace CtyTinLuong
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmChamCong_TDK()
+        public frmChamCong_TDK(int id_bophan)
         {
+            _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -34,6 +34,10 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
             ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
             ds_grid.Add(Ngay31);
+
+
+            this.cbHangHoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbHangHoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; 
         }
 
         private string LayThu(DateTime date)
@@ -139,19 +143,7 @@ namespace CtyTinLuong
 
                 using (clsThin clsThin_ = new clsThin())
                 {
-                    DataTable  dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
-                    if (dt_ != null && dt_.Rows.Count == 1)
-                    {
-                        _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
-                    }
-                    else
-                    {
-                        _id_bophan = 0;
-                        MessageBox.Show("Chưa có bộ phận " + tenbophan + ". Hãy đến Cấu hình quản trị để cài đặt thêm " + tenbophan);
-                        return;
-                    }
-                    dt_.Dispose();
-                    dt_ = clsThin_.T_LoaiHangSX_SF(0);
+                    DataTable    dt_ = clsThin_.T_LoaiHangSX_SF(0);
                      
                     cbHangHoa.DataSource = dt_;
                     cbHangHoa.DisplayMember = "TenVTHH";
