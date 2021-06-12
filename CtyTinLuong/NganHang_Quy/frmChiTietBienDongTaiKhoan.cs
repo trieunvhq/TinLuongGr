@@ -15,10 +15,11 @@ namespace CtyTinLuong
     {
         public static int miiiID_TaiKhoanKeToanCon;
         public static DateTime mdteTuNgay, mdteDenNgay;        
-        public static bool mPrtint_CongNo_NganHang;
+        public static bool mbPrint;
+        public static string msTieuDe, mssoTK_me, msTenTK_me;
         public static DataTable mdt_ChiTiet_Print;
 
-        DateTime ngaynhonhat;
+      
         private void Load_Lockup()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -133,7 +134,7 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null & gridNhomDoiTuong.EditValue!=null)
             {
                 int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
@@ -163,16 +164,30 @@ namespace CtyTinLuong
 
                 if (mdt_ChiTiet_Print.Rows.Count == 0)
                 {
-                    mPrtint_CongNo_NganHang = false;
+                  
                     MessageBox.Show("Không có dữ liệu");
                 }
 
                 else
                 {
-                    mPrtint_CongNo_NganHang = true;
+                    mbPrint = true;
                     mdteTuNgay = dteTuNgay.DateTime;
                     mdteDenNgay = dteDenNgay.DateTime;
-
+                    mssoTK_me = gridNhomDoiTuong.Text.ToString();
+                    msTenTK_me = txtTenTKMe.Text;
+                    int iiDi = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+                    clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+                    cls.iID_TaiKhoanKeToanMe = iiDi;
+                    DataTable dt = cls.SelectOne();
+                    if (cls.iID_TaiKhoanKeToanMe == 287)
+                        msTieuDe = "SỔ TỔNG HỢP PHẢI TRẢ CHO NGƯỜI BÁN";
+                    else if (cls.iID_TaiKhoanKeToanMe == 268)
+                        msTieuDe = "SỔ TỔNG HỢP PHẢI THU CỦA KHÁCH HÀNG";
+                    else if (cls.iID_TaiKhoanKeToanMe == 265)
+                        msTieuDe = "SỔ TỔNG HỢP TIỀN GỬI NGÂN HÀNG";
+                    else if (cls.iID_TaiKhoanKeToanMe == 315)
+                        msTieuDe = "SỔ TỔNG HỢP TIỀN MẶT";
+                    else msTieuDe = "SỔ TỔNG HỢP TÀI KHOẢN";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.Show();
 
@@ -205,18 +220,12 @@ namespace CtyTinLuong
             cls.iID_TaiKhoanKeToanMe = xxid;
             DataTable dt = cls.SelectOne();
             txtTenTKMe.Text = cls.sTenTaiKhoanMe.Value;
-            //LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            DateTime ngaychon = dteTuNgay.DateTime;
-            if(ngaychon<ngaynhonhat)
-            {
-                MessageBox.Show("Chọn ngày lớn hơn ngày thiết lập phần mềm");
-                dteTuNgay.EditValue = ngaynhonhat;
-                return;
-            }
+            
            
         }
 
@@ -237,17 +246,9 @@ namespace CtyTinLuong
             dteDenNgay.EditValue = DateTime.Today;
             DateTime ngaydauthang= cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
          
-            gridNhomDoiTuong.EditValue = 287;
-            
-            clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dtxx = clsxx.Select_ngay_nhoNhat();
-            ngaynhonhat = Convert.ToDateTime(dtxx.Rows[0][0].ToString());
-            dteNgayThietlap.EditValue = ngaynhonhat;
-            if (ngaynhonhat > ngaydauthang)
-                dteTuNgay.EditValue = ngaynhonhat;
-            else dteTuNgay.EditValue = ngaydauthang;
+           dteTuNgay.EditValue = ngaydauthang;
 
-            LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
+           // LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }

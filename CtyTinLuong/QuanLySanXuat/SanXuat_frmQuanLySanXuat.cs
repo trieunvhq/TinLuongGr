@@ -295,7 +295,7 @@ namespace CtyTinLuong
 
         private void nbSL_CTL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(6, 2021);
+            SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
             ff.Show();
         }
     }

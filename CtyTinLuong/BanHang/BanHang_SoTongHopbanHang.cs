@@ -206,6 +206,18 @@ namespace CtyTinLuong
 
         }
 
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)
         {
             clsNgayThang cls = new clsNgayThang();

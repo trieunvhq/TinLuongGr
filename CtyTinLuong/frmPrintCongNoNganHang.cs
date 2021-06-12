@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmPrintCongNoNganHang : Form
     {
-        private void Print_CongNo(DataTable dt3)
+        private void Print_frmChiTietBienDongTaiKhoan(DataTable dt3)
         {
 
             Xtra_CongNo_NganHang xtr111 = new Xtra_CongNo_NganHang();
@@ -50,7 +50,7 @@ namespace CtyTinLuong
             documentViewer1.DocumentSource = xtr111;
         }
 
-        private void Print_ChiTietCongNo(DataTable dt3)
+        private void Print_ChiTiet_TAIkHOAN(DataTable dt3)
         {
 
             Xtra_CongNo_ChiTiet_Mot_taiKhoan xtr111 = new Xtra_CongNo_ChiTiet_Mot_taiKhoan();
@@ -97,28 +97,22 @@ namespace CtyTinLuong
 
         private void frmPrintCongNoNganHang_Load(object sender, EventArgs e)
         {
-           
-            if (frmCongNho_NganHang.mPrtint_CongNo_NganHang == true)
-                Print_CongNo(frmCongNho_NganHang.mdt_ChiTiet_Print);
-            if (Quy_NganHang_ChiTiet_CongNho_Newwwwww.mbPrint == true)
-                Print_ChiTietCongNo(Quy_NganHang_ChiTiet_CongNho_Newwwwww.mdt_ChiTiet_Print);
+          
             if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint == true)
-                Print_ChiTietCongNo(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdt_ChiTiet_Print);
-            if (frmChiTietBienDongTaiKhoan.mPrtint_CongNo_NganHang == true)
-                Print_CongNo(frmChiTietBienDongTaiKhoan.mdt_ChiTiet_Print);
+                Print_ChiTiet_TAIkHOAN(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdt_ChiTiet_Print);
+            if (frmChiTietBienDongTaiKhoan.mbPrint == true)
+                Print_frmChiTietBienDongTaiKhoan(frmChiTietBienDongTaiKhoan.mdt_ChiTiet_Print);
             if (MuaHang_frmCongNo.mPrtint_CongNo_NganHang == true)
-                Print_CongNo(MuaHang_frmCongNo.mdt_ChiTiet_Print);
-            if (MuaHang_frmChiTietCongNo_MuaHang.mbPrint == true)
-                Print_ChiTietCongNo(MuaHang_frmChiTietCongNo_MuaHang.mdt_ChiTiet_Print);
-
+                Print_frmChiTietBienDongTaiKhoan(MuaHang_frmCongNo.mdt_ChiTiet_Print);
+           
         }
 
         private void frmPrintCongNoNganHang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmCongNho_NganHang.mPrtint_CongNo_NganHang = false;
-            Quy_NganHang_ChiTiet_CongNho_Newwwwww.mbPrint = false;
-            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;
-            MuaHang_frmCongNo.mPrtint_CongNo_NganHang = false;
+            
+         
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;    
+           
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
         }
     }

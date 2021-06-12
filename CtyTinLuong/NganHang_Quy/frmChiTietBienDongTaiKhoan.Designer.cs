@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietBienDongTaiKhoan));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.dteNgayThietlap = new DevExpress.XtraEditors.DateEdit();
+            this.txtID_me = new System.Windows.Forms.TextBox();
             this.txtTenTKMe = new System.Windows.Forms.TextBox();
             this.gridNhomDoiTuong = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -75,14 +76,10 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtID_me = new System.Windows.Forms.TextBox();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNhomDoiTuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -103,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +118,6 @@
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.Controls.Add(this.txtID_me);
-            this.dataLayoutControl1.Controls.Add(this.dteNgayThietlap);
             this.dataLayoutControl1.Controls.Add(this.txtTenTKMe);
             this.dataLayoutControl1.Controls.Add(this.gridNhomDoiTuong);
             this.dataLayoutControl1.Controls.Add(this.btPrint);
@@ -140,23 +135,12 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
-            // dteNgayThietlap
+            // txtID_me
             // 
-            this.dteNgayThietlap.EditValue = null;
-            this.dteNgayThietlap.Location = new System.Drawing.Point(754, 2);
-            this.dteNgayThietlap.Name = "dteNgayThietlap";
-            this.dteNgayThietlap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteNgayThietlap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteNgayThietlap.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dteNgayThietlap.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayThietlap.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.dteNgayThietlap.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayThietlap.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteNgayThietlap.Size = new System.Drawing.Size(244, 20);
-            this.dteNgayThietlap.StyleController = this.dataLayoutControl1;
-            this.dteNgayThietlap.TabIndex = 99;
+            this.txtID_me.Location = new System.Drawing.Point(104, 545);
+            this.txtID_me.Name = "txtID_me";
+            this.txtID_me.Size = new System.Drawing.Size(331, 20);
+            this.txtID_me.TabIndex = 100;
             // 
             // txtTenTKMe
             // 
@@ -250,9 +234,9 @@
             // btLayDuLieu
             // 
             this.btLayDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.button_yellow;
-            this.btLayDuLieu.Location = new System.Drawing.Point(1002, 2);
+            this.btLayDuLieu.Location = new System.Drawing.Point(971, 2);
             this.btLayDuLieu.Name = "btLayDuLieu";
-            this.btLayDuLieu.Size = new System.Drawing.Size(80, 22);
+            this.btLayDuLieu.Size = new System.Drawing.Size(111, 22);
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 94;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
@@ -272,7 +256,7 @@
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteDenNgay.Size = new System.Drawing.Size(232, 20);
+            this.dteDenNgay.Size = new System.Drawing.Size(551, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 93;
             // 
@@ -606,7 +590,6 @@
             this.emptySpaceItem1,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem10,
             this.layoutControlItem11});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
@@ -639,7 +622,7 @@
             this.layoutControlItem3.CustomizationFormText = "Đến ngày";
             this.layoutControlItem3.Location = new System.Drawing.Point(312, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(338, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(657, 26);
             this.layoutControlItem3.Text = "Đến ngày";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(99, 13);
             // 
@@ -657,9 +640,9 @@
             // 
             this.layoutControlItem5.Control = this.btLayDuLieu;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(1000, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(969, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(84, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(115, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -708,22 +691,6 @@
             this.layoutControlItem9.Text = "Diễn giải";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(99, 13);
             // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.dteNgayThietlap;
-            this.layoutControlItem10.Location = new System.Drawing.Point(650, 0);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(350, 26);
-            this.layoutControlItem10.Text = "Ngày thiết lập";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // txtID_me
-            // 
-            this.txtID_me.Location = new System.Drawing.Point(104, 545);
-            this.txtID_me.Name = "txtID_me";
-            this.txtID_me.Size = new System.Drawing.Size(331, 20);
-            this.txtID_me.TabIndex = 100;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.txtID_me;
@@ -745,8 +712,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNhomDoiTuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -767,7 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
@@ -819,8 +783,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraEditors.DateEdit dteNgayThietlap;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.TextBox txtID_me;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }

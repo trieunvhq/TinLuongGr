@@ -29,38 +29,6 @@ namespace CtyTinLuong.Luong_ChamCong
         }
 
         //
-        int Tong_Ngay1 = 0;
-        int Tong_Ngay2 = 0;
-        int Tong_Ngay3 = 0;
-        int Tong_Ngay4 = 0;
-        int Tong_Ngay5 = 0;
-        int Tong_Ngay6 = 0;
-        int Tong_Ngay7 = 0;
-        int Tong_Ngay8 = 0;
-        int Tong_Ngay9 = 0;
-        int Tong_Ngay10 = 0;
-        int Tong_Ngay11 = 0;
-        int Tong_Ngay12 = 0;
-        int Tong_Ngay13 = 0;
-        int Tong_Ngay14 = 0;
-        int Tong_Ngay15 = 0;
-        int Tong_Ngay16 = 0;
-        int Tong_Ngay17 = 0;
-        int Tong_Ngay18 = 0;
-        int Tong_Ngay19 = 0;
-        int Tong_Ngay20 = 0;
-        int Tong_Ngay21 = 0;
-        int Tong_Ngay22 = 0;
-        int Tong_Ngay23 = 0;
-        int Tong_Ngay24 = 0;
-        int Tong_Ngay25 = 0;
-        int Tong_Ngay26 = 0;
-        int Tong_Ngay27 = 0;
-        int Tong_Ngay28 = 0;
-        int Tong_Ngay29 = 0;
-        int Tong_Ngay30 = 0;
-        int Tong_Ngay31 = 0;
-
         private List<int> ds_id_congnhan = new List<int>();
 
         private void Tr_frmBangChamCong_TBX_Load(object sender, EventArgs e)

@@ -8,10 +8,10 @@ namespace CtyTinLuong
 	public partial class clsNganHang_ChiTietBienDongTaiKhoanKeToan : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bDaGhiSo, m_bNgungTheoDoi, m_bBBool_TonDauKy, m_bTienUSD, m_bTonTai;
+			private SqlBoolean		m_bBBool_TonDauKy, m_bTonTai, m_bNgungTheoDoi, m_bDaGhiSo, m_bTienUSD;
 			private SqlDateTime		m_daNgayThang;
-			private SqlDouble		m_fNo, m_fCo, m_fTiGia;
-			private SqlInt32		m_iTrangThai_MuaHang1_BanHang2_VAT3, m_iID_ChungTu, m_iID_DoiTuong, m_iID_ChiTietBienDongTaiKhoan, m_iID_TaiKhoanKeToanCon;
+			private SqlDouble		m_fTiGia, m_fCo, m_fNo;
+			private SqlInt32		m_iID_TaiKhoanDoiUng, m_iTrangThai_MuaHang1_BanHang2_VAT3, m_iID_ChungTu, m_iID_DoiTuong, m_iID_ChiTietBienDongTaiKhoan, m_iID_TaiKhoanKeToanCon;
 			private SqlString		m_sDienGiai, m_sSoChungTu;
 		#endregion
 
@@ -48,6 +48,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaGhiSo", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaGhiSo));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bbBool_TonDauKy", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bBBool_TonDauKy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iTrangThai_MuaHang1_BanHang2_VAT3", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iTrangThai_MuaHang1_BanHang2_VAT3));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanDoiUng", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TaiKhoanDoiUng));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietBienDongTaiKhoan", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietBienDongTaiKhoan));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
@@ -108,6 +109,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaGhiSo", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaGhiSo));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bbBool_TonDauKy", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bBBool_TonDauKy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iTrangThai_MuaHang1_BanHang2_VAT3", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iTrangThai_MuaHang1_BanHang2_VAT3));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanDoiUng", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TaiKhoanDoiUng));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
@@ -229,6 +231,7 @@ namespace CtyTinLuong
 					m_bDaGhiSo = (bool)dtToReturn.Rows[0]["DaGhiSo"];
 					m_bBBool_TonDauKy = (bool)dtToReturn.Rows[0]["bBool_TonDauKy"];
 					m_iTrangThai_MuaHang1_BanHang2_VAT3 = (Int32)dtToReturn.Rows[0]["TrangThai_MuaHang1_BanHang2_VAT3"];
+					m_iID_TaiKhoanDoiUng = dtToReturn.Rows[0]["ID_TaiKhoanDoiUng"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["ID_TaiKhoanDoiUng"];
 				}
 				return dtToReturn;
 			}
@@ -577,6 +580,24 @@ namespace CtyTinLuong
 					throw new ArgumentOutOfRangeException("iTrangThai_MuaHang1_BanHang2_VAT3", "iTrangThai_MuaHang1_BanHang2_VAT3 can't be NULL");
 				}
 				m_iTrangThai_MuaHang1_BanHang2_VAT3 = value;
+			}
+		}
+
+
+		public SqlInt32 iID_TaiKhoanDoiUng
+		{
+			get
+			{
+				return m_iID_TaiKhoanDoiUng;
+			}
+			set
+			{
+				SqlInt32 iID_TaiKhoanDoiUngTmp = (SqlInt32)value;
+				if(iID_TaiKhoanDoiUngTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("iID_TaiKhoanDoiUng", "iID_TaiKhoanDoiUng can't be NULL");
+				}
+				m_iID_TaiKhoanDoiUng = value;
 			}
 		}
 		#endregion
