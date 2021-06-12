@@ -15,13 +15,12 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsNganHang_ChiTietBienDongTaiKhoanKeToan : clsDBInteractionBase
 	{
-        //r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU
-        public DataTable Sum_Co_No_W_ID_Con_NgayThang_HUU(int xxID_TK_Con, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        public DataTable Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU(int xxID_TK_Con, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU]";
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU");
+            DataTable dtToReturn = new DataTable("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -41,7 +40,42 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU", ex);
+                throw new Exception("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataTable Sum_Co_No_W_ID_Con_NgayThang_Du_Dau_HUU(int xxID_TK_Con, DateTime ngay_batdau)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_Du_Dau_HUU]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_Du_Dau_HUU");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiiIDVTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_TaiKhoanKeToanCon", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_TK_Con));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+               // scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_Du_Dau_HUU", ex);
             }
             finally
             {
@@ -121,74 +155,8 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public DataTable Sum_Co_No_NgayThang_Phat_Sinh_HUU(int xxID_TK_Me, DateTime ngay_batdau, DateTime ngay_ketthuc)
-        {
-            SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU]";
-            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU");
-            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
-
-            // Use base class' connection object
-            scmCmdToExecute.Connection = m_scoMainConnection;
-
-            try
-            {
-                m_scoMainConnection.Open();
-                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiiIDVTHH));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanMe", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_TK_Me));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
-
-                sdaAdapter.Fill(dtToReturn);
-                return dtToReturn;
-            }
-            catch (Exception ex)
-            {
-                // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Phat_Sinh_HUU", ex);
-            }
-            finally
-            {
-                //Close connection.
-                m_scoMainConnection.Close();
-                scmCmdToExecute.Dispose();
-                sdaAdapter.Dispose();
-            }
-        }
-        public DataTable Sum_Co_No_NgayThang_Du_Dau_HUU(int xxxiID_TaiKhoanKeToanMe, DateTime ngay_batdau)
-        {
-            SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Du_Dau_HUU]";
-            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Du_Dau_HUU");
-            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
-
-            // Use base class' connection object
-            scmCmdToExecute.Connection = m_scoMainConnection;
-
-            try
-            {
-                m_scoMainConnection.Open();
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanMe", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxxiID_TaiKhoanKeToanMe));
-                // Execute query.
-                sdaAdapter.Fill(dtToReturn);
-                return dtToReturn;
-            }
-            catch (Exception ex)
-            {
-                // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_Du_Dau_HUU", ex);
-            }
-            finally
-            {
-                //Close connection.
-                m_scoMainConnection.Close();
-                scmCmdToExecute.Dispose();
-                sdaAdapter.Dispose();
-            }
-        }
+    
+       
         public void Update_W_TonTai()
         {
 
