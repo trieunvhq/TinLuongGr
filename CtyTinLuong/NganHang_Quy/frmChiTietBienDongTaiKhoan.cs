@@ -133,7 +133,7 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null & gridNhomDoiTuong.EditValue!=null)
             {
                 int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
@@ -205,18 +205,12 @@ namespace CtyTinLuong
             cls.iID_TaiKhoanKeToanMe = xxid;
             DataTable dt = cls.SelectOne();
             txtTenTKMe.Text = cls.sTenTaiKhoanMe.Value;
-            //LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            DateTime ngaychon = dteTuNgay.DateTime;
-            if(ngaychon<ngaynhonhat)
-            {
-                MessageBox.Show("Chọn ngày lớn hơn ngày thiết lập phần mềm");
-                dteTuNgay.EditValue = ngaynhonhat;
-                return;
-            }
+            
            
         }
 
@@ -237,17 +231,9 @@ namespace CtyTinLuong
             dteDenNgay.EditValue = DateTime.Today;
             DateTime ngaydauthang= cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
          
-            gridNhomDoiTuong.EditValue = 287;
-            
-            clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dtxx = clsxx.Select_ngay_nhoNhat();
-            ngaynhonhat = Convert.ToDateTime(dtxx.Rows[0][0].ToString());
-            dteNgayThietlap.EditValue = ngaynhonhat;
-            if (ngaynhonhat > ngaydauthang)
-                dteTuNgay.EditValue = ngaynhonhat;
-            else dteTuNgay.EditValue = ngaydauthang;
+           dteTuNgay.EditValue = ngaydauthang;
 
-            LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
+           // LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
