@@ -17,7 +17,6 @@ namespace CtyTinLuong.Luong_ChamCong
         public int _id_bophan;
         public string _TenVTHH;
         private DataTable _data;
-        private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         public Tr_frmPrintChamCong_TDK(int thang, int nam, int id_bophan)
