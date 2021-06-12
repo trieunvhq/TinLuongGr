@@ -233,6 +233,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TMC_CT.Designer.cs">
       <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCongToGapDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCongToGapDan.Designer.cs">
+      <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -423,17 +429,17 @@
     <Compile Include="Luong_ChamCong\frmChamCom_TGD.Designer.cs">
       <DependentUpon>frmChamCom_TGD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\T_frmPrintChamCongToGapDan.cs">
+    <Compile Include="Luong_ChamCong\T_frmPrintChamComToGapDan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\T_frmPrintChamCongToGapDan.Designer.cs">
-      <DependentUpon>T_frmPrintChamCongToGapDan.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\T_frmPrintChamComToGapDan.Designer.cs">
+      <DependentUpon>T_frmPrintChamComToGapDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\T_PrintChamCongToGapDan.cs">
+    <Compile Include="Luong_ChamCong\T_PrintChamComToGapDan.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\T_PrintChamCongToGapDan.Designer.cs">
-      <DependentUpon>T_PrintChamCongToGapDan.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\T_PrintChamComToGapDan.Designer.cs">
+      <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\VTHH_DinhMuc_Model.cs" />
     <Compile Include="MuaHang\MuaHang_frmCongNo.cs">
@@ -710,12 +716,6 @@
     </Compile>
     <Compile Include="Luong_ChamCong\frmMaHang_ChamCong_ToGapDan.Designer.cs">
       <DependentUpon>frmMaHang_ChamCong_ToGapDan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCongToGapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCongToGapDan.Designer.cs">
-      <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New_BoSungCongNhan_MayDot - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New_BoSungCongNhan_MayDot.cs" />
@@ -1834,6 +1834,9 @@
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TMC_CT.resx">
       <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
+      <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
       <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
     </EmbeddedResource>
@@ -1879,6 +1882,7 @@
     <EmbeddedResource Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.resx">
       <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -2044,11 +2048,11 @@
     <EmbeddedResource Include="Luong_ChamCong\frmChamCom_TGD.resx">
       <DependentUpon>frmChamCom_TGD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\T_frmPrintChamCongToGapDan.resx">
-      <DependentUpon>T_frmPrintChamCongToGapDan.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\T_frmPrintChamComToGapDan.resx">
+      <DependentUpon>T_frmPrintChamComToGapDan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\T_PrintChamCongToGapDan.resx">
-      <DependentUpon>T_PrintChamCongToGapDan.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\T_PrintChamComToGapDan.resx">
+      <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\MuaHang_frmChiTietCongNo_MuaHang.resx">
       <DependentUpon>MuaHang_frmChiTietCongNo_MuaHang.cs</DependentUpon>
@@ -2091,9 +2095,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmCaiMacDinnhMaHangToGapDan.resx">
       <DependentUpon>frmCaiMacDinnhMaHangToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
-      <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmChiTietLuong_DaiLy.resx">
       <DependentUpon>frmChiTietLuong_DaiLy.cs</DependentUpon>
