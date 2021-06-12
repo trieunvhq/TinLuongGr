@@ -32,6 +32,10 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
             ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
             ds_grid.Add(Ngay31);
+
+
+            this.cbNhanVien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbNhanVien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
         }
 
         private string LayThu(DateTime date)
@@ -146,9 +150,11 @@ namespace CtyTinLuong
                     cbBoPhan.DisplayMember = "TenBoPhan";
                     cbBoPhan.ValueMember = "ID_BoPhan";
                     cbBoPhan.DataSource = dt_;
-                    cbBoPhan.SelectedValue = 18;
+                    cbBoPhan.SelectedValue = 0;
                     cbBoPhan.Enabled = true;
 
+                    dt_ = clsThin_.T_NhanSu_SF("0,");
+                    cbNhanVien.DataSource = dt_;
                     cbNhanVien.DisplayMember = "TenNhanVien";
                     cbNhanVien.ValueMember = "ID_NhanSu";
                      
@@ -646,6 +652,23 @@ namespace CtyTinLuong
             {
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             }
+        }
+
+        private void cbBoPhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_SF((int)cbBoPhan.SelectedValue + ",");
+                cbNhanVien.DataSource = dt_;
+            }
+        }
+
+        private void cbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        { 
+        }
+
+        private void cbNhanVien_TextUpdate(object sender, EventArgs e)
+        {
         }
 
         private void btThoat_Click(object sender, EventArgs e)
