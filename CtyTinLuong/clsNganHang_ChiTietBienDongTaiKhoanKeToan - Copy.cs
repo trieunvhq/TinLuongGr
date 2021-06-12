@@ -15,7 +15,42 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsNganHang_ChiTietBienDongTaiKhoanKeToan : clsDBInteractionBase
 	{
-        //pr_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_NgayThang_HUU
+        //r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU
+        public DataTable Sum_Co_No_W_ID_Con_NgayThang_HUU(int xxID_TK_Con, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiiIDVTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_TaiKhoanKeToanCon", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_TK_Con));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("r_NganHang_ChiTietBienDongTaiKhoanKeToan_Sum_Co_No_W_ID_Con_NgayThang_HUU", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable Sum_Co_No_NgayThang_HUU(int xxID_TK_Me, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietBienDongTaiKhoan));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.dteNgayThietlap = new DevExpress.XtraEditors.DateEdit();
             this.txtTenTKMe = new System.Windows.Forms.TextBox();
             this.gridNhomDoiTuong = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -75,11 +75,14 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dteNgayThietlap = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtID_me = new System.Windows.Forms.TextBox();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNhomDoiTuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -100,9 +103,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -119,6 +121,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.txtID_me);
             this.dataLayoutControl1.Controls.Add(this.dteNgayThietlap);
             this.dataLayoutControl1.Controls.Add(this.txtTenTKMe);
             this.dataLayoutControl1.Controls.Add(this.gridNhomDoiTuong);
@@ -137,21 +140,39 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
+            // dteNgayThietlap
+            // 
+            this.dteNgayThietlap.EditValue = null;
+            this.dteNgayThietlap.Location = new System.Drawing.Point(754, 2);
+            this.dteNgayThietlap.Name = "dteNgayThietlap";
+            this.dteNgayThietlap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dteNgayThietlap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dteNgayThietlap.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dteNgayThietlap.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dteNgayThietlap.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dteNgayThietlap.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dteNgayThietlap.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayThietlap.Size = new System.Drawing.Size(244, 20);
+            this.dteNgayThietlap.StyleController = this.dataLayoutControl1;
+            this.dteNgayThietlap.TabIndex = 99;
+            // 
             // txtTenTKMe
             // 
-            this.txtTenTKMe.Location = new System.Drawing.Point(393, 28);
+            this.txtTenTKMe.Location = new System.Drawing.Point(416, 28);
             this.txtTenTKMe.Name = "txtTenTKMe";
-            this.txtTenTKMe.Size = new System.Drawing.Size(730, 20);
+            this.txtTenTKMe.Size = new System.Drawing.Size(707, 20);
             this.txtTenTKMe.TabIndex = 98;
             // 
             // gridNhomDoiTuong
             // 
-            this.gridNhomDoiTuong.Location = new System.Drawing.Point(81, 28);
+            this.gridNhomDoiTuong.Location = new System.Drawing.Point(104, 28);
             this.gridNhomDoiTuong.Name = "gridNhomDoiTuong";
             this.gridNhomDoiTuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridNhomDoiTuong.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridNhomDoiTuong.Size = new System.Drawing.Size(229, 20);
+            this.gridNhomDoiTuong.Size = new System.Drawing.Size(206, 20);
             this.gridNhomDoiTuong.StyleController = this.dataLayoutControl1;
             this.gridNhomDoiTuong.TabIndex = 97;
             this.gridNhomDoiTuong.EditValueChanged += new System.EventHandler(this.gridNhomDoiTuong_EditValueChanged);
@@ -240,7 +261,7 @@
             // dteDenNgay
             // 
             this.dteDenNgay.EditValue = null;
-            this.dteDenNgay.Location = new System.Drawing.Point(393, 2);
+            this.dteDenNgay.Location = new System.Drawing.Point(416, 2);
             this.dteDenNgay.Name = "dteDenNgay";
             this.dteDenNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -251,14 +272,14 @@
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteDenNgay.Size = new System.Drawing.Size(255, 20);
+            this.dteDenNgay.Size = new System.Drawing.Size(232, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 93;
             // 
             // dteTuNgay
             // 
             this.dteTuNgay.EditValue = null;
-            this.dteTuNgay.Location = new System.Drawing.Point(81, 2);
+            this.dteTuNgay.Location = new System.Drawing.Point(104, 2);
             this.dteTuNgay.Name = "dteTuNgay";
             this.dteTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -269,7 +290,7 @@
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteTuNgay.Size = new System.Drawing.Size(229, 20);
+            this.dteTuNgay.Size = new System.Drawing.Size(206, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 93;
             this.dteTuNgay.EditValueChanged += new System.EventHandler(this.dteTuNgay_EditValueChanged);
@@ -585,7 +606,8 @@
             this.emptySpaceItem1,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.layoutControlItem11});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1125, 569);
@@ -609,7 +631,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(312, 26);
             this.layoutControlItem1.Text = "Từ ngày";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem3
             // 
@@ -619,7 +641,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(338, 26);
             this.layoutControlItem3.Text = "Đến ngày";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem4
             // 
@@ -663,9 +685,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 543);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(437, 543);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(875, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(438, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -675,7 +697,7 @@
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(312, 24);
             this.layoutControlItem8.Text = "Nhóm đối tượng";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem9
             // 
@@ -684,25 +706,7 @@
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(813, 24);
             this.layoutControlItem9.Text = "Diễn giải";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(76, 13);
-            // 
-            // dteNgayThietlap
-            // 
-            this.dteNgayThietlap.EditValue = null;
-            this.dteNgayThietlap.Location = new System.Drawing.Point(731, 2);
-            this.dteNgayThietlap.Name = "dteNgayThietlap";
-            this.dteNgayThietlap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteNgayThietlap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteNgayThietlap.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.dteNgayThietlap.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayThietlap.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.dteNgayThietlap.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayThietlap.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteNgayThietlap.Size = new System.Drawing.Size(267, 20);
-            this.dteNgayThietlap.StyleController = this.dataLayoutControl1;
-            this.dteNgayThietlap.TabIndex = 99;
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem10
             // 
@@ -711,7 +715,22 @@
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(350, 26);
             this.layoutControlItem10.Text = "Ngày thiết lập";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(76, 13);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(99, 13);
+            // 
+            // txtID_me
+            // 
+            this.txtID_me.Location = new System.Drawing.Point(104, 545);
+            this.txtID_me.Name = "txtID_me";
+            this.txtID_me.Size = new System.Drawing.Size(331, 20);
+            this.txtID_me.TabIndex = 100;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtID_me;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 543);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(437, 26);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(99, 13);
             // 
             // frmChiTietBienDongTaiKhoan
             // 
@@ -726,6 +745,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNhomDoiTuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -746,9 +767,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteNgayThietlap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -801,5 +821,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.DateEdit dteNgayThietlap;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private System.Windows.Forms.TextBox txtID_me;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

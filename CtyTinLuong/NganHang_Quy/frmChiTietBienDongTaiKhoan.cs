@@ -14,8 +14,7 @@ namespace CtyTinLuong
     public partial class frmChiTietBienDongTaiKhoan : Form
     {
         public static int miiiID_TaiKhoanKeToanCon;
-        public static DateTime mdteTuNgay, mdteDenNgay;
-        public static double mdbNoDauKy, mdbCoDauKy;
+        public static DateTime mdteTuNgay, mdteDenNgay;        
         public static bool mPrtint_CongNo_NganHang;
         public static DataTable mdt_ChiTiet_Print;
 
@@ -29,113 +28,7 @@ namespace CtyTinLuong
             gridNhomDoiTuong.Properties.DisplayMember = "SoTaiKhoanMe"; //
             gridNhomDoiTuong.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
         }
-        public void LoadData_ccuuuuuuuuuuuu(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
-        {
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
-            dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
-            dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
-            dt2.Columns.Add("NoDauKy", typeof(double));
-            dt2.Columns.Add("CoDauKy", typeof(double));
-            dt2.Columns.Add("NoTrongKy", typeof(double));
-            dt2.Columns.Add("CoTrongKy", typeof(double));
-            dt2.Columns.Add("NoCuoiKy", typeof(double));
-            dt2.Columns.Add("CoCuoiKy", typeof(double));
-
-            gridControl1.DataSource = null;
-            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dt_du_Dau = cls.Sum_Co_No_NgayThang_Du_Dau_HUU(iiID_TKKeToanMe, xxtungay);
-            DataTable dt_PhatSinh = cls.Sum_Co_No_NgayThang_Phat_Sinh_HUU(iiID_TKKeToanMe,xxtungay,xxdenngay);
-            if(dt_PhatSinh.Rows.Count>0)
-            {
-                for (int i = 0; i < dt_PhatSinh.Rows.Count; i++)
-                {
-                    int iiIDID_TaiKhoanKeToanCon;
-                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
-                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
-
-                     iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dt_PhatSinh.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                    dNoTrongKy = Convert.ToDouble(dt_PhatSinh.Rows[i]["NoTrongKy"].ToString());
-                    dCoTrongKy = Convert.ToDouble(dt_PhatSinh.Rows[i]["CoTrongKy"].ToString());
-                    sTenTaiKhoanCon = dt_PhatSinh.Rows[i]["TenTaiKhoanCon"].ToString();
-                    sSoTaiKhoanCon = dt_PhatSinh.Rows[i]["SoTaiKhoanCon"].ToString();
-                    string expression;
-                    expression = "ID_TaiKhoanKeToanCon =" + iiIDID_TaiKhoanKeToanCon + "";
-                    DataRow[] foundRows;
-                    foundRows = dt_du_Dau.Select(expression);
-                    if (foundRows.Length > 0)
-                    {
-                        dNoDauKy =Convert.ToDouble(foundRows[0]["NoDauKy"].ToString());
-                        dCoDauKy = Convert.ToDouble(foundRows[0]["CoDauKy"].ToString());
-                    }
-                    else
-                    {
-                        dNoDauKy = dCoDauKy = 0;
-                    }
-                    dNoCuoiKy = dNoDauKy + dNoTrongKy;
-                    dCoCuoiKy = dCoDauKy + dCoTrongKy;
-                    DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;                
-
-                    _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
-                    _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
-                    _ravi["NoDauKy"] = dNoDauKy;
-                    _ravi["CoDauKy"] = dCoDauKy;
-                    _ravi["NoTrongKy"] = dNoTrongKy;
-                    _ravi["CoTrongKy"] = dCoTrongKy;
-                    _ravi["NoCuoiKy"] = dNoCuoiKy;
-                    _ravi["CoCuoiKy"] = dCoCuoiKy;
-                    dt2.Rows.Add(_ravi);
-
-                }
-            }
-            if (dt_du_Dau.Rows.Count > 0)
-            {
-                for (int i = 0; i < dt_du_Dau.Rows.Count; i++)
-                {
-                    int iiIDID_TaiKhoanKeToanCon;
-                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
-                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
-
-                    iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dt_du_Dau.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                    dNoDauKy = Convert.ToDouble(dt_du_Dau.Rows[i]["NoDauKy"].ToString());
-                    dCoDauKy = Convert.ToDouble(dt_du_Dau.Rows[i]["CoDauKy"].ToString());
-                    sTenTaiKhoanCon = dt_du_Dau.Rows[i]["TenTaiKhoanCon"].ToString();
-                    sSoTaiKhoanCon = dt_du_Dau.Rows[i]["SoTaiKhoanCon"].ToString();
-                    string expression;
-                    expression = "ID_TaiKhoanKeToanCon =" + iiIDID_TaiKhoanKeToanCon + "";
-                    DataRow[] foundRows;
-                    foundRows = dt_PhatSinh.Select(expression);
-                    if (foundRows.Length > 0)
-                    {
-                       
-                    }
-                    else
-                    {
-                        dNoTrongKy= 0;
-                        dCoTrongKy = 0;
-                        dNoCuoiKy = dNoDauKy + dNoTrongKy;
-                        dCoCuoiKy = dCoDauKy + dCoTrongKy;
-                        DataRow _ravi = dt2.NewRow();
-                        _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
-
-                        _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
-                        _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
-                        _ravi["NoDauKy"] = dNoDauKy;
-                        _ravi["CoDauKy"] = dCoDauKy;
-                        _ravi["NoTrongKy"] = dNoTrongKy;
-                        _ravi["CoTrongKy"] = dCoTrongKy;
-                        _ravi["NoCuoiKy"] = dNoCuoiKy;
-                        _ravi["CoCuoiKy"] = dCoCuoiKy;
-                        dt2.Rows.Add(_ravi);
-                    }
-                   
-
-                }
-            }
-            gridControl1.DataSource = dt2;
-        }
-
+    
         public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt2 = new DataTable();
@@ -295,8 +188,7 @@ namespace CtyTinLuong
                 mdteTuNgay = dteTuNgay.DateTime;
                 mdteDenNgay = dteDenNgay.DateTime;
                 //mdbNoDauKy, mdbCoDauKy;
-                mdbNoDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clNoDauKy).ToString());
-                mdbCoDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clCoDauKy).ToString());
+               
                 //miTrangThai_MuaHang1_BanHang2_VAT3 = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clTrangThai_MuaHang1_BanHang2_VAT3).ToString());
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 frmChiTietBienDongTaiKhoan_Mot_TaiKhoan ff = new frmChiTietBienDongTaiKhoan_Mot_TaiKhoan();
@@ -312,6 +204,7 @@ namespace CtyTinLuong
         private void gridNhomDoiTuong_EditValueChanged(object sender, EventArgs e)
         {
             int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+            txtID_me.Text = xxid.ToString();
             clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
             cls.iID_TaiKhoanKeToanMe = xxid;
             DataTable dt = cls.SelectOne();
@@ -358,7 +251,7 @@ namespace CtyTinLuong
                 dteTuNgay.EditValue = ngaynhonhat;
             else dteTuNgay.EditValue = ngaydauthang;
 
-            //LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
