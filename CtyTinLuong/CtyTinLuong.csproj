@@ -803,6 +803,18 @@
     <Compile Include="Luong_ChamCong\frmBangChamCongTrongThang.Designer.cs">
       <DependentUpon>frmBangChamCongTrongThang.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmPrintSanLuong_CT_Luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmPrintSanLuong_CT_Luong.Designer.cs">
+      <DependentUpon>Tr_frmPrintSanLuong_CT_Luong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_PrintSanLuong_CT_Luong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_PrintSanLuong_CT_Luong.Designer.cs">
+      <DependentUpon>Tr_PrintSanLuong_CT_Luong.cs</DependentUpon>
+    </Compile>
     <Compile Include="QUANTRI\clsAaatbMacDinhNguoiKy - Copy.cs" />
     <Compile Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.cs">
       <SubType>Form</SubType>
@@ -2239,6 +2251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_RutGon.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_RutGon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Tr_frmPrintSanLuong_CT_Luong.resx">
+      <DependentUpon>Tr_frmPrintSanLuong_CT_Luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Tr_PrintSanLuong_CT_Luong.resx">
+      <DependentUpon>Tr_PrintSanLuong_CT_Luong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCDinhMucHangNhu.resx">
       <DependentUpon>UCDinhMucHangNhu.cs</DependentUpon>
