@@ -164,7 +164,7 @@
             this.xrTableCell12.Text = "xrTableCell12";
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell12.TextFormatString = "{0:dd/MM/yyyy}";
-            this.xrTableCell12.Weight = 1.4450982662178569D;
+            this.xrTableCell12.Weight = 1.228183373107794D;
             // 
             // xrTableCell17
             // 
@@ -176,7 +176,7 @@
             this.xrTableCell17.StylePriority.UseTextAlignment = false;
             this.xrTableCell17.Text = "xrTableCell17";
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell17.Weight = 2.85959001441536D;
+            this.xrTableCell17.Weight = 3.0765049075254258D;
             // 
             // xrTableCell18
             // 
@@ -732,7 +732,7 @@
             this.xrTableCell37.StylePriority.UseTextAlignment = false;
             this.xrTableCell37.Text = "Số TK";
             this.xrTableCell37.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell37.Weight = 1.35987103206189D;
+            this.xrTableCell37.Weight = 1.5610884152939D;
             // 
             // xrTableCell38
             // 
@@ -744,7 +744,7 @@
             this.xrTableCell38.StylePriority.UseTextAlignment = false;
             this.xrTableCell38.Text = "Tên Tài khoản";
             this.xrTableCell38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell38.Weight = 4.11162180713156D;
+            this.xrTableCell38.Weight = 3.9104044238995503D;
             // 
             // xrTableCell10
             // 
