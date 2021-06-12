@@ -335,12 +335,6 @@
     <Compile Include="Luong_ChamCong\T_PrintChamComToGapDan.Designer.cs">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.Designer.cs">
-      <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1896,9 +1890,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\T_PrintChamComToGapDan.resx">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NganHang_Quy\NganHang_PhaiTraNguoiBan.resx">
-      <DependentUpon>NganHang_PhaiTraNguoiBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
