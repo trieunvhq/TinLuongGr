@@ -47,7 +47,7 @@ namespace CtyTinLuong
 
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
             DataTable dtdudau = cls.Sum_Co_No_W_ID_Con_NgayThang_Du_Dau_HUU(iiID_Con, xxtungay);
-            DataTable dtphatsinh = cls.Sum_Co_No_W_ID_Con_NgayThang_PhatSinh_HUU(iiID_Con, xxtungay, xxdenngay);
+            DataTable dtphatsinh = cls.SA_CongNo_MuaHang_HUU(iiID_Con, xxtungay, xxdenngay);
             double dNoDauKy_0, dCoDauKy_0;
             if (dtdudau.Rows.Count > 0)
             {
