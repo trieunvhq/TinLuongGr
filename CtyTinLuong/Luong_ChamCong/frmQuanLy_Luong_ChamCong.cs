@@ -71,11 +71,6 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmChamCongToGapDan frm = new frmChamCongToGapDan() { TopLevel = false, TopMost = true };
-            frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-
-            ShowWinform(frm,  sender);
         }
 
         private void frmQuanLy_Luong_ChamCong_Load(object sender, EventArgs e)
@@ -193,6 +188,26 @@ namespace CtyTinLuong
         private void navBTTL_TMC_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
             frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
+
+        private void navChamCong_TGD_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            frmChamCongToGapDan frm = new frmChamCongToGapDan() { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
+
+        private void navChamCong_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            frmChamCong_TBX frm = new frmChamCong_TBX() { TopLevel = false, TopMost = true };
             frm.LoadData(true);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
