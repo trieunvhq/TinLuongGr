@@ -38,7 +38,11 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("CoTrongKy", typeof(double));
             dt2xxxx.Columns.Add("NoCuoiKy", typeof(double));
             dt2xxxx.Columns.Add("CoCuoiKy", typeof(double));
-
+            dt2xxxx.Columns.Add("TK_DoiUng", typeof(string));
+            dt2xxxx.Columns.Add("SoLuong", typeof(double));
+            dt2xxxx.Columns.Add("DonGia", typeof(double));
+            dt2xxxx.Columns.Add("ThanhTien", typeof(double));
+            //TK_DoiUng
             gridControl2.DataSource = null;
 
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
