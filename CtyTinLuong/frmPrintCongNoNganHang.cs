@@ -102,7 +102,7 @@ namespace CtyTinLuong
                 Print_CongNo(frmCongNho_NganHang.mdt_ChiTiet_Print);
             if (Quy_NganHang_ChiTiet_CongNho_Newwwwww.mbPrint == true)
                 Print_ChiTietCongNo(Quy_NganHang_ChiTiet_CongNho_Newwwwww.mdt_ChiTiet_Print);
-            if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint == true)
+            if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint_Congno == true)
                 Print_ChiTietCongNo(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdt_ChiTiet_Print);
             if (frmChiTietBienDongTaiKhoan.mPrtint_CongNo_NganHang == true)
                 Print_CongNo(frmChiTietBienDongTaiKhoan.mdt_ChiTiet_Print);
@@ -117,7 +117,8 @@ namespace CtyTinLuong
         {
             frmCongNho_NganHang.mPrtint_CongNo_NganHang = false;
             Quy_NganHang_ChiTiet_CongNho_Newwwwww.mbPrint = false;
-            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint_Congno = false;
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint_PhaiTraNguoiBan = false;
             MuaHang_frmCongNo.mPrtint_CongNo_NganHang = false;
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
         }

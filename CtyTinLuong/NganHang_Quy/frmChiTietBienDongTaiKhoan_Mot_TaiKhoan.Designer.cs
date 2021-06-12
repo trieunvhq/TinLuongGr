@@ -146,7 +146,7 @@
             this.btPrint_PhaiTraNguoiBan.Size = new System.Drawing.Size(225, 22);
             this.btPrint_PhaiTraNguoiBan.StyleController = this.layoutControl1;
             this.btPrint_PhaiTraNguoiBan.TabIndex = 113;
-            this.btPrint_PhaiTraNguoiBan.Text = "Print _ Sổ phải trả người bán";
+            this.btPrint_PhaiTraNguoiBan.Text = "Print _ Sổ phải trả (thu)";
             this.btPrint_PhaiTraNguoiBan.Click += new System.EventHandler(this.btPrint_PhaiTraNguoiBan_Click);
             // 
             // btPrint_DoiChieuCongNo
@@ -160,6 +160,7 @@
             this.btPrint_DoiChieuCongNo.StyleController = this.layoutControl1;
             this.btPrint_DoiChieuCongNo.TabIndex = 112;
             this.btPrint_DoiChieuCongNo.Text = "Print Đối chiếu công nợ";
+            this.btPrint_DoiChieuCongNo.Click += new System.EventHandler(this.btPrint_DoiChieuCongNo_Click);
             // 
             // btRefresh
             // 
