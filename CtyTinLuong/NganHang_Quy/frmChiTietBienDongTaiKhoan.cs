@@ -175,7 +175,19 @@ namespace CtyTinLuong
                     mdteDenNgay = dteDenNgay.DateTime;
                     mssoTK_me = gridNhomDoiTuong.Text.ToString();
                     msTenTK_me = txtTenTKMe.Text;
-                    msTieuDe = "";
+                    int iiDi = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+                    clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+                    cls.iID_TaiKhoanKeToanMe = iiDi;
+                    DataTable dt = cls.SelectOne();
+                    if (cls.iID_TaiKhoanKeToanMe == 287)
+                        msTieuDe = "SỔ TỔNG HỢP PHẢI TRẢ CHO NGƯỜI BÁN";
+                    else if (cls.iID_TaiKhoanKeToanMe == 268)
+                        msTieuDe = "SỔ TỔNG HỢP PHẢI THU CỦA KHÁCH HÀNG";
+                    else if (cls.iID_TaiKhoanKeToanMe == 265)
+                        msTieuDe = "SỔ TỔNG HỢP TIỀN GỬI NGÂN HÀNG";
+                    else if (cls.iID_TaiKhoanKeToanMe == 315)
+                        msTieuDe = "SỔ TỔNG HỢP TIỀN MẶT";
+                    else msTieuDe = "SỔ TỔNG HỢP TÀI KHOẢN";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.Show();
 

@@ -100,7 +100,7 @@ namespace CtyTinLuong
           
             if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint == true)
                 Print_ChiTiet_TAIkHOAN(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mdt_ChiTiet_Print);
-            if (frmChiTietBienDongTaiKhoan.mPrtint_CongNo_NganHang == true)
+            if (frmChiTietBienDongTaiKhoan.mbPrint == true)
                 Print_frmChiTietBienDongTaiKhoan(frmChiTietBienDongTaiKhoan.mdt_ChiTiet_Print);
             if (MuaHang_frmCongNo.mPrtint_CongNo_NganHang == true)
                 Print_frmChiTietBienDongTaiKhoan(MuaHang_frmCongNo.mdt_ChiTiet_Print);
