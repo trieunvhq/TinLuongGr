@@ -432,16 +432,14 @@
             this.clNoDauKy.AppearanceCell.Options.UseTextOptions = true;
             this.clNoDauKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoDauKy.Caption = "Nợ";
-            this.clNoDauKy.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clNoDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoDauKy.FieldName = "NoDauKy";
-            this.clNoDauKy.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clNoDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoDauKy.Name = "clNoDauKy";
             this.clNoDauKy.OptionsColumn.AllowEdit = false;
             this.clNoDauKy.OptionsColumn.FixedWidth = true;
             this.clNoDauKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoDauKy", "{0:#,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoDauKy", "N")});
             this.clNoDauKy.Visible = true;
             this.clNoDauKy.Width = 120;
             // 
@@ -450,16 +448,14 @@
             this.clCoDauKy.AppearanceCell.Options.UseTextOptions = true;
             this.clCoDauKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoDauKy.Caption = "Có";
-            this.clCoDauKy.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clCoDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCoDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoDauKy.FieldName = "CoDauKy";
-            this.clCoDauKy.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clCoDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCoDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoDauKy.Name = "clCoDauKy";
             this.clCoDauKy.OptionsColumn.AllowEdit = false;
             this.clCoDauKy.OptionsColumn.FixedWidth = true;
             this.clCoDauKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoDauKy", "{0:#,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoDauKy", "N")});
             this.clCoDauKy.Visible = true;
             this.clCoDauKy.Width = 120;
             // 
@@ -484,16 +480,14 @@
             this.clNoTrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoTrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clNoTrongKy.Caption = "Nợ";
-            this.clNoTrongKy.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clNoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoTrongKy.FieldName = "NoTrongKy";
-            this.clNoTrongKy.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clNoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoTrongKy.Name = "clNoTrongKy";
             this.clNoTrongKy.OptionsColumn.AllowEdit = false;
             this.clNoTrongKy.OptionsColumn.FixedWidth = true;
             this.clNoTrongKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoTrongKy", "{0:#,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoTrongKy", "N")});
             this.clNoTrongKy.Visible = true;
             this.clNoTrongKy.Width = 120;
             // 
@@ -503,16 +497,14 @@
             this.clCoTrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoTrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clCoTrongKy.Caption = "Có";
-            this.clCoTrongKy.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clCoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoTrongKy.FieldName = "CoTrongKy";
-            this.clCoTrongKy.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clCoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoTrongKy.Name = "clCoTrongKy";
             this.clCoTrongKy.OptionsColumn.AllowEdit = false;
             this.clCoTrongKy.OptionsColumn.FixedWidth = true;
             this.clCoTrongKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoTrongKy", "{0:#,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoTrongKy", "N")});
             this.clCoTrongKy.Visible = true;
             this.clCoTrongKy.Width = 120;
             // 
@@ -536,16 +528,14 @@
             this.clNoCuoiKy.AppearanceCell.Options.UseTextOptions = true;
             this.clNoCuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoCuoiKy.Caption = "Nợ";
-            this.clNoCuoiKy.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clNoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoCuoiKy.FieldName = "NoCuoiKy";
-            this.clNoCuoiKy.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clNoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoCuoiKy.Name = "clNoCuoiKy";
             this.clNoCuoiKy.OptionsColumn.AllowEdit = false;
             this.clNoCuoiKy.OptionsColumn.FixedWidth = true;
             this.clNoCuoiKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoCuoiKy", "{0:#,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoCuoiKy", "N")});
             this.clNoCuoiKy.Visible = true;
             this.clNoCuoiKy.Width = 120;
             // 
@@ -554,16 +544,14 @@
             this.clCoCuoiKy.AppearanceCell.Options.UseTextOptions = true;
             this.clCoCuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoCuoiKy.Caption = "Có";
-            this.clCoCuoiKy.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clCoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoCuoiKy.FieldName = "CoCuoiKy";
-            this.clCoCuoiKy.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clCoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clCoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoCuoiKy.Name = "clCoCuoiKy";
             this.clCoCuoiKy.OptionsColumn.AllowEdit = false;
             this.clCoCuoiKy.OptionsColumn.FixedWidth = true;
             this.clCoCuoiKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoCuoiKy", "{0:#,##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoCuoiKy", "N")});
             this.clCoCuoiKy.Visible = true;
             this.clCoCuoiKy.Width = 120;
             // 
