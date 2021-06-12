@@ -45,8 +45,11 @@ namespace CtyTinLuong
             if (dt.Rows.Count > 0)
             {
                 pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                pKeToan.Value = dt.Rows[5]["HoTen"].ToString();
-                pPhoGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
+                pKeToan.Value = dt.Rows[6]["HoTen"].ToString();
+                pPhoGiamDoc.Value = dt.Rows[8]["HoTen"].ToString();
+            }
+            else
+            {
 
             }
             if (frmChiTietBienDongTaiKhoan.mbPrint == true)

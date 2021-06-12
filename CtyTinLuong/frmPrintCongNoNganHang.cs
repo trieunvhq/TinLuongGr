@@ -111,9 +111,8 @@ namespace CtyTinLuong
         {
             
          
-            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;
-     
-            //MuaHang_frmCongNo.mPrtint_CongNo_NganHang = false;
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;    
+           
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
         }
     }
