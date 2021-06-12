@@ -465,7 +465,7 @@ namespace CtyTinLuong
 
             //CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD(6, 2021);
             //ff.Show();
-            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(6, 2021);
+            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(7, 2021);
             ff.Show();
 
         }

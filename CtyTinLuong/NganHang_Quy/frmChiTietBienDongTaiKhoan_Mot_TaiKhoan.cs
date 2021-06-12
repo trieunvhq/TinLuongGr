@@ -242,7 +242,7 @@ namespace CtyTinLuong
             DataTable dt = cls1.SelectOne();
             msSoTaiKhoan = cls1.sSoTaiKhoanCon.Value;
             msTenTaiKhoan = cls1.sTenTaiKhoanCon.Value;
-            txtSoTK.Text = cls1.sSoTaiKhoanCon.Value.ToString();
+            //txtSoTK.Text = cls1.sSoTaiKhoanCon.Value.ToString();
             txtTenTK.Text = cls1.sTenTaiKhoanCon.Value.ToString();
             dteDenNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteDenNgay;
             dteTuNgay.EditValue = frmChiTietBienDongTaiKhoan.mdteTuNgay;
