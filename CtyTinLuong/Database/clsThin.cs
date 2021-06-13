@@ -224,11 +224,11 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable T_ChamCong_SF(int nam
+        public DataTable T_ChamCom_SF(int nam
             , int thang, int ID_BoPhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[T_ChamCong_SF]";
+            scmCmdToExecute.CommandText = "dbo.[T_ChamCom_SF]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
             DataTable dtToReturn = new DataTable("cpn_bp");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
