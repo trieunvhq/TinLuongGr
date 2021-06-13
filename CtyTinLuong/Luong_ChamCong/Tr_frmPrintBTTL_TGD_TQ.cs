@@ -126,7 +126,7 @@ namespace CtyTinLuong.Luong_ChamCong
                             _ravi2["TamUng"] = 0;
                         else
                             _ravi2["TamUng"] = Convert.ToDouble(TruTienCom_);
-                        ds.tbBTTL_TGD_CT.Rows.Add(_ravi2);
+                        ds.tbBTTL_TGD_TQ.Rows.Add(_ravi2);
 
                         TongLuong_ = 0;
                     }
