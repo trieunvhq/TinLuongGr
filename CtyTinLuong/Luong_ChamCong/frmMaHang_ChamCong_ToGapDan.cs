@@ -184,9 +184,9 @@ namespace CtyTinLuong
             DataTable newdtCaTruong2222 = dvCaTruong2222.ToTable();
 
 
-            gridCongNhan.Properties.DataSource = newdtCaTruong2222;
-            gridCongNhan.Properties.ValueMember = "ID_NhanSu";
-            gridCongNhan.Properties.DisplayMember = "MaNhanVien";
+            cbCongNhan.Properties.DataSource = newdtCaTruong2222;
+            cbCongNhan.Properties.ValueMember = "ID_NhanSu";
+            cbCongNhan.Properties.DisplayMember = "MaNhanVien";
 
 
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -278,7 +278,7 @@ namespace CtyTinLuong
             try
             {
                 clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
-                clsncc.iID_NhanSu = Convert.ToInt16(gridCongNhan.EditValue.ToString());
+                clsncc.iID_NhanSu = Convert.ToInt16(cbCongNhan.EditValue.ToString());
                 DataTable dt = clsncc.SelectOne();
                 if (dt.Rows.Count > 0)
                 {
