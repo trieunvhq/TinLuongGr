@@ -460,7 +460,7 @@ namespace CtyTinLuong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(6, 2021);
+            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(2, 2021);
             ff.Show();
 
             //CtyTinLuong.Luong_ChamCong.Tr_frmPrintCT_Luong_SL ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintCT_Luong_SL(6, 2021);
