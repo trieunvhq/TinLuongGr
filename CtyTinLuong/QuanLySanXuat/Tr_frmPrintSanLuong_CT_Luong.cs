@@ -12,12 +12,17 @@ namespace CtyTinLuong
 {
     public partial class Tr_frmPrintSanLuong_CT_Luong : Form
     {
-        private int _thang;
-        private int _nam;
-        public Tr_frmPrintSanLuong_CT_Luong(int thang, int nam)
+        private int _thang, _nam, _iiID_CongNhan;
+        private string _hoTenNhanVien;
+        private DataTable dt2;
+
+        public Tr_frmPrintSanLuong_CT_Luong(int thang, int nam, int iiID_CongNhan, string hoTenNhanVien)
         {
             _thang = thang;
             _nam = nam;
+            _iiID_CongNhan = iiID_CongNhan;
+            _hoTenNhanVien = hoTenNhanVien;
+
             InitializeComponent();
         }
 
@@ -26,66 +31,99 @@ namespace CtyTinLuong
             Tr_PrintSanLuong_CT_Luong xtr111 = new Tr_PrintSanLuong_CT_Luong(_thang, _nam);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
-            //ds.tbCongNhatChamCongToGapDan.Clone();
-            //ds.tbCongNhatChamCongToGapDan.Clear();
-            clsThin cls1 = new clsThin();
+            //ds.tbChiTiet_LuongSL.Clone();
+            //ds.tbChiTiet_LuongSL.Clear();
+            //clsThin cls1 = new clsThin();
 
-            DataTable dt3 = cls1.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, 18, 0, "");
+            //DataTable dt3 = cls1.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, 18, 0, "");
 
-            //for (int i = 0; i < dt3.Rows.Count; i++)
-            //{
-            //    //DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
+            //dt2 = new DataTable();
 
-            //    //_ravi["TenNhanVien"] = dt3.Rows[i]["TenNhanVien"].ToString();
-            //    //_ravi["Ngay1"] = Convert.ToInt32(dt3.Rows[i]["Ngay1"].ToString());
-            //    //_ravi["Ngay2"] = Convert.ToInt32(dt3.Rows[i]["Ngay2"].ToString());
-            //    //_ravi["Ngay3"] = Convert.ToInt32(dt3.Rows[i]["Ngay3"].ToString());
-            //    //_ravi["Ngay4"] = Convert.ToInt32(dt3.Rows[i]["Ngay4"].ToString());
-            //    //_ravi["Ngay5"] = Convert.ToInt32(dt3.Rows[i]["Ngay5"].ToString());
-            //    //_ravi["Ngay6"] = Convert.ToInt32(dt3.Rows[i]["Ngay6"].ToString());
-            //    //_ravi["Ngay7"] = Convert.ToInt32(dt3.Rows[i]["Ngay7"].ToString());
-            //    //_ravi["Ngay8"] = Convert.ToInt32(dt3.Rows[i]["Ngay8"].ToString());
-            //    //_ravi["Ngay9"] = Convert.ToInt32(dt3.Rows[i]["Ngay9"].ToString());
-            //    //_ravi["Ngay10"] = Convert.ToInt32(dt3.Rows[i]["Ngay10"].ToString());
-            //    //_ravi["Ngay11"] = Convert.ToInt32(dt3.Rows[i]["Ngay11"].ToString());
-            //    //_ravi["Ngay12"] = Convert.ToInt32(dt3.Rows[i]["Ngay12"].ToString());
-            //    //_ravi["Ngay13"] = Convert.ToInt32(dt3.Rows[i]["Ngay13"].ToString());
-            //    //_ravi["Ngay14"] = Convert.ToInt32(dt3.Rows[i]["Ngay14"].ToString());
-            //    //_ravi["Ngay15"] = Convert.ToInt32(dt3.Rows[i]["Ngay15"].ToString());
-            //    //_ravi["Ngay16"] = Convert.ToInt32(dt3.Rows[i]["Ngay16"].ToString());
-            //    //_ravi["Ngay17"] = Convert.ToInt32(dt3.Rows[i]["Ngay17"].ToString());
-            //    //_ravi["Ngay18"] = Convert.ToInt32(dt3.Rows[i]["Ngay18"].ToString());
-            //    //_ravi["Ngay19"] = Convert.ToInt32(dt3.Rows[i]["Ngay19"].ToString());
-            //    //_ravi["Ngay20"] = Convert.ToInt32(dt3.Rows[i]["Ngay20"].ToString());
-            //    //_ravi["Ngay21"] = Convert.ToInt32(dt3.Rows[i]["Ngay21"].ToString());
-            //    //_ravi["Ngay22"] = Convert.ToInt32(dt3.Rows[i]["Ngay22"].ToString());
-            //    //_ravi["Ngay23"] = Convert.ToInt32(dt3.Rows[i]["Ngay23"].ToString());
-            //    //_ravi["Ngay24"] = Convert.ToInt32(dt3.Rows[i]["Ngay24"].ToString());
-            //    //_ravi["Ngay25"] = Convert.ToInt32(dt3.Rows[i]["Ngay25"].ToString());
-            //    //_ravi["Ngay26"] = Convert.ToInt32(dt3.Rows[i]["Ngay26"].ToString());
-            //    //_ravi["Ngay27"] = Convert.ToInt32(dt3.Rows[i]["Ngay27"].ToString());
-            //    //_ravi["Ngay28"] = Convert.ToInt32(dt3.Rows[i]["Ngay28"].ToString());
-            //    //_ravi["Ngay29"] = Convert.ToInt32(dt3.Rows[i]["Ngay29"].ToString());
-            //    //_ravi["Ngay30"] = Convert.ToInt32(dt3.Rows[i]["Ngay30"].ToString());
-            //    //_ravi["Ngay31"] = Convert.ToInt32(dt3.Rows[i]["Ngay31"].ToString());
-            //    //_ravi["Tong"] = Convert.ToDouble(dt3.Rows[i]["Tong"].ToString());
-            //    //_ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-            //    //_ravi["KyNhan"] = "ấdasd";
+            clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
+            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+            DataTable dtxxxx = new DataTable();
+            dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(_iiID_CongNhan, GetFistDayInMonth(_nam, _thang), GetLastDayInMonth(_nam, _thang));
+            int days = DateTime.DaysInMonth(_nam, _thang);
 
 
-            //    // ds.tbCongNhatChamCongToGapDan.Rows.Add(_ravi);
-            //}
 
-            //xtr111.DataSource = null;
-            // xtr111.DataSource = ds.tbCongNhatChamCongToGapDan;
-            // xtr111.DataMember = "tbCongNhatChamCongToGapDan";
+            int id_vthh_cu_ = 0;
+            double tong1 = 0, tong2 = 0;
+            for (int k = 0; k < dtxxxx.Rows.Count; k++)
+            {
+                DataRow _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
+                DataRow _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
+
+                double snluong_thuong = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
+                double snluong_tangca = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
+
+                int ngay_ = (Convert.ToDateTime(dtxxxx.Rows[k]["NgaySanXuat"].ToString()).Day);
+                _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+                _ravi_2["TenNhanVien"] = _hoTenNhanVien;
+
+                _ravi_1["Ngay" + (ngay_)] = snluong_thuong;
+                _ravi_2["Ngay" + (ngay_)] = snluong_tangca;
+                tong1 += snluong_thuong;
+                tong2 += snluong_tangca;
+                _ravi_1["Tong"] = tong1;
+                _ravi_2["Tong"] = tong2;
+                //
+                int id_vthh_ = 0;
+                if (k < dtxxxx.Rows.Count - 1)
+                {
+                    id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
+
+                    if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
+                    {
+                        //_ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                        //_ravi_1["Cong"] = "Thường";
+
+                        //_ravi_2["TenVTHH"] = "";
+                        //_ravi_2["Cong"] = "Tăng ca";
+
+                        tong1 = 0;
+                        tong2 = 0;
+                        id_vthh_cu_ = id_vthh_;
+                    }
+                    else
+                    { }
+                }
+                else
+                {
+                    //
+                    //_ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                    //_ravi_1["Cong"] = "Thường";
+
+                    //_ravi_2["TenVTHH"] = "";
+                    //_ravi_2["Cong"] = "Tăng ca";
+
+                    tong1 = 0;
+                    tong2 = 0;
+                }
+
+                ds.tbChiTiet_LuongSL.Rows.Add(_ravi_1);
+                ds.tbChiTiet_LuongSL.Rows.Add(_ravi_2);
+            }
 
             xtr111.DataSource = null;
-            xtr111.DataSource = dt3;
+            xtr111.DataSource = ds.tbChiTiet_LuongSL;
+            xtr111.DataMember = "tbChiTiet_LuongSL";
 
 
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
+        }
+
+        public static DateTime GetFistDayInMonth(int year, int month)
+        {
+            DateTime aDateTime = new DateTime(year, month, 1);
+            return aDateTime;
+        }
+        public static DateTime GetLastDayInMonth(int year, int month)
+        {
+            DateTime aDateTime = new DateTime(year, month, 1);
+            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
+            return retDateTime;
         }
     }
 }

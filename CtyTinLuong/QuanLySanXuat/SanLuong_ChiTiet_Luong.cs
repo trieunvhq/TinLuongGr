@@ -320,6 +320,7 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
+        private int xxID;
         private void gridCongNhan_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -329,7 +330,7 @@ namespace CtyTinLuong
                 DataTable dt = clsncc.SelectOne();
 
                 txtHoTen.Text = clsncc.sTenNhanVien.Value;
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
+                xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
                 LoadData(xxID);
                 HienThiGridcontrol2(xxID);
 
@@ -434,7 +435,7 @@ namespace CtyTinLuong
         {
             _nam = Convert.ToInt32(txtNam.Text.ToString());
             _thang = Convert.ToInt32(txtThang.Text.ToString());
-            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(_thang, _nam);
+            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(_thang, _nam, xxID, txtHoTen.Text);
             ff.Show();
 
 
