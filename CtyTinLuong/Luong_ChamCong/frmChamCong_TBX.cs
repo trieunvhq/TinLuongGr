@@ -21,7 +21,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCong_TBX : Form
     { 
-        public int _nam, _thang, _id_bophan = 25;
+        public int _nam, _thang, _id_bophan = 25, _ID_DinhMucLuong_CongNhat;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -29,6 +29,7 @@ namespace CtyTinLuong
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmChamCong_TBX(int id_bophan)
         {
+            _ID_DinhMucLuong_CongNhat= 0;
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
@@ -819,7 +820,7 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true, isTang, _id_bophan);
+                        0, true, isTang, _id_bophan, _ID_DinhMucLuong_CongNhat);
                 }
                 if (isGuiThanhCong)
                 {

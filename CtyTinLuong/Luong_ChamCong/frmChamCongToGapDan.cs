@@ -568,7 +568,7 @@ namespace CtyTinLuong
             // miID_congNhan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
 
             // msTenNhanVien = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
-            frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(this);
+            frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(_nam,_thang,_id_vthh,0,_id_bophan);
             ff.Show();
         }
 
@@ -798,6 +798,11 @@ namespace CtyTinLuong
             LoadData(false);
         }
 
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         { 
             GridView view = sender as GridView;
@@ -899,7 +904,7 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true,false,_id_bophan);
+                        0, true,false,_id_bophan,_ID_DinhMucLuong_CongNhat);
                 }
                 if (isGuiThanhCong)
                 {
