@@ -458,6 +458,23 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tbChiTiet_LuongSL_sub" msprop:Generator_TableClassName="tbChiTiet_LuongSL_subDataTable" msprop:Generator_TableVarName="tabletbChiTiet_LuongSL_sub" msprop:Generator_TablePropName="tbChiTiet_LuongSL_sub" msprop:Generator_RowDeletingName="tbChiTiet_LuongSL_subRowDeleting" msprop:Generator_RowChangingName="tbChiTiet_LuongSL_subRowChanging" msprop:Generator_RowEvHandlerName="tbChiTiet_LuongSL_subRowChangeEventHandler" msprop:Generator_RowDeletedName="tbChiTiet_LuongSL_subRowDeleted" msprop:Generator_UserTableName="tbChiTiet_LuongSL_sub" msprop:Generator_RowChangedName="tbChiTiet_LuongSL_subRowChanged" msprop:Generator_RowEvArgName="tbChiTiet_LuongSL_subRowChangeEvent" msprop:Generator_RowClassName="tbChiTiet_LuongSL_subRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TenNhanVien" msprop:Generator_ColumnVarNameInTable="columnTenNhanVien" msprop:Generator_ColumnPropNameInRow="TenNhanVien" msprop:Generator_ColumnPropNameInTable="TenNhanVienColumn" msprop:Generator_UserColumnName="TenNhanVien" type="xs:string" minOccurs="0" />
+              <xs:element name="MaHang" msprop:Generator_ColumnVarNameInTable="columnMaHang" msprop:Generator_ColumnPropNameInRow="MaHang" msprop:Generator_ColumnPropNameInTable="MaHangColumn" msprop:Generator_UserColumnName="MaHang" type="xs:string" minOccurs="0" />
+              <xs:element name="TenHang" msprop:Generator_ColumnVarNameInTable="columnTenHang" msprop:Generator_ColumnPropNameInRow="TenHang" msprop:Generator_ColumnPropNameInTable="TenHangColumn" msprop:Generator_UserColumnName="TenHang" type="xs:string" minOccurs="0" />
+              <xs:element name="DonGia" msprop:Generator_ColumnVarNameInTable="columnDonGia" msprop:Generator_ColumnPropNameInRow="DonGia" msprop:Generator_ColumnPropNameInTable="DonGiaColumn" msprop:Generator_UserColumnName="DonGia" type="xs:double" minOccurs="0" />
+              <xs:element name="DonGiaTang" msprop:Generator_ColumnVarNameInTable="columnDonGiaTang" msprop:Generator_ColumnPropNameInRow="DonGiaTang" msprop:Generator_ColumnPropNameInTable="DonGiaTangColumn" msprop:Generator_UserColumnName="DonGiaTang" type="xs:double" minOccurs="0" />
+              <xs:element name="TongLuong" msprop:Generator_ColumnVarNameInTable="columnTongLuong" msprop:Generator_ColumnPropNameInRow="TongLuong" msprop:Generator_ColumnPropNameInTable="TongLuongColumn" msprop:Generator_UserColumnName="TongLuong" type="xs:double" minOccurs="0" />
+              <xs:element name="BaoHiem" msprop:Generator_ColumnVarNameInTable="columnBaoHiem" msprop:Generator_ColumnPropNameInRow="BaoHiem" msprop:Generator_ColumnPropNameInTable="BaoHiemColumn" msprop:Generator_UserColumnName="BaoHiem" type="xs:double" minOccurs="0" />
+              <xs:element name="AnCa" msprop:Generator_ColumnVarNameInTable="columnAnCa" msprop:Generator_ColumnPropNameInRow="AnCa" msprop:Generator_ColumnPropNameInTable="AnCaColumn" msprop:Generator_UserColumnName="AnCa" type="xs:double" minOccurs="0" />
+              <xs:element name="TamUng" msprop:Generator_ColumnVarNameInTable="columnTamUng" msprop:Generator_ColumnPropNameInRow="TamUng" msprop:Generator_ColumnPropNameInTable="TamUngColumn" msprop:Generator_UserColumnName="TamUng" type="xs:double" minOccurs="0" />
+              <xs:element name="ThucNhan" msprop:Generator_ColumnVarNameInTable="columnThucNhan" msprop:Generator_ColumnPropNameInRow="ThucNhan" msprop:Generator_ColumnPropNameInTable="ThucNhanColumn" msprop:Generator_UserColumnName="ThucNhan" type="xs:double" minOccurs="0" />
+              <xs:element name="TongSanLuong" msprop:Generator_ColumnVarNameInTable="columnTongSanLuong" msprop:Generator_ColumnPropNameInRow="TongSanLuong" msprop:Generator_ColumnPropNameInTable="TongSanLuongColumn" msprop:Generator_UserColumnName="TongSanLuong" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
