@@ -92,8 +92,10 @@
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.pKhachHang_NCC = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTieuDeKH_NCC = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -845,6 +847,11 @@
             this.pTieuDeKH_NCC.Description = "Parameter1";
             this.pTieuDeKH_NCC.Name = "pTieuDeKH_NCC";
             // 
+            // dataSet_TinLuong1
+            // 
+            this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
+            this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Xtra_DoiChieuCongNo
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -854,6 +861,10 @@
             this.ReportHeader,
             this.PageHeader,
             this.GroupFooter1});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.dataSet_TinLuong1});
+            this.DataMember = "tbChiTietBienDongTaiKhoan";
+            this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(93, 68, 73, 47);
             this.PageHeight = 827;
@@ -870,6 +881,7 @@
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -939,5 +951,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.Parameters.Parameter pKhachHang_NCC;
         private DevExpress.XtraReports.Parameters.Parameter pTieuDeKH_NCC;
+        private DataSet_TinLuong dataSet_TinLuong1;
     }
 }
