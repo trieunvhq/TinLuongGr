@@ -20,7 +20,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCongToGapDan : Form
     { 
-        public int _nam, _thang, _id_bophan, _id_vthh;
+        public int _nam, _thang, _id_bophan, _id_vthh, _ID_DinhMucLuong_CongNhat;
         public string _ten_vthh;
         private DataTable _data;
         private bool isload = true;
@@ -29,6 +29,7 @@ namespace CtyTinLuong
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmChamCongToGapDan(int id_bophan)
         {
+            _ID_DinhMucLuong_CongNhat = 0;
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
