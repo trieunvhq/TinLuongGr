@@ -261,6 +261,11 @@
               <xs:element name="TaiKhoanDoiUng" msprop:Generator_ColumnVarNameInTable="columnTaiKhoanDoiUng" msprop:Generator_ColumnPropNameInRow="TaiKhoanDoiUng" msprop:Generator_ColumnPropNameInTable="TaiKhoanDoiUngColumn" msprop:Generator_UserColumnName="TaiKhoanDoiUng" type="xs:string" minOccurs="0" />
               <xs:element name="NoDauKy" msprop:Generator_ColumnVarNameInTable="columnNoDauKy" msprop:Generator_ColumnPropNameInRow="NoDauKy" msprop:Generator_ColumnPropNameInTable="NoDauKyColumn" msprop:Generator_UserColumnName="NoDauKy" type="xs:double" minOccurs="0" />
               <xs:element name="CoDauKy" msprop:Generator_ColumnVarNameInTable="columnCoDauKy" msprop:Generator_ColumnPropNameInRow="CoDauKy" msprop:Generator_ColumnPropNameInTable="CoDauKyColumn" msprop:Generator_UserColumnName="CoDauKy" type="xs:double" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:double" minOccurs="0" />
+              <xs:element name="DonGia" msprop:Generator_ColumnVarNameInTable="columnDonGia" msprop:Generator_ColumnPropNameInRow="DonGia" msprop:Generator_ColumnPropNameInTable="DonGiaColumn" msprop:Generator_UserColumnName="DonGia" type="xs:double" minOccurs="0" />
+              <xs:element name="ThanhTien" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_UserColumnName="ThanhTien" type="xs:double" minOccurs="0" />
+              <xs:element name="GhiChu" msprop:Generator_ColumnVarNameInTable="columnGhiChu" msprop:Generator_ColumnPropNameInRow="GhiChu" msprop:Generator_ColumnPropNameInTable="GhiChuColumn" msprop:Generator_UserColumnName="GhiChu" type="xs:string" minOccurs="0" />
+              <xs:element name="DoiTuong" msprop:Generator_ColumnVarNameInTable="columnDoiTuong" msprop:Generator_ColumnPropNameInRow="DoiTuong" msprop:Generator_ColumnPropNameInTable="DoiTuongColumn" msprop:Generator_UserColumnName="DoiTuong" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
