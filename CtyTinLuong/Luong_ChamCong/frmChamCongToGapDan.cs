@@ -20,7 +20,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCongToGapDan : Form
     { 
-        public int _nam, _thang, _id_bophan, _id_vthh;
+        public int _nam, _thang, _id_bophan, _id_vthh, _ID_DinhMucLuong_CongNhat;
         public string _ten_vthh;
         private DataTable _data;
         private bool isload = true;
@@ -29,6 +29,7 @@ namespace CtyTinLuong
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmChamCongToGapDan(int id_bophan)
         {
+            _ID_DinhMucLuong_CongNhat = 0;
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
@@ -567,7 +568,7 @@ namespace CtyTinLuong
             // miID_congNhan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
 
             // msTenNhanVien = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
-            frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(this);
+            frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(_nam,_thang,_id_vthh,0,_id_bophan);
             ff.Show();
         }
 
@@ -797,6 +798,11 @@ namespace CtyTinLuong
             LoadData(false);
         }
 
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         { 
             GridView view = sender as GridView;
@@ -898,7 +904,7 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true,false,_id_bophan);
+                        0, true,false,_id_bophan,_ID_DinhMucLuong_CongNhat);
                 }
                 if (isGuiThanhCong)
                 {

@@ -56,7 +56,7 @@ namespace CtyTinLuong
         private void Print_MuaHang_frmCongNo(DataTable dt3)
         {
 
-            Xtra_CongNo_NganHang xtr111 = new Xtra_CongNo_NganHang();
+            Xtra_DoiChieuCongNo xtr111 = new Xtra_DoiChieuCongNo();
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbCongNo_NganHang.Clone();

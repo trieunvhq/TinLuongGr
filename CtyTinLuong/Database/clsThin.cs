@@ -224,11 +224,11 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable T_ChamCong_SF(int nam
+        public DataTable T_ChamCom_SF(int nam
             , int thang, int ID_BoPhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[T_ChamCong_SF]";
+            scmCmdToExecute.CommandText = "dbo.[T_ChamCom_SF]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
             DataTable dtToReturn = new DataTable("cpn_bp");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
@@ -386,7 +386,7 @@ namespace CtyTinLuong
             , float fNgay14, float fNgay15, float fNgay16, float fNgay17, float fNgay18, float fNgay19
             , float fNgay20, float fNgay21, float fNgay22, float fNgay23, float fNgay24, float fNgay25
             , float fNgay26, float fNgay27, float fNgay28, float fNgay29, float fNgay30, float fNgay31
-            , float fSanLuong, bool bGuiDuLieu, bool bIsTangCa, int id_bophan)
+            , float fSanLuong, bool bGuiDuLieu, bool bIsTangCa, int id_bophan, int ID_DinhMucLuong_CongNhat)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I]";
@@ -443,6 +443,7 @@ namespace CtyTinLuong
 
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@bIsTangCa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bIsTangCa));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_DinhMucLuong_CongNhat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_DinhMucLuong_CongNhat));
 
                 // Open connection.
                 m_scoMainConnection.Open();
