@@ -32,6 +32,8 @@ namespace CtyTinLuong.Luong_ChamCong
             else xrlbThang.Text = _thang.ToString();
             xrlbNam.Text = _nam.ToString();
 
+            xrTable2.DeleteRow(xrTable2.Rows[1]);
+
             //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgay.Value);
             if (d.Day > 9)
