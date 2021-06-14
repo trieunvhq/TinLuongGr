@@ -129,12 +129,34 @@ namespace CtyTinLuong
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
-                clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();
-                cls1.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(cli).ToString());
+                clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+                int iiIDthuchi= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
+                DataTable dt1 = cls1.SelectOne();
+                string sochungtu = cls1.sSoChungTu.Value;
+                DateTime ngay = cls1.daNgayChungTu.Value;
+
+                cls1 = new clsNganHang_tbThuChi();
+                cls1.iID_ThuChi = iiIDthuchi;
                 cls1.Delete();
-                clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
-                cls2.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
-                cls2.Delete_W_ID_MuaHang();
+                clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
+                cls2.iID_ThuChi = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
+                cls2.Delete_ALL_W_ID_ThuChi();
+
+                //xoá chi tiết biến động tài khoản
+               clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+                clsxx.iID_ChungTu = iiIDthuchi;
+                clsxx.sSoChungTu = sochungtu;
+                clsxx.daNgayThang = ngay;
+
+                DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
+                if (dt2_cu.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt2_cu.Rows.Count; i++)
+                    {
+                        clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
+                        clsxx.Delete();
+                    }
+                }
                 MessageBox.Show("Đã xóa");
 
             }
