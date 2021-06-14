@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions29 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject113 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject114 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject115 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject116 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions30 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject117 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject118 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject119 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject120 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong_TDK));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -152,9 +152,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions29.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions29, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject113, serializableAppearanceObject114, serializableAppearanceObject115, serializableAppearanceObject116, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // btThoat
@@ -208,7 +208,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 6);
+            this.label3.Location = new System.Drawing.Point(180, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 126;
@@ -218,7 +218,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(167, 6);
+            this.label4.Location = new System.Drawing.Point(326, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 127;
@@ -227,7 +227,7 @@
             // txtThang
             // 
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(97, 2);
+            this.txtThang.Location = new System.Drawing.Point(256, 13);
             this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 20);
@@ -238,7 +238,7 @@
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(223, 3);
+            this.txtNam.Location = new System.Drawing.Point(382, 14);
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(78, 20);
@@ -249,9 +249,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions30.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions30, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject117, serializableAppearanceObject118, serializableAppearanceObject119, serializableAppearanceObject120, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -400,7 +400,7 @@
             this.clSTT.OptionsColumn.FixedWidth = true;
             this.clSTT.Visible = true;
             this.clSTT.VisibleIndex = 0;
-            this.clSTT.Width = 30;
+            this.clSTT.Width = 40;
             // 
             // clTongLuong
             // 
@@ -426,13 +426,13 @@
             this.TenVTHH.Caption = "TÊN HÀNG";
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.TenVTHH.MaxWidth = 185;
-            this.TenVTHH.MinWidth = 185;
+            this.TenVTHH.MaxWidth = 194;
+            this.TenVTHH.MinWidth = 177;
             this.TenVTHH.Name = "TenVTHH";
             this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 1;
-            this.TenVTHH.Width = 185;
+            this.TenVTHH.Width = 177;
             // 
             // clID_ChiTietChamCong
             // 
@@ -516,8 +516,8 @@
             this.Ngay1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay1.Caption = "01";
             this.Ngay1.FieldName = "Ngay1";
-            this.Ngay1.MaxWidth = 27;
-            this.Ngay1.MinWidth = 27;
+            this.Ngay1.MaxWidth = 28;
+            this.Ngay1.MinWidth = 28;
             this.Ngay1.Name = "Ngay1";
             this.Ngay1.OptionsColumn.FixedWidth = true;
             this.Ngay1.OptionsFilter.AllowAutoFilter = false;
@@ -541,8 +541,8 @@
             this.Ngay2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay2.Caption = "02";
             this.Ngay2.FieldName = "Ngay2";
-            this.Ngay2.MaxWidth = 27;
-            this.Ngay2.MinWidth = 27;
+            this.Ngay2.MaxWidth = 28;
+            this.Ngay2.MinWidth = 28;
             this.Ngay2.Name = "Ngay2";
             this.Ngay2.OptionsColumn.FixedWidth = true;
             this.Ngay2.OptionsFilter.AllowAutoFilter = false;
@@ -566,8 +566,8 @@
             this.Ngay3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay3.Caption = "03";
             this.Ngay3.FieldName = "Ngay3";
-            this.Ngay3.MaxWidth = 27;
-            this.Ngay3.MinWidth = 27;
+            this.Ngay3.MaxWidth = 28;
+            this.Ngay3.MinWidth = 28;
             this.Ngay3.Name = "Ngay3";
             this.Ngay3.OptionsColumn.FixedWidth = true;
             this.Ngay3.OptionsFilter.AllowAutoFilter = false;
@@ -591,8 +591,8 @@
             this.Ngay4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay4.Caption = "04";
             this.Ngay4.FieldName = "Ngay4";
-            this.Ngay4.MaxWidth = 27;
-            this.Ngay4.MinWidth = 27;
+            this.Ngay4.MaxWidth = 28;
+            this.Ngay4.MinWidth = 28;
             this.Ngay4.Name = "Ngay4";
             this.Ngay4.OptionsColumn.FixedWidth = true;
             this.Ngay4.OptionsFilter.AllowAutoFilter = false;
@@ -616,8 +616,8 @@
             this.Ngay5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay5.Caption = "05";
             this.Ngay5.FieldName = "Ngay5";
-            this.Ngay5.MaxWidth = 27;
-            this.Ngay5.MinWidth = 27;
+            this.Ngay5.MaxWidth = 28;
+            this.Ngay5.MinWidth = 28;
             this.Ngay5.Name = "Ngay5";
             this.Ngay5.OptionsColumn.FixedWidth = true;
             this.Ngay5.OptionsFilter.AllowAutoFilter = false;
@@ -641,8 +641,8 @@
             this.Ngay6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay6.Caption = "06";
             this.Ngay6.FieldName = "Ngay6";
-            this.Ngay6.MaxWidth = 27;
-            this.Ngay6.MinWidth = 27;
+            this.Ngay6.MaxWidth = 28;
+            this.Ngay6.MinWidth = 28;
             this.Ngay6.Name = "Ngay6";
             this.Ngay6.OptionsColumn.FixedWidth = true;
             this.Ngay6.OptionsFilter.AllowAutoFilter = false;
@@ -666,8 +666,8 @@
             this.Ngay7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay7.Caption = "07";
             this.Ngay7.FieldName = "Ngay7";
-            this.Ngay7.MaxWidth = 27;
-            this.Ngay7.MinWidth = 27;
+            this.Ngay7.MaxWidth = 28;
+            this.Ngay7.MinWidth = 28;
             this.Ngay7.Name = "Ngay7";
             this.Ngay7.OptionsColumn.FixedWidth = true;
             this.Ngay7.OptionsFilter.AllowAutoFilter = false;
@@ -691,8 +691,8 @@
             this.Ngay8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay8.Caption = "08";
             this.Ngay8.FieldName = "Ngay8";
-            this.Ngay8.MaxWidth = 27;
-            this.Ngay8.MinWidth = 27;
+            this.Ngay8.MaxWidth = 28;
+            this.Ngay8.MinWidth = 28;
             this.Ngay8.Name = "Ngay8";
             this.Ngay8.OptionsColumn.FixedWidth = true;
             this.Ngay8.OptionsFilter.AllowAutoFilter = false;
@@ -716,8 +716,8 @@
             this.Ngay9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay9.Caption = "09";
             this.Ngay9.FieldName = "Ngay9";
-            this.Ngay9.MaxWidth = 27;
-            this.Ngay9.MinWidth = 27;
+            this.Ngay9.MaxWidth = 28;
+            this.Ngay9.MinWidth = 28;
             this.Ngay9.Name = "Ngay9";
             this.Ngay9.OptionsColumn.FixedWidth = true;
             this.Ngay9.OptionsFilter.AllowAutoFilter = false;
@@ -741,8 +741,8 @@
             this.Ngay10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay10.Caption = "10";
             this.Ngay10.FieldName = "Ngay10";
-            this.Ngay10.MaxWidth = 27;
-            this.Ngay10.MinWidth = 27;
+            this.Ngay10.MaxWidth = 28;
+            this.Ngay10.MinWidth = 28;
             this.Ngay10.Name = "Ngay10";
             this.Ngay10.OptionsColumn.FixedWidth = true;
             this.Ngay10.OptionsFilter.AllowAutoFilter = false;
@@ -767,8 +767,8 @@
             this.Ngay11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay11.Caption = "11";
             this.Ngay11.FieldName = "Ngay11";
-            this.Ngay11.MaxWidth = 27;
-            this.Ngay11.MinWidth = 27;
+            this.Ngay11.MaxWidth = 28;
+            this.Ngay11.MinWidth = 28;
             this.Ngay11.Name = "Ngay11";
             this.Ngay11.OptionsColumn.FixedWidth = true;
             this.Ngay11.OptionsFilter.AllowAutoFilter = false;
@@ -792,8 +792,8 @@
             this.Ngay12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay12.Caption = "12";
             this.Ngay12.FieldName = "Ngay12";
-            this.Ngay12.MaxWidth = 27;
-            this.Ngay12.MinWidth = 27;
+            this.Ngay12.MaxWidth = 28;
+            this.Ngay12.MinWidth = 28;
             this.Ngay12.Name = "Ngay12";
             this.Ngay12.OptionsColumn.FixedWidth = true;
             this.Ngay12.OptionsFilter.AllowAutoFilter = false;
@@ -817,8 +817,8 @@
             this.Ngay13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay13.Caption = "13";
             this.Ngay13.FieldName = "Ngay13";
-            this.Ngay13.MaxWidth = 27;
-            this.Ngay13.MinWidth = 27;
+            this.Ngay13.MaxWidth = 28;
+            this.Ngay13.MinWidth = 28;
             this.Ngay13.Name = "Ngay13";
             this.Ngay13.OptionsColumn.FixedWidth = true;
             this.Ngay13.OptionsFilter.AllowAutoFilter = false;
@@ -842,8 +842,8 @@
             this.Ngay14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay14.Caption = "14";
             this.Ngay14.FieldName = "Ngay14";
-            this.Ngay14.MaxWidth = 27;
-            this.Ngay14.MinWidth = 27;
+            this.Ngay14.MaxWidth = 28;
+            this.Ngay14.MinWidth = 28;
             this.Ngay14.Name = "Ngay14";
             this.Ngay14.OptionsColumn.FixedWidth = true;
             this.Ngay14.OptionsFilter.AllowAutoFilter = false;
@@ -867,8 +867,8 @@
             this.Ngay15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay15.Caption = "15";
             this.Ngay15.FieldName = "Ngay15";
-            this.Ngay15.MaxWidth = 27;
-            this.Ngay15.MinWidth = 27;
+            this.Ngay15.MaxWidth = 28;
+            this.Ngay15.MinWidth = 28;
             this.Ngay15.Name = "Ngay15";
             this.Ngay15.OptionsColumn.FixedWidth = true;
             this.Ngay15.OptionsFilter.AllowAutoFilter = false;
@@ -892,8 +892,8 @@
             this.Ngay16.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay16.Caption = "16";
             this.Ngay16.FieldName = "Ngay16";
-            this.Ngay16.MaxWidth = 27;
-            this.Ngay16.MinWidth = 27;
+            this.Ngay16.MaxWidth = 28;
+            this.Ngay16.MinWidth = 28;
             this.Ngay16.Name = "Ngay16";
             this.Ngay16.OptionsColumn.FixedWidth = true;
             this.Ngay16.OptionsFilter.AllowAutoFilter = false;
@@ -917,8 +917,8 @@
             this.Ngay17.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay17.Caption = "17";
             this.Ngay17.FieldName = "Ngay17";
-            this.Ngay17.MaxWidth = 27;
-            this.Ngay17.MinWidth = 27;
+            this.Ngay17.MaxWidth = 28;
+            this.Ngay17.MinWidth = 28;
             this.Ngay17.Name = "Ngay17";
             this.Ngay17.OptionsColumn.FixedWidth = true;
             this.Ngay17.OptionsFilter.AllowAutoFilter = false;
@@ -942,8 +942,8 @@
             this.Ngay18.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay18.Caption = "18";
             this.Ngay18.FieldName = "Ngay18";
-            this.Ngay18.MaxWidth = 27;
-            this.Ngay18.MinWidth = 27;
+            this.Ngay18.MaxWidth = 28;
+            this.Ngay18.MinWidth = 28;
             this.Ngay18.Name = "Ngay18";
             this.Ngay18.OptionsColumn.FixedWidth = true;
             this.Ngay18.OptionsFilter.AllowAutoFilter = false;
@@ -967,8 +967,8 @@
             this.Ngay19.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay19.Caption = "19";
             this.Ngay19.FieldName = "Ngay19";
-            this.Ngay19.MaxWidth = 27;
-            this.Ngay19.MinWidth = 27;
+            this.Ngay19.MaxWidth = 28;
+            this.Ngay19.MinWidth = 28;
             this.Ngay19.Name = "Ngay19";
             this.Ngay19.OptionsColumn.FixedWidth = true;
             this.Ngay19.OptionsFilter.AllowAutoFilter = false;
@@ -992,8 +992,8 @@
             this.Ngay20.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay20.Caption = "20";
             this.Ngay20.FieldName = "Ngay20";
-            this.Ngay20.MaxWidth = 27;
-            this.Ngay20.MinWidth = 27;
+            this.Ngay20.MaxWidth = 28;
+            this.Ngay20.MinWidth = 28;
             this.Ngay20.Name = "Ngay20";
             this.Ngay20.OptionsColumn.FixedWidth = true;
             this.Ngay20.OptionsFilter.AllowAutoFilter = false;
@@ -1017,8 +1017,8 @@
             this.Ngay21.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay21.Caption = "21";
             this.Ngay21.FieldName = "Ngay21";
-            this.Ngay21.MaxWidth = 27;
-            this.Ngay21.MinWidth = 27;
+            this.Ngay21.MaxWidth = 28;
+            this.Ngay21.MinWidth = 28;
             this.Ngay21.Name = "Ngay21";
             this.Ngay21.OptionsColumn.FixedWidth = true;
             this.Ngay21.OptionsFilter.AllowAutoFilter = false;
@@ -1042,8 +1042,8 @@
             this.Ngay22.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay22.Caption = "22";
             this.Ngay22.FieldName = "Ngay22";
-            this.Ngay22.MaxWidth = 27;
-            this.Ngay22.MinWidth = 27;
+            this.Ngay22.MaxWidth = 28;
+            this.Ngay22.MinWidth = 28;
             this.Ngay22.Name = "Ngay22";
             this.Ngay22.OptionsColumn.FixedWidth = true;
             this.Ngay22.OptionsFilter.AllowAutoFilter = false;
@@ -1067,8 +1067,8 @@
             this.Ngay23.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay23.Caption = "23";
             this.Ngay23.FieldName = "Ngay23";
-            this.Ngay23.MaxWidth = 27;
-            this.Ngay23.MinWidth = 27;
+            this.Ngay23.MaxWidth = 28;
+            this.Ngay23.MinWidth = 28;
             this.Ngay23.Name = "Ngay23";
             this.Ngay23.OptionsColumn.FixedWidth = true;
             this.Ngay23.OptionsFilter.AllowAutoFilter = false;
@@ -1092,8 +1092,8 @@
             this.Ngay24.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay24.Caption = "24";
             this.Ngay24.FieldName = "Ngay24";
-            this.Ngay24.MaxWidth = 27;
-            this.Ngay24.MinWidth = 27;
+            this.Ngay24.MaxWidth = 28;
+            this.Ngay24.MinWidth = 28;
             this.Ngay24.Name = "Ngay24";
             this.Ngay24.OptionsColumn.FixedWidth = true;
             this.Ngay24.OptionsFilter.AllowAutoFilter = false;
@@ -1117,8 +1117,8 @@
             this.Ngay25.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay25.Caption = "25";
             this.Ngay25.FieldName = "Ngay25";
-            this.Ngay25.MaxWidth = 27;
-            this.Ngay25.MinWidth = 27;
+            this.Ngay25.MaxWidth = 28;
+            this.Ngay25.MinWidth = 28;
             this.Ngay25.Name = "Ngay25";
             this.Ngay25.OptionsColumn.FixedWidth = true;
             this.Ngay25.OptionsFilter.AllowAutoFilter = false;
@@ -1142,8 +1142,8 @@
             this.Ngay26.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay26.Caption = "26";
             this.Ngay26.FieldName = "Ngay26";
-            this.Ngay26.MaxWidth = 27;
-            this.Ngay26.MinWidth = 27;
+            this.Ngay26.MaxWidth = 28;
+            this.Ngay26.MinWidth = 28;
             this.Ngay26.Name = "Ngay26";
             this.Ngay26.OptionsColumn.FixedWidth = true;
             this.Ngay26.OptionsFilter.AllowAutoFilter = false;
@@ -1167,8 +1167,8 @@
             this.Ngay27.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay27.Caption = "27";
             this.Ngay27.FieldName = "Ngay27";
-            this.Ngay27.MaxWidth = 27;
-            this.Ngay27.MinWidth = 27;
+            this.Ngay27.MaxWidth = 28;
+            this.Ngay27.MinWidth = 28;
             this.Ngay27.Name = "Ngay27";
             this.Ngay27.OptionsColumn.FixedWidth = true;
             this.Ngay27.OptionsFilter.AllowAutoFilter = false;
@@ -1192,8 +1192,8 @@
             this.Ngay28.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay28.Caption = "28";
             this.Ngay28.FieldName = "Ngay28";
-            this.Ngay28.MaxWidth = 27;
-            this.Ngay28.MinWidth = 27;
+            this.Ngay28.MaxWidth = 28;
+            this.Ngay28.MinWidth = 28;
             this.Ngay28.Name = "Ngay28";
             this.Ngay28.OptionsColumn.FixedWidth = true;
             this.Ngay28.OptionsFilter.AllowAutoFilter = false;
@@ -1217,8 +1217,8 @@
             this.Ngay29.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay29.Caption = "29";
             this.Ngay29.FieldName = "Ngay29";
-            this.Ngay29.MaxWidth = 27;
-            this.Ngay29.MinWidth = 27;
+            this.Ngay29.MaxWidth = 28;
+            this.Ngay29.MinWidth = 28;
             this.Ngay29.Name = "Ngay29";
             this.Ngay29.OptionsColumn.FixedWidth = true;
             this.Ngay29.OptionsFilter.AllowAutoFilter = false;
@@ -1242,8 +1242,8 @@
             this.Ngay30.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay30.Caption = "30";
             this.Ngay30.FieldName = "Ngay30";
-            this.Ngay30.MaxWidth = 27;
-            this.Ngay30.MinWidth = 27;
+            this.Ngay30.MaxWidth = 28;
+            this.Ngay30.MinWidth = 28;
             this.Ngay30.Name = "Ngay30";
             this.Ngay30.OptionsColumn.FixedWidth = true;
             this.Ngay30.OptionsFilter.AllowAutoFilter = false;
@@ -1267,8 +1267,8 @@
             this.Ngay31.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay31.Caption = "31";
             this.Ngay31.FieldName = "Ngay31";
-            this.Ngay31.MaxWidth = 27;
-            this.Ngay31.MinWidth = 27;
+            this.Ngay31.MaxWidth = 28;
+            this.Ngay31.MinWidth = 28;
             this.Ngay31.Name = "Ngay31";
             this.Ngay31.OptionsColumn.FixedWidth = true;
             this.Ngay31.OptionsFilter.AllowAutoFilter = false;
@@ -1304,12 +1304,12 @@
             this.Tong.FieldName = "Tong";
             this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.Tong.MaxWidth = 44;
-            this.Tong.MinWidth = 44;
+            this.Tong.MinWidth = 60;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 33;
-            this.Tong.Width = 44;
+            this.Tong.Width = 60;
             // 
             // gridControl1
             // 
@@ -1416,14 +1416,14 @@
             // 
             this.cbHangHoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHangHoa.FormattingEnabled = true;
-            this.cbHangHoa.Location = new System.Drawing.Point(449, 3);
+            this.cbHangHoa.Location = new System.Drawing.Point(608, 14);
             this.cbHangHoa.Name = "cbHangHoa";
             this.cbHangHoa.Size = new System.Drawing.Size(207, 21);
             this.cbHangHoa.TabIndex = 139;
             // 
             // btnThemHangHoa
             // 
-            this.btnThemHangHoa.Location = new System.Drawing.Point(671, 3);
+            this.btnThemHangHoa.Location = new System.Drawing.Point(830, 13);
             this.btnThemHangHoa.Name = "btnThemHangHoa";
             this.btnThemHangHoa.Size = new System.Drawing.Size(130, 23);
             this.btnThemHangHoa.TabIndex = 138;
@@ -1435,7 +1435,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(341, 6);
+            this.label7.Location = new System.Drawing.Point(500, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 13);
             this.label7.TabIndex = 137;

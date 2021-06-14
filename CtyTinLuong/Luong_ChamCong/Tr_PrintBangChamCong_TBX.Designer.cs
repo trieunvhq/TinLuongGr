@@ -203,7 +203,6 @@
             this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pHight = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -2357,13 +2356,6 @@
             this.pLapBieu.Name = "pLapBieu";
             this.pLapBieu.ValueInfo = "Phạm Thị Lành";
             // 
-            // pHight
-            // 
-            this.pHight.Description = "Giãn dòng";
-            this.pHight.Name = "pHight";
-            this.pHight.Type = typeof(float);
-            this.pHight.ValueInfo = "0";
-            // 
             // dataSet_TinLuong1
             // 
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
@@ -2391,8 +2383,7 @@
             this.pNgay,
             this.pGiamDoc,
             this.pTongHop,
-            this.pLapBieu,
-            this.pHight});
+            this.pLapBieu});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
@@ -2579,7 +2570,6 @@
         private DevExpress.XtraReports.Parameters.Parameter pGiamDoc;
         private DevExpress.XtraReports.Parameters.Parameter pTongHop;
         private DevExpress.XtraReports.Parameters.Parameter pLapBieu;
-        private DevExpress.XtraReports.Parameters.Parameter pHight;
         private DataSet_TinLuong dataSet_TinLuong1;
     }
 }

@@ -112,6 +112,7 @@ namespace CtyTinLuong
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
                         DataRow _ravi2 = data_moi_.NewRow();
+                        _ravi2["STT"] = (i+1).ToString();
                         _ravi2["ID_CongNhan"] = ID_CongNhan_;
                         _ravi2["Thang"] = _thang;
                         _ravi2["Nam"] = _nam;

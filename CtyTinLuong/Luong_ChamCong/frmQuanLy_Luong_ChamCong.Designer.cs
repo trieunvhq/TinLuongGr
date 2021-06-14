@@ -132,7 +132,7 @@
             // 
             this.navNhapKho_TuMuaHang.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navNhapKho_TuMuaHang.Appearance.Options.UseForeColor = true;
-            this.navNhapKho_TuMuaHang.Caption = "Chi tiết ALL";
+            this.navNhapKho_TuMuaHang.Caption = "Chi Tiết ALL";
             this.navNhapKho_TuMuaHang.Name = "navNhapKho_TuMuaHang";
             this.navNhapKho_TuMuaHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNhapKho_TuMuaHang_LinkClicked);
             // 
@@ -163,7 +163,7 @@
             // 
             this.navBarItem9.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navBarItem9.Appearance.Options.UseForeColor = true;
-            this.navBarItem9.Caption = "Tạm ứng";
+            this.navBarItem9.Caption = "Tạm Ứng";
             this.navBarItem9.Name = "navBarItem9";
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
@@ -171,7 +171,7 @@
             // 
             this.navBarItem14.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navBarItem14.Appearance.Options.UseForeColor = true;
-            this.navBarItem14.Caption = "Trả lương";
+            this.navBarItem14.Caption = "Trả Lương";
             this.navBarItem14.Name = "navBarItem14";
             this.navBarItem14.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem14_LinkClicked);
             // 
@@ -179,7 +179,7 @@
             // 
             this.navBarItem17.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navBarItem17.Appearance.Options.UseForeColor = true;
-            this.navBarItem17.Caption = "Mã hàng tổ GD";
+            this.navBarItem17.Caption = "Mã Hàng Tổ Gấp Dán";
             this.navBarItem17.Name = "navBarItem17";
             this.navBarItem17.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem17_LinkClicked);
             // 
@@ -259,13 +259,13 @@
             // 
             this.navChamCong_TDK.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navChamCong_TDK.Appearance.Options.UseForeColor = true;
-            this.navChamCong_TDK.Caption = "Đóng kiện";
+            this.navChamCong_TDK.Caption = "Đóng Kiện";
             this.navChamCong_TDK.Name = "navChamCong_TDK";
             this.navChamCong_TDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TDK_LinkClicked);
             // 
             // navChamCong_TGD
             // 
-            this.navChamCong_TGD.Caption = "Gấp dán";
+            this.navChamCong_TGD.Caption = "Gấp Dán";
             this.navChamCong_TGD.Name = "navChamCong_TGD";
             this.navChamCong_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TGD_LinkClicked);
             // 
@@ -293,31 +293,31 @@
             this.navTTL_TGD.AppearanceHotTracked.Options.UseForeColor = true;
             this.navTTL_TGD.AppearancePressed.ForeColor = System.Drawing.Color.Blue;
             this.navTTL_TGD.AppearancePressed.Options.UseForeColor = true;
-            this.navTTL_TGD.Caption = "Gấp dán - Chi tiết";
+            this.navTTL_TGD.Caption = "Gấp Dán - Chi Tiết";
             this.navTTL_TGD.Name = "navTTL_TGD";
             this.navTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTTL_TGD_LinkClicked);
             // 
             // navTTL_TBX_CT
             // 
-            this.navTTL_TBX_CT.Caption = "Gấp dán - Tổng quan";
+            this.navTTL_TBX_CT.Caption = "Gấp Dán - Tổng Quan";
             this.navTTL_TBX_CT.Name = "navTTL_TBX_CT";
             this.navTTL_TBX_CT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TGD_TD_LinkClicked);
             // 
             // navBarItem15
             // 
-            this.navBarItem15.Caption = "Bốc xếp - Chi tiết";
+            this.navBarItem15.Caption = "Bốc Xếp - Chi Tiết";
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked_1);
             // 
             // navBTTL_TBX_TQ
             // 
-            this.navBTTL_TBX_TQ.Caption = "Bốc xếp - Tổng quan";
+            this.navBTTL_TBX_TQ.Caption = "Bốc Xếp - Tổng Quan";
             this.navBTTL_TBX_TQ.Name = "navBTTL_TBX_TQ";
             this.navBTTL_TBX_TQ.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TBX_TD_LinkClicked);
             // 
             // navBTTL_TMC
             // 
-            this.navBTTL_TMC.Caption = "Máy cắt";
+            this.navBTTL_TMC.Caption = "Máy Cắt";
             this.navBTTL_TMC.Name = "navBTTL_TMC";
             this.navBTTL_TMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TMC_LinkClicked);
             // 
@@ -333,7 +333,7 @@
             // 
             // navChamCom_TGD
             // 
-            this.navChamCom_TGD.Caption = "Tổ Gấn dán";
+            this.navChamCom_TGD.Caption = "Tổ Gấn Dán";
             this.navChamCom_TGD.Name = "navChamCom_TGD";
             this.navChamCom_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCom_TGD_LinkClicked);
             // 
