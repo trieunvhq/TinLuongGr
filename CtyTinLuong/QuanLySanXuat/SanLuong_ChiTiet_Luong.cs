@@ -438,7 +438,6 @@ namespace CtyTinLuong
             Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(_thang, _nam, xxID, txtHoTen.Text);
             ff.Show();
 
-
             //DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             //CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
             //string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);

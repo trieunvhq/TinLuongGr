@@ -75,12 +75,6 @@ namespace CtyTinLuong
 
                     if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
                     {
-                        //_ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-                        //_ravi_1["Cong"] = "Thường";
-
-                        //_ravi_2["TenVTHH"] = "";
-                        //_ravi_2["Cong"] = "Tăng ca";
-
                         tong1 = 0;
                         tong2 = 0;
                         id_vthh_cu_ = id_vthh_;
@@ -90,13 +84,6 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    //
-                    //_ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-                    //_ravi_1["Cong"] = "Thường";
-
-                    //_ravi_2["TenVTHH"] = "";
-                    //_ravi_2["Cong"] = "Tăng ca";
-
                     tong1 = 0;
                     tong2 = 0;
                 }
