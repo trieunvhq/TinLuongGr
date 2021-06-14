@@ -4,6 +4,10 @@
 
     public partial class DataSet_TinLuong
     {
+        partial class tbChiTiet_LuongSLDataTable
+        {
+        }
+
         partial class tbChiTiet_LuongSL_subDataTable
         {
         }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_ChiTiet_Luong));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
@@ -281,7 +280,7 @@
             this.clTenVTHH1.OptionsColumn.AllowEdit = false;
             this.clTenVTHH1.Visible = true;
             this.clTenVTHH1.VisibleIndex = 1;
-            this.clTenVTHH1.Width = 212;
+            this.clTenVTHH1.Width = 199;
             // 
             // repositoryItemMemoEdit2
             // 
@@ -296,7 +295,7 @@
             this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 60;
+            this.gridColumn2.Width = 74;
             // 
             // Ngay1
             // 
@@ -307,7 +306,7 @@
             this.Ngay1.OptionsColumn.FixedWidth = true;
             this.Ngay1.Visible = true;
             this.Ngay1.VisibleIndex = 3;
-            this.Ngay1.Width = 30;
+            this.Ngay1.Width = 25;
             // 
             // Ngay2
             // 
@@ -318,7 +317,7 @@
             this.Ngay2.OptionsColumn.FixedWidth = true;
             this.Ngay2.Visible = true;
             this.Ngay2.VisibleIndex = 4;
-            this.Ngay2.Width = 30;
+            this.Ngay2.Width = 25;
             // 
             // Ngay3
             // 
@@ -329,7 +328,7 @@
             this.Ngay3.OptionsColumn.FixedWidth = true;
             this.Ngay3.Visible = true;
             this.Ngay3.VisibleIndex = 5;
-            this.Ngay3.Width = 30;
+            this.Ngay3.Width = 25;
             // 
             // Ngay4
             // 
@@ -340,7 +339,7 @@
             this.Ngay4.OptionsColumn.FixedWidth = true;
             this.Ngay4.Visible = true;
             this.Ngay4.VisibleIndex = 6;
-            this.Ngay4.Width = 30;
+            this.Ngay4.Width = 25;
             // 
             // Ngay5
             // 
@@ -351,7 +350,7 @@
             this.Ngay5.OptionsColumn.FixedWidth = true;
             this.Ngay5.Visible = true;
             this.Ngay5.VisibleIndex = 7;
-            this.Ngay5.Width = 30;
+            this.Ngay5.Width = 25;
             // 
             // Ngay6
             // 
@@ -362,7 +361,7 @@
             this.Ngay6.OptionsColumn.FixedWidth = true;
             this.Ngay6.Visible = true;
             this.Ngay6.VisibleIndex = 8;
-            this.Ngay6.Width = 30;
+            this.Ngay6.Width = 25;
             // 
             // Ngay7
             // 
@@ -373,7 +372,7 @@
             this.Ngay7.OptionsColumn.FixedWidth = true;
             this.Ngay7.Visible = true;
             this.Ngay7.VisibleIndex = 9;
-            this.Ngay7.Width = 30;
+            this.Ngay7.Width = 25;
             // 
             // Ngay8
             // 
@@ -384,7 +383,7 @@
             this.Ngay8.OptionsColumn.FixedWidth = true;
             this.Ngay8.Visible = true;
             this.Ngay8.VisibleIndex = 10;
-            this.Ngay8.Width = 30;
+            this.Ngay8.Width = 25;
             // 
             // Ngay9
             // 
@@ -395,7 +394,7 @@
             this.Ngay9.OptionsColumn.FixedWidth = true;
             this.Ngay9.Visible = true;
             this.Ngay9.VisibleIndex = 11;
-            this.Ngay9.Width = 30;
+            this.Ngay9.Width = 25;
             // 
             // Ngay10
             // 
@@ -406,7 +405,7 @@
             this.Ngay10.OptionsColumn.FixedWidth = true;
             this.Ngay10.Visible = true;
             this.Ngay10.VisibleIndex = 12;
-            this.Ngay10.Width = 30;
+            this.Ngay10.Width = 25;
             // 
             // Ngay11
             // 
@@ -417,7 +416,7 @@
             this.Ngay11.OptionsColumn.FixedWidth = true;
             this.Ngay11.Visible = true;
             this.Ngay11.VisibleIndex = 13;
-            this.Ngay11.Width = 30;
+            this.Ngay11.Width = 25;
             // 
             // Ngay12
             // 
@@ -428,7 +427,7 @@
             this.Ngay12.OptionsColumn.FixedWidth = true;
             this.Ngay12.Visible = true;
             this.Ngay12.VisibleIndex = 14;
-            this.Ngay12.Width = 30;
+            this.Ngay12.Width = 25;
             // 
             // Ngay13
             // 
@@ -439,7 +438,7 @@
             this.Ngay13.OptionsColumn.FixedWidth = true;
             this.Ngay13.Visible = true;
             this.Ngay13.VisibleIndex = 15;
-            this.Ngay13.Width = 30;
+            this.Ngay13.Width = 25;
             // 
             // Ngay14
             // 
@@ -450,7 +449,7 @@
             this.Ngay14.OptionsColumn.FixedWidth = true;
             this.Ngay14.Visible = true;
             this.Ngay14.VisibleIndex = 16;
-            this.Ngay14.Width = 30;
+            this.Ngay14.Width = 25;
             // 
             // Ngay15
             // 
@@ -461,7 +460,7 @@
             this.Ngay15.OptionsColumn.FixedWidth = true;
             this.Ngay15.Visible = true;
             this.Ngay15.VisibleIndex = 17;
-            this.Ngay15.Width = 30;
+            this.Ngay15.Width = 25;
             // 
             // Ngay16
             // 
@@ -472,7 +471,7 @@
             this.Ngay16.OptionsColumn.FixedWidth = true;
             this.Ngay16.Visible = true;
             this.Ngay16.VisibleIndex = 18;
-            this.Ngay16.Width = 30;
+            this.Ngay16.Width = 25;
             // 
             // Ngay17
             // 
@@ -483,7 +482,7 @@
             this.Ngay17.OptionsColumn.FixedWidth = true;
             this.Ngay17.Visible = true;
             this.Ngay17.VisibleIndex = 19;
-            this.Ngay17.Width = 30;
+            this.Ngay17.Width = 25;
             // 
             // Ngay18
             // 
@@ -494,7 +493,7 @@
             this.Ngay18.OptionsColumn.FixedWidth = true;
             this.Ngay18.Visible = true;
             this.Ngay18.VisibleIndex = 20;
-            this.Ngay18.Width = 30;
+            this.Ngay18.Width = 25;
             // 
             // Ngay19
             // 
@@ -505,7 +504,7 @@
             this.Ngay19.OptionsColumn.FixedWidth = true;
             this.Ngay19.Visible = true;
             this.Ngay19.VisibleIndex = 21;
-            this.Ngay19.Width = 30;
+            this.Ngay19.Width = 25;
             // 
             // Ngay20
             // 
@@ -516,7 +515,7 @@
             this.Ngay20.OptionsColumn.FixedWidth = true;
             this.Ngay20.Visible = true;
             this.Ngay20.VisibleIndex = 22;
-            this.Ngay20.Width = 30;
+            this.Ngay20.Width = 25;
             // 
             // Ngay21
             // 
@@ -527,7 +526,7 @@
             this.Ngay21.OptionsColumn.FixedWidth = true;
             this.Ngay21.Visible = true;
             this.Ngay21.VisibleIndex = 23;
-            this.Ngay21.Width = 30;
+            this.Ngay21.Width = 25;
             // 
             // Ngay22
             // 
@@ -538,7 +537,7 @@
             this.Ngay22.OptionsColumn.FixedWidth = true;
             this.Ngay22.Visible = true;
             this.Ngay22.VisibleIndex = 24;
-            this.Ngay22.Width = 30;
+            this.Ngay22.Width = 25;
             // 
             // Ngay23
             // 
@@ -549,7 +548,7 @@
             this.Ngay23.OptionsColumn.FixedWidth = true;
             this.Ngay23.Visible = true;
             this.Ngay23.VisibleIndex = 25;
-            this.Ngay23.Width = 30;
+            this.Ngay23.Width = 25;
             // 
             // Ngay24
             // 
@@ -560,7 +559,7 @@
             this.Ngay24.OptionsColumn.FixedWidth = true;
             this.Ngay24.Visible = true;
             this.Ngay24.VisibleIndex = 26;
-            this.Ngay24.Width = 30;
+            this.Ngay24.Width = 25;
             // 
             // Ngay25
             // 
@@ -571,7 +570,7 @@
             this.Ngay25.OptionsColumn.FixedWidth = true;
             this.Ngay25.Visible = true;
             this.Ngay25.VisibleIndex = 27;
-            this.Ngay25.Width = 30;
+            this.Ngay25.Width = 25;
             // 
             // Ngay26
             // 
@@ -582,7 +581,7 @@
             this.Ngay26.OptionsColumn.FixedWidth = true;
             this.Ngay26.Visible = true;
             this.Ngay26.VisibleIndex = 28;
-            this.Ngay26.Width = 30;
+            this.Ngay26.Width = 25;
             // 
             // Ngay27
             // 
@@ -593,7 +592,7 @@
             this.Ngay27.OptionsColumn.FixedWidth = true;
             this.Ngay27.Visible = true;
             this.Ngay27.VisibleIndex = 29;
-            this.Ngay27.Width = 30;
+            this.Ngay27.Width = 25;
             // 
             // Ngay28
             // 
@@ -604,7 +603,7 @@
             this.Ngay28.OptionsColumn.FixedWidth = true;
             this.Ngay28.Visible = true;
             this.Ngay28.VisibleIndex = 30;
-            this.Ngay28.Width = 30;
+            this.Ngay28.Width = 25;
             // 
             // Ngay29
             // 
@@ -615,7 +614,7 @@
             this.Ngay29.OptionsColumn.FixedWidth = true;
             this.Ngay29.Visible = true;
             this.Ngay29.VisibleIndex = 31;
-            this.Ngay29.Width = 30;
+            this.Ngay29.Width = 25;
             // 
             // Ngay30
             // 
@@ -626,7 +625,7 @@
             this.Ngay30.OptionsColumn.FixedWidth = true;
             this.Ngay30.Visible = true;
             this.Ngay30.VisibleIndex = 32;
-            this.Ngay30.Width = 30;
+            this.Ngay30.Width = 25;
             // 
             // Ngay31
             // 
@@ -637,7 +636,7 @@
             this.Ngay31.OptionsColumn.FixedWidth = true;
             this.Ngay31.Visible = true;
             this.Ngay31.VisibleIndex = 33;
-            this.Ngay31.Width = 30;
+            this.Ngay31.Width = 25;
             // 
             // clTong
             // 

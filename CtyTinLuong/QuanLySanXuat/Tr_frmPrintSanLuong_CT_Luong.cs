@@ -75,25 +75,38 @@ namespace CtyTinLuong
 
                     if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
                     {
-                        tong1 = 0;
-                        tong2 = 0;
-                        id_vthh_cu_ = id_vthh_;
+                        _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                        _ravi_2["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                        _ravi_1["NoiDung"] = "Thường";
+                        _ravi_2["NoiDung"] = "Tăng ca";
 
                         ds.tbChiTiet_LuongSL.Rows.Add(_ravi_1);
                         ds.tbChiTiet_LuongSL.Rows.Add(_ravi_2);
+
+                        tong1 = 0;
+                        tong2 = 0;
+
                         _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
                         _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
+
+                        id_vthh_cu_ = id_vthh_;
                     }
                     else
                     { }
                 }
                 else
                 {
-                    tong1 = 0;
-                    tong2 = 0;
+                    _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                    _ravi_2["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                    _ravi_1["NoiDung"] = "Thường";
+                    _ravi_2["NoiDung"] = "Tăng ca";
 
                     ds.tbChiTiet_LuongSL.Rows.Add(_ravi_1);
                     ds.tbChiTiet_LuongSL.Rows.Add(_ravi_2);
+
+                    tong1 = 0;
+                    tong2 = 0;
+
                     _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
                     _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
                 }

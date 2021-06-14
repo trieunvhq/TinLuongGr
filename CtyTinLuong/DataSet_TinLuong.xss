@@ -25,8 +25,8 @@
     <Shape ID="DesignTable:tbBTTL_TGD_TQ" ZOrder="9" X="1047" Y="68" Height="181" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:tbBTTL_TBX_CT" ZOrder="8" X="679" Y="393" Height="200" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
     <Shape ID="DesignTable:tbBTTL_TGD_CT" ZOrder="7" X="1172" Y="262" Height="257" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
-    <Shape ID="DesignTable:tbChiTiet_LuongSL" ZOrder="3" X="528" Y="35" Height="257" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
-    <Shape ID="DesignTable:tbChiTiet_LuongSL_sub" ZOrder="1" X="720" Y="37" Height="238" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
+    <Shape ID="DesignTable:tbChiTiet_LuongSL" ZOrder="3" X="527" Y="33" Height="257" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
+    <Shape ID="DesignTable:tbChiTiet_LuongSL_sub" ZOrder="1" X="720" Y="37" Height="257" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

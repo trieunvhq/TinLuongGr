@@ -127,6 +127,7 @@ namespace CtyTinLuong
         {
             setThu();
 
+
             //Load label ngay thang nam header:
             if (_thang <= 9) xrLabel2.Text = "BẢNG KẾT QUẢ THÁNG 0" + _thang.ToString() + " NĂM " + _nam.ToString();
             else xrLabel2.Text = "BẢNG KẾT QUẢ THÁNG " + _thang.ToString() + " NĂM " + _nam.ToString();
@@ -228,10 +229,11 @@ namespace CtyTinLuong
 
                 //
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)119.31;
+                xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = xrTableCell2.WidthF = (float)155;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)52.16;
                 //
                 float tmp = 0;
-                float W_thu = (float)(1083 - 119.31 - 61.07) / 28;
+                float W_thu = (float)(1083 - 155 - 52.16 - 44.12) / 28;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
                     Ds_NgayTitle[i].WidthF = W_thu;
@@ -259,10 +261,11 @@ namespace CtyTinLuong
                 }
 
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)119.31;
+                xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = xrTableCell2.WidthF = (float)155;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)52.16;
                 //
                 float tmp = 0;
-                float W_thu = (float)(1083 - 119.31 - 61.07) / 29;
+                float W_thu = (float)(1083 - 155 - 52.16 - 44.12) / 29;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
                     Ds_NgayTitle[i].WidthF = W_thu;
@@ -283,10 +286,11 @@ namespace CtyTinLuong
                 }
 
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)119.31;
+                xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = xrTableCell2.WidthF = (float)155;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)52.16;
                 //
                 float tmp = 0;
-                float W_thu = (float)(1083 - 119.31 - 61.07) / 30;
+                float W_thu = (float)(1083 - 155 - 52.16 - 44.12) / 30;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
                     Ds_NgayTitle[i].WidthF = W_thu;
@@ -298,7 +302,19 @@ namespace CtyTinLuong
             }
             else if (ngaycuathang_ == 31)
             {
-                //nothing
+                xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = xrTableCell2.WidthF = (float)155;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)52.16;
+                //
+                float tmp = 0;
+                float W_thu = (float)(1083 - 155 - 52.16 - 44.12) / 31;
+                for (int i = 0; i < ngaycuathang_; ++i)
+                {
+                    Ds_NgayTitle[i].WidthF = W_thu;
+                    Ds_Ngay_Header[i].WidthF = W_thu;
+                    Ds_Ngay[i].WidthF = W_thu;
+                    tmp += W_thu;
+                }
+                xrTableCell3.WidthF = tmp;
             }
 
             //Tô màu Chủ nhật:
@@ -329,6 +345,7 @@ namespace CtyTinLuong
             dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan_HUU(_iiID_CongNhan, GetFistDayInMonth(_nam, _thang), GetLastDayInMonth(_nam, _thang));
 
             int id_vthh_cu_ = 0;
+            int STT = 0;
 
             for (int k = 0; k < dtxxxx.Rows.Count; k++)
             {
@@ -351,6 +368,7 @@ namespace CtyTinLuong
                         //_ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
 
                         _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+                        _ravi_1["STT"] = (STT + 1).ToString(); STT++;
                         _ravi_1["MaHang"] = dtxxxx.Rows[k]["MaVT"].ToString();
                         _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
                         _ravi_1["SanLuongThuong"] = xxsanluong_thuong;
@@ -376,6 +394,7 @@ namespace CtyTinLuong
                     DataRow _ravi_1 = ds.tbChiTiet_LuongSL_sub.NewRow();
 
                     _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+                    _ravi_1["STT"] = (STT + 1).ToString(); STT++;
                     _ravi_1["MaHang"] = dtxxxx.Rows[k]["MaVT"].ToString();
                     _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
                     _ravi_1["SanLuongThuong"] = xxsanluong_thuong;
