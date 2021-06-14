@@ -933,11 +933,10 @@
             // 
             // txtID_DoiTuong
             // 
-            this.txtID_DoiTuong.Location = new System.Drawing.Point(124, 501);
+            this.txtID_DoiTuong.Location = new System.Drawing.Point(18, 499);
             this.txtID_DoiTuong.Name = "txtID_DoiTuong";
             this.txtID_DoiTuong.Size = new System.Drawing.Size(100, 20);
             this.txtID_DoiTuong.TabIndex = 105;
-            this.txtID_DoiTuong.Visible = false;
             // 
             // btLuu_Dong
             // 
