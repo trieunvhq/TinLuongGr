@@ -127,6 +127,12 @@ namespace CtyTinLuong
         {
             setThu();
 
+            pNgay.Value = DateTime.Now.ToString("yyyy/MM/dd");
+
+            //
+            clsNhanSu_tbNhanSu cls = new CtyTinLuong.clsNhanSu_tbNhanSu();
+            DataTable dt = cls.SO_W_ID_CongNhan(_iiID_CongNhan);
+            xrlbBoPhan.Text = "(Họ tên: " + _hoTenNhanVien + "    -    Bộ phận: " + dt.Rows[0]["TenBoPhan"].ToString()+")";
 
             //Load label ngay thang nam header:
             if (_thang <= 9) xrLabel2.Text = "BẢNG KẾT QUẢ THÁNG 0" + _thang.ToString() + " NĂM " + _nam.ToString();
