@@ -1798,6 +1798,9 @@
     <Compile Include="Xtra_XuatKho_DaiLy_NhieuKho.Designer.cs">
       <DependentUpon>Xtra_XuatKho_DaiLy_NhieuKho.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BanHang\BanHang_ChiTietCongNo.resx">
+      <DependentUpon>BanHang_ChiTietCongNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_CongNo.resx">
       <DependentUpon>BanHang_CongNo.cs</DependentUpon>
     </EmbeddedResource>

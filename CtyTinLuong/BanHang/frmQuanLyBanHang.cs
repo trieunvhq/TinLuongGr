@@ -130,5 +130,11 @@ namespace CtyTinLuong
             BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
             ucc.Show();
         }
+
+        private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            BanHang_CongNo ff = new CtyTinLuong.BanHang_CongNo();
+            ff.Show();
+        }
     }
 }
