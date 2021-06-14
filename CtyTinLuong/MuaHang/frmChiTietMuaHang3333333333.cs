@@ -778,7 +778,8 @@ namespace CtyTinLuong
             }
 
             gridControl1.DataSource = dt2;
-           
+
+         
 
             clsNganHang_ChiTietBienDongTaiKhoanKeToan clstaikhoan = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
             clstaikhoan.iID_ChungTu = UCMuaHang.miiiID_Sua_DonHang;
@@ -828,6 +829,28 @@ namespace CtyTinLuong
             gridControl2.DataSource = dt2xx;
 
             gridNCC.EditValue = cls.iIDNhaCungCap.Value;
+
+            clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+            cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+            cls1.sThamChieu = txtSoChungTu.Text.ToString();
+            cls1.iID_DoiTuong = Convert.ToInt32(gridNCC.EditValue.ToString());
+            DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
+            if (dt1.Rows.Count > 0)
+            {
+                int bientrangthaixx = Convert.ToInt32(dt1.Rows[0]["BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4"].ToString());
+                if (bientrangthaixx == 3)
+                {
+                    bienthangthai = 3;
+                    checkPhieuChi.Checked = true;
+                    checkBaoNo.Checked = false;
+                }
+                if (bientrangthaixx == 2)
+                {
+                    bienthangthai = 2;
+                    checkPhieuChi.Checked = false;
+                    checkBaoNo.Checked = true;
+                }
+            }
         }
         private void HienThi_Copy()
         {
@@ -964,6 +987,28 @@ namespace CtyTinLuong
             gridControl2.DataSource = dt2xx;
 
             gridNCC.EditValue = cls.iIDNhaCungCap.Value;
+
+            clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+            cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+            cls1.sThamChieu = txtSoChungTu.Text.ToString();
+            cls1.iID_DoiTuong = Convert.ToInt32(gridNCC.EditValue.ToString());
+            DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
+            if (dt1.Rows.Count > 0)
+            {
+                int bientrangthaixx = Convert.ToInt32(dt1.Rows[0]["BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4"].ToString());
+                if (bientrangthaixx == 3)
+                {
+                    bienthangthai = 3;
+                    checkPhieuChi.Checked = true;
+                    checkBaoNo.Checked = false;
+                }
+                if (bientrangthaixx == 2)
+                {
+                    bienthangthai = 2;
+                    checkPhieuChi.Checked = false;
+                    checkBaoNo.Checked = true;
+                }
+            }
         }
         private void Load_LockUp()
         {
