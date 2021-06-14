@@ -45,14 +45,14 @@ namespace CtyTinLuong
             dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(_iiID_CongNhan, GetFistDayInMonth(_nam, _thang), GetLastDayInMonth(_nam, _thang));
             int days = DateTime.DaysInMonth(_nam, _thang);
 
-
+            DataRow _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
+            DataRow _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
 
             int id_vthh_cu_ = 0;
             double tong1 = 0, tong2 = 0;
             for (int k = 0; k < dtxxxx.Rows.Count; k++)
             {
-                DataRow _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
-                DataRow _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
+
 
                 double snluong_thuong = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
                 double snluong_tangca = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
@@ -78,6 +78,11 @@ namespace CtyTinLuong
                         tong1 = 0;
                         tong2 = 0;
                         id_vthh_cu_ = id_vthh_;
+
+                        ds.tbChiTiet_LuongSL.Rows.Add(_ravi_1);
+                        ds.tbChiTiet_LuongSL.Rows.Add(_ravi_2);
+                        _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
+                        _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
                     }
                     else
                     { }
@@ -86,10 +91,12 @@ namespace CtyTinLuong
                 {
                     tong1 = 0;
                     tong2 = 0;
-                }
 
-                ds.tbChiTiet_LuongSL.Rows.Add(_ravi_1);
-                ds.tbChiTiet_LuongSL.Rows.Add(_ravi_2);
+                    ds.tbChiTiet_LuongSL.Rows.Add(_ravi_1);
+                    ds.tbChiTiet_LuongSL.Rows.Add(_ravi_2);
+                    _ravi_1 = ds.tbChiTiet_LuongSL.NewRow();
+                    _ravi_2 = ds.tbChiTiet_LuongSL.NewRow();
+                }
             }
 
             xtr111.DataSource = null;
