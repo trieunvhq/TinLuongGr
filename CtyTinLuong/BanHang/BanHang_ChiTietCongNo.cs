@@ -23,7 +23,7 @@ namespace CtyTinLuong
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dt = cls.Select_DISTINCT_W_ID_TaiKhoanKeToanCon_COngNo_MuaHang_Select_DISTINCT();
+            DataTable dt = cls.SA_BanHang_Select_DISTINCT_Lockup();
             GridSoTaiKhoan.Properties.DataSource = dt;
             GridSoTaiKhoan.Properties.DisplayMember = "SoTaiKhoanCon";
             GridSoTaiKhoan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
