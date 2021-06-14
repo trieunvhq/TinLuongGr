@@ -4,21 +4,25 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CtyTinLuong
 {
     public partial class Tr_PrintSanLuong_CT_Luong : DevExpress.XtraReports.UI.XtraReport
     {
-        private int _thang;
-        private int _nam;
+        private int _thang, _nam, _iiID_CongNhan;
+        private string _hoTenNhanVien;
         List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
 
-        public Tr_PrintSanLuong_CT_Luong(int thang, int nam)
+        public Tr_PrintSanLuong_CT_Luong(int thang, int nam, int iiID_CongNhan, string hoTenNhanVien)
         {
             _thang = thang;
             _nam = nam;
+            _iiID_CongNhan = iiID_CongNhan;
+            _hoTenNhanVien = hoTenNhanVien;
+
             InitializeComponent();
             //
             Ds_NgayTitle.Add(xrTableCell37);
@@ -311,5 +315,98 @@ namespace CtyTinLuong
             }
         }
 
+        private void xrSubreport1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+
+            //
+            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+
+            DataTable dtxxxx = new DataTable();
+            dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan_HUU(_iiID_CongNhan, GetFistDayInMonth(_nam, _thang), GetLastDayInMonth(_nam, _thang));
+
+            int id_vthh_cu_ = 0;
+
+            for (int k = 0; k < dtxxxx.Rows.Count; k++)
+            {
+
+                int xxID_VTHH = Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
+                //double snluong_thuong = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
+                //double snluong_tangca = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
+                double xxsanluong_thuong = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                double xxsanluong_tang = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_TangCa)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                double xxthanhtien = Convert.ToDouble(dtxxxx.Compute("sum(ThanhTien)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                int id_vthh_ = 0;
+                if (k < dtxxxx.Rows.Count - 1)
+                {
+                    id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
+                    if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
+                    {
+                        DataRow _ravi_1 = ds.tbChiTiet_LuongSL_sub.NewRow();
+
+                        //_ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                        //_ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
+
+                        _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+                        _ravi_1["MaHang"] = dtxxxx.Rows[k]["MaVT"].ToString();
+                        _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                        _ravi_1["SanLuongThuong"] = xxsanluong_thuong;
+                        _ravi_1["SanLuongTang"] = xxsanluong_tang;
+                        _ravi_1["DonGia"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
+                        _ravi_1["DonGiaTang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
+                        _ravi_1["ThanhTien"] = xxthanhtien;
+                        _ravi_1["BaoHiem"] = 0;
+                        _ravi_1["AnCa"] = 0;
+                        _ravi_1["TamUng"] = 0;
+                        _ravi_1["ThucNhan"] = xxthanhtien;
+
+                        id_vthh_cu_ = id_vthh_;
+
+                        //
+                        ds.tbChiTiet_LuongSL_sub.Rows.Add(_ravi_1);
+                    }
+                    else
+                    { }
+                }
+                else
+                {
+                    DataRow _ravi_1 = ds.tbChiTiet_LuongSL_sub.NewRow();
+
+                    _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+                    _ravi_1["MaHang"] = dtxxxx.Rows[k]["MaVT"].ToString();
+                    _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                    _ravi_1["SanLuongThuong"] = xxsanluong_thuong;
+                    _ravi_1["SanLuongTang"] = xxsanluong_tang;
+                    _ravi_1["DonGia"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
+                    _ravi_1["DonGiaTang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
+                    _ravi_1["ThanhTien"] = xxthanhtien;
+                    _ravi_1["BaoHiem"] = 0;
+                    _ravi_1["AnCa"] = 0;
+                    _ravi_1["TamUng"] = 0;
+                    _ravi_1["ThucNhan"] = xxthanhtien;
+
+                    //
+                    ds.tbChiTiet_LuongSL_sub.Rows.Add(_ravi_1);
+                }
+            }
+
+            //show
+            Tr_PrintSanLuong_CT_Luong_Sub xtr112 = (Tr_PrintSanLuong_CT_Luong_Sub)xrSubreport1.ReportSource;
+            xtr112.DataSource = ds.tbChiTiet_LuongSL_sub;
+            xtr112.DataMember = "tbChiTiet_LuongSL_sub";
+        }
+
+        public static DateTime GetFistDayInMonth(int year, int month)
+        {
+            DateTime aDateTime = new DateTime(year, month, 1);
+            return aDateTime;
+        }
+        public static DateTime GetLastDayInMonth(int year, int month)
+        {
+            DateTime aDateTime = new DateTime(year, month, 1);
+            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
+            return retDateTime;
+        }
     }
 }

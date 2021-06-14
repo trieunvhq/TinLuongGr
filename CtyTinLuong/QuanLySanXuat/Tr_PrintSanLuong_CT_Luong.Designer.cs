@@ -145,6 +145,7 @@
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.lbNgayThangNam = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
@@ -158,7 +159,6 @@
             this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
@@ -1576,6 +1576,14 @@
             this.ReportFooter.HeightF = 164.8343F;
             this.ReportFooter.Name = "ReportFooter";
             // 
+            // xrSubreport1
+            // 
+            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 31.91665F);
+            this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ReportSource = new CtyTinLuong.Tr_PrintSanLuong_CT_Luong_Sub();
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(1083F, 23F);
+            this.xrSubreport1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrSubreport1_BeforePrint);
+            // 
             // lbNgayThangNam
             // 
             this.lbNgayThangNam.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic);
@@ -1715,13 +1723,6 @@
             this.pLapBieu.Description = "Lập biểu";
             this.pLapBieu.Name = "pLapBieu";
             this.pLapBieu.ValueInfo = "Phạm Thị Lành";
-            // 
-            // xrSubreport1
-            // 
-            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 31.91665F);
-            this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ReportSource = new CtyTinLuong.Tr_PrintSanLuong_CT_Luong_Sub();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(1083F, 23F);
             // 
             // Tr_PrintSanLuong_CT_Luong
             // 

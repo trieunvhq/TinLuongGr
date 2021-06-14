@@ -28,7 +28,7 @@ namespace CtyTinLuong
 
         private void Tr_frmPrintSanLuong_CT_Luong_Load(object sender, EventArgs e)
         {
-            Tr_PrintSanLuong_CT_Luong xtr111 = new Tr_PrintSanLuong_CT_Luong(_thang, _nam);
+            Tr_PrintSanLuong_CT_Luong xtr111 = new Tr_PrintSanLuong_CT_Luong(_thang, _nam, _iiID_CongNhan, _hoTenNhanVien);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             //ds.tbChiTiet_LuongSL.Clone();
