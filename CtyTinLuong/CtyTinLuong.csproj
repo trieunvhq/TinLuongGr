@@ -877,8 +877,6 @@
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New - Copy.cs" />
     <Compile Include="QUANTRI\clsAaatbMacDinhNguoiKy.cs" />
     <Compile Include="QUANTRI\DinhMucLuong\clsHUU_DinhMucLuong_CongNhat.cs" />
-    <Compile Include="NganHang_Quy\clsNganHang_tbThamChieuThuChi - Copy.cs" />
-    <Compile Include="NganHang_Quy\clsNganHang_tbThamChieuThuChi.cs" />
     <Compile Include="NganHang_Quy\clsNganHang_tbThuChi - Copy.cs" />
     <Compile Include="NganHang_Quy\clsNganHang_tbThuChi.cs" />
     <Compile Include="KhoDaiLy\clsDaiLy_tbChiTietXuatKho - Copy.cs" />

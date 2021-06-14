@@ -7,7 +7,39 @@ namespace CtyTinLuong
 {
 	public partial class clsNganHang_tbThuChi_ChiTietThuChi : clsDBInteractionBase
 	{
-        //pr_NganHang_tbThuChi_ChiTietThuChi_Delete_ALL_W_ID_ThuChi
+        //pr_NganHang_tbThuChi_ChiTietThuChi_Update_ALL_TonTai
+        public void Update_ALL_TonTai()
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbThuChi_ChiTietThuChi_Update_ALL_TonTai]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ThuChi", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ThuChi));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_NganHang_tbThuChi_ChiTietThuChi_Update_ALL_TonTai::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         public void Delete_ALL_W_ID_ThuChi()
         {
 
