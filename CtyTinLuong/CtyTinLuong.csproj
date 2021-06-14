@@ -135,6 +135,18 @@
     <Compile Include="BanHang\BanHang_SoTongHopbanHang.Designer.cs">
       <DependentUpon>BanHang_SoTongHopbanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\BanHang_ChiTietCongNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHang_ChiTietCongNo.Designer.cs">
+      <DependentUpon>BanHang_ChiTietCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\BanHang_CongNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHang_CongNo.Designer.cs">
+      <DependentUpon>BanHang_CongNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy - Copy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy.cs" />
     <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy - Copy.cs" />
@@ -1786,6 +1798,12 @@
     <Compile Include="Xtra_XuatKho_DaiLy_NhieuKho.Designer.cs">
       <DependentUpon>Xtra_XuatKho_DaiLy_NhieuKho.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BanHang\BanHang_ChiTietCongNo.resx">
+      <DependentUpon>BanHang_ChiTietCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\BanHang_CongNo.resx">
+      <DependentUpon>BanHang_CongNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_frmChiTietMotVatTu.resx">
       <DependentUpon>BanHang_frmChiTietMotVatTu.cs</DependentUpon>
     </EmbeddedResource>

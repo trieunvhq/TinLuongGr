@@ -282,7 +282,7 @@ namespace CtyTinLuong
                 DataTable dt = clsncc.SelectOne();
                 if (dt.Rows.Count > 0)
                 {
-                    txtHoTenxxx.Text = dt.Rows[0]["TenNhanVien"].ToString();
+                   // txtHoTenxxx.Text = dt.Rows[0]["TenNhanVien"].ToString();
 
                 }
 

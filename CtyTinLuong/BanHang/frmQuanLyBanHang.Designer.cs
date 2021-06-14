@@ -45,6 +45,7 @@
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navbangKeHoaDonBanHang = new DevExpress.XtraNavBar.NavBarItem();
+            this.navTonghopbanHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemDinhMucDOt = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemDinhMucNPL = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
@@ -52,7 +53,7 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navTonghopbanHang = new DevExpress.XtraNavBar.NavBarItem();
+            this.navCongNo = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -167,7 +168,8 @@
             this.navBarItem14,
             this.navBarItem16,
             this.navbangKeHoaDonBanHang,
-            this.navTonghopbanHang});
+            this.navTonghopbanHang,
+            this.navCongNo});
             this.navBarControl1.Location = new System.Drawing.Point(6, 14);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
@@ -181,7 +183,8 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navbangKeHoaDonBanHang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navTonghopbanHang)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navTonghopbanHang),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navbangKeHoaDonBanHang
@@ -189,6 +192,12 @@
             this.navbangKeHoaDonBanHang.Caption = "Bảng kê hoá đơn bán hàng";
             this.navbangKeHoaDonBanHang.Name = "navbangKeHoaDonBanHang";
             this.navbangKeHoaDonBanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navbangKeHoaDonBanHang_LinkClicked);
+            // 
+            // navTonghopbanHang
+            // 
+            this.navTonghopbanHang.Caption = "Sổ tổng hợp bán hàng";
+            this.navTonghopbanHang.Name = "navTonghopbanHang";
+            this.navTonghopbanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTonghopbanHang_LinkClicked);
             // 
             // navBarItemDinhMucDOt
             // 
@@ -233,17 +242,17 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // navTonghopbanHang
+            // navCongNo
             // 
-            this.navTonghopbanHang.Caption = "Sổ tổng hợp bán hàng";
-            this.navTonghopbanHang.Name = "navTonghopbanHang";
-            this.navTonghopbanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTonghopbanHang_LinkClicked);
+            this.navCongNo.Caption = "Công nợ";
+            this.navCongNo.Name = "navCongNo";
+            this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
             // frmQuanLyBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 662);
+            this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
@@ -289,5 +298,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navbangKeHoaDonBanHang;
         private DevExpress.XtraNavBar.NavBarItem navTonghopbanHang;
+        private DevExpress.XtraNavBar.NavBarItem navCongNo;
     }
 }
