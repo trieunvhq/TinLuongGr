@@ -132,7 +132,9 @@ namespace CtyTinLuong
             //
             clsNhanSu_tbNhanSu cls = new CtyTinLuong.clsNhanSu_tbNhanSu();
             DataTable dt = cls.SO_W_ID_CongNhan(_iiID_CongNhan);
-            xrlbBoPhan.Text = "(Họ tên: " + _hoTenNhanVien + "    -    Bộ phận: " + dt.Rows[0]["TenBoPhan"].ToString()+")";
+
+            xrlbBoPhan.Text = "(Họ tên: " + toTitle(_hoTenNhanVien) 
+                                + "    -    Bộ phận: " + toTitle(dt.Rows[0]["TenBoPhan"].ToString())+")";
 
             //Load label ngay thang nam header:
             if (_thang <= 9) xrLabel2.Text = "BẢNG KẾT QUẢ THÁNG 0" + _thang.ToString() + " NĂM " + _nam.ToString();
@@ -434,6 +436,27 @@ namespace CtyTinLuong
             DateTime aDateTime = new DateTime(year, month, 1);
             DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
             return retDateTime;
+        }
+
+        //
+        public string toTitle(string str)
+        {
+            str = str.Trim();
+            while (str.IndexOf("\t") >= 0)
+            {
+                str = str.Replace("\t", " ");
+            }
+            while (str.IndexOf("  ") >= 0)
+            {
+                str = str.Replace("  ", " ");
+            }
+            string[] arrStr = str.Split(' ');
+            string s = "";
+            foreach (string item in arrStr)
+            {
+                s += item.Substring(0, 1).ToUpper() + item.Substring(1).ToLower() + " ";
+            }
+            return s;
         }
     }
 }
