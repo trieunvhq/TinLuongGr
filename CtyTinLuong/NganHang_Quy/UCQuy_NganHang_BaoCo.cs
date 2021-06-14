@@ -47,7 +47,6 @@ namespace CtyTinLuong
         }
         private void HienThi_ALL()
         {
-
             clsNganHang_tbThuChi cls = new CtyTinLuong.clsNganHang_tbThuChi();
             DataTable dt = cls.SelectAll();
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
@@ -100,25 +99,11 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(ID_ThuChi).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString() != "")
             {
 
                 mbThemMoi_ThuChi = false;
-                miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_ThuChi).ToString());
-               
-                //if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue(BitThuChiKhac).ToString()) == true)
-                //{
-                //    mbooolBitThuChiKhac = true;
-
-                //    //Quy_nganHang_ChiTiet_thuChi_Newwwwwwwwwwwwwwww ff = new CtyTinLuong.Quy_nganHang_ChiTiet_thuChi_Newwwwwwwwwwwwwwww();
-                //    //ff.Show();
-                //}
-                //else
-                //{
-                //    mbooolBitThuChiKhac = false;
-                //    //Quy_nganHang_ChiTiet_thuChi_TuMuaHang_BanHang_VanVan ff = new CtyTinLuong.Quy_nganHang_ChiTiet_thuChi_TuMuaHang_BanHang_VanVan();
-                //    //ff.Show();
-                //}
+                miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());               
                 Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
                 ff.Show();
             }
@@ -138,7 +123,25 @@ namespace CtyTinLuong
 
         }
 
-        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult traloi;
+            traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (traloi == DialogResult.Yes)
+            {
+                clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();
+                cls1.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(cli).ToString());
+                cls1.Delete();
+                clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
+                cls2.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
+                cls2.Delete_W_ID_MuaHang();
+                MessageBox.Show("Đã xóa");
+
+            }
+   
+    }
+
+    private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
             GridView View = sender as GridView;
             if (e.RowHandle >= 0)
