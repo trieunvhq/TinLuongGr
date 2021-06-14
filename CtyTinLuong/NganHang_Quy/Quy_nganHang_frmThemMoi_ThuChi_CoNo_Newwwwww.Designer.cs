@@ -227,7 +227,7 @@
             this.gridDoiTuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridDoiTuong.Properties.PopupView = this.gridView3;
-            this.gridDoiTuong.Size = new System.Drawing.Size(50, 20);
+            this.gridDoiTuong.Size = new System.Drawing.Size(200, 20);
             this.gridDoiTuong.StyleController = this.layoutControl1;
             this.gridDoiTuong.TabIndex = 106;
             this.gridDoiTuong.EditValueChanged += new System.EventHandler(this.gridDoiTuong_EditValueChanged);
@@ -271,10 +271,10 @@
             // 
             // txtThamChieu
             // 
-            this.txtThamChieu.Location = new System.Drawing.Point(836, 74);
+            this.txtThamChieu.Location = new System.Drawing.Point(877, 74);
             this.txtThamChieu.Name = "txtThamChieu";
             this.txtThamChieu.ReadOnly = true;
-            this.txtThamChieu.Size = new System.Drawing.Size(125, 20);
+            this.txtThamChieu.Size = new System.Drawing.Size(84, 20);
             this.txtThamChieu.TabIndex = 98;
             // 
             // txtTiGia
@@ -290,9 +290,9 @@
             // 
             // txtDoiTuong
             // 
-            this.txtDoiTuong.Location = new System.Drawing.Point(270, 74);
+            this.txtDoiTuong.Location = new System.Drawing.Point(420, 74);
             this.txtDoiTuong.Name = "txtDoiTuong";
-            this.txtDoiTuong.Size = new System.Drawing.Size(455, 20);
+            this.txtDoiTuong.Size = new System.Drawing.Size(346, 20);
             this.txtDoiTuong.TabIndex = 96;
             // 
             // checkUSD
@@ -507,9 +507,9 @@
             // 
             this.layoutControlItem10.Control = this.txtDoiTuong;
             this.layoutControlItem10.CustomizationFormText = "Người giao hàng";
-            this.layoutControlItem10.Location = new System.Drawing.Point(161, 72);
+            this.layoutControlItem10.Location = new System.Drawing.Point(311, 72);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(566, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(457, 24);
             this.layoutControlItem10.Text = "Tên đối tượng";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(104, 13);
             // 
@@ -528,7 +528,7 @@
             this.layoutControlItem11.Control = this.gridDoiTuong;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(161, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(311, 24);
             this.layoutControlItem11.Text = "Đối tượng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(104, 13);
             // 
@@ -583,9 +583,9 @@
             // 
             this.layoutControlItem5.Control = this.txtThamChieu;
             this.layoutControlItem5.CustomizationFormText = "Tham chiếu";
-            this.layoutControlItem5.Location = new System.Drawing.Point(727, 72);
+            this.layoutControlItem5.Location = new System.Drawing.Point(768, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(236, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(195, 24);
             this.layoutControlItem5.Text = "Tham chiếu";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(104, 13);
             // 

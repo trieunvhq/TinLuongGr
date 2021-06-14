@@ -22,108 +22,7 @@ namespace CtyTinLuong
         public static double mdbSoTien, mdbTiGia;
         int DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 = 0;
         DataTable dtdoituong = new DataTable();
-        private bool LuuDuLieu_Chi_Luu(int bienthangthai, string sThamChieu)
-        {
-            if (!KiemTraLuu()) return false;
-            else
-            {
-                int ID_ThuChi;
-                clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.fSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
-                cls1.sThamChieu = sThamChieu; // Báo có khác
-                cls1.sDoiTuong = txtDoiTuong.Text.ToString();
-                cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
-                cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.bTienUSD = checkUSD.Checked;
-                cls1.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
-                cls1.bDaGhiSo = false;
-                
-                if (checkKhac.Checked == true)
-                    cls1.iBienMuaHang1_BanHang2_ConLai_0 = 0;
-                else if (checkKhachHang.Checked == true)
-                    cls1.iBienMuaHang1_BanHang2_ConLai_0 = 2;
-                else if (checkNhaCungCap.Checked == true)
-                    cls1.iBienMuaHang1_BanHang2_ConLai_0 = 1;
-                if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
-                {
-                    cls1.Insert();
-                    ID_ThuChi = cls1.iID_ThuChi.Value;
-                    clsNganHang_tbThuChi_ChiTietThuChi cls2 = new CtyTinLuong.clsNganHang_tbThuChi_ChiTietThuChi();
-                    cls2.iID_ThuChi = ID_ThuChi;
-                    // xoá trước
-                    cls2.Delete_ALL_W_ID_ThuChi();
-                    string shienthi = "1";
-                    DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-                    dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-                    DataView dv = dttttt2.DefaultView;
-                    DataTable dv3 = dv.ToTable();
-
-                    for (int i = 0; i < dv3.Rows.Count; i++)
-                    {
-                        double TiGia;
-                        if (dv3.Rows[i]["TiGia"].ToString() == "")
-                            TiGia = 0;
-                        else TiGia = Convert.ToDouble(dv3.Rows[i]["TiGia"].ToString());
-                        cls2.iID_ThuChi = ID_ThuChi;
-                        cls2.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                        cls2.fCo = Convert.ToDouble(dv3.Rows[i]["Co"].ToString());
-                        cls2.fNo = Convert.ToDouble(dv3.Rows[i]["No"].ToString());
-                        cls2.bTienUSD = Convert.ToBoolean(dv3.Rows[i]["TienUSD"].ToString());
-                        cls2.fTiGia = TiGia;
-                        cls2.bTonTai = true;
-                        cls2.bNgungTheoDoi = false;
-                        cls2.bDaGhiSo = false;
-                        cls2.sGhiChu = dv3.Rows[i]["GhiChu"].ToString();
-                        cls2.Insert();
-                    }
-
-                }
-
-                else
-                {
-                    cls1.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
-                    cls1.Update();
-                    clsNganHang_tbThuChi_ChiTietThuChi cls2 = new CtyTinLuong.clsNganHang_tbThuChi_ChiTietThuChi();
-                    // xóa trước
-                    cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
-                    cls2.Delete_ALL_W_ID_ThuChi();
-                    string shienthi = "1";
-                    DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-                    dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-                    DataView dv = dttttt2.DefaultView;
-                    DataTable dv3 = dv.ToTable();
-
-                    for (int i = 0; i < dv3.Rows.Count; i++)
-                    {
-                        double TiGia;
-                        if (dv3.Rows[i]["TiGia"].ToString() == "")
-                            TiGia = 0;
-                        else TiGia = Convert.ToDouble(dv3.Rows[i]["TiGia"].ToString());
-                        cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
-                        cls2.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                        cls2.fCo = Convert.ToDouble(dv3.Rows[i]["Co"].ToString());
-                        cls2.fNo = Convert.ToDouble(dv3.Rows[i]["No"].ToString());
-                        cls2.bTienUSD = Convert.ToBoolean(dv3.Rows[i]["TienUSD"].ToString());
-                        cls2.fTiGia = TiGia;
-                        cls2.bTonTai = true;
-                        cls2.bNgungTheoDoi = false;
-                        cls2.bDaGhiSo = false;
-                        cls2.sGhiChu = dv3.Rows[i]["GhiChu"].ToString();
-                        cls2.Insert();
-                    }
-
-                }
-
-
-                return true;
-            }
-        }
+  
         private bool LuuDuLieu_Va_GhiSo(int bienthangthai, string sThamChieu)
         {
             if (!KiemTraLuu()) return false;
@@ -846,105 +745,11 @@ namespace CtyTinLuong
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
             {
                 int kkkk = 1; string sthamchieuxxx = "Báo Có";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-            {
-                int kkkk = 2; string sthamchieuxxx = "Báo Nợ";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-            {
-                int kkkk = 3; string sthamchieuxxx = "Phiếu chi";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-            {
-                int kkkk = 4; string sthamchieuxxx = "Phiếu thu";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
-                }
-            }
-
-        }
-
-        private void btLuu_Copy_Click(object sender, EventArgs e)
-        {
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
-            {
-                int kkkk = 1; string sthamchieuxxx = "Báo Có";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-            {
-                int kkkk = 2; string sthamchieuxxx = "Báo Nợ";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-            {
-                int kkkk = 3; string sthamchieuxxx = "Phiếu Chi";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-            {
-                int kkkk = 3; string sthamchieuxxx = "Phiếu Thu";
-                if (!LuuDuLieu_Chi_Luu(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-
-        }
-
-        private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
-        {
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
-            {
-                int kkkk = 1; string sthamchieuxxx = "Báo Có";
                 if (!LuuDuLieu_Va_GhiSo(kkkk, sthamchieuxxx)) return;
                 else
                 {
                     MessageBox.Show("Đã lưu");
-                    this.Close();
+                    
                 }
             }
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
@@ -964,7 +769,7 @@ namespace CtyTinLuong
                 else
                 {
                     MessageBox.Show("Đã lưu");
-                    this.Close();
+                   
                 }
             }
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
@@ -974,60 +779,13 @@ namespace CtyTinLuong
                 else
                 {
                     MessageBox.Show("Đã lưu");
-                    this.Close();
+                 
                 }
             }
 
         }
 
-        private void btLuu_Gui_Copy_Click(object sender, EventArgs e)
-        {
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
-            {
-                int kkkk = 1; string sthamchieuxxx = "Báo Có";
-                if (!LuuDuLieu_Va_GhiSo(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-            {
-                int kkkk = 2; string sthamchieuxxx = "Báo Nợ";
-                if (!LuuDuLieu_Va_GhiSo(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-            {
-                int kkkk = 3; string sthamchieuxxx = "Phiếu Chi";
-                if (!LuuDuLieu_Va_GhiSo(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-            {
-                int kkkk = 3; string sthamchieuxxx = "Phiếu Thu";
-                if (!LuuDuLieu_Va_GhiSo(kkkk, sthamchieuxxx)) return;
-                else
-                {
-                    MessageBox.Show("Đã lưu");
-                    UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
-                    HienThiSoChungTu();
-                }
-            }
-        }
-
+      
         private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
         {
             try
