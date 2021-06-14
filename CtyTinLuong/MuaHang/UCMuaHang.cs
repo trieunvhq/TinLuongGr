@@ -214,20 +214,20 @@ namespace CtyTinLuong
                     cls2.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     cls2.Delete_W_ID_MuaHang();
                     // xoá chi tiết biến động tài khoản
-                    clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                    clsxx.iID_ChungTu = xxxID_MuaHang;
-                    clsxx.sSoChungTu = xxsochungtu;
-                    clsxx.daNgayThang = xxngay;
+                    //clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+                    //clsxx.iID_ChungTu = xxxID_MuaHang;
+                    //clsxx.sSoChungTu = xxsochungtu;
+                    //clsxx.daNgayThang = xxngay;
 
-                    DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
-                    if (dt2_cu.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dt2_cu.Rows.Count; i++)
-                        {
-                            clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
-                            clsxx.Delete();
-                        }
-                    }
+                    //DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
+                    //if (dt2_cu.Rows.Count > 0)
+                    //{
+                    //    for (int i = 0; i < dt2_cu.Rows.Count; i++)
+                    //    {
+                    //        clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
+                    //        clsxx.Delete();
+                    //    }
+                    //}
 
 
                     MessageBox.Show("Đã xóa");
