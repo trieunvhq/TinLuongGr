@@ -183,17 +183,40 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+           
 
             DialogResult traloi;
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
-                cls1.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
+                int xxxxID_BanHang= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
+                clsBanHang_tbBanHang cls1moi = new clsBanHang_tbBanHang();
+                cls1moi.iID_BanHang = xxxxID_BanHang;
+                DataTable dt1moi = cls1moi.SelectOne();
+                string sochungtu = cls1moi.sSoChungTu.Value;
+                DateTime ngaychungtu = cls1moi.daNgayChungTu.Value;
+                clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+                cls1.iID_BanHang = xxxxID_BanHang;            
                 cls1.Delete();
                 clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
                 cls2.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
                 cls2.Delete_W_iID_BanHang();
+                // xoá bien dong tai khoan
+                clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+                clsxx.iID_ChungTu = xxxxID_BanHang;
+                clsxx.sSoChungTu = sochungtu;
+                clsxx.daNgayThang = ngaychungtu;
+
+                DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
+                if (dt2_cu.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt2_cu.Rows.Count; i++)
+                    {
+                        clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
+                        clsxx.Delete();
+                    }
+                }
+
                 MessageBox.Show("Đã xóa");
                 if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                 {
