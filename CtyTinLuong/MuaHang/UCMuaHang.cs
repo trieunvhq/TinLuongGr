@@ -193,6 +193,9 @@ namespace CtyTinLuong
             clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();           
             cls1.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
             DataTable dt1 = cls1.SelectOne();
+            int xxxID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
+            string xxsochungtu = cls1.sSoChungTu.Value;
+            DateTime xxngay = cls1.daNgayChungTu.Value;
             if (cls1.bTrangThaiNhapKho.Value == true)
             {
                 MessageBox.Show("Đã nhập kho, không thể xoá");
@@ -204,11 +207,29 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
+                   
                     cls1.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     cls1.Delete();
                     clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
                     cls2.iID_MuaHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     cls2.Delete_W_ID_MuaHang();
+                    // xoá chi tiết biến động tài khoản
+                    clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+                    clsxx.iID_ChungTu = xxxID_MuaHang;
+                    clsxx.sSoChungTu = xxsochungtu;
+                    clsxx.daNgayThang = xxngay;
+
+                    DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
+                    if (dt2_cu.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt2_cu.Rows.Count; i++)
+                        {
+                            clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
+                            clsxx.Delete();
+                        }
+                    }
+
+
                     MessageBox.Show("Đã xóa");
                     if (frmMuaHang2222.mbTraLaiHangMua == true)
                         HienThi(true);
