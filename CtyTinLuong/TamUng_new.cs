@@ -14,7 +14,7 @@ namespace CtyTinLuong
     public partial class TamUng_new : Form
     {
         int bienthangthai = 0;
-        DataTable dtdoituong = new DataTable();
+       
 
         public string SoChungTu_tbThuChi()
         {
@@ -99,8 +99,13 @@ namespace CtyTinLuong
         }
         private void Load_LockUp_DoiTuong()
         {
+           
+            DataTable dtdoituong = new DataTable();
             dtdoituong.Clear();
-
+            dtdoituong.Columns.Add("ID_DoiTuong", typeof(int));
+            dtdoituong.Columns.Add("MaDoiTuong", typeof(string));
+            dtdoituong.Columns.Add("DoiTuong", typeof(string));
+          
             if (checkCongNhanVien.Checked == true) // Khác
             {
                 clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
@@ -113,13 +118,17 @@ namespace CtyTinLuong
                     DataRow _ravi = dtdoituong.NewRow();
                     _ravi["ID_DoiTuong"] = Convert.ToInt32(dt3.Rows[i]["ID_NhanSu"].ToString());
                     _ravi["MaDoiTuong"] = dt3.Rows[i]["MaNhanVien"].ToString();
-                    _ravi["TenDoiTuong"] = dt3.Rows[i]["TenNhanVien"].ToString();
+                    _ravi["DoiTuong"] = dt3.Rows[i]["TenNhanVien"].ToString();
                     dtdoituong.Rows.Add(_ravi);
                 }
                 gridDoiTuong.Properties.DataSource = dtdoituong;
                 gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
                 gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
 
+                gridDoiTuong_gridControl.DataSource = dtdoituong;
+                gridDoiTuong_gridControl.ValueMember = "ID_DoiTuong";
+                gridDoiTuong_gridControl.DisplayMember = "MaDoiTuong";
+                
             }
             if (checkDaiLy.Checked == true) // Khác
             {
@@ -133,13 +142,16 @@ namespace CtyTinLuong
                     DataRow _ravi = dtdoituong.NewRow();
                     _ravi["ID_DoiTuong"] = Convert.ToInt32(dt3.Rows[i]["ID_DaiLy"].ToString());
                     _ravi["MaDoiTuong"] = dt3.Rows[i]["MaDaiLy"].ToString();
-                    _ravi["TenDoiTuong"] = dt3.Rows[i]["TenDaiLy"].ToString();                 
+                    _ravi["DoiTuong"] = dt3.Rows[i]["TenDaiLy"].ToString();                 
                     dtdoituong.Rows.Add(_ravi);
                 }
                 gridDoiTuong.Properties.DataSource = dtdoituong;
                 gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
                 gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
 
+                gridDoiTuong_gridControl.DataSource = dtdoituong;
+                gridDoiTuong_gridControl.ValueMember = "ID_DoiTuong";
+                gridDoiTuong_gridControl.DisplayMember = "MaDoiTuong";
             }
            
 
@@ -439,7 +451,7 @@ namespace CtyTinLuong
             if (UCLuong_TamUng.mbThemMoiTamUng == true)
                 HienThi_ThemMoi();
             else HienThi_Sua(UCLuong_TamUng.miiiiID_TamUng);
-
+            Load_LockUp_DoiTuong();
         }
 
 
