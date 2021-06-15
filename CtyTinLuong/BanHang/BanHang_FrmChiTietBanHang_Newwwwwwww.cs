@@ -670,7 +670,27 @@ namespace CtyTinLuong
             }
             gridControl2.DataSource = dt2xx;
 
-
+            clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+            cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+            cls1.sThamChieu = txtSoChungTu.Text.ToString();
+            cls1.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
+            DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
+            if (dt1.Rows.Count > 0)
+            {
+                int bientrangthaixx = Convert.ToInt32(dt1.Rows[0]["BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4"].ToString());
+                if (bientrangthaixx == 4)
+                {
+                    bienthangthai = 4;
+                    checkPhieuThu.Checked = true;
+                    checkBaoCo.Checked = false;
+                }
+                if (bientrangthaixx == 1)
+                {
+                    bienthangthai = 1;
+                    checkPhieuThu.Checked = false;
+                    checkBaoCo.Checked = true;
+                }
+            }
 
         }
         private void Load_LockUp()
