@@ -14,8 +14,8 @@ namespace CtyTinLuong
     public partial class TamUng_new : Form
     {
         int bienthangthai = 0;
-       
 
+        DataTable dtdoituong = new DataTable();
         public string SoChungTu_tbThuChi()
         {
             string sochungtuThuChi="";
@@ -100,11 +100,9 @@ namespace CtyTinLuong
         private void Load_LockUp_DoiTuong()
         {
            
-            DataTable dtdoituong = new DataTable();
+            
             dtdoituong.Clear();
-            dtdoituong.Columns.Add("ID_DoiTuong", typeof(int));
-            dtdoituong.Columns.Add("MaDoiTuong", typeof(string));
-            dtdoituong.Columns.Add("DoiTuong", typeof(string));
+           
           
             if (checkCongNhanVien.Checked == true) // Khác
             {
@@ -200,18 +198,45 @@ namespace CtyTinLuong
             clsTamUng_New cls = new CtyTinLuong.clsTamUng_New();
             cls.iID_TamUng = iiDI_tamung;
             DataTable dt = cls.SelectOne();
-            if (dt.Rows.Count > 0)
-            {               
-                gridDoiTuong.EditValue = cls.iID_DoiTuong.Value;
-                txtSoChungTu.Text = cls.sSoChungTu.Value;
-                dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
-                gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
-                txtThang.Text = cls.iKhauTruLuongThang.Value.ToString();
-                txtNam.Text = cls.iKhauTruLuongThang_Nam.Value.ToString();
-                txtDienGiai.Text = cls.sDienGiai.Value;
-                txtTongSoTien.Text = cls.fTongSoTien.Value.ToString();
-                txtGhiChu.Text = cls.sGhiChu.Value;
+
+            gridDoiTuong.EditValue = cls.iID_DoiTuong.Value;
+            txtSoChungTu.Text = cls.sSoChungTu.Value;
+            dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
+            gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
+            txtThang.Text = cls.iKhauTruLuongThang.Value.ToString();
+            txtNam.Text = cls.iKhauTruLuongThang_Nam.Value.ToString();
+            txtDienGiai.Text = cls.sDienGiai.Value;
+            txtTongSoTien.Text = cls.fTongSoTien.Value.ToString();
+            txtGhiChu.Text = cls.sGhiChu.Value;
+            if (cls.bCheckTamUngDaiLy == true)
+                checkDaiLy.Checked = true;
+            else checkCongNhanVien.Checked = true;
+
+            if (cls.bGuiDuLieu == true)
+                btLuu_Gui.Enabled = false;
+
+            clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+            cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+            cls1.sThamChieu = txtSoChungTu.Text.ToString();
+            cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+            DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
+            if (dt1.Rows.Count > 0)
+            {
+                int bientrangthaixx = Convert.ToInt32(dt1.Rows[0]["BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4"].ToString());
+                if (bientrangthaixx == 3)
+                {
+                    bienthangthai = 3;
+                    checkPhieuChi.Checked = true;
+                    checkBaoNo.Checked = false;
+                }
+                if (bientrangthaixx == 2)
+                {
+                    bienthangthai = 2;
+                    checkPhieuChi.Checked = false;
+                    checkBaoNo.Checked = true;
+                }
             }
+
             clsTamUng_ChiTietTamUng cls2 = new clsTamUng_ChiTietTamUng();
             cls2.iID_TamUng = iiDI_tamung;
             DataTable dtchitiet = new DataTable();
@@ -446,6 +471,10 @@ namespace CtyTinLuong
 
         private void TamUng_new_Load(object sender, EventArgs e)
         {
+            dtdoituong.Columns.Add("ID_DoiTuong", typeof(int));
+            dtdoituong.Columns.Add("MaDoiTuong", typeof(string));
+            dtdoituong.Columns.Add("DoiTuong", typeof(string));
+
             clKhauTruLuongThang.Caption = "Khấu trừ\ntháng";
             Load_LockUp_DoiTuong();
             if (UCLuong_TamUng.mbThemMoiTamUng == true)
@@ -520,6 +549,51 @@ namespace CtyTinLuong
                 e.Visible = false;
                 e.Handled = true;
             }
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+           
+            if (e.Column == clMaDoiTuong)
+            {
+                int iiID_DoiTuong = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+
+                string expressionnhapkho;
+                expressionnhapkho = "ID_DoiTuong=" + iiID_DoiTuong + "";
+                DataRow[] foundRows;
+                foundRows = dtdoituong.Select(expressionnhapkho);
+                string tendoituong = "";
+                if (foundRows.Length > 0)
+                {
+                    tendoituong = foundRows[0]["DoiTuong"].ToString();
+                }
+
+
+                int xxthang = Convert.ToInt32(txtThang.Text);
+                gridView4.SetRowCellValue(e.RowHandle, clKhauTruLuongThang, xxthang);
+                gridView4.SetRowCellValue(e.RowHandle, clID_DoiTuong, iiID_DoiTuong);
+                gridView4.SetRowCellValue(e.RowHandle, clDoiTuong, tendoituong);
+                gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                gridView4.SetRowCellValue(e.RowHandle, clSoTien, 0);
+
+
+            }
+
+            
+            double deTOngtien;
+            DataTable dataTable = (DataTable)gridControl2.DataSource;
+            string shienthi = "1";
+            object xxxx = dataTable.Compute("sum(SoTien)", "HienThi=" + shienthi + "");
+            if (xxxx.ToString() != "")
+                deTOngtien = Convert.ToDouble(xxxx);
+            else deTOngtien = 0;
+            txtTongSoTien.Text = deTOngtien.ToString();
         }
     }
 }
