@@ -258,15 +258,15 @@ namespace CtyTinLuong
                 for(int i=0; i< dtchitiet.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xx.NewRow();
-                    _ravi["ID_ChiTietTamUng"] = dtchitiet.Rows[0]["ID_ChiTietTamUng"].ToString();
-                    _ravi["ID_TamUng"] = dtchitiet.Rows[0]["ID_TamUng"].ToString();
-                    _ravi["ID_DoiTuong"] = dtchitiet.Rows[0]["ID_DoiTuong"].ToString();
-                    _ravi["MaDoiTuong"] = dtchitiet.Rows[0]["MaDoiTuong"].ToString();
-                    _ravi["DoiTuong"] = dtchitiet.Rows[0]["DoiTuong"].ToString();
-                    _ravi["KhauTruLuongThang"] = dtchitiet.Rows[0]["KhauTruLuongThang"].ToString();
-                    _ravi["KhauTruLuongThang_Nam"] = dtchitiet.Rows[0]["KhauTruLuongThang_Nam"].ToString();
-                    _ravi["SoTien"] = dtchitiet.Rows[0]["SoTien"].ToString();
-                    _ravi["GhiChu"] = dtchitiet.Rows[0]["GhiChu"].ToString();
+                    _ravi["ID_ChiTietTamUng"] = dtchitiet.Rows[i]["ID_ChiTietTamUng"].ToString();
+                    _ravi["ID_TamUng"] = dtchitiet.Rows[i]["ID_TamUng"].ToString();
+                    _ravi["ID_DoiTuong"] = dtchitiet.Rows[i]["ID_DoiTuong"].ToString();
+                    _ravi["MaDoiTuong"] = dtchitiet.Rows[i]["ID_DoiTuong"].ToString();
+                    _ravi["DoiTuong"] = dtchitiet.Rows[i]["DoiTuong"].ToString();
+                    _ravi["KhauTruLuongThang"] = dtchitiet.Rows[i]["KhauTruLuongThang"].ToString();
+                    _ravi["KhauTruLuongThang_Nam"] = dtchitiet.Rows[i]["KhauTruLuongThang_Nam"].ToString();
+                    _ravi["SoTien"] = dtchitiet.Rows[i]["SoTien"].ToString();
+                    _ravi["GhiChu"] = dtchitiet.Rows[i]["GhiChu"].ToString();
                     _ravi["HienThi"] = "1";
                     dt2xx.Rows.Add(_ravi);
                 }
@@ -338,7 +338,7 @@ namespace CtyTinLuong
                 cls2.sThamChieu = txtSoChungTu.Text.ToString();
                 cls2.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 DataTable dt1 = cls2.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
-                if (dt1.Rows.Count > 0)
+                if (dt1.Rows.Count == 0)
                 {
                     cls1.Insert();
                    
@@ -378,9 +378,11 @@ namespace CtyTinLuong
                 }
                 for (int i = 0; i < dt_gridcontrol.Rows.Count; i++)
                 {
-                    int ID_TaiKhoanKeToanConxxx = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-                    cls2 = new CtyTinLuong.clsTamUng_ChiTietTamUng();                
+                    
+                                
                     int iiID_DoiTuong= Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_DoiTuong"].ToString());
+                    cls2 = new CtyTinLuong.clsTamUng_ChiTietTamUng();
+
                     cls2.iID_TamUng = xxxID_TamUng;
                     cls2.iID_DoiTuong = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_DoiTuong"].ToString());
                     cls2.iKhauTruLuongThang = Convert.ToInt32(dt_gridcontrol.Rows[i]["KhauTruLuongThang"].ToString());
@@ -431,7 +433,7 @@ namespace CtyTinLuong
                 int xxID_tamung = 0;
                 clsTamUng_New cls1 = new clsTamUng_New();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = SoChungTu_tbThuChi();
+                cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 cls1.iKhauTruLuongThang = Convert.ToInt32(txtThang.Text);
