@@ -499,6 +499,16 @@ namespace CtyTinLuong
             dtdoituong.Columns.Add("MaDoiTuong", typeof(string));
             dtdoituong.Columns.Add("DoiTuong", typeof(string));
 
+            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
+            DataTable dtNguoi = clsNguoi.SelectAll();
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
+            DataView dvCaTruong = dtNguoi.DefaultView;
+            DataTable newdtCaTruong = dvCaTruong.ToTable();
+
+            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
+            gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
+
             clKhauTruLuongThang.Caption = "Khấu trừ\ntháng";
             Load_LockUp_DoiTuong();
             if (UCLuong_TamUng.mbThemMoiTamUng == true)
@@ -618,6 +628,52 @@ namespace CtyTinLuong
                 deTOngtien = Convert.ToDouble(xxxx);
             else deTOngtien = 0;
             txtTongSoTien.Text = deTOngtien.ToString();
+        }
+
+        private void btThooat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int iiID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+                string expressionnhapkho;
+                expressionnhapkho = "ID_DoiTuong=" + iiID_DoiTuong + "";
+                DataRow[] foundRows;
+                foundRows = dtdoituong.Select(expressionnhapkho);              
+                if (foundRows.Length > 0)
+                {
+                    txtDoiTuong.Text = foundRows[0]["DoiTuong"].ToString();
+                }
+            }
+            catch
+            {
+
+            }
+          
+        }
+
+        private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
+                clsncc.iID_NhanSu = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                DataTable dt = clsncc.SelectOne();
+                if (dt.Rows.Count > 0)
+                {
+                    txtNguoiMuaHang.Text = dt.Rows[0]["TenNhanVien"].ToString();
+
+                }
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }
