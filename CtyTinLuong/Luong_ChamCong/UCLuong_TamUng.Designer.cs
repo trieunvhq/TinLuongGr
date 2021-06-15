@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -85,6 +85,10 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btLayDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkDaiLy = new System.Windows.Forms.CheckBox();
+            this.checkCongNhanVien = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -107,6 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -124,6 +130,8 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.checkCongNhanVien);
+            this.dataLayoutControl1.Controls.Add(this.checkDaiLy);
             this.dataLayoutControl1.Controls.Add(this.btLayDuLieu);
             this.dataLayoutControl1.Controls.Add(this.gridControl2);
             this.dataLayoutControl1.Controls.Add(this.gridControl1);
@@ -151,7 +159,7 @@
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2,
             this.repositoryItemCheckEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1187, 297);
+            this.gridControl1.Size = new System.Drawing.Size(1187, 298);
             this.gridControl1.TabIndex = 97;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -178,6 +186,7 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -327,16 +336,16 @@
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(535, 2);
+            this.txtNam.Location = new System.Drawing.Point(387, 2);
             this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(446, 20);
+            this.txtNam.Size = new System.Drawing.Size(306, 20);
             this.txtNam.TabIndex = 99;
             // 
             // txtThang
             // 
             this.txtThang.Location = new System.Drawing.Point(35, 2);
             this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new System.Drawing.Size(463, 20);
+            this.txtThang.Size = new System.Drawing.Size(315, 20);
             this.txtThang.TabIndex = 98;
             this.txtThang.TextChanged += new System.EventHandler(this.txtThang_TextChanged);
             // 
@@ -376,7 +385,9 @@
             this.layoutControlItem5,
             this.layoutControlItem2,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem9});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1191, 593);
@@ -388,7 +399,7 @@
             this.layoutControlItem1.CustomizationFormText = "Tháng";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(500, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(352, 26);
             this.layoutControlItem1.Text = "Tháng";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(30, 13);
             // 
@@ -396,9 +407,9 @@
             // 
             this.layoutControlItem4.Control = this.txtNam;
             this.layoutControlItem4.CustomizationFormText = "Năm";
-            this.layoutControlItem4.Location = new System.Drawing.Point(500, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(352, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(483, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(343, 26);
             this.layoutControlItem4.Text = "Năm";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(30, 13);
             // 
@@ -455,14 +466,14 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(2, 329);
+            this.gridControl2.Location = new System.Drawing.Point(2, 330);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa2,
             this.memodoituong,
             this.gridDoiTuong_gridControl});
-            this.gridControl2.Size = new System.Drawing.Size(1187, 262);
+            this.gridControl2.Size = new System.Drawing.Size(1187, 261);
             this.gridControl2.TabIndex = 114;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -496,6 +507,7 @@
             this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             // 
             // clSTT2
             // 
@@ -550,9 +562,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions8.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -682,16 +694,16 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1191, 301);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1191, 302);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.gridControl2;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 327);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 328);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1191, 266);
+            this.layoutControlItem6.Size = new System.Drawing.Size(1191, 265);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -713,6 +725,44 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(128, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // checkDaiLy
+            // 
+            this.checkDaiLy.Location = new System.Drawing.Point(854, 2);
+            this.checkDaiLy.Name = "checkDaiLy";
+            this.checkDaiLy.Size = new System.Drawing.Size(127, 20);
+            this.checkDaiLy.TabIndex = 118;
+            this.checkDaiLy.Text = "Tạm ứng Đại lý";
+            this.checkDaiLy.UseVisualStyleBackColor = true;
+            this.checkDaiLy.CheckedChanged += new System.EventHandler(this.checkDaiLy_CheckedChanged);
+            // 
+            // checkCongNhanVien
+            // 
+            this.checkCongNhanVien.Location = new System.Drawing.Point(697, 2);
+            this.checkCongNhanVien.Name = "checkCongNhanVien";
+            this.checkCongNhanVien.Size = new System.Drawing.Size(153, 20);
+            this.checkCongNhanVien.TabIndex = 117;
+            this.checkCongNhanVien.Text = "Tạm ứng Công nhân viên";
+            this.checkCongNhanVien.UseVisualStyleBackColor = true;
+            this.checkCongNhanVien.CheckedChanged += new System.EventHandler(this.checkCongNhanVien_CheckedChanged);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.checkDaiLy;
+            this.layoutControlItem8.Location = new System.Drawing.Point(852, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(131, 26);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.checkCongNhanVien;
+            this.layoutControlItem9.Location = new System.Drawing.Point(695, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(157, 26);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
             // 
             // UCLuong_TamUng
             // 
@@ -744,6 +794,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -801,5 +853,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton btLayDuLieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private System.Windows.Forms.CheckBox checkCongNhanVien;
+        private System.Windows.Forms.CheckBox checkDaiLy;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }
