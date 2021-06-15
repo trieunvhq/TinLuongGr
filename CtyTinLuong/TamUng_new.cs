@@ -202,7 +202,10 @@ namespace CtyTinLuong
             }
             clsTamUng_ChiTietTamUng cls2 = new clsTamUng_ChiTietTamUng();
             cls2.iID_TamUng = iiDI_tamung;
-            DataTable dtchitiet = cls2.SA_W_ID_TamUng();
+            DataTable dtchitiet = new DataTable();
+            if(checkDaiLy.Checked==true)
+                dtchitiet = cls2.SA_W_ID_TamUng_DaiLy();
+            else dtchitiet = cls2.SA_W_ID_TamUng_CongNhan();
             gridControl2.DataSource = null;
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("ID_ChiTietTamUng", typeof(int));
@@ -215,15 +218,25 @@ namespace CtyTinLuong
             dt2xx.Columns.Add("SoTien", typeof(double));            
             dt2xx.Columns.Add("GhiChu", typeof(string));      
             dt2xx.Columns.Add("HienThi", typeof(string));
-            //DataRow _ravi = dt2xx.NewRow();
-            //_ravi["TienUSD"] = checkUSD.Checked;
-            //_ravi["TiGia"] = 1;
-            //_ravi["DaGhiSo"] = false;
-            //_ravi["GhiChu"] = "";
-            //_ravi["SoTaiKhoanCon"] = ID_TaiKhoanKeToanCon.ToString();
-            //_ravi["TenTaiKhoanCon"] = dtcon.Rows[0]["TenTaiKhoanCon"].ToString();
-            //_ravi["HienThi"] = "1";
-            //dt2xx.Rows.Add(_ravi);
+            if(dtchitiet.Rows.Count>0)
+            {
+                for(int i=0; i< dtchitiet.Rows.Count; i++)
+                {
+                    DataRow _ravi = dt2xx.NewRow();
+                    _ravi["ID_ChiTietTamUng"] = dtchitiet.Rows[0]["ID_ChiTietTamUng"].ToString();
+                    _ravi["ID_TamUng"] = dtchitiet.Rows[0]["ID_TamUng"].ToString();
+                    _ravi["ID_DoiTuong"] = dtchitiet.Rows[0]["ID_DoiTuong"].ToString();
+                    _ravi["MaDoiTuong"] = dtchitiet.Rows[0]["MaDoiTuong"].ToString();
+                    _ravi["DoiTuong"] = dtchitiet.Rows[0]["DoiTuong"].ToString();
+                    _ravi["KhauTruLuongThang"] = dtchitiet.Rows[0]["KhauTruLuongThang"].ToString();
+                    _ravi["KhauTruLuongThang_Nam"] = dtchitiet.Rows[0]["KhauTruLuongThang_Nam"].ToString();
+                    _ravi["SoTien"] = dtchitiet.Rows[0]["SoTien"].ToString();
+                    _ravi["GhiChu"] = dtchitiet.Rows[0]["GhiChu"].ToString();
+                    _ravi["HienThi"] = "1";
+                    dt2xx.Rows.Add(_ravi);
+                }
+            }
+           
             gridControl2.DataSource = dt2xx;
         }
         public TamUng_new()
