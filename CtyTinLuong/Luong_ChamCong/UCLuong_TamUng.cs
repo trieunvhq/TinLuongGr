@@ -14,6 +14,10 @@ namespace CtyTinLuong
     {
         public static int miiiiID_TamUng;
         public static bool mbThemMoiTamUng;
+
+        private int _SoTrang = 1;
+        private int _SoDong = 1;
+        private bool isload = false;
         private void HienThiGridControl_2(int iiDI_tamung)
         {
             gridControl2.DataSource = null;
@@ -26,17 +30,72 @@ namespace CtyTinLuong
             else dtchitiet = cls2.SA_W_ID_TamUng_CongNhan();         
             gridControl2.DataSource = dtchitiet;
         }
-        public void LoadData(DateTime xxtungay, DateTime xxdenngay)
+        public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
-            //gridControl1.DataSource = null;
+            gridControl1.DataSource = null;
+            isload = true;
+            _SoTrang = sotrang;
+            clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
+            DataTable dt = cls.SelectAll_Load_DaTa_W_NgayThang(_SoTrang, xxtungay, xxdenngay);
 
-            //clsTamUng_New cls = new clsTamUng_New();
-            //DataTable dt = cls.sa(xxtungay, xxdenngay);
-            //gridControl1.DataSource = dt;
+            gridControl1.DataSource = dt;
 
 
+            isload = false;
         }
-       
+        private void Load_TamUng(bool islandau)
+        {
+            int sotrang_ = 1;
+            int sodong_ = 10;
+            try
+            {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+                sodong_ = Convert.ToInt32(txtSoDong.Text);
+            }
+            catch
+            {
+                sotrang_ = 1;
+                sodong_ = 1;
+                txtSoTrang.Text = "1";
+                txtSoDong.Text = "10";
+            }
+            LoadData(sotrang_, sodong_,true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
+        {
+            btnTrangSau.Visible = true;
+            btnTrangTiep.Visible = true;
+            lbTongSoTrang.Visible = true;
+            txtSoTrang.Visible = true;
+            btnTrangSau.LinkColor = Color.Black;
+            btnTrangTiep.LinkColor = Color.Blue;
+            txtSoTrang.Text = "1";
+
+            using (clsTamUng_New cls = new clsTamUng_New())
+            {
+                DataTable dt_ = new DataTable();
+                if (checkCongNhanVien.Checked == true)
+                    dt_ = cls.Dem_Dong_CongNhan(xxtungay, xxdenngay);
+                else dt_ = cls.Dem_Dong_DaiLy(xxtungay, xxdenngay);
+
+                if (dt_ != null && dt_.Rows.Count > 0)
+                {
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                }
+                else
+                {
+                    lbTongSoTrang.Text = "/1";
+                }
+            }
+            if (lbTongSoTrang.Text == "0")
+                lbTongSoTrang.Text = "/1";
+            if (lbTongSoTrang.Text == "/1")
+            {
+                btnTrangSau.LinkColor = Color.Black;
+                btnTrangTiep.LinkColor = Color.Black;
+            }
+        }
         public UCLuong_TamUng()
         {
             InitializeComponent();
