@@ -467,7 +467,7 @@ namespace CtyTinLuong
 
             }
         }
-        private void LuuDuLieu_ChiLuu(int bienthangthai)
+        private void LuuDuLieu()
         {
             if (!KiemTraLuu()) return;
             else
@@ -478,16 +478,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void LuuDuLieu_Va_GuiDuLieu(int bienthangthai)
-        {
-            if (!KiemTraLuu()) return;
-            else
-            {
-                LuuDuLieu_TamUng();
-                LuuDuLieu_ThuChi();
-                MessageBox.Show("Đã lưu và gửi dữ liệu");
-            }
-        }
+     
         public TamUng_new()
         {
             InitializeComponent();
@@ -674,6 +665,33 @@ namespace CtyTinLuong
             {
 
             }
+        }
+
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            LuuDuLieu();
+        }
+
+        private void btLuu_Gui_Click(object sender, EventArgs e)
+        {
+            LuuDuLieu();
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double deTOngtien;
+                DataTable dataTable = (DataTable)gridControl2.DataSource;
+                string shienthi = "1";
+                object xxxx = dataTable.Compute("sum(SoTien)", "HienThi=" + shienthi + "");
+                if (xxxx.ToString() != "")
+                    deTOngtien = Convert.ToDouble(xxxx);
+                else deTOngtien = 0;
+                txtTongSoTien.Text = deTOngtien.ToString();
+            }
+            catch
+            { }
         }
     }
 }
