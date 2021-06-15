@@ -113,7 +113,7 @@ namespace CtyTinLuong
             //    txtDienGiai.Text = cls.sDienGiai.Value;
             //    txtSoTienTamUng.Text = cls.dcSoTien.Value.ToString();
 
-            }
+            //}
         }
         public TamUng_new()
         {
