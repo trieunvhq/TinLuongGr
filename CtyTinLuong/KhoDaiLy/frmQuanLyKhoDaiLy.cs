@@ -173,10 +173,7 @@ namespace CtyTinLuong
 
         private void navTamUng_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDaiLy_TamUng uccc_NhapKho = new UCDaiLy_TamUng();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
+          
         }
 
         private void btGuiDuLieuLuong_Click(object sender, EventArgs e)
