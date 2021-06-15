@@ -227,6 +227,7 @@
     <Compile Include="frmPrint_Nhap_Xuat_Kho.Designer.cs">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\clsTamUng_ChiTietTamUng - Copy.cs" />
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_CT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,8 +360,8 @@
     <Compile Include="Luong_ChamCong\T_PrintChamComToGapDan.Designer.cs">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NganHang_Quy\clsTamUng_ChiTietTamUng.cs" />
-    <Compile Include="NganHang_Quy\clsTamUng_New.cs" />
+    <Compile Include="Luong_ChamCong\clsTamUng_ChiTietTamUng.cs" />
+    <Compile Include="Luong_ChamCong\clsTamUng_New.cs" />
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -14,6 +14,88 @@ namespace CtyTinLuong
     {
         int bienthangthai = 0;
         DataTable dtdoituong = new DataTable();
+
+        public string HienThiSoChungTu()
+        {
+            string sochungtuThuChi="";
+            clsNganHang_tbThuChi cls2 = new clsNganHang_tbThuChi();
+            DataTable dt = cls2.SelectAll();
+            if (bienthangthai == 1)
+            {
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =1 ";
+                DataView dv2 = dt.DefaultView;
+                DataTable newdt2 = dv2.ToTable();
+                int k = newdt2.Rows.Count;
+                if (k == 0)
+                {
+                    sochungtuThuChi = "BC 1";
+                }
+                else
+                {
+                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
+                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                    sochungtuThuChi = "BC " + xxx2 + "";
+                }
+              
+            }
+
+            else if (bienthangthai == 2)
+            {
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =2 ";
+                DataView dv2 = dt.DefaultView;
+                DataTable newdt2 = dv2.ToTable();
+                int k = newdt2.Rows.Count;
+                if (k == 0)
+                {
+                    sochungtuThuChi = "BN 1";
+                }
+                else
+                {
+                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
+                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                    sochungtuThuChi = "BN " + xxx2 + "";
+                }
+              
+            }
+
+            else if (bienthangthai == 3)
+            {
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =3 ";
+                DataView dv2 = dt.DefaultView;
+                DataTable newdt2 = dv2.ToTable();
+                int k = newdt2.Rows.Count;
+                if (k == 0)
+                {
+                    sochungtuThuChi = "PC 1";
+                }
+                else
+                {
+                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
+                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                    sochungtuThuChi = "PC " + xxx2 + "";
+                }
+               
+            }
+            else if (bienthangthai == 4)
+            {
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =4 ";
+                DataView dv2 = dt.DefaultView;
+                DataTable newdt2 = dv2.ToTable();
+                int k = newdt2.Rows.Count;
+                if (k == 0)
+                {
+                    sochungtuThuChi = "PT 1";
+                }
+                else
+                {
+                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
+                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                    sochungtuThuChi = "PT " + xxx2 + "";
+                }
+                
+            }
+            return sochungtuThuChi;
+        }
         private void Load_LockUp_DoiTuong()
         {
             dtdoituong.Clear();
@@ -78,10 +160,8 @@ namespace CtyTinLuong
             else
             {
                 string xxx = dvthuchi3.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt16(xxx.Substring(2).Trim()) + 1;
-                if (xxx2 >= 10000)
-                    txtSoChungTu.Text = "TU 1";
-                else txtSoChungTu.Text = "TU " + xxx2 + "";
+                int xxx2 = Convert.ToInt16(xxx.Substring(2).Trim()) + 1;               
+                txtSoChungTu.Text = "TU " + xxx2 + "";
             }
 
             string thang = DateTime.Today.ToString("MM");
@@ -91,32 +171,50 @@ namespace CtyTinLuong
             txtThang.Text = thang;
 
         }
-        private void HienThi_Sua()
+        private void HienThi_Sua(int iiDI_tamung)
         {
-            //clsDaiLy_TamUng cls = new CtyTinLuong.clsDaiLy_TamUng();
-            //cls.iID_TamUng = UCDaiLy_TamUng.miiiiID_TamUng;
-            //DataTable dt = cls.SelectOne();
-            //if (dt.Rows.Count > 0)
-            //{
-            //    if (cls.bGuiDuLieu.Value == true)
-            //    {
-            //        btLuu_Copy.Enabled = false;
-            //        btLuu_Dong.Enabled = false;
-            //        btLuu_Gui_Copy.Enabled = false;
-            //        btLuu_Gui_Dong.Enabled = false;
-            //    }
-            //    gridMaDaiLy.EditValue = cls.iID_DaiLy.Value;
-
-            //    txtSoChungTu.Text = cls.sSoChungTu.Value;
-            //    dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
-            //    gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
-            //    txtThang.Text = cls.iKhauTruLuongThang.Value.ToString();
-            //    txtNam.Text = cls.iKhauTruLuongThang_Nam.Value.ToString();
-
-            //    txtDienGiai.Text = cls.sDienGiai.Value;
-            //    txtSoTienTamUng.Text = cls.dcSoTien.Value.ToString();
-
-            //}
+            clsTamUng_New cls = new CtyTinLuong.clsTamUng_New();
+            cls.iID_TamUng = iiDI_tamung;
+            DataTable dt = cls.SelectOne();
+            if (dt.Rows.Count > 0)
+            {               
+                gridDoiTuong.EditValue = cls.iID_DoiTuong.Value;
+                txtSoChungTu.Text = cls.sSoChungTu.Value;
+                dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
+                gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
+                txtThang.Text = cls.iKhauTruLuongThang.Value.ToString();
+                txtNam.Text = cls.iKhauTruLuongThang_Nam.Value.ToString();
+                txtDienGiai.Text = cls.sDienGiai.Value;
+                txtSoTienTamUng.Text = cls.fTongSoTien.Value.ToString();
+                txtGhiChu.Text = cls.sGhiChu.Value;
+            }
+            clsTamUng_ChiTietTamUng cls2 = new clsTamUng_ChiTietTamUng();
+            cls2.iID_TamUng = iiDI_tamung;
+            //DataTable dtchitiet=cls2.SelectAll
+            gridControl2.DataSource = null;
+            DataTable dt2xx = new DataTable();
+            dt2xx.Columns.Add("ID_ChiTietBienDongTaiKhoan", typeof(int));
+            dt2xx.Columns.Add("ID_ChungTu", typeof(int));
+            dt2xx.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
+            dt2xx.Columns.Add("No", typeof(double));
+            dt2xx.Columns.Add("Co", typeof(double));
+            dt2xx.Columns.Add("TienUSD", typeof(bool));
+            dt2xx.Columns.Add("TiGia", typeof(double));
+            dt2xx.Columns.Add("DaGhiSo", typeof(bool));
+            dt2xx.Columns.Add("GhiChu", typeof(string));
+            dt2xx.Columns.Add("SoTaiKhoanCon");
+            dt2xx.Columns.Add("TenTaiKhoanCon", typeof(string));
+            dt2xx.Columns.Add("HienThi", typeof(string));
+            //DataRow _ravi = dt2xx.NewRow();
+            //_ravi["TienUSD"] = checkUSD.Checked;
+            //_ravi["TiGia"] = 1;
+            //_ravi["DaGhiSo"] = false;
+            //_ravi["GhiChu"] = "";
+            //_ravi["SoTaiKhoanCon"] = ID_TaiKhoanKeToanCon.ToString();
+            //_ravi["TenTaiKhoanCon"] = dtcon.Rows[0]["TenTaiKhoanCon"].ToString();
+            //_ravi["HienThi"] = "1";
+            //dt2xx.Rows.Add(_ravi);
+           
         }
         public TamUng_new()
         {
@@ -128,7 +226,7 @@ namespace CtyTinLuong
             Load_LockUp_DoiTuong();
             if (UCLuong_TamUng.mbThemMoiTamUng == true)
                 HienThi_ThemMoi();
-            else HienThi_Sua();
+            else HienThi_Sua(UCLuong_TamUng.miiiiID_TamUng);
 
         }
 
@@ -166,6 +264,20 @@ namespace CtyTinLuong
             {
                 bienthangthai = 2;
                 checkPhieuChi.Checked = false;
+            }
+        }
+
+        private void txtSoTienTamUng_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal value = decimal.Parse(txtSoTienTamUng.Text);
+                txtSoTienTamUng.Text = String.Format("{0:#,##0.00}", value);
+               
+            }
+            catch
+            {
+
             }
         }
     }
