@@ -123,6 +123,9 @@ namespace CtyTinLuong
         private void TamUng_new_Load(object sender, EventArgs e)
         {
             Load_LockUp_DoiTuong();
+            if (UCLuong_TamUng.mbThemMoiTamUng == true)
+                HienThi_ThemMoi();
+            else HienThi_Sua();
 
         }
 
