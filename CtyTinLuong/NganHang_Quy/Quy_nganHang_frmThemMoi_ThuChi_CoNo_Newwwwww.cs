@@ -185,7 +185,7 @@ namespace CtyTinLuong
                 
             }
         }
-    private void LuuDuLieu_Va_GhiSo(int bienthangthai)
+        private void LuuDuLieu_Va_GhiSo(int bienthangthai)
         {
             if (!KiemTraLuu()) return ;
             else

@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TamUng_new));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
@@ -92,9 +92,7 @@
             this.memodoituong = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.clDoiTuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkCongNhanVien = new System.Windows.Forms.CheckBox();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridDoiTuong_gridControl = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -103,6 +101,8 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.checkDaiLy = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -137,12 +137,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memodoituong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDoiTuong_gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -158,8 +158,8 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.checkBox2);
-            this.layoutControl1.Controls.Add(this.checkBox1);
+            this.layoutControl1.Controls.Add(this.checkDaiLy);
+            this.layoutControl1.Controls.Add(this.checkCongNhanVien);
             this.layoutControl1.Controls.Add(this.gridControl2);
             this.layoutControl1.Controls.Add(this.btPrint);
             this.layoutControl1.Controls.Add(this.btLuu_Gui_Dong);
@@ -378,10 +378,10 @@
             this.layoutControlItem11,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem14,
             this.layoutControlItem17,
             this.emptySpaceItem2,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(815, 451);
@@ -702,9 +702,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -762,39 +762,22 @@
             this.clDoiTuong.VisibleIndex = 2;
             this.clDoiTuong.Width = 303;
             // 
-            // checkBox1
+            // checkCongNhanVien
             // 
-            this.checkBox1.Location = new System.Drawing.Point(2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(403, 20);
-            this.checkBox1.TabIndex = 114;
-            this.checkBox1.Text = "Đại lý";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.checkBox1;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(407, 24);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.Location = new System.Drawing.Point(409, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(404, 20);
-            this.checkBox2.TabIndex = 115;
-            this.checkBox2.Text = "Công nhân viên";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkCongNhanVien.Location = new System.Drawing.Point(2, 2);
+            this.checkCongNhanVien.Name = "checkCongNhanVien";
+            this.checkCongNhanVien.Size = new System.Drawing.Size(403, 20);
+            this.checkCongNhanVien.TabIndex = 115;
+            this.checkCongNhanVien.Text = "Công nhân viên";
+            this.checkCongNhanVien.UseVisualStyleBackColor = true;
+            this.checkCongNhanVien.CheckedChanged += new System.EventHandler(this.checkCongNhanVien_CheckedChanged);
             // 
             // layoutControlItem17
             // 
-            this.layoutControlItem17.Control = this.checkBox2;
-            this.layoutControlItem17.Location = new System.Drawing.Point(407, 0);
+            this.layoutControlItem17.Control = this.checkCongNhanVien;
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(408, 24);
+            this.layoutControlItem17.Size = new System.Drawing.Size(407, 24);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
@@ -858,6 +841,25 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(408, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // checkDaiLy
+            // 
+            this.checkDaiLy.Location = new System.Drawing.Point(409, 2);
+            this.checkDaiLy.Name = "checkDaiLy";
+            this.checkDaiLy.Size = new System.Drawing.Size(404, 20);
+            this.checkDaiLy.TabIndex = 116;
+            this.checkDaiLy.Text = "Đại lý";
+            this.checkDaiLy.UseVisualStyleBackColor = true;
+            this.checkDaiLy.CheckedChanged += new System.EventHandler(this.checkDaiLy_CheckedChanged);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.checkDaiLy;
+            this.layoutControlItem5.Location = new System.Drawing.Point(407, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(408, 24);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // TamUng_new
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -902,12 +904,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memodoituong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDoiTuong_gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -957,8 +959,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkCongNhanVien;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT2;
@@ -978,9 +979,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private System.Windows.Forms.CheckBox checkDaiLy;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
