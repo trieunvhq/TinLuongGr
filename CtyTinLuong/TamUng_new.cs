@@ -665,7 +665,7 @@ namespace CtyTinLuong
                 DataTable dt = clsncc.SelectOne();
                 if (dt.Rows.Count > 0)
                 {
-                    txtNguoiMuaHang.Text = dt.Rows[0]["TenNhanVien"].ToString();
+                    txtNguoiLap.Text = dt.Rows[0]["TenNhanVien"].ToString();
 
                 }
 
