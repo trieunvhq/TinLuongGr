@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TamUng_new));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -65,7 +65,6 @@
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
-            this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
             this.txtNam = new System.Windows.Forms.TextBox();
             this.txtDoiTuong = new System.Windows.Forms.TextBox();
             this.gridDoiTuong = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -94,7 +93,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -138,7 +136,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
@@ -182,7 +179,6 @@
             this.layoutControl1.Controls.Add(this.btPrint);
             this.layoutControl1.Controls.Add(this.btLuu);
             this.layoutControl1.Controls.Add(this.btThooat);
-            this.layoutControl1.Controls.Add(this.txtsochungtu_tbThuChi);
             this.layoutControl1.Controls.Add(this.txtNam);
             this.layoutControl1.Controls.Add(this.txtDoiTuong);
             this.layoutControl1.Controls.Add(this.gridDoiTuong);
@@ -348,9 +344,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -495,15 +491,6 @@
             this.btThooat.StyleController = this.layoutControl1;
             this.btThooat.TabIndex = 109;
             this.btThooat.Text = "Thoát";
-            // 
-            // txtsochungtu_tbThuChi
-            // 
-            this.txtsochungtu_tbThuChi.Location = new System.Drawing.Point(704, 26);
-            this.txtsochungtu_tbThuChi.Name = "txtsochungtu_tbThuChi";
-            this.txtsochungtu_tbThuChi.ReadOnly = true;
-            this.txtsochungtu_tbThuChi.Size = new System.Drawing.Size(113, 20);
-            this.txtsochungtu_tbThuChi.TabIndex = 110;
-            this.txtsochungtu_tbThuChi.Visible = false;
             // 
             // txtNam
             // 
@@ -650,7 +637,7 @@
             this.dteNgayChungTu.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayChungTu.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dteNgayChungTu.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dteNgayChungTu.Size = new System.Drawing.Size(248, 20);
+            this.dteNgayChungTu.Size = new System.Drawing.Size(365, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl1;
             this.dteNgayChungTu.TabIndex = 14;
             // 
@@ -685,7 +672,6 @@
             this.layoutControlItem2,
             this.layoutControlItem1,
             this.layoutControlItem6,
-            this.layoutControlItem10,
             this.layoutControlItem8,
             this.layoutControlItem11,
             this.layoutControlItem12,
@@ -796,16 +782,6 @@
             this.layoutControlItem6.Text = "Năm";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(103, 13);
             // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtsochungtu_tbThuChi;
-            this.layoutControlItem10.CustomizationFormText = "layoutControlItem10";
-            this.layoutControlItem10.Location = new System.Drawing.Point(702, 24);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(117, 24);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btThooat;
@@ -900,7 +876,7 @@
             this.layoutControlItem18.CustomizationFormText = "Ngày chứng từ";
             this.layoutControlItem18.Location = new System.Drawing.Point(344, 24);
             this.layoutControlItem18.Name = "layoutControlItem5";
-            this.layoutControlItem18.Size = new System.Drawing.Size(358, 24);
+            this.layoutControlItem18.Size = new System.Drawing.Size(475, 24);
             this.layoutControlItem18.Text = "Ngày chứng từ";
             this.layoutControlItem18.TextSize = new System.Drawing.Size(103, 13);
             // 
@@ -1013,7 +989,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
@@ -1040,7 +1015,6 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.TextBox txtsochungtu_tbThuChi;
         private System.Windows.Forms.TextBox txtNam;
         private System.Windows.Forms.TextBox txtDoiTuong;
         private DevExpress.XtraEditors.GridLookUpEdit gridDoiTuong;
@@ -1070,7 +1044,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.SimpleButton btPrint;
         private DevExpress.XtraEditors.SimpleButton btLuu;
         private DevExpress.XtraEditors.SimpleButton btThooat;

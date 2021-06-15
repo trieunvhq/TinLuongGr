@@ -313,7 +313,7 @@ namespace CtyTinLuong
 
         } 
 
-        private void LuuDuLieu_ThuChi(int ID_ThuChixxx)
+        private void LuuDuLieu_ThuChi()
         {
             if (!KiemTraLuu()) return;
             else
@@ -334,20 +334,24 @@ namespace CtyTinLuong
                 cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
                 cls1.bDaGhiSo = true;
                 cls1.iBienMuaHang1_BanHang2_ConLai_0 = 9;
-                //if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
-                //{
-                //    cls1.Insert();
-                //    ID_ThuChixxx = cls1.iID_ThuChi.Value;
 
-                //}
-                //else
-                //{
-                //    ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
-                //    cls1.iID_ThuChi = ID_ThuChixxx;
-                //    cls1.Update();
-                //}
+                clsNganHang_tbThuChi cls2 = new clsNganHang_tbThuChi();
+                cls2.daNgayChungTu = dteNgayChungTu.DateTime;
+                cls2.sThamChieu = txtSoChungTu.Text.ToString();
+                cls2.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+                DataTable dt1 = cls2.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
+                if (dt1.Rows.Count > 0)
+                {
+                    cls1.Insert();
+                   
+                }
+                else
+                {
+
+                    cls1.iID_ThuChi = Convert.ToInt32(dt1.Rows[0]["ID_ThuChi"].ToString());
+                    cls1.Update();
+                }
                
-                               
             }
         }
         private void Luu_ChiTiet_TamUng(int xxxID_TamUng)
@@ -425,6 +429,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
+                
                 int xxID_tamung = 0;
                 clsTamUng_New cls1 = new clsTamUng_New();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
@@ -441,6 +446,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 if (UCLuong_TamUng.mbThemMoiTamUng == true)
                 {
+                    cls1.bGuiDuLieu = false;
                     cls1.Insert();
                     xxID_tamung = cls1.iID_TamUng.Value;
 
@@ -448,6 +454,12 @@ namespace CtyTinLuong
                 else
                 {
                     xxID_tamung = UCLuong_TamUng.miiiiID_TamUng;
+
+                    clsTamUng_New cls2 = new clsTamUng_New();
+                    cls2.iID_TamUng = xxID_tamung;
+                    DataTable dt2 = cls2.SelectOne();
+                    cls1.bGuiDuLieu = cls2.bGuiDuLieu.Value;
+                   
                     cls1.iID_TamUng = xxID_tamung;
                     cls1.Update();
                 }
@@ -455,13 +467,25 @@ namespace CtyTinLuong
 
             }
         }
-        private void LuuDuLieu(int bienthangthai)
+        private void LuuDuLieu_ChiLuu(int bienthangthai)
         {
             if (!KiemTraLuu()) return;
             else
             {
-                LuuDuLieu_ThuChi(0);
+                LuuDuLieu_TamUng();
+                LuuDuLieu_ThuChi();
                 MessageBox.Show("Đã lưu");
+            }
+        }
+
+        private void LuuDuLieu_Va_GuiDuLieu(int bienthangthai)
+        {
+            if (!KiemTraLuu()) return;
+            else
+            {
+                LuuDuLieu_TamUng();
+                LuuDuLieu_ThuChi();
+                MessageBox.Show("Đã lưu và gửi dữ liệu");
             }
         }
         public TamUng_new()
