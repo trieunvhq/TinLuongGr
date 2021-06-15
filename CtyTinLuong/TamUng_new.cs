@@ -60,6 +60,61 @@ namespace CtyTinLuong
            
 
         }
+
+        private void HienThi_ThemMoi()
+        {
+            //gridNguoiLap.EditValue = 11;
+            //clsDaiLy_TamUng cls = new CtyTinLuong.clsDaiLy_TamUng();
+            //DataTable dtthuchi = cls.SelectAll();
+            //dtthuchi.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            //DataView dvthuchi = dtthuchi.DefaultView;
+            //DataTable dvthuchi3 = dvthuchi.ToTable();
+            //int k = dvthuchi3.Rows.Count;
+            //if (k == 0)
+            //    txtSoChungTu.Text = "TU 1";
+            //else
+            //{
+            //    string xxx = dvthuchi3.Rows[k - 1]["SoChungTu"].ToString();
+            //    int xxx2 = Convert.ToInt16(xxx.Substring(2).Trim()) + 1;
+            //    if (xxx2 >= 10000)
+            //        txtSoChungTu.Text = "TU 1";
+            //    else txtSoChungTu.Text = "TU " + xxx2 + "";
+            //}
+
+            //string thang = DateTime.Today.ToString("MM");
+            //string nam = DateTime.Today.ToString("yyyy");
+            //dteNgayChungTu.DateTime = DateTime.Today;
+            //txtNam.Text = nam;
+            //txtThang.Text = thang;
+
+        }
+        private void HienThi_Sua()
+        {
+            //clsDaiLy_TamUng cls = new CtyTinLuong.clsDaiLy_TamUng();
+            //cls.iID_TamUng = UCDaiLy_TamUng.miiiiID_TamUng;
+            //DataTable dt = cls.SelectOne();
+            //if (dt.Rows.Count > 0)
+            //{
+            //    if (cls.bGuiDuLieu.Value == true)
+            //    {
+            //        btLuu_Copy.Enabled = false;
+            //        btLuu_Dong.Enabled = false;
+            //        btLuu_Gui_Copy.Enabled = false;
+            //        btLuu_Gui_Dong.Enabled = false;
+            //    }
+            //    gridMaDaiLy.EditValue = cls.iID_DaiLy.Value;
+
+            //    txtSoChungTu.Text = cls.sSoChungTu.Value;
+            //    dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
+            //    gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
+            //    txtThang.Text = cls.iKhauTruLuongThang.Value.ToString();
+            //    txtNam.Text = cls.iKhauTruLuongThang_Nam.Value.ToString();
+
+            //    txtDienGiai.Text = cls.sDienGiai.Value;
+            //    txtSoTienTamUng.Text = cls.dcSoTien.Value.ToString();
+
+            }
+        }
         public TamUng_new()
         {
             InitializeComponent();
@@ -71,10 +126,6 @@ namespace CtyTinLuong
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void checkDaiLy_CheckedChanged(object sender, EventArgs e)
         {

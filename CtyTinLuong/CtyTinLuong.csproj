@@ -359,6 +359,8 @@
     <Compile Include="Luong_ChamCong\T_PrintChamComToGapDan.Designer.cs">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="NganHang_Quy\clsTamUng_ChiTietTamUng.cs" />
+    <Compile Include="NganHang_Quy\clsTamUng_New.cs" />
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
     </Compile>
