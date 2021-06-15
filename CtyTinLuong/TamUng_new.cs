@@ -212,9 +212,7 @@ namespace CtyTinLuong
                 checkDaiLy.Checked = true;
             else checkCongNhanVien.Checked = true;
 
-            if (cls.bGuiDuLieu == true)
-                btLuu_Gui.Enabled = false;
-
+           
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             cls1.daNgayChungTu = dteNgayChungTu.DateTime;
             cls1.sThamChieu = txtSoChungTu.Text.ToString();
@@ -668,11 +666,6 @@ namespace CtyTinLuong
         }
 
         private void btLuu_Click(object sender, EventArgs e)
-        {
-            LuuDuLieu();
-        }
-
-        private void btLuu_Gui_Click(object sender, EventArgs e)
         {
             LuuDuLieu();
         }
