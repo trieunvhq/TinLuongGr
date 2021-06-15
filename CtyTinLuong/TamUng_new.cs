@@ -12,6 +12,7 @@ namespace CtyTinLuong
 {
     public partial class TamUng_new : Form
     {
+        int bienthangthai = 0;
         DataTable dtdoituong = new DataTable();
         private void Load_LockUp_DoiTuong()
         {
@@ -63,29 +64,31 @@ namespace CtyTinLuong
 
         private void HienThi_ThemMoi()
         {
-            //gridNguoiLap.EditValue = 11;
-            //clsDaiLy_TamUng cls = new CtyTinLuong.clsDaiLy_TamUng();
-            //DataTable dtthuchi = cls.SelectAll();
-            //dtthuchi.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            //DataView dvthuchi = dtthuchi.DefaultView;
-            //DataTable dvthuchi3 = dvthuchi.ToTable();
-            //int k = dvthuchi3.Rows.Count;
-            //if (k == 0)
-            //    txtSoChungTu.Text = "TU 1";
-            //else
-            //{
-            //    string xxx = dvthuchi3.Rows[k - 1]["SoChungTu"].ToString();
-            //    int xxx2 = Convert.ToInt16(xxx.Substring(2).Trim()) + 1;
-            //    if (xxx2 >= 10000)
-            //        txtSoChungTu.Text = "TU 1";
-            //    else txtSoChungTu.Text = "TU " + xxx2 + "";
-            //}
+            gridNguoiLap.EditValue = 11;
+            checkPhieuChi.Checked = true;
+            checkCongNhanVien.Checked = true;
+            clsTamUng_New      cls = new CtyTinLuong.clsTamUng_New();
+            DataTable dtthuchi = cls.SelectAll();
+            dtthuchi.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            DataView dvthuchi = dtthuchi.DefaultView;
+            DataTable dvthuchi3 = dvthuchi.ToTable();
+            int k = dvthuchi3.Rows.Count;
+            if (k == 0)
+                txtSoChungTu.Text = "TU 1";
+            else
+            {
+                string xxx = dvthuchi3.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt16(xxx.Substring(2).Trim()) + 1;
+                if (xxx2 >= 10000)
+                    txtSoChungTu.Text = "TU 1";
+                else txtSoChungTu.Text = "TU " + xxx2 + "";
+            }
 
-            //string thang = DateTime.Today.ToString("MM");
-            //string nam = DateTime.Today.ToString("yyyy");
-            //dteNgayChungTu.DateTime = DateTime.Today;
-            //txtNam.Text = nam;
-            //txtThang.Text = thang;
+            string thang = DateTime.Today.ToString("MM");
+            string nam = DateTime.Today.ToString("yyyy");
+            dteNgayChungTu.DateTime = DateTime.Today;
+            txtNam.Text = nam;
+            txtThang.Text = thang;
 
         }
         private void HienThi_Sua()
@@ -145,6 +148,24 @@ namespace CtyTinLuong
             {
                 checkDaiLy.Checked = false;
                 Load_LockUp_DoiTuong();
+            }
+        }
+
+        private void checkPhieuChi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkPhieuChi.Checked == true)
+            {
+                bienthangthai = 3;
+                checkBaoNo.Checked = false;
+            }
+        }
+
+        private void checkBaoNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBaoNo.Checked == true)
+            {
+                bienthangthai = 2;
+                checkPhieuChi.Checked = false;
             }
         }
     }
