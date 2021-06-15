@@ -211,8 +211,8 @@ namespace CtyTinLuong
             if (cls.bCheckTamUngDaiLy == true)
                 checkDaiLy.Checked = true;
             else checkCongNhanVien.Checked = true;
-
-           
+            if (cls.bGuiDuLieu == true)
+                btLuu_Gui.Enabled = false;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             cls1.daNgayChungTu = dteNgayChungTu.DateTime;
             cls1.sThamChieu = txtSoChungTu.Text.ToString();
@@ -330,7 +330,7 @@ namespace CtyTinLuong
                 cls1.bTienUSD = false;
                 cls1.fTiGia = 1;
                 cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
-                cls1.bDaGhiSo = true;
+              
                 cls1.iBienMuaHang1_BanHang2_ConLai_0 = 9;
 
                 clsNganHang_tbThuChi cls2 = new clsNganHang_tbThuChi();
@@ -340,12 +340,14 @@ namespace CtyTinLuong
                 DataTable dt1 = cls2.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
                 if (dt1.Rows.Count == 0)
                 {
+                    cls1.bDaGhiSo = false;
+                   
                     cls1.Insert();
                    
                 }
                 else
                 {
-
+                    cls1.bDaGhiSo = Convert.ToBoolean(dt1.Rows[0]["DaGhiSo"].ToString());
                     cls1.iID_ThuChi = Convert.ToInt32(dt1.Rows[0]["ID_ThuChi"].ToString());
                     cls1.Update();
                 }
@@ -467,18 +469,26 @@ namespace CtyTinLuong
 
             }
         }
-        private void LuuDuLieu()
+        private void LuuDuLieu_ChiLuu()
+        {
+            if (!KiemTraLuu()) return;
+            else
+            {
+                LuuDuLieu_TamUng();               
+                MessageBox.Show("Đã lưu");
+            }
+        }
+
+        private void LuuDuLieu_Va_GuiDuLieu()
         {
             if (!KiemTraLuu()) return;
             else
             {
                 LuuDuLieu_TamUng();
                 LuuDuLieu_ThuChi();
-                MessageBox.Show("Đã lưu");
+                MessageBox.Show("Đã lưu và gửi dữ liệu");
             }
         }
-
-     
         public TamUng_new()
         {
             InitializeComponent();
@@ -669,7 +679,7 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            LuuDuLieu();
+            LuuDuLieu_ChiLuu();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)
@@ -687,6 +697,11 @@ namespace CtyTinLuong
             }
             catch
             { }
+        }
+
+        private void btLuu_Gui_Click(object sender, EventArgs e)
+        {
+            LuuDuLieu_Va_GuiDuLieu();
         }
     }
 }
