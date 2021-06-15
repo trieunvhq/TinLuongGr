@@ -122,6 +122,8 @@ namespace CtyTinLuong
                 DataView dv2232xx = dtkkk.DefaultView;
                 DataTable dt_gridcontrol = dv2232xx.ToTable();
                 DataTable dt2_cu = new DataTable();
+
+                cls2.iID_ThuChi = xxxID_ThuChi;
                 dt2_cu = cls2.SelectAll_W_ID_ThuChi();
                 if (dt2_cu.Rows.Count > 0)
                 {
@@ -135,7 +137,7 @@ namespace CtyTinLuong
                 for (int i = 0; i < dt_gridcontrol.Rows.Count; i++)
                 {
                     int ID_TaiKhoanKeToanConxxx = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-
+                    cls2 = new CtyTinLuong.clsNganHang_tbThuChi_ChiTietThuChi();
                     double TiGia;
                     if (dt_gridcontrol.Rows[i]["TiGia"].ToString() == "")
                         TiGia = 0;
@@ -150,7 +152,7 @@ namespace CtyTinLuong
                     cls2.bNgungTheoDoi = false;
                     cls2.bDaGhiSo = true;
                     cls2.sGhiChu = dt_gridcontrol.Rows[i]["GhiChu"].ToString();
-                    cls2.Insert();
+                 
                     string expressionnhapkho;
                     expressionnhapkho = "ID_TaiKhoanKeToanCon=" + ID_TaiKhoanKeToanConxxx + "";
                     DataRow[] foundRows;
@@ -183,7 +185,7 @@ namespace CtyTinLuong
                 
             }
         }
-    private void LuuDuLieu_Va_GhiSo(int bienthangthai, string sThamChieu)
+    private void LuuDuLieu_Va_GhiSo(int bienthangthai)
         {
             if (!KiemTraLuu()) return ;
             else
@@ -194,7 +196,7 @@ namespace CtyTinLuong
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.fSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
-                cls1.sThamChieu = sThamChieu; // Báo có khác
+                cls1.sThamChieu = txtThamChieu.Text; 
                 cls1.sDoiTuong = txtDoiTuong.Text.ToString();
                 cls1.bTonTai = true;
                 cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
@@ -367,6 +369,29 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
             //
             gridControl1.DataSource = dt2;
+
+            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
+            {              
+                txtThamChieu.Text = "Báo Có";
+
+            }
+                       
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
+            {
+                
+                txtThamChieu.Text = "Báo Nợ";
+
+            }
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
+            {
+               
+                txtThamChieu.Text = "Phiếu Chi";
+
+            }
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
+            {
+                txtThamChieu.Text = "Phiếu Thu";
+            }
         }
         private void HienThi_Sua()
         {
@@ -400,7 +425,7 @@ namespace CtyTinLuong
             if (cls1.bDaGhiSo.Value == true)
             {
                 //btLuu_Copy.Enabled = false;
-                btLuu_Dong.Enabled = false;
+                //btLuu_Dong.Enabled = false;
                 //btLuu_Gui_Copy.Enabled = false;
                 //btLuu_Gui_Dong.Enabled = false;
             }
@@ -799,33 +824,32 @@ namespace CtyTinLuong
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
             int kkkk = 0;
-            string sthamchieuxxx = "";
+           
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
             {
                 kkkk = 1;
-                sthamchieuxxx = "Báo Có";
+              
 
             }
             else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
             {
                 kkkk = 2;
-                sthamchieuxxx = "Báo Nợ";
+               
 
             }
             else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
             {
                 kkkk = 3;
-                sthamchieuxxx = "Phiếu Chi";
+             
 
             }
             else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
             {
                 kkkk = 3;
-                sthamchieuxxx = "Phiếu Thu";
+                
             }
-            LuuDuLieu_Va_GhiSo(kkkk, sthamchieuxxx);
+            LuuDuLieu_Va_GhiSo(kkkk);
            
-
         }
 
       
