@@ -7,12 +7,11 @@ khi insert dữ liệu ban đầu phải cho muahang, ban hang vao
 insert Chi tiết biến động TK kế toán
 TrangThai_MuaHang1_BanHang2_VAT3_
 
+
 đi vay=1 coi nhu ncc
 
 vat=3
 con lai =0
 
-
-Huutq-88
-Huutq@88
-C:\Users\HUU\Documents\GitHub\TinLuong
+Tam ứng tbThuChi. iBienMuaHang1_BanHang2_ConLai_0=9
+không lưu ChiTietThuChi

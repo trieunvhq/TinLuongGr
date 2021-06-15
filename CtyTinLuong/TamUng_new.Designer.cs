@@ -46,7 +46,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtThang = new System.Windows.Forms.TextBox();
-            this.txtSoTienTamUng = new System.Windows.Forms.TextBox();
+            this.txtTongSoTien = new System.Windows.Forms.TextBox();
             this.gridNguoiLap = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -183,7 +183,7 @@
             this.layoutControl1.Controls.Add(this.txtDoiTuong);
             this.layoutControl1.Controls.Add(this.gridDoiTuong);
             this.layoutControl1.Controls.Add(this.txtThang);
-            this.layoutControl1.Controls.Add(this.txtSoTienTamUng);
+            this.layoutControl1.Controls.Add(this.txtTongSoTien);
             this.layoutControl1.Controls.Add(this.gridNguoiLap);
             this.layoutControl1.Controls.Add(this.txtNguoiLap);
             this.layoutControl1.Controls.Add(this.dteNgayChungTu);
@@ -273,16 +273,16 @@
             this.txtThang.Size = new System.Drawing.Size(232, 20);
             this.txtThang.TabIndex = 1;
             // 
-            // txtSoTienTamUng
+            // txtTongSoTien
             // 
-            this.txtSoTienTamUng.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoTienTamUng.ForeColor = System.Drawing.Color.Red;
-            this.txtSoTienTamUng.Location = new System.Drawing.Point(108, 179);
-            this.txtSoTienTamUng.Name = "txtSoTienTamUng";
-            this.txtSoTienTamUng.Size = new System.Drawing.Size(232, 20);
-            this.txtSoTienTamUng.TabIndex = 5;
-            this.txtSoTienTamUng.Text = "0";
-            this.txtSoTienTamUng.TextChanged += new System.EventHandler(this.txtSoTienTamUng_TextChanged);
+            this.txtTongSoTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongSoTien.ForeColor = System.Drawing.Color.Red;
+            this.txtTongSoTien.Location = new System.Drawing.Point(108, 179);
+            this.txtTongSoTien.Name = "txtTongSoTien";
+            this.txtTongSoTien.Size = new System.Drawing.Size(232, 20);
+            this.txtTongSoTien.TabIndex = 5;
+            this.txtTongSoTien.Text = "0";
+            this.txtTongSoTien.TextChanged += new System.EventHandler(this.txtSoTienTamUng_TextChanged);
             // 
             // gridNguoiLap
             // 
@@ -436,7 +436,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.txtSoTienTamUng;
+            this.layoutControlItem9.Control = this.txtTongSoTien;
             this.layoutControlItem9.CustomizationFormText = "Số tiền";
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 177);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -1018,7 +1018,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private System.Windows.Forms.TextBox txtThang;
-        private System.Windows.Forms.TextBox txtSoTienTamUng;
+        private System.Windows.Forms.TextBox txtTongSoTien;
         private DevExpress.XtraEditors.GridLookUpEdit gridNguoiLap;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn clID_NhanSu;
