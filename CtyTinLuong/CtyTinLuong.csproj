@@ -753,14 +753,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\clsDaiLy_TraLuong - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDaiLy_TraLuong.cs" />
-    <Compile Include="KhoDaiLy\frmChiTietTamUng_DaiLy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\frmChiTietTamUng_DaiLy.Designer.cs">
-      <DependentUpon>frmChiTietTamUng_DaiLy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoDaiLy\clsDaiLy_TamUng - Copy.cs" />
-    <Compile Include="KhoDaiLy\clsDaiLy_TamUng.cs" />
     <Compile Include="NganHang_Quy\clsNganHang_tbThuChi_ChiTietThuChi - Copy.cs" />
     <Compile Include="NganHang_Quy\clsNganHang_tbThuChi_ChiTietThuChi.cs" />
     <Compile Include="NganHang_Quy\frmQuy_NganHang_Newwwwwwwwwwwwwwwww.cs">
@@ -783,14 +775,6 @@
     <Compile Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.Designer.cs">
       <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\frmChiTietTamUng.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Luong_ChamCong\frmChiTietTamUng.Designer.cs">
-      <DependentUpon>frmChiTietTamUng.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Luong_ChamCong\clsHUU_CongNhat_TamUng - Copy.cs" />
-    <Compile Include="Luong_ChamCong\clsHUU_CongNhat_TamUng.cs" />
     <Compile Include="QuanLySanXuat\frmGuiDuLieuLuongTheoSanLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1458,12 +1442,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_TinhLuong.Designer.cs">
       <DependentUpon>UCDaiLy_TinhLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_TamUng.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_TamUng.Designer.cs">
-      <DependentUpon>UCDaiLy_TamUng.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_TraLuong.cs">
       <SubType>UserControl</SubType>
@@ -2136,17 +2114,11 @@
     <EmbeddedResource Include="KhoDaiLy\frmChiTietLuong_DaiLy.resx">
       <DependentUpon>frmChiTietLuong_DaiLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\frmChiTietTamUng_DaiLy.resx">
-      <DependentUpon>frmChiTietTamUng_DaiLy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmGuiDuLieuLuongDaiLy.resx">
       <DependentUpon>frmGuiDuLieuLuongDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmLuong_ChiTietTraLuong_DaiLy.resx">
       <DependentUpon>frmLuong_ChiTietTraLuong_DaiLy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\UCDaiLy_TamUng.resx">
-      <DependentUpon>UCDaiLy_TamUng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_TinhLuong.resx">
       <DependentUpon>UCDaiLy_TinhLuong.cs</DependentUpon>
@@ -2180,9 +2152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChiTietChamCong_Mot_CongNhan.resx">
       <DependentUpon>frmChiTietChamCong_Mot_CongNhan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\frmChiTietTamUng.resx">
-      <DependentUpon>frmChiTietTamUng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.resx">
       <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
@@ -2505,6 +2474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanLuong_To_May_IN.resx">
       <DependentUpon>SanLuong_To_May_IN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TamUng_new.resx">
+      <DependentUpon>TamUng_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraDaiLy_ChiTietLuong.resx">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>
