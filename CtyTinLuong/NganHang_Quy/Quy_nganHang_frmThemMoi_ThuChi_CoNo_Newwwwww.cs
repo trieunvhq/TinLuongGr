@@ -682,6 +682,8 @@ namespace CtyTinLuong
             {
                 if (e.Column == clSoTaiKhoanCon)
                 {
+                    double tigiaxx = Convert.ToDouble(txtTiGia.Text);
+                    bool tienussd = checkUSD.Checked;
                     gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
                     gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
 
@@ -689,23 +691,14 @@ namespace CtyTinLuong
                     cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                     int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                     DataTable dt = cls.SelectOne();
-                    if (dt.Rows.Count > 0)
-                    {
-                        gridView4.SetRowCellValue(e.RowHandle, ID_TaiKhoanKeToanCon, kk);
-                        //gridView4.SetRowCellValue(e.RowHandle, ID_TaiKhoanKeToanMe, cls.iID_TaiKhoanKeToanMe.Value);
-                        gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, dt.Rows[0]["TenTaiKhoanCon"].ToString());
-                        gridView4.SetRowCellValue(e.RowHandle, HienThi, "1");
-                        gridView4.SetRowCellValue(e.RowHandle, clTienUSD, false);
-                    }
+                    gridView4.SetRowCellValue(e.RowHandle, ID_TaiKhoanKeToanCon, kk);                 
+                    gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, dt.Rows[0]["TenTaiKhoanCon"].ToString());
+                    gridView4.SetRowCellValue(e.RowHandle, HienThi, "1");
+                    gridView4.SetRowCellValue(e.RowHandle, clTienUSD, tienussd);
+                    gridView4.SetFocusedRowCellValue(clTiGia, tigiaxx);
 
                 }
-                if (e.Column == clTienUSD)
-                {
-                    if (Convert.ToBoolean(gridView4.GetFocusedRowCellValue(clTienUSD).ToString()) == false)
-                        gridView4.SetFocusedRowCellValue(clTiGia, 1);
-                    else
-                        gridView4.SetFocusedRowCellValue(clTiGia, 0);
-                }
+              
             }
             catch
             {

@@ -1591,6 +1591,12 @@
     <Compile Include="QuanLySanXuat\SanLuong_ChiTiet_Luong.Designer.cs">
       <DependentUpon>SanLuong_ChiTiet_Luong.cs</DependentUpon>
     </Compile>
+    <Compile Include="TamUng_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TamUng_new.Designer.cs">
+      <DependentUpon>TamUng_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <Compile Include="KhoNPL\UCNPL_NhapKho_Khacccccccccccc.cs">
       <SubType>UserControl</SubType>
