@@ -138,13 +138,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void txtThang_TextChanged(object sender, EventArgs e)
-        {
-            if (txtThang.Text.ToString() != "" & txtNam.Text.ToString() != "")
-            {
-                HienThi();
-            }
-        }
+       
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
