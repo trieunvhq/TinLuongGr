@@ -33,14 +33,15 @@ namespace CtyTinLuong
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
             gridControl1.DataSource = null;
+            DataTable dt = new DataTable();
             isload = true;
             _SoTrang = sotrang;
-            clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-            DataTable dt = cls.SelectAll_Load_DaTa_W_NgayThang(_SoTrang, xxtungay, xxdenngay);
-
+            _SoDong = sodong;
+            clsTamUng_New cls = new clsTamUng_New();
+            if (checkCongNhanVien.Checked == true)
+                dt = cls.SA_W_NgayThang_CongNhan(_SoTrang, sodong, xxtungay, xxdenngay);
+            else dt = cls.SA_W_NgayThang_DaiLy(_SoTrang, sodong, xxtungay, xxdenngay);
             gridControl1.DataSource = dt;
-
-
             isload = false;
         }
         private void Load_TamUng(bool islandau)
@@ -143,7 +144,7 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             mbThemMoiTamUng = true;
-            miiiiID_TamUng = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_TamUng).ToString());
+           
             TamUng_new ff = new CtyTinLuong.TamUng_new();
             ff.Show();
         }
