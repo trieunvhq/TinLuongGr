@@ -30,36 +30,36 @@ namespace CtyTinLuong
         {
             if (txtThang.Text.ToString() != "" & txtNam.Text.ToString() != "")
             {
-                DateTime ngaydautien, ngaycuoicung;
-                // DateTime ngayhomnay = 
-                int thang = Convert.ToInt16(txtThang.Text.ToString());
-                int nam = Convert.ToInt16(txtNam.Text.ToString());
-                ngaydautien = GetFistDayInMonth(nam, thang);
-                ngaycuoicung = GetLastDayInMonth(nam, thang);
-                clsHUU_CongNhat_TamUng cls = new CtyTinLuong.clsHUU_CongNhat_TamUng();
-                DataTable dt = cls.SelectAll_W_tenNhanVien();
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-                DataView dv = dt.DefaultView;
-                dv.Sort = "NgayChungTu DESC";
-                DataTable dxxxx = dv.ToTable();
-                dxxxx.DefaultView.RowFilter = " NgayChungTu<='" + ngaycuoicung + "'";
-                DataView dvxx = dxxxx.DefaultView;
-                DataTable dt22xxx = dvxx.ToTable();
-                dt22xxx.DefaultView.RowFilter = " NgayChungTu>='" + ngaydautien + "'";
-                gridControl1.DataSource = dt22xxx;
+                //DateTime ngaydautien, ngaycuoicung;
+                //// DateTime ngayhomnay = 
+                //int thang = Convert.ToInt16(txtThang.Text.ToString());
+                //int nam = Convert.ToInt16(txtNam.Text.ToString());
+                //ngaydautien = GetFistDayInMonth(nam, thang);
+                //ngaycuoicung = GetLastDayInMonth(nam, thang);
+                //clsHUU_CongNhat_TamUng cls = new CtyTinLuong.clsHUU_CongNhat_TamUng();
+                //DataTable dt = cls.SelectAll_W_tenNhanVien();
+                //dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+                //DataView dv = dt.DefaultView;
+                //dv.Sort = "NgayChungTu DESC";
+                //DataTable dxxxx = dv.ToTable();
+                //dxxxx.DefaultView.RowFilter = " NgayChungTu<='" + ngaycuoicung + "'";
+                //DataView dvxx = dxxxx.DefaultView;
+                //DataTable dt22xxx = dvxx.ToTable();
+                //dt22xxx.DefaultView.RowFilter = " NgayChungTu>='" + ngaydautien + "'";
+                //gridControl1.DataSource = dt22xxx;
             }
 
 
         }
         private void HienThi_ALL()
         {
-            clsHUU_CongNhat_TamUng cls = new CtyTinLuong.clsHUU_CongNhat_TamUng();
-            DataTable dt = cls.SelectAll_W_tenNhanVien();
-            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt.DefaultView;
-            dv.Sort = "NgayChungTu DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
+            //clsHUU_CongNhat_TamUng cls = new CtyTinLuong.clsHUU_CongNhat_TamUng();
+            //DataTable dt = cls.SelectAll_W_tenNhanVien();
+            //dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            //DataView dv = dt.DefaultView;
+            //dv.Sort = "NgayChungTu DESC";
+            //DataTable dxxxx = dv.ToTable();
+            //gridControl1.DataSource = dxxxx;
         }
         public UCLuong_TamUng()
         {
@@ -96,7 +96,7 @@ namespace CtyTinLuong
             {
                 mbThemMoiTamUng = false;
                 miiiiID_TamUng = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_TamUng).ToString());
-                frmChiTietTamUng ff = new CtyTinLuong.frmChiTietTamUng();
+                TamUng_new ff = new CtyTinLuong.TamUng_new();
                 ff.Show();
             }
         }
@@ -113,7 +113,7 @@ namespace CtyTinLuong
         {
             mbThemMoiTamUng = true;
             //miiiiID_TamUng = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_TamUng).ToString());
-            frmChiTietTamUng ff = new CtyTinLuong.frmChiTietTamUng();
+            TamUng_new ff = new CtyTinLuong.TamUng_new();
             ff.Show();
         }
     }

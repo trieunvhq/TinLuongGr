@@ -16,5 +16,10 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void TamUng_new_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
