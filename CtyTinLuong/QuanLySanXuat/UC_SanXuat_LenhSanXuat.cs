@@ -157,16 +157,13 @@ namespace CtyTinLuong
         }
         
         private void UC_SanXuat_LenhSanXuat_Load(object sender, EventArgs e)
-        {
-            
+        {        
          
             clCaSanXuat.Caption = "Ca\n SX";
             clNhomMay.Caption = "Nhóm\nmáy";
-
             dteTuNgay.EditValue = DateTime.Now.AddDays(-20);
             dteDenNgay.EditValue = DateTime.Now;
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }      
 

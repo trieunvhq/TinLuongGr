@@ -26,13 +26,13 @@ namespace CtyTinLuong
             else dtchitiet = cls2.SA_W_ID_TamUng_CongNhan();         
             gridControl2.DataSource = dtchitiet;
         }
-        public void LoadData(int thang_, int Nam_)
+        public void LoadData(DateTime xxtungay, DateTime xxdenngay)
         {
-            gridControl1.DataSource = null;
-           
-            clsTamUng_New cls = new clsTamUng_New();
-            DataTable dt = cls.sa(xxtungay, xxdenngay);
-            gridControl1.DataSource = dt;
+            //gridControl1.DataSource = null;
+
+            //clsTamUng_New cls = new clsTamUng_New();
+            //DataTable dt = cls.sa(xxtungay, xxdenngay);
+            //gridControl1.DataSource = dt;
 
 
         }
@@ -44,11 +44,8 @@ namespace CtyTinLuong
 
         private void UCLuong_TamUng_Load(object sender, EventArgs e)
         {
-            mbThemMoiTamUng = true;           
-            DateTime ngayhomnay = DateTime.Today;
-            int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
-            int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));           
-            txtNam.Text = nam.ToString();
+            mbThemMoiTamUng = true;
+            checkCongNhanVien.Checked = true;
             
         }
 

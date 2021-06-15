@@ -228,6 +228,7 @@
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\clsTamUng_ChiTietTamUng - Copy.cs" />
+    <Compile Include="Luong_ChamCong\clsTamUng_New - Copy.cs" />
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_CT.cs">
       <SubType>Form</SubType>
     </Compile>
