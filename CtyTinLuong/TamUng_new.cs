@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -169,7 +170,18 @@ namespace CtyTinLuong
             dteNgayChungTu.DateTime = DateTime.Today;
             txtNam.Text = nam;
             txtThang.Text = thang;
-
+            DataTable dt2xx = new DataTable();
+            dt2xx.Columns.Add("ID_ChiTietTamUng", typeof(int));
+            dt2xx.Columns.Add("ID_TamUng", typeof(int));
+            dt2xx.Columns.Add("ID_DoiTuong", typeof(int));
+            dt2xx.Columns.Add("MaDoiTuong", typeof(string));
+            dt2xx.Columns.Add("DoiTuong", typeof(string));
+            dt2xx.Columns.Add("KhauTruLuongThang", typeof(int));
+            dt2xx.Columns.Add("KhauTruLuongThang_Nam", typeof(int));
+            dt2xx.Columns.Add("SoTien", typeof(double));
+            dt2xx.Columns.Add("GhiChu", typeof(string));
+            dt2xx.Columns.Add("HienThi", typeof(string));
+            gridControl2.DataSource = dt2xx;
         }
         private void HienThi_Sua(int iiDI_tamung)
         {
@@ -190,20 +202,18 @@ namespace CtyTinLuong
             }
             clsTamUng_ChiTietTamUng cls2 = new clsTamUng_ChiTietTamUng();
             cls2.iID_TamUng = iiDI_tamung;
-            //DataTable dtchitiet=cls2.SelectAll
+            DataTable dtchitiet = cls2.SA_W_ID_TamUng();
             gridControl2.DataSource = null;
             DataTable dt2xx = new DataTable();
-            dt2xx.Columns.Add("ID_ChiTietBienDongTaiKhoan", typeof(int));
-            dt2xx.Columns.Add("ID_ChungTu", typeof(int));
-            dt2xx.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
-            dt2xx.Columns.Add("No", typeof(double));
-            dt2xx.Columns.Add("Co", typeof(double));
-            dt2xx.Columns.Add("TienUSD", typeof(bool));
-            dt2xx.Columns.Add("TiGia", typeof(double));
-            dt2xx.Columns.Add("DaGhiSo", typeof(bool));
-            dt2xx.Columns.Add("GhiChu", typeof(string));
-            dt2xx.Columns.Add("SoTaiKhoanCon");
-            dt2xx.Columns.Add("TenTaiKhoanCon", typeof(string));
+            dt2xx.Columns.Add("ID_ChiTietTamUng", typeof(int));
+            dt2xx.Columns.Add("ID_TamUng", typeof(int));
+            dt2xx.Columns.Add("ID_DoiTuong", typeof(int));
+            dt2xx.Columns.Add("MaDoiTuong", typeof(string));
+            dt2xx.Columns.Add("DoiTuong", typeof(string));
+            dt2xx.Columns.Add("KhauTruLuongThang", typeof(int));
+            dt2xx.Columns.Add("KhauTruLuongThang_Nam", typeof(int));
+            dt2xx.Columns.Add("SoTien", typeof(double));            
+            dt2xx.Columns.Add("GhiChu", typeof(string));      
             dt2xx.Columns.Add("HienThi", typeof(string));
             //DataRow _ravi = dt2xx.NewRow();
             //_ravi["TienUSD"] = checkUSD.Checked;
@@ -214,7 +224,7 @@ namespace CtyTinLuong
             //_ravi["TenTaiKhoanCon"] = dtcon.Rows[0]["TenTaiKhoanCon"].ToString();
             //_ravi["HienThi"] = "1";
             //dt2xx.Rows.Add(_ravi);
-           
+            gridControl2.DataSource = dt2xx;
         }
         public TamUng_new()
         {
@@ -223,6 +233,7 @@ namespace CtyTinLuong
 
         private void TamUng_new_Load(object sender, EventArgs e)
         {
+            clKhauTruLuongThang.Caption = "Khấu trừ\ntháng";
             Load_LockUp_DoiTuong();
             if (UCLuong_TamUng.mbThemMoiTamUng == true)
                 HienThi_ThemMoi();
@@ -278,6 +289,23 @@ namespace CtyTinLuong
             catch
             {
 
+            }
+        }
+
+        private void btXoa2_Click(object sender, EventArgs e)
+        {
+            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
+           // gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clSoLuong, 0);
+        }
+
+        private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+        {
+            GridView view = sender as GridView;
+            DataView dv = view.DataSource as DataView;
+            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
+            {
+                e.Visible = false;
+                e.Handled = true;
             }
         }
     }
