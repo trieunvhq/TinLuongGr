@@ -14,18 +14,45 @@ namespace CtyTinLuong
     {
         public static int miiiiID_TamUng;
         public static bool mbThemMoiTamUng;
+        private void HienThiGridControl_2(int xxiDmuahang)
+        {
+            clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
+            cls2.iID_MuaHang = xxiDmuahang;
+            DataTable dt3 = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_ChiTietMuaHang"); // ID của tbChi tiet don hàng
+            dt2.Columns.Add("ID_MuaHang");
+            dt2.Columns.Add("ID_VTHH");
+            dt2.Columns.Add("SoLuong", typeof(float));
+            dt2.Columns.Add("DonGia", typeof(double));
+            dt2.Columns.Add("MaVT");// tb VTHH
+            dt2.Columns.Add("TenVTHH");
+            dt2.Columns.Add("DonViTinh");
+            dt2.Columns.Add("ThanhTien", typeof(double));
+            dt2.Columns.Add("HienThi", typeof(string));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuong"].ToString());
+                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
+                DataRow _ravi = dt2.NewRow();
+                _ravi["ID_ChiTietMuaHang"] = dt3.Rows[i]["ID_ChiTietMuaHang"].ToString();
+                _ravi["ID_MuaHang"] = dt3.Rows[i]["ID_MuaHang"].ToString();
+                _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
+                _ravi["SoLuong"] = xxsoluong;
+                _ravi["DonGia"] = xxdongia;
+                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                _ravi["HienThi"] = "1";
+                dt2.Rows.Add(_ravi);
+            }
 
-        public static DateTime GetFistDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            return aDateTime;
+            gridControl2.DataSource = dt2;
         }
-        public static DateTime GetLastDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
-            return retDateTime;
-        }
+     
         private void HienThi()
         {
             if (txtThang.Text.ToString() != "" & txtNam.Text.ToString() != "")
