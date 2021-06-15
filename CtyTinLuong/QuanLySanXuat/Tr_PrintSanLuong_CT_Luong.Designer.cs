@@ -147,7 +147,9 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlbBoPhan = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.lbNgayThangNam = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
@@ -164,8 +166,6 @@
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
             this.PTruongCa = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrlbBoPhan = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
@@ -1619,6 +1619,18 @@
             this.xrLabel3.Text = "CÔNG TY TNHH ĐTTM SX TÍN LƯỢNG";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
+            // xrlbBoPhan
+            // 
+            this.xrlbBoPhan.Font = new System.Drawing.Font("Times New Roman", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.xrlbBoPhan.LocationFloat = new DevExpress.Utils.PointFloat(2.825069F, 49.83331F);
+            this.xrlbBoPhan.Multiline = true;
+            this.xrlbBoPhan.Name = "xrlbBoPhan";
+            this.xrlbBoPhan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrlbBoPhan.SizeF = new System.Drawing.SizeF(1074.771F, 19.22285F);
+            this.xrlbBoPhan.StylePriority.UseFont = false;
+            this.xrlbBoPhan.StylePriority.UseTextAlignment = false;
+            this.xrlbBoPhan.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -1635,6 +1647,14 @@
             this.xrLabel6});
             this.ReportFooter.HeightF = 185.6677F;
             this.ReportFooter.Name = "ReportFooter";
+            // 
+            // xrSubreport1
+            // 
+            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 37.73063F);
+            this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ReportSource = new CtyTinLuong.Tr_PrintSanLuong_CT_Luong_Sub();
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(1083F, 23F);
+            this.xrSubreport1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrSubreport1_BeforePrint);
             // 
             // lbNgayThangNam
             // 
@@ -1743,7 +1763,7 @@
             this.xrLabel4.SizeF = new System.Drawing.SizeF(1083F, 20.91665F);
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "2. Lương theo sản lượng mới máy cắt";
+            this.xrLabel4.Text = "2. Lương theo sản lượng";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrLabel5
@@ -1809,26 +1829,6 @@
             this.PTruongCa.Description = "Trưởng ca";
             this.PTruongCa.Name = "PTruongCa";
             this.PTruongCa.ValueInfo = "Nguyễn Thanh Quân";
-            // 
-            // xrlbBoPhan
-            // 
-            this.xrlbBoPhan.Font = new System.Drawing.Font("Times New Roman", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.xrlbBoPhan.LocationFloat = new DevExpress.Utils.PointFloat(2.825069F, 49.83331F);
-            this.xrlbBoPhan.Multiline = true;
-            this.xrlbBoPhan.Name = "xrlbBoPhan";
-            this.xrlbBoPhan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlbBoPhan.SizeF = new System.Drawing.SizeF(1074.771F, 19.22285F);
-            this.xrlbBoPhan.StylePriority.UseFont = false;
-            this.xrlbBoPhan.StylePriority.UseTextAlignment = false;
-            this.xrlbBoPhan.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrSubreport1
-            // 
-            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 37.73063F);
-            this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ReportSource = new CtyTinLuong.Tr_PrintSanLuong_CT_Luong_Sub();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(1083F, 23F);
-            this.xrSubreport1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrSubreport1_BeforePrint);
             // 
             // Tr_PrintSanLuong_CT_Luong
             // 
