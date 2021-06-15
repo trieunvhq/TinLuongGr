@@ -62,7 +62,7 @@ namespace CtyTinLuong
             LoadData(sotrang_, sodong_,true, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
 
-        public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
+        public void ResetSoTrang(int sodong_,DateTime xxtungay, DateTime xxdenngay)
         {
             btnTrangSau.Visible = true;
             btnTrangTiep.Visible = true;
@@ -81,7 +81,7 @@ namespace CtyTinLuong
 
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)sodong_)).ToString();
                 }
                 else
                 {
@@ -105,7 +105,13 @@ namespace CtyTinLuong
         {
             mbThemMoiTamUng = true;
             checkCongNhanVien.Checked = true;
-            
+            clsNgayThang cls = new clsNgayThang();
+            dteDenNgay.EditValue = DateTime.Today;
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            int sodong = 10;
+            LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            ResetSoTrang(sodong,dteTuNgay.DateTime, dteDenNgay.DateTime);
+
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -180,6 +186,100 @@ namespace CtyTinLuong
             {
                 checkDaiLy.Checked = false;
                 //Load_LockUp_DoiTuong();
+            }
+        }
+
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                int sodong = Convert.ToInt32(txtSoDong.Text);
+                ResetSoTrang(sodong,dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, sodong,true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (isload)
+                return;
+            if (btnTrangTiep.LinkColor == Color.Black)
+                return;
+            if (btnTrangSau.LinkColor == Color.Black)
+                btnTrangSau.LinkColor = Color.Blue;
+
+            int sotrang_;
+            try
+            {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+                int max_ = Convert.ToInt32(lbTongSoTrang.Text.Replace(" ", "").Replace("/", ""));
+                if (sotrang_ < max_)
+                {
+                    txtSoTrang.Text = (sotrang_ + 1).ToString();
+
+                    Load_TamUng(false);
+                }
+                else
+                {
+                    txtSoTrang.Text = (max_).ToString();
+                    btnTrangTiep.LinkColor = Color.Black;
+                }
+            }
+            catch
+            {
+                btnTrangTiep.LinkColor = Color.Black;
+                sotrang_ = 1;
+                txtSoTrang.Text = "1";
+            }
+        }
+
+        private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (isload)
+                return;
+            if (btnTrangSau.LinkColor == Color.Black)
+                return;
+            if (btnTrangTiep.LinkColor == Color.Black)
+                btnTrangTiep.LinkColor = Color.Blue;
+
+            int sotrang_;
+            try
+            {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+                if (sotrang_ <= 1)
+                {
+                    txtSoTrang.Text = "1";
+                    btnTrangSau.LinkColor = Color.Black;
+
+                }
+                else
+                {
+                    txtSoTrang.Text = (sotrang_ - 1).ToString();
+                    Load_TamUng(false);
+                }
+            }
+            catch
+            {
+                btnTrangSau.LinkColor = Color.Black;
+                sotrang_ = 1;
+                txtSoTrang.Text = "1";
+            }
+        }
+
+        private void txtSoTrang_TextChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            Load_TamUng(false);
+        }
+
+        private void txtSoDong_TextChanged(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                int sodong = Convert.ToInt32(txtSoDong.Text);
+                ResetSoTrang(sodong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
     }
