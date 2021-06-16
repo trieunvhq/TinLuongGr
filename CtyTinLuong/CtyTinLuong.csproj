@@ -1610,6 +1610,7 @@
     <Compile Include="KhoBanThanhPham\UCBTP_NhapKho_LSX_I_C_D.Designer.cs">
       <DependentUpon>UCBTP_NhapKho_LSX_I_C_D.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tr_clsChiTietTamUng.cs" />
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>
