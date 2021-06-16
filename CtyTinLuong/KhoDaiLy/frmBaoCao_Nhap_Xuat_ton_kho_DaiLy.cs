@@ -671,7 +671,7 @@ namespace CtyTinLuong
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            /*Load_lockup*/(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            ///*Load_lockup*/(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
