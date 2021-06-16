@@ -212,6 +212,7 @@
             this.btPrint.StyleController = this.dataLayoutControl1;
             this.btPrint.TabIndex = 95;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // gridControl1
             // 
@@ -261,6 +262,7 @@
             this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
             // gridBand6
             // 

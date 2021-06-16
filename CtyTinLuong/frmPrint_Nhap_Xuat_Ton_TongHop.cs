@@ -160,7 +160,8 @@ namespace CtyTinLuong
         {
             frmBaoCaoNXT.mbPrint_NXT_Kho_NPL = false;
             frmBaoCaoNhapXuatTon_BanThanhPham.mbPrint_NXT_Kho_BTP = false;
-            UCDaiLy_BaoCao_NhapXuatTon.mbPrint_NXT_Kho = false;
+            frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One = false;
+            frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_ALL = false;
             UCDaiLy_GapDan_baocao_NXT.mbPrint_NXT_Kho = false;
             frmBaoCaoNXT_KhoThanhPham.mbPrint_NXT_Kho_NPL = false;
             UCDaiLy_NhapXuatTon_theoDaiLy.mbPrint_NXT_Kho = false;
@@ -177,8 +178,11 @@ namespace CtyTinLuong
             if (frmBaoCaoNXT_KhoThanhPham.mbPrint_NXT_Kho_NPL == true)
                 Print_N_X_T(frmBaoCaoNXT_KhoThanhPham.mdt_ChiTiet_Print);
 
-            if (UCDaiLy_BaoCao_NhapXuatTon.mbPrint_NXT_Kho == true)
-                Print_N_X_T_DaiLy(UCDaiLy_BaoCao_NhapXuatTon.mdt_ChiTiet_Print);
+            if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_ALL == true)
+                Print_N_X_T_DaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
+
+            if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
+                Print_UCDaiLy_NhapXuatTon_theoDaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
             if (UCDaiLy_NhapXuatTon_theoDaiLy.mbPrint_NXT_Kho == true)
                 Print_UCDaiLy_NhapXuatTon_theoDaiLy(UCDaiLy_NhapXuatTon_theoDaiLy.mdt_ChiTiet_Print);

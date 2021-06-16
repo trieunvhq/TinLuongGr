@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,11 @@ namespace CtyTinLuong
 {
     public partial class frmBaoCao_Nhap_Xuat_ton_kho_DaiLy : Form
     {
+        public static bool mbPrint_ALL, mbPrint_One;      
+        public static DataTable mdtPrint;
+        public static int miiID_VTHH,miID_DaiLy;
+        public static double msoluongTonDauKy, mGiaTriTonDauKy;
+        public static DateTime mdatungay, mdadenngay;
         private void Load_lockup(DateTime xxtungay, DateTime xxdenngay)
         {
             //clsDaiLy_tbNhapKho cls = new CtyTinLuong.clsDaiLy_tbNhapKho();
@@ -668,10 +674,63 @@ namespace CtyTinLuong
             }
         }
 
+        private void bandedGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
+            {
+                miiID_VTHH = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                if (gridMaDaiLy.EditValue == null)
+                {
+                    miID_DaiLy = 0;
+                }
+                else
+                {
+                    miID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                }
+                msoluongTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
+                mGiaTriTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
+                DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
+                ff.Show();
+
+            }
+        }
+
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             ///*Load_lockup*/(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                if (gridMaDaiLy.EditValue == null)
+                {
+                    mbPrint_ALL = true;
+                    mbPrint_One = false;
+                }
+                else
+                {
+                    mbPrint_ALL = false;
+                    mbPrint_One = true;
+                }
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                
+                frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
+                ff.Show();
+
+            }
+        }
+    
     }
 }

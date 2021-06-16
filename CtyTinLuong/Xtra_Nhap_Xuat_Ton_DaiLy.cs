@@ -28,8 +28,8 @@ namespace CtyTinLuong
                 //pGiamDoc.Value = frmMain.msGiamDoc;
             }
 
-            DateTime denngay = UCDaiLy_BaoCao_NhapXuatTon.mdadenngay;
-            DateTime tungay = UCDaiLy_BaoCao_NhapXuatTon.mdatungay;
+            DateTime denngay = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;
+            DateTime tungay = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
         }
         public Xtra_Nhap_Xuat_Ton_DaiLy()
@@ -39,7 +39,7 @@ namespace CtyTinLuong
 
         private void xrLabel2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            //if (UCDaiLy_BaoCao_NhapXuatTon.mbPrint_NXT_Kho == true)
+            //if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_NXT_Kho == true)
             //{
             //    NXT_Kho_DaiLy();
             //}
@@ -48,7 +48,7 @@ namespace CtyTinLuong
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
 
-            if (UCDaiLy_BaoCao_NhapXuatTon.mbPrint_NXT_Kho == true)
+            if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_ALL == true)
             {
                 NXT_Kho_DaiLy();
             }

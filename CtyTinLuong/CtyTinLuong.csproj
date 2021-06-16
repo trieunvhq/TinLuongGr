@@ -1387,12 +1387,6 @@
     <Compile Include="KhoDaiLy\UCDaiLy_ChiTiet_XuatKho_ALL.Designer.cs">
       <DependentUpon>UCDaiLy_ChiTiet_XuatKho_ALL.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_BaoCao_NhapXuatTon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_BaoCao_NhapXuatTon.Designer.cs">
-      <DependentUpon>UCDaiLy_BaoCao_NhapXuatTon.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_TongHopTonKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2141,9 +2135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii.resx">
       <DependentUpon>frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\UCDaiLy_BaoCao_NhapXuatTon.resx">
-      <DependentUpon>UCDaiLy_BaoCao_NhapXuatTon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_ChiTietNHapKho_ALL.resx">
       <DependentUpon>UCDaiLy_ChiTietNHapKho_ALL.cs</DependentUpon>
