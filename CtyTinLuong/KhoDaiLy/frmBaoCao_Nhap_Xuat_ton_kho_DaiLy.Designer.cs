@@ -636,6 +636,7 @@
             this.gridMaDaiLy.Size = new System.Drawing.Size(356, 20);
             this.gridMaDaiLy.StyleController = this.dataLayoutControl1;
             this.gridMaDaiLy.TabIndex = 104;
+            this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 

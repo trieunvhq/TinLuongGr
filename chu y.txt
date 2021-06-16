@@ -1,6 +1,5 @@
 thiết lạp ban đầu với kho
-ID_NhapKho=0
-Không có dữ liệu bảng tb_NhapKho
+Phải đổ vào tb_NhapKho để còn tính NXT số chứng từ ví dụ: NKBTP 0
 
 
 khi insert dữ liệu ban đầu phải cho muahang, ban hang vao
