@@ -49,12 +49,12 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public DataTable SA_distinct_TonDauKy(DateTime ngay_batdau)
+        public DataTable SA_distinct_NhapTruocKy(DateTime ngay_batdau)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbChiTietNhapKho_SA_distinct_TonDauKy]";
+            scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbChiTietNhapKho_SA_distinct_NhapTruocKy]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_DaiLy_tbChiTietNhapKho_SA_distinct_TonDauKy");
+            DataTable dtToReturn = new DataTable("pr_DaiLy_tbChiTietNhapKho_SA_distinct_NhapTruocKy");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -72,7 +72,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_DaiLy_tbChiTietNhapKho_SA_distinct_TonDauKy", ex);
+                throw new Exception("pr_DaiLy_tbChiTietNhapKho_SA_distinct_NhapTruocKy", ex);
             }
             finally
             {
