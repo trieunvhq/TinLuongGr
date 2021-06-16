@@ -355,6 +355,9 @@ namespace CtyTinLuong
             int id_vthh_cu_ = 0;
             int STT = 0;
 
+            Tr_clsChiTietTamUng cls_TU = new Tr_clsChiTietTamUng();
+            DataTable dt_TU = cls_TU.ReturnTotalTamUng(_iiID_CongNhan, _thang, _nam);
+
             for (int k = 0; k < dtxxxx.Rows.Count; k++)
             {
 
@@ -376,6 +379,10 @@ namespace CtyTinLuong
                         //_ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
 
                         _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+
+                        if (STT == 0) _ravi_1["TamUng"] = dt_TU.Rows[0]["TamUng"].ToString();
+                        else _ravi_1["TamUng"] = 0; 
+
                         _ravi_1["STT"] = (STT + 1).ToString(); STT++;
                         _ravi_1["MaHang"] = dtxxxx.Rows[k]["MaVT"].ToString();
                         _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
@@ -386,7 +393,6 @@ namespace CtyTinLuong
                         _ravi_1["ThanhTien"] = xxthanhtien;
                         _ravi_1["BaoHiem"] = 0;
                         _ravi_1["AnCa"] = 0;
-                        _ravi_1["TamUng"] = 0;
                         _ravi_1["ThucNhan"] = xxthanhtien;
 
                         id_vthh_cu_ = id_vthh_;
@@ -402,6 +408,10 @@ namespace CtyTinLuong
                     DataRow _ravi_1 = ds.tbChiTiet_LuongSL_sub.NewRow();
 
                     _ravi_1["TenNhanVien"] = _hoTenNhanVien;
+
+                    if (STT == 0) _ravi_1["TamUng"] = dt_TU.Rows[0]["TamUng"].ToString();
+                    else _ravi_1["TamUng"] = 0;
+
                     _ravi_1["STT"] = (STT + 1).ToString(); STT++;
                     _ravi_1["MaHang"] = dtxxxx.Rows[k]["MaVT"].ToString();
                     _ravi_1["TenHang"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
@@ -412,7 +422,6 @@ namespace CtyTinLuong
                     _ravi_1["ThanhTien"] = xxthanhtien;
                     _ravi_1["BaoHiem"] = 0;
                     _ravi_1["AnCa"] = 0;
-                    _ravi_1["TamUng"] = 0;
                     _ravi_1["ThucNhan"] = xxthanhtien;
 
                     //
