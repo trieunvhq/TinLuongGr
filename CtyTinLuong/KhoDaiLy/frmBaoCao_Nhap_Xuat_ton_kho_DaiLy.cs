@@ -22,7 +22,13 @@ namespace CtyTinLuong
         }
         private void LoadDaTa(DateTime xxtungay, DateTime xxdenngay)
         {
+            clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            DataTable dt_NhapTruoc= cls1.SA_distinct_NhapTruocKy(xxtungay);
+            DataTable dt_NhapTrongKy = cls1.SA_distinct_NhapTrongKy(xxtungay, xxdenngay);
 
+            clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+            DataTable dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy(xxtungay);
+            DataTable dt_XuatTrongKy=cls2.SA_distinct_XuatTrongKy(xxtungay, xxdenngay);
         }
         public frmBaoCao_Nhap_Xuat_ton_kho_DaiLy()
         {
@@ -32,7 +38,9 @@ namespace CtyTinLuong
         private void frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load(object sender, EventArgs e)
         {
             Load_lockup();
-          
+            LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
