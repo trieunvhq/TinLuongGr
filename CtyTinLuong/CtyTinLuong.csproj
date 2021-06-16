@@ -1847,6 +1847,9 @@
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.resx">
+      <DependentUpon>frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TBX_CT.resx">
       <DependentUpon>frmBTTL_TBX_CT.cs</DependentUpon>
     </EmbeddedResource>
