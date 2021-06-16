@@ -344,7 +344,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Location = new System.Drawing.Point(181, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(963, 684);
+            this.panelControl1.Size = new System.Drawing.Size(1157, 684);
             this.panelControl1.TabIndex = 70;
             // 
             // frmQuanLy_Luong_ChamCong
@@ -352,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1156, 699);
+            this.ClientSize = new System.Drawing.Size(1350, 699);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
