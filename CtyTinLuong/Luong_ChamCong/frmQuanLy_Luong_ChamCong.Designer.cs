@@ -62,7 +62,10 @@
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // navBarItem25
@@ -219,10 +222,10 @@
             this.navBTTL_TBX_TQ,
             this.navBTTL_TMC,
             this.navChamCong_TGD});
-            this.navBarControl1.Location = new System.Drawing.Point(12, 12);
+            this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 171;
-            this.navBarControl1.Size = new System.Drawing.Size(171, 681);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
+            this.navBarControl1.Size = new System.Drawing.Size(216, 645);
             this.navBarControl1.TabIndex = 66;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -342,26 +345,37 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl1.Location = new System.Drawing.Point(181, 12);
+            this.panelControl1.Location = new System.Drawing.Point(5, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1157, 684);
+            this.panelControl1.Size = new System.Drawing.Size(913, 635);
             this.panelControl1.TabIndex = 70;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.panelControl1);
+            this.panelControl2.Location = new System.Drawing.Point(228, 12);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(923, 645);
+            this.panelControl2.TabIndex = 71;
             // 
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1350, 699);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.navBarControl1);
+            this.Controls.Add(this.panelControl2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmQuanLy_Luong_ChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chấm công";
             this.Load += new System.EventHandler(this.frmQuanLy_Luong_ChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -400,5 +414,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TBX_TQ;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TMC;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_TGD;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
     }
 }

@@ -397,9 +397,9 @@ namespace CtyTinLuong
             //{
             //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
             //}
-            gridThin.EditValueChanged += (o, e) => {
+            //gridThin.EditValueChanged += (o, e) => {
 
-            };
+            //};
             // dat doan cuoi nay đi
 
 
@@ -660,9 +660,9 @@ namespace CtyTinLuong
             //{
             //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
             //}
-            gridThin.EditValueChanged += (o, e) => {
+            //gridThin.EditValueChanged += (o, e) => {
 
-            };
+            //};
             // dat doan cuoi nay đi
 
 
@@ -799,6 +799,11 @@ namespace CtyTinLuong
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
