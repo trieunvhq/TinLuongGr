@@ -256,9 +256,7 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT(_thang, _nam);
-            this.Hide();
             ff.ShowDialog();
-            this.Show();
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
