@@ -124,14 +124,14 @@ namespace CtyTinLuong
             return dt2xxxx;
         }
 
-        private void LoadDaTa(int xxID_VTHH, DateTime xxtungay, DateTime xxdenngay)
+        private void LoadDaTa(int xxID_VTHH___, DateTime xxtungay, DateTime xxdenngay)
         {
 
             clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
-            DataTable dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH(xxID_VTHH, xxtungay);
+            DataTable dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH(xxID_VTHH___, xxtungay);
 
             clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
-            DataTable dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH(xxID_VTHH, xxtungay);
+            DataTable dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH(xxID_VTHH___, xxtungay);
 
             DataTable dt2xxxx = new DataTable();
 
@@ -175,7 +175,7 @@ namespace CtyTinLuong
                     dt2xxxx.Rows.Add(_ravi);
                 }
             }
-
+            DataTable dt2 = LoadDaTa_Nhap_Xuat_TrongKy(xxID_VTHH___, xxtungay, xxdenngay);
         }
 
         private void HienThi()
