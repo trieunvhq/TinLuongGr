@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrint_NguoiKy));
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView13 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -42,16 +44,15 @@
             this.clID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_DangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memoTenNV = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -63,8 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btThoat
@@ -92,6 +93,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(604, 386);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(4, 360);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 22);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Có thể gõ trực tiếp họ tên";
             // 
             // btLuu
             // 
@@ -161,7 +170,7 @@
             // 
             this.clChucVu.AppearanceCell.Options.UseTextOptions = true;
             this.clChucVu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.clChucVu.Caption = "Chức vụ";
+            this.clChucVu.Caption = "CHỨC VỤ";
             this.clChucVu.FieldName = "ChucVu";
             this.clChucVu.Name = "clChucVu";
             this.clChucVu.OptionsColumn.AllowEdit = false;
@@ -173,7 +182,7 @@
             // 
             this.clHoTen.AppearanceCell.Options.UseTextOptions = true;
             this.clHoTen.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.clHoTen.Caption = "Họ tên";
+            this.clHoTen.Caption = "HỌ TÊN";
             this.clHoTen.FieldName = "HoTen";
             this.clHoTen.Name = "clHoTen";
             this.clHoTen.Visible = true;
@@ -182,7 +191,7 @@
             // 
             // clMaNhanVien
             // 
-            this.clMaNhanVien.Caption = "Mã NV";
+            this.clMaNhanVien.Caption = "MÃ NHÂN VIÊN";
             this.clMaNhanVien.ColumnEdit = this.gridMaNhanVien;
             this.clMaNhanVien.FieldName = "MaNhanVien";
             this.clMaNhanVien.Name = "clMaNhanVien";
@@ -221,6 +230,12 @@
             this.clID_DangNhap.Caption = "ID_DangNhap";
             this.clID_DangNhap.FieldName = "ID_DangNhap";
             this.clID_DangNhap.Name = "clID_DangNhap";
+            // 
+            // clHienThi
+            // 
+            this.clHienThi.Caption = "HienThi";
+            this.clHienThi.FieldName = "HienThi";
+            this.clHienThi.Name = "clHienThi";
             // 
             // memoTenNV
             // 
@@ -276,6 +291,15 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.label1;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 356);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(229, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl1);
@@ -288,29 +312,6 @@
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             // 
-            // clHienThi
-            // 
-            this.clHienThi.Caption = "HienThi";
-            this.clHienThi.FieldName = "HienThi";
-            this.clHienThi.Name = "clHienThi";
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(4, 360);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 22);
-            this.label1.TabIndex = 79;
-            this.label1.Text = "Có thể gõ trực tiếp họ tên";
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.label1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 356);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(229, 26);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
             // frmPrint_NguoiKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,10 +319,11 @@
             this.CancelButton = this.btThoat;
             this.ClientSize = new System.Drawing.Size(604, 399);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPrint_NguoiKy";
-            this.Text = "Cài đặt mặc định người ký";
+            this.Text = "Cài Đặt Mặc Định Người Ký";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_NguoiKy_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_NguoiKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -335,8 +337,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
