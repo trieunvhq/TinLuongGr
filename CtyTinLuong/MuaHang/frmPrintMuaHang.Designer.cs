@@ -912,8 +912,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrintMuaHang";
-            this.Text = "Nhập kho";
+            this.Text = "Print Nhập Kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrintMuaHang_FormClosed);
             this.Load += new System.EventHandler(this.frmPrintMuaHang_Load);

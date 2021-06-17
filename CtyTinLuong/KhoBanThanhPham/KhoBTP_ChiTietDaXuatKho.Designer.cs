@@ -640,11 +640,12 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btThoat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KhoBTP_ChiTietDaXuatKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kho BTP - Chi tiết xuất kho";
+            this.Text = "Kho Bán Thành Phẩm - Chi Tiết Xuất Kho";
             this.Load += new System.EventHandler(this.KhoBTP_ChiTietDaXuatKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuy_NganHang_Newwwwwwwwwwwwwwwww));
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBaoCo = new DevExpress.XtraNavBar.NavBarItem();
@@ -203,8 +204,9 @@
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuy_NganHang_Newwwwwwwwwwwwwwwww";
-            this.Text = "Quản lý Quỹ Ngân hàng";
+            this.Text = "Quản Lý Quỹ Ngân Hàng";
             this.Load += new System.EventHandler(this.frmQuy_NganHang_Newwwwwwwwwwwwwwwww_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

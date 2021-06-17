@@ -731,11 +731,12 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btThoat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmChiTietNhapKhoThanhPham_DaNhapKhoTP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết nhập kho ";
+            this.Text = "Chi Tiết Nhập Kho";
             this.Load += new System.EventHandler(this.frmChiTietNhapKhoThanhPham_DaNhapKhoTP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);

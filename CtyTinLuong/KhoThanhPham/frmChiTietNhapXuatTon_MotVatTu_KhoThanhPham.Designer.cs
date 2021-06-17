@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.txtDVT = new System.Windows.Forms.TextBox();
@@ -681,6 +682,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 524);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham";
             this.Text = "frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham";
             this.Load += new System.EventHandler(this.frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham_Load);

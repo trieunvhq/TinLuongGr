@@ -695,9 +695,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCao_Nhap_Xuat_ton_kho_DaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Báo cáo Nhập - Xuất - Tồn ";
+            this.Text = "Báo Cáo Nhập Xuất Tồn ";
             this.Load += new System.EventHandler(this.frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

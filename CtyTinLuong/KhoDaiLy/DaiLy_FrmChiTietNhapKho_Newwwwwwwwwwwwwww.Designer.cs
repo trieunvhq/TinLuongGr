@@ -1513,9 +1513,10 @@
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi  tiết nhập kho đại lý";
+            this.Text = "Chi  Tiết Nhập Kho Đại Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_FormClosed);
             this.Load += new System.EventHandler(this.DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_Load);
             this.groupBox3.ResumeLayout(false);

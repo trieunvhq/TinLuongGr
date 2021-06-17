@@ -1398,6 +1398,7 @@
             this.Controls.Add(this.btPrint_XuatKho);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_FrmChiTietBanHang_Newwwwwwww";
             this.Text = "Chi tiết bán hàng";
             this.Load += new System.EventHandler(this.BanHang_FrmChiTietBanHang_Newwwwwwww_Load);

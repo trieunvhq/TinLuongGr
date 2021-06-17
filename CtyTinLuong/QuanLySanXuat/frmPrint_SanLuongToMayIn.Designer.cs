@@ -924,6 +924,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_SanLuongToMayIn";
             this.Text = "Báo cáo sản lượng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -46,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnMinimum = new System.Windows.Forms.Button();
             this.btnMaximum = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -320,7 +319,6 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panelTitleBar.Controls.Add(this.button1);
             this.panelTitleBar.Controls.Add(this.btnMinimum);
             this.panelTitleBar.Controls.Add(this.btnMaximum);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -332,16 +330,6 @@
             this.panelTitleBar.Size = new System.Drawing.Size(884, 80);
             this.panelTitleBar.TabIndex = 67;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(142, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 41);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnMinimum
             // 
@@ -656,7 +644,6 @@
         private System.Windows.Forms.Button btnMinimum;
         private System.Windows.Forms.Button btnMaximum;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

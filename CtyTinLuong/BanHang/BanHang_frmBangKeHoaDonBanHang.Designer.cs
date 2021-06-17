@@ -969,6 +969,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_frmBangKeHoaDonBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "BẢNG KÊ HOÁ ĐƠN BÁN HÀNG";

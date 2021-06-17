@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyKhoThanhPham));
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChoNhapKho_tuDaiLy = new DevExpress.XtraNavBar.NavBarItem();
@@ -79,8 +80,8 @@
             this.navBarItem10});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 207;
-            this.navBarControl1.Size = new System.Drawing.Size(207, 606);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
+            this.navBarControl1.Size = new System.Drawing.Size(216, 606);
             this.navBarControl1.TabIndex = 69;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -201,8 +202,9 @@
             // 
             // btThooat
             // 
+            this.btThooat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(1037, 625);
+            this.btThooat.Location = new System.Drawing.Point(1069, 629);
             this.btThooat.Name = "btThooat";
             this.btThooat.Size = new System.Drawing.Size(75, 23);
             this.btThooat.TabIndex = 70;
@@ -211,9 +213,9 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Location = new System.Drawing.Point(212, 13);
+            this.panelControl1.Location = new System.Drawing.Point(227, 13);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(900, 606);
+            this.panelControl1.Size = new System.Drawing.Size(923, 606);
             this.panelControl1.TabIndex = 71;
             // 
             // linkLabel1
@@ -231,17 +233,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 661);
+            this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQuanLyKhoThanhPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kho thành phẩm";
+            this.Text = "Kho Thành Phẩm";
             this.Load += new System.EventHandler(this.frmQuanLyKhoThanhPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

@@ -692,6 +692,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 484);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanLuong_ChiTiet_SanLuong_Dot_Dap";
             this.Text = "Báo cáo chi tiết sản lượng tổ Đột  Dập";
             this.Load += new System.EventHandler(this.SanLuong_ChiTiet_SanLuong_Dot_Dap_Load);

@@ -616,6 +616,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btThoat2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoBTP_ChiTiet_DaNhapKho";
             this.Text = "Nhập kho bán thành phẩm";
             this.Load += new System.EventHandler(this.KhoBTP_ChiTiet_DaNhapKho_Load);

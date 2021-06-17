@@ -742,11 +742,12 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btThoat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KhoThanhPham_frmChiTiet_Da_XuatKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết đã xuất kho Thành phẩm";
+            this.Text = "Chi Tiết Đã Xuất Kho Thành Phẩm";
             this.Load += new System.EventHandler(this.KhoThanhPham_frmChiTiet_Da_XuatKho_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();

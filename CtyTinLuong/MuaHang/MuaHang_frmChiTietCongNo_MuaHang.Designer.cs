@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaHang_frmChiTietCongNo_MuaHang));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -64,6 +65,7 @@
             this.clCoCuoiKy = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_TaiKhoanKeToanCon = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_MuaHang = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clHienThi = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenTK = new System.Windows.Forms.TextBox();
@@ -89,7 +91,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.clHienThi = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -620,6 +621,13 @@
             this.clID_MuaHang.Name = "clID_MuaHang";
             this.clID_MuaHang.Visible = true;
             // 
+            // clHienThi
+            // 
+            this.clHienThi.Caption = "bandedGridColumn1";
+            this.clHienThi.FieldName = "HienThi";
+            this.clHienThi.Name = "clHienThi";
+            this.clHienThi.Visible = true;
+            // 
             // repositoryItemMemoEdit2
             // 
             this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
@@ -884,21 +892,15 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // clHienThi
-            // 
-            this.clHienThi.Caption = "bandedGridColumn1";
-            this.clHienThi.FieldName = "HienThi";
-            this.clHienThi.Name = "clHienThi";
-            this.clHienThi.Visible = true;
-            // 
             // MuaHang_frmChiTietCongNo_MuaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 565);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuaHang_frmChiTietCongNo_MuaHang";
-            this.Text = "Chi tiết công nợ";
+            this.Text = "Chi Tiết Công Nợ";
             this.Load += new System.EventHandler(this.MuaHang_frmChiTietCongNo_MuaHang_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

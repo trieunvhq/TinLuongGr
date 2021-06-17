@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGuiDuLieuLuongDaiLy));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNam = new System.Windows.Forms.TextBox();
@@ -92,7 +94,7 @@
             // btThoat2222
             // 
             this.btThoat2222.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThoat2222.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
+            this.btThoat2222.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
             this.btThoat2222.Location = new System.Drawing.Point(408, 36);
             this.btThoat2222.Name = "btThoat2222";
             this.btThoat2222.Size = new System.Drawing.Size(72, 22);
@@ -103,7 +105,7 @@
             // 
             // btGuiDuLieu
             // 
-            this.btGuiDuLieu.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
+            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
             this.btGuiDuLieu.Location = new System.Drawing.Point(323, 36);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
             this.btGuiDuLieu.Size = new System.Drawing.Size(81, 22);
@@ -123,10 +125,8 @@
             this.layoutControlItem4,
             this.layoutControlItem1,
             this.layoutControlItem2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(492, 76);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(492, 70);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem3
@@ -136,9 +136,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(311, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(85, 26);
-            this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -147,8 +145,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(311, 32);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(311, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -158,9 +155,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(396, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(76, 26);
-            this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem1
@@ -189,8 +184,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 89);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGuiDuLieuLuongDaiLy";
-            this.Text = "frmGuiDuLieuLuongDaiLy";
+            this.Text = "Gửi Dữ Liệu Lương Đại Lý";
             this.Load += new System.EventHandler(this.frmGuiDuLieuLuongDaiLy_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

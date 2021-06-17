@@ -111,7 +111,7 @@
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 53);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(994, 409);
+            this.documentViewer1.Size = new System.Drawing.Size(994, 411);
             this.documentViewer1.TabIndex = 0;
             // 
             // documentViewerBarManager1
@@ -193,7 +193,7 @@
             this.repositoryItemZoomTrackBar1,
             this.printPreviewRepositoryItemComboBox1});
             this.documentViewerBarManager1.StatusBar = this.previewBar2;
-            this.documentViewerBarManager1.TransparentEditors = true;
+            this.documentViewerBarManager1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
             // previewBar1
             // 
@@ -238,7 +238,7 @@
             this.printPreviewBarItem2.Enabled = false;
             this.printPreviewBarItem2.Hint = "Document Map";
             this.printPreviewBarItem2.Id = 7;
-            this.printPreviewBarItem2.ImageIndex = 19;
+            this.printPreviewBarItem2.ImageOptions.ImageIndex = 19;
             this.printPreviewBarItem2.Name = "printPreviewBarItem2";
             // 
             // printPreviewBarItem3
@@ -249,17 +249,18 @@
             this.printPreviewBarItem3.Enabled = false;
             this.printPreviewBarItem3.Hint = "Parameters";
             this.printPreviewBarItem3.Id = 8;
-            this.printPreviewBarItem3.ImageIndex = 22;
+            this.printPreviewBarItem3.ImageOptions.ImageIndex = 22;
             this.printPreviewBarItem3.Name = "printPreviewBarItem3";
             // 
             // printPreviewBarItem4
             // 
+            this.printPreviewBarItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
             this.printPreviewBarItem4.Caption = "Search";
             this.printPreviewBarItem4.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Find;
             this.printPreviewBarItem4.Enabled = false;
             this.printPreviewBarItem4.Hint = "Search";
             this.printPreviewBarItem4.Id = 9;
-            this.printPreviewBarItem4.ImageIndex = 20;
+            this.printPreviewBarItem4.ImageOptions.ImageIndex = 20;
             this.printPreviewBarItem4.Name = "printPreviewBarItem4";
             // 
             // printPreviewBarItem5
@@ -269,7 +270,7 @@
             this.printPreviewBarItem5.Enabled = false;
             this.printPreviewBarItem5.Hint = "Customize";
             this.printPreviewBarItem5.Id = 10;
-            this.printPreviewBarItem5.ImageIndex = 14;
+            this.printPreviewBarItem5.ImageOptions.ImageIndex = 14;
             this.printPreviewBarItem5.Name = "printPreviewBarItem5";
             // 
             // printPreviewBarItem6
@@ -279,7 +280,7 @@
             this.printPreviewBarItem6.Enabled = false;
             this.printPreviewBarItem6.Hint = "Open a document";
             this.printPreviewBarItem6.Id = 11;
-            this.printPreviewBarItem6.ImageIndex = 23;
+            this.printPreviewBarItem6.ImageOptions.ImageIndex = 23;
             this.printPreviewBarItem6.Name = "printPreviewBarItem6";
             // 
             // printPreviewBarItem7
@@ -289,7 +290,7 @@
             this.printPreviewBarItem7.Enabled = false;
             this.printPreviewBarItem7.Hint = "Save the document";
             this.printPreviewBarItem7.Id = 12;
-            this.printPreviewBarItem7.ImageIndex = 24;
+            this.printPreviewBarItem7.ImageOptions.ImageIndex = 24;
             this.printPreviewBarItem7.Name = "printPreviewBarItem7";
             // 
             // printPreviewBarItem8
@@ -299,7 +300,7 @@
             this.printPreviewBarItem8.Enabled = false;
             this.printPreviewBarItem8.Hint = "Print";
             this.printPreviewBarItem8.Id = 13;
-            this.printPreviewBarItem8.ImageIndex = 0;
+            this.printPreviewBarItem8.ImageOptions.ImageIndex = 0;
             this.printPreviewBarItem8.Name = "printPreviewBarItem8";
             // 
             // printPreviewBarItem9
@@ -309,7 +310,7 @@
             this.printPreviewBarItem9.Enabled = false;
             this.printPreviewBarItem9.Hint = "Quick Print";
             this.printPreviewBarItem9.Id = 14;
-            this.printPreviewBarItem9.ImageIndex = 1;
+            this.printPreviewBarItem9.ImageOptions.ImageIndex = 1;
             this.printPreviewBarItem9.Name = "printPreviewBarItem9";
             // 
             // printPreviewBarItem10
@@ -319,7 +320,7 @@
             this.printPreviewBarItem10.Enabled = false;
             this.printPreviewBarItem10.Hint = "Page Setup";
             this.printPreviewBarItem10.Id = 15;
-            this.printPreviewBarItem10.ImageIndex = 2;
+            this.printPreviewBarItem10.ImageOptions.ImageIndex = 2;
             this.printPreviewBarItem10.Name = "printPreviewBarItem10";
             // 
             // printPreviewBarItem11
@@ -329,7 +330,7 @@
             this.printPreviewBarItem11.Enabled = false;
             this.printPreviewBarItem11.Hint = "Header And Footer";
             this.printPreviewBarItem11.Id = 16;
-            this.printPreviewBarItem11.ImageIndex = 15;
+            this.printPreviewBarItem11.ImageOptions.ImageIndex = 15;
             this.printPreviewBarItem11.Name = "printPreviewBarItem11";
             // 
             // printPreviewBarItem12
@@ -341,7 +342,7 @@
             this.printPreviewBarItem12.Enabled = false;
             this.printPreviewBarItem12.Hint = "Scale";
             this.printPreviewBarItem12.Id = 17;
-            this.printPreviewBarItem12.ImageIndex = 25;
+            this.printPreviewBarItem12.ImageOptions.ImageIndex = 25;
             this.printPreviewBarItem12.Name = "printPreviewBarItem12";
             // 
             // printPreviewBarItem13
@@ -352,7 +353,7 @@
             this.printPreviewBarItem13.Enabled = false;
             this.printPreviewBarItem13.Hint = "Hand Tool";
             this.printPreviewBarItem13.Id = 18;
-            this.printPreviewBarItem13.ImageIndex = 16;
+            this.printPreviewBarItem13.ImageOptions.ImageIndex = 16;
             this.printPreviewBarItem13.Name = "printPreviewBarItem13";
             // 
             // printPreviewBarItem14
@@ -363,7 +364,7 @@
             this.printPreviewBarItem14.Enabled = false;
             this.printPreviewBarItem14.Hint = "Magnifier";
             this.printPreviewBarItem14.Id = 19;
-            this.printPreviewBarItem14.ImageIndex = 3;
+            this.printPreviewBarItem14.ImageOptions.ImageIndex = 3;
             this.printPreviewBarItem14.Name = "printPreviewBarItem14";
             // 
             // printPreviewBarItem15
@@ -373,7 +374,7 @@
             this.printPreviewBarItem15.Enabled = false;
             this.printPreviewBarItem15.Hint = "Zoom Out";
             this.printPreviewBarItem15.Id = 20;
-            this.printPreviewBarItem15.ImageIndex = 5;
+            this.printPreviewBarItem15.ImageOptions.ImageIndex = 5;
             this.printPreviewBarItem15.Name = "printPreviewBarItem15";
             // 
             // zoomBarEditItem1
@@ -381,11 +382,11 @@
             this.zoomBarEditItem1.Caption = "Zoom";
             this.zoomBarEditItem1.Edit = this.printPreviewRepositoryItemComboBox1;
             this.zoomBarEditItem1.EditValue = "100%";
+            this.zoomBarEditItem1.EditWidth = 70;
             this.zoomBarEditItem1.Enabled = false;
             this.zoomBarEditItem1.Hint = "Zoom";
             this.zoomBarEditItem1.Id = 21;
             this.zoomBarEditItem1.Name = "zoomBarEditItem1";
-            this.zoomBarEditItem1.Width = 70;
             // 
             // printPreviewRepositoryItemComboBox1
             // 
@@ -402,7 +403,7 @@
             this.printPreviewBarItem16.Enabled = false;
             this.printPreviewBarItem16.Hint = "Zoom In";
             this.printPreviewBarItem16.Id = 22;
-            this.printPreviewBarItem16.ImageIndex = 4;
+            this.printPreviewBarItem16.ImageOptions.ImageIndex = 4;
             this.printPreviewBarItem16.Name = "printPreviewBarItem16";
             // 
             // printPreviewBarItem17
@@ -412,7 +413,7 @@
             this.printPreviewBarItem17.Enabled = false;
             this.printPreviewBarItem17.Hint = "First Page";
             this.printPreviewBarItem17.Id = 23;
-            this.printPreviewBarItem17.ImageIndex = 7;
+            this.printPreviewBarItem17.ImageOptions.ImageIndex = 7;
             this.printPreviewBarItem17.Name = "printPreviewBarItem17";
             // 
             // printPreviewBarItem18
@@ -422,7 +423,7 @@
             this.printPreviewBarItem18.Enabled = false;
             this.printPreviewBarItem18.Hint = "Previous Page";
             this.printPreviewBarItem18.Id = 24;
-            this.printPreviewBarItem18.ImageIndex = 8;
+            this.printPreviewBarItem18.ImageOptions.ImageIndex = 8;
             this.printPreviewBarItem18.Name = "printPreviewBarItem18";
             // 
             // printPreviewBarItem19
@@ -432,7 +433,7 @@
             this.printPreviewBarItem19.Enabled = false;
             this.printPreviewBarItem19.Hint = "Next Page";
             this.printPreviewBarItem19.Id = 25;
-            this.printPreviewBarItem19.ImageIndex = 9;
+            this.printPreviewBarItem19.ImageOptions.ImageIndex = 9;
             this.printPreviewBarItem19.Name = "printPreviewBarItem19";
             // 
             // printPreviewBarItem20
@@ -442,7 +443,7 @@
             this.printPreviewBarItem20.Enabled = false;
             this.printPreviewBarItem20.Hint = "Last Page";
             this.printPreviewBarItem20.Id = 26;
-            this.printPreviewBarItem20.ImageIndex = 10;
+            this.printPreviewBarItem20.ImageOptions.ImageIndex = 10;
             this.printPreviewBarItem20.Name = "printPreviewBarItem20";
             // 
             // printPreviewBarItem21
@@ -453,7 +454,7 @@
             this.printPreviewBarItem21.Enabled = false;
             this.printPreviewBarItem21.Hint = "Multiple Pages";
             this.printPreviewBarItem21.Id = 27;
-            this.printPreviewBarItem21.ImageIndex = 11;
+            this.printPreviewBarItem21.ImageOptions.ImageIndex = 11;
             this.printPreviewBarItem21.Name = "printPreviewBarItem21";
             // 
             // printPreviewBarItem22
@@ -464,7 +465,7 @@
             this.printPreviewBarItem22.Enabled = false;
             this.printPreviewBarItem22.Hint = "Background";
             this.printPreviewBarItem22.Id = 28;
-            this.printPreviewBarItem22.ImageIndex = 12;
+            this.printPreviewBarItem22.ImageOptions.ImageIndex = 12;
             this.printPreviewBarItem22.Name = "printPreviewBarItem22";
             // 
             // printPreviewBarItem23
@@ -474,7 +475,7 @@
             this.printPreviewBarItem23.Enabled = false;
             this.printPreviewBarItem23.Hint = "Watermark";
             this.printPreviewBarItem23.Id = 29;
-            this.printPreviewBarItem23.ImageIndex = 21;
+            this.printPreviewBarItem23.ImageOptions.ImageIndex = 21;
             this.printPreviewBarItem23.Name = "printPreviewBarItem23";
             // 
             // printPreviewBarItem24
@@ -485,7 +486,7 @@
             this.printPreviewBarItem24.Enabled = false;
             this.printPreviewBarItem24.Hint = "Export Document...";
             this.printPreviewBarItem24.Id = 30;
-            this.printPreviewBarItem24.ImageIndex = 18;
+            this.printPreviewBarItem24.ImageOptions.ImageIndex = 18;
             this.printPreviewBarItem24.Name = "printPreviewBarItem24";
             // 
             // printPreviewBarItem25
@@ -496,7 +497,7 @@
             this.printPreviewBarItem25.Enabled = false;
             this.printPreviewBarItem25.Hint = "Send via E-Mail...";
             this.printPreviewBarItem25.Id = 31;
-            this.printPreviewBarItem25.ImageIndex = 17;
+            this.printPreviewBarItem25.ImageOptions.ImageIndex = 17;
             this.printPreviewBarItem25.Name = "printPreviewBarItem25";
             // 
             // printPreviewBarItem26
@@ -506,7 +507,7 @@
             this.printPreviewBarItem26.Enabled = false;
             this.printPreviewBarItem26.Hint = "Close Preview";
             this.printPreviewBarItem26.Id = 32;
-            this.printPreviewBarItem26.ImageIndex = 13;
+            this.printPreviewBarItem26.ImageOptions.ImageIndex = 13;
             this.printPreviewBarItem26.Name = "printPreviewBarItem26";
             // 
             // previewBar2
@@ -537,7 +538,6 @@
             this.printPreviewStaticItem1.LeftIndent = 1;
             this.printPreviewStaticItem1.Name = "printPreviewStaticItem1";
             this.printPreviewStaticItem1.RightIndent = 1;
-            this.printPreviewStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
             this.printPreviewStaticItem1.Type = "PageOfPages";
             // 
             // barStaticItem1
@@ -545,17 +545,16 @@
             this.barStaticItem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.barStaticItem1.Id = 1;
             this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
             this.barStaticItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
             // 
             // progressBarEditItem1
             // 
             this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
             this.progressBarEditItem1.EditHeight = 12;
+            this.progressBarEditItem1.EditWidth = 150;
             this.progressBarEditItem1.Id = 2;
             this.progressBarEditItem1.Name = "progressBarEditItem1";
             this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.progressBarEditItem1.Width = 150;
             // 
             // repositoryItemProgressBar1
             // 
@@ -586,6 +585,7 @@
             this.printPreviewStaticItem2.Caption = "100%";
             this.printPreviewStaticItem2.Id = 5;
             this.printPreviewStaticItem2.Name = "printPreviewStaticItem2";
+            this.printPreviewStaticItem2.Size = new System.Drawing.Size(40, 0);
             this.printPreviewStaticItem2.TextAlignment = System.Drawing.StringAlignment.Far;
             this.printPreviewStaticItem2.Type = "ZoomFactor";
             this.printPreviewStaticItem2.Width = 40;
@@ -595,13 +595,13 @@
             this.zoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.zoomTrackBarEditItem1.Edit = this.repositoryItemZoomTrackBar1;
             this.zoomTrackBarEditItem1.EditValue = 90;
+            this.zoomTrackBarEditItem1.EditWidth = 140;
             this.zoomTrackBarEditItem1.Enabled = false;
             this.zoomTrackBarEditItem1.Id = 6;
             this.zoomTrackBarEditItem1.Name = "zoomTrackBarEditItem1";
             this.zoomTrackBarEditItem1.Range = new int[] {
         10,
         500};
-            this.zoomTrackBarEditItem1.Width = 140;
             // 
             // repositoryItemZoomTrackBar1
             // 
@@ -609,9 +609,8 @@
             this.repositoryItemZoomTrackBar1.AllowFocused = false;
             this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.repositoryItemZoomTrackBar1.Maximum = 180;
-            this.repositoryItemZoomTrackBar1.Middle = 5;
+            this.repositoryItemZoomTrackBar1.Middle = 90;
             this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
-            this.repositoryItemZoomTrackBar1.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
             // 
             // previewBar3
             // 
@@ -702,31 +701,36 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.documentViewerBarManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(994, 53);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 462);
-            this.barDockControlBottom.Size = new System.Drawing.Size(994, 28);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 464);
+            this.barDockControlBottom.Manager = this.documentViewerBarManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(994, 26);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 409);
+            this.barDockControlLeft.Manager = this.documentViewerBarManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 411);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(994, 53);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 409);
+            this.barDockControlRight.Manager = this.documentViewerBarManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 411);
             // 
             // printPreviewBarCheckItem1
             // 
+            this.printPreviewBarCheckItem1.BindableChecked = true;
             this.printPreviewBarCheckItem1.Caption = "PDF File";
             this.printPreviewBarCheckItem1.Checked = true;
             this.printPreviewBarCheckItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportPdf;
@@ -818,6 +822,7 @@
             // 
             // printPreviewBarCheckItem10
             // 
+            this.printPreviewBarCheckItem10.BindableChecked = true;
             this.printPreviewBarCheckItem10.Caption = "PDF File";
             this.printPreviewBarCheckItem10.Checked = true;
             this.printPreviewBarCheckItem10.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendPdf;
@@ -907,14 +912,16 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_LuongDaiLy_TrongThang";
-            this.Text = "frmPrint_LuongDaiLy_TrongThang";
+            this.Text = "Print Lương Đại Lý Trong Tháng";
             this.Load += new System.EventHandler(this.frmPrint_LuongDaiLy_TrongThang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -472,7 +472,9 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDK ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDK(_thang, _nam, _id_bophan);
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnThemHangHoa_Click(object sender, EventArgs e)

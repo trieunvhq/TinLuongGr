@@ -34,6 +34,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmChiTietPhieu_MayDot));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.txtDoCao = new System.Windows.Forms.TextBox();
@@ -1238,6 +1239,7 @@
             this.Controls.Add(this.btChiLuu);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupBox4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanXuat_frmChiTietPhieu_MayDot";
             this.Text = "Chi tiết phiếu máy đột";
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietPhieu_MayDot_Load);

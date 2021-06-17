@@ -753,8 +753,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btThoat2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoThanhPham_ChiTiet_NhapKho_Khac";
-            this.Text = "Nhập kho thành phẩm";
+            this.Text = "Nhập Kho Thành Phẩm";
             this.Load += new System.EventHandler(this.KhoThanhPham_ChiTiet_NhapKho_Khac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);

@@ -652,8 +652,9 @@
             this.Controls.Add(this.btThoat2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoBTP_ChiTiet_NhapKho_Khac";
-            this.Text = "Nhập kho khác";
+            this.Text = "Nhập Kho Khác";
             this.Load += new System.EventHandler(this.KhoBTP_ChiTiet_NhapKho_Khac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mrmVTHH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();

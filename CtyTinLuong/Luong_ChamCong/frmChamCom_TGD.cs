@@ -645,7 +645,9 @@ namespace CtyTinLuong
             catch { }
 
             CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan(_thang, _nam, _id_bophan);
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)

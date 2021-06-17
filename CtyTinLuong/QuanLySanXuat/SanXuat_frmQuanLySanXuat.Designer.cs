@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmQuanLySanXuat));
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
@@ -186,8 +187,8 @@
             this.navLuongSanLuong});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
-            this.navBarControl1.Size = new System.Drawing.Size(238, 606);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
+            this.navBarControl1.Size = new System.Drawing.Size(216, 606);
             this.navBarControl1.TabIndex = 66;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -283,9 +284,9 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Location = new System.Drawing.Point(251, 13);
+            this.panelControl1.Location = new System.Drawing.Point(228, 13);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(900, 606);
+            this.panelControl1.Size = new System.Drawing.Size(923, 606);
             this.panelControl1.TabIndex = 68;
             // 
             // simpleButton1
@@ -357,7 +358,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 661);
+            this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.txtSoTrang);
             this.Controls.Add(this.lbTongSoTrang);
             this.Controls.Add(this.btnTrangSau);
@@ -368,6 +369,7 @@
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SanXuat_frmQuanLySanXuat";

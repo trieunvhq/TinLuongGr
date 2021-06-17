@@ -326,7 +326,9 @@ namespace CtyTinLuong
         private void btnKHSX_Click(object sender, EventArgs e)
         {
             frmKeHoachSanXuat ff = new frmKeHoachSanXuat();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -349,57 +351,75 @@ namespace CtyTinLuong
         private void btnMuaHang_Click(object sender, EventArgs e)
         {
             frmMuaHang2222 ff = new frmMuaHang2222();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
          
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             frmQuanLyBanHang ff = new CtyTinLuong.frmQuanLyBanHang();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnDaiLy_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoDaiLy ff = new frmQuanLyKhoDaiLy();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnQLSX_Click(object sender, EventArgs e)
         {
             SanXuat_frmQuanLySanXuat ff = new SanXuat_frmQuanLySanXuat();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         //frmQuanLy_Luong_ChamCong _frmQuanLy_Luong_ChamCong;
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
             frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
-            //this.Hide();hide
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
+
         }
 
         private void btnQuyNganHang_Click(object sender, EventArgs e)
         {
             frmQuy_NganHang_Newwwwwwwwwwwwwwwww ff = new CtyTinLuong.frmQuy_NganHang_Newwwwwwwwwwwwwwwww();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnKhoNguyenPhuLieu_Click(object sender, EventArgs e)
         {
             KhoNPL_frmNPL ff = new KhoNPL_frmNPL();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnKhoBanThanhPham_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoBanThanhPham ff = new CtyTinLuong.frmQuanLyKhoBanThanhPham();
-            ff.Show();
+            ff.Show(); this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnKhoThanhPham_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoThanhPham ff = new CtyTinLuong.frmQuanLyKhoThanhPham();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
 
@@ -431,13 +451,17 @@ namespace CtyTinLuong
         private void btnPhieuSX_Click(object sender, EventArgs e)
         {
             frmImPortPhieuSanXuat_banDau ff = new frmImPortPhieuSanXuat_banDau();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnNganHang_Click(object sender, EventArgs e)
         {
             frmImPortPhieuNganHang ff = new frmImPortPhieuNganHang();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -450,23 +474,13 @@ namespace CtyTinLuong
         private void btnBaoCaoNXT_Click(object sender, EventArgs e)
         {
             frmBaoCaoNXT ff = new frmBaoCaoNXT();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(2, 2021, 149, "Lê Xuân Thìn");
-            ff.Show();
-
-            //CtyTinLuong.Luong_ChamCong.Tr_frmPrintCT_Luong_SL ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintCT_Luong_SL(6, 2021);
-            //ff.Show();
-            //Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(7, 2021);
-            //ff.Show();
 
         }
     }
