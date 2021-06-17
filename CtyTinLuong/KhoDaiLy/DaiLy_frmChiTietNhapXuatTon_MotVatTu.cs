@@ -348,6 +348,8 @@ namespace CtyTinLuong
             else gridMaDaiLy.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy;
 
             gridMaVT.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
+
+            HienThi();
         }
     }
 }
