@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBTTL_TGD_CT));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -126,9 +126,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // btThoat
@@ -221,9 +221,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -322,6 +322,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
+            this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
@@ -347,6 +348,7 @@
             this.clSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
+            this.clSTT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.clSTT.OptionsColumn.FixedWidth = true;
             this.clSTT.Visible = true;
             this.clSTT.VisibleIndex = 0;
@@ -362,6 +364,7 @@
             this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
+            this.clTenNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
             this.clTenNhanVien.Width = 120;
@@ -394,6 +397,7 @@
             this.Cong.MinWidth = 120;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
+            this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 2;
             this.Cong.Width = 120;
@@ -497,6 +501,7 @@
             this.SanLuong.FieldName = "SanLuong";
             this.SanLuong.MinWidth = 40;
             this.SanLuong.Name = "SanLuong";
+            this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
             this.SanLuong.OptionsFilter.AllowFilter = false;
@@ -521,6 +526,7 @@
             this.DonGia.FieldName = "DonGia";
             this.DonGia.MinWidth = 40;
             this.DonGia.Name = "DonGia";
+            this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
             this.DonGia.OptionsFilter.AllowFilter = false;
@@ -545,6 +551,7 @@
             this.ThanhTien.FieldName = "ThanhTien";
             this.ThanhTien.MinWidth = 40;
             this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.OptionsColumn.FixedWidth = true;
             this.ThanhTien.OptionsFilter.AllowAutoFilter = false;
             this.ThanhTien.OptionsFilter.AllowFilter = false;
@@ -569,6 +576,7 @@
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 40;
             this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
             this.TongLuong.OptionsFilter.AllowFilter = false;
@@ -593,6 +601,7 @@
             this.SoNgayAn.FieldName = "SoNgayAn";
             this.SoNgayAn.MinWidth = 40;
             this.SoNgayAn.Name = "SoNgayAn";
+            this.SoNgayAn.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SoNgayAn.OptionsColumn.FixedWidth = true;
             this.SoNgayAn.OptionsFilter.AllowAutoFilter = false;
             this.SoNgayAn.OptionsFilter.AllowFilter = false;
@@ -617,6 +626,7 @@
             this.TruTienCom.FieldName = "TruTienCom";
             this.TruTienCom.MinWidth = 40;
             this.TruTienCom.Name = "TruTienCom";
+            this.TruTienCom.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TruTienCom.OptionsColumn.FixedWidth = true;
             this.TruTienCom.OptionsFilter.AllowAutoFilter = false;
             this.TruTienCom.OptionsFilter.AllowFilter = false;
@@ -641,6 +651,7 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 40;
             this.TongTien.Name = "TongTien";
+            this.TongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
             this.TongTien.OptionsFilter.AllowFilter = false;
@@ -665,6 +676,7 @@
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 40;
             this.TamUng.Name = "TamUng";
+            this.TamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
             this.TamUng.OptionsFilter.AllowFilter = false;
@@ -689,6 +701,7 @@
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 40;
             this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
             this.ThucNhan.OptionsFilter.AllowFilter = false;
@@ -714,6 +727,7 @@
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 40;
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
             this.KyNhan.OptionsFilter.AllowFilter = false;

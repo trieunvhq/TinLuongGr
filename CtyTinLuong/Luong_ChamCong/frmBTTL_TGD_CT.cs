@@ -67,6 +67,7 @@ namespace CtyTinLuong
                 _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang,_id_bophan);
                 double TongLuong_row = 0; 
                 int ID_CongNhan_Cu = 0;
+                int stt = 1;
                 if (_data != null && _data.Rows.Count > 0)
                 {
                     ID_CongNhan_Cu = Convert.ToInt32(_data.Rows[0]["ID_CongNhan"].ToString());
@@ -107,7 +108,10 @@ namespace CtyTinLuong
                     double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
                     if (ID_CongNhan_ != ID_CongNhan_Cu || i==_data.Rows.Count-1)
                     {
-                        double SoNgayAn_row = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                        _data.Rows[i]["STT"] = stt.ToString();
+                        ++stt;
+
+                           double SoNgayAn_row = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
                         double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
                         _data.Rows[i]["TongLuong"] = TongLuong_row.ToString("N0");
 
@@ -144,6 +148,7 @@ namespace CtyTinLuong
                         _data.Rows[i]["SoNgayAn"] = "";
                         _data.Rows[i]["TongTien"] = "";
                         _data.Rows[i]["TamUng"] = "";
+                        _data.Rows[i]["ThucNhan"] = "";
                     }
                     _data.Rows[i]["ThanhTien"] = (dongia_ * sanluong_).ToString("N0");
                     
