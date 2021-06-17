@@ -77,9 +77,12 @@ namespace CtyTinLuong
         //}
 
         private void navTTL_TGD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        { 
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
+            if (id_bophan_ == 0) return;
+
             frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT() { TopLevel = false, TopMost = true };
-            frm.LoadData(true);
+            frm.LoadData(true, id_bophan_);
             //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
             ShowWinform(frm, sender);
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
