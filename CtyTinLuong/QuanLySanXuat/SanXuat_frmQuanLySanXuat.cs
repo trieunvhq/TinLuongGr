@@ -98,7 +98,9 @@ namespace CtyTinLuong
         {
           
             SanXuat_frmChiTietSoPhieu_RutGon ff = new SanXuat_frmChiTietSoPhieu_RutGon();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
         
         private void SanXuat_frmQuanLySanXuat_FormClosed(object sender, FormClosedEventArgs e)
@@ -164,7 +166,9 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -270,33 +274,43 @@ namespace CtyTinLuong
         {
             imay_in_1_Cat_2_dot_3 = 3;
             SanLuong_To_DOT_DAP ucc = new SanLuong_To_DOT_DAP();
-            ucc.Show();
+            this.Hide();
+            ucc.ShowDialog();
+            this.Show();
         }
 
         private void navSanLuongMayIn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             imay_in_1_Cat_2_dot_3 = 1;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
-            ucc.Show();
+            this.Hide();
+            ucc.ShowDialog();
+            this.Show();
         }
 
         private void navSanLuongMayCAT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             imay_in_1_Cat_2_dot_3 = 2;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
-            ucc.Show();
+            this.Hide();
+            ucc.ShowDialog();
+            this.Show();
         }
 
         private void navLuongSanLuong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
-            ucc.Show();
+            this.Hide();
+            ucc.ShowDialog();
+            this.Show();
         }
 
         private void nbSL_CTL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
     }
 }
