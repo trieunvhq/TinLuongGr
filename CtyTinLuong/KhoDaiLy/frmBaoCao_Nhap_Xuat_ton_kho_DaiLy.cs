@@ -148,8 +148,8 @@ namespace CtyTinLuong
             }
             else
             {
-                DataTable dt_NhapTruoc = cls1.SA_distinct_NhapTrongKy_W_ID_DaiLy(ID_DaiLy_, xxtungay, xxdenngay);                
-                DataTable dt_XuatTruoc = cls2.SA_distinct_XuatTrongKy_W_ID_DaiLy(ID_DaiLy_, xxtungay, xxdenngay);
+                dt_NhapTrongKy = cls1.SA_distinct_NhapTrongKy_W_ID_DaiLy(ID_DaiLy_, xxtungay, xxdenngay);
+                dt_XuatTrongKy = cls2.SA_distinct_XuatTrongKy_W_ID_DaiLy(ID_DaiLy_, xxtungay, xxdenngay);
             }
 
             DataTable dt2 = new DataTable();
