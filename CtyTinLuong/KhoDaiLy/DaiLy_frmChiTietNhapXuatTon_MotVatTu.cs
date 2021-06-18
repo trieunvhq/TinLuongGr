@@ -34,95 +34,7 @@ namespace CtyTinLuong
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
         }
        
-        private DataTable LoadDaTa_Nhap_Xuat_TrongKy(int xxID_VTHH, DateTime xxtungay, DateTime xxdenngay)
-        {
-            clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
-            DataTable dt_NhapTrongKy = cls1.SA_NhapTrongKy_ID_VTHH(xxID_VTHH,xxtungay, xxdenngay);
-
-            clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
-            DataTable dt_XuatTrongKy = cls2.SA_XuatTrongKy_ID_VTHH(xxID_VTHH,xxtungay, xxdenngay);
-
-
-            DataTable dt2xxxx = new DataTable();
-
-            dt2xxxx.Columns.Add("NgayChungTu", typeof(DateTime));
-            dt2xxxx.Columns.Add("Nhap", typeof(string));
-            dt2xxxx.Columns.Add("Xuat", typeof(string));
-            dt2xxxx.Columns.Add("Ton", typeof(string));
-            dt2xxxx.Columns.Add("SoChungTu_NhapKho", typeof(string));
-            dt2xxxx.Columns.Add("SoChungTu_XuatKho", typeof(string));
-            dt2xxxx.Columns.Add("MaDaiLy", typeof(string));
-            dt2xxxx.Columns.Add("TenDaiLy", typeof(string));
-            dt2xxxx.Columns.Add("DienGiai", typeof(string));
-            for (int i = 0; i < dt_NhapTrongKy.Rows.Count; i++)
-            {
-                int iiiiiID_VTHH;
-                iiiiiID_VTHH = Convert.ToInt16(dt_NhapTrongKy.Rows[i]["ID_VTHH"].ToString());
-                double SoLuongNhap_TrongKy, GiaTriNhap_TrongKy,
-                SoLuongXuat_TrongKy, GiaTriXuat_TrongKy;
-                SoLuongNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                GiaTriNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
-                string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
-                DataRow[] rows = dt_XuatTrongKy.Select(filterExpression);
-                if (rows.Length == 0)
-                {
-                    SoLuongXuat_TrongKy = 0;
-                    GiaTriXuat_TrongKy = 0;
-                }
-                else
-                {
-                    SoLuongXuat_TrongKy = Convert.ToDouble(rows[0]["SoLuongXuat_TrongKy"].ToString());
-                    GiaTriXuat_TrongKy = Convert.ToDouble(rows[0]["GiaTriXuat_TrongKy"].ToString());
-
-                }
-
-                DataRow _ravi = dt2xxxx.NewRow();
-                _ravi["ID_VTHH"] = iiiiiID_VTHH;
-
-                _ravi["MaVT"] = dt_NhapTrongKy.Rows[i]["MaVT"].ToString();
-                _ravi["TenVTHH"] = dt_NhapTrongKy.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt_NhapTrongKy.Rows[i]["DonViTinh"].ToString();
-
-                _ravi["SoLuongNhap_TrongKy"] = SoLuongNhap_TrongKy;
-                _ravi["GiaTriNhap_TrongKy"] = GiaTriNhap_TrongKy;
-
-                _ravi["SoLuongXuat_TrongKy"] = SoLuongXuat_TrongKy;
-                _ravi["GiaTriXuat_TrongKy"] = GiaTriXuat_TrongKy;
-                dt2xxxx.Rows.Add(_ravi);
-
-            }
-            for (int i = 0; i < dt_XuatTrongKy.Rows.Count; i++)
-            {
-                int iiiiiID_VTHH;
-                iiiiiID_VTHH = Convert.ToInt16(dt_XuatTrongKy.Rows[i]["ID_VTHH"].ToString());
-
-                double SoLuongXuat_TrongKy, GiaTriXuat_TrongKy;
-
-                //SoLuongNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                //GiaTriNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
-
-                SoLuongXuat_TrongKy = Convert.ToDouble(dt_XuatTrongKy.Rows[i]["SoLuongXuat_TrongKy"].ToString());
-                GiaTriXuat_TrongKy = Convert.ToDouble(dt_XuatTrongKy.Rows[i]["GiaTriXuat_TrongKy"].ToString());
-                string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
-                DataRow[] rows = dt_NhapTrongKy.Select(filterExpression);
-                if (rows.Length == 0)
-                {
-                    DataRow _ravi = dt2xxxx.NewRow();
-                    _ravi["ID_VTHH"] = iiiiiID_VTHH;
-                    _ravi["MaVT"] = dt_XuatTrongKy.Rows[i]["MaVT"].ToString();
-                    _ravi["TenVTHH"] = dt_XuatTrongKy.Rows[i]["TenVTHH"].ToString();
-                    _ravi["DonViTinh"] = dt_XuatTrongKy.Rows[i]["DonViTinh"].ToString();
-                    _ravi["SoLuongNhap_TrongKy"] = 0;
-                    _ravi["GiaTriNhap_TrongKy"] = 0;
-                    _ravi["SoLuongXuat_TrongKy"] = SoLuongXuat_TrongKy;
-                    _ravi["GiaTriXuat_TrongKy"] = GiaTriXuat_TrongKy;
-                    dt2xxxx.Rows.Add(_ravi);
-                }
-
-
-            }
-            return dt2xxxx;
-        }
+       
 
         private void LoadDaTa(int xxID_VTHH___, DateTime xxtungay, DateTime xxdenngay)
         {
@@ -145,7 +57,7 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("TenDaiLy", typeof(string));
             dt2xxxx.Columns.Add("DienGiai", typeof(string));
 
-            double SoLuong_NhapTruocKy, SoLuong_XuatTruocKy, SoLuong_TonDauKy;
+            double SoLuong_NhapTruocKy, SoLuong_XuatTruocKy, SoLuong_TonDauKy=0;
             if (dt_NhapTruoc.Rows.Count > 0)
             {
                 DataRow _ravi = dt2xxxx.NewRow();
@@ -175,120 +87,64 @@ namespace CtyTinLuong
                     dt2xxxx.Rows.Add(_ravi);
                 }
             }
-            DataTable dt2 = LoadDaTa_Nhap_Xuat_TrongKy(xxID_VTHH___, xxtungay, xxdenngay);
-        }
-
-        private void HienThi()
-        {
-            DataTable dt2xxxx = new DataTable();
-
-            dt2xxxx.Columns.Add("NgayChungTu", typeof(DateTime));
-            dt2xxxx.Columns.Add("Nhap", typeof(string));           
-            dt2xxxx.Columns.Add("Xuat", typeof(string));
-            dt2xxxx.Columns.Add("Ton", typeof(string));           
-            dt2xxxx.Columns.Add("SoChungTu_NhapKho", typeof(string));
-            dt2xxxx.Columns.Add("SoChungTu_XuatKho", typeof(string));
-            dt2xxxx.Columns.Add("MaDaiLy", typeof(string));
-            dt2xxxx.Columns.Add("TenDaiLy", typeof(string));
-            dt2xxxx.Columns.Add("DienGiai", typeof(string));
-            DateTime dteDenNgayxx = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;
-            DateTime dteTuNgayxxx = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
-
+            cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            cls2 = new clsDaiLy_tbChiTietXuatKho();
+            DataTable dtnhap = cls1.SA_NhapTrongKy_ID_VTHH(xxID_VTHH___, xxtungay, xxdenngay);
+            DataTable dtxuat = cls2.SA_XuatTrongKy_ID_VTHH(xxID_VTHH___, xxtungay, xxdenngay);
             DateTime ngaydautien;
-            ngaydautien = dteTuNgayxxx;
+            ngaydautien = xxtungay;
 
-            TimeSpan timespsanxxxx = dteDenNgayxx - dteTuNgayxxx;
+            TimeSpan timespsanxxxx = xxdenngay - xxtungay;
             int songay = timespsanxxxx.Days;
-            DataRow _ravi_Khong = dt2xxxx.NewRow();
-            _ravi_Khong["DienGiai"] = "Tồn đầu kỳ";
-            _ravi_Khong["Ton"] = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.msoluongTonDauKy;
-            dt2xxxx.Rows.Add(_ravi_Khong);
-            double soluongton=0, Tong_SoLuongNhap=0, Tong_SoluongXuat=0;
-            soluongton= frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.msoluongTonDauKy;
+            double Tong_SoLuongNhap = 0, Tong_SoluongXuat = 0;
+            double soluongton = SoLuong_TonDauKy;
             for (int i = 0; i <= songay; i++)
             {
+                ngaydautien = ngaydautien.AddDays(1);
+                string expressionnhapkho;
+                expressionnhapkho = "NgayChungTu=" + ngaydautien + "";
+                DataRow[] foundRows_Nhap, foundRows_Xuat;
+                foundRows_Nhap = dtnhap.Select(expressionnhapkho);
+                foundRows_Xuat= dtxuat.Select(expressionnhapkho);
+                if (foundRows_Nhap.Length > 0)
+                {
+                    for (int j = 0; j < foundRows_Nhap.Length; j++)
+                    {
 
-                clsDaiLy_tbChiTietNhapKho cls1 = new clsDaiLy_tbChiTietNhapKho();
-                cls1.iID_VTHH = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
-                DataTable dt1 = cls1.Select_One_NXT_TinhToan_newwwwww();
-                dt1.DefaultView.RowFilter = " NgayChungTu ='" + ngaydautien + "'and DaNhapKho=True";
-                DataView dv1 = dt1.DefaultView;
-                DataTable dt11new = dv1.ToTable();
-               
-                if (dt11new.Rows.Count > 0) // có nhập
-                {
-                    double soluongnhap, soluongxuat ;
-                    for (int k1 = 0; k1 < dt11new.Rows.Count; k1++)
-                    {
-                        DataRow _ravi = dt2xxxx.NewRow();
-                        soluongnhap = Convert.ToDouble(dt11new.Rows[k1]["SoLuongNhap"].ToString());                        
-                        _ravi["NgayChungTu"] = ngaydautien;
-                        _ravi["DienGiai"] = dt11new.Rows[k1]["DienGiai"].ToString();
-                        _ravi["SoChungTu_NhapKho"] = dt11new.Rows[k1]["SoChungTu"].ToString();
-                        _ravi["MaDaiLy"] = dt11new.Rows[k1]["MaDaiLy"].ToString();
-                        _ravi["TenDaiLy"] = dt11new.Rows[k1]["TenDaiLy"].ToString();
-                        _ravi["Nhap"] = soluongnhap;                      
-                        _ravi["Ton"] = soluongton+ soluongnhap;                       
-                        soluongton= soluongton + soluongnhap;
+                        DataRow _ravi_Nhap = dt2xxxx.NewRow();
+                        double soluongnhap = Convert.ToDouble(foundRows_Nhap[i]["SoLuongNhap"].ToString());
+                        _ravi_Nhap["NgayChungTu"] = ngaydautien;
+                        _ravi_Nhap["DienGiai"] = foundRows_Nhap[i]["DienGiai"].ToString();
+                        _ravi_Nhap["SoChungTu_NhapKho"] = foundRows_Nhap[i]["SoChungTu"].ToString();
+                        _ravi_Nhap["MaDaiLy"] = foundRows_Nhap[i]["MaDaiLy"].ToString();
+                        _ravi_Nhap["TenDaiLy"] = foundRows_Nhap[i]["TenDaiLy"].ToString();
+                        _ravi_Nhap["Nhap"] = soluongnhap;
+                        _ravi_Nhap["Ton"] = soluongton + soluongnhap;
+                        SoLuong_TonDauKy = soluongton + soluongnhap;
                         Tong_SoLuongNhap = Tong_SoLuongNhap + soluongnhap;
-                        dt2xxxx.Rows.Add(_ravi);
-                    }
-                  
-                    clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
-                    cls2.iID_VTHH = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
-                    DataTable dt2 = cls2.SelectAll_W_ID_VTHH_TinhToan_TenDaiLy_NXT();
-                    dt2.DefaultView.RowFilter = " NgayChungTu ='" + ngaydautien + "'and DaXuatKho=True";
-                    DataView dv2 = dt2.DefaultView;
-                    DataTable dt22new = dv2.ToTable();
-                    if (dt22new.Rows.Count > 0) // có xuất
-                    {
-                        for (int k2 = 0; k2 < dt22new.Rows.Count; k2++)
-                        {
-                            DataRow _ravi2 = dt2xxxx.NewRow();
-                            _ravi2["NgayChungTu"] = ngaydautien;
-                            soluongxuat = Convert.ToDouble(dt22new.Rows[k2]["SoLuongXuat"].ToString());
-                            _ravi2["Xuat"] = soluongxuat;
-                            _ravi2["SoChungTu_XuatKho"] = dt22new.Rows[k2]["SoChungTu"].ToString();
-                            _ravi2["MaDaiLy"] = dt22new.Rows[k2]["MaDaiLy"].ToString();
-                            _ravi2["TenDaiLy"] = dt22new.Rows[k2]["TenDaiLy"].ToString();
-                            _ravi2["DienGiai"] = dt22new.Rows[k2]["DienGiai"].ToString();
-                            _ravi2["Ton"] = soluongton - soluongxuat;
-                            dt2xxxx.Rows.Add(_ravi2);
-                            soluongton = soluongton - soluongxuat;
-                            Tong_SoluongXuat = Tong_SoluongXuat + soluongxuat;
-                        }
-                       
-                    }
-                    ngaydautien = ngaydautien.AddDays(1);
+                        dt2xxxx.Rows.Add(_ravi_Nhap);
+                    }                       
                 }
-                else // ko có nhập, kiểm tra xem có xuất không. nếu có thì thêm row
+                if (foundRows_Xuat.Length > 0)
                 {
-                    clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
-                    cls2.iID_VTHH = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
-                    DataTable dt2 = cls2.SelectAll_W_ID_VTHH_TinhToan_TenDaiLy_NXT();
-                    dt2.DefaultView.RowFilter = " NgayChungTu ='" + ngaydautien + "'and DaXuatKho=True";
-                    DataView dv2 = dt2.DefaultView;
-                    DataTable dt22new = dv2.ToTable();
-                    if (dt22new.Rows.Count > 0) // có xuất
+                    for (int j = 0; j < foundRows_Xuat.Length; j++)
                     {
-                        for (int k2 = 0; k2 < dt22new.Rows.Count; k2++)
-                        {
-                            double soluongxuat;
-                            DataRow _ravi2 = dt2xxxx.NewRow();
-                            _ravi2["NgayChungTu"] = ngaydautien;
-                            soluongxuat = Convert.ToDouble(dt22new.Rows[k2]["SoLuongXuat"].ToString());
-                            _ravi2["Xuat"] = soluongxuat;
-                            _ravi2["SoChungTu_XuatKho"] = dt22new.Rows[k2]["SoChungTu"].ToString();
-                            _ravi2["MaDaiLy"] = dt22new.Rows[k2]["MaDaiLy"].ToString();
-                            _ravi2["TenDaiLy"] = dt22new.Rows[k2]["TenDaiLy"].ToString();
-                            _ravi2["DienGiai"] = dt22new.Rows[k2]["DienGiai"].ToString();
-                            _ravi2["Ton"] = soluongton - soluongxuat;
-                            dt2xxxx.Rows.Add(_ravi2);
-                            soluongton = soluongton - soluongxuat;
-                        }
+                        DataRow _ravi_Xuat = dt2xxxx.NewRow();
+                        _ravi_Xuat["NgayChungTu"] = ngaydautien;
+                        double soluongxuat = Convert.ToDouble(foundRows_Xuat[i]["SoLuongXuat"].ToString());                     
+                        _ravi_Xuat["Xuat"] = soluongxuat;
+                        _ravi_Xuat["SoChungTu_XuatKho"] = foundRows_Xuat[i]["SoChungTu"].ToString();
+                        _ravi_Xuat["MaDaiLy"] = foundRows_Xuat[i]["MaDaiLy"].ToString();
+                        _ravi_Xuat["TenDaiLy"] = foundRows_Xuat[i]["TenDaiLy"].ToString();
+                        _ravi_Xuat["DienGiai"] = foundRows_Xuat[i]["DienGiai"].ToString();
+                        _ravi_Xuat["Ton"] = soluongton - soluongxuat;
+                        dt2xxxx.Rows.Add(_ravi_Xuat);
+                        soluongton = soluongton - soluongxuat;
+                        Tong_SoluongXuat = Tong_SoluongXuat + soluongxuat;
+
                     }
-                    ngaydautien = ngaydautien.AddDays(1);
-                }                
+                }
+                ngaydautien = ngaydautien.AddDays(1);
             }
             DataRow _ravi_Cuoi = dt2xxxx.NewRow();
             _ravi_Cuoi["DienGiai"] = "NXT trong kỳ";
@@ -297,8 +153,9 @@ namespace CtyTinLuong
             _ravi_Cuoi["Xuat"] = Tong_SoluongXuat;
             dt2xxxx.Rows.Add(_ravi_Cuoi);
             gridControl1.DataSource = dt2xxxx;
-
         }
+
+     
         public DaiLy_frmChiTietNhapXuatTon_MotVatTu()
         {
             InitializeComponent();
@@ -334,10 +191,7 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-        private void txtGiaTriTonDauKy_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void DaiLy_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
@@ -349,7 +203,7 @@ namespace CtyTinLuong
 
             gridMaVT.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
 
-            HienThi();
+            LoadDaTa(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH,dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
