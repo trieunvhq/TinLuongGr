@@ -269,7 +269,8 @@
               <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:string" minOccurs="0" />
               <xs:element name="STT_Gr" msprop:Generator_ColumnVarNameInTable="columnSTT_Gr" msprop:Generator_ColumnPropNameInRow="STT_Gr" msprop:Generator_ColumnPropNameInTable="STT_GrColumn" msprop:Generator_UserColumnName="STT_Gr" type="xs:string" minOccurs="0" />
               <xs:element name="TenNhaCungCap" msprop:Generator_ColumnVarNameInTable="columnTenNhaCungCap" msprop:Generator_ColumnPropNameInRow="TenNhaCungCap" msprop:Generator_ColumnPropNameInTable="TenNhaCungCapColumn" msprop:Generator_UserColumnName="TenNhaCungCap" type="xs:string" minOccurs="0" />
-              <xs:element name="SoDuDauKy" msprop:Generator_ColumnVarNameInTable="columnSoDuDauKy" msprop:Generator_ColumnPropNameInRow="SoDuDauKy" msprop:Generator_ColumnPropNameInTable="SoDuDauKyColumn" msprop:Generator_UserColumnName="SoDuDauKy" type="xs:double" minOccurs="0" />
+              <xs:element name="SoDuDauKy_No" msprop:Generator_ColumnVarNameInTable="columnSoDuDauKy_No" msprop:Generator_ColumnPropNameInRow="SoDuDauKy_No" msprop:Generator_ColumnPropNameInTable="SoDuDauKy_NoColumn" msprop:Generator_UserColumnName="SoDuDauKy_No" type="xs:double" minOccurs="0" />
+              <xs:element name="SoDuDauKy_Co" msprop:Generator_ColumnVarNameInTable="columnSoDuDauKy_Co" msprop:Generator_ColumnPropNameInRow="SoDuDauKy_Co" msprop:Generator_ColumnPropNameInTable="SoDuDauKy_CoColumn" msprop:Generator_UserColumnName="SoDuDauKy_Co" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
