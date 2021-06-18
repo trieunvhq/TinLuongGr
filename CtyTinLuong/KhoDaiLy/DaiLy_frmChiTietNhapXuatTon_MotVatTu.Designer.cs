@@ -185,6 +185,7 @@
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 105;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
+            this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
             // 
             // gridMaVT
             // 
@@ -196,6 +197,7 @@
             this.gridMaVT.Size = new System.Drawing.Size(234, 20);
             this.gridMaVT.StyleController = this.dataLayoutControl1;
             this.gridMaVT.TabIndex = 105;
+            this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
             // 
             // gridView1
             // 
@@ -243,6 +245,7 @@
             this.gridMaDaiLy.Size = new System.Drawing.Size(234, 20);
             this.gridMaDaiLy.StyleController = this.dataLayoutControl1;
             this.gridMaDaiLy.TabIndex = 106;
+            this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 

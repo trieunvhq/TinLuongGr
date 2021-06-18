@@ -18,10 +18,10 @@ namespace CtyTinLuong
         public static string msNguoiLap_Prtint;
         public static DataTable mdt_ChiTiet_MotVatTu_N_X_T_Print;
         public static DateTime mdatungay, mdadenngay;
-        private void Load_Lockup(DateTime xxtungay, DateTime xxdenngay)
+        private void Load_Lockup()
         {
-            clsDaiLy_tbChiTietNhapKho cls = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();         
-            DataTable dt2 = cls.SA_distinct_NhapTrongKy(xxtungay, xxdenngay);        
+            clsTbVatTuHangHoa cls = new CtyTinLuong.clsTbVatTuHangHoa();         
+            DataTable dt2 = cls.SelectAll();        
 
             gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
@@ -72,7 +72,7 @@ namespace CtyTinLuong
             else
             {
                 dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH___, xxID_DaiLy, xxtungay);
-                dt_XuatTruoc = cls1.SA_NhapTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH___, xxID_DaiLy, xxtungay);
+                dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH___, xxID_DaiLy, xxtungay);
             }
               
          
@@ -239,7 +239,57 @@ namespace CtyTinLuong
             ff.Show();
         }
 
-       
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            int xidvt = Convert.ToInt32(gridMaVT.EditValue.ToString());
+            int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            LoadDaTa(xidvt, xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        private void gridMaVT_EditValueChanged(object sender, EventArgs e)
+        {
+            int xidvt = Convert.ToInt32(gridMaVT.EditValue.ToString());
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = xidvt;
+            DataTable dt = cls.SelectOne();
+            try
+            {
+                txtTenVT.Text = cls.sTenVTHH.Value;
+                txtDVT.Text = cls.sDonViTinh.Value;
+                if (gridMaDaiLy.EditValue != null)
+                {
+                    int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                    LoadDaTa(xidvt, xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                }
+                   
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
+        {
+            int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
+            cls.iID_DaiLy = xiddaily;
+            DataTable dt = cls.SelectOne();
+            try
+            {
+                txtTenDaiLy.Text = cls.sTenDaiLy.Value;     
+                if(gridMaVT.EditValue!=null)
+                {
+                    int xidvt = Convert.ToInt32(gridMaVT.EditValue.ToString());
+                    LoadDaTa(xidvt, xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                }
+               
+            }
+            catch
+            {
+
+            }
+        }
 
         private void DaiLy_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
@@ -247,7 +297,7 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
             dteDenNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;          
             gridMaVT.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
-            Load_Lockup(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Load_Lockup();
             gridMaDaiLy.EditValue= frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy;
             LoadDaTa(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH, frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy,dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
