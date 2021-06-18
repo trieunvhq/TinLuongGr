@@ -185,6 +185,7 @@
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 105;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
+            this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
             // 
             // gridMaVT
             // 
@@ -196,6 +197,7 @@
             this.gridMaVT.Size = new System.Drawing.Size(234, 20);
             this.gridMaVT.StyleController = this.dataLayoutControl1;
             this.gridMaVT.TabIndex = 105;
+            this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
             // 
             // gridView1
             // 
@@ -243,6 +245,7 @@
             this.gridMaDaiLy.Size = new System.Drawing.Size(234, 20);
             this.gridMaDaiLy.StyleController = this.dataLayoutControl1;
             this.gridMaDaiLy.TabIndex = 106;
+            this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -301,6 +304,8 @@
             this.bandedGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.bandedGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.bandedGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.bandedGridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand4,
             this.gridBand3,
@@ -526,7 +531,11 @@
             this.clNhap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNhap.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clNhap.Caption = "Nhập";
+            this.clNhap.DisplayFormat.FormatString = "{0:0.###}";
+            this.clNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNhap.FieldName = "Nhap";
+            this.clNhap.GroupFormat.FormatString = "{0:0.###}";
+            this.clNhap.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNhap.Name = "clNhap";
             this.clNhap.OptionsColumn.AllowEdit = false;
             this.clNhap.OptionsColumn.FixedWidth = true;
@@ -541,7 +550,11 @@
             this.clXuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clXuat.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clXuat.Caption = "Xuất";
+            this.clXuat.DisplayFormat.FormatString = "{0:0.###}";
+            this.clXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clXuat.FieldName = "Xuat";
+            this.clXuat.GroupFormat.FormatString = "{0:0.###}";
+            this.clXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clXuat.Name = "clXuat";
             this.clXuat.OptionsColumn.AllowEdit = false;
             this.clXuat.OptionsColumn.FixedWidth = true;
@@ -555,7 +568,11 @@
             this.clTon.AppearanceCell.Options.UseTextOptions = true;
             this.clTon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTon.Caption = "Tồn";
+            this.clTon.DisplayFormat.FormatString = "{0:0.###}";
+            this.clTon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTon.FieldName = "Ton";
+            this.clTon.GroupFormat.FormatString = "{0:0.###}";
+            this.clTon.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTon.Name = "clTon";
             this.clTon.OptionsColumn.AllowEdit = false;
             this.clTon.OptionsColumn.FixedWidth = true;

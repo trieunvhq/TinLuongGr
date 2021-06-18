@@ -35,7 +35,6 @@
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navLuongDaiLy = new DevExpress.XtraNavBar.NavBarItem();
             this.navTamUng = new DevExpress.XtraNavBar.NavBarItem();
@@ -95,22 +94,15 @@
             // 
             // navBarItem10
             // 
-            this.navBarItem10.Caption = "Báo cáo NXT_ALL";
+            this.navBarItem10.Caption = "Báo cáo Nhập- Xuất - Tồn";
             this.navBarItem10.Name = "navBarItem10";
             this.navBarItem10.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem10_LinkClicked);
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Caption = "NXT_Theo ĐL";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Báo cáo";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongDaiLy),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navTamUng),
@@ -217,7 +209,6 @@
             this.navBarItem5,
             this.navBarItem6,
             this.navBarItem25,
-            this.navBarItem9,
             this.navBarItem10,
             this.navBarItem7,
             this.navBarItem3,
@@ -336,7 +327,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarItem navBarItem10;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;

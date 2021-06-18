@@ -164,7 +164,7 @@ namespace CtyTinLuong
             frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_ALL = false;
             UCDaiLy_GapDan_baocao_NXT.mbPrint_NXT_Kho = false;
             frmBaoCaoNXT_KhoThanhPham.mbPrint_NXT_Kho_NPL = false;
-            UCDaiLy_NhapXuatTon_theoDaiLy.mbPrint_NXT_Kho = false;
+            //UCDaiLy_NhapXuatTon_theoDaiLy.mbPrint_NXT_Kho = false;
         }
 
         private void frmPrint_Nhap_Xuat_Ton_TongHop_Load(object sender, EventArgs e)
@@ -184,8 +184,6 @@ namespace CtyTinLuong
             if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
                 Print_UCDaiLy_NhapXuatTon_theoDaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
-            if (UCDaiLy_NhapXuatTon_theoDaiLy.mbPrint_NXT_Kho == true)
-                Print_UCDaiLy_NhapXuatTon_theoDaiLy(UCDaiLy_NhapXuatTon_theoDaiLy.mdt_ChiTiet_Print);
         }
     }
 }
