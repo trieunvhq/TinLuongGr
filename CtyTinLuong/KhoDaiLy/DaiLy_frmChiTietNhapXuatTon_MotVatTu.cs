@@ -53,10 +53,7 @@ namespace CtyTinLuong
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
           
-        }
-
-
-
+        }        
         private void LoadDaTa(int xxID_VTHH___, int xxID_DaiLy, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt_NhapTruoc = new DataTable();
@@ -201,9 +198,7 @@ namespace CtyTinLuong
             _ravi_Cuoi["Xuat"] = Tong_SoluongXuat;
             dt2xxxx.Rows.Add(_ravi_Cuoi);
             gridControl1.DataSource = dt2xxxx;
-        }
-
-     
+        }     
         public DaiLy_frmChiTietNhapXuatTon_MotVatTu()
         {
             InitializeComponent();
