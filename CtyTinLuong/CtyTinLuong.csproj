@@ -178,6 +178,12 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\DaiLy_BaoCao_TonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\DaiLy_BaoCao_TonKho.Designer.cs">
+      <DependentUpon>DaiLy_BaoCao_TonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\clsThin.cs" />
     <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
@@ -1829,6 +1835,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\DaiLy_BaoCao_TonKho.resx">
+      <DependentUpon>DaiLy_BaoCao_TonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.resx">
       <DependentUpon>frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.cs</DependentUpon>
