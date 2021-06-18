@@ -73,10 +73,8 @@ namespace CtyTinLuong
                 _ravi["Ton"] = SoLuong_TonDauKy;
                 dt2xxxx.Rows.Add(_ravi);
             }
-            else
+            else if (dt_XuatTruoc.Rows.Count > 0)
             {
-                if (dt_XuatTruoc.Rows.Count > 0)
-                {
                     DataRow _ravi = dt2xxxx.NewRow();
                     SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
                     SoLuong_TonDauKy = -SoLuong_XuatTruocKy;
@@ -85,8 +83,19 @@ namespace CtyTinLuong
                     _ravi["Xuat"] = SoLuong_XuatTruocKy;
                     _ravi["Ton"] = SoLuong_TonDauKy;
                     dt2xxxx.Rows.Add(_ravi);
-                }
             }
+
+            else
+            {
+                DataRow _ravi = dt2xxxx.NewRow();
+                SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+                SoLuong_TonDauKy = -SoLuong_XuatTruocKy;
+                _ravi["DienGiai"] = "Tồn đầu kỳ";
+                _ravi["DienGiai"] = "Tồn đầu kỳ";                
+                _ravi["Ton"] = 0;
+                dt2xxxx.Rows.Add(_ravi);
+            }
+
             cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
             cls2 = new clsDaiLy_tbChiTietXuatKho();
             DataTable dtnhap = cls1.SA_NhapTrongKy_ID_VTHH(xxID_VTHH___, xxtungay, xxdenngay);
@@ -101,23 +110,23 @@ namespace CtyTinLuong
             for (int i = 0; i <= songay; i++)
             {
                 ngaydautien = ngaydautien.AddDays(1);
-                string expressionnhapkho;
-                expressionnhapkho = "NgayChungTu=" + ngaydautien + "";
+                string expression;
+                expression = "NgayChungTu='" + ngaydautien + "'";
                 DataRow[] foundRows_Nhap, foundRows_Xuat;
-                foundRows_Nhap = dtnhap.Select(expressionnhapkho);
-                foundRows_Xuat= dtxuat.Select(expressionnhapkho);
+                foundRows_Nhap = dtnhap.Select(expression);
+                foundRows_Xuat= dtxuat.Select(expression);
                 if (foundRows_Nhap.Length > 0)
                 {
                     for (int j = 0; j < foundRows_Nhap.Length; j++)
                     {
 
                         DataRow _ravi_Nhap = dt2xxxx.NewRow();
-                        double soluongnhap = Convert.ToDouble(foundRows_Nhap[i]["SoLuongNhap"].ToString());
+                        double soluongnhap = Convert.ToDouble(foundRows_Nhap[j]["SoLuongNhap"].ToString());
                         _ravi_Nhap["NgayChungTu"] = ngaydautien;
-                        _ravi_Nhap["DienGiai"] = foundRows_Nhap[i]["DienGiai"].ToString();
-                        _ravi_Nhap["SoChungTu_NhapKho"] = foundRows_Nhap[i]["SoChungTu"].ToString();
-                        _ravi_Nhap["MaDaiLy"] = foundRows_Nhap[i]["MaDaiLy"].ToString();
-                        _ravi_Nhap["TenDaiLy"] = foundRows_Nhap[i]["TenDaiLy"].ToString();
+                        _ravi_Nhap["DienGiai"] = foundRows_Nhap[j]["DienGiai"].ToString();
+                        _ravi_Nhap["SoChungTu_NhapKho"] = foundRows_Nhap[j]["SoChungTu"].ToString();
+                        _ravi_Nhap["MaDaiLy"] = foundRows_Nhap[j]["MaDaiLy"].ToString();
+                        _ravi_Nhap["TenDaiLy"] = foundRows_Nhap[j]["TenDaiLy"].ToString();
                         _ravi_Nhap["Nhap"] = soluongnhap;
                         _ravi_Nhap["Ton"] = soluongton + soluongnhap;
                         SoLuong_TonDauKy = soluongton + soluongnhap;
@@ -131,12 +140,12 @@ namespace CtyTinLuong
                     {
                         DataRow _ravi_Xuat = dt2xxxx.NewRow();
                         _ravi_Xuat["NgayChungTu"] = ngaydautien;
-                        double soluongxuat = Convert.ToDouble(foundRows_Xuat[i]["SoLuongXuat"].ToString());                     
+                        double soluongxuat = Convert.ToDouble(foundRows_Xuat[j]["SoLuongXuat"].ToString());                     
                         _ravi_Xuat["Xuat"] = soluongxuat;
-                        _ravi_Xuat["SoChungTu_XuatKho"] = foundRows_Xuat[i]["SoChungTu"].ToString();
-                        _ravi_Xuat["MaDaiLy"] = foundRows_Xuat[i]["MaDaiLy"].ToString();
-                        _ravi_Xuat["TenDaiLy"] = foundRows_Xuat[i]["TenDaiLy"].ToString();
-                        _ravi_Xuat["DienGiai"] = foundRows_Xuat[i]["DienGiai"].ToString();
+                        _ravi_Xuat["SoChungTu_XuatKho"] = foundRows_Xuat[j]["SoChungTu"].ToString();
+                        _ravi_Xuat["MaDaiLy"] = foundRows_Xuat[j]["MaDaiLy"].ToString();
+                        _ravi_Xuat["TenDaiLy"] = foundRows_Xuat[j]["TenDaiLy"].ToString();
+                        _ravi_Xuat["DienGiai"] = foundRows_Xuat[j]["DienGiai"].ToString();
                         _ravi_Xuat["Ton"] = soluongton - soluongxuat;
                         dt2xxxx.Rows.Add(_ravi_Xuat);
                         soluongton = soluongton - soluongxuat;
@@ -195,6 +204,7 @@ namespace CtyTinLuong
 
         private void DaiLy_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
+            //frmBaoCao_Nhap_Xuat_ton_kho_DaiLy
             dteTuNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
             dteDenNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;
             if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy == 0)
