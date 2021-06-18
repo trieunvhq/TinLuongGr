@@ -20,36 +20,6 @@ namespace CtyTinLuong
         public static DateTime mdatungay, mdadenngay;
         private void Load_lockup(DateTime xxtungay, DateTime xxdenngay)
         {
-            //clsDaiLy_tbNhapKho cls = new CtyTinLuong.clsDaiLy_tbNhapKho();
-            //DataTable dtnhapkho = cls.SA_Load_lockUp_DaiLy_NhapKho(xxtungay, xxdenngay);
-            ////DataTable dtxuatkho = cls.SA_Load_lockUp_DaiLy_XuatKho(xxtungay, xxdenngay);
-
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_DaiLy", typeof(int));
-            //dt2.Columns.Add("MaDaiLy", typeof(string));
-            //dt2.Columns.Add("TenDaiLy", typeof(string));
-            //if(dtnhapkho.Rows.Count>0)
-            //{
-            //    for (int i = 0; i < dtnhapkho.Rows.Count; i++)
-            //    {
-            //        int ID_DaiLyxx = Convert.ToInt16(dtnhapkho.Rows[i]["ID_DaiLy"].ToString());
-            //        DataRow _ravi = dt2.NewRow();
-            //        _ravi["ID_DaiLy"] = ID_DaiLyxx;                  
-            //        _ravi["MaDaiLy"] = dtnhapkho.Rows[i]["MaDaiLy"].ToString();
-            //        _ravi["TenDaiLy"] = dtnhapkho.Rows[i]["TenDaiLy"].ToString();
-            //        dt2.Rows.Add(_ravi);
-            //    }
-            //}
-            ////else
-            ////{
-            ////    if (dtxuatkho.Rows.Count > 0)
-            ////    {
-            ////        for (int i = 0; i < dtxuatkho.Rows.Count; i++)
-            ////        {
-            ////        }
-            ////    }
-            //}
-
             clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
             DataTable dt2 = cls.SelectAll();
             gridMaDaiLy.Properties.DataSource = dt2;
