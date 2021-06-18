@@ -148,8 +148,8 @@ namespace CtyTinLuong
             }
             else
             {
-                DataTable dt_NhapTruoc = cls1.SA_distinct_NhapTruocKy_W_ID_DaiLy(ID_DaiLy_, xxtungay);                
-                DataTable dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy_W_ID_DaiLy(ID_DaiLy_, xxtungay);
+                DataTable dt_NhapTruoc = cls1.SA_distinct_NhapTrongKy_W_ID_DaiLy(ID_DaiLy_, xxtungay, xxdenngay);                
+                DataTable dt_XuatTruoc = cls2.SA_distinct_XuatTrongKy_W_ID_DaiLy(ID_DaiLy_, xxtungay, xxdenngay);
             }
 
             DataTable dt2 = new DataTable();
@@ -204,9 +204,6 @@ namespace CtyTinLuong
                 iiiiiID_VTHH = Convert.ToInt16(dt_XuatTrongKy.Rows[i]["ID_VTHH"].ToString());
 
                 double SoLuongXuat_TrongKy, GiaTriXuat_TrongKy;
-
-                //SoLuongNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                //GiaTriNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
 
                 SoLuongXuat_TrongKy = Convert.ToDouble(dt_XuatTrongKy.Rows[i]["SoLuongXuat_TrongKy"].ToString());
                 GiaTriXuat_TrongKy = Convert.ToDouble(dt_XuatTrongKy.Rows[i]["GiaTriXuat_TrongKy"].ToString());
@@ -351,19 +348,12 @@ namespace CtyTinLuong
         private void frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load(object sender, EventArgs e)
         {
            
-         
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Now;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             Load_lockup();
             gridMaDaiLy.EditValue = 0;
-            LoadDaTa(0,dteTuNgay.DateTime, dteDenNgay.DateTime);
-            
-        }
-
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load( sender,  e);
+            LoadDaTa(0,dteTuNgay.DateTime, dteDenNgay.DateTime);            
         }
 
         private void btThoat2_Click(object sender, EventArgs e)
@@ -381,54 +371,37 @@ namespace CtyTinLuong
         {
             int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
             LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
-            cls.iID_DaiLy = xiddaily;
-            DataTable dt = cls.SelectOne();
-            try
+            if (xiddaily == 0) txtTenDaiLy.Text = "";
+            else
             {
-                txtTenDaiLy.Text = cls.sTenDaiLy.Value;              
+                clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
+                cls.iID_DaiLy = xiddaily;
+                DataTable dt = cls.SelectOne();
+                txtTenDaiLy.Text = cls.sTenDaiLy.Value;
             }
-            catch
-            {
-
-            }
+           
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            if(dteTuNgay.DateTime>dteDenNgay.DateTime)
-            {
-                MessageBox.Show("Chọn lại ngày, ngày bắt đầu phải nhỏ hơn ngày kết thúc");
-            }         
-          
-            try
-            {
-                int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-            catch
-            {
-
-            }
+            
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
 
-            if (dteTuNgay.DateTime > dteDenNgay.DateTime)
-            {
-                MessageBox.Show("Chọn lại ngày, ngày bắt đầu phải nhỏ hơn ngày kết thúc");
-            }
+           
+        }
 
-            try
-            {
-                int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-            catch
-            {
+        private void btRefresh_Click_1(object sender, EventArgs e)
+        {
+            frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load(sender, e);
+        }
 
-            }
+        private void btLayDuLieu_Click_1(object sender, EventArgs e)
+        {
+            int xxID = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            LoadDaTa(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
@@ -454,11 +427,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            int xxID = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            LoadDaTa(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);            
-        }
+       
 
         private void btPrint_Click(object sender, EventArgs e)
         {
