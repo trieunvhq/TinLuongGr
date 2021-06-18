@@ -379,14 +379,51 @@ namespace CtyTinLuong
 
         private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
         {
+            int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
+            cls.iID_DaiLy = xiddaily;
+            DataTable dt = cls.SelectOne();
             try
             {
-                clsTbDanhMuc_DaiLy clsncc = new clsTbDanhMuc_DaiLy();
-                int xxID= Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                clsncc.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                DataTable dt = clsncc.SelectOne();
-                txtTenDaiLy.Text = dt.Rows[0]["TenDaiLy"].ToString();
-                LoadDaTa(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                txtTenDaiLy.Text = cls.sTenDaiLy.Value;              
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if(dteTuNgay.DateTime>dteDenNgay.DateTime)
+            {
+                MessageBox.Show("Chọn lại ngày, ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            }         
+          
+            try
+            {
+                int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+
+            if (dteTuNgay.DateTime > dteDenNgay.DateTime)
+            {
+                MessageBox.Show("Chọn lại ngày, ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            }
+
+            try
+            {
+                int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
             catch
             {
