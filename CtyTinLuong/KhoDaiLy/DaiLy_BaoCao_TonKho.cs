@@ -17,10 +17,58 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void HienThi_GridConTrol_2(int , DateTime xxdenngaya)
+        private void HienThi_GridConTrol_2(int xxID_VTHH, DateTime xxdenngaya)
         {
+            gridControl2.DataSource = null;
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("Ton", typeof(double));
+            dt2.Columns.Add("MaDaiLy", typeof(string));
+            dt2.Columns.Add("TenDaiLy", typeof(string));
+            dt2.Columns.Add("ID_DaiLy", typeof(int));
 
-
+            DataTable dtnhap = new DataTable();
+            DataTable dtXuat = new DataTable();
+            clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+            dtnhap = cls1.SA_TonKho_W_ID_VTHH(xxID_VTHH,xxdenngaya);
+            dtXuat = cls2.SA_TonKho_W_ID_VTHH(xxID_VTHH,xxdenngaya);
+            if(dtnhap.Rows.Count>0)
+            {
+                for (int i = 0; i < dtnhap.Rows.Count; i++)
+                {
+                    int iiID_DaiLy = Convert.ToInt32(dtnhap.Rows[i]["ID_DaiLy"].ToString());
+                    double soluongnhap = Convert.ToDouble(dtnhap.Rows[i]["SoLuongNhap"].ToString());
+                    double soluongxuat;
+                    string expression = "ID_DaiLy='" + iiID_DaiLy + "'";
+                    DataRow[] foundRows;
+                    foundRows = dtXuat.Select(expression);
+                    if (foundRows.Length > 0)
+                        soluongxuat = Convert.ToDouble(foundRows[0]["SoLuongXuat"].ToString());
+                    else
+                        soluongxuat = 0;
+                    DataRow _ravi2 = dt2.NewRow();
+                    _ravi2["ID_DaiLy"] = iiID_DaiLy;
+                    _ravi2["Ton"] = soluongnhap - soluongxuat;
+                    _ravi2["MaDaiLy"] = dtnhap.Rows[i]["MaDaiLy"].ToString();
+                    _ravi2["TenDaiLy"] = dtnhap.Rows[i]["TenDaiLy"].ToString();
+                    dt2.Rows.Add(_ravi2);
+                }
+            }
+            else if (dtXuat.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtXuat.Rows.Count; i++)
+                {
+                    int iiID_DaiLy = Convert.ToInt32(dtXuat.Rows[i]["ID_DaiLy"].ToString());
+                    double soluongxuat = Convert.ToDouble(dtXuat.Rows[i]["SoLuongXuat"].ToString());
+                    DataRow _ravi2 = dt2.NewRow();
+                    _ravi2["ID_DaiLy"] = iiID_DaiLy;
+                    _ravi2["Ton"] = - soluongxuat;
+                    _ravi2["MaDaiLy"] = dtXuat.Rows[i]["MaDaiLy"].ToString();
+                    _ravi2["TenDaiLy"] = dtXuat.Rows[i]["TenDaiLy"].ToString();
+                    dt2.Rows.Add(_ravi2);
+                }
+            }
+            gridControl2.DataSource = dt2;
         }
         private void Load_Lockup()
         {           
@@ -181,6 +229,14 @@ namespace CtyTinLuong
                 int xxID =Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 HienThi_GridConTrol_2(xxID, dteDenNgay.DateTime);
 
+            }
+        }
+
+        private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
     }
