@@ -16,7 +16,7 @@ namespace CtyTinLuong
         public static bool mbPrint_ALL, mbPrint_One;      
         public static DataTable mdtPrint;
         public static int miiID_VTHH,miID_DaiLy;
-        public static double msoluongTonDauKy, mGiaTriTonDauKy;
+        //public static double msoluongTonDauKy, mGiaTriTonDauKy;
         public static DateTime mdatungay, mdadenngay;
         private void Load_lockup(DateTime xxtungay, DateTime xxdenngay)
         {
@@ -687,8 +687,8 @@ namespace CtyTinLuong
                 {
                     miID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 }
-                msoluongTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
-                mGiaTriTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
+                //msoluongTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
+                //mGiaTriTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
                 DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
                 ff.Show();
 
