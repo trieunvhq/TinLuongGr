@@ -347,7 +347,11 @@
             this.clSoLuong_TonDauKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuong_TonDauKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSoLuong_TonDauKy.Caption = "SL";
+            this.clSoLuong_TonDauKy.DisplayFormat.FormatString = "{0:0.###}";
+            this.clSoLuong_TonDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuong_TonDauKy.FieldName = "SoLuong_TonDauKy";
+            this.clSoLuong_TonDauKy.GroupFormat.FormatString = "{0:0.###}";
+            this.clSoLuong_TonDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuong_TonDauKy.Name = "clSoLuong_TonDauKy";
             this.clSoLuong_TonDauKy.OptionsColumn.AllowEdit = false;
             this.clSoLuong_TonDauKy.OptionsColumn.FixedWidth = true;
@@ -392,7 +396,11 @@
             this.clSoLuongNhap_TrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuongNhap_TrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSoLuongNhap_TrongKy.Caption = "SL";
+            this.clSoLuongNhap_TrongKy.DisplayFormat.FormatString = "{0:0.###}";
+            this.clSoLuongNhap_TrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuongNhap_TrongKy.FieldName = "SoLuongNhap_TrongKy";
+            this.clSoLuongNhap_TrongKy.GroupFormat.FormatString = "{0:0.###}";
+            this.clSoLuongNhap_TrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuongNhap_TrongKy.Name = "clSoLuongNhap_TrongKy";
             this.clSoLuongNhap_TrongKy.OptionsColumn.AllowEdit = false;
             this.clSoLuongNhap_TrongKy.OptionsColumn.FixedWidth = true;
@@ -437,7 +445,11 @@
             this.clSoLuongXuat_TrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuongXuat_TrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSoLuongXuat_TrongKy.Caption = "SL";
+            this.clSoLuongXuat_TrongKy.DisplayFormat.FormatString = "{0:0.###}";
+            this.clSoLuongXuat_TrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuongXuat_TrongKy.FieldName = "SoLuongXuat_TrongKy";
+            this.clSoLuongXuat_TrongKy.GroupFormat.FormatString = "{0:0.###}";
+            this.clSoLuongXuat_TrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuongXuat_TrongKy.Name = "clSoLuongXuat_TrongKy";
             this.clSoLuongXuat_TrongKy.OptionsColumn.AllowEdit = false;
             this.clSoLuongXuat_TrongKy.OptionsColumn.FixedWidth = true;
@@ -481,7 +493,11 @@
             this.clSoLuongTon_CuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuongTon_CuoiKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSoLuongTon_CuoiKy.Caption = "SL";
+            this.clSoLuongTon_CuoiKy.DisplayFormat.FormatString = "{0:0.###}";
+            this.clSoLuongTon_CuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuongTon_CuoiKy.FieldName = "SoLuongTon_CuoiKy";
+            this.clSoLuongTon_CuoiKy.GroupFormat.FormatString = "{0:0.###}";
+            this.clSoLuongTon_CuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuongTon_CuoiKy.Name = "clSoLuongTon_CuoiKy";
             this.clSoLuongTon_CuoiKy.OptionsColumn.AllowEdit = false;
             this.clSoLuongTon_CuoiKy.OptionsColumn.FixedWidth = true;

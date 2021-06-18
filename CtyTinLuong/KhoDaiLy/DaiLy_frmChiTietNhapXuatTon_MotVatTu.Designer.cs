@@ -531,7 +531,11 @@
             this.clNhap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNhap.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clNhap.Caption = "Nhập";
+            this.clNhap.DisplayFormat.FormatString = "{0:0.###}";
+            this.clNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNhap.FieldName = "Nhap";
+            this.clNhap.GroupFormat.FormatString = "{0:0.###}";
+            this.clNhap.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNhap.Name = "clNhap";
             this.clNhap.OptionsColumn.AllowEdit = false;
             this.clNhap.OptionsColumn.FixedWidth = true;
@@ -546,7 +550,11 @@
             this.clXuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clXuat.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clXuat.Caption = "Xuất";
+            this.clXuat.DisplayFormat.FormatString = "{0:0.###}";
+            this.clXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clXuat.FieldName = "Xuat";
+            this.clXuat.GroupFormat.FormatString = "{0:0.###}";
+            this.clXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clXuat.Name = "clXuat";
             this.clXuat.OptionsColumn.AllowEdit = false;
             this.clXuat.OptionsColumn.FixedWidth = true;
@@ -560,7 +568,11 @@
             this.clTon.AppearanceCell.Options.UseTextOptions = true;
             this.clTon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTon.Caption = "Tồn";
+            this.clTon.DisplayFormat.FormatString = "{0:0.###}";
+            this.clTon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTon.FieldName = "Ton";
+            this.clTon.GroupFormat.FormatString = "{0:0.###}";
+            this.clTon.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTon.Name = "clTon";
             this.clTon.OptionsColumn.AllowEdit = false;
             this.clTon.OptionsColumn.FixedWidth = true;
