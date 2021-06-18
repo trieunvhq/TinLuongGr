@@ -135,22 +135,12 @@ namespace CtyTinLuong
 
         private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            //UCDaiLy_BaoCao_NhapXuatTon uccc_NhapKho = new UCDaiLy_BaoCao_NhapXuatTon();
-            //uccc_NhapKho.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(uccc_NhapKho);
-            //uccc_NhapKho.BringToFront();
+            
 
             frmBaoCao_Nhap_Xuat_ton_kho_DaiLy ff = new CtyTinLuong.frmBaoCao_Nhap_Xuat_ton_kho_DaiLy();
             ff.Show();
         }
 
-        private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCDaiLy_NhapXuatTon_theoDaiLy uccc_NhapKho = new UCDaiLy_NhapXuatTon_theoDaiLy();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-        }
 
         private void frmQuanLyKhoDaiLy_Load(object sender, EventArgs e)
         {

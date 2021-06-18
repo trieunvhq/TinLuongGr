@@ -184,8 +184,6 @@ namespace CtyTinLuong
             if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
                 Print_UCDaiLy_NhapXuatTon_theoDaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
-            if (UCDaiLy_NhapXuatTon_theoDaiLy.mbPrint_NXT_Kho == true)
-                Print_UCDaiLy_NhapXuatTon_theoDaiLy(UCDaiLy_NhapXuatTon_theoDaiLy.mdt_ChiTiet_Print);
         }
     }
 }

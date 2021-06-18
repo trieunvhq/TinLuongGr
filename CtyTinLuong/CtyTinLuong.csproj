@@ -383,12 +383,6 @@
     </Compile>
     <Compile Include="KhoDaiLy\clsGapDan_ThamChieuTinhXuatKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsGapDan_ThamChieuTinhXuatKho.cs" />
-    <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.Designer.cs">
-      <DependentUpon>DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAnhLon_KHSX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1507,12 +1501,6 @@
     <Compile Include="KhoThanhPham\UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.Designer.cs">
       <DependentUpon>UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_NhapXuatTon_theoDaiLy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_NhapXuatTon_theoDaiLy.Designer.cs">
-      <DependentUpon>UCDaiLy_NhapXuatTon_theoDaiLy.cs</DependentUpon>
-    </Compile>
     <Compile Include="NganHang_Quy\Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1927,9 +1915,6 @@
     <EmbeddedResource Include="KhoBanThanhPham\UCBTP_XuatKho_LSX_I_C_D.resx">
       <DependentUpon>UCBTP_XuatKho_LSX_I_C_D.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.resx">
-      <DependentUpon>DaiLy_frmChiTietNhapXuatTon_MotVatTu_TungDaiLy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAnhLon_KHSX.resx">
       <DependentUpon>frmAnhLon_KHSX.cs</DependentUpon>
     </EmbeddedResource>
@@ -2034,9 +2019,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_NhapKho_GapDan.resx">
       <DependentUpon>UCDaiLy_NhapKho_GapDan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\UCDaiLy_NhapXuatTon_theoDaiLy.resx">
-      <DependentUpon>UCDaiLy_NhapXuatTon_theoDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UCDaiLy_XuatKho_GapDan.resx">
       <DependentUpon>UCDaiLy_XuatKho_GapDan.cs</DependentUpon>
