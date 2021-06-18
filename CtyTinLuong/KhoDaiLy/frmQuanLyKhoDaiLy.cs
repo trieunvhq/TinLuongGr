@@ -228,10 +228,9 @@ namespace CtyTinLuong
 
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDaiLy_TongHopTonKho uccc_NhapKho = new UCDaiLy_TongHopTonKho();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
+            
+            DaiLy_BaoCao_TonKho ff = new DaiLy_BaoCao_TonKho();
+            ff.Show();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
