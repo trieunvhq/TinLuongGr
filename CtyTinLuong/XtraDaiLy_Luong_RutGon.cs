@@ -35,6 +35,8 @@ namespace CtyTinLuong
                     pTruongPhong.Value = "Phạm Thị Đông";
                 }
             }
+            if (DaiLy_BangLuong.mbPrint_RutGon == true)
+                pThangNam.Value = "Tháng " + DaiLy_BangLuong.miThang.ToString() + " năm " + DaiLy_BangLuong.miNam.ToString() + "";
         }
     }
 }
