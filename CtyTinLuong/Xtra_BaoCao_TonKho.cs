@@ -9,6 +9,12 @@ namespace CtyTinLuong
 {
     public partial class Xtra_BaoCao_TonKho : DevExpress.XtraReports.UI.XtraReport
     {
+        private void TonKho_DaiLy()
+        {
+            DateTime dengay = DaiLy_BaoCao_TonKho.mdadenngay;
+            pNgayThang.Value = "Đến ngày " + dengay.ToString("dd/MM/yyyy") + "";
+
+        }
         public Xtra_BaoCao_TonKho()
         {
             InitializeComponent();
@@ -21,13 +27,13 @@ namespace CtyTinLuong
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
-                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                pNguoilap.Value = dt.Rows[1]["HoTen"].ToString();
 
                 pKeToan.Value = dt.Rows[6]["HoTen"].ToString();
             }
             else
             {
-                pNguoiLap.Value = "Phạm Thị Lành";
+                pNguoilap.Value = "Phạm Thị Lành";
                 pKeToan.Value = "Lê Thị Thuỷ";
             }
         }

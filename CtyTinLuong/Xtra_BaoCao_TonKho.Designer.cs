@@ -62,6 +62,7 @@
             this.pNguoilap = new DevExpress.XtraReports.Parameters.Parameter();
             this.pKeToan = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
+            this.pNgayThang = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
@@ -413,6 +414,11 @@
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
             this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pNgayThang
+            // 
+            this.pNgayThang.Description = "Đến ngày";
+            this.pNgayThang.Name = "pNgayThang";
+            // 
             // Xtra_BaoCao_TonKho
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -430,7 +436,8 @@
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.PKho,
             this.pNguoilap,
-            this.pKeToan});
+            this.pKeToan,
+            this.pNgayThang});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -474,5 +481,6 @@
         private DevExpress.XtraReports.Parameters.Parameter pNguoilap;
         private DevExpress.XtraReports.Parameters.Parameter pKeToan;
         private DataSet_TinLuong dataSet_TinLuong1;
+        private DevExpress.XtraReports.Parameters.Parameter pNgayThang;
     }
 }
