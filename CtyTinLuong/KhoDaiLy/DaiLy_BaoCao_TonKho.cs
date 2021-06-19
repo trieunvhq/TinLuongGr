@@ -12,6 +12,9 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_BaoCao_TonKho : Form
     {
+        public static int miID_VTHHH;
+        public static DateTime mdadenngay;
+
         public DaiLy_BaoCao_TonKho()
         {
             InitializeComponent();
@@ -254,6 +257,17 @@ namespace CtyTinLuong
                 LoadDaTa(kkk, dteDenNgay.DateTime);
             }
            
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+            {
+                miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                mdadenngay = dteDenNgay.DateTime;
+                DaiLy_Frm_TonKho_MotVatTu ff = new DaiLy_Frm_TonKho_MotVatTu();
+                ff.Show();
+            }
         }
     }
 }

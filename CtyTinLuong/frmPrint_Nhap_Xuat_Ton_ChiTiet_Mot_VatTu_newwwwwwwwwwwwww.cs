@@ -85,14 +85,14 @@ namespace CtyTinLuong
             if (DaiLy_frmChiTietNhapXuatTon_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
                 Print_N_X_T_ChiTiet_Mot_Vat_Tu_DaiLy(DaiLy_frmChiTietNhapXuatTon_MotVatTu.mdt_ChiTiet_MotVatTu_N_X_T_Print);
             //Print_DaiLy_Frm_TonKho_MotVatTu
-            if (DaiLy_Frm_TonKho_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
-                Print_DaiLy_Frm_TonKho_MotVatTu(DaiLy_Frm_TonKho_MotVatTu.mdt_ChiTiet_MotVatTu_N_X_T_Print);
+            if (DaiLy_Frm_TonKho_MotVatTu.mbPrint == true)
+                Print_DaiLy_Frm_TonKho_MotVatTu(DaiLy_Frm_TonKho_MotVatTu.mdtPrint);
         }
 
         private void frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww_FormClosed(object sender, FormClosedEventArgs e)
         {
             DaiLy_frmChiTietNhapXuatTon_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = false;
-            DaiLy_Frm_TonKho_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = false;
+            DaiLy_Frm_TonKho_MotVatTu.mbPrint = false;
         }
     }
 }
