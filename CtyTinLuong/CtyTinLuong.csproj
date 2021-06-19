@@ -1851,6 +1851,9 @@
     <EmbeddedResource Include="frmPrint_Nhap_Xuat_Kho.resx">
       <DependentUpon>frmPrint_Nhap_Xuat_Kho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\DaiLy_BangLuong.resx">
+      <DependentUpon>DaiLy_BangLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_BaoCao_TonKho.resx">
       <DependentUpon>DaiLy_BaoCao_TonKho.cs</DependentUpon>
     </EmbeddedResource>

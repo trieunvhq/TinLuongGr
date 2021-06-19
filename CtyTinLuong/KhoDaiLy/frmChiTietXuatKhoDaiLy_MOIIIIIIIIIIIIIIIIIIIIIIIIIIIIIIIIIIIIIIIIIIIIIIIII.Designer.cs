@@ -683,7 +683,11 @@
             this.clDonGia1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clDonGia1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clDonGia1.Caption = "Đơn giá";
+            this.clDonGia1.DisplayFormat.FormatString = "{0:#,##0.00}";
+            this.clDonGia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia1.FieldName = "DonGia";
+            this.clDonGia1.GroupFormat.FormatString = "{0:#,##0.00}";
+            this.clDonGia1.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia1.Name = "clDonGia1";
             this.clDonGia1.OptionsColumn.FixedWidth = true;
             this.clDonGia1.Visible = true;
@@ -696,7 +700,11 @@
             this.clThanhTien1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clThanhTien1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clThanhTien1.Caption = "Thành tiền";
+            this.clThanhTien1.DisplayFormat.FormatString = "{0:#,##0.00}";
+            this.clThanhTien1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clThanhTien1.FieldName = "ThanhTien";
+            this.clThanhTien1.GroupFormat.FormatString = "{0:#,##0.00}";
+            this.clThanhTien1.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clThanhTien1.Name = "clThanhTien1";
             this.clThanhTien1.OptionsColumn.AllowEdit = false;
             this.clThanhTien1.OptionsColumn.FixedWidth = true;
