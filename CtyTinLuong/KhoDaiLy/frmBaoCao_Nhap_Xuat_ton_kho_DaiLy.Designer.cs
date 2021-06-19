@@ -76,8 +76,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btPrint_One = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -101,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,7 +115,6 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Controls.Add(this.btPrint_One);
             this.dataLayoutControl1.Controls.Add(this.btRefresh);
             this.dataLayoutControl1.Controls.Add(this.btLayDuLieu);
             this.dataLayoutControl1.Controls.Add(this.txtTenDaiLy);
@@ -220,9 +216,9 @@
             this.btThoat2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat2.Appearance.Options.UseFont = true;
             this.btThoat2.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat2.Location = new System.Drawing.Point(1069, 624);
+            this.btThoat2.Location = new System.Drawing.Point(1030, 624);
             this.btThoat2.Name = "btThoat2";
-            this.btThoat2.Size = new System.Drawing.Size(85, 22);
+            this.btThoat2.Size = new System.Drawing.Size(124, 22);
             this.btThoat2.StyleController = this.dataLayoutControl1;
             this.btThoat2.TabIndex = 111;
             this.btThoat2.Text = "Thoát";
@@ -233,12 +229,12 @@
             this.btPrint_ALL.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_ALL.Appearance.Options.UseFont = true;
             this.btPrint_ALL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint_ALL.Location = new System.Drawing.Point(792, 624);
+            this.btPrint_ALL.Location = new System.Drawing.Point(913, 624);
             this.btPrint_ALL.Name = "btPrint_ALL";
-            this.btPrint_ALL.Size = new System.Drawing.Size(144, 22);
+            this.btPrint_ALL.Size = new System.Drawing.Size(113, 22);
             this.btPrint_ALL.StyleController = this.dataLayoutControl1;
             this.btPrint_ALL.TabIndex = 95;
-            this.btPrint_ALL.Text = "Print_ALL";
+            this.btPrint_ALL.Text = "Print";
             this.btPrint_ALL.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // gridControl1
@@ -611,8 +607,7 @@
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem10});
+            this.layoutControlItem4});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1156, 648);
@@ -651,18 +646,18 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btPrint_ALL;
-            this.layoutControlItem6.Location = new System.Drawing.Point(790, 622);
+            this.layoutControlItem6.Location = new System.Drawing.Point(911, 622);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(148, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(117, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btThoat2;
-            this.layoutControlItem7.Location = new System.Drawing.Point(1067, 622);
+            this.layoutControlItem7.Location = new System.Drawing.Point(1028, 622);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(89, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(128, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -671,7 +666,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 622);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(790, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(911, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -710,27 +705,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // btPrint_One
-            // 
-            this.btPrint_One.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint_One.Appearance.Options.UseFont = true;
-            this.btPrint_One.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btPrint_One.Location = new System.Drawing.Point(940, 624);
-            this.btPrint_One.Name = "btPrint_One";
-            this.btPrint_One.Size = new System.Drawing.Size(125, 22);
-            this.btPrint_One.StyleController = this.dataLayoutControl1;
-            this.btPrint_One.TabIndex = 112;
-            this.btPrint_One.Text = "Print_One";
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.btPrint_One;
-            this.layoutControlItem10.Location = new System.Drawing.Point(938, 622);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(129, 26);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
             // frmBaoCao_Nhap_Xuat_ton_kho_DaiLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,7 +739,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -818,7 +791,5 @@
         private DevExpress.XtraEditors.SimpleButton btLayDuLieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SimpleButton btPrint_One;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }

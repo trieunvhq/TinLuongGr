@@ -69,7 +69,7 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
-        private void Print_UCDaiLy_NhapXuatTon_theoDaiLy(DataTable dt3)
+        private void Print_NhapXuatTon_theoDaiLy(DataTable dt3)
         {
 
             Xtra_N_X_T_DaiLy_TheoTung_DaiLy xtr111 = new Xtra_N_X_T_DaiLy_TheoTung_DaiLy();
@@ -182,7 +182,7 @@ namespace CtyTinLuong
                 Print_N_X_T_DaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
             if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
-                Print_UCDaiLy_NhapXuatTon_theoDaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
+                Print_NhapXuatTon_theoDaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
         }
     }

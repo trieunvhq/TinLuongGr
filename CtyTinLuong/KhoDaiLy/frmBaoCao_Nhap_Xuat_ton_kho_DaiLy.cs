@@ -426,9 +426,7 @@ namespace CtyTinLuong
 
             }
         }
-
-       
-
+        
         private void btPrint_Click(object sender, EventArgs e)
         {
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
@@ -441,7 +439,7 @@ namespace CtyTinLuong
                 MessageBox.Show("Không có dữ liệu");
             else
             {
-                if (gridMaDaiLy.EditValue == null)
+                if (Convert.ToInt32(gridMaDaiLy.EditValue.ToString())==0)
                 {
                     mbPrint_ALL = true;
                     mbPrint_One = false;
