@@ -190,9 +190,11 @@ namespace CtyTinLuong
   
         private void DaiLy_BaoCao_TonKho_Load(object sender, EventArgs e)
         {
+            Load_Lockup();     
+          
+            gridMaDaiLy.EditValue = 0;
             dteDenNgay.DateTime = DateTime.Now;
-            Load_Lockup();
-            LoadDaTa(0, dteDenNgay.DateTime);
+           
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -210,8 +212,12 @@ namespace CtyTinLuong
 
         private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
         {
+            if(dteDenNgay.EditValue!=null)
+            {
+                int kkk = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                LoadDaTa(kkk, dteDenNgay.DateTime);
+            }
             int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            LoadDaTa(xiddaily, dteDenNgay.DateTime);
             if (xiddaily == 0) txtTenDaiLy.Text = "";
             else
             {
@@ -238,6 +244,16 @@ namespace CtyTinLuong
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridMaDaiLy.EditValue != null)
+            {
+                int kkk = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                LoadDaTa(kkk, dteDenNgay.DateTime);
+            }
+           
         }
     }
 }
