@@ -15,7 +15,7 @@ namespace CtyTinLuong
     {
         public static bool mbPrint_ALL, mbPrint_one;
         public static int miID_VTHH;
-        public static string msMaVT, msTenVT, msMaDaiLy, msTenDaiLy;        
+        public static string msMaVT, msTenVT, msMaDaiLy, msTenDaiLy, msDonViTinh;        
         public static DataTable mdtPrint;
         public static DateTime mdatungay, mdadenngay;
         private void Load_Lockup()
@@ -248,6 +248,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
                 msMaVT = gridMaVT.Text.ToString();
                 msTenVT = txtTenVT.Text.ToString();
+                msDonViTinh = txtDVT.Text.ToString();
                 frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
                 ff.Show();
             }
