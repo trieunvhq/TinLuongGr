@@ -54,16 +54,12 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbLuongDaiLy.NewRow();
-                _ravi["NgayChungTu"] = Convert.ToDateTime(dt3.Rows[i]["NgayChungTu"].ToString());
-                _ravi["SoLuongXuat"] = Convert.ToDouble(dt3.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["TongTienHang"] = Convert.ToDouble(dt3.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
-                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
+             
+                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();                
                 _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
-                _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
-                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                _ravi["TongLuong"] = Convert.ToDouble(dt3.Rows[i]["TongTien"].ToString());
+                _ravi["TamUng"] = Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                _ravi["ThucNhan"] = Convert.ToDouble(dt3.Rows[i]["ThucNhan"].ToString());
                 ds.tbLuongDaiLy.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;
