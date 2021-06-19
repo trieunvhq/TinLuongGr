@@ -54,7 +54,7 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbLuongDaiLy.NewRow();
-             
+                _ravi["STT"] = (i+1).ToString();
                 _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();                
                 _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
                 _ravi["TongLuong"] = Convert.ToDouble(dt3.Rows[i]["TongTien"].ToString());

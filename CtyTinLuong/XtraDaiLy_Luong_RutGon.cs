@@ -31,8 +31,8 @@ namespace CtyTinLuong
             {
                 {
                     pNguoiLap.Value = "Phạm Thị Lành";
-                    pPhoGiamDoc.Value = "Phạm Kim Diện";
-                    pTruongPhong.Value = "Phạm Thị Đông";
+                    pTruongPhong.Value = "Phạm Kim Diện";
+                    pPhoGiamDoc.Value = "Phạm Thị Đông";
                 }
             }
             if (DaiLy_BangLuong.mbPrint_RutGon == true)
