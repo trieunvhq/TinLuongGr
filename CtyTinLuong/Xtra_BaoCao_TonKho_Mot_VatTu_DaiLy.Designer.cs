@@ -153,7 +153,7 @@
             this.xrTableCell24.StylePriority.UseTextAlignment = false;
             this.xrTableCell24.Text = "Thành tiền";
             this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell24.TextFormatString = "{0:n2}";
+            this.xrTableCell24.TextFormatString = "{0:#.00}";
             this.xrTableCell24.Weight = 2.1546499703952229D;
             // 
             // TopMargin
@@ -406,7 +406,7 @@
             this.xrTableCell14.Summary = xrSummary2;
             this.xrTableCell14.Text = "xrTableCell7";
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell14.TextFormatString = "{0:#,#}";
+            this.xrTableCell14.TextFormatString = "{0:#.00}";
             this.xrTableCell14.Weight = 2.1546499703952229D;
             // 
             // pNgayThang

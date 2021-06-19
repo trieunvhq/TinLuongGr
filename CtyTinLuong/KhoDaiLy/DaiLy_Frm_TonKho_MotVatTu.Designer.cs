@@ -293,7 +293,11 @@
             this.clTon.AppearanceCell.Options.UseTextOptions = true;
             this.clTon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clTon.Caption = "Tồn";
+            this.clTon.DisplayFormat.FormatString = "{0:0.###}";
+            this.clTon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTon.FieldName = "Ton";
+            this.clTon.GroupFormat.FormatString = "{0:0.###}";
+            this.clTon.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTon.Name = "clTon";
             this.clTon.OptionsColumn.AllowEdit = false;
             this.clTon.OptionsColumn.FixedWidth = true;
