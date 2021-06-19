@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_BangLuong : Form
     {
-       
+        DateTime ngaybatdau, ngayketthuc;        
         public DaiLy_BangLuong()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace CtyTinLuong
         {
             clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
             DataTable dt_luong = cls1.SA_ID_DaiLy_TinhLuong(xxID_DaiLy, xxtungay, xxdenngay);
+            gridControl2.DataSource = dt_luong;
         }
         private void LoadDaTa(int thang, int nam, DateTime xxtungay, DateTime xxdenngay)
         {
@@ -61,11 +62,13 @@ namespace CtyTinLuong
         private void DaiLy_BangLuong_Load(object sender, EventArgs e)
         {
             
-            txtNam.Text = DateTime.Now.Year.ToString();     
-          
-            clsNgayThang cls = new CtyTinLuong.clsNgayThang();         
+            txtNam.Text = DateTime.Now.Year.ToString();  
             txtThang.Text = (DateTime.Now.Month).ToString();
-
+            int xxthang = Convert.ToInt32(txtThang.Text.ToString());
+            int xxnam = Convert.ToInt32(txtNam.Text.ToString());
+            clsNgayThang cls = new CtyTinLuong.clsNgayThang();
+            ngaybatdau = cls.GetFistDayInMonth(xxnam, xxthang);
+            ngayketthuc = cls.GetLastDayInMonth(xxnam, xxthang);
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -81,11 +84,37 @@ namespace CtyTinLuong
             {
                 int xxnam = Convert.ToInt32(txtNam.Text.ToString());
                 clsNgayThang cls = new CtyTinLuong.clsNgayThang();
-                DateTime ngaybatdau = cls.GetFistDayInMonth(xxnam,xxthang);
-                DateTime ngayketthuc = cls.GetLastDayInMonth(xxnam, xxthang);
+                ngaybatdau = cls.GetFistDayInMonth(xxnam, xxthang);
+                ngayketthuc = cls.GetLastDayInMonth(xxnam, xxthang);
                 LoadDaTa(xxthang, xxnam,ngaybatdau, ngayketthuc);
             }
 
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString()!="")
+            {
+                int xxID_ = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString());               
+                HienThi_GridConTrol_2(xxID_, ngaybatdau, ngayketthuc);
+            }
         }
     }
 }
