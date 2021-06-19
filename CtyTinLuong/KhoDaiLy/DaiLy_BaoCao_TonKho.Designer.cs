@@ -252,6 +252,7 @@
             this.btPrint.StyleController = this.layoutControl1;
             this.btPrint.TabIndex = 112;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // btThoat2
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,8 @@ namespace CtyTinLuong
     {
         public static int miID_VTHHH;
         public static DateTime mdadenngay;
-
+        public static bool mbPrint;
+        public static DataTable mdtPrint;
         public DaiLy_BaoCao_TonKho()
         {
             InitializeComponent();
@@ -268,6 +270,28 @@ namespace CtyTinLuong
                 DaiLy_Frm_TonKho_MotVatTu ff = new DaiLy_Frm_TonKho_MotVatTu();
                 ff.Show();
             }
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+          
+          
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                mbPrint = true;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_BaoCao_TonKho ff = new CtyTinLuong.frmPrint_BaoCao_TonKho();
+                ff.Show();
+            }
+         
         }
     }
 }
