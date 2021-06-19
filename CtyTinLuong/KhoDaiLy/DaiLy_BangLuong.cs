@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_BangLuong : Form
     {
-        DateTime ngaybatdau, ngayketthuc;
+       
         public DaiLy_BangLuong()
         {
             InitializeComponent();
@@ -24,6 +24,8 @@ namespace CtyTinLuong
         }
         private void LoadDaTa(int thang, int nam, DateTime xxtungay, DateTime xxdenngay)
         {
+            gridControl1.DataSource = null;
+
             DataTable dt2 = new DataTable();
          
             dt2.Columns.Add("ID_DaiLy", typeof(string));
@@ -59,11 +61,9 @@ namespace CtyTinLuong
         private void DaiLy_BangLuong_Load(object sender, EventArgs e)
         {
             
-            txtNam.Text = DateTime.Now.Year.ToString();      
+            txtNam.Text = DateTime.Now.Year.ToString();     
           
-            clsNgayThang cls = new CtyTinLuong.clsNgayThang();
-            ngaybatdau = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-            ngayketthuc = cls.GetLastDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            clsNgayThang cls = new CtyTinLuong.clsNgayThang();         
             txtThang.Text = (DateTime.Now.Month).ToString();
 
         }
@@ -80,6 +80,9 @@ namespace CtyTinLuong
             if (txtNam.Text!="")
             {
                 int xxnam = Convert.ToInt32(txtNam.Text.ToString());
+                clsNgayThang cls = new CtyTinLuong.clsNgayThang();
+                DateTime ngaybatdau = cls.GetFistDayInMonth(xxnam,xxthang);
+                DateTime ngayketthuc = cls.GetLastDayInMonth(xxnam, xxthang);
                 LoadDaTa(xxthang, xxnam,ngaybatdau, ngayketthuc);
             }
 
