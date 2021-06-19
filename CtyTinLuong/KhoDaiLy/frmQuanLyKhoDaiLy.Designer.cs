@@ -37,8 +37,6 @@
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navLuongDaiLy = new DevExpress.XtraNavBar.NavBarItem();
-            this.navTamUng = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
@@ -105,8 +103,6 @@
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongDaiLy),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navTamUng),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13)});
             this.navBarGroup2.Name = "navBarGroup2";
@@ -116,18 +112,6 @@
             this.navLuongDaiLy.Caption = "Bảng lương tổng đại lý";
             this.navLuongDaiLy.Name = "navLuongDaiLy";
             this.navLuongDaiLy.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongDaiLy_LinkClicked);
-            // 
-            // navTamUng
-            // 
-            this.navTamUng.Caption = "Tạm ứng đại lý";
-            this.navTamUng.Name = "navTamUng";
-            this.navTamUng.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTamUng_LinkClicked);
-            // 
-            // navBarItem8
-            // 
-            this.navBarItem8.Caption = "Trả lương đại lý";
-            this.navBarItem8.Name = "navBarItem8";
-            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked_1);
             // 
             // navBarItem11
             // 
@@ -217,8 +201,6 @@
             this.navBarItem1,
             this.navBarItem2,
             this.navLuongDaiLy,
-            this.navTamUng,
-            this.navBarItem8,
             this.navBarItem11,
             this.navNhapKhoGapDan,
             this.navXuatKhoGapDan,
@@ -338,9 +320,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navLuongDaiLy;
-        private DevExpress.XtraNavBar.NavBarItem navTamUng;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieuLuong;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem11;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navNhapKhoGapDan;
