@@ -152,14 +152,7 @@ namespace CtyTinLuong
             frmQuanLyKhoDaiLy_Load( sender,  e);
         }
 
-        private void navLuongDaiLy_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            TinhLuongDaiLy();
-            UCDaiLy_TinhLuong uccc_NhapKho = new UCDaiLy_TinhLuong();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-        }
+     
 
         private void navTamUng_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -168,23 +161,10 @@ namespace CtyTinLuong
 
         private void btGuiDuLieuLuong_Click(object sender, EventArgs e)
         {
-            frmGuiDuLieuLuongDaiLy ucc = new frmGuiDuLieuLuongDaiLy();
-            ucc.Show();
+           
         }
 
-        private void navBarItem8_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UCDaiLy_TraLuong uccc_NhapKho = new UCDaiLy_TraLuong();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-        }
-
-        private void navBarItem11_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmChiTietLuong_DaiLy ff = new frmChiTietLuong_DaiLy();
-            ff.Show();
-        }
+      
 
         private void navNhapKhoGapDan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {

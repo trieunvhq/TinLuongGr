@@ -37,6 +37,7 @@
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBangLuongDaiLy = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -52,9 +53,7 @@
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
-            this.btGuiDuLieuLuong = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBangLuongDaiLy = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +109,12 @@
             this.navBarItem13.Caption = "Báo cáo Tồn Kho";
             this.navBarItem13.Name = "navBarItem13";
             this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
+            // 
+            // navBangLuongDaiLy
+            // 
+            this.navBangLuongDaiLy.Caption = "Bảng lương Đại lý";
+            this.navBangLuongDaiLy.Name = "navBangLuongDaiLy";
+            this.navBangLuongDaiLy.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBangLuongDaiLy_LinkClicked);
             // 
             // navBarItem3
             // 
@@ -240,16 +245,6 @@
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
-            // btGuiDuLieuLuong
-            // 
-            this.btGuiDuLieuLuong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieuLuong.Location = new System.Drawing.Point(234, 629);
-            this.btGuiDuLieuLuong.Name = "btGuiDuLieuLuong";
-            this.btGuiDuLieuLuong.Size = new System.Drawing.Size(145, 23);
-            this.btGuiDuLieuLuong.TabIndex = 70;
-            this.btGuiDuLieuLuong.Text = "Gửi dữ liệu Lương Đại lý";
-            this.btGuiDuLieuLuong.Click += new System.EventHandler(this.btGuiDuLieuLuong_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -261,19 +256,12 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // navBangLuongDaiLy
-            // 
-            this.navBangLuongDaiLy.Caption = "Bảng lương Đại lý";
-            this.navBangLuongDaiLy.Name = "navBangLuongDaiLy";
-            this.navBangLuongDaiLy.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBangLuongDaiLy_LinkClicked);
-            // 
             // frmQuanLyKhoDaiLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btGuiDuLieuLuong);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
@@ -310,7 +298,6 @@
         private DevExpress.XtraNavBar.NavBarItem navXuatKho;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
-        private DevExpress.XtraEditors.SimpleButton btGuiDuLieuLuong;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navNhapKhoGapDan;
         private DevExpress.XtraNavBar.NavBarItem navXuatKhoGapDan;

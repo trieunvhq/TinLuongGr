@@ -402,22 +402,22 @@ namespace CtyTinLuong
         }
         private void HienThi_Sua()
         {
-            clsDaiLy_TraLuong cls = new CtyTinLuong.clsDaiLy_TraLuong();
-            cls.iID_TraLuong = UCDaiLy_TraLuong.mID_TraLuong_Sua;
-            DataTable dt = cls.SelectOne();
-            txtSoChungTu.Text = cls.sSoChungTu.Value;
-            dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
-            gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
-            txtDienGiai.Text = cls.sDienGiai.Value;
-            txtSoTienThanhToan.Text = cls.dcSoTien.Value.ToString();
-            txtTongTienLuong.Text = cls.dcSoTien.Value.ToString();
+            //clsDaiLy_TraLuong cls = new CtyTinLuong.clsDaiLy_TraLuong();
+            //cls.iID_TraLuong = UCDaiLy_TraLuong.mID_TraLuong_Sua;
+            //DataTable dt = cls.SelectOne();
+            //txtSoChungTu.Text = cls.sSoChungTu.Value;
+            //dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
+            //gridNguoiLap.EditValue = cls.iID_NguoiLap.Value;
+            //txtDienGiai.Text = cls.sDienGiai.Value;
+            //txtSoTienThanhToan.Text = cls.dcSoTien.Value.ToString();
+            //txtTongTienLuong.Text = cls.dcSoTien.Value.ToString();
 
-            HienThi_GridconTrol_Sua();
-            if (cls.bDaTraLuong == true || cls.bGuiDuLieu==true)
-            {
-                btLuu_Dong.Enabled = false;
-                btLuu_Gui_Dong.Enabled = false;
-            }
+            //HienThi_GridconTrol_Sua();
+            //if (cls.bDaTraLuong == true || cls.bGuiDuLieu==true)
+            //{
+            //    btLuu_Dong.Enabled = false;
+            //    btLuu_Gui_Dong.Enabled = false;
+            //}
            
         }
         private void HienThi_GridconTrol_ThemMoi()
