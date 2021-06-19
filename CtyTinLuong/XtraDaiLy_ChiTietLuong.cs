@@ -16,33 +16,34 @@ namespace CtyTinLuong
 
         private void TopMargin_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            //pThangNam.Value = "Tháng " + frmChiTietLuong_DaiLy.msPrintThang + " năm " + frmChiTietLuong_DaiLy.ssPrintNam + "";
-            //clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            //cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
-            //DataTable dt = cls.SelectAll_ID_DangNhap();
-            //if (dt.Rows.Count > 0)
-            //{
-            //    pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
-            //    pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
-            //    pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                
-            //    //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
-            //    //txtNguoiLap.Text = dt.Rows[1]["HoTen"].ToString();
-            //    //txtNguoiNhan.Text = dt.Rows[2]["HoTen"].ToString();
-            //    //txtthuKhonewww.Text = dt.Rows[3]["HoTen"].ToString();
-            //    //txtTruongPhongKH.Text = dt.Rows[4]["HoTen"].ToString();
-            //    //txtKeToanTruong.Text = dt.Rows[5]["HoTen"].ToString();
-            //    //txtGiamDoc.Text = dt.Rows[6]["HoTen"].ToString();
-            //    //txtCaTruong.Text = dt.Rows[7]["HoTen"].ToString();
-            //    //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
-            //}
-            //else
-            //{
-            //    //pNguoiLap.Value = frmMain.msKhoDaiLy;
-            //    //pGiamDoc.Value = frmMain.msGiamDoc;
-            //    //pTruongPhong.Value = frmMain.msTruongPhongTH;
-            //}
         }
 
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+
+            DateTime ngayx = DateTime.Today;
+            pNgay.Value = "Ngày " + ngayx.ToString("dd") + " tháng " + ngayx.ToString("MM") + " năm " + ngayx.ToString("yyyy") + "";
+            clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
+            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            DataTable dt = cls.SelectAll_ID_DangNhap();
+            if (dt.Rows.Count > 0)
+            {
+                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
+                pPhoGiamDoc.Value = dt.Rows[8]["HoTen"].ToString();
+                pKeToan.Value= dt.Rows[6]["HoTen"].ToString();
+            }
+            else
+            {
+                {
+                    pNguoiLap.Value = "Phạm Thị Lành";
+                    pTruongPhong.Value = "Phạm Kim Diện";
+                    pPhoGiamDoc.Value = "Phạm Thị Đông";
+                    
+                }
+            }
+            if (DaiLy_BangLuong.mbPrint_ALL == true)
+                pThangNam.Value = "Tháng " + DaiLy_BangLuong.miThang.ToString() + " năm " + DaiLy_BangLuong.miNam.ToString() + "";
+        }
     }
 }
