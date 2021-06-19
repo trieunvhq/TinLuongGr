@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Data.Filtering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,11 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_BangLuong : Form
     {
-        DateTime ngaybatdau, ngayketthuc;        
+        DateTime ngaybatdau, ngayketthuc;
+        public static bool mbPrint_ALL, mbPrint_RutGon;
+        public static DataTable mdtPrint;
+        public static DateTime mdaNgayThang;
+        public static int miThang, miNam;
         public DaiLy_BangLuong()
         {
             InitializeComponent();
@@ -104,6 +109,52 @@ namespace CtyTinLuong
         private void gridControl2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btPrint_RutGon_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                mbPrint_ALL = false;
+                mbPrint_RutGon = true;
+                mdaNgayThang = DateTime.Now;
+                miThang = Convert.ToInt32(txtThang.Text);
+                miNam = Convert.ToInt32(txtNam.Text);
+                frmPrint_LuongDaiLy_TrongThang ff = new frmPrint_LuongDaiLy_TrongThang();
+                ff.Show();
+
+            }
+        }
+
+        private void btPrint_ALL_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                mbPrint_ALL = true;
+                mbPrint_RutGon = false;
+                mdaNgayThang = DateTime.Now;
+                miThang = Convert.ToInt32(txtThang.Text);
+                miNam = Convert.ToInt32(txtNam.Text);
+                frmPrint_LuongDaiLy_TrongThang ff = new frmPrint_LuongDaiLy_TrongThang();
+                ff.Show();
+
+            }
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

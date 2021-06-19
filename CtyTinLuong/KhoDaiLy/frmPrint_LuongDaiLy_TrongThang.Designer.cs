@@ -915,6 +915,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_LuongDaiLy_TrongThang";
             this.Text = "Print Lương Đại Lý Trong Tháng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_LuongDaiLy_TrongThang_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_LuongDaiLy_TrongThang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
