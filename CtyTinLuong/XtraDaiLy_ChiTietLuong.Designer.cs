@@ -223,7 +223,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 80F;
+            this.TopMargin.HeightF = 64.375F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -853,7 +853,7 @@
             this.DataMember = "tbLuongDaiLy";
             this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(50, 80, 80, 40);
+            this.Margins = new System.Drawing.Printing.Margins(50, 80, 64, 40);
             this.PageHeight = 827;
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
