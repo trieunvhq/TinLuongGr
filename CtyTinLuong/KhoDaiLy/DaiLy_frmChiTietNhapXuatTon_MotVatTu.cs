@@ -13,10 +13,10 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_frmChiTietNhapXuatTon_MotVatTu : Form
     {
-        public static bool mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = false;
+        public static bool mbPrint_ALL, mbPrint_one;
         public static int miID_VTHH;
-        public static string msNguoiLap_Prtint;
-        public static DataTable mdt_ChiTiet_MotVatTu_N_X_T_Print;
+        public static string msMaVT, msTenVT, msMaDaiLy, msTenDaiLy;        
+        public static DataTable mdtPrint;
         public static DateTime mdatungay, mdadenngay;
         private void Load_Lockup()
         {
@@ -219,19 +219,39 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            miID_VTHH = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
-            mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = true;
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
-            mdt_ChiTiet_MotVatTu_N_X_T_Print = dv1212.ToTable();
-            mdatungay = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
-            mdadenngay = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;
-            msNguoiLap_Prtint = "";
-            frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
-            ff.Show();
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                if (Convert.ToInt32(gridMaDaiLy.EditValue.ToString()) == 0)
+                {
+                    mbPrint_ALL = true;
+                    mbPrint_one = false;
+                }
+                else
+                {
+                    mbPrint_ALL = false;
+                    mbPrint_one = true;
+                    msMaDaiLy = gridMaDaiLy.Text.ToString();
+                    msTenDaiLy = txtTenDaiLy.Text;
+
+                }
+
+                miID_VTHH = Convert.ToInt32(gridMaVT.EditValue.ToString());              
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                msMaVT = gridMaVT.Text.ToString();
+                msTenVT = txtTenVT.Text.ToString();
+                frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
+                ff.Show();
+            }
+            
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
