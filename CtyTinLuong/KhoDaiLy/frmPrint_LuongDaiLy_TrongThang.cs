@@ -47,7 +47,7 @@ namespace CtyTinLuong
         }
         private void Print_DaiLy_BangLuong_RutGon(DataTable dt3)
         {
-            XtraDaiLy_ChiTietLuong xtr111 = new XtraDaiLy_ChiTietLuong();
+            XtraDaiLy_Luong_RutGon xtr111 = new XtraDaiLy_Luong_RutGon();
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbLuongDaiLy.Clone();
             ds.tbLuongDaiLy.Clear();
