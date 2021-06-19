@@ -25,17 +25,20 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbLuongDaiLy.NewRow();
-                _ravi["NgayChungTu"] = Convert.ToDateTime(dt3.Rows[i]["NgayChungTu"].ToString());
-                _ravi["SoLuongXuat"] = Convert.ToDouble(dt3.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["TongTienHang"] = Convert.ToDouble(dt3.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
-                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
+                _ravi["STT"] = (i + 1).ToString();
+                //_ravi["NgayChungTu"] = Convert.ToDateTime(dt3.Rows[i]["NgayChungTu"].ToString());
+                //_ravi["SoChungTu"] = Convert.ToDateTime(dt3.Rows[i]["SoChungTu"].ToString());
+                _ravi["TongLuong"] = Convert.ToDouble(dt3.Rows[i]["TongLuong"].ToString());
+                _ravi["TamUng"] = Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                _ravi["ThucNhan"] = Convert.ToDouble(dt3.Rows[i]["TongLuong"].ToString())- Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();              
                 _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-
+                _ravi["SoLuongXuat"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap"].ToString());
+                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["TongTienHang"] = Convert.ToDouble(dt3.Rows[i]["TongTienHang"].ToString());
                 ds.tbLuongDaiLy.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;
