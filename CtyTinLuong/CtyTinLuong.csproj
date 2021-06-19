@@ -1641,6 +1641,12 @@
     <Compile Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu_DaiLy.Designer.cs">
       <DependentUpon>Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu_DaiLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_BaoCao_TonKho.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_BaoCao_TonKho.Designer.cs">
+      <DependentUpon>Xtra_BaoCao_TonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2485,6 +2491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu_DaiLy.resx">
       <DependentUpon>Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_BaoCao_TonKho.resx">
+      <DependentUpon>Xtra_BaoCao_TonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.resx">
       <DependentUpon>Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy.cs</DependentUpon>
