@@ -70,7 +70,7 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_VTHH_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_VTHH));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_DaiLy__", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_DaiLy));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_DaiLy_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_DaiLy));
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;
             }

@@ -65,11 +65,8 @@ namespace CtyTinLuong
             
             txtNam.Text = DateTime.Now.Year.ToString();  
             txtThang.Text = (DateTime.Now.Month).ToString();
-            int xxthang = Convert.ToInt32(txtThang.Text.ToString());
-            int xxnam = Convert.ToInt32(txtNam.Text.ToString());
-            clsNgayThang cls = new CtyTinLuong.clsNgayThang();
-            ngaybatdau = cls.GetFistDayInMonth(xxnam, xxthang);
-            ngayketthuc = cls.GetLastDayInMonth(xxnam, xxthang);
+            
+           
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
