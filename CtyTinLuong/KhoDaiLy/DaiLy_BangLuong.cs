@@ -24,16 +24,53 @@ namespace CtyTinLuong
         }
         private void LoadDaTa(int thang, int nam, DateTime xxtungay, DateTime xxdenngay)
         {
+            DataTable dt2 = new DataTable();
+         
+            dt2.Columns.Add("ID_DaiLy", typeof(string));
+            dt2.Columns.Add("MaDaiLy", typeof(string));
+            dt2.Columns.Add("TenDaiLy", typeof(string));
+            dt2.Columns.Add("TongTien", typeof(double));
+            dt2.Columns.Add("SoTien_TamUng", typeof(double));          
+            dt2.Columns.Add("ThucNhan", typeof(double));           
+       
+
             clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
-            DataTable dt = cls1.SD_w_TU(thang, nam, xxtungay, xxdenngay);
-            gridControl1.DataSource = dt;
+            DataTable dt3 = cls1.SD_w_TU(thang, nam, xxtungay, xxdenngay);
+            if(dt3.Rows.Count>0)
+            {
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    double tongtienxx = Convert.ToDouble(dt3.Rows[i]["TongTien"].ToString());
+                    double SoTien_TamUngxxx = Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                    DataRow _ravi = dt2.NewRow();
+
+                    _ravi["ID_DaiLy"] = dt3.Rows[i]["ID_DaiLy"].ToString();
+                    _ravi["TongTien"] = tongtienxx;
+                    _ravi["SoTien_TamUng"] = SoTien_TamUngxxx;
+                    _ravi["ThucNhan"] = tongtienxx- SoTien_TamUngxxx;                 
+                    _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
+                    _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
+
+                    dt2.Rows.Add(_ravi);
+                }
+            }
+            gridControl1.DataSource = dt2;
         }
         private void DaiLy_BangLuong_Load(object sender, EventArgs e)
         {
             
-            txtNam.Text = DateTime.Now.Year.ToString();
-            txtThang.Text = DateTime.Now.Month.ToString();
-            
+            txtNam.Text = DateTime.Now.Year.ToString();      
+          
+            clsNgayThang cls = new CtyTinLuong.clsNgayThang();
+            ngaybatdau = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            ngayketthuc = cls.GetLastDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            txtThang.Text = (DateTime.Now.Month).ToString();
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txtThang_TextChanged(object sender, EventArgs e)
@@ -43,7 +80,7 @@ namespace CtyTinLuong
             if (txtNam.Text!="")
             {
                 int xxnam = Convert.ToInt32(txtNam.Text.ToString());
-                LoadDaTa(xxthang, xxnam);
+                LoadDaTa(xxthang, xxnam,ngaybatdau, ngayketthuc);
             }
 
         }
