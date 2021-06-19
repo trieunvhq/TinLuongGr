@@ -268,9 +268,9 @@
             // 
             // txtTenDaiLy
             // 
-            this.txtTenDaiLy.Location = new System.Drawing.Point(281, 28);
+            this.txtTenDaiLy.Location = new System.Drawing.Point(409, 28);
             this.txtTenDaiLy.Name = "txtTenDaiLy";
-            this.txtTenDaiLy.Size = new System.Drawing.Size(699, 20);
+            this.txtTenDaiLy.Size = new System.Drawing.Size(571, 20);
             this.txtTenDaiLy.TabIndex = 109;
             // 
             // gridMaDaiLy
@@ -281,7 +281,7 @@
             this.gridMaDaiLy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridMaDaiLy.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridMaDaiLy.Size = new System.Drawing.Size(173, 20);
+            this.gridMaDaiLy.Size = new System.Drawing.Size(301, 20);
             this.gridMaDaiLy.StyleController = this.layoutControl1;
             this.gridMaDaiLy.TabIndex = 108;
             this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
@@ -631,16 +631,16 @@
             this.layoutControlItem3.Control = this.gridMaDaiLy;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(227, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(355, 24);
             this.layoutControlItem3.Text = "Mã Đại lý";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(47, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtTenDaiLy;
-            this.layoutControlItem4.Location = new System.Drawing.Point(227, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(355, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(753, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(625, 24);
             this.layoutControlItem4.Text = "Tên đại lý";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(47, 13);
             // 
