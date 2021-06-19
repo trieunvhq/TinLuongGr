@@ -238,6 +238,11 @@ namespace CtyTinLuong
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
             ff.Show();
         }
-       
+
+        private void navBangLuongDaiLy_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            DaiLy_BangLuong ff = new CtyTinLuong.DaiLy_BangLuong();
+            ff.Show();
+        }
     }
 }

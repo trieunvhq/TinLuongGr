@@ -36,8 +36,6 @@
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navLuongDaiLy = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
@@ -56,6 +54,7 @@
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.btGuiDuLieuLuong = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBangLuongDaiLy = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -102,26 +101,13 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongDaiLy),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBangLuongDaiLy)});
             this.navBarGroup2.Name = "navBarGroup2";
-            // 
-            // navLuongDaiLy
-            // 
-            this.navLuongDaiLy.Caption = "Bảng lương tổng đại lý";
-            this.navLuongDaiLy.Name = "navLuongDaiLy";
-            this.navLuongDaiLy.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongDaiLy_LinkClicked);
-            // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Caption = "Bảng chi tiết lương ĐL";
-            this.navBarItem11.Name = "navBarItem11";
-            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
             // 
             // navBarItem13
             // 
-            this.navBarItem13.Caption = "BC Tồn kho";
+            this.navBarItem13.Caption = "Báo cáo Tồn Kho";
             this.navBarItem13.Name = "navBarItem13";
             this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
             // 
@@ -200,14 +186,13 @@
             this.navXuatKho,
             this.navBarItem1,
             this.navBarItem2,
-            this.navLuongDaiLy,
-            this.navBarItem11,
             this.navNhapKhoGapDan,
             this.navXuatKhoGapDan,
             this.navBarItem14,
             this.navBarItem15,
             this.navBarItem12,
-            this.navBarItem13});
+            this.navBarItem13,
+            this.navBangLuongDaiLy});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -276,6 +261,12 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // navBangLuongDaiLy
+            // 
+            this.navBangLuongDaiLy.Caption = "Bảng lương Đại lý";
+            this.navBangLuongDaiLy.Name = "navBangLuongDaiLy";
+            this.navBangLuongDaiLy.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBangLuongDaiLy_LinkClicked);
+            // 
             // frmQuanLyKhoDaiLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,9 +310,7 @@
         private DevExpress.XtraNavBar.NavBarItem navXuatKho;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
-        private DevExpress.XtraNavBar.NavBarItem navLuongDaiLy;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieuLuong;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem11;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navNhapKhoGapDan;
         private DevExpress.XtraNavBar.NavBarItem navXuatKhoGapDan;
@@ -330,5 +319,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem12;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private DevExpress.XtraNavBar.NavBarItem navBangLuongDaiLy;
     }
 }
