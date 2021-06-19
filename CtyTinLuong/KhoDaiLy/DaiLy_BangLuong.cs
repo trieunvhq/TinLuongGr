@@ -22,9 +22,11 @@ namespace CtyTinLuong
             clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
             DataTable dt_luong = cls1.SA_ID_DaiLy_TinhLuong(xxID_DaiLy, xxtungay, xxdenngay);
         }
-        private void LoadDaTa(int thang, int nam)
+        private void LoadDaTa(int thang, int nam, DateTime xxtungay, DateTime xxdenngay)
         {
-           
+            clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
+            DataTable dt = cls1.SD_w_TU(thang, nam, xxtungay, xxdenngay);
+            gridControl1.DataSource = dt;
         }
         private void DaiLy_BangLuong_Load(object sender, EventArgs e)
         {
