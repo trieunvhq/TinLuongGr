@@ -5579,7 +5579,7 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NXT_Mot_VatTu_NewwRow AddNXT_Mot_VatTu_NewwRow(string NgayThang, string SoChungTu_NhapKho, string SoChungTu_XuatKho, string DienGiai, string Nhap, string Xuat, string Ton, string MaDaiLy, string TenDaiLy) {
+            public NXT_Mot_VatTu_NewwRow AddNXT_Mot_VatTu_NewwRow(string NgayThang, string SoChungTu_NhapKho, string SoChungTu_XuatKho, string DienGiai, double Nhap, double Xuat, double Ton, string MaDaiLy, string TenDaiLy) {
                 NXT_Mot_VatTu_NewwRow rowNXT_Mot_VatTu_NewwRow = ((NXT_Mot_VatTu_NewwRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NgayThang,
@@ -5635,11 +5635,11 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnSoChungTu_XuatKho);
                 this.columnDienGiai = new global::System.Data.DataColumn("DienGiai", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDienGiai);
-                this.columnNhap = new global::System.Data.DataColumn("Nhap", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnNhap = new global::System.Data.DataColumn("Nhap", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNhap);
-                this.columnXuat = new global::System.Data.DataColumn("Xuat", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnXuat = new global::System.Data.DataColumn("Xuat", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnXuat);
-                this.columnTon = new global::System.Data.DataColumn("Ton", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTon = new global::System.Data.DataColumn("Ton", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTon);
                 this.columnMaDaiLy = new global::System.Data.DataColumn("MaDaiLy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaDaiLy);
@@ -15279,10 +15279,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nhap {
+            public double Nhap {
                 get {
                     try {
-                        return ((string)(this[this.tableNXT_Mot_VatTu_Neww.NhapColumn]));
+                        return ((double)(this[this.tableNXT_Mot_VatTu_Neww.NhapColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Nhap\' in table \'NXT_Mot_VatTu_Neww\' is DBNull.", e);
@@ -15295,10 +15295,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Xuat {
+            public double Xuat {
                 get {
                     try {
-                        return ((string)(this[this.tableNXT_Mot_VatTu_Neww.XuatColumn]));
+                        return ((double)(this[this.tableNXT_Mot_VatTu_Neww.XuatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Xuat\' in table \'NXT_Mot_VatTu_Neww\' is DBNull.", e);
@@ -15311,10 +15311,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Ton {
+            public double Ton {
                 get {
                     try {
-                        return ((string)(this[this.tableNXT_Mot_VatTu_Neww.TonColumn]));
+                        return ((double)(this[this.tableNXT_Mot_VatTu_Neww.TonColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ton\' in table \'NXT_Mot_VatTu_Neww\' is DBNull.", e);
