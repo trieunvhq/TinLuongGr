@@ -216,7 +216,7 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(697F, 26.125F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "BÁO CÁO TỒN KHO ĐẠI LÝ";
+            this.xrLabel2.Text = "BÁO CÁO TỒN KHO THEO KHO";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel17
