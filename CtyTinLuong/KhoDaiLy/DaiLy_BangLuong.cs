@@ -76,10 +76,10 @@ namespace CtyTinLuong
 
         private void txtThang_TextChanged(object sender, EventArgs e)
         {
-            int xxthang = Convert.ToInt32(txtThang.Text.ToString());         
-
-            if (txtNam.Text!="")
+           
+            if (txtNam.Text!="" & txtThang.Text != "" )
             {
+                int xxthang = Convert.ToInt32(txtThang.Text.ToString());
                 int xxnam = Convert.ToInt32(txtNam.Text.ToString());
                 clsNgayThang cls = new CtyTinLuong.clsNgayThang();
                 ngaybatdau = cls.GetFistDayInMonth(xxnam, xxthang);
