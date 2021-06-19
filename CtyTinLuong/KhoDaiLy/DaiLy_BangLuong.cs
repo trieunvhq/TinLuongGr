@@ -19,6 +19,7 @@ namespace CtyTinLuong
         }
         private void HienThi_GridConTrol_2(int xxID_DaiLy, DateTime xxtungay, DateTime xxdenngay)
         {
+            gridControl2.DataSource = null;
             clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
             DataTable dt_luong = cls1.SA_ID_DaiLy_TinhLuong(xxID_DaiLy, xxtungay, xxdenngay);
             gridControl2.DataSource = dt_luong;
