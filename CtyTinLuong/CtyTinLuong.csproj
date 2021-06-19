@@ -1587,6 +1587,12 @@
     <Compile Include="XtraDaiLy_ChiTietLuong.Designer.cs">
       <DependentUpon>XtraDaiLy_ChiTietLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraDaiLy_Luong_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraDaiLy_Luong_RutGon.Designer.cs">
+      <DependentUpon>XtraDaiLy_Luong_RutGon.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
