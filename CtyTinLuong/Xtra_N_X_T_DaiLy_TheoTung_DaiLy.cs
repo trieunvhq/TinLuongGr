@@ -19,18 +19,18 @@ namespace CtyTinLuong
                 pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
                 pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                 pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
-
-              
+                
             }
             else
             {
               
             }
 
-            //DateTime denngay = UCDaiLy_NhapXuatTon_theoDaiLy.mdadenngay;
-            //DateTime tungay = UCDaiLy_NhapXuatTon_theoDaiLy.mdatungay;
+            DateTime denngay = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;
+            DateTime tungay = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
 
-            //pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
+            pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
+            pDaiLy.Value = "Kho: " + frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.msTenDaiLy + " (" + frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.msMaDaiLy + ")";
         }
         public Xtra_N_X_T_DaiLy_TheoTung_DaiLy()
         {
@@ -39,7 +39,8 @@ namespace CtyTinLuong
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            
+            if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
+                Print_N_X_T_DaiLy_TheoTung_DaiLy();
         }
     }
 }

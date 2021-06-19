@@ -16,7 +16,7 @@ namespace CtyTinLuong
         public static bool mbPrint_ALL, mbPrint_One;      
         public static DataTable mdtPrint;
         public static int miiID_VTHH,miID_DaiLy;
-      
+        public static string msMaDaiLy, msTenDaiLy;
         public static DateTime mdatungay, mdadenngay;
         private void Load_lockup()
         {
@@ -238,6 +238,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("TenVTHH", typeof(string));
             dt2.Columns.Add("DonViTinh", typeof(string));
 
+         
             dt2.Columns.Add("SoLuong_TonDauKy", typeof(double));
             dt2.Columns.Add("GiaTri_TonDauKy", typeof(double));
 
@@ -448,6 +449,9 @@ namespace CtyTinLuong
                 {
                     mbPrint_ALL = false;
                     mbPrint_One = true;
+                    msMaDaiLy = gridMaDaiLy.Text.ToString();
+                    msTenDaiLy = txtTenDaiLy.Text;
+                   
                 }
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;

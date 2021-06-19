@@ -69,7 +69,7 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
-        private void Print_NhapXuatTon_theoDaiLy(DataTable dt3)
+        private void Print_NhapXuatTon_Theo_Tung_DaiLy(DataTable dt3)
         {
 
             Xtra_N_X_T_DaiLy_TheoTung_DaiLy xtr111 = new Xtra_N_X_T_DaiLy_TheoTung_DaiLy();
@@ -86,8 +86,8 @@ namespace CtyTinLuong
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
 
-                _ravi["MaDaily"] = dt3.Rows[i]["MaDaily"].ToString();
-                _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
+                //_ravi["MaDaily"] = dt3.Rows[i]["MaDaily"].ToString();
+                //_ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
 
                 _ravi["SoLuong_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());
                 _ravi["GiaTri_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
@@ -182,7 +182,7 @@ namespace CtyTinLuong
                 Print_N_X_T_DaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
             if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
-                Print_NhapXuatTon_theoDaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
+                Print_NhapXuatTon_Theo_Tung_DaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
 
         }
     }
