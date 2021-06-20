@@ -23,8 +23,8 @@ namespace CtyTinLuong
         {
             DataTable dt_NhapTruoc = new DataTable();
             DataTable dt_XuatTruoc = new DataTable();
-            clsGapDan_ChiTiet_NhapKho cls1 = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
-            clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
+            clsKhoNPL_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
             dt_NhapTruoc = cls1.SA_distinct_NhapTruocKy(xxtungay);
             dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy(xxtungay);
             DataTable dt2 = new DataTable();
@@ -99,8 +99,8 @@ namespace CtyTinLuong
         }
         private DataTable LoadDaTa_Nhap_Xuat_TrongKy(DateTime xxtungay, DateTime xxdenngay)
         {
-            clsGapDan_ChiTiet_NhapKho cls1 = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
-            clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
+            clsKhoNPL_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
             DataTable dt_NhapTrongKy = new DataTable();
             DataTable dt_XuatTrongKy = new DataTable();
 
