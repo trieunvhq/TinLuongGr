@@ -32,10 +32,8 @@ namespace CtyTinLuong
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
             cls.iID_VTHH = frmChiTietNhapXuatTon_MotVatTu.miID_VTHH;
-            DataTable dtxx = cls.SelectOne();           
-            pMaVT.Value = "Mã vật tư: " + cls.sMaVT.Value + "";
-            pTenVT.Value = "Tên vật tư: " + cls.sTenVTHH.Value + "";
-            pDVT.Value = "ĐVT: " + cls.sDonViTinh.Value + "";
+            DataTable dtxx = cls.SelectOne();    
+            pTenVT.Value = "Mã: " + cls.sMaVT.Value + ":  " + cls.sTenVTHH.Value + "  (" + cls.sDonViTinh.Value + ")";
         }
         private void NXT_Kho_BanThanhPham()
         {
@@ -62,7 +60,7 @@ namespace CtyTinLuong
             cls.iID_VTHH = frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham.miID_VTHH;
             DataTable dtxx = cls.SelectOne();
             pTenVT.Value = "Mã: " + cls.sMaVT.Value + ":  " + cls.sTenVTHH.Value + "  (" + cls.sDonViTinh.Value + ")";
-            pDauKy.Value = "Tồn đầu kỳ: " + frmBaoCaoNhapXuatTon_BanThanhPham.msoluongTonDauKy.ToString() + "       Giá trị: " + frmBaoCaoNhapXuatTon_BanThanhPham.mGiaTriTonDauKy.ToString() + "";
+           // pDauKy.Value = "Tồn đầu kỳ: " + frmBaoCaoNhapXuatTon_BanThanhPham.msoluongTonDauKy.ToString() + "       Giá trị: " + frmBaoCaoNhapXuatTon_BanThanhPham.mGiaTriTonDauKy.ToString() + "";
         }
 
         private void NXT_Kho_ThanhPham()
@@ -90,7 +88,7 @@ namespace CtyTinLuong
             cls.iID_VTHH = frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.miID_VTHH;
             DataTable dtxx = cls.SelectOne();
             pTenVT.Value = "Mã: " + cls.sMaVT.Value + ":  " + cls.sTenVTHH.Value + "  (" + cls.sDonViTinh.Value + ")";
-            pDauKy.Value = "Tồn đầu kỳ: " + frmBaoCaoNXT_KhoThanhPham.msoluongTonDauKy.ToString() + "       Giá trị: " + frmBaoCaoNXT_KhoThanhPham.mGiaTriTonDauKy.ToString() + "";
+            //pDauKy.Value = "Tồn đầu kỳ: " + frmBaoCaoNXT_KhoThanhPham.msoluongTonDauKy.ToString() + "       Giá trị: " + frmBaoCaoNXT_KhoThanhPham.mGiaTriTonDauKy.ToString() + "";
         }
         private void NXT_Kho_GapDan()
         {
@@ -106,18 +104,16 @@ namespace CtyTinLuong
             }
             else
             {
-                //pTruongPhong.Value = frmMain.msTruongPhongTH;
-                //pGiamDoc.Value = frmMain.msGiamDoc;
+                pNguoiLap.Value = "Phạm Thị Lành";
+                pTruongPhong.Value = "Phạm Kim Diện";
+                pGiamDoc.Value = "Bùi Ngọc Kiên";
             }
 
             DateTime denngay = GapDan_frmChiTietNhapXuatTon_MotVatTu.mdadenngay;
             DateTime tungay = GapDan_frmChiTietNhapXuatTon_MotVatTu.mdatungay;
-            pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            cls.iID_VTHH = GapDan_frmChiTietNhapXuatTon_MotVatTu.miID_VTHH;
-            DataTable dtxx = cls.SelectOne();
-            pTenVT.Value = "Mã: " + cls.sMaVT.Value + ":  " + cls.sTenVTHH.Value + "  (" + cls.sDonViTinh.Value + ")";
-            pDauKy.Value = "Tồn đầu kỳ: " + UCDaiLy_GapDan_baocao_NXT.msoluongTonDauKy.ToString() + "       Giá trị: " + UCDaiLy_GapDan_baocao_NXT.mGiaTriTonDauKy.ToString() + "";
+            pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";           
+            pTenVT.Value = "Mã: " + GapDan_frmChiTietNhapXuatTon_MotVatTu.msMaVT + ":  " + GapDan_frmChiTietNhapXuatTon_MotVatTu.msTenVTHH + "  (" + GapDan_frmChiTietNhapXuatTon_MotVatTu.msDonViTinh + ")";
+            //pDauKy.Value = "Tồn đầu kỳ: " + GapDan_frmChiTietNhapXuatTon_MotVatTu.msoluongTonDauKy.ToString() + "       Giá trị: " + GapDan_frmChiTietNhapXuatTon_MotVatTu.mGiaTriTonDauKy.ToString() + "";
         }
 
         public Xtra_BaoCao_N_X_T_ChiTiet_Mot_VatTu()
@@ -127,6 +123,7 @@ namespace CtyTinLuong
 
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
+            
 
             if (frmChiTietNhapXuatTon_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
                 NXT_Kho_NPL();
@@ -134,7 +131,7 @@ namespace CtyTinLuong
                 NXT_Kho_BanThanhPham();
             if (frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
                 NXT_Kho_ThanhPham();
-            if (GapDan_frmChiTietNhapXuatTon_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
+            if (GapDan_frmChiTietNhapXuatTon_MotVatTu.mbPrint == true)
                 NXT_Kho_GapDan();
         }
 

@@ -101,8 +101,8 @@ namespace CtyTinLuong
                 Print_N_X_T_ChiTiet_Mot_Vat_Tu(frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham.mdt_ChiTiet_MotVatTu_N_X_T_Print);
             if (frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
                 Print_N_X_T_ChiTiet_Mot_Vat_Tu(frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.mdt_ChiTiet_MotVatTu_N_X_T_Print);          
-            if (GapDan_frmChiTietNhapXuatTon_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
-                Print_N_X_T_ChiTiet_Mot_Vat_Tu(GapDan_frmChiTietNhapXuatTon_MotVatTu.mdt_ChiTiet_MotVatTu_N_X_T_Print);
+            if (GapDan_frmChiTietNhapXuatTon_MotVatTu.mbPrint == true)
+                Print_N_X_T_ChiTiet_Mot_Vat_Tu(GapDan_frmChiTietNhapXuatTon_MotVatTu.mdtPrint);
 
             //if (DaiLy_frmChiTietNhapXuatTon_MotVatTu.mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu == true)
             //    Print_N_X_T_ChiTiet_Mot_Vat_Tu_DaiLy(DaiLy_frmChiTietNhapXuatTon_MotVatTu.mdt_ChiTiet_MotVatTu_N_X_T_Print);

@@ -15,8 +15,7 @@ namespace CtyTinLuong
     {
         public static bool mbPrint;
         public static DataTable mdtPrint;
-        public static int miiID_VTHH, miID_DaiLy;
-        public static string msMaDaiLy, msTenDaiLy;
+        public static int miiID_VTHH;    
         public static DateTime mdatungay, mdadenngay;
    
         private DataTable LoadDaTa_TonDauKy( DateTime xxtungay)
@@ -316,7 +315,7 @@ namespace CtyTinLuong
                 miiID_VTHH = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());                
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-                DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
+                GapDan_frmChiTietNhapXuatTon_MotVatTu ff = new GapDan_frmChiTietNhapXuatTon_MotVatTu();
                 ff.Show();
 
             }

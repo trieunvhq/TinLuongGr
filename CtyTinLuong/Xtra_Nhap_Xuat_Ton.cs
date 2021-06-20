@@ -25,15 +25,6 @@ namespace CtyTinLuong
                 pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                 pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
 
-                //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
-                //txtNguoiLap.Text = dt.Rows[1]["HoTen"].ToString();
-                //txtNguoiNhan.Text = dt.Rows[2]["HoTen"].ToString();
-                //txtthuKhonewww.Text = dt.Rows[3]["HoTen"].ToString();
-                //txtTruongPhongKH.Text = dt.Rows[4]["HoTen"].ToString();
-                //txtKeToanTruong.Text = dt.Rows[5]["HoTen"].ToString();
-                //txtGiamDoc.Text = dt.Rows[6]["HoTen"].ToString();
-                //txtCaTruong.Text = dt.Rows[7]["HoTen"].ToString();
-                //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
             }
             else
             {
@@ -59,15 +50,6 @@ namespace CtyTinLuong
                 pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                 pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
 
-                //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
-                //txtNguoiLap.Text = dt.Rows[1]["HoTen"].ToString();
-                //txtNguoiNhan.Text = dt.Rows[2]["HoTen"].ToString();
-                //txtthuKhonewww.Text = dt.Rows[3]["HoTen"].ToString();
-                //txtTruongPhongKH.Text = dt.Rows[4]["HoTen"].ToString();
-                //txtKeToanTruong.Text = dt.Rows[5]["HoTen"].ToString();
-                //txtGiamDoc.Text = dt.Rows[6]["HoTen"].ToString();
-                //txtCaTruong.Text = dt.Rows[7]["HoTen"].ToString();
-                //txtNguoiGiao.Text = dt.Rows[0]["HoTen"].ToString();
             }
             else
             {
@@ -119,12 +101,11 @@ namespace CtyTinLuong
             }
             else
             {
-                //pTruongPhong.Value = frmMain.msTruongPhongTH;
-                //pGiamDoc.Value = frmMain.msGiamDoc;
+               
             }
 
-            DateTime denngay = UCDaiLy_GapDan_baocao_NXT.mdadenngay;
-            DateTime tungay = UCDaiLy_GapDan_baocao_NXT.mdatungay;
+            DateTime denngay = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdadenngay;
+            DateTime tungay = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdatungay;
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
         }
         private void PageHeader_AfterPrint(object sender, EventArgs e)
@@ -141,7 +122,7 @@ namespace CtyTinLuong
             {
                 NXT_Kho_ThanhPham();
             }
-            if (UCDaiLy_GapDan_baocao_NXT.mbPrint_NXT_Kho == true)
+            if (DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mbPrint == true)
             {
                 NXT_Kho_GapDan();
             }

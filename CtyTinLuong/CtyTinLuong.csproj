@@ -1477,12 +1477,6 @@
     <Compile Include="KhoThanhPham\UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.Designer.cs">
       <DependentUpon>UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_GapDan_baocao_NXT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\UCDaiLy_GapDan_baocao_NXT.Designer.cs">
-      <DependentUpon>UCDaiLy_GapDan_baocao_NXT.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoThanhPham\UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2431,9 +2425,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\UCBanThanhPham_XuatKho_Khac.resx">
       <DependentUpon>UCBanThanhPham_XuatKho_Khac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\UCDaiLy_GapDan_baocao_NXT.resx">
-      <DependentUpon>UCDaiLy_GapDan_baocao_NXT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_GapDan.resx">
       <DependentUpon>UCNPL_XuatKho_GapDan.cs</DependentUpon>
