@@ -179,7 +179,7 @@ namespace CtyTinLuong
             mdt_ChiTiet_MotVatTu_N_X_T_Print = dv1212.ToTable();
             mdatungay = frmBaoCaoNXT.mdatungay;
             mdadenngay = frmBaoCaoNXT.mdadenngay;
-            msNguoiLap_Prtint = "";
+          
             if (mdt_ChiTiet_MotVatTu_N_X_T_Print.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu");
