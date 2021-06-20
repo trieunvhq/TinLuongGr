@@ -11,9 +11,7 @@ namespace CtyTinLuong
     {
         private void BaoCao_TonKho_Mot_VatTu_DaiLy()
         {
-            //DaiLy_Frm_TonKho_MotVatTu
-           
-
+          
             DateTime denngay = DaiLy_Frm_TonKho_MotVatTu.mdadenngay;
           
             pNgayThang.Value = "Đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";

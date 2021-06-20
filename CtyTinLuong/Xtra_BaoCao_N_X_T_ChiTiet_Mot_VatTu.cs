@@ -23,8 +23,9 @@ namespace CtyTinLuong
             }
             else
             {
-                //pTruongPhong.Value = frmMain.msTruongPhongTH;
-                //pGiamDoc.Value = frmMain.msGiamDoc;
+                //pNguoiLap.Value = "Phạm Thị Lành";
+                pTruongPhong.Value = "Phạm Kim Diện";
+                pGiamDoc.Value = "Bùi Ngọc Kiên";
             }
             pKho.Value = "Kho Nguyên phụ liệu";
             DateTime denngay = frmChiTietNhapXuatTon_MotVatTu.mdadenngay;
@@ -49,8 +50,9 @@ namespace CtyTinLuong
             }
             else
             {
-                //pTruongPhong.Value = frmMain.msTruongPhongTH;
-                //pGiamDoc.Value = frmMain.msGiamDoc;
+                //pNguoiLap.Value = "Phạm Thị Lành";
+                pTruongPhong.Value = "Phạm Kim Diện";
+                pGiamDoc.Value = "Bùi Ngọc Kiên";
             }
 
             DateTime denngay = frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham.mdadenngay;
@@ -77,8 +79,9 @@ namespace CtyTinLuong
             }
             else
             {
-                //pTruongPhong.Value = frmMain.msTruongPhongTH;
-                //pGiamDoc.Value = frmMain.msGiamDoc;
+                pNguoiLap.Value = "";
+                pTruongPhong.Value = "Phạm Kim Diện";
+                pGiamDoc.Value = "Bùi Ngọc Kiên";
             }
 
             DateTime denngay = frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham.mdadenngay;

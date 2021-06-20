@@ -11,6 +11,7 @@ namespace CtyTinLuong
     {
         private void TonKho_DaiLy()
         {
+            
             DateTime dengay = DaiLy_BaoCao_TonKho.mdadenngay;
             pNgayThang.Value = "Đến ngày " + dengay.ToString("dd/MM/yyyy") + "";
 
@@ -22,6 +23,7 @@ namespace CtyTinLuong
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
+            
             clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
             clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();

@@ -49,7 +49,9 @@ namespace CtyTinLuong
             }
             else
             {
-
+                pNguoiLap.Value = "Phạm Thị Lành";
+                pTruongPhong.Value = "Phạm Kim Diện";
+                pGiamDoc.Value = "Bùi Ngọc Kiên";
             }
 
             if (DaiLy_frmChiTietNhapXuatTon_MotVatTu.mbPrint_ALL == true)

@@ -200,6 +200,7 @@
             this.xrTableCell20.StylePriority.UseTextAlignment = false;
             this.xrTableCell20.Text = "Số lượng";
             this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell20.TextFormatString = "{0:#.00}";
             this.xrTableCell20.Weight = 0.886876243837673D;
             // 
             // xrTableCell21
@@ -219,6 +220,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SoLuongNhap_TrongKy]")});
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.Text = "Số lượng";
+            this.xrTableCell22.TextFormatString = "{0:#.00}";
             this.xrTableCell22.Weight = 1.1249538477301D;
             // 
             // xrTableCell23
@@ -238,6 +240,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SoLuongXuat_TrongKy]")});
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.Text = "Số lượng";
+            this.xrTableCell24.TextFormatString = "{0:#.00}";
             this.xrTableCell24.Weight = 0.998740334558231D;
             // 
             // xrTableCell26
@@ -255,6 +258,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SoLuongTon_CuoiKy]")});
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.Text = "xrTableCell28";
+            this.xrTableCell28.TextFormatString = "{0:#.00}";
             this.xrTableCell28.Weight = 1.06680101444392D;
             // 
             // xrTableCell15
@@ -319,14 +323,14 @@
             this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pKho]")});
             this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 97.50002F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 83.95837F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(1019F, 23F);
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
             this.xrLabel6.Text = "xrLabel6";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel2
             // 
