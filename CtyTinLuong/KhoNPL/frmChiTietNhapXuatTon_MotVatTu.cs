@@ -181,10 +181,10 @@ namespace CtyTinLuong
             }
             else
             {
-                miID_VTHH = frmBaoCaoNXT.miiID_VTHH;
+                miID_VTHH = Convert.ToInt32(gridMaVT.EditValue.ToString());
                 mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = true;
-                mdatungay = frmBaoCaoNXT.mdatungay;
-                mdadenngay = frmBaoCaoNXT.mdadenngay;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
                 frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu();
                 ff.Show();
             }
