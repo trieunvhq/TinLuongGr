@@ -101,7 +101,9 @@ namespace CtyTinLuong
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             MuaHang_frmCongNo ff = new MuaHang_frmCongNo();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
     }
 }

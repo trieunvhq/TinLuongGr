@@ -180,7 +180,9 @@ namespace CtyTinLuong
                 mdteDenNgay = dteDenNgay.DateTime;             
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 MuaHang_frmChiTietCongNo_MuaHang ff = new MuaHang_frmChiTietCongNo_MuaHang();
-                ff.Show();
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
         }
 
