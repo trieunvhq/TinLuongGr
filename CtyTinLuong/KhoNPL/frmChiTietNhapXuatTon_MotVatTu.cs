@@ -11,32 +11,34 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class GapDan_frmChiTietNhapXuatTon_MotVatTu : Form
+    //thay doi huu 2222222
+    public partial class frmChiTietNhapXuatTon_MotVatTu : Form
     {
-
-        public static bool mbPrint = false;
-        public static string msMaVT, msTenVTHH, msDonViTinh;
-        public static DataTable mdtPrint;
+        public static bool mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = false;
+        public static int miID_VTHH;
+        public static string msNguoiLap_Prtint;
+        public static DataTable mdt_ChiTiet_MotVatTu_N_X_T_Print;
         public static DateTime mdatungay, mdadenngay;
+
         private void Load_Lockup()
         {
-            clsGapDan_ChiTiet_NhapKho cls = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
+            clsKhoNPL_tbChiTietNhapKho cls = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
             DataTable dt2 = cls.SD_MaVT_Load_lockUP();
 
             gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";
-            
+
         }
         private void LoadDaTa(int xxID_VTHH___, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt_NhapTruoc = new DataTable();
             DataTable dt_XuatTruoc = new DataTable();
-            clsGapDan_ChiTiet_NhapKho cls1 = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
-            clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
+            clsKhoNPL_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
 
-            dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH(xxID_VTHH___,  xxtungay);
-            dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH(xxID_VTHH___,  xxtungay);
+            dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH(xxID_VTHH___, xxtungay);
+            dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH(xxID_VTHH___, xxtungay);
 
             DataTable dt2xxxx = new DataTable();
 
@@ -45,7 +47,7 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("Xuat", typeof(string));
             dt2xxxx.Columns.Add("Ton", typeof(string));
             dt2xxxx.Columns.Add("SoChungTu_NhapKho", typeof(string));
-            dt2xxxx.Columns.Add("SoChungTu_XuatKho", typeof(string));           
+            dt2xxxx.Columns.Add("SoChungTu_XuatKho", typeof(string));
             dt2xxxx.Columns.Add("DienGiai", typeof(string));
 
             double SoLuong_NhapTruocKy, SoLuong_XuatTruocKy, SoLuong_TonDauKy = 0;
@@ -80,8 +82,8 @@ namespace CtyTinLuong
                 dt2xxxx.Rows.Add(_ravi);
             }
 
-            cls1 = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
-            cls2 = new clsGapDan_ChiTiet_XuatKho();
+            cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
+            cls2 = new clsKhoNPL_tbChiTietXuatKho();
             DataTable dtnhap = new DataTable();
             DataTable dtxuat = new DataTable();
 
@@ -113,7 +115,7 @@ namespace CtyTinLuong
                         double soluongnhap = Convert.ToDouble(foundRows_Nhap[j]["SoLuongNhap"].ToString());
                         _ravi_Nhap["NgayChungTu"] = ngaydautien;
                         _ravi_Nhap["DienGiai"] = foundRows_Nhap[j]["DienGiai"].ToString();
-                        _ravi_Nhap["SoChungTu_NhapKho"] = foundRows_Nhap[j]["SoChungTu"].ToString();                      
+                        _ravi_Nhap["SoChungTu_NhapKho"] = foundRows_Nhap[j]["SoChungTu"].ToString();
                         _ravi_Nhap["Nhap"] = soluongnhap;
                         _ravi_Nhap["Ton"] = soluongton + soluongnhap;
                         soluongton = soluongton + soluongnhap;
@@ -129,7 +131,7 @@ namespace CtyTinLuong
                         _ravi_Xuat["NgayChungTu"] = ngaydautien;
                         double soluongxuat = Convert.ToDouble(foundRows_Xuat[j]["SoLuongXuat"].ToString());
                         _ravi_Xuat["Xuat"] = soluongxuat;
-                        _ravi_Xuat["SoChungTu_XuatKho"] = foundRows_Xuat[j]["SoChungTu"].ToString();                        
+                        _ravi_Xuat["SoChungTu_XuatKho"] = foundRows_Xuat[j]["SoChungTu"].ToString();
                         _ravi_Xuat["DienGiai"] = foundRows_Xuat[j]["DienGiai"].ToString();
                         _ravi_Xuat["Ton"] = soluongton - soluongxuat;
                         dt2xxxx.Rows.Add(_ravi_Xuat);
@@ -148,47 +150,9 @@ namespace CtyTinLuong
             dt2xxxx.Rows.Add(_ravi_Cuoi);
             gridControl1.DataSource = dt2xxxx;
         }
-        public GapDan_frmChiTietNhapXuatTon_MotVatTu()
-        {
-            InitializeComponent();
-        }
-
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-       
-        private void btPrint_Click(object sender, EventArgs e)
-        {
-          
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
-            if(mdtPrint.Rows.Count>0)
-            {
-              
-                mbPrint = true;
-                msMaVT = gridMaVT.Text.ToString();
-                msTenVTHH = txtTenVT.Text;
-                msDonViTinh = txtDVT.Text;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-
-                frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu();
-                ff.Show();
-            }
-            
-        }
-
-      
-
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            GapDan_frmChiTietNhapXuatTon_MotVatTu_Load( sender,  e);
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -197,6 +161,47 @@ namespace CtyTinLuong
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+          
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdt_ChiTiet_MotVatTu_N_X_T_Print = dv1212.ToTable();       
+         
+            if(mdt_ChiTiet_MotVatTu_N_X_T_Print.Rows.Count==0)
+            {
+                MessageBox.Show("Không có dữ liệu");
+                return;
+                    
+            }
+            else
+            {
+                miID_VTHH = frmBaoCaoNXT.miiID_VTHH;
+                mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = true;
+                mdatungay = frmBaoCaoNXT.mdatungay;
+                mdadenngay = frmBaoCaoNXT.mdadenngay;
+                frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu();
+                ff.Show();
+            }
+           
+        }
+
+        private void frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
+        {
+            Load_Lockup();
+            dteTuNgay.EditValue = frmBaoCaoNXT.mdatungay;
+            dteDenNgay.EditValue = frmBaoCaoNXT.mdadenngay;
+            gridMaVT.EditValue = frmBaoCaoNXT.miiID_VTHH;
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            frmChiTietNhapXuatTon_MotVatTu_Load( sender,  e);
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
@@ -214,9 +219,9 @@ namespace CtyTinLuong
             try
             {
                 txtTenVT.Text = cls.sTenVTHH.Value;
-                txtDVT.Text = cls.sDonViTinh.Value;               
+                txtDVT.Text = cls.sDonViTinh.Value;
                 LoadDaTa(xidvt, dteTuNgay.DateTime, dteDenNgay.DateTime);
-                
+
             }
             catch
             {
@@ -224,12 +229,9 @@ namespace CtyTinLuong
             }
         }
 
-        private void GapDan_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
+        public frmChiTietNhapXuatTon_MotVatTu()
         {
-            Load_Lockup();
-            dteTuNgay.EditValue = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdatungay;
-            dteDenNgay.EditValue = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdadenngay;
-            gridMaVT.EditValue= DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.miiID_VTHH;
+            InitializeComponent();
         }
     }
 }
