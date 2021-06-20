@@ -147,7 +147,7 @@ namespace CtyTinLuong
           
            
             string shienthi = "1";
-            object xxxx = dt27hhhdshjj.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            
             mdbSumTongTien = Convert.ToDouble(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
             mdbSumTamUng = Convert.ToDouble(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
             mdbSumThucNhan = Convert.ToDouble(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
