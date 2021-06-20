@@ -102,19 +102,18 @@ namespace CtyTinLuong
             {
                 DataRow _ravi = ds.tbCongNo_NganHang.NewRow();
 
-                _ravi["SoTaiKhoanCon"] = dt3.Rows[i]["SoTaiKhoanCon"].ToString();
-                _ravi["TenTaiKhoanCon"] = dt3.Rows[i]["TenTaiKhoanCon"].ToString();
+                _ravi["SoDuDauKy_No"] = dt3.Rows[i]["SoTaiKhoanCon"].ToString();
+                _ravi["SoDuDauKy_Co"] = dt3.Rows[i]["TenTaiKhoanCon"].ToString();
+                _ravi["TenNhaCungCap"] = Convert.ToDouble(dt3.Rows[i]["NoDauKy"].ToString());
+                _ravi["NgayThang"] = Convert.ToDouble(dt3.Rows[i]["CoDauKy"].ToString());
 
-                _ravi["NoDauKy"] = Convert.ToDouble(dt3.Rows[i]["NoDauKy"].ToString());
-                _ravi["CoDauKy"] = Convert.ToDouble(dt3.Rows[i]["CoDauKy"].ToString());
-
-                _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
-                _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                _ravi["SoChungTu"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                _ravi["DienGiai"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
 
 
-                _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
-                _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-
+                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
 
 
                 ds.tbCongNo_NganHang.Rows.Add(_ravi);
@@ -190,7 +189,7 @@ namespace CtyTinLuong
         {
             frmChiTietBienDongTaiKhoan.mbPrint = false;
             frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;
-            MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
+            MuaHang_frmCongNo.mbPrint = false;
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
         }
     }
