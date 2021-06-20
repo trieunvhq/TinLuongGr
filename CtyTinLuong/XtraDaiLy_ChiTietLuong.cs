@@ -43,7 +43,12 @@ namespace CtyTinLuong
                 }
             }
             if (DaiLy_BangLuong.mbPrint_ALL == true)
+            {
                 pThangNam.Value = "Tháng " + DaiLy_BangLuong.miThang.ToString() + " năm " + DaiLy_BangLuong.miNam.ToString() + "";
+                pTongTamUng.Value = DaiLy_BangLuong.mdbSumTamUng;
+                pTongThucNhan.Value = DaiLy_BangLuong.mdbSumThucNhan;
+                pTongTien.Value = DaiLy_BangLuong.mdbSumTongTien;
+            }
         }
     }
 }

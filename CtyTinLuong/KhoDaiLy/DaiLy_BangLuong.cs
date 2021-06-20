@@ -18,6 +18,7 @@ namespace CtyTinLuong
         public static DataTable mdtPrint;
         public static DateTime mdaNgayThang;
         public static int miThang, miNam;
+        public static double mdbSumTongTien, mdbSumTamUng, mdbSumThucNhan;
         public DaiLy_BangLuong()
         {
             InitializeComponent();
@@ -40,8 +41,8 @@ namespace CtyTinLuong
             dt2.Columns.Add("TenDaiLy", typeof(string));
             dt2.Columns.Add("TongTien", typeof(double));
             dt2.Columns.Add("SoTien_TamUng", typeof(double));          
-            dt2.Columns.Add("ThucNhan", typeof(double));           
-       
+            dt2.Columns.Add("ThucNhan", typeof(double));
+            dt2.Columns.Add("HienThi", typeof(string));
 
             clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
             DataTable dt3 = cls1.SD_w_TU(thang, nam, xxtungay, xxdenngay);
@@ -59,7 +60,7 @@ namespace CtyTinLuong
                     _ravi["ThucNhan"] = tongtienxx- SoTien_TamUngxxx;                 
                     _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
                     _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
-
+                    _ravi["HienThi"] = "1";
                     dt2.Rows.Add(_ravi);
                 }
             }
@@ -137,6 +138,19 @@ namespace CtyTinLuong
         private void btPrint_ALL_Click(object sender, EventArgs e)
         {
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            DataTable dt27hhhdshjj = dv1212.ToTable();
+
+          
+           
+            string shienthi = "1";
+            object xxxx = dt27hhhdshjj.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            mdbSumTongTien = Convert.ToDouble(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
+            mdbSumTamUng = Convert.ToDouble(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
+            mdbSumThucNhan = Convert.ToDouble(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
            
             if (DatatableABC.Rows.Count == 0)
                 MessageBox.Show("Không có dữ liệu");
@@ -144,6 +158,9 @@ namespace CtyTinLuong
             {
                 mbPrint_ALL = true;
                 mbPrint_RutGon = false;
+
+           
+               
 
                 int xxthang = Convert.ToInt32(txtThang.Text.ToString());
                 int xxnam = Convert.ToInt32(txtNam.Text.ToString());
