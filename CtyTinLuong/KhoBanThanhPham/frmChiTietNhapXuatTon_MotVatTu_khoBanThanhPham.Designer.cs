@@ -219,9 +219,9 @@
             this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint.Appearance.Options.UseFont = true;
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(333, 450);
+            this.btPrint.Location = new System.Drawing.Point(652, 450);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(328, 22);
+            this.btPrint.Size = new System.Drawing.Size(116, 22);
             this.btPrint.StyleController = this.dataLayoutControl1;
             this.btPrint.TabIndex = 107;
             this.btPrint.Text = "Print";
@@ -280,9 +280,9 @@
             // btThoat
             // 
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(665, 450);
+            this.btThoat.Location = new System.Drawing.Point(772, 450);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(204, 22);
+            this.btThoat.Size = new System.Drawing.Size(97, 22);
             this.btThoat.StyleController = this.dataLayoutControl1;
             this.btThoat.TabIndex = 104;
             this.btThoat.Text = "Thoát";
@@ -673,16 +673,16 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 448);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(331, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(650, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btThoat;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(663, 448);
+            this.layoutControlItem5.Location = new System.Drawing.Point(770, 448);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(208, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(101, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -737,9 +737,9 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btPrint;
-            this.layoutControlItem1.Location = new System.Drawing.Point(331, 448);
+            this.layoutControlItem1.Location = new System.Drawing.Point(650, 448);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(332, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(120, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

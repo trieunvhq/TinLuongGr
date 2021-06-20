@@ -363,6 +363,12 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
+        private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
         private void frmBaoCaoNhapXuatTon_BanThanhPham_Load(object sender, EventArgs e)
         {
             clsNgayThang cls = new clsNgayThang();
