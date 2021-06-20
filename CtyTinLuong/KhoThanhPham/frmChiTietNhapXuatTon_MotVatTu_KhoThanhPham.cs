@@ -196,6 +196,25 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridMaVT_EditValueChanged(object sender, EventArgs e)
+        {
+            int xidvt = Convert.ToInt32(gridMaVT.EditValue.ToString());
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = xidvt;
+            DataTable dt = cls.SelectOne();
+            try
+            {
+                txtTenVT.Text = cls.sTenVTHH.Value;
+                txtDVT.Text = cls.sDonViTinh.Value;
+                LoadDaTa(xidvt, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            }
+            catch
+            {
+
+            }
+        }
+
         private void frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham_Load(object sender, EventArgs e)
         {
             Load_Lockup();
