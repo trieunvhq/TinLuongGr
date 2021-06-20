@@ -71,6 +71,7 @@ namespace CtyTinLuong
                 clsxx.bDaGhiSo = true;
                 clsxx.bBBool_TonDauKy = false;
                 clsxx.sDienGiai = txtDienGiai.Text.ToString();
+                clsxx.bCheck_PhanNganHang = true;
                 if (checkKhac.Checked == true)
                     clsxx.iTrangThai_MuaHang1_BanHang2_VAT3 = 0;
                 else if (checkKhachHang.Checked == true)
