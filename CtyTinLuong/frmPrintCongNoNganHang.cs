@@ -105,13 +105,20 @@ namespace CtyTinLuong
               
                 if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
                     _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                else
+                    _ravi["NoTrongKy"] = 0;
                 if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
                     _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                else
+                    _ravi["CoTrongKy"] = 0;
                 if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
                     _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                else
+                    _ravi["NoCuoiKy"] = 0;
                 if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
                     _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-                
+                else
+                    _ravi["CoCuoiKy"] = 0;
                 if (dt3.Rows[i]["NgayThang"].ToString()!="")
                 {                  
                     _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
@@ -120,11 +127,10 @@ namespace CtyTinLuong
                 {
                     _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                     _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                    _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                    _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                    _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["ThanhTien"].ToString());
+                    _ravi["SoLuong"] = dt3.Rows[i]["SoLuong"].ToString();
+                    _ravi["ThanhTien"] = dt3.Rows[i]["ThanhTien"].ToString();
                 }
-             
+                  
                 _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
                 _ravi["DienGiai"] =dt3.Rows[i]["DienGiai"].ToString();
             

@@ -6490,9 +6490,9 @@ namespace CtyTinLuong {
                         string TaiKhoanDoiUng, 
                         double NoDauKy, 
                         double CoDauKy, 
-                        double SoLuong, 
-                        double DonGia, 
-                        double ThanhTien, 
+                        string SoLuong, 
+                        string DonGia, 
+                        string ThanhTien, 
                         string GhiChu, 
                         string DoiTuong, 
                         string STT, 
@@ -6598,11 +6598,11 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnNoDauKy);
                 this.columnCoDauKy = new global::System.Data.DataColumn("CoDauKy", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCoDauKy);
-                this.columnSoLuong = new global::System.Data.DataColumn("SoLuong", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnSoLuong = new global::System.Data.DataColumn("SoLuong", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuong);
-                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDonGia);
-                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThanhTien);
                 this.columnGhiChu = new global::System.Data.DataColumn("GhiChu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGhiChu);
@@ -16095,10 +16095,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double SoLuong {
+            public string SoLuong {
                 get {
                     try {
-                        return ((double)(this[this.tabletbChiTietBienDongTaiKhoan.SoLuongColumn]));
+                        return ((string)(this[this.tabletbChiTietBienDongTaiKhoan.SoLuongColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SoLuong\' in table \'tbChiTietBienDongTaiKhoan\' is DBNull.", e);
@@ -16111,10 +16111,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double DonGia {
+            public string DonGia {
                 get {
                     try {
-                        return ((double)(this[this.tabletbChiTietBienDongTaiKhoan.DonGiaColumn]));
+                        return ((string)(this[this.tabletbChiTietBienDongTaiKhoan.DonGiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DonGia\' in table \'tbChiTietBienDongTaiKhoan\' is DBNull.", e);
@@ -16127,10 +16127,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ThanhTien {
+            public string ThanhTien {
                 get {
                     try {
-                        return ((double)(this[this.tabletbChiTietBienDongTaiKhoan.ThanhTienColumn]));
+                        return ((string)(this[this.tabletbChiTietBienDongTaiKhoan.ThanhTienColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ThanhTien\' in table \'tbChiTietBienDongTaiKhoan\' is DBNull.", e);

@@ -296,14 +296,14 @@ namespace CtyTinLuong
                 mdtPrint.Columns.Add("MaVT", typeof(string));
                 mdtPrint.Columns.Add("TenVTHH", typeof(string));
 
-                mdtPrint.Columns.Add("NoTrongKy", typeof(double));
-                mdtPrint.Columns.Add("CoTrongKy", typeof(double));
-                mdtPrint.Columns.Add("NoCuoiKy", typeof(double));
-                mdtPrint.Columns.Add("CoCuoiKy", typeof(double));
+                mdtPrint.Columns.Add("NoTrongKy", typeof(string));
+                mdtPrint.Columns.Add("CoTrongKy", typeof(string));
+                mdtPrint.Columns.Add("NoCuoiKy", typeof(string));
+                mdtPrint.Columns.Add("CoCuoiKy", typeof(string));
                
-                mdtPrint.Columns.Add("SoLuong", typeof(double));
-                mdtPrint.Columns.Add("DonGia", typeof(double));
-                mdtPrint.Columns.Add("ThanhTien", typeof(double));
+                mdtPrint.Columns.Add("SoLuong", typeof(string));
+                mdtPrint.Columns.Add("DonGia", typeof(string));
+                mdtPrint.Columns.Add("ThanhTien", typeof(string));
 
                
                 for(int i=0; i<dt3.Rows.Count; i++)
@@ -325,62 +325,29 @@ namespace CtyTinLuong
                             _ravi2["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
                             _ravi2["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
                             _ravi2["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
-                            if (dt3.Rows[i]["NgayThang"].ToString() != "")
-                            {
-                                _ravi2["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
-                            }
-                            if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
-                                _ravi2["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
-                            else
-                                _ravi2["NoTrongKy"] = 0;
-                            if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
-                                _ravi2["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
-                            else
-                                _ravi2["CoTrongKy"] = 0;
-                            if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
-                                _ravi2["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
-                            else
-                                _ravi2["NoCuoiKy"] = 0;
-                            if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
-                                _ravi2["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-                            else
-                                _ravi2["CoCuoiKy"] = 0;
+                            _ravi2["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
+                            _ravi2["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
+                            _ravi2["CoTrongKy"] =dt3.Rows[i]["CoTrongKy"].ToString();
+                            _ravi2["NoCuoiKy"] =dt3.Rows[i]["NoCuoiKy"].ToString();
+                            _ravi2["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
                             _ravi2["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
                             _ravi2["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
                             mdtPrint.Rows.Add(_ravi2);
                         }
                     }
-                    
-                    DataRow _ravi = mdtPrint.NewRow();
-                    _ravi["SoLuong"] = "";
-                    _ravi["DonGia"] = "";
-                    _ravi["ThanhTien"] = "";
-                    _ravi["MaVT"] = "";
-                    _ravi["TenVTHH"] = "";
-
-                    if (dt3.Rows[i]["NgayThang"].ToString() != "")
+                    else
                     {
-                        _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
+                        DataRow _ravi = mdtPrint.NewRow();
+                        _ravi["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
+                        _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                        _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                        _ravi["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
+                        _ravi["CoTrongKy"] = dt3.Rows[i]["CoTrongKy"].ToString();
+                        _ravi["NoCuoiKy"] = dt3.Rows[i]["NoCuoiKy"].ToString();
+                        _ravi["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
+                        mdtPrint.Rows.Add(_ravi);
                     }
-                    _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                    _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                    if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
-                        _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
-                    else
-                        _ravi["NoTrongKy"] = 0;
-                    if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
-                        _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
-                    else
-                        _ravi["CoTrongKy"] = 0;
-                    if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
-                        _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
-                    else
-                        _ravi["NoCuoiKy"] = 0;
-                    if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
-                        _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-                    else
-                        _ravi["CoCuoiKy"] = 0;
-                    mdtPrint.Rows.Add(_ravi);
+                   
 
                 }
 
@@ -391,9 +358,9 @@ namespace CtyTinLuong
                 mbPrint = true;
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-                gridControl3.DataSource = mdtPrint;
-                //frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                //ff.Show();
+                
+                frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
+                ff.Show();
             }
         }
 
