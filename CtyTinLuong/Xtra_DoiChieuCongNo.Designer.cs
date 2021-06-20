@@ -202,6 +202,7 @@
             this.xrTableCell26.StylePriority.UseTextAlignment = false;
             this.xrTableCell26.Text = "xrTableCell2";
             this.xrTableCell26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell26.TextFormatString = "{0:#.00}";
             this.xrTableCell26.Weight = 1.99420819664056D;
             // 
             // xrTableCell27
@@ -972,6 +973,7 @@
             this.xrTableCell57.StylePriority.UseTextAlignment = false;
             this.xrTableCell57.Text = "xrTableCell14";
             this.xrTableCell57.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell57.TextFormatString = "{0:n2}";
             this.xrTableCell57.Weight = 1.77848358234261D;
             // 
             // pNoDauKy

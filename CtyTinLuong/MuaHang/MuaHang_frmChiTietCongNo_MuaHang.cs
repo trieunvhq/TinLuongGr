@@ -307,7 +307,9 @@ namespace CtyTinLuong
 
                
                 for(int i=0; i<dt3.Rows.Count; i++)
-                {                   
+                {
+                   
+
                     if (Convert.ToBoolean(dt3.Rows[i]["HienThi"].ToString()) == true)
                     {
                         int iDImuahang = Convert.ToInt32(dt3.Rows[i]["ID_MuaHang"].ToString());
@@ -317,52 +319,71 @@ namespace CtyTinLuong
 
                         for (int j = 0; j < dtxxx.Rows.Count; j++)
                         {
-                            DataRow _ravi = mdtPrint.NewRow();
-                            _ravi["SoLuong"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString());
-                            _ravi["DonGia"] = Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
-                            _ravi["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
-                            _ravi["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
-                            _ravi["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
+                            DataRow _ravi2 = mdtPrint.NewRow();
+                            _ravi2["SoLuong"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString());
+                            _ravi2["DonGia"] = Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi2["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi2["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
+                            _ravi2["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
                             if (dt3.Rows[i]["NgayThang"].ToString() != "")
                             {
-                                _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
+                                _ravi2["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
                             }
                             if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
-                                _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                                _ravi2["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                            else
+                                _ravi2["NoTrongKy"] = 0;
                             if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
-                                _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                                _ravi2["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                            else
+                                _ravi2["CoTrongKy"] = 0;
                             if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
-                                _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                                _ravi2["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                            else
+                                _ravi2["NoCuoiKy"] = 0;
                             if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
-                                _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-                            _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                            _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                            mdtPrint.Rows.Add(_ravi);
+                                _ravi2["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                            else
+                                _ravi2["CoCuoiKy"] = 0;
+                            _ravi2["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                            _ravi2["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                            mdtPrint.Rows.Add(_ravi2);
                         }
                     }
-                    else
+                    
+                    DataRow _ravi = mdtPrint.NewRow();
+                    _ravi["SoLuong"] = "";
+                    _ravi["DonGia"] = "";
+                    _ravi["ThanhTien"] = "";
+                    _ravi["MaVT"] = "";
+                    _ravi["TenVTHH"] = "";
+
+                    if (dt3.Rows[i]["NgayThang"].ToString() != "")
                     {
-                        DataRow _ravi = mdtPrint.NewRow();
-                        if (dt3.Rows[i]["NgayThang"].ToString() != "")
-                        {
-                            _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
-                        }
-                        _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                        _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                        if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
-                            _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
-                        if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
-                            _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
-                        if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
-                            _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
-                        if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
-                            _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-                        mdtPrint.Rows.Add(_ravi);
-
+                        _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
                     }
+                    _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                    _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                    if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
+                        _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                    else
+                        _ravi["NoTrongKy"] = 0;
+                    if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
+                        _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                    else
+                        _ravi["CoTrongKy"] = 0;
+                    if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
+                        _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                    else
+                        _ravi["NoCuoiKy"] = 0;
+                    if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
+                        _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                    else
+                        _ravi["CoCuoiKy"] = 0;
+                    mdtPrint.Rows.Add(_ravi);
 
-                }            
-               
+                }
+
                 int iiDi = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
                 msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                 msSoTaiKhoan = GridSoTaiKhoan.Text.ToString();
@@ -370,8 +391,9 @@ namespace CtyTinLuong
                 mbPrint = true;
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-                frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                ff.Show();
+                gridControl3.DataSource = mdtPrint;
+                //frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
+                //ff.Show();
             }
         }
 
