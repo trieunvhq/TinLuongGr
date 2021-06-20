@@ -128,6 +128,7 @@
             this.btRefresh.StyleController = this.dataLayoutControl1;
             this.btRefresh.TabIndex = 108;
             this.btRefresh.ToolTip = "Refesh";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // btLayDuLieu
             // 
@@ -138,6 +139,7 @@
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 107;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
+            this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
             // 
             // btThoat2
             // 
@@ -163,6 +165,7 @@
             this.btPrint_ALL.StyleController = this.dataLayoutControl1;
             this.btPrint_ALL.TabIndex = 95;
             this.btPrint_ALL.Text = "Print";
+            this.btPrint_ALL.Click += new System.EventHandler(this.btPrint_ALL_Click);
             // 
             // gridControl1
             // 
@@ -211,6 +214,8 @@
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
+            this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
             // gridBand6
             // 
@@ -617,6 +622,7 @@
             this.Name = "DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo NXT kho Gấp dán";
+            this.Load += new System.EventHandler(this.DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
