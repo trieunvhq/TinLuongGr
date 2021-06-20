@@ -675,6 +675,12 @@ namespace CtyTinLuong
             this.Close();
         }
 
+        private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
         private void btPrint_Click(object sender, EventArgs e)
         {
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
