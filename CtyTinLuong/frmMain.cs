@@ -409,7 +409,7 @@ namespace CtyTinLuong
         private void btnKhoBanThanhPham_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoBanThanhPham ff = new CtyTinLuong.frmQuanLyKhoBanThanhPham();
-            ff.Show(); this.Hide();
+            this.Hide();
             ff.ShowDialog();
             this.Show();
         }
