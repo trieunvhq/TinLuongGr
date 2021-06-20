@@ -84,7 +84,7 @@ namespace CtyTinLuong
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
                     _ravi["ID_MuaHang"] = dtphatsinh.Rows[i]["ID_ChungTu"].ToString();
-                    if (dtphatsinh.Rows[i]["ID_ChungTu"].ToString() != "" & dtphatsinh.Rows[i]["TrangThai_MuaHang1_BanHang2_VAT3"].ToString() == "1")
+                    if (dtphatsinh.Rows[i]["ID_ChungTu"].ToString() != "" & dtphatsinh.Rows[i]["Check_PhanNganHang"].ToString() == "1")
                         _ravi["HienThi"] = true;
                     else _ravi["HienThi"] = false;
                     _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
