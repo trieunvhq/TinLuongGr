@@ -290,7 +290,6 @@ namespace CtyTinLuong
                 mdtPrint = new DataTable();
                 mdtPrint.Columns.Add("STT", typeof(string));
               
-              
                 mdtPrint.Columns.Add("NgayThang", typeof(string));
                 mdtPrint.Columns.Add("SoChungTu", typeof(string));
                 mdtPrint.Columns.Add("DienGiai", typeof(string));
