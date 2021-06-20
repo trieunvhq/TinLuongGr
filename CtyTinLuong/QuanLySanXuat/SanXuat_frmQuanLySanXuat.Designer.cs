@@ -58,7 +58,6 @@
             this.navLuongSanLuong = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
@@ -289,16 +288,6 @@
             this.panelControl1.Size = new System.Drawing.Size(923, 606);
             this.panelControl1.TabIndex = 68;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.simpleButton1.Location = new System.Drawing.Point(865, 625);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(205, 23);
-            this.simpleButton1.TabIndex = 69;
-            this.simpleButton1.Text = "Gửi dữ liệu Lương sản lượng";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -364,7 +353,6 @@
             this.Controls.Add(this.btnTrangSau);
             this.Controls.Add(this.btnTrangTiep);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.panelControl1);
@@ -407,7 +395,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem20;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;
