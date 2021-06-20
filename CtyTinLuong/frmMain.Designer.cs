@@ -33,11 +33,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btCongNo = new System.Windows.Forms.Button();
-            this.btnBaoCaoNXT = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnNganHang = new System.Windows.Forms.Button();
-            this.btnPhieuSX = new System.Windows.Forms.Button();
             this.btnKHSX = new System.Windows.Forms.Button();
             this.btnCongCu = new System.Windows.Forms.Button();
             this.btnQuanTri = new System.Windows.Forms.Button();
@@ -99,11 +96,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.btCongNo);
-            this.panelMenu.Controls.Add(this.btnBaoCaoNXT);
             this.panelMenu.Controls.Add(this.btnDangXuat);
             this.panelMenu.Controls.Add(this.btnNganHang);
-            this.panelMenu.Controls.Add(this.btnPhieuSX);
             this.panelMenu.Controls.Add(this.btnKHSX);
             this.panelMenu.Controls.Add(this.btnCongCu);
             this.panelMenu.Controls.Add(this.btnQuanTri);
@@ -115,43 +109,6 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 561);
             this.panelMenu.TabIndex = 66;
             // 
-            // btCongNo
-            // 
-            this.btCongNo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btCongNo.FlatAppearance.BorderSize = 0;
-            this.btCongNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCongNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCongNo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btCongNo.Image = ((System.Drawing.Image)(resources.GetObject("btCongNo.Image")));
-            this.btCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCongNo.Location = new System.Drawing.Point(0, 448);
-            this.btCongNo.Name = "btCongNo";
-            this.btCongNo.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btCongNo.Size = new System.Drawing.Size(200, 46);
-            this.btCongNo.TabIndex = 75;
-            this.btCongNo.Text = "          Công nợ";
-            this.btCongNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCongNo.UseVisualStyleBackColor = true;
-            // 
-            // btnBaoCaoNXT
-            // 
-            this.btnBaoCaoNXT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBaoCaoNXT.FlatAppearance.BorderSize = 0;
-            this.btnBaoCaoNXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCaoNXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCaoNXT.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnBaoCaoNXT.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCaoNXT.Image")));
-            this.btnBaoCaoNXT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCaoNXT.Location = new System.Drawing.Point(0, 402);
-            this.btnBaoCaoNXT.Name = "btnBaoCaoNXT";
-            this.btnBaoCaoNXT.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnBaoCaoNXT.Size = new System.Drawing.Size(200, 46);
-            this.btnBaoCaoNXT.TabIndex = 74;
-            this.btnBaoCaoNXT.Text = "          BC nhập xuất tồn";
-            this.btnBaoCaoNXT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoCaoNXT.UseVisualStyleBackColor = true;
-            this.btnBaoCaoNXT.Click += new System.EventHandler(this.btnBaoCaoNXT_Click);
-            // 
             // btnDangXuat
             // 
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
@@ -161,7 +118,7 @@
             this.btnDangXuat.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 356);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 310);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDangXuat.Size = new System.Drawing.Size(200, 46);
@@ -180,7 +137,7 @@
             this.btnNganHang.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnNganHang.Image = ((System.Drawing.Image)(resources.GetObject("btnNganHang.Image")));
             this.btnNganHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNganHang.Location = new System.Drawing.Point(0, 310);
+            this.btnNganHang.Location = new System.Drawing.Point(0, 264);
             this.btnNganHang.Name = "btnNganHang";
             this.btnNganHang.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnNganHang.Size = new System.Drawing.Size(200, 46);
@@ -189,25 +146,6 @@
             this.btnNganHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNganHang.UseVisualStyleBackColor = true;
             this.btnNganHang.Click += new System.EventHandler(this.btnNganHang_Click);
-            // 
-            // btnPhieuSX
-            // 
-            this.btnPhieuSX.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhieuSX.FlatAppearance.BorderSize = 0;
-            this.btnPhieuSX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhieuSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhieuSX.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPhieuSX.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuSX.Image")));
-            this.btnPhieuSX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhieuSX.Location = new System.Drawing.Point(0, 264);
-            this.btnPhieuSX.Name = "btnPhieuSX";
-            this.btnPhieuSX.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPhieuSX.Size = new System.Drawing.Size(200, 46);
-            this.btnPhieuSX.TabIndex = 71;
-            this.btnPhieuSX.Text = "          Phiếu sản xuất";
-            this.btnPhieuSX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhieuSX.UseVisualStyleBackColor = true;
-            this.btnPhieuSX.Click += new System.EventHandler(this.btnPhieuSX_Click);
             // 
             // btnKHSX
             // 
@@ -616,11 +554,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btCongNo;
-        private System.Windows.Forms.Button btnBaoCaoNXT;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Button btnNganHang;
-        private System.Windows.Forms.Button btnPhieuSX;
         private System.Windows.Forms.Button btnKHSX;
         private System.Windows.Forms.Button btnCongCu;
         private System.Windows.Forms.Button btnQuanTri;
