@@ -346,6 +346,7 @@ namespace CtyTinLuong
                 ff.Show();
 
             }
+           
         }
 
         public DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton()
