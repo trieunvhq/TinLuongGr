@@ -74,6 +74,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -362,7 +363,8 @@
             this.clThucNhan,
             this.clTenDaiLy,
             this.clMaDaiLy,
-            this.clID_DaiLy});
+            this.clID_DaiLy,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -601,6 +603,12 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "HienThi";
+            this.gridColumn1.FieldName = "HienThi";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // DaiLy_BangLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,5 +683,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn clID_DaiLy;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }
