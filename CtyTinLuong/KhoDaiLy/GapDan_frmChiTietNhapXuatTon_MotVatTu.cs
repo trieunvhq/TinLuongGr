@@ -225,7 +225,7 @@ namespace CtyTinLuong
 
         private void GapDan_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
-           
+            Load_Lockup();
             dteTuNgay.EditValue = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdatungay;
             dteDenNgay.EditValue = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdadenngay;
             gridMaVT.EditValue= DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.miiID_VTHH;
