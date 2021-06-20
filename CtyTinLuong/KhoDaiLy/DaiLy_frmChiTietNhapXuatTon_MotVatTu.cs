@@ -27,10 +27,11 @@ namespace CtyTinLuong
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";
 
-        
-            clsTbDanhMuc_DaiLy clsxx = new CtyTinLuong.clsTbDanhMuc_DaiLy();
-            DataTable dtnhapkho = clsxx.SelectAll();
-            
+
+            clsDaiLy_tbNhapKho clsxx = new CtyTinLuong.clsDaiLy_tbNhapKho();
+            DataTable dtnhapkho = clsxx.SelectAll_DIStintc_LayDanhSachDaiLy_XuatKho();
+
+
             DataTable dtxx2 = new DataTable();
             dtxx2.Columns.Add("ID_DaiLy", typeof(int));
             dtxx2.Columns.Add("MaDaiLy", typeof(string));
