@@ -288,36 +288,87 @@ namespace CtyTinLuong
                 dv1212.RowFilter = filterString;
                 DataTable dt3 = dv1212.ToTable();
                 mdtPrint = new DataTable();
-                mdtPrint.Columns.Add("STT", typeof(string));
+             
               
                 mdtPrint.Columns.Add("NgayThang", typeof(string));
                 mdtPrint.Columns.Add("SoChungTu", typeof(string));
                 mdtPrint.Columns.Add("DienGiai", typeof(string));
-                mdtPrint.Columns.Add("DonGia", typeof(string));
 
-                mdtPrint.Columns.Add("TongTienHang", typeof(double));
-                mdtPrint.Columns.Add("ThanhTien", typeof(double));
+                mdtPrint.Columns.Add("MaVT", typeof(string));
+                mdtPrint.Columns.Add("TenVTHH", typeof(string));
+
+                mdtPrint.Columns.Add("NoTrongKy", typeof(double));
+                mdtPrint.Columns.Add("CoTrongKy", typeof(double));
+                mdtPrint.Columns.Add("NoCuoiKy", typeof(double));
+                mdtPrint.Columns.Add("CoCuoiKy", typeof(double));
+               
                 mdtPrint.Columns.Add("SoLuong", typeof(double));
                 mdtPrint.Columns.Add("DonGia", typeof(double));
-                DataRow _ravi = mdtPrint.NewRow();
+                mdtPrint.Columns.Add("ThanhTien", typeof(double));
+
+               
                 for(int i=0; i<dt3.Rows.Count; i++)
                 {
-                    _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
-                 
-                    _ravi["TongTienHang"] = Convert.ToDouble(dt3.Rows[i]["TongTienHang"].ToString());
-                    if (dt3.Rows[i]["NgayThang"].ToString() != "")
+                    
+                    if (dt3.Rows[i]["HienThi"].ToString() == "1")
                     {
-                        DateTime ngay = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
-                        _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
+                        int iDImuahang = Convert.ToInt32(dt3.Rows[i]["ID_MuaHang"].ToString());
+                        clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
+                        cls2.iID_MuaHang = iDImuahang;
+                        DataTable dtxxx = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
+
+                        for (int j = 0; j < dtxxx.Rows.Count; j++)
+                        {
+                            DataRow _ravi = mdtPrint.NewRow();
+                            _ravi["SoLuong"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString());
+                            _ravi["DonGia"] = Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["ThanhTien"].ToString());
+                            _ravi["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
+                            _ravi["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
+
+                            if (dt3.Rows[i]["NgayThang"].ToString() != "")
+                            {                                
+                                _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
+                            }
+                            if(dt3.Rows[i]["NoTrongKy"].ToString()!="")
+                                _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                            if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
+                                _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                            if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
+                                _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                            if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
+                                _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                            _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                            _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                          
+                            mdtPrint.Rows.Add(_ravi);
+                        }
+                        
                     }
+                    else
+                    {
+                        DataRow _ravi = mdtPrint.NewRow();
 
-                    _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                    _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                    _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                    _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                    _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["ThanhTien"].ToString());
+                       
+                        if (dt3.Rows[i]["NgayThang"].ToString() != "")
+                        {
+                            _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
+                        }
+                        _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                        _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                        if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
+                            _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                        if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
+                            _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                        if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
+                            _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                        if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
+                            _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                        mdtPrint.Rows.Add(_ravi);
+                    }
+                   
 
-                    mdtPrint.Rows.Add(_ravi);
+                  
                 }
              
                
