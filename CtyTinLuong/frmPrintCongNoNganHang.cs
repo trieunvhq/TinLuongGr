@@ -107,8 +107,8 @@ namespace CtyTinLuong
 
                 _ravi["SoDuDauKy_No"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_No"].ToString());
                 _ravi["SoDuDauKy_Co"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_Co"].ToString());
-                _ravi["TenNhaCungCap"] = dt3.Rows[i]["TenNhaCungCap"].ToString();
-                if(dt3.Rows[i]["NgayThang"].ToString()!="")
+                _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                if (dt3.Rows[i]["NgayThang"].ToString()!="")
                 {
                     DateTime ngay= Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
