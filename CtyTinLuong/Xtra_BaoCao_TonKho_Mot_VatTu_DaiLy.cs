@@ -18,10 +18,8 @@ namespace CtyTinLuong
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
             cls.iID_VTHH = DaiLy_Frm_TonKho_MotVatTu.miID_VTHH;
             DataTable dtxx = cls.SelectOne();
-            // pTenVT.Value = " Mã vật tư: " + cls.sMaVT.Value + ",   Tên vật tư: " + cls.sTenVTHH.Value + ",   ĐVT: " + cls.sDonViTinh.Value + "";
-            pMaVT.Value = "Mã vật tư: " + cls.sMaVT.Value + "";
-            pTenVT.Value = "Tên vật tư: " + cls.sTenVTHH.Value + "";
-            pDVT.Value = "ĐVT: " + cls.sDonViTinh.Value + "";
+            pTenVT.Value = " Mã vật tư: " + cls.sMaVT.Value + ",   Tên vật tư: " + cls.sTenVTHH.Value + ",   ĐVT: " + cls.sDonViTinh.Value + "";
+       
 
         }
         public Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy()
