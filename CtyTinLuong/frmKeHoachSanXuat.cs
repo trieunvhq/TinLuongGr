@@ -292,6 +292,11 @@ namespace CtyTinLuong
             
         }
 
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView View = sender as GridView;
