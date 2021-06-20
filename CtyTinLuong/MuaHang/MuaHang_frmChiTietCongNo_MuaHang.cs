@@ -164,7 +164,7 @@ namespace CtyTinLuong
         
             dt2.Columns.Add("SoLuong", typeof(float));
             dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("MaVT");// tb VTHH
+            dt2.Columns.Add("MaVT");
             dt2.Columns.Add("TenVTHH");
             dt2.Columns.Add("DonViTinh");
             dt2.Columns.Add("ThanhTien", typeof(double));
@@ -273,7 +273,6 @@ namespace CtyTinLuong
         {
             DataTable DatatableABC = (DataTable)gridControl2.DataSource;
            
-
             if (DatatableABC.Rows.Count == 0)
             {
 
@@ -308,8 +307,7 @@ namespace CtyTinLuong
 
                
                 for(int i=0; i<dt3.Rows.Count; i++)
-                {
-                    
+                {                    
                     if (dt3.Rows[i]["HienThi"].ToString() == "1")
                     {
                         int iDImuahang = Convert.ToInt32(dt3.Rows[i]["ID_MuaHang"].ToString());
@@ -325,7 +323,6 @@ namespace CtyTinLuong
                             _ravi["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["ThanhTien"].ToString());
                             _ravi["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
                             _ravi["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
-
                             if (dt3.Rows[i]["NgayThang"].ToString() != "")
                             {                                
                                 _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
@@ -339,17 +336,13 @@ namespace CtyTinLuong
                             if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
                                 _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
                             _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                            _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                          
+                            _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();                          
                             mdtPrint.Rows.Add(_ravi);
-                        }
-                        
+                        }                        
                     }
                     else
                     {
-                        DataRow _ravi = mdtPrint.NewRow();
-
-                       
+                        DataRow _ravi = mdtPrint.NewRow();                       
                         if (dt3.Rows[i]["NgayThang"].ToString() != "")
                         {
                             _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
@@ -365,12 +358,8 @@ namespace CtyTinLuong
                         if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
                             _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
                         mdtPrint.Rows.Add(_ravi);
-                    }
-                   
-
-                  
-                }
-             
+                    }                   
+                }            
                
                 int iiDi = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
                 msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
@@ -381,7 +370,6 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                 ff.Show();
-
             }
         }
 

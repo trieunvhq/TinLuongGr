@@ -900,6 +900,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuaHang_frmChiTietCongNo_MuaHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi Tiết Công Nợ";
             this.Load += new System.EventHandler(this.MuaHang_frmChiTietCongNo_MuaHang_Load);
             this.groupBox1.ResumeLayout(false);
