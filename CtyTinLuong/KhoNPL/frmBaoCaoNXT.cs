@@ -17,7 +17,7 @@ namespace CtyTinLuong
         public static string msNguoiLap_Prtint;
         public static DataTable mdt_ChiTiet_Print;
         public static int miiID_VTHH;
-        public static double msoluongTonDauKy, mGiaTriTonDauKy;
+   
         public static DateTime mdatungay, mdadenngay;
         private DataTable LoadDaTa_TonDauKy(DateTime xxtungay)
         {
@@ -345,11 +345,7 @@ namespace CtyTinLuong
                 {
                     mdatungay = dteTuNgay.DateTime;
                     mdadenngay = dteDenNgay.DateTime;
-                    miiID_VTHH = Convert.ToInt16(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-                    //msoluongTonDauKy, mGiaTriTonDauKy;
-                    msoluongTonDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
-                    mGiaTriTonDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
-                    
+                    miiID_VTHH = Convert.ToInt16(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());                 
 
                     frmChiTietNhapXuatTon_MotVatTu ff2 = new frmChiTietNhapXuatTon_MotVatTu();
                     ff2.Show();
