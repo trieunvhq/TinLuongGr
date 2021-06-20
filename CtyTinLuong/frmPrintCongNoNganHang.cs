@@ -96,33 +96,32 @@ namespace CtyTinLuong
             Xtra_DoiChieuCongNo xtr111 = new Xtra_DoiChieuCongNo();
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
-            ds.tbCongNo_NganHang.Clone();
-            ds.tbCongNo_NganHang.Clear();
+            ds.tbChiTietBienDongTaiKhoan.Clone();
+            ds.tbChiTietBienDongTaiKhoan.Clear();
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                DataRow _ravi = ds.tbCongNo_NganHang.NewRow();
+                DataRow _ravi = ds.tbChiTietBienDongTaiKhoan.NewRow();
 
-                _ravi["SoDuDauKy_No"] = dt3.Rows[i]["SoTaiKhoanCon"].ToString();
-                _ravi["SoDuDauKy_Co"] = dt3.Rows[i]["TenTaiKhoanCon"].ToString();
-                _ravi["TenNhaCungCap"] = Convert.ToDouble(dt3.Rows[i]["NoDauKy"].ToString());
-                _ravi["NgayThang"] = Convert.ToDouble(dt3.Rows[i]["CoDauKy"].ToString());
-
-                _ravi["SoChungTu"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
-                _ravi["DienGiai"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
-
-
-                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
-
-
-                ds.tbCongNo_NganHang.Rows.Add(_ravi);
+                _ravi["SoDuDauKy_No"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_No"].ToString());
+                _ravi["SoDuDauKy_Co"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_Co"].ToString());
+                _ravi["TenNhaCungCap"] = dt3.Rows[i]["TenNhaCungCap"].ToString();
+                if(dt3.Rows[i]["NgayThang"].ToString()!="")
+                {
+                    DateTime ngay= Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
+                    _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
+                }
+               
+                _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                _ravi["DienGiai"] =dt3.Rows[i]["DienGiai"].ToString();
+                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
+                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["ThanhTien"].ToString());
+                ds.tbChiTietBienDongTaiKhoan.Rows.Add(_ravi);
             }
 
             xtr111.DataSource = null;
-            xtr111.DataSource = ds.tbCongNo_NganHang;
-            xtr111.DataMember = "tbCongNo_NganHang";
-            // xtr111.IntData(sgiamdoc);
+            xtr111.DataSource = ds.tbChiTietBienDongTaiKhoan;
+            xtr111.DataMember = "tbChiTietBienDongTaiKhoan";         
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
