@@ -6221,6 +6221,8 @@ namespace CtyTinLuong {
             
             private global::System.Data.DataColumn columnTongTienHang;
             
+            private global::System.Data.DataColumn columnMaVT;
+            
             private global::System.Data.DataColumn columnSoDuDauKy_Co;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6426,6 +6428,14 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MaVTColumn {
+                get {
+                    return this.columnMaVT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SoDuDauKy_CoColumn {
                 get {
                     return this.columnSoDuDauKy_Co;
@@ -6491,6 +6501,7 @@ namespace CtyTinLuong {
                         double SoDuDauKy_No, 
                         string TenVTHH, 
                         double TongTienHang, 
+                        string MaVT, 
                         double SoDuDauKy_Co) {
                 tbChiTietBienDongTaiKhoanRow rowtbChiTietBienDongTaiKhoanRow = ((tbChiTietBienDongTaiKhoanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -6515,6 +6526,7 @@ namespace CtyTinLuong {
                         SoDuDauKy_No,
                         TenVTHH,
                         TongTienHang,
+                        MaVT,
                         SoDuDauKy_Co};
                 rowtbChiTietBienDongTaiKhoanRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbChiTietBienDongTaiKhoanRow);
@@ -6559,6 +6571,7 @@ namespace CtyTinLuong {
                 this.columnSoDuDauKy_No = base.Columns["SoDuDauKy_No"];
                 this.columnTenVTHH = base.Columns["TenVTHH"];
                 this.columnTongTienHang = base.Columns["TongTienHang"];
+                this.columnMaVT = base.Columns["MaVT"];
                 this.columnSoDuDauKy_Co = base.Columns["SoDuDauKy_Co"];
             }
             
@@ -6607,6 +6620,8 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnTenVTHH);
                 this.columnTongTienHang = new global::System.Data.DataColumn("TongTienHang", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTienHang);
+                this.columnMaVT = new global::System.Data.DataColumn("MaVT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaVT);
                 this.columnSoDuDauKy_Co = new global::System.Data.DataColumn("SoDuDauKy_Co", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoDuDauKy_Co);
             }
@@ -16259,6 +16274,22 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MaVT {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbChiTietBienDongTaiKhoan.MaVTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaVT\' in table \'tbChiTietBienDongTaiKhoan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbChiTietBienDongTaiKhoan.MaVTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public double SoDuDauKy_Co {
                 get {
                     try {
@@ -16524,6 +16555,18 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTongTienHangNull() {
                 this[this.tabletbChiTietBienDongTaiKhoan.TongTienHangColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaVTNull() {
+                return this.IsNull(this.tabletbChiTietBienDongTaiKhoan.MaVTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaVTNull() {
+                this[this.tabletbChiTietBienDongTaiKhoan.MaVTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
