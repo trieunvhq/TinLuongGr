@@ -102,12 +102,9 @@ namespace CtyTinLuong
             {
                 DataRow _ravi = ds.tbChiTietBienDongTaiKhoan.NewRow();
 
-                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
-                _ravi["STT_Gg"] = dt3.Rows[i]["STT_Gg"].ToString();
-
-                _ravi["SoDuDauKy_No"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_No"].ToString());
-                _ravi["SoDuDauKy_Co"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_Co"].ToString());
-                _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();              
+               
+                _ravi["TongTienHang"] = Convert.ToDouble(dt3.Rows[i]["TongTienHang"].ToString());
                 if (dt3.Rows[i]["NgayThang"].ToString()!="")
                 {
                     DateTime ngay= Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());

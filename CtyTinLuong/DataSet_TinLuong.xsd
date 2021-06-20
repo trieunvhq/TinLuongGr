@@ -275,6 +275,7 @@
               <xs:element name="TenNhaCungCap" msprop:Generator_ColumnVarNameInTable="columnTenNhaCungCap" msprop:Generator_ColumnPropNameInRow="TenNhaCungCap" msprop:Generator_ColumnPropNameInTable="TenNhaCungCapColumn" msprop:Generator_UserColumnName="TenNhaCungCap" type="xs:string" minOccurs="0" />
               <xs:element name="SoDuDauKy_No" msprop:Generator_ColumnVarNameInTable="columnSoDuDauKy_No" msprop:Generator_ColumnPropNameInRow="SoDuDauKy_No" msprop:Generator_ColumnPropNameInTable="SoDuDauKy_NoColumn" msprop:Generator_UserColumnName="SoDuDauKy_No" type="xs:double" minOccurs="0" />
               <xs:element name="TenVTHH" msprop:Generator_ColumnVarNameInTable="columnTenVTHH" msprop:Generator_ColumnPropNameInRow="TenVTHH" msprop:Generator_ColumnPropNameInTable="TenVTHHColumn" msprop:Generator_UserColumnName="TenVTHH" type="xs:string" minOccurs="0" />
+              <xs:element name="TongTienHang" msprop:Generator_ColumnVarNameInTable="columnTongTienHang" msprop:Generator_ColumnPropNameInRow="TongTienHang" msprop:Generator_ColumnPropNameInTable="TongTienHangColumn" msprop:Generator_UserColumnName="TongTienHang" type="xs:double" minOccurs="0" />
               <xs:element name="SoDuDauKy_Co" msprop:Generator_ColumnVarNameInTable="columnSoDuDauKy_Co" msprop:Generator_ColumnPropNameInRow="SoDuDauKy_Co" msprop:Generator_ColumnPropNameInTable="SoDuDauKy_CoColumn" msprop:Generator_UserColumnName="SoDuDauKy_Co" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

@@ -119,6 +119,12 @@
             this.xrTableCell55 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell57 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.pNoDauKy = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pCoDauKy = new DevExpress.XtraReports.Parameters.Parameter();
+            this.NoPhatSinh = new DevExpress.XtraReports.Parameters.Parameter();
+            this.CoPhatSinh = new DevExpress.XtraReports.Parameters.Parameter();
+            this.NoCuoiKy = new DevExpress.XtraReports.Parameters.Parameter();
+            this.CoCuoiKy = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -745,6 +751,8 @@
             // 
             // xrTableCell3
             // 
+            this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[NoPhatSinh]")});
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -752,6 +760,8 @@
             // 
             // xrTableCell12
             // 
+            this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[CoPhatSinh]")});
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -790,6 +800,8 @@
             // 
             // xrTableCell35
             // 
+            this.xrTableCell35.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[NoCuoiKy]")});
             this.xrTableCell35.Multiline = true;
             this.xrTableCell35.Name = "xrTableCell35";
             this.xrTableCell35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -798,6 +810,8 @@
             // 
             // xrTableCell37
             // 
+            this.xrTableCell37.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[CoCuoiKy]")});
             this.xrTableCell37.Multiline = true;
             this.xrTableCell37.Name = "xrTableCell37";
             this.xrTableCell37.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1097,7 +1111,7 @@
             // xrTableCell54
             // 
             this.xrTableCell54.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CoCuoiKy]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DienGiai]")});
             this.xrTableCell54.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell54.Name = "xrTableCell54";
             this.xrTableCell54.StylePriority.UseFont = false;
@@ -1110,7 +1124,7 @@
             // xrTableCell55
             // 
             this.xrTableCell55.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SoDuDauKy_No]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pNoDauKy]")});
             this.xrTableCell55.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell55.Name = "xrTableCell55";
             this.xrTableCell55.StylePriority.UseFont = false;
@@ -1120,7 +1134,7 @@
             // xrTableCell56
             // 
             this.xrTableCell56.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SoDuDauKy_Co]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pCoDauKy]")});
             this.xrTableCell56.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell56.Name = "xrTableCell56";
             this.xrTableCell56.StylePriority.UseFont = false;
@@ -1141,6 +1155,48 @@
             this.xrTableCell57.Text = "xrTableCell14";
             this.xrTableCell57.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell57.Weight = 2.834992296604D;
+            // 
+            // pNoDauKy
+            // 
+            this.pNoDauKy.Description = "Parameter1";
+            this.pNoDauKy.Name = "pNoDauKy";
+            this.pNoDauKy.Type = typeof(int);
+            this.pNoDauKy.ValueInfo = "0";
+            // 
+            // pCoDauKy
+            // 
+            this.pCoDauKy.Description = "Parameter1";
+            this.pCoDauKy.Name = "pCoDauKy";
+            this.pCoDauKy.Type = typeof(int);
+            this.pCoDauKy.ValueInfo = "0";
+            // 
+            // NoPhatSinh
+            // 
+            this.NoPhatSinh.Description = "Parameter1";
+            this.NoPhatSinh.Name = "NoPhatSinh";
+            this.NoPhatSinh.Type = typeof(int);
+            this.NoPhatSinh.ValueInfo = "0";
+            // 
+            // CoPhatSinh
+            // 
+            this.CoPhatSinh.Description = "Parameter1";
+            this.CoPhatSinh.Name = "CoPhatSinh";
+            this.CoPhatSinh.Type = typeof(int);
+            this.CoPhatSinh.ValueInfo = "0";
+            // 
+            // NoCuoiKy
+            // 
+            this.NoCuoiKy.Description = "Parameter1";
+            this.NoCuoiKy.Name = "NoCuoiKy";
+            this.NoCuoiKy.Type = typeof(int);
+            this.NoCuoiKy.ValueInfo = "0";
+            // 
+            // CoCuoiKy
+            // 
+            this.CoCuoiKy.Description = "Parameter1";
+            this.CoCuoiKy.Name = "CoCuoiKy";
+            this.CoCuoiKy.Type = typeof(int);
+            this.CoCuoiKy.ValueInfo = "0";
             // 
             // Xtra_DoiChieuCongNo
             // 
@@ -1168,7 +1224,13 @@
             this.pTruongPhong,
             this.pPhoGiamDoc,
             this.pKhachHang_NCC,
-            this.pTieuDeKH_NCC});
+            this.pTieuDeKH_NCC,
+            this.pNoDauKy,
+            this.pCoDauKy,
+            this.NoPhatSinh,
+            this.CoPhatSinh,
+            this.NoCuoiKy,
+            this.CoCuoiKy});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
@@ -1270,5 +1332,11 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell55;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell56;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell57;
+        private DevExpress.XtraReports.Parameters.Parameter pNoDauKy;
+        private DevExpress.XtraReports.Parameters.Parameter pCoDauKy;
+        private DevExpress.XtraReports.Parameters.Parameter NoPhatSinh;
+        private DevExpress.XtraReports.Parameters.Parameter CoPhatSinh;
+        private DevExpress.XtraReports.Parameters.Parameter NoCuoiKy;
+        private DevExpress.XtraReports.Parameters.Parameter CoCuoiKy;
     }
 }

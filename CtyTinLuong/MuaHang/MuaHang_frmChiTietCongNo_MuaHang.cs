@@ -289,29 +289,23 @@ namespace CtyTinLuong
                 DataTable dt3 = dv1212.ToTable();
                 mdtPrint = new DataTable();
                 mdtPrint.Columns.Add("STT", typeof(string));
-                mdtPrint.Columns.Add("STT_Gg", typeof(string));
-                mdtPrint.Columns.Add("SoDuDauKy_No", typeof(string));
-                mdtPrint.Columns.Add("SoDuDauKy_Co", typeof(string));
-                mdtPrint.Columns.Add("TenNhaCungCap", typeof(string));
-                mdtPrint.Columns.Add("NgayThang", typeof(double));
+              
+              
+                mdtPrint.Columns.Add("NgayThang", typeof(string));
                 mdtPrint.Columns.Add("SoChungTu", typeof(string));
-                mdtPrint.Columns.Add("DienGiai", typeof(double));
+                mdtPrint.Columns.Add("DienGiai", typeof(string));
                 mdtPrint.Columns.Add("DonGia", typeof(string));
 
-
-                mdtPrint.Columns.Add("ThanhTien", typeof(string));
-                mdtPrint.Columns.Add("DienGiai", typeof(double));
-                mdtPrint.Columns.Add("DonGia", typeof(string));
-
+                mdtPrint.Columns.Add("TongTienHang", typeof(double));
+                mdtPrint.Columns.Add("ThanhTien", typeof(double));
+                mdtPrint.Columns.Add("SoLuong", typeof(double));
+                mdtPrint.Columns.Add("DonGia", typeof(double));
                 DataRow _ravi = mdtPrint.NewRow();
                 for(int i=0; i<dt3.Rows.Count; i++)
                 {
                     _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
-                    _ravi["STT_Gg"] = dt3.Rows[i]["STT_Gg"].ToString();
-
-                    _ravi["SoDuDauKy_No"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_No"].ToString());
-                    _ravi["SoDuDauKy_Co"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_Co"].ToString());
-                    _ravi["TenNhaCungCap"] = dt3.Rows[i]["TenNhaCungCap"].ToString();
+                 
+                    _ravi["TongTienHang"] = Convert.ToDouble(dt3.Rows[i]["TongTienHang"].ToString());
                     if (dt3.Rows[i]["NgayThang"].ToString() != "")
                     {
                         DateTime ngay = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
