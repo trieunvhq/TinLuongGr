@@ -52,11 +52,11 @@ namespace CtyTinLuong
             TimeSpan timespsanxxxx = dteDenNgayxx - dteTuNgayxxx;
             int songay = timespsanxxxx.Days;
             DataRow _ravi_Khong = dt2xxxx.NewRow();
-            _ravi_Khong["DienGiai"] = "Tồn đầu kỳ";
-            _ravi_Khong["Ton"] = frmBaoCaoNXT.msoluongTonDauKy;
-            dt2xxxx.Rows.Add(_ravi_Khong);
+            //_ravi_Khong["DienGiai"] = "Tồn đầu kỳ";
+            //_ravi_Khong["Ton"] = frmBaoCaoNXT.msoluongTonDauKy;
+            //dt2xxxx.Rows.Add(_ravi_Khong);
             double soluongton = 0, Tong_SoLuongNhap = 0, Tong_SoluongXuat = 0;
-            soluongton = frmBaoCaoNXT.msoluongTonDauKy;
+            //soluongton = frmBaoCaoNXT.msoluongTonDauKy;
             for (int i = 0; i <= songay; i++)
             {
 
@@ -81,8 +81,8 @@ namespace CtyTinLuong
 
                         _ravi["Nhap"] = soluongnhap;
                         _ravi["Ton"] = soluongton + soluongnhap;
-                        soluongton = soluongton + soluongnhap;
-                        Tong_SoLuongNhap = Tong_SoLuongNhap + soluongnhap;
+                        //soluongton = soluongton + soluongnhap;
+                        //Tong_SoLuongNhap = Tong_SoLuongNhap + soluongnhap;
                         dt2xxxx.Rows.Add(_ravi);
                     }
 

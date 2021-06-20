@@ -23,8 +23,8 @@ namespace CtyTinLuong
         {
             DataTable dt_NhapTruoc = new DataTable();
             DataTable dt_XuatTruoc = new DataTable();
-            clsKhoNPL_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
-            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
+            clsKhoBTP_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoBTP_tbChiTietNhapKho();
+            clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
             dt_NhapTruoc = cls1.SA_distinct_NhapTruocKy(xxtungay);
             dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy(xxtungay);
             DataTable dt2 = new DataTable();
@@ -99,8 +99,8 @@ namespace CtyTinLuong
         }
         private DataTable LoadDaTa_Nhap_Xuat_TrongKy(DateTime xxtungay, DateTime xxdenngay)
         {
-            clsKhoNPL_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
-            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
+            clsKhoBTP_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoBTP_tbChiTietNhapKho();
+            clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
             DataTable dt_NhapTrongKy = new DataTable();
             DataTable dt_XuatTrongKy = new DataTable();
 
@@ -319,10 +319,6 @@ namespace CtyTinLuong
                     mdadenngay = dteDenNgay.DateTime;
                     miiID_VTHH = Convert.ToInt16(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                    
-                    msoluongTonDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
-                    mGiaTriTonDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
-
-
                     frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham ff2 = new frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham();
                     ff2.Show();
                 }
