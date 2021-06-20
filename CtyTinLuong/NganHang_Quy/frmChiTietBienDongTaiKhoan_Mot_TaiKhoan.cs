@@ -204,7 +204,8 @@ namespace CtyTinLuong
                 msTenTaiKhoan = txtTenTK.Text;
                 mbPrint = true;               
                 mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;               
+
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                 ff.Show();
 

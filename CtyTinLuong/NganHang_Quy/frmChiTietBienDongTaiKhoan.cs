@@ -154,15 +154,9 @@ namespace CtyTinLuong
         {
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
             {
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;              
 
-                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-                CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                DataView dv1212 = new DataView(DatatableABC);
-                dv1212.RowFilter = filterString;
-                mdt_ChiTiet_Print = dv1212.ToTable();
-
-                if (mdt_ChiTiet_Print.Rows.Count == 0)
+                if (DatatableABC.Rows.Count == 0)
                 {
                   
                     MessageBox.Show("Không có dữ liệu");
@@ -170,6 +164,12 @@ namespace CtyTinLuong
 
                 else
                 {
+                    CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                    string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                    DataView dv1212 = new DataView(DatatableABC);
+                    dv1212.RowFilter = filterString;
+                    mdt_ChiTiet_Print = dv1212.ToTable();
+
                     mbPrint = true;
                     mdteTuNgay = dteTuNgay.DateTime;
                     mdteDenNgay = dteDenNgay.DateTime;

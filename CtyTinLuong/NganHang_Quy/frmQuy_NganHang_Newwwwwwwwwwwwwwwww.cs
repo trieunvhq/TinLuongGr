@@ -111,15 +111,7 @@ namespace CtyTinLuong
             this.Close();
         }
 
-        private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //UCQuy_NganHang_CongNo_MoiiiiiIIIIIIIIIIIIIIIIIIIIIIIIIIII ucc = new UCQuy_NganHang_CongNo_MoiiiiiIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
-          
-        }
-
+     
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             

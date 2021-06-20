@@ -36,7 +36,6 @@
             this.navPhieuThu = new DevExpress.XtraNavBar.NavBarItem();
             this.navPhieuChi = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navCongNo = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
@@ -65,7 +64,6 @@
             this.navBarItem7,
             this.navBarItem3,
             this.navBaoCo,
-            this.navCongNo,
             this.navBaoNo,
             this.navPhieuThu,
             this.navPhieuChi,
@@ -118,15 +116,8 @@
             this.navBarGroup2.Caption = "Báo cáo";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.navBarGroup2.Name = "navBarGroup2";
-            // 
-            // navCongNo
-            // 
-            this.navCongNo.Caption = "Công nợ";
-            this.navCongNo.Name = "navCongNo";
-            this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
             // navBarItem1
             // 
@@ -224,7 +215,6 @@
         private DevExpress.XtraNavBar.NavBarItem navPhieuThu;
         private DevExpress.XtraNavBar.NavBarItem navPhieuChi;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
-        private DevExpress.XtraNavBar.NavBarItem navCongNo;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;

@@ -198,10 +198,12 @@
             // 
             // btPrint
             // 
+            this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint.Appearance.Options.UseFont = true;
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(877, 545);
+            this.btPrint.Location = new System.Drawing.Point(872, 545);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(133, 22);
+            this.btPrint.Size = new System.Drawing.Size(138, 22);
             this.btPrint.StyleController = this.dataLayoutControl1;
             this.btPrint.TabIndex = 96;
             this.btPrint.Text = "Print";
@@ -209,6 +211,8 @@
             // 
             // btThoat
             // 
+            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
             this.btThoat.Location = new System.Drawing.Point(1014, 545);
@@ -432,14 +436,16 @@
             this.clNoDauKy.AppearanceCell.Options.UseTextOptions = true;
             this.clNoDauKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoDauKy.Caption = "Nợ";
+            this.clNoDauKy.DisplayFormat.FormatString = "N";
             this.clNoDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoDauKy.FieldName = "NoDauKy";
+            this.clNoDauKy.GroupFormat.FormatString = "N";
             this.clNoDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoDauKy.Name = "clNoDauKy";
             this.clNoDauKy.OptionsColumn.AllowEdit = false;
             this.clNoDauKy.OptionsColumn.FixedWidth = true;
             this.clNoDauKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoDauKy", "N")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoDauKy", "{0:#,##0.00}")});
             this.clNoDauKy.Visible = true;
             this.clNoDauKy.Width = 120;
             // 
@@ -448,14 +454,16 @@
             this.clCoDauKy.AppearanceCell.Options.UseTextOptions = true;
             this.clCoDauKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoDauKy.Caption = "Có";
+            this.clCoDauKy.DisplayFormat.FormatString = "N";
             this.clCoDauKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoDauKy.FieldName = "CoDauKy";
+            this.clCoDauKy.GroupFormat.FormatString = "N";
             this.clCoDauKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoDauKy.Name = "clCoDauKy";
             this.clCoDauKy.OptionsColumn.AllowEdit = false;
             this.clCoDauKy.OptionsColumn.FixedWidth = true;
             this.clCoDauKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoDauKy", "N")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoDauKy", "{0:#,##0.00}")});
             this.clCoDauKy.Visible = true;
             this.clCoDauKy.Width = 120;
             // 
@@ -480,14 +488,16 @@
             this.clNoTrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoTrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clNoTrongKy.Caption = "Nợ";
+            this.clNoTrongKy.DisplayFormat.FormatString = "N";
             this.clNoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoTrongKy.FieldName = "NoTrongKy";
+            this.clNoTrongKy.GroupFormat.FormatString = "N";
             this.clNoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoTrongKy.Name = "clNoTrongKy";
             this.clNoTrongKy.OptionsColumn.AllowEdit = false;
             this.clNoTrongKy.OptionsColumn.FixedWidth = true;
             this.clNoTrongKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoTrongKy", "N")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoTrongKy", "{0:#,##0.00}")});
             this.clNoTrongKy.Visible = true;
             this.clNoTrongKy.Width = 120;
             // 
@@ -497,14 +507,16 @@
             this.clCoTrongKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoTrongKy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clCoTrongKy.Caption = "Có";
+            this.clCoTrongKy.DisplayFormat.FormatString = "N";
             this.clCoTrongKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoTrongKy.FieldName = "CoTrongKy";
+            this.clCoTrongKy.GroupFormat.FormatString = "N";
             this.clCoTrongKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoTrongKy.Name = "clCoTrongKy";
             this.clCoTrongKy.OptionsColumn.AllowEdit = false;
             this.clCoTrongKy.OptionsColumn.FixedWidth = true;
             this.clCoTrongKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoTrongKy", "N")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoTrongKy", "{0:#,##0.00}")});
             this.clCoTrongKy.Visible = true;
             this.clCoTrongKy.Width = 120;
             // 
@@ -528,14 +540,16 @@
             this.clNoCuoiKy.AppearanceCell.Options.UseTextOptions = true;
             this.clNoCuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clNoCuoiKy.Caption = "Nợ";
+            this.clNoCuoiKy.DisplayFormat.FormatString = "N";
             this.clNoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoCuoiKy.FieldName = "NoCuoiKy";
+            this.clNoCuoiKy.GroupFormat.FormatString = "N";
             this.clNoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clNoCuoiKy.Name = "clNoCuoiKy";
             this.clNoCuoiKy.OptionsColumn.AllowEdit = false;
             this.clNoCuoiKy.OptionsColumn.FixedWidth = true;
             this.clNoCuoiKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoCuoiKy", "N")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NoCuoiKy", "{0:#,##0.00}")});
             this.clNoCuoiKy.Visible = true;
             this.clNoCuoiKy.Width = 120;
             // 
@@ -544,14 +558,16 @@
             this.clCoCuoiKy.AppearanceCell.Options.UseTextOptions = true;
             this.clCoCuoiKy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clCoCuoiKy.Caption = "Có";
+            this.clCoCuoiKy.DisplayFormat.FormatString = "N";
             this.clCoCuoiKy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoCuoiKy.FieldName = "CoCuoiKy";
+            this.clCoCuoiKy.GroupFormat.FormatString = "N";
             this.clCoCuoiKy.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.clCoCuoiKy.Name = "clCoCuoiKy";
             this.clCoCuoiKy.OptionsColumn.AllowEdit = false;
             this.clCoCuoiKy.OptionsColumn.FixedWidth = true;
             this.clCoCuoiKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoCuoiKy", "N")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CoCuoiKy", "{0:#,##0.00}")});
             this.clCoCuoiKy.Visible = true;
             this.clCoCuoiKy.Width = 120;
             // 
@@ -646,9 +662,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btPrint;
-            this.layoutControlItem7.Location = new System.Drawing.Point(875, 543);
+            this.layoutControlItem7.Location = new System.Drawing.Point(870, 543);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(137, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(142, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             this.layoutControlItem7.Click += new System.EventHandler(this.layoutControlItem7_Click);
@@ -658,7 +674,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(437, 543);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(438, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(433, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -686,6 +702,7 @@
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(437, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem11.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // frmChiTietBienDongTaiKhoan
             // 
@@ -697,6 +714,7 @@
             this.Name = "frmChiTietBienDongTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tài Khoản Kế Toán";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChiTietBienDongTaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

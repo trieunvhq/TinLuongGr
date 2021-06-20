@@ -188,8 +188,7 @@ namespace CtyTinLuong
 
         private void frmPrintCongNoNganHang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
-         
+            frmChiTietBienDongTaiKhoan.mbPrint = false;
             frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mbPrint = false;
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
