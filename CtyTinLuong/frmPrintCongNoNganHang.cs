@@ -102,6 +102,9 @@ namespace CtyTinLuong
             {
                 DataRow _ravi = ds.tbChiTietBienDongTaiKhoan.NewRow();
 
+                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
+                _ravi["STT_Gg"] = dt3.Rows[i]["STT_Gg"].ToString();
+
                 _ravi["SoDuDauKy_No"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_No"].ToString());
                 _ravi["SoDuDauKy_Co"] = Convert.ToDouble(dt3.Rows[i]["SoDuDauKy_Co"].ToString());
                 _ravi["TenNhaCungCap"] = dt3.Rows[i]["TenNhaCungCap"].ToString();
@@ -180,7 +183,7 @@ namespace CtyTinLuong
             if (MuaHang_frmCongNo.mbPrint == true)
                 Print_MuaHang_frmCongNo(MuaHang_frmCongNo.mdt_ChiTiet_Print);
             if (MuaHang_frmChiTietCongNo_MuaHang.mbPrint == true)
-                Print_MuaHang_frmChiTietCongNo_MuaHang(MuaHang_frmChiTietCongNo_MuaHang.mdt_ChiTiet_Print);
+                Print_MuaHang_frmChiTietCongNo_MuaHang(MuaHang_frmChiTietCongNo_MuaHang.mdtPrint);
             
         }
 
