@@ -178,6 +178,12 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.Designer.cs">
+      <DependentUpon>DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_BangLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1833,6 +1839,9 @@
     <EmbeddedResource Include="KhoDaiLy\DaiLy_BaoCao_TonKho.resx">
       <DependentUpon>DaiLy_BaoCao_TonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.resx">
+      <DependentUpon>DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.resx">
       <DependentUpon>frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.cs</DependentUpon>
     </EmbeddedResource>
@@ -1902,6 +1911,7 @@
     <EmbeddedResource Include="Luong_ChamCong\T_PrintChamComToGapDan.resx">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </EmbeddedResource>

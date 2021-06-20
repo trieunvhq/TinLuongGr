@@ -372,7 +372,12 @@ namespace CtyTinLuong
         private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
         {
             int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            if (dteTuNgay.EditValue!=null & dteDenNgay.EditValue!=null)
+            {
+               
+                LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+           
             if (xiddaily == 0) txtTenDaiLy.Text = "";
             else
             {
@@ -386,13 +391,23 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            
+            //if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null & gridMaDaiLy.EditValue!=null)
+            //{
+            //    int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            //    LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
+                
+          
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
+            //if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null & gridMaDaiLy.EditValue != null)
+            //{
+            //    int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            //    LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
 
-           
         }
 
         private void btRefresh_Click_1(object sender, EventArgs e)

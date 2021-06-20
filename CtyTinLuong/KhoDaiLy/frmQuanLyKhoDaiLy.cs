@@ -200,10 +200,9 @@ namespace CtyTinLuong
 
         private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDaiLy_GapDan_baocao_NXT uccc_NhapKho = new UCDaiLy_GapDan_baocao_NXT();
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
+            DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton uccc_NhapKho = new DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton();
+            uccc_NhapKho.Show();
+          
         }
 
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
