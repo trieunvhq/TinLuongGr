@@ -23,7 +23,7 @@ namespace CtyTinLuong
        private void NhapKho_NPL(DataTable dt_NPL)
         {
             clsKhoNPL_tbChiTietNhapKho clschitietnhapkho_NPL = new clsKhoNPL_tbChiTietNhapKho();
-            clsKhoNPL_tbChiTiet_TonDauKy clstondauky = new clsKhoNPL_tbChiTiet_TonDauKy();
+           
             for (int i = 0; i < dt_NPL.Rows.Count; i++)
             {
                 int ID_VTHH = Convert.ToInt32(dt_NPL.Rows[i]["ID_VTHH"].ToString());
@@ -41,13 +41,7 @@ namespace CtyTinLuong
                 clschitietnhapkho_NPL.bBoolTonDauKy = true;
                 clschitietnhapkho_NPL.bDaNhapKho = true;
                 clschitietnhapkho_NPL.Insert();
-                // ton đâu kỳ
-                clstondauky.iID_VTHH = ID_VTHH;
-                clstondauky.fSoLuong = SoLuong;
-                clstondauky.fDonGia = DonGia;
-                clstondauky.bTonTai = true;
-                clstondauky.bNgungTheoDoi = false;
-                clstondauky.Insert();
+             
             }
 
             MessageBox.Show("Đã xong kho NPL");
@@ -57,7 +51,7 @@ namespace CtyTinLuong
         {
           
             clsKhoBTP_tbChiTietNhapKho clschitietnhapkho_BTP = new clsKhoBTP_tbChiTietNhapKho();
-            clsKhoBTP_tbChiTiet_tonDauKy clstondauky = new clsKhoBTP_tbChiTiet_tonDauKy();
+          
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
             
                
@@ -79,13 +73,7 @@ namespace CtyTinLuong
                     clschitietnhapkho_BTP.bBoolTonDauKy = true;
                     clschitietnhapkho_BTP.bDaNhapKho = true;
                     clschitietnhapkho_BTP.Insert();
-                    // ton đâu kỳ
-                    clstondauky.iID_VTHH = ID_VTHH;
-                    clstondauky.fSoLuong = SoLuong;
-                    clstondauky.fDonGia = DonGia;
-                    clstondauky.bTonTai = true;
-                    clstondauky.bNgungTheoDoi = false;
-                    clstondauky.Insert();
+               
                 }
             
             MessageBox.Show("Đã xong kho bán thành phẩm");

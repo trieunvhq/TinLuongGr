@@ -147,21 +147,11 @@
     <Compile Include="BanHang\BanHang_CongNo.Designer.cs">
       <DependentUpon>BanHang_CongNo.cs</DependentUpon>
     </Compile>
-    <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy - Copy.cs" />
-    <Compile Include="CaiDatBanDau\clsKhoBTP_tbChiTiet_tonDauKy.cs" />
-    <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy - Copy.cs" />
-    <Compile Include="CaiDatBanDau\clsKhoNPL_tbChiTiet_TonDauKy.cs" />
     <Compile Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.Designer.cs">
       <DependentUpon>CaiDatBanDau_ChonTaiKhoanNganHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CaiDatBanDau\KhoNPL_CaiDatBanDau.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CaiDatBanDau\KhoNPL_CaiDatBanDau.Designer.cs">
-      <DependentUpon>KhoNPL_CaiDatBanDau.cs</DependentUpon>
     </Compile>
     <Compile Include="clsDelete_ALL_newwww.cs" />
     <Compile Include="clsNgayThang.cs" />
@@ -889,12 +879,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="CaiDatBanDau\frmThietLap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CaiDatBanDau\frmThietLap.Designer.cs">
-      <DependentUpon>frmThietLap.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmChiTietNhapKho_DaiLy_Sua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1332,12 +1316,6 @@
     </Compile>
     <Compile Include="KhoBanThanhPham\UCbanThanhPham_DaXuatKho.Designer.cs">
       <DependentUpon>UCbanThanhPham_DaXuatKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.Designer.cs">
-      <DependentUpon>UCCaiDatBanDau_Kho_BTP.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoNPL\UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.cs">
       <SubType>UserControl</SubType>
@@ -1800,9 +1778,6 @@
     <EmbeddedResource Include="CaiDatBanDau\CaiDatBanDau_ChonTaiKhoanNganHang.resx">
       <DependentUpon>CaiDatBanDau_ChonTaiKhoanNganHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CaiDatBanDau\KhoNPL_CaiDatBanDau.resx">
-      <DependentUpon>KhoNPL_CaiDatBanDau.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -2158,9 +2133,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CaiDatBanDau\frmThietLap.resx">
-      <DependentUpon>frmThietLap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietNhapKho_DaiLy_Sua.resx">
       <DependentUpon>frmChiTietNhapKho_DaiLy_Sua.cs</DependentUpon>
     </EmbeddedResource>
@@ -2410,9 +2382,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\UCbanThanhPham_DaXuatKho.resx">
       <DependentUpon>UCbanThanhPham_DaXuatKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CaiDatBanDau\UCCaiDatBanDau_Kho_BTP.resx">
-      <DependentUpon>UCCaiDatBanDau_Kho_BTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.resx">
       <DependentUpon>UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.cs</DependentUpon>
