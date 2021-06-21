@@ -405,7 +405,7 @@
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(39, 23);
             this.btThemMoi.TabIndex = 70;
-            this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.ToolTip = "Add";
             this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // btRefresh
