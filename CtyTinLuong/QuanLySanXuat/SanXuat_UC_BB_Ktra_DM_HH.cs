@@ -179,13 +179,13 @@ namespace CtyTinLuong
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString() != "")
+                if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
                 {
                     mb_ThemMoi_SoPhieu = false;
                     mb_Sua_SoPhieu = true;
                     mbCopy_Phieu = false;
-                    msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
-                    mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+                    msTenSoPhieu = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString();
+                    mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
                     SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
                     ff.Show();
                 }
@@ -203,7 +203,7 @@ namespace CtyTinLuong
             traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
-                int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+                int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
                 cls1.iID_SoPhieu = xxiID_SoPhieu;
                 cls1.Delete();
                 clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
@@ -285,8 +285,8 @@ namespace CtyTinLuong
             {
 
                 clsPhieu_tbPhieu cls = new clsPhieu_tbPhieu();
-                cls.iID_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-                cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
+                cls.iID_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
+                cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clLoaiGiay).ToString());
                 cls.Update_NgungTheoDoi();
             }
             catch
@@ -300,10 +300,10 @@ namespace CtyTinLuong
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString() != "")
+                if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
                 {
-                    msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
-                    mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+                    msTenSoPhieu = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString();
+                    mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
                     SanXuat_frmChiTietSoPhieu_RutGon ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_RutGon();
                     ff.Show();
                 }
@@ -379,13 +379,13 @@ namespace CtyTinLuong
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString() != "")
+                if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
                 {
                     mb_ThemMoi_SoPhieu = false;
                     mb_Sua_SoPhieu = false;
                     mbCopy_Phieu = true;
-                    msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
-                    mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+                    msTenSoPhieu = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString();
+                    mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
                     SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
                     ff.Show();
                 }
