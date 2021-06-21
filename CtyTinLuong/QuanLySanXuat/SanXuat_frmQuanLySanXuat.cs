@@ -14,6 +14,7 @@ namespace CtyTinLuong
     {
         private bool isload = true;
         UC_SanXuat_PhieuSanXuat ucc;
+        SanXuat_UC_BB_Ktra_DM_HH ucc1;
         public static int imay_in_1_Cat_2_dot_3;
         public SanXuat_frmQuanLySanXuat()
         {
@@ -264,10 +265,19 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            SanXuat_UC_BB_Ktra_DM_HH ucc = new SanXuat_UC_BB_Ktra_DM_HH();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            //SanXuat_UC_BB_Ktra_DM_HH ucc = new SanXuat_UC_BB_Ktra_DM_HH();
+            //ucc.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(ucc);
+            //ucc.BringToFront();
+
+
+            ucc1.LoadData(1, true);
+
+            ResetSoTrang();
+
+            ucc1.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc1);
+            ucc1.BringToFront();
         }
 
         private void navSanLuongMayDOT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

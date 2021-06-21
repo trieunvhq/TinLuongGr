@@ -302,7 +302,7 @@
             // btnTrangTiep
             // 
             this.btnTrangTiep.AutoSize = true;
-            this.btnTrangTiep.Location = new System.Drawing.Point(370, 636);
+            this.btnTrangTiep.Location = new System.Drawing.Point(386, 636);
             this.btnTrangTiep.Name = "btnTrangTiep";
             this.btnTrangTiep.Size = new System.Drawing.Size(55, 13);
             this.btnTrangTiep.TabIndex = 79;
@@ -326,7 +326,7 @@
             // lbTongSoTrang
             // 
             this.lbTongSoTrang.AutoSize = true;
-            this.lbTongSoTrang.Location = new System.Drawing.Point(352, 636);
+            this.lbTongSoTrang.Location = new System.Drawing.Point(368, 636);
             this.lbTongSoTrang.Name = "lbTongSoTrang";
             this.lbTongSoTrang.Size = new System.Drawing.Size(12, 13);
             this.lbTongSoTrang.TabIndex = 81;
@@ -337,7 +337,7 @@
             // 
             this.txtSoTrang.Location = new System.Drawing.Point(309, 633);
             this.txtSoTrang.Name = "txtSoTrang";
-            this.txtSoTrang.Size = new System.Drawing.Size(37, 20);
+            this.txtSoTrang.Size = new System.Drawing.Size(56, 20);
             this.txtSoTrang.TabIndex = 82;
             this.txtSoTrang.Visible = false;
             this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
