@@ -14,7 +14,7 @@ namespace CtyTinLuong
     {
         private bool isload = true;
         UC_SanXuat_PhieuSanXuat ucc;
-        SanXuat_UC_BB_Ktra_DM_HH ucc1;
+        Tr_UC_BB_Ktra_DM_HHSX ucc1;
         public static int imay_in_1_Cat_2_dot_3;
         public SanXuat_frmQuanLySanXuat()
         {
@@ -22,7 +22,7 @@ namespace CtyTinLuong
             InitializeComponent();
             isload = false;
             ucc = new UC_SanXuat_PhieuSanXuat(this);
-            ucc1 = new SanXuat_UC_BB_Ktra_DM_HH(this);
+            ucc1 = new Tr_UC_BB_Ktra_DM_HHSX(this);
         }
         public void ResetSoTrang()
         {

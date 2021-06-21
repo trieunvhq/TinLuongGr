@@ -11,7 +11,7 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace CtyTinLuong
 {
-    public partial class SanXuat_UC_BB_Ktra_DM_HH : UserControl
+    public partial class Tr_UC_BB_Ktra_DM_HHSX : UserControl
     {
         public static int mID_iD_SoPhieu;
         public static bool mb_ThemMoi_SoPhieu, mb_Sua_SoPhieu, mbCopy_Phieu;
@@ -148,13 +148,13 @@ namespace CtyTinLuong
            
         }
         SanXuat_frmQuanLySanXuat _frmQLSX;
-        public SanXuat_UC_BB_Ktra_DM_HH(SanXuat_frmQuanLySanXuat frmQLSX)
+        public Tr_UC_BB_Ktra_DM_HHSX(SanXuat_frmQuanLySanXuat frmQLSX)
         {
             _frmQLSX = frmQLSX;
             InitializeComponent();
         }
 
-        private void SanXuat_UC_BB_Ktra_DM_HH_Load(object sender, EventArgs e)
+        private void Tr_UC_BB_Ktra_DM_HHSX_Load(object sender, EventArgs e)
         {
             //clCaLamViec.Caption = "Ca\n làm việc";
           //  HienThi_ALL();
@@ -162,7 +162,7 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            SanXuat_UC_BB_Ktra_DM_HH_Load(sender, e);
+            Tr_UC_BB_Ktra_DM_HHSX_Load(sender, e);
         }
 
      
@@ -297,8 +297,10 @@ namespace CtyTinLuong
             //mb_ThemMoi_SoPhieu = true;
             //mb_Sua_SoPhieu = false;
             //mbCopy_Phieu = false;
-            //SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
-            //ff.Show();
+            Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
+            _frmQLSX.Hide();
+            ff.ShowDialog();
+            _frmQLSX.Show();
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)

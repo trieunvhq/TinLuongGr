@@ -787,6 +787,12 @@
     <Compile Include="Luong_ChamCong\frmBangChamCongTrongThang.Designer.cs">
       <DependentUpon>frmBangChamCongTrongThang.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmChiTietBB_Ktra_DMHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmChiTietBB_Ktra_DMHH.Designer.cs">
+      <DependentUpon>Tr_frmChiTietBB_Ktra_DMHH.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Tr_frmPrintSanLuong_CT_Luong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -805,11 +811,11 @@
     <Compile Include="QuanLySanXuat\Tr_PrintSanLuong_CT_Luong_Sub.Designer.cs">
       <DependentUpon>Tr_PrintSanLuong_CT_Luong_Sub.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_UC_BB_Ktra_DM_HH.cs">
+    <Compile Include="QuanLySanXuat\Tr_UC_BB_Ktra_DM_HHSX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLySanXuat\SanXuat_UC_BB_Ktra_DM_HH.Designer.cs">
-      <DependentUpon>SanXuat_UC_BB_Ktra_DM_HH.cs</DependentUpon>
+    <Compile Include="QuanLySanXuat\Tr_UC_BB_Ktra_DM_HHSX.Designer.cs">
+      <DependentUpon>Tr_UC_BB_Ktra_DM_HHSX.cs</DependentUpon>
     </Compile>
     <Compile Include="QUANTRI\clsAaatbMacDinhNguoiKy - Copy.cs" />
     <Compile Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.cs">
@@ -2169,6 +2175,9 @@
     <EmbeddedResource Include="QuanLySanXuat\SanLuong_To_DOT_DAP.resx">
       <DependentUpon>SanLuong_To_DOT_DAP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Tr_frmChiTietBB_Ktra_DMHH.resx">
+      <DependentUpon>Tr_frmChiTietBB_Ktra_DMHH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\SanXuat_frmChiTietSoPhieu_RutGon.resx">
       <DependentUpon>SanXuat_frmChiTietSoPhieu_RutGon.cs</DependentUpon>
     </EmbeddedResource>
@@ -2190,8 +2199,8 @@
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.resx">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\SanXuat_UC_BB_Ktra_DM_HH.resx">
-      <DependentUpon>SanXuat_UC_BB_Ktra_DM_HH.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLySanXuat\Tr_UC_BB_Ktra_DM_HHSX.resx">
+      <DependentUpon>Tr_UC_BB_Ktra_DM_HHSX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Xtra_SanLuongToMay_IN_RutGon.resx">
       <DependentUpon>Xtra_SanLuongToMay_IN_RutGon.cs</DependentUpon>
