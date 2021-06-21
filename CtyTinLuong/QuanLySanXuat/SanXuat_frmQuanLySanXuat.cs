@@ -22,6 +22,7 @@ namespace CtyTinLuong
             InitializeComponent();
             isload = false;
             ucc = new UC_SanXuat_PhieuSanXuat(this);
+            ucc1 = new SanXuat_UC_BB_Ktra_DM_HH(this);
         }
         public void ResetSoTrang()
         {
@@ -53,7 +54,38 @@ namespace CtyTinLuong
                 btnTrangTiep.LinkColor = Color.Black;
             }
         }
-       
+
+        public void ResetSoTrang_BB()
+        {
+            btnTrangSau.Visible = true;
+            btnTrangTiep.Visible = true;
+            lbTongSoTrang.Visible = true;
+            txtSoTrang.Visible = true;
+            btnTrangSau.LinkColor = Color.Black;
+            btnTrangTiep.LinkColor = Color.Blue;
+            txtSoTrang.Text = "1";
+
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_TongPhieuSX(ucc1._ngay_batdau, ucc1._ngay_ketthuc, ucc1._ma_phieu);
+                if (dt_ != null && dt_.Rows.Count > 0)
+                {
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                }
+                else
+                {
+                    lbTongSoTrang.Text = "/1";
+                }
+            }
+            if (lbTongSoTrang.Text == "0")
+                lbTongSoTrang.Text = "/1";
+            if (lbTongSoTrang.Text == "/1")
+            {
+                btnTrangSau.LinkColor = Color.Black;
+                btnTrangTiep.LinkColor = Color.Black;
+            }
+        }
+
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             ucc.LoadData(1,true);
@@ -273,7 +305,7 @@ namespace CtyTinLuong
 
             ucc1.LoadData(1, true);
 
-            ResetSoTrang();
+            ResetSoTrang_BB();
 
             ucc1.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc1);
