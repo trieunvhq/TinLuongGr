@@ -13,8 +13,10 @@ namespace CtyTinLuong
 {
     public partial class Tr_UC_BB_Ktra_DM_HHSX : UserControl
     {
-        public static int mID_iD_SoPhieu;
-        public static bool mb_ThemMoi_SoPhieu, mb_Sua_SoPhieu, mbCopy_Phieu;
+        public static int mi_ID_BB_Ktra = -1;
+        public static bool mbAdd_BB_Ktra = false;
+        public static bool mb_Sua_BB_Ktra = false;
+        public static bool mbCopy_BB_Ktra = false;
         public static string msTenSoPhieu;
        
         public static DateTime madaNgayPhieu;
@@ -294,9 +296,11 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click_1(object sender, EventArgs e)
         {
-            //mb_ThemMoi_SoPhieu = true;
-            //mb_Sua_SoPhieu = false;
-            //mbCopy_Phieu = false;
+            mbAdd_BB_Ktra = true;
+            mbCopy_BB_Ktra = false;
+            mb_Sua_BB_Ktra = false;
+
+            //
             Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
             _frmQLSX.Hide();
             ff.ShowDialog();

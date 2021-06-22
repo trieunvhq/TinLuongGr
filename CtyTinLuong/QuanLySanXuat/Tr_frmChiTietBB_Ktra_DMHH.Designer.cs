@@ -346,7 +346,6 @@
             this.btChiLuu.Size = new System.Drawing.Size(92, 22);
             this.btChiLuu.TabIndex = 114;
             this.btChiLuu.Text = "Lưu";
-            this.btChiLuu.Click += new System.EventHandler(this.btChiLuu_Click);
             // 
             // btPrint
             // 
@@ -386,6 +385,7 @@
             this.btSave.Size = new System.Drawing.Size(67, 23);
             this.btSave.TabIndex = 18;
             this.btSave.Text = "Lưu";
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // groupBox1
             // 

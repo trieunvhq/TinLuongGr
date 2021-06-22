@@ -70,89 +70,29 @@ namespace CtyTinLuong
         }
 
       
-        private void Luu_Va_GuiDuLieu_May_DOT()
+        private bool Insert_BB_Ktra_DMHHSX()
         {
-            //if (!KiemTraLuu_May_DOT()) return;
-            //else
-            //{
-            //    clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
-            //    cls2.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
-            //    cls2.sCaSanXuat = cbCa.Text.ToString();
-            //    cls2.daNgaySanXuat = dateNgayThang.DateTime;
-            //    DataTable dt3 = cls2.SelectAll_W_iID_SoPhieu_W_NgayThangSX_W_Ca_SX_Chon_May_DOT();
-            //    int ID_ChiTietPhieuxxxx;
-            //    bool bbbbbTrangThaiXuatNhap, bbbbbTrangThaiTaoLenhSanXuat;
-            //    if (dt3.Rows.Count > 0)
-            //    {                   
-            //        bbbbbTrangThaiXuatNhap = Convert.ToBoolean(dt3.Rows[0]["TrangThaiXuatNhap"].ToString());
-            //        bbbbbTrangThaiTaoLenhSanXuat = Convert.ToBoolean(dt3.Rows[0]["TrangThaiTaoLenhSanXuat"].ToString());
-            //    }
-            //    else
-            //    {
-                    
-            //        bbbbbTrangThaiXuatNhap = bbbbbTrangThaiTaoLenhSanXuat = false;
-            //    }
-            //    clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-              
-            //    int ID_May = Convert.ToInt32(gridMaMay_DOT.EditValue.ToString());
-            //    int ID_CongNhan = Convert.ToInt32(gridMaCongNhan_May_DOT.EditValue.ToString());
-            //    int ID_CaTruong = Convert.ToInt32(gridMaCaTruong_May_DOT.EditValue.ToString());
-            //    DateTime NgaySanXuat = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
-            //    string CaSanXuat = cbCa.Text.ToString();
+            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+            cls.daNgayThang = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
+            cls.sSoHieu = txtSoHieu.Text.ToString().Trim();
+            cls.iCa = Convert.ToInt32(txtCa.Text.ToString());
+            cls.sLoaiHang = txtLoaiHang.Text.ToString().Trim();
+            cls.sLoaiGiay = txtLoaiGiay.Text.ToString().Trim();
+            cls.fSoLuongKtra = Convert.ToDouble(txtSoLuongKtra.Text.ToString());
+            cls.sDonVi_first = txtDonVi_in.Text.ToString().Trim();
+            cls.fTrongLuong = Convert.ToDouble(txtTrongLuong.Text.ToString());
+            cls.fSoLuong = Convert.ToDouble(txtSoLuong.Text.ToString());
+            cls.sDonVi_Second = txtDonVi_Out.Text.ToString().Trim();
+            cls.fQuyRaKien = Convert.ToDouble(txtQuyRaKien.Text.ToString());
+            cls.fPhePham = Convert.ToDouble(txtPhePham.Text.ToString());
+            cls.fDoCao = Convert.ToDouble(txtDoCao.Text.ToString());
+            cls.fMotBao_kg = Convert.ToDouble(txt1Bao_kg.Text.ToString());
+            cls.fMotBao_SoKien = Convert.ToDouble(txt1Bao_SoKien.Text.ToString());
+            cls.fSauMuoi_BaoKien = Convert.ToDouble(txt60Bao_Kien.Text.ToString());
+            cls.sGhiChu = txtGhiChu.Text.ToString().Trim();
 
-            //    int ID_VTHH_Vao = Convert.ToInt32(gridHangHoaVao_may_DOT.EditValue.ToString());
-            //    double SoLuong_Vao = Convert.ToDouble(txtDonVi_first.Text.ToString());
-            //    double DonGia_Vao = Convert.ToDouble(txtTrongLuong.Text.ToString());
-            //    int ID_VTHH_Ra = Convert.ToInt32(gridHangHoaXuat_May_DOT.EditValue.ToString());
-            //    double SanLuong_Thuong = Convert.ToDouble(txtSoLuong.Text.ToString());                
-            //    double DonGia_Xuat = Convert.ToDouble(txtDonGiaXuat_May_DOT.Text.ToString());
-            //    double PhePham = Convert.ToDouble(txtPhePham_May_DOT.Text.ToString());
-            //    double SOKGMOTBAO=Convert.ToDouble(txtSoHieu.Text.ToString());
-            //    double docaodot= Convert.ToDouble(txtDoCao.Text.ToString());
-            //    int ID_DinhMuc_Luong = Convert.ToInt32(gridDinhMucSLMay_DOT.EditValue.ToString());
-            //    cls.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu; 
-            //    cls.iID_May = ID_May;
-            //    cls.iID_CongNhan = ID_CongNhan;
-            //    cls.iID_CaTruong = ID_CaTruong;
-            //    cls.daNgaySanXuat = NgaySanXuat;
-            //    cls.sGhiChu = txtGhiChu_May_DOT.Text.ToString();
-            //    cls.sCaSanXuat = CaSanXuat;
-            //    cls.iID_DinhMuc_Luong = ID_DinhMuc_Luong;
-            //    cls.iID_VTHH_Vao = ID_VTHH_Vao;
-            //    cls.fSoLuong_Vao = SoLuong_Vao;
-            //    cls.fDonGia_Vao = DonGia_Vao;
-            //    cls.iID_VTHH_Ra = ID_VTHH_Ra;
-            //    cls.fSanLuong_Thuong = SanLuong_Thuong;
-            //    cls.fSanLuong_TangCa = 0;
-            //    cls.fSanLuong_Tong = SanLuong_Thuong;
-            //    cls.fDonGia_Xuat = DonGia_Xuat;
-            //    cls.fPhePham = PhePham;
-            //    cls.bBMay_IN = false;
-            //    cls.bBMay_CAT = false;
-            //    cls.bBMay_DOT = true;
-            //    cls.bTrangThaiXuatNhap = bbbbbTrangThaiXuatNhap;
-            //    cls.bGuiDuLieu = true;
-            //    cls.bTrangThaiTaoLenhSanXuat = bbbbbTrangThaiTaoLenhSanXuat;
-            //    cls.fSoKG_MotBao_May_Dot = SOKGMOTBAO;
-            //    cls.fDoCao_Dot = docaodot;
-            //    if (mbThemMoi_DOT == true)
-            //    {
-            //        cls.Insert();
-            //        ID_ChiTietPhieuxxxx = cls.iID_ChiTietPhieu.Value;
-            //    }
-            //    else
-            //    {
-            //        ID_ChiTietPhieuxxxx = Convert.ToInt32(dt3.Rows[0]["ID_ChiTietPhieu"].ToString());
-            //        cls.iID_ChiTietPhieu = ID_ChiTietPhieuxxxx;
-            //        cls.Update();
-            //    }
-            //    TaoLenhSanXuat_DOT(SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu, ID_ChiTietPhieuxxxx);
-
-            //    clsPhieu_tbPhieu cls22222 = new clsPhieu_tbPhieu();
-            //    cls22222.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
-            //    cls22222.Update_Gui_DuLieu();
-            //}
-
+            if (cls.Insert()) return true;
+            else return false;
         }
         private void TaoLenhSanXuat_DOT(int xxIDSoPhieu, int iiiDID_ChiTietPhieu)
         {
@@ -334,7 +274,184 @@ namespace CtyTinLuong
 
 
         }
-      
+
+        private bool CheckDataInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtSoHieu.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Số hiệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoHieu.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtSoHieu.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Số hiệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoHieu.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtCa.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Ca sản xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCa.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtCa.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Ca sản xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCa.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtLoaiHang.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Loại hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLoaiHang.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtLoaiGiay.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Loại giấy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLoaiGiay.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtSoLuongKtra.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Số lượng kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoLuongKtra.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtSoLuongKtra.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Số lượng kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoLuongKtra.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDonVi_in.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDonVi_in.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtTrongLuong.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Trọng lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTrongLuong.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtTrongLuong.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Trọng lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTrongLuong.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtSoLuong.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoLuong.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtSoLuong.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoLuong.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDonVi_Out.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDonVi_Out.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtQuyRaKien.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Quy ra kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuyRaKien.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtQuyRaKien.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Quy ra kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuyRaKien.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhePham.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Phế phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhePham.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtPhePham.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Phế phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhePham.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDoCao.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Độ cao!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDoCao.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txtDoCao.Text))
+            {
+                MessageBox.Show("Kiểm tra lại Độ cao!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDoCao.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txt1Bao_kg.Text))
+            {
+                MessageBox.Show("Kiểm tra lại 1 Bao (kg)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt1Bao_kg.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txt1Bao_kg.Text))
+            {
+                MessageBox.Show("Kiểm tra lại 1 Bao (kg)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt1Bao_kg.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txt1Bao_SoKien.Text))
+            {
+                MessageBox.Show("Kiểm tra lại 1 Bao giao số kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt1Bao_SoKien.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txt1Bao_SoKien.Text))
+            {
+                MessageBox.Show("Kiểm tra lại 1 Bao giao số kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt1Bao_SoKien.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txt60Bao_Kien.Text))
+            {
+                MessageBox.Show("Kiểm tra lại 60 Bao/kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt60Bao_Kien.Focus();
+                return false;
+            }
+            else if (!CheckIsNumber(txt60Bao_Kien.Text))
+            {
+                MessageBox.Show("Kiểm tra lại 60 Bao/kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt60Bao_Kien.Focus();
+                return false;
+            }
+            else return true;
+        }
+
+        //
+        public static bool CheckIsNumber(string Value)
+        {
+            double OutVal;
+            if (Double.TryParse(Value, out OutVal))
+            {
+                // it is a number
+                return true;
+            }
+            else
+            {
+                // it is not a number
+                return false;
+            }
+        }
+
         public Tr_frmChiTietBB_Ktra_DMHH()
         {
             InitializeComponent();
@@ -354,15 +471,22 @@ namespace CtyTinLuong
         }
 
 
-
-
-
-        private void btChiLuu_Click(object sender, EventArgs e)
+        private void btSave_Click(object sender, EventArgs e)
         {
-            //Luu_Va_GuiDuLieu_May_DOT();
-            //LuuDuLieu_BoSungCongNhan(SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu);
-            //MessageBox.Show("Đã lưu");
-
+            if  (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra)
+            {
+                if (CheckDataInput())
+                {
+                    if (Insert_BB_Ktra_DMHHSX())
+                    {
+                        MessageBox.Show("Thêm mới dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm mới dữ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
     }
 }
