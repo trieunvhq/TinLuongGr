@@ -63,6 +63,7 @@
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.navChamCong_TrgCa = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -221,7 +222,8 @@
             this.navBarItem15,
             this.navBTTL_TBX_TQ,
             this.navBTTL_TMC,
-            this.navChamCong_TGD});
+            this.navChamCong_TGD,
+            this.navChamCong_TrgCa});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -239,7 +241,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_CongNhat),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TBX),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TDK),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TGD)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TGD),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TrgCa)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navChamCong_CongNhat
@@ -358,6 +361,12 @@
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
             // 
+            // navChamCong_TrgCa
+            // 
+            this.navChamCong_TrgCa.Caption = "Trưởng ca";
+            this.navChamCong_TrgCa.Name = "navChamCong_TrgCa";
+            this.navChamCong_TrgCa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TrgCa_LinkClicked);
+            // 
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,5 +424,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TMC;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_TGD;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraNavBar.NavBarItem navChamCong_TrgCa;
     }
 }

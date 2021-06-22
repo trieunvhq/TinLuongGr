@@ -16,7 +16,7 @@ namespace CtyTinLuong
     public partial class frmChamCong_TDK : Form
     { 
         public int _nam, _thang, _id_bophan,_ID_DinhMucLuong_CongNhat;
-        public string _TenVTHH;
+        public string _TenVTHH, _MaDinhMucLuongCongNhat;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -24,8 +24,8 @@ namespace CtyTinLuong
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmChamCong_TDK(int id_bophan)
         {
-            _ID_DinhMucLuong_CongNhat = 0;
-            _id_bophan = id_bophan;
+            _ID_DinhMucLuong_CongNhat = 0; _MaDinhMucLuongCongNhat = "";
+             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -375,7 +375,38 @@ namespace CtyTinLuong
             gridControl1.DataSource = _data;
 
             isload = false;
-        }  
+        }
+        public void Load_DinhMuc(int id_dinhmuc, string ma, int id_congnhan)
+        {
+            _ID_DinhMucLuong_CongNhat = id_dinhmuc;
+            _MaDinhMucLuongCongNhat = ma;
+            if (id_congnhan > 0)
+            {
+                for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                {
+                    if (Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()) == id_congnhan)
+                    {
+                        _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
+
+                        _data.Rows[i + 1]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _data.Rows[i + 1]["MaDinhMucLuongCongNhat"] = ma;
+                        break;
+                    }
+                    else
+                    { }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                {
+                    _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                    _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
+                }
+            }
+            gridControl1.DataSource = _data;
+        }
         private string thutrongtuanxyz(int ewwd)
         { 
             string xxx = "";
@@ -590,6 +621,40 @@ namespace CtyTinLuong
 
             ++stt_;
             _ravi["STT"] = (stt_);
+            _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+            _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
+            _ravi["Cong"] = "Công";
+            _data.Rows.Add(_ravi);
+            //
+            _ravi = _data.NewRow();
+            _ravi["ID_CongNhan"] = 0;
+            _ravi["ID_VTHH"] = id_vthh_;
+            _ravi["TenVTHH"] = ten_;
+            _ravi["Thang"] = _thang;
+            _ravi["Nam"] = _nam;
+            _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
+            _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
+            _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
+            _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
+            _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
+            _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
+            _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
+            _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
+            _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
+            _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
+            _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
+
+            _ravi["Tong"] = 0;
+            _ravi["GuiDuLieu"] = false;
+            _ravi["MaNhanVien"] = "";
+            _ravi["TenNhanVien"] = "";
+
+
+            ++stt_;
+            _ravi["STT"] = (stt_);
+            _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+            _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
+            _ravi["Cong"] = "Tăng";
             _data.Rows.Add(_ravi);
             //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
             //{

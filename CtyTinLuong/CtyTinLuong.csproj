@@ -261,6 +261,12 @@
     <Compile Include="Luong_ChamCong\frmChamCongToGapDan.Designer.cs">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TrgCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TrgCa.Designer.cs">
+      <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1829,6 +1835,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TrgCa.resx">
+      <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
       <DependentUpon>frmChamCong_TDK.cs</DependentUpon>

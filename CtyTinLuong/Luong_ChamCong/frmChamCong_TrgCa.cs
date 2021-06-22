@@ -19,20 +19,18 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCong_TBX : Form
+    public partial class frmChamCong_TrgCa : Form
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         public int _nam, _thang, _id_bophan = 25;
-        private string _MaDinhMucLuongCongNhat;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmChamCong_TBX(int id_bophan)
+        public frmChamCong_TrgCa(int id_bophan)
         {
             _ID_DinhMucLuong_CongNhat = 0;
-            _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
@@ -50,8 +48,7 @@ namespace CtyTinLuong
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
             _ID_DinhMucLuong_CongNhat = id_dinhmuc;
-            _MaDinhMucLuongCongNhat = ma;
-            if (id_congnhan>0)
+            if(id_congnhan>0)
             {
                 for (int i = 0; i < _data.Rows.Count - 1; ++i)
                 {
@@ -136,7 +133,8 @@ namespace CtyTinLuong
         {
             isload = true;
             if (islandau)
-            { 
+            {
+
                 DateTime dtnow = DateTime.Now;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
@@ -177,7 +175,8 @@ namespace CtyTinLuong
                         ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
                         ds_grid[i].AppearanceCell.ForeColor = Color.Red;
                     }
-                } 
+                }
+
             }
             else
             {
@@ -394,12 +393,11 @@ namespace CtyTinLuong
                         _ravi["MaDinhMuc"] = "";
                         _ravi["DinhMuc_KhongTang"] = 0;
                         _ravi["DinhMuc_Tang"] = 0;
-                        _ravi["Cong"] = "Công";
 
                         ++stt_;
                         _ravi["STT"] = (stt_);
+                        _ravi["Cong"] = "Công";
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                        _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
 
                         _ravi = _data.NewRow();
@@ -430,10 +428,9 @@ namespace CtyTinLuong
                         _ravi["DinhMuc_Tang"] = 0;
 
                         ++stt_;
-                        _ravi["STT"] = (stt_);
+                        _ravi["STT"] = (stt_); 
                         _ravi["Cong"] = "Tăng";
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                        _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
                     }
                 }
@@ -509,7 +506,7 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
-        private void frmChamCong_TBX_Load(object sender, EventArgs e)
+        private void frmChamCong_TrgCa_Load(object sender, EventArgs e)
         {
         }
 
@@ -706,7 +703,6 @@ namespace CtyTinLuong
 
                 _ravi["Cong"] = "Công";
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
 
                 _data.Rows.Add(_ravi);
 
@@ -731,10 +727,9 @@ namespace CtyTinLuong
                 _ravi["GuiDuLieu"] = false;
                 _ravi["MaNhanVien"] = "";
                 _ravi["TenNhanVien"] = ten_;
+                _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat; 
 
-                _ravi["Cong"] = "Tăng";
-                _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
+                 _ravi["Cong"] = "Tăng";
 
                 _data.Rows.Add(_ravi);
             }
@@ -841,7 +836,7 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_TBX", this);
+            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_TrgCa", this);
             ff.ShowDialog();
         }
         
@@ -869,7 +864,7 @@ namespace CtyTinLuong
             {
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
                  
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_TBX", this);
+                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_TrgCa", this);
                 ff.ShowDialog();
 
             }

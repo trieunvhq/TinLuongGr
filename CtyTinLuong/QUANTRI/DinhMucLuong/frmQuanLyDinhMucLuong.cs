@@ -152,15 +152,20 @@ namespace CtyTinLuong
                     switch (_Type)
                     {
                         case "frmChamCong_TBX":
-                            this.Close();
-                            frmChamCong_TBX frm_ = (frmChamCong_TBX)_frm;
-                            frm_.Load_DinhMuc
+                            this.Close(); 
+                            ((frmChamCong_TBX)_frm).Load_DinhMuc
                                 (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString())
                                 , gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString(),
                                 _ID_CongNhan);
                             break;
-                    }
-                    
+                        case "frmChamCong_TrgCa":
+                            this.Close(); 
+                            ((frmChamCong_TrgCa)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString())
+                                , gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString(),
+                                _ID_CongNhan);
+                            break;
+                    } 
                 }
                 else
                 {

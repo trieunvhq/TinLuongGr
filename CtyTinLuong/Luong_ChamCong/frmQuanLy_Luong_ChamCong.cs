@@ -250,5 +250,18 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navChamCong_TrgCa_LinkClicked(object sender, NavBarLinkEventArgs e)
+        { 
+            int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_TrgCa frm = new frmChamCong_TrgCa(id_bophan_) { TopLevel = false, TopMost = true };
+            frm.LoadData(true);
+            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
+            ShowWinform(frm, sender);
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
     }
 }

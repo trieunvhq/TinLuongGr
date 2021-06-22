@@ -21,7 +21,7 @@ namespace CtyTinLuong
     public partial class frmChamCongToGapDan : Form
     { 
         public int _nam, _thang, _id_bophan, _id_vthh, _ID_DinhMucLuong_CongNhat;
-        public string _ten_vthh;
+        public string _ten_vthh, _MaDinhMucLuongCongNhat;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -30,6 +30,7 @@ namespace CtyTinLuong
         public frmChamCongToGapDan(int id_bophan)
         {
             _ID_DinhMucLuong_CongNhat = 0;
+            _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
@@ -390,6 +391,8 @@ namespace CtyTinLuong
 
                     ++stt_;
                     _ravi["STT"] = (stt_);
+                    _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                    _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                     _data.Rows.Add(_ravi);
                 }
             }
@@ -675,6 +678,8 @@ namespace CtyTinLuong
 
             ++stt_;
             _ravi["STT"] = (stt_);
+            _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+            _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
             _data.Rows.Add(_ravi);
             //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
             //{
