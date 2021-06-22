@@ -21,7 +21,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCong_TBX : Form
     {
-        public static int  _ID_DinhMucLuong_CongNhat = 0;
+        public int  _ID_DinhMucLuong_CongNhat = 0;
         public int _nam, _thang, _id_bophan = 25;
         private DataTable _data;
         private bool isload = true;
@@ -45,10 +45,35 @@ namespace CtyTinLuong
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
         }
-        public static void Load_DinhMuc(int id_dinhmuc)
+        public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
             _ID_DinhMucLuong_CongNhat = id_dinhmuc;
+            if(id_congnhan>0)
+            {
+                for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                {
+                    if(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString())==id_congnhan)
+                    {
+                        _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
 
+                        _data.Rows[i+1]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _data.Rows[i + 1]["MaDinhMucLuongCongNhat"] = ma;
+                        break;
+                    }
+                    else
+                    { }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                {
+                    _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                    _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
+                }
+            }
+            gridControl1.DataSource = _data;
         }
         private string LayThu(DateTime date)
         {
@@ -163,11 +188,7 @@ namespace CtyTinLuong
                 cbNhanSu.DisplayMember = "TenNhanVien";
                 cbNhanSu.ValueMember = "ID_NhanSu";
                 //
-                _dt_DinhMuc = clsThin_.T_DML_CN_SA();
-                cbDinhMuc.DataSource = _dt_DinhMuc;
-                cbDinhMuc.DisplayMember = "MaDinhMucLuongCongNhat";
-                cbDinhMuc.ValueMember = "ID_DinhMucLuong_CongNhat";
-
+                 
             }
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
@@ -316,9 +337,7 @@ namespace CtyTinLuong
                     Tong_Ngay29 += Ngay29;
                     Tong_Ngay30 += Ngay30;
                     Tong_Ngay31 += Ngay31;
-
-
-                    _data.Rows[i]["MaDinhMucLuongCongNhat"] = _dt_DinhMuc;
+                    
                 }
             }
             LoadCongNhanVaoBang(_id_bophan);
@@ -760,34 +779,16 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww();
+            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_TBX", this);
             ff.ShowDialog();
         }
-
-        private void cbDinhMuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-            _ID_DinhMucLuong_CongNhat = (int)cbDinhMuc.SelectedValue;
-            for(int i = 0;i<_data.Rows.Count-1;++i)
-            {
-                _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-            }
-        }
-
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
         {
             if(e.Column ==  clTenNhanVien)
             {
-                int id_nhanvien = Convert.ToInt32(_data.Rows[e.RowHandle]["ID_CongNhan"]);
-
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_nhanvien, "frmChamCong_TBX");
-                ff.ShowDialog();
+                
             }
         }
 
@@ -797,6 +798,22 @@ namespace CtyTinLuong
             if (e.RowHandle == _data.Rows.Count - 1)
             {
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
+                 
+                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_TBX", this);
+                ff.ShowDialog();
+
+            }
+            catch (Exception ee)
+            {
+
             }
         }
 
@@ -866,7 +883,8 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true, isTang, _id_bophan, _ID_DinhMucLuong_CongNhat);
+                        0, true, isTang, _id_bophan,
+                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {

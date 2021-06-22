@@ -13,7 +13,7 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyDinhMucLuong : Form
     {
-        private int _ID_CongNhan = 0;
+        private int _ID_CongNhan = -1;
         private string _Type = "";
         public static bool mb_TheMoi_DinhMucLuongCongNhat;
         public static string msTenDinhMucLuongCongNhat;
@@ -47,14 +47,16 @@ namespace CtyTinLuong
         }
         public frmQuanLyDinhMucLuong()
         {
-            _ID_CongNhan = 0;
+            _ID_CongNhan = -1;
             _Type = "";
             InitializeComponent();
         }
-        public frmQuanLyDinhMucLuong(int id_nhanvien, string type)
+        private object _frm;
+        public frmQuanLyDinhMucLuong(int id_nhanvien, string type, object frm)
         {
             _ID_CongNhan = id_nhanvien;
             _Type = type;
+            _frm = frm;
             InitializeComponent();
         }
 
@@ -145,10 +147,20 @@ namespace CtyTinLuong
         {
             try
             { 
-                if (_ID_CongNhan > 0)
-                { 
-                    frmChamCong_TBX.Load_DinhMuc(Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()));
-                    this.Close();
+                if (_ID_CongNhan >= 0)
+                {
+                    switch (_Type)
+                    {
+                        case "frmChamCong_TBX":
+                            this.Close();
+                            frmChamCong_TBX frm_ = (frmChamCong_TBX)_frm;
+                            frm_.Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString())
+                                , gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString(),
+                                _ID_CongNhan);
+                            break;
+                    }
+                    
                 }
                 else
                 {
@@ -168,7 +180,7 @@ namespace CtyTinLuong
                
                    
             }
-            catch
+            catch (Exception ee)
             {
 
             }

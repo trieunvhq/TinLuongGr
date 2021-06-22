@@ -118,8 +118,6 @@ namespace CtyTinLuong
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.cbDinhMuc = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -355,6 +353,7 @@ namespace CtyTinLuong
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clTenNhanVien
             // 
@@ -1338,7 +1337,6 @@ namespace CtyTinLuong
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -1454,7 +1452,7 @@ namespace CtyTinLuong
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(155, 616);
+            this.label5.Location = new System.Drawing.Point(157, 601);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(185, 13);
             this.label5.TabIndex = 147;
@@ -1463,33 +1461,13 @@ namespace CtyTinLuong
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(0, 616);
+            this.linkLabel2.Location = new System.Drawing.Point(2, 601);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(149, 13);
             this.linkLabel2.TabIndex = 146;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Cài định mức  toàn danh sách";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // cbDinhMuc
-            // 
-            this.cbDinhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDinhMuc.FormattingEnabled = true;
-            this.cbDinhMuc.Location = new System.Drawing.Point(110, 586);
-            this.cbDinhMuc.Name = "cbDinhMuc";
-            this.cbDinhMuc.Size = new System.Drawing.Size(230, 21);
-            this.cbDinhMuc.TabIndex = 150;
-            this.cbDinhMuc.SelectedIndexChanged += new System.EventHandler(this.cbDinhMuc_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 590);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 148;
-            this.label1.Text = "Chọn Định mức";
             // 
             // frmChamCong_TBX
             // 
@@ -1498,8 +1476,6 @@ namespace CtyTinLuong
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(913, 635);
             this.ControlBox = false;
-            this.Controls.Add(this.cbDinhMuc);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.btnPrint);
@@ -1623,7 +1599,5 @@ namespace CtyTinLuong
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.ComboBox cbDinhMuc;
-        private System.Windows.Forms.Label label1;
     }
 }
