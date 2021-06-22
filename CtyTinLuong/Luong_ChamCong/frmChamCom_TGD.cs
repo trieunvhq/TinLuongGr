@@ -61,7 +61,8 @@ namespace CtyTinLuong
                     return "CN";
             }
             return "";
-        } 
+        }
+
 
         int Tong_Ngay1 = 0;
         int Tong_Ngay2 = 0;
@@ -94,7 +95,7 @@ namespace CtyTinLuong
         int Tong_Ngay29 = 0;
         int Tong_Ngay30 = 0;
         int Tong_Ngay31 = 0;
-
+        //
         public void LoadData(bool islandau)
         {
             isload = true; 
@@ -174,10 +175,42 @@ namespace CtyTinLuong
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
 
+             Tong_Ngay1 = 0;
+             Tong_Ngay2 = 0;
+             Tong_Ngay3 = 0;
+             Tong_Ngay4 = 0;
+             Tong_Ngay5 = 0;
+             Tong_Ngay6 = 0;
+             Tong_Ngay7 = 0;
+             Tong_Ngay8 = 0;
+             Tong_Ngay9 = 0;
+             Tong_Ngay10 = 0;
+             Tong_Ngay11 = 0;
+             Tong_Ngay12 = 0;
+             Tong_Ngay13 = 0;
+             Tong_Ngay14 = 0;
+             Tong_Ngay15 = 0;
+             Tong_Ngay16 = 0;
+             Tong_Ngay17 = 0;
+             Tong_Ngay18 = 0;
+             Tong_Ngay19 = 0;
+             Tong_Ngay20 = 0;
+             Tong_Ngay21 = 0;
+             Tong_Ngay22 = 0;
+             Tong_Ngay23 = 0;
+             Tong_Ngay24 = 0;
+             Tong_Ngay25 = 0;
+             Tong_Ngay26 = 0;
+             Tong_Ngay27 = 0;
+             Tong_Ngay28 = 0;
+             Tong_Ngay29 = 0;
+             Tong_Ngay30 = 0;
+             Tong_Ngay31 = 0;
+            //
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.T_ChamCom_SF(_nam, _thang, _id_bophan);
-                
+
                 int Ngay1 = 0;
                 int Ngay2 = 0;
                 int Ngay3 = 0;
@@ -275,6 +308,7 @@ namespace CtyTinLuong
                     _data.Rows[i]["Ngay29"] = Ngay29.ToString("N0");
                     _data.Rows[i]["Ngay30"] = Ngay30.ToString("N0");
                     _data.Rows[i]["Ngay31"] = Ngay31.ToString("N0");
+                     
 
                     Tong_Ngay1 += Ngay1;
                     Tong_Ngay2 += Ngay2;
@@ -407,7 +441,7 @@ namespace CtyTinLuong
             _ravi["GuiDuLieu"] = false;
             _ravi["MaNhanVien"] = "";
             _ravi["TenNhanVien"] = ten_;
-
+             
 
             ++stt_;
             _ravi["STT"] = (stt_);
@@ -514,7 +548,27 @@ namespace CtyTinLuong
                     _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 }
             }
+            CongTong();
             // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+        }
+        private void CongTong()
+        { 
+            int[] _ds_ngay_tong_ = new int[31];
+            int tong_tong_ = 0;
+            for (int i=0;i<_data.Rows.Count-1;++i)
+            {
+                for (int j = 0; j < 31; ++j)
+                {
+                    _ds_ngay_tong_[j] += Convert.ToInt32(_data.Rows[i]["Ngay" + (j + 1)].ToString());
+                }
+                tong_tong_ += Convert.ToInt32(_data.Rows[i]["Tong"].ToString());
+            }
+            for (int j = 0; j < 31; ++j)
+            {
+                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = _ds_ngay_tong_[j];
+            }
+            _data.Rows[_data.Rows.Count - 1]["Tong"] = tong_tong_;
+            gridControl1.DataSource = _data;
         }
 
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -653,7 +707,7 @@ namespace CtyTinLuong
         { 
             GridView view = sender as GridView;
             if (e.RowHandle == _data.Rows.Count - 1)
-            {
+            { 
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             }
         }
