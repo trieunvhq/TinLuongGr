@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -56,6 +55,7 @@
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayThang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_BienBan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoHieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clCaLamViec = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clLoaiHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clLoaiGiay = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,7 +92,6 @@
             this.a = new DevExpress.XtraLayout.LayoutControlItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.clSoHieu = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -196,6 +195,7 @@
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.FixedWidth = true;
+            this.clSTT.OptionsEditForm.RowSpan = 2;
             this.clSTT.Visible = true;
             this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 43;
@@ -222,6 +222,13 @@
             this.clID_BienBan.Caption = "ID_Biên Bản";
             this.clID_BienBan.FieldName = "ID_BienBan";
             this.clID_BienBan.Name = "clID_BienBan";
+            // 
+            // clSoHieu
+            // 
+            this.clSoHieu.Caption = "Số hiệu";
+            this.clSoHieu.FieldName = "SoHieu";
+            this.clSoHieu.Name = "clSoHieu";
+            this.clSoHieu.Width = 40;
             // 
             // clCaLamViec
             // 
@@ -623,13 +630,6 @@
             this.groupBox1.Size = new System.Drawing.Size(900, 606);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
-            // 
-            // clSoHieu
-            // 
-            this.clSoHieu.Caption = "Số hiệu";
-            this.clSoHieu.FieldName = "SoHieu";
-            this.clSoHieu.Name = "clSoHieu";
-            this.clSoHieu.Width = 40;
             // 
             // Tr_UC_BB_Ktra_DM_HHSX
             // 

@@ -114,8 +114,8 @@ namespace CtyTinLuong
                         _ravi["SoHieu"] = dt_.Rows[i]["SoHieu"].ToString(); 
                         _ravi["ID_BienBan"] = Convert.ToInt32(dt_.Rows[i]["Id_BB"].ToString());
                         _ravi["CaSanXuat"] = Convert.ToInt32(dt_.Rows[i]["Ca"].ToString());
-                        _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString();
-                        _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString();
+                        _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString().Trim();
+                        _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString().Trim();
                         _ravi["SoLuongKiemTra"] = Convert.ToDouble(dt_.Rows[i]["SoLuongKtra"].ToString());
                         _ravi["DonVi"] = dt_.Rows[i]["DonVi_first"].ToString();
                         _ravi["TrongLuong"] = Convert.ToDouble(dt_.Rows[i]["TrongLuong"].ToString());
