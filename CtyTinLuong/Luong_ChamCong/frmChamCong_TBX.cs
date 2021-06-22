@@ -20,8 +20,9 @@ using System.Windows.Forms;
 namespace CtyTinLuong
 {
     public partial class frmChamCong_TBX : Form
-    { 
-        public int _nam, _thang, _id_bophan = 25, _ID_DinhMucLuong_CongNhat;
+    {
+        public static int  _ID_DinhMucLuong_CongNhat = 0;
+        public int _nam, _thang, _id_bophan = 25;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -29,7 +30,7 @@ namespace CtyTinLuong
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmChamCong_TBX(int id_bophan)
         {
-            _ID_DinhMucLuong_CongNhat= 0;
+            _ID_DinhMucLuong_CongNhat = 0;
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
@@ -44,7 +45,11 @@ namespace CtyTinLuong
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
         }
+        public static void Load_DinhMuc(int id_dinhmuc)
+        {
+            _ID_DinhMucLuong_CongNhat = id_dinhmuc;
 
+        }
         private string LayThu(DateTime date)
         {
             switch (date.DayOfWeek)
