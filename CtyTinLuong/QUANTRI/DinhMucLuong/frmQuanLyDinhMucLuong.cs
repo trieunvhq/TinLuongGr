@@ -13,6 +13,8 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyDinhMucLuong : Form
     {
+        private int _ID_CongNhan = 0;
+        private string _Type = "";
         public static bool mb_TheMoi_DinhMucLuongCongNhat;
         public static string msTenDinhMucLuongCongNhat;
         public static int miID_Sua_DinhMucLuongCongNhat;
@@ -45,6 +47,14 @@ namespace CtyTinLuong
         }
         public frmQuanLyDinhMucLuong()
         {
+            _ID_CongNhan = 0;
+            _Type = "";
+            InitializeComponent();
+        }
+        public frmQuanLyDinhMucLuong(int id_nhanvien, string type)
+        {
+            _ID_CongNhan = id_nhanvien;
+            _Type = type;
             InitializeComponent();
         }
 
@@ -95,14 +105,14 @@ namespace CtyTinLuong
         {
             try
             {
-                if(Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString())!=7)
+                if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()) != 7)
                 {
                     clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
                     cls.iID_DinhMucLuong_CongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
                     cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                     cls.Update_NgungTheoDoi();
                 }
-               
+
             }
             catch
             {
@@ -134,19 +144,28 @@ namespace CtyTinLuong
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             try
-            {
-                if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()) != 7)
-                {
-                    miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
-                    msTenDinhMucLuongCongNhat = gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString();
-                    mb_TheMoi_DinhMucLuongCongNhat = false;
-                    frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww();
-                    ff.Show();
+            { 
+                if (_ID_CongNhan > 0)
+                { 
+                    frmChamCong_TBX.Load_DinhMuc(Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()));
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Định mức 0\n không cho sửa");
+                    if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()) != 7)
+                    {
+                        miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
+                        msTenDinhMucLuongCongNhat = gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString();
+                        mb_TheMoi_DinhMucLuongCongNhat = false;
+                        frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww();
+                        ff.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Định mức 0\n không cho sửa");
+                    }
                 }
+               
                    
             }
             catch
