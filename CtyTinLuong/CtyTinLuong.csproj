@@ -1644,6 +1644,12 @@
     <Compile Include="Xtra_DoiChieuCongNo.Designer.cs">
       <DependentUpon>Xtra_DoiChieuCongNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_DoiChieuCongNo_ALL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_DoiChieuCongNo_ALL.Designer.cs">
+      <DependentUpon>Xtra_DoiChieuCongNo_ALL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_keHoachSanXuat.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2455,6 +2461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_DoiChieuCongNo.resx">
       <DependentUpon>Xtra_DoiChieuCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_DoiChieuCongNo_ALL.resx">
+      <DependentUpon>Xtra_DoiChieuCongNo_ALL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_keHoachSanXuat.resx">
       <DependentUpon>Xtra_keHoachSanXuat.cs</DependentUpon>
