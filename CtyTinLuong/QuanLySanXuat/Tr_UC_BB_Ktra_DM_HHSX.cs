@@ -61,7 +61,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("DoCao", typeof(Double));
             dt2.Columns.Add("MotBao_kg", typeof(Double));
             dt2.Columns.Add("MotBao_SoKien", typeof(Double));
-            dt2.Columns.Add("Bao_Kien", typeof(Double));
+            dt2.Columns.Add("SauMuoi_BaoKien", typeof(Double));
             dt2.Columns.Add("GhiChu", typeof(string));
 
             using (clsTr_BB_KtraDinhMuc_HHSX cls_ = new clsTr_BB_KtraDinhMuc_HHSX())
@@ -99,28 +99,18 @@ namespace CtyTinLuong
                         _ravi["CaSanXuat"] = Convert.ToInt32(dt_.Rows[i]["Ca"].ToString());
                         _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString();
                         _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString();
-                        _ravi["SoLuongKiemTra"] = dt_.Rows[i]["SoLuongKtra"].ToString();
+                        _ravi["SoLuongKiemTra"] = Convert.ToDouble(dt_.Rows[i]["SoLuongKtra"].ToString());
                         _ravi["DonVi"] = dt_.Rows[i]["DonVi_first"].ToString();
-                        _ravi["TrongLuong"] = dt_.Rows[i]["TrongLuong"].ToString();
-                        _ravi["SoLuong"] = dt_.Rows[i]["SoLuong"].ToString();
+                        _ravi["TrongLuong"] = Convert.ToDouble(dt_.Rows[i]["TrongLuong"].ToString());
+                        _ravi["SoLuong"] = Convert.ToDouble(dt_.Rows[i]["SoLuong"].ToString());
                         _ravi["DonVi_"] = dt_.Rows[i]["DonVi_Second"].ToString();
-                        _ravi["QuyRaKien"] = dt_.Rows[i]["QuyRaKien"].ToString();
-                        _ravi["PhePham"] = dt_.Rows[i]["PhePham"].ToString();
-                        _ravi["DoCao"] = dt_.Rows[i]["DoCao"].ToString();
-                        _ravi["MotBao_kg"] = dt_.Rows[i]["MotBao_kg"].ToString();
-                        _ravi["MotBao_SoKien"] = dt_.Rows[i]["MotBao_SoKien"].ToString();
-                        _ravi["Bao_Kien"] = dt_.Rows[i]["SauMuoi_BaoKien"].ToString();
+                        _ravi["QuyRaKien"] = Convert.ToDouble(dt_.Rows[i]["QuyRaKien"].ToString());
+                        _ravi["PhePham"] = Convert.ToDouble(dt_.Rows[i]["PhePham"].ToString());
+                        _ravi["DoCao"] = Convert.ToDouble(dt_.Rows[i]["DoCao"].ToString());
+                        _ravi["MotBao_kg"] = Convert.ToDouble(dt_.Rows[i]["MotBao_kg"].ToString());
+                        _ravi["MotBao_SoKien"] = Convert.ToDouble(dt_.Rows[i]["MotBao_SoKien"].ToString());
+                        _ravi["SauMuoi_BaoKien"] = Convert.ToDouble(dt_.Rows[i]["SauMuoi_BaoKien"].ToString());
                         _ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
-                        //_ravi["ID_SoPhieu"] = ID_SoPhieu;
-                        //_ravi["MaPhieu"] = dt_.Rows[i]["MaPhieu"].ToString();
-                        //_ravi["NgayLapPhieu"] = Convert.ToDateTime(dt_.Rows[i]["NgayLapPhieu"].ToString());
-                        //_ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
-                        //_ravi["CaSanXuat"] = dt_.Rows[i]["CaSanXuat"].ToString();
-                        //_ravi["GuiDuLieu"] = Convert.ToBoolean(dt_.Rows[i]["GuiDuLieu"].ToString());
-                        //_ravi["ID_CaTruong"] = Convert.ToInt32(dt_.Rows[i]["ID_CaTruong"].ToString());
-                        //_ravi["DaKetThuc"] = Convert.ToBoolean(dt_.Rows[i]["DaKetThuc"].ToString());
-                        //_ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
-                        //_ravi["MaHang"] = dt_.Rows[i]["TenVTHH"].ToString();
 
                         dt2.Rows.Add(_ravi);
                     }

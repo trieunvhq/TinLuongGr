@@ -67,7 +67,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt_ = clsThin_.T_TongPhieuSX(ucc1._ngay_batdau, ucc1._ngay_ketthuc, ucc1._ma_phieu);
+                DataTable dt_ = clsThin_.T_TongPhieuSX(ucc1._ngay_batdau, ucc1._ngay_ketthuc, ucc1._idBienBan);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();

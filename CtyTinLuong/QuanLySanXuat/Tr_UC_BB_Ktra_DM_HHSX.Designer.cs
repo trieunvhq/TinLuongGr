@@ -69,7 +69,7 @@
             this.clDoCao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMotBao_kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMotBao_SoKien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clBao_Kien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSauMuoi_BaoKien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clCopy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btCopY = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -165,7 +165,7 @@
             this.clDoCao,
             this.clMotBao_kg,
             this.clMotBao_SoKien,
-            this.clBao_Kien,
+            this.clSauMuoi_BaoKien,
             this.clCopy,
             this.clXoa,
             this.clGhiChu});
@@ -371,11 +371,11 @@
             this.clMotBao_SoKien.VisibleIndex = 11;
             this.clMotBao_SoKien.Width = 69;
             // 
-            // clBao_Kien
+            // clSauMuoi_BaoKien
             // 
-            this.clBao_Kien.Caption = "60 Bao/kiện";
-            this.clBao_Kien.FieldName = "Bao_Kien";
-            this.clBao_Kien.Name = "clBao_Kien";
+            this.clSauMuoi_BaoKien.Caption = "60 Bao/kiện";
+            this.clSauMuoi_BaoKien.FieldName = "SauMuoi_BaoKien";
+            this.clSauMuoi_BaoKien.Name = "clSauMuoi_BaoKien";
             // 
             // clCopy
             // 
@@ -709,7 +709,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clDoCao;
         private DevExpress.XtraGrid.Columns.GridColumn clMotBao_kg;
         private DevExpress.XtraGrid.Columns.GridColumn clMotBao_SoKien;
-        private DevExpress.XtraGrid.Columns.GridColumn clBao_Kien;
+        private DevExpress.XtraGrid.Columns.GridColumn clSauMuoi_BaoKien;
         private DevExpress.XtraGrid.Columns.GridColumn clSoHieu;
     }
 }
