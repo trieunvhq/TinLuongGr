@@ -33,8 +33,8 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBTTL_TBX_CT));
+            this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -60,11 +60,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // repositoryItemMemoEdit3
+            // 
+            this.repositoryItemMemoEdit3.Name = "repositoryItemMemoEdit3";
             // 
             // btGuiDuLieu
             // 
@@ -221,8 +225,7 @@
             this.clTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenNhanVien.AppearanceCell.Options.UseFont = true;
             this.clTenNhanVien.Caption = "HỌ TÊN";
-            repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit3";
-            this.clTenNhanVien.ColumnEdit = repositoryItemMemoEdit2;
+            this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit3;
             this.clTenNhanVien.FieldName = "TenNhanVien";
             this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
@@ -263,7 +266,7 @@
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 6;
+            this.DonGia.VisibleIndex = 4;
             this.DonGia.Width = 80;
             // 
             // SanLuong
@@ -296,7 +299,7 @@
             this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
             this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TongLuong.Caption = "TỔNG LƯƠNG";
+            this.TongLuong.Caption = "TỔNG";
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 10;
             this.TongLuong.Name = "TongLuong";
@@ -313,7 +316,7 @@
             this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 5;
+            this.TongLuong.VisibleIndex = 6;
             this.TongLuong.Width = 80;
             // 
             // LuongTrachNhiem
@@ -323,7 +326,7 @@
             this.LuongTrachNhiem.Name = "LuongTrachNhiem";
             this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.LuongTrachNhiem.Visible = true;
-            this.LuongTrachNhiem.VisibleIndex = 4;
+            this.LuongTrachNhiem.VisibleIndex = 5;
             this.LuongTrachNhiem.Width = 80;
             // 
             // TongTien
@@ -513,9 +516,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BẢNG THANH TOÁN LƯƠNG TỔ GẤP DÁN";
             this.Load += new System.EventHandler(this.frmBTTL_TBX_CT_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -548,5 +551,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
     }
 }

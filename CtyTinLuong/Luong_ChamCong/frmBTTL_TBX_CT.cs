@@ -98,7 +98,7 @@ namespace CtyTinLuong
                     tongluong_tong_ += tongluong_;
                     _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
-                    luongtrachnhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                    luongtrachnhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
                     luongtrachnhiem_tong_ += luongtrachnhiem_;
                     if (luongtrachnhiem_ == 0)
                         _data.Rows[i]["LuongTrachNhiem"] = "";
