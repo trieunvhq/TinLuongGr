@@ -415,9 +415,28 @@ namespace CtyTinLuong
                     _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 }
             }
-            // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+            CongTong(); 
         }
 
+        private void CongTong()
+        {
+            int[] _ds_ngay_tong_ = new int[31];
+            int tong_tong_ = 0;
+            for (int i = 0; i < _data.Rows.Count - 1; ++i)
+            {
+                for (int j = 0; j < 31; ++j)
+                {
+                    _ds_ngay_tong_[j] += Convert.ToInt32(_data.Rows[i]["Ngay" + (j + 1)].ToString());
+                }
+                tong_tong_ += Convert.ToInt32(_data.Rows[i]["Tong"].ToString());
+            }
+            for (int j = 0; j < 31; ++j)
+            {
+                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = _ds_ngay_tong_[j];
+            }
+            _data.Rows[_data.Rows.Count - 1]["Tong"] = tong_tong_;
+            gridControl1.DataSource = _data;
+        }
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
