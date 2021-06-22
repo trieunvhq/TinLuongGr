@@ -97,8 +97,7 @@ namespace CtyTinLuong
                     songayan_ += Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString());
 
                     songayan_tong_ += songayan_;
-                    trutiencom_ += Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString());
-                    trutiencom_tong_ += trutiencom_;
+
                     tamung_ += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
                     tamung_tong_ += tamung_;
                     //  
@@ -114,7 +113,8 @@ namespace CtyTinLuong
 
                     tongluong_ += (dongia_ * sanluong_);
                     tongluong_tong_ += tongluong_;
-                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    trutiencom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    trutiencom_tong_ += trutiencom_;
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
                         DataRow _ravi2 = data_moi_.NewRow();
@@ -124,32 +124,32 @@ namespace CtyTinLuong
                         _ravi2["Nam"] = _nam;
                         _ravi2["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
 
-                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                        tamung_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
                         _ravi2["TongLuong"] = tongluong_.ToString("N0");
 
                         ID_CongNhan_Cu = ID_CongNhan_;
 
-                        tongtien_ = (tongluong_ - TruTienCom_);
+                        tongtien_ = (tongluong_ - trutiencom_);
                         tongtien_tong_ += tongtien_;
-                        _ravi2["TongTien"] = (tongluong_ - TruTienCom_).ToString("N0");
-                        thucnhan_ = (tongluong_ - TruTienCom_ - TamUng_);
+                        _ravi2["TongTien"] = (tongluong_ - trutiencom_).ToString("N0");
+                        thucnhan_ = (tongluong_ - trutiencom_ - tamung_);
                         thucnhan_tong_ += thucnhan_;
                         _ravi2["ThucNhan"] = thucnhan_.ToString("N0");
 
-                        if (TruTienCom_ == 0)
+                        if (trutiencom_ == 0)
                             _ravi2["TruTienCom"] = "";
                         else
-                            _ravi2["TruTienCom"] = TruTienCom_.ToString("N0");
+                            _ravi2["TruTienCom"] = trutiencom_.ToString("N0");
 
                         if (SoNgayAn_ == 0)
                             _ravi2["SoNgayAn"] = "";
                         else
                             _ravi2["SoNgayAn"] = SoNgayAn_.ToString("N0");
 
-                        if (TamUng_ == 0)
+                        if (tamung_ == 0)
                             _ravi2["TamUng"] = "";
                         else
-                            _ravi2["TamUng"] = TruTienCom_.ToString("N0");
+                            _ravi2["TamUng"] = tamung_.ToString("N0");
                         data_moi_.Rows.Add(_ravi2);
 
                         tongluong_ = 0;
