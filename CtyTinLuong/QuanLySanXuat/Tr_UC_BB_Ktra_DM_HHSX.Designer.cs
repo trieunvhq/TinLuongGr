@@ -195,7 +195,6 @@
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.FixedWidth = true;
-            this.clSTT.OptionsEditForm.RowSpan = 2;
             this.clSTT.Visible = true;
             this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 43;
