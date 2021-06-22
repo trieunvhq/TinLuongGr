@@ -284,6 +284,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (isload)
