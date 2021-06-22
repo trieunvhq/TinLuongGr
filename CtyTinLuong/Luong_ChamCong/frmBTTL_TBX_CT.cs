@@ -56,14 +56,18 @@ namespace CtyTinLuong
             else
             {
             }
+            double tongluong_tong_ = 0;
+            double luongtrachnhiem_tong_ = 0;
+            double tong_tong_ = 0;
+            double trutamung_tong_ = 0;
+            double thuclinh_tong_ = 0;
 
-            double TongLuong = 0;
 
-            double songayan = 0;
-            double LuongTrachNhiem = 0;
-            double tongtien = 0;
-            double tamung = 0;
-            double thucnhan = 0;
+            double tongluong_ = 0;
+            double luongtrachnhiem_ = 0;
+            double tong_ = 0;
+            double trutamung_ = 0;
+            double thuclinh_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -90,30 +94,33 @@ namespace CtyTinLuong
                     //
                     _data.Rows[i]["STT"] = (i / 2) + 1;
 
-                    TongLuong += (dongia_ * sanluong_);
+                    tongluong_ = (dongia_ * sanluong_);
+                    tongluong_tong_ += tongluong_;
                     _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
-                    double LuongTrachNhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
-                    LuongTrachNhiem += LuongTrachNhiem_;
-                    if (LuongTrachNhiem_ == 0)
+                    luongtrachnhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                    luongtrachnhiem_tong_ += luongtrachnhiem_;
+                    if (luongtrachnhiem_ == 0)
                         _data.Rows[i]["LuongTrachNhiem"] = "";
                     else
-                        _data.Rows[i]["LuongTrachNhiem"] = LuongTrachNhiem_.ToString("N0");
+                        _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
 
-                    double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
-                    tamung += TamUng_;
-                    if (TamUng_ == 0)
+                    trutamung_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                    trutamung_tong_ += trutamung_;
+                    if (trutamung_ == 0)
                         _data.Rows[i]["TamUng"] = "";
                     else
-                        _data.Rows[i]["TamUng"] = TamUng_.ToString("N0");
+                        _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
 
 
 
-                    tongtien += ((dongia_ * sanluong_) - TamUng_);
-                    _data.Rows[i]["TongTien"] = ((dongia_ * sanluong_) + LuongTrachNhiem_).ToString("N0");
+                    tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
+                    tong_tong_ += tong_;
+                    _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-                    thucnhan += ((dongia_ * sanluong_) - +LuongTrachNhiem_ - TamUng_);
-                    _data.Rows[i]["ThucNhan"] = ((dongia_ * sanluong_) - +LuongTrachNhiem_ - TamUng_).ToString("N0");
+                    thuclinh_ = (tong_ - trutamung_);
+                    thuclinh_tong_ += thuclinh_;
+                    _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
 
 
 
@@ -125,40 +132,49 @@ namespace CtyTinLuong
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["TenNhanVien"] = "TỔNG";
-            if (TongLuong == 0)
+            if (tongluong_tong_ == 0)
             {
                 _ravi["TongLuong"] = "";
             }
             else
             {
-                _ravi["TongLuong"] = TongLuong.ToString("N0");
+                _ravi["TongLuong"] = tongluong_tong_.ToString("N0");
             }
             // 
-            if (tongtien == 0)
-            {
-                _ravi["TongTien"] = "";
-            }
-            else
-            {
-                _ravi["TongTien"] = tongtien.ToString("N0");
-            }
-            // 
-            if (tamung == 0)
+            if (trutamung_tong_ == 0)
             {
                 _ravi["TamUng"] = "";
             }
             else
             {
-                _ravi["TamUng"] = tamung.ToString("N0");
+                _ravi["TamUng"] = trutamung_tong_.ToString("N0");
             }
             // 
-            if (thucnhan == 0)
+            if (tong_tong_ == 0)
+            {
+                _ravi["TongTien"] = "";
+            }
+            else
+            {
+                _ravi["TongTien"] = tong_tong_.ToString("N0");
+            }
+            // 
+            if (trutamung_tong_ == 0)
+            {
+                _ravi["TamUng"] = "";
+            }
+            else
+            {
+                _ravi["TamUng"] = trutamung_tong_.ToString("N0");
+            }
+            // 
+            if (thuclinh_tong_ == 0)
             {
                 _ravi["ThucNhan"] = "";
             }
             else
             {
-                _ravi["ThucNhan"] = thucnhan.ToString("N0");
+                _ravi["ThucNhan"] = thuclinh_tong_.ToString("N0");
             }
 
             _data.Rows.Add(_ravi);
