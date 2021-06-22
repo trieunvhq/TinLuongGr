@@ -13,6 +13,8 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyDinhMucLuong : Form
     {
+        private int _ID_CongNhan = 0;
+        private string _Type = "";
         public static bool mb_TheMoi_DinhMucLuongCongNhat;
         public static string msTenDinhMucLuongCongNhat;
         public static int miID_Sua_DinhMucLuongCongNhat;
@@ -45,6 +47,12 @@ namespace CtyTinLuong
         }
         public frmQuanLyDinhMucLuong()
         {
+            InitializeComponent();
+        }
+        public frmQuanLyDinhMucLuong(int id_nhanvien, string type)
+        {
+            _ID_CongNhan = id_nhanvien;
+            _Type = type;
             InitializeComponent();
         }
 

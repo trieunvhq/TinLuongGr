@@ -98,7 +98,7 @@ namespace CtyTinLuong
         int Tong_Ngay29 = 0;
         int Tong_Ngay30 = 0;
         int Tong_Ngay31 = 0;
-
+        DataTable _dt_DinhMuc;
         public void LoadData(bool islandau)
         {
             isload = true;
@@ -147,18 +147,22 @@ namespace CtyTinLuong
                     }
                 }
 
-                using (clsThin clsThin_ = new clsThin())
-                {
-                    DataTable dt_ = clsThin_.T_NhanSu_SF("0");
-                    cbNhanSu.DataSource = dt_;
-                    cbNhanSu.DisplayMember = "TenNhanVien";
-                    cbNhanSu.ValueMember = "ID_NhanSu";
-                    //
-                    
-                }
             }
             else
             {
+            }
+            using (clsThin clsThin_ = new clsThin())
+            {
+                _dt_DinhMuc = clsThin_.T_NhanSu_SF("0");
+                cbNhanSu.DataSource = _dt_DinhMuc;
+                cbNhanSu.DisplayMember = "TenNhanVien";
+                cbNhanSu.ValueMember = "ID_NhanSu";
+                //
+                _dt_DinhMuc = clsThin_.T_DML_CN_SA();
+                cbDinhMuc.DataSource = _dt_DinhMuc;
+                cbDinhMuc.DisplayMember = "MaDinhMucLuongCongNhat";
+                cbDinhMuc.ValueMember = "ID_DinhMucLuong_CongNhat";
+
             }
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
@@ -307,6 +311,9 @@ namespace CtyTinLuong
                     Tong_Ngay29 += Ngay29;
                     Tong_Ngay30 += Ngay30;
                     Tong_Ngay31 += Ngay31;
+
+
+                    _data.Rows[i]["MaDinhMucLuongCongNhat"] = _dt_DinhMuc;
                 }
             }
             LoadCongNhanVaoBang(_id_bophan);
@@ -750,6 +757,33 @@ namespace CtyTinLuong
         {
             frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww();
             ff.ShowDialog();
+        }
+
+        private void cbDinhMuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            _ID_DinhMucLuong_CongNhat = (int)cbDinhMuc.SelectedValue;
+            for(int i = 0;i<_data.Rows.Count-1;++i)
+            {
+                _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            if(e.Column ==  clTenNhanVien)
+            {
+                int id_nhanvien = Convert.ToInt32(_data.Rows[e.RowHandle]["ID_CongNhan"]);
+
+                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(_thang, _nam);
+                ff.ShowDialog();
+            }
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
