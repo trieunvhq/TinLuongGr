@@ -33,7 +33,7 @@ namespace CtyTinLuong
             isload = true;
             if (isLoadLanDau)
             {
-                dteTuNgay.EditValue = DateTime.Now.AddDays(-90);
+                dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
                 dteDenNgay.EditValue = DateTime.Now;
                 txtTimKiem.Text = "";
             }

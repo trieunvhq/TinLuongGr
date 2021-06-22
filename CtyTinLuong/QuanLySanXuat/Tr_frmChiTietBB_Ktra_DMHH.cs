@@ -455,6 +455,7 @@ namespace CtyTinLuong
         public Tr_frmChiTietBB_Ktra_DMHH()
         {
             InitializeComponent();
+            dateNgayThang.EditValue = DateTime.Now;
         }
 
         private void Tr_frmChiTietBB_Ktra_DMHH_Load(object sender, EventArgs e)
