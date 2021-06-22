@@ -781,7 +781,7 @@ namespace CtyTinLuong
             {
                 int id_nhanvien = Convert.ToInt32(_data.Rows[e.RowHandle]["ID_CongNhan"]);
 
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(_thang, _nam);
+                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_nhanvien, "frmChamCong_TBX");
                 ff.ShowDialog();
             }
         }

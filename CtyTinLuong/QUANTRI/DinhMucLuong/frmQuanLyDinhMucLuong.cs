@@ -47,6 +47,8 @@ namespace CtyTinLuong
         }
         public frmQuanLyDinhMucLuong()
         {
+            _ID_CongNhan = 0;
+            _Type = "";
             InitializeComponent();
         }
         public frmQuanLyDinhMucLuong(int id_nhanvien, string type)
@@ -103,13 +105,22 @@ namespace CtyTinLuong
         {
             try
             {
-                if(Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString())!=7)
+                _ID_CongNhan = 0;
+                if (_ID_CongNhan>0)
                 {
-                    clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
-                    cls.iID_DinhMucLuong_CongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
-                    cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
-                    cls.Update_NgungTheoDoi();
+
                 }
+                else
+                {
+                    if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()) != 7)
+                    {
+                        clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
+                        cls.iID_DinhMucLuong_CongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
+                        cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
+                        cls.Update_NgungTheoDoi();
+                    }
+                }
+               
                
             }
             catch
