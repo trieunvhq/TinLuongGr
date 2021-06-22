@@ -27,8 +27,7 @@ namespace CtyTinLuong
         public int _nam, _thang, _id_bophan;
         public string _ten_vthh;
         private DataTable _data;
-        private bool isload = true;
-        private double _dinhmuc_tangca = 0, _dinhmuc_cong = 0;
+        private bool isload = true; 
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
         public frmBTTL_TBX_CT(int id_bophan)
@@ -81,13 +80,13 @@ namespace CtyTinLuong
                     bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
                     if (istangca_)
                     {
-                        dongia_ = _dinhmuc_tangca;
+                        dongia_ = Convert.ToDouble(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
                         _data.Rows[i]["TenVTHH"] = "Tăng ca";
 
                     }
                     else
                     {
-                        dongia_ = _dinhmuc_cong;
+                        dongia_ = Convert.ToDouble(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
                         _data.Rows[i]["TenVTHH"] = "Công nhật";
                     }
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
