@@ -65,9 +65,9 @@ namespace CtyTinLuong
             btnTrangTiep.LinkColor = Color.Blue;
             txtSoTrang.Text = "1";
 
-            using (clsThin clsThin_ = new clsThin())
+            using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
             {
-                DataTable dt_ = clsThin_.T_TongPhieuSX(ucc1._ngay_batdau, ucc1._ngay_ketthuc, ucc1._idBienBan);
+                DataTable dt_ = cls.T_TongSoBB(ucc1._ngay_batdau, ucc1._ngay_ketthuc, ucc1._idBienBan);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();

@@ -94,6 +94,33 @@ namespace CtyTinLuong
             if (cls.Insert()) return true;
             else return false;
         }
+
+
+        // 
+        private bool Update_BB_Ktra_DMHHSX()
+        {
+            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+            cls.daNgayThang = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
+            cls.sSoHieu = txtSoHieu.Text.ToString().Trim();
+            cls.iCa = Convert.ToInt32(txtCa.Text.ToString());
+            cls.sLoaiHang = txtLoaiHang.Text.ToString().Trim();
+            cls.sLoaiGiay = txtLoaiGiay.Text.ToString().Trim();
+            cls.fSoLuongKtra = Convert.ToDouble(txtSoLuongKtra.Text.ToString());
+            cls.sDonVi_first = txtDonVi_in.Text.ToString().Trim();
+            cls.fTrongLuong = Convert.ToDouble(txtTrongLuong.Text.ToString());
+            cls.fSoLuong = Convert.ToDouble(txtSoLuong.Text.ToString());
+            cls.sDonVi_Second = txtDonVi_Out.Text.ToString().Trim();
+            cls.fQuyRaKien = Convert.ToDouble(txtQuyRaKien.Text.ToString());
+            cls.fPhePham = Convert.ToDouble(txtPhePham.Text.ToString());
+            cls.fDoCao = Convert.ToDouble(txtDoCao.Text.ToString());
+            cls.fMotBao_kg = Convert.ToDouble(txt1Bao_kg.Text.ToString());
+            cls.fMotBao_SoKien = Convert.ToDouble(txt1Bao_SoKien.Text.ToString());
+            cls.fSauMuoi_BaoKien = Convert.ToDouble(txt60Bao_Kien.Text.ToString());
+            cls.sGhiChu = txtGhiChu.Text.ToString().Trim();
+
+            if (cls.Insert()) return true;
+            else return false;
+        }
         private void TaoLenhSanXuat_DOT(int xxIDSoPhieu, int iiiDID_ChiTietPhieu)
         {
             //clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
@@ -212,67 +239,24 @@ namespace CtyTinLuong
 
         }
    
-        private void Load_lockUP_EDIT_May_DOT()
+        private void Load_frmEdit()
         {
-            //clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            //DataTable dtNguoi = clsNguoi.SelectAll();
-            //dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=11";
-            //DataView dvCongNhan = dtNguoi.DefaultView;
-            //DataTable newdtCongNhan = dvCongNhan.ToTable();
-
-            //gridMaCongNhan_May_DOT.Properties.DataSource = newdtCongNhan;
-            //gridMaCongNhan_May_DOT.Properties.ValueMember = "ID_NhanSu";
-            //gridMaCongNhan_May_DOT.Properties.DisplayMember = "MaNhanVien";
-
-            //dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=8";
-            //DataView dvCaTruong = dtNguoi.DefaultView;
-            //DataTable newdtCaTruong = dvCaTruong.ToTable();
-
-            //gridMaCaTruong_May_DOT.Properties.DataSource = newdtCaTruong;
-            //gridMaCaTruong_May_DOT.Properties.ValueMember = "ID_NhanSu";
-            //gridMaCaTruong_May_DOT.Properties.DisplayMember = "MaNhanVien";
-
-            //clsTbVatTuHangHoa clsVTxxxx = new clsTbVatTuHangHoa();
-            //DataTable dtVTxxx = clsVTxxxx.SelectAll();
-            //dtVTxxx.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            //DataView dvVTxxx = dtVTxxx.DefaultView;
-            //DataTable xxxxnewdtVT = dvVTxxx.ToTable();
-            //gridHangHoaVao_may_DOT.Properties.DataSource = xxxxnewdtVT;
-            //gridHangHoaVao_may_DOT.Properties.ValueMember = "ID_VTHH";
-            //gridHangHoaVao_may_DOT.Properties.DisplayMember = "MaVT";
-
-            //clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
-            //DataTable dtkksss = clsxx.SelectAll();
-            //dtkksss.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            //DataView dvcxxx = dtkksss.DefaultView;
-            //DataTable vdtrhh = dvcxxx.ToTable();
-            //gridHangHoaXuat_May_DOT.Properties.DataSource = vdtrhh;
-            //gridHangHoaXuat_May_DOT.Properties.ValueMember = "ID_VTHH";
-            //gridHangHoaXuat_May_DOT.Properties.DisplayMember = "MaVT";
-
-
-            //clsT_MayMoc clsMayMoc = new clsT_MayMoc();
-            //DataTable dtMayIN = clsMayMoc.SelectAll();
-            //dtMayIN.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and id_loai=3";
-            //DataView dvMayIn = dtMayIN.DefaultView;
-            //DataTable newdtMayIn = dvMayIn.ToTable();
-
-            //gridMaMay_DOT.Properties.DataSource = newdtMayIn;
-            //gridMaMay_DOT.Properties.ValueMember = "id";
-            //gridMaMay_DOT.Properties.DisplayMember = "MaMay";
-
-
-            //clsDinhMuc_DinhMuc_Luong_TheoSanLuong clssanluong = new CtyTinLuong.clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-            //DataTable dtDinhMucSanLuong = clssanluong.SelectAll();
-            //dtDinhMucSanLuong.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            //DataView dvsanluiong = dtDinhMucSanLuong.DefaultView;
-            //DataTable newdtsanluong = dvsanluiong.ToTable();
-
-            //gridDinhMucSLMay_DOT.Properties.DataSource = newdtsanluong;
-            //gridDinhMucSLMay_DOT.Properties.ValueMember = "ID_DinhMuc_Luong_SanLuong";
-            //gridDinhMucSLMay_DOT.Properties.DisplayMember = "MaDinhMuc";
-
-
+            dateNgayThang.EditValue = Tr_UC_BB_Ktra_DM_HHSX.mbNgayThang;
+            txtSoHieu.Text = Tr_UC_BB_Ktra_DM_HHSX.mbSoHieu;
+            txtCa.Text = Tr_UC_BB_Ktra_DM_HHSX.mbCaSanXuat.ToString();
+            txtLoaiHang.Text = Tr_UC_BB_Ktra_DM_HHSX.mbLoaiHang.ToString();
+            txtLoaiGiay.Text = Tr_UC_BB_Ktra_DM_HHSX.mbLoaiGiay.ToString();
+            txtSoLuongKtra.Text = Tr_UC_BB_Ktra_DM_HHSX.mbSoLuongKiemTra.ToString();
+            txtTrongLuong.Text = Tr_UC_BB_Ktra_DM_HHSX.mbTrongLuong.ToString();
+            txtSoLuong.Text = Tr_UC_BB_Ktra_DM_HHSX.mbSoLuong.ToString();
+            txtDonVi_Out.Text = Tr_UC_BB_Ktra_DM_HHSX.mbDonVi;
+            txtQuyRaKien.Text = Tr_UC_BB_Ktra_DM_HHSX.mbQuyRaKien.ToString();
+            txtPhePham.Text = Tr_UC_BB_Ktra_DM_HHSX.mbPhePham.ToString();
+            txtDoCao.Text = Tr_UC_BB_Ktra_DM_HHSX.mbDoCao.ToString();
+            txt1Bao_kg.Text = Tr_UC_BB_Ktra_DM_HHSX.mbMotBao_kg.ToString();
+            txt1Bao_SoKien.Text = Tr_UC_BB_Ktra_DM_HHSX.mbMotBao_SoKien.ToString();
+            txt60Bao_Kien.Text = Tr_UC_BB_Ktra_DM_HHSX.mbSauMuoi_BaoKien.ToString();
+            txtGhiChu.Text = Tr_UC_BB_Ktra_DM_HHSX.mbGhiChu;
         }
 
         private bool CheckDataInput()
@@ -456,6 +440,11 @@ namespace CtyTinLuong
         {
             InitializeComponent();
             dateNgayThang.EditValue = DateTime.Now;
+
+            if (Tr_UC_BB_Ktra_DM_HHSX.mbCopy_BB_Ktra)
+            {
+                Load_frmEdit();
+            }
         }
 
         private void Tr_frmChiTietBB_Ktra_DMHH_Load(object sender, EventArgs e)
@@ -474,20 +463,34 @@ namespace CtyTinLuong
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            if  (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra)
+            if  (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra == true 
+                && Tr_UC_BB_Ktra_DM_HHSX.mb_Sua_BB_Ktra == false)
             {
                 if (CheckDataInput())
                 {
                     if (Insert_BB_Ktra_DMHHSX())
                     {
-                        MessageBox.Show("Thêm mới dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Thêm mới dữ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lưu dữ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
+            else if (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra == false
+                && Tr_UC_BB_Ktra_DM_HHSX.mb_Sua_BB_Ktra == true)
+            {
+                if (Update_BB_Ktra_DMHHSX())
+                {
+                    MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lưu dữ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
         }
     }
 }

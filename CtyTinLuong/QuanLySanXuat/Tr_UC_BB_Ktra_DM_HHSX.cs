@@ -17,7 +17,24 @@ namespace CtyTinLuong
         public static bool mbAdd_BB_Ktra = false;
         public static bool mb_Sua_BB_Ktra = false;
         public static bool mbCopy_BB_Ktra = false;
-        public static string msTenSoPhieu;
+        public static DateTime mbNgayThang;
+        public static string mbSoHieu;
+        public static int mbID_BienBan;
+        public static int mbCaSanXuat;
+        public static string mbLoaiHang;
+        public static string mbLoaiGiay;
+        public static Double mbSoLuongKiemTra;
+        public static string mbDonVi;
+        public static Double mbTrongLuong;
+        public static Double mbSoLuong;
+        public static string mbDonVi_;
+        public static Double mbQuyRaKien;
+        public static Double mbPhePham;
+        public static Double mbDoCao;
+        public static Double mbMotBao_kg;
+        public static Double mbMotBao_SoKien;
+        public static Double mbSauMuoi_BaoKien;
+        public static string mbGhiChu;
        
         public static DateTime madaNgayPhieu;
         
@@ -202,7 +219,7 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            Tr_UC_BB_Ktra_DM_HHSX_Load(sender, e);
+            this.Refresh();
         }
 
      
@@ -376,33 +393,53 @@ namespace CtyTinLuong
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            //if (isload)
-            //    return;
-            //_ma_phieu = txtTimKiem.Text;
-            //_frmQLSX.ResetSoTrang();
-            //LoadData(1, false);
+            if (isload)
+                return;
+            _idBienBan = txtTimKiem.Text;
+            _frmQLSX.ResetSoTrang_BB();
+            LoadData(1, false);
         }    
 
         private void btCopY_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
-            //    {
-            //        mb_ThemMoi_SoPhieu = false;
-            //        mb_Sua_SoPhieu = false;
-            //        mbCopy_Phieu = true;
-            //        msTenSoPhieu = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString();
-            //        mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
-            //        SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
-            //        ff.Show();
-            //    }
-            //}
-            //catch
-            //{
+            try
+            {
+                if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
+                {
+                    mbAdd_BB_Ktra = true;
+                    mb_Sua_BB_Ktra = false;
+                    mbCopy_BB_Ktra = true;
 
-            //}
-            
+                    mbNgayThang = Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clNgayThang).ToString());
+                    mbSoHieu = gridView1.GetFocusedRowCellValue(clSoHieu).ToString().Trim();
+                    mbID_BienBan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
+                    mbCaSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clCaLamViec).ToString());
+                    mbLoaiHang = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString().Trim();
+                    mbLoaiGiay = gridView1.GetFocusedRowCellValue(clLoaiGiay).ToString().Trim();
+                    mbSoLuongKiemTra = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuongKiemTra).ToString());
+                    mbDonVi = gridView1.GetFocusedRowCellValue(clDonVi).ToString().Trim();
+                    mbTrongLuong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clTrongLuong).ToString());
+                    mbSoLuong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong).ToString());
+                    mbDonVi_ = gridView1.GetFocusedRowCellValue(clDonVi_).ToString().Trim();
+                    mbQuyRaKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clQuyRaKien).ToString());
+                    mbPhePham = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clPhePham).ToString());
+                    mbDoCao = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDoCao).ToString());
+                    mbMotBao_kg = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clMotBao_kg).ToString());
+                    mbMotBao_SoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clMotBao_SoKien).ToString());
+                    mbSauMuoi_BaoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
+                    mbGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
+
+                    Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
+                    _frmQLSX.Hide();
+                    ff.ShowDialog();
+                    _frmQLSX.Show();
+                }
+            }
+            catch
+            {
+
+            }
+
         }
     }
 }
