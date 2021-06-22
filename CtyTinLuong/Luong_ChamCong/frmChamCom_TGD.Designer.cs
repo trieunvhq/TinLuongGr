@@ -61,7 +61,7 @@
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -319,7 +319,7 @@
             this.clSTT,
             this.clTenNhanVien,
             this.clTongLuong,
-            this.TenVTHH,
+            this.NoiDung,
             this.clID_ChiTietChamCong,
             this.clID_ChamCong,
             this.clThang,
@@ -429,17 +429,17 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
             this.clTongLuong.Width = 80;
             // 
-            // TenVTHH
+            // NoiDung
             // 
-            this.TenVTHH.Caption = "Nội dung";
-            this.TenVTHH.FieldName = "TenVTHH";
-            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.TenVTHH.MinWidth = 140;
-            this.TenVTHH.Name = "TenVTHH";
-            this.TenVTHH.OptionsColumn.AllowEdit = false;
-            this.TenVTHH.Visible = true;
-            this.TenVTHH.VisibleIndex = 2;
-            this.TenVTHH.Width = 140;
+            this.NoiDung.Caption = "Nội dung";
+            this.NoiDung.FieldName = "NoiDung";
+            this.NoiDung.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.NoiDung.MinWidth = 50;
+            this.NoiDung.Name = "NoiDung";
+            this.NoiDung.OptionsColumn.AllowEdit = false;
+            this.NoiDung.Visible = true;
+            this.NoiDung.VisibleIndex = 2;
+            this.NoiDung.Width = 50;
             // 
             // clID_ChiTietChamCong
             // 
@@ -1570,7 +1570,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn clTongLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
+        private DevExpress.XtraGrid.Columns.GridColumn NoiDung;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clThang;
