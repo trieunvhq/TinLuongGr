@@ -24,7 +24,7 @@ namespace CtyTinLuong
 
         public  DateTime _ngay_batdau;
         public  DateTime _ngay_ketthuc;
-        public string _ma_phieu;
+        public string _idBienBan;
         private int _SoTrang = 1;
         private bool isload = false;
 
@@ -38,31 +38,79 @@ namespace CtyTinLuong
                 txtTimKiem.Text = "";
             }
             else { }
-            _ma_phieu = txtTimKiem.Text;
+            _idBienBan = txtTimKiem.Text;
             _ngay_batdau = (DateTime)dteTuNgay.EditValue;
             _ngay_ketthuc = dteDenNgay.DateTime;
             _SoTrang = sotrang;
 
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_SoPhieu", typeof(int));
-            dt2.Columns.Add("MaPhieu", typeof(string));
-            dt2.Columns.Add("NgayLapPhieu", typeof(DateTime));
+            dt2.Columns.Add("STT", typeof(int));
+            dt2.Columns.Add("NgayThang", typeof(DateTime));
+            dt2.Columns.Add("SoHieu", typeof(string));
+            dt2.Columns.Add("ID_BienBan", typeof(int));
+            dt2.Columns.Add("CaSanXuat", typeof(int));
+            dt2.Columns.Add("LoaiHang", typeof(string));
+            dt2.Columns.Add("LoaiGiay", typeof(string));
+            dt2.Columns.Add("SoLuongKiemTra", typeof(Double));
+            dt2.Columns.Add("DonVi", typeof(string));
+            dt2.Columns.Add("TrongLuong", typeof(Double));
+            dt2.Columns.Add("SoLuong", typeof(Double));
+            dt2.Columns.Add("DonVi_", typeof(string));
+            dt2.Columns.Add("QuyRaKien", typeof(Double));
+            dt2.Columns.Add("PhePham", typeof(Double));
+            dt2.Columns.Add("DoCao", typeof(Double));
+            dt2.Columns.Add("MotBao_kg", typeof(Double));
+            dt2.Columns.Add("MotBao_SoKien", typeof(Double));
+            dt2.Columns.Add("Bao_Kien", typeof(Double));
             dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("GuiDuLieu", typeof(bool));
-            dt2.Columns.Add("ID_CaTruong", typeof(int));
-            dt2.Columns.Add("DaKetThuc", typeof(bool));
-            dt2.Columns.Add("TenNhanVien", typeof(string));
-            dt2.Columns.Add("MaHang", typeof(string));
-            dt2.Columns.Add("CaSanXuat", typeof(string));
-            using (clsThin cls_ = new clsThin())
+
+            using (clsTr_BB_KtraDinhMuc_HHSX cls_ = new clsTr_BB_KtraDinhMuc_HHSX())
             {
-                DataTable dt_ = cls_.T_PhieuSX_SF(_SoTrang, _ngay_batdau, _ngay_ketthuc, _ma_phieu);
+                DataTable dt_ = cls_.SelectPage_BB_Ktra_DMHHSX(_SoTrang, _ngay_batdau, _ngay_ketthuc, _idBienBan);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt_.Rows.Count; i++)
                     {
-                        //int ID_SoPhieu = Convert.ToInt32(dt_.Rows[i]["ID_SoPhieu"].ToString());
+                        /*
+                         * 	[Id_BB],
+	[NgayThang],
+	[SoHieu],
+	[Ca],
+	[LoaiHang],
+	[LoaiGiay],
+	[SoLuongKtra],
+	[DonVi_first],
+	[TrongLuong],
+	[SoLuong],
+	[DonVi_Second],
+	[QuyRaKien],
+	[PhePham],
+	[DoCao],
+	[MotBao_kg],
+	[MotBao_SoKien],
+	[SauMuoi_BaoKien],
+	[GhiChu]*/
                         DataRow _ravi = dt2.NewRow();
+
+                        _ravi["STT"] = (i+1).ToString();
+                        _ravi["NgayThang"] = Convert.ToDateTime(dt_.Rows[i]["NgayThang"].ToString());
+                        _ravi["SoHieu"] = dt_.Rows[i]["SoHieu"].ToString(); 
+                        _ravi["ID_BienBan"] = Convert.ToInt32(dt_.Rows[i]["Id_BB"].ToString());
+                        _ravi["CaSanXuat"] = Convert.ToInt32(dt_.Rows[i]["Ca"].ToString());
+                        _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString();
+                        _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString();
+                        _ravi["SoLuongKiemTra"] = dt_.Rows[i]["SoLuongKtra"].ToString();
+                        _ravi["DonVi"] = dt_.Rows[i]["DonVi_first"].ToString();
+                        _ravi["TrongLuong"] = dt_.Rows[i]["TrongLuong"].ToString();
+                        _ravi["SoLuong"] = dt_.Rows[i]["SoLuong"].ToString();
+                        _ravi["DonVi_"] = dt_.Rows[i]["DonVi_Second"].ToString();
+                        _ravi["QuyRaKien"] = dt_.Rows[i]["QuyRaKien"].ToString();
+                        _ravi["PhePham"] = dt_.Rows[i]["PhePham"].ToString();
+                        _ravi["DoCao"] = dt_.Rows[i]["DoCao"].ToString();
+                        _ravi["MotBao_kg"] = dt_.Rows[i]["MotBao_kg"].ToString();
+                        _ravi["MotBao_SoKien"] = dt_.Rows[i]["MotBao_SoKien"].ToString();
+                        _ravi["Bao_Kien"] = dt_.Rows[i]["SauMuoi_BaoKien"].ToString();
+                        _ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
                         //_ravi["ID_SoPhieu"] = ID_SoPhieu;
                         //_ravi["MaPhieu"] = dt_.Rows[i]["MaPhieu"].ToString();
                         //_ravi["NgayLapPhieu"] = Convert.ToDateTime(dt_.Rows[i]["NgayLapPhieu"].ToString());
@@ -78,7 +126,7 @@ namespace CtyTinLuong
                     }
                 }
             }
-            //gridControl1.DataSource = dt2;
+            gridControl1.DataSource = dt2;
 
             isload = false;
         }
@@ -309,30 +357,31 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            //if (isload)
-            //    return;
+            if (isload)
+                return;
 
-            //try
-            //{
-            //    _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
-            //    _frmQLSX.ResetSoTrang();
-            //    LoadData(1, false);
-            //}
-            //catch
-            //{ } 
+            try
+            {
+                _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
+                _frmQLSX.ResetSoTrang();
+                LoadData(1, false);
+            }
+            catch
+            { }
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
-            //if (isload)
-            //    return;
-            //try {
-            //    _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
-            //    _frmQLSX.ResetSoTrang();
-            //    LoadData(1, false);
-            //}
-            //catch
-            //{ }
+            if (isload)
+                return;
+            try
+            {
+                _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
+                _frmQLSX.ResetSoTrang();
+                LoadData(1, false);
+            }
+            catch
+            { }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)

@@ -92,6 +92,7 @@
             this.a = new DevExpress.XtraLayout.LayoutControlItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clSoHieu = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -150,6 +151,7 @@
             this.clSTT,
             this.clNgayThang,
             this.clID_BienBan,
+            this.clSoHieu,
             this.clCaLamViec,
             this.clLoaiHang,
             this.clLoaiGiay,
@@ -190,6 +192,7 @@
             this.clSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSTT.Caption = "STT";
+            this.clSTT.FieldName = "STT";
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.FixedWidth = true;
@@ -621,6 +624,13 @@
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             // 
+            // clSoHieu
+            // 
+            this.clSoHieu.Caption = "Số hiệu";
+            this.clSoHieu.FieldName = "SoHieu";
+            this.clSoHieu.Name = "clSoHieu";
+            this.clSoHieu.Width = 40;
+            // 
             // Tr_UC_BB_Ktra_DM_HHSX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,5 +710,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clMotBao_kg;
         private DevExpress.XtraGrid.Columns.GridColumn clMotBao_SoKien;
         private DevExpress.XtraGrid.Columns.GridColumn clBao_Kien;
+        private DevExpress.XtraGrid.Columns.GridColumn clSoHieu;
     }
 }
