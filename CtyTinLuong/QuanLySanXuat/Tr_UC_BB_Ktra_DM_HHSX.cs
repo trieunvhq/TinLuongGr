@@ -41,6 +41,10 @@ namespace CtyTinLuong
         public string _sSearch;
         private int _SoTrang = 1;
         private bool isload = false;
+        private int _STT = 1;
+        private int _RowPage_curent = 0;
+        private int _TongSoTrang = 0;
+
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
 
@@ -84,13 +88,16 @@ namespace CtyTinLuong
             using (clsTr_BB_KtraDinhMuc_HHSX cls_ = new clsTr_BB_KtraDinhMuc_HHSX())
             {
                 DataTable dt_ = cls_.SelectPage_BB_Ktra_DMHHSX(_SoTrang, _ngay_batdau, _ngay_ketthuc, _sSearch);
+
+                _RowPage_curent = dt_.Rows.Count;
+
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt_.Rows.Count; i++)
                     {
                         DataRow _ravi = dt2.NewRow();
 
-                        _ravi["STT"] = (i+1).ToString();
+                        _ravi["STT"] = _STT.ToString(); _STT++;
                         _ravi["NgayThang"] = Convert.ToDateTime(dt_.Rows[i]["NgayThang"].ToString());
                         _ravi["SoHieu"] = dt_.Rows[i]["SoHieu"].ToString(); 
                         _ravi["ID_BienBan"] = Convert.ToInt32(dt_.Rows[i]["Id_BB"].ToString());
@@ -128,11 +135,11 @@ namespace CtyTinLuong
 
             clSoLuongKiemTra.Caption = "Số lượng\nkiểm tra";
             clTrongLuong.Caption = "Trọng\nlượng";
-
         }
 
         private void Tr_UC_BB_Ktra_DM_HHSX_Load(object sender, EventArgs e)
         {
+            _STT = 1;
             LoadData(1, true);
             ResetSoTrang_BB();
         }
@@ -400,7 +407,8 @@ namespace CtyTinLuong
                 DataTable dt_ = cls.T_TongSoBB(_ngay_batdau, _ngay_ketthuc, _sSearch);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20));
+                    lbTongSoTrang.Text = "/" + _TongSoTrang.ToString();
                 }
                 else
                 {
@@ -433,6 +441,10 @@ namespace CtyTinLuong
                 if (sotrang_ < max_)
                 {
                     txtSoTrang.Text = (sotrang_ + 1).ToString();
+                    if (sotrang_ + 1 == _TongSoTrang)
+                    {
+                        btnTrangTiep.LinkColor = Color.Black;
+                    }
 
                     Load_BBKtraHHSX(false);
                 }
@@ -467,11 +479,20 @@ namespace CtyTinLuong
                 {
                     txtSoTrang.Text = "1";
                     btnTrangSau.LinkColor = Color.Black;
+                    _STT = 1;
 
                 }
                 else
                 {
                     txtSoTrang.Text = (sotrang_ - 1).ToString();
+
+                    _STT -= (20 + _RowPage_curent);
+
+                    if (sotrang_ - 1 == 1)
+                    {
+                        btnTrangSau.LinkColor = Color.Black;
+                    }
+
                     Load_BBKtraHHSX(false);
                 }
             }
@@ -480,6 +501,7 @@ namespace CtyTinLuong
                 btnTrangSau.LinkColor = Color.Black;
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
+                _STT = 1;
             }
         }
 

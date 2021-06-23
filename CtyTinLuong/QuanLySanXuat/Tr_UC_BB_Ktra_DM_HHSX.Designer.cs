@@ -695,19 +695,19 @@
             // btnTrangSau
             // 
             this.btnTrangSau.AutoSize = true;
-            this.btnTrangSau.Location = new System.Drawing.Point(354, 7);
+            this.btnTrangSau.Location = new System.Drawing.Point(349, 7);
             this.btnTrangSau.Name = "btnTrangSau";
-            this.btnTrangSau.Size = new System.Drawing.Size(55, 13);
+            this.btnTrangSau.Size = new System.Drawing.Size(62, 13);
             this.btnTrangSau.TabIndex = 84;
             this.btnTrangSau.TabStop = true;
-            this.btnTrangSau.Text = "Trang sau";
+            this.btnTrangSau.Text = "Trang trước";
             this.btnTrangSau.Visible = false;
             this.btnTrangSau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangSau_LinkClicked);
             // 
             // btnTrangTiep
             // 
             this.btnTrangTiep.AutoSize = true;
-            this.btnTrangTiep.Location = new System.Drawing.Point(492, 8);
+            this.btnTrangTiep.Location = new System.Drawing.Point(491, 8);
             this.btnTrangTiep.Name = "btnTrangTiep";
             this.btnTrangTiep.Size = new System.Drawing.Size(55, 13);
             this.btnTrangTiep.TabIndex = 83;
