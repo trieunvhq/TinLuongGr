@@ -332,21 +332,24 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint_tbChiTietPhieu = dv1212.ToTable();
-            if(mdtPrint_tbChiTietPhieu.Rows.Count>0)
+            try
             {
-                xxsotrang = "Số trang: " + txtSoTrang.Text.ToString() + "" + lbTongSoTrang.Text + "";
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
-                ff.ShowDialog();
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                mdtPrint_tbChiTietPhieu = dv1212.ToTable();
+                if (mdtPrint_tbChiTietPhieu.Rows.Count > 0)
+                {
+                    xxsotrang = "Số trang: " + txtSoTrang.Text.ToString() + "" + lbTongSoTrang.Text + "";
+                    mdatungay = dteTuNgay.DateTime;
+                    mdadenngay = dteDenNgay.DateTime;
+                    frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
+                    ff.ShowDialog();
+                }
             }
+            catch { }
         }
         
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

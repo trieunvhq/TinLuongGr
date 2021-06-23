@@ -114,7 +114,7 @@
             // 
             // navBarGroup1
             // 
-            this.navBarGroup1.Caption = "Sản xuất";
+            this.navBarGroup1.Caption = "Sản Xuất";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemPhieuSanXuat),
@@ -124,19 +124,19 @@
             // 
             // navBarItemPhieuSanXuat
             // 
-            this.navBarItemPhieuSanXuat.Caption = "Phiếu sản xuất";
+            this.navBarItemPhieuSanXuat.Caption = "Phiếu Sản Xuất";
             this.navBarItemPhieuSanXuat.Name = "navBarItemPhieuSanXuat";
             this.navBarItemPhieuSanXuat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemPhieuSanXuat_LinkClicked);
             // 
             // navBarItemLenhSanXuat
             // 
-            this.navBarItemLenhSanXuat.Caption = "Lệnh sản xuất IN_CAT_DOT";
+            this.navBarItemLenhSanXuat.Caption = "Lệnh Sản Xuất IN_CAT_DOT";
             this.navBarItemLenhSanXuat.Name = "navBarItemLenhSanXuat";
             this.navBarItemLenhSanXuat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemLenhSanXuat_LinkClicked);
             // 
             // navBarItem20
             // 
-            this.navBarItem20.Caption = "Cài đặt mặc định";
+            this.navBarItem20.Caption = "Cài Đặt Mặc Định";
             this.navBarItem20.Name = "navBarItem20";
             this.navBarItem20.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem20_LinkClicked);
             // 
@@ -181,7 +181,7 @@
             // 
             // navBarGroup2
             // 
-            this.navBarGroup2.Caption = "Định mức";
+            this.navBarGroup2.Caption = "Định Mức";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDinhMucDOt),
@@ -193,37 +193,37 @@
             // 
             // navBarItemDinhMucDOt
             // 
-            this.navBarItemDinhMucDOt.Caption = "Định mức Đột";
+            this.navBarItemDinhMucDOt.Caption = "Định Mức Đột";
             this.navBarItemDinhMucDOt.Name = "navBarItemDinhMucDOt";
             this.navBarItemDinhMucDOt.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemDinhMucDOt_LinkClicked);
             // 
             // navBarItemDinhMucNPL
             // 
-            this.navBarItemDinhMucNPL.Caption = "Định mức NPL";
+            this.navBarItemDinhMucNPL.Caption = "Định Mức NPL";
             this.navBarItemDinhMucNPL.Name = "navBarItemDinhMucNPL";
             this.navBarItemDinhMucNPL.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemDinhMucNPL_LinkClicked);
             // 
             // navBarItem13
             // 
-            this.navBarItem13.Caption = "Định mức tổ gấp dán";
+            this.navBarItem13.Caption = "Định Mức Tổ Gấp Dán";
             this.navBarItem13.Name = "navBarItem13";
             this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked_1);
             // 
             // navBarItem16
             // 
-            this.navBarItem16.Caption = "Định mức hàng Nhũ";
+            this.navBarItem16.Caption = "Định Mức Hàng Nhũ";
             this.navBarItem16.Name = "navBarItem16";
             this.navBarItem16.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked_2);
             // 
             // navBarItem15
             // 
-            this.navBarItem15.Caption = "Biên bản kiểm tra ĐM HH";
+            this.navBarItem15.Caption = "Biên Bản Kiểm Tra ĐMHHSX";
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
             // navBarGroup3
             // 
-            this.navBarGroup3.Caption = "Báo cáo tổng hợp";
+            this.navBarGroup3.Caption = "Báo Cáo Tổng Hợp";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
@@ -235,31 +235,31 @@
             // 
             // navBarItem8
             // 
-            this.navBarItem8.Caption = "Giao nhanh nội bộ";
+            this.navBarItem8.Caption = "Giao Nhanh Nội Bộ";
             this.navBarItem8.Name = "navBarItem8";
             this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
             // 
             // navSanLuongMayIn
             // 
-            this.navSanLuongMayIn.Caption = "Sản lượng tổ máy IN";
+            this.navSanLuongMayIn.Caption = "Sản Lượng Tổ Máy In";
             this.navSanLuongMayIn.Name = "navSanLuongMayIn";
             this.navSanLuongMayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayIn_LinkClicked);
             // 
             // navSanLuongMayCAT
             // 
-            this.navSanLuongMayCAT.Caption = "Sản lượng tổ máy CẮT";
+            this.navSanLuongMayCAT.Caption = "Sản Lượng Tổ Máy Cắt";
             this.navSanLuongMayCAT.Name = "navSanLuongMayCAT";
             this.navSanLuongMayCAT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayCAT_LinkClicked);
             // 
             // navSanLuongMayDOT
             // 
-            this.navSanLuongMayDOT.Caption = "Sản lượng tổ ĐỘT DẬP";
+            this.navSanLuongMayDOT.Caption = "Sản Lượng Tổ Đột Dập";
             this.navSanLuongMayDOT.Name = "navSanLuongMayDOT";
             this.navSanLuongMayDOT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayDOT_LinkClicked);
             // 
             // navLuongSanLuong
             // 
-            this.navLuongSanLuong.Caption = "Báo cáo lương sản lượng";
+            this.navLuongSanLuong.Caption = "Báo Cáo Lương Sản Lượng";
             this.navLuongSanLuong.Name = "navLuongSanLuong";
             this.navLuongSanLuong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongSanLuong_LinkClicked);
             // 
@@ -309,7 +309,7 @@
             this.MinimizeBox = false;
             this.Name = "SanXuat_frmQuanLySanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý sản xuất";
+            this.Text = "Quản Lý Sản Xuất";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SanXuat_frmQuanLySanXuat_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

@@ -210,43 +210,50 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)grid_ChiTiet.DataSource;
-            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
-            if (mdtPrint.Rows.Count > 0)
+            try
             {
-                mbPrint_RutGon = true;
-                mbPrint_ALL = false;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                ff.ShowDialog();
+                DataTable DatatableABC = (DataTable)grid_ChiTiet.DataSource;
+                CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                mdtPrint = dv1212.ToTable();
+                if (mdtPrint.Rows.Count > 0)
+                {
+                    mbPrint_RutGon = true;
+                    mbPrint_ALL = false;
+                    mdatungay = dteTuNgay.DateTime;
+                    mdadenngay = dteDenNgay.DateTime;
+                    frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                    ff.ShowDialog();
 
+                }
             }
+            catch { }
         }
 
         private void btprint_ALL_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)grid_ChiTiet.DataSource;
-            CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
-
-            if (mdtPrint.Rows.Count > 0)
+            try
             {
-                mbPrint_RutGon = false;
-                mbPrint_ALL = true;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                ff.ShowDialog();
+                DataTable DatatableABC = (DataTable)grid_ChiTiet.DataSource;
+                CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                mdtPrint = dv1212.ToTable();
 
+                if (mdtPrint.Rows.Count > 0)
+                {
+                    mbPrint_RutGon = false;
+                    mbPrint_ALL = true;
+                    mdatungay = dteTuNgay.DateTime;
+                    mdadenngay = dteDenNgay.DateTime;
+                    frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
+                    ff.ShowDialog();
+                }
             }
+            catch { }
         }
 
         private void btRefesh_Click(object sender, EventArgs e)
