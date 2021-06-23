@@ -238,46 +238,52 @@
     <Compile Include="Luong_ChamCong\clsTamUng_ChiTietTamUng - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTamUng_New - Copy.cs" />
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_CT.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_CT.Designer.cs">
       <DependentUpon>frmBTTL_TBX_CT.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_TQ.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_TQ.Designer.cs">
       <DependentUpon>frmBTTL_TBX_TQ.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TMC_CT.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TMC_CT.Designer.cs">
       <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCongToGapDan.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCongToGapDan.Designer.cs">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TrgCa.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TrgCa.Designer.cs">
       <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDK.Designer.cs">
       <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.Designer.cs">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa.Designer.cs">
+      <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_CT.cs">
       <SubType>Form</SubType>
@@ -455,19 +461,19 @@
       <DependentUpon>KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TGD_TQ.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TGD_TQ.Designer.cs">
       <DependentUpon>frmBTTL_TGD_TQ.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TGD_CT.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TGD_CT.Designer.cs">
       <DependentUpon>frmBTTL_TGD_CT.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCom_TGD.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCom_TGD.Designer.cs">
       <DependentUpon>frmChamCom_TGD.cs</DependentUpon>
@@ -1856,6 +1862,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TBX.resx">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTrgCa.resx">
+      <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_CT.resx">
       <DependentUpon>Tr_frmPrintBTTL_TBX_CT.cs</DependentUpon>
