@@ -309,9 +309,22 @@ namespace CtyTinLuong
                 for(int i=0; i<dt3.Rows.Count; i++)
                 {
                    
-
-                    if (Convert.ToBoolean(dt3.Rows[i]["HienThi"].ToString()) == true)
+                    if (Convert.ToBoolean(dt3.Rows[i]["HienThi"].ToString()) == false)
                     {
+                        DataRow _ravi = mdtPrint.NewRow();
+                        _ravi["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
+                        _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                        _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                        _ravi["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
+                        _ravi["CoTrongKy"] = dt3.Rows[i]["CoTrongKy"].ToString();
+                        _ravi["NoCuoiKy"] = dt3.Rows[i]["NoCuoiKy"].ToString();
+                        _ravi["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
+                        mdtPrint.Rows.Add(_ravi);
+                    }
+                    else
+                    {
+                       
+
                         int iDImuahang = Convert.ToInt32(dt3.Rows[i]["ID_MuaHang"].ToString());
                         clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
                         cls2.iID_MuaHang = iDImuahang;
@@ -327,25 +340,13 @@ namespace CtyTinLuong
                             _ravi2["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
                             _ravi2["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
                             _ravi2["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
-                            _ravi2["CoTrongKy"] =dt3.Rows[i]["CoTrongKy"].ToString();
-                            _ravi2["NoCuoiKy"] =dt3.Rows[i]["NoCuoiKy"].ToString();
+                            _ravi2["CoTrongKy"] = dt3.Rows[i]["CoTrongKy"].ToString();
+                            _ravi2["NoCuoiKy"] = dt3.Rows[i]["NoCuoiKy"].ToString();
                             _ravi2["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
                             _ravi2["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
                             _ravi2["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
                             mdtPrint.Rows.Add(_ravi2);
                         }
-                    }
-                    else
-                    {
-                        DataRow _ravi = mdtPrint.NewRow();
-                        _ravi["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
-                        _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                        _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                        _ravi["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
-                        _ravi["CoTrongKy"] = dt3.Rows[i]["CoTrongKy"].ToString();
-                        _ravi["NoCuoiKy"] = dt3.Rows[i]["NoCuoiKy"].ToString();
-                        _ravi["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
-                        mdtPrint.Rows.Add(_ravi);
                     }
                    
 
