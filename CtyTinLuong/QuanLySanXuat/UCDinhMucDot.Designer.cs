@@ -65,6 +65,7 @@
             this.checked_ALL = new DevExpress.XtraEditors.CheckEdit();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -72,17 +73,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 32);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1.Location = new System.Drawing.Point(0, 35);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa,
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(877, 571);
+            this.gridControl1.Size = new System.Drawing.Size(900, 571);
             this.gridControl1.TabIndex = 66;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -372,7 +375,8 @@
             // 
             // checkTheoDoi
             // 
-            this.checkTheoDoi.Location = new System.Drawing.Point(684, 5);
+            this.checkTheoDoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkTheoDoi.Location = new System.Drawing.Point(699, 5);
             this.checkTheoDoi.Name = "checkTheoDoi";
             this.checkTheoDoi.Properties.Caption = "Đang theo dõi";
             this.checkTheoDoi.Size = new System.Drawing.Size(90, 19);
@@ -381,7 +385,8 @@
             // 
             // checkNgungTheoDoi
             // 
-            this.checkNgungTheoDoi.Location = new System.Drawing.Point(780, 7);
+            this.checkNgungTheoDoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkNgungTheoDoi.Location = new System.Drawing.Point(795, 5);
             this.checkNgungTheoDoi.Name = "checkNgungTheoDoi";
             this.checkNgungTheoDoi.Properties.Caption = "Ngừng theo dõi";
             this.checkNgungTheoDoi.Size = new System.Drawing.Size(100, 19);
@@ -390,7 +395,8 @@
             // 
             // checked_ALL
             // 
-            this.checked_ALL.Location = new System.Drawing.Point(622, 5);
+            this.checked_ALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checked_ALL.Location = new System.Drawing.Point(637, 5);
             this.checked_ALL.Name = "checked_ALL";
             this.checked_ALL.Properties.Caption = "Tất cả";
             this.checked_ALL.Size = new System.Drawing.Size(56, 19);
@@ -401,7 +407,7 @@
             // 
             this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
             this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btThemMoi.Location = new System.Drawing.Point(3, 3);
+            this.btThemMoi.Location = new System.Drawing.Point(6, 3);
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(39, 23);
             this.btThemMoi.TabIndex = 70;
@@ -412,22 +418,31 @@
             // 
             this.btRefresh.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Update;
             this.btRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btRefresh.Location = new System.Drawing.Point(48, 3);
+            this.btRefresh.Location = new System.Drawing.Point(51, 3);
             this.btRefresh.Name = "btRefresh";
             this.btRefresh.Size = new System.Drawing.Size(39, 23);
             this.btRefresh.TabIndex = 75;
             this.btRefresh.ToolTip = "Refesh";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btRefresh);
+            this.panel1.Controls.Add(this.checkTheoDoi);
+            this.panel1.Controls.Add(this.checkNgungTheoDoi);
+            this.panel1.Controls.Add(this.btThemMoi);
+            this.panel1.Controls.Add(this.checked_ALL);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(900, 30);
+            this.panel1.TabIndex = 76;
+            // 
             // UCDinhMucDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btRefresh);
-            this.Controls.Add(this.btThemMoi);
-            this.Controls.Add(this.checkTheoDoi);
-            this.Controls.Add(this.checkNgungTheoDoi);
-            this.Controls.Add(this.checked_ALL);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridControl1);
             this.Name = "UCDinhMucDot";
             this.Size = new System.Drawing.Size(900, 606);
@@ -439,6 +454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -477,5 +493,6 @@
         private DevExpress.XtraEditors.SimpleButton btRefresh;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clKhoa;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -45,7 +45,7 @@ namespace CtyTinLuong
         {
             mb_TheMoi_DinhMuc_Dot = true;
             frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
-            ff.Show();
+            ff.ShowDialog();
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace CtyTinLuong
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());                 
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
-                    ff.Show();
+                    ff.ShowDialog();
                 }
             }
             catch

@@ -28,7 +28,6 @@ namespace CtyTinLuong
 
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
@@ -58,7 +57,7 @@ namespace CtyTinLuong
 
         private void navBarItemDinhMucNPL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            ucDinhMucNGuyenPhuLieu ucc = new ucDinhMucNGuyenPhuLieu();
+            ucDinhMucNGuyenPhuLieu ucc = new ucDinhMucNGuyenPhuLieu(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

@@ -189,7 +189,9 @@ namespace CtyTinLuong
                     msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                     mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
                     SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
-                    ff.Show();
+                    _frmQLSX.Hide();
+                    ff.ShowDialog();
+                    _frmQLSX.Show();
                 }
             }
             catch
@@ -240,44 +242,6 @@ namespace CtyTinLuong
                 }
 
             }
-
-
-
-            //clsPhieu_tbPhieu cls1 = new clsPhieu_tbPhieu();
-            //cls1.iID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-            //DataTable dt1 = cls1.SelectOne();
-            //if (cls1.bGuiDuLieu==true)
-            //{
-            //    MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
-            //    return;
-
-            //}
-            //else
-            //{
-            //    DialogResult traloi;
-            //    traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //    if (traloi == DialogResult.Yes)
-            //    {
-
-            //        cls1.iID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-            //        cls1.Delete();
-            //        clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
-            //        cls2.iID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-            //        cls2.Delete_All_W_ID_SoPhieu();
-            //        MessageBox.Show("Đã xóa");
-            //        if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            //        {
-            //            HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //        }
-            //        else
-            //        {
-            //            //  HienThi_ALL();ien
-            //            LoadData(_SoTrang,false);
-            //        }
-
-            //    }
-            //}
-
         }
 
 
@@ -337,7 +301,9 @@ namespace CtyTinLuong
             mb_Sua_SoPhieu = false;
             mbCopy_Phieu = false;
             SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
-            ff.Show();
+            _frmQLSX.Hide();
+            ff.ShowDialog();
+            _frmQLSX.Show();
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)

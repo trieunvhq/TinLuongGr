@@ -46,8 +46,11 @@ namespace CtyTinLuong
             }
         }
 
-        public ucDinhMucNGuyenPhuLieu()
+        SanXuat_frmQuanLySanXuat _frmQLSX;
+
+        public ucDinhMucNGuyenPhuLieu(SanXuat_frmQuanLySanXuat frmQLSX)
         {
+            _frmQLSX = frmQLSX;
             InitializeComponent();
         }
 
@@ -123,7 +126,9 @@ namespace CtyTinLuong
                     miID_DinhMuc_NPL = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_NPL).ToString());                   
                     mb_TheMoi_DinhMuc_NPL = false;
                     frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
-                    ff.Show();
+                    _frmQLSX.Hide();
+                    ff.ShowDialog();
+                    _frmQLSX.Show();
                 }
             }
             catch
@@ -186,7 +191,9 @@ namespace CtyTinLuong
         {
             mb_TheMoi_DinhMuc_NPL = true;
             frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
-            ff.Show();
+            _frmQLSX.Hide();
+            ff.ShowDialog();
+            _frmQLSX.Show();
         }
     }
 }
