@@ -812,6 +812,12 @@
     <Compile Include="QuanLySanXuat\Tr_frmPrintSanLuong_CT_Luong.Designer.cs">
       <DependentUpon>Tr_frmPrintSanLuong_CT_Luong.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\Tr_PrintBB_Ktra_DM_HHSX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_PrintBB_Ktra_DM_HHSX.Designer.cs">
+      <DependentUpon>Tr_PrintBB_Ktra_DM_HHSX.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Tr_PrintSanLuong_CT_Luong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2208,6 +2214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Tr_frmPrintSanLuong_CT_Luong.resx">
       <DependentUpon>Tr_frmPrintSanLuong_CT_Luong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Tr_PrintBB_Ktra_DM_HHSX.resx">
+      <DependentUpon>Tr_PrintBB_Ktra_DM_HHSX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Tr_PrintSanLuong_CT_Luong.resx">
       <DependentUpon>Tr_PrintSanLuong_CT_Luong.cs</DependentUpon>

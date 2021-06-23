@@ -304,6 +304,7 @@ namespace CtyTinLuong
             {
                 _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
                 ResetSoTrang_BB();
+                _STT = 1;
                 LoadData(1, false);
             }
             catch
@@ -318,6 +319,7 @@ namespace CtyTinLuong
             {
                 _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
                 ResetSoTrang_BB();
+                _STT = 1;
                 LoadData(1, false);
             }
             catch
@@ -503,6 +505,11 @@ namespace CtyTinLuong
                 txtSoTrang.Text = "1";
             }
             LoadData(sotrang_, islandau);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
