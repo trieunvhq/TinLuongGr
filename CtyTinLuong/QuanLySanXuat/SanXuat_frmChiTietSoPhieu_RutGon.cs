@@ -345,11 +345,8 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
-                ff.Show();
+                ff.ShowDialog();
             }
-          
-            
-            
         }
         
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

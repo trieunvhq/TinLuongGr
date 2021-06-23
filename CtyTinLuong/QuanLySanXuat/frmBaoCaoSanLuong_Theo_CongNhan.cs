@@ -223,7 +223,7 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                ff.Show();
+                ff.ShowDialog();
 
             }
         }
@@ -244,7 +244,7 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                ff.Show();
+                ff.ShowDialog();
 
             }
         }
@@ -289,8 +289,9 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
-                ff.Show();
-
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
         }
 
@@ -311,7 +312,5 @@ namespace CtyTinLuong
             LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
             gridView2.ExpandAllGroups();
         }
-
-      
     }
 }

@@ -65,7 +65,6 @@ namespace CtyTinLuong
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-          
             SanXuat_frmChiTietSoPhieu_RutGon ff = new SanXuat_frmChiTietSoPhieu_RutGon();
             this.Hide();
             ff.ShowDialog();
