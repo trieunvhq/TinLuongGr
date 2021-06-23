@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmBTTL_TMC_CT : Form
+    public partial class frmBTTL_TMC_CT : UserControl
     { 
         public int miiID_chiTietChamCong, miiD_DinhMuc_Luong, miID_congNhan;
         public int miiID_ChamCong;
@@ -296,7 +296,7 @@ namespace CtyTinLuong
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
     }
 }

@@ -561,7 +561,10 @@
             this.ClientSize = new System.Drawing.Size(579, 496);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCaiMacDinnhMaHangToGapDan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCaiMacDinnhMaHangToGapDan";
             this.Load += new System.EventHandler(this.frmCaiMacDinnhMaHangToGapDan_Load);
             this.groupBox1.ResumeLayout(false);

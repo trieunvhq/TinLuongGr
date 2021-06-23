@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCong_TrgCa : Form
+    public partial class frmChamCong_TrgCa : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         public int _nam, _thang, _id_bophan = 25;
@@ -876,7 +876,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
         private void GuiDuLieuBangLuong()
         {

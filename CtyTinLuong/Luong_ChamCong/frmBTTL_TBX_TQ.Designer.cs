@@ -78,7 +78,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -624,21 +623,11 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(145, 616);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 13);
-            this.label2.TabIndex = 148;
-            this.label2.Text = "Double click để sửa định mức lương tổ gấp dán";
-            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(146, 601);
+            this.label8.Location = new System.Drawing.Point(145, 610);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(314, 13);
             this.label8.TabIndex = 146;
@@ -648,7 +637,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 584);
+            this.label1.Location = new System.Drawing.Point(146, 593);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(356, 13);
             this.label1.TabIndex = 147;
@@ -660,8 +649,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(913, 635);
-            this.ControlBox = false;
-            this.Controls.Add(this.label2);
+            //this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrint);
@@ -673,14 +661,14 @@
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.MaximizeBox = false;
+            //this.MinimizeBox = false;
             this.Name = "frmBTTL_TBX_TQ";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            //this.ShowIcon = false;
+            //this.ShowInTaskbar = false;
+            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BẢNG THANH TOÁN LƯƠNG TỔ GẤP DÁN";
             this.Load += new System.EventHandler(this.frmBTTL_TBX_TQ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
@@ -742,7 +730,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn LuongTrachNhiem;
         private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
     }

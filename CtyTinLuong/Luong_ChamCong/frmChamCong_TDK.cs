@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCong_TDK : Form
+    public partial class frmChamCong_TDK : UserControl
     { 
         public int _nam, _thang, _id_bophan,_ID_DinhMucLuong_CongNhat;
         public string _TenVTHH, _MaDinhMucLuongCongNhat;
@@ -761,7 +761,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
         private void GuiDuLieuBangLuong()
         {

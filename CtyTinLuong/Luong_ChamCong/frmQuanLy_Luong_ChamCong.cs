@@ -16,10 +16,7 @@ namespace CtyTinLuong
         //frmMain _frmMain;
         public frmQuanLy_Luong_ChamCong()
         {
-            //_frmMain = frm;
             InitializeComponent();
-
-           
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -28,6 +25,8 @@ namespace CtyTinLuong
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navNhapKho_TuMuaHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -36,6 +35,8 @@ namespace CtyTinLuong
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
 
@@ -45,6 +46,8 @@ namespace CtyTinLuong
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem14_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -53,12 +56,16 @@ namespace CtyTinLuong
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
          
         private void navBarItem17_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -70,24 +77,23 @@ namespace CtyTinLuong
 
         }
 
-        //private void frmQuanLy_Luong_ChamCong_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    //  _frmMain.Show();
-        //    this.Close();
-        //}
 
         private void navTTL_TGD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT() { TopLevel = false, TopMost = true };
+            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT();
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true, id_bophan_);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
+
+        //
         private void ShowWinform(Form frm, object sender)
         {
 
@@ -142,22 +148,26 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TGD_TQ frm = new frmBTTL_TGD_TQ(id_bophan_) { TopLevel = false, TopMost = true };
+            frmBTTL_TGD_TQ frm = new frmBTTL_TGD_TQ(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navChamCom_TGD_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            frmChamCom_TGD frm = new frmChamCom_TGD() { TopLevel = false, TopMost = true };
+            frmChamCom_TGD frm = new frmChamCom_TGD();
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navBTTL_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -165,12 +175,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_) { TopLevel = false, TopMost = true };
+            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -178,12 +190,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ(id_bophan_) { TopLevel = false, TopMost = true };
+            frmBTTL_TBX_TQ frm = new frmBTTL_TBX_TQ(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem15_LinkClicked_1(object sender, NavBarLinkEventArgs e)
@@ -191,12 +205,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT(id_bophan_) { TopLevel = false, TopMost = true };
+            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navChamCong_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -204,12 +220,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng kiện");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TDK frm = new frmChamCong_TDK(id_bophan_) { TopLevel = false, TopMost = true };
+            frmChamCong_TDK frm = new frmChamCong_TDK(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navBTTL_TMC_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -217,12 +235,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Máy cắt");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT(id_bophan_) { TopLevel = false, TopMost = true };
+            frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navChamCong_TGD_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -230,12 +250,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmChamCongToGapDan frm = new frmChamCongToGapDan(id_bophan_) { TopLevel = false, TopMost = true };
+            frmChamCongToGapDan frm = new frmChamCongToGapDan(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navChamCong_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -243,12 +265,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_) { TopLevel = false, TopMost = true };
+            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+
+            doiMauTitle(sender, e);
         }
 
         private void navChamCong_TrgCa_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -256,10 +280,24 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TrgCa frm = new frmChamCong_TrgCa(id_bophan_) { TopLevel = false, TopMost = true };
+            frmChamCong_TrgCa frm = new frmChamCong_TrgCa(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
             frm.LoadData(true);
-            //frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            ShowWinform(frm, sender);
+
+            doiMauTitle(sender, e);
+        }
+
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }

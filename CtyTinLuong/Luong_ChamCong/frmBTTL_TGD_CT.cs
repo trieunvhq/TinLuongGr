@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmBTTL_TGD_CT : Form
+    public partial class frmBTTL_TGD_CT : UserControl
     {  
 
         public int _nam, _thang, _id_bophan;
@@ -338,7 +338,7 @@ namespace CtyTinLuong
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
     }
 }

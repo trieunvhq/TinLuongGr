@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmBTTL_TBX_TQ : Form
+    public partial class frmBTTL_TBX_TQ : UserControl
     { 
         public int miiID_chiTietChamCong, miiD_DinhMuc_Luong, miID_congNhan;
         public int miiID_ChamCong;
@@ -338,7 +338,7 @@ namespace CtyTinLuong
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         } 
     }
 }

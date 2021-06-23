@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCongToGapDan : Form
+    public partial class frmChamCongToGapDan : UserControl
     { 
         public int _nam, _thang, _id_bophan, _id_vthh, _ID_DinhMucLuong_CongNhat;
         public string _ten_vthh, _MaDinhMucLuongCongNhat;
@@ -876,7 +876,7 @@ namespace CtyTinLuong
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
         private void GuiDuLieuBangLuong()
         {
