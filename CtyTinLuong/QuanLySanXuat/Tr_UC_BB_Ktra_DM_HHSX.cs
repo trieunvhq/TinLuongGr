@@ -125,6 +125,10 @@ namespace CtyTinLuong
         {
             _frmQLSX = frmQLSX;
             InitializeComponent();
+
+            clSoLuongKiemTra.Caption = "Số lượng\nkiểm tra";
+            clTrongLuong.Caption = "Trọng\nlượng";
+
         }
 
         private void Tr_UC_BB_Ktra_DM_HHSX_Load(object sender, EventArgs e)

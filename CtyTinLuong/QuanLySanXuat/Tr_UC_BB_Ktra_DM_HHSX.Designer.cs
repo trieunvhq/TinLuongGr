@@ -87,13 +87,13 @@
             this.a = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.btnTrangSau = new System.Windows.Forms.LinkLabel();
             this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -116,9 +116,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.a)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemButtonEdit1
@@ -258,7 +258,7 @@
             this.clLoaiHang.OptionsColumn.AllowEdit = false;
             this.clLoaiHang.Visible = true;
             this.clLoaiHang.VisibleIndex = 3;
-            this.clLoaiHang.Width = 60;
+            this.clLoaiHang.Width = 80;
             // 
             // clLoaiGiay
             // 
@@ -275,6 +275,7 @@
             this.clLoaiGiay.Caption = "Loại giấy";
             this.clLoaiGiay.FieldName = "LoaiGiay";
             this.clLoaiGiay.Name = "clLoaiGiay";
+            this.clLoaiGiay.OptionsColumn.AllowEdit = false;
             this.clLoaiGiay.OptionsColumn.FixedWidth = true;
             this.clLoaiGiay.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clLoaiGiay.Visible = true;
@@ -291,13 +292,14 @@
             this.clSoLuongKiemTra.OptionsColumn.AllowEdit = false;
             this.clSoLuongKiemTra.Visible = true;
             this.clSoLuongKiemTra.VisibleIndex = 5;
-            this.clSoLuongKiemTra.Width = 82;
+            this.clSoLuongKiemTra.Width = 70;
             // 
             // clDonVi
             // 
             this.clDonVi.Caption = "Đơn vị";
             this.clDonVi.FieldName = "DonVi";
             this.clDonVi.Name = "clDonVi";
+            this.clDonVi.OptionsColumn.AllowEdit = false;
             // 
             // clTrongLuong
             // 
@@ -310,7 +312,7 @@
             this.clTrongLuong.OptionsColumn.FixedWidth = true;
             this.clTrongLuong.Visible = true;
             this.clTrongLuong.VisibleIndex = 6;
-            this.clTrongLuong.Width = 80;
+            this.clTrongLuong.Width = 70;
             // 
             // clSoLuong
             // 
@@ -319,10 +321,11 @@
             this.clSoLuong.Caption = "Số lượng";
             this.clSoLuong.FieldName = "SoLuong";
             this.clSoLuong.Name = "clSoLuong";
+            this.clSoLuong.OptionsColumn.AllowEdit = false;
             this.clSoLuong.OptionsColumn.FixedWidth = true;
             this.clSoLuong.Visible = true;
             this.clSoLuong.VisibleIndex = 7;
-            this.clSoLuong.Width = 60;
+            this.clSoLuong.Width = 62;
             // 
             // clDonVi_
             // 
@@ -336,19 +339,21 @@
             this.clDonVi_.OptionsColumn.FixedWidth = true;
             this.clDonVi_.Visible = true;
             this.clDonVi_.VisibleIndex = 8;
-            this.clDonVi_.Width = 60;
+            this.clDonVi_.Width = 62;
             // 
             // clQuyRaKien
             // 
             this.clQuyRaKien.Caption = "Quy ra kiện";
             this.clQuyRaKien.FieldName = "QuyRaKien";
             this.clQuyRaKien.Name = "clQuyRaKien";
+            this.clQuyRaKien.OptionsColumn.AllowEdit = false;
             // 
             // clPhePham
             // 
             this.clPhePham.Caption = "Phế phẩm (lạng)";
             this.clPhePham.FieldName = "PhePham";
             this.clPhePham.Name = "clPhePham";
+            this.clPhePham.OptionsColumn.AllowEdit = false;
             // 
             // clDoCao
             // 
@@ -357,9 +362,10 @@
             this.clDoCao.Caption = "Độ cao";
             this.clDoCao.FieldName = "DoCao";
             this.clDoCao.Name = "clDoCao";
+            this.clDoCao.OptionsColumn.AllowEdit = false;
             this.clDoCao.Visible = true;
             this.clDoCao.VisibleIndex = 9;
-            this.clDoCao.Width = 61;
+            this.clDoCao.Width = 62;
             // 
             // clMotBao_kg
             // 
@@ -368,9 +374,10 @@
             this.clMotBao_kg.Caption = "1 Bao (kg)";
             this.clMotBao_kg.FieldName = "MotBao_kg";
             this.clMotBao_kg.Name = "clMotBao_kg";
+            this.clMotBao_kg.OptionsColumn.AllowEdit = false;
             this.clMotBao_kg.Visible = true;
             this.clMotBao_kg.VisibleIndex = 10;
-            this.clMotBao_kg.Width = 69;
+            this.clMotBao_kg.Width = 65;
             // 
             // clMotBao_SoKien
             // 
@@ -379,15 +386,17 @@
             this.clMotBao_SoKien.Caption = "1 Bao giao số kiện";
             this.clMotBao_SoKien.FieldName = "MotBao_SoKien";
             this.clMotBao_SoKien.Name = "clMotBao_SoKien";
+            this.clMotBao_SoKien.OptionsColumn.AllowEdit = false;
             this.clMotBao_SoKien.Visible = true;
             this.clMotBao_SoKien.VisibleIndex = 11;
-            this.clMotBao_SoKien.Width = 69;
+            this.clMotBao_SoKien.Width = 65;
             // 
             // clSauMuoi_BaoKien
             // 
             this.clSauMuoi_BaoKien.Caption = "60 Bao/kiện";
             this.clSauMuoi_BaoKien.FieldName = "SauMuoi_BaoKien";
             this.clSauMuoi_BaoKien.Name = "clSauMuoi_BaoKien";
+            this.clSauMuoi_BaoKien.OptionsColumn.AllowEdit = false;
             // 
             // clCopy
             // 
@@ -397,7 +406,7 @@
             this.clCopy.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clCopy.Visible = true;
             this.clCopy.VisibleIndex = 12;
-            this.clCopy.Width = 40;
+            this.clCopy.Width = 45;
             // 
             // btCopY
             // 
@@ -633,6 +642,14 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(30, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(778, 0);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(57, 26);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl1);
@@ -699,14 +716,6 @@
             this.btnTrangTiep.Visible = false;
             this.btnTrangTiep.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangTiep_LinkClicked);
             // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(778, 0);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(57, 26);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // Tr_UC_BB_Ktra_DM_HHSX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,10 +747,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.a)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
