@@ -203,46 +203,31 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            //clsPhieu_tbPhieu cls1 = new clsPhieu_tbPhieu();
-            //DialogResult traloi;
-            //traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //if (traloi == DialogResult.Yes)
-            //{
-            //    int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
-            //    cls1.iID_SoPhieu = xxiID_SoPhieu;
-            //    cls1.Delete();
-            //    clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
-            //    cls2.iID_SoPhieu = xxiID_SoPhieu;
-            //    cls2.Delete_All_W_ID_SoPhieu();
-            //    // xoá chi tiet lenh sản xuất
-            //    clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls3 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
-            //    cls3.iID_SoPhieu = xxiID_SoPhieu;
-            //    cls3.Delete_ALL_W_ID_SoPhieu();
-            //    // xoá lenh san xuat
-            //    cls3.iID_SoPhieu = xxiID_SoPhieu;
-            //    DataTable dt4 = cls3.SelectAll_W_ID_SoPhieu();
-            //    if(dt4.Rows.Count>0)
-            //    {
-            //        for(int i=0; i<=dt4.Rows.Count; i++)
-            //        {
-            //            int ID_LenhSanXuatxx = Convert.ToInt32(dt4.Rows[i]["ID_LenhSanXuat"].ToString());
-            //            clsHUU_LenhSanXuat cls4 = new clsHUU_LenhSanXuat();
-            //            cls4.iID_LenhSanXuat = ID_LenhSanXuatxx;
-            //            cls4.Delete();
-            //        }
-            //    }
-            //    MessageBox.Show("Đã xóa");
-            //    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            //    {
-            //        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //    }
-            //    else
-            //    {
-            //        //  HienThi_ALL();ien
-            //        LoadData(_SoTrang, false);
-            //    }
+            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+            cls.iId_BB = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
 
-            //}
+            DialogResult traloi;
+            traloi = MessageBox.Show("Xóa dữ liệu tại dòng: \n"
+                + "STT: " + gridView1.GetFocusedRowCellValue(clSTT).ToString() + " | "
+                + "Ngày: " + Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clNgayThang).ToString()).ToString("dd/MM/yyyy") + " | "
+                + "Ca: " + gridView1.GetFocusedRowCellValue(clCaLamViec).ToString() + " | "
+                + "Loại Hàng: " + gridView1.GetFocusedRowCellValue(clLoaiHang).ToString()
+                + "...", "Delete", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (traloi == DialogResult.Yes)
+            {
+                if (cls.Delete())
+                {
+                    MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _STT -= _RowPage_curent;
+                    LoadData(_SoTrang, false);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa dữ liệu thất bại. Kiểm tra lại kết nối!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
 
         }
 
@@ -345,7 +330,7 @@ namespace CtyTinLuong
                 return;
             _sSearch = txtTimKiem.Text;
             ResetSoTrang_BB();
-
+            _STT = 1;
             LoadData(1, false);
         }    
 
