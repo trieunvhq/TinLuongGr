@@ -49,7 +49,7 @@ namespace CtyTinLuong
         
         private void navBarItemDinhMucDOt_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDinhMucDot ucc = new UCDinhMucDot();
+            UCDinhMucDot ucc = new UCDinhMucDot(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
@@ -111,7 +111,7 @@ namespace CtyTinLuong
 
         private void navBarItem13_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCSanXuat_DinhMuc_ToGapDan ucc = new UCSanXuat_DinhMuc_ToGapDan();
+            UCSanXuat_DinhMuc_ToGapDan ucc = new UCSanXuat_DinhMuc_ToGapDan(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

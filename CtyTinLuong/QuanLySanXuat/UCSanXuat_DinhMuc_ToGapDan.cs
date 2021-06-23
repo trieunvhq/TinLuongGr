@@ -40,15 +40,14 @@ namespace CtyTinLuong
                     dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=True";
                     DataView dv = dt.DefaultView;
                     gridControl1.DataSource = dv;
-
                 }
-
-
             }
         }
 
-        public UCSanXuat_DinhMuc_ToGapDan()
+        SanXuat_frmQuanLySanXuat _frmQLSX;
+        public UCSanXuat_DinhMuc_ToGapDan(SanXuat_frmQuanLySanXuat frmQLSX)
         {
+            _frmQLSX = frmQLSX;
             InitializeComponent();
         }
 
@@ -128,7 +127,9 @@ namespace CtyTinLuong
                     miID_DinhMuc_ToGapDan= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_ToGapDan).ToString());
                     mb_TheMoi_DinhMuc_ToGapDan = false;
                     frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
-                    ff.Show();
+                    _frmQLSX.Hide();
+                    ff.ShowDialog();
+                    _frmQLSX.Show();
                 }
             }
             catch
@@ -170,7 +171,9 @@ namespace CtyTinLuong
         {
             mb_TheMoi_DinhMuc_ToGapDan = true;
             frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
-            ff.Show();
+            _frmQLSX.Hide();
+            ff.ShowDialog();
+            _frmQLSX.Show();
         }
     }
 }

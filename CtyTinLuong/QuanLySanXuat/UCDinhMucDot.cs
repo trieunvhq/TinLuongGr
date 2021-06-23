@@ -45,7 +45,9 @@ namespace CtyTinLuong
         {
             mb_TheMoi_DinhMuc_Dot = true;
             frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
+            _frmQLSX.Hide();
             ff.ShowDialog();
+            _frmQLSX.Show();
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -59,7 +61,9 @@ namespace CtyTinLuong
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());                 
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
+                    _frmQLSX.Hide();
                     ff.ShowDialog();
+                    _frmQLSX.Show();
                 }
             }
             catch
@@ -136,8 +140,11 @@ namespace CtyTinLuong
             }
             
         }
-        public UCDinhMucDot()
+
+        SanXuat_frmQuanLySanXuat _frmQLSX;
+        public UCDinhMucDot(SanXuat_frmQuanLySanXuat frmQLSX)
         {
+            _frmQLSX = frmQLSX;
             InitializeComponent();
         }
 
