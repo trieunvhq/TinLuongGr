@@ -50,15 +50,14 @@ namespace CtyTinLuong
                     dv.Sort = "NgayThang DESC";
                     DataTable dxxxx = dv.ToTable();
                     gridControl1.DataSource = dxxxx;
-
-
                 }
-
             }
-
         }
-        public UCDinhMucHangNhu()
+
+        SanXuat_frmQuanLySanXuat _frmQLSX;
+        public UCDinhMucHangNhu(SanXuat_frmQuanLySanXuat frmQLSX)
         {
+            _frmQLSX = frmQLSX;
             InitializeComponent();
         }
 
@@ -139,7 +138,9 @@ namespace CtyTinLuong
         {
             mb_TheMoi_DinhMuc_Dot = true;
             frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu();
-            ff.Show();
+            _frmQLSX.Hide();
+            ff.ShowDialog();
+            _frmQLSX.Show();
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -153,7 +154,9 @@ namespace CtyTinLuong
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu();
-                    ff.Show();
+                    _frmQLSX.Hide();
+                    ff.ShowDialog();
+                    _frmQLSX.Show();
                 }
             }
             catch

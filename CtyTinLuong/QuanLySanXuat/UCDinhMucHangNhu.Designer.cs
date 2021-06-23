@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.checkTheoDoi = new DevExpress.XtraEditors.CheckEdit();
             this.checkNgungTheoDoi = new DevExpress.XtraEditors.CheckEdit();
@@ -87,7 +87,8 @@
             // 
             // checkTheoDoi
             // 
-            this.checkTheoDoi.Location = new System.Drawing.Point(525, 3);
+            this.checkTheoDoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkTheoDoi.Location = new System.Drawing.Point(697, 3);
             this.checkTheoDoi.Name = "checkTheoDoi";
             this.checkTheoDoi.Properties.Caption = "Đang theo dõi";
             this.checkTheoDoi.Size = new System.Drawing.Size(90, 19);
@@ -96,7 +97,8 @@
             // 
             // checkNgungTheoDoi
             // 
-            this.checkNgungTheoDoi.Location = new System.Drawing.Point(621, 3);
+            this.checkNgungTheoDoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkNgungTheoDoi.Location = new System.Drawing.Point(793, 3);
             this.checkNgungTheoDoi.Name = "checkNgungTheoDoi";
             this.checkNgungTheoDoi.Properties.Caption = "Ngừng theo dõi";
             this.checkNgungTheoDoi.Size = new System.Drawing.Size(100, 19);
@@ -105,7 +107,8 @@
             // 
             // checked_ALL
             // 
-            this.checked_ALL.Location = new System.Drawing.Point(463, 3);
+            this.checked_ALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checked_ALL.Location = new System.Drawing.Point(635, 3);
             this.checked_ALL.Name = "checked_ALL";
             this.checked_ALL.Properties.Caption = "Tất cả";
             this.checked_ALL.Size = new System.Drawing.Size(56, 19);
@@ -134,9 +137,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -397,13 +400,14 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(5, 32);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1.Location = new System.Drawing.Point(0, 35);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa,
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(716, 571);
+            this.gridControl1.Size = new System.Drawing.Size(900, 571);
             this.gridControl1.TabIndex = 76;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -430,7 +434,7 @@
             this.Controls.Add(this.btThemMoi);
             this.Controls.Add(this.gridControl1);
             this.Name = "UCDinhMucHangNhu";
-            this.Size = new System.Drawing.Size(727, 606);
+            this.Size = new System.Drawing.Size(900, 606);
             this.Load += new System.EventHandler(this.UCDinhMucHangNhu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).EndInit();

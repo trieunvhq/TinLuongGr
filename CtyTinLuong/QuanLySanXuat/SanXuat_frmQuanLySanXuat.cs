@@ -126,7 +126,7 @@ namespace CtyTinLuong
 
         private void navBarItem16_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCDinhMucHangNhu ucc = new UCDinhMucHangNhu();
+            UCDinhMucHangNhu ucc = new UCDinhMucHangNhu(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

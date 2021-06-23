@@ -408,8 +408,11 @@
             this.ClientSize = new System.Drawing.Size(643, 246);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMuc_HangNhu";
-            this.Text = "Chi tiết định mức hàng Nhũ";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Chi Tiết Định Mức Hàng Nhũ";
             this.Load += new System.EventHandler(this.frmChiTietDinhMuc_HangNhu_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
