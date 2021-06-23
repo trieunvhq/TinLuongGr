@@ -217,7 +217,7 @@
             // 
             // navBarItem15
             // 
-            this.navBarItem15.Caption = "BB Ktra ĐM HH";
+            this.navBarItem15.Caption = "Biên bản kiểm tra ĐM HH";
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
@@ -259,7 +259,7 @@
             // 
             // navLuongSanLuong
             // 
-            this.navLuongSanLuong.Caption = "BC Lương sản lượng";
+            this.navLuongSanLuong.Caption = "Báo cáo lương sản lượng";
             this.navLuongSanLuong.Name = "navLuongSanLuong";
             this.navLuongSanLuong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongSanLuong_LinkClicked);
             // 
