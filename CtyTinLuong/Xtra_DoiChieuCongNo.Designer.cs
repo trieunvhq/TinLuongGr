@@ -827,13 +827,13 @@
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable5});
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("NgayThang", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending),
-            new DevExpress.XtraReports.UI.GroupField("SoChungtu", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
-            new DevExpress.XtraReports.UI.GroupField("DienGiai", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
-            new DevExpress.XtraReports.UI.GroupField("NoTrongKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
+            new DevExpress.XtraReports.UI.GroupField("NgayThang", DevExpress.XtraReports.UI.XRColumnSortOrder.Descending),
             new DevExpress.XtraReports.UI.GroupField("CoTrongKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
-            new DevExpress.XtraReports.UI.GroupField("NoCuoiKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
-            new DevExpress.XtraReports.UI.GroupField("CoCuoiKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None)});
+            new DevExpress.XtraReports.UI.GroupField("NoTrongKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
+            new DevExpress.XtraReports.UI.GroupField("DienGiai", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
+            new DevExpress.XtraReports.UI.GroupField("SoChungTu", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
+            new DevExpress.XtraReports.UI.GroupField("CoCuoiKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None),
+            new DevExpress.XtraReports.UI.GroupField("NoCuoiKy", DevExpress.XtraReports.UI.XRColumnSortOrder.None)});
             this.GroupHeader1.HeightF = 25F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
