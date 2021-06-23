@@ -258,7 +258,7 @@
             this.clLoaiHang.OptionsColumn.AllowEdit = false;
             this.clLoaiHang.Visible = true;
             this.clLoaiHang.VisibleIndex = 3;
-            this.clLoaiHang.Width = 80;
+            this.clLoaiHang.Width = 79;
             // 
             // clLoaiGiay
             // 
@@ -292,7 +292,7 @@
             this.clSoLuongKiemTra.OptionsColumn.AllowEdit = false;
             this.clSoLuongKiemTra.Visible = true;
             this.clSoLuongKiemTra.VisibleIndex = 5;
-            this.clSoLuongKiemTra.Width = 70;
+            this.clSoLuongKiemTra.Width = 69;
             // 
             // clDonVi
             // 
@@ -365,7 +365,7 @@
             this.clDoCao.OptionsColumn.AllowEdit = false;
             this.clDoCao.Visible = true;
             this.clDoCao.VisibleIndex = 9;
-            this.clDoCao.Width = 62;
+            this.clDoCao.Width = 61;
             // 
             // clMotBao_kg
             // 
@@ -377,7 +377,7 @@
             this.clMotBao_kg.OptionsColumn.AllowEdit = false;
             this.clMotBao_kg.Visible = true;
             this.clMotBao_kg.VisibleIndex = 10;
-            this.clMotBao_kg.Width = 65;
+            this.clMotBao_kg.Width = 68;
             // 
             // clMotBao_SoKien
             // 
@@ -389,7 +389,7 @@
             this.clMotBao_SoKien.OptionsColumn.AllowEdit = false;
             this.clMotBao_SoKien.Visible = true;
             this.clMotBao_SoKien.VisibleIndex = 11;
-            this.clMotBao_SoKien.Width = 65;
+            this.clMotBao_SoKien.Width = 68;
             // 
             // clSauMuoi_BaoKien
             // 
@@ -406,7 +406,7 @@
             this.clCopy.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clCopy.Visible = true;
             this.clCopy.VisibleIndex = 12;
-            this.clCopy.Width = 45;
+            this.clCopy.Width = 40;
             // 
             // btCopY
             // 
@@ -426,7 +426,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.Visible = true;
             this.clXoa.VisibleIndex = 13;
-            this.clXoa.Width = 38;
+            this.clXoa.Width = 40;
             // 
             // btXoa
             // 
