@@ -4,6 +4,10 @@
 
     public partial class DataSet_TinLuong
     {
+        partial class tbBB_Ktra_DMHHSXDataTable
+        {
+        }
+
         partial class tbChiTiet_LuongSLDataTable
         {
         }

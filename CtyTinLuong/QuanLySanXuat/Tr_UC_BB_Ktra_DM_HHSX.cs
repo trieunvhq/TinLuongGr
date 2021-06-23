@@ -509,7 +509,8 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            Tr_frmPrintBB_Ktra_DM_HHSX ff = new Tr_frmPrintBB_Ktra_DM_HHSX(_ngay_batdau, _ngay_ketthuc);
+            ff.ShowDialog();
         }
     }
 }

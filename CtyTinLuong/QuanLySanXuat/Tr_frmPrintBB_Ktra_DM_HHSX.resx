@@ -117,44 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="documentViewerBarManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btPrint.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAx0RVh0VGl0
-        bGUAUHJpbnQ7yDYy6gAAAr9JREFUOE99k9lPU1EQxssW2URwSXz1xT9AIT4ZUCTyAEoiEAJxARIUTBCK
-        CilFgqzFlD0YJAEjJL4ZiQQkYpEaAlIK+IYSEVq7UAp0B0rbz5lr0JQHT/LL3HPuzDdn5s4VAfgLrYD2
-        V+qJzsEFdA7OC3QQ7QNqgZa+L5PkE+wX47cRiYJIAF6fD16vDx7G48M+4d73Qt6vYqcjfjF+G5EoRN43
-        KwSZLTvY2HYROzBtO7Hr9kD2Yoadwg7FCCuACCLCZb0zQjbjppNwwEDWYHbCtbOP+u4pjoghgolAQliB
-        jT3KpI7Br3N54i4UVb7E7p4H+g07dCYHYYPWZIfduYd88XNkFTRSKer5qtbRZIrlpKKQtoHFdSNlySxo
-        QB45OVxuaI02rBmt0BisWCO2bLvIKWpBSo4EepMTTb0qE8WGskCovH+BygFSsiXILmyB1bGHVb0FP3UW
-        rOi2BbgfN/IakHi9RPCt7Z7lciJYILyhZw5utxfpd6qQmPaQnIhrTBkuM6liXEoRI4FIzSoTfKWtQj+i
-        WCCyunOasrrxXqFGcvoDXEjMRVxCLmLjb+N8/C2cu3gTscSVlCKMjM/CSv141DTJAtEsEFXxTAnDlhM/
-        DDasCNjp2mR1duHs4FywdK6nL1P8dJwFjrNAdGm9At91ViwumxGXLPkvC8sbWNJYUSgdY4ETLBBz/8kH
-        zH0zQzGvRW3XFCy2PdSN/ULNqBbSYS0eD61ikwaL342rVqFa2kB++QgLnGSByMx7/VM5xa+Rcbcf1e1K
-        YQqrhjWQvNOg/O0axG9WYdpyobpNiaSMOlzNkiEhTTpNsUITeRj44RRxRir/hHVyXqc6GZ4Po5kmkmyl
-        fIKzniVOE8eI4MP/QlhpzbCyovkjKpoVBFnZAQqU1Ax9Jp8Ivxi/zZ/bRBLcXa6P4Zsx/HyUCPoXA9Fv
-        k15uVlve/joAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btSave.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABd0RVh0VGl0
-        bGUAU2F2ZSBBbGw7U2F2ZTtBbGxuFPWhAAAC90lEQVQ4T22TyU9TURSHwYJQCogbE/4JF0YlzHOBQkuh
-        LRT62lKgdKDQQh+dKVBmqSjIYAwmiEaCKJJgom4MkGiMiStFNHEnYVQxEWT5895HgqZ6k2/zcs53zr3n
-        vDAAJyQmJoYTThEiQoj8DzxCeKiA1+yfXLZ2TKK5fQJNvnE0esZgdo/C6LoOg2MYensQmsYeqA2dKyQ+
-        IlQQ2eyfwNTcC/ROLKBn/BG6xx+ie3QegZEHsHnHYCICY+sQVA0dIPFRYeSEE04RIgQCQZTRec0+Or1k
-        bx++x/qCd1nvlRnWM3iHbQvcYvXWPnuDbaDVYBtEZa2HCqKpgKexBZe1LUFIq9tgcVwlVQahb+qF1tQF
-        Vb0P+WIDxConJNXs51pLt11v7YdC66ICPhVEamxDGJl+CnGFDbv7v7D97RCbXw+wsXeAL7s/kS2qg7LO
-        jyJFC9RGf1udpQ/lDEsFMVRwmmkaQHBqCYXljVzi2087eLO+jddrW3j1fhMZQg0qdKSTMgtUem+bztyD
-        UmULFQioIKrK3IeBycfIkxiwQSoeJ27h5btNjpRcFeRaD3IkJih1bofWGECJopkKYqkgutLQjcCNea7V
-        rAId0knFtDwGqSQxObsKSVlK0rIbmSI9KrQOp7qhC8WyRiqIowK+vK4D7cOzMHsmYXJPwOAeB2PqgUzt
-        Qhnj5JBWO5EmrIVcxToZfScKpUYqiKeCGGmND87+Gch1XrIO/57iCiskShbJuRqUVbW4FBoXhOKGE4FA
-        wrhgD9yGlHFwCXs/jo7ZP+KmIpSaUaywk6uokJnPuIplFuQUaVeJgJtCrKjSTlb3Jqlk4wQ0aYfynXJI
-        3qYeInkrLqYrwefzz5HEBIKAwKOCuAKZFSbXGISlZngXP8K5sA52fh22uQ9our9GHlSLnBITLqQoQOLj
-        SY2T9aeHn5KrXknNr+EqSdqfQeR5jjz2CdIti7hcP4ukDDoJBucvSVZJfEyogP4H9C5nCAl/cTYE+o0u
-        Du+PAGG/ARDb9RFcHU5rAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAD/FgAAZgAAAICAAAABACAAKAgBAGUXAABAQAAAAQAgAChCAACNHwEAMDAAAAEA
@@ -1917,6 +1883,14 @@
         /35QCP+ATQX/gE0F/4BNBf+ATQX/gE0F/4BNBf+ATQW2gE0FKoBNBeCATQX8gE0F/IBNBfyATQX8gE0F
         /IBNBfyATQX8gE0F/IBNBfyATQX8gE0F/IBNBfyATQW9gE0FDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v18.1" name="DevExpress.Utils.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="documentViewerBarManager1.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v18.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYxOC4xLCBWZXJzaW9uPTE4LjEu
+        NC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEFAQAAAChE
+        ZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0cmVhbWVyAAAAAAIAAAAL
 </value>
   </data>
 </root>
