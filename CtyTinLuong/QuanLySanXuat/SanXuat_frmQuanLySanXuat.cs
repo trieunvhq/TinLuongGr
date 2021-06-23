@@ -24,73 +24,10 @@ namespace CtyTinLuong
             ucc = new UC_SanXuat_PhieuSanXuat(this);
             ucc1 = new Tr_UC_BB_Ktra_DM_HHSX(this);
         }
-        public void ResetSoTrang()
-        {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-
-            using (clsThin clsThin_ = new clsThin())
-            {
-                DataTable dt_ = clsThin_.T_TongPhieuSX(ucc._ngay_batdau, ucc._ngay_ketthuc, ucc._ma_phieu);
-                if (dt_ != null && dt_.Rows.Count > 0)
-                {
-                    lbTongSoTrang.Text = "/" +(Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
-                }
-                else
-                {
-                    lbTongSoTrang.Text = "/1";
-                }
-            }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
-            }
-        }
-
-        public void ResetSoTrang_BB()
-        {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-
-            using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
-            {
-                DataTable dt_ = cls.T_TongSoBB(ucc1._ngay_batdau, ucc1._ngay_ketthuc, ucc1._idBienBan);
-                if (dt_ != null && dt_.Rows.Count > 0)
-                {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
-                }
-                else
-                {
-                    lbTongSoTrang.Text = "/1";
-                }
-            }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
-            }
-        }
+      
 
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            ucc.LoadData(1,true);
-
-            ResetSoTrang();
 
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
@@ -204,108 +141,11 @@ namespace CtyTinLuong
             this.Show();
         }
 
-        private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (isload)
-                return;
-            if (btnTrangTiep.LinkColor == Color.Black)
-                return;
-            if (btnTrangSau.LinkColor == Color.Black)
-                btnTrangSau.LinkColor = Color.Blue;
-
-            int sotrang_;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-                int max_ = Convert.ToInt32(lbTongSoTrang.Text.Replace(" ", "").Replace("/", ""));
-                if (sotrang_ < max_)
-                {
-                    txtSoTrang.Text = (sotrang_+1).ToString();
-
-                    Load_PhieuSX(false);
-                }
-                else
-                { txtSoTrang.Text = (max_).ToString();
-                    btnTrangTiep.LinkColor = Color.Black;
-                }
-            }
-            catch
-            {
-                btnTrangTiep.LinkColor = Color.Black;
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-        }
-
-        private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (isload)
-                return;
-            if (btnTrangSau.LinkColor == Color.Black)
-                return;
-            if (btnTrangTiep.LinkColor == Color.Black)
-                btnTrangTiep.LinkColor = Color.Blue;
-
-            int sotrang_;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-                if (sotrang_ <= 1)
-                {
-                    txtSoTrang.Text = "1";
-                    btnTrangSau.LinkColor = Color.Black;
-
-                }
-                else
-                {
-                    txtSoTrang.Text = (sotrang_-1).ToString();
-                    Load_PhieuSX(false);
-                }
-            }
-            catch
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-        }
-
-        private void txtSoTrang_TextChanged(object sender, EventArgs e)
-        { 
-        }
-
-        private void txtSoTrang_Leave(object sender, EventArgs e)
-        {
-            if (isload)
-                return;
-            Load_PhieuSX(false);
-        }
-        private void Load_PhieuSX(bool islandau)
-        { 
-            int sotrang_ = 1;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-            }
-            catch
-            {
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            } 
-            ucc.LoadData(sotrang_, islandau); 
-        }
-
+      
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            //SanXuat_UC_BB_Ktra_DM_HH ucc = new SanXuat_UC_BB_Ktra_DM_HH();
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
-
-
-            ucc1.LoadData(1, true);
-
-            ResetSoTrang_BB();
+            //ucc1.LoadData(1, true);
+            //ResetSoTrang_BB();
 
             ucc1.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc1);

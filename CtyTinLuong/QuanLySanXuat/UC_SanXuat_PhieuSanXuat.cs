@@ -157,7 +157,9 @@ namespace CtyTinLuong
         private void UC_SanXuat_PhieuSanXuat_Load(object sender, EventArgs e)
         {
             clCaLamViec.Caption = "Ca\n làm việc";
-          //  HienThi_ALL();
+            LoadData(1, true);
+            ResetSoTrang();
+            //  HienThi_ALL();
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -346,7 +348,7 @@ namespace CtyTinLuong
             try
             {
                 _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
-                _frmQLSX.ResetSoTrang();
+                ResetSoTrang();
                 LoadData(1, false);
             }
             catch
@@ -359,7 +361,7 @@ namespace CtyTinLuong
                 return;
             try {
                 _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
-                _frmQLSX.ResetSoTrang();
+                ResetSoTrang();
                 LoadData(1, false);
             }
             catch
@@ -371,7 +373,7 @@ namespace CtyTinLuong
             if (isload)
                 return;
             _ma_phieu = txtTimKiem.Text;
-            _frmQLSX.ResetSoTrang();
+            ResetSoTrang();
             LoadData(1, false);
         }    
 
@@ -396,5 +398,131 @@ namespace CtyTinLuong
             }
             
         }
+
+        //
+        public void ResetSoTrang()
+        {
+            btnTrangSau.Visible = true;
+            btnTrangTiep.Visible = true;
+            lbTongSoTrang.Visible = true;
+            txtSoTrang.Visible = true;
+            btnTrangSau.LinkColor = Color.Black;
+            btnTrangTiep.LinkColor = Color.Blue;
+            txtSoTrang.Text = "1";
+
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_TongPhieuSX(_ngay_batdau, _ngay_ketthuc, _ma_phieu);
+                if (dt_ != null && dt_.Rows.Count > 0)
+                {
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                }
+                else
+                {
+                    lbTongSoTrang.Text = "/1";
+                }
+            }
+            if (lbTongSoTrang.Text == "0")
+                lbTongSoTrang.Text = "/1";
+            if (lbTongSoTrang.Text == "/1")
+            {
+                btnTrangSau.LinkColor = Color.Black;
+                btnTrangTiep.LinkColor = Color.Black;
+            }
+        }
+
+        //
+        private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (isload)
+                return;
+            if (btnTrangTiep.LinkColor == Color.Black)
+                return;
+            if (btnTrangSau.LinkColor == Color.Black)
+                btnTrangSau.LinkColor = Color.Blue;
+
+            int sotrang_;
+            try
+            {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+                int max_ = Convert.ToInt32(lbTongSoTrang.Text.Replace(" ", "").Replace("/", ""));
+                if (sotrang_ < max_)
+                {
+                    txtSoTrang.Text = (sotrang_ + 1).ToString();
+
+                    Load_PhieuSX(false);
+                }
+                else
+                {
+                    txtSoTrang.Text = (max_).ToString();
+                    btnTrangTiep.LinkColor = Color.Black;
+                }
+            }
+            catch
+            {
+                btnTrangTiep.LinkColor = Color.Black;
+                sotrang_ = 1;
+                txtSoTrang.Text = "1";
+            }
+        }
+
+        private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (isload)
+                return;
+            if (btnTrangSau.LinkColor == Color.Black)
+                return;
+            if (btnTrangTiep.LinkColor == Color.Black)
+                btnTrangTiep.LinkColor = Color.Blue;
+
+            int sotrang_;
+            try
+            {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+                if (sotrang_ <= 1)
+                {
+                    txtSoTrang.Text = "1";
+                    btnTrangSau.LinkColor = Color.Black;
+
+                }
+                else
+                {
+                    txtSoTrang.Text = (sotrang_ - 1).ToString();
+                    Load_PhieuSX(false);
+                }
+            }
+            catch
+            {
+                btnTrangSau.LinkColor = Color.Black;
+                sotrang_ = 1;
+                txtSoTrang.Text = "1";
+            }
+        }
+
+        //
+        private void Load_PhieuSX(bool islandau)
+        {
+            int sotrang_ = 1;
+            try
+            {
+                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+            }
+            catch
+            {
+                sotrang_ = 1;
+                txtSoTrang.Text = "1";
+            }
+            LoadData(sotrang_, islandau);
+        }
+
+        //
+        private void txtSoTrang_Leave(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            Load_PhieuSX(false);
+        }
+
+
     }
 }

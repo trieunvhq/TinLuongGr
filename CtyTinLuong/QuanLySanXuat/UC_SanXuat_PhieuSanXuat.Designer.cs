@@ -84,8 +84,12 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.a = new DevExpress.XtraLayout.LayoutControlItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.lbTongSoTrang = new System.Windows.Forms.Label();
+            this.btnTrangSau = new System.Windows.Forms.LinkLabel();
+            this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -107,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // repositoryItemButtonEdit1
@@ -127,7 +132,7 @@
             this.repositoryItemCheckEdit1,
             this.btChiTiet,
             this.btCopY});
-            this.gridControl1.Size = new System.Drawing.Size(890, 557);
+            this.gridControl1.Size = new System.Drawing.Size(890, 528);
             this.gridControl1.TabIndex = 69;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -385,7 +390,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 13);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(900, 593);
+            this.layoutControl1.Size = new System.Drawing.Size(900, 564);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -461,7 +466,7 @@
             this.a});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(900, 593);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(900, 564);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -470,7 +475,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(894, 561);
+            this.layoutControlItem1.Size = new System.Drawing.Size(894, 532);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -524,33 +529,80 @@
             this.a.Text = "Tìm kiếm";
             this.a.TextSize = new System.Drawing.Size(47, 13);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 585);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 76;
-            this.label1.Text = "label1";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Size = new System.Drawing.Size(900, 606);
+            this.groupBox1.Size = new System.Drawing.Size(900, 577);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtSoTrang);
+            this.panel1.Controls.Add(this.lbTongSoTrang);
+            this.panel1.Controls.Add(this.btnTrangSau);
+            this.panel1.Controls.Add(this.btnTrangTiep);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 576);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(900, 30);
+            this.panel1.TabIndex = 78;
+            // 
+            // txtSoTrang
+            // 
+            this.txtSoTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoTrang.Location = new System.Drawing.Point(415, 5);
+            this.txtSoTrang.Name = "txtSoTrang";
+            this.txtSoTrang.Size = new System.Drawing.Size(40, 20);
+            this.txtSoTrang.TabIndex = 86;
+            this.txtSoTrang.Visible = false;
+            // 
+            // lbTongSoTrang
+            // 
+            this.lbTongSoTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTongSoTrang.AutoSize = true;
+            this.lbTongSoTrang.Location = new System.Drawing.Point(458, 8);
+            this.lbTongSoTrang.Name = "lbTongSoTrang";
+            this.lbTongSoTrang.Size = new System.Drawing.Size(12, 13);
+            this.lbTongSoTrang.TabIndex = 85;
+            this.lbTongSoTrang.Text = "/";
+            this.lbTongSoTrang.Visible = false;
+            // 
+            // btnTrangSau
+            // 
+            this.btnTrangSau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrangSau.AutoSize = true;
+            this.btnTrangSau.Location = new System.Drawing.Point(354, 7);
+            this.btnTrangSau.Name = "btnTrangSau";
+            this.btnTrangSau.Size = new System.Drawing.Size(55, 13);
+            this.btnTrangSau.TabIndex = 84;
+            this.btnTrangSau.TabStop = true;
+            this.btnTrangSau.Text = "Trang sau";
+            this.btnTrangSau.Visible = false;
+            // 
+            // btnTrangTiep
+            // 
+            this.btnTrangTiep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrangTiep.AutoSize = true;
+            this.btnTrangTiep.Location = new System.Drawing.Point(492, 8);
+            this.btnTrangTiep.Name = "btnTrangTiep";
+            this.btnTrangTiep.Size = new System.Drawing.Size(55, 13);
+            this.btnTrangTiep.TabIndex = 83;
+            this.btnTrangTiep.TabStop = true;
+            this.btnTrangTiep.Text = "Trang tiếp";
+            this.btnTrangTiep.Visible = false;
             // 
             // UC_SanXuat_PhieuSanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
             this.Name = "UC_SanXuat_PhieuSanXuat";
             this.Size = new System.Drawing.Size(900, 606);
             this.Load += new System.EventHandler(this.UC_SanXuat_PhieuSanXuat_Load);
@@ -575,8 +627,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.a)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -601,7 +654,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clChiTiet;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btChiTiet;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -618,5 +670,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.TextBox txtTimKiem;
         private DevExpress.XtraLayout.LayoutControlItem a;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtSoTrang;
+        private System.Windows.Forms.Label lbTongSoTrang;
+        private System.Windows.Forms.LinkLabel btnTrangSau;
+        private System.Windows.Forms.LinkLabel btnTrangTiep;
     }
 }

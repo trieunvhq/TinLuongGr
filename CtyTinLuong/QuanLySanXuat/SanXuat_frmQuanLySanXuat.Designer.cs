@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmQuanLySanXuat));
-            this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -59,23 +58,11 @@
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
-            this.btnTrangSau = new System.Windows.Forms.LinkLabel();
-            this.lbTongSoTrang = new System.Windows.Forms.Label();
-            this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btThooat
-            // 
-            this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(1076, 625);
-            this.btThooat.Name = "btThooat";
-            this.btThooat.Size = new System.Drawing.Size(75, 23);
-            this.btThooat.TabIndex = 67;
-            this.btThooat.Text = "Thoát";
-            this.btThooat.Click += new System.EventHandler(this.btThooat_Click);
             // 
             // navBarItem6
             // 
@@ -184,10 +171,10 @@
             this.navSanLuongMayCAT,
             this.navSanLuongMayDOT,
             this.navLuongSanLuong});
-            this.navBarControl1.Location = new System.Drawing.Point(6, 13);
+            this.navBarControl1.Location = new System.Drawing.Point(6, 19);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
-            this.navBarControl1.Size = new System.Drawing.Size(216, 606);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 211;
+            this.navBarControl1.Size = new System.Drawing.Size(211, 596);
             this.navBarControl1.TabIndex = 66;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -285,7 +272,7 @@
             // 
             this.panelControl1.Location = new System.Drawing.Point(228, 13);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(923, 606);
+            this.panelControl1.Size = new System.Drawing.Size(923, 611);
             this.panelControl1.TabIndex = 68;
             // 
             // linkLabel1
@@ -299,62 +286,22 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // btnTrangTiep
+            // groupBox1
             // 
-            this.btnTrangTiep.AutoSize = true;
-            this.btnTrangTiep.Location = new System.Drawing.Point(386, 636);
-            this.btnTrangTiep.Name = "btnTrangTiep";
-            this.btnTrangTiep.Size = new System.Drawing.Size(55, 13);
-            this.btnTrangTiep.TabIndex = 79;
-            this.btnTrangTiep.TabStop = true;
-            this.btnTrangTiep.Text = "Trang tiếp";
-            this.btnTrangTiep.Visible = false;
-            this.btnTrangTiep.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangTiep_LinkClicked);
-            // 
-            // btnTrangSau
-            // 
-            this.btnTrangSau.AutoSize = true;
-            this.btnTrangSau.Location = new System.Drawing.Point(248, 635);
-            this.btnTrangSau.Name = "btnTrangSau";
-            this.btnTrangSau.Size = new System.Drawing.Size(55, 13);
-            this.btnTrangSau.TabIndex = 80;
-            this.btnTrangSau.TabStop = true;
-            this.btnTrangSau.Text = "Trang sau";
-            this.btnTrangSau.Visible = false;
-            this.btnTrangSau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnTrangSau_LinkClicked);
-            // 
-            // lbTongSoTrang
-            // 
-            this.lbTongSoTrang.AutoSize = true;
-            this.lbTongSoTrang.Location = new System.Drawing.Point(352, 636);
-            this.lbTongSoTrang.Name = "lbTongSoTrang";
-            this.lbTongSoTrang.Size = new System.Drawing.Size(12, 13);
-            this.lbTongSoTrang.TabIndex = 81;
-            this.lbTongSoTrang.Text = "/";
-            this.lbTongSoTrang.Visible = false;
-            // 
-            // txtSoTrang
-            // 
-            this.txtSoTrang.Location = new System.Drawing.Point(309, 633);
-            this.txtSoTrang.Name = "txtSoTrang";
-            this.txtSoTrang.Size = new System.Drawing.Size(40, 20);
-            this.txtSoTrang.TabIndex = 82;
-            this.txtSoTrang.Visible = false;
-            this.txtSoTrang.TextChanged += new System.EventHandler(this.txtSoTrang_TextChanged);
-            this.txtSoTrang.Leave += new System.EventHandler(this.txtSoTrang_Leave);
+            this.groupBox1.Controls.Add(this.navBarControl1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(219, 618);
+            this.groupBox1.TabIndex = 79;
+            this.groupBox1.TabStop = false;
             // 
             // SanXuat_frmQuanLySanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 662);
-            this.Controls.Add(this.txtSoTrang);
-            this.Controls.Add(this.lbTongSoTrang);
-            this.Controls.Add(this.btnTrangSau);
-            this.Controls.Add(this.btnTrangTiep);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btThooat);
-            this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -366,14 +313,13 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SanXuat_frmQuanLySanXuat_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.SimpleButton btThooat;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
@@ -398,14 +344,11 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel btnTrangTiep;
-        private System.Windows.Forms.LinkLabel btnTrangSau;
-        private System.Windows.Forms.Label lbTongSoTrang;
-        private System.Windows.Forms.TextBox txtSoTrang;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayIn;
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayCAT;
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayDOT;
         private DevExpress.XtraNavBar.NavBarItem navLuongSanLuong;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
