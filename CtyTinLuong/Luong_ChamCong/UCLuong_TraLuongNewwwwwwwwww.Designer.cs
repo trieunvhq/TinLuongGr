@@ -43,7 +43,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ID_TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_TraLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,7 +63,7 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_TraLuong222 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,7 +74,7 @@
             this.memodoituong = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clKhauTruLuongThang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_ChiTietTamUng = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_ChiTietTraLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridDoiTuong_gridControl = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -234,7 +234,7 @@
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
-            this.ID_TamUng,
+            this.clID_TraLuong,
             this.gridColumn1,
             this.gridColumn2,
             this.clSoTien,
@@ -272,11 +272,11 @@
             this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 43;
             // 
-            // ID_TamUng
+            // clID_TraLuong
             // 
-            this.ID_TamUng.Caption = "ID_TamUng";
-            this.ID_TamUng.FieldName = "ID_TamUng";
-            this.ID_TamUng.Name = "ID_TamUng";
+            this.clID_TraLuong.Caption = "ID_TraLuong";
+            this.clID_TraLuong.FieldName = "ID_TraLuong";
+            this.clID_TraLuong.Name = "clID_TraLuong";
             // 
             // gridColumn1
             // 
@@ -362,7 +362,7 @@
             // 
             // clDoiTuong
             // 
-            this.clDoiTuong.Caption = "Người tạm ứng";
+            this.clDoiTuong.Caption = "Người nhận tiền";
             this.clDoiTuong.FieldName = "TenNhanVien";
             this.clDoiTuong.Name = "clDoiTuong";
             this.clDoiTuong.OptionsColumn.AllowEdit = false;
@@ -372,9 +372,11 @@
             // 
             // KhauTruLuongThang
             // 
-            this.KhauTruLuongThang.Caption = "Khấu trừ tháng";
-            this.KhauTruLuongThang.FieldName = "KhauTruLuongThang";
+            this.KhauTruLuongThang.Caption = "Tháng";
+            this.KhauTruLuongThang.FieldName = "Luong_Thang";
             this.KhauTruLuongThang.Name = "KhauTruLuongThang";
+            this.KhauTruLuongThang.Visible = true;
+            this.KhauTruLuongThang.VisibleIndex = 7;
             this.KhauTruLuongThang.Width = 72;
             // 
             // gridColumn5
@@ -509,7 +511,7 @@
             this.gridView4.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT2,
-            this.clID_TamUng,
+            this.clID_TraLuong222,
             this.gridColumn3,
             this.clHienThi,
             this.clXoa,
@@ -518,7 +520,7 @@
             this.clGhiChu,
             this.gridColumn4,
             this.clKhauTruLuongThang,
-            this.clID_ChiTietTamUng});
+            this.clID_ChiTietTraLuong});
             this.gridView4.GridControl = this.gridControl2;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.AllowHtmlDrawHeaders = true;
@@ -537,11 +539,11 @@
             this.clSTT2.VisibleIndex = 0;
             this.clSTT2.Width = 43;
             // 
-            // clID_TamUng
+            // clID_TraLuong222
             // 
-            this.clID_TamUng.Caption = "ID_TamUng";
-            this.clID_TamUng.FieldName = "ID_TamUng";
-            this.clID_TamUng.Name = "clID_TamUng";
+            this.clID_TraLuong222.Caption = "ID_TraLuong";
+            this.clID_TraLuong222.FieldName = "ID_TraLuong";
+            this.clID_TraLuong222.Name = "clID_TraLuong222";
             // 
             // gridColumn3
             // 
@@ -611,7 +613,7 @@
             this.clGhiChu.OptionsColumn.AllowEdit = false;
             this.clGhiChu.OptionsColumn.FixedWidth = true;
             this.clGhiChu.Visible = true;
-            this.clGhiChu.VisibleIndex = 5;
+            this.clGhiChu.VisibleIndex = 4;
             this.clGhiChu.Width = 125;
             // 
             // memodoituong
@@ -633,19 +635,17 @@
             // 
             // clKhauTruLuongThang
             // 
-            this.clKhauTruLuongThang.Caption = "Khấu trừ";
-            this.clKhauTruLuongThang.FieldName = "KhauTruLuongThang";
+            this.clKhauTruLuongThang.Caption = "Tháng";
+            this.clKhauTruLuongThang.FieldName = "Luong_Thang";
             this.clKhauTruLuongThang.Name = "clKhauTruLuongThang";
             this.clKhauTruLuongThang.OptionsColumn.AllowEdit = false;
             this.clKhauTruLuongThang.OptionsColumn.FixedWidth = true;
-            this.clKhauTruLuongThang.Visible = true;
-            this.clKhauTruLuongThang.VisibleIndex = 4;
             // 
-            // clID_ChiTietTamUng
+            // clID_ChiTietTraLuong
             // 
-            this.clID_ChiTietTamUng.Caption = "ID_ChiTietTamUng";
-            this.clID_ChiTietTamUng.FieldName = "ID_ChiTietTamUng";
-            this.clID_ChiTietTamUng.Name = "clID_ChiTietTamUng";
+            this.clID_ChiTietTraLuong.Caption = "ID_ChiTietTraLuong";
+            this.clID_ChiTietTraLuong.FieldName = "ID_ChiTietTraLuong";
+            this.clID_ChiTietTraLuong.Name = "clID_ChiTietTraLuong";
             // 
             // gridDoiTuong_gridControl
             // 
@@ -932,7 +932,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
-        private DevExpress.XtraGrid.Columns.GridColumn ID_TamUng;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_TraLuong;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn clSoTien;
@@ -952,7 +952,7 @@
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT2;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_TamUng;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_TraLuong222;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn clHienThi;
         private DevExpress.XtraGrid.Columns.GridColumn clXoa;
@@ -963,7 +963,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit memodoituong;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn clKhauTruLuongThang;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietTamUng;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietTraLuong;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gridDoiTuong_gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;

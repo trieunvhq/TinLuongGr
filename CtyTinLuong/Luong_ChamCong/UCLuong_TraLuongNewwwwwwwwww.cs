@@ -129,10 +129,10 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick_1(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_TamUng).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_TraLuong222).ToString() != "")
             {
                 mbThemMoiTraLuong = false;
-                mID_TraLuong_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TamUng).ToString());
+                mID_TraLuong_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TraLuong222).ToString());
                 frmLuong_ChiTietTraLuong ff = new CtyTinLuong.frmLuong_ChiTietTraLuong();
                 ff.Show();
             }
@@ -156,9 +156,9 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(ID_TamUng).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_TraLuong).ToString() != "")
             {
-                int xxxmiiiiID_TamUng = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_TamUng).ToString());
+                int xxxmiiiiID_TamUng = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TraLuong).ToString());
                 HienThiGridControl_2(xxxmiiiiID_TamUng);
             }
         }
