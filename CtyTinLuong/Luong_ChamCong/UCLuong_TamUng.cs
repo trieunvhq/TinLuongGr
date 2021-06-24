@@ -109,9 +109,8 @@ namespace CtyTinLuong
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-            int sodong = 10;
-            LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            ResetSoTrang(sodong,dteTuNgay.DateTime, dteDenNgay.DateTime);
+           
+           
 
         }
 
@@ -172,7 +171,9 @@ namespace CtyTinLuong
                 checkDaiLy.Checked = false;
             try
             {
-                LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                int sodong = 10;
+                LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                ResetSoTrang(sodong, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
             catch
             { }
@@ -185,7 +186,9 @@ namespace CtyTinLuong
                 checkCongNhanVien.Checked = false;
             try
             {
-                LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                int sodong = 10;
+                LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                ResetSoTrang(sodong, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
             catch
             { }
