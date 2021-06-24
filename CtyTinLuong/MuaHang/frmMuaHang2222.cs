@@ -28,6 +28,7 @@ namespace CtyTinLuong
             }
            
         }
+
         public frmMuaHang2222()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace CtyTinLuong
         private void navBarItemMuaHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             mbTraLaiHangMua = false;
-            UCMuaHang ucc = new UCMuaHang();
+            UCMuaHang ucc = new UCMuaHang(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
@@ -79,7 +80,7 @@ namespace CtyTinLuong
         private void navBarItem1_LinkClicked_3(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             mbTraLaiHangMua = true;
-            UCMuaHang ucc = new UCMuaHang();
+            UCMuaHang ucc = new UCMuaHang(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();

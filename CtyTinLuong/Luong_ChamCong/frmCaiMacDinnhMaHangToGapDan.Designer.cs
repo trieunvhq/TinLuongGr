@@ -565,7 +565,7 @@
             this.MinimizeBox = false;
             this.Name = "frmCaiMacDinnhMaHangToGapDan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCaiMacDinnhMaHangToGapDan";
+            this.Text = "Cài Mặc Định Mã Hàng Tổ Gấp Dán";
             this.Load += new System.EventHandler(this.frmCaiMacDinnhMaHangToGapDan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

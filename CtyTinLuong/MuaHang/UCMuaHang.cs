@@ -104,8 +104,12 @@ namespace CtyTinLuong
 
 
         }
-        public UCMuaHang()
+
+        frmMuaHang2222 _frmMH;
+
+        public UCMuaHang(frmMuaHang2222 frmMH)
         {
+            _frmMH = frmMH;
             InitializeComponent();
         }
         
@@ -145,8 +149,10 @@ namespace CtyTinLuong
         {
             mbbTheMoi_DonHang = true;
             mbCopY = true;
-            frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();         
-            ff.Show();
+            frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
+            _frmMH.Hide();
+            ff.ShowDialog();
+            _frmMH.Show();
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -164,7 +170,9 @@ namespace CtyTinLuong
                     mbbTheMoi_DonHang = false;
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
-                    ff.Show();
+                    _frmMH.Hide();
+                    ff.ShowDialog();
+                    _frmMH.Show();
                 }
             }
             catch
@@ -283,7 +291,9 @@ namespace CtyTinLuong
                     mbbTheMoi_DonHang = false;
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
-                    ff.Show();
+                    _frmMH.Hide();
+                    ff.ShowDialog();
+                    _frmMH.Show();
                 }
             }
             catch

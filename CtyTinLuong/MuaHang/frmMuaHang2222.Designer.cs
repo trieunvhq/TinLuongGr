@@ -51,11 +51,12 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navPhaiTraNguoiBan = new DevExpress.XtraNavBar.NavBarItem();
             this.navDoiChieuCongNo = new DevExpress.XtraNavBar.NavBarItem();
-            this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -105,16 +106,16 @@
             this.navPhaiTraNguoiBan,
             this.navDoiChieuCongNo,
             this.navCongNo});
-            this.navBarControl1.Location = new System.Drawing.Point(6, 14);
+            this.navBarControl1.Location = new System.Drawing.Point(3, 19);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
-            this.navBarControl1.Size = new System.Drawing.Size(216, 606);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 215;
+            this.navBarControl1.Size = new System.Drawing.Size(215, 592);
             this.navBarControl1.TabIndex = 69;
             this.navBarControl1.Text = "navBarControl1";
             // 
             // navBarGroup1
             // 
-            this.navBarGroup1.Caption = "Mua hàng";
+            this.navBarGroup1.Caption = "Mua Hàng";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navMuaHang),
@@ -125,25 +126,25 @@
             // 
             // navMuaHang
             // 
-            this.navMuaHang.Caption = "Mua hàng ";
+            this.navMuaHang.Caption = "Mua Hàng ";
             this.navMuaHang.Name = "navMuaHang";
             this.navMuaHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemMuaHang_LinkClicked);
             // 
             // navBarItem1
             // 
-            this.navBarItem1.Caption = "Trả lại hàng mua";
+            this.navBarItem1.Caption = "Trả Lại Hàng Mua";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_3);
             // 
             // navChiTiet_ALL
             // 
-            this.navChiTiet_ALL.Caption = "Chi tiết _ALL";
+            this.navChiTiet_ALL.Caption = "Chi Tiết - Tất Cả";
             this.navChiTiet_ALL.Name = "navChiTiet_ALL";
             this.navChiTiet_ALL.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChiTiet_ALL_LinkClicked);
             // 
             // navCongNo
             // 
-            this.navCongNo.Caption = "Công nợ";
+            this.navCongNo.Caption = "Công Nợ";
             this.navCongNo.Name = "navCongNo";
             this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
@@ -211,22 +212,10 @@
             this.navDoiChieuCongNo.Caption = "Đối chiếu công nợ";
             this.navDoiChieuCongNo.Name = "navDoiChieuCongNo";
             // 
-            // btThooat
-            // 
-            this.btThooat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btThooat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(1069, 627);
-            this.btThooat.Name = "btThooat";
-            this.btThooat.Size = new System.Drawing.Size(75, 23);
-            this.btThooat.TabIndex = 70;
-            this.btThooat.Text = "Thoát";
-            this.btThooat.Click += new System.EventHandler(this.btThooat_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 626);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 631);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(112, 13);
             this.linkLabel1.TabIndex = 72;
@@ -240,16 +229,23 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.navBarControl1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(220, 614);
+            this.groupBox1.TabIndex = 73;
+            this.groupBox1.TabStop = false;
+            // 
             // frmMuaHang2222
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btThooat;
             this.ClientSize = new System.Drawing.Size(1156, 662);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.navBarControl1);
-            this.Controls.Add(this.btThooat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -260,6 +256,7 @@
             this.Load += new System.EventHandler(this.frmMuaHang2222_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +281,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem12;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
-        private DevExpress.XtraEditors.SimpleButton btThooat;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
@@ -292,5 +288,6 @@
         private DevExpress.XtraNavBar.NavBarItem navPhaiTraNguoiBan;
         private DevExpress.XtraNavBar.NavBarItem navDoiChieuCongNo;
         private DevExpress.XtraNavBar.NavBarItem navCongNo;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

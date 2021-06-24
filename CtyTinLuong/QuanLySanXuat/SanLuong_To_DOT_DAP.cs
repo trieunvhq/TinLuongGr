@@ -82,8 +82,12 @@ namespace CtyTinLuong
                 gridControl1.DataSource = dt2;
             }
 
-           
+            cls.Dispose();
+            clsvt.Dispose();
+            dtID_VTHH_Ra.Dispose();
         }
+
+        //
         public SanLuong_To_DOT_DAP()
         {
             InitializeComponent();
