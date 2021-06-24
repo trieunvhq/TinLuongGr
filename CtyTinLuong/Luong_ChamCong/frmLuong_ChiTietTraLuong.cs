@@ -427,8 +427,8 @@ namespace CtyTinLuong
                     cls2 = new CtyTinLuong.clsTraLuong_ChiTietTraLuong_new();
 
                     cls2.iID_TraLuong = xxxID_Traluong;
-                    cls2.iID_DoiTuong = Convert.ToInt32(dt_gridcontrol.Rows[i]["Luong_Thang"].ToString());
-                    cls2.iLuong_Thang = Convert.ToInt32(dt_gridcontrol.Rows[i]["Luong_Nam"].ToString());
+                    cls2.iID_DoiTuong = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_DoiTuong"].ToString());
+                    cls2.iLuong_Thang = Convert.ToInt32(txtThang.Text);
                     cls2.iLuong_Nam = Convert.ToInt32(txtNam.Text);
                     cls2.bCheckDaiLy = checkDaiLy.Checked;
                     cls2.bTonTai = true;
