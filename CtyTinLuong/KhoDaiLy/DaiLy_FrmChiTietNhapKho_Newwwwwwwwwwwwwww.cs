@@ -304,7 +304,10 @@ namespace CtyTinLuong
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
-                else cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                else if (checkHangNhu.Checked == true)
+                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                else if (checkHangSot.Checked == true)
+                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
                 cls1.Update();
                 // update danhapkho neu có check bao ve check lai xe check dai ly
                 int iiID_Nhapkho;
@@ -461,6 +464,11 @@ namespace CtyTinLuong
             DataTable dt = cls1.SelectOne();
             if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 1)
                 checkHangDot.Checked = true;
+            else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 2)
+                checkHangNhu.Checked = true;
+            else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 3)
+                checkHangSot.Checked = true;
+
             if (cls1.bCheck_BaoVe.Value == true)
                 checkBaoVe.Checked = true;
             else checkBaoVe.Checked = false;
@@ -830,7 +838,7 @@ namespace CtyTinLuong
             {
                 //Load_LockUp_DinhMucDot();
                 checkHangNhu.Checked = false;
-
+                checkHangSot.Checked = false;
                 layoutControlItem1_duoi.Visibility = LayoutVisibility.Always;
                 layoutControlItem2_duoi.Visibility = LayoutVisibility.Always;
                 layoutControlItem3_duoi.Visibility = LayoutVisibility.Always;
@@ -846,7 +854,7 @@ namespace CtyTinLuong
         {
             if (checkHangNhu.Checked == true)
             {
-                //Load_LockUp_DinhMucDot();
+                checkHangSot.Checked = false;
                 checkHangDot.Checked = false;
                 layoutControlItem1_duoi.Visibility = LayoutVisibility.Never;
                 layoutControlItem2_duoi.Visibility = LayoutVisibility.Never;
@@ -856,6 +864,27 @@ namespace CtyTinLuong
                 layoutControlItem1tren.Text = "Cục/ 1bao";
                 layoutControlItembaoto.Text = "Số lượng xuất";
                 layoutControlItem_tongSoKG.Text = "Tổng số cục";
+                txtSoLuong_BaoBe.Text = "0";
+            }
+        }
+
+        private void checkHangSot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkHangSot.Checked == true)
+            {
+
+                checkHangNhu.Checked = false;
+                checkHangDot.Checked = false;
+                layoutControlItem1_duoi.Visibility = LayoutVisibility.Never;
+                layoutControlItem2_duoi.Visibility = LayoutVisibility.Never;
+                layoutControlItem3_duoi.Visibility = LayoutVisibility.Never;
+                layoutControlItem27.Visibility = LayoutVisibility.Never;
+                layoutControlItem4_duoi.Visibility = LayoutVisibility.Never;
+
+                layoutControlItem1tren.Text = "Tép/ 1Sọt";
+                layoutControlItembaoto.Text = "Số lượng xuất";
+                layoutControlItem_tongSoKG.Text = "Tổng số tép";
+                txtSoLuong_BaoBe.Text = "0";
             }
         }
 
