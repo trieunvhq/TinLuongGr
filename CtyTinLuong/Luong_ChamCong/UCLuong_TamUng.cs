@@ -168,14 +168,28 @@ namespace CtyTinLuong
 
         private void checkCongNhanVien_CheckedChanged(object sender, EventArgs e)
         {
-          
+            if (checkCongNhanVien.Checked == true)
+                checkDaiLy.Checked = false;
+            try
+            {
+                LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            { }
         }
 
         private void checkDaiLy_CheckedChanged(object sender, EventArgs e)
         {
-           
 
-            
+            if (checkDaiLy.Checked == true)
+                checkCongNhanVien.Checked = false;
+            try
+            {
+                LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            { }
+
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
