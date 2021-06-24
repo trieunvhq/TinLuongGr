@@ -1371,8 +1371,7 @@ namespace CtyTinLuong
                 layoutControlItem27.Visibility = LayoutVisibility.Never;
                 layoutControlItem25.Visibility = LayoutVisibility.Never;
 
-                layoutControlItem16.Text = "Tép/ 1Sọt";
-                layoutControlItem26.Text = "Kiện/Sọt"; 
+                layoutControlItem16.Text = "Tép/ 1Sọt";               
                 layoutControlItem15.Text = "Số lượng xuất";
                 layoutControlItem21.Text = "Tổng số tép";
                 txtSoLuong_BaoBe.Text = "0";
