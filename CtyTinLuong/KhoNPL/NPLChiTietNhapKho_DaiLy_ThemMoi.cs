@@ -106,7 +106,10 @@ namespace CtyTinLuong
                 else checkHoanThanh.Checked = false;
                 if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 1)
                     checkHangDot.Checked = true;
-                else checkHangNhu.Checked = true;
+                else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 2)
+                    checkHangNhu.Checked = true;
+                else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 3)
+                    checkHangSot.Checked = true;
 
                 txtSoLuong_BaoTo.Text = cls1.fSoLuongXuat_BaoTo.Value.ToString();
                 txtSoLuong_BaoBe.Text = cls1.fSoLuongXuat_BaoBe.Value.ToString();
@@ -826,7 +829,10 @@ namespace CtyTinLuong
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
-                else cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                else if (checkHangNhu.Checked == true)
+                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                else if (checkHangSot.Checked == true)
+                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
                 int iiiiID_NHapKhoDaiLy;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
                 {
@@ -948,7 +954,10 @@ namespace CtyTinLuong
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
-                else cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                else if (checkHangNhu.Checked == true)
+                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                else if (checkHangSot.Checked == true)
+                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
                 int iiiiID_NHapKhoDaiLy;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
                 {
@@ -1349,18 +1358,41 @@ namespace CtyTinLuong
             }
         }
 
+        private void checkHangSot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkHangSot.Checked == true)
+            {
+             
+                checkHangNhu.Checked = false;
+                checkHangDot.Checked = false;
+                layoutControlItem1.Visibility = LayoutVisibility.Never;
+                layoutControlItem22.Visibility = LayoutVisibility.Never;
+                layoutControlItem20.Visibility = LayoutVisibility.Never;
+                layoutControlItem27.Visibility = LayoutVisibility.Never;
+                layoutControlItem25.Visibility = LayoutVisibility.Never;
+
+                layoutControlItem16.Text = "Tép/ 1Sọt";
+                layoutControlItem26.Text = "Kiện/Sọt"; 
+                layoutControlItem15.Text = "Số lượng xuất";
+                layoutControlItem21.Text = "Tổng số tép";
+                txtSoLuong_BaoBe.Text = "0";
+            }
+        }
+
         private void checkHangDot_CheckedChanged(object sender, EventArgs e)
         {
             if (checkHangDot.Checked == true)
             {
-                //Load_LockUp_DinhMucDot();
+               
                 checkHangNhu.Checked = false;
-
+                checkHangSot.Checked = false;
+              
                 layoutControlItem1.Visibility = LayoutVisibility.Always;
                 layoutControlItem22.Visibility = LayoutVisibility.Always;
                 layoutControlItem20.Visibility = LayoutVisibility.Always;
                 layoutControlItem27.Visibility = LayoutVisibility.Always;
                 layoutControlItem25.Visibility = LayoutVisibility.Always;
+
                 layoutControlItem16.Text = "Kg/ 1bao";
                 layoutControlItem15.Text = "SL Bao To";
                 layoutControlItem21.Text = "Tổng số Kg";
@@ -1371,7 +1403,7 @@ namespace CtyTinLuong
         {
             if (checkHangNhu.Checked == true)
             {
-                //Load_LockUp_DinhMucDot();
+                checkHangSot.Checked = false;
                 checkHangDot.Checked = false;
                 layoutControlItem1.Visibility = LayoutVisibility.Never;
                 layoutControlItem22.Visibility = LayoutVisibility.Never;
@@ -1379,7 +1411,7 @@ namespace CtyTinLuong
                 layoutControlItem27.Visibility = LayoutVisibility.Never;
                 layoutControlItem25.Visibility = LayoutVisibility.Never;
                 layoutControlItem16.Text = "Cục/ 1bao";
-                layoutControlItem15.Text = "Số lượng xuất";
+                layoutControlItem15.Text = "Số lượng xuất";                
                 layoutControlItem21.Text = "Tổng số cục";
                 txtSoLuong_BaoBe.Text = "0";
             }
