@@ -105,13 +105,12 @@ namespace CtyTinLuong
         private void UCLuong_TraLuongNewwwwwwwwww_Load(object sender, EventArgs e)
         {
             mbThemMoiTraLuong = true;
-            checkCongNhanVien.Checked = true;
+          
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-            int sodong = 10;
-            LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            ResetSoTrang(sodong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            checkCongNhanVien.Checked = true;
+           
         }
         
         private void btRefresh_Click_1(object sender, EventArgs e)
@@ -169,6 +168,14 @@ namespace CtyTinLuong
                 checkDaiLy.Checked = false;
                // LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
+            try
+            {
+                int sodong = 10;
+                LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                ResetSoTrang(sodong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            { }
         }
 
         private void checkDaiLy_CheckedChanged(object sender, EventArgs e)
@@ -178,6 +185,14 @@ namespace CtyTinLuong
                 checkCongNhanVien.Checked = false;
               //  LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
+            try
+            {
+                int sodong = 10;
+                LoadData(1, sodong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                ResetSoTrang(sodong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            { }
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

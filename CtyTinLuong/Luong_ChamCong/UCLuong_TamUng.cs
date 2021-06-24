@@ -104,14 +104,11 @@ namespace CtyTinLuong
 
         private void UCLuong_TamUng_Load(object sender, EventArgs e)
         {
-            mbThemMoiTamUng = true;
-            checkCongNhanVien.Checked = true;
+            mbThemMoiTamUng = true;           
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-           
-           
-
+            checkCongNhanVien.Checked = true;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
