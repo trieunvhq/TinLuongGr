@@ -12,6 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmPrint_BaoCao_TonKho : Form
     {
+    
         private void TonKho_DaiLy(DataTable dt3)
         {
             Xtra_BaoCao_TonKho xtr111 = new Xtra_BaoCao_TonKho();
@@ -46,11 +47,14 @@ namespace CtyTinLuong
         {
             if (DaiLy_BaoCao_TonKho.mbPrint == true)
                 TonKho_DaiLy(DaiLy_BaoCao_TonKho.mdtPrint);
+            if (DaiLy_Frm_TonKho_MotVatTu.mbPrint == true)
+                TonKho_DaiLy(DaiLy_Frm_TonKho_MotVatTu.mdtPrint);
         }
 
         private void frmPrint_BaoCao_TonKho_FormClosed(object sender, FormClosedEventArgs e)
         {
             DaiLy_BaoCao_TonKho.mbPrint = false;
+            DaiLy_Frm_TonKho_MotVatTu.mbPrint = false;
         }
     }
 }
