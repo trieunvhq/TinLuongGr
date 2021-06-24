@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -245,6 +246,7 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell_1);
             // 
             // clSTT
             // 
@@ -449,7 +451,7 @@
             this.checkCongNhanVien.Name = "checkCongNhanVien";
             this.checkCongNhanVien.Size = new System.Drawing.Size(128, 20);
             this.checkCongNhanVien.TabIndex = 117;
-            this.checkCongNhanVien.Text = "Tạm ứng Công nhân viên";
+            this.checkCongNhanVien.Text = "Trả lương CNV";
             this.checkCongNhanVien.UseVisualStyleBackColor = true;
             // 
             // checkDaiLy
@@ -458,7 +460,7 @@
             this.checkDaiLy.Name = "checkDaiLy";
             this.checkDaiLy.Size = new System.Drawing.Size(115, 20);
             this.checkDaiLy.TabIndex = 118;
-            this.checkDaiLy.Text = "Tạm ứng Đại lý";
+            this.checkDaiLy.Text = "Trả lương Đại lý";
             this.checkDaiLy.UseVisualStyleBackColor = true;
             // 
             // btLayDuLieu
@@ -700,6 +702,7 @@
             this.btRefresh.StyleController = this.dataLayoutControl1;
             this.btRefresh.TabIndex = 95;
             this.btRefresh.ToolTip = "Refesh";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click_1);
             // 
             // layoutControlGroup1
             // 
