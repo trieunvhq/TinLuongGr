@@ -1880,6 +1880,9 @@
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TBX.resx">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.resx">
+      <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTrgCa.resx">
       <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
     </EmbeddedResource>
