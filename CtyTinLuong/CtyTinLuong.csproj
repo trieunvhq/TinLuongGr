@@ -245,6 +245,8 @@
     </Compile>
     <Compile Include="Luong_ChamCong\clsTamUng_ChiTietTamUng - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTamUng_New - Copy.cs" />
+    <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new.cs" />
+    <Compile Include="Luong_ChamCong\clsTraLuong_new.cs" />
     <Compile Include="Luong_ChamCong\frmBTTL_TBX_CT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -782,14 +784,7 @@
     <Compile Include="Luong_ChamCong\frmPrint_TraLuong.Designer.cs">
       <DependentUpon>frmPrint_TraLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\clsHUU_CongNhat_TraLuong.cs" />
     <Compile Include="Luong_ChamCong\Copy of clsHUU_CongNhat_TraLuong.cs" />
-    <Compile Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.Designer.cs">
-      <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLySanXuat\frmGuiDuLieuLuongTheoSanLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1931,7 +1926,6 @@
     <EmbeddedResource Include="Luong_ChamCong\T_PrintChamComToGapDan.resx">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -2147,9 +2141,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChiTietChamCong_Mot_CongNhan.resx">
       <DependentUpon>frmChiTietChamCong_Mot_CongNhan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.resx">
-      <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmPrint_TraLuong.resx">
       <DependentUpon>frmPrint_TraLuong.cs</DependentUpon>
