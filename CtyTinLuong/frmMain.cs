@@ -456,19 +456,15 @@ namespace CtyTinLuong
             this.Show();
         }
 
-        private void btnNganHang_Click(object sender, EventArgs e)
-        {
-            frmImPortPhieuNganHang ff = new frmImPortPhieuNganHang();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
-        }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDangNhap ff = new frmDangNhap();
-            ff.Show();
+            if (MessageBox.Show("Bạn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Hide();
+                frmDangNhap ff = new frmDangNhap();
+                ff.Show();
+            }
         }
 
         private void btnBaoCaoNXT_Click(object sender, EventArgs e)

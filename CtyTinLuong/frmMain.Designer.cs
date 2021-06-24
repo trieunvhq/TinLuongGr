@@ -34,7 +34,6 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
-            this.btnNganHang = new System.Windows.Forms.Button();
             this.btnKHSX = new System.Windows.Forms.Button();
             this.btnCongCu = new System.Windows.Forms.Button();
             this.btnQuanTri = new System.Windows.Forms.Button();
@@ -97,7 +96,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnDangXuat);
-            this.panelMenu.Controls.Add(this.btnNganHang);
             this.panelMenu.Controls.Add(this.btnKHSX);
             this.panelMenu.Controls.Add(this.btnCongCu);
             this.panelMenu.Controls.Add(this.btnQuanTri);
@@ -118,7 +116,7 @@
             this.btnDangXuat.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 310);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 264);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDangXuat.Size = new System.Drawing.Size(200, 46);
@@ -127,25 +125,6 @@
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangXuat.UseVisualStyleBackColor = true;
             this.btnDangXuat.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnNganHang
-            // 
-            this.btnNganHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNganHang.FlatAppearance.BorderSize = 0;
-            this.btnNganHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNganHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNganHang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnNganHang.Image = ((System.Drawing.Image)(resources.GetObject("btnNganHang.Image")));
-            this.btnNganHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNganHang.Location = new System.Drawing.Point(0, 264);
-            this.btnNganHang.Name = "btnNganHang";
-            this.btnNganHang.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnNganHang.Size = new System.Drawing.Size(200, 46);
-            this.btnNganHang.TabIndex = 72;
-            this.btnNganHang.Text = "          Ngân hàng";
-            this.btnNganHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNganHang.UseVisualStyleBackColor = true;
-            this.btnNganHang.Click += new System.EventHandler(this.btnNganHang_Click);
             // 
             // btnKHSX
             // 
@@ -555,7 +534,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnDangXuat;
-        private System.Windows.Forms.Button btnNganHang;
         private System.Windows.Forms.Button btnKHSX;
         private System.Windows.Forms.Button btnCongCu;
         private System.Windows.Forms.Button btnQuanTri;

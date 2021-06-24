@@ -125,15 +125,6 @@ namespace CtyTinLuong
             MuaHang_frmCongNo_Load( sender,  e);
         }
 
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            {
-                int xxid = 287; // 331 phải tra người bán
-                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-        }
-
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT)
@@ -171,6 +162,15 @@ namespace CtyTinLuong
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.ShowDialog();
                 }
+            }
+        }
+
+        private void btLayDuLieu_Click_1(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                int xxid = 287; // 331 phải tra người bán
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
