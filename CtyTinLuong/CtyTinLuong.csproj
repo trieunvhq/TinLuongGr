@@ -293,6 +293,12 @@
     <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa.Designer.cs">
       <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongTrgCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongTrgCa.Designer.cs">
+      <DependentUpon>Tr_frmPrintChamCongTrgCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_CT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1873,6 +1879,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTrgCa.resx">
       <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCongTrgCa.resx">
+      <DependentUpon>Tr_frmPrintChamCongTrgCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_CT.resx">
       <DependentUpon>Tr_frmPrintBTTL_TBX_CT.cs</DependentUpon>
