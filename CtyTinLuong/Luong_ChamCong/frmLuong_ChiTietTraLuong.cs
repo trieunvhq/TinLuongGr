@@ -355,7 +355,7 @@ namespace CtyTinLuong
 
             }
         }
-        private void Luu_ChiTiet_TamUng(int xxxID_TamUng)
+        private void Luu_ChiTiet_TraLuong(int xxxID_Traluong)
         {
             if (!KiemTraLuu()) return;
             else
@@ -368,13 +368,13 @@ namespace CtyTinLuong
                 DataTable dt_gridcontrol = dv2232xx.ToTable();
                 DataTable dt2_cu = new DataTable();
 
-                cls2.iID_TraLuong = xxxID_TamUng;
+                cls2.iID_TraLuong = xxxID_Traluong;
                 dt2_cu = cls2.SA_W_ID_TraLuong();
                 if (dt2_cu.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt2_cu.Rows.Count; i++)
                     {
-                        cls2.iID_TraLuong = xxxID_TamUng;
+                        cls2.iID_TraLuong = xxxID_Traluong;
                         cls2.bTonTai = false;
                         cls2.Update_ALL_TonTai_W_ID_TraLuong();
                     }
@@ -386,7 +386,7 @@ namespace CtyTinLuong
                     int iiID_DoiTuong = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_DoiTuong"].ToString());
                     cls2 = new CtyTinLuong.clsTraLuong_ChiTietTraLuong_new();
 
-                    cls2.iID_TraLuong = xxxID_TamUng;
+                    cls2.iID_TraLuong = xxxID_Traluong;
                     cls2.iID_DoiTuong = Convert.ToInt32(dt_gridcontrol.Rows[i]["Luong_Thang"].ToString());
                     cls2.iLuong_Thang = Convert.ToInt32(dt_gridcontrol.Rows[i]["Luong_Nam"].ToString());
                     cls2.iLuong_Nam = Convert.ToInt32(txtNam.Text);
@@ -413,7 +413,7 @@ namespace CtyTinLuong
                 // xoa ton tai=false
                 DataTable dt2_moi11111 = new DataTable();
                 cls2 = new CtyTinLuong.clsTraLuong_ChiTietTraLuong_new();
-                cls2.iID_TraLuong = xxxID_TamUng;
+                cls2.iID_TraLuong = xxxID_Traluong;
                 dt2_moi11111 = cls2.SA_W_ID_TraLuong();
                 dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
                 DataView dvdt2_moi = dt2_moi11111.DefaultView;
@@ -427,13 +427,13 @@ namespace CtyTinLuong
 
             }
         }
-        private void LuuDuLieu_TamUng()
+        private void LuuDuLieu_TraLuong()
         {
             if (!KiemTraLuu()) return;
             else
             {
 
-                int xxID_tamung = 0;
+                int xxID_traluong_ = 0;
                 clsTraLuong_new cls1 = new clsTraLuong_new();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
@@ -451,22 +451,22 @@ namespace CtyTinLuong
                 {
                     cls1.bGuiDuLieu = false;
                     cls1.Insert();
-                    xxID_tamung = cls1.iID_TraLuong.Value;
+                    xxID_traluong_ = cls1.iID_TraLuong.Value;
 
                 }
                 else
                 {
-                    xxID_tamung = UCLuong_TraLuongNewwwwwwwwww.mID_TraLuong_Sua;
+                    xxID_traluong_ = UCLuong_TraLuongNewwwwwwwwww.mID_TraLuong_Sua;
 
                     clsTraLuong_new cls2 = new clsTraLuong_new();
-                    cls2.iID_TraLuong = xxID_tamung;
+                    cls2.iID_TraLuong = xxID_traluong_;
                     DataTable dt2 = cls2.SelectOne();
                     cls1.bGuiDuLieu = cls2.bGuiDuLieu.Value;
 
-                    cls1.iID_TraLuong = xxID_tamung;
+                    cls1.iID_TraLuong = xxID_traluong_;
                     cls1.Update();
                 }
-                Luu_ChiTiet_TamUng(xxID_tamung);
+                Luu_ChiTiet_TraLuong(xxID_traluong_);
 
             }
         }
@@ -475,7 +475,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                LuuDuLieu_TamUng();
+                LuuDuLieu_TraLuong();
                 MessageBox.Show("Đã lưu");
             }
         }
@@ -485,7 +485,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                LuuDuLieu_TamUng();
+                LuuDuLieu_TraLuong();
                 LuuDuLieu_ThuChi();
                 MessageBox.Show("Đã lưu và gửi dữ liệu");
             }
