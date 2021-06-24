@@ -72,7 +72,7 @@ namespace CtyTinLuong
         private void navBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             //UCBanHang_BanHang
-            UCBanHang_BanHang ucc = new UCBanHang_BanHang();
+            UCBanHang_BanHang ucc = new UCBanHang_BanHang(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
@@ -110,7 +110,9 @@ namespace CtyTinLuong
         private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
-            ucc.Show();
+            this.Hide();
+            ucc.ShowDialog();
+            this.Show();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -122,19 +124,25 @@ namespace CtyTinLuong
         private void navbangKeHoaDonBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
-            ucc.Show();
+            this.Hide();
+            ucc.ShowDialog();
+            this.Show();
         }
 
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             BanHang_CongNo ff = new CtyTinLuong.BanHang_CongNo();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
     }
 }

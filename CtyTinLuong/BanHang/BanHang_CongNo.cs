@@ -159,7 +159,7 @@ namespace CtyTinLuong
                     msTenTK_me = "Phải trả cho người bán";
                     msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                    ff.Show();
+                    ff.ShowDialog();
 
                 }
             }
@@ -173,7 +173,9 @@ namespace CtyTinLuong
                 mdteDenNgay = dteDenNgay.DateTime;
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 BanHang_ChiTietCongNo ff = new BanHang_ChiTietCongNo();
-                ff.Show();
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
         }
 
