@@ -71,9 +71,10 @@ namespace CtyTinLuong
 
         }
 
-
-        public UCMuaHang_ChiTietTatCa()
+        frmMuaHang2222 _frmMH;
+        public UCMuaHang_ChiTietTatCa(frmMuaHang2222 frmMH)
         {
+            _frmMH = frmMH;
             InitializeComponent();
         }
 
@@ -104,7 +105,9 @@ namespace CtyTinLuong
             {
                 miID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 MuaHang_frmChiTietMotVatTu ff = new MuaHang_frmChiTietMotVatTu();
-                ff.Show();
+                _frmMH.Hide();
+                ff.ShowDialog();
+                _frmMH.Show();
             }
         }
     }

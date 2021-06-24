@@ -1297,26 +1297,6 @@ namespace CtyTinLuong
                 tongtienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
                 tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
                 txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
-                //double tongtienCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-              
-                //if (tienVAT == 0)
-                //{
-                //    gridView8.SetRowCellValue(0, clNo, tongtienCoVAT);
-                //    gridView8.SetRowCellValue(0, clCo, 0);
-                //    gridView8.SetRowCellValue(1, clNo, 0);
-                //    gridView8.SetRowCellValue(1, clCo, tongtienCoVAT);
-                //}
-                //else
-                //{
-                //    gridView8.SetRowCellValue(0, clNo, tongtienchuaVAT);
-                //    gridView8.SetRowCellValue(0, clCo, 0);
-
-                //    gridView8.SetRowCellValue(1, clNo, tienVAT);
-                //    gridView8.SetRowCellValue(1, clCo, 0);
-
-                //    gridView8.SetRowCellValue(2, clNo, 0);
-                //    gridView8.SetRowCellValue(2, clCo, tongtienCoVAT);
-                //}
             }
             catch
             {
@@ -1340,11 +1320,7 @@ namespace CtyTinLuong
         }
         private void checkMuaHangNhapKho_CheckedChanged(object sender, EventArgs e)
         {
-            //if (checkMuaHangNhapKho.Checked == true)
-            //    checkMuaHangNhapKho.CheckState = CheckState.Checked;
-            //if (checkMuaHangNhapKho.Checked == false)
-            //    checkMuaHangNhapKho.CheckState = CheckState.Checked;
-
+            //
         }
         private void txtTiGia_TextChanged(object sender, EventArgs e)
         {
@@ -1375,28 +1351,6 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
                 txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
-
-               // double tongtienCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-               // double tongtienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
-               // double tienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
-               // if(tienVAT==0)
-               // {
-               //     gridView8.SetRowCellValue(0, clNo, 0);
-               //     gridView8.SetRowCellValue(0, clCo, tongtienCoVAT);
-               //     gridView8.SetRowCellValue(1, clNo, tongtienCoVAT);
-               //     gridView8.SetRowCellValue(1, clCo, 0);
-               // }
-               //else
-               // {
-               //     gridView8.SetRowCellValue(0, clNo, 0);
-               //     gridView8.SetRowCellValue(0, clCo, tongtienCoVAT);
-
-               //     gridView8.SetRowCellValue(1, clNo, tienVAT);
-               //     gridView8.SetRowCellValue(1, clCo, 0);
-
-               //     gridView8.SetRowCellValue(2, clNo, 0);
-               //     gridView8.SetRowCellValue(2, clCo, tongtienCoVAT);
-               // }
             }
             catch
             {
@@ -1739,7 +1693,6 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTiGia.Text);
                 txtTiGia.Text = String.Format("{0:#,##0.00}", value);
-
             }
             catch
             {

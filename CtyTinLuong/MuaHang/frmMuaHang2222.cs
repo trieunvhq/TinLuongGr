@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraNavBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,8 @@ namespace CtyTinLuong
 
         private void navBarItemMuaHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             mbTraLaiHangMua = false;
             UCMuaHang ucc = new UCMuaHang(this);
             ucc.Dock = DockStyle.Fill;
@@ -79,6 +82,8 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked_3(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             mbTraLaiHangMua = true;
             UCMuaHang ucc = new UCMuaHang(this);
             ucc.Dock = DockStyle.Fill;
@@ -88,7 +93,9 @@ namespace CtyTinLuong
 
         private void navChiTiet_ALL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCMuaHang_ChiTietTatCa ucc = new UCMuaHang_ChiTietTatCa();
+            doiMauTitle(sender, e);
+
+            UCMuaHang_ChiTietTatCa ucc = new UCMuaHang_ChiTietTatCa(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
@@ -101,10 +108,24 @@ namespace CtyTinLuong
 
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             MuaHang_frmCongNo ff = new MuaHang_frmCongNo();
             this.Hide();
             ff.ShowDialog();
             this.Show();
+        }
+
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
     }
 }
