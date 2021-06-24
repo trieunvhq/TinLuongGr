@@ -53,8 +53,12 @@ namespace CtyTinLuong
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            MuaHang_frmCongNo ff = new MuaHang_frmCongNo();
-            ff.Show();
+            doiMauTitle(sender, e);
+
+            MuaHang_frmCongNo ucc = new MuaHang_frmCongNo(this);
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
         }
 
         
@@ -77,7 +81,9 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void navBarItem1_LinkClicked_3(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -110,10 +116,10 @@ namespace CtyTinLuong
         {
             doiMauTitle(sender, e);
 
-            MuaHang_frmCongNo ff = new MuaHang_frmCongNo();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            MuaHang_frmCongNo ucc = new MuaHang_frmCongNo(this);
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
         }
 
         private void doiMauTitle(object sender, NavBarLinkEventArgs e)

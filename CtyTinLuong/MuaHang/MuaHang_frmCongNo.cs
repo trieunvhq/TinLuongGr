@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class MuaHang_frmCongNo : Form
+    public partial class MuaHang_frmCongNo : UserControl
     {
         public static int miiiID_TaiKhoanKeToanCon;
         public static DateTime mdteTuNgay, mdteDenNgay;
@@ -112,8 +112,11 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
         }
 
-        public MuaHang_frmCongNo()
+        //
+        frmMuaHang2222 _frmMH;
+        public MuaHang_frmCongNo(frmMuaHang2222 frmMH)
         {
+            _frmMH = frmMH;
             InitializeComponent();
         }
 
@@ -166,8 +169,7 @@ namespace CtyTinLuong
                     msTenTK_me = "Phải trả cho người bán";                  
                      msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                    ff.Show();
-
+                    ff.ShowDialog();
                 }
             }
         }
@@ -180,15 +182,15 @@ namespace CtyTinLuong
                 mdteDenNgay = dteDenNgay.DateTime;             
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 MuaHang_frmChiTietCongNo_MuaHang ff = new MuaHang_frmChiTietCongNo_MuaHang();
-                this.Hide();
+                _frmMH.Hide();
                 ff.ShowDialog();
-                this.Show();
+                _frmMH.Show();
             }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void MuaHang_frmCongNo_Load(object sender, EventArgs e)

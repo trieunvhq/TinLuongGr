@@ -361,7 +361,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
               
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                ff.Show();
+                ff.ShowDialog();
             }
         }
 
