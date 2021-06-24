@@ -55,6 +55,8 @@ namespace CtyTinLuong
                 txtTongSoKG.Text = (soluongbaobe * sokg1baobe + soluongbaoto * sokg1baoto).ToString();
                 if (checkHangNhu.Checked == true)
                     txtTongSoKG.Text = txtSoLuong_BaoTo.Text;
+                if (checkHangSot.Checked == true)
+                    txtTongSoKG.Text = txtSoLuong_BaoTo.Text;
             }
             catch
             {
