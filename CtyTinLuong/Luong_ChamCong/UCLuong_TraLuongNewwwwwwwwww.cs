@@ -24,28 +24,8 @@ namespace CtyTinLuong
         {
            
         }
+        
 
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            if (gridView1.GetFocusedRowCellValue(clID_TamUng).ToString() != "")
-            {
-                mbThemMoiTraLuong = false;
-                mID_TraLuong_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TamUng).ToString());
-                frmLuong_ChiTietTraLuong ff = new CtyTinLuong.frmLuong_ChiTietTraLuong();
-                ff.Show();
-            }
-        }
 
       
         private void btRefresh_Click_1(object sender, EventArgs e)
@@ -58,6 +38,17 @@ namespace CtyTinLuong
             if (e.Column == clSTT)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void gridView1_DoubleClick_1(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_TamUng).ToString() != "")
+            {
+                mbThemMoiTraLuong = false;
+                mID_TraLuong_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TamUng).ToString());
+                frmLuong_ChiTietTraLuong ff = new CtyTinLuong.frmLuong_ChiTietTraLuong();
+                ff.Show();
             }
         }
     }
