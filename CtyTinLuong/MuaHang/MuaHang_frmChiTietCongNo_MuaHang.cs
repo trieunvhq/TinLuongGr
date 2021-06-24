@@ -17,7 +17,7 @@ namespace CtyTinLuong
         public static bool mbPrint;
 
         public static DataTable mdtPrint;
-        public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
+        public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan, msTenKhachHang;
         public static DateTime mdatungay, mdadenngay;
 
         private void Load_lockUp()
@@ -359,7 +359,7 @@ namespace CtyTinLuong
                 mbPrint = true;
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-              
+                msTenKhachHang = txtTenTK.Text;
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                 ff.Show();
             }
