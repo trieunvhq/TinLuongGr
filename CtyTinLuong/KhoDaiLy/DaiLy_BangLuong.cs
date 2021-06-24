@@ -72,7 +72,6 @@ namespace CtyTinLuong
             txtNam.Text = DateTime.Now.Year.ToString();  
             txtThang.Text = (DateTime.Now.Month).ToString();
             
-           
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

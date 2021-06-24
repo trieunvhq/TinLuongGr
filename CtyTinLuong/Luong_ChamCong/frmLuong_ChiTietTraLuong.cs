@@ -700,5 +700,19 @@ namespace CtyTinLuong
         {
             LuuDuLieu_Va_GuiDuLieu();
         }
+
+        private void checkALL_CheckedChanged(object sender, EventArgs e)
+        {
+            if(UCLuong_TraLuongNewwwwwwwwww.mbThemMoiTraLuong==true)
+            {
+                if(checkALL.Checked==true)
+                {
+                    if(checkDaiLy.Checked==true)
+                    {
+                        //clsd
+                    }
+                }
+            }
+        }
     }
 }
