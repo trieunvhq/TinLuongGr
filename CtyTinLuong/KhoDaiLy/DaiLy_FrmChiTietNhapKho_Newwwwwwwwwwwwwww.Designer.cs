@@ -155,6 +155,8 @@
             this.checkDaiLy = new System.Windows.Forms.CheckBox();
             this.checkLaiXe = new System.Windows.Forms.CheckBox();
             this.checkBaoVe = new System.Windows.Forms.CheckBox();
+            this.checkHangSot = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -208,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -222,6 +225,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.checkHangSot);
             this.layoutControl1.Controls.Add(this.checkHangNhu);
             this.layoutControl1.Controls.Add(this.checkHoanThanh);
             this.layoutControl1.Controls.Add(this.txtDonGiaThanhPhamQuyDoi);
@@ -266,7 +270,7 @@
             // 
             this.checkHangNhu.Location = new System.Drawing.Point(280, 2);
             this.checkHangNhu.Name = "checkHangNhu";
-            this.checkHangNhu.Size = new System.Drawing.Size(669, 20);
+            this.checkHangNhu.Size = new System.Drawing.Size(332, 20);
             this.checkHangNhu.TabIndex = 138;
             this.checkHangNhu.Text = "Loại hàng Nhũ";
             this.checkHangNhu.UseVisualStyleBackColor = true;
@@ -827,7 +831,8 @@
             this.layoutControlItem29,
             this.layoutControlItem13,
             this.layoutControlItem12,
-            this.layoutControlItem24});
+            this.layoutControlItem24,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(951, 277);
@@ -1118,7 +1123,7 @@
             this.layoutControlItem31.Control = this.checkHangNhu;
             this.layoutControlItem31.Location = new System.Drawing.Point(278, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(673, 24);
+            this.layoutControlItem31.Size = new System.Drawing.Size(336, 24);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
@@ -1500,6 +1505,25 @@
             this.checkBaoVe.UseVisualStyleBackColor = true;
             this.checkBaoVe.CheckedChanged += new System.EventHandler(this.checkBaoVe_CheckedChanged);
             // 
+            // checkHangSot
+            // 
+            this.checkHangSot.Location = new System.Drawing.Point(616, 2);
+            this.checkHangSot.Name = "checkHangSot";
+            this.checkHangSot.Size = new System.Drawing.Size(333, 20);
+            this.checkHangSot.TabIndex = 137;
+            this.checkHangSot.Text = "Loại hàng Sọt";
+            this.checkHangSot.UseVisualStyleBackColor = true;
+            this.checkHangSot.CheckedChanged += new System.EventHandler(this.checkHangSot_CheckedChanged);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.checkHangSot;
+            this.layoutControlItem1.Location = new System.Drawing.Point(614, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(337, 24);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1572,6 +1596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1699,5 +1724,7 @@
         private System.Windows.Forms.CheckBox checkHangDot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
+        private System.Windows.Forms.CheckBox checkHangSot;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

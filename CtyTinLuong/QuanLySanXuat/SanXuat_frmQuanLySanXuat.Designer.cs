@@ -211,7 +211,7 @@
             // 
             // navBarItem16
             // 
-            this.navBarItem16.Caption = "Định Mức Hàng Nhũ";
+            this.navBarItem16.Caption = "Định Mức Hàng Nhũ_Sọt";
             this.navBarItem16.Name = "navBarItem16";
             this.navBarItem16.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked_2);
             // 
