@@ -457,7 +457,7 @@
             // 
             this.clQuyRaKG.AppearanceCell.Options.UseTextOptions = true;
             this.clQuyRaKG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clQuyRaKG.Caption = "QuyRaKG";
+            this.clQuyRaKG.Caption = "Quy ra KG";
             this.clQuyRaKG.FieldName = "QuyRaKG";
             this.clQuyRaKG.Name = "clQuyRaKG";
             this.clQuyRaKG.OptionsColumn.AllowEdit = false;

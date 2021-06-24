@@ -405,14 +405,13 @@
             this.gridBand4.Columns.Add(this.clTenTaiKhoanCon);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 557;
+            this.gridBand4.Width = 482;
             // 
             // clHienThi
             // 
             this.clHienThi.Caption = "xx";
             this.clHienThi.FieldName = "HienThi";
             this.clHienThi.Name = "clHienThi";
-            this.clHienThi.Visible = true;
             // 
             // clSoChungTu
             // 

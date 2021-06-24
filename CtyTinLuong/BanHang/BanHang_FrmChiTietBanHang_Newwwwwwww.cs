@@ -138,7 +138,7 @@ namespace CtyTinLuong
                             clsxx.daNgayThang = dteNgayChungTu.DateTime;
                             clsxx.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[2]["ID_TaiKhoanKeToanCon"].ToString());
                             if (dv3cccccc.Rows[2]["Co"].ToString() != "")
-                                clsxx.fCo = Convert.ToDouble(dv3cccccc.Rows[12]["Co"].ToString());
+                                clsxx.fCo = Convert.ToDouble(dv3cccccc.Rows[2]["Co"].ToString());
                             else clsxx.fCo = 0;
                             if (dv3cccccc.Rows[2]["No"].ToString() != "")
                                 clsxx.fNo = Convert.ToDouble(dv3cccccc.Rows[2]["No"].ToString());

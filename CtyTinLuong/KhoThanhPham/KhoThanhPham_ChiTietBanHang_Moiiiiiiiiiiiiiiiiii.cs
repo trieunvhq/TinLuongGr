@@ -159,7 +159,7 @@ namespace CtyTinLuong
                     clsxx.iTrangThai_MuaHang1_BanHang2_VAT3 = 2;
                     clsxx.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
                     clsxx.sDienGiai = txtDienGiai.Text.ToString();
-
+                    clsxx.bCheck_PhanNganHang = false;
                     string expressionnhapkho;
                     expressionnhapkho = "ID_TaiKhoanKeToanCon=" + ID_TaiKhoanKeToanConxxxx1 + "";
                     DataRow[] foundRows;
@@ -199,6 +199,7 @@ namespace CtyTinLuong
                         clsxx.iTrangThai_MuaHang1_BanHang2_VAT3 = 4;
                         clsxx.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
                         clsxx.sDienGiai = txtDienGiai.Text.ToString();
+                        clsxx.bCheck_PhanNganHang = false;
                         string expression222;
                         expression222 = "ID_TaiKhoanKeToanCon=" + ID_TaiKhoanKeToanConxxxx2 + "";
                         DataRow[] foundRows222;
@@ -238,6 +239,7 @@ namespace CtyTinLuong
                             clsxx.iTrangThai_MuaHang1_BanHang2_VAT3 = 3;
                             clsxx.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
                             clsxx.sDienGiai = txtDienGiai.Text.ToString();
+                            clsxx.bCheck_PhanNganHang = false;
                             string expression333;
                             expression333 = "ID_TaiKhoanKeToanCon=" + ID_TaiKhoanKeToanConxxxx3 + "";
                             DataRow[] foundRows3333;
