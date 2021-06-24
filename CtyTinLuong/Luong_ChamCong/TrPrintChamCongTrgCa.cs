@@ -281,6 +281,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     tmp += (float)23.33;
                 }
                 xrTableCell3.WidthF = tmp;
+                tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)58.96;
             }
             else if (ngaycuathang_ == 29)
             {
@@ -316,6 +317,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     tmp += (float)22.93;
                 }
                 xrTableCell3.WidthF = tmp;
+                tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)58.96;
             }
             else if (ngaycuathang_ == 30)
             {
@@ -344,6 +346,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     tmp += (float)22.23;
                 }
                 xrTableCell3.WidthF = tmp;
+                tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)58.96;
             }
             else if (ngaycuathang_ == 31)
             {

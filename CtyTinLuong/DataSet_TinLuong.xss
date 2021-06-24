@@ -20,7 +20,7 @@
     <Shape ID="DesignTable:tbCongNo_NganHang" ZOrder="7" X="444" Y="51" Height="28" Width="150" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="292" SplitterPosition="24" />
     <Shape ID="DesignTable:tbChiTietBienDongTaiKhoan" ZOrder="2" X="556" Y="360" Height="28" Width="231" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="253" SplitterPosition="24" />
     <Shape ID="DesignTable:tbKeHoachSanXuat" ZOrder="21" X="25" Y="346" Height="28" Width="178" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="387" SplitterPosition="24" />
-    <Shape ID="DesignTable:tbCongNhatChamCongToGapDan" ZOrder="1" X="821" Y="133" Height="486" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="482" />
+    <Shape ID="DesignTable:tbCongNhatChamCongToGapDan" ZOrder="1" X="821" Y="133" Height="28" Width="262" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="482" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBan_MuaHang" ZOrder="17" X="367" Y="379" Height="28" Width="162" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="425" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBTTL_TGD_TQ" ZOrder="13" X="819" Y="81" Height="28" Width="157" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="177" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBTTL_TBX_CT" ZOrder="15" X="818" Y="177" Height="28" Width="155" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="196" SplitterPosition="24" />
