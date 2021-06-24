@@ -194,10 +194,10 @@ namespace CtyTinLuong
             dt2xx.Columns.Add("HienThi", typeof(string));
             gridControl2.DataSource = dt2xx;
         }
-        private void HienThi_Sua(int iiDI_tamung)
+        private void HienThi_Sua(int iiID_TraLuong)
         {
             clsTraLuong_new cls = new CtyTinLuong.clsTraLuong_new();
-            cls.iID_TraLuong = iiDI_tamung;
+            cls.iID_TraLuong = iiID_TraLuong;
             DataTable dt = cls.SelectOne();
 
             gridDoiTuong.EditValue = cls.iID_DoiTuong.Value;
@@ -237,7 +237,7 @@ namespace CtyTinLuong
             }
 
             clsTraLuong_ChiTietTraLuong_new cls2 = new clsTraLuong_ChiTietTraLuong_new();
-            cls2.iID_TraLuong = iiDI_tamung;
+            cls2.iID_TraLuong = iiID_TraLuong;
             DataTable dtchitiet = new DataTable();
             if (checkDaiLy.Checked == true)
                 dtchitiet = cls2.SA_W_ID_TraLuong_DaiLy();
@@ -513,9 +513,9 @@ namespace CtyTinLuong
 
             clKhauTruLuongThang.Caption = "Khấu trừ\ntháng";
             Load_LockUp_DoiTuong();
-            if (UCLuong_TamUng.mbThemMoiTamUng == true)
+            if (UCLuong_TraLuongNewwwwwwwwww.mbThemMoiTraLuong == true)
                 HienThi_ThemMoi();
-            else HienThi_Sua(UCLuong_TamUng.miiiiID_TamUng);
+            else HienThi_Sua(UCLuong_TraLuongNewwwwwwwwww.mID_TraLuong_Sua);
             Load_LockUp_DoiTuong();
         }
 

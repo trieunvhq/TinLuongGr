@@ -168,20 +168,12 @@ namespace CtyTinLuong
 
         private void checkCongNhanVien_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkCongNhanVien.Checked == true)
-            {
-                checkDaiLy.Checked = false;
-                //Load_LockUp_DoiTuong();
-            }
+          
         }
 
         private void checkDaiLy_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkDaiLy.Checked == true)
-            {
-                checkCongNhanVien.Checked = false;
-                //Load_LockUp_DoiTuong();
-            }
+           
 
             
         }

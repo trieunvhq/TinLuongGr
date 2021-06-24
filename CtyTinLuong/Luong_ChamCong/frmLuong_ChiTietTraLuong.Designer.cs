@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLuong_ChiTietTraLuong));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -48,7 +48,7 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_TraLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,7 +64,7 @@
             this.memodoituong = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clDoiTuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clKhauTruLuongThang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_ChiTietTamUng = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_ChiTietTraLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThooat = new DevExpress.XtraEditors.SimpleButton();
@@ -309,7 +309,7 @@
             this.gridView4.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT2,
-            this.clID_TamUng,
+            this.clID_TraLuong,
             this.clSoTien,
             this.clHienThi,
             this.clXoa,
@@ -318,7 +318,7 @@
             this.clGhiChu,
             this.clDoiTuong,
             this.clKhauTruLuongThang,
-            this.clID_ChiTietTamUng});
+            this.clID_ChiTietTraLuong});
             this.gridView4.GridControl = this.gridControl2;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.AllowHtmlDrawHeaders = true;
@@ -339,11 +339,11 @@
             this.clSTT2.VisibleIndex = 0;
             this.clSTT2.Width = 43;
             // 
-            // clID_TamUng
+            // clID_TraLuong
             // 
-            this.clID_TamUng.Caption = "ID_TamUng";
-            this.clID_TamUng.FieldName = "ID_TamUng";
-            this.clID_TamUng.Name = "clID_TamUng";
+            this.clID_TraLuong.Caption = "ID_TraLuong";
+            this.clID_TraLuong.FieldName = "ID_TraLuong";
+            this.clID_TraLuong.Name = "clID_TraLuong";
             // 
             // clSoTien
             // 
@@ -382,9 +382,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions10.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -479,18 +479,18 @@
             // 
             // clKhauTruLuongThang
             // 
-            this.clKhauTruLuongThang.Caption = "Khấu trừ";
-            this.clKhauTruLuongThang.FieldName = "KhauTruLuongThang";
+            this.clKhauTruLuongThang.Caption = "Tháng";
+            this.clKhauTruLuongThang.FieldName = "Luong_Thang";
             this.clKhauTruLuongThang.Name = "clKhauTruLuongThang";
             this.clKhauTruLuongThang.OptionsColumn.FixedWidth = true;
             this.clKhauTruLuongThang.Visible = true;
             this.clKhauTruLuongThang.VisibleIndex = 4;
             // 
-            // clID_ChiTietTamUng
+            // clID_ChiTietTraLuong
             // 
-            this.clID_ChiTietTamUng.Caption = "ID_ChiTietTamUng";
-            this.clID_ChiTietTamUng.FieldName = "ID_ChiTietTamUng";
-            this.clID_ChiTietTamUng.Name = "clID_ChiTietTamUng";
+            this.clID_ChiTietTraLuong.Caption = "ID_ChiTietTraLuong";
+            this.clID_ChiTietTraLuong.FieldName = "ID_ChiTietTraLuong";
+            this.clID_ChiTietTraLuong.Name = "clID_ChiTietTraLuong";
             // 
             // btPrint
             // 
@@ -757,7 +757,7 @@
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 186);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(344, 24);
-            this.layoutControlItem9.Text = "Số tiền tạm ứng";
+            this.layoutControlItem9.Text = "Số tiền Trả lương";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(103, 13);
             // 
             // layoutControlItem15
@@ -1030,7 +1030,7 @@
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT2;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_TamUng;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_TraLuong;
         private DevExpress.XtraGrid.Columns.GridColumn clSoTien;
         private DevExpress.XtraGrid.Columns.GridColumn clHienThi;
         private DevExpress.XtraGrid.Columns.GridColumn clXoa;
@@ -1046,7 +1046,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit memodoituong;
         private DevExpress.XtraGrid.Columns.GridColumn clDoiTuong;
         private DevExpress.XtraGrid.Columns.GridColumn clKhauTruLuongThang;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietTamUng;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietTraLuong;
         private DevExpress.XtraEditors.SimpleButton btPrint;
         private DevExpress.XtraEditors.SimpleButton btLuu;
         private DevExpress.XtraEditors.SimpleButton btThooat;
