@@ -16,7 +16,47 @@ namespace CtyTinLuong
         int bienthangthai = 0;
 
         DataTable dtdoituong = new DataTable();
+        private void HienThi_ALL_DaiLy()
+        {
+            clsNgayThang clsnt = new clsNgayThang();
+            DateTime ngayvatdau = clsnt.GetFistDayInMonth(Convert.ToInt32(txtNam.Text), Convert.ToInt32(txtThang.Text));
+            DateTime ngayketthu = clsnt.GetLastDayInMonth(Convert.ToInt32(txtNam.Text), Convert.ToInt32(txtThang.Text));
+           
+            clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
+            DataTable dt3 = cls1.SD_w_TU(Convert.ToInt32(txtNam.Text), Convert.ToInt32(txtThang.Text), ngayvatdau, ngayketthu);
+            gridControl2.DataSource = null;
+            DataTable dt2xx = new DataTable();
+            dt2xx.Columns.Add("ID_ChiTietTraLuong", typeof(int));
+            dt2xx.Columns.Add("ID_TraLuong", typeof(int));
+            dt2xx.Columns.Add("ID_DoiTuong", typeof(int));
+            dt2xx.Columns.Add("MaDoiTuong", typeof(string));
+            dt2xx.Columns.Add("DoiTuong", typeof(string));
+            dt2xx.Columns.Add("Luong_Thang", typeof(int));
+            dt2xx.Columns.Add("Luong_Nam", typeof(int));
+            dt2xx.Columns.Add("SoTien", typeof(double));
+            dt2xx.Columns.Add("GhiChu", typeof(string));
+            dt2xx.Columns.Add("HienThi", typeof(string));
+            if (dt3.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    DataRow _ravi = dt2xx.NewRow();
+                    //_ravi["ID_ChiTietTraLuong"] = dt3.Rows[i]["ID_ChiTietTraLuong"].ToString();
+                    //_ravi["ID_TraLuong"] = dt3.Rows[i]["ID_TraLuong"].ToString();
+                    _ravi["ID_DoiTuong"] = dt3.Rows[i]["ID_DaiLy"].ToString();
+                    _ravi["MaDoiTuong"] = dt3.Rows[i]["ID_DaiLy"].ToString();
+                    _ravi["DoiTuong"] = dt3.Rows[i]["TenDaiLy"].ToString();
+                    _ravi["Luong_Thang"] = Convert.ToInt32(txtThang.Text);
+                    _ravi["Luong_Nam"] = Convert.ToInt32(txtNam.Text);
+                    _ravi["SoTien"] =Convert.ToDouble(dt3.Rows[i]["Tongtien"].ToString())- Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                    //_ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                    _ravi["HienThi"] = "1";
+                    dt2xx.Rows.Add(_ravi);
+                }
+            }
 
+            gridControl2.DataSource = dt2xx;
+        }
         public string SoChungTu_tbThuChi()
         {
             string sochungtuThuChi = "";
@@ -709,7 +749,7 @@ namespace CtyTinLuong
                 {
                     if(checkDaiLy.Checked==true)
                     {
-                        //clsd
+                        HienThi_ALL_DaiLy();
                     }
                 }
             }
