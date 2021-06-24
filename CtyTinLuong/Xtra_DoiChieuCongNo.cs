@@ -25,6 +25,17 @@ namespace CtyTinLuong
                 pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                 pPhoGiamDoc.Value = dt.Rows[8]["HoTen"].ToString();
             }
+            if(MuaHang_frmChiTietCongNo_MuaHang.mbPrint==true)
+            {
+                DateTime denngay = MuaHang_frmChiTietCongNo_MuaHang.mdadenngay;
+                DateTime tungay = MuaHang_frmChiTietCongNo_MuaHang.mdatungay;
+                pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
+
+                pTieuDeKH_NCC.Value = "Khách hàng";
+                pKhachHang_NCC.Value = MuaHang_frmChiTietCongNo_MuaHang.msTenKhachHang;
+                PtaiKhoanMe.Value = "331: Phải trả cho người bán";
+                pTenTaiKhoan_Con.Value = ""+ MuaHang_frmChiTietCongNo_MuaHang.msSoTaiKhoan+ ": "+ MuaHang_frmChiTietCongNo_MuaHang.msTenTaiKhoan+ "";
+            }
         }
     }
 }

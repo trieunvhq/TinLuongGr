@@ -17,7 +17,7 @@ namespace CtyTinLuong
         public static bool mbPrint;
 
         public static DataTable mdtPrint;
-        public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
+        public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan, msTenKhachHang;
         public static DateTime mdatungay, mdadenngay;
 
         private void Load_lockUp()
@@ -255,6 +255,34 @@ namespace CtyTinLuong
 
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            clsTbNhaCungCap cls = new clsTbNhaCungCap();
+            DataTable dt = cls.SelectAll();
+            for(int i=0; i<dt.Rows.Count; i++)
+            {
+                int xxID = Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToan"].ToString());
+                string tenNhacungcap = dt.Rows[i]["TenNhaCungCap"].ToString();
+                clsNganHang_TaiKhoanKeToanCon clsxxx = new clsNganHang_TaiKhoanKeToanCon();
+                clsxxx.iID_TaiKhoanKeToanCon = xxID;
+                DataTable dtxxcon = clsxxx.SelectOne();
+                if(dtxxcon.Rows.Count>0)
+                {
+                    if (dtxxcon.Rows[0]["TenTaiKhoanCon"].ToString() == "")
+                    {
+                        clsxxx = new clsNganHang_TaiKhoanKeToanCon();
+                        clsxxx.iID_TaiKhoanKeToanCon = xxID;
+                        clsxxx.sTenTaiKhoanCon = tenNhacungcap;
+                        clsxxx.Update_W_TenTaiKhoan_newwww();
+
+                    }
+                }
+              
+             
+            }
+            MessageBox.Show("Đã xong");
+        }
+
         private void bandedGridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView View = sender as GridView;
@@ -359,7 +387,7 @@ namespace CtyTinLuong
                 mbPrint = true;
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-              
+                msTenKhachHang = txtTenTK.Text;
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                 ff.ShowDialog();
             }
