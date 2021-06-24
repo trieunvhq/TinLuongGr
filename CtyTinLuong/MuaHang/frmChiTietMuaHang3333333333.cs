@@ -1532,7 +1532,7 @@ namespace CtyTinLuong
                     mdcTongTienCoVAT = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
 
                     frmPrintMuaHang ff = new frmPrintMuaHang();
-                    ff.Show();
+                    ff.ShowDialog();
                 }
                 
             }
