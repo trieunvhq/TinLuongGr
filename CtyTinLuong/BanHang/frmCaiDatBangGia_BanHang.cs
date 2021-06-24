@@ -355,7 +355,7 @@ namespace CtyTinLuong
                 msDienGiai = "Đơn giá bán hàng";
 
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
-                ff.Show();
+                ff.ShowDialog();
             }
       
 

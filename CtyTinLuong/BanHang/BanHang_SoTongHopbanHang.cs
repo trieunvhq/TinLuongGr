@@ -200,7 +200,7 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
-                ff.Show();
+                ff.ShowDialog();
 
             }
 
@@ -216,6 +216,11 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT2)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)

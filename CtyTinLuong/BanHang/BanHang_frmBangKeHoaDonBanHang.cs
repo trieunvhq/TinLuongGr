@@ -222,7 +222,7 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
-                ff.Show();
+                ff.ShowDialog();
             }
         }
 

@@ -97,9 +97,10 @@ namespace CtyTinLuong
             gridControl2.DataSource = dt2;
         }
 
-      
-        public UCBanHang_BanHang()
+        frmQuanLyBanHang _frmQLBH;
+        public UCBanHang_BanHang(frmQuanLyBanHang frmQLBH)
         {
+            _frmQLBH = frmQLBH;
             InitializeComponent();
         }
 
@@ -150,7 +151,9 @@ namespace CtyTinLuong
                 {//msDienGiai
                     miiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
                     BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww();
-                    ff.Show();
+                    _frmQLBH.Hide();
+                    ff.ShowDialog();
+                    _frmQLBH.Show();
                 }
             }
             catch
