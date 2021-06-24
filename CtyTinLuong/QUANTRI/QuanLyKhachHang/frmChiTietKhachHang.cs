@@ -14,7 +14,31 @@ namespace CtyTinLuong
     {
         private bool KiemTraLuu()
         {
-            if (txtMaKH.Text.ToString() == "")
+            clsTbKhachHang cls = new CtyTinLuong.clsTbKhachHang();
+            DataTable dt = cls.SelectAll();
+            string tenkhach = txtTen.Text;
+            string MaKH = txtMaKH.Text;
+            string expression;
+            expression = "TenKH='" + tenkhach + "'";
+            DataRow[] foundRows;
+            foundRows = dt.Select(expression);
+
+            string expression22;
+            expression22 = "MaKH='" + MaKH + "'";
+            DataRow[] foundRows222;
+            foundRows222 = dt.Select(expression22);
+
+            if (foundRows.Length > 0)
+            {
+                MessageBox.Show("Đã có tên khách hàng tồn tại trong hệ thống ");
+                return false;
+            }
+           else if (foundRows222.Length > 0)
+            {
+                MessageBox.Show("Đã có mã khách hàng tồn tại trong hệ thống ");
+                return false;
+            }           
+            else if (txtMaKH.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn Mã Nhân viên ");
                 return false;

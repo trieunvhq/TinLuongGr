@@ -138,8 +138,8 @@ namespace CtyTinLuong
                 msMaVT = GridMaVT.Text.ToString();
                 msTenVT = txtTenVTHH.Text;
                 msDVT = txtDVT.Text;
-                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-                DataTable dt3 = new DataTable();
+                //clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                //DataTable dt3 = new DataTable();
                 //if (xxximay_in_1_Cat_2_dot_3 == 1)
                 //    dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_IN(miID_VThh, mdatungay, mdadenngay);
                 //else if (xxximay_in_1_Cat_2_dot_3 == 2)
