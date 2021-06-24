@@ -22,12 +22,12 @@ namespace CtyTinLuong
         {
             gridControl2.DataSource = null;
 
-            clsTamUng_ChiTietTamUng cls2 = new clsTamUng_ChiTietTamUng();
-            cls2.iID_TamUng = iiDI_tamung;
+            clsTraLuong_ChiTietTraLuong_new cls2 = new clsTraLuong_ChiTietTraLuong_new();
+            cls2.iID_TraLuong = iiDI_tamung;
             DataTable dtchitiet = new DataTable();
             if (checkDaiLy.Checked == true)
-                dtchitiet = cls2.SA_W_ID_TamUng_DaiLy();
-            else dtchitiet = cls2.SA_W_ID_TamUng_CongNhan();
+                dtchitiet = cls2.SA_W_ID_TraLuong_DaiLy();
+            else dtchitiet = cls2.SA_W_ID_TraLuong_CongNhan();
             gridControl2.DataSource = dtchitiet;
         }
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
@@ -37,7 +37,7 @@ namespace CtyTinLuong
             isload = true;
             _SoTrang = sotrang;
             _SoDong = sodong;
-            clsTamUng_New cls = new clsTamUng_New();
+            clsTraLuong_new cls = new clsTraLuong_new();
             if (checkCongNhanVien.Checked == true)
                 dt = cls.SA_W_NgayThang_CongNhan(_SoTrang, sodong, xxtungay, xxdenngay);
             else dt = cls.SA_W_NgayThang_DaiLy(_SoTrang, sodong, xxtungay, xxdenngay);
@@ -73,7 +73,7 @@ namespace CtyTinLuong
             btnTrangTiep.LinkColor = Color.Blue;
             txtSoTrang.Text = "1";
 
-            using (clsTamUng_New cls = new clsTamUng_New())
+            using (clsTraLuong_new cls = new clsTraLuong_new())
             {
                 DataTable dt_ = new DataTable();
                 if (checkCongNhanVien.Checked == true)
