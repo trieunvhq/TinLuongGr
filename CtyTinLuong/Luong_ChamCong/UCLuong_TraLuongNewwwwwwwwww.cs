@@ -14,10 +14,7 @@ namespace CtyTinLuong
     {
         public static bool mbThemMoiTraLuong;
         public static int mID_TraLuong_Sua;
-
-        public static int miiiiID_TamUng;
-        public static bool mbThemMoiTamUng;
-
+        
         private int _SoTrang = 1;
         private int _SoDong = 1;
         private bool isload = false;
@@ -107,7 +104,7 @@ namespace CtyTinLuong
 
         private void UCLuong_TraLuongNewwwwwwwwww_Load(object sender, EventArgs e)
         {
-            mbThemMoiTamUng = true;
+            mbThemMoiTraLuong = true;
             checkCongNhanVien.Checked = true;
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
