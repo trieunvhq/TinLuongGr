@@ -51,5 +51,18 @@ namespace CtyTinLuong
                 ff.Show();
             }
         }
+
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
     }
 }
