@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraNavBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,6 +77,8 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void btThooat_Click(object sender, EventArgs e)
@@ -113,6 +116,8 @@ namespace CtyTinLuong
             this.Hide();
             ucc.ShowDialog();
             this.Show();
+
+            doiMauTitle(sender, e);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -127,6 +132,8 @@ namespace CtyTinLuong
             this.Hide();
             ff.ShowDialog();
             this.Show();
+
+            doiMauTitle(sender, e);
         }
 
         private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -135,6 +142,8 @@ namespace CtyTinLuong
             this.Hide();
             ucc.ShowDialog();
             this.Show();
+
+            doiMauTitle(sender, e);
         }
 
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -143,6 +152,20 @@ namespace CtyTinLuong
             this.Hide();
             ff.ShowDialog();
             this.Show();
+
+            doiMauTitle(sender, e);
+        }
+
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
     }
 }
