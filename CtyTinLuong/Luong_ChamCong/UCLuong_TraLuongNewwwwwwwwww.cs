@@ -141,7 +141,6 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             mbThemMoiTraLuong = true;
-
             frmLuong_ChiTietTraLuong ff = new CtyTinLuong.frmLuong_ChiTietTraLuong();
             ff.Show();
         }
@@ -168,7 +167,7 @@ namespace CtyTinLuong
             if (checkCongNhanVien.Checked == true)
             {
                 checkDaiLy.Checked = false;
-                //Load_LockUp_DoiTuong();
+               // LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
@@ -177,7 +176,7 @@ namespace CtyTinLuong
             if (checkDaiLy.Checked == true)
             {
                 checkCongNhanVien.Checked = false;
-                //Load_LockUp_DoiTuong();
+              //  LoadData(_SoTrang, _SoDong, isload, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
