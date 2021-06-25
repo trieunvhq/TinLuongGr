@@ -927,7 +927,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tr_frmPrintBB_Ktra_DM_HHSX";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Print Sản Lượng Chi Tiết Lương";
+            this.Text = "Print Biên Bản Kiểm Tra Định Mức Hàng Hóa Sản Xuất";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Tr_frmPrintBB_Ktra_DM_HHSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();

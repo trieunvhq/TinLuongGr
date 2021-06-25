@@ -927,7 +927,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tr_frmPrintSanLuong_CT_Luong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Print Sản Lượng Chi Tiết Lương";
+            this.Text = "Print Chi Tiết Lương Sản Lượng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Tr_frmPrintSanLuong_CT_Luong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
