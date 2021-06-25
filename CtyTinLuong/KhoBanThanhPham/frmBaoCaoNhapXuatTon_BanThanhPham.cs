@@ -320,7 +320,9 @@ namespace CtyTinLuong
                     miiID_VTHH = Convert.ToInt16(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                    
                     frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham ff2 = new frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham();
-                    ff2.Show();
+                    this.Hide();
+                    ff2.ShowDialog();
+                    this.Show();
                 }
 
             }

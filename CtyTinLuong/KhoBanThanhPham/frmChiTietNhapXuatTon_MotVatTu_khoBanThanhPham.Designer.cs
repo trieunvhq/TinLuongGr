@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -777,7 +776,10 @@
             this.ClientSize = new System.Drawing.Size(871, 487);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Xuất Tồn";
             this.Load += new System.EventHandler(this.frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham_Load);
             this.groupBox1.ResumeLayout(false);
