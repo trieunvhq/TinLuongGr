@@ -28,6 +28,7 @@ namespace CtyTinLuong
         private void Form1_Load(object sender, EventArgs e)
         {
             miID_DangNhap = 1;
+            txtTen.Focus();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
