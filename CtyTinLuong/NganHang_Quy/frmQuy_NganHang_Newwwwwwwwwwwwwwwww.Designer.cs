@@ -44,7 +44,6 @@
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -165,16 +164,6 @@
             this.panelControl1.Size = new System.Drawing.Size(969, 606);
             this.panelControl1.TabIndex = 75;
             // 
-            // btThooat
-            // 
-            this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(1069, 624);
-            this.btThooat.Name = "btThooat";
-            this.btThooat.Size = new System.Drawing.Size(75, 23);
-            this.btThooat.TabIndex = 76;
-            this.btThooat.Text = "Thoát";
-            this.btThooat.Click += new System.EventHandler(this.btThooat_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -192,7 +181,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 655);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btThooat);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -223,7 +211,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btThooat;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
     }

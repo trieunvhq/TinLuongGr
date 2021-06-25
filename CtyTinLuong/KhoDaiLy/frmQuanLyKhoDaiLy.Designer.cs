@@ -45,7 +45,6 @@
             this.navXuatKho = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.btThooat = new DevExpress.XtraEditors.SimpleButton();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navNhapKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
@@ -161,17 +160,6 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
-            // btThooat
-            // 
-            this.btThooat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btThooat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThooat.Location = new System.Drawing.Point(1064, 628);
-            this.btThooat.Name = "btThooat";
-            this.btThooat.Size = new System.Drawing.Size(75, 23);
-            this.btThooat.TabIndex = 67;
-            this.btThooat.Text = "Thoát";
-            this.btThooat.Click += new System.EventHandler(this.btThooat_Click);
-            // 
             // navBarControl1
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
@@ -263,7 +251,6 @@
             this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.btThooat);
             this.Controls.Add(this.navBarControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -292,7 +279,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
-        private DevExpress.XtraEditors.SimpleButton btThooat;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
         private DevExpress.XtraNavBar.NavBarItem navNhapKho;
         private DevExpress.XtraNavBar.NavBarItem navXuatKho;
