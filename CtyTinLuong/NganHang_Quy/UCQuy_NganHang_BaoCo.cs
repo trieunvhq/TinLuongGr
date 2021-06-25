@@ -63,8 +63,12 @@ namespace CtyTinLuong
             gridControl1.DataSource = dxxxx;
 
         }
-        public UCQuy_NganHang_BaoCo()
+
+        frmQuy_NganHang_Newwwwwwwwwwwwwwwww _frmQNH;
+
+        public UCQuy_NganHang_BaoCo(frmQuy_NganHang_Newwwwwwwwwwwwwwwww frmQNH)
         {
+            _frmQNH = frmQNH;
             InitializeComponent();
         }
 
@@ -86,7 +90,9 @@ namespace CtyTinLuong
             mbThemMoi_ThuChi = true;
            
             Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-            ff.Show();
+            _frmQNH.Hide();
+            ff.ShowDialog();
+            _frmQNH.Show();
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -105,7 +111,9 @@ namespace CtyTinLuong
                 mbThemMoi_ThuChi = false;
                 miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());               
                 Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                ff.Show();
+                _frmQNH.Hide();
+                ff.ShowDialog();
+                _frmQNH.Show();
             }
 
         }

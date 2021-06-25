@@ -1038,55 +1038,59 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            mbPrint = true;
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            DataTable dttttt2 = dv1212.ToTable();
-            string shienthi = "1";
-            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-            DataView dv = dttttt2.DefaultView;
-            mdtCHiTietTaKhoan_print = dv.ToTable();
-
-            mbTienUSD = checkUSD.Checked;
-            mdaNgayThang = dteNgayChungTu.DateTime;
-            msNguoiNopTen = txtDoiTuong.Text.ToString();
-            msDiaChi = txtDoiTuong.Text.ToString();
-            msDienGiai = txtDienGiai.Text.ToString();
-            msSoChungTu = txtSoChungTu.Text.ToString();
-            string Str1 = msSoChungTu.Substring(0, 2);//Cắt chuỗi từ vị trí đầu tiên(vị trí 0) đến vị trí số 2
-            if (Str1 == "BC")
-                msLoaiChungTu = "BÁO CÓ";
-            if (Str1 == "BN")
-                msLoaiChungTu = "BÁO NỢ";
-            if (Str1 == "PT")
-                msLoaiChungTu = "PHIẾU THU";
-            if (Str1 == "PC")
-                msLoaiChungTu = "PHIẾU CHI";
-
-            mdbSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
-            mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-            for (int i = 0; i < mdtCHiTietTaKhoan_print.Rows.Count; i++)
+            try
             {
-                clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                if (Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["No"].ToString()) == 0 & Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["Co"].ToString()) > 0)
-                {
-                    clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtCHiTietTaKhoan_print.Rows[i]["SoTaiKhoanCon"].ToString());
-                    DataTable dtcon = clscon.SelectOne();
-                    ms_TaiKhoanCo = clscon.sSoTaiKhoanCon.Value;
-                }
-                if (Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["No"].ToString()) > 0 & Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["Co"].ToString()) == 0)
-                {
-                    clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtCHiTietTaKhoan_print.Rows[i]["SoTaiKhoanCon"].ToString());
-                    DataTable dtcon = clscon.SelectOne();
-                    msTaiKhoan_No = clscon.sSoTaiKhoanCon.Value;
-                }
-            }
+                mbPrint = true;
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dttttt2 = dv1212.ToTable();
+                string shienthi = "1";
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                mdtCHiTietTaKhoan_print = dv.ToTable();
 
-            frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No ff = new frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No();
-            ff.Show();
+                mbTienUSD = checkUSD.Checked;
+                mdaNgayThang = dteNgayChungTu.DateTime;
+                msNguoiNopTen = txtDoiTuong.Text.ToString();
+                msDiaChi = txtDoiTuong.Text.ToString();
+                msDienGiai = txtDienGiai.Text.ToString();
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                string Str1 = msSoChungTu.Substring(0, 2);//Cắt chuỗi từ vị trí đầu tiên(vị trí 0) đến vị trí số 2
+                if (Str1 == "BC")
+                    msLoaiChungTu = "BÁO CÓ";
+                if (Str1 == "BN")
+                    msLoaiChungTu = "BÁO NỢ";
+                if (Str1 == "PT")
+                    msLoaiChungTu = "PHIẾU THU";
+                if (Str1 == "PC")
+                    msLoaiChungTu = "PHIẾU CHI";
+
+                mdbSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
+                mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
+                for (int i = 0; i < mdtCHiTietTaKhoan_print.Rows.Count; i++)
+                {
+                    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
+                    if (Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["No"].ToString()) == 0 & Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["Co"].ToString()) > 0)
+                    {
+                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtCHiTietTaKhoan_print.Rows[i]["SoTaiKhoanCon"].ToString());
+                        DataTable dtcon = clscon.SelectOne();
+                        ms_TaiKhoanCo = clscon.sSoTaiKhoanCon.Value;
+                    }
+                    if (Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["No"].ToString()) > 0 & Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["Co"].ToString()) == 0)
+                    {
+                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtCHiTietTaKhoan_print.Rows[i]["SoTaiKhoanCon"].ToString());
+                        DataTable dtcon = clscon.SelectOne();
+                        msTaiKhoan_No = clscon.sSoTaiKhoanCon.Value;
+                    }
+                }
+
+                frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No ff = new frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No();
+                ff.ShowDialog();
+            }
+            catch { }
         }
     }
 }

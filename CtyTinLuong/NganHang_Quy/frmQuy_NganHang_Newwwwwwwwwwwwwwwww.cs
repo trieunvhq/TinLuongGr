@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraNavBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,10 +69,12 @@ namespace CtyTinLuong
         private void navBaoCo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 1;
-            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo();
+            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void frmQuy_NganHang_Newwwwwwwwwwwwwwwww_Load(object sender, EventArgs e)
@@ -82,28 +85,34 @@ namespace CtyTinLuong
         private void navBaoNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 2;
-            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo();
+            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navPhieuThu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 4;
-            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo();
+            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navPhieuChi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 3;
-            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo();
+            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void btThooat_Click(object sender, EventArgs e)
@@ -120,15 +129,31 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmChiTietBienDongTaiKhoan ff = new CtyTinLuong.frmChiTietBienDongTaiKhoan();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
+
+            doiMauTitle(sender, e);
         }
 
-    
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
     }
 }

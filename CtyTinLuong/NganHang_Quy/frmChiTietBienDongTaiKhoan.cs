@@ -152,46 +152,52 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
+            try
             {
-                DataTable DatatableABC = (DataTable)gridControl1.DataSource;              
-
-                if (DatatableABC.Rows.Count == 0)
+                if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
                 {
-                  
-                    MessageBox.Show("Không có dữ liệu");
+                    DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+
+                    if (DatatableABC.Rows.Count == 0)
+                    {
+
+                        MessageBox.Show("Không có dữ liệu");
+                    }
+
+                    else
+                    {
+                        CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                        string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                        DataView dv1212 = new DataView(DatatableABC);
+                        dv1212.RowFilter = filterString;
+                        mdt_ChiTiet_Print = dv1212.ToTable();
+
+                        mbPrint = true;
+                        mdteTuNgay = dteTuNgay.DateTime;
+                        mdteDenNgay = dteDenNgay.DateTime;
+                        mssoTK_me = gridNhomDoiTuong.Text.ToString();
+                        msTenTK_me = txtTenTKMe.Text;
+                        int iiDi = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+                        clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+                        cls.iID_TaiKhoanKeToanMe = iiDi;
+                        DataTable dt = cls.SelectOne();
+                        if (cls.iID_TaiKhoanKeToanMe == 287)
+                            msTieuDe = "SỔ TỔNG HỢP PHẢI TRẢ CHO NGƯỜI BÁN";
+                        else if (cls.iID_TaiKhoanKeToanMe == 268)
+                            msTieuDe = "SỔ TỔNG HỢP PHẢI THU CỦA KHÁCH HÀNG";
+                        else if (cls.iID_TaiKhoanKeToanMe == 265)
+                            msTieuDe = "SỔ TỔNG HỢP TIỀN GỬI NGÂN HÀNG";
+                        else if (cls.iID_TaiKhoanKeToanMe == 315)
+                            msTieuDe = "SỔ TỔNG HỢP TIỀN MẶT";
+                        else msTieuDe = "SỔ TỔNG HỢP TÀI KHOẢN";
+                        frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
+                        ff.ShowDialog();
+                    }
                 }
-
-                else
-                {
-                    CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-                    string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                    DataView dv1212 = new DataView(DatatableABC);
-                    dv1212.RowFilter = filterString;
-                    mdt_ChiTiet_Print = dv1212.ToTable();
-
-                    mbPrint = true;
-                    mdteTuNgay = dteTuNgay.DateTime;
-                    mdteDenNgay = dteDenNgay.DateTime;
-                    mssoTK_me = gridNhomDoiTuong.Text.ToString();
-                    msTenTK_me = txtTenTKMe.Text;
-                    int iiDi = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
-                    clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
-                    cls.iID_TaiKhoanKeToanMe = iiDi;
-                    DataTable dt = cls.SelectOne();
-                    if (cls.iID_TaiKhoanKeToanMe == 287)
-                        msTieuDe = "SỔ TỔNG HỢP PHẢI TRẢ CHO NGƯỜI BÁN";
-                    else if (cls.iID_TaiKhoanKeToanMe == 268)
-                        msTieuDe = "SỔ TỔNG HỢP PHẢI THU CỦA KHÁCH HÀNG";
-                    else if (cls.iID_TaiKhoanKeToanMe == 265)
-                        msTieuDe = "SỔ TỔNG HỢP TIỀN GỬI NGÂN HÀNG";
-                    else if (cls.iID_TaiKhoanKeToanMe == 315)
-                        msTieuDe = "SỔ TỔNG HỢP TIỀN MẶT";
-                    else msTieuDe = "SỔ TỔNG HỢP TÀI KHOẢN";
-                    frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                    ff.Show();
-
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo");
             }
         }
 
@@ -203,7 +209,9 @@ namespace CtyTinLuong
                 mdteDenNgay = dteDenNgay.DateTime;               
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 frmChiTietBienDongTaiKhoan_Mot_TaiKhoan ff = new frmChiTietBienDongTaiKhoan_Mot_TaiKhoan();
-                ff.Show();
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
         }
 
