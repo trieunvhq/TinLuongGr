@@ -343,10 +343,8 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
 
                 frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
-                ff.Show();
-
+                ff.ShowDialog();
             }
-           
         }
 
         public DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton()

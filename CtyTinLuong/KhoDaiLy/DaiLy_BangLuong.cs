@@ -129,8 +129,7 @@ namespace CtyTinLuong
                 miThang = Convert.ToInt32(txtThang.Text);
                 miNam = Convert.ToInt32(txtNam.Text);
                 frmPrint_LuongDaiLy_TrongThang ff = new frmPrint_LuongDaiLy_TrongThang();
-                ff.Show();
-
+                ff.ShowDialog();
             }
         }
 
@@ -169,7 +168,7 @@ namespace CtyTinLuong
                 miThang = Convert.ToInt32(txtThang.Text);
                 miNam = Convert.ToInt32(txtNam.Text);
                 frmPrint_LuongDaiLy_TrongThang ff = new frmPrint_LuongDaiLy_TrongThang();
-                ff.Show();
+                ff.ShowDialog();
 
             }
         }

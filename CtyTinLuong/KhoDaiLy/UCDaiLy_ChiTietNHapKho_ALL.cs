@@ -98,8 +98,11 @@ namespace CtyTinLuong
 
 
         }
-        public UCDaiLy_ChiTietNHapKho_ALL()
+
+        frmQuanLyKhoDaiLy _frmQLKDL;
+        public UCDaiLy_ChiTietNHapKho_ALL(frmQuanLyKhoDaiLy frmQLKDL)
         {
+            _frmQLKDL = frmQLKDL;
             InitializeComponent();
         }
 
@@ -125,7 +128,7 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            gridControl1.ShowPrintPreview();
+            //gridControl1.ShowPrintPreview();
         }
     }
 }

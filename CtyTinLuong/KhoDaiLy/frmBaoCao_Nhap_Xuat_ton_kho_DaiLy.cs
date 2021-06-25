@@ -439,8 +439,9 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
-                ff.Show();
-
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
         }
         
@@ -473,8 +474,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
                 
                 frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
-                ff.Show();
-
+                ff.ShowDialog();
             }
         }
     

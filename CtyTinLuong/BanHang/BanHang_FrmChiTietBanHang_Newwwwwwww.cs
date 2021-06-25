@@ -1290,7 +1290,7 @@ namespace CtyTinLuong
             mdaNgayChungTu = dteNgayChungTu.DateTime;
             mdbSoLuongXuat = Convert.ToDouble(gridView4.GetRowCellValue(0,clSoLuong).ToString());
             BanHang_FrmThamChieuKeHoachSanXuat ff = new CtyTinLuong.BanHang_FrmThamChieuKeHoachSanXuat();
-            ff.Show();
+            ff.ShowDialog();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

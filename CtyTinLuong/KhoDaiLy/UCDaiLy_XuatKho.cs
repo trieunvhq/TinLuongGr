@@ -98,9 +98,11 @@ namespace CtyTinLuong
             gridControl2.DataSource = dt2;
 
         }
-       
-        public UCDaiLy_XuatKho()
+
+        frmQuanLyKhoDaiLy _frmQLKDL;
+        public UCDaiLy_XuatKho(frmQuanLyKhoDaiLy frmQLKDL)
         {
+            _frmQLKDL = frmQLKDL;
             InitializeComponent();
         }
 
@@ -144,7 +146,9 @@ namespace CtyTinLuong
             
             miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
             frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-            ff.Show();
+            _frmQLKDL.Hide();
+            ff.ShowDialog();
+            _frmQLKDL.Show();
         }
 
       

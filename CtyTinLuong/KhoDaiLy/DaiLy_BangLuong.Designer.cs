@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_BangLuong));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -62,6 +61,7 @@
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clMaDaiLy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_DaiLy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.txtNam = new System.Windows.Forms.TextBox();
             this.txtThang = new System.Windows.Forms.TextBox();
@@ -74,7 +74,6 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -486,6 +485,12 @@
             this.clID_DaiLy.FieldName = "ID_DaiLy";
             this.clID_DaiLy.Name = "clID_DaiLy";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "HienThi";
+            this.gridColumn1.FieldName = "HienThi";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
@@ -603,20 +608,15 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "HienThi";
-            this.gridColumn1.FieldName = "HienThi";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
             // DaiLy_BangLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 676);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_BangLuong";
-            this.Text = "Bảng thanh toán Lương đại lý";
+            this.Text = "Bảng Thanh Toán Lương Đại Lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DaiLy_BangLuong_Load);
             this.groupBox1.ResumeLayout(false);

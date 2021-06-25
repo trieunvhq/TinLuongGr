@@ -125,7 +125,7 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            gridControl1.ShowPrintPreview();
+            //gridControl1.ShowPrintPreview();
         }
     }
 }

@@ -675,42 +675,49 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            mbPrint_Chitiet_XuatKho_DaiLyGiaCong = true;
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            DataTable dttttt2 = dv1212.ToTable();
-            string shienthi = "1";
-            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-            DataView dv = dttttt2.DefaultView;
-            mdt_ChiTietXuatKho = dv.ToTable();
+            try
+            {
+                mbPrint_Chitiet_XuatKho_DaiLyGiaCong = true;
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dttttt2 = dv1212.ToTable();
+                string shienthi = "1";
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                mdt_ChiTietXuatKho = dv.ToTable();
 
 
-            clsTbDanhMuc_DaiLy clsncc = new clsTbDanhMuc_DaiLy();
-            clsncc.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            DataTable dt = clsncc.SelectOne();
-            msDiaChiDaiLy = clsncc.sDiaChi.Value;
-            msSDTDaiLy = clsncc.sSoDienThoai.Value;
-            msMaDaiLy = clsncc.sMaDaiLy.Value;
+                clsTbDanhMuc_DaiLy clsncc = new clsTbDanhMuc_DaiLy();
+                clsncc.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                DataTable dt = clsncc.SelectOne();
+                msDiaChiDaiLy = clsncc.sDiaChi.Value;
+                msSDTDaiLy = clsncc.sSoDienThoai.Value;
+                msMaDaiLy = clsncc.sMaDaiLy.Value;
 
 
-            msTenThanhPham = txtTenThanhPhamQuyDoi.Text.ToString();
-            msdvtthanhphamquydoi = txtDVTThanhPhamQuyDoi.Text.ToString();
-            msMaThanhPham = txtMaTPQuyDoi.Text.ToString();
+                msTenThanhPham = txtTenThanhPhamQuyDoi.Text.ToString();
+                msdvtthanhphamquydoi = txtDVTThanhPhamQuyDoi.Text.ToString();
+                msMaThanhPham = txtMaTPQuyDoi.Text.ToString();
 
-            mfsoluongtpqiuydoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                mfsoluongtpqiuydoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
 
-            mdaNgayXuatKho = dteNgayChungTu.DateTime;
-            msSoChungTu = txtSoChungTu.Text.ToString();
-            msDienGiaig = txtDienGiai.Text.ToString();
-            msThuKho = txtTenNguoiLap.Text.ToString();
-            msNguoiNhan = txtTenDaiLy.Text.ToString();
-            msNguoiLap = "Phạm Thị Lành";
-            msGhiChu = txtGhiChu.Text.ToString();
-            frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
-            ff.Show();
+                mdaNgayXuatKho = dteNgayChungTu.DateTime;
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                msDienGiaig = txtDienGiai.Text.ToString();
+                msThuKho = txtTenNguoiLap.Text.ToString();
+                msNguoiNhan = txtTenDaiLy.Text.ToString();
+                msNguoiLap = "Phạm Thị Lành";
+                msGhiChu = txtGhiChu.Text.ToString();
+                frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
+                ff.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Liên hệ bên viết phần mềm để khắc phục sự cố này!", "Thông báo");
+            }
         }
 
         private void DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_FormClosed(object sender, FormClosedEventArgs e)

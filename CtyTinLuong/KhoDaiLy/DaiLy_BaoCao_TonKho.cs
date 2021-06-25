@@ -268,7 +268,9 @@ namespace CtyTinLuong
                 miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 mdadenngay = dteDenNgay.DateTime;
                 DaiLy_Frm_TonKho_MotVatTu ff = new DaiLy_Frm_TonKho_MotVatTu();
-                ff.Show();
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
         }
 
@@ -289,7 +291,7 @@ namespace CtyTinLuong
                 mbPrint = true;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_BaoCao_TonKho ff = new CtyTinLuong.frmPrint_BaoCao_TonKho();
-                ff.Show();
+                ff.ShowDialog();
             }
          
         }

@@ -110,8 +110,10 @@ namespace CtyTinLuong
             }
         }
 
-        public UC_DaiLy_NhapKho_ChoGhiSo()
+        frmQuanLyKhoDaiLy _frmQLKDL;
+        public UC_DaiLy_NhapKho_ChoGhiSo(frmQuanLyKhoDaiLy frmQLKDL)
         {
+            _frmQLKDL = frmQLKDL;
             InitializeComponent();
         }
 
@@ -137,7 +139,9 @@ namespace CtyTinLuong
             mbThemMoi_nhapKhoDaiLy = false;
             miID_NhapKhoDaiLy= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
             DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww ff = new DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww();
-            ff.Show();
+            _frmQLKDL.Hide();
+            ff.ShowDialog();
+            _frmQLKDL.Show();
         }
 
  
@@ -183,8 +187,6 @@ namespace CtyTinLuong
                    
                 }
             }
-
-           
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)

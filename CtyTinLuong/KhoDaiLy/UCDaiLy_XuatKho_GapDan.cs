@@ -94,8 +94,11 @@ namespace CtyTinLuong
           
 
         }
-        public UCDaiLy_XuatKho_GapDan()
+
+        frmQuanLyKhoDaiLy _frmQLKDL;
+        public UCDaiLy_XuatKho_GapDan(frmQuanLyKhoDaiLy frmQLKDL)
         {
+            _frmQLKDL = frmQLKDL;
             InitializeComponent();
         }
 
@@ -129,9 +132,10 @@ namespace CtyTinLuong
                 mbcopy = false;
                 miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
-                ff.Show();
+                _frmQLKDL.Hide();
+                ff.ShowDialog();
+                _frmQLKDL.Show();
             }
-           
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
@@ -173,12 +177,13 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-           
             mbthemmoi = true;
             mbsua = false;
             mbcopy = false;
             DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
-            ff.Show();
+            _frmQLKDL.Hide();
+            ff.ShowDialog();
+            _frmQLKDL.Show();
         }
     }
 }

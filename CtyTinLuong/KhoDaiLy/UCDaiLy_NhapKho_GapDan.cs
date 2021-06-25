@@ -180,8 +180,10 @@ namespace CtyTinLuong
 
         }
 
-        public UCDaiLy_NhapKho_GapDan()
+        frmQuanLyKhoDaiLy _frmQLKDL;
+        public UCDaiLy_NhapKho_GapDan(frmQuanLyKhoDaiLy frmQLKDL)
         {
+            _frmQLKDL = frmQLKDL;
             InitializeComponent();
         }
 
@@ -212,9 +214,10 @@ namespace CtyTinLuong
             {
                 miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
                 DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan();
-                ff.Show();
+                _frmQLKDL.Hide();
+                ff.ShowDialog();
+                _frmQLKDL.Show();
             }
-           
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)

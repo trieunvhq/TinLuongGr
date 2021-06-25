@@ -251,9 +251,8 @@ namespace CtyTinLuong
                 msTenVT = txtTenVT.Text.ToString();
                 msDonViTinh = txtDVT.Text.ToString();
                 frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
-                ff.Show();
+                ff.ShowDialog();
             }
-            
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

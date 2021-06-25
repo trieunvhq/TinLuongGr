@@ -103,7 +103,7 @@ namespace CtyTinLuong
             mdtPrint = dv1212.ToTable();           
             mdadenngay = dteDenNgay.DateTime;        
             frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
-            ff.Show();
+            ff.ShowDialog();
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
