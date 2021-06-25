@@ -100,8 +100,11 @@ namespace CtyTinLuong
 
             gridControl2.DataSource = dt2;
         }
-        public UCThanhPham_XuatKhoBanHang_Newwwwwwwwww()
+
+        frmQuanLyKhoThanhPham _frmQLKTP;
+        public UCThanhPham_XuatKhoBanHang_Newwwwwwwwww(frmQuanLyKhoThanhPham frmQLKTP)
         {
+            _frmQLKTP = frmQLKTP;
             InitializeComponent();
         }
 
@@ -125,7 +128,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopY = false;
             KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii ff = new KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
-            ff.Show();
+            _frmQLKTP.Hide();
+            ff.ShowDialog();
+            _frmQLKTP.Show();
         }
 
         private void btCopy_Click(object sender, EventArgs e)
@@ -134,7 +139,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopY = true;
             KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii ff = new KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
-            ff.Show();
+            _frmQLKTP.Hide();
+            ff.ShowDialog();
+            _frmQLKTP.Show();
         }
 
         private void btXoa1_Click(object sender, EventArgs e)
@@ -188,7 +195,9 @@ namespace CtyTinLuong
                 miiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
 
                 KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii ff = new KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
-                ff.Show();
+                _frmQLKTP.Hide();
+                ff.ShowDialog();
+                _frmQLKTP.Show();
             }
         }
 

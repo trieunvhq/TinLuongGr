@@ -115,9 +115,11 @@ namespace CtyTinLuong
 
 
         }
-      
-        public UCThanhPham_DaXuatKho()
+
+        frmQuanLyKhoThanhPham _frmQLKTP;
+        public UCThanhPham_DaXuatKho(frmQuanLyKhoThanhPham frmQLKTP)
         {
+            _frmQLKTP = frmQLKTP;
             InitializeComponent();
         }
 
@@ -203,7 +205,9 @@ namespace CtyTinLuong
                 {
                     miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                     KhoThanhPham_frmChiTiet_Da_XuatKho ff = new KhoThanhPham_frmChiTiet_Da_XuatKho();
-                    ff.Show();
+                    _frmQLKTP.Hide();
+                    ff.ShowDialog();
+                    _frmQLKTP.Show();
                 }
             }
             catch

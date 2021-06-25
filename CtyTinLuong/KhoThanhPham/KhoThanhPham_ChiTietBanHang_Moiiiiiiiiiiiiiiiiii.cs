@@ -1593,7 +1593,7 @@ namespace CtyTinLuong
 
 
                 frmPrint_BanHang ff = new frmPrint_BanHang();
-                ff.Show();
+                ff.ShowDialog();
 
             }
         }
@@ -1621,7 +1621,7 @@ namespace CtyTinLuong
                 mdbTongTienVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
                 msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.Show();
+                ff.ShowDialog();
 
             }
         }

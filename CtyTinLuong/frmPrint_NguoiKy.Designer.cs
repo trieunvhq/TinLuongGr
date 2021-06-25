@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrint_NguoiKy));
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -323,6 +322,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPrint_NguoiKy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cài Đặt Mặc Định Người Ký";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_NguoiKy_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_NguoiKy_Load);

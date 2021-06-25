@@ -201,8 +201,11 @@ namespace CtyTinLuong
 
             }
         }
-        public UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww()
+
+        frmQuanLyKhoThanhPham _frmQLKTP;
+        public UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww(frmQuanLyKhoThanhPham frmQLKTP)
         {
+            _frmQLKTP = frmQLKTP;
             InitializeComponent();
         }
 
@@ -301,7 +304,9 @@ namespace CtyTinLuong
                 mbSua = true;
                 miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-                ff.Show();
+                _frmQLKTP.Hide();
+                ff.ShowDialog();
+                _frmQLKTP.Show();
             }
            
         }
@@ -310,7 +315,9 @@ namespace CtyTinLuong
         {
             mbThemMoi_XuatKhohoDaiLy = true;
             KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-            ff.Show();
+            _frmQLKTP.Hide();
+            ff.ShowDialog();
+            _frmQLKTP.Show();
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

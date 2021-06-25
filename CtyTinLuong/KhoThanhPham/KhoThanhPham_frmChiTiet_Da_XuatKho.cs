@@ -466,11 +466,10 @@ namespace CtyTinLuong
                     msNguoinhanhang = txtNguoiNhanHang.Text.ToString();
                 else
                     msNguoinhanhang = txtTenKH.Text.ToString();
-               mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
                 msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.Show();
-
+                ff.ShowDialog();
             }
         }
     }

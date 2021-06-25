@@ -357,9 +357,6 @@ namespace CtyTinLuong
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
                 ff.ShowDialog();
             }
-      
-
-          
         }
     }
 }
