@@ -1454,8 +1454,6 @@ namespace CtyTinLuong
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
 
                     HienThi_GridControl_ThemMoi_newwwwwww();
-
-
             }
             catch
             {
@@ -1492,42 +1490,43 @@ namespace CtyTinLuong
         
         private void btPrint_Click(object sender, EventArgs e)
         {
-            
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            DataTable dttttt2 = dv1212.ToTable();
-            string shienthi = "1";
-            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-            DataView dv = dttttt2.DefaultView;
-            mdt_ChiTietXuatKho = dv.ToTable();
-            if (mdt_ChiTietXuatKho.Rows.Count > 0)
+            try
             {
-                mbPrint_Chitiet_XuatKho_DaiLyGiaCong = true;
-                clsTbDanhMuc_DaiLy clsncc = new clsTbDanhMuc_DaiLy();
-                clsncc.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                DataTable dt = clsncc.SelectOne();
-                msDiaChiDaiLy = clsncc.sDiaChi.Value;
-                msSDTDaiLy = clsncc.sSoDienThoai.Value;
-                msMaDaiLy = clsncc.sMaDaiLy.Value;
-                msTenThanhPham = txtTenThanhPhamQuyDoi.Text.ToString();
-                msdvtthanhphamquydoi = txtDVTThanhPhamQuyDoi.Text.ToString();
-                msMaThanhPham = txtMaTPQuyDoi.Text.ToString();
-                mfPrint_soluongtpqiuydoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
-                mdaNgayXuatKho = dteNgayChungTu.DateTime;
-                msSoChungTu = txtSoChungTu.Text.ToString();
-                msDienGiaig = txtDienGiai.Text.ToString();
-                msThuKho = txtTenNguoiLap.Text.ToString();
-                msNguoiNhan = txtTenDaiLy.Text.ToString();              
-                msGhiChu = txtGhiChu.Text.ToString();
-                frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
-                ff.Show();
+
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dttttt2 = dv1212.ToTable();
+                string shienthi = "1";
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                mdt_ChiTietXuatKho = dv.ToTable();
+                if (mdt_ChiTietXuatKho.Rows.Count > 0)
+                {
+                    mbPrint_Chitiet_XuatKho_DaiLyGiaCong = true;
+                    clsTbDanhMuc_DaiLy clsncc = new clsTbDanhMuc_DaiLy();
+                    clsncc.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                    DataTable dt = clsncc.SelectOne();
+                    msDiaChiDaiLy = clsncc.sDiaChi.Value;
+                    msSDTDaiLy = clsncc.sSoDienThoai.Value;
+                    msMaDaiLy = clsncc.sMaDaiLy.Value;
+                    msTenThanhPham = txtTenThanhPhamQuyDoi.Text.ToString();
+                    msdvtthanhphamquydoi = txtDVTThanhPhamQuyDoi.Text.ToString();
+                    msMaThanhPham = txtMaTPQuyDoi.Text.ToString();
+                    mfPrint_soluongtpqiuydoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                    mdaNgayXuatKho = dteNgayChungTu.DateTime;
+                    msSoChungTu = txtSoChungTu.Text.ToString();
+                    msDienGiaig = txtDienGiai.Text.ToString();
+                    msThuKho = txtTenNguoiLap.Text.ToString();
+                    msNguoiNhan = txtTenDaiLy.Text.ToString();
+                    msGhiChu = txtGhiChu.Text.ToString();
+                    frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
+                    ff.ShowDialog();
+                }
             }
-
-
-
+            catch { }
         }
 
         private void NPLChiTietNhapKho_DaiLy_ThemMoi_FormClosed(object sender, FormClosedEventArgs e)

@@ -409,28 +409,31 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            DataTable dttttt2 = dv1212.ToTable();
-            string shienthi = "1";
-            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-            DataView dv = dttttt2.DefaultView;
-            mdtPrint = dv.ToTable();
-            if (mdtPrint.Rows.Count > 0)
+            try
             {
-                mbPrint = true;
-                mdaNgayChungTu = dteNgayChungTu.DateTime;
-                msSoChungTu = txtSoChungTu.Text.ToString();
-                msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
-                mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                msDienGiai = txtDienGiai.Text.ToString();
-                frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.Show();
-
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dttttt2 = dv1212.ToTable();
+                string shienthi = "1";
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                mdtPrint = dv.ToTable();
+                if (mdtPrint.Rows.Count > 0)
+                {
+                    mbPrint = true;
+                    mdaNgayChungTu = dteNgayChungTu.DateTime;
+                    msSoChungTu = txtSoChungTu.Text.ToString();
+                    msNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                    mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                    msDienGiai = txtDienGiai.Text.ToString();
+                    frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
+                    ff.ShowDialog();
+                }
             }
+            catch { }
         }
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)

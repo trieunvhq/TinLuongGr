@@ -182,8 +182,11 @@ namespace CtyTinLuong
 
 
         }
-        public UCNPL_XuatKho_GapDan()
+
+        KhoNPL_frmNPL _frmKNPL;
+        public UCNPL_XuatKho_GapDan(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -217,7 +220,9 @@ namespace CtyTinLuong
                 mbSua = true;
                 miiID_NhapKhoGapDan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
                 KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
-                ff.Show();
+                _frmKNPL.Hide();
+                ff.ShowDialog();
+                _frmKNPL.Show();
             }
         }
 
@@ -318,7 +323,9 @@ namespace CtyTinLuong
             mbCopy = false;
             mbSua = false;
             KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
-            ff.Show();
+            _frmKNPL.Hide();
+            ff.ShowDialog();
+            _frmKNPL.Show();
         }
     }
 }

@@ -411,7 +411,7 @@ namespace CtyTinLuong
                 mdbTongSotien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
                 msDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.Show();
+                ff.ShowDialog();
 
             }
 

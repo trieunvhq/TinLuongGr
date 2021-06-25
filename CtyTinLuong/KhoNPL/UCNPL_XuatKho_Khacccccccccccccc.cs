@@ -107,8 +107,11 @@ namespace CtyTinLuong
 
 
         }
-        public UCNPL_XuatKho_Khacccccccccccccc()
+
+        KhoNPL_frmNPL _frmKNPL;
+        public UCNPL_XuatKho_Khacccccccccccccc(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -140,7 +143,9 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 miiD_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
                 KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
-                ff.Show();
+                _frmKNPL.Hide();
+                ff.ShowDialog();
+                _frmKNPL.Show();
             }
         }
 
@@ -193,7 +198,9 @@ namespace CtyTinLuong
         {
             mbThemMoi = true;
             KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
-            ff.Show();
+            _frmKNPL.Hide();
+            ff.ShowDialog();
+            _frmKNPL.Show();
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

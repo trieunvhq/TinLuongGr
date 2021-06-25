@@ -103,8 +103,10 @@ namespace CtyTinLuong
 
         }
 
-        public UCKhoNPL_DaXuatKho()
+        KhoNPL_frmNPL _frmKNPL;
+        public UCKhoNPL_DaXuatKho(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -137,7 +139,9 @@ namespace CtyTinLuong
                 {
                     miD_XuatKhoNPL = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
                     frmKhoNPL_DaXuatKho ff = new frmKhoNPL_DaXuatKho();
-                    ff.Show();
+                    _frmKNPL.Hide();
+                    ff.ShowDialog();
+                    _frmKNPL.Show();
                 }
             }
             catch

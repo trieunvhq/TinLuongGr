@@ -100,8 +100,11 @@ namespace CtyTinLuong
             gridControl1.DataSource = dxxxx;
          
         }
-        public UC_KhoNVL_frmChoNhapKho()
+
+        KhoNPL_frmNPL _frmKNPL;
+        public UC_KhoNVL_frmChoNhapKho(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -121,7 +124,9 @@ namespace CtyTinLuong
                 {
                     miID_MuaHang_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     KhoNPL_frmChiTiet_MuaHang_NhapKho ff = new KhoNPL_frmChiTiet_MuaHang_NhapKho();
-                    ff.Show();
+                    _frmKNPL.Hide();
+                    ff.ShowDialog();
+                    _frmKNPL.Show();
                 }
             }
             catch

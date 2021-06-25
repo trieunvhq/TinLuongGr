@@ -105,9 +105,12 @@ namespace CtyTinLuong
 
 
         }
-      
-        public UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong()
+
+        KhoNPL_frmNPL _frmKNPL;
+
+        public UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -140,7 +143,9 @@ namespace CtyTinLuong
                 mbThemMoi_nhapKhoDaiLy = false;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
                 NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
-                ff.Show();
+                _frmKNPL.Hide();
+                ff.ShowDialog();
+                _frmKNPL.Show();
             }
         }
 
@@ -160,7 +165,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopy = false;
             NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
-            ff.Show();
+            _frmKNPL.Hide();
+            ff.ShowDialog();
+            _frmKNPL.Show();
         }
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

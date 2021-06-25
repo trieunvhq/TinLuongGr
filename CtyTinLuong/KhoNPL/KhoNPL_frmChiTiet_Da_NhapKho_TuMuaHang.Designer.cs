@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -633,11 +632,12 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btThoat2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết nhập kho";
+            this.Text = "Chi Tiết Nhập Kho";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang_FormClosed);
             this.Load += new System.EventHandler(this.KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang_Load_1);
             this.groupBox1.ResumeLayout(false);

@@ -166,27 +166,34 @@ namespace CtyTinLuong
         private void btPrint_Click(object sender, EventArgs e)
         {
           
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdt_ChiTiet_MotVatTu_N_X_T_Print = dv1212.ToTable();       
-         
-            if(mdt_ChiTiet_MotVatTu_N_X_T_Print.Rows.Count==0)
+           try
             {
-                MessageBox.Show("Không có dữ liệu");
-                return;
-                    
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                mdt_ChiTiet_MotVatTu_N_X_T_Print = dv1212.ToTable();
+
+                if (mdt_ChiTiet_MotVatTu_N_X_T_Print.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu");
+                    return;
+
+                }
+                else
+                {
+                    miID_VTHH = Convert.ToInt32(gridMaVT.EditValue.ToString());
+                    mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = true;
+                    mdatungay = dteTuNgay.DateTime;
+                    mdadenngay = dteDenNgay.DateTime;
+                    frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu();
+                    ff.ShowDialog();
+                }
             }
-            else
+            catch
             {
-                miID_VTHH = Convert.ToInt32(gridMaVT.EditValue.ToString());
-                mbPrint_NXT_Kho_NPL_ChiTiet_MotVatTu = true;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu();
-                ff.Show();
+                MessageBox.Show("Không có dữ liệu để in!", "Thông báo");
             }
            
         }

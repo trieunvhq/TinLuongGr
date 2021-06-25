@@ -113,8 +113,11 @@ namespace CtyTinLuong
 
 
         }
-        public UCNPL_NhapKho_Khacccccccccccc()
+
+        KhoNPL_frmNPL _frmKNPL;
+        public UCNPL_NhapKho_Khacccccccccccc(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -146,7 +149,9 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 miD_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
                 KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
-                ff.Show();
+                _frmKNPL.Hide();
+                ff.ShowDialog();
+                _frmKNPL.Show();
             }
         }
 
@@ -208,7 +213,9 @@ namespace CtyTinLuong
         {
             mbThemMoi = true;
             KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
-            ff.Show();
+            _frmKNPL.Hide();
+            ff.ShowDialog();
+            _frmKNPL.Show();
         }
     }
 }

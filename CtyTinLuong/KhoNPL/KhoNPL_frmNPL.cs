@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraNavBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,20 +60,23 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UC_KhoNVL_frmDaNhapKho uccc_DaNhapKho = new UC_KhoNVL_frmDaNhapKho();
+            UC_KhoNVL_frmDaNhapKho uccc_DaNhapKho = new UC_KhoNVL_frmDaNhapKho(this);
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
 
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            UC_KhoNVL_frmChoNhapKho uccc_ChoNhapKho = new UC_KhoNVL_frmChoNhapKho();
+            UC_KhoNVL_frmChoNhapKho uccc_ChoNhapKho = new UC_KhoNVL_frmChoNhapKho(this);
             uccc_ChoNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_ChoNhapKho);
             uccc_ChoNhapKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -94,10 +98,12 @@ namespace CtyTinLuong
 
         private void navBarItem7_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCNPL_XuatKho_TheoLenhSanXuat_mayIN uccc_XuatKho= new UCNPL_XuatKho_TheoLenhSanXuat_mayIN();
+            UCNPL_XuatKho_TheoLenhSanXuat_mayIN uccc_XuatKho= new UCNPL_XuatKho_TheoLenhSanXuat_mayIN(this);
             uccc_XuatKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_XuatKho);
             uccc_XuatKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem7_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -107,10 +113,12 @@ namespace CtyTinLuong
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCKhoNPL_DaXuatKho uccc_XuatKho = new UCKhoNPL_DaXuatKho();
+            UCKhoNPL_DaXuatKho uccc_XuatKho = new UCKhoNPL_DaXuatKho(this);
             uccc_XuatKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_XuatKho);
             uccc_XuatKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         
@@ -118,25 +126,30 @@ namespace CtyTinLuong
         private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmBaoCaoNXT ff = new frmBaoCaoNXT();
-            ff.Show();
-            
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
+
+            doiMauTitle(sender, e);
         }
 
       
 
         private void navBarItem3_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong uccc_XuatKho = new UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong();
+            UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong uccc_XuatKho = new UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong(this);
             uccc_XuatKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_XuatKho);
             uccc_XuatKho.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
       
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            ff.Show();
+            ff.ShowDialog();
         }
 
      
@@ -144,26 +157,44 @@ namespace CtyTinLuong
 
         private void navBarItem7_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCNPL_NhapKho_Khacccccccccccc ucc = new UCNPL_NhapKho_Khacccccccccccc();
+            UCNPL_NhapKho_Khacccccccccccc ucc = new UCNPL_NhapKho_Khacccccccccccc(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCNPL_XuatKho_Khacccccccccccccc ucc = new UCNPL_XuatKho_Khacccccccccccccc();
+            UCNPL_XuatKho_Khacccccccccccccc ucc = new UCNPL_XuatKho_Khacccccccccccccc(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem2_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UCNPL_XuatKho_GapDan ucc = new UCNPL_XuatKho_GapDan();
+            UCNPL_XuatKho_GapDan ucc = new UCNPL_XuatKho_GapDan(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+
+            doiMauTitle(sender, e);
+        }
+
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
     }
 }

@@ -107,9 +107,11 @@ namespace CtyTinLuong
 
 
         }
-      
-        public UC_KhoNVL_frmDaNhapKho()
+
+        KhoNPL_frmNPL _frmKNPL;
+        public UC_KhoNVL_frmDaNhapKho(KhoNPL_frmNPL frmKNPL)
         {
+            _frmKNPL = frmKNPL;
             InitializeComponent();
         }
 
@@ -131,7 +133,9 @@ namespace CtyTinLuong
                     msThamChieuMuaHang = gridView1.GetFocusedRowCellValue(clThamChieu).ToString();
                     miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
                     KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang ff = new KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang();
-                    ff.Show();
+                    _frmKNPL.Hide();
+                    ff.ShowDialog();
+                    _frmKNPL.Show();
                 }
             }
             catch
