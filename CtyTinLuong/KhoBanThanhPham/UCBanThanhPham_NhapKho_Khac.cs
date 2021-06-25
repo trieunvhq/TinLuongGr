@@ -108,8 +108,11 @@ namespace CtyTinLuong
 
 
         }
-        public UCBanThanhPham_NhapKho_Khac()
+
+        frmQuanLyKhoBanThanhPham _frmKBTP;
+        public UCBanThanhPham_NhapKho_Khac(frmQuanLyKhoBanThanhPham frmKBTP)
         {
+            _frmKBTP = frmKBTP;
             InitializeComponent();
         }
 
@@ -149,7 +152,9 @@ namespace CtyTinLuong
                 mbThemMoi_NhapKho = false;
                 miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
                 KhoBTP_ChiTiet_NhapKho_Khac ff = new KhoBTP_ChiTiet_NhapKho_Khac();
-                ff.Show();
+                _frmKBTP.Hide();
+                ff.ShowDialog();
+                _frmKBTP.Show();
             }
         }
 
@@ -162,7 +167,9 @@ namespace CtyTinLuong
         {
             mbThemMoi_NhapKho = true;
             KhoBTP_ChiTiet_NhapKho_Khac ff = new KhoBTP_ChiTiet_NhapKho_Khac();
-            ff.Show();
+            _frmKBTP.Hide();
+            ff.ShowDialog();
+            _frmKBTP.Show();
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

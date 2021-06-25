@@ -109,8 +109,10 @@ namespace CtyTinLuong
 
         }
 
-        public UCBanThanhPham_DaNhapKho()
+        frmQuanLyKhoBanThanhPham _frmKBTP;
+        public UCBanThanhPham_DaNhapKho(frmQuanLyKhoBanThanhPham frmKBTP)
         {
+            _frmKBTP = frmKBTP;
             InitializeComponent();
         }
 
@@ -144,7 +146,9 @@ namespace CtyTinLuong
                     
                     miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoBTP).ToString());
                     KhoBTP_ChiTiet_DaNhapKho ff = new KhoBTP_ChiTiet_DaNhapKho();
-                    ff.Show();
+                    _frmKBTP.Hide();
+                    ff.ShowDialog();
+                    _frmKBTP.Show();
                 }
             }
             catch

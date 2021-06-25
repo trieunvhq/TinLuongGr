@@ -131,8 +131,11 @@ namespace CtyTinLuong
 
             gridControl2.DataSource = dt2;
         }
-        public UCBTP_NhapKho_LSX_I_C_D()
+
+        frmQuanLyKhoBanThanhPham _frmKBTP;
+        public UCBTP_NhapKho_LSX_I_C_D(frmQuanLyKhoBanThanhPham frmKBTP)
         {
+            _frmKBTP = frmKBTP;
             InitializeComponent();
         }
 
@@ -165,7 +168,9 @@ namespace CtyTinLuong
                     msMaLenhSanxuat = gridView1.GetFocusedRowCellValue(clMaLenhSanXuat).ToString();
                     mID_iD_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
                     KhoBTP_ChiTiet_NhapKho_XuatKho_LSX ff = new KhoBTP_ChiTiet_NhapKho_XuatKho_LSX();
-                    ff.Show();
+                    _frmKBTP.Hide();
+                    ff.ShowDialog();
+                    _frmKBTP.Show();
                 }
             }
             catch

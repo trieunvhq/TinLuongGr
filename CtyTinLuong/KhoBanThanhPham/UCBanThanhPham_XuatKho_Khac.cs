@@ -110,8 +110,11 @@ namespace CtyTinLuong
 
 
         }
-        public UCBanThanhPham_XuatKho_Khac()
+
+        frmQuanLyKhoBanThanhPham _frmKBTP;
+        public UCBanThanhPham_XuatKho_Khac(frmQuanLyKhoBanThanhPham frmKBTP)
         {
+            _frmKBTP = frmKBTP;
             InitializeComponent();
         }
 
@@ -151,7 +154,9 @@ namespace CtyTinLuong
                 mbThemMoi_XuatKho = false;
                 miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoBTP).ToString());
                 KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
-                ff.Show();
+                _frmKBTP.Hide();
+                ff.ShowDialog();
+                _frmKBTP.Show();
             }
         }
 
@@ -173,7 +178,9 @@ namespace CtyTinLuong
         {
             mbThemMoi_XuatKho = true;
             KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
-            ff.Show();
+            _frmKBTP.Hide();
+            ff.ShowDialog();
+            _frmKBTP.Show();
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)

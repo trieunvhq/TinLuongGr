@@ -347,8 +347,7 @@ namespace CtyTinLuong
                     mdadenngay = dteDenNgay.DateTime;
                     msNguoiLap_Prtint = "";
                     frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
-                    ff.Show();
-
+                    ff.ShowDialog();
                 }
             }
         }

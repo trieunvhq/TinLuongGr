@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx));
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
-            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
+            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager();
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
             this.bbiDocumentMap = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.bbiParameters = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -924,8 +923,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-            this.Text = "frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+            this.Text = "Print";
             this.Load += new System.EventHandler(this.frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
