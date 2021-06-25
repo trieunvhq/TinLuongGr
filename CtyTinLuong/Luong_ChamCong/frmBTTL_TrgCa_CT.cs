@@ -175,6 +175,15 @@ namespace CtyTinLuong
             {
                 _ravi["ThucNhan"] = thuclinh_tong_.ToString("N0");
             }
+            // 
+            if (luongtrachnhiem_tong_ == 0)
+            {
+                _ravi["LuongTrachNhiem"] = "";
+            }
+            else
+            {
+                _ravi["LuongTrachNhiem"] = luongtrachnhiem_tong_.ToString("N0");
+            }
 
             _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;

@@ -238,10 +238,11 @@
             this.TenVTHH.Caption = "CÔNG";
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 2;
-            this.TenVTHH.Width = 100;
+            this.TenVTHH.Width = 69;
             // 
             // DonGia
             // 
@@ -252,6 +253,7 @@
             this.DonGia.FieldName = "DonGia";
             this.DonGia.MinWidth = 10;
             this.DonGia.Name = "DonGia";
+            this.DonGia.OptionsColumn.AllowEdit = false;
             this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
@@ -264,19 +266,18 @@
             this.DonGia.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
-            this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 4;
             this.DonGia.Width = 80;
             // 
             // SanLuong
             // 
             this.SanLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.SanLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SanLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SanLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SanLuong.Caption = "NGÀY CÔNG";
             this.SanLuong.FieldName = "SanLuong";
             this.SanLuong.MinWidth = 10;
             this.SanLuong.Name = "SanLuong";
+            this.SanLuong.OptionsColumn.AllowEdit = false;
             this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
@@ -300,8 +301,10 @@
             this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongLuong.Caption = "TỔNG";
             this.TongLuong.FieldName = "TongLuong";
-            this.TongLuong.MinWidth = 10;
+            this.TongLuong.MaxWidth = 100;
+            this.TongLuong.MinWidth = 100;
             this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowEdit = false;
             this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
@@ -315,18 +318,23 @@
             this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 6;
-            this.TongLuong.Width = 80;
+            this.TongLuong.VisibleIndex = 4;
+            this.TongLuong.Width = 93;
             // 
             // LuongTrachNhiem
             // 
+            this.LuongTrachNhiem.AppearanceCell.Options.UseTextOptions = true;
+            this.LuongTrachNhiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
             this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
+            this.LuongTrachNhiem.MaxWidth = 100;
+            this.LuongTrachNhiem.MinWidth = 100;
             this.LuongTrachNhiem.Name = "LuongTrachNhiem";
+            this.LuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.LuongTrachNhiem.Visible = true;
             this.LuongTrachNhiem.VisibleIndex = 5;
-            this.LuongTrachNhiem.Width = 80;
+            this.LuongTrachNhiem.Width = 100;
             // 
             // TongTien
             // 
@@ -335,8 +343,10 @@
             this.TongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongTien.Caption = "TỔNG";
             this.TongTien.FieldName = "TongTien";
-            this.TongTien.MinWidth = 10;
+            this.TongTien.MaxWidth = 100;
+            this.TongTien.MinWidth = 100;
             this.TongTien.Name = "TongTien";
+            this.TongTien.OptionsColumn.AllowEdit = false;
             this.TongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
@@ -350,8 +360,8 @@
             this.TongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 7;
-            this.TongTien.Width = 80;
+            this.TongTien.VisibleIndex = 6;
+            this.TongTien.Width = 93;
             // 
             // TamUng
             // 
@@ -360,8 +370,10 @@
             this.TamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TamUng.Caption = "TRỪ TẠM ỨNG";
             this.TamUng.FieldName = "TamUng";
-            this.TamUng.MinWidth = 10;
+            this.TamUng.MaxWidth = 100;
+            this.TamUng.MinWidth = 100;
             this.TamUng.Name = "TamUng";
+            this.TamUng.OptionsColumn.AllowEdit = false;
             this.TamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
@@ -375,8 +387,8 @@
             this.TamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.TamUng.Visible = true;
-            this.TamUng.VisibleIndex = 8;
-            this.TamUng.Width = 80;
+            this.TamUng.VisibleIndex = 7;
+            this.TamUng.Width = 92;
             // 
             // ThucNhan
             // 
@@ -385,8 +397,10 @@
             this.ThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThucNhan.Caption = "THỰC LĨNH";
             this.ThucNhan.FieldName = "ThucNhan";
-            this.ThucNhan.MinWidth = 10;
+            this.ThucNhan.MaxWidth = 100;
+            this.ThucNhan.MinWidth = 100;
             this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowEdit = false;
             this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
@@ -401,8 +415,8 @@
             this.ThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
-            this.ThucNhan.VisibleIndex = 9;
-            this.ThucNhan.Width = 80;
+            this.ThucNhan.VisibleIndex = 8;
+            this.ThucNhan.Width = 99;
             // 
             // KyNhan
             // 
@@ -413,6 +427,7 @@
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 10;
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
@@ -427,8 +442,8 @@
             this.KyNhan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.KyNhan.Visible = true;
-            this.KyNhan.VisibleIndex = 10;
-            this.KyNhan.Width = 80;
+            this.KyNhan.VisibleIndex = 9;
+            this.KyNhan.Width = 88;
             // 
             // gridControl1
             // 
