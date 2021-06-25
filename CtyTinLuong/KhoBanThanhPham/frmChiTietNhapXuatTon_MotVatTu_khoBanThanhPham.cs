@@ -191,7 +191,7 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu();
-                ff.Show();
+                ff.ShowDialog();
             }
         }
 
