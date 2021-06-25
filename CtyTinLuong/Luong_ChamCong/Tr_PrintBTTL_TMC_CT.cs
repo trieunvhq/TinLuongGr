@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class Tr_PrintBTTL_TGD_CT : DevExpress.XtraReports.UI.XtraReport
+    public partial class Tr_PrintBTTL_TMC_CT : DevExpress.XtraReports.UI.XtraReport
     {
         private int _thang;
         private int _nam;
@@ -17,7 +17,7 @@ namespace CtyTinLuong.Luong_ChamCong
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
 
-        public Tr_PrintBTTL_TGD_CT(int thang, int nam)
+        public Tr_PrintBTTL_TMC_CT(int thang, int nam)
         {
             _thang = thang;
             _nam = nam;
