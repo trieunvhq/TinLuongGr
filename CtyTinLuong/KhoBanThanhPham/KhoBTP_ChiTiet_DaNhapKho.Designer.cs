@@ -616,7 +616,10 @@
             this.Controls.Add(this.btThoat2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "KhoBTP_ChiTiet_DaNhapKho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Kho Bán Thành Phẩm";
             this.Load += new System.EventHandler(this.KhoBTP_ChiTiet_DaNhapKho_Load);
             this.groupBox2.ResumeLayout(false);
