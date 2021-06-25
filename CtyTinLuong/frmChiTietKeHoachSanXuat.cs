@@ -42,99 +42,102 @@ namespace CtyTinLuong
         }
         private void HienThi()
         {
-            Load_LockUp();
-            if (frmKeHoachSanXuat.mbThemMoi == true)
+            try
             {
-                dteNgayDatHang.EditValue = DateTime.Today;
-                dteNgayDuKienGiaoHang.EditValue = DateTime.Today.AddDays(10);
-                dteNgayGiaoHangThucTe.EditValue = DateTime.Today.AddDays(10);
-                clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat();
-                DataTable dt = cls.SelectAll();
-                int k = dt.Rows.Count;
-                if (k == 0)
+                Load_LockUp();
+                if (frmKeHoachSanXuat.mbThemMoi == true)
                 {
-                    txtMaKeHoach.Text = "KH 1";
+                    dteNgayDatHang.EditValue = DateTime.Today;
+                    dteNgayDuKienGiaoHang.EditValue = DateTime.Today.AddDays(10);
+                    dteNgayGiaoHangThucTe.EditValue = DateTime.Today.AddDays(10);
+                    clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat();
+                    DataTable dt = cls.SelectAll();
+                    int k = dt.Rows.Count;
+                    if (k == 0)
+                    {
+                        txtMaKeHoach.Text = "KH 1";
+                    }
+                    else
+                    {
+                        string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
+                        int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                        txtMaKeHoach.Text = "KH " + xxx2 + "";
+                    }
                 }
                 else
                 {
-                    string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                    txtMaKeHoach.Text = "KH " + xxx2 + "";
+
+                    clsTbKeHoachSanXuat cls = new CtyTinLuong.clsTbKeHoachSanXuat();
+                    cls.iID_KeHoachSanXuat = frmKeHoachSanXuat.miID_KeHoachSanXuat;
+                    DataTable dt = cls.SelectOne();
+                    dteNgayDatHang.EditValue = cls.daNgayDatHang.Value;
+                    dteNgayDuKienGiaoHang.EditValue = cls.daNgayDuKienXuat.Value;
+                    dteNgayGiaoHangThucTe.EditValue = cls.daNgayXuatThucTe.Value;
+                    gridKH.EditValue = cls.iID_KhachHang.Value;
+                    gridMaHang.EditValue = cls.iID_VTHH.Value;
+                    txtSoLuong.Text = cls.fSoLuong.Value.ToString();
+                    txtSoLuongThucGiaoHang.Text = cls.fSoLuongThucXuat.Value.ToString();
+                    txtSoCount.Text = cls.fSoCountner.Value.ToString();
+                    txtQuyCach.Text = cls.sQuyCach.Value;
+                    txtGhiChu2222.Text = cls.sGhiChu.Value;
+                    checkHoanThanh.Checked = false;
+                    txtDienGiai222222.Text = cls.sDienGiai.Value;
+                    txtMaKeHoach.Text = cls.sMaKeHoach.Value;
+                    clsTbKeHoachSanXuat_HinhAnh cls2 = new clsTbKeHoachSanXuat_HinhAnh();
+                    cls2.iID_KeHoachSanXuat = frmKeHoachSanXuat.miID_KeHoachSanXuat;
+                    DataTable dthinhanh = cls2.SelectAll_W_ID_KeHoachSanXuat();
+                    if (dthinhanh.Rows.Count > 0)
+                    {
+                        if (dthinhanh.Rows[0]["HinhAnh"].ToString() != "")
+                        {
+                            Byte[] byteBLOBData = new Byte[0];
+                            byteBLOBData = (Byte[])(dthinhanh.Rows[0]["HinhAnh"]);
+                            MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                            pictureEdit1.Image = Image.FromStream(stmBLOBData);
+                            txtPic1.Text = dthinhanh.Rows[0]["HinhAnh"].ToString();
+                            txt_ID_pic1.Text = dthinhanh.Rows[0]["ID_HinhAnhKeHoach"].ToString();
+                        }
+                        if (dthinhanh.Rows.Count > 1)
+                        {
+                            if (dthinhanh.Rows[1]["HinhAnh"].ToString() != "")
+                            {
+                                Byte[] byteBLOBData = new Byte[0];
+                                byteBLOBData = (Byte[])(dthinhanh.Rows[1]["HinhAnh"]);
+                                MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                                pictureEdit2.Image = Image.FromStream(stmBLOBData);
+                                txtPic2.Text = dthinhanh.Rows[1]["HinhAnh"].ToString();
+                                txt_ID_pic2.Text = dthinhanh.Rows[1]["ID_HinhAnhKeHoach"].ToString();
+                            }
+                        }
+                        if (dthinhanh.Rows.Count > 2)
+                        {
+                            if (dthinhanh.Rows[2]["HinhAnh"].ToString() != "")
+                            {
+                                Byte[] byteBLOBData = new Byte[0];
+                                byteBLOBData = (Byte[])(dthinhanh.Rows[2]["HinhAnh"]);
+                                MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                                pictureEdit3.Image = Image.FromStream(stmBLOBData);
+                                txtPic3.Text = dthinhanh.Rows[2]["HinhAnh"].ToString();
+                                txt_ID_pic3.Text = dthinhanh.Rows[2]["ID_HinhAnhKeHoach"].ToString();
+                            }
+                        }
+                        if (dthinhanh.Rows.Count > 3)
+                        {
+                            if (dthinhanh.Rows[3]["HinhAnh"].ToString() != "")
+                            {
+                                Byte[] byteBLOBData = new Byte[0];
+                                byteBLOBData = (Byte[])(dthinhanh.Rows[3]["HinhAnh"]);
+                                MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                                pictureEdit4.Image = Image.FromStream(stmBLOBData);
+                                txtPic4.Text = dthinhanh.Rows[3]["HinhAnh"].ToString();
+                                txt_ID_pic4.Text = dthinhanh.Rows[3]["ID_HinhAnhKeHoach"].ToString();
+                            }
+                        }
+                    }
+
                 }
             }
-            else
-            {
-
-                clsTbKeHoachSanXuat cls = new CtyTinLuong.clsTbKeHoachSanXuat();
-                cls.iID_KeHoachSanXuat = frmKeHoachSanXuat.miID_KeHoachSanXuat;
-                DataTable dt = cls.SelectOne();
-                dteNgayDatHang.EditValue = cls.daNgayDatHang.Value;
-                dteNgayDuKienGiaoHang.EditValue = cls.daNgayDuKienXuat.Value;
-                dteNgayGiaoHangThucTe.EditValue = cls.daNgayXuatThucTe.Value;
-                gridKH.EditValue = cls.iID_KhachHang.Value;
-                gridMaHang.EditValue = cls.iID_VTHH.Value;
-                txtSoLuong.Text = cls.fSoLuong.Value.ToString();
-                txtSoLuongThucGiaoHang.Text = cls.fSoLuongThucXuat.Value.ToString();
-                txtSoCount.Text = cls.fSoCountner.Value.ToString();
-                txtQuyCach.Text = cls.sQuyCach.Value;
-                txtGhiChu2222.Text = cls.sGhiChu.Value;
-                checkHoanThanh.Checked = false;
-                txtDienGiai222222.Text = cls.sDienGiai.Value;
-                txtMaKeHoach.Text = cls.sMaKeHoach.Value;
-                clsTbKeHoachSanXuat_HinhAnh cls2 = new clsTbKeHoachSanXuat_HinhAnh();
-                cls2.iID_KeHoachSanXuat = frmKeHoachSanXuat.miID_KeHoachSanXuat;
-                DataTable dthinhanh = cls2.SelectAll_W_ID_KeHoachSanXuat();
-                if (dthinhanh.Rows.Count > 0)
-                {
-                    if (dthinhanh.Rows[0]["HinhAnh"].ToString() != "")
-                    {
-                        Byte[] byteBLOBData = new Byte[0];
-                        byteBLOBData = (Byte[])(dthinhanh.Rows[0]["HinhAnh"]);
-                        MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-                        pictureEdit1.Image = Image.FromStream(stmBLOBData);
-                        txtPic1.Text = dthinhanh.Rows[0]["HinhAnh"].ToString();
-                        txt_ID_pic1.Text = dthinhanh.Rows[0]["ID_HinhAnhKeHoach"].ToString();
-                    }
-                    if (dthinhanh.Rows.Count > 1)
-                    {
-                        if (dthinhanh.Rows[1]["HinhAnh"].ToString() != "")
-                        {
-                            Byte[] byteBLOBData = new Byte[0];
-                            byteBLOBData = (Byte[])(dthinhanh.Rows[1]["HinhAnh"]);
-                            MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-                            pictureEdit2.Image = Image.FromStream(stmBLOBData);
-                            txtPic2.Text = dthinhanh.Rows[1]["HinhAnh"].ToString();
-                            txt_ID_pic2.Text = dthinhanh.Rows[1]["ID_HinhAnhKeHoach"].ToString();
-                        }
-                    }
-                    if (dthinhanh.Rows.Count > 2)
-                    {
-                        if (dthinhanh.Rows[2]["HinhAnh"].ToString() != "")
-                        {
-                            Byte[] byteBLOBData = new Byte[0];
-                            byteBLOBData = (Byte[])(dthinhanh.Rows[2]["HinhAnh"]);
-                            MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-                            pictureEdit3.Image = Image.FromStream(stmBLOBData);
-                            txtPic3.Text = dthinhanh.Rows[2]["HinhAnh"].ToString();
-                            txt_ID_pic3.Text = dthinhanh.Rows[2]["ID_HinhAnhKeHoach"].ToString();
-                        }
-                    }
-                    if (dthinhanh.Rows.Count > 3)
-                    {
-                        if (dthinhanh.Rows[3]["HinhAnh"].ToString() != "")
-                        {
-                            Byte[] byteBLOBData = new Byte[0];
-                            byteBLOBData = (Byte[])(dthinhanh.Rows[3]["HinhAnh"]);
-                            MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-                            pictureEdit4.Image = Image.FromStream(stmBLOBData);
-                            txtPic4.Text = dthinhanh.Rows[3]["HinhAnh"].ToString();
-                            txt_ID_pic4.Text = dthinhanh.Rows[3]["ID_HinhAnhKeHoach"].ToString();
-                        }
-                    }
-                }
-
-            }
-
+            catch { }
         }
 
         private bool KiemTraLuu()
@@ -399,7 +402,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.Show();
+                ff.ShowDialog();
             }
 
         }
@@ -413,7 +416,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.Show();
+                ff.ShowDialog();
             }
         }
 
@@ -426,7 +429,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.Show();
+                ff.ShowDialog();
             }
         }
 
@@ -439,7 +442,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.Show();
+                ff.ShowDialog();
             }
         }
 

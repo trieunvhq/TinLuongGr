@@ -272,24 +272,30 @@ namespace CtyTinLuong
                 mbCopy = true;
                 miID_KeHoachSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString());
                 frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
-                ff.Show();
+                this.Hide();
+                ff.ShowDialog();
+                this.Show();
             }
            
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString() != "")
+            try
             {
-                mbThemMoi = false;
-                mbSua = true;
-                mbCopy = false;
-                miID_KeHoachSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString());
-                frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
-                ff.Show();
+                if (gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString() != "")
+                {
+                    mbThemMoi = false;
+                    mbSua = true;
+                    mbCopy = false;
+                    miID_KeHoachSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString());
+                    frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
+                    this.Hide();
+                    ff.ShowDialog();
+                    this.Show();
+                }
             }
-
-            
+            catch { }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -330,7 +336,7 @@ namespace CtyTinLuong
                 mdaDenNgay = dteDenNgay.DateTime;
                 mPrint = true;
                 frmPrint_KeHoachSanXuat ff= new frmPrint_KeHoachSanXuat();
-                ff.Show();
+                ff.ShowDialog();
             }
             else
             {
@@ -350,7 +356,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopy = false;
             frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
-            ff.Show();
+            this.Hide();
+            ff.ShowDialog();
+            this.Show();
         }
     }
 }
