@@ -479,7 +479,7 @@ namespace CtyTinLuong
             }
             catch
             {
-                MessageBox.Show("Không có dữ liệu để in!", "Thông báo")
+                MessageBox.Show("Không có dữ liệu để in!", "Thông báo");
             }
         }
 
