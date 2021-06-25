@@ -12,10 +12,6 @@ namespace CtyTinLuong.Luong_ChamCong
     {
         private int _thang;
         private int _nam;
-        List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
 
         public Tr_PrintBTTL_TMC_CT(int thang, int nam)
         {
