@@ -770,7 +770,10 @@
             this.ClientSize = new System.Drawing.Size(908, 488);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmChiTietNhapXuatTon_MotVatTu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo Cáo NXT";
             this.Load += new System.EventHandler(this.frmChiTietNhapXuatTon_MotVatTu_Load);
             this.groupBox1.ResumeLayout(false);
