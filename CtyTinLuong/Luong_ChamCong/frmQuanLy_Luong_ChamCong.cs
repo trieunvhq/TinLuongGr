@@ -301,5 +301,20 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navBTTL_TrgCa_CT_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_TrgCa_CT frm = new frmBTTL_TrgCa_CT(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            doiMauTitle(sender, e);
+        }
     }
 }
