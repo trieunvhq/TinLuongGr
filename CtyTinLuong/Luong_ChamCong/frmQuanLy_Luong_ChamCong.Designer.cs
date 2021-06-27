@@ -60,12 +60,12 @@
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TBX_TQ = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TMC = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_TrgCa_CT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.navBTTL_TrgCa_CT = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -339,6 +339,17 @@
             this.navBTTL_TMC.Name = "navBTTL_TMC";
             this.navBTTL_TMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TMC_LinkClicked);
             // 
+            // navBTTL_TrgCa_CT
+            // 
+            this.navBTTL_TrgCa_CT.Caption = "Trưởng Ca";
+            this.navBTTL_TrgCa_CT.Name = "navBTTL_TrgCa_CT";
+            this.navBTTL_TrgCa_CT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TrgCa_CT_LinkClicked);
+            // 
+            // navBarItem18
+            // 
+            this.navBarItem18.Caption = "navBarItem18";
+            this.navBarItem18.Name = "navBarItem18";
+            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -372,17 +383,6 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
-            // 
-            // navBTTL_TrgCa_CT
-            // 
-            this.navBTTL_TrgCa_CT.Caption = "Trưởng Ca - Chi Tiết";
-            this.navBTTL_TrgCa_CT.Name = "navBTTL_TrgCa_CT";
-            this.navBTTL_TrgCa_CT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TrgCa_CT_LinkClicked);
-            // 
-            // navBarItem18
-            // 
-            this.navBarItem18.Caption = "navBarItem18";
-            this.navBarItem18.Name = "navBarItem18";
             // 
             // frmQuanLy_Luong_ChamCong
             // 

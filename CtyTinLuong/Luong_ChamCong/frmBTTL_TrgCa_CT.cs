@@ -307,6 +307,21 @@ namespace CtyTinLuong
             }
         }
 
+        private void btnCheDoHienThi_Click(object sender, EventArgs e)
+        {
+            //if(ColSanLuong.Visible)
+            //{
+            //    ColSanLuong.Visible = false;
+            //    ColTenVTHH.Visible = false;
+            //    ColSanLuong.Visible = false;
+            //    ColSanLuong.Visible = false;
+            //}
+            //else
+            //{
+
+            //}
+        }
+
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //miiID_chiTietChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
