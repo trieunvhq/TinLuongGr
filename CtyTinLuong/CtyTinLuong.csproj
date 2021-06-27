@@ -172,6 +172,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
+    <Compile Include="Luong_ChamCong\frmBTTL_PTH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_PTH.Designer.cs">
+      <DependentUpon>frmBTTL_PTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TrgCa_CT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1882,6 +1888,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.resx">
       <DependentUpon>frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PTH.resx">
+      <DependentUpon>frmBTTL_PTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TrgCa_CT.resx">
       <DependentUpon>frmBTTL_TrgCa_CT.cs</DependentUpon>
