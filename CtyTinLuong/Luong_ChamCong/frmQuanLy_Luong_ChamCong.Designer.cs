@@ -54,6 +54,7 @@
             this.navChamCong_TDK = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_TrgCa = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChamCong_PTH = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navTTL_TBX_CT = new DevExpress.XtraNavBar.NavBarItem();
@@ -227,7 +228,8 @@
             this.navChamCong_TGD,
             this.navChamCong_TrgCa,
             this.navBTTL_TrgCa_CT,
-            this.navBarItem18});
+            this.navBarItem18,
+            this.navChamCong_PTH});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -246,7 +248,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TBX),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TDK),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TGD),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TrgCa)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TrgCa),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PTH)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navChamCong_CongNhat
@@ -284,6 +287,12 @@
             this.navChamCong_TrgCa.Caption = "Trưởng ca";
             this.navChamCong_TrgCa.Name = "navChamCong_TrgCa";
             this.navChamCong_TrgCa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TrgCa_LinkClicked);
+            // 
+            // navChamCong_PTH
+            // 
+            this.navChamCong_PTH.Caption = "Phòng Tổng Hợp";
+            this.navChamCong_PTH.Name = "navChamCong_PTH";
+            this.navChamCong_PTH.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_PTH_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -444,5 +453,6 @@
         private DevExpress.XtraNavBar.NavBarItem navChamCong_TrgCa;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TrgCa_CT;
         private DevExpress.XtraNavBar.NavBarItem navBarItem18;
+        private DevExpress.XtraNavBar.NavBarItem navChamCong_PTH;
     }
 }

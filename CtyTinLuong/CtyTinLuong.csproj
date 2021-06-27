@@ -178,6 +178,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TrgCa_CT.Designer.cs">
       <DependentUpon>frmBTTL_TrgCa_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PTH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PTH.Designer.cs">
+      <DependentUpon>frmChamCong_PTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1891,6 +1897,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PTH.resx">
+      <DependentUpon>frmChamCong_PTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TrgCa.resx">
       <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>

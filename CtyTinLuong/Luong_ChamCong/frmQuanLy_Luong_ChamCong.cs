@@ -316,5 +316,20 @@ namespace CtyTinLuong
 
             doiMauTitle(sender, e);
         }
+
+        private void navChamCong_PTH_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Tổng hợp");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_PTH frm = new frmChamCong_PTH(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            doiMauTitle(sender, e);
+        }
     }
 }
