@@ -387,6 +387,7 @@ namespace CtyTinLuong
 
                         _ravi["SanLuong"] = 0;
                         _ravi["Tong"] = 0;
+                        _ravi["ID_LoaiCong"] = 1;
                         _ravi["GuiDuLieu"] = false;
                         _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
                         _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
@@ -432,6 +433,7 @@ namespace CtyTinLuong
                         ++stt_;
                         _ravi["STT"] = (stt_);
                         _ravi["Cong"] = "Tăng";
+                        _ravi["ID_LoaiCong"] = 2;
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                         _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
@@ -705,6 +707,7 @@ namespace CtyTinLuong
                 _ravi["TenNhanVien"] = ten_;
 
                 _ravi["Cong"] = "Công";
+                _ravi["ID_LoaiCong"] = 1;
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                 _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
 
@@ -733,6 +736,7 @@ namespace CtyTinLuong
                 _ravi["TenNhanVien"] = ten_;
 
                 _ravi["Cong"] = "Tăng";
+                _ravi["ID_LoaiCong"] = 2;
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                 _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
 
@@ -946,7 +950,8 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
                         0, true, isTang, _id_bophan,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()));
+                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()),
+                        Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {

@@ -624,6 +624,7 @@ namespace CtyTinLuong
             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
             _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
             _ravi["Cong"] = "Công";
+            _ravi["ID_LoaiCong"] = 1;
             _data.Rows.Add(_ravi);
             //
             _ravi = _data.NewRow();
@@ -655,6 +656,7 @@ namespace CtyTinLuong
             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
             _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
             _ravi["Cong"] = "Tăng";
+            _ravi["ID_LoaiCong"] = 2;
             _data.Rows.Add(_ravi);
             //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
             //{
@@ -819,7 +821,8 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true,false,_id_bophan, _ID_DinhMucLuong_CongNhat);
+                        0, true,false,_id_bophan, _ID_DinhMucLuong_CongNhat,
+                        Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {

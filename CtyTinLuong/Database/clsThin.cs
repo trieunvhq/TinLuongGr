@@ -386,7 +386,8 @@ namespace CtyTinLuong
             , float fNgay14, float fNgay15, float fNgay16, float fNgay17, float fNgay18, float fNgay19
             , float fNgay20, float fNgay21, float fNgay22, float fNgay23, float fNgay24, float fNgay25
             , float fNgay26, float fNgay27, float fNgay28, float fNgay29, float fNgay30, float fNgay31
-            , float fSanLuong, bool bGuiDuLieu, bool bIsTangCa, int id_bophan, int ID_DinhMucLuong_CongNhat)
+            , float fSanLuong, bool bGuiDuLieu, bool bIsTangCa, int id_bophan, int ID_DinhMucLuong_CongNhat,
+             int ID_LoaiCong)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I]";
@@ -444,6 +445,7 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@bIsTangCa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bIsTangCa));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_DinhMucLuong_CongNhat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_DinhMucLuong_CongNhat));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_LoaiCong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_LoaiCong));
 
                 // Open connection.
                 m_scoMainConnection.Open();
@@ -568,6 +570,41 @@ namespace CtyTinLuong
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
                 throw new Exception("clsCpn_bp::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataTable T_LoaiCong_SA()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_LoaiCong_SA]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("T_LoaiCong_SA");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                 
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("T_LoaiCong_SA::SelectAll::Error occured.", ex);
             }
             finally
             {

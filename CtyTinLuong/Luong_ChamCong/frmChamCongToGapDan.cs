@@ -388,6 +388,7 @@ namespace CtyTinLuong
                     _ravi["MaDinhMuc"] = "";
                     _ravi["DinhMuc_KhongTang"] = 0;
                     _ravi["DinhMuc_Tang"] = 0;
+                    _ravi["ID_LoaiCong"] = 1;
 
                     ++stt_;
                     _ravi["STT"] = (stt_);
@@ -674,6 +675,7 @@ namespace CtyTinLuong
             _ravi["GuiDuLieu"] = false;
             _ravi["MaNhanVien"] = "";
             _ravi["TenNhanVien"] = ten_;
+            _ravi["ID_LoaiCong"] = 1;
 
 
             ++stt_;
@@ -934,7 +936,8 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true,false,_id_bophan,_ID_DinhMucLuong_CongNhat);
+                        0, true,false,_id_bophan,_ID_DinhMucLuong_CongNhat,
+                        Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {

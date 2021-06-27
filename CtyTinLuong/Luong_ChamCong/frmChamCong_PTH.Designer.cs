@@ -29,16 +29,16 @@ namespace CtyTinLuong
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong_PTH));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -118,6 +118,8 @@ namespace CtyTinLuong
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.cbLoaiCong = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -153,9 +155,9 @@ namespace CtyTinLuong
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // btThoat
@@ -178,7 +180,7 @@ namespace CtyTinLuong
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 25);
+            this.label3.Location = new System.Drawing.Point(7, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -188,7 +190,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(223, 26);
+            this.label4.Location = new System.Drawing.Point(163, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -197,7 +199,7 @@ namespace CtyTinLuong
             // txtThang
             // 
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(117, 23);
+            this.txtThang.Location = new System.Drawing.Point(57, 18);
             this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 20);
@@ -208,7 +210,7 @@ namespace CtyTinLuong
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(262, 23);
+            this.txtNam.Location = new System.Drawing.Point(202, 18);
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(66, 20);
@@ -219,9 +221,9 @@ namespace CtyTinLuong
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1409,16 +1411,16 @@ namespace CtyTinLuong
             // 
             this.cbNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNhanSu.FormattingEnabled = true;
-            this.cbNhanSu.Location = new System.Drawing.Point(511, 22);
+            this.cbNhanSu.Location = new System.Drawing.Point(511, 34);
             this.cbNhanSu.Name = "cbNhanSu";
             this.cbNhanSu.Size = new System.Drawing.Size(204, 21);
             this.cbNhanSu.TabIndex = 138;
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(730, 21);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(730, 3);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 23);
+            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 52);
             this.btnThemNhanVien.TabIndex = 137;
             this.btnThemNhanVien.Text = "Thêm nhân viên";
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
@@ -1428,7 +1430,7 @@ namespace CtyTinLuong
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(406, 25);
+            this.label7.Location = new System.Drawing.Point(406, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 13);
             this.label7.TabIndex = 136;
@@ -1469,13 +1471,32 @@ namespace CtyTinLuong
             this.linkLabel2.Text = "Cài định mức  toàn danh sách";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // cbLoaiCong
+            // 
+            this.cbLoaiCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiCong.FormattingEnabled = true;
+            this.cbLoaiCong.Location = new System.Drawing.Point(511, 0);
+            this.cbLoaiCong.Name = "cbLoaiCong";
+            this.cbLoaiCong.Size = new System.Drawing.Size(204, 21);
+            this.cbLoaiCong.TabIndex = 149;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(406, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 148;
+            this.label1.Text = "Chọn loại công";
+            // 
             // frmChamCong_PTH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(913, 635);
-            //this.ControlBox = false;
+            this.Controls.Add(this.cbLoaiCong);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.btnPrint);
@@ -1489,17 +1510,8 @@ namespace CtyTinLuong
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.HelpButton = true;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
             this.Name = "frmChamCong_PTH";
-            //this.ShowIcon = false;
-            //this.ShowInTaskbar = false;
-            //this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chấm công tổ gấp dán";
+            this.Size = new System.Drawing.Size(913, 635);
             this.Load += new System.EventHandler(this.frmChamCong_PTH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
@@ -1599,5 +1611,7 @@ namespace CtyTinLuong
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.ComboBox cbLoaiCong;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -703,6 +703,7 @@ namespace CtyTinLuong
                 _ravi["TenNhanVien"] = ten_;
 
                 _ravi["Cong"] = "Công";
+                _ravi["ID_LoaiCong"] = 1;
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
 
                 _data.Rows.Add(_ravi);
@@ -941,7 +942,8 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
                         0, true, isTang, _id_bophan,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()));
+                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()),
+                        Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {

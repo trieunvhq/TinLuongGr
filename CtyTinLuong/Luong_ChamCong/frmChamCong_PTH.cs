@@ -188,7 +188,11 @@ namespace CtyTinLuong
                 cbNhanSu.DisplayMember = "TenNhanVien";
                 cbNhanSu.ValueMember = "ID_NhanSu";
                 //
-                 
+
+                _dt_DinhMuc = clsThin_.T_LoaiCong_SA();
+                cbLoaiCong.DataSource = _dt_DinhMuc;
+                cbLoaiCong.DisplayMember = "Ten";
+                cbLoaiCong.ValueMember = "ID_LoaiCong";
             }
             _nam = DateTime.Now.Year;
             _thang = DateTime.Now.Month;
@@ -651,17 +655,34 @@ namespace CtyTinLuong
             }
             else
             {
-                ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true);
+                int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
+               
+                ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_,cbLoaiCong.Text);
             }
         }
-        private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew)
+        private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew,int id_loaicong_,string ten_loaicong_)
         {
+            bool IsTangCa_ = false; 
+            switch (id_loaicong_)
+            {
+                case 1:
+                    IsTangCa_ = false;
+                    break;
+                case 2:
+                    IsTangCa_ = true;
+                    break;
+                case 3:
+                    break;
+            }
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
                 {
-                    MessageBox.Show("Đã tồn tại công nhân này trong bảng");
-                    return;
+                    if(Convert.ToInt32(_data.Rows[i]["id_loaicong_"].ToString()) == id_loaicong_)
+                    {
+                        MessageBox.Show("Đã tồn tại công nhân này trong bảng");
+                        return;
+                    }
                 }
             }
 
@@ -682,6 +703,7 @@ namespace CtyTinLuong
             {
                 DataRow _ravi = _data.NewRow();
                 _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
+                _ravi["ID_LoaiCong"] = id_loaicong_;
                 _ravi["ID_CongNhan"] = id_nhansu_;
                 _ravi["Thang"] = _thang;
                 _ravi["Nam"] = _nam;
@@ -702,7 +724,7 @@ namespace CtyTinLuong
                 _ravi["MaNhanVien"] = "";
                 _ravi["TenNhanVien"] = ten_;
 
-                _ravi["Cong"] = "Công";
+                _ravi["Cong"] = ten_loaicong_;
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
 
                 _data.Rows.Add(_ravi);
@@ -941,7 +963,8 @@ namespace CtyTinLuong
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
                         (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
                         0, true, isTang, _id_bophan,
-                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()));
+                        Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()),
+                        Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {
