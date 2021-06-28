@@ -64,8 +64,8 @@ namespace CtyTinLuong
         private void UCDinhMucHangNhu_Load(object sender, EventArgs e)
         {
             clSoLuongKiemTra.Caption = "SL\nkiểm tra";
-            //clSoKG_MotBao.Caption = "1 BAO\n(kg)";
-            //clSoKienMotBao.Caption = "1 BAO\n(Kiện)";
+            clSoKienMotBao.Caption = "Cục/Bao\n Tép/Sọt";
+            clSoKG_MotBao.Caption = "Kg/Bao\n Kg/Sọt";
             clTrongLuongKiemTra.Caption = "Trọng\nlượng";
             clQuyRaKien.Caption = "Quy\nra kiện";
             clPhePham.Caption = "Phế\nphẩm";
