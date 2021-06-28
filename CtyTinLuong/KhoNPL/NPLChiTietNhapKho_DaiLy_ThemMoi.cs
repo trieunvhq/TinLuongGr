@@ -1374,7 +1374,7 @@ namespace CtyTinLuong
                 layoutControlItem25.Visibility = LayoutVisibility.Never;
 
                 layoutControlItem16.Text = "Tép/ 1Sọt";               
-                layoutControlItem15.Text = "Số lượng xuất";
+                layoutControlItem15.Text = "Số lượng xuất ()";
                 layoutControlItem21.Text = "Tổng số tép";
                 txtSoLuong_BaoBe.Text = "0";
             }
@@ -1412,7 +1412,7 @@ namespace CtyTinLuong
                 layoutControlItem27.Visibility = LayoutVisibility.Never;
                 layoutControlItem25.Visibility = LayoutVisibility.Never;
                 layoutControlItem16.Text = "Cục/ 1bao";
-                layoutControlItem15.Text = "Số lượng xuất";                
+                layoutControlItem15.Text = "Số lượng xuất (Cục)";                
                 layoutControlItem21.Text = "Tổng số cục";
                 txtSoLuong_BaoBe.Text = "0";
             }
