@@ -104,52 +104,62 @@ namespace CtyTinLuong
 
         private void navNhapKho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UC_DaiLy_NhapKho_ChoGhiSo uccc_NhapKho = new UC_DaiLy_NhapKho_ChoGhiSo(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navXuatKho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_XuatKho uccc_NhapKho = new UCDaiLy_XuatKho(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_ChiTietNHapKho_ALL uccc_NhapKho = new UCDaiLy_ChiTietNHapKho_ALL(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_ChiTiet_XuatKho_ALL uccc_NhapKho = new UCDaiLy_ChiTiet_XuatKho_ALL();
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmBaoCao_Nhap_Xuat_ton_kho_DaiLy ff = new CtyTinLuong.frmBaoCao_Nhap_Xuat_ton_kho_DaiLy();
-            this.Hide();
+            //this.Hide();
             ff.ShowDialog();
-            this.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -179,22 +189,27 @@ namespace CtyTinLuong
 
         private void navNhapKhoGapDan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_NhapKho_GapDan uccc_NhapKho = new UCDaiLy_NhapKho_GapDan(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navXuatKhoGapDan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             UCDaiLy_XuatKho_GapDan uccc_NhapKho = new UCDaiLy_XuatKho_GapDan(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem14_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -215,22 +230,26 @@ namespace CtyTinLuong
 
         private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton uccc_NhapKho = new DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton();
-            this.Hide();
+            //this.Hide();
             uccc_NhapKho.ShowDialog();
-            this.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             DaiLy_BaoCao_TonKho ff = new DaiLy_BaoCao_TonKho();
-            this.Hide();
+            //this.Hide();
             ff.ShowDialog();
-            this.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -241,12 +260,14 @@ namespace CtyTinLuong
 
         private void navBangLuongDaiLy_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             DaiLy_BangLuong ff = new CtyTinLuong.DaiLy_BangLuong();
-            this.Hide();
+            //this.Hide();
             ff.ShowDialog();
-            this.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void doiMauTitle(object sender, NavBarLinkEventArgs e)

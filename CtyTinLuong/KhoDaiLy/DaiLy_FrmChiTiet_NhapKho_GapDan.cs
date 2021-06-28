@@ -571,38 +571,44 @@ namespace CtyTinLuong
 
         private void DaiLy_FrmChiTiet_NhapKho_GapDan_Load(object sender, EventArgs e)
         {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
+            try
+            {
+                clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
+                DataTable dtvthh = clsvthhh.SelectAll();
+                dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                DataView dvvthh = dtvthh.DefaultView;
+                DataTable newdtvthh = dvvthh.ToTable();
 
 
-            repositoryItemLookUpEdit2.DataSource = newdtvthh;
-            repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
-            repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+                repositoryItemLookUpEdit2.DataSource = newdtvthh;
+                repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
+                repositoryItemLookUpEdit2.DisplayMember = "MaVT";
 
 
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("DinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuongTheoDinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("SoLuongTon", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
-            gridControl1.DataSource = dt2;
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("ID_VTHH", typeof(int));
+                dt2.Columns.Add("MaVT", typeof(string));
+                dt2.Columns.Add("TenVTHH", typeof(string));
+                dt2.Columns.Add("DonViTinh", typeof(string));
+                dt2.Columns.Add("DinhMuc", typeof(float));
+                dt2.Columns.Add("SoLuongTheoDinhMuc", typeof(float));
+                dt2.Columns.Add("SoLuong", typeof(float));
+                dt2.Columns.Add("SoLuongTon", typeof(float));
+                dt2.Columns.Add("DonGia", typeof(double));
+                dt2.Columns.Add("GhiChu", typeof(string));
+                dt2.Columns.Add("HienThi", typeof(string));
+                dt2.Columns.Add("ThanhTien", typeof(double));
+                dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
+                gridControl1.DataSource = dt2;
 
-            Load_LockUp();
+                Load_LockUp();
 
-            HienThi_Sua_XuatKho();
+                HienThi_Sua_XuatKho();
+            }
+            catch { }
+
+            Cursor.Current = Cursors.Default;
         }
 
      

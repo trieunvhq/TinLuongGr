@@ -1500,7 +1500,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("ThanhTien", typeof(double));
             gridControl1.DataSource = dt2;
             HienThi_Sua_XuatKho();
-
+            Cursor.Current = Cursors.Default;
         }
     }
 }

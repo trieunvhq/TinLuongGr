@@ -104,15 +104,19 @@ namespace CtyTinLuong
 
         private void UCDaiLy_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_XuatKho_GapDan_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -127,14 +131,16 @@ namespace CtyTinLuong
         {
             if(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString()!="")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 mbthemmoi = false;
                 mbsua = true;
                 mbcopy = false;
                 miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
-                _frmQLKDL.Hide();
+                //_frmQLKDL.Hide();
                 ff.ShowDialog();
-                _frmQLKDL.Show();
+                //_frmQLKDL.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -177,13 +183,15 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbthemmoi = true;
             mbsua = false;
             mbcopy = false;
             DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
-            _frmQLKDL.Hide();
+            //_frmQLKDL.Hide();
             ff.ShowDialog();
-            _frmQLKDL.Show();
+            //_frmQLKDL.Show();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

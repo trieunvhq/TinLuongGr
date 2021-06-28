@@ -1106,6 +1106,7 @@ namespace CtyTinLuong
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
         }
+
         public DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww()
         {
             InitializeComponent();
@@ -1113,10 +1114,10 @@ namespace CtyTinLuong
 
         private void DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_Load(object sender, EventArgs e)
         {
-            
             Load_LockUp();
 
             HienThi_Sua_XuatKho();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

@@ -125,12 +125,13 @@ namespace CtyTinLuong
 
         private void UCDaiLy_XuatKho_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
             dteDenNgay.EditValue = null;
             dteTuNgay.EditValue = null;
-            HienThi_ALL();         
-          
+            HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -143,19 +144,22 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            
+            Cursor.Current = Cursors.WaitCursor;
             miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
             frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-            _frmQLKDL.Hide();
+            //_frmQLKDL.Hide();
             ff.ShowDialog();
-            _frmQLKDL.Show();
+            //_frmQLKDL.Show();
+            Cursor.Current = Cursors.Default;
         }
 
       
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_XuatKho_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)

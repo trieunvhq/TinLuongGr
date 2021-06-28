@@ -105,14 +105,18 @@ namespace CtyTinLuong
 
         private void UCDaiLy_ChiTiet_XuatKho_ALL_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             dteNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDaiLy_ChiTiet_XuatKho_ALL_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
