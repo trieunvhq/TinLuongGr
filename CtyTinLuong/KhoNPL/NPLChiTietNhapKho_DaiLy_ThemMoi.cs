@@ -871,7 +871,6 @@ namespace CtyTinLuong
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
                
-               
                 cls1.bTrangThaiXuatNhap_KhoDaiLy = bTrangThaiXuatNhap_KhoDaiLyxx;
                 cls1.bTrangThaiXuatNhap_Kho_BTP = bTrangThaiXuatNhap_Kho_BTPxx;
                 cls1.bTrangThaiXuatNhap_Kho_NPL = bTrangThaiXuatNhap_Kho_NPLxx;
@@ -1456,8 +1455,8 @@ namespace CtyTinLuong
                 layoutKg1baonho.Visibility = LayoutVisibility.Never;
                 layoutkien1baonho.Visibility = LayoutVisibility.Never;
                 layoutControlItem25.Visibility = LayoutVisibility.Never;
-                layoutkg1baoto.Visibility= LayoutVisibility.Never;
-               
+                layoutkg1baoto.Visibility= LayoutVisibility.Always;
+                
                 layoutkg1baoto.Text = "Cục/ 1bao";
                 layoutbaoto.Text = "Số lượng xuất (Cục)";                
                 layoutControlItem21.Text = "Tổng số cục";
