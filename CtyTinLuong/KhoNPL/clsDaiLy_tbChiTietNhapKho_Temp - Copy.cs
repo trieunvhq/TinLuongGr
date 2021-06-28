@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public partial class clsDaiLy_tbNhapKho_Temp : clsDBInteractionBase
+	public partial class clsDaiLy_tbChiTietNhapKho_Temp : clsDBInteractionBase
 	{
 		
 	}

@@ -170,7 +170,9 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoNPL\clsDaiLy_tbChiTietNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbChiTietNhapKho_Temp.cs" />
+    <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
