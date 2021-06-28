@@ -694,6 +694,9 @@
             // 
             // clTenDaiLy
             // 
+            this.clTenDaiLy.AppearanceCell.Options.UseTextOptions = true;
+            this.clTenDaiLy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.clTenDaiLy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clTenDaiLy.Caption = "Đại lý";
             this.clTenDaiLy.ColumnEdit = this.memodaily;
             this.clTenDaiLy.FieldName = "TenDaiLy";
