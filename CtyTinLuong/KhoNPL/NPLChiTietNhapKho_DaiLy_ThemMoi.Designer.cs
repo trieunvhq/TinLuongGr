@@ -46,7 +46,6 @@
             this.checkHangSot = new System.Windows.Forms.CheckBox();
             this.checkHangNhu = new System.Windows.Forms.CheckBox();
             this.checkHangDot = new System.Windows.Forms.CheckBox();
-            this.checkHoanThanh = new System.Windows.Forms.CheckBox();
             this.txtSoKien_1_BaoBe = new System.Windows.Forms.TextBox();
             this.txtSoKien_1_BaoTo = new System.Windows.Forms.TextBox();
             this.txtQuyRaKien_BaoBe = new System.Windows.Forms.TextBox();
@@ -134,7 +133,6 @@
             this.layoutkien1baonho = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
@@ -211,7 +209,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutkien1baonho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -247,7 +244,6 @@
             this.layoutControl1.Controls.Add(this.checkHangSot);
             this.layoutControl1.Controls.Add(this.checkHangNhu);
             this.layoutControl1.Controls.Add(this.checkHangDot);
-            this.layoutControl1.Controls.Add(this.checkHoanThanh);
             this.layoutControl1.Controls.Add(this.txtSoKien_1_BaoBe);
             this.layoutControl1.Controls.Add(this.txtSoKien_1_BaoTo);
             this.layoutControl1.Controls.Add(this.txtQuyRaKien_BaoBe);
@@ -288,7 +284,7 @@
             // 
             this.checkHangSot.Location = new System.Drawing.Point(431, 2);
             this.checkHangSot.Name = "checkHangSot";
-            this.checkHangSot.Size = new System.Drawing.Size(234, 20);
+            this.checkHangSot.Size = new System.Drawing.Size(518, 20);
             this.checkHangSot.TabIndex = 113;
             this.checkHangSot.Text = "Loại hàng Sọt";
             this.checkHangSot.UseVisualStyleBackColor = true;
@@ -313,17 +309,6 @@
             this.checkHangDot.Text = "Loại hàng Đột";
             this.checkHangDot.UseVisualStyleBackColor = true;
             this.checkHangDot.CheckedChanged += new System.EventHandler(this.checkHangDot_CheckedChanged);
-            // 
-            // checkHoanThanh
-            // 
-            this.checkHoanThanh.ForeColor = System.Drawing.Color.Red;
-            this.checkHoanThanh.Location = new System.Drawing.Point(669, 2);
-            this.checkHoanThanh.Name = "checkHoanThanh";
-            this.checkHoanThanh.Size = new System.Drawing.Size(280, 20);
-            this.checkHoanThanh.TabIndex = 110;
-            this.checkHoanThanh.Text = "Hoàn thành";
-            this.checkHoanThanh.UseVisualStyleBackColor = true;
-            this.checkHoanThanh.CheckedChanged += new System.EventHandler(this.checkHoanThanh_CheckedChanged);
             // 
             // txtSoKien_1_BaoBe
             // 
@@ -925,7 +910,6 @@
             this.layoutkien1baonho,
             this.layoutControlItem29,
             this.layoutControlItem30,
-            this.layoutControlItem28,
             this.layoutControlItem31});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
@@ -1230,21 +1214,12 @@
             this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem30.TextVisible = false;
             // 
-            // layoutControlItem28
-            // 
-            this.layoutControlItem28.Control = this.checkHoanThanh;
-            this.layoutControlItem28.Location = new System.Drawing.Point(667, 0);
-            this.layoutControlItem28.Name = "layoutControlItem28";
-            this.layoutControlItem28.Size = new System.Drawing.Size(284, 24);
-            this.layoutControlItem28.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem28.TextVisible = false;
-            // 
             // layoutControlItem31
             // 
             this.layoutControlItem31.Control = this.checkHangSot;
             this.layoutControlItem31.Location = new System.Drawing.Point(429, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(238, 24);
+            this.layoutControlItem31.Size = new System.Drawing.Size(522, 24);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
@@ -1677,7 +1652,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutkien1baonho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -1807,12 +1781,10 @@
         private System.Windows.Forms.TextBox txtSoKien_1_BaoTo;
         private DevExpress.XtraLayout.LayoutControlItem layoutkien1baoto;
         private DevExpress.XtraLayout.LayoutControlItem layoutkien1baonho;
-        private System.Windows.Forms.CheckBox checkHoanThanh;
         private System.Windows.Forms.CheckBox checkHangNhu;
         private System.Windows.Forms.CheckBox checkHangDot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
         private DevExpress.XtraGrid.Columns.GridColumn clTenVTHHxxx3;
         private DevExpress.XtraGrid.Columns.GridColumn clTenVTHHxx1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;

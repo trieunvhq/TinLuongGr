@@ -76,7 +76,7 @@ namespace CtyTinLuong
 
             }
             string sochungtuNhapKhoDaiLy;
-            clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
+            clsDaiLy_tbNhapKho_Temp cls = new clsDaiLy_tbNhapKho_Temp();
             DataTable dt1222 = cls.SelectAll();
             dt1222.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
             DataView dvxxx = dt1222.DefaultView;
@@ -102,12 +102,10 @@ namespace CtyTinLuong
             if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbCopy == true)
             {
                 HienThi_ThemMoi_XuatKho();
-                clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
+                clsDaiLy_tbNhapKho_Temp cls1 = new clsDaiLy_tbNhapKho_Temp();
                 cls1.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
                 DataTable dt22222 = cls1.SelectOne();
-                if (cls1.bHoanThanh.Value == true)
-                    checkHoanThanh.Checked = true;
-                else checkHoanThanh.Checked = false;
+               
                 if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 1)
                     checkHangDot.Checked = true;
                 else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 2)
@@ -133,7 +131,7 @@ namespace CtyTinLuong
             }
             else if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == true)
             {
-                clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
+                clsDaiLy_tbNhapKho_Temp cls1 = new clsDaiLy_tbNhapKho_Temp();
                 cls1.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
                 DataTable dt22222 = cls1.SelectOne();
 
@@ -316,10 +314,10 @@ namespace CtyTinLuong
             dt2.Columns.Add("BoolVTChinh", typeof(bool));
             dt2.Columns.Add("BoolNPL", typeof(bool));
 
-            clsDaiLy_tbChiTietNhapKho cls = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            clsDaiLy_tbChiTietNhapKho_Temp cls = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho_Temp();
             cls.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
             cls.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            DataTable dt_ChiTiet_nhapkho_DaiLy = cls.SelectAll_W_ID_NhapKhoDaiLy();
+            DataTable dt_ChiTiet_nhapkho_DaiLy = cls.SelectAll_W_ID_NhapKhoDaiLy_Moi();
 
             clsDinhMuc_tbDM_NguyenPhuLieu cls1 = new CtyTinLuong.clsDinhMuc_tbDM_NguyenPhuLieu();
             cls1.iID_DinhMuc_NPL = Convert.ToInt32(gridMaDinhMucNPL.EditValue.ToString());
@@ -449,7 +447,7 @@ namespace CtyTinLuong
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
                         string s7 = txtSoKien_1_BaoBe.Text.ToString();
                         if (s3 == "")
-                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " bao to)";
+                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to)";
                         else txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to + " + s3 + " bao bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
                     }
 
@@ -461,7 +459,7 @@ namespace CtyTinLuong
                         string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
                         string s5 = txtTongSoKG.Text.ToString();
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
-                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + " bao to)";
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + " to)";
                     }
                     else if (checkHangSot.Checked == true)
                     {
@@ -475,7 +473,7 @@ namespace CtyTinLuong
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
                         string s7 = txtSoKien_1_BaoBe.Text.ToString();
                         if (s3 == "")
-                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " bao to)";
+                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to)";
                         else txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to + " + s3 + " sọt bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
                     }
 
@@ -649,7 +647,7 @@ namespace CtyTinLuong
                 DataView dv2232xx = dtkkk.DefaultView;
                 DataTable dt232 = dv2232xx.ToTable();
 
-                clsDaiLy_tbChiTietNhapKho cls2 = new clsDaiLy_tbChiTietNhapKho();
+                clsDaiLy_tbChiTietNhapKho_Temp cls2 = new clsDaiLy_tbChiTietNhapKho_Temp();
                 DataTable dt2_cu = new DataTable();
                 cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
                 dt2_cu = cls2.SelectAll_W_ID_NhapKhoDaiLy_Moi();
@@ -841,23 +839,20 @@ namespace CtyTinLuong
                 bool bTrangThaiXuatNhap_KhoDaiLyxx, bTrangThaiXuatNhap_Kho_BTPxx, bTrangThaiXuatNhap_Kho_NPLxx, bCheck_BaoVexx, bCheck_DaiLyxx, bCheck_LaiXe, bDaNhapKhoxx;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == true)
                 {
-                    clsDaiLy_tbNhapKho cls2 = new clsDaiLy_tbNhapKho();
+                    clsDaiLy_tbNhapKho_Temp cls2 = new clsDaiLy_tbNhapKho_Temp();
                     cls2.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
                     cls2.SelectOne();
                     bTrangThaiXuatNhap_KhoDaiLyxx = cls2.bTrangThaiXuatNhap_KhoDaiLy.Value;
                     bTrangThaiXuatNhap_Kho_BTPxx = cls2.bTrangThaiXuatNhap_Kho_BTP.Value;
                     bTrangThaiXuatNhap_Kho_NPLxx = cls2.bTrangThaiXuatNhap_Kho_NPL.Value;
-                    bCheck_BaoVexx = cls2.bCheck_BaoVe.Value;
-                    bCheck_DaiLyxx = cls2.bCheck_DaiLy.Value;
-                    bCheck_LaiXe = cls2.bCheck_LaiXe.Value;
-                    bDaNhapKhoxx = cls2.bDaNhapKho.Value;
+                    
                 }
                 else
                 {
 
                     bTrangThaiXuatNhap_KhoDaiLyxx = bTrangThaiXuatNhap_Kho_BTPxx = bTrangThaiXuatNhap_Kho_NPLxx = bCheck_BaoVexx = bCheck_DaiLyxx = bCheck_LaiXe = bDaNhapKhoxx = false;
                 }
-                 clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
+                 clsDaiLy_tbNhapKho_Temp cls1 = new clsDaiLy_tbNhapKho_Temp();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTuKhoDaiLy.Text.ToString();
                 cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
@@ -875,16 +870,14 @@ namespace CtyTinLuong
                 cls1.fSoLuongTonThanhPhamQuyDoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
-                cls1.bHoanThanh = checkHoanThanh.Checked;
+               
                
                 cls1.bTrangThaiXuatNhap_KhoDaiLy = bTrangThaiXuatNhap_KhoDaiLyxx;
                 cls1.bTrangThaiXuatNhap_Kho_BTP = bTrangThaiXuatNhap_Kho_BTPxx;
                 cls1.bTrangThaiXuatNhap_Kho_NPL = bTrangThaiXuatNhap_Kho_NPLxx;
                 cls1.sThamChieu = txtSoChungTu.Text.ToString();
-                cls1.bDaNhapKho = bDaNhapKhoxx;
-                cls1.bCheck_BaoVe = bCheck_BaoVexx;
-                cls1.bCheck_DaiLy = bCheck_DaiLyxx;
-                cls1.bCheck_LaiXe = bCheck_LaiXe;
+              
+
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
@@ -965,16 +958,12 @@ namespace CtyTinLuong
                 bool bTrangThaiXuatNhap_KhoDaiLyxx, bTrangThaiXuatNhap_Kho_BTPxx, bCheck_BaoVexx, bCheck_DaiLyxx, bCheck_LaiXe, bDaNhapKhoxx;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == true)
                 {
-                    clsDaiLy_tbNhapKho cls2 = new clsDaiLy_tbNhapKho();
+                    clsDaiLy_tbNhapKho_Temp cls2 = new clsDaiLy_tbNhapKho_Temp();
                     cls2.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
                     cls2.SelectOne();
                     bTrangThaiXuatNhap_KhoDaiLyxx = cls2.bTrangThaiXuatNhap_KhoDaiLy.Value;
                     bTrangThaiXuatNhap_Kho_BTPxx = cls2.bTrangThaiXuatNhap_Kho_BTP.Value;
                    
-                    bCheck_BaoVexx = cls2.bCheck_BaoVe.Value;
-                    bCheck_DaiLyxx = cls2.bCheck_DaiLy.Value;
-                    bCheck_LaiXe = cls2.bCheck_LaiXe.Value;
-                    bDaNhapKhoxx = cls2.bDaNhapKho.Value;
                 }
                 else
                 {
@@ -983,7 +972,7 @@ namespace CtyTinLuong
                 }
 
 
-                clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
+                clsDaiLy_tbNhapKho_Temp cls1 = new clsDaiLy_tbNhapKho_Temp();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTuKhoDaiLy.Text.ToString();
                 cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
@@ -1001,15 +990,12 @@ namespace CtyTinLuong
                 cls1.fSoLuongTonThanhPhamQuyDoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
-                cls1.bHoanThanh = checkHoanThanh.Checked;
+                
                 cls1.bTrangThaiXuatNhap_KhoDaiLy = bTrangThaiXuatNhap_KhoDaiLyxx;
                 cls1.bTrangThaiXuatNhap_Kho_BTP = bTrangThaiXuatNhap_Kho_BTPxx;
                 cls1.bTrangThaiXuatNhap_Kho_NPL = true;
                 cls1.sThamChieu = txtSoChungTu.Text.ToString();
-                cls1.bDaNhapKho = bDaNhapKhoxx;
-                cls1.bCheck_BaoVe = bCheck_BaoVexx;
-                cls1.bCheck_DaiLy = bCheck_DaiLyxx;
-                cls1.bCheck_LaiXe = bCheck_LaiXe;
+               
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
@@ -1402,22 +1388,7 @@ namespace CtyTinLuong
            
         }
 
-        private void checkHoanThanh_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
-                cls.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
-                cls.bHoanThanh = checkHoanThanh.Checked;
-                cls.Update_W_HoanThanh();
-
-            }
-            catch
-            {
-
-            }
-        }
+      
 
         private void checkHangSot_CheckedChanged(object sender, EventArgs e)
         {
