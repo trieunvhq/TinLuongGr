@@ -874,7 +874,7 @@ namespace CtyTinLuong
                 clsnplxk.bTonTai = true;
                 clsnplxk.bNgungTheoDoi = false;
                 clsnplxk.bDaXuatKho = true;
-             
+                clsnplxk.bCheckXuatKho_Khac = false;
                 if (dt2npl.Rows.Count == 0)
                 {
                     clsnplxk.Insert();
