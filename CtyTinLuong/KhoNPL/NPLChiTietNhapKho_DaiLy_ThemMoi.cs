@@ -1140,19 +1140,54 @@ namespace CtyTinLuong
             try
             {
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
-                    ////HienThi_GridControl_Moiiiiiiiiiiii();
+                {
                     HienThi_GridControl_ThemMoi_newwwwwww();
+                   
+                }
+                    
             }
             catch
             {
 
             }
 
-            //}
-            //catch
-            //{
+            try
+            {
+                if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
+                {
+                    if(checkHangDot.Checked==true)
+                    {
+                        string s1 = txtDienGiaiDMNPL.Text.ToString();
+                        string s2 = txtSoLuong_BaoTo.Text.ToString();
+                        string s3 = "";
+                        if (txtSoLuong_BaoBe.Text.ToString() != "0")
+                            s3 = txtSoLuong_BaoBe.Text.ToString();
+                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
+                        string s5 = txtTongSoKG.Text.ToString();
+                        string s6 = txtSoKien_1_BaoTo.Text.ToString();
+                        string s7 = txtSoKien_1_BaoBe.Text.ToString();
+                        if (s3=="")
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = "+s5+" kg= "+s4+" kiện (ĐM="+s6+" bao to)";
+                        else txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to + "+s3+" bao bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, "+s7+" bé)";
+                    }
 
-            //}
+                    if (checkHangNhu.Checked == true)
+                    {
+                        string s1 = txtDienGiaiDMNPL.Text.ToString();
+                        string s2 = txtSoLuong_BaoTo.Text.ToString();
+                      
+                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
+                        string s5 = txtTongSoKG.Text.ToString();
+                        string s6 = txtSoKien_1_BaoTo.Text.ToString();                     
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " bao to)";                      
+                    }
+                }
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void gridMaDinhMucDot_EditValueChanged(object sender, EventArgs e)
