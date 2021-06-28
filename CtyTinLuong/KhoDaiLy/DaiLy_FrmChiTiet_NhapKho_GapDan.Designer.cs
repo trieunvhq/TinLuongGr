@@ -1049,7 +1049,10 @@
             this.Controls.Add(this.btLuu_Gui_Dong);
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DaiLy_FrmChiTiet_NhapKho_GapDan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Kho Gấp Dán";
             this.Load += new System.EventHandler(this.DaiLy_FrmChiTiet_NhapKho_GapDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();

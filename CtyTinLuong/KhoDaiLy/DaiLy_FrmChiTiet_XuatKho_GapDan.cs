@@ -1284,6 +1284,7 @@ namespace CtyTinLuong
             if (UCDaiLy_XuatKho_GapDan.mbthemmoi == true)
                 HienThi_ThemMoi_XuatKho();
             else HienThi_Sua_XuatKho();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

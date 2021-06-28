@@ -199,7 +199,7 @@ namespace CtyTinLuong
           
             gridMaDaiLy.EditValue = 0;
             dteDenNgay.DateTime = DateTime.Now;
-           
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -265,12 +265,14 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 mdadenngay = dteDenNgay.DateTime;
                 DaiLy_Frm_TonKho_MotVatTu ff = new DaiLy_Frm_TonKho_MotVatTu();
-                this.Hide();
+                //this.Hide();
                 ff.ShowDialog();
-                this.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 

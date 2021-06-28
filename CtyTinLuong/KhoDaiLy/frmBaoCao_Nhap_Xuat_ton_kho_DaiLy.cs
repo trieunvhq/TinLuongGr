@@ -355,7 +355,9 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             Load_lockup();
             gridMaDaiLy.EditValue = 0;
-            LoadDaTa(0,dteTuNgay.DateTime, dteDenNgay.DateTime);            
+            LoadDaTa(0,dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat2_Click(object sender, EventArgs e)
@@ -412,7 +414,10 @@ namespace CtyTinLuong
 
         private void btRefresh_Click_1(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click_1(object sender, EventArgs e)
@@ -436,12 +441,16 @@ namespace CtyTinLuong
                 }
                 //msoluongTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
                 //mGiaTriTonDauKy= Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
+
+                Cursor.Current = Cursors.WaitCursor;
+
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
-                this.Hide();
+                //this.Hide();
                 ff.ShowDialog();
-                this.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
         

@@ -316,6 +316,7 @@ namespace CtyTinLuong
             Load_Lockup();
             gridMaDaiLy.EditValue= frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy;
             LoadDaTa(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH, frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy,dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }

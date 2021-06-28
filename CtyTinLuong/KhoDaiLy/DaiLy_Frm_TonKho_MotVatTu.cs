@@ -130,7 +130,7 @@ namespace CtyTinLuong
             Load_Lockup();          
             gridMaVT.EditValue = DaiLy_BaoCao_TonKho.miID_VTHHH;
             dteDenNgay.EditValue = DaiLy_BaoCao_TonKho.mdadenngay;
-         
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridMaVT_EditValueChanged(object sender, EventArgs e)

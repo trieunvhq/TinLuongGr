@@ -359,15 +359,19 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Now;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);          
             LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }

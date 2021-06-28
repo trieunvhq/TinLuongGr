@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Threading;
+using DevExpress.XtraWaitForm;
 
 namespace CtyTinLuong
 {
@@ -115,6 +117,7 @@ namespace CtyTinLuong
         {
             _frmQLKDL = frmQLKDL;
             InitializeComponent();
+            
         }
 
         private void UC_DaiLy_NhapKho_Load(object sender, EventArgs e)
@@ -136,15 +139,15 @@ namespace CtyTinLuong
         }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoi_nhapKhoDaiLy = false;
-            miID_NhapKhoDaiLy= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
+            miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
             DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww ff = new DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww();
-            _frmQLKDL.Hide();
+            //_frmQLKDL.Hide();
             ff.ShowDialog();
-            _frmQLKDL.Show();
+            //_frmQLKDL.Show();
         }
 
- 
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
@@ -155,7 +158,6 @@ namespace CtyTinLuong
         {
             try
             {
-
                 clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
                 cls.iID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
