@@ -488,6 +488,7 @@
             this.txtTongSoKG.ReadOnly = true;
             this.txtTongSoKG.Size = new System.Drawing.Size(87, 20);
             this.txtTongSoKG.TabIndex = 97;
+            this.txtTongSoKG.TextChanged += new System.EventHandler(this.txtTongSoKG_TextChanged);
             // 
             // txtSoKG1Bao_Be
             // 

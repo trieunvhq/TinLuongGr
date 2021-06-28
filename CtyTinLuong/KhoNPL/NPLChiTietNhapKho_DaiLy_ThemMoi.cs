@@ -431,7 +431,62 @@ namespace CtyTinLuong
 
         }
 
- 
+        private void hienthi_DienGai()
+        {
+            try
+            {
+                if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
+                {
+                    if (checkHangDot.Checked == true)
+                    {
+                        string s1 = txtDienGiaiDMNPL.Text.ToString();
+                        string s2 = txtSoLuong_BaoTo.Text.ToString();
+                        string s3 = "";
+                        if (txtSoLuong_BaoBe.Text.ToString() != "0")
+                            s3 = txtSoLuong_BaoBe.Text.ToString();
+                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
+                        string s5 = txtTongSoKG.Text.ToString();
+                        string s6 = txtSoKien_1_BaoTo.Text.ToString();
+                        string s7 = txtSoKien_1_BaoBe.Text.ToString();
+                        if (s3 == "")
+                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " bao to)";
+                        else txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to + " + s3 + " bao bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
+                    }
+
+                   else if (checkHangNhu.Checked == true)
+                    {
+                        string s1 = txtDienGiaiDMNPL.Text.ToString();
+                        string s2 = txtSoLuong_BaoTo.Text.ToString();
+
+                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
+                        string s5 = txtTongSoKG.Text.ToString();
+                        string s6 = txtSoKien_1_BaoTo.Text.ToString();
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + " bao to)";
+                    }
+                    else if (checkHangSot.Checked == true)
+                    {
+                        string s1 = txtDienGiaiDMNPL.Text.ToString();
+                        string s2 = txtSoLuong_BaoTo.Text.ToString();
+                        string s3 = "";
+                        if (txtSoLuong_BaoBe.Text.ToString() != "0")
+                            s3 = txtSoLuong_BaoBe.Text.ToString();
+                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
+                        string s5 = txtTongSoKG.Text.ToString();
+                        string s6 = txtSoKien_1_BaoTo.Text.ToString();
+                        string s7 = txtSoKien_1_BaoBe.Text.ToString();
+                        if (s3 == "")
+                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " bao to)";
+                        else txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to + " + s3 + " sọt bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
+                    }
+
+                }
+
+            }
+            catch
+            {
+
+            }
+        }
         private void Load_LockUp()
         {
 
@@ -1100,7 +1155,7 @@ namespace CtyTinLuong
                     
                     HienThi_GridControl_ThemMoi_newwwwwww();
 
-
+                hienthi_DienGai();
             }
             catch
             {
@@ -1146,54 +1201,20 @@ namespace CtyTinLuong
                     HienThi_GridControl_ThemMoi_newwwwwww();
                    
                 }
-                    
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
-                {
-                    if(checkHangDot.Checked==true)
-                    {
-                        string s1 = txtDienGiaiDMNPL.Text.ToString();
-                        string s2 = txtSoLuong_BaoTo.Text.ToString();
-                        string s3 = "";
-                        if (txtSoLuong_BaoBe.Text.ToString() != "0")
-                            s3 = txtSoLuong_BaoBe.Text.ToString();
-                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
-                        string s5 = txtTongSoKG.Text.ToString();
-                        string s6 = txtSoKien_1_BaoTo.Text.ToString();
-                        string s7 = txtSoKien_1_BaoBe.Text.ToString();
-                        if (s3=="")
-                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = "+s5+" kg= "+s4+" kiện (ĐM="+s6+" bao to)";
-                        else txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to + "+s3+" bao bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, "+s7+" bé)";
-                    }
-
-                    if (checkHangNhu.Checked == true)
-                    {
-                        string s1 = txtDienGiaiDMNPL.Text.ToString();
-                        string s2 = txtSoLuong_BaoTo.Text.ToString();
-                      
-                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
-                        string s5 = txtTongSoKG.Text.ToString();
-                        string s6 = txtSoKien_1_BaoTo.Text.ToString();                     
-                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " bao to)";                      
-                    }
-                }
+                hienthi_DienGai();
 
             }
             catch
             {
 
             }
+
+            
         }
 
         private void gridMaDinhMucDot_EditValueChanged(object sender, EventArgs e)
         {
+          
             clsDinhMuc_tbDinhMuc_DOT clsncc = new clsDinhMuc_tbDinhMuc_DOT();
            
             clsncc.iID_DinhMuc_Dot = Convert.ToInt32(gridMaDinhMucDot_BaoTo.EditValue.ToString());
@@ -1208,6 +1229,7 @@ namespace CtyTinLuong
                 TinhTongSoKg_TongSoKien();
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
                     HienThi_GridControl_ThemMoi_newwwwwww();
+                hienthi_DienGai();
             }
             catch
             {
@@ -1420,6 +1442,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void txtTongSoKG_TextChanged(object sender, EventArgs e)
+        {
+            hienthi_DienGai();
+        }
+
         private void checkHangDot_CheckedChanged(object sender, EventArgs e)
         {
             if (checkHangDot.Checked == true)
@@ -1488,6 +1515,7 @@ namespace CtyTinLuong
                 TinhTongSoKg_TongSoKien();
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
                     HienThi_GridControl_ThemMoi_newwwwwww();
+                hienthi_DienGai();
             }
             catch
             {
@@ -1499,6 +1527,7 @@ namespace CtyTinLuong
         {
             try
             {
+                hienthi_DienGai();
                 TinhTongSoKg_TongSoKien();
 
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
