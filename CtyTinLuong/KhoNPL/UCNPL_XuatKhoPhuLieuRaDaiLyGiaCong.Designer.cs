@@ -771,8 +771,6 @@
             this.clHoanThanh.Name = "clHoanThanh";
             this.clHoanThanh.OptionsColumn.AllowEdit = false;
             this.clHoanThanh.OptionsColumn.FixedWidth = true;
-            this.clHoanThanh.Visible = true;
-            this.clHoanThanh.VisibleIndex = 10;
             this.clHoanThanh.Width = 40;
             // 
             // checkHoanThanh
