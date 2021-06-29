@@ -28,9 +28,11 @@ namespace CtyTinLuong
 
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItemLenhSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

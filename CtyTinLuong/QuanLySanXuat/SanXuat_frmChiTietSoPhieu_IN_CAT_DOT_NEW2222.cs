@@ -1344,8 +1344,9 @@ namespace CtyTinLuong
 
         private void SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222_Load(object sender, EventArgs e)
         {
-          
+            Cursor.Current = Cursors.WaitCursor;
             Load_khoiDong();
+            Cursor.Current = Cursors.Default;
 
         }
 

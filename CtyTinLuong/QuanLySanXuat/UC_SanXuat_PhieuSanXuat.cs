@@ -61,7 +61,10 @@ namespace CtyTinLuong
             dt2.Columns.Add("CaSanXuat", typeof(string));
             using (clsThin cls_ = new clsThin())
             {
-                DataTable dt_ = cls_.T_PhieuSX_SF(_SoTrang,_ngay_batdau,_ngay_ketthuc,_ma_phieu); 
+                DataTable dt_ = cls_.T_PhieuSX_SF(_SoTrang,_ngay_batdau,_ngay_ketthuc,_ma_phieu);
+
+                _RowPage_curent = dt_.Rows.Count;
+
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt_.Rows.Count; i++)
@@ -164,11 +167,13 @@ namespace CtyTinLuong
 
         private void UC_SanXuat_PhieuSanXuat_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             _STT = 1;
             clCaLamViec.Caption = "Ca\n làm việc";
             LoadData(1, true);
             ResetSoTrang();
             //  HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -180,10 +185,10 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
+            //if (e.Column == clSTT)
+            //{
+            //    e.DisplayText = (e.RowHandle + 1).ToString();
+            //}
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -192,6 +197,7 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     mb_ThemMoi_SoPhieu = false;
                     mb_Sua_SoPhieu = true;
                     mbCopy_Phieu = false;
@@ -201,6 +207,7 @@ namespace CtyTinLuong
                     //_frmQLSX.Hide();
                     ff.Show();
                     //_frmQLSX.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
