@@ -56,12 +56,16 @@ namespace CtyTinLuong
 
         private void ucDinhMucNGuyenPhuLieu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             clBooL_NguyenPhuLieu.Caption = "Vật tư\nphụ";
       
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.VisibleIndex = 4;
             HienThi();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -123,12 +127,14 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_DinhMuc_NPL).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     miID_DinhMuc_NPL = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_NPL).ToString());                   
                     mb_TheMoi_DinhMuc_NPL = false;
                     frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
-                    _frmQLSX.Hide();
+                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
@@ -143,12 +149,14 @@ namespace CtyTinLuong
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 clsDinhMuc_tbDM_NguyenPhuLieu cls1 = new clsDinhMuc_tbDM_NguyenPhuLieu();
                 cls1.iID_DinhMuc_NPL = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_NPL).ToString());
                 cls1.Delete();
 
                 MessageBox.Show("Đã xóa");
                 HienThi();
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -184,16 +192,20 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             ucDinhMucNGuyenPhuLieu_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_NPL = true;
             frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
-            _frmQLSX.Hide();
+            //_frmQLSX.Hide();
             ff.ShowDialog();
-            _frmQLSX.Show();
+            //_frmQLSX.Show();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

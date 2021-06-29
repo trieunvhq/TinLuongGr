@@ -43,11 +43,13 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_Dot = true;
             frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
-            _frmQLSX.Hide();
+            //_frmQLSX.Hide();
             ff.ShowDialog();
-            _frmQLSX.Show();
+            //_frmQLSX.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -56,14 +58,16 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     miID_DinhMuc_Dot = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());                 
                     miDID_VTHH= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());                 
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
-                    _frmQLSX.Hide();
+                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
@@ -74,7 +78,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDinhMucDot_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -180,6 +186,7 @@ namespace CtyTinLuong
 
         private void UCDinhMucDot_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clSoLuongKiemTra.Caption = "SL\nkiểm tra";
             //clSoKG_MotBao.Caption = "1 BAO\n(kg)";
             //clSoKienMotBao.Caption = "1 BAO\n(Kiện)";
@@ -192,6 +199,7 @@ namespace CtyTinLuong
             checkTheoDoi.Checked = true;
             mb_TheMoi_DinhMuc_Dot = false;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

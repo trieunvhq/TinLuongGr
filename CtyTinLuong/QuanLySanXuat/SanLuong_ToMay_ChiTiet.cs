@@ -79,6 +79,7 @@ namespace CtyTinLuong
 
         private void SanLuong_ToMay_ChiTiet_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             xxximay_in_1_Cat_2_dot_3 = SanXuat_frmQuanLySanXuat.imay_in_1_Cat_2_dot_3;
             Load_lockup();
             dteTuNgay.EditValue = SanLuong_To_May_IN.mdatungay;
@@ -87,7 +88,7 @@ namespace CtyTinLuong
             int xxID = Convert.ToInt32(GridMaVT.EditValue.ToString());            
             LoadData( xxID,dteTuNgay.DateTime, dteDenNgay.DateTime);
 
-
+            Cursor.Current = Cursors.Default;
 
         }
 

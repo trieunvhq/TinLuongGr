@@ -343,7 +343,7 @@ namespace CtyTinLuong
 
         private void SanLuong_ChiTiet_Luong_Load(object sender, EventArgs e)
         {
-            
+            Cursor.Current = Cursors.WaitCursor;
             DateTime dtnow = DateTime.Now;
             txtNam.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year.ToString();
             txtThang.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month.ToString();
@@ -354,13 +354,15 @@ namespace CtyTinLuong
             HienThiGridcontrol2(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
             Load_LockUp();
             gridCongNhan.EditValue = frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan;
-
+            Cursor.Current = Cursors.Default;
         }
 
 
         private void btRefesh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             SanLuong_ChiTiet_Luong_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)

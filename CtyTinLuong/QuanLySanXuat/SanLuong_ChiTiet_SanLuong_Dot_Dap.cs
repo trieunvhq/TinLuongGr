@@ -65,6 +65,7 @@ namespace CtyTinLuong
 
         private void SanLuong_ChiTiet_SanLuong_Dot_Dap_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clSoKG_MotBao_May_Dot.Caption = "Số KG/\nBao_Sọt";
             clQuyRaKG.Caption = "Tổng số\nKg";
             Load_lockup();
@@ -73,6 +74,7 @@ namespace CtyTinLuong
             GridMaVT.EditValue = SanLuong_To_DOT_DAP.miID_VTHH_Ra;
            
             LoadData(SanLuong_To_DOT_DAP.miID_VTHH_Ra, SanLuong_To_DOT_DAP.mdatungay, SanLuong_To_DOT_DAP.mdadenngay);
+            Cursor.Current = Cursors.Default;
         }
 
         private void GridMaVT_EditValueChanged(object sender, EventArgs e)

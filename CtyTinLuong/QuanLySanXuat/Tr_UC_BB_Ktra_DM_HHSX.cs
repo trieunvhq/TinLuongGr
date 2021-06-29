@@ -139,14 +139,18 @@ namespace CtyTinLuong
 
         private void Tr_UC_BB_Ktra_DM_HHSX_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             _STT = 1;
             LoadData(1, true);
             ResetSoTrang_BB();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Tr_UC_BB_Ktra_DM_HHSX_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
      
@@ -165,6 +169,8 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
+
                     mbAdd_BB_Ktra = false;
                     mb_Sua_BB_Ktra = true;
                     mbCopy_BB_Ktra = true;
@@ -190,9 +196,11 @@ namespace CtyTinLuong
                     msGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
 
                     Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
-                    _frmQLSX.Hide();
+                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Show();
+
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
@@ -203,6 +211,8 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
             cls.iId_BB = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
 
@@ -229,6 +239,7 @@ namespace CtyTinLuong
 
             }
 
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -284,15 +295,19 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click_1(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             mbAdd_BB_Ktra = true;
             mbCopy_BB_Ktra = false;
             mb_Sua_BB_Ktra = false;
 
             //
             Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
-            _frmQLSX.Hide();
+            //_frmQLSX.Hide();
             ff.ShowDialog();
-            _frmQLSX.Show();
+            //_frmQLSX.Show();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
@@ -342,6 +357,8 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_BienBan).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
+
                     mbAdd_BB_Ktra = true;
                     mb_Sua_BB_Ktra = false;
                     mbCopy_BB_Ktra = true;
@@ -366,9 +383,11 @@ namespace CtyTinLuong
                     msGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
 
                     Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
-                    _frmQLSX.Hide();
+                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Show();
+
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch

@@ -50,6 +50,7 @@ namespace CtyTinLuong
 
         private void UCSanXuat_CaiDatMacDinh_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsvthhh = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
             DataTable dtvthh = clsvthhh.SelectAll();
             dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
@@ -59,11 +60,14 @@ namespace CtyTinLuong
             repositoryItemGridLookUpEdit1.ValueMember = "ID_DinhMuc_Luong_SanLuong";
             repositoryItemGridLookUpEdit1.DisplayMember = "MaDinhMuc";
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCSanXuat_CaiDatMacDinh_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

@@ -300,11 +300,13 @@ namespace CtyTinLuong
 
         private void SanXuat_frmChiTietSoPhieu_RutGon_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Now;            
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

@@ -482,6 +482,7 @@ namespace CtyTinLuong
 
         private void SanXuat_frmChiTietLenhSanXuat_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             // textBox4.Text = "" + UC_SanXuat_LenhSanXuat.mID_iD_LenhSanXuat.ToString() + "; " + UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat.ToString() + "";
             clSanLuong_TangCa.Caption = "SL\n tăng ca";
             clSanLuong_Thuong.Caption = "Sản\n lượng";
@@ -509,9 +510,7 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
             HienThi_SUa_LenhSanXuat();
 
-
-
-
+            Cursor.Current = Cursors.Default;
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

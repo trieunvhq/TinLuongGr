@@ -292,13 +292,15 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_CongNhan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
-                this.Hide();
+                //this.Hide();
                 ff.ShowDialog();
-                this.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -309,6 +311,7 @@ namespace CtyTinLuong
 
         private void frmBaoCaoSanLuong_Theo_CongNhan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             DateTime ngayhomnay = DateTime.Today;
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
             int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
@@ -318,6 +321,7 @@ namespace CtyTinLuong
             
             LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
             gridView2.ExpandAllGroups();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

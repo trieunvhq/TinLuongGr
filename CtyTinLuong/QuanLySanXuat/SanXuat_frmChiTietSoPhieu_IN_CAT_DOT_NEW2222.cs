@@ -1347,7 +1347,6 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             Load_khoiDong();
             Cursor.Current = Cursors.Default;
-
         }
 
         private void gridMaCaTruong_May_IN_EditValueChanged(object sender, EventArgs e)

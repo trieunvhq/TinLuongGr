@@ -268,42 +268,48 @@ namespace CtyTinLuong
 
         private void frmChiTietDinhMucNPL_Load(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_ChiTietDinhMucNPL", typeof(int));
-            dt2.Columns.Add("ID_DinhMuc_NPL", typeof(int));
-            dt2.Columns.Add("ID_VTHH", typeof(int));         
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("MaVT");// 
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("HienThi", typeof(string));               
-            gridControl1.DataSource = dt2;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("ID_ChiTietDinhMucNPL", typeof(int));
+                dt2.Columns.Add("ID_DinhMuc_NPL", typeof(int));
+                dt2.Columns.Add("ID_VTHH", typeof(int));
+                dt2.Columns.Add("SoLuong", typeof(float));
+                dt2.Columns.Add("MaVT");// 
+                dt2.Columns.Add("TenVTHH");
+                dt2.Columns.Add("DonViTinh");
+                dt2.Columns.Add("HienThi", typeof(string));
+                gridControl1.DataSource = dt2;
 
-            
 
 
 
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
 
-            gridMaTPQuyDoi.Properties.DataSource = dtxx2;
-            gridMaTPQuyDoi.Properties.ValueMember = "ID_VTHH";
-            gridMaTPQuyDoi.Properties.DisplayMember = "MaVT";
-            //
-            gridMaVTchinh1.Properties.DataSource = dtxx2;
-            gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
-            gridMaVTchinh1.Properties.DisplayMember = "MaVT";
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                DataTable dt = cls.SelectAll();
+                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                DataView dv2 = dt.DefaultView;
+                DataTable dtxx2 = dv2.ToTable();
 
-            repositoryItemLookUpEdit2.DataSource = dtxx2;
-            repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
-            repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+                gridMaTPQuyDoi.Properties.DataSource = dtxx2;
+                gridMaTPQuyDoi.Properties.ValueMember = "ID_VTHH";
+                gridMaTPQuyDoi.Properties.DisplayMember = "MaVT";
+                //
+                gridMaVTchinh1.Properties.DataSource = dtxx2;
+                gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
+                gridMaVTchinh1.Properties.DisplayMember = "MaVT";
 
-            if (ucDinhMucNGuyenPhuLieu.mb_TheMoi_DinhMuc_NPL == true)
-                HienThi_ThemMoi_DinhMuc_NPL();
-            else HienThi_Sua_DinhMuc_NPL();
+                repositoryItemLookUpEdit2.DataSource = dtxx2;
+                repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
+                repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+
+                if (ucDinhMucNGuyenPhuLieu.mb_TheMoi_DinhMuc_NPL == true)
+                    HienThi_ThemMoi_DinhMuc_NPL();
+                else HienThi_Sua_DinhMuc_NPL();
+            }
+            catch { }
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridMaVTchinh1_EditValueChanged(object sender, EventArgs e)

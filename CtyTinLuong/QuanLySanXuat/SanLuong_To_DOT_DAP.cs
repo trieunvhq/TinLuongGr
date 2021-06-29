@@ -95,6 +95,7 @@ namespace CtyTinLuong
 
         private void SanLuong_To_DOT_DAP_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clTongSoBao_Sot.Caption = "Số KG/\nBao_Sọt";
             clTongSoKg.Caption = "Tổng số\nKg";
             DateTime ngayhomnay = DateTime.Today;
@@ -106,7 +107,7 @@ namespace CtyTinLuong
 
             LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
-           
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
@@ -168,13 +169,15 @@ namespace CtyTinLuong
         {
             if (gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_VTHH_Ra = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 SanLuong_ChiTiet_SanLuong_Dot_Dap ff = new SanLuong_ChiTiet_SanLuong_Dot_Dap();
-                this.Hide();
+                //this.Hide();
                 ff.ShowDialog();
-                this.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
     }

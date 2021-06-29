@@ -63,6 +63,7 @@ namespace CtyTinLuong
 
         private void UCDinhMucHangNhu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clSoLuongKiemTra.Caption = "SL\nkiểm tra";
             clSoKienMotBao.Caption = "Cục/Bao\n Tép/Sọt";
             clSoKG_MotBao.Caption = "Kg/Bao\n Kg/Sọt";
@@ -75,11 +76,14 @@ namespace CtyTinLuong
             checkTheoDoi.Checked = true;
             mb_TheMoi_DinhMuc_Dot = false;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCDinhMucHangNhu_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -125,22 +129,26 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     clsDinhMuc_tbDinhMuc_DOT cls1 = new clsDinhMuc_tbDinhMuc_DOT();
                     cls1.iID_DinhMuc_Dot = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
                     cls1.Delete();
                     MessageBox.Show("Đã xóa");
                     HienThi();
+                    Cursor.Current = Cursors.Default;
                 }
             }
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_Dot = true;
             frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu();
-            _frmQLSX.Hide();
+            //_frmQLSX.Hide();
             ff.ShowDialog();
-            _frmQLSX.Show();
+            //_frmQLSX.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -149,14 +157,16 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     miID_DinhMuc_Dot = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
                     miDID_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu();
-                    _frmQLSX.Hide();
+                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch

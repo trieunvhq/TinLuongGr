@@ -305,7 +305,7 @@ namespace CtyTinLuong
 
         private void frmChiTietDinhMucDot_Load(object sender, EventArgs e)
         {
-           
+            Cursor.Current = Cursors.WaitCursor;
 
             if (UCDinhMucDot.mb_TheMoi_DinhMuc_Dot==true)
             {
@@ -316,6 +316,8 @@ namespace CtyTinLuong
               
                 HienThi_Sua_DinhMuc_DOT();
             }
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)

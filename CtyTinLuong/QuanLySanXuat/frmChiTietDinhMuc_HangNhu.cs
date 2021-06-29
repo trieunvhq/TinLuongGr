@@ -162,6 +162,7 @@ namespace CtyTinLuong
 
         private void frmChiTietDinhMuc_HangNhu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (UCDinhMucHangNhu.mb_TheMoi_DinhMuc_Dot == true)
             {
                 HienThi_ThemMoi_DinhMuc_DOT();
@@ -171,6 +172,7 @@ namespace CtyTinLuong
 
                 HienThi_Sua_DinhMuc_DOT();
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridLookUpEditLoaiHang_EditValueChanged(object sender, EventArgs e)

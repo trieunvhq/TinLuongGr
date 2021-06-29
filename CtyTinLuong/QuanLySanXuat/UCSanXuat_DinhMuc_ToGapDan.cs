@@ -53,10 +53,12 @@ namespace CtyTinLuong
 
         private void UCSanXuat_DinhMuc_ToGapDan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.VisibleIndex = 4;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -91,7 +93,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCSanXuat_DinhMuc_ToGapDan_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -120,6 +124,7 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 if (gridView1.GetFocusedRowCellValue(clID_DinhMuc_ToGapDan).ToString() != "")
@@ -127,15 +132,16 @@ namespace CtyTinLuong
                     miID_DinhMuc_ToGapDan= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_ToGapDan).ToString());
                     mb_TheMoi_DinhMuc_ToGapDan = false;
                     frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
-                    _frmQLSX.Hide();
+                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Show();
                 }
             }
             catch
             {
 
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -169,11 +175,13 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_ToGapDan = true;
             frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
-            _frmQLSX.Hide();
+            //_frmQLSX.Hide();
             ff.ShowDialog();
-            _frmQLSX.Show();
+            //_frmQLSX.Show();
+            Cursor.Current = Cursors.Default;
         }
     }
 }
