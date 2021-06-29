@@ -87,5 +87,10 @@ namespace CtyTinLuong
             if (e.Column == clSTT2)
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
+
+        private void btNhapKho_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
