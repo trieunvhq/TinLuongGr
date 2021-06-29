@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public partial class clsDaiLy_ThamChieu_TinhXuatKho : clsDBInteractionBase
+	public partial class clsDaiLy_ThamChieu_TinhXuatKho_Temp : clsDBInteractionBase
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bTonTai, m_bNgungTheoDoi;
@@ -14,7 +14,7 @@ namespace CtyTinLuong
 		#endregion
 
 
-		public clsDaiLy_ThamChieu_TinhXuatKho()
+		public clsDaiLy_ThamChieu_TinhXuatKho_Temp()
 		{
 			// Nothing for now.
 		}
@@ -23,7 +23,7 @@ namespace CtyTinLuong
 		public override bool Insert()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Insert]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Insert]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -54,7 +54,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Insert' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Insert' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return true;
@@ -62,7 +62,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho::Insert::Error occured.", ex);
+				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho_Temp::Insert::Error occured.", ex);
 			}
 			finally
 			{
@@ -76,7 +76,7 @@ namespace CtyTinLuong
 		public override bool Update()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Update]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Update]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -106,7 +106,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Update' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Update' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return true;
@@ -114,7 +114,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho::Update::Error occured.", ex);
+				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho_Temp::Update::Error occured.", ex);
 			}
 			finally
 			{
@@ -128,7 +128,7 @@ namespace CtyTinLuong
 		public override bool Delete()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Delete]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Delete]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -149,7 +149,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Delete' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Delete' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return true;
@@ -157,7 +157,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho::Delete::Error occured.", ex);
+				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho_Temp::Delete::Error occured.", ex);
 			}
 			finally
 			{
@@ -171,9 +171,9 @@ namespace CtyTinLuong
 		public override DataTable SelectOne()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_SelectOne]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Temp_SelectOne]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-			DataTable dtToReturn = new DataTable("DaiLy_ThamChieu_TinhXuatKho");
+			DataTable dtToReturn = new DataTable("DaiLy_ThamChieu_TinhXuatKho_Temp");
 			SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
 			// Use base class' connection object
@@ -194,7 +194,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_SelectOne' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Temp_SelectOne' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				if(dtToReturn.Rows.Count > 0)
@@ -215,7 +215,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho::SelectOne::Error occured.", ex);
+				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho_Temp::SelectOne::Error occured.", ex);
 			}
 			finally
 			{
@@ -230,9 +230,9 @@ namespace CtyTinLuong
 		public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_SelectAll]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_ThamChieu_TinhXuatKho_Temp_SelectAll]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-			DataTable dtToReturn = new DataTable("DaiLy_ThamChieu_TinhXuatKho");
+			DataTable dtToReturn = new DataTable("DaiLy_ThamChieu_TinhXuatKho_Temp");
 			SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
 			// Use base class' connection object
@@ -252,7 +252,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_SelectAll' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_ThamChieu_TinhXuatKho_Temp_SelectAll' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return dtToReturn;
@@ -260,7 +260,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho::SelectAll::Error occured.", ex);
+				throw new Exception("clsDaiLy_ThamChieu_TinhXuatKho_Temp::SelectAll::Error occured.", ex);
 			}
 			finally
 			{

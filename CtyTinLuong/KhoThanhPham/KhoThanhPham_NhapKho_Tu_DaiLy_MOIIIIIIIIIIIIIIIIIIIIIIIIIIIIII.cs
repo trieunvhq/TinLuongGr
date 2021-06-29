@@ -832,8 +832,7 @@ namespace CtyTinLuong
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.iID_VTHH = 0;
-                cls1.fSoLuongXuat_BaoTo = 0;
-                cls1.fSoLuongXuat_BaoBe = 0;
+                
                 cls1.fSoLuongThanhPhamQuyDoi = dexxTongSoLuong;
                 if (dexxTongSoLuong != 0)
                     cls1.fDonGia = dexxTongtienhang / dexxTongSoLuong;
@@ -842,9 +841,7 @@ namespace CtyTinLuong
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
-                cls1.iID_DinhMucDot_BaoTo = 0;
-                cls1.iID_DinhMucDot_BaoBe = 0;
-                cls1.iID_DinhMucNguenPhuLieu = 0;
+               
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls1.bCheck_BaoVe = false;
@@ -855,7 +852,7 @@ namespace CtyTinLuong
                 cls1.bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False = checkNhapKhoThanhPham.Checked;
                 cls1.bDaXuatKho = false;
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
-                cls1.iID_ThamChieuNhapKho = 0;
+               
                 cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
 
                 if (UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.mbSua == false)
@@ -915,8 +912,7 @@ namespace CtyTinLuong
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.iID_VTHH = 0;
-                cls1.fSoLuongXuat_BaoTo = 0;
-                cls1.fSoLuongXuat_BaoBe = 0;
+               
                 cls1.fSoLuongThanhPhamQuyDoi = dexxTongSoLuong;
                 if (dexxTongSoLuong != 0)
                     cls1.fDonGia = dexxTongtienhang / dexxTongSoLuong;
@@ -925,9 +921,7 @@ namespace CtyTinLuong
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
-                cls1.iID_DinhMucDot_BaoTo = 0;
-                cls1.iID_DinhMucDot_BaoBe = 0;
-                cls1.iID_DinhMucNguenPhuLieu = 0;
+                
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls1.bCheck_BaoVe = false;
@@ -939,7 +933,7 @@ namespace CtyTinLuong
                 cls1.bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False = checkNhapKhoThanhPham.Checked;
                 cls1.bDaXuatKho = false;
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
-                cls1.iID_ThamChieuNhapKho =0;
+              
                 if (UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww.mbSua == false)
                 {
                     cls1.Insert();
