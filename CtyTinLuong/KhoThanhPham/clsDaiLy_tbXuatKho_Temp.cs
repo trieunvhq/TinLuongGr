@@ -5,18 +5,18 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public partial class clsDaiLy_tbXuatKho : clsDBInteractionBase
+	public partial class clsDaiLy_tbXuatKho_Temp : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bNgungTheoDoi, m_bTonTai, m_bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False, m_bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe, m_bCheck_DaiLy, m_bCheck_LaiXe, m_bTrangThai_XuatKho_DaiLy_GuiDuLieu, m_bDaXuatKho, m_bCheck_BaoVe;
-			private SqlDateTime		m_daNgayChungTu, m_daThoiGian_KhoiTao, m_daThoiGian_LaiXe, m_daThoiGian_BaoVe, m_daThoiGian_DaiLy;
-			private SqlDouble		m_fTongTienHang, m_fDonGia, m_fSoLuongThanhPhamQuyDoi;
-			private SqlInt32		m_iHangDoT_1_hangNhu_2_ConLai3, m_iID_NguoiNhap, m_iID_VTHH, m_iID_XuatKhoDaiLy, m_iID_DaiLy;
+			private SqlBoolean		m_bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False, m_bTrangThai_XuatKho_DaiLy_GuiDuLieu, m_bNgungTheoDoi, m_bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe, m_bDaXuatKho, m_bTonTai;
+			private SqlDateTime		m_daNgayChungTu;
+			private SqlDouble		m_fDonGia, m_fSoLuongThanhPhamQuyDoi, m_fTongTienHang;
+			private SqlInt32		m_iHangDoT_1_hangNhu_2_ConLai3, m_iID_DaiLy, m_iID_VTHH, m_iID_XuatKhoDaiLy, m_iID_NguoiNhap;
 			private SqlString		m_sSoChungTu, m_sGhiChu, m_sDienGiai;
 		#endregion
 
 
-		public clsDaiLy_tbXuatKho()
+		public clsDaiLy_tbXuatKho_Temp()
 		{
 			// Nothing for now.
 		}
@@ -25,7 +25,7 @@ namespace CtyTinLuong
 		public override bool Insert()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Insert]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Temp_Insert]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -44,13 +44,6 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NguoiNhap", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NguoiNhap));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DaiLy", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DaiLy));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_BaoVe", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_BaoVe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_LaiXe", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_LaiXe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_DaiLy", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_DaiLy));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_KhoiTao", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_KhoiTao));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_LaiXe", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_LaiXe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_BaoVe", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_BaoVe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_DaiLy", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_DaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThai_XuatKho_DaiLy_GuiDuLieu", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThai_XuatKho_DaiLy_GuiDuLieu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False));
@@ -71,7 +64,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Insert' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Temp_Insert' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return true;
@@ -79,7 +72,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_tbXuatKho::Insert::Error occured.", ex);
+				throw new Exception("clsDaiLy_tbXuatKho_Temp::Insert::Error occured.", ex);
 			}
 			finally
 			{
@@ -93,7 +86,7 @@ namespace CtyTinLuong
 		public override bool Update()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Update]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Temp_Update]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -113,13 +106,6 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NguoiNhap", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NguoiNhap));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DaiLy", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DaiLy));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_BaoVe", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_BaoVe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_LaiXe", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_LaiXe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_DaiLy", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_DaiLy));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_KhoiTao", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_KhoiTao));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_LaiXe", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_LaiXe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_BaoVe", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_BaoVe));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_DaiLy", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_DaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThai_XuatKho_DaiLy_GuiDuLieu", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThai_XuatKho_DaiLy_GuiDuLieu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False));
@@ -138,7 +124,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Update' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Temp_Update' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return true;
@@ -146,7 +132,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_tbXuatKho::Update::Error occured.", ex);
+				throw new Exception("clsDaiLy_tbXuatKho_Temp::Update::Error occured.", ex);
 			}
 			finally
 			{
@@ -160,7 +146,7 @@ namespace CtyTinLuong
 		public override bool Delete()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Delete]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Temp_Delete]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -181,7 +167,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Delete' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Temp_Delete' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return true;
@@ -189,7 +175,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_tbXuatKho::Delete::Error occured.", ex);
+				throw new Exception("clsDaiLy_tbXuatKho_Temp::Delete::Error occured.", ex);
 			}
 			finally
 			{
@@ -203,9 +189,9 @@ namespace CtyTinLuong
 		public override DataTable SelectOne()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_SelectOne]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Temp_SelectOne]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-			DataTable dtToReturn = new DataTable("DaiLy_tbXuatKho");
+			DataTable dtToReturn = new DataTable("DaiLy_tbXuatKho_Temp");
 			SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
 			// Use base class' connection object
@@ -226,7 +212,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_SelectOne' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Temp_SelectOne' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				if(dtToReturn.Rows.Count > 0)
@@ -243,13 +229,6 @@ namespace CtyTinLuong
 					m_bNgungTheoDoi = (bool)dtToReturn.Rows[0]["NgungTheoDoi"];
 					m_iID_NguoiNhap = (Int32)dtToReturn.Rows[0]["ID_NguoiNhap"];
 					m_iID_DaiLy = (Int32)dtToReturn.Rows[0]["ID_DaiLy"];
-					m_bCheck_BaoVe = (bool)dtToReturn.Rows[0]["Check_BaoVe"];
-					m_bCheck_LaiXe = (bool)dtToReturn.Rows[0]["Check_LaiXe"];
-					m_bCheck_DaiLy = (bool)dtToReturn.Rows[0]["Check_DaiLy"];
-					m_daThoiGian_KhoiTao = dtToReturn.Rows[0]["ThoiGian_KhoiTao"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_KhoiTao"];
-					m_daThoiGian_LaiXe = dtToReturn.Rows[0]["ThoiGian_LaiXe"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_LaiXe"];
-					m_daThoiGian_BaoVe = dtToReturn.Rows[0]["ThoiGian_BaoVe"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_BaoVe"];
-					m_daThoiGian_DaiLy = dtToReturn.Rows[0]["ThoiGian_DaiLy"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_DaiLy"];
 					m_bTrangThai_XuatKho_DaiLy_GuiDuLieu = (bool)dtToReturn.Rows[0]["TrangThai_XuatKho_DaiLy_GuiDuLieu"];
 					m_bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe = (bool)dtToReturn.Rows[0]["TrangThaiXuatNhap_ThanhPham_TuDaiLyVe"];
 					m_bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False = (bool)dtToReturn.Rows[0]["CheckNhapKho_ThanhPham_True_nhapKhoBTP_False"];
@@ -262,7 +241,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_tbXuatKho::SelectOne::Error occured.", ex);
+				throw new Exception("clsDaiLy_tbXuatKho_Temp::SelectOne::Error occured.", ex);
 			}
 			finally
 			{
@@ -277,9 +256,9 @@ namespace CtyTinLuong
 		public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_SelectAll]";
+			scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbXuatKho_Temp_SelectAll]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-			DataTable dtToReturn = new DataTable("DaiLy_tbXuatKho");
+			DataTable dtToReturn = new DataTable("DaiLy_tbXuatKho_Temp");
 			SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
 			// Use base class' connection object
@@ -299,7 +278,7 @@ namespace CtyTinLuong
 				if(m_iErrorCode != (int)LLBLError.AllOk)
 				{
 					// Throw error.
-					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_SelectAll' reported the ErrorCode: " + m_iErrorCode);
+					throw new Exception("Stored Procedure 'pr_DaiLy_tbXuatKho_Temp_SelectAll' reported the ErrorCode: " + m_iErrorCode);
 				}
 
 				return dtToReturn;
@@ -307,7 +286,7 @@ namespace CtyTinLuong
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsDaiLy_tbXuatKho::SelectAll::Error occured.", ex);
+				throw new Exception("clsDaiLy_tbXuatKho_Temp::SelectAll::Error occured.", ex);
 			}
 			finally
 			{
@@ -532,132 +511,6 @@ namespace CtyTinLuong
 					throw new ArgumentOutOfRangeException("iID_DaiLy", "iID_DaiLy can't be NULL");
 				}
 				m_iID_DaiLy = value;
-			}
-		}
-
-
-		public SqlBoolean bCheck_BaoVe
-		{
-			get
-			{
-				return m_bCheck_BaoVe;
-			}
-			set
-			{
-				SqlBoolean bCheck_BaoVeTmp = (SqlBoolean)value;
-				if(bCheck_BaoVeTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("bCheck_BaoVe", "bCheck_BaoVe can't be NULL");
-				}
-				m_bCheck_BaoVe = value;
-			}
-		}
-
-
-		public SqlBoolean bCheck_LaiXe
-		{
-			get
-			{
-				return m_bCheck_LaiXe;
-			}
-			set
-			{
-				SqlBoolean bCheck_LaiXeTmp = (SqlBoolean)value;
-				if(bCheck_LaiXeTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("bCheck_LaiXe", "bCheck_LaiXe can't be NULL");
-				}
-				m_bCheck_LaiXe = value;
-			}
-		}
-
-
-		public SqlBoolean bCheck_DaiLy
-		{
-			get
-			{
-				return m_bCheck_DaiLy;
-			}
-			set
-			{
-				SqlBoolean bCheck_DaiLyTmp = (SqlBoolean)value;
-				if(bCheck_DaiLyTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("bCheck_DaiLy", "bCheck_DaiLy can't be NULL");
-				}
-				m_bCheck_DaiLy = value;
-			}
-		}
-
-
-		public SqlDateTime daThoiGian_KhoiTao
-		{
-			get
-			{
-				return m_daThoiGian_KhoiTao;
-			}
-			set
-			{
-				SqlDateTime daThoiGian_KhoiTaoTmp = (SqlDateTime)value;
-				if(daThoiGian_KhoiTaoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("daThoiGian_KhoiTao", "daThoiGian_KhoiTao can't be NULL");
-				}
-				m_daThoiGian_KhoiTao = value;
-			}
-		}
-
-
-		public SqlDateTime daThoiGian_LaiXe
-		{
-			get
-			{
-				return m_daThoiGian_LaiXe;
-			}
-			set
-			{
-				SqlDateTime daThoiGian_LaiXeTmp = (SqlDateTime)value;
-				if(daThoiGian_LaiXeTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("daThoiGian_LaiXe", "daThoiGian_LaiXe can't be NULL");
-				}
-				m_daThoiGian_LaiXe = value;
-			}
-		}
-
-
-		public SqlDateTime daThoiGian_BaoVe
-		{
-			get
-			{
-				return m_daThoiGian_BaoVe;
-			}
-			set
-			{
-				SqlDateTime daThoiGian_BaoVeTmp = (SqlDateTime)value;
-				if(daThoiGian_BaoVeTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("daThoiGian_BaoVe", "daThoiGian_BaoVe can't be NULL");
-				}
-				m_daThoiGian_BaoVe = value;
-			}
-		}
-
-
-		public SqlDateTime daThoiGian_DaiLy
-		{
-			get
-			{
-				return m_daThoiGian_DaiLy;
-			}
-			set
-			{
-				SqlDateTime daThoiGian_DaiLyTmp = (SqlDateTime)value;
-				if(daThoiGian_DaiLyTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("daThoiGian_DaiLy", "daThoiGian_DaiLy can't be NULL");
-				}
-				m_daThoiGian_DaiLy = value;
 			}
 		}
 
