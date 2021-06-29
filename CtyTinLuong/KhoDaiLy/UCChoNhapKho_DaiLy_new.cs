@@ -143,7 +143,7 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
-                DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww ff = new DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww();                
+                DaiLy_ChiTietChoNhapKho_Moi ff = new DaiLy_ChiTietChoNhapKho_Moi();                
                 ff.ShowDialog();
                
             }
