@@ -223,6 +223,7 @@ namespace CtyTinLuong
             traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
                 cls1.iID_SoPhieu = xxiID_SoPhieu;
                 cls1.Delete();
@@ -247,7 +248,6 @@ namespace CtyTinLuong
                         cls4.Delete();
                     }
                 }
-                MessageBox.Show("Đã xóa");
                 if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                 {
                     HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
@@ -257,7 +257,8 @@ namespace CtyTinLuong
                     //  HienThi_ALL();ien
                     LoadData(_SoTrang, false);
                 }
-
+                Cursor.Current = Cursors.Default;
+                MessageBox.Show("Đã xóa");
             }
         }
 
