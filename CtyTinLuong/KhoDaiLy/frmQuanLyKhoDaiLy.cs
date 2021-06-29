@@ -19,17 +19,18 @@ namespace CtyTinLuong
         }
         private void HienThi_Caption()
         {
-            clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
+            clsDaiLy_tbNhapKho_Temp cls1 = new clsDaiLy_tbNhapKho_Temp();
             DataTable dt1 = cls1.SelectAll();
-            dt1.DefaultView.RowFilter = "TrangThaiXuatNhap_KhoDaiLy = False and TrangThaiXuatNhap_Kho_BTP = True and TrangThaiXuatNhap_Kho_NPL = True";
+            dt1.DefaultView.RowFilter = "TrangThaiXuatNhap_KhoDaiLy = False and TrangThaiXuatNhap_Kho_NPL = True";
             DataView dv1 = dt1.DefaultView;
             DataTable dxxxx1 = dv1.ToTable();            
             int k1 = dxxxx1.Rows.Count;
             if (k1 > 0)
             {
-                navNhapKho.Caption = "Nhập kho (" + k1.ToString() + ")";
-                navNhapKho.Appearance.Font = new Font(navNhapKho.Appearance.Font, FontStyle.Bold);
+                navChoNhapKho.Caption = "Nhập kho (" + k1.ToString() + ")";
+                
             }
+
             clsDaiLy_tbXuatKho cls2 = new clsDaiLy_tbXuatKho();
             DataTable dt2 = cls2.SelectAll_W_TenDaiLy();
             dt2.DefaultView.RowFilter = "TrangThai_XuatKho_DaiLy_GuiDuLieu = False and TrangThaiXuatNhap_ThanhPham_TuDaiLyVe = True";
@@ -280,6 +281,18 @@ namespace CtyTinLuong
 
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
+        }
+
+        private void navChoNhapKho_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            UCChoNhapKho_DaiLy_new uccc_NhapKho = new UCChoNhapKho_DaiLy_new();
+            uccc_NhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_NhapKho);
+            uccc_NhapKho.BringToFront();
+
+            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
     }
 }
