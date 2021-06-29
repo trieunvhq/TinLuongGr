@@ -27,7 +27,7 @@ namespace CtyTinLuong
             int k1 = dxxxx1.Rows.Count;
             if (k1 > 0)
             {
-                navChoNhapKho.Caption = "Nhập kho (" + k1.ToString() + ")";
+                navChoNhapKho.Caption = "Chờ Nhập kho (" + k1.ToString() + ")";
                 
             }
 
@@ -290,7 +290,6 @@ namespace CtyTinLuong
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-
             doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
