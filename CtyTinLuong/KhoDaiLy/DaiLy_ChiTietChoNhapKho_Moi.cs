@@ -25,7 +25,7 @@ namespace CtyTinLuong
         int miID_DinhMucNPL_XXx;
 
         int iiiIDThanhPham_QuyDoi;
-        bool Check_BaoVe, Check_LaiXe, Check_DaiLy;
+      
 
         private void TinhTongSoKg_TongSoKien()
         {
@@ -215,19 +215,12 @@ namespace CtyTinLuong
         }
         private void Luu_NhapKhoDaiLy(int xxxID_NhapKho)
         {
-
             if (!KiemTraLuu()) return;
             else
             {
                 clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
                 cls1.iID_NhapKhoDaiLy = xxxID_NhapKho;
-                DataTable dt = cls1.SelectOne();
-                Check_BaoVe = cls1.bCheck_BaoVe.Value;
-                Check_LaiXe = cls1.bCheck_LaiXe.Value;
-                Check_DaiLy = cls1.bCheck_DaiLy.Value;
-                //  DaNhapKho = cls1.bDaNhapKho.Value;
-
-
+              
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
@@ -246,14 +239,13 @@ namespace CtyTinLuong
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bHoanThanh = false;
-
                 cls1.bTrangThaiXuatNhap_KhoDaiLy = true;
                 cls1.bTrangThaiXuatNhap_Kho_BTP = true;
                 cls1.bTrangThaiXuatNhap_Kho_NPL = true;
                 cls1.sThamChieu = txtThamChieu.Text.ToString();
-                cls1.bCheck_BaoVe = Check_BaoVe;
-                cls1.bCheck_DaiLy = Check_DaiLy;
-                cls1.bCheck_LaiXe = Check_LaiXe;
+                cls1.bCheck_BaoVe = false;
+                cls1.bCheck_DaiLy = false;
+                cls1.bCheck_LaiXe = false;
                 cls1.bDaNhapKho = true;
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
@@ -263,15 +255,16 @@ namespace CtyTinLuong
                 else if (checkHangSot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
                 cls1.Update();
-                // update danhapkho neu có check bao ve check lai xe check dai ly
+               
                 int iiID_Nhapkho;
                 iiID_Nhapkho = cls1.iID_NhapKhoDaiLy.Value;
-                if (Convert.ToBoolean(dt.Rows[0]["Check_BaoVe"].ToString()) == true & (Convert.ToBoolean(dt.Rows[0]["Check_LaiXe"].ToString()) == true & Convert.ToBoolean(dt.Rows[0]["Check_DaiLy"].ToString()) == true))
-                {
-                    cls1.iID_NhapKhoDaiLy = iiID_Nhapkho;
-                    cls1.Update_TrangThai_DaNhapkho_CheckBaoVe_LaiXe_DaiLy();
-                }
+               
                 Luu_ChiTiet_NhapKho_DaiLy(xxxID_NhapKho);
+
+                // update trạng thái nhập kho
+                clsDaiLy_tbNhapKho_Temp clstemp = new clsDaiLy_tbNhapKho_Temp();
+                clstemp.iID_NhapKhoDaiLy = xxxID_NhapKho;
+                clstemp.Update_TrangThaiXuatNhap_KhoDaiLy();
 
                 MessageBox.Show("Đã lưu");
                 this.Close();
