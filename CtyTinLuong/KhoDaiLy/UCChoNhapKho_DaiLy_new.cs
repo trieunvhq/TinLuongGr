@@ -65,10 +65,10 @@ namespace CtyTinLuong
                 sochungtu = "NKDL 1";
             else
             {
-                string ID = dt.Rows[dt.Rows.Count-1]["ID_NhapKhoDaiLy"].ToString();
-                sochungtu = "NKDL "+ ID + "";
+                int ID = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["ID_NhapKhoDaiLy"].ToString());
+                sochungtu = "NKDL " + (ID + 1).ToString() + "";
             }
-           
+          
             return sochungtu;
         }
         private void Luu_NhapKhoDaiLy(int xxxID_NhapKhoDaiLy)

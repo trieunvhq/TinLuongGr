@@ -413,8 +413,8 @@ namespace CtyTinLuong
                 txtSoChungTu.Text = "NKDL 1";
             else
             {
-                string ID = dt.Rows[dt.Rows.Count - 1]["ID_NhapKhoDaiLy"].ToString();
-                txtSoChungTu.Text = "NKDL " + ID + "";
+                int ID =Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["ID_NhapKhoDaiLy"].ToString());
+                txtSoChungTu.Text = "NKDL " + (ID+1).ToString() + "";
             }
 
             
