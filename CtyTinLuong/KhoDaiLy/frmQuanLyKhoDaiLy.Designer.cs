@@ -45,6 +45,8 @@
             this.navXuatKho = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChoNhapKho = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navNhapKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
@@ -133,18 +135,20 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNhapKho),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKho),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChoNhapKho),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navNhapKho
             // 
-            this.navNhapKho.Caption = "Nhập kho";
+            this.navNhapKho.Caption = "Đã Nhập kho";
             this.navNhapKho.Name = "navNhapKho";
             this.navNhapKho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNhapKho_LinkClicked);
             // 
             // navXuatKho
             // 
-            this.navXuatKho.Caption = "Xuất kho";
+            this.navXuatKho.Caption = "Đã Xuất kho";
             this.navXuatKho.Name = "navXuatKho";
             this.navXuatKho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navXuatKho_LinkClicked);
             // 
@@ -159,6 +163,17 @@
             this.navBarItem2.Caption = "Xuất kho_ALL";
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            // 
+            // navChoNhapKho
+            // 
+            this.navChoNhapKho.Caption = "Chờ nhập kho";
+            this.navChoNhapKho.Name = "navChoNhapKho";
+            this.navChoNhapKho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChoNhapKho_LinkClicked);
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Caption = "Chờ xuất kho";
+            this.navBarItem9.Name = "navBarItem9";
             // 
             // navBarControl1
             // 
@@ -185,7 +200,9 @@
             this.navBarItem15,
             this.navBarItem12,
             this.navBarItem13,
-            this.navBangLuongDaiLy});
+            this.navBangLuongDaiLy,
+            this.navChoNhapKho,
+            this.navBarItem9});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -293,5 +310,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBangLuongDaiLy;
+        private DevExpress.XtraNavBar.NavBarItem navChoNhapKho;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
     }
 }

@@ -117,24 +117,24 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(76, 146);
+            this.txtGhiChu.Location = new System.Drawing.Point(98, 146);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(559, 53);
+            this.txtGhiChu.Size = new System.Drawing.Size(537, 53);
             this.txtGhiChu.TabIndex = 9;
             // 
             // txtSoKienMotBao
             // 
-            this.txtSoKienMotBao.Location = new System.Drawing.Point(76, 122);
+            this.txtSoKienMotBao.Location = new System.Drawing.Point(98, 122);
             this.txtSoKienMotBao.Name = "txtSoKienMotBao";
-            this.txtSoKienMotBao.Size = new System.Drawing.Size(559, 20);
+            this.txtSoKienMotBao.Size = new System.Drawing.Size(537, 20);
             this.txtSoKienMotBao.TabIndex = 4;
             // 
             // txtSoKGMotBao
             // 
-            this.txtSoKGMotBao.Location = new System.Drawing.Point(76, 98);
+            this.txtSoKGMotBao.Location = new System.Drawing.Point(98, 98);
             this.txtSoKGMotBao.Name = "txtSoKGMotBao";
-            this.txtSoKGMotBao.Size = new System.Drawing.Size(559, 20);
+            this.txtSoKGMotBao.Size = new System.Drawing.Size(537, 20);
             this.txtSoKGMotBao.TabIndex = 7;
             // 
             // btLuu_va_Dong
@@ -163,7 +163,7 @@
             // dteNgayThang
             // 
             this.dteNgayThang.EditValue = null;
-            this.dteNgayThang.Location = new System.Drawing.Point(76, 26);
+            this.dteNgayThang.Location = new System.Drawing.Point(98, 26);
             this.dteNgayThang.Name = "dteNgayThang";
             this.dteNgayThang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -173,15 +173,15 @@
             this.dteNgayThang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayThang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayThang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayThang.Size = new System.Drawing.Size(233, 20);
+            this.dteNgayThang.Size = new System.Drawing.Size(211, 20);
             this.dteNgayThang.StyleController = this.layoutControl2;
             this.dteNgayThang.TabIndex = 1;
             // 
             // txtSoHieu
             // 
-            this.txtSoHieu.Location = new System.Drawing.Point(76, 2);
+            this.txtSoHieu.Location = new System.Drawing.Point(98, 2);
             this.txtSoHieu.Name = "txtSoHieu";
-            this.txtSoHieu.Size = new System.Drawing.Size(134, 20);
+            this.txtSoHieu.Size = new System.Drawing.Size(112, 20);
             this.txtSoHieu.TabIndex = 2;
             // 
             // txtDVT1
@@ -194,21 +194,21 @@
             // 
             // txtTenVatTu
             // 
-            this.txtTenVatTu.Location = new System.Drawing.Point(76, 74);
+            this.txtTenVatTu.Location = new System.Drawing.Point(98, 74);
             this.txtTenVatTu.Multiline = true;
             this.txtTenVatTu.Name = "txtTenVatTu";
             this.txtTenVatTu.ReadOnly = true;
-            this.txtTenVatTu.Size = new System.Drawing.Size(407, 20);
+            this.txtTenVatTu.Size = new System.Drawing.Size(385, 20);
             this.txtTenVatTu.TabIndex = 6;
             // 
             // gridLookUpEditLoaiHang
             // 
-            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(76, 50);
+            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(98, 50);
             this.gridLookUpEditLoaiHang.Name = "gridLookUpEditLoaiHang";
             this.gridLookUpEditLoaiHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEditLoaiHang.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEditLoaiHang.Size = new System.Drawing.Size(153, 20);
+            this.gridLookUpEditLoaiHang.Size = new System.Drawing.Size(131, 20);
             this.gridLookUpEditLoaiHang.StyleController = this.layoutControl2;
             this.gridLookUpEditLoaiHang.TabIndex = 5;
             this.gridLookUpEditLoaiHang.EditValueChanged += new System.EventHandler(this.gridLookUpEditLoaiHang_EditValueChanged);
@@ -281,7 +281,7 @@
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(231, 24);
             this.layoutControlItem23.Text = "Mã VT";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlItem5
             // 
@@ -290,7 +290,7 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(311, 24);
             this.layoutControlItem5.Text = "Ngày lập";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlItem1
             // 
@@ -299,7 +299,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem1.Text = "Mã Định mức";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlItem2
             // 
@@ -333,8 +333,8 @@
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(637, 24);
-            this.layoutControlItem7.Text = "Số cục / 1 bao";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem7.Text = "Cục/ bao (Kg/Sọt)";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlItem8
             // 
@@ -342,8 +342,8 @@
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(637, 24);
-            this.layoutControlItem8.Text = "Số kiện / 1 bao";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem8.Text = "Kiện/Bao (Kiên/Sọt)";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlItem4
             // 
@@ -353,7 +353,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(485, 24);
             this.layoutControlItem4.Text = "Tên VT";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlItem9
             // 
@@ -399,7 +399,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(637, 57);
             this.layoutControlItem6.Text = "Ghi chú";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
             // 
             // frmChiTietDinhMuc_HangNhu
             // 

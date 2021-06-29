@@ -694,6 +694,9 @@
             // 
             // clTenDaiLy
             // 
+            this.clTenDaiLy.AppearanceCell.Options.UseTextOptions = true;
+            this.clTenDaiLy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.clTenDaiLy.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clTenDaiLy.Caption = "Đại lý";
             this.clTenDaiLy.ColumnEdit = this.memodaily;
             this.clTenDaiLy.FieldName = "TenDaiLy";
@@ -771,8 +774,6 @@
             this.clHoanThanh.Name = "clHoanThanh";
             this.clHoanThanh.OptionsColumn.AllowEdit = false;
             this.clHoanThanh.OptionsColumn.FixedWidth = true;
-            this.clHoanThanh.Visible = true;
-            this.clHoanThanh.VisibleIndex = 10;
             this.clHoanThanh.Width = 40;
             // 
             // checkHoanThanh
