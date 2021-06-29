@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_ChiTietChoNhapKho_Moi));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -274,6 +274,7 @@
             this.checkHangSot.TabIndex = 137;
             this.checkHangSot.Text = "Loại hàng Sọt";
             this.checkHangSot.UseVisualStyleBackColor = true;
+            this.checkHangSot.CheckedChanged += new System.EventHandler(this.checkHangSot_CheckedChanged);
             // 
             // checkHangNhu
             // 
@@ -283,6 +284,7 @@
             this.checkHangNhu.TabIndex = 138;
             this.checkHangNhu.Text = "Loại hàng Nhũ";
             this.checkHangNhu.UseVisualStyleBackColor = true;
+            this.checkHangNhu.CheckedChanged += new System.EventHandler(this.checkHangNhu_CheckedChanged);
             // 
             // checkHoanThanh
             // 
@@ -300,6 +302,8 @@
             this.txtDonGiaThanhPhamQuyDoi.Size = new System.Drawing.Size(357, 20);
             this.txtDonGiaThanhPhamQuyDoi.TabIndex = 110;
             this.txtDonGiaThanhPhamQuyDoi.Text = "0";
+            this.txtDonGiaThanhPhamQuyDoi.TextChanged += new System.EventHandler(this.txtDonGiaThanhPhamQuyDoi_TextChanged);
+            this.txtDonGiaThanhPhamQuyDoi.Leave += new System.EventHandler(this.txtDonGiaThanhPhamQuyDoi_Leave);
             // 
             // txtSoKien_1_BaoBe
             // 
@@ -343,6 +347,7 @@
             this.checkHangDot.TabIndex = 137;
             this.checkHangDot.Text = "Loại hàng Đột";
             this.checkHangDot.UseVisualStyleBackColor = true;
+            this.checkHangDot.CheckedChanged += new System.EventHandler(this.checkHangDot_CheckedChanged);
             // 
             // gridMaDinhMucDot_BaoBe
             // 
@@ -354,6 +359,7 @@
             this.gridMaDinhMucDot_BaoBe.Size = new System.Drawing.Size(178, 20);
             this.gridMaDinhMucDot_BaoBe.StyleController = this.layoutControl1;
             this.gridMaDinhMucDot_BaoBe.TabIndex = 105;
+            this.gridMaDinhMucDot_BaoBe.EditValueChanged += new System.EventHandler(this.gridMaDinhMucDot_BaoBe_EditValueChanged);
             // 
             // gridView4
             // 
@@ -444,6 +450,7 @@
             this.txtSoLuong_BaoBe.Size = new System.Drawing.Size(114, 20);
             this.txtSoLuong_BaoBe.TabIndex = 103;
             this.txtSoLuong_BaoBe.Text = "0";
+            this.txtSoLuong_BaoBe.TextChanged += new System.EventHandler(this.txtSoLuong_BaoBe_TextChanged);
             // 
             // txtGhiChu
             // 
@@ -467,6 +474,7 @@
             this.txtTongTienHang.ReadOnly = true;
             this.txtTongTienHang.Size = new System.Drawing.Size(386, 20);
             this.txtTongTienHang.TabIndex = 52;
+            this.txtTongTienHang.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
             // 
             // txtSoKG1Bao_To
             // 
@@ -492,6 +500,7 @@
             this.txtSoLuongThanhPhamQuyDoi.Name = "txtSoLuongThanhPhamQuyDoi";
             this.txtSoLuongThanhPhamQuyDoi.Size = new System.Drawing.Size(143, 20);
             this.txtSoLuongThanhPhamQuyDoi.TabIndex = 45;
+            this.txtSoLuongThanhPhamQuyDoi.TextChanged += new System.EventHandler(this.txtSoLuongThanhPhamQuyDoi_TextChanged);
             // 
             // txtTenThanhPhamQuyDoi
             // 
@@ -527,6 +536,7 @@
             this.gridMaDinhMucDot_BaoTo.Size = new System.Drawing.Size(176, 20);
             this.gridMaDinhMucDot_BaoTo.StyleController = this.layoutControl1;
             this.gridMaDinhMucDot_BaoTo.TabIndex = 41;
+            this.gridMaDinhMucDot_BaoTo.EditValueChanged += new System.EventHandler(this.gridMaDinhMucDot_BaoTo_EditValueChanged);
             // 
             // gridView3
             // 
@@ -603,6 +613,7 @@
             this.gridMaDinhMucNPL.Size = new System.Drawing.Size(164, 20);
             this.gridMaDinhMucNPL.StyleController = this.layoutControl1;
             this.gridMaDinhMucNPL.TabIndex = 40;
+            this.gridMaDinhMucNPL.EditValueChanged += new System.EventHandler(this.gridMaDinhMucNPL_EditValueChanged);
             // 
             // gridView2
             // 
@@ -647,6 +658,7 @@
             this.txtSoLuong_BaoTo.Size = new System.Drawing.Size(116, 20);
             this.txtSoLuong_BaoTo.TabIndex = 33;
             this.txtSoLuong_BaoTo.Text = "0";
+            this.txtSoLuong_BaoTo.TextChanged += new System.EventHandler(this.txtSoLuong_BaoTo_TextChanged);
             // 
             // txtSoChungTu
             // 
@@ -692,6 +704,7 @@
             this.gridNguoiLap.Size = new System.Drawing.Size(166, 20);
             this.gridNguoiLap.StyleController = this.layoutControl1;
             this.gridNguoiLap.TabIndex = 27;
+            this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
             // 
             // gridLookUpEdit3View
             // 
@@ -746,6 +759,7 @@
             this.gridMaDaiLy.Size = new System.Drawing.Size(166, 20);
             this.gridMaDaiLy.StyleController = this.layoutControl1;
             this.gridMaDaiLy.TabIndex = 22;
+            this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -1232,6 +1246,9 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView1_CustomRowFilter);
             // 
             // clSTT
             // 
@@ -1385,11 +1402,12 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions5.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
             // 
             // clGhiChu
             // 
@@ -1445,6 +1463,7 @@
             this.checkDaiLy.TabIndex = 142;
             this.checkDaiLy.Text = "Đại lý";
             this.checkDaiLy.UseVisualStyleBackColor = true;
+            this.checkDaiLy.CheckedChanged += new System.EventHandler(this.checkDaiLy_CheckedChanged);
             // 
             // checkLaiXe
             // 
@@ -1458,6 +1477,7 @@
             this.checkLaiXe.TabIndex = 141;
             this.checkLaiXe.Text = "Lái xe";
             this.checkLaiXe.UseVisualStyleBackColor = true;
+            this.checkLaiXe.CheckedChanged += new System.EventHandler(this.checkLaiXe_CheckedChanged);
             // 
             // checkBaoVe
             // 
@@ -1471,6 +1491,7 @@
             this.checkBaoVe.TabIndex = 140;
             this.checkBaoVe.Text = "Bảo vệ";
             this.checkBaoVe.UseVisualStyleBackColor = true;
+            this.checkBaoVe.CheckedChanged += new System.EventHandler(this.checkBaoVe_CheckedChanged);
             // 
             // btLuu_Dong
             // 
@@ -1480,6 +1501,7 @@
             this.btLuu_Dong.Size = new System.Drawing.Size(88, 23);
             this.btLuu_Dong.TabIndex = 139;
             this.btLuu_Dong.Text = "Lưu lại";
+            this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // btPrint
             // 
@@ -1489,6 +1511,7 @@
             this.btPrint.Size = new System.Drawing.Size(85, 23);
             this.btPrint.TabIndex = 138;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // btThoat
             // 
@@ -1499,6 +1522,7 @@
             this.btThoat.Size = new System.Drawing.Size(75, 23);
             this.btThoat.TabIndex = 137;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // DaiLy_ChiTietChoNhapKho_Moi
             // 
