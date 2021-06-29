@@ -218,47 +218,52 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
+            int xxiID_SoPhieu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+            string maPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+
             clsPhieu_tbPhieu cls1 = new clsPhieu_tbPhieu();
             DialogResult traloi;
-            traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            traloi = MessageBox.Show("Xóa dữ liệu có mã phiếu \"" + maPhieu + "\". Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
                 cls1.iID_SoPhieu = xxiID_SoPhieu;
-                cls1.Delete();
-                _STT -= _RowPage_curent;
-                clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
-                cls2.iID_SoPhieu = xxiID_SoPhieu;
-                cls2.Delete_All_W_ID_SoPhieu();
-                // xoá chi tiet lenh sản xuất
-                clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls3 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
-                cls3.iID_SoPhieu = xxiID_SoPhieu;
-                cls3.Delete_ALL_W_ID_SoPhieu();
-                // xoá lenh san xuat
-                cls3.iID_SoPhieu = xxiID_SoPhieu;
-                DataTable dt4 = cls3.SelectAll_W_ID_SoPhieu();
-                if(dt4.Rows.Count>0)
+                if (cls1.Delete())
                 {
-                    for(int i=0; i<=dt4.Rows.Count; i++)
+                    _STT -= _RowPage_curent;
+                    clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
+                    cls2.iID_SoPhieu = xxiID_SoPhieu;
+                    cls2.Delete_All_W_ID_SoPhieu();
+                    // xoá chi tiet lenh sản xuất
+                    clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls3 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
+                    cls3.iID_SoPhieu = xxiID_SoPhieu;
+                    cls3.Delete_ALL_W_ID_SoPhieu();
+                    // xoá lenh san xuat
+                    cls3.iID_SoPhieu = xxiID_SoPhieu;
+                    DataTable dt4 = cls3.SelectAll_W_ID_SoPhieu();
+                    if (dt4.Rows.Count > 0)
                     {
-                        int ID_LenhSanXuatxx = Convert.ToInt32(dt4.Rows[i]["ID_LenhSanXuat"].ToString());
-                        clsHUU_LenhSanXuat cls4 = new clsHUU_LenhSanXuat();
-                        cls4.iID_LenhSanXuat = ID_LenhSanXuatxx;
-                        cls4.Delete();
+                        for (int i = 0; i <= dt4.Rows.Count; i++)
+                        {
+                            int ID_LenhSanXuatxx = Convert.ToInt32(dt4.Rows[i]["ID_LenhSanXuat"].ToString());
+                            clsHUU_LenhSanXuat cls4 = new clsHUU_LenhSanXuat();
+                            cls4.iID_LenhSanXuat = ID_LenhSanXuatxx;
+                            cls4.Delete();
+                        }
                     }
-                }
-                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-                {
-                    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                }
-                else
-                {
-                    //  HienThi_ALL();ien
+                    //if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                    //{
+                    //    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                    //}
+                    //else
+                    //{
+                    //    //  HienThi_ALL();ien
                     LoadData(_SoTrang, false);
+                    //}
+                    MessageBox.Show("Đã xóa");
                 }
+
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Đã xóa");
             }
         }
 
