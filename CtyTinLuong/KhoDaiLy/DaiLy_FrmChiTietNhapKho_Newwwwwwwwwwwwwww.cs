@@ -21,18 +21,7 @@ namespace CtyTinLuong
         public static string msdvtthanhphamquydoi, msMaDaiLy, msDiaChiDaiLy, msSDTDaiLy, msGhiChu, msSoChungTu, msDienGiaig, msThuKho, msNguoiNhan, msNguoiLap, msMaThanhPham, msTenThanhPham;
         public static double mfsoluongtpqiuydoi;
 
-        public static DateTime GetFistDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            return aDateTime;
-        }
-        public static DateTime GetLastDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
-            return retDateTime;
-        }
-
+   
         int miID_DinhMucNPL_XXx;
         int iiiIDThanhPham_QuyDoi;
         bool Check_BaoVe, Check_LaiXe, Check_DaiLy;
