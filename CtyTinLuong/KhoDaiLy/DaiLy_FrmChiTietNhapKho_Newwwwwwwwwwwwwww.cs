@@ -125,42 +125,7 @@ namespace CtyTinLuong
 
         }       
 
-        private bool Luu_themMoi_DuLieubangLuong()
-        {
-
-            if (!KiemTraLuu()) return false;
-            else
-            {
-                int ID_DaiLyxx = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                int thangx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("MM"));
-                int namxx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("yyyy"));
-                DateTime tungay = GetFistDayInMonth(namxx, thangx);
-                DateTime denngay = GetLastDayInMonth(namxx, thangx);
-
-                clsDaiLy_BangLuong clsxx = new clsDaiLy_BangLuong();
-                clsxx.iThang = thangx;
-                clsxx.iNam = namxx;
-                clsxx.iID_DaiLy = ID_DaiLyxx;
-                DataTable dt = clsxx.SelectOne__W_Thang_Nam_ID_DaiLy();
-                if (dt.Rows.Count == 0)
-                {
-                    clsxx.iID_DaiLy = ID_DaiLyxx;
-                    clsxx.iThang = thangx;
-                    clsxx.iNam = namxx;
-                    clsxx.dcLuongDaiLy = 0;
-                    clsxx.dcTamUng = 0;
-                    clsxx.dcSoTienDaTra = 0;
-                    clsxx.sDienGiai = "";
-                    clsxx.bTonTai = true;
-                    clsxx.bNgungTheoDoi = false;
-                    clsxx.bDaTraLuong = false;
-                    clsxx.Insert();
-                }
-
-                return true;
-            }
-
-        }
+    
 
         private void Luu_ChiTiet_NhapKho_DaiLy(int iiiID_NhapKhoDaiLy)
         {
@@ -918,7 +883,7 @@ namespace CtyTinLuong
         {
             if (!KiemTraLuu()) return;
             else if (!Luu_NhapKhoDaiLy()) return;
-            else if (!Luu_themMoi_DuLieubangLuong()) return;
+        
             else
             {
                 MessageBox.Show("Đã lưu");
