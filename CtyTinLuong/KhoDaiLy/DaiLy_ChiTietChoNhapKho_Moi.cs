@@ -128,15 +128,7 @@ namespace CtyTinLuong
                 DataTable dt232 = dv2232xx.ToTable();
 
                 clsDaiLy_tbChiTietNhapKho cls2 = new clsDaiLy_tbChiTietNhapKho();
-                DataTable dt2_cu = new DataTable();
                 cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
-                dt2_cu = cls2.SelectAll_W_ID_NhapKhoDaiLy_Moi();
-                if (dt2_cu.Rows.Count > 0)
-                {
-                    cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
-                    cls2.bTonTai = false;
-                    cls2.Update_ALL_TonTai_W_ID_NhapKhoDaiLy();
-                }
                 cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls2.iID_VTHH = iiiIDThanhPham_QuyDoi;
                 cls2.fSoLuongNhap = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
@@ -147,26 +139,11 @@ namespace CtyTinLuong
                 cls2.bNgungTheoDoi = false;
                 cls2.bDaNhapKho = false;
                 cls2.bBoolTonDauKy = false;
-                // Nhap kho Thành pham quy doi
-                int ID_VTHHxxx_TP = iiiIDThanhPham_QuyDoi;
-                string expression_TP;
-                expression_TP = "ID_VTHH=" + ID_VTHHxxx_TP + "";
-                DataRow[] foundRows_TP;
-                foundRows_TP = dt2_cu.Select(expression_TP);
-                if (foundRows_TP.Length > 0)
-                {
-                    cls2.iID_ChiTietNhapKho_DaiLy = Convert.ToInt32(foundRows_TP[0]["ID_ChiTietNhapKho_DaiLy"].ToString());
-                    cls2.Update();
-                }
-                else
-                {
-                    cls2.Insert();
-                }
-                // nhap kho vạt tư khác
-
+                cls2.Insert();
                 DataTable dttttt2 = dv2232xx.ToTable();
                 for (int i = 0; i < dttttt2.Rows.Count; i++)
                 {
+                    cls2 = new clsDaiLy_tbChiTietNhapKho();
                     cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
                     int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                     cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
@@ -181,36 +158,10 @@ namespace CtyTinLuong
                     cls2.bNgungTheoDoi = false;
                     cls2.bDaNhapKho = false;
                     cls2.bBoolTonDauKy = false;
-
-                    string expressionnhapkho;
-                    expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
-                    DataRow[] foundRows;
-                    foundRows = dt2_cu.Select(expressionnhapkho);
-                    if (foundRows.Length > 0)
-                    {
-                        cls2.iID_ChiTietNhapKho_DaiLy = Convert.ToInt32(foundRows[0]["ID_ChiTietNhapKho_DaiLy"].ToString());
-                        cls2.Update();
-                    }
-                    else
-                    {
-                        cls2.Insert();
-                    }
+                    cls2.Insert();
+                    
                 }
-                // xoa ton tai=false
-                DataTable dt2_moi11111 = new DataTable();
-                cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
-                dt2_moi11111 = cls2.SelectAll_W_ID_NhapKhoDaiLy_Moi();
-                dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
-                DataView dvdt2_moi = dt2_moi11111.DefaultView;
-                DataTable dt2_moi = dvdt2_moi.ToTable();
-                for (int i = 0; i < dt2_moi.Rows.Count; i++)
-                {
-                    int IID_ChiTietNhapKho_DaiLyxxxx = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietNhapKho_DaiLy"].ToString());
-                    cls2.iID_ChiTietNhapKho_DaiLy = IID_ChiTietNhapKho_DaiLyxxxx;
-                    cls2.Delete();
-                }
-
-
+               
             }
         }
         private void Luu_NhapKhoDaiLy(int xxxID_NhapKho)
@@ -219,8 +170,7 @@ namespace CtyTinLuong
             else
             {
                 clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
-                cls1.iID_NhapKhoDaiLy = xxxID_NhapKho;
-              
+               
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
@@ -254,12 +204,12 @@ namespace CtyTinLuong
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
                 else if (checkHangSot.Checked == true)
                     cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
-                cls1.Update();
+                cls1.Insert();
                
                 int iiID_Nhapkho;
                 iiID_Nhapkho = cls1.iID_NhapKhoDaiLy.Value;
                
-                Luu_ChiTiet_NhapKho_DaiLy(xxxID_NhapKho);
+                Luu_ChiTiet_NhapKho_DaiLy(iiID_Nhapkho);
 
                 // update trạng thái nhập kho
                 clsDaiLy_tbNhapKho_Temp clstemp = new clsDaiLy_tbNhapKho_Temp();
@@ -414,7 +364,7 @@ namespace CtyTinLuong
             else
             {
                 int ID =Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["ID_NhapKhoDaiLy"].ToString());
-                txtSoChungTu.Text = "NKDL " + (ID+1).ToString() + "";
+                txtSoChungTu.Text = "NKDL " + (ID).ToString() + "";
             }
 
             
