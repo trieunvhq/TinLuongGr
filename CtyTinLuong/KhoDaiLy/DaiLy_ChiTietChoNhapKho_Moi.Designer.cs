@@ -261,9 +261,9 @@
             // 
             // checkHangSot
             // 
-            this.checkHangSot.Location = new System.Drawing.Point(616, 2);
+            this.checkHangSot.Location = new System.Drawing.Point(575, 2);
             this.checkHangSot.Name = "checkHangSot";
-            this.checkHangSot.Size = new System.Drawing.Size(333, 20);
+            this.checkHangSot.Size = new System.Drawing.Size(374, 20);
             this.checkHangSot.TabIndex = 137;
             this.checkHangSot.Text = "Loại hàng Sọt";
             this.checkHangSot.UseVisualStyleBackColor = true;
@@ -271,9 +271,9 @@
             // 
             // checkHangNhu
             // 
-            this.checkHangNhu.Location = new System.Drawing.Point(280, 2);
+            this.checkHangNhu.Location = new System.Drawing.Point(272, 2);
             this.checkHangNhu.Name = "checkHangNhu";
-            this.checkHangNhu.Size = new System.Drawing.Size(332, 20);
+            this.checkHangNhu.Size = new System.Drawing.Size(299, 20);
             this.checkHangNhu.TabIndex = 138;
             this.checkHangNhu.Text = "Loại hàng Nhũ";
             this.checkHangNhu.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             // 
             this.checkHangDot.Location = new System.Drawing.Point(2, 2);
             this.checkHangDot.Name = "checkHangDot";
-            this.checkHangDot.Size = new System.Drawing.Size(274, 20);
+            this.checkHangDot.Size = new System.Drawing.Size(266, 20);
             this.checkHangDot.TabIndex = 137;
             this.checkHangDot.Text = "Loại hàng Đột";
             this.checkHangDot.UseVisualStyleBackColor = true;
@@ -1107,16 +1107,16 @@
             this.layoutControlItem30.Control = this.checkHangDot;
             this.layoutControlItem30.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(278, 24);
+            this.layoutControlItem30.Size = new System.Drawing.Size(270, 24);
             this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem30.TextVisible = false;
             // 
             // layoutControlItem31
             // 
             this.layoutControlItem31.Control = this.checkHangNhu;
-            this.layoutControlItem31.Location = new System.Drawing.Point(278, 0);
+            this.layoutControlItem31.Location = new System.Drawing.Point(270, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(336, 24);
+            this.layoutControlItem31.Size = new System.Drawing.Size(303, 24);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
@@ -1153,9 +1153,9 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.checkHangSot;
-            this.layoutControlItem1.Location = new System.Drawing.Point(614, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(573, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(337, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(378, 24);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
