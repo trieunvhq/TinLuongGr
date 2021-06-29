@@ -161,7 +161,7 @@ namespace CtyTinLuong
             clsDaiLy_tbNhapKho_Temp cls1 = new clsDaiLy_tbNhapKho_Temp();
             cls1.iID_NhapKhoDaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
             DataTable dt1 = cls1.SelectOne();
-            if (cls1.bTrangThaiXuatNhap_Kho_NPL.Value == true)
+            if (cls1.bTrangThaiXuatNhap_KhoDaiLy.Value == true)
             {
                 MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
                 return;
