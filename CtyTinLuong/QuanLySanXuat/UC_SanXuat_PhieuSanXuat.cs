@@ -26,6 +26,12 @@ namespace CtyTinLuong
         private int _SoTrang = 1;
         private bool isload = false;
 
+        //
+        public string _sSearch;
+        private int _STT = 1;
+        private int _RowPage_curent = 0;
+        private int _TongSoTrang = 0;
+
         public void LoadData(int sotrang, bool isLoadLanDau)
         {
             isload = true;
@@ -42,6 +48,7 @@ namespace CtyTinLuong
             _SoTrang = sotrang;
 
             DataTable dt2 = new DataTable();
+            dt2.Columns.Add("STT", typeof(int));
             dt2.Columns.Add("ID_SoPhieu", typeof(int));
             dt2.Columns.Add("MaPhieu", typeof(string));
             dt2.Columns.Add("NgayLapPhieu", typeof(DateTime));
@@ -61,6 +68,7 @@ namespace CtyTinLuong
                     {
                         int ID_SoPhieu = Convert.ToInt32(dt_.Rows[i]["ID_SoPhieu"].ToString());
                         DataRow _ravi = dt2.NewRow();
+                        _ravi["STT"] = _STT.ToString(); _STT++;
                         _ravi["ID_SoPhieu"] = ID_SoPhieu;
                         _ravi["MaPhieu"] = dt_.Rows[i]["MaPhieu"].ToString();
                         _ravi["NgayLapPhieu"] = Convert.ToDateTime(dt_.Rows[i]["NgayLapPhieu"].ToString());
@@ -156,6 +164,7 @@ namespace CtyTinLuong
 
         private void UC_SanXuat_PhieuSanXuat_Load(object sender, EventArgs e)
         {
+            _STT = 1;
             clCaLamViec.Caption = "Ca\n làm việc";
             LoadData(1, true);
             ResetSoTrang();
@@ -189,9 +198,9 @@ namespace CtyTinLuong
                     msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                     mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
                     SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
-                    _frmQLSX.Hide();
-                    ff.ShowDialog();
-                    _frmQLSX.Show();
+                    //_frmQLSX.Hide();
+                    ff.Show();
+                    //_frmQLSX.Show();
                 }
             }
             catch
@@ -210,6 +219,7 @@ namespace CtyTinLuong
                 int xxiID_SoPhieu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
                 cls1.iID_SoPhieu = xxiID_SoPhieu;
                 cls1.Delete();
+                _STT -= _RowPage_curent;
                 clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
                 cls2.iID_SoPhieu = xxiID_SoPhieu;
                 cls2.Delete_All_W_ID_SoPhieu();
@@ -301,9 +311,9 @@ namespace CtyTinLuong
             mb_Sua_SoPhieu = false;
             mbCopy_Phieu = false;
             SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
-            _frmQLSX.Hide();
-            ff.ShowDialog();
-            _frmQLSX.Show();
+            //_frmQLSX.Hide();
+            ff.Show();
+            //_frmQLSX.Show();
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
@@ -315,6 +325,7 @@ namespace CtyTinLuong
             {
                 _ngay_batdau = Convert.ToDateTime(dteTuNgay.DateTime);
                 ResetSoTrang();
+                _STT = 1;
                 LoadData(1, false);
             }
             catch
@@ -328,6 +339,7 @@ namespace CtyTinLuong
             try {
                 _ngay_ketthuc = Convert.ToDateTime(dteDenNgay.DateTime);
                 ResetSoTrang();
+                _STT = 1;
                 LoadData(1, false);
             }
             catch
@@ -340,6 +352,7 @@ namespace CtyTinLuong
                 return;
             _ma_phieu = txtTimKiem.Text;
             ResetSoTrang();
+            _STT = 1;
             LoadData(1, false);
         }    
 
@@ -381,7 +394,9 @@ namespace CtyTinLuong
                 DataTable dt_ = clsThin_.T_TongPhieuSX(_ngay_batdau, _ngay_ketthuc, _ma_phieu);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    //lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20));
+                    lbTongSoTrang.Text = "/" + _TongSoTrang.ToString();
                 }
                 else
                 {
@@ -400,6 +415,37 @@ namespace CtyTinLuong
         //
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //if (isload)
+            //    return;
+            //if (btnTrangTiep.LinkColor == Color.Black)
+            //    return;
+            //if (btnTrangSau.LinkColor == Color.Black)
+            //    btnTrangSau.LinkColor = Color.Blue;
+
+            //int sotrang_;
+            //try
+            //{
+            //    sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+            //    int max_ = Convert.ToInt32(lbTongSoTrang.Text.Replace(" ", "").Replace("/", ""));
+            //    if (sotrang_ < max_)
+            //    {
+            //        txtSoTrang.Text = (sotrang_ + 1).ToString();
+
+            //        Load_PhieuSX(false);
+            //    }
+            //    else
+            //    {
+            //        txtSoTrang.Text = (max_).ToString();
+            //        btnTrangTiep.LinkColor = Color.Black;
+            //    }
+            //}
+            //catch
+            //{
+            //    btnTrangTiep.LinkColor = Color.Black;
+            //    sotrang_ = 1;
+            //    txtSoTrang.Text = "1";
+            //}
+
             if (isload)
                 return;
             if (btnTrangTiep.LinkColor == Color.Black)
@@ -415,6 +461,10 @@ namespace CtyTinLuong
                 if (sotrang_ < max_)
                 {
                     txtSoTrang.Text = (sotrang_ + 1).ToString();
+                    if (sotrang_ + 1 == _TongSoTrang)
+                    {
+                        btnTrangTiep.LinkColor = Color.Black;
+                    }
 
                     Load_PhieuSX(false);
                 }
@@ -434,6 +484,35 @@ namespace CtyTinLuong
 
         private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //if (isload)
+            //    return;
+            //if (btnTrangSau.LinkColor == Color.Black)
+            //    return;
+            //if (btnTrangTiep.LinkColor == Color.Black)
+            //    btnTrangTiep.LinkColor = Color.Blue;
+
+            //int sotrang_;
+            //try
+            //{
+            //    sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+            //    if (sotrang_ <= 1)
+            //    {
+            //        txtSoTrang.Text = "1";
+            //        btnTrangSau.LinkColor = Color.Black;
+
+            //    }
+            //    else
+            //    {
+            //        txtSoTrang.Text = (sotrang_ - 1).ToString();
+            //        Load_PhieuSX(false);
+            //    }
+            //}
+            //catch
+            //{
+            //    btnTrangSau.LinkColor = Color.Black;
+            //    sotrang_ = 1;
+            //    txtSoTrang.Text = "1";
+            //}
             if (isload)
                 return;
             if (btnTrangSau.LinkColor == Color.Black)
@@ -449,11 +528,20 @@ namespace CtyTinLuong
                 {
                     txtSoTrang.Text = "1";
                     btnTrangSau.LinkColor = Color.Black;
+                    _STT = 1;
 
                 }
                 else
                 {
                     txtSoTrang.Text = (sotrang_ - 1).ToString();
+
+                    _STT -= (20 + _RowPage_curent);
+
+                    if (sotrang_ - 1 == 1)
+                    {
+                        btnTrangSau.LinkColor = Color.Black;
+                    }
+
                     Load_PhieuSX(false);
                 }
             }
@@ -462,7 +550,13 @@ namespace CtyTinLuong
                 btnTrangSau.LinkColor = Color.Black;
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
+                _STT = 1;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         //
