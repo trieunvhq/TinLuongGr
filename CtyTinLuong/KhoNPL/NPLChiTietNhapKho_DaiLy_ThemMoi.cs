@@ -447,7 +447,7 @@ namespace CtyTinLuong
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
                         string s7 = txtSoKien_1_BaoBe.Text.ToString();
                         if (s3 == "")
-                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to)";
+                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + ")";
                         else txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao to + " + s3 + " bao bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
                     }
 
@@ -459,7 +459,7 @@ namespace CtyTinLuong
                         string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
                         string s5 = txtTongSoKG.Text.ToString();
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
-                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + " to)";
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + ")";
                     }
                     else if (checkHangSot.Checked == true)
                     {
@@ -473,7 +473,7 @@ namespace CtyTinLuong
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
                         string s7 = txtSoKien_1_BaoBe.Text.ToString();
                         if (s3 == "")
-                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to)";
+                            txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + ")";
                         else txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to + " + s3 + " sọt bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
                     }
 
