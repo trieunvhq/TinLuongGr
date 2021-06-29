@@ -7,7 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsDaiLy_tbChiTietNhapKho_Temp : clsDBInteractionBase
 	{
-        //pr_DaiLy_tbChiTietNhapKho_Temp_Delete_W_ID_NhapKhoDaiLy
+        //pr_DaiLy_tbNhapKho_Temp_SA_NgayThang_ChoGhiSo
 
         public void Delete_W_ID_NhapKhoDaiLy()
         {

@@ -25,8 +25,8 @@ namespace CtyTinLuong
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
 
-            clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
-            DataTable dtxx = cls.SelectAll_W_TenDaiLy_W_DinhMuc();
+            clsDaiLy_tbNhapKho_Temp cls = new clsDaiLy_tbNhapKho_Temp();
+            DataTable dtxx = cls.SA_NgayThang_ChoGhiSo(xxtungay,xxdenngay);
             dtxx.DefaultView.RowFilter = "TrangThaiXuatNhap_Kho_NPL = True";
             DataView dvxxx = dtxx.DefaultView;
             DataTable dt = dvxxx.ToTable();
