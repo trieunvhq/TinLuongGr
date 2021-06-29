@@ -24,26 +24,10 @@ namespace CtyTinLuong
         }
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-
             clsDaiLy_tbNhapKho_Temp cls = new clsDaiLy_tbNhapKho_Temp();
-            DataTable dtxx = cls.SA_NgayThang_ChoGhiSo(xxtungay,xxdenngay);
-            dtxx.DefaultView.RowFilter = "TrangThaiXuatNhap_Kho_NPL = True";
-            DataView dvxxx = dtxx.DefaultView;
-            DataTable dt = dvxxx.ToTable();
-            if (dtxx.Rows.Count > 0)
-            {
-
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-                DataView dv = dt.DefaultView;
-                DataTable dt22 = dv.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-                DataView dv2 = dt22.DefaultView;
-                dv2.Sort = "TrangThaiXuatNhap_KhoDaiLy ASC, NgayChungTu DESC, ID_NhapKhoDaiLy DESC";
-                DataTable dxxxx = dv2.ToTable();
-                gridControl1.DataSource = dxxxx;
-
-            }
-
+            DataTable dtxx = cls.SA_NgayThang_ChoGhiSo(xxtungay, xxdenngay);
+            gridControl1.DataSource = dtxx;
+            
         }
         public UCChoNhapKho_DaiLy_new()
         {
