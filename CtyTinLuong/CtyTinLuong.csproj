@@ -1635,6 +1635,18 @@
       <DependentUpon>UCBTP_NhapKho_LSX_I_C_D.cs</DependentUpon>
     </Compile>
     <Compile Include="Tr_clsChiTietTamUng.cs" />
+    <Compile Include="KhoDaiLy\UCChoNhapKho_DaiLy_new.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\UCChoNhapKho_DaiLy_new.Designer.cs">
+      <DependentUpon>UCChoNhapKho_DaiLy_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.Designer.cs">
+      <DependentUpon>UC_ChoXuatKho_DaiLy_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1892,6 +1904,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.resx">
       <DependentUpon>frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\UCChoNhapKho_DaiLy_new.resx">
+      <DependentUpon>UCChoNhapKho_DaiLy_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.resx">
+      <DependentUpon>UC_ChoXuatKho_DaiLy_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PTH.resx">
       <DependentUpon>frmBTTL_PTH.cs</DependentUpon>
