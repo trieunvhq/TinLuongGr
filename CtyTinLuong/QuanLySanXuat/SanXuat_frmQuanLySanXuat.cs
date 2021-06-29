@@ -29,16 +29,19 @@ namespace CtyTinLuong
 
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navBarItemLenhSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
 
             UC_SanXuat_LenhSanXuat ucc = new UC_SanXuat_LenhSanXuat();         
@@ -46,7 +49,6 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -57,34 +59,37 @@ namespace CtyTinLuong
         
         private void navBarItemDinhMucDOt_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             UCDinhMucDot ucc = new UCDinhMucDot(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navBarItemDinhMucNPL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             ucDinhMucNGuyenPhuLieu ucc = new ucDinhMucNGuyenPhuLieu(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             SanXuat_frmChiTietSoPhieu_RutGon ff = new SanXuat_frmChiTietSoPhieu_RutGon();
             //this.Hide();
             ff.ShowDialog();
             //this.Show();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
         
@@ -97,12 +102,13 @@ namespace CtyTinLuong
 
         private void navBarItem20_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             UCSanXuat_CaiDatMacDinh ucc = new UCSanXuat_CaiDatMacDinh();
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -130,31 +136,34 @@ namespace CtyTinLuong
 
         private void navBarItem13_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             UCSanXuat_DinhMuc_ToGapDan ucc = new UCSanXuat_DinhMuc_ToGapDan(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
         
 
         private void navBarItem14_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
             ucc.Show();
-            doiMauTitle(sender, e);
         }
 
         private void navBarItem16_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             UCDinhMucHangNhu ucc = new UCDinhMucHangNhu(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -169,6 +178,8 @@ namespace CtyTinLuong
       
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             //ucc1.LoadData(1, true);
             //ResetSoTrang_BB();
             Cursor.Current = Cursors.WaitCursor;
@@ -176,65 +187,69 @@ namespace CtyTinLuong
             ucc1.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc1);
             ucc1.BringToFront();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navSanLuongMayDOT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             imay_in_1_Cat_2_dot_3 = 3;
             SanLuong_To_DOT_DAP ucc = new SanLuong_To_DOT_DAP();
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navSanLuongMayIn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             imay_in_1_Cat_2_dot_3 = 1;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navSanLuongMayCAT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             imay_in_1_Cat_2_dot_3 = 2;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void navLuongSanLuong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void nbSL_CTL_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             Cursor.Current = Cursors.WaitCursor;
             SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
             //this.Hide();
             ff.ShowDialog();
             //this.Show();
-            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
