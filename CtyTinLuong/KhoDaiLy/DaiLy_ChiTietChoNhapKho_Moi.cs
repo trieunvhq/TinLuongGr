@@ -359,15 +359,18 @@ namespace CtyTinLuong
             
             clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
             DataTable dt = cls.SelectAll();
+            int k = dt.Rows.Count;
             if (dt.Rows.Count == 0)
                 txtSoChungTu.Text = "NKDL 1";
             else
             {
-                int ID =Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["ID_NhapKhoDaiLy"].ToString());
-                txtSoChungTu.Text = "NKDL " + (ID).ToString() + "";
-            }
+                string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
+                txtSoChungTu.Text = "NKDL " + xxx2 + "";
 
+            }
             
+
         }
         private void HienThi_Sua_XuatKho( int xxID_NhapKhodaily)
         {

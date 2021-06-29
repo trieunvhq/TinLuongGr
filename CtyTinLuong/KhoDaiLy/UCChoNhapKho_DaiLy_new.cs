@@ -61,15 +61,19 @@ namespace CtyTinLuong
             string sochungtu = "";
             clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
             DataTable dt = cls.SelectAll();
+            int k = dt.Rows.Count;
             if (dt.Rows.Count == 0)
                 sochungtu = "NKDL 1";
             else
             {
-                int ID = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["ID_NhapKhoDaiLy"].ToString());
-                sochungtu = "NKDL " + (ID + 1).ToString() + "";
+              
+                string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
+                sochungtu = "NKDL " + xxx2 + "";
             }
           
             return sochungtu;
+            
         }
         private void Luu_NhapKhoDaiLy(int xxxID_NhapKhoDaiLy)
         {
