@@ -29,6 +29,10 @@ namespace CtyTinLuong
             gridControl1.DataSource = dtxx;
             
         }
+        private void Luu_NhapKho_DaiLy()
+        {
+
+        }
         public UCChoNhapKho_DaiLy_new()
         {
             InitializeComponent();
@@ -90,7 +94,8 @@ namespace CtyTinLuong
 
         private void btNhapKho_Click(object sender, EventArgs e)
         {
-
+            Luu_NhapKho_DaiLy();
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
     }
 }
