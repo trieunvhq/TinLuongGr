@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraNavBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -44,7 +46,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
-
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -60,6 +62,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -70,6 +73,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -80,6 +84,7 @@ namespace CtyTinLuong
             //this.Hide();
             ff.ShowDialog();
             //this.Show();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
         
@@ -97,6 +102,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -129,6 +135,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
         
@@ -137,6 +144,7 @@ namespace CtyTinLuong
         {
             frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
             ucc.Show();
+            doiMauTitle(sender, e);
         }
 
         private void navBarItem16_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -146,15 +154,16 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            this.Hide();
+            //this.Hide();
             ff.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
       
@@ -167,7 +176,7 @@ namespace CtyTinLuong
             ucc1.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc1);
             ucc1.BringToFront();
-
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -179,6 +188,7 @@ namespace CtyTinLuong
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -190,6 +200,7 @@ namespace CtyTinLuong
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -201,6 +212,7 @@ namespace CtyTinLuong
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -211,6 +223,7 @@ namespace CtyTinLuong
             //this.Hide();
             ucc.ShowDialog();
             //this.Show();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -221,7 +234,20 @@ namespace CtyTinLuong
             //this.Hide();
             ff.ShowDialog();
             //this.Show();
+            doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
+        }
+
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
     }
 }
