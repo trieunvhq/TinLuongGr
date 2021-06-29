@@ -1486,6 +1486,7 @@
             this.btThoat.Size = new System.Drawing.Size(75, 23);
             this.btThoat.TabIndex = 95;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btPrint
             // 
@@ -1511,6 +1512,7 @@
             this.Name = "DaiLy_ChiTietChoNhapKho_Moi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết nhập kho đại lý";
+            this.Load += new System.EventHandler(this.DaiLy_ChiTietChoNhapKho_Moi_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
