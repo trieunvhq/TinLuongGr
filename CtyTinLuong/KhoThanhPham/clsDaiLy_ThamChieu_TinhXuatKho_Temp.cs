@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
 
-namespace SQL_TinLuong
+namespace CtyTinLuong
 {
 	public partial class clsDaiLy_ThamChieu_TinhXuatKho_Temp : clsDBInteractionBase
 	{
