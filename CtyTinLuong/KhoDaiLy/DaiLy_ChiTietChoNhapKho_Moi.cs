@@ -451,7 +451,7 @@ namespace CtyTinLuong
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_ChucVu=2";
             DataView dvCaTruong = dtNguoi.DefaultView;
             DataTable newdtCaTruong = dvCaTruong.ToTable();
 
