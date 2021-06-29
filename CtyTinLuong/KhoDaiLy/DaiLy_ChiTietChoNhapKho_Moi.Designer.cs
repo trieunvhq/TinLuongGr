@@ -1489,10 +1489,12 @@
             // 
             // btPrint
             // 
+            this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint.Appearance.Options.UseFont = true;
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(719, 648);
+            this.btPrint.Location = new System.Drawing.Point(704, 648);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(76, 23);
+            this.btPrint.Size = new System.Drawing.Size(91, 23);
             this.btPrint.TabIndex = 97;
             this.btPrint.Text = "Print";
             // 
