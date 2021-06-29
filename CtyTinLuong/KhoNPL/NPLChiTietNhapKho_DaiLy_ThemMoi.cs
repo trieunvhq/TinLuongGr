@@ -1397,10 +1397,10 @@ namespace CtyTinLuong
                 checkHangNhu.Checked = false;
                 checkHangDot.Checked = false;
                 layoutbaobe.Visibility = LayoutVisibility.Always;
-                layoutControlItem22.Visibility = LayoutVisibility.Always;
+                layoutDM_Duoi.Visibility = LayoutVisibility.Always;
                 layoutKg1baonho.Visibility = LayoutVisibility.Always;
                 layoutkien1baonho.Visibility = LayoutVisibility.Always;
-                layoutControlItem25.Visibility = LayoutVisibility.Always;
+                layoutQuyKien_Duoi.Visibility = LayoutVisibility.Always;
                 layoutkg1baoto.Visibility = LayoutVisibility.Always;
                 layoutkien1baoto.Text = "Số kiện/Sọt to";
                 layoutkien1baonho.Text = "Số kiện/Sọt bé";
@@ -1426,10 +1426,10 @@ namespace CtyTinLuong
                 checkHangSot.Checked = false;
               
                 layoutbaobe.Visibility = LayoutVisibility.Always;
-                layoutControlItem22.Visibility = LayoutVisibility.Always;
+                layoutDM_Duoi.Visibility = LayoutVisibility.Always;
                 layoutKg1baonho.Visibility = LayoutVisibility.Always;
                 layoutkien1baonho.Visibility = LayoutVisibility.Always;
-                layoutControlItem25.Visibility = LayoutVisibility.Always;
+                layoutQuyKien_Duoi.Visibility = LayoutVisibility.Always;
                 layoutkg1baoto.Visibility = LayoutVisibility.Always;
                 layoutkg1baoto.Text = "Kg/bao to";
               
@@ -1451,10 +1451,10 @@ namespace CtyTinLuong
                 checkHangSot.Checked = false;
                 checkHangDot.Checked = false;
                 layoutbaobe.Visibility = LayoutVisibility.Never;
-                layoutControlItem22.Visibility = LayoutVisibility.Never;
+                layoutDM_Duoi.Visibility = LayoutVisibility.Never;
                 layoutKg1baonho.Visibility = LayoutVisibility.Never;
                 layoutkien1baonho.Visibility = LayoutVisibility.Never;
-                layoutControlItem25.Visibility = LayoutVisibility.Never;
+                layoutQuyKien_Duoi.Visibility = LayoutVisibility.Never;
                 layoutkg1baoto.Visibility= LayoutVisibility.Always;
                 
                 layoutkg1baoto.Text = "Cục/ 1bao";

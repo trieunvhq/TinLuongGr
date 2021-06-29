@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_ChiTietChoNhapKho_Moi));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.checkHangSot = new System.Windows.Forms.CheckBox();
             this.checkHangNhu = new System.Windows.Forms.CheckBox();
-            this.checkHoanThanh = new System.Windows.Forms.CheckBox();
             this.txtDonGiaThanhPhamQuyDoi = new System.Windows.Forms.TextBox();
             this.txtSoKien_1_BaoBe = new System.Windows.Forms.TextBox();
             this.txtSoKien_1_BaoTo = new System.Windows.Forms.TextBox();
@@ -103,29 +102,28 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItembaoto = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutbaoto = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1tren = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutkg1baoto = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1_duoi = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3_duoi = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutbaobe = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutKg1baonho = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem_tongSoKG = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2_duoi = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutDM_Tren = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutDM_Duoi = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4_duoi = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutQuyKien_Tren = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutQuyKien_Duoi = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutkien1baoto = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutkien1baonho = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -151,9 +149,6 @@
             this.clBoolVTChinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuongTon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuongTheoDinhMuc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.checkDaiLy = new System.Windows.Forms.CheckBox();
-            this.checkLaiXe = new System.Windows.Forms.CheckBox();
-            this.checkBaoVe = new System.Windows.Forms.CheckBox();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -178,29 +173,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItembaoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutbaoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1tren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutkg1baoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1_duoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3_duoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutbaobe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutKg1baonho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem_tongSoKG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2_duoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutDM_Tren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutDM_Duoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4_duoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutQuyKien_Tren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutQuyKien_Duoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutkien1baoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutkien1baonho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
@@ -227,7 +221,6 @@
             // 
             this.layoutControl1.Controls.Add(this.checkHangSot);
             this.layoutControl1.Controls.Add(this.checkHangNhu);
-            this.layoutControl1.Controls.Add(this.checkHoanThanh);
             this.layoutControl1.Controls.Add(this.txtDonGiaThanhPhamQuyDoi);
             this.layoutControl1.Controls.Add(this.txtSoKien_1_BaoBe);
             this.layoutControl1.Controls.Add(this.txtSoKien_1_BaoTo);
@@ -285,15 +278,6 @@
             this.checkHangNhu.Text = "Loại hàng Nhũ";
             this.checkHangNhu.UseVisualStyleBackColor = true;
             this.checkHangNhu.CheckedChanged += new System.EventHandler(this.checkHangNhu_CheckedChanged);
-            // 
-            // checkHoanThanh
-            // 
-            this.checkHoanThanh.Location = new System.Drawing.Point(834, 26);
-            this.checkHoanThanh.Name = "checkHoanThanh";
-            this.checkHoanThanh.Size = new System.Drawing.Size(115, 20);
-            this.checkHoanThanh.TabIndex = 111;
-            this.checkHoanThanh.Text = "Hoàn thành";
-            this.checkHoanThanh.UseVisualStyleBackColor = true;
             // 
             // txtDonGiaThanhPhamQuyDoi
             // 
@@ -464,7 +448,7 @@
             this.txtThamChieu.Location = new System.Drawing.Point(675, 26);
             this.txtThamChieu.Name = "txtThamChieu";
             this.txtThamChieu.ReadOnly = true;
-            this.txtThamChieu.Size = new System.Drawing.Size(155, 20);
+            this.txtThamChieu.Size = new System.Drawing.Size(274, 20);
             this.txtThamChieu.TabIndex = 101;
             // 
             // txtTongTienHang
@@ -816,29 +800,28 @@
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem3,
-            this.layoutControlItembaoto,
+            this.layoutbaoto,
             this.layoutControlItem4,
             this.layoutControlItem14,
             this.layoutControlItem8,
-            this.layoutControlItem1tren,
+            this.layoutkg1baoto,
             this.layoutControlItem23,
             this.layoutControlItem7,
             this.layoutControlItem19,
             this.layoutControlItem6,
-            this.layoutControlItem1_duoi,
-            this.layoutControlItem3_duoi,
+            this.layoutbaobe,
+            this.layoutKg1baonho,
             this.layoutControlItem_tongSoKG,
-            this.layoutControlItem11,
-            this.layoutControlItem2_duoi,
+            this.layoutDM_Tren,
+            this.layoutDM_Duoi,
             this.layoutControlItem17,
-            this.layoutControlItem18,
-            this.layoutControlItem4_duoi,
-            this.layoutControlItem26,
-            this.layoutControlItem27,
+            this.layoutQuyKien_Tren,
+            this.layoutQuyKien_Duoi,
+            this.layoutkien1baoto,
+            this.layoutkien1baonho,
             this.layoutControlItem28,
             this.layoutControlItem30,
             this.layoutControlItem31,
-            this.layoutControlItem29,
             this.layoutControlItem13,
             this.layoutControlItem12,
             this.layoutControlItem24,
@@ -898,15 +881,15 @@
             this.layoutControlItem3.Text = "Tên Đại lý";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // layoutControlItembaoto
+            // layoutbaoto
             // 
-            this.layoutControlItembaoto.Control = this.txtSoLuong_BaoTo;
-            this.layoutControlItembaoto.CustomizationFormText = "Số lượng xuất";
-            this.layoutControlItembaoto.Location = new System.Drawing.Point(0, 133);
-            this.layoutControlItembaoto.Name = "layoutControlItembaoto";
-            this.layoutControlItembaoto.Size = new System.Drawing.Size(220, 24);
-            this.layoutControlItembaoto.Text = "SL Bao To";
-            this.layoutControlItembaoto.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutbaoto.Control = this.txtSoLuong_BaoTo;
+            this.layoutbaoto.CustomizationFormText = "Số lượng xuất";
+            this.layoutbaoto.Location = new System.Drawing.Point(0, 133);
+            this.layoutbaoto.Name = "layoutbaoto";
+            this.layoutbaoto.Size = new System.Drawing.Size(220, 24);
+            this.layoutbaoto.Text = "SL Bao To";
+            this.layoutbaoto.TextSize = new System.Drawing.Size(97, 13);
             // 
             // layoutControlItem4
             // 
@@ -942,17 +925,17 @@
             this.layoutControlItem8.Text = "Số lượng TP Quy đổi";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // layoutControlItem1tren
+            // layoutkg1baoto
             // 
-            this.layoutControlItem1tren.Control = this.txtSoKG1Bao_To;
-            this.layoutControlItem1tren.CustomizationFormText = "Số KG / 1 bao";
-            this.layoutControlItem1tren.Location = new System.Drawing.Point(450, 133);
-            this.layoutControlItem1tren.Name = "layoutControlItem1tren";
-            this.layoutControlItem1tren.Size = new System.Drawing.Size(123, 24);
-            this.layoutControlItem1tren.Text = "Kg/1 bao";
-            this.layoutControlItem1tren.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem1tren.TextSize = new System.Drawing.Size(43, 13);
-            this.layoutControlItem1tren.TextToControlDistance = 5;
+            this.layoutkg1baoto.Control = this.txtSoKG1Bao_To;
+            this.layoutkg1baoto.CustomizationFormText = "Số KG / 1 bao";
+            this.layoutkg1baoto.Location = new System.Drawing.Point(450, 133);
+            this.layoutkg1baoto.Name = "layoutkg1baoto";
+            this.layoutkg1baoto.Size = new System.Drawing.Size(123, 24);
+            this.layoutkg1baoto.Text = "Kg/1 bao";
+            this.layoutkg1baoto.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutkg1baoto.TextSize = new System.Drawing.Size(43, 13);
+            this.layoutkg1baoto.TextToControlDistance = 5;
             // 
             // layoutControlItem23
             // 
@@ -994,27 +977,27 @@
             this.layoutControlItem6.Text = "Định mức NPL";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // layoutControlItem1_duoi
+            // layoutbaobe
             // 
-            this.layoutControlItem1_duoi.Control = this.txtSoLuong_BaoBe;
-            this.layoutControlItem1_duoi.CustomizationFormText = "SL Bao Bé";
-            this.layoutControlItem1_duoi.Location = new System.Drawing.Point(0, 157);
-            this.layoutControlItem1_duoi.Name = "layoutControlItem1_duoi";
-            this.layoutControlItem1_duoi.Size = new System.Drawing.Size(218, 24);
-            this.layoutControlItem1_duoi.Text = "SL Bao Bé";
-            this.layoutControlItem1_duoi.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutbaobe.Control = this.txtSoLuong_BaoBe;
+            this.layoutbaobe.CustomizationFormText = "SL Bao Bé";
+            this.layoutbaobe.Location = new System.Drawing.Point(0, 157);
+            this.layoutbaobe.Name = "layoutbaobe";
+            this.layoutbaobe.Size = new System.Drawing.Size(218, 24);
+            this.layoutbaobe.Text = "SL Bao Bé";
+            this.layoutbaobe.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // layoutControlItem3_duoi
+            // layoutKg1baonho
             // 
-            this.layoutControlItem3_duoi.Control = this.txtSoKG1Bao_Be;
-            this.layoutControlItem3_duoi.CustomizationFormText = "Kg/1 bao";
-            this.layoutControlItem3_duoi.Location = new System.Drawing.Point(450, 157);
-            this.layoutControlItem3_duoi.Name = "layoutControlItem3_duoi";
-            this.layoutControlItem3_duoi.Size = new System.Drawing.Size(123, 24);
-            this.layoutControlItem3_duoi.Text = "Kg/1 bao";
-            this.layoutControlItem3_duoi.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem3_duoi.TextSize = new System.Drawing.Size(43, 13);
-            this.layoutControlItem3_duoi.TextToControlDistance = 5;
+            this.layoutKg1baonho.Control = this.txtSoKG1Bao_Be;
+            this.layoutKg1baonho.CustomizationFormText = "Kg/1 bao";
+            this.layoutKg1baonho.Location = new System.Drawing.Point(450, 157);
+            this.layoutKg1baonho.Name = "layoutKg1baonho";
+            this.layoutKg1baonho.Size = new System.Drawing.Size(123, 24);
+            this.layoutKg1baonho.Text = "Kg/1 bao";
+            this.layoutKg1baonho.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutKg1baonho.TextSize = new System.Drawing.Size(43, 13);
+            this.layoutKg1baonho.TextToControlDistance = 5;
             // 
             // layoutControlItem_tongSoKG
             // 
@@ -1028,29 +1011,29 @@
             this.layoutControlItem_tongSoKG.TextSize = new System.Drawing.Size(52, 13);
             this.layoutControlItem_tongSoKG.TextToControlDistance = 5;
             // 
-            // layoutControlItem11
+            // layoutDM_Tren
             // 
-            this.layoutControlItem11.Control = this.gridMaDinhMucDot_BaoTo;
-            this.layoutControlItem11.CustomizationFormText = "Định mức Đột";
-            this.layoutControlItem11.Location = new System.Drawing.Point(220, 133);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(230, 24);
-            this.layoutControlItem11.Text = "Định mức";
-            this.layoutControlItem11.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(45, 13);
-            this.layoutControlItem11.TextToControlDistance = 5;
+            this.layoutDM_Tren.Control = this.gridMaDinhMucDot_BaoTo;
+            this.layoutDM_Tren.CustomizationFormText = "Định mức Đột";
+            this.layoutDM_Tren.Location = new System.Drawing.Point(220, 133);
+            this.layoutDM_Tren.Name = "layoutDM_Tren";
+            this.layoutDM_Tren.Size = new System.Drawing.Size(230, 24);
+            this.layoutDM_Tren.Text = "Định mức";
+            this.layoutDM_Tren.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutDM_Tren.TextSize = new System.Drawing.Size(45, 13);
+            this.layoutDM_Tren.TextToControlDistance = 5;
             // 
-            // layoutControlItem2_duoi
+            // layoutDM_Duoi
             // 
-            this.layoutControlItem2_duoi.Control = this.gridMaDinhMucDot_BaoBe;
-            this.layoutControlItem2_duoi.CustomizationFormText = "Định mức";
-            this.layoutControlItem2_duoi.Location = new System.Drawing.Point(218, 157);
-            this.layoutControlItem2_duoi.Name = "layoutControlItem2_duoi";
-            this.layoutControlItem2_duoi.Size = new System.Drawing.Size(232, 24);
-            this.layoutControlItem2_duoi.Text = "Định mức";
-            this.layoutControlItem2_duoi.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem2_duoi.TextSize = new System.Drawing.Size(45, 13);
-            this.layoutControlItem2_duoi.TextToControlDistance = 5;
+            this.layoutDM_Duoi.Control = this.gridMaDinhMucDot_BaoBe;
+            this.layoutDM_Duoi.CustomizationFormText = "Định mức";
+            this.layoutDM_Duoi.Location = new System.Drawing.Point(218, 157);
+            this.layoutDM_Duoi.Name = "layoutDM_Duoi";
+            this.layoutDM_Duoi.Size = new System.Drawing.Size(232, 24);
+            this.layoutDM_Duoi.Text = "Định mức";
+            this.layoutDM_Duoi.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutDM_Duoi.TextSize = new System.Drawing.Size(45, 13);
+            this.layoutDM_Duoi.TextToControlDistance = 5;
             // 
             // layoutControlItem17
             // 
@@ -1062,53 +1045,53 @@
             this.layoutControlItem17.Text = "Diễn giải ĐM";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(97, 13);
             // 
-            // layoutControlItem18
+            // layoutQuyKien_Tren
             // 
-            this.layoutControlItem18.Control = this.txtQuyRaKien_BaoTo;
-            this.layoutControlItem18.CustomizationFormText = "Quy ra kiện";
-            this.layoutControlItem18.Location = new System.Drawing.Point(733, 133);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(218, 24);
-            this.layoutControlItem18.Text = "Quy ra kiện";
-            this.layoutControlItem18.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(55, 13);
-            this.layoutControlItem18.TextToControlDistance = 5;
+            this.layoutQuyKien_Tren.Control = this.txtQuyRaKien_BaoTo;
+            this.layoutQuyKien_Tren.CustomizationFormText = "Quy ra kiện";
+            this.layoutQuyKien_Tren.Location = new System.Drawing.Point(733, 133);
+            this.layoutQuyKien_Tren.Name = "layoutQuyKien_Tren";
+            this.layoutQuyKien_Tren.Size = new System.Drawing.Size(218, 24);
+            this.layoutQuyKien_Tren.Text = "Quy ra kiện";
+            this.layoutQuyKien_Tren.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutQuyKien_Tren.TextSize = new System.Drawing.Size(55, 13);
+            this.layoutQuyKien_Tren.TextToControlDistance = 5;
             // 
-            // layoutControlItem4_duoi
+            // layoutQuyKien_Duoi
             // 
-            this.layoutControlItem4_duoi.Control = this.txtQuyRaKien_BaoBe;
-            this.layoutControlItem4_duoi.CustomizationFormText = "Quy ra kiện";
-            this.layoutControlItem4_duoi.Location = new System.Drawing.Point(733, 157);
-            this.layoutControlItem4_duoi.Name = "layoutControlItem4_duoi";
-            this.layoutControlItem4_duoi.Size = new System.Drawing.Size(218, 24);
-            this.layoutControlItem4_duoi.Text = "Quy ra kiện";
-            this.layoutControlItem4_duoi.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem4_duoi.TextSize = new System.Drawing.Size(55, 13);
-            this.layoutControlItem4_duoi.TextToControlDistance = 5;
+            this.layoutQuyKien_Duoi.Control = this.txtQuyRaKien_BaoBe;
+            this.layoutQuyKien_Duoi.CustomizationFormText = "Quy ra kiện";
+            this.layoutQuyKien_Duoi.Location = new System.Drawing.Point(733, 157);
+            this.layoutQuyKien_Duoi.Name = "layoutQuyKien_Duoi";
+            this.layoutQuyKien_Duoi.Size = new System.Drawing.Size(218, 24);
+            this.layoutQuyKien_Duoi.Text = "Quy ra kiện";
+            this.layoutQuyKien_Duoi.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutQuyKien_Duoi.TextSize = new System.Drawing.Size(55, 13);
+            this.layoutQuyKien_Duoi.TextToControlDistance = 5;
             // 
-            // layoutControlItem26
+            // layoutkien1baoto
             // 
-            this.layoutControlItem26.Control = this.txtSoKien_1_BaoTo;
-            this.layoutControlItem26.CustomizationFormText = "Kiện/1 bao";
-            this.layoutControlItem26.Location = new System.Drawing.Point(573, 133);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(160, 24);
-            this.layoutControlItem26.Text = "Kiện/1 bao";
-            this.layoutControlItem26.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(51, 13);
-            this.layoutControlItem26.TextToControlDistance = 5;
+            this.layoutkien1baoto.Control = this.txtSoKien_1_BaoTo;
+            this.layoutkien1baoto.CustomizationFormText = "Kiện/1 bao";
+            this.layoutkien1baoto.Location = new System.Drawing.Point(573, 133);
+            this.layoutkien1baoto.Name = "layoutkien1baoto";
+            this.layoutkien1baoto.Size = new System.Drawing.Size(160, 24);
+            this.layoutkien1baoto.Text = "Kiện/1 bao";
+            this.layoutkien1baoto.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutkien1baoto.TextSize = new System.Drawing.Size(51, 13);
+            this.layoutkien1baoto.TextToControlDistance = 5;
             // 
-            // layoutControlItem27
+            // layoutkien1baonho
             // 
-            this.layoutControlItem27.Control = this.txtSoKien_1_BaoBe;
-            this.layoutControlItem27.CustomizationFormText = "Kiện/1 bao";
-            this.layoutControlItem27.Location = new System.Drawing.Point(573, 157);
-            this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(160, 24);
-            this.layoutControlItem27.Text = "Kiện/1 bao";
-            this.layoutControlItem27.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(51, 13);
-            this.layoutControlItem27.TextToControlDistance = 5;
+            this.layoutkien1baonho.Control = this.txtSoKien_1_BaoBe;
+            this.layoutkien1baonho.CustomizationFormText = "Kiện/1 bao";
+            this.layoutkien1baonho.Location = new System.Drawing.Point(573, 157);
+            this.layoutkien1baonho.Name = "layoutkien1baonho";
+            this.layoutkien1baonho.Size = new System.Drawing.Size(160, 24);
+            this.layoutkien1baonho.Text = "Kiện/1 bao";
+            this.layoutkien1baonho.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutkien1baonho.TextSize = new System.Drawing.Size(51, 13);
+            this.layoutkien1baonho.TextToControlDistance = 5;
             // 
             // layoutControlItem28
             // 
@@ -1137,15 +1120,6 @@
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
-            // layoutControlItem29
-            // 
-            this.layoutControlItem29.Control = this.checkHoanThanh;
-            this.layoutControlItem29.Location = new System.Drawing.Point(832, 24);
-            this.layoutControlItem29.Name = "layoutControlItem29";
-            this.layoutControlItem29.Size = new System.Drawing.Size(119, 24);
-            this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem29.TextVisible = false;
-            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.txtSoChungTu;
@@ -1172,7 +1146,7 @@
             this.layoutControlItem24.CustomizationFormText = "Số CT ĐL";
             this.layoutControlItem24.Location = new System.Drawing.Point(573, 24);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(259, 24);
+            this.layoutControlItem24.Size = new System.Drawing.Size(378, 24);
             this.layoutControlItem24.Text = "Tham chiếu";
             this.layoutControlItem24.TextSize = new System.Drawing.Size(97, 13);
             // 
@@ -1272,7 +1246,7 @@
             this.clDinhMuc.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.clDinhMuc.AppearanceCell.Options.UseFont = true;
             this.clDinhMuc.AppearanceCell.Options.UseForeColor = true;
-            this.clDinhMuc.Caption = "Định mức";
+            this.clDinhMuc.Caption = "ĐM";
             this.clDinhMuc.FieldName = "DinhMuc";
             this.clDinhMuc.Name = "clDinhMuc";
             this.clDinhMuc.OptionsColumn.AllowEdit = false;
@@ -1402,9 +1376,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -1451,48 +1425,6 @@
             this.clSoLuongTheoDinhMuc.Visible = true;
             this.clSoLuongTheoDinhMuc.VisibleIndex = 5;
             // 
-            // checkDaiLy
-            // 
-            this.checkDaiLy.AutoSize = true;
-            this.checkDaiLy.Checked = true;
-            this.checkDaiLy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkDaiLy.ForeColor = System.Drawing.Color.Purple;
-            this.checkDaiLy.Location = new System.Drawing.Point(135, 626);
-            this.checkDaiLy.Name = "checkDaiLy";
-            this.checkDaiLy.Size = new System.Drawing.Size(52, 17);
-            this.checkDaiLy.TabIndex = 142;
-            this.checkDaiLy.Text = "Đại lý";
-            this.checkDaiLy.UseVisualStyleBackColor = true;
-            this.checkDaiLy.CheckedChanged += new System.EventHandler(this.checkDaiLy_CheckedChanged);
-            // 
-            // checkLaiXe
-            // 
-            this.checkLaiXe.AutoSize = true;
-            this.checkLaiXe.Checked = true;
-            this.checkLaiXe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkLaiXe.ForeColor = System.Drawing.Color.Purple;
-            this.checkLaiXe.Location = new System.Drawing.Point(75, 626);
-            this.checkLaiXe.Name = "checkLaiXe";
-            this.checkLaiXe.Size = new System.Drawing.Size(54, 17);
-            this.checkLaiXe.TabIndex = 141;
-            this.checkLaiXe.Text = "Lái xe";
-            this.checkLaiXe.UseVisualStyleBackColor = true;
-            this.checkLaiXe.CheckedChanged += new System.EventHandler(this.checkLaiXe_CheckedChanged);
-            // 
-            // checkBaoVe
-            // 
-            this.checkBaoVe.AutoSize = true;
-            this.checkBaoVe.Checked = true;
-            this.checkBaoVe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBaoVe.ForeColor = System.Drawing.Color.Purple;
-            this.checkBaoVe.Location = new System.Drawing.Point(9, 626);
-            this.checkBaoVe.Name = "checkBaoVe";
-            this.checkBaoVe.Size = new System.Drawing.Size(60, 17);
-            this.checkBaoVe.TabIndex = 140;
-            this.checkBaoVe.Text = "Bảo vệ";
-            this.checkBaoVe.UseVisualStyleBackColor = true;
-            this.checkBaoVe.CheckedChanged += new System.EventHandler(this.checkBaoVe_CheckedChanged);
-            // 
             // btLuu_Dong
             // 
             this.btLuu_Dong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btLuu_Dong.ImageOptions.Image")));
@@ -1529,9 +1461,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 654);
-            this.Controls.Add(this.checkDaiLy);
-            this.Controls.Add(this.checkLaiXe);
-            this.Controls.Add(this.checkBaoVe);
             this.Controls.Add(this.btLuu_Dong);
             this.Controls.Add(this.btPrint);
             this.Controls.Add(this.btThoat);
@@ -1562,29 +1491,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItembaoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutbaoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1tren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutkg1baoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1_duoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3_duoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutbaobe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutKg1baonho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem_tongSoKG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2_duoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutDM_Tren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutDM_Duoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4_duoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutQuyKien_Tren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutQuyKien_Duoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutkien1baoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutkien1baonho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
@@ -1596,7 +1524,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1606,7 +1533,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private System.Windows.Forms.CheckBox checkHangSot;
         private System.Windows.Forms.CheckBox checkHangNhu;
-        private System.Windows.Forms.CheckBox checkHoanThanh;
         private System.Windows.Forms.TextBox txtDonGiaThanhPhamQuyDoi;
         private System.Windows.Forms.TextBox txtSoKien_1_BaoBe;
         private System.Windows.Forms.TextBox txtSoKien_1_BaoTo;
@@ -1670,29 +1596,28 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItembaoto;
+        private DevExpress.XtraLayout.LayoutControlItem layoutbaoto;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1tren;
+        private DevExpress.XtraLayout.LayoutControlItem layoutkg1baoto;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1_duoi;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3_duoi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutbaobe;
+        private DevExpress.XtraLayout.LayoutControlItem layoutKg1baonho;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem_tongSoKG;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2_duoi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutDM_Tren;
+        private DevExpress.XtraLayout.LayoutControlItem layoutDM_Duoi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4_duoi;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem27;
+        private DevExpress.XtraLayout.LayoutControlItem layoutQuyKien_Tren;
+        private DevExpress.XtraLayout.LayoutControlItem layoutQuyKien_Duoi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutkien1baoto;
+        private DevExpress.XtraLayout.LayoutControlItem layoutkien1baonho;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
@@ -1718,9 +1643,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clBoolVTChinh;
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuongTon;
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuongTheoDinhMuc;
-        private System.Windows.Forms.CheckBox checkDaiLy;
-        private System.Windows.Forms.CheckBox checkLaiXe;
-        private System.Windows.Forms.CheckBox checkBaoVe;
         private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
         private DevExpress.XtraEditors.SimpleButton btPrint;
         private DevExpress.XtraEditors.SimpleButton btThoat;
