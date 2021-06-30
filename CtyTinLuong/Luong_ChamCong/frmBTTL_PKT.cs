@@ -60,6 +60,7 @@ namespace CtyTinLuong
             double tong_tong_ = 0;
             double trutamung_tong_ = 0;
             double thuclinh_tong_ = 0;
+            double phucap_tong_ = 0;
 
 
             double tongluong_ = 0;
@@ -67,6 +68,7 @@ namespace CtyTinLuong
             double tong_ = 0;
             double trutamung_ = 0;
             double thuclinh_ = 0;
+            double phucap_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -104,6 +106,14 @@ namespace CtyTinLuong
                     else
                         _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
 
+                    phucap_ = Convert.ToDouble(_data.Rows[i]["PhuCap_Value"].ToString());
+                    phucap_tong_ += phucap_;
+                    if (phucap_ == 0)
+                        _data.Rows[i]["PhuCap"] = "";
+                    else
+                        _data.Rows[i]["PhuCap"] = phucap_.ToString("N0");
+
+
                     trutamung_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
                     trutamung_tong_ += trutamung_;
                     if (trutamung_ == 0)
@@ -117,7 +127,7 @@ namespace CtyTinLuong
                     tong_tong_ += tong_;
                     _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-                    thuclinh_ = (tong_ - trutamung_);
+                    thuclinh_ = (tong_ - trutamung_ + phucap_);
                     thuclinh_tong_ += thuclinh_;
                     _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
 
@@ -174,6 +184,15 @@ namespace CtyTinLuong
             else
             {
                 _ravi["ThucNhan"] = thuclinh_tong_.ToString("N0");
+            }
+            // 
+            if (phucap_tong_ == 0)
+            {
+                _ravi["PhuCap"] = "";
+            }
+            else
+            {
+                _ravi["PhuCap"] = phucap_tong_.ToString("N0");
             }
 
             _data.Rows.Add(_ravi);

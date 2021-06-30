@@ -58,6 +58,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.colPhuCap = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -183,7 +184,8 @@
             this.TongTien,
             this.TamUng,
             this.ThucNhan,
-            this.KyNhan});
+            this.KyNhan,
+            this.colPhuCap});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -315,7 +317,7 @@
             this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 6;
+            this.TongLuong.VisibleIndex = 5;
             this.TongLuong.Width = 80;
             // 
             // LuongTrachNhiem
@@ -324,8 +326,6 @@
             this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
             this.LuongTrachNhiem.Name = "LuongTrachNhiem";
             this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.LuongTrachNhiem.Visible = true;
-            this.LuongTrachNhiem.VisibleIndex = 5;
             this.LuongTrachNhiem.Width = 80;
             // 
             // TongTien
@@ -333,7 +333,7 @@
             this.TongTien.AppearanceCell.Options.UseTextOptions = true;
             this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TongTien.Caption = "TỔNG";
+            this.TongTien.Caption = "TỔNG LƯƠNG";
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 10;
             this.TongTien.Name = "TongTien";
@@ -358,7 +358,7 @@
             this.TamUng.AppearanceCell.Options.UseTextOptions = true;
             this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TamUng.Caption = "TRỪ TẠM ỨNG";
+            this.TamUng.Caption = "TẠM ỨNG";
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 10;
             this.TamUng.Name = "TamUng";
@@ -466,6 +466,17 @@
             this.label2.TabIndex = 145;
             this.label2.Text = "Double click để sửa định mức";
             // 
+            // colPhuCap
+            // 
+            this.colPhuCap.AppearanceCell.Options.UseTextOptions = true;
+            this.colPhuCap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colPhuCap.Caption = "PHỤ CẤP";
+            this.colPhuCap.FieldName = "PhuCap";
+            this.colPhuCap.Name = "colPhuCap";
+            this.colPhuCap.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colPhuCap.Visible = true;
+            this.colPhuCap.VisibleIndex = 6;
+            // 
             // frmBTTL_PKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,5 +529,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhuCap;
     }
 }
