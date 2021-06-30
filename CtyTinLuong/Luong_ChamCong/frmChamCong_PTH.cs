@@ -680,7 +680,7 @@ namespace CtyTinLuong
                 {
                     if(Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()) == id_loaicong_)
                     {
-                        MessageBox.Show("Đã tồn tại công nhân này trong bảng");
+                        MessageBox.Show("Đã tồn tại công nhân này và loại công này trong bảng");
                         return;
                     }
                 }
