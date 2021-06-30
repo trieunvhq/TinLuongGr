@@ -319,7 +319,7 @@ namespace CtyTinLuong
 
         private void navChamCong_PTH_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            int id_bophan_ = KiemTraTenBoPhan("Tổng hợp");
+            int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
             if (id_bophan_ == 0) return;
 
             frmChamCong_PTH frm = new frmChamCong_PTH(id_bophan_);
@@ -334,7 +334,7 @@ namespace CtyTinLuong
 
         private void navBTTL_PTH_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            int id_bophan_ = KiemTraTenBoPhan("Tổng hợp");
+            int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
             if (id_bophan_ == 0) return;
 
             frmBTTL_PTH frm = new frmBTTL_PTH(id_bophan_);
@@ -368,6 +368,21 @@ namespace CtyTinLuong
             if (id_bophan_ == 0) return;
 
             frmBTTL_PKT frm = new frmBTTL_PKT(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            doiMauTitle(sender, e);
+        }
+
+        private void navChamCong_PMC_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_PMC frm = new frmChamCong_PMC(id_bophan_);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();

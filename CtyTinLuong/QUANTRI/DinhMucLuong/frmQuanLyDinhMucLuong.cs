@@ -179,6 +179,13 @@ namespace CtyTinLuong
                                 , gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString(),
                                 _ID_CongNhan);
                             break;
+                        case "frmChamCong_PMC":
+                            this.Close();
+                            ((frmChamCong_PMC)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString())
+                                , gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString(),
+                                _ID_CongNhan);
+                            break;
                     } 
                 }
                 else

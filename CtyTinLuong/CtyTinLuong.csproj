@@ -205,6 +205,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TrgCa_CT.Designer.cs">
       <DependentUpon>frmBTTL_TrgCa_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PMC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PMC.Designer.cs">
+      <DependentUpon>frmChamCong_PMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_PTH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1969,6 +1975,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PMC.resx">
+      <DependentUpon>frmChamCong_PMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PTH.resx">
       <DependentUpon>frmChamCong_PTH.cs</DependentUpon>

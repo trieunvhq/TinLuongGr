@@ -1,7 +1,7 @@
 ﻿
 namespace CtyTinLuong
 {
-    partial class frmChamCong_PTH
+    partial class frmChamCong_PMC
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@ namespace CtyTinLuong
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong_PTH));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong_PMC));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -1322,8 +1322,8 @@ namespace CtyTinLuong
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.Location = new System.Drawing.Point(3, 61);
             this.gridControl1.MainView = this.gridView1;
@@ -1492,7 +1492,7 @@ namespace CtyTinLuong
             this.label1.TabIndex = 148;
             this.label1.Text = "Chọn loại công";
             // 
-            // frmChamCong_PTH
+            // frmChamCong_PMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1512,9 +1512,9 @@ namespace CtyTinLuong
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmChamCong_PTH";
+            this.Name = "frmChamCong_PMC";
             this.Size = new System.Drawing.Size(913, 635);
-            this.Load += new System.EventHandler(this.frmChamCong_PTH_Load);
+            this.Load += new System.EventHandler(this.frmChamCong_PMC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
