@@ -342,6 +342,12 @@
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.Designer.cs">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.Designer.cs">
+      <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -353,6 +359,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TMC_CT.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_TMC_CT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongPTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongPTH.Designer.cs">
+      <DependentUpon>Tr_frmPrintChamCongPTH.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongTrgCa.cs">
       <SubType>Form</SubType>
@@ -1976,11 +1988,17 @@
     <EmbeddedResource Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.resx">
       <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongPTH.resx">
+      <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTrgCa.resx">
       <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TMC_CT.resx">
       <DependentUpon>Tr_frmPrintBTTL_TMC_CT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCongPTH.resx">
+      <DependentUpon>Tr_frmPrintChamCongPTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCongTrgCa.resx">
       <DependentUpon>Tr_frmPrintChamCongTrgCa.cs</DependentUpon>
