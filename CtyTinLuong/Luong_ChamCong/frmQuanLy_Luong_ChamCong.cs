@@ -346,5 +346,35 @@ namespace CtyTinLuong
 
             doiMauTitle(sender, e);
         }
+
+        private void navChamCong_PKT_LinkClicked(object sender, NavBarLinkEventArgs e)
+        { 
+            int id_bophan_ = KiemTraTenBoPhan("Phòng Kế toán");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_PKT frm = new frmChamCong_PKT(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            doiMauTitle(sender, e);
+        }
+
+        private void navBTTL_PKT_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Phòng Kế toán");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_PKT frm = new frmBTTL_PKT(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            doiMauTitle(sender, e);
+        }
     }
 }

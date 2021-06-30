@@ -193,6 +193,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_PTH.Designer.cs">
       <DependentUpon>frmBTTL_PTH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_PKT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_PKT.Designer.cs">
+      <DependentUpon>frmBTTL_PKT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TrgCa_CT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_PTH.Designer.cs">
       <DependentUpon>frmChamCong_PTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PKT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PKT.Designer.cs">
+      <DependentUpon>frmChamCong_PKT.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.cs">
       <SubType>Form</SubType>
@@ -1928,6 +1940,9 @@
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PTH.resx">
       <DependentUpon>frmBTTL_PTH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PKT.resx">
+      <DependentUpon>frmBTTL_PKT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TrgCa_CT.resx">
       <DependentUpon>frmBTTL_TrgCa_CT.cs</DependentUpon>
     </EmbeddedResource>
@@ -1945,6 +1960,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PTH.resx">
       <DependentUpon>frmChamCong_PTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PKT.resx">
+      <DependentUpon>frmChamCong_PKT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TrgCa.resx">
       <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>
