@@ -262,16 +262,7 @@ namespace CtyTinLuong
                 int Ngay31 = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
-                {
-                       _data.Rows[i]["Cong"] = "Công";
-                    //if (Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString()))
-                    //{
-                    //    _data.Rows[i]["Cong"] = "Tăng";
-                    //}
-                    //else
-                    //{
-                    //    _data.Rows[i]["Cong"] = "Công";
-                    //}
+                { 
                     ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
 
                     Ngay1 = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());

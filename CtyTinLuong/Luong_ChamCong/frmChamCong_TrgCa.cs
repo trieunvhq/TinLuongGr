@@ -56,9 +56,36 @@ namespace CtyTinLuong
                     {
                         _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                         _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
+                        if (i > 0)
+                        {
+                            int j = i - 1;
+                            int id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            while (id_congnhan1_ == id_congnhan)
+                            {
+                                _data.Rows[j]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                                _data.Rows[j]["MaDinhMucLuongCongNhat"] = ma;
+                                --j;
+                                if (j < 0)
+                                    break;
 
-                        _data.Rows[i+1]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                        _data.Rows[i + 1]["MaDinhMucLuongCongNhat"] = ma;
+                                id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            }
+                        }
+                        if (i < _data.Rows.Count - 1)
+                        {
+                            int j = i + 1;
+                            int id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            while (id_congnhan1_ == id_congnhan)
+                            {
+                                _data.Rows[j]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                                _data.Rows[j]["MaDinhMucLuongCongNhat"] = ma;
+                                ++j;
+                                if (j >= _data.Rows.Count - 1)
+                                    break;
+
+                                id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            }
+                        }
                         break;
                     }
                     else
