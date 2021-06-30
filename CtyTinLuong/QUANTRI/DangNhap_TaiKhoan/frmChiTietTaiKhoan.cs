@@ -147,7 +147,7 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
-            if (frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan == true)
+            if (frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan == true || CtyTinLuong.FormMain.FormCongCu.mb_Add_TK == true)
                 LuuDuLieu_ThemMoiTaiKhoan();
             else LuuDuLieu_SuaTaiKhoan();
         }

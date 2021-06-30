@@ -45,6 +45,7 @@
             this.btnTaoTaiKhoan.TabIndex = 1;
             this.btnTaoTaiKhoan.Text = "Tạo tài khoản";
             this.btnTaoTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaoTaiKhoan.Click += new System.EventHandler(this.btnTaoTaiKhoan_Click);
             // 
             // btnDoiMatKhau
             // 

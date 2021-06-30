@@ -107,6 +107,7 @@ namespace CtyTinLuong.FormMain
 
         private void btnMacDinhNguoiKy_Click(object sender, EventArgs e)
         {
+            frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan = true;
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
             ff.Show();
         }

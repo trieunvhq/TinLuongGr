@@ -55,5 +55,13 @@ namespace CtyTinLuong.FormMain
         {
             Application.Exit();
         }
+
+        public static bool mb_Add_TK = false;
+        private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
+        {
+            mb_Add_TK = true;
+            frmChiTietTaiKhoan ff = new frmChiTietTaiKhoan();
+            ff.Show();
+        }
     }
 }

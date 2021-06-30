@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyTaiKhoan : Form
     {
-        public static bool mb_TheMoi_TaiKhoan;
+        public static bool mb_TheMoi_TaiKhoan = false;
         public static string ms_Ten_TaiKhoan, ms_MatKhau_TaiKhoan;
         public static int miID_DangNhap;
         private void HienThi()
