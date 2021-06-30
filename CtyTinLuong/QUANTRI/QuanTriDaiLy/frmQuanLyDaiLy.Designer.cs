@@ -353,7 +353,7 @@
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(32, 23);
             this.btThemMoi.TabIndex = 74;
-            this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.ToolTip = "Add";
             this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // checked_ALL
@@ -407,7 +407,8 @@
             this.Controls.Add(this.checkTheoDoi);
             this.Controls.Add(this.checkNgungTheoDoi);
             this.Name = "frmQuanLyDaiLy";
-            this.Text = "Danh mục Đại Lý";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Danh Mục Đại Lý";
             this.Load += new System.EventHandler(this.frmQuanLyDaiLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();

@@ -676,7 +676,7 @@
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(39, 23);
             this.btThemMoi.TabIndex = 61;
-            this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.ToolTip = "Add";
             this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // frmNhanSu
@@ -693,11 +693,12 @@
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.gridControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNhanSu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhân sự";
+            this.Text = "Nhân Sự";
             this.Load += new System.EventHandler(this.frmNhanSu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

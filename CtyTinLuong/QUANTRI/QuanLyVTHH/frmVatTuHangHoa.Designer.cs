@@ -672,7 +672,7 @@
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(39, 23);
             this.btThemMoi.TabIndex = 69;
-            this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.ToolTip = "Add";
             this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // btRefresh
@@ -704,7 +704,7 @@
             this.MinimizeBox = false;
             this.Name = "frmVatTuHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VTHH";
+            this.Text = "Vật Tư Hàng Hóa";
             this.Load += new System.EventHandler(this.frmVatTuHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietDinhMucLuongTheoSanLuong));
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.checkNgungTheoDoi = new System.Windows.Forms.CheckBox();
@@ -49,16 +50,16 @@
             this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtMaxSanLuongThuong = new System.Windows.Forms.TextBox();
             this.txtDVT = new System.Windows.Forms.TextBox();
             this.txtTenVTHH = new System.Windows.Forms.TextBox();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaxSanLuongThuong = new System.Windows.Forms.TextBox();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
@@ -74,8 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btThoat
@@ -288,6 +289,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtMaxSanLuongThuong
+            // 
+            this.txtMaxSanLuongThuong.Location = new System.Drawing.Point(147, 133);
+            this.txtMaxSanLuongThuong.Name = "txtMaxSanLuongThuong";
+            this.txtMaxSanLuongThuong.Size = new System.Drawing.Size(302, 20);
+            this.txtMaxSanLuongThuong.TabIndex = 20;
+            this.txtMaxSanLuongThuong.Text = "0";
+            // 
             // txtDVT
             // 
             this.txtDVT.Location = new System.Drawing.Point(147, 109);
@@ -342,6 +351,15 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(226, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtMaxSanLuongThuong;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 131);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(451, 24);
+            this.layoutControlItem5.Text = "Giới hạn Sản lượng thường";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(142, 13);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl1);
@@ -360,23 +378,6 @@
             this.label1.TabIndex = 65;
             this.label1.Text = "Mã VTHH có thể để trống không chọn";
             // 
-            // txtMaxSanLuongThuong
-            // 
-            this.txtMaxSanLuongThuong.Location = new System.Drawing.Point(147, 133);
-            this.txtMaxSanLuongThuong.Name = "txtMaxSanLuongThuong";
-            this.txtMaxSanLuongThuong.Size = new System.Drawing.Size(302, 20);
-            this.txtMaxSanLuongThuong.TabIndex = 20;
-            this.txtMaxSanLuongThuong.Text = "0";
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.txtMaxSanLuongThuong;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 131);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(451, 24);
-            this.layoutControlItem5.Text = "Giới hạn Sản lượng thường";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(142, 13);
-            // 
             // frmChiTietDinhMucLuongTheoSanLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,11 +388,12 @@
             this.Controls.Add(this.btLUU);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMucLuongTheoSanLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết định mức Lương theo sản lượng";
+            this.Text = "Chi Tiết Định Mức Lương Theo Sản Lượng";
             this.Load += new System.EventHandler(this.frmChiTietDinhMucLuongTheoSanLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -408,8 +410,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -2367,6 +2367,9 @@
     <EmbeddedResource Include="QUANTRI\DinhMucLuong\frmChiTietDinhMucLuongCongNhat_New.resx">
       <DependentUpon>frmChiTietDinhMucLuongCongNhat_New.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QUANTRI\QuanLyMayMoc\frmChiTietMayMoc.resx">
+      <DependentUpon>frmChiTietMayMoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QUANTRI\QuanLyTaiKhoanKeToan\frmChiTietTaiKhoanKeToanCon.resx">
       <DependentUpon>frmChiTietTaiKhoanKeToanCon.cs</DependentUpon>
     </EmbeddedResource>
