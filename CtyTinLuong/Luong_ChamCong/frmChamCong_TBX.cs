@@ -385,9 +385,15 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_SF(_id_bophan + ",");
-
+               
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
+                    if (_ID_DinhMucLuong_CongNhat == 0)
+                    {
+                        _ID_DinhMucLuong_CongNhat = Convert.ToInt32(dt_.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString());
+                        _MaDinhMucLuongCongNhat = dt_.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
+                    }
+                    //
                     int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString());
                     if (ds_id_congnhan.Contains(id_nhansu_))
                     {

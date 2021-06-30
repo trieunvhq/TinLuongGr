@@ -22,6 +22,7 @@ namespace CtyTinLuong
     public partial class frmChamCong_TrgCa : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
+        private string _MaDinhMucLuongCongNhat;
         public int _nam, _thang, _id_bophan = 25;
         private DataTable _data;
         private bool isload = true;
@@ -31,7 +32,8 @@ namespace CtyTinLuong
         public frmChamCong_TrgCa(int id_bophan)
         {
             _ID_DinhMucLuong_CongNhat = 0;
-            _id_bophan = id_bophan;
+            _MaDinhMucLuongCongNhat = "";
+        _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -48,6 +50,7 @@ namespace CtyTinLuong
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
             _ID_DinhMucLuong_CongNhat = id_dinhmuc;
+            _MaDinhMucLuongCongNhat = ma;
             if(id_congnhan>0)
             {
                 for (int i = 0; i < _data.Rows.Count - 1; ++i)
@@ -259,15 +262,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                       _data.Rows[i]["Cong"] = "Công";
-                    //if (Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString()))
-                    //{
-                    //    _data.Rows[i]["Cong"] = "Tăng";
-                    //}
-                    //else
-                    //{
-                    //    _data.Rows[i]["Cong"] = "Công";
-                    //}
+                    
                     ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
 
                     Ngay1 = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
@@ -388,6 +383,12 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
+                    if (_ID_DinhMucLuong_CongNhat == 0)
+                    {
+                        _ID_DinhMucLuong_CongNhat = Convert.ToInt32(dt_.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString());
+                        _MaDinhMucLuongCongNhat = dt_.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
+                    }
+                    //
                     int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString());
                     if (ds_id_congnhan.Contains(id_nhansu_))
                     {
@@ -426,6 +427,7 @@ namespace CtyTinLuong
                         _ravi["STT"] = (stt_);
                         _ravi["Cong"] = "Công";
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
 
                         //_ravi = _data.NewRow();

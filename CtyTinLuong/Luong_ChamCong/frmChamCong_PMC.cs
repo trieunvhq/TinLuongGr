@@ -22,6 +22,7 @@ namespace CtyTinLuong
     public partial class frmChamCong_PMC : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
+        private string _MaDinhMucLuongCongNhat;
         public int _nam, _thang, _id_bophan = 25;
         private DataTable _data;
         private bool isload = true;
@@ -31,6 +32,7 @@ namespace CtyTinLuong
         public frmChamCong_PMC(int id_bophan)
         {
             _ID_DinhMucLuong_CongNhat = 0;
+            _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
@@ -48,7 +50,8 @@ namespace CtyTinLuong
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
             _ID_DinhMucLuong_CongNhat = id_dinhmuc;
-            if(id_congnhan>0)
+            _MaDinhMucLuongCongNhat = ma;
+            if (id_congnhan>0)
             {
                 for (int i = 0; i < _data.Rows.Count - 1; ++i)
                 {
@@ -380,9 +383,16 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_SF(_id_bophan + ",");
+  
 
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
+                    if (_ID_DinhMucLuong_CongNhat == 0)
+                    {
+                        _ID_DinhMucLuong_CongNhat = Convert.ToInt32(dt_.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString());
+                        _MaDinhMucLuongCongNhat = dt_.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
+                    }
+                    //
                     int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString());
                     if (ds_id_congnhan.Contains(id_nhansu_))
                     {
@@ -422,6 +432,7 @@ namespace CtyTinLuong
                         _ravi["Cong"] = "Công nhật";
                         _ravi["ID_LoaiCong"] = 1;
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
  
                     }

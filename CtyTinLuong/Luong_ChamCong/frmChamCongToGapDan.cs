@@ -358,6 +358,12 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
+                    if (_ID_DinhMucLuong_CongNhat == 0)
+                    {
+                        _ID_DinhMucLuong_CongNhat = Convert.ToInt32(dt_.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString());
+                        _MaDinhMucLuongCongNhat = dt_.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
+                    }
+                    //
                     int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_NhanSu"].ToString());
                     DataRow _ravi = _data.NewRow();
                     _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
