@@ -398,11 +398,11 @@ namespace CtyTinLuong
                         _ravi["MaDinhMuc"] = "";
                         _ravi["DinhMuc_KhongTang"] = 0;
                         _ravi["DinhMuc_Tang"] = 0;
-                        _ravi["ID_LoaiCong"] = 0;
 
                         ++stt_;
                         _ravi["STT"] = (stt_);
-                        _ravi["Cong"] = "Công";
+                        _ravi["Cong"] = "Công nhật";
+                        _ravi["ID_LoaiCong"] = 1;
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                         _data.Rows.Add(_ravi);
  
