@@ -74,7 +74,32 @@ namespace CtyTinLuong
             return sochungtu;
 
         }
-        private void Luu_NhapKhoDaiLy(int xxxID_XuatKhoDaiLy)
+        private void Luu_ThamCHieuTinhXuatKho(int iiiiID_XuatKhoDaiLy)
+        {
+            clsDaiLy_ThamChieu_TinhXuatKho_Temp clsxx = new clsDaiLy_ThamChieu_TinhXuatKho_Temp();
+            DataTable dtthamchieu = clsxx.SA_W_ID_XuatKhoDaiLy(iiiiID_XuatKhoDaiLy);
+            if(dtthamchieu.Rows.Count>0)
+            {
+                clsDaiLy_ThamChieu_TinhXuatKho cls = new CtyTinLuong.clsDaiLy_ThamChieu_TinhXuatKho();
+                for(int i=0; i< dtthamchieu.Rows.Count; i++)
+                {
+                    int xxiID_NhapKhoDaiLy = Convert.ToInt32(dtthamchieu.Rows[i]["ID_NhapKhoDaiLy"].ToString());
+                    cls.iID_NhapKhoDaiLy = Convert.ToInt32(dtthamchieu.Rows[i]["ID_NhapKhoDaiLy"].ToString());
+                    cls.iID_DaiLy = Convert.ToInt32(dtthamchieu.Rows[i]["ID_DaiLy"].ToString());
+                    cls.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
+                    cls.iID_VTHH = Convert.ToInt32(dtthamchieu.Rows[i]["ID_VTHH"].ToString());
+                    cls.fSoLuongThanhPhamQuyDoi = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
+                    cls.fSoLuongNhap = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongNhap"].ToString());
+                    cls.bTonTai = true;
+                    cls.bNgungTheoDoi = false;
+                    cls.fDonGia = Convert.ToDouble(dtthamchieu.Rows[i]["DonGia"].ToString());
+                    cls.Insert();
+                }
+            }
+           
+                
+        }
+        private void Luu_XuatKhoDaiLy(int xxxID_XuatKhoDaiLy)
         {
 
             clsDaiLy_tbXuatKho_Temp clsxx = new clsDaiLy_tbXuatKho_Temp();
@@ -145,7 +170,7 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
-                DaiLy_ChiTietChoNhapKho_Moi ff = new DaiLy_ChiTietChoNhapKho_Moi();
+                DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
                 ff.ShowDialog();
 
             }
@@ -185,8 +210,9 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
-                Luu_NhapKhoDaiLy(iiIDnhapKhp);
+                int iiiID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                Luu_XuatKhoDaiLy(iiiID);
+                Luu_ThamCHieuTinhXuatKho(iiiID);
                 MessageBox.Show("Đã nhập kho đại lý");
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             }

@@ -16,5 +16,10 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void DaiLy_ChiTietChoXuatKho_Moi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
