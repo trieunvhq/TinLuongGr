@@ -38,10 +38,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBTTL_TBX_TQ));
-            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,9 +74,10 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -96,21 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             this.SuspendLayout();
             // 
-            // btGuiDuLieu
-            // 
-            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btGuiDuLieu.Appearance.Options.UseFont = true;
-            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
-            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(561, 592);
-            this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(175, 30);
-            this.btGuiDuLieu.TabIndex = 118;
-            this.btGuiDuLieu.Text = "Gửi dữ liệu bảng lương ";
-            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
-            // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
@@ -118,22 +101,6 @@
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            // 
-            // btThoat
-            // 
-            this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.btThoat.Appearance.Options.UseFont = true;
-            this.btThoat.Appearance.Options.UseForeColor = true;
-            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(826, 592);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 30);
-            this.btThoat.TabIndex = 116;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // linkLabel1
             // 
@@ -619,54 +586,74 @@
             // 
             this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
+            // btnPrintTQ
+            // 
+            this.btnPrintTQ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintTQ.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTQ.Appearance.Options.UseFont = true;
+            this.btnPrintTQ.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
+            this.btnPrintTQ.Location = new System.Drawing.Point(741, 595);
+            this.btnPrintTQ.Name = "btnPrintTQ";
+            this.btnPrintTQ.Size = new System.Drawing.Size(82, 25);
+            this.btnPrintTQ.TabIndex = 145;
+            this.btnPrintTQ.Text = "Tổng quát";
+            // 
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
-            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(742, 592);
+            this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
+            this.btnPrint.Location = new System.Drawing.Point(656, 596);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(78, 30);
-            this.btnPrint.TabIndex = 140;
-            this.btnPrint.Text = "Print";
+            this.btnPrint.Size = new System.Drawing.Size(82, 25);
+            this.btnPrint.TabIndex = 144;
+            this.btnPrint.Text = "Chi tiết";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // label8
+            // btGuiDuLieu
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(145, 610);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(314, 13);
-            this.label8.TabIndex = 146;
-            this.label8.Text = "Khi tắt form thì tự lưu dữ liệu chấm công từng ngày của nhân viên";
+            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btGuiDuLieu.Appearance.Options.UseFont = true;
+            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
+            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
+            this.btGuiDuLieu.Location = new System.Drawing.Point(571, 596);
+            this.btGuiDuLieu.Name = "btGuiDuLieu";
+            this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
+            this.btGuiDuLieu.TabIndex = 143;
+            this.btGuiDuLieu.Text = "Lưu lại";
+            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
             // 
-            // label1
+            // btThoat
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 593);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 13);
-            this.label1.TabIndex = 147;
-            this.label1.Text = "Chú ý: Chỉ gửi dữ liệu khi kiểm tra kỹ. Chỉ gửi dữ liệu lương của tháng trước";
+            this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThoat.Appearance.Options.UseFont = true;
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
+            this.btThoat.Location = new System.Drawing.Point(826, 595);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(82, 25);
+            this.btThoat.TabIndex = 142;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // frmBTTL_TBX_TQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnPrintTQ);
             this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btGuiDuLieu);
+            this.Controls.Add(this.btThoat);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btGuiDuLieu);
-            this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmBTTL_TBX_TQ";
             this.Size = new System.Drawing.Size(913, 635);
@@ -691,9 +678,7 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -729,8 +714,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
         private DevExpress.XtraGrid.Columns.GridColumn LuongTrachNhiem;
         private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
+        private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
+        private DevExpress.XtraEditors.SimpleButton btThoat;
     }
 }
