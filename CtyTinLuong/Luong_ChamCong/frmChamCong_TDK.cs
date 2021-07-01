@@ -132,6 +132,8 @@ namespace CtyTinLuong
                  Tong_Ngay30 = 0;
                  Tong_Ngay31 = 0;
                 DateTime dtnow = DateTime.Now;
+                _nam = DateTime.Now.Year;
+                _thang = DateTime.Now.Month;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
@@ -186,8 +188,6 @@ namespace CtyTinLuong
             else
             {
             }
-            _thang = Convert.ToInt16(txtThang.Text);
-            _nam = Convert.ToInt16(txtNam.Text);
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");

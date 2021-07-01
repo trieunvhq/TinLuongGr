@@ -109,6 +109,8 @@ namespace CtyTinLuong
             if (islandau)
             {
                 DateTime dtnow = DateTime.Now;
+                _nam = DateTime.Now.Year;
+                _thang = DateTime.Now.Month;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
@@ -187,9 +189,7 @@ namespace CtyTinLuong
             }
             else
             {
-            }
-            _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
+            } 
 
             using (clsThin clsThin_ = new clsThin())
             {
