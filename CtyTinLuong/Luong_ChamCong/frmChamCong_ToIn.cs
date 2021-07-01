@@ -223,7 +223,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
+                _data = clsThin_.T_Phieu_ChiTietPhieu_New_SF(_nam, _thang, true, false, false);
                 ds_id_congnhan = new List<int>();
 
                 int Ngay1 = 0;
@@ -260,14 +260,6 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    if (Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString()))
-                    {
-                        _data.Rows[i]["Cong"] = "Tăng";
-                    }
-                    else
-                    {
-                        _data.Rows[i]["Cong"] = "Công";
-                    }
                     ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
 
                     Ngay1 = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
