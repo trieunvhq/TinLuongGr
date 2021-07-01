@@ -56,6 +56,7 @@
             this.navChamCong_TrgCa = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PTH = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PKT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChamCong_PMC = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navTTL_TBX_CT = new DevExpress.XtraNavBar.NavBarItem();
@@ -69,7 +70,7 @@
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.navChamCong_PMC = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_PMC = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -235,7 +236,8 @@
             this.navChamCong_PTH,
             this.navBTTL_PKT,
             this.navChamCong_PKT,
-            this.navChamCong_PMC});
+            this.navChamCong_PMC,
+            this.navBTTL_PMC});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -308,6 +310,12 @@
             this.navChamCong_PKT.Name = "navChamCong_PKT";
             this.navChamCong_PKT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_PKT_LinkClicked);
             // 
+            // navChamCong_PMC
+            // 
+            this.navChamCong_PMC.Caption = "Phụ Máy Cắt";
+            this.navChamCong_PMC.Name = "navChamCong_PMC";
+            this.navChamCong_PMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_PMC_LinkClicked);
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -322,7 +330,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TMC),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TrgCa_CT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PTH),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PKT)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PKT),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PMC)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -415,11 +424,11 @@
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
             // 
-            // navChamCong_PMC
+            // navBTTL_PMC
             // 
-            this.navChamCong_PMC.Caption = "Phụ Máy Cắt";
-            this.navChamCong_PMC.Name = "navChamCong_PMC";
-            this.navChamCong_PMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_PMC_LinkClicked);
+            this.navBTTL_PMC.Caption = "Phụ Máy Cắt";
+            this.navBTTL_PMC.Name = "navBTTL_PMC";
+            this.navBTTL_PMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_PMC_LinkClicked);
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -485,5 +494,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_PKT;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_PKT;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_PMC;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_PMC;
     }
 }

@@ -391,5 +391,20 @@ namespace CtyTinLuong
 
             doiMauTitle(sender, e);
         }
+
+        private void navBTTL_PMC_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_PMC frm = new frmBTTL_PMC(id_bophan_);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            doiMauTitle(sender, e);
+        }
     }
 }
