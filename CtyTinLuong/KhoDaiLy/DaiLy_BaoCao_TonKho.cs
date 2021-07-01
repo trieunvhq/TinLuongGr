@@ -124,6 +124,7 @@ namespace CtyTinLuong
 
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_VTHH", typeof(int));
+            dt2.Columns.Add("ID_NhomVTHH", typeof(int));
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("TenVTHH", typeof(string));
             dt2.Columns.Add("DonViTinh", typeof(string));
@@ -155,6 +156,7 @@ namespace CtyTinLuong
                 GiaTri_TonDauKy = GiaTri_NhapTruocKy - GiaTri_XuatTruocKy;
                 DataRow _ravi = dt2.NewRow();
                 _ravi["ID_VTHH"] = iiiiiID_VTHH;
+                _ravi["ID_NhomVTHH"] = Convert.ToInt16(dt_NhapTruoc.Rows[i]["ID_NhomVTHH"].ToString());
                 _ravi["MaVT"] = dt_NhapTruoc.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt_NhapTruoc.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt_NhapTruoc.Rows[i]["DonViTinh"].ToString();
@@ -180,6 +182,7 @@ namespace CtyTinLuong
                     GiaTri_TonDauKy = -GiaTri_XuatTruocKy;
                     DataRow _ravi = dt2.NewRow();
                     _ravi["ID_VTHH"] = iiiiiID_VTHH;
+                    _ravi["ID_NhomVTHH"] = Convert.ToInt16(dt_XuatTruoc.Rows[i]["ID_NhomVTHH"].ToString());
                     _ravi["MaVT"] = dt_XuatTruoc.Rows[i]["MaVT"].ToString();
                     _ravi["TenVTHH"] = dt_XuatTruoc.Rows[i]["TenVTHH"].ToString();
                     _ravi["DonViTinh"] = dt_XuatTruoc.Rows[i]["DonViTinh"].ToString();
@@ -189,8 +192,10 @@ namespace CtyTinLuong
                 }
 
             }
-
-            gridControl1.DataSource= dt2;
+            dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
+            dt2 = dt2.DefaultView.ToTable();
+            gridControl1.DataSource = dt2;
+           
         }
   
         private void DaiLy_BaoCao_TonKho_Load(object sender, EventArgs e)
