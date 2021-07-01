@@ -694,7 +694,7 @@ namespace CtyTinLuong
                     DataTable dt = cls.SelectOne();
                     gridView4.SetRowCellValue(e.RowHandle, ID_TaiKhoanKeToanCon, kk);                 
                     gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, dt.Rows[0]["TenTaiKhoanCon"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, HienThi, "1");
+                    gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
                     gridView4.SetRowCellValue(e.RowHandle, clTienUSD, tienussd);
                     gridView4.SetFocusedRowCellValue(clTiGia, tigiaxx);
 
@@ -908,9 +908,16 @@ namespace CtyTinLuong
 
         }
 
+        private void btXoa2_Click(object sender, EventArgs e)
+        {
+            gridView4.SetFocusedRowCellValue(clHienThi,"0");
+            gridView4.SetFocusedRowCellValue(clNo, 0);
+            gridView4.SetFocusedRowCellValue(clCo, 0);
+        }
+
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, HienThi, "0");
+            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
         }
 
         private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
