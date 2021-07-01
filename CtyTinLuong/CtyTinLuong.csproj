@@ -187,6 +187,12 @@
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
+    <Compile Include="Luong_ChamCong\frmBTTL_PMC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_PMC.Designer.cs">
+      <DependentUpon>frmBTTL_PMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_PTH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1954,6 +1960,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.resx">
       <DependentUpon>UC_ChoXuatKho_DaiLy_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PMC.resx">
+      <DependentUpon>frmBTTL_PMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PTH.resx">
       <DependentUpon>frmBTTL_PTH.cs</DependentUpon>

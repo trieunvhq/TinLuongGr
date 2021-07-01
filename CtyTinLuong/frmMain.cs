@@ -15,7 +15,7 @@ namespace CtyTinLuong
     {
         public void HideFormMain()
         {
-            this.Hide();
+            //this.Hide();
         }
       //
         private void QuyenTruyCap()
@@ -99,7 +99,7 @@ namespace CtyTinLuong
         private void importDuLieuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii = new CtyTinLuong.frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii(this);
-            this.Hide();
+            //this.Hide();
             _frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii.Show();
         }
 
@@ -326,9 +326,9 @@ namespace CtyTinLuong
         private void btnKHSX_Click(object sender, EventArgs e)
         {
             frmKeHoachSanXuat ff = new frmKeHoachSanXuat();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            ////this.Hide();
+            ff.Show();
+            ////this.Show();
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -351,75 +351,74 @@ namespace CtyTinLuong
         private void btnMuaHang_Click(object sender, EventArgs e)
         {
             frmMuaHang2222 ff = new frmMuaHang2222();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            ////this.Hide();
+            ff.Show();
         }
          
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             frmQuanLyBanHang ff = new CtyTinLuong.frmQuanLyBanHang();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void btnDaiLy_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoDaiLy ff = new frmQuanLyKhoDaiLy();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void btnQLSX_Click(object sender, EventArgs e)
         {
             SanXuat_frmQuanLySanXuat ff = new SanXuat_frmQuanLySanXuat();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         //frmQuanLy_Luong_ChamCong _frmQuanLy_Luong_ChamCong;
         private void btnLuongChamCong_Click(object sender, EventArgs e)
         {
             frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
-            //this.Hide();
+            ////this.Hide();
             ff.Show();
-            //this.Show();
+            ////this.Show();
 
         }
 
         private void btnQuyNganHang_Click(object sender, EventArgs e)
         {
             frmQuy_NganHang_Newwwwwwwwwwwwwwwww ff = new CtyTinLuong.frmQuy_NganHang_Newwwwwwwwwwwwwwwww();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void btnKhoNguyenPhuLieu_Click(object sender, EventArgs e)
         {
             KhoNPL_frmNPL ff = new KhoNPL_frmNPL();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void btnKhoBanThanhPham_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoBanThanhPham ff = new CtyTinLuong.frmQuanLyKhoBanThanhPham();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void btnKhoThanhPham_Click(object sender, EventArgs e)
         {
             frmQuanLyKhoThanhPham ff = new CtyTinLuong.frmQuanLyKhoThanhPham();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
 
@@ -451,9 +450,9 @@ namespace CtyTinLuong
         private void btnPhieuSX_Click(object sender, EventArgs e)
         {
             frmImPortPhieuSanXuat_banDau ff = new frmImPortPhieuSanXuat_banDau();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
 
@@ -461,7 +460,7 @@ namespace CtyTinLuong
         {
             if (MessageBox.Show("Bạn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                this.Hide();
+                //this.Hide();
                 frmDangNhap ff = new frmDangNhap();
                 ff.Show();
             }
@@ -470,9 +469,9 @@ namespace CtyTinLuong
         private void btnBaoCaoNXT_Click(object sender, EventArgs e)
         {
             frmBaoCaoNXT ff = new frmBaoCaoNXT();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
