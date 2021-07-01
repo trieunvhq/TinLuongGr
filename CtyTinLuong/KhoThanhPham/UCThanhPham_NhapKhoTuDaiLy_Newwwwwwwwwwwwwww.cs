@@ -24,110 +24,15 @@ namespace CtyTinLuong
      
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-
-            DataTable dt2 = new DataTable();
-
-            dt2.Columns.Add("ID_DaiLy", typeof(int));
-            dt2.Columns.Add("ID_XuatKhoDaiLy", typeof(int));
-            dt2.Columns.Add("NgayChungTu", typeof(DateTime));
-            dt2.Columns.Add("SoChungTu", typeof(string));
-            dt2.Columns.Add("SoLuongThanhPhamQuyDoi", typeof(double));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("TongTienHang", typeof(double));
-            dt2.Columns.Add("DienGiai", typeof(string));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("TenDaiLy", typeof(string));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("Chon", typeof(bool));
-            dt2.Columns.Add("TrangThaiXuatNhap_ThanhPham_TuDaiLyVe", typeof(bool));
-            //TenDaiLy MaVT
-            clsDaiLy_tbXuatKho cls = new clsDaiLy_tbXuatKho();
-            DataTable dtxx = cls.SelectAll_W_TenDaiLy_W_MaVT();
-            dtxx.DefaultView.RowFilter = "TonTai = True and NgungTheoDoi = False";
-            DataView dvxxx = dtxx.DefaultView;
-            DataTable dt = dvxxx.ToTable();
-            if (dtxx.Rows.Count > 0)
-            {
-               
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-                DataView dv = dt.DefaultView;
-                DataTable dt22 = dv.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-                DataView dv2 = dt22.DefaultView;
-                DataTable dxxxx = dv2.ToTable();
-                for (int i = 0; i < dxxxx.Rows.Count; i++)
-                {
-                    DataRow _ravi3 = dt2.NewRow();
-                    _ravi3["ID_DaiLy"] = dxxxx.Rows[i]["ID_DaiLy"].ToString();
-                    _ravi3["ID_XuatKhoDaiLy"] = dxxxx.Rows[i]["ID_XuatKhoDaiLy"].ToString();
-                    _ravi3["NgayChungTu"] = dxxxx.Rows[i]["NgayChungTu"].ToString();
-                    _ravi3["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
-                    _ravi3["DonViTinh"] = dxxxx.Rows[i]["DonViTinh"].ToString();
-                    _ravi3["SoLuongThanhPhamQuyDoi"] = dxxxx.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString();
-                    _ravi3["DonGia"] = dxxxx.Rows[i]["DonGia"].ToString();
-                    _ravi3["TongTienHang"] = dxxxx.Rows[i]["TongTienHang"].ToString();
-                    _ravi3["DienGiai"] = dxxxx.Rows[i]["DienGiai"].ToString();
-                    _ravi3["TenDaiLy"] = dxxxx.Rows[i]["TenDaiLy"].ToString();
-                    _ravi3["MaVT"] = dxxxx.Rows[i]["MaVT"].ToString();
-                    _ravi3["TenVTHH"] = dxxxx.Rows[i]["TenVTHH"].ToString();
-                    _ravi3["Chon"] = false;
-                    _ravi3["TrangThaiXuatNhap_ThanhPham_TuDaiLyVe"] = dxxxx.Rows[i]["TrangThaiXuatNhap_ThanhPham_TuDaiLyVe"].ToString();
-                    dt2.Rows.Add(_ravi3);
-
-                }
-
-                gridControl1.DataSource = dt2;
-
-
-            }
-
+            clsDaiLy_tbXuatKho_Temp cls = new clsDaiLy_tbXuatKho_Temp();
+            DataTable dtxx = cls.SA_NgayThang(xxtungay, xxdenngay);
+            gridControl1.DataSource = dtxx;
         }
         private void HienThiGridControl( int xxxxmiID_XuatKhoDaiLyxxxxx)
         {
-           
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_NhapKhoDaiLy", typeof(int));
-            dt2.Columns.Add("ID_ThamChieu", typeof(int));
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("SoChungTu", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("SoLuongNhap", typeof(double));
-            dt2.Columns.Add("SoLuongThanhPhamQuyDoi", typeof(double));
-            dt2.Columns.Add("TiLe", typeof(double));
-            dt2.Columns.Add("DonGia", typeof(double));
-
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            clsDaiLy_ThamChieu_TinhXuatKho cls2 = new clsDaiLy_ThamChieu_TinhXuatKho();
-            cls2.iID_XuatKhoDaiLy = xxxxmiID_XuatKhoDaiLyxxxxx;
-            DataTable dt222 = cls2.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT();
-            for (int i = 0; i < dt222.Rows.Count; i++)
-            {
-
-                DataRow _ravi3 = dt2.NewRow();
-                _ravi3["ID_ThamChieu"] = Convert.ToInt32(dt222.Rows[i]["ID_ThamChieu"].ToString());
-                _ravi3["ID_NhapKhoDaiLy"] = Convert.ToInt32(dt222.Rows[i]["ID_NhapKhoDaiLy"].ToString());
-                _ravi3["ID_VTHH"] = Convert.ToInt32(dt222.Rows[i]["ID_VTHH"].ToString());
-                _ravi3["SoChungTu"] = dt222.Rows[i]["ID_NhapKhoDaiLy"].ToString();
-                _ravi3["MaVT"] = dt222.Rows[i]["MaVT"].ToString();
-                _ravi3["TenVTHH"] = dt222.Rows[i]["TenVTHH"].ToString();
-                _ravi3["DonViTinh"] = dt222.Rows[i]["DonViTinh"].ToString();
-                _ravi3["SoLuongNhap"] = Convert.ToDouble(dt222.Rows[i]["SoLuongNhap"].ToString());
-                _ravi3["SoLuongThanhPhamQuyDoi"] = Convert.ToDouble(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi3["DonGia"] = Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
-                _ravi3["HienThi"] = "1";
-                _ravi3["TiLe"] = Convert.ToDouble(dt222.Rows[i]["SoLuongNhap"].ToString()) / Convert.ToDouble(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi3["ThanhTien"] = Convert.ToDouble(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString()) * Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
-
-                dt2.Rows.Add(_ravi3);
-
-            }
-            gridControl2.DataSource = dt2;
-        
+            clsDaiLy_ThamChieu_TinhXuatKho_Temp cls2 = new clsDaiLy_ThamChieu_TinhXuatKho_Temp();           
+            DataTable dt222 = cls2.SA_W_ID_XuatKhoDaiLy(xxxxmiID_XuatKhoDaiLyxxxxx);           
+            gridControl2.DataSource = dt222;        
         }
        
 
