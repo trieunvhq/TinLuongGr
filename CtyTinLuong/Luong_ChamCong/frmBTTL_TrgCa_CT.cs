@@ -60,6 +60,7 @@ namespace CtyTinLuong
             double tong_tong_ = 0;
             double trutamung_tong_ = 0;
             double thuclinh_tong_ = 0;
+            double baohiem_tong_ = 0;
 
 
             double tongluong_ = 0;
@@ -67,6 +68,7 @@ namespace CtyTinLuong
             double tong_ = 0;
             double trutamung_ = 0;
             double thuclinh_ = 0;
+            double baohiem_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -103,7 +105,15 @@ namespace CtyTinLuong
                         _data.Rows[i]["LuongTrachNhiem"] = "";
                     else
                         _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
+                    //
+                    baohiem_ = Convert.ToDouble(_data.Rows[i]["BaoHiem_Value"].ToString());
+                    baohiem_tong_ += baohiem_;
+                    if (baohiem_ == 0)
+                        _data.Rows[i]["BaoHiem"] = "";
+                    else
+                        _data.Rows[i]["BaoHiem"] = baohiem_.ToString("N0");
 
+                    //
                     trutamung_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
                     trutamung_tong_ += trutamung_;
                     if (trutamung_ == 0)
@@ -183,6 +193,15 @@ namespace CtyTinLuong
             else
             {
                 _ravi["LuongTrachNhiem"] = luongtrachnhiem_tong_.ToString("N0");
+            }
+            // 
+            if (baohiem_tong_ == 0)
+            {
+                _ravi["BaoHiem"] = "";
+            }
+            else
+            {
+                _ravi["BaoHiem"] = baohiem_tong_.ToString("N0");
             }
 
             _data.Rows.Add(_ravi);
