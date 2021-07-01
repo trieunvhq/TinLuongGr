@@ -100,6 +100,7 @@ namespace CtyTinLuong
             {
                 clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
                 int iiIDthuchi= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
+                cls1.iID_ThuChi = iiIDthuchi;
                 DataTable dt1 = cls1.SelectOne();
                 string sochungtu = cls1.sSoChungTu.Value;
                 DateTime ngay = cls1.daNgayChungTu.Value;
@@ -127,6 +128,7 @@ namespace CtyTinLuong
                     }
                 }
                 MessageBox.Show("Đã xóa");
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4);
 
             }
    
