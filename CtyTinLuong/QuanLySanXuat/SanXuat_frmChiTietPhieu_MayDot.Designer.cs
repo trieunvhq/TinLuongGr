@@ -249,7 +249,7 @@
             this.txtMaPhieu.Location = new System.Drawing.Point(78, 2);
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(124, 20);
-            this.txtMaPhieu.TabIndex = 116;
+            this.txtMaPhieu.TabIndex = 0;
             // 
             // txtSanLuong_TrongNgay_DOT
             // 
@@ -274,7 +274,7 @@
             this.txtSoKGMotBao.Location = new System.Drawing.Point(78, 147);
             this.txtSoKGMotBao.Name = "txtSoKGMotBao";
             this.txtSoKGMotBao.Size = new System.Drawing.Size(124, 20);
-            this.txtSoKGMotBao.TabIndex = 112;
+            this.txtSoKGMotBao.TabIndex = 7;
             this.txtSoKGMotBao.Text = "1";
             this.txtSoKGMotBao.TextChanged += new System.EventHandler(this.txtSoKGMotBao_TextChanged);
             // 
@@ -305,7 +305,7 @@
             this.dteNgaySanXuat_May_DOT.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dteNgaySanXuat_May_DOT.Size = new System.Drawing.Size(466, 20);
             this.dteNgaySanXuat_May_DOT.StyleController = this.layoutControl4;
-            this.dteNgaySanXuat_May_DOT.TabIndex = 111;
+            this.dteNgaySanXuat_May_DOT.TabIndex = 1;
             // 
             // gridMaCaTruong_May_DOT
             // 
@@ -316,7 +316,7 @@
             this.gridMaCaTruong_May_DOT.Properties.PopupView = this.gridView8;
             this.gridMaCaTruong_May_DOT.Size = new System.Drawing.Size(124, 20);
             this.gridMaCaTruong_May_DOT.StyleController = this.layoutControl4;
-            this.gridMaCaTruong_May_DOT.TabIndex = 110;
+            this.gridMaCaTruong_May_DOT.TabIndex = 2;
             this.gridMaCaTruong_May_DOT.EditValueChanged += new System.EventHandler(this.gridMaCaTruong_May_DOT_EditValueChanged);
             // 
             // gridView8
@@ -393,7 +393,7 @@
             this.gridDinhMucSLMay_DOT.Properties.PopupView = this.gridView12;
             this.gridDinhMucSLMay_DOT.Size = new System.Drawing.Size(124, 20);
             this.gridDinhMucSLMay_DOT.StyleController = this.layoutControl4;
-            this.gridDinhMucSLMay_DOT.TabIndex = 32;
+            this.gridDinhMucSLMay_DOT.TabIndex = 10;
             this.gridDinhMucSLMay_DOT.EditValueChanged += new System.EventHandler(this.gridDinhMucSLMay_DOT_EditValueChanged);
             // 
             // gridView12
@@ -455,7 +455,7 @@
             this.txtGhiChu_May_DOT.Multiline = true;
             this.txtGhiChu_May_DOT.Name = "txtGhiChu_May_DOT";
             this.txtGhiChu_May_DOT.Size = new System.Drawing.Size(814, 28);
-            this.txtGhiChu_May_DOT.TabIndex = 25;
+            this.txtGhiChu_May_DOT.TabIndex = 11;
             // 
             // txtTenCongNhan_may_DOT
             // 
@@ -474,7 +474,7 @@
             this.gridMaCongNhan_May_DOT.Properties.PopupView = this.gridView13;
             this.gridMaCongNhan_May_DOT.Size = new System.Drawing.Size(124, 20);
             this.gridMaCongNhan_May_DOT.StyleController = this.layoutControl4;
-            this.gridMaCongNhan_May_DOT.TabIndex = 17;
+            this.gridMaCongNhan_May_DOT.TabIndex = 9;
             this.gridMaCongNhan_May_DOT.EditValueChanged += new System.EventHandler(this.gridMaCongNhan_May_DOT_EditValueChanged);
             // 
             // gridView13
@@ -529,7 +529,7 @@
             this.gridMaMay_DOT.Properties.PopupView = this.gridView14;
             this.gridMaMay_DOT.Size = new System.Drawing.Size(124, 20);
             this.gridMaMay_DOT.StyleController = this.layoutControl4;
-            this.gridMaMay_DOT.TabIndex = 14;
+            this.gridMaMay_DOT.TabIndex = 8;
             this.gridMaMay_DOT.EditValueChanged += new System.EventHandler(this.gridMaMay_DOT_EditValueChanged);
             // 
             // gridView14
@@ -582,7 +582,7 @@
             this.txtSanLuong_may_DOT.Location = new System.Drawing.Point(78, 123);
             this.txtSanLuong_may_DOT.Name = "txtSanLuong_may_DOT";
             this.txtSanLuong_may_DOT.Size = new System.Drawing.Size(124, 20);
-            this.txtSanLuong_may_DOT.TabIndex = 12;
+            this.txtSanLuong_may_DOT.TabIndex = 6;
             this.txtSanLuong_may_DOT.Text = "0";
             this.txtSanLuong_may_DOT.TextChanged += new System.EventHandler(this.txtSanLuong_may_DOT_TextChanged);
             // 
@@ -593,7 +593,7 @@
             this.txtSoLuongNhap_May_DOT.Location = new System.Drawing.Point(78, 99);
             this.txtSoLuongNhap_May_DOT.Name = "txtSoLuongNhap_May_DOT";
             this.txtSoLuongNhap_May_DOT.Size = new System.Drawing.Size(124, 20);
-            this.txtSoLuongNhap_May_DOT.TabIndex = 10;
+            this.txtSoLuongNhap_May_DOT.TabIndex = 5;
             this.txtSoLuongNhap_May_DOT.Text = "0";
             // 
             // txtTenHangHoaRa_May_DOT
@@ -641,7 +641,7 @@
             this.gridHangHoaXuat_May_DOT.Properties.PopupView = this.gridView15;
             this.gridHangHoaXuat_May_DOT.Size = new System.Drawing.Size(124, 20);
             this.gridHangHoaXuat_May_DOT.StyleController = this.layoutControl4;
-            this.gridHangHoaXuat_May_DOT.TabIndex = 5;
+            this.gridHangHoaXuat_May_DOT.TabIndex = 4;
             this.gridHangHoaXuat_May_DOT.EditValueChanged += new System.EventHandler(this.gridHangHoaXuat_May_DOT_EditValueChanged);
             // 
             // gridView15
@@ -691,7 +691,7 @@
             this.gridHangHoaVao_may_DOT.Properties.PopupView = this.gridView16;
             this.gridHangHoaVao_may_DOT.Size = new System.Drawing.Size(124, 20);
             this.gridHangHoaVao_may_DOT.StyleController = this.layoutControl4;
-            this.gridHangHoaVao_may_DOT.TabIndex = 4;
+            this.gridHangHoaVao_may_DOT.TabIndex = 3;
             this.gridHangHoaVao_may_DOT.EditValueChanged += new System.EventHandler(this.gridHangHoaVao_may_DOT_EditValueChanged);
             // 
             // gridView16
