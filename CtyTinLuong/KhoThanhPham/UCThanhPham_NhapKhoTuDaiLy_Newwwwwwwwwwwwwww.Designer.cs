@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -321,7 +320,6 @@
             // clSoChungTu1
             // 
             this.clSoChungTu1.Caption = "Tham chiếu";
-            this.clSoChungTu1.ColumnEdit = this.gridMaHang;
             this.clSoChungTu1.FieldName = "SoChungTu";
             this.clSoChungTu1.Name = "clSoChungTu1";
             this.clSoChungTu1.OptionsColumn.FixedWidth = true;
