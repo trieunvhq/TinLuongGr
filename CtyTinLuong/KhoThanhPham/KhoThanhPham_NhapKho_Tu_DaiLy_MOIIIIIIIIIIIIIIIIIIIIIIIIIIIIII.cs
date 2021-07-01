@@ -109,8 +109,11 @@ namespace CtyTinLuong
                 txtSoChungTu.Text = "XKDL " + xxx2 + "";
 
             }
+            dteDenNgay.DateTime = DateTime.Today;
+            dteTuNgay.DateTime= DateTime.Today.AddDays(-30);
+
             clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
-            DataTable dt = cls.SelectAll_DIStintc_LayDanhSachDaiLy_XuatKho();
+            DataTable dt = cls.SA_Load_lockUp_DaiLy_NhapKho(dteTuNgay.DateTime, dteDenNgay.DateTime);
             gridMaDaiLy.Properties.DataSource = dt;
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
@@ -205,11 +208,7 @@ namespace CtyTinLuong
             gridControl2.DataSource = dt3;
           
         }
-        public static DateTime GetFistDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            return aDateTime;
-        }
+       
      
         private void Load_LockUp()
         {
@@ -1072,6 +1071,31 @@ namespace CtyTinLuong
                 mbPrint = true;
                 frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
                 ff.ShowDialog();
+            }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if(dteTuNgay.EditValue!=null & dteDenNgay.EditValue!=null)
+            {
+                clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
+                DataTable dt = cls.SA_Load_lockUp_DaiLy_NhapKho(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                gridMaDaiLy.Properties.DataSource = dt;
+                gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
+                gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
+            }
+           
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
+            {
+                clsDaiLy_tbNhapKho cls = new clsDaiLy_tbNhapKho();
+                DataTable dt = cls.SA_Load_lockUp_DaiLy_NhapKho(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                gridMaDaiLy.Properties.DataSource = dt;
+                gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
+                gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
             }
         }
 
