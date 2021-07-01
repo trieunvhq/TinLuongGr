@@ -18,7 +18,7 @@ namespace CtyTinLuong
 
             DataTable dt2 = new DataTable();
             clsDaiLy_tbChiTietXuatKho_Temp cls2 = new CtyTinLuong.clsDaiLy_tbChiTietXuatKho_Temp();          
-            DataTable dtxxxx = cls2.SA_W_ID_XuatKhoDaiLy(xxID_Xuatkho_);
+            DataTable dtxxxx = cls2.SelectAll_W_ID_NhapKhoDaiLy_Moi(xxID_Xuatkho_);
             gridControl3.DataSource = dtxxxx;
         }
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
