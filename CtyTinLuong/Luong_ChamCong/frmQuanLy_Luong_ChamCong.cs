@@ -411,7 +411,7 @@ namespace CtyTinLuong
 
         private void navChamCong_ToIn_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            int id_bophan_ = KiemTraTenBoPhan("Tổ In");
+            int id_bophan_ = KiemTraTenBoPhan("Máy in");
             if (id_bophan_ == 0) return;
 
             frmChamCong_ToIn frm = new frmChamCong_ToIn(id_bophan_);
