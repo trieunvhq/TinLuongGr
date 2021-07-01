@@ -169,7 +169,7 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
                 Cursor.Current = Cursors.WaitCursor;
-                miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
                 ff.ShowDialog();
 
