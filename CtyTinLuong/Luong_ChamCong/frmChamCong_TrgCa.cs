@@ -431,38 +431,7 @@ namespace CtyTinLuong
                         _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
 
-                        //_ravi = _data.NewRow();
-                        //_ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
-                        //_ravi["ID_CongNhan"] = id_nhansu_;
-                        //_ravi["Thang"] = _thang;
-                        //_ravi["Nam"] = _nam;
-                        //_ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
-                        //_ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
-                        //_ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
-                        //_ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
-                        //_ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
-                        //_ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
-                        //_ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
-                        //_ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
-                        //_ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
-                        //_ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
-                        //_ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
-
-                        //_ravi["SanLuong"] = 0;
-                        //_ravi["Tong"] = 0;
-                        //_ravi["GuiDuLieu"] = false;
-                        //_ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
-                        //_ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
-
-                        //_ravi["MaDinhMuc"] = "";
-                        //_ravi["DinhMuc_KhongTang"] = 0;
-                        //_ravi["DinhMuc_Tang"] = 0;
-
-                        //++stt_;
-                        //_ravi["STT"] = (stt_); 
-                        //_ravi["Cong"] = "Tăng";
-                        //_ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                        //_data.Rows.Add(_ravi);
+                         
                     }
                 }
             }

@@ -544,7 +544,41 @@ namespace CtyTinLuong
             }
         }
 
-        //[pr_DaiLy_tbNhapKho_SelectAll_W_ID_DaiLy_hienThiLockUp]
+        //pr_DaiLy_tbNhapKho_SelectAll_W_ID_DaiLy_hienThiLockUp_NgayThang
+        public DataTable SelectAll_W_ID_DaiLy_hienThiLockUp_NgayThang(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbNhapKho_SelectAll_W_ID_DaiLy_hienThiLockUp_NgayThang]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_DaiLy_tbNhapKho_SelectAll_W_ID_DaiLy_hienThiLockUp_NgayThang");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DaiLy", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DaiLy));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+
+                m_scoMainConnection.Open();
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_DaiLy_tbNhapKho_SelectAll_W_ID_DaiLy_hienThiLockUp_NgayThang", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_W_ID_DaiLy_hienThiLockUp()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -559,6 +593,9 @@ namespace CtyTinLuong
             try
             {
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DaiLy", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DaiLy));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+
                 m_scoMainConnection.Open();
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;

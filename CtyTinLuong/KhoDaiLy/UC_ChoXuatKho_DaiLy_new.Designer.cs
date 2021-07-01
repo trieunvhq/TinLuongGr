@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ChoXuatKho_DaiLy_new));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ChoXuatKho_DaiLy_new));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -329,9 +329,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -514,8 +514,8 @@
             this.clDienGiai.Name = "clDienGiai";
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
-            this.clDienGiai.VisibleIndex = 6;
-            this.clDienGiai.Width = 191;
+            this.clDienGiai.VisibleIndex = 5;
+            this.clDienGiai.Width = 294;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -543,7 +543,7 @@
             this.clTongTienHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongTienHang", "{0:#,##0.00}")});
             this.clTongTienHang.Visible = true;
-            this.clTongTienHang.VisibleIndex = 7;
+            this.clTongTienHang.VisibleIndex = 6;
             this.clTongTienHang.Width = 120;
             // 
             // clNgungTheoDoi
@@ -581,7 +581,7 @@
             this.clSoLuongXuatTheoBao.OptionsColumn.AllowEdit = false;
             this.clSoLuongXuatTheoBao.OptionsColumn.FixedWidth = true;
             this.clSoLuongXuatTheoBao.Visible = true;
-            this.clSoLuongXuatTheoBao.VisibleIndex = 4;
+            this.clSoLuongXuatTheoBao.VisibleIndex = 3;
             this.clSoLuongXuatTheoBao.Width = 83;
             // 
             // clTenDaiLy
@@ -592,7 +592,7 @@
             this.clTenDaiLy.OptionsColumn.AllowEdit = false;
             this.clTenDaiLy.OptionsColumn.FixedWidth = true;
             this.clTenDaiLy.Visible = true;
-            this.clTenDaiLy.VisibleIndex = 5;
+            this.clTenDaiLy.VisibleIndex = 4;
             this.clTenDaiLy.Width = 122;
             // 
             // clMaDinhMuc
@@ -601,8 +601,6 @@
             this.clMaDinhMuc.FieldName = "MaDinhMuc";
             this.clMaDinhMuc.Name = "clMaDinhMuc";
             this.clMaDinhMuc.OptionsColumn.AllowEdit = false;
-            this.clMaDinhMuc.Visible = true;
-            this.clMaDinhMuc.VisibleIndex = 3;
             this.clMaDinhMuc.Width = 164;
             // 
             // clNhapKho
@@ -611,14 +609,15 @@
             this.clNhapKho.ColumnEdit = this.btNhapKho;
             this.clNhapKho.Name = "clNhapKho";
             this.clNhapKho.Visible = true;
-            this.clNhapKho.VisibleIndex = 8;
+            this.clNhapKho.VisibleIndex = 7;
+            this.clNhapKho.Width = 61;
             // 
             // btNhapKho
             // 
             this.btNhapKho.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btNhapKho.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btNhapKho.Name = "btNhapKho";
             this.btNhapKho.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btNhapKho.Click += new System.EventHandler(this.btNhapKho_Click);

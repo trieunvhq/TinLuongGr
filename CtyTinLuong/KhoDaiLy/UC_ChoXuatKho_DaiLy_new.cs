@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class UC_ChoXuatKho_DaiLy_new : UserControl
     {
-        public static int miID_NhapKhoDaiLy;
+        public static int miID_XuatKhoDaiLy;
         private void HienThiGridControl_2(int xxID_Xuatkho_)
         {
 
@@ -169,7 +169,7 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
                 Cursor.Current = Cursors.WaitCursor;
-                miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
                 ff.ShowDialog();
 

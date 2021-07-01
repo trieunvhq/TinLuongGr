@@ -1070,9 +1070,7 @@ namespace CtyTinLuong
                 }
                 clsDaiLy_tbNhapKho clsvattu = new clsDaiLy_tbNhapKho();
                 clsvattu.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                DataTable dtvattu = clsvattu.SelectAll_W_ID_DaiLy_hienThiLockUp();
-                //dtvattu.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False ";
-                dtvattu.DefaultView.RowFilter = " HoanThanh = False";
+                DataTable dtvattu = clsvattu.SelectAll_W_ID_DaiLy_hienThiLockUp();               
                 DataView dvvattu = dtvattu.DefaultView;
                 DataTable newdtvattu = dvvattu.ToTable();
                 gridMaHang.DataSource = newdtvattu;
@@ -1108,9 +1106,7 @@ namespace CtyTinLuong
             {
 
             }
-        }
-
-      
+        }              
 
         private void btXoaGrid2_Click(object sender, EventArgs e)
         {
@@ -1315,7 +1311,7 @@ namespace CtyTinLuong
 
         private void btXoa2_Click(object sender, EventArgs e)
         {
-            gridView2.SetFocusedRowCellValue(clHienThi1, "0");
+            gridView4.SetFocusedRowCellValue(clHienThi1, "0");
         }
 
         private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
