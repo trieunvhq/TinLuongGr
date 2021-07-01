@@ -42,13 +42,13 @@ namespace CtyTinLuong.Luong_ChamCong
                 _ravi["STT"] = (i + 1).ToString();
                 _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
                 _ravi["NgayCong"] = _data.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
-                _ravi["TongTien"] = _data.Rows[i]["Cong"].ToString();
+                _ravi["TongTien"] = _data.Rows[i]["TongTien"].ToString();
                 
-                _ravi["TrachNhiem"] = Convert.ToDouble(_data.Rows[i]["Ngay13"].ToString());
-                _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["Ngay14"].ToString());
+                _ravi["TrachNhiem"] = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
                 _ravi["BaoHiem"] = Convert.ToDouble(_data.Rows[i]["Ngay15"].ToString());
-                _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["Ngay16"].ToString());
-                _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["Ngay17"].ToString());
+                _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TamUng"].ToString());
+                _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
                 
                 ds.tbCongNhatChamCongToGapDan.Rows.Add(_ravi);
             }
