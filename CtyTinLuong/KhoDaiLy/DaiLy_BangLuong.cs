@@ -27,7 +27,8 @@ namespace CtyTinLuong
         {
             gridControl2.DataSource = null;
             clsDaiLy_tbXuatKho cls1 = new CtyTinLuong.clsDaiLy_tbXuatKho();
-            DataTable dt_luong = cls1.SA_ID_DaiLy_TinhLuong(xxID_DaiLy, xxtungay, xxdenngay);
+            //DataTable dt_luong = cls1.SA_ID_DaiLy_TinhLuong(xxID_DaiLy, xxtungay, xxdenngay);
+            DataTable dt_luong = cls1.SA_ID_DaiLy_TinhLuong_SUM(xxID_DaiLy, xxtungay, xxdenngay);
             gridControl2.DataSource = dt_luong;
         }
         private void LoadDaTa(int thang, int nam, DateTime xxtungay, DateTime xxdenngay)

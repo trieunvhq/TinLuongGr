@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_BangLuong));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -202,8 +203,6 @@
             this.clNgayChungTu.Name = "clNgayChungTu";
             this.clNgayChungTu.OptionsColumn.AllowEdit = false;
             this.clNgayChungTu.OptionsColumn.FixedWidth = true;
-            this.clNgayChungTu.Visible = true;
-            this.clNgayChungTu.VisibleIndex = 1;
             // 
             // clSoChungTu
             // 
@@ -212,8 +211,6 @@
             this.clSoChungTu.Name = "clSoChungTu";
             this.clSoChungTu.OptionsColumn.AllowEdit = false;
             this.clSoChungTu.OptionsColumn.FixedWidth = true;
-            this.clSoChungTu.Visible = true;
-            this.clSoChungTu.VisibleIndex = 2;
             this.clSoChungTu.Width = 80;
             // 
             // clSoLuongXuat
@@ -230,7 +227,7 @@
             this.clSoLuongXuat.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:#,##0}")});
             this.clSoLuongXuat.Visible = true;
-            this.clSoLuongXuat.VisibleIndex = 6;
+            this.clSoLuongXuat.VisibleIndex = 4;
             this.clSoLuongXuat.Width = 80;
             // 
             // DonGia
@@ -246,8 +243,6 @@
             this.DonGia.Name = "DonGia";
             this.DonGia.OptionsColumn.AllowEdit = false;
             this.DonGia.OptionsColumn.FixedWidth = true;
-            this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 7;
             this.DonGia.Width = 130;
             // 
             // clTongTienHang
@@ -266,7 +261,7 @@
             this.clTongTienHang.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:#,##0.00}")});
             this.clTongTienHang.Visible = true;
-            this.clTongTienHang.VisibleIndex = 8;
+            this.clTongTienHang.VisibleIndex = 5;
             this.clTongTienHang.Width = 130;
             // 
             // clMaVT
@@ -279,7 +274,7 @@
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.OptionsColumn.FixedWidth = true;
             this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 3;
+            this.clMaVT.VisibleIndex = 1;
             // 
             // clTenVTHH
             // 
@@ -291,7 +286,7 @@
             this.clTenVTHH.Name = "clTenVTHH";
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 4;
+            this.clTenVTHH.VisibleIndex = 2;
             this.clTenVTHH.Width = 380;
             // 
             // repositoryItemMemoEdit3
@@ -306,7 +301,7 @@
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
             this.clDonViTinh.OptionsColumn.FixedWidth = true;
             this.clDonViTinh.Visible = true;
-            this.clDonViTinh.VisibleIndex = 5;
+            this.clDonViTinh.VisibleIndex = 3;
             // 
             // btPrint_RutGon
             // 
