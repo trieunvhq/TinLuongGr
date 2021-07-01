@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace CtyTinLuong
 {
     public partial class Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww : Form
     {
+      
         public static DataTable mdtCHiTietTaKhoan_print;
         public static bool mbPrint = false;
         public static bool mbTienUSD;
@@ -554,6 +556,9 @@ namespace CtyTinLuong
         public Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww()
         {
             InitializeComponent();
+            this.Load += Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww_Load;
+            //end-users cannot add rows
+            gridView4.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
         }
 
         private void Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww_Load(object sender, EventArgs e)
@@ -840,28 +845,32 @@ namespace CtyTinLuong
                         clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
                         clscon.iID_TaiKhoanKeToanCon = iiiiID_TaiKhoanKeToan;
                         DataTable dtcon = clscon.SelectOne();
-                  
 
-                        DataTable dt1 = new DataTable();
-                        dt1 = (DataTable)gridControl1.DataSource;
-                        gridControl1.DataSource = null;
-                        DataTable dt2 = dt1.Copy();
-                        DataRow _ravi = dt2.NewRow();
-                   
-                        _ravi["ID_TaiKhoanKeToanCon"] = iiiiID_TaiKhoanKeToan;
-                        _ravi["ID_TaiKhoanKeToanMe"] = clscon.iID_TaiKhoanKeToanMe.Value;
-                      
-                        _ravi["TienUSD"] = checkUSD.Checked;
-                        _ravi["TiGia"] = 0;
-                        _ravi["No"] = 0;
-                        _ravi["Co"] = 0;
-                        _ravi["DaGhiSo"] = false;
-                        _ravi["GhiChu"] = "";
-                        _ravi["SoTaiKhoanCon"] = iiiiID_TaiKhoanKeToan.ToString();
-                        _ravi["TenTaiKhoanCon"] = clscon.sTenTaiKhoanCon.Value;
-                        _ravi["HienThi"] = "1";
-                        dt2.Rows.Add(_ravi);
-                        gridControl1.DataSource = dt2;
+                        gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
+                        gridView4.AddNewRow();
+                       
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], 1);
+
+                        //    DataTable dt1 = new DataTable();
+                        //dt1 = (DataTable)gridControl1.DataSource;
+                        //gridControl1.DataSource = null;
+                        //DataTable dt2 = dt1.Copy();
+                        //DataRow _ravi = dt2.NewRow();
+
+                        //_ravi["ID_TaiKhoanKeToanCon"] = iiiiID_TaiKhoanKeToan;
+                        //_ravi["ID_TaiKhoanKeToanMe"] = clscon.iID_TaiKhoanKeToanMe.Value;
+
+                        //_ravi["TienUSD"] = checkUSD.Checked;
+                        //_ravi["TiGia"] = 0;
+                        //_ravi["No"] = 0;
+                        //_ravi["Co"] = 0;
+                        //_ravi["DaGhiSo"] = false;
+                        //_ravi["GhiChu"] = "";
+                        //_ravi["SoTaiKhoanCon"] = iiiiID_TaiKhoanKeToan.ToString();
+                        //_ravi["TenTaiKhoanCon"] = clscon.sTenTaiKhoanCon.Value;
+                        //_ravi["HienThi"] = "1";
+                        //dt2.Rows.Add(_ravi);
+                        //gridControl1.DataSource = dt2;
                     }
                 }
             }
