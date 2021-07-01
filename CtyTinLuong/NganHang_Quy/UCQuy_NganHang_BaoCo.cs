@@ -16,53 +16,14 @@ namespace CtyTinLuong
         public static int miID_ThuChi_Sua;
         public static bool mbThemMoi_ThuChi, mbooolBitThuChiKhac;
 
-        private void HienThi()
+        private void Load_DaTa(DateTime xxtungay, DateTime  xxdenngay, int bientrangthai)
         {
-            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
-            {
-                DateTime denngay = dteDenNgay.DateTime;
-                DateTime tungay = dteTuNgay.DateTime;
-
-                clsNganHang_tbThuChi cls = new CtyTinLuong.clsNganHang_tbThuChi();
-                DataTable dt = cls.SelectAll();
-                if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =1 ";
-                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =2 ";
-                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =3 ";
-                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =4 ";
-                DataView dv = dt.DefaultView;
-                dv.Sort = "DaGhiSo ASC, NgayChungTu DESC, ID_ThuChi DESC";
-                DataTable dxxxx = dv.ToTable();
-                dxxxx.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'";
-                DataView dvxx = dxxxx.DefaultView;
-                DataTable dt22xxx = dvxx.ToTable();
-                dt22xxx.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
-                gridControl1.DataSource = dt22xxx;
-            }
-
-
-        }
-        private void HienThi_ALL()
-        {
+            DataTable dt = new DataTable();
             clsNganHang_tbThuChi cls = new CtyTinLuong.clsNganHang_tbThuChi();
-            DataTable dt = cls.SelectAll();
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =1 ";
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =2 ";
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =3 ";
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =4 ";
-            DataView dv = dt.DefaultView;
-            dv.Sort = "DaGhiSo ASC, NgayChungTu DESC, ID_ThuChi DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
-
+            dt = cls.SA_NgayThang(xxtungay, xxdenngay, bientrangthai);
+            gridControl1.DataSource = dt;
         }
+     
 
         frmQuy_NganHang_Newwwwwwwwwwwwwwwww _frmQNH;
 
@@ -74,10 +35,10 @@ namespace CtyTinLuong
 
         private void UCQuy_NganHang_BaoCo_Load(object sender, EventArgs e)
         {
-            mbThemMoi_ThuChi = true;                      
-            dteTuNgay.EditValue = null;
-            dteDenNgay.EditValue = null;
-            HienThi_ALL();
+            mbThemMoi_ThuChi = true;
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            dteDenNgay.EditValue = DateTime.Today;
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4);
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -122,7 +83,7 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                HienThi();
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4);
             }
         }
 

@@ -332,6 +332,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "No", this.clNoTrongKy, "{0:#,##0}")});
             this.bandedGridView1.Name = "bandedGridView1";
             this.bandedGridView1.NewItemRowText = "Thêm mới tại đây";
+            this.bandedGridView1.OptionsFind.AlwaysVisible = true;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
