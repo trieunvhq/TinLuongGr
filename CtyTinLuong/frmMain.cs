@@ -386,7 +386,7 @@ namespace CtyTinLuong
             frmQuanLy_Luong_ChamCong ff = new CtyTinLuong.frmQuanLy_Luong_ChamCong();
             //this.Hide();
             ff.Show();
-            this.Show();
+            //this.Show();
 
         }
 
