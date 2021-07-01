@@ -38,10 +38,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChamCong_TDK));
-            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -111,12 +108,13 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.cbHangHoa = new System.Windows.Forms.ComboBox();
             this.btnThemHangHoa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -133,22 +131,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             this.SuspendLayout();
             // 
-            // btGuiDuLieu
-            // 
-            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btGuiDuLieu.Appearance.Options.UseFont = true;
-            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
-            this.btGuiDuLieu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(557, 594);
-            this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(174, 29);
-            this.btGuiDuLieu.TabIndex = 118;
-            this.btGuiDuLieu.Text = "Gửi dữ liệu bảng lương ";
-            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
-            // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
@@ -156,22 +138,6 @@
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            // 
-            // btThoat
-            // 
-            this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.btThoat.Appearance.Options.UseFont = true;
-            this.btThoat.Appearance.Options.UseForeColor = true;
-            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(826, 594);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 29);
-            this.btThoat.TabIndex = 116;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // linkLabel1
             // 
@@ -1379,19 +1345,6 @@
             // 
             this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Appearance.Options.UseFont = true;
-            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(740, 594);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(78, 29);
-            this.btnPrint.TabIndex = 136;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // cbHangHoa
             // 
             this.cbHangHoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1421,58 +1374,79 @@
             this.label7.TabIndex = 137;
             this.label7.Text = "Thêm hàng hóa:";
             // 
-            // label8
+            // btnPrint
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(150, 609);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(314, 13);
-            this.label8.TabIndex = 140;
-            this.label8.Text = "Khi tắt form thì tự lưu dữ liệu chấm công từng ngày của nhân viên";
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
+            this.btnPrint.Location = new System.Drawing.Point(741, 595);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(82, 25);
+            this.btnPrint.TabIndex = 161;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // label1
+            // btGuiDuLieu
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 592);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 13);
-            this.label1.TabIndex = 141;
-            this.label1.Text = "Chú ý: Chỉ gửi dữ liệu khi kiểm tra kỹ. Chỉ gửi dữ liệu lương của tháng trước";
+            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btGuiDuLieu.Appearance.Options.UseFont = true;
+            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
+            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
+            this.btGuiDuLieu.Location = new System.Drawing.Point(656, 595);
+            this.btGuiDuLieu.Name = "btGuiDuLieu";
+            this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
+            this.btGuiDuLieu.TabIndex = 160;
+            this.btGuiDuLieu.Text = "Lưu lại";
+            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
+            // 
+            // btThoat
+            // 
+            this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThoat.Appearance.Options.UseFont = true;
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
+            this.btThoat.Location = new System.Drawing.Point(825, 595);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(82, 25);
+            this.btThoat.TabIndex = 159;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(251, 601);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(262, 13);
+            this.label5.TabIndex = 162;
+            this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
             // 
             // frmChamCong_TDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(913, 635);
-            //this.ControlBox = false;
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btGuiDuLieu);
+            this.Controls.Add(this.btThoat);
             this.Controls.Add(this.cbHangHoa);
             this.Controls.Add(this.btnThemHangHoa);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btGuiDuLieu);
-            this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.HelpButton = true;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
             this.Name = "frmChamCong_TDK";
-            //this.ShowIcon = false;
-            //this.ShowInTaskbar = false;
-            //this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chấm công tổ gấp dán";
+            this.Size = new System.Drawing.Size(913, 635);
             this.Load += new System.EventHandler(this.frmChamCong_TDK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
@@ -1494,9 +1468,7 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1566,11 +1538,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
         private System.Windows.Forms.ComboBox cbHangHoa;
         private System.Windows.Forms.Button btnThemHangHoa;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
+        private DevExpress.XtraEditors.SimpleButton btThoat;
+        private System.Windows.Forms.Label label5;
     }
 }
