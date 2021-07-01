@@ -57,6 +57,7 @@
             this.navChamCong_PTH = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PKT = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PMC = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChamCong_ToIn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
@@ -69,7 +70,7 @@
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.navChamCong_ToIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_ToIn = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -235,7 +236,8 @@
             this.navChamCong_PKT,
             this.navChamCong_PMC,
             this.navBTTL_PMC,
-            this.navChamCong_ToIn});
+            this.navChamCong_ToIn,
+            this.navBTTL_ToIn});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -315,6 +317,12 @@
             this.navChamCong_PMC.Name = "navChamCong_PMC";
             this.navChamCong_PMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_PMC_LinkClicked);
             // 
+            // navChamCong_ToIn
+            // 
+            this.navChamCong_ToIn.Caption = "Tổ In";
+            this.navChamCong_ToIn.Name = "navChamCong_ToIn";
+            this.navChamCong_ToIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_ToIn_LinkClicked);
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -328,7 +336,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TrgCa_CT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PKT),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PMC)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PMC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_ToIn)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -415,11 +424,11 @@
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
             // 
-            // navChamCong_ToIn
+            // navBTTL_ToIn
             // 
-            this.navChamCong_ToIn.Caption = "Tổ In";
-            this.navChamCong_ToIn.Name = "navChamCong_ToIn";
-            this.navChamCong_ToIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_ToIn_LinkClicked);
+            this.navBTTL_ToIn.Caption = "Tổ In";
+            this.navBTTL_ToIn.Name = "navBTTL_ToIn";
+            this.navBTTL_ToIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_ToIn_LinkClicked);
             // 
             // frmQuanLy_Luong_ChamCong
             // 
@@ -485,5 +494,6 @@
         private DevExpress.XtraNavBar.NavBarItem navChamCong_PMC;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_PMC;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_ToIn;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_ToIn;
     }
 }
