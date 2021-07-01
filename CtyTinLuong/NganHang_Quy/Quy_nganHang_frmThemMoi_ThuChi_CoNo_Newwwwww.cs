@@ -839,7 +839,7 @@ namespace CtyTinLuong
             }
             else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
             {
-                kkkk = 3;
+                kkkk = 4;
                 
             }
             LuuDuLieu_Va_GhiSo(kkkk);
