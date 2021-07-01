@@ -269,96 +269,59 @@ namespace CtyTinLuong
             else return true;
 
         }
-        public void HienThiSoChungTu()
+        public void HienThiSoChungTu(int xxbientrangthai)
         {
             clsNganHang_tbThuChi cls2 = new clsNganHang_tbThuChi();
-            DataTable dt = cls2.SelectAll();
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
+            DataTable dt = cls2.SA_W_bientrangthai_(xxbientrangthai);
+            int k = dt.Rows.Count;
+
+            if (k == 0)
             {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =1 ";
-                DataView dv2 = dt.DefaultView;
-                DataTable newdt2 = dv2.ToTable();
-                int k = newdt2.Rows.Count;
-                if (k == 0)
-                {
+                if (xxbientrangthai == 1)                
                     txtSoChungTu.Text = "BC 1";
-                }
-                else
-                {
-                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                    txtSoChungTu.Text = "BC " + xxx2 + "";
-                }
-            }
-
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-            {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =2 ";
-                DataView dv2 = dt.DefaultView;
-                DataTable newdt2 = dv2.ToTable();
-                int k = newdt2.Rows.Count;
-                if (k == 0)
-                {
+                else if (xxbientrangthai == 2)
                     txtSoChungTu.Text = "BN 1";
-                }
-                else
-                {
-                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                    txtSoChungTu.Text = "BN " + xxx2 + "";
-                }
-            }
-
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-            {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =3 ";
-                DataView dv2 = dt.DefaultView;
-                DataTable newdt2 = dv2.ToTable();
-                int k = newdt2.Rows.Count;
-                if (k == 0)
-                {
+                else if (xxbientrangthai == 3)
                     txtSoChungTu.Text = "PC 1";
-                }
-                else
-                {
-                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                    txtSoChungTu.Text = "PC " + xxx2 + "";
-                }
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-            {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =4 ";
-                DataView dv2 = dt.DefaultView;
-                DataTable newdt2 = dv2.ToTable();
-                int k = newdt2.Rows.Count;
-                if (k == 0)
-                {
+                else if (xxbientrangthai == 4)
                     txtSoChungTu.Text = "PT 1";
-                }
-                else
-                {
-                    string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                    int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                    txtSoChungTu.Text = "PT " + xxx2 + "";
-                }
+
             }
+            else
+            {
+                string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                if (xxbientrangthai == 1)
+                    txtSoChungTu.Text = "BC " + xxx2 + "";
+                else if (xxbientrangthai == 2)
+                    txtSoChungTu.Text = "BN " + xxx2 + "";
+                else if (xxbientrangthai == 3)
+                    txtSoChungTu.Text = "PC " + xxx2 + "";
+                else if (xxbientrangthai == 4)
+                    txtSoChungTu.Text = "PT " + xxx2 + "";
+            }
+            if (xxbientrangthai == 1)
+                txtThamChieu.Text = "Báo Có";
+            else if (xxbientrangthai == 2)
+                txtThamChieu.Text = "Báo Nợ";
+            else if (xxbientrangthai == 3)
+                txtThamChieu.Text = "Phiếu Chi";
+            else if (xxbientrangthai == 4)
+                txtThamChieu.Text = "Phiếu Thu";
+
         }
-        private void HienThi_ThemMoi()
+        private void HienThi_ThemMoi(int bientrangthia)
         {
             checkVNĐ.Checked = true;
 
             gridNguoiLap.EditValue = 13;
             dteNgayChungTu.EditValue = DateTime.Today;
-            HienThiSoChungTu();
-
-
+            HienThiSoChungTu(bientrangthia);
             DataTable dt2 = new DataTable();
 
             dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
             dt2.Columns.Add("ID_ThuChi", typeof(int));
-            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
-            //dt2.Columns.Add("ID_TaiKhoanKeToanMe", typeof(int));
+            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));           
             dt2.Columns.Add("No", typeof(double));
             dt2.Columns.Add("Co", typeof(double));
             dt2.Columns.Add("TienUSD", typeof(bool));
@@ -368,31 +331,43 @@ namespace CtyTinLuong
             dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
             dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
             dt2.Columns.Add("HienThi", typeof(string));
-            //
+
+            DataRow _ravi = dt2.NewRow();
+            if (bientrangthia == 1) //báo nợ
+            {
+                _ravi["ID_TaiKhoanKeToanCon"] = 2;
+                _ravi["SoTaiKhoanCon"] = "1121";
+                _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
+            }
+            if (bientrangthia == 2) //báo Có
+            {
+                _ravi["ID_TaiKhoanKeToanCon"] = 2;
+                _ravi["SoTaiKhoanCon"] = "1121";
+                _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
+            }
+            if (bientrangthia == 3) //Phiếu chi
+            {
+                _ravi["ID_TaiKhoanKeToanCon"] = 294;
+                _ravi["SoTaiKhoanCon"] = "1111";
+                _ravi["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
+            }
+            if (bientrangthia == 4) //Phiếu thu
+            {
+                _ravi["ID_TaiKhoanKeToanCon"] = 294;
+                _ravi["SoTaiKhoanCon"] = "1111";
+                _ravi["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
+            }
+            _ravi["No"] =0;
+            _ravi["Co"] = 0;
+            _ravi["TienUSD"] = false;
+            _ravi["TiGia"] = 1;
+            _ravi["DaGhiSo"] = false;
+            _ravi["GhiChu"] = "";           
+            _ravi["HienThi"] = "1";
+            dt2.Rows.Add(_ravi);
             gridControl1.DataSource = dt2;
 
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
-            {              
-                txtThamChieu.Text = "Báo Có";
 
-            }
-                       
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
-            {
-                
-                txtThamChieu.Text = "Báo Nợ";
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
-            {
-               
-                txtThamChieu.Text = "Phiếu Chi";
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
-            {
-                txtThamChieu.Text = "Phiếu Thu";
-            }
         }
         private void HienThi_Sua()
         {
@@ -591,7 +566,7 @@ namespace CtyTinLuong
             Load_LockUp();
           
             if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
-                HienThi_ThemMoi();
+                HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4);
             else
                 HienThi_Sua();
         }
@@ -692,7 +667,7 @@ namespace CtyTinLuong
                     cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                     int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                     DataTable dt = cls.SelectOne();
-                    gridView4.SetRowCellValue(e.RowHandle, ID_TaiKhoanKeToanCon, kk);                 
+                    gridView4.SetRowCellValue(e.RowHandle, clID_TaiKhoanKeToanCon, kk);                 
                     gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, dt.Rows[0]["TenTaiKhoanCon"].ToString());
                     gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
                     gridView4.SetRowCellValue(e.RowHandle, clTienUSD, tienussd);
@@ -861,29 +836,15 @@ namespace CtyTinLuong
                    
                     if (rows[0]["ID_TaiKhoanKeToan"].ToString() != "")
                     {
-                        int iiiiID_TaiKhoanKeToan = Convert.ToInt32(rows[0]["ID_TaiKhoanKeToan"].ToString());
-                        //gridView4.SetRowCellValue(0, clSoTaiKhoanCon, iiiiID_TaiKhoanKeToan.ToString());
+                        int iiiiID_TaiKhoanKeToan = Convert.ToInt32(rows[0]["ID_TaiKhoanKeToan"].ToString());                       
                         clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
                         clscon.iID_TaiKhoanKeToanCon = iiiiID_TaiKhoanKeToan;
                         DataTable dtcon = clscon.SelectOne();
                   
 
                         DataTable dt2 = new DataTable();
-                        dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
-                        dt2.Columns.Add("ID_ThuChi", typeof(int));
-                        dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
-                        dt2.Columns.Add("ID_TaiKhoanKeToanMe", typeof(int));                       
-                        dt2.Columns.Add("No", typeof(double));
-                        dt2.Columns.Add("Co", typeof(double));
-                        dt2.Columns.Add("TienUSD", typeof(bool));
-                        dt2.Columns.Add("TiGia", typeof(double));
-                        dt2.Columns.Add("DaGhiSo", typeof(bool));
-                        dt2.Columns.Add("GhiChu", typeof(string));
-                        dt2.Columns.Add("SoTaiKhoanCon");
-                        dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
-                        dt2.Columns.Add("HienThi", typeof(string));
-
-                  
+                        dt2 = (DataTable)gridControl1.DataSource;
+                        gridControl1.DataSource = null;
                         DataRow _ravi = dt2.NewRow();
                    
                         _ravi["ID_TaiKhoanKeToanCon"] = iiiiID_TaiKhoanKeToan;
