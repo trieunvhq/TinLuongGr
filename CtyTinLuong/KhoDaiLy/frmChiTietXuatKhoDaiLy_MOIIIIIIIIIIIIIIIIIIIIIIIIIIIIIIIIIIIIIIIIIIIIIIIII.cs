@@ -968,7 +968,7 @@ namespace CtyTinLuong
                 cls1.bDaXuatKho = false;
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
                
-                cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
+             
 
                 cls1.iID_XuatKhoDaiLy = UCDaiLy_XuatKho.miID_XuatKhoDaiLy;
                 cls1.Update();
