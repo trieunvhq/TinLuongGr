@@ -188,6 +188,12 @@
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
+    <Compile Include="Luong_ChamCong\frmBTTL_ToIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_ToIn.Designer.cs">
+      <DependentUpon>frmBTTL_ToIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_PMC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +217,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TrgCa_CT.Designer.cs">
       <DependentUpon>frmBTTL_TrgCa_CT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_ToIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_ToIn.Designer.cs">
+      <DependentUpon>frmChamCong_ToIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_PMC.cs">
       <SubType>UserControl</SubType>
@@ -1962,6 +1974,9 @@
     <EmbeddedResource Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.resx">
       <DependentUpon>UC_ChoXuatKho_DaiLy_new.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmBTTL_ToIn.resx">
+      <DependentUpon>frmBTTL_ToIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_PMC.resx">
       <DependentUpon>frmBTTL_PMC.cs</DependentUpon>
     </EmbeddedResource>
@@ -1985,6 +2000,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_ToIn.resx">
+      <DependentUpon>frmChamCong_ToIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PMC.resx">
       <DependentUpon>frmChamCong_PMC.cs</DependentUpon>
