@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -1432,7 +1431,7 @@
             this.btLuu_Dong.Name = "btLuu_Dong";
             this.btLuu_Dong.Size = new System.Drawing.Size(88, 23);
             this.btLuu_Dong.TabIndex = 139;
-            this.btLuu_Dong.Text = "Lưu lại";
+            this.btLuu_Dong.Text = "Nhập kho";
             this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // btPrint
