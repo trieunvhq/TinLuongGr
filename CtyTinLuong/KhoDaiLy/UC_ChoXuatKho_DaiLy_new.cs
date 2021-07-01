@@ -12,7 +12,7 @@ namespace CtyTinLuong
 {
     public partial class UC_ChoXuatKho_DaiLy_new : UserControl
     {
-        public static int miID_NhapKhoDaiLy;
+        public static int miID_XuatKhoDaiLy;
         private void HienThiGridControl_2(int xxID_Xuatkho_)
         {
 

@@ -1311,7 +1311,7 @@ namespace CtyTinLuong
 
         private void btXoa2_Click(object sender, EventArgs e)
         {
-            gridView2.SetFocusedRowCellValue(clHienThi1, "0");
+            gridView4.SetFocusedRowCellValue(clHienThi1, "0");
         }
 
         private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
