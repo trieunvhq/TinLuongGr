@@ -469,6 +469,12 @@
     <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TBX_TQ.designer.cs">
       <DependentUpon>Tr_PrintBTTL_TBX_TQ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TrgCa_CT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TrgCa_CT.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_TrgCa_CT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TMC_CT.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2087,6 +2093,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TBX_TQ.resx">
       <DependentUpon>Tr_PrintBTTL_TBX_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TrgCa_CT.resx">
+      <DependentUpon>Tr_PrintBTTL_TrgCa_CT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TMC_CT.resx">
       <DependentUpon>Tr_PrintBTTL_TMC_CT.cs</DependentUpon>
