@@ -38,7 +38,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBTTL_TGD_CT));
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -90,8 +89,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -111,16 +109,16 @@
             // btGuiDuLieu
             // 
             this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btGuiDuLieu.Appearance.Options.UseFont = true;
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
-            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(561, 595);
+            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
+            this.btGuiDuLieu.Location = new System.Drawing.Point(571, 599);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(174, 29);
+            this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
             this.btGuiDuLieu.TabIndex = 118;
-            this.btGuiDuLieu.Text = "Gửi dữ liệu bảng lương ";
+            this.btGuiDuLieu.Text = "Lưu lại";
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
             // 
             // repositoryItemButtonEdit1
@@ -134,13 +132,13 @@
             // btThoat
             // 
             this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(826, 595);
+            this.btThoat.Location = new System.Drawing.Point(826, 598);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 28);
+            this.btThoat.Size = new System.Drawing.Size(82, 25);
             this.btThoat.TabIndex = 116;
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -344,6 +342,7 @@
             this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
+            this.clTenNhanVien.OptionsColumn.AllowFocus = false;
             this.clTenNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
@@ -363,6 +362,7 @@
             this.clTongLuong.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clTongLuong.Name = "clTongLuong";
             this.clTongLuong.OptionsColumn.AllowEdit = false;
+            this.clTongLuong.OptionsColumn.AllowFocus = false;
             this.clTongLuong.OptionsColumn.FixedWidth = true;
             this.clTongLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
@@ -376,6 +376,7 @@
             this.Cong.MinWidth = 50;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
+            this.Cong.OptionsColumn.AllowFocus = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 2;
@@ -388,6 +389,8 @@
             this.clID_ChiTietChamCong.MaxWidth = 40;
             this.clID_ChiTietChamCong.MinWidth = 40;
             this.clID_ChiTietChamCong.Name = "clID_ChiTietChamCong";
+            this.clID_ChiTietChamCong.OptionsColumn.AllowEdit = false;
+            this.clID_ChiTietChamCong.OptionsColumn.AllowFocus = false;
             this.clID_ChiTietChamCong.Width = 40;
             // 
             // clID_ChamCong
@@ -396,6 +399,8 @@
             this.clID_ChamCong.FieldName = "ID_ChamCong";
             this.clID_ChamCong.MinWidth = 40;
             this.clID_ChamCong.Name = "clID_ChamCong";
+            this.clID_ChamCong.OptionsColumn.AllowEdit = false;
+            this.clID_ChamCong.OptionsColumn.AllowFocus = false;
             this.clID_ChamCong.Width = 80;
             // 
             // clThang
@@ -405,6 +410,7 @@
             this.clThang.MinWidth = 40;
             this.clThang.Name = "clThang";
             this.clThang.OptionsColumn.AllowEdit = false;
+            this.clThang.OptionsColumn.AllowFocus = false;
             this.clThang.OptionsColumn.FixedWidth = true;
             this.clThang.Width = 80;
             // 
@@ -414,6 +420,8 @@
             this.clNam.FieldName = "Nam";
             this.clNam.MinWidth = 40;
             this.clNam.Name = "clNam";
+            this.clNam.OptionsColumn.AllowEdit = false;
+            this.clNam.OptionsColumn.AllowFocus = false;
             this.clNam.OptionsColumn.FixedWidth = true;
             this.clNam.Width = 80;
             // 
@@ -424,6 +432,8 @@
             this.clID_DinhMucLuong_CongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clID_DinhMucLuong_CongNhat.MinWidth = 40;
             this.clID_DinhMucLuong_CongNhat.Name = "clID_DinhMucLuong_CongNhat";
+            this.clID_DinhMucLuong_CongNhat.OptionsColumn.AllowEdit = false;
+            this.clID_DinhMucLuong_CongNhat.OptionsColumn.AllowFocus = false;
             this.clID_DinhMucLuong_CongNhat.Width = 80;
             // 
             // clMaDinhMucLuongCongNhat
@@ -437,6 +447,8 @@
             this.clMaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clMaDinhMucLuongCongNhat.MinWidth = 40;
             this.clMaDinhMucLuongCongNhat.Name = "clMaDinhMucLuongCongNhat";
+            this.clMaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
+            this.clMaDinhMucLuongCongNhat.OptionsColumn.AllowFocus = false;
             this.clMaDinhMucLuongCongNhat.Width = 80;
             // 
             // clID_CongNhan
@@ -445,6 +457,8 @@
             this.clID_CongNhan.FieldName = "ID_CongNhan";
             this.clID_CongNhan.MinWidth = 40;
             this.clID_CongNhan.Name = "clID_CongNhan";
+            this.clID_CongNhan.OptionsColumn.AllowEdit = false;
+            this.clID_CongNhan.OptionsColumn.AllowFocus = false;
             this.clID_CongNhan.Width = 80;
             // 
             // clSLThuong
@@ -457,6 +471,8 @@
             this.clSLThuong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLThuong.MinWidth = 40;
             this.clSLThuong.Name = "clSLThuong";
+            this.clSLThuong.OptionsColumn.AllowEdit = false;
+            this.clSLThuong.OptionsColumn.AllowFocus = false;
             this.clSLThuong.Width = 80;
             // 
             // clSLTangCa
@@ -469,6 +485,8 @@
             this.clSLTangCa.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLTangCa.MinWidth = 40;
             this.clSLTangCa.Name = "clSLTangCa";
+            this.clSLTangCa.OptionsColumn.AllowEdit = false;
+            this.clSLTangCa.OptionsColumn.AllowFocus = false;
             this.clSLTangCa.Width = 80;
             // 
             // SanLuong
@@ -480,6 +498,8 @@
             this.SanLuong.FieldName = "SanLuong";
             this.SanLuong.MinWidth = 40;
             this.SanLuong.Name = "SanLuong";
+            this.SanLuong.OptionsColumn.AllowEdit = false;
+            this.SanLuong.OptionsColumn.AllowFocus = false;
             this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
@@ -505,6 +525,8 @@
             this.DonGia.FieldName = "DonGia";
             this.DonGia.MinWidth = 40;
             this.DonGia.Name = "DonGia";
+            this.DonGia.OptionsColumn.AllowEdit = false;
+            this.DonGia.OptionsColumn.AllowFocus = false;
             this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
@@ -530,6 +552,8 @@
             this.ThanhTien.FieldName = "ThanhTien";
             this.ThanhTien.MinWidth = 40;
             this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.OptionsColumn.AllowEdit = false;
+            this.ThanhTien.OptionsColumn.AllowFocus = false;
             this.ThanhTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.OptionsColumn.FixedWidth = true;
             this.ThanhTien.OptionsFilter.AllowAutoFilter = false;
@@ -555,6 +579,8 @@
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 40;
             this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowEdit = false;
+            this.TongLuong.OptionsColumn.AllowFocus = false;
             this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
@@ -580,6 +606,8 @@
             this.SoNgayAn.FieldName = "SoNgayAn";
             this.SoNgayAn.MinWidth = 40;
             this.SoNgayAn.Name = "SoNgayAn";
+            this.SoNgayAn.OptionsColumn.AllowEdit = false;
+            this.SoNgayAn.OptionsColumn.AllowFocus = false;
             this.SoNgayAn.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SoNgayAn.OptionsColumn.FixedWidth = true;
             this.SoNgayAn.OptionsFilter.AllowAutoFilter = false;
@@ -605,6 +633,8 @@
             this.TruTienCom.FieldName = "TruTienCom";
             this.TruTienCom.MinWidth = 40;
             this.TruTienCom.Name = "TruTienCom";
+            this.TruTienCom.OptionsColumn.AllowEdit = false;
+            this.TruTienCom.OptionsColumn.AllowFocus = false;
             this.TruTienCom.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TruTienCom.OptionsColumn.FixedWidth = true;
             this.TruTienCom.OptionsFilter.AllowAutoFilter = false;
@@ -630,6 +660,8 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 40;
             this.TongTien.Name = "TongTien";
+            this.TongTien.OptionsColumn.AllowEdit = false;
+            this.TongTien.OptionsColumn.AllowFocus = false;
             this.TongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
@@ -655,6 +687,8 @@
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 40;
             this.TamUng.Name = "TamUng";
+            this.TamUng.OptionsColumn.AllowEdit = false;
+            this.TamUng.OptionsColumn.AllowFocus = false;
             this.TamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
@@ -680,6 +714,8 @@
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 40;
             this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowEdit = false;
+            this.ThucNhan.OptionsColumn.AllowFocus = false;
             this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
@@ -706,6 +742,8 @@
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 40;
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
+            this.KyNhan.OptionsColumn.AllowFocus = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
@@ -815,43 +853,35 @@
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
-            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(742, 595);
+            this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
+            this.btnPrint.Location = new System.Drawing.Point(656, 599);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(78, 29);
+            this.btnPrint.Size = new System.Drawing.Size(82, 25);
             this.btnPrint.TabIndex = 140;
-            this.btnPrint.Text = "Print";
+            this.btnPrint.Text = "Chi tiết";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // label8
+            // btnPrintTQ
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(140, 609);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(314, 13);
-            this.label8.TabIndex = 146;
-            this.label8.Text = "Khi tắt form thì tự lưu dữ liệu chấm công từng ngày của nhân viên";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 592);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 13);
-            this.label1.TabIndex = 147;
-            this.label1.Text = "Chú ý: Chỉ gửi dữ liệu khi kiểm tra kỹ. Chỉ gửi dữ liệu lương của tháng trước";
+            this.btnPrintTQ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintTQ.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTQ.Appearance.Options.UseFont = true;
+            this.btnPrintTQ.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
+            this.btnPrintTQ.Location = new System.Drawing.Point(741, 598);
+            this.btnPrintTQ.Name = "btnPrintTQ";
+            this.btnPrintTQ.Size = new System.Drawing.Size(82, 25);
+            this.btnPrintTQ.TabIndex = 141;
+            this.btnPrintTQ.Text = "Tổng quát";
+            this.btnPrintTQ.Click += new System.EventHandler(this.btnPrintTQ_Click);
             // 
             // frmBTTL_TGD_CT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnPrintTQ);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
@@ -935,7 +965,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
     }
 }

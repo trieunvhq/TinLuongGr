@@ -55,10 +55,10 @@
             this.TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThucNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhuCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.colPhuCap = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -240,6 +240,7 @@
             this.TenVTHH.Caption = "CÔNG";
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 2;
@@ -254,6 +255,7 @@
             this.DonGia.FieldName = "DonGia";
             this.DonGia.MinWidth = 10;
             this.DonGia.Name = "DonGia";
+            this.DonGia.OptionsColumn.AllowEdit = false;
             this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
@@ -279,6 +281,7 @@
             this.SanLuong.FieldName = "SanLuong";
             this.SanLuong.MinWidth = 10;
             this.SanLuong.Name = "SanLuong";
+            this.SanLuong.OptionsColumn.AllowEdit = false;
             this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
@@ -304,6 +307,7 @@
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 10;
             this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowEdit = false;
             this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
@@ -325,6 +329,7 @@
             this.LuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
             this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
             this.LuongTrachNhiem.Name = "LuongTrachNhiem";
+            this.LuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.LuongTrachNhiem.Width = 80;
             // 
@@ -337,6 +342,7 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 10;
             this.TongTien.Name = "TongTien";
+            this.TongTien.OptionsColumn.AllowEdit = false;
             this.TongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
@@ -362,6 +368,7 @@
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 10;
             this.TamUng.Name = "TamUng";
+            this.TamUng.OptionsColumn.AllowEdit = false;
             this.TamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
@@ -387,6 +394,7 @@
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowEdit = false;
             this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
@@ -413,6 +421,7 @@
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 10;
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
@@ -429,6 +438,18 @@
             this.KyNhan.Visible = true;
             this.KyNhan.VisibleIndex = 10;
             this.KyNhan.Width = 80;
+            // 
+            // colPhuCap
+            // 
+            this.colPhuCap.AppearanceCell.Options.UseTextOptions = true;
+            this.colPhuCap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colPhuCap.Caption = "PHỤ CẤP";
+            this.colPhuCap.FieldName = "PhuCap";
+            this.colPhuCap.Name = "colPhuCap";
+            this.colPhuCap.OptionsColumn.AllowEdit = false;
+            this.colPhuCap.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colPhuCap.Visible = true;
+            this.colPhuCap.VisibleIndex = 6;
             // 
             // gridControl1
             // 
@@ -465,17 +486,6 @@
             this.label2.Size = new System.Drawing.Size(149, 13);
             this.label2.TabIndex = 145;
             this.label2.Text = "Double click để sửa định mức";
-            // 
-            // colPhuCap
-            // 
-            this.colPhuCap.AppearanceCell.Options.UseTextOptions = true;
-            this.colPhuCap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colPhuCap.Caption = "PHỤ CẤP";
-            this.colPhuCap.FieldName = "PhuCap";
-            this.colPhuCap.Name = "colPhuCap";
-            this.colPhuCap.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colPhuCap.Visible = true;
-            this.colPhuCap.VisibleIndex = 6;
             // 
             // frmBTTL_PKT
             // 

@@ -55,13 +55,13 @@
             this.ColTamUng = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColThucNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColCongBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TruBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCheDoHienThi = new System.Windows.Forms.Button();
-            this.ColCongBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TruBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -453,6 +453,41 @@
             this.KyNhan.VisibleIndex = 11;
             this.KyNhan.Width = 88;
             // 
+            // ColCongBaoHiem
+            // 
+            this.ColCongBaoHiem.AppearanceCell.Options.UseTextOptions = true;
+            this.ColCongBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.ColCongBaoHiem.Caption = "CỘNG BẢO HIỂM";
+            this.ColCongBaoHiem.FieldName = "CongBaoHiem";
+            this.ColCongBaoHiem.MaxWidth = 80;
+            this.ColCongBaoHiem.MinWidth = 80;
+            this.ColCongBaoHiem.Name = "ColCongBaoHiem";
+            this.ColCongBaoHiem.OptionsColumn.AllowEdit = false;
+            this.ColCongBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.ColCongBaoHiem.Visible = true;
+            this.ColCongBaoHiem.VisibleIndex = 5;
+            this.ColCongBaoHiem.Width = 80;
+            // 
+            // TruBaoHiem
+            // 
+            this.TruBaoHiem.AppearanceCell.Options.UseTextOptions = true;
+            this.TruBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TruBaoHiem.Caption = "TRỪ BẢO HIỂM";
+            this.TruBaoHiem.FieldName = "TruBaoHiem";
+            this.TruBaoHiem.MaxWidth = 80;
+            this.TruBaoHiem.MinWidth = 80;
+            this.TruBaoHiem.Name = "TruBaoHiem";
+            this.TruBaoHiem.OptionsColumn.AllowEdit = false;
+            this.TruBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.TruBaoHiem.Visible = true;
+            this.TruBaoHiem.VisibleIndex = 8;
+            this.TruBaoHiem.Width = 80;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -499,38 +534,6 @@
             this.btnCheDoHienThi.Text = "Thay đổi chế độ hiển thị";
             this.btnCheDoHienThi.UseVisualStyleBackColor = true;
             this.btnCheDoHienThi.Click += new System.EventHandler(this.btnCheDoHienThi_Click);
-            // 
-            // ColCongBaoHiem
-            // 
-            this.ColCongBaoHiem.AppearanceCell.Options.UseTextOptions = true;
-            this.ColCongBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.ColCongBaoHiem.Caption = "CỘNG BẢO HIỂM";
-            this.ColCongBaoHiem.FieldName = "CongBaoHiem";
-            this.ColCongBaoHiem.MaxWidth = 80;
-            this.ColCongBaoHiem.MinWidth = 80;
-            this.ColCongBaoHiem.Name = "ColCongBaoHiem";
-            this.ColCongBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.ColCongBaoHiem.Visible = true;
-            this.ColCongBaoHiem.VisibleIndex = 5;
-            this.ColCongBaoHiem.Width = 80;
-            // 
-            // TruBaoHiem
-            // 
-            this.TruBaoHiem.AppearanceCell.Options.UseTextOptions = true;
-            this.TruBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.TruBaoHiem.Caption = "TRỪ BẢO HIỂM";
-            this.TruBaoHiem.FieldName = "TruBaoHiem";
-            this.TruBaoHiem.MaxWidth = 80;
-            this.TruBaoHiem.MinWidth = 80;
-            this.TruBaoHiem.Name = "TruBaoHiem";
-            this.TruBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.TruBaoHiem.Visible = true;
-            this.TruBaoHiem.VisibleIndex = 8;
-            this.TruBaoHiem.Width = 80;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Name = "gridColumn2";
             // 
             // frmBTTL_PTH
             // 

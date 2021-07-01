@@ -245,6 +245,11 @@ namespace CtyTinLuong
            
         }
 
+        private void btnPrintTQ_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //miiID_chiTietChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
