@@ -308,7 +308,7 @@
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 15.83335F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 16.83335F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -359,7 +359,7 @@
             this.xrTbHeader.Name = "xrTbHeader";
             this.xrTbHeader.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTbHeader.SizeF = new System.Drawing.SizeF(1075F, 54.16667F);
+            this.xrTbHeader.SizeF = new System.Drawing.SizeF(1075F, 35.83333F);
             this.xrTbHeader.StylePriority.UseBorders = false;
             this.xrTbHeader.StylePriority.UseFont = false;
             this.xrTbHeader.StylePriority.UseTextAlignment = false;
@@ -385,18 +385,22 @@
             // 
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
-            this.xrTableCell1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
+            this.xrTableCell1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell1.StylePriority.UsePadding = false;
-            this.xrTableCell1.Text = "\r\nSTT";
+            this.xrTableCell1.StylePriority.UseTextAlignment = false;
+            this.xrTableCell1.Text = "STT";
+            this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell1.Weight = 0.60768385057325491D;
             // 
             // xrTableCell2
             // 
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
-            this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
+            this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell2.StylePriority.UsePadding = false;
-            this.xrTableCell2.Text = "\r\nHỌ TÊN";
+            this.xrTableCell2.StylePriority.UseTextAlignment = false;
+            this.xrTableCell2.Text = "HỌ TÊN";
+            this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell2.Weight = 1.97099892931584D;
             // 
             // xrTableCell13
@@ -458,9 +462,11 @@
             // 
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
-            this.xrTableCell7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 10, 0, 100F);
+            this.xrTableCell7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell7.StylePriority.UsePadding = false;
-            this.xrTableCell7.Text = "TẠM\r\nỨNG";
+            this.xrTableCell7.StylePriority.UseTextAlignment = false;
+            this.xrTableCell7.Text = "TẠM ỨNG";
+            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell7.Weight = 1.3098344898482321D;
             // 
             // xrTableCell8
@@ -478,9 +484,11 @@
             // 
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
-            this.xrTableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
+            this.xrTableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell9.StylePriority.UsePadding = false;
-            this.xrTableCell9.Text = "\r\nKÝ NHẬN";
+            this.xrTableCell9.StylePriority.UseTextAlignment = false;
+            this.xrTableCell9.Text = "KÝ NHẬN";
+            this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell9.Weight = 1.3098344898482321D;
             // 
             // ReportFooter
@@ -761,7 +769,7 @@
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
             this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Tr_PrintBTTL_TrgCa_TQ
+            // Tr_PrintBTTL_TrgCa_CT
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
