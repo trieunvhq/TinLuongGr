@@ -408,5 +408,10 @@ namespace CtyTinLuong
 
             doiMauTitle(sender, e);
         }
+
+        private void navChamCong_ToIn_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+
+        }
     }
 }

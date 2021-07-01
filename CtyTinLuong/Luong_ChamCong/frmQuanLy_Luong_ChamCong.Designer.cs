@@ -69,6 +69,7 @@
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.navChamCong_ToIn = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -233,7 +234,8 @@
             this.navBTTL_PKT,
             this.navChamCong_PKT,
             this.navChamCong_PMC,
-            this.navBTTL_PMC});
+            this.navBTTL_PMC,
+            this.navChamCong_ToIn});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -255,7 +257,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TrgCa),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PKT),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PMC)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PMC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_ToIn)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navChamCong_CongNhat
@@ -412,6 +415,12 @@
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
             // 
+            // navChamCong_ToIn
+            // 
+            this.navChamCong_ToIn.Caption = "Tổ In";
+            this.navChamCong_ToIn.Name = "navChamCong_ToIn";
+            this.navChamCong_ToIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_ToIn_LinkClicked);
+            // 
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,5 +484,6 @@
         private DevExpress.XtraNavBar.NavBarItem navChamCong_PKT;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_PMC;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_PMC;
+        private DevExpress.XtraNavBar.NavBarItem navChamCong_ToIn;
     }
 }
