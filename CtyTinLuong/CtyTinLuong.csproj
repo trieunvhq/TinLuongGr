@@ -170,6 +170,12 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="DaiLy_ChiTietChoXuatKho_Moi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaiLy_ChiTietChoXuatKho_Moi.Designer.cs">
+      <DependentUpon>DaiLy_ChiTietChoXuatKho_Moi.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DaiLy_ChiTietChoNhapKho_Moi.cs">
       <SubType>Form</SubType>
     </Compile>
