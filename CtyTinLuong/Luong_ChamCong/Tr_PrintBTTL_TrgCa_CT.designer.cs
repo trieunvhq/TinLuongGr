@@ -346,7 +346,7 @@
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTbHeader});
-            this.PageHeader.HeightF = 54.16667F;
+            this.PageHeader.HeightF = 35.83333F;
             this.PageHeader.Name = "PageHeader";
             // 
             // xrTbHeader
