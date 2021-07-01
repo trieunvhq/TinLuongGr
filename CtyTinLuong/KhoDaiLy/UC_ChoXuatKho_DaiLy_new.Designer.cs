@@ -221,7 +221,9 @@
             // clSoLuong2
             // 
             this.clSoLuong2.Caption = "Số lượng";
+            this.clSoLuong2.DisplayFormat.FormatString = "{0:0.###}";
             this.clSoLuong2.FieldName = "SoLuong";
+            this.clSoLuong2.GroupFormat.FormatString = "{0:0.###}";
             this.clSoLuong2.Name = "clSoLuong2";
             this.clSoLuong2.OptionsColumn.AllowEdit = false;
             this.clSoLuong2.OptionsColumn.FixedWidth = true;
