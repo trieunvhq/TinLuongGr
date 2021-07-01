@@ -1453,11 +1453,11 @@ namespace CtyTinLuong
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(157, 601);
+            this.label5.Location = new System.Drawing.Point(157, 602);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 13);
+            this.label5.Size = new System.Drawing.Size(262, 13);
             this.label5.TabIndex = 147;
-            this.label5.Text = "(Double click để sửa định mức)";
+            this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
             // 
             // linkLabel2
             // 
