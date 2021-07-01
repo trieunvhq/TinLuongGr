@@ -341,6 +341,12 @@ namespace CtyTinLuong
             //}
         }
 
+        private void btnPrintTQ_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TrgCa_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TrgCa_TQ(_thang, _nam, _data);
+            ff.ShowDialog();
+        }
+
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //miiID_chiTietChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
