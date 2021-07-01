@@ -174,6 +174,7 @@
             // 
             this.navBarItem9.Caption = "Chờ xuất kho";
             this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarControl1
             // 

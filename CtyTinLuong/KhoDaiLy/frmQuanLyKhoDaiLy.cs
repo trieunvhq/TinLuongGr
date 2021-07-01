@@ -293,5 +293,16 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
+
+        private void navBarItem9_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            UC_ChoXuatKho_DaiLy_new uccc_NhapKho = new UC_ChoXuatKho_DaiLy_new();
+            uccc_NhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_NhapKho);
+            uccc_NhapKho.BringToFront();
+            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
+        }
     }
 }
