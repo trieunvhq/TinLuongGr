@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -222,7 +221,11 @@
             // clSoLuong2
             // 
             this.clSoLuong2.Caption = "Số lượng";
+            this.clSoLuong2.DisplayFormat.FormatString = "d";
+            this.clSoLuong2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.clSoLuong2.FieldName = "SoLuong";
+            this.clSoLuong2.GroupFormat.FormatString = "{0:0.###}";
+            this.clSoLuong2.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clSoLuong2.Name = "clSoLuong2";
             this.clSoLuong2.OptionsColumn.AllowEdit = false;
             this.clSoLuong2.OptionsColumn.FixedWidth = true;
