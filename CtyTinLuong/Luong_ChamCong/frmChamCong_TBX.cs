@@ -165,6 +165,8 @@ namespace CtyTinLuong
             if (islandau)
             { 
                 DateTime dtnow = DateTime.Now;
+                _nam = dtnow.Year;
+                _thang = dtnow.Month;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
@@ -214,12 +216,8 @@ namespace CtyTinLuong
                 _dt_DinhMuc = clsThin_.T_NhanSu_SF("0");
                 cbNhanSu.DataSource = _dt_DinhMuc;
                 cbNhanSu.DisplayMember = "TenNhanVien";
-                cbNhanSu.ValueMember = "ID_NhanSu";
-                //
-                 
+                cbNhanSu.ValueMember = "ID_NhanSu"; 
             }
-            _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
 
             using (clsThin clsThin_ = new clsThin())
             {
