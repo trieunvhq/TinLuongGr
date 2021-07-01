@@ -842,9 +842,10 @@ namespace CtyTinLuong
                         DataTable dtcon = clscon.SelectOne();
                   
 
-                        DataTable dt2 = new DataTable();
-                        dt2 = (DataTable)gridControl1.DataSource;
+                        DataTable dt1 = new DataTable();
+                        dt1 = (DataTable)gridControl1.DataSource;
                         gridControl1.DataSource = null;
+                        DataTable dt2 = dt1.Copy();
                         DataRow _ravi = dt2.NewRow();
                    
                         _ravi["ID_TaiKhoanKeToanCon"] = iiiiID_TaiKhoanKeToan;
