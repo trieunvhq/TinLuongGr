@@ -35,41 +35,41 @@ namespace CtyTinLuong
             DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
             return retDateTime;
         }
-        private void Luu_themMoi_DuLieubangLuong()
-        {
+        //private void Luu_themMoi_DuLieubangLuong()
+        //{
 
-            if (!KiemTraLuu()) return ;
-            else
-            {
-                int ID_DaiLyxx = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                int thangx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("MM"));
-                int namxx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("yyyy"));
-                DateTime tungay = GetFistDayInMonth(namxx, thangx);
-                DateTime denngay = GetLastDayInMonth(namxx, thangx);
+        //    if (!KiemTraLuu()) return ;
+        //    else
+        //    {
+        //        int ID_DaiLyxx = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+        //        int thangx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("MM"));
+        //        int namxx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("yyyy"));
+        //        DateTime tungay = GetFistDayInMonth(namxx, thangx);
+        //        DateTime denngay = GetLastDayInMonth(namxx, thangx);
 
-                clsDaiLy_BangLuong clsxx = new clsDaiLy_BangLuong();
-                clsxx.iThang = thangx;
-                clsxx.iNam = namxx;
-                clsxx.iID_DaiLy = ID_DaiLyxx;
-                DataTable dt = clsxx.SelectOne__W_Thang_Nam_ID_DaiLy();
-                if (dt.Rows.Count == 0)
-                {
-                    clsxx.iID_DaiLy = ID_DaiLyxx;
-                    clsxx.iThang = thangx;
-                    clsxx.iNam = namxx;
-                    clsxx.dcLuongDaiLy = 0;
-                    clsxx.dcTamUng = 0;
-                    clsxx.dcSoTienDaTra = 0;
-                    clsxx.sDienGiai = "";
-                    clsxx.bTonTai = true;
-                    clsxx.bNgungTheoDoi = false;
-                    clsxx.bDaTraLuong = false;
-                    clsxx.Insert();
-                }
+        //        clsDaiLy_BangLuong clsxx = new clsDaiLy_BangLuong();
+        //        clsxx.iThang = thangx;
+        //        clsxx.iNam = namxx;
+        //        clsxx.iID_DaiLy = ID_DaiLyxx;
+        //        DataTable dt = clsxx.SelectOne__W_Thang_Nam_ID_DaiLy();
+        //        if (dt.Rows.Count == 0)
+        //        {
+        //            clsxx.iID_DaiLy = ID_DaiLyxx;
+        //            clsxx.iThang = thangx;
+        //            clsxx.iNam = namxx;
+        //            clsxx.dcLuongDaiLy = 0;
+        //            clsxx.dcTamUng = 0;
+        //            clsxx.dcSoTienDaTra = 0;
+        //            clsxx.sDienGiai = "";
+        //            clsxx.bTonTai = true;
+        //            clsxx.bNgungTheoDoi = false;
+        //            clsxx.bDaTraLuong = false;
+        //            clsxx.Insert();
+        //        }
 
                
-            }
-        }
+        //    }
+        //}
         private string soChungTu_KhoThanhPham()
         {
             string sochungtu;
@@ -1049,7 +1049,7 @@ namespace CtyTinLuong
                 iiiiID_XuatKhoDaiLy = UCDaiLy_XuatKho.miID_XuatKhoDaiLy;
                 // chi tiet nhập kho
 
-                Luu_themMoi_DuLieubangLuong();
+                //Luu_themMoi_DuLieubangLuong();
                 Luu_ChiTiet_XuatKho_DaiLy(iiiiID_XuatKhoDaiLy, true);
                 Luu_ThamCHieuTinhXuatKho(iiiiID_XuatKhoDaiLy);
                 Luu_NhapKho_Khac(iiiiID_XuatKhoDaiLy);

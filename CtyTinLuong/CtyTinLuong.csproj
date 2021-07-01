@@ -170,10 +170,10 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="DaiLy_ChiTietChoXuatKho_Moi.cs">
+    <Compile Include="KhoDaiLy\DaiLy_ChiTietChoXuatKho_Moi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DaiLy_ChiTietChoXuatKho_Moi.Designer.cs">
+    <Compile Include="KhoDaiLy\DaiLy_ChiTietChoXuatKho_Moi.Designer.cs">
       <DependentUpon>DaiLy_ChiTietChoXuatKho_Moi.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\DaiLy_ChiTietChoNhapKho_Moi.cs">
@@ -1934,6 +1934,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang.resx">
       <DependentUpon>Xtra_SoTongHop_banHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\DaiLy_ChiTietChoXuatKho_Moi.resx">
+      <DependentUpon>DaiLy_ChiTietChoXuatKho_Moi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
