@@ -7,7 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsDaiLy_ThamChieu_TinhXuatKho_Temp : clsDBInteractionBase
 	{
-        //pr_DaiLy_ThamChieu_TinhXuatKho_Temp_Delete_ALL_W_ID_XuatKhoDaiLy
+        //pr_DaiLy_ThamChieu_TinhXuatKho_Temp_SO_Gridcontrol
         public void Delete_ALL_W_ID_XuatKhoDaiLy(int xxiID_XuatKhoDaiLy_)
         {
 

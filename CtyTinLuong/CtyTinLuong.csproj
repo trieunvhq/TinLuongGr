@@ -182,6 +182,7 @@
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp.cs" />
+    <Compile Include="KhoThanhPham\clsDaiLy_tbXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
