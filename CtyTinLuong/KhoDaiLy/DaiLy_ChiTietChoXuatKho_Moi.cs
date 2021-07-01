@@ -1319,7 +1319,7 @@ namespace CtyTinLuong
         {
             clSoLuongNhap1.Caption = "Số lượng \n nhập";
             Load_LockUp();         
-            HienThi_Sua_XuatKho();
+            HienThi_Sua_XuatKho(UC_ChoXuatKho_DaiLy_new.miID_XuatKhoDaiLy);
             Cursor.Current = Cursors.Default;
         }
     }
