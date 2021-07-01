@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCong_PKT : UserControl
+    public partial class frmChamCong_ToIn : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         public int _nam, _thang, _id_bophan = 25;
@@ -29,7 +29,7 @@ namespace CtyTinLuong
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmChamCong_PKT(int id_bophan)
+        public frmChamCong_ToIn(int id_bophan)
         {
             _ID_DinhMucLuong_CongNhat = 0;
             _MaDinhMucLuongCongNhat = "";
@@ -378,8 +378,7 @@ namespace CtyTinLuong
             int stt_ = 0;
             if (_data != null && _data.Rows.Count > 0)
             {
-                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString());
-
+                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString()); 
             }
             //
             using (clsThin clsThin_ = new clsThin())
@@ -467,7 +466,7 @@ namespace CtyTinLuong
                         ++stt_;
                         _ravi["STT"] = (stt_);
                         _ravi["Cong"] = "Tăng ca";
-                        _ravi["ID_LoaiCong"] = 2;
+                        _ravi["ID_LoaiCong"] = 2; 
                         _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                         _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                         _data.Rows.Add(_ravi);
@@ -545,7 +544,7 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
-        private void frmChamCong_PKT_Load(object sender, EventArgs e)
+        private void frmChamCong_ToIn_Load(object sender, EventArgs e)
         {
         }
 
@@ -879,7 +878,7 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_PKT", this);
+            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_ToIn", this);
             ff.ShowDialog();
         }
         
@@ -907,7 +906,7 @@ namespace CtyTinLuong
             {
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
                  
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_PKT", this);
+                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_ToIn", this);
                 ff.ShowDialog();
 
             }
