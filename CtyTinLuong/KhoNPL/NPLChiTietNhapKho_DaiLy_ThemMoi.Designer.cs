@@ -1445,7 +1445,7 @@
             this.clDinhMuc.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.clDinhMuc.AppearanceCell.Options.UseFont = true;
             this.clDinhMuc.AppearanceCell.Options.UseForeColor = true;
-            this.clDinhMuc.Caption = "Định mức";
+            this.clDinhMuc.Caption = "ĐM";
             this.clDinhMuc.DisplayFormat.FormatString = "{0:0.###}";
             this.clDinhMuc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDinhMuc.FieldName = "DinhMuc";
