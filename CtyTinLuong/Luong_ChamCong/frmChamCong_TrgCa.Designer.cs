@@ -341,6 +341,7 @@ namespace CtyTinLuong
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
             this.Cong.Name = "Cong";
+            this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 2;
@@ -408,6 +409,7 @@ namespace CtyTinLuong
             this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
             this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
             this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.MaDinhMucLuongCongNhat.Visible = true;
             this.MaDinhMucLuongCongNhat.VisibleIndex = 1;
@@ -1280,6 +1282,7 @@ namespace CtyTinLuong
             this.KyNhan.Caption = "KÝ NHẬN";
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.Visible = true;
             this.KyNhan.VisibleIndex = 34;

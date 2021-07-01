@@ -379,6 +379,12 @@
     <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.Designer.cs">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa_Copy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa_Copy.Designer.cs">
+      <DependentUpon>TrPrintChamCongTrgCa_Copy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCongTrgCa.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2036,6 +2042,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongPTH.resx">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTrgCa_Copy.resx">
+      <DependentUpon>TrPrintChamCongTrgCa_Copy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTrgCa.resx">
       <DependentUpon>TrPrintChamCongTrgCa.cs</DependentUpon>
