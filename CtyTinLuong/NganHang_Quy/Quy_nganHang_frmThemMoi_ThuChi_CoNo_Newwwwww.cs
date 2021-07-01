@@ -335,26 +335,30 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
 
             DataRow _ravi = dt2.NewRow();
-            if (bientrangthia == 1) //báo nợ
+            if (bientrangthia == 1) //báo nợ chi tiền từ ngân hàng ra
             {
+                checkNhaCungCap.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 2;
                 _ravi["SoTaiKhoanCon"] = "1121";
                 _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
             }
             if (bientrangthia == 2) //báo Có
             {
+                checkKhachHang.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 2;
                 _ravi["SoTaiKhoanCon"] = "1121";
                 _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
             }
             if (bientrangthia == 3) //Phiếu chi
             {
+                checkNhaCungCap.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 294;
                 _ravi["SoTaiKhoanCon"] = "1111";
                 _ravi["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
             }
             if (bientrangthia == 4) //Phiếu thu
             {
+                checkKhachHang.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 294;
                 _ravi["SoTaiKhoanCon"] = "1111";
                 _ravi["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
@@ -849,28 +853,17 @@ namespace CtyTinLuong
                         gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
                         gridView4.AddNewRow();
                        
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], 1);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], txtTiGia.Text);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TienUSD"], checkUSD.Checked);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], 0);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["DaGhiSo"], false);
 
-                        //    DataTable dt1 = new DataTable();
-                        //dt1 = (DataTable)gridControl1.DataSource;
-                        //gridControl1.DataSource = null;
-                        //DataTable dt2 = dt1.Copy();
-                        //DataRow _ravi = dt2.NewRow();
-
-                        //_ravi["ID_TaiKhoanKeToanCon"] = iiiiID_TaiKhoanKeToan;
-                        //_ravi["ID_TaiKhoanKeToanMe"] = clscon.iID_TaiKhoanKeToanMe.Value;
-
-                        //_ravi["TienUSD"] = checkUSD.Checked;
-                        //_ravi["TiGia"] = 0;
-                        //_ravi["No"] = 0;
-                        //_ravi["Co"] = 0;
-                        //_ravi["DaGhiSo"] = false;
-                        //_ravi["GhiChu"] = "";
-                        //_ravi["SoTaiKhoanCon"] = iiiiID_TaiKhoanKeToan.ToString();
-                        //_ravi["TenTaiKhoanCon"] = clscon.sTenTaiKhoanCon.Value;
-                        //_ravi["HienThi"] = "1";
-                        //dt2.Rows.Add(_ravi);
-                        //gridControl1.DataSource = dt2;
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
+                      
                     }
                 }
             }
@@ -884,6 +877,11 @@ namespace CtyTinLuong
             gridView4.SetFocusedRowCellValue(clHienThi,"0");
             gridView4.SetFocusedRowCellValue(clNo, 0);
             gridView4.SetFocusedRowCellValue(clCo, 0);
+        }
+
+        private void btthemmoi_Click(object sender, EventArgs e)
+        {
+            HienThi_ThemMoi();
         }
 
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
