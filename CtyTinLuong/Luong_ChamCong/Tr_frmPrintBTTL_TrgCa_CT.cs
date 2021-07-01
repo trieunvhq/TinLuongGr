@@ -43,14 +43,38 @@ namespace CtyTinLuong.Luong_ChamCong
                 _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
                 _ravi["NgayCong"] = _data.Rows[i]["SanLuong"].ToString();
                 _ravi["TongTien"] = _data.Rows[i]["TongTien"].ToString();
-                
-                _ravi["TrachNhiem"] = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
-                _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                _ravi["BaoHiem"] = Convert.ToDouble(_data.Rows[i]["TruBaoHiem"].ToString());
-                _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TamUng"].ToString());
-                _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
-                
-                ds.tbCongNhatChamCongToGapDan.Rows.Add(_ravi);
+
+                if (_data.Rows[i]["LuongTrachNhiem"].ToString() != "")
+                {
+                    _ravi["TrachNhiem"] = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                }
+                else _ravi["TrachNhiem"] = 0;
+
+                if (_data.Rows[i]["TongLuong"].ToString() != "")
+                {
+                    _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
+                }
+                else _ravi["TongLuong"] = 0;
+
+                if (_data.Rows[i]["BaoHiem"].ToString() != "")
+                {
+                    _ravi["BaoHiem"] = Convert.ToDouble(_data.Rows[i]["BaoHiem"].ToString());
+                }
+                else _ravi["BaoHiem"] = 0;
+
+                if (_data.Rows[i]["TamUng"].ToString() != "")
+                {
+                    _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TamUng"].ToString());
+                }
+                else _ravi["TamUng"] = 0;
+
+                if (_data.Rows[i]["ThucNhan"].ToString() != "")
+                {
+                    _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
+                }
+                else _ravi["ThucNhan"] = 0;
+
+                ds.tbBTTL_TrgCa_CT.Rows.Add(_ravi);
             }
 
             xtr111.DataSource = null;
