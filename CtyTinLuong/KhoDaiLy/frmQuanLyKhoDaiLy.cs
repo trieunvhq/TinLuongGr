@@ -28,19 +28,19 @@ namespace CtyTinLuong
             if (k1 > 0)
             {
                 navChoNhapKho.Caption = "Chờ Nhập kho (" + k1.ToString() + ")";
-                
+                navChoNhapKho.Appearance.Font = new Font(navXuatKho.Appearance.Font, FontStyle.Bold);
             }
 
-            clsDaiLy_tbXuatKho cls2 = new clsDaiLy_tbXuatKho();
-            DataTable dt2 = cls2.SelectAll_W_TenDaiLy();
+            clsDaiLy_tbXuatKho_Temp cls2 = new clsDaiLy_tbXuatKho_Temp();
+            DataTable dt2 = cls2.SelectAll();
             dt2.DefaultView.RowFilter = "TrangThai_XuatKho_DaiLy_GuiDuLieu = False and TrangThaiXuatNhap_ThanhPham_TuDaiLyVe = True";
             DataView dv2 = dt2.DefaultView;
             DataTable dxxxx2 = dv2.ToTable();   
             int k2 = dxxxx2.Rows.Count;
             if (k2 > 0)
             {
-                navXuatKho.Caption = "Xuất kho (" + k2.ToString() + ")";
-                navXuatKho.Appearance.Font = new Font(navXuatKho.Appearance.Font, FontStyle.Bold);
+                navChoXuatKho.Caption = "Chờ Xuất kho (" + k2.ToString() + ")";
+                navChoXuatKho.Appearance.Font = new Font(navXuatKho.Appearance.Font, FontStyle.Bold);
             }
 
             clsGapDan_tbNhapKho cls7 = new clsGapDan_tbNhapKho();
