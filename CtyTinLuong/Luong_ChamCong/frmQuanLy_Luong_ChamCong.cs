@@ -143,8 +143,9 @@ namespace CtyTinLuong
             }
             return _id_bophan;
         }
-        private void navBTTL_TGD_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
+        private void navBTTL_TGD_TD_LinkClicked(object sender, NavBarLinkEventArgs e) //đã xóa
         {
+            //Gấp dán tổng quan
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
@@ -185,8 +186,9 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
         }
 
-        private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e)
+        private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e) //bỏ
         {
+            //Bốc xếp tổng quát
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 

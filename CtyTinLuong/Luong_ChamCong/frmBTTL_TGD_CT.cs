@@ -304,6 +304,12 @@ namespace CtyTinLuong
            // GuiDuLieuBangLuong();
         }
 
+        private void btnPrintTQ_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ(6, 2021);
+            ff.ShowDialog();
+        }
+
         private float ConvertToFloat(string s)
         {
             char systemSeparator = Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];

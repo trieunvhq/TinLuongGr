@@ -329,6 +329,7 @@
             this.TenVTHH.Caption = "CÔNG";
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 2;
@@ -343,6 +344,7 @@
             this.DonGia.FieldName = "DonGia";
             this.DonGia.MinWidth = 10;
             this.DonGia.Name = "DonGia";
+            this.DonGia.OptionsColumn.AllowEdit = false;
             this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
@@ -368,6 +370,7 @@
             this.SanLuong.FieldName = "SanLuong";
             this.SanLuong.MinWidth = 10;
             this.SanLuong.Name = "SanLuong";
+            this.SanLuong.OptionsColumn.AllowEdit = false;
             this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
@@ -393,6 +396,7 @@
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 10;
             this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowEdit = false;
             this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
@@ -414,6 +418,7 @@
             this.LuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
             this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
             this.LuongTrachNhiem.Name = "LuongTrachNhiem";
+            this.LuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.LuongTrachNhiem.Visible = true;
             this.LuongTrachNhiem.VisibleIndex = 6;
@@ -428,6 +433,7 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 10;
             this.TongTien.Name = "TongTien";
+            this.TongTien.OptionsColumn.AllowEdit = false;
             this.TongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
@@ -453,6 +459,7 @@
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 10;
             this.TamUng.Name = "TamUng";
+            this.TamUng.OptionsColumn.AllowEdit = false;
             this.TamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
@@ -478,6 +485,7 @@
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowEdit = false;
             this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
@@ -504,6 +512,7 @@
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 10;
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
@@ -648,8 +657,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(913, 635);
-            //this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrint);
@@ -661,15 +668,8 @@
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
             this.Name = "frmBTTL_TBX_TQ";
-            //this.ShowIcon = false;
-            //this.ShowInTaskbar = false;
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BẢNG THANH TOÁN LƯƠNG TỔ GẤP DÁN";
+            this.Size = new System.Drawing.Size(913, 635);
             this.Load += new System.EventHandler(this.frmBTTL_TBX_TQ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();

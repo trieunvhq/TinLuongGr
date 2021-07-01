@@ -327,6 +327,7 @@
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 10;
             this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowEdit = false;
             this.TongLuong.OptionsColumn.FixedWidth = true;
             this.TongLuong.OptionsFilter.AllowAutoFilter = false;
             this.TongLuong.OptionsFilter.AllowFilter = false;
@@ -351,6 +352,7 @@
             this.SoNgayAn.FieldName = "SoNgayAn";
             this.SoNgayAn.MinWidth = 10;
             this.SoNgayAn.Name = "SoNgayAn";
+            this.SoNgayAn.OptionsColumn.AllowEdit = false;
             this.SoNgayAn.OptionsColumn.FixedWidth = true;
             this.SoNgayAn.OptionsFilter.AllowAutoFilter = false;
             this.SoNgayAn.OptionsFilter.AllowFilter = false;
@@ -375,6 +377,7 @@
             this.TruTienCom.FieldName = "TruTienCom";
             this.TruTienCom.MinWidth = 10;
             this.TruTienCom.Name = "TruTienCom";
+            this.TruTienCom.OptionsColumn.AllowEdit = false;
             this.TruTienCom.OptionsColumn.FixedWidth = true;
             this.TruTienCom.OptionsFilter.AllowAutoFilter = false;
             this.TruTienCom.OptionsFilter.AllowFilter = false;
@@ -399,6 +402,7 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 10;
             this.TongTien.Name = "TongTien";
+            this.TongTien.OptionsColumn.AllowEdit = false;
             this.TongTien.OptionsColumn.FixedWidth = true;
             this.TongTien.OptionsFilter.AllowAutoFilter = false;
             this.TongTien.OptionsFilter.AllowFilter = false;
@@ -423,6 +427,7 @@
             this.TamUng.FieldName = "TamUng";
             this.TamUng.MinWidth = 10;
             this.TamUng.Name = "TamUng";
+            this.TamUng.OptionsColumn.AllowEdit = false;
             this.TamUng.OptionsColumn.FixedWidth = true;
             this.TamUng.OptionsFilter.AllowAutoFilter = false;
             this.TamUng.OptionsFilter.AllowFilter = false;
@@ -447,6 +452,7 @@
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowEdit = false;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
             this.ThucNhan.OptionsFilter.AllowFilter = false;
@@ -472,6 +478,7 @@
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.MinWidth = 10;
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.FixedWidth = true;
             this.KyNhan.OptionsFilter.AllowAutoFilter = false;
             this.KyNhan.OptionsFilter.AllowFilter = false;
@@ -615,8 +622,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(913, 635);
-            //this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrint);
@@ -628,15 +633,8 @@
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
             this.Name = "frmBTTL_TGD_TQ";
-            //this.ShowIcon = false;
-            //this.ShowInTaskbar = false;
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BẢNG THANH TOÁN LƯƠNG TỔ GẤP DÁN";
+            this.Size = new System.Drawing.Size(913, 635);
             this.Load += new System.EventHandler(this.frmBTTL_TGD_TQ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
