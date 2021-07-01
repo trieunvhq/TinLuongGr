@@ -29,16 +29,16 @@ namespace CtyTinLuong
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -134,9 +134,9 @@ namespace CtyTinLuong
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
@@ -184,9 +184,9 @@ namespace CtyTinLuong
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -340,6 +340,7 @@ namespace CtyTinLuong
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
             this.Cong.Name = "Cong";
+            this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 1;
@@ -369,12 +370,14 @@ namespace CtyTinLuong
             this.clID_ChiTietChamCong.Caption = "ID_ChiTietChamCong";
             this.clID_ChiTietChamCong.FieldName = "ID_ChiTietChamCong";
             this.clID_ChiTietChamCong.Name = "clID_ChiTietChamCong";
+            this.clID_ChiTietChamCong.OptionsColumn.AllowEdit = false;
             // 
             // clID_ChamCong
             // 
             this.clID_ChamCong.Caption = "ID_ChamCong";
             this.clID_ChamCong.FieldName = "ID_ChamCong";
             this.clID_ChamCong.Name = "clID_ChamCong";
+            this.clID_ChamCong.OptionsColumn.AllowEdit = false;
             // 
             // clThang
             // 
@@ -390,6 +393,7 @@ namespace CtyTinLuong
             this.clNam.Caption = "Năm";
             this.clNam.FieldName = "Nam";
             this.clNam.Name = "clNam";
+            this.clNam.OptionsColumn.AllowEdit = false;
             this.clNam.OptionsColumn.FixedWidth = true;
             // 
             // ID_DinhMucLuong_CongNhat
@@ -398,6 +402,7 @@ namespace CtyTinLuong
             this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
             this.ID_DinhMucLuong_CongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
+            this.ID_DinhMucLuong_CongNhat.OptionsColumn.AllowEdit = false;
             // 
             // MaDinhMucLuongCongNhat
             // 
@@ -408,6 +413,7 @@ namespace CtyTinLuong
             this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
             this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
             this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.MaDinhMucLuongCongNhat.Width = 71;
             // 
@@ -416,6 +422,7 @@ namespace CtyTinLuong
             this.clID_CongNhan.Caption = "ID_CongNhan";
             this.clID_CongNhan.FieldName = "ID_CongNhan";
             this.clID_CongNhan.Name = "clID_CongNhan";
+            this.clID_CongNhan.OptionsColumn.AllowEdit = false;
             // 
             // clSLThuong
             // 
@@ -426,6 +433,7 @@ namespace CtyTinLuong
             this.clSLThuong.FieldName = "SLThuong";
             this.clSLThuong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLThuong.Name = "clSLThuong";
+            this.clSLThuong.OptionsColumn.AllowEdit = false;
             this.clSLThuong.Width = 52;
             // 
             // clSLTangCa
@@ -437,6 +445,7 @@ namespace CtyTinLuong
             this.clSLTangCa.FieldName = "SLTangCa";
             this.clSLTangCa.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLTangCa.Name = "clSLTangCa";
+            this.clSLTangCa.OptionsColumn.AllowEdit = false;
             this.clSLTangCa.Width = 53;
             // 
             // Ngay1
@@ -449,6 +458,7 @@ namespace CtyTinLuong
             this.Ngay1.MaxWidth = 35;
             this.Ngay1.MinWidth = 35;
             this.Ngay1.Name = "Ngay1";
+            this.Ngay1.OptionsColumn.AllowEdit = false;
             this.Ngay1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsColumn.FixedWidth = true;
             this.Ngay1.OptionsFilter.AllowAutoFilter = false;
@@ -475,6 +485,7 @@ namespace CtyTinLuong
             this.Ngay2.MaxWidth = 35;
             this.Ngay2.MinWidth = 35;
             this.Ngay2.Name = "Ngay2";
+            this.Ngay2.OptionsColumn.AllowEdit = false;
             this.Ngay2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsColumn.FixedWidth = true;
             this.Ngay2.OptionsFilter.AllowAutoFilter = false;
@@ -501,6 +512,7 @@ namespace CtyTinLuong
             this.Ngay3.MaxWidth = 35;
             this.Ngay3.MinWidth = 35;
             this.Ngay3.Name = "Ngay3";
+            this.Ngay3.OptionsColumn.AllowEdit = false;
             this.Ngay3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsColumn.FixedWidth = true;
             this.Ngay3.OptionsFilter.AllowAutoFilter = false;
@@ -527,6 +539,7 @@ namespace CtyTinLuong
             this.Ngay4.MaxWidth = 35;
             this.Ngay4.MinWidth = 35;
             this.Ngay4.Name = "Ngay4";
+            this.Ngay4.OptionsColumn.AllowEdit = false;
             this.Ngay4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsColumn.FixedWidth = true;
             this.Ngay4.OptionsFilter.AllowAutoFilter = false;
@@ -553,6 +566,7 @@ namespace CtyTinLuong
             this.Ngay5.MaxWidth = 35;
             this.Ngay5.MinWidth = 35;
             this.Ngay5.Name = "Ngay5";
+            this.Ngay5.OptionsColumn.AllowEdit = false;
             this.Ngay5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsColumn.FixedWidth = true;
             this.Ngay5.OptionsFilter.AllowAutoFilter = false;
@@ -579,6 +593,7 @@ namespace CtyTinLuong
             this.Ngay6.MaxWidth = 35;
             this.Ngay6.MinWidth = 35;
             this.Ngay6.Name = "Ngay6";
+            this.Ngay6.OptionsColumn.AllowEdit = false;
             this.Ngay6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsColumn.FixedWidth = true;
             this.Ngay6.OptionsFilter.AllowAutoFilter = false;
@@ -605,6 +620,7 @@ namespace CtyTinLuong
             this.Ngay7.MaxWidth = 35;
             this.Ngay7.MinWidth = 35;
             this.Ngay7.Name = "Ngay7";
+            this.Ngay7.OptionsColumn.AllowEdit = false;
             this.Ngay7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsColumn.FixedWidth = true;
             this.Ngay7.OptionsFilter.AllowAutoFilter = false;
@@ -631,6 +647,7 @@ namespace CtyTinLuong
             this.Ngay8.MaxWidth = 35;
             this.Ngay8.MinWidth = 35;
             this.Ngay8.Name = "Ngay8";
+            this.Ngay8.OptionsColumn.AllowEdit = false;
             this.Ngay8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsColumn.FixedWidth = true;
             this.Ngay8.OptionsFilter.AllowAutoFilter = false;
@@ -657,6 +674,7 @@ namespace CtyTinLuong
             this.Ngay9.MaxWidth = 35;
             this.Ngay9.MinWidth = 35;
             this.Ngay9.Name = "Ngay9";
+            this.Ngay9.OptionsColumn.AllowEdit = false;
             this.Ngay9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsColumn.FixedWidth = true;
             this.Ngay9.OptionsFilter.AllowAutoFilter = false;
@@ -683,6 +701,7 @@ namespace CtyTinLuong
             this.Ngay10.MaxWidth = 35;
             this.Ngay10.MinWidth = 35;
             this.Ngay10.Name = "Ngay10";
+            this.Ngay10.OptionsColumn.AllowEdit = false;
             this.Ngay10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsColumn.FixedWidth = true;
             this.Ngay10.OptionsFilter.AllowAutoFilter = false;
@@ -710,6 +729,7 @@ namespace CtyTinLuong
             this.Ngay11.MaxWidth = 35;
             this.Ngay11.MinWidth = 35;
             this.Ngay11.Name = "Ngay11";
+            this.Ngay11.OptionsColumn.AllowEdit = false;
             this.Ngay11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsColumn.FixedWidth = true;
             this.Ngay11.OptionsFilter.AllowAutoFilter = false;
@@ -736,6 +756,7 @@ namespace CtyTinLuong
             this.Ngay12.MaxWidth = 35;
             this.Ngay12.MinWidth = 35;
             this.Ngay12.Name = "Ngay12";
+            this.Ngay12.OptionsColumn.AllowEdit = false;
             this.Ngay12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsColumn.FixedWidth = true;
             this.Ngay12.OptionsFilter.AllowAutoFilter = false;
@@ -762,6 +783,7 @@ namespace CtyTinLuong
             this.Ngay13.MaxWidth = 35;
             this.Ngay13.MinWidth = 35;
             this.Ngay13.Name = "Ngay13";
+            this.Ngay13.OptionsColumn.AllowEdit = false;
             this.Ngay13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsColumn.FixedWidth = true;
             this.Ngay13.OptionsFilter.AllowAutoFilter = false;
@@ -788,6 +810,7 @@ namespace CtyTinLuong
             this.Ngay14.MaxWidth = 35;
             this.Ngay14.MinWidth = 35;
             this.Ngay14.Name = "Ngay14";
+            this.Ngay14.OptionsColumn.AllowEdit = false;
             this.Ngay14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsColumn.FixedWidth = true;
             this.Ngay14.OptionsFilter.AllowAutoFilter = false;
@@ -814,6 +837,7 @@ namespace CtyTinLuong
             this.Ngay15.MaxWidth = 35;
             this.Ngay15.MinWidth = 35;
             this.Ngay15.Name = "Ngay15";
+            this.Ngay15.OptionsColumn.AllowEdit = false;
             this.Ngay15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsColumn.FixedWidth = true;
             this.Ngay15.OptionsFilter.AllowAutoFilter = false;
@@ -840,6 +864,7 @@ namespace CtyTinLuong
             this.Ngay16.MaxWidth = 35;
             this.Ngay16.MinWidth = 35;
             this.Ngay16.Name = "Ngay16";
+            this.Ngay16.OptionsColumn.AllowEdit = false;
             this.Ngay16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsColumn.FixedWidth = true;
             this.Ngay16.OptionsFilter.AllowAutoFilter = false;
@@ -866,6 +891,7 @@ namespace CtyTinLuong
             this.Ngay17.MaxWidth = 35;
             this.Ngay17.MinWidth = 35;
             this.Ngay17.Name = "Ngay17";
+            this.Ngay17.OptionsColumn.AllowEdit = false;
             this.Ngay17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsColumn.FixedWidth = true;
             this.Ngay17.OptionsFilter.AllowAutoFilter = false;
@@ -892,6 +918,7 @@ namespace CtyTinLuong
             this.Ngay18.MaxWidth = 35;
             this.Ngay18.MinWidth = 35;
             this.Ngay18.Name = "Ngay18";
+            this.Ngay18.OptionsColumn.AllowEdit = false;
             this.Ngay18.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsColumn.FixedWidth = true;
             this.Ngay18.OptionsFilter.AllowAutoFilter = false;
@@ -918,6 +945,7 @@ namespace CtyTinLuong
             this.Ngay19.MaxWidth = 35;
             this.Ngay19.MinWidth = 35;
             this.Ngay19.Name = "Ngay19";
+            this.Ngay19.OptionsColumn.AllowEdit = false;
             this.Ngay19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsColumn.FixedWidth = true;
             this.Ngay19.OptionsFilter.AllowAutoFilter = false;
@@ -944,6 +972,7 @@ namespace CtyTinLuong
             this.Ngay20.MaxWidth = 35;
             this.Ngay20.MinWidth = 35;
             this.Ngay20.Name = "Ngay20";
+            this.Ngay20.OptionsColumn.AllowEdit = false;
             this.Ngay20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsColumn.FixedWidth = true;
             this.Ngay20.OptionsFilter.AllowAutoFilter = false;
@@ -970,6 +999,7 @@ namespace CtyTinLuong
             this.Ngay21.MaxWidth = 35;
             this.Ngay21.MinWidth = 35;
             this.Ngay21.Name = "Ngay21";
+            this.Ngay21.OptionsColumn.AllowEdit = false;
             this.Ngay21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsColumn.FixedWidth = true;
             this.Ngay21.OptionsFilter.AllowAutoFilter = false;
@@ -996,6 +1026,7 @@ namespace CtyTinLuong
             this.Ngay22.MaxWidth = 35;
             this.Ngay22.MinWidth = 35;
             this.Ngay22.Name = "Ngay22";
+            this.Ngay22.OptionsColumn.AllowEdit = false;
             this.Ngay22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsColumn.FixedWidth = true;
             this.Ngay22.OptionsFilter.AllowAutoFilter = false;
@@ -1022,6 +1053,7 @@ namespace CtyTinLuong
             this.Ngay23.MaxWidth = 35;
             this.Ngay23.MinWidth = 35;
             this.Ngay23.Name = "Ngay23";
+            this.Ngay23.OptionsColumn.AllowEdit = false;
             this.Ngay23.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsColumn.FixedWidth = true;
             this.Ngay23.OptionsFilter.AllowAutoFilter = false;
@@ -1048,6 +1080,7 @@ namespace CtyTinLuong
             this.Ngay24.MaxWidth = 35;
             this.Ngay24.MinWidth = 35;
             this.Ngay24.Name = "Ngay24";
+            this.Ngay24.OptionsColumn.AllowEdit = false;
             this.Ngay24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsColumn.FixedWidth = true;
             this.Ngay24.OptionsFilter.AllowAutoFilter = false;
@@ -1074,6 +1107,7 @@ namespace CtyTinLuong
             this.Ngay25.MaxWidth = 35;
             this.Ngay25.MinWidth = 35;
             this.Ngay25.Name = "Ngay25";
+            this.Ngay25.OptionsColumn.AllowEdit = false;
             this.Ngay25.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsColumn.FixedWidth = true;
             this.Ngay25.OptionsFilter.AllowAutoFilter = false;
@@ -1100,6 +1134,7 @@ namespace CtyTinLuong
             this.Ngay26.MaxWidth = 35;
             this.Ngay26.MinWidth = 35;
             this.Ngay26.Name = "Ngay26";
+            this.Ngay26.OptionsColumn.AllowEdit = false;
             this.Ngay26.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsColumn.FixedWidth = true;
             this.Ngay26.OptionsFilter.AllowAutoFilter = false;
@@ -1126,6 +1161,7 @@ namespace CtyTinLuong
             this.Ngay27.MaxWidth = 35;
             this.Ngay27.MinWidth = 35;
             this.Ngay27.Name = "Ngay27";
+            this.Ngay27.OptionsColumn.AllowEdit = false;
             this.Ngay27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsColumn.FixedWidth = true;
             this.Ngay27.OptionsFilter.AllowAutoFilter = false;
@@ -1152,6 +1188,7 @@ namespace CtyTinLuong
             this.Ngay28.MaxWidth = 35;
             this.Ngay28.MinWidth = 35;
             this.Ngay28.Name = "Ngay28";
+            this.Ngay28.OptionsColumn.AllowEdit = false;
             this.Ngay28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsColumn.FixedWidth = true;
             this.Ngay28.OptionsFilter.AllowAutoFilter = false;
@@ -1178,6 +1215,7 @@ namespace CtyTinLuong
             this.Ngay29.MaxWidth = 35;
             this.Ngay29.MinWidth = 35;
             this.Ngay29.Name = "Ngay29";
+            this.Ngay29.OptionsColumn.AllowEdit = false;
             this.Ngay29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsColumn.FixedWidth = true;
             this.Ngay29.OptionsFilter.AllowAutoFilter = false;
@@ -1204,6 +1242,7 @@ namespace CtyTinLuong
             this.Ngay30.MaxWidth = 35;
             this.Ngay30.MinWidth = 35;
             this.Ngay30.Name = "Ngay30";
+            this.Ngay30.OptionsColumn.AllowEdit = false;
             this.Ngay30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsColumn.FixedWidth = true;
             this.Ngay30.OptionsFilter.AllowAutoFilter = false;
@@ -1230,6 +1269,7 @@ namespace CtyTinLuong
             this.Ngay31.MaxWidth = 35;
             this.Ngay31.MinWidth = 35;
             this.Ngay31.Name = "Ngay31";
+            this.Ngay31.OptionsColumn.AllowEdit = false;
             this.Ngay31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsColumn.FixedWidth = true;
             this.Ngay31.OptionsFilter.AllowAutoFilter = false;
@@ -1251,6 +1291,7 @@ namespace CtyTinLuong
             this.clGuiDuLieu.Caption = "GuiDuLieu";
             this.clGuiDuLieu.FieldName = "GuiDuLieu";
             this.clGuiDuLieu.Name = "clGuiDuLieu";
+            this.clGuiDuLieu.OptionsColumn.AllowEdit = false;
             // 
             // Tong
             // 
@@ -1277,6 +1318,7 @@ namespace CtyTinLuong
             this.KyNhan.Caption = "KÝ NHẬN";
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.Visible = true;
             this.KyNhan.VisibleIndex = 35;
@@ -1443,6 +1485,7 @@ namespace CtyTinLuong
             this.gridColumn2.MaxWidth = 40;
             this.gridColumn2.MinWidth = 40;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 34;
