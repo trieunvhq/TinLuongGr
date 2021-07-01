@@ -1102,13 +1102,7 @@ namespace CtyTinLuong
         private void KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII_Load(object sender, EventArgs e)
         {
             clSoLuongNhap1.Caption = "Số lượng \n nhập";
-            dteDenNgay.DateTime = DateTime.Today;
-            DateTime ngaydautien;
-            DateTime ngayhomnay = DateTime.Today;
-            int nam = Convert.ToInt32(ngayhomnay.ToString("yyyy"));
-            int thang = Convert.ToInt32(ngayhomnay.ToString("MM"));
-            ngaydautien = GetFistDayInMonth(nam, thang);       
-            dteTuNgay.EditValue = ngaydautien;
+           
          
             Load_LockUp();
 
