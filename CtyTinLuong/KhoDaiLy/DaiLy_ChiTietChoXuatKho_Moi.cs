@@ -1212,6 +1212,10 @@ namespace CtyTinLuong
                 Luu_ChiTiet_XuatKho_DaiLy(xxID_Xuatkhodaily, true);
                 Luu_ThamCHieuTinhXuatKho(xxID_Xuatkhodaily);
                 Luu_NhapKho_Khac(xxID_Xuatkhodaily);
+
+                // update trang thai
+                clsDaiLy_tbXuatKho_Temp clstxx = new clsDaiLy_tbXuatKho_Temp();             
+                clstxx.Update_GuiDuLieu(UC_ChoXuatKho_DaiLy_new.miID_XuatKhoDaiLy);
                 MessageBox.Show("Đã lưu và gửi");
 
             }
