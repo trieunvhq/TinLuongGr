@@ -46,7 +46,7 @@
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navChoNhapKho = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChoXuatKho = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navNhapKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
@@ -137,7 +137,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChoNhapKho),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChoXuatKho)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navNhapKho
@@ -170,11 +170,11 @@
             this.navChoNhapKho.Name = "navChoNhapKho";
             this.navChoNhapKho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChoNhapKho_LinkClicked);
             // 
-            // navBarItem9
+            // navChoXuatKho
             // 
-            this.navBarItem9.Caption = "Chờ xuất kho";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
+            this.navChoXuatKho.Caption = "Chờ xuất kho";
+            this.navChoXuatKho.Name = "navChoXuatKho";
+            this.navChoXuatKho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarControl1
             // 
@@ -203,7 +203,7 @@
             this.navBarItem13,
             this.navBangLuongDaiLy,
             this.navChoNhapKho,
-            this.navBarItem9});
+            this.navChoXuatKho});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -312,6 +312,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBangLuongDaiLy;
         private DevExpress.XtraNavBar.NavBarItem navChoNhapKho;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
+        private DevExpress.XtraNavBar.NavBarItem navChoXuatKho;
     }
 }
