@@ -58,7 +58,55 @@ namespace CtyTinLuong
             pTK_No.Value = "Nợ  " + Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.msTaiKhoan_No + "";
         }
 
-       
+        private void Pritn_QuyNganHang_Frm_DoiTienUSD()
+        {
+
+            clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
+            clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            DataTable dt = clsxxx.SelectAll_ID_DangNhap();
+            if (dt.Rows.Count > 0)
+            {
+                pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
+                pThuQuy.Value = dt.Rows[8]["HoTen"].ToString();
+                pNguoiNopTien.Value = dt.Rows[9]["HoTen"].ToString();
+            }
+            else
+            {
+
+                //pGiamDoc.Value = frmMain.msGiamDoc;
+            }
+            pSoTien.Value = QuyNganHang_Frm_DoiTienUSD.mdbSoTien;
+
+
+            DateTime ngaythang = QuyNganHang_Frm_DoiTienUSD.mdaNgayThang;
+            pDiaChi.Value = QuyNganHang_Frm_DoiTienUSD.msDiaChi;
+            pDienGiai.Value = QuyNganHang_Frm_DoiTienUSD.msDienGiai;
+            pLoaiChungTu.Value = QuyNganHang_Frm_DoiTienUSD.msLoaiChungTu;
+            if (QuyNganHang_Frm_DoiTienUSD.mbTienUSD == true)
+            {
+                pTienUSD.Value = true;
+                pTienVND.Value = false;
+                clsSoTienBangChu cls = new clsSoTienBangChu();
+                pSoTienBangChu.Value = cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien, " USD");
+            }
+            else
+            {
+                pTienUSD.Value = false;
+                pTienVND.Value = true;
+                clsSoTienBangChu cls = new clsSoTienBangChu();
+                pSoTienBangChu.Value = cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien, " VNĐ");
+            }
+
+            pNgayThang.Value = "Ngày " + ngaythang.ToString("dd") + " tháng  " + ngaythang.ToString("MM") + " năm  " + ngaythang.ToString("yyyy") + "";
+            pNguoiNopTien.Value = QuyNganHang_Frm_DoiTienUSD.msNguoiNopTen;
+            pSoChungTu.Value = QuyNganHang_Frm_DoiTienUSD.msSoChungTu;
+            pTiGia.Value = QuyNganHang_Frm_DoiTienUSD.mdbTiGia;
+            pTK_Co.Value = "Có   " + QuyNganHang_Frm_DoiTienUSD.ms_TaiKhoanCo + "";
+            pTK_No.Value = "Nợ  " + QuyNganHang_Frm_DoiTienUSD.msTaiKhoan_No + "";
+        }
+
+
         public Xtra_NganHang_PhieuThu_Chi_Bao_Co_No()
         {
             InitializeComponent();
@@ -66,10 +114,10 @@ namespace CtyTinLuong
 
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            //if (Quy_nganHang_ChiTiet_thuChi_TuMuaHang_BanHang_VanVan.mbPrint == true)
-            //{
-            //    Pritnxxxx_Quy_nganHang_ChiTiet_thuChi_TuMuaHang_BanHang_VanVan();
-            //}
+            if (QuyNganHang_Frm_DoiTienUSD.mbPrint == true)
+            {
+                Pritn_QuyNganHang_Frm_DoiTienUSD();
+            }
             if (Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mbPrint == true)
             {
                 Pritnxxxx_Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
