@@ -182,6 +182,7 @@
             // 
             this.navBarItem2.Caption = "Đổi tiền USD";
             this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked_1);
             // 
             // frmQuy_NganHang_Newwwwwwwwwwwwwwwww
             // 
