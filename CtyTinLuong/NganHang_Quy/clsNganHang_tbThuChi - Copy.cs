@@ -19,9 +19,9 @@ namespace CtyTinLuong
         public DataTable SA_W_bientrangthai_(int bientrangthaixx_)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_bientrangthai_]";
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbThuChi_SA_W_bientrangthai_]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_bientrangthai_");
+            DataTable dtToReturn = new DataTable("pr_NganHang_tbThuChi_SA_W_bientrangthai_");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -39,7 +39,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_bientrangthai_", ex);
+                throw new Exception("pr_NganHang_tbThuChi_SA_W_bientrangthai_", ex);
             }
             finally
             {
@@ -52,9 +52,9 @@ namespace CtyTinLuong
         public DataTable SA_NgayThang(DateTime ngay_batdau, DateTime ngay_ketthuc, int bientrangthaixx_)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbThuChi_ChiTietThuChi_SA_NgayThang]";
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbThuChi_SA_NgayThang]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_NganHang_tbThuChi_ChiTietThuChi_SA_NgayThang");
+            DataTable dtToReturn = new DataTable("pr_NganHang_tbThuChi_SA_NgayThang");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -72,7 +72,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_tbThuChi_ChiTietThuChi_SA_NgayThang", ex);
+                throw new Exception("pr_NganHang_tbThuChi_SA_NgayThang", ex);
             }
             finally
             {
