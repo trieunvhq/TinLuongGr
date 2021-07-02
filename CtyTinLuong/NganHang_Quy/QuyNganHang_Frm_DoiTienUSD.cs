@@ -298,8 +298,21 @@ namespace CtyTinLuong
             _ravi["GhiChu"] = "";
             _ravi["HienThi"] = "1";
             dt2.Rows.Add(_ravi);
-            gridControl1.DataSource = dt2;
 
+            DataRow _ravi2 = dt2.NewRow();
+            _ravi2["ID_TaiKhoanKeToanCon"] = 10;
+            _ravi2["SoTaiKhoanCon"] = "1122.2";
+            _ravi2["TenTaiKhoanCon"] = "VCB USD";
+            _ravi2["No"] = 0;
+            _ravi2["Co"] = 0;
+            _ravi2["TienUSD"] = true;
+            _ravi2["TiGia"] = 1;
+            _ravi2["DaGhiSo"] = false;
+            _ravi2["GhiChu"] = "";
+            _ravi2["HienThi"] = "1";
+            dt2.Rows.Add(_ravi2);
+
+            gridControl1.DataSource = dt2;
 
         }
         private void HienThi_Sua()
@@ -485,9 +498,9 @@ namespace CtyTinLuong
             try
             {
                 double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-                gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                gridView4.SetRowCellValue(0, clCo, 0);
-
+                double tigiaxxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                txtTienVND.Text = (sotienxxx * tigiaxxx).ToString();
+              
                 gridView4.SetRowCellValue(1, clNo, 0);
                 gridView4.SetRowCellValue(1, clCo, sotienxxx);
                 if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
@@ -507,6 +520,9 @@ namespace CtyTinLuong
             if (txtTiGia.Text.ToString() != "1")
             {
                 double tigiaxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+               
+                txtTienVND.Text = (sotienxxx * tigiaxx).ToString();
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
                 try
                 {
@@ -518,6 +534,12 @@ namespace CtyTinLuong
                         }
                         gridControl1.DataSource = dttttt2;
                     }
+                    if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                    {
+                        string sotien = txtSoTien.Text;
+                        string tigia = txtTiGia.Text;
+                        txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + "";
+                    }
                 }
                 catch
                 {
@@ -527,33 +549,8 @@ namespace CtyTinLuong
         }
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
-        {
-            int kkkk = 0;
-
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 1)
-            {
-                kkkk = 1;
-
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
-            {
-                kkkk = 2;
-
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
-            {
-                kkkk = 3;
-
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
-            {
-                kkkk = 4;
-
-            }
-            LuuDuLieu_Va_GhiSo(kkkk);
+        {            
+            LuuDuLieu_Va_GhiSo(5);
         }
 
         private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
@@ -667,6 +664,27 @@ namespace CtyTinLuong
             if (e.Column == clSTT)
                 e.DisplayText = (e.RowHandle + 1).ToString();
 
+        }
+
+        private void txtTienVND_TextChanged(object sender, EventArgs e)
+        {
+            decimal value = decimal.Parse(txtTienVND.Text);
+            txtTienVND.Text = String.Format("{0:#,##0.00}", value);
+
+
+            try
+            {
+                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+                double tigiaxxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                double tienvnd = sotienxxx * tigiaxxx;              
+
+                gridView4.SetRowCellValue(0, clNo, tienvnd);
+                gridView4.SetRowCellValue(0, clCo, 0);
+                
+            }
+            catch
+            {
+            }
         }
 
         private void txtTiGia_Leave(object sender, EventArgs e)
