@@ -426,17 +426,118 @@ namespace CtyTinLuong
 		}
 
 
-		/// <summary>
-		/// Purpose: SelectAll method. This method will Select all rows from the table.
-		/// </summary>
-		/// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
-		/// <remarks>
-		/// Properties set after a succesful call of this method: 
-		/// <UL>
-		///		 <LI>iErrorCode</LI>
-		/// </UL>
-		/// </remarks>
-		public override DataTable SelectAll()
+        //
+        public bool SelectOne_MaNhanVien(string MaNhanVien)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_NhanSu_tbNhanSu_SelectOne_MaNhanVien]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("NhanSu_tbNhanSu");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaNhanVien", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, MaNhanVien));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_NhanSu_tbNhanSu_SelectOne_MaNhanVien' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                if (dtToReturn.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsNhanSu_tbNhanSu::Tr_NhanSu_tbNhanSu_SelectOne_MaNhanVien::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+
+        //
+        public bool SelectOne_TenNhanVien(string TenNhanVien)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_NhanSu_tbNhanSu_SelectOne_TenNhanVien]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("NhanSu_tbNhanSu");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sTenNhanVien", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, TenNhanVien));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_NhanSu_tbNhanSu_SelectOne_TenNhanVien' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                if (dtToReturn.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsNhanSu_tbNhanSu::Tr_NhanSu_tbNhanSu_SelectOne_TenNhanVien::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Purpose: SelectAll method. This method will Select all rows from the table.
+        /// </summary>
+        /// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
+        /// <remarks>
+        /// Properties set after a succesful call of this method: 
+        /// <UL>
+        ///		 <LI>iErrorCode</LI>
+        /// </UL>
+        /// </remarks>
+        public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[pr_NhanSu_tbNhanSu_SelectAll]";

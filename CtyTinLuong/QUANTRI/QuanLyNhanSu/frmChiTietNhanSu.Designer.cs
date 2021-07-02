@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhanSu));
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -413,6 +412,7 @@
             this.txtHoTen.Size = new System.Drawing.Size(422, 20);
             this.txtHoTen.StyleController = this.layoutControl1;
             this.txtHoTen.TabIndex = 1;
+            this.txtHoTen.EditValueChanged += new System.EventHandler(this.txtHoTen_EditValueChanged);
             // 
             // checkBoxNu
             // 
@@ -442,6 +442,7 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(214, 20);
             this.txtMaNV.TabIndex = 0;
+            this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
             // 
             // layoutControlGroup1
             // 

@@ -242,5 +242,33 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             txtDienGiai.Text = cls.sDienGiai.Value;
         }
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+            clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
+
+            if (!String.IsNullOrEmpty(txtMaNV.Text))
+            {
+                if (cls.SelectOne_MaNhanVien(txtMaNV.Text.Trim()))
+                {
+                    MessageBox.Show("Mã nhân viên \"" + txtMaNV.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtMaNV.Focus();
+                }
+            }
+        }
+
+        private void txtHoTen_EditValueChanged(object sender, EventArgs e)
+        {
+            clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
+
+            if (!String.IsNullOrEmpty(txtHoTen.Text))
+            {
+                if (cls.SelectOne_TenNhanVien(txtHoTen.Text.Trim()))
+                {
+                    MessageBox.Show("Tên nhân viên \"" + txtHoTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtHoTen.Focus();
+                }
+            }
+        }
     }
 }
