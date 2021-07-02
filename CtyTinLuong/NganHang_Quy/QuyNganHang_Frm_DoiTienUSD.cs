@@ -16,5 +16,10 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
