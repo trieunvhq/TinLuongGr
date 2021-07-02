@@ -34,7 +34,7 @@ namespace CtyTinLuong
         {
             _id_bophan = id_bophan;
             InitializeComponent();
-             
+            ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
         }
 
         public void LoadData(bool islandau)

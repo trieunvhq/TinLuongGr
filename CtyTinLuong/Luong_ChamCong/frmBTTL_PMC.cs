@@ -34,7 +34,12 @@ namespace CtyTinLuong
         {
             _id_bophan = id_bophan;
             InitializeComponent();
-             
+            ColSanLuong.Caption = "CÔNG/\nTĂNG/SL";
+            ColCongBaoHiem.Caption = "CỘNG\nBẢO HIỂM";
+            ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
+            ColTongTien.Caption = "TỔNG\nLƯƠNG";
+            TruBaoHiem.Caption = "TRỪ BẢO\nHIỂM";
+
         }
 
         public void LoadData(bool islandau)
