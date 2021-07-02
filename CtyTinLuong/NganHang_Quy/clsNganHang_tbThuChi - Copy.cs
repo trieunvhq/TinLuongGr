@@ -72,7 +72,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_tbThuChi_ChiTietThuChi_SA_BaoCo", ex);
+                throw new Exception("pr_NganHang_tbThuChi_ChiTietThuChi_SA_NgayThang", ex);
             }
             finally
             {
