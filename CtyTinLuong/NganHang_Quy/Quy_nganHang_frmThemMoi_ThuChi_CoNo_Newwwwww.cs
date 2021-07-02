@@ -882,6 +882,7 @@ namespace CtyTinLuong
 
         private void btthemmoi_Click(object sender, EventArgs e)
         {
+            UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
             HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
         }
 
