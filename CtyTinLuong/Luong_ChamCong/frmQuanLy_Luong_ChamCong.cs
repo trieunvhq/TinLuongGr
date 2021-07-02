@@ -76,9 +76,9 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
             Cursor.Current = Cursors.Default;
         }
 

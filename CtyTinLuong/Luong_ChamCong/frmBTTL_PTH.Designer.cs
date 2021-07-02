@@ -59,7 +59,6 @@
             this.btnCheDoHienThi = new System.Windows.Forms.Button();
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -505,21 +504,6 @@
             this.btnPrint.Text = "Chi tiết";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // btGuiDuLieu
-            // 
-            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btGuiDuLieu.Appearance.Options.UseFont = true;
-            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
-            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(572, 594);
-            this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
-            this.btGuiDuLieu.TabIndex = 148;
-            this.btGuiDuLieu.Text = "Lưu lại";
-            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
-            // 
             // btThoat
             // 
             this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -541,7 +525,6 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.btnPrintTQ);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.btnCheDoHienThi);
             this.Controls.Add(this.txtNam);
@@ -589,7 +572,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
     }
 }

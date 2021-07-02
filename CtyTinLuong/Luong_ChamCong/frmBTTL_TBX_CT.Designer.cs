@@ -53,10 +53,8 @@
             this.ThucNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -421,16 +419,6 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 590);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 13);
-            this.label2.TabIndex = 145;
-            this.label2.Text = "Double click để sửa định mức";
-            // 
             // btnPrintTQ
             // 
             this.btnPrintTQ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -457,21 +445,6 @@
             this.btnPrint.Text = "Chi tiết";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // btGuiDuLieu
-            // 
-            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btGuiDuLieu.Appearance.Options.UseFont = true;
-            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
-            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(571, 593);
-            this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
-            this.btGuiDuLieu.TabIndex = 147;
-            this.btGuiDuLieu.Text = "Lưu lại";
-            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
-            // 
             // btThoat
             // 
             this.btThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -493,9 +466,7 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.btnPrintTQ);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label4);
@@ -534,11 +505,9 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Columns.GridColumn LuongTrachNhiem;
         private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
-        private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
     }
 }
