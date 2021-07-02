@@ -1565,6 +1565,14 @@ namespace CtyTinLuong
             ff.Show();
         }
 
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+            UC_SanXuat_PhieuSanXuat.mb_ThemMoi_SoPhieu = true;
+            mbThemMoi_IN = mbThemMoi_CAT = true;
+            txtMaPhieu.ResetText();
+            btChuyen.Visible = false;
+        }
+
         private void txtSanLuongTong_May_CAT_TextChanged(object sender, EventArgs e)
         {
             double SanluongHienCo, SanLuongPhieu;

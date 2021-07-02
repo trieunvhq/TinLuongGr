@@ -1278,10 +1278,12 @@ namespace CtyTinLuong
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                
+                string tenvthh = dt.Rows[i]["TenVTHH"].ToString();
                 string smavt = dt.Rows[i]["MaVT"].ToString();
                 string soluong = dt.Rows[i]["SoLuongNhap"].ToString();
                 string sdvt = dt.Rows[i]["DonViTinh"].ToString();
-                sssDienGiai[i] = ""+ soluong + " ("+ sdvt + ") "+smavt+"_______";
+                sssDienGiai[i] = " " + tenvthh + " (" + sdvt + "); ";
                 double tile = Convert.ToDouble(dt.Rows[i]["TiLe"].ToString());
                 int iiID_NhapKhoDaiLy = Convert.ToInt32(dt.Rows[i]["ID_NhapKhoDaiLy"].ToString());
                 cls.iID_NhapKhoDaiLy = iiID_NhapKhoDaiLy;
