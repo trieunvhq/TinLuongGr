@@ -137,5 +137,27 @@ namespace CtyTinLuong
         {
             LuuDuLieu();
         }
+
+        private void txtMaNCC_TextChanged(object sender, EventArgs e)
+        {
+            clsTbNhaCungCap cls = new clsTbNhaCungCap();
+
+            if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
+            {
+                MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtMaNCC.Focus();
+            }
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            clsTbNhaCungCap cls = new clsTbNhaCungCap();
+
+            if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
+            {
+                MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtTen.Focus();
+            }
+        }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietDaiLy));
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -170,6 +169,7 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(310, 25);
             this.txtTen.TabIndex = 5;
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // txtMaDL
             // 
@@ -177,6 +177,7 @@
             this.txtMaDL.Name = "txtMaDL";
             this.txtMaDL.Size = new System.Drawing.Size(120, 20);
             this.txtMaDL.TabIndex = 4;
+            this.txtMaDL.TextChanged += new System.EventHandler(this.txtMaDL_TextChanged);
             // 
             // layoutControlGroup1
             // 

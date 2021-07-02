@@ -229,8 +229,108 @@ namespace CtyTinLuong
 			}
 		}
 
+        //
+        public bool SelectOne_MaDaiLy(string MaDaiLy)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_tbDanhMuc_DaiLy_SelectOne_MaDaiLy]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbDanhMuc_DaiLy");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
-		public override DataTable SelectAll()
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaDaiLy", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, MaDaiLy));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_tbDanhMuc_DaiLy_SelectOne_MaDaiLy' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                if (dtToReturn.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTbDanhMuc_DaiLy::Tr_tbDanhMuc_DaiLy_SelectOne_MaDaiLy::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        //
+        public bool SelectOne_TenDaiLy(string TenDaiLy)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_tbDanhMuc_DaiLy_SelectOne_TenDaiLy]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbDanhMuc_DaiLy");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sTenDaiLy", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, TenDaiLy));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_tbDanhMuc_DaiLy_SelectOne_TenDaiLy' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                if (dtToReturn.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTbDanhMuc_DaiLy::Tr_tbDanhMuc_DaiLy_SelectOne_TenDaiLy::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+
+        public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[pr_tbDanhMuc_DaiLy_SelectAll]";

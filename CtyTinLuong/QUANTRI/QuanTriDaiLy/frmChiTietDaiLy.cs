@@ -126,5 +126,27 @@ namespace CtyTinLuong
         {
             LuuDuLieu();
         }
+
+        private void txtMaDL_TextChanged(object sender, EventArgs e)
+        {
+            clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
+
+            if (cls.SelectOne_MaDaiLy(txtMaDL.Text.Trim()))
+            {
+                MessageBox.Show("Mã đại lý \"" + txtMaDL.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtMaDL.Focus();
+            }
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
+
+            if (cls.SelectOne_TenDaiLy(txtTen.Text.Trim()))
+            {
+                MessageBox.Show("Tên đại lý \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtTen.Focus();
+            }
+        }
     }
 }
