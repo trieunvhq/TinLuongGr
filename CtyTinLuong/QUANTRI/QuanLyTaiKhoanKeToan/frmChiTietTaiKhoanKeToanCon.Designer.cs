@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietTaiKhoanKeToanCon));
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -140,6 +139,7 @@
             this.txtTenTKCon.Name = "txtTenTKCon";
             this.txtTenTKCon.Size = new System.Drawing.Size(456, 20);
             this.txtTenTKCon.TabIndex = 92;
+            this.txtTenTKCon.TextChanged += new System.EventHandler(this.txtTenTKCon_TextChanged);
             // 
             // txtGhiChuCon
             // 
@@ -163,6 +163,7 @@
             this.txtSoTKCon.Name = "txtSoTKCon";
             this.txtSoTKCon.Size = new System.Drawing.Size(456, 20);
             this.txtSoTKCon.TabIndex = 88;
+            this.txtSoTKCon.TextChanged += new System.EventHandler(this.txtSoTKCon_TextChanged);
             // 
             // txtDienGiaiMe
             // 

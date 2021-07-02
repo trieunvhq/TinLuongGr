@@ -253,10 +253,13 @@ namespace CtyTinLuong
         {
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
-            if (cls.SelectOne_MaVT(txtMaVT.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtMaVT.Text))
             {
-                MessageBox.Show("Mã vật tư \"" + txtMaVT.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtMaVT.Focus();
+                if (cls.SelectOne_MaVT(txtMaVT.Text.Trim()))
+                {
+                    MessageBox.Show("Mã vật tư \"" + txtMaVT.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtMaVT.Focus();
+                }
             }
         }
 
@@ -264,10 +267,13 @@ namespace CtyTinLuong
         {
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
-            if (cls.SelectOne_TenVTHH(txtTen.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtTen.Text))
             {
-                MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtTen.Focus();
+                if (cls.SelectOne_TenVTHH(txtTen.Text.Trim()))
+                {
+                    MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtTen.Focus();
+                }
             }
         }
     }

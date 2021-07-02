@@ -39,11 +39,18 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu_ThemMoiTaiKhoan()
         {
+            clsTbDangNhap cls = new clsTbDangNhap();
+
             if (!KiemTraLuu()) return;
+            else if (cls.SelectOne_Ten(txtTen.Text.Trim()))
+            {
+                MessageBox.Show("Tên tài khoản \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtTen.Focus();
+                return;
+            }
             else
             {
-                clsTbDangNhap cls = new clsTbDangNhap();
-                cls.sTen = txtTen.Text.ToString().Trim();
+                cls.sTen = txtTen.Text.ToString().Trim().ToLower();
                 cls.sMatKhau = txtMatKhau.Text.ToString().Trim();
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = false;
@@ -67,12 +74,19 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu_SuaTaiKhoan()
         {
+            clsTbDangNhap cls = new clsTbDangNhap();
+
             if (!KiemTraLuu()) return;
+            else if (cls.SelectOne_Ten(txtTen.Text.Trim()))
+            {
+                MessageBox.Show("Tên tài khoản \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtTen.Focus();
+                return;
+            }
             else
             {
-                clsTbDangNhap cls = new clsTbDangNhap();
                 cls.iID_DangNhap = frmQuanLyTaiKhoan.miID_DangNhap;
-                cls.sTen = txtTen.Text.ToString().Trim();
+                cls.sTen = txtTen.Text.ToString().Trim().ToLower();
                 cls.sMatKhau = txtMatKhau.Text.ToString().Trim();
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = false;
@@ -97,7 +111,7 @@ namespace CtyTinLuong
         {
            
             string smatkau = txtMatKhau.Text.ToString().Trim();
-            string tendangnhap = txtTen.Text.ToString().Trim();
+            string tendangnhap = txtTen.Text.ToString().Trim().ToLower();
             clsTbDangNhap cls = new clsTbDangNhap();
             DataTable dt = cls.SelectAll();
             dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
@@ -111,7 +125,7 @@ namespace CtyTinLuong
             {
                 if (rows.Length > 0)
                 {
-                    MessageBox.Show("Đã có tài khoản: " + tendangnhap + "\n Vui lòng chọn tên tài khoản khác");
+                    MessageBox.Show("Đã có tài khoản: " + tendangnhap + "\n Vui lòng chọn tên tài khoản khác", "Thông báo");
                     return false;
                 }
             }
@@ -150,6 +164,20 @@ namespace CtyTinLuong
             if (frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan == true || CtyTinLuong.FormMain.FormCongCu.mb_Add_TK == true)
                 LuuDuLieu_ThemMoiTaiKhoan();
             else LuuDuLieu_SuaTaiKhoan();
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            clsTbDangNhap cls = new clsTbDangNhap();
+
+            if (!String.IsNullOrEmpty(txtTen.Text))
+            {
+                if (cls.SelectOne_Ten(txtTen.Text.Trim()))
+                {
+                    MessageBox.Show("Tên tài khoản \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtTen.Focus();
+                }
+            }
         }
     }
 }

@@ -160,10 +160,13 @@ namespace CtyTinLuong
         {
             clsTbKhachHang cls = new clsTbKhachHang();
 
-            if (cls.SelectOne_MaKH(txtMaKH.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtMaKH.Text))
             {
-                MessageBox.Show("Mã khách hàng \"" + txtMaKH.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtMaKH.Focus();
+                if (cls.SelectOne_MaKH(txtMaKH.Text.Trim()))
+                {
+                    MessageBox.Show("Mã khách hàng \"" + txtMaKH.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtMaKH.Focus();
+                }
             }
         }
 
@@ -171,10 +174,13 @@ namespace CtyTinLuong
         {
             clsTbKhachHang cls = new clsTbKhachHang();
 
-            if (cls.SelectOne_TenKH(txtTen.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtTen.Text))
             {
-                MessageBox.Show("Tên khách hàng \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtTen.Focus();
+                if (cls.SelectOne_TenKH(txtTen.Text.Trim()))
+                {
+                    MessageBox.Show("Tên khách hàng \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtTen.Focus();
+                }
             }
         }
     }
