@@ -159,7 +159,12 @@ namespace CtyTinLuong
    
     }
 
-    private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
             GridView View = sender as GridView;
             if (e.RowHandle >= 0)
