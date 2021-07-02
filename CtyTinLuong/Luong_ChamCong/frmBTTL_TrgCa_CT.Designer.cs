@@ -150,10 +150,10 @@
             this.ColTongLuong,
             this.ColLuongTrachNhiem,
             this.ColTongTien,
+            this.gridColumn1,
             this.ColTamUng,
             this.ColThucNhan,
-            this.KyNhan,
-            this.gridColumn1});
+            this.KyNhan});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -262,7 +262,7 @@
             this.ColSanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColSanLuong.Visible = true;
             this.ColSanLuong.VisibleIndex = 3;
-            this.ColSanLuong.Width = 80;
+            this.ColSanLuong.Width = 84;
             // 
             // ColTongLuong
             // 
@@ -271,8 +271,7 @@
             this.ColTongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColTongLuong.Caption = "TỔNG";
             this.ColTongLuong.FieldName = "TongLuong";
-            this.ColTongLuong.MaxWidth = 100;
-            this.ColTongLuong.MinWidth = 100;
+            this.ColTongLuong.MinWidth = 10;
             this.ColTongLuong.Name = "ColTongLuong";
             this.ColTongLuong.OptionsColumn.AllowEdit = false;
             this.ColTongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -289,7 +288,7 @@
             this.ColTongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongLuong.Visible = true;
             this.ColTongLuong.VisibleIndex = 4;
-            this.ColTongLuong.Width = 93;
+            this.ColTongLuong.Width = 84;
             // 
             // ColLuongTrachNhiem
             // 
@@ -297,14 +296,13 @@
             this.ColLuongTrachNhiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ColLuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
             this.ColLuongTrachNhiem.FieldName = "LuongTrachNhiem";
-            this.ColLuongTrachNhiem.MaxWidth = 100;
-            this.ColLuongTrachNhiem.MinWidth = 100;
+            this.ColLuongTrachNhiem.MinWidth = 10;
             this.ColLuongTrachNhiem.Name = "ColLuongTrachNhiem";
             this.ColLuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.ColLuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColLuongTrachNhiem.Visible = true;
             this.ColLuongTrachNhiem.VisibleIndex = 5;
-            this.ColLuongTrachNhiem.Width = 100;
+            this.ColLuongTrachNhiem.Width = 84;
             // 
             // ColTongTien
             // 
@@ -313,8 +311,7 @@
             this.ColTongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColTongTien.Caption = "TỔNG";
             this.ColTongTien.FieldName = "TongTien";
-            this.ColTongTien.MaxWidth = 100;
-            this.ColTongTien.MinWidth = 100;
+            this.ColTongTien.MinWidth = 10;
             this.ColTongTien.Name = "ColTongTien";
             this.ColTongTien.OptionsColumn.AllowEdit = false;
             this.ColTongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -331,7 +328,7 @@
             this.ColTongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongTien.Visible = true;
             this.ColTongTien.VisibleIndex = 6;
-            this.ColTongTien.Width = 100;
+            this.ColTongTien.Width = 84;
             // 
             // ColTamUng
             // 
@@ -340,8 +337,7 @@
             this.ColTamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColTamUng.Caption = "TẠM ỨNG";
             this.ColTamUng.FieldName = "TamUng";
-            this.ColTamUng.MaxWidth = 100;
-            this.ColTamUng.MinWidth = 100;
+            this.ColTamUng.MinWidth = 10;
             this.ColTamUng.Name = "ColTamUng";
             this.ColTamUng.OptionsColumn.AllowEdit = false;
             this.ColTamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -358,7 +354,7 @@
             this.ColTamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTamUng.Visible = true;
             this.ColTamUng.VisibleIndex = 8;
-            this.ColTamUng.Width = 92;
+            this.ColTamUng.Width = 84;
             // 
             // ColThucNhan
             // 
@@ -367,8 +363,7 @@
             this.ColThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColThucNhan.Caption = "THỰC LĨNH";
             this.ColThucNhan.FieldName = "ThucNhan";
-            this.ColThucNhan.MaxWidth = 100;
-            this.ColThucNhan.MinWidth = 100;
+            this.ColThucNhan.MinWidth = 10;
             this.ColThucNhan.Name = "ColThucNhan";
             this.ColThucNhan.OptionsColumn.AllowEdit = false;
             this.ColThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -386,7 +381,7 @@
             this.ColThucNhan.Tag = "Thuc";
             this.ColThucNhan.Visible = true;
             this.ColThucNhan.VisibleIndex = 9;
-            this.ColThucNhan.Width = 100;
+            this.ColThucNhan.Width = 84;
             // 
             // KyNhan
             // 
@@ -413,15 +408,17 @@
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.KyNhan.Visible = true;
             this.KyNhan.VisibleIndex = 10;
-            this.KyNhan.Width = 67;
+            this.KyNhan.Width = 84;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "BẢO HIỂM";
-            this.gridColumn1.FieldName = "TruBaoHiem";
+            this.gridColumn1.FieldName = "BaoHiem";
+            this.gridColumn1.MinWidth = 10;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.Width = 84;
             // 
             // gridControl1
             // 
@@ -431,7 +428,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 39);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(992, 538);
+            this.gridControl1.Size = new System.Drawing.Size(910, 538);
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -465,7 +462,7 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btnPrint.Location = new System.Drawing.Point(657, 594);
+            this.btnPrint.Location = new System.Drawing.Point(657, 593);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(82, 25);
             this.btnPrint.TabIndex = 149;
