@@ -20,7 +20,7 @@ namespace CtyTinLuong
         public static bool mbTienUSD;
         public static DateTime mdaNgayThang;
         public static string msDiaChi, msLoaiChungTu, msSoChungTu, msNguoiNopTen, msTaiKhoan_No, ms_TaiKhoanCo, msDienGiai;
-        public static double mdbSoTien, mdbTiGia;
+        public static double mdbSoTien_Co_USD, mdbSoTien_No_VND, mdbTiGia;
       
         DataTable dtdoituong = new DataTable();
 
@@ -765,7 +765,8 @@ namespace CtyTinLuong
                     msLoaiChungTu = "PHIẾU CHI";
                 if (Str1 == "DT")
                     msLoaiChungTu = "BÁO CÓ";
-                mdbSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
+                mdbSoTien_Co_USD = Convert.ToDouble(txtSoTien.Text.ToString());
+                mdbSoTien_No_VND = Convert.ToDouble(txtTienVND.Text.ToString());
                 mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
                 for (int i = 0; i < mdtCHiTietTaKhoan_print.Rows.Count; i++)
                 {

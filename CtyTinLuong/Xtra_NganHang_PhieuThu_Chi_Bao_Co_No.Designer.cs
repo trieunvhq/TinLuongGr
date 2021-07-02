@@ -57,12 +57,12 @@
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.pTK_Co = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pSoTien = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pSoTienVND = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTK_No = new DevExpress.XtraReports.Parameters.Parameter();
             this.pDiaChi = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTiGia = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTienVND = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pSoTienBangChu = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pSoTienBangChu_USD = new DevExpress.XtraReports.Parameters.Parameter();
             this.pDienGiai = new DevExpress.XtraReports.Parameters.Parameter();
             this.pNguoiNopTien = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTienUSD = new DevExpress.XtraReports.Parameters.Parameter();
@@ -82,6 +82,9 @@
             this.pThuQuy = new DevExpress.XtraReports.Parameters.Parameter();
             this.pNguoiLap = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
+            this.pSoTienUSD = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pBangChu_VND = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -132,8 +135,9 @@
             this.xrLabel12,
             this.xrLabel2,
             this.xrLine1,
-            this.xrLabel1});
-            this.PageHeader.HeightF = 367.7917F;
+            this.xrLabel1,
+            this.xrLabel30});
+            this.PageHeader.HeightF = 419.875F;
             this.PageHeader.Name = "PageHeader";
             this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
@@ -152,7 +156,7 @@
             // xrLabel29
             // 
             this.xrLabel29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pSoTien]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTienUSD]")});
             this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(542.4167F, 161.5417F);
             this.xrLabel29.Name = "xrLabel29";
             this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -165,7 +169,7 @@
             // xrLabel27
             // 
             this.xrLabel27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pSoTien]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTienVND]")});
             this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(542.4168F, 138.5417F);
             this.xrLabel27.Name = "xrLabel27";
             this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -254,11 +258,11 @@
             // xrLabel19
             // 
             this.xrLabel19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pSoTienBangChu]")});
-            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(94.7917F, 340.625F);
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTienBangChu_USD]")});
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 363.625F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel19.SizeF = new System.Drawing.SizeF(612.2083F, 23F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(706.9996F, 23F);
             this.xrLabel19.StylePriority.UseTextAlignment = false;
             this.xrLabel19.Text = "Diễn giải:";
             this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -416,12 +420,12 @@
             this.pTK_Co.Description = "pTK_Co";
             this.pTK_Co.Name = "pTK_Co";
             // 
-            // pSoTien
+            // pSoTienVND
             // 
-            this.pSoTien.Description = "pSoTien";
-            this.pSoTien.Name = "pSoTien";
-            this.pSoTien.Type = typeof(decimal);
-            this.pSoTien.ValueInfo = "0";
+            this.pSoTienVND.Description = "pSoTien";
+            this.pSoTienVND.Name = "pSoTienVND";
+            this.pSoTienVND.Type = typeof(decimal);
+            this.pSoTienVND.ValueInfo = "0";
             // 
             // pTK_No
             // 
@@ -447,10 +451,10 @@
             this.pTienVND.Type = typeof(bool);
             this.pTienVND.ValueInfo = "False";
             // 
-            // pSoTienBangChu
+            // pSoTienBangChu_USD
             // 
-            this.pSoTienBangChu.Description = "pSoTienBangChu";
-            this.pSoTienBangChu.Name = "pSoTienBangChu";
+            this.pSoTienBangChu_USD.Description = "pSoTienBangChu";
+            this.pSoTienBangChu_USD.Name = "pSoTienBangChu_USD";
             // 
             // pDienGiai
             // 
@@ -624,6 +628,30 @@
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
             this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pSoTienUSD
+            // 
+            this.pSoTienUSD.Description = "pSoTienUSD";
+            this.pSoTienUSD.Name = "pSoTienUSD";
+            this.pSoTienUSD.Type = typeof(int);
+            this.pSoTienUSD.ValueInfo = "0";
+            // 
+            // pBangChu_VND
+            // 
+            this.pBangChu_VND.Description = "pBangChu_VND";
+            this.pBangChu_VND.Name = "pBangChu_VND";
+            // 
+            // xrLabel30
+            // 
+            this.xrLabel30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pBangChu_VND]")});
+            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(0F, 386.625F);
+            this.xrLabel30.Name = "xrLabel30";
+            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel30.SizeF = new System.Drawing.SizeF(706.9996F, 23F);
+            this.xrLabel30.StylePriority.UseTextAlignment = false;
+            this.xrLabel30.Text = "Diễn giải:";
+            this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // Xtra_NganHang_PhieuThu_Chi_Bao_Co_No
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -647,14 +675,16 @@
             this.pGiamDoc,
             this.pSoChungTu,
             this.pDienGiai,
-            this.pSoTien,
-            this.pSoTienBangChu,
+            this.pSoTienVND,
+            this.pSoTienBangChu_USD,
             this.pTienUSD,
             this.pTiGia,
             this.pDiaChi,
             this.pTK_No,
             this.pTK_Co,
-            this.pTienVND});
+            this.pTienVND,
+            this.pSoTienUSD,
+            this.pBangChu_VND});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -693,8 +723,8 @@
         private DevExpress.XtraReports.Parameters.Parameter pSoChungTu;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.Parameters.Parameter pDienGiai;
-        private DevExpress.XtraReports.Parameters.Parameter pSoTien;
-        private DevExpress.XtraReports.Parameters.Parameter pSoTienBangChu;
+        private DevExpress.XtraReports.Parameters.Parameter pSoTienVND;
+        private DevExpress.XtraReports.Parameters.Parameter pSoTienBangChu_USD;
         private DevExpress.XtraReports.UI.XRLabel xrLabel19;
         private DevExpress.XtraReports.UI.XRLabel xrLabel18;
         private DevExpress.XtraReports.UI.XRLabel xrLabel17;
@@ -717,5 +747,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel26;
         private DevExpress.XtraReports.Parameters.Parameter pTK_No;
         private DevExpress.XtraReports.Parameters.Parameter pTienVND;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel30;
+        private DevExpress.XtraReports.Parameters.Parameter pSoTienUSD;
+        private DevExpress.XtraReports.Parameters.Parameter pBangChu_VND;
     }
 }

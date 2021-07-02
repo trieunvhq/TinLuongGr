@@ -28,7 +28,7 @@ namespace CtyTinLuong
 
                 //pGiamDoc.Value = frmMain.msGiamDoc;
             }
-            pSoTien.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien;
+            pSoTienVND.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien;
 
 
             DateTime ngaythang = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdaNgayThang;
@@ -40,14 +40,14 @@ namespace CtyTinLuong
                 pTienUSD.Value = true;
                 pTienVND.Value = false;
                 clsSoTienBangChu cls = new clsSoTienBangChu();
-                pSoTienBangChu.Value = cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " USD");
+                pSoTienBangChu_USD.Value = cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " USD");
             }
             else
             {
                 pTienUSD.Value = false;
                 pTienVND.Value = true;
                 clsSoTienBangChu cls = new clsSoTienBangChu();
-                pSoTienBangChu.Value = cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " VNĐ");
+                pSoTienBangChu_USD.Value = cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " VNĐ");
             }
 
             pNgayThang.Value = "Ngày " + ngaythang.ToString("dd") + " tháng  " + ngaythang.ToString("MM") + " năm  " + ngaythang.ToString("yyyy") + "";
@@ -76,8 +76,8 @@ namespace CtyTinLuong
 
                 //pGiamDoc.Value = frmMain.msGiamDoc;
             }
-            pSoTien.Value = QuyNganHang_Frm_DoiTienUSD.mdbSoTien;
-
+            pSoTienVND.Value = QuyNganHang_Frm_DoiTienUSD.mdbSoTien_No_VND;
+            pSoTienUSD.Value= QuyNganHang_Frm_DoiTienUSD.mdbSoTien_Co_USD;
 
             DateTime ngaythang = QuyNganHang_Frm_DoiTienUSD.mdaNgayThang;
             pDiaChi.Value = QuyNganHang_Frm_DoiTienUSD.msDiaChi;
@@ -86,7 +86,8 @@ namespace CtyTinLuong
             pTienUSD.Value = true;
             pTienVND.Value = false;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien, " USD");
+            pSoTienBangChu_USD.Value = cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien_Co_USD, " USD");
+            pBangChu_VND.Value= cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien_No_VND, " VNĐ");
             pNgayThang.Value = "Ngày " + ngaythang.ToString("dd") + " tháng  " + ngaythang.ToString("MM") + " năm  " + ngaythang.ToString("yyyy") + "";
             pNguoiNopTien.Value = QuyNganHang_Frm_DoiTienUSD.msNguoiNopTen;
             pSoChungTu.Value = QuyNganHang_Frm_DoiTienUSD.msSoChungTu;
