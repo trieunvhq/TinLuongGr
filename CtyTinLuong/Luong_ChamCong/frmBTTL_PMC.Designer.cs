@@ -249,8 +249,7 @@
             this.ColSanLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColSanLuong.Caption = "CÔNG/TĂNG/SL";
             this.ColSanLuong.FieldName = "SanLuong";
-            this.ColSanLuong.MaxWidth = 50;
-            this.ColSanLuong.MinWidth = 50;
+            this.ColSanLuong.MinWidth = 10;
             this.ColSanLuong.Name = "ColSanLuong";
             this.ColSanLuong.OptionsColumn.AllowEdit = false;
             this.ColSanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -267,7 +266,6 @@
             this.ColSanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColSanLuong.Visible = true;
             this.ColSanLuong.VisibleIndex = 3;
-            this.ColSanLuong.Width = 50;
             // 
             // ColTongLuong
             // 
@@ -276,8 +274,7 @@
             this.ColTongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColTongLuong.Caption = "TỔNG";
             this.ColTongLuong.FieldName = "TongLuong";
-            this.ColTongLuong.MaxWidth = 100;
-            this.ColTongLuong.MinWidth = 100;
+            this.ColTongLuong.MinWidth = 10;
             this.ColTongLuong.Name = "ColTongLuong";
             this.ColTongLuong.OptionsColumn.AllowEdit = false;
             this.ColTongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -294,7 +291,6 @@
             this.ColTongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongLuong.Visible = true;
             this.ColTongLuong.VisibleIndex = 4;
-            this.ColTongLuong.Width = 100;
             // 
             // ColLuongTrachNhiem
             // 
@@ -302,14 +298,12 @@
             this.ColLuongTrachNhiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ColLuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
             this.ColLuongTrachNhiem.FieldName = "LuongTrachNhiem";
-            this.ColLuongTrachNhiem.MaxWidth = 80;
-            this.ColLuongTrachNhiem.MinWidth = 80;
+            this.ColLuongTrachNhiem.MinWidth = 10;
             this.ColLuongTrachNhiem.Name = "ColLuongTrachNhiem";
             this.ColLuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.ColLuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColLuongTrachNhiem.Visible = true;
             this.ColLuongTrachNhiem.VisibleIndex = 6;
-            this.ColLuongTrachNhiem.Width = 80;
             // 
             // ColTongTien
             // 
@@ -318,8 +312,7 @@
             this.ColTongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColTongTien.Caption = "TỔNG LƯƠNG";
             this.ColTongTien.FieldName = "TongTien";
-            this.ColTongTien.MaxWidth = 100;
-            this.ColTongTien.MinWidth = 100;
+            this.ColTongTien.MinWidth = 10;
             this.ColTongTien.Name = "ColTongTien";
             this.ColTongTien.OptionsColumn.AllowEdit = false;
             this.ColTongTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -336,7 +329,6 @@
             this.ColTongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongTien.Visible = true;
             this.ColTongTien.VisibleIndex = 7;
-            this.ColTongTien.Width = 93;
             // 
             // ColTamUng
             // 
@@ -345,8 +337,7 @@
             this.ColTamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColTamUng.Caption = "TẠM ỨNG";
             this.ColTamUng.FieldName = "TamUng";
-            this.ColTamUng.MaxWidth = 80;
-            this.ColTamUng.MinWidth = 80;
+            this.ColTamUng.MinWidth = 10;
             this.ColTamUng.Name = "ColTamUng";
             this.ColTamUng.OptionsColumn.AllowEdit = false;
             this.ColTamUng.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -363,7 +354,6 @@
             this.ColTamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTamUng.Visible = true;
             this.ColTamUng.VisibleIndex = 9;
-            this.ColTamUng.Width = 80;
             // 
             // ColThucNhan
             // 
@@ -372,8 +362,7 @@
             this.ColThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ColThucNhan.Caption = "THỰC LĨNH";
             this.ColThucNhan.FieldName = "ThucNhan";
-            this.ColThucNhan.MaxWidth = 100;
-            this.ColThucNhan.MinWidth = 100;
+            this.ColThucNhan.MinWidth = 10;
             this.ColThucNhan.Name = "ColThucNhan";
             this.ColThucNhan.OptionsColumn.AllowEdit = false;
             this.ColThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -391,7 +380,6 @@
             this.ColThucNhan.Tag = "Thuc";
             this.ColThucNhan.Visible = true;
             this.ColThucNhan.VisibleIndex = 10;
-            this.ColThucNhan.Width = 99;
             // 
             // KyNhan
             // 
@@ -418,7 +406,6 @@
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.KyNhan.Visible = true;
             this.KyNhan.VisibleIndex = 11;
-            this.KyNhan.Width = 88;
             // 
             // ColCongBaoHiem
             // 
@@ -426,14 +413,12 @@
             this.ColCongBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ColCongBaoHiem.Caption = "CỘNG BẢO HIỂM";
             this.ColCongBaoHiem.FieldName = "CongBaoHiem";
-            this.ColCongBaoHiem.MaxWidth = 80;
-            this.ColCongBaoHiem.MinWidth = 80;
+            this.ColCongBaoHiem.MinWidth = 10;
             this.ColCongBaoHiem.Name = "ColCongBaoHiem";
             this.ColCongBaoHiem.OptionsColumn.AllowEdit = false;
             this.ColCongBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColCongBaoHiem.Visible = true;
             this.ColCongBaoHiem.VisibleIndex = 5;
-            this.ColCongBaoHiem.Width = 80;
             // 
             // TruBaoHiem
             // 
@@ -441,14 +426,12 @@
             this.TruBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TruBaoHiem.Caption = "TRỪ BẢO HIỂM";
             this.TruBaoHiem.FieldName = "TruBaoHiem";
-            this.TruBaoHiem.MaxWidth = 80;
-            this.TruBaoHiem.MinWidth = 80;
+            this.TruBaoHiem.MinWidth = 10;
             this.TruBaoHiem.Name = "TruBaoHiem";
             this.TruBaoHiem.OptionsColumn.AllowEdit = false;
             this.TruBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TruBaoHiem.Visible = true;
             this.TruBaoHiem.VisibleIndex = 8;
-            this.TruBaoHiem.Width = 80;
             // 
             // gridColumn2
             // 
