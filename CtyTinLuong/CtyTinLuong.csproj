@@ -403,6 +403,12 @@
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TMC_CT.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_TMC_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_PhuMC_CT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_PhuMC_CT.Designer.cs">
+      <DependentUpon>Tr_frmPrintBTTL_PhuMC_CT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TrgCa_TQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2102,6 +2108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TMC_CT.resx">
       <DependentUpon>Tr_frmPrintBTTL_TMC_CT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_PhuMC_CT.resx">
+      <DependentUpon>Tr_frmPrintBTTL_PhuMC_CT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TrgCa_TQ.resx">
       <DependentUpon>Tr_frmPrintBTTL_TrgCa_TQ.cs</DependentUpon>
