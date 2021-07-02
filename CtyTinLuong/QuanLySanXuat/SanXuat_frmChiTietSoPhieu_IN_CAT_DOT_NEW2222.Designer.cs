@@ -219,6 +219,7 @@
             this.layoutControlItem62 = new DevExpress.XtraLayout.LayoutControlItem();
             this.label1 = new System.Windows.Forms.Label();
             this.btChuyen = new DevExpress.XtraEditors.SimpleButton();
+            this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -2351,11 +2352,27 @@
             this.btChuyen.Text = "Đến máy Đột";
             this.btChuyen.Click += new System.EventHandler(this.btChuyen_Click);
             // 
+            // btThemMoi
+            // 
+            this.btThemMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThemMoi.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btThemMoi.Appearance.Options.UseFont = true;
+            this.btThemMoi.Appearance.Options.UseForeColor = true;
+            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.btThemMoi.Location = new System.Drawing.Point(679, 494);
+            this.btThemMoi.Name = "btThemMoi";
+            this.btThemMoi.Size = new System.Drawing.Size(135, 22);
+            this.btThemMoi.StyleController = this.layoutControl2;
+            this.btThemMoi.TabIndex = 115;
+            this.btThemMoi.Text = "Thêm mới";
+            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
+            // 
             // SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1139, 528);
+            this.Controls.Add(this.btThemMoi);
             this.Controls.Add(this.btChuyen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
@@ -2670,5 +2687,6 @@
         private DevExpress.XtraEditors.SimpleButton btChuyen;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem42;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem45;
+        private DevExpress.XtraEditors.SimpleButton btThemMoi;
     }
 }
