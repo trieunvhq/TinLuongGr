@@ -28,8 +28,9 @@ namespace CtyTinLuong
 
                 //pGiamDoc.Value = frmMain.msGiamDoc;
             }
+           
             pSoTienVND.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien;
-
+            pSoTienUSD.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien;
 
             DateTime ngaythang = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdaNgayThang;
             pDiaChi.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.msDiaChi;
@@ -40,19 +41,19 @@ namespace CtyTinLuong
                 pTienUSD.Value = true;
                 pTienVND.Value = false;
                 clsSoTienBangChu cls = new clsSoTienBangChu();
-                pSoTienBangChu_USD.Value = cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " USD");
+                pSoTienBangChu_USD.Value = "- "+ cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " USD") + "";
             }
             else
             {
                 pTienUSD.Value = false;
                 pTienVND.Value = true;
                 clsSoTienBangChu cls = new clsSoTienBangChu();
-                pSoTienBangChu_USD.Value = cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " VNĐ");
+                pSoTienBangChu_USD.Value = "- "+ cls.DocTienBangChu(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbSoTien, " VNĐ") + "";
             }
 
             pNgayThang.Value = "Ngày " + ngaythang.ToString("dd") + " tháng  " + ngaythang.ToString("MM") + " năm  " + ngaythang.ToString("yyyy") + "";
             pNguoiNopTien.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.msNguoiNopTen;
-            pSoChungTu.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.msSoChungTu;
+            pSoChungTu.Value = "Số CT: "+ Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.msSoChungTu + "";
             pTiGia.Value = Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdbTiGia;
             pTK_Co.Value = "Có   " + Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.ms_TaiKhoanCo + "";
             pTK_No.Value = "Nợ  " + Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.msTaiKhoan_No + "";
@@ -86,11 +87,11 @@ namespace CtyTinLuong
             pTienUSD.Value = true;
             pTienVND.Value = false;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu_USD.Value = cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien_Co_USD, " USD");
-            pBangChu_VND.Value= cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien_No_VND, " VNĐ");
+            pSoTienBangChu_USD.Value = "- "+ cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien_Co_USD, " USD") + "";
+            pBangChu_VND.Value= "- "+ cls.DocTienBangChu(QuyNganHang_Frm_DoiTienUSD.mdbSoTien_No_VND, " VNĐ") + "";
             pNgayThang.Value = "Ngày " + ngaythang.ToString("dd") + " tháng  " + ngaythang.ToString("MM") + " năm  " + ngaythang.ToString("yyyy") + "";
             pNguoiNopTien.Value = QuyNganHang_Frm_DoiTienUSD.msNguoiNopTen;
-            pSoChungTu.Value = QuyNganHang_Frm_DoiTienUSD.msSoChungTu;
+            pSoChungTu.Value = "Số CT: " + QuyNganHang_Frm_DoiTienUSD.msSoChungTu + "";
             pTiGia.Value = QuyNganHang_Frm_DoiTienUSD.mdbTiGia;
             pTK_Co.Value = "Có   " + QuyNganHang_Frm_DoiTienUSD.ms_TaiKhoanCo + "";
             pTK_No.Value = "Nợ  " + QuyNganHang_Frm_DoiTienUSD.msTaiKhoan_No + "";

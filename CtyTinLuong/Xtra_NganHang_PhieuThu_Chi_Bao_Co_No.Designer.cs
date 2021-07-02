@@ -137,7 +137,7 @@
             this.xrLine1,
             this.xrLabel1,
             this.xrLabel30});
-            this.PageHeader.HeightF = 419.875F;
+            this.PageHeader.HeightF = 414.6667F;
             this.PageHeader.Name = "PageHeader";
             this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
@@ -259,10 +259,10 @@
             // 
             this.xrLabel19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTienBangChu_USD]")});
-            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 363.625F);
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(54.16668F, 363.625F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel19.SizeF = new System.Drawing.SizeF(706.9996F, 23F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(652.833F, 23F);
             this.xrLabel19.StylePriority.UseTextAlignment = false;
             this.xrLabel19.Text = "Diễn giải:";
             this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -270,7 +270,7 @@
             // xrLabel18
             // 
             this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pSoTien]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoTienUSD]")});
             this.xrLabel18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(94.79165F, 294.625F);
             this.xrLabel18.Name = "xrLabel18";
@@ -327,7 +327,7 @@
             this.xrLabel15.SizeF = new System.Drawing.SizeF(308.7498F, 23F);
             this.xrLabel15.StylePriority.UseTextAlignment = false;
             this.xrLabel15.Text = "Số chứng từ: ";
-            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel4
             // 
@@ -644,10 +644,10 @@
             // 
             this.xrLabel30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pBangChu_VND]")});
-            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(0F, 386.625F);
+            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(54.16668F, 386.625F);
             this.xrLabel30.Name = "xrLabel30";
             this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel30.SizeF = new System.Drawing.SizeF(706.9996F, 23F);
+            this.xrLabel30.SizeF = new System.Drawing.SizeF(652.8329F, 23F);
             this.xrLabel30.StylePriority.UseTextAlignment = false;
             this.xrLabel30.Text = "Diễn giải:";
             this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;

@@ -507,7 +507,7 @@ namespace CtyTinLuong
                 {
                     string sotien = txtSoTien.Text;
                     string tigia = txtTiGia.Text;
-                    txtDienGiai.Text = "Đổi tiền: "+sotien+" USD * "+tigia+"";
+                    txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + " = " + txtTienVND.Text + " vnđ";
                 }
             }
             catch
@@ -538,7 +538,7 @@ namespace CtyTinLuong
                     {
                         string sotien = txtSoTien.Text;
                         string tigia = txtTiGia.Text;
-                        txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + "";
+                        txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + " = " + txtTienVND.Text + " vnđ";
                     }
                 }
                 catch
