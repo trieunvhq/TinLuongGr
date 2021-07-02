@@ -496,6 +496,7 @@ namespace CtyTinLuong
 
         private void TamUng_new_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             dtdoituong.Columns.Add("ID_DoiTuong", typeof(int));
             dtdoituong.Columns.Add("MaDoiTuong", typeof(string));
             dtdoituong.Columns.Add("DoiTuong", typeof(string));
@@ -516,6 +517,7 @@ namespace CtyTinLuong
                 HienThi_ThemMoi();
             else HienThi_Sua(UCLuong_TamUng.miiiiID_TamUng);
             Load_LockUp_DoiTuong();
+            Cursor.Current = Cursors.Default;
         }
 
 

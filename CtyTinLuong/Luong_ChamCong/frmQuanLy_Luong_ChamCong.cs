@@ -21,51 +21,65 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             UCBangLuong uccc_DaNhapKho = new UCBangLuong();
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navNhapKho_TuMuaHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             UCLuong_ChieTiet_ALL uccc_DaNhapKho = new UCLuong_ChieTiet_ALL();
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
 
         private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             UCLuong_TamUng uccc_DaNhapKho = new UCLuong_TamUng();
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem14_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             UCLuong_TraLuongNewwwwwwwwww uccc_DaNhapKho = new UCLuong_TraLuongNewwwwwwwwww();
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
          
         private void navBarItem17_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
             this.Hide();
             ff.ShowDialog();
             this.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -80,6 +94,9 @@ namespace CtyTinLuong
 
         private void navTTL_TGD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
@@ -90,7 +107,7 @@ namespace CtyTinLuong
 
             frm.LoadData(true, id_bophan_);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         //
@@ -145,6 +162,9 @@ namespace CtyTinLuong
         }
         private void navBTTL_TGD_TD_LinkClicked(object sender, NavBarLinkEventArgs e) //đã xóa
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             //Gấp dán tổng quan
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
@@ -156,11 +176,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCom_TGD_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             frmChamCom_TGD frm = new frmChamCom_TGD();
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
@@ -168,11 +191,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
@@ -183,11 +209,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_TBX_TD_LinkClicked(object sender, NavBarLinkEventArgs e) //bỏ
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             //Bốc xếp tổng quát
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
@@ -199,11 +228,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem15_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
@@ -214,11 +246,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng kiện");
             if (id_bophan_ == 0) return;
 
@@ -229,11 +264,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_TMC_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Máy cắt");
             if (id_bophan_ == 0) return;
 
@@ -244,11 +282,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_TGD_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
@@ -259,11 +300,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_TBX_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
@@ -274,11 +318,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_TrgCa_LinkClicked(object sender, NavBarLinkEventArgs e)
-        { 
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
             if (id_bophan_ == 0) return;
 
@@ -289,7 +336,7 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void doiMauTitle(object sender, NavBarLinkEventArgs e)
@@ -306,6 +353,9 @@ namespace CtyTinLuong
 
         private void navBTTL_TrgCa_CT_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
             if (id_bophan_ == 0) return;
 
@@ -316,11 +366,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_PTH_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
             if (id_bophan_ == 0) return;
 
@@ -331,11 +384,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_PTH_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
             if (id_bophan_ == 0) return;
 
@@ -346,11 +402,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_PKT_LinkClicked(object sender, NavBarLinkEventArgs e)
-        { 
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Phòng Kế toán");
             if (id_bophan_ == 0) return;
 
@@ -361,11 +420,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_PKT_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Phòng Kế toán");
             if (id_bophan_ == 0) return;
 
@@ -376,11 +438,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_PMC_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
             if (id_bophan_ == 0) return;
 
@@ -391,11 +456,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_PMC_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
             if (id_bophan_ == 0) return;
 
@@ -406,11 +474,14 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navChamCong_ToIn_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             int id_bophan_ = KiemTraTenBoPhan("Máy in");
             if (id_bophan_ == 0) return;
 
@@ -421,7 +492,7 @@ namespace CtyTinLuong
 
             frm.LoadData(true);
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBTTL_ToIn_LinkClicked(object sender, NavBarLinkEventArgs e)

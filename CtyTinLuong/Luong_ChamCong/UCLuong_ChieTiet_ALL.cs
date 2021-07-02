@@ -43,15 +43,19 @@ namespace CtyTinLuong
 
         private void UCLuong_ChieTiet_ALL_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             txtThang.ResetText();
             DateTime ngayhomnay = DateTime.Today;
             txtNam.Text = ngayhomnay.ToString("yyyy");
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCLuong_ChieTiet_ALL_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void txtThang_TextChanged(object sender, EventArgs e)

@@ -16,8 +16,6 @@ namespace CtyTinLuong
         public static bool mb_ThemMoi_ChamCong;
         private void HienThi()
         {
-            
-
             clsHuu_CongNhat cls = new CtyTinLuong.clsHuu_CongNhat();
             DataTable dt = cls.SelectAll();
             DataView dv = dt.DefaultView;
@@ -35,20 +33,26 @@ namespace CtyTinLuong
 
         private void UCBangLuong_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clNgungTheoDoi.Caption = "Bỏ\ntheo dõi";
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_ThemMoi_ChamCong = true;
             SanXuat_frmDanhSachChamCong ff = new SanXuat_frmDanhSachChamCong();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCBangLuong_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -65,6 +69,7 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_ChamCong).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     mb_ThemMoi_ChamCong = false;
                     mID_iD_ChamCong = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ChamCong).ToString());
 
@@ -72,6 +77,7 @@ namespace CtyTinLuong
                     miiNam = Convert.ToInt32(gridView1.GetFocusedRowCellValue(Nam).ToString());
                     frmBangChamCongTrongThang ff = new frmBangChamCongTrongThang();
                     ff.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch

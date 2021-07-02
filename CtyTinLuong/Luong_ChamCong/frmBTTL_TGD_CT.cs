@@ -177,6 +177,7 @@ namespace CtyTinLuong
         }
         private void frmBTTL_TGD_CT_Load(object sender, EventArgs e)
         {
+            //Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

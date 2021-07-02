@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -96,7 +95,7 @@
             this.btThemMoi.Size = new System.Drawing.Size(25, 22);
             this.btThemMoi.StyleController = this.layoutControl1;
             this.btThemMoi.TabIndex = 96;
-            this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.ToolTip = "Add";
             this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // layoutControl1
@@ -574,10 +573,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 567);
             this.Controls.Add(this.groupBox1);
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "UCBangLuong";
+            this.Size = new System.Drawing.Size(1172, 567);
             this.Load += new System.EventHandler(this.UCBangLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

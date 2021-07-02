@@ -38,7 +38,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -105,21 +104,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btGuiDuLieu
-            // 
-            this.btGuiDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuiDuLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuiDuLieu.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btGuiDuLieu.Appearance.Options.UseFont = true;
-            this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
-            this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(571, 599);
-            this.btGuiDuLieu.Name = "btGuiDuLieu";
-            this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
-            this.btGuiDuLieu.TabIndex = 118;
-            this.btGuiDuLieu.Text = "Lưu lại";
-            this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
             // 
             // repositoryItemButtonEdit1
             // 
@@ -888,7 +872,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmBTTL_TGD_CT";
@@ -914,7 +897,6 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.LinkLabel linkLabel1;

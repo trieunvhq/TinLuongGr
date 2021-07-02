@@ -104,16 +104,20 @@ namespace CtyTinLuong
 
         private void UCLuong_TamUng_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoiTamUng = true;           
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             checkCongNhanVien.Checked = true;
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCLuong_TamUng_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -128,10 +132,12 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(ID_TamUng).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 mbThemMoiTamUng = false;
                 miiiiID_TamUng = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_TamUng).ToString());
                 TamUng_new ff = new CtyTinLuong.TamUng_new();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -139,10 +145,12 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoiTamUng = true;
            
             TamUng_new ff = new CtyTinLuong.TamUng_new();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -204,6 +212,7 @@ namespace CtyTinLuong
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangTiep.LinkColor == Color.Black)
@@ -234,10 +243,12 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangSau.LinkColor == Color.Black)
@@ -267,6 +278,7 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void txtSoTrang_TextChanged(object sender, EventArgs e)

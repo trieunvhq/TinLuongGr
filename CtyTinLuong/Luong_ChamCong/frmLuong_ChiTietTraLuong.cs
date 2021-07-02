@@ -537,6 +537,7 @@ namespace CtyTinLuong
 
         private void frmLuong_ChiTietTraLuong_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             dtdoituong.Columns.Add("ID_DoiTuong", typeof(int));
             dtdoituong.Columns.Add("MaDoiTuong", typeof(string));
             dtdoituong.Columns.Add("DoiTuong", typeof(string));
@@ -557,6 +558,7 @@ namespace CtyTinLuong
                 HienThi_ThemMoi();
             else HienThi_Sua(UCLuong_TraLuongNewwwwwwwwww.mID_TraLuong_Sua);
             Load_LockUp_DoiTuong();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checkDaiLy_CheckedChanged(object sender, EventArgs e)

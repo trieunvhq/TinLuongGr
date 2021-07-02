@@ -134,6 +134,7 @@ namespace CtyTinLuong
 
         private void frmCaiMacDinnhMaHangToGapDan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
             DataTable dtvthh = clsvthhh.SelectAll();
             dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
@@ -177,6 +178,7 @@ namespace CtyTinLuong
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
             txtNam.Text = nam.ToString();
             txtThang.Text = thang.ToString();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
