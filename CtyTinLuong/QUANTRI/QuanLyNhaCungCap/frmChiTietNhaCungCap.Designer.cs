@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhaCungCap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -264,6 +263,7 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(354, 20);
             this.txtTen.TabIndex = 5;
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // txtMaNCC
             // 
@@ -271,6 +271,7 @@
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(124, 20);
             this.txtMaNCC.TabIndex = 4;
+            this.txtMaNCC.TextChanged += new System.EventHandler(this.txtMaNCC_TextChanged);
             // 
             // layoutControlGroup1
             // 

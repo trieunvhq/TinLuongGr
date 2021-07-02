@@ -406,6 +406,7 @@
             this.Controls.Add(this.checked_ALL);
             this.Controls.Add(this.checkTheoDoi);
             this.Controls.Add(this.checkNgungTheoDoi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuanLyDaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục Đại Lý";
