@@ -369,33 +369,7 @@ namespace CtyTinLuong
             if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
                 gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
         }
-        private void Load_LockUp_DoiTuong()
-        {
-            dtdoituong.Clear();
-
-            if (DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 == 5) //đổi tiền
-            {
-                clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-                DataView dv = dt.DefaultView;
-                DataTable dt3 = dv.ToTable();
-                for (int i = 0; i < dt3.Rows.Count; i++)
-                {
-                    DataRow _ravi = dtdoituong.NewRow();
-                    _ravi["ID_DoiTuong"] = Convert.ToInt32(dt3.Rows[i]["ID_NhanSu"].ToString());
-                    _ravi["MaDoiTuong"] = dt3.Rows[i]["MaNhanVien"].ToString();
-                    _ravi["TenDoiTuong"] = dt3.Rows[i]["TenNhanVien"].ToString();
-                    dtdoituong.Rows.Add(_ravi);
-                }
-                gridDoiTuong.Properties.DataSource = dtdoituong;
-                gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
-                gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
-
-            }
-            
-
-        }
+      
         private void Load_LockUp()
         {
             clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
@@ -418,6 +392,22 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
+            clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
+            DataTable dt = cls.SelectAll();
+            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            DataView dv = dt.DefaultView;
+            DataTable dt3 = dv.ToTable();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = dtdoituong.NewRow();
+                _ravi["ID_DoiTuong"] = Convert.ToInt32(dt3.Rows[i]["ID_NhanSu"].ToString());
+                _ravi["MaDoiTuong"] = dt3.Rows[i]["MaNhanVien"].ToString();
+                _ravi["TenDoiTuong"] = dt3.Rows[i]["TenNhanVien"].ToString();
+                dtdoituong.Rows.Add(_ravi);
+            }
+            gridDoiTuong.Properties.DataSource = dtdoituong;
+            gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
+            gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
 
         }
         public void HienThiSoChungTu(int xxbientrangthai)
@@ -680,6 +670,11 @@ namespace CtyTinLuong
             {
 
             }
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txtTiGia_Leave(object sender, EventArgs e)
