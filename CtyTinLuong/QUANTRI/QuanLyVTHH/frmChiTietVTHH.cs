@@ -56,6 +56,7 @@ namespace CtyTinLuong
                     cls.blobHinhAnh = pic;
                 }
 
+
                 cls.sMaVT = txtMaVT.Text.ToString();
                 cls.sTenVTHH = txtTen.Text.ToString();
                 cls.sDienGiai = txtDienGiai.Text.ToString();
@@ -246,6 +247,28 @@ namespace CtyTinLuong
             if (comboBox1.Text.ToString() == "4. Ra máy ĐỘT")
                 bienmacdinh = 4;          
 
+        }
+
+        private void txtMaVT_TextChanged(object sender, EventArgs e)
+        {
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+
+            if (cls.SelectOne_MaVT(txtMaVT.Text.Trim()))
+            {
+                MessageBox.Show("Mã vật tư \"" + txtMaVT.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtMaVT.Focus();
+            }
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+
+            if (cls.SelectOne_TenVTHH(txtTen.Text.Trim()))
+            {
+                MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtTen.Focus();
+            }
         }
     }
 }

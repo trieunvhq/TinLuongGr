@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietVTHH));
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -188,6 +187,7 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(389, 20);
             this.txtTen.TabIndex = 5;
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // layoutControlItem1
             // 
@@ -205,6 +205,7 @@
             this.txtMaVT.Name = "txtMaVT";
             this.txtMaVT.Size = new System.Drawing.Size(159, 20);
             this.txtMaVT.TabIndex = 4;
+            this.txtMaVT.TextChanged += new System.EventHandler(this.txtMaVT_TextChanged);
             // 
             // layoutControlGroup1
             // 
