@@ -141,5 +141,33 @@ namespace CtyTinLuong
 
             
         }
+
+        private void txtSoTKCon_TextChanged(object sender, EventArgs e)
+        {
+            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+
+            if (!String.IsNullOrEmpty(txtSoTKCon.Text))
+            {
+                if (cls.SelectOne_SoTaiKhoanCon(txtSoTKCon.Text.Trim()))
+                {
+                    MessageBox.Show("Số tài khoản con \"" + txtSoTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtSoTKCon.Focus();
+                }
+            }
+        }
+
+        private void txtTenTKCon_TextChanged(object sender, EventArgs e)
+        {
+            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+
+            if (!String.IsNullOrEmpty(txtTenTKCon.Text))
+            {
+                if (cls.SelectOne_TenTaiKhoanCon(txtTenTKCon.Text.Trim()))
+                {
+                    MessageBox.Show("Tên tài khoản con \"" + txtTenTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtTenTKCon.Focus();
+                }
+            }
+        }
     }
 }

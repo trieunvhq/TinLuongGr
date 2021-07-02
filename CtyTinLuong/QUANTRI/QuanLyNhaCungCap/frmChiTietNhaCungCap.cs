@@ -142,10 +142,13 @@ namespace CtyTinLuong
         {
             clsTbNhaCungCap cls = new clsTbNhaCungCap();
 
-            if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtMaNCC.Text))
             {
-                MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtMaNCC.Focus();
+                if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
+                {
+                    MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtMaNCC.Focus();
+                }
             }
         }
 
@@ -153,10 +156,13 @@ namespace CtyTinLuong
         {
             clsTbNhaCungCap cls = new clsTbNhaCungCap();
 
-            if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtTen.Text))
             {
-                MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtTen.Focus();
+                if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
+                {
+                    MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtTen.Focus();
+                }
             }
         }
     }

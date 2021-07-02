@@ -376,18 +376,68 @@ namespace CtyTinLuong
 			}
 		}
 
+        //
+        public bool SelectOne_Ten(string Ten)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_tbDangNhap_SelectOne_Ten]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbDangNhap");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
-		/// <summary>
-		/// Purpose: SelectAll method. This method will Select all rows from the table.
-		/// </summary>
-		/// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
-		/// <remarks>
-		/// Properties set after a succesful call of this method: 
-		/// <UL>
-		///		 <LI>iErrorCode</LI>
-		/// </UL>
-		/// </remarks>
-		public override DataTable SelectAll()
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sTen", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, Ten));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_tbDangNhap_SelectOne_Ten' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                if (dtToReturn.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTbDangNhap::Tr_tbDangNhap_SelectOne_Ten::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+
+        /// <summary>
+        /// Purpose: SelectAll method. This method will Select all rows from the table.
+        /// </summary>
+        /// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
+        /// <remarks>
+        /// Properties set after a succesful call of this method: 
+        /// <UL>
+        ///		 <LI>iErrorCode</LI>
+        /// </UL>
+        /// </remarks>
+        public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[pr_tbDangNhap_SelectAll]";

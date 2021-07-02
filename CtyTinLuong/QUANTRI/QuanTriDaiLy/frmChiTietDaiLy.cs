@@ -131,10 +131,13 @@ namespace CtyTinLuong
         {
             clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
 
-            if (cls.SelectOne_MaDaiLy(txtMaDL.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtMaDL.Text))
             {
-                MessageBox.Show("Mã đại lý \"" + txtMaDL.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtMaDL.Focus();
+                if (cls.SelectOne_MaDaiLy(txtMaDL.Text.Trim()))
+                {
+                    MessageBox.Show("Mã đại lý \"" + txtMaDL.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtMaDL.Focus();
+                }
             }
         }
 
@@ -142,10 +145,13 @@ namespace CtyTinLuong
         {
             clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
 
-            if (cls.SelectOne_TenDaiLy(txtTen.Text.Trim()))
+            if (!String.IsNullOrEmpty(txtTen.Text))
             {
-                MessageBox.Show("Tên đại lý \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                txtTen.Focus();
+                if (cls.SelectOne_TenDaiLy(txtTen.Text.Trim()))
+                {
+                    MessageBox.Show("Tên đại lý \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    txtTen.Focus();
+                }
             }
         }
     }
