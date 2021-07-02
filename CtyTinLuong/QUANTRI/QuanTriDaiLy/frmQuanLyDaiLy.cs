@@ -49,12 +49,13 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-           
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
             frmChiTietDaiLy ff = new frmChiTietDaiLy();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -89,10 +90,12 @@ namespace CtyTinLuong
 
         private void frmQuanLyDaiLy_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -150,6 +153,7 @@ namespace CtyTinLuong
 
             if (gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_DaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString());
 
                 mbThemMoi = false;
@@ -157,6 +161,7 @@ namespace CtyTinLuong
                 mbCopy = false;
                 frmChiTietDaiLy ff = new frmChiTietDaiLy();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
 
         }
@@ -171,13 +176,16 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyDaiLy_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btCooy_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_DaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString());
 
                 mbThemMoi = false;
@@ -185,6 +193,7 @@ namespace CtyTinLuong
                 mbCopy = true;
                 frmChiTietDaiLy ff = new frmChiTietDaiLy();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
     }

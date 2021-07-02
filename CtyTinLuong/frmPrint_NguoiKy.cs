@@ -280,8 +280,10 @@ namespace CtyTinLuong
 
         private void frmPrint_NguoiKy_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();           
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)

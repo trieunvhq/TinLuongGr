@@ -79,10 +79,12 @@ namespace CtyTinLuong
 
         private void frmQuanLyDinhMucLuongTheoSanLuong_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             mb_TheMoi_DinhMucLuongSanLuong = false;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -140,7 +142,7 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_SanLuong).ToString()) != 1)
@@ -162,6 +164,8 @@ namespace CtyTinLuong
             {
 
             }
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -174,14 +178,18 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMucLuongSanLuong = true;
             frmChiTietDinhMucLuongTheoSanLuong ff = new frmChiTietDinhMucLuongTheoSanLuong();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyDinhMucLuongTheoSanLuong_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
     }
 }

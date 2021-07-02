@@ -200,9 +200,11 @@ namespace CtyTinLuong
 
         private void frmNhanSu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -361,13 +363,14 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_NhanSu).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     miID_Sua_NhanVien = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhanSu).ToString());
                     mbThemMoi = false;
                     mbSua = true;
                     mbCopy = false;
                     frmChiTietNhanSu ff = new frmChiTietNhanSu();
                     ff.Show();
-
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
@@ -383,11 +386,13 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
             frmChiTietNhanSu ff = new frmChiTietNhanSu();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -465,13 +470,14 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhanSu).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_NhanVien = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhanSu).ToString());
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
                 frmChiTietNhanSu ff = new frmChiTietNhanSu();
                 ff.Show();
-
+                Cursor.Current = Cursors.Default;
             }
         }
     }

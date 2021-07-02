@@ -156,6 +156,7 @@ namespace CtyTinLuong
 
         private void frmChiTietVTHH_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsTbDonViTinh cls = new clsTbDonViTinh();
             DataTable dt = cls.SelectAll();
             dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
@@ -168,7 +169,8 @@ namespace CtyTinLuong
                 HienThi_SuaThongTin_VTHH();
             else if (frmVatTuHangHoa.mbCopy == true)
                 HienThi_SuaThongTin_VTHH();
-            
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLuu_Click(object sender, EventArgs e)
@@ -178,6 +180,7 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Stream mystremmxx = null;
             OpenFileDialog ff = new OpenFileDialog();
             ff.Filter = "Image file(*.jpg; *.jpeg; *.bmp)| *.jpg;*.jpeg;*.bmp";
@@ -208,6 +211,8 @@ namespace CtyTinLuong
                 }
                 
             }
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void pictureEdit1_DoubleClick_1(object sender, EventArgs e)

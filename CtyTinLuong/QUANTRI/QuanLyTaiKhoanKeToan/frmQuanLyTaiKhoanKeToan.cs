@@ -51,11 +51,13 @@ namespace CtyTinLuong
 
         private void frmQuanLyTaiKhoanKeToan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_TaiKhoan = false;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             mb_TheMoi_TaiKhoan = false;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -129,11 +131,13 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.OK)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
                     cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                     cls1.Delete_W_TonTai();
-                    MessageBox.Show("Đã xóa");
                     HienThi();
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Đã xóa");
                 }
             }
             catch
@@ -146,11 +150,13 @@ namespace CtyTinLuong
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_TaiKhoan_Con = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 miID_Sua_TaiKhoan_Me = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanMe).ToString());
                 mb_TheMoi_TaiKhoan = false;
                 frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
             catch
             {
@@ -160,21 +166,27 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyTaiKhoanKeToan_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_TaiKhoan = true;
             frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThemMoi_Con_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_TaiKhoan = true;
             frmChiTietTaiKhoanKeToanCon ff = new CtyTinLuong.frmChiTietTaiKhoanKeToanCon();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
     }
 }
