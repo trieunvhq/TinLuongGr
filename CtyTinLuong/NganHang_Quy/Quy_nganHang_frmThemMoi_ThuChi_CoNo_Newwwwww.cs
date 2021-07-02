@@ -908,32 +908,8 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtSoTien.Text);
                 txtSoTien.Text = String.Format("{0:#,##0.00}", value);
-                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-                if (checkNhaCungCap.Checked == true) // mua hang
-                {
-                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(0, clCo, 0);
-
-                    gridView4.SetRowCellValue(1, clNo, 0);
-                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
-
-                }
-                else if (checkKhachHang.Checked == true)
-                {
-                    gridView4.SetRowCellValue(0, clNo, 0);
-                    gridView4.SetRowCellValue(0, clCo, sotienxxx);
-
-                    gridView4.SetRowCellValue(1, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(1, clCo, 0);
-                }
-                else
-                {
-                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(0, clCo, 0);
-
-                    gridView4.SetRowCellValue(1, clNo, 0);
-                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
-                }
+                
+                
             }
             catch
             {
@@ -980,32 +956,7 @@ namespace CtyTinLuong
                 {
                     decimal value = decimal.Parse(txtSoTien.Text);
                     txtSoTien.Text = String.Format("{0:#,##0.00}", value);
-                    double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-                    if (checkNhaCungCap.Checked == true) // mua hang
-                    {
-                        gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                        gridView4.SetRowCellValue(0, clCo, 0);
-
-                        gridView4.SetRowCellValue(1, clNo, 0);
-                        gridView4.SetRowCellValue(1, clCo, sotienxxx);
-
-                    }
-                    else if (checkKhachHang.Checked == true)
-                    {
-                        gridView4.SetRowCellValue(0, clNo, 0);
-                        gridView4.SetRowCellValue(0, clCo, sotienxxx);
-
-                        gridView4.SetRowCellValue(1, clNo, sotienxxx);
-                        gridView4.SetRowCellValue(1, clCo, 0);
-                    }
-                    else
-                    {
-                        gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                        gridView4.SetRowCellValue(0, clCo, 0);
-
-                        gridView4.SetRowCellValue(1, clNo, 0);
-                        gridView4.SetRowCellValue(1, clCo, sotienxxx);
-                    }
+                    
                 }
                 catch
                 {

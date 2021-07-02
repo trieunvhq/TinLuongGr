@@ -19,15 +19,6 @@ namespace CtyTinLuong
 
             Xtra_NganHang_PhieuThu_Chi_Bao_Co_No xtr111 = new Xtra_NganHang_PhieuThu_Chi_Bao_Co_No();
           
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
-            //dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
-            //dt2.Columns.Add("GhiChu", typeof(string));
-            //dt2.Columns.Add("No", typeof(double));
-            //dt2.Columns.Add("Co", typeof(double));
-            //dt2.Columns.Add("TienUSD", typeof(bool));
-            //dt2.Columns.Add("TiGia", typeof(double));
-
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbNganHang_PhieuThu_Chi_Bao_Co_No.Clone();
             ds.tbNganHang_PhieuThu_Chi_Bao_Co_No.Clear();
@@ -62,12 +53,15 @@ namespace CtyTinLuong
            
             if (Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mbPrint == true)
                 Print_NganHang_PhieuThu_Chi_Bao_Co_No(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdtCHiTietTaKhoan_print);
+            if (QuyNganHang_Frm_DoiTienUSD.mbPrint == true)
+                Print_NganHang_PhieuThu_Chi_Bao_Co_No(QuyNganHang_Frm_DoiTienUSD.mdtCHiTietTaKhoan_print);
         }
 
         private void frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No_FormClosed(object sender, FormClosedEventArgs e)
         {
 
             Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mbPrint = false;
+            QuyNganHang_Frm_DoiTienUSD.mbPrint = false;
         }
     }
 }
