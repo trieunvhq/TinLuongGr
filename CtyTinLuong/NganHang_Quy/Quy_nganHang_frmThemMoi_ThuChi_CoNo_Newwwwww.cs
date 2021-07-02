@@ -207,9 +207,9 @@ namespace CtyTinLuong
                 cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bTienUSD = checkUSD.Checked;
                 cls1.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
+                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 = bienthangthai;
                 cls1.bDaGhiSo = true;
-                cls1.bCheckDoiTienUSD = false;
+                
                 if (checkKhac.Checked == true)
                     cls1.iBienMuaHang1_BanHang2_ConLai_0 = 0;
                 else if (checkKhachHang.Checked == true)

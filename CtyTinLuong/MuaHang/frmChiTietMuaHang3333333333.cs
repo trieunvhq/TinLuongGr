@@ -508,12 +508,12 @@ namespace CtyTinLuong
                 cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bTienUSD = checkUSD.Checked;
                 cls1.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
+                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 = bienthangthai;
                 cls1.bDaGhiSo = false;
                 cls1.iID_DoiTuong = Convert.ToInt32(gridNCC.EditValue.ToString());
                 cls1.iBienMuaHang1_BanHang2_ConLai_0 = 1;
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.bCheckDoiTienUSD = false;
+                
                 DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
                 if (dt1.Rows.Count > 0)
                 {
