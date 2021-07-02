@@ -272,7 +272,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)65.77;
                 //
                 float tmp = 0;
-                float colw = (float)((25.24 * 31) / 28);
+                float colw = (float)((26.6 * 31) / 28);
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
 
@@ -310,7 +310,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)65.77;
                 //
                 float tmp = 0;
-                float colw = (float)((25.24 * 31) / 29);
+                float colw = (float)((26.6 * 31) / 29);
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
 
@@ -340,7 +340,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)65.77;
                 //
                 float tmp = 0;
-                float colw = (float)((25.24 * 31) / 30);
+                float colw = (float)((26.6 * 31) / 30);
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
 

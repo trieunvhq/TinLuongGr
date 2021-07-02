@@ -2314,6 +2314,8 @@
             this.ReportFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dataSet_TinLuong1});
+            this.DataMember = "tbCongNhatChamCongToGapDan";
+            this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(45, 31, 40, 40);
             this.PageHeight = 827;
