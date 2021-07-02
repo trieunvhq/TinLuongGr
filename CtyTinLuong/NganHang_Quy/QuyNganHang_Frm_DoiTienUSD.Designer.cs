@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuyNganHang_Frm_DoiTienUSD));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -179,6 +179,7 @@
             this.gridDoiTuong.Size = new System.Drawing.Size(232, 20);
             this.gridDoiTuong.StyleController = this.layoutControl1;
             this.gridDoiTuong.TabIndex = 106;
+            this.gridDoiTuong.EditValueChanged += new System.EventHandler(this.gridDoiTuong_EditValueChanged);
             // 
             // gridView3
             // 
@@ -231,6 +232,9 @@
             this.txtTiGia.Size = new System.Drawing.Size(453, 20);
             this.txtTiGia.TabIndex = 97;
             this.txtTiGia.Text = "1";
+            this.txtTiGia.TextChanged += new System.EventHandler(this.txtTiGia_TextChanged);
+            this.txtTiGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTiGia_KeyDown);
+            this.txtTiGia.Leave += new System.EventHandler(this.txtTiGia_Leave);
             // 
             // txtDoiTuong
             // 
@@ -248,6 +252,9 @@
             this.txtSoTien.Size = new System.Drawing.Size(352, 20);
             this.txtSoTien.TabIndex = 78;
             this.txtSoTien.Text = "0";
+            this.txtSoTien.TextChanged += new System.EventHandler(this.txtSoTien_TextChanged);
+            this.txtSoTien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoTien_KeyDown);
+            this.txtSoTien.Leave += new System.EventHandler(this.txtSoTien_Leave);
             // 
             // gridNguoiLap
             // 
@@ -259,6 +266,7 @@
             this.gridNguoiLap.Size = new System.Drawing.Size(232, 20);
             this.gridNguoiLap.StyleController = this.layoutControl1;
             this.gridNguoiLap.TabIndex = 23;
+            this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
             // 
             // gridView2
             // 
@@ -530,6 +538,8 @@
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
+            this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
             // 
             // clSTT
             // 
@@ -617,7 +627,7 @@
             this.clTiGia.Name = "clTiGia";
             this.clTiGia.OptionsColumn.FixedWidth = true;
             this.clTiGia.Visible = true;
-            this.clTiGia.VisibleIndex = 6;
+            this.clTiGia.VisibleIndex = 5;
             this.clTiGia.Width = 115;
             // 
             // clDaGhiSo
@@ -657,11 +667,12 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions8.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
             // 
             // clTienUSD
             // 
@@ -793,6 +804,7 @@
             this.btthemmoi.Size = new System.Drawing.Size(107, 23);
             this.btthemmoi.TabIndex = 110;
             this.btthemmoi.Text = "Thêm mới";
+            this.btthemmoi.Click += new System.EventHandler(this.btthemmoi_Click);
             // 
             // btLuu_Dong
             // 
@@ -804,6 +816,7 @@
             this.btLuu_Dong.Size = new System.Drawing.Size(107, 23);
             this.btLuu_Dong.TabIndex = 109;
             this.btLuu_Dong.Text = "Lưu";
+            this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // btThoat
             // 
@@ -826,6 +839,7 @@
             this.btPrint.Size = new System.Drawing.Size(98, 23);
             this.btPrint.TabIndex = 108;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // QuyNganHang_Frm_DoiTienUSD
             // 
