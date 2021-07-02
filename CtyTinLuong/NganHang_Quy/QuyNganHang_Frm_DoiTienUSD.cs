@@ -20,8 +20,8 @@ namespace CtyTinLuong
         public static bool mbTienUSD;
         public static DateTime mdaNgayThang;
         public static string msDiaChi, msLoaiChungTu, msSoChungTu, msNguoiNopTen, msTaiKhoan_No, ms_TaiKhoanCo, msDienGiai;
-        public static double mdbSoTien, mdbTiGia;
-        int DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 = 0;
+        public static double mdbSoTien_Co_USD, mdbSoTien_No_VND, mdbTiGia;
+      
         DataTable dtdoituong = new DataTable();
 
         private void Luu_BienDongTaiKhoanKeToan(int xxxID_ThuChi)
@@ -287,14 +287,9 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
 
             DataRow _ravi = dt2.NewRow();
-           
-            if (bientrangthia == 5) //báo Có - đổi tiền
-            {                
-                _ravi["ID_TaiKhoanKeToanCon"] = 2;
-                _ravi["SoTaiKhoanCon"] = "1121";
-                _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
-            }
-            
+            _ravi["ID_TaiKhoanKeToanCon"] = 2;
+            _ravi["SoTaiKhoanCon"] = "1121";
+            _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
             _ravi["No"] = 0;
             _ravi["Co"] = 0;
             _ravi["TienUSD"] = false;
@@ -303,8 +298,21 @@ namespace CtyTinLuong
             _ravi["GhiChu"] = "";
             _ravi["HienThi"] = "1";
             dt2.Rows.Add(_ravi);
-            gridControl1.DataSource = dt2;
 
+            DataRow _ravi2 = dt2.NewRow();
+            _ravi2["ID_TaiKhoanKeToanCon"] = 10;
+            _ravi2["SoTaiKhoanCon"] = "1122.2";
+            _ravi2["TenTaiKhoanCon"] = "VCB USD";
+            _ravi2["No"] = 0;
+            _ravi2["Co"] = 0;
+            _ravi2["TienUSD"] = true;
+            _ravi2["TiGia"] = 1;
+            _ravi2["DaGhiSo"] = false;
+            _ravi2["GhiChu"] = "";
+            _ravi2["HienThi"] = "1";
+            dt2.Rows.Add(_ravi2);
+
+            gridControl1.DataSource = dt2;
 
         }
         private void HienThi_Sua()
@@ -330,6 +338,7 @@ namespace CtyTinLuong
             cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
             DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
             DataTable dt2 = new DataTable();
+            
             dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
             dt2.Columns.Add("ID_ThuChi", typeof(int));
             dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
@@ -418,37 +427,20 @@ namespace CtyTinLuong
 
             if (k == 0)
             {
-                if (xxbientrangthai == 1)
-                    txtSoChungTu.Text = "BC 1";
-                else if (xxbientrangthai == 2)
-                    txtSoChungTu.Text = "BN 1";
-                else if (xxbientrangthai == 3)
-                    txtSoChungTu.Text = "PC 1";
-                else if (xxbientrangthai == 4)
-                    txtSoChungTu.Text = "PT 1";
-
+                if (xxbientrangthai == 5)
+                    txtSoChungTu.Text = "DT 1";
+               
             }
             else
             {
                 string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
                 int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                if (xxbientrangthai == 1)
-                    txtSoChungTu.Text = "BC " + xxx2 + "";
-                else if (xxbientrangthai == 2)
-                    txtSoChungTu.Text = "BN " + xxx2 + "";
-                else if (xxbientrangthai == 3)
-                    txtSoChungTu.Text = "PC " + xxx2 + "";
-                else if (xxbientrangthai == 4)
-                    txtSoChungTu.Text = "PT " + xxx2 + "";
+                if (xxbientrangthai == 5)
+                    txtSoChungTu.Text = "DT " + xxx2 + "";
+              
             }
-            if (xxbientrangthai == 1)
-                txtThamChieu.Text = "Báo Có";
-            else if (xxbientrangthai == 2)
-                txtThamChieu.Text = "Báo Nợ";
-            else if (xxbientrangthai == 3)
-                txtThamChieu.Text = "Phiếu Chi";
-            else if (xxbientrangthai == 4)
-                txtThamChieu.Text = "Phiếu Thu";
+            if (xxbientrangthai == 5)
+                txtThamChieu.Text = "Đổi tiền";            
 
         }
 
@@ -480,8 +472,8 @@ namespace CtyTinLuong
                 {
                     double tigiaxx = Convert.ToDouble(txtTiGia.Text);
                    
-                    gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
-                    gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
+                    //gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
+                    //gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
 
                     clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
                     cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
@@ -506,12 +498,17 @@ namespace CtyTinLuong
             try
             {
                 double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-                gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                gridView4.SetRowCellValue(0, clCo, 0);
-
+                double tigiaxxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                txtTienVND.Text = (sotienxxx * tigiaxxx).ToString();
+              
                 gridView4.SetRowCellValue(1, clNo, 0);
                 gridView4.SetRowCellValue(1, clCo, sotienxxx);
-
+                if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                {
+                    string sotien = txtSoTien.Text;
+                    string tigia = txtTiGia.Text;
+                    txtDienGiai.Text = "Đổi tiền: "+sotien+" USD * "+tigia+"";
+                }
             }
             catch
             {
@@ -523,6 +520,9 @@ namespace CtyTinLuong
             if (txtTiGia.Text.ToString() != "1")
             {
                 double tigiaxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+               
+                txtTienVND.Text = (sotienxxx * tigiaxx).ToString();
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
                 try
                 {
@@ -534,6 +534,12 @@ namespace CtyTinLuong
                         }
                         gridControl1.DataSource = dttttt2;
                     }
+                    if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                    {
+                        string sotien = txtSoTien.Text;
+                        string tigia = txtTiGia.Text;
+                        txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + "";
+                    }
                 }
                 catch
                 {
@@ -543,33 +549,8 @@ namespace CtyTinLuong
         }
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
-        {
-            int kkkk = 0;
-
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 1)
-            {
-                kkkk = 1;
-
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
-            {
-                kkkk = 2;
-
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
-            {
-                kkkk = 3;
-
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
-            {
-                kkkk = 4;
-
-            }
-            LuuDuLieu_Va_GhiSo(kkkk);
+        {            
+            LuuDuLieu_Va_GhiSo(5);
         }
 
         private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
@@ -581,7 +562,7 @@ namespace CtyTinLuong
                 DataTable dt = clsncc.SelectOne();
                 if (dt.Rows.Count > 0)
                 {
-                    txtNguoiMuaHang.Text = dt.Rows[0]["TenNhanVien"].ToString();
+                    txtDoiTuong.Text = dt.Rows[0]["TenNhanVien"].ToString();
 
                 }
 
@@ -638,7 +619,9 @@ namespace CtyTinLuong
 
         private void btthemmoi_Click(object sender, EventArgs e)
         {
-            HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
+            HienThi_ThemMoi(5);
+            txtSoTien.Text = "0";
         }
 
         private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
@@ -660,11 +643,6 @@ namespace CtyTinLuong
                 txtSoTien.Text = String.Format("{0:#,##0.00}", value);
                 double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
 
-                gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                gridView4.SetRowCellValue(0, clCo, 0);
-
-                gridView4.SetRowCellValue(1, clNo, 0);
-                gridView4.SetRowCellValue(1, clCo, sotienxxx);
             }
             catch
             {
@@ -675,6 +653,34 @@ namespace CtyTinLuong
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+
+        }
+
+        private void txtTienVND_TextChanged(object sender, EventArgs e)
+        {
+            decimal value = decimal.Parse(txtTienVND.Text);
+            txtTienVND.Text = String.Format("{0:#,##0.00}", value);
+
+
+            try
+            {
+                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+                double tigiaxxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                double tienvnd = sotienxxx * tigiaxxx;              
+
+                gridView4.SetRowCellValue(0, clNo, tienvnd);
+                gridView4.SetRowCellValue(0, clCo, 0);
+                
+            }
+            catch
+            {
+            }
         }
 
         private void txtTiGia_Leave(object sender, EventArgs e)
@@ -716,13 +722,7 @@ namespace CtyTinLuong
                 {
                     decimal value = decimal.Parse(txtSoTien.Text);
                     txtSoTien.Text = String.Format("{0:#,##0.00}", value);
-                    double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-
-                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(0, clCo, 0);
-
-                    gridView4.SetRowCellValue(1, clNo, 0);
-                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
+                    double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());                 
 
                 }
                 catch
@@ -763,8 +763,10 @@ namespace CtyTinLuong
                     msLoaiChungTu = "PHIẾU THU";
                 if (Str1 == "PC")
                     msLoaiChungTu = "PHIẾU CHI";
-
-                mdbSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
+                if (Str1 == "DT")
+                    msLoaiChungTu = "BÁO CÓ";
+                mdbSoTien_Co_USD = Convert.ToDouble(txtSoTien.Text.ToString());
+                mdbSoTien_No_VND = Convert.ToDouble(txtTienVND.Text.ToString());
                 mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
                 for (int i = 0; i < mdtCHiTietTaKhoan_print.Rows.Count; i++)
                 {
