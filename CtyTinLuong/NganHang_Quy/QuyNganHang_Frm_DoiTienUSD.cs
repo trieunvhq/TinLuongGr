@@ -764,7 +764,7 @@ namespace CtyTinLuong
                 if (Str1 == "PC")
                     msLoaiChungTu = "PHIẾU CHI";
                 if (Str1 == "DT")
-                    msLoaiChungTu = "ĐỔI TIỀN USD";
+                    msLoaiChungTu = "BÁO CÓ";
                 mdbSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
                 mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
                 for (int i = 0; i < mdtCHiTietTaKhoan_print.Rows.Count; i++)
