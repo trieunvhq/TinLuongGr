@@ -84,10 +84,12 @@ namespace CtyTinLuong
 
         private void frmQuanLyMayMoc_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             mb_TheMoi_MayMoc = false;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -130,10 +132,12 @@ namespace CtyTinLuong
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_MayMoc = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clid).ToString());
                 mb_TheMoi_MayMoc = false;
                 frmChiTietMayMoc ff = new frmChiTietMayMoc();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
             catch
             {
@@ -151,9 +155,11 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_MayMoc = true;
             frmChiTietMayMoc ff = new CtyTinLuong.frmChiTietMayMoc();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

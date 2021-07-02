@@ -155,8 +155,10 @@ namespace CtyTinLuong
 
         private void frmChiTietTaiKhoan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan == false)
                 HienThi_SuaTaiKhoan();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLuu_Click(object sender, EventArgs e)

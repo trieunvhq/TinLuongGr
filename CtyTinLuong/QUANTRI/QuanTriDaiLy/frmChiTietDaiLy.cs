@@ -111,10 +111,13 @@ namespace CtyTinLuong
 
         private void frmChiTietDaiLy_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (frmQuanLyDaiLy.mbSua == true)
                 HienThi_SuaThongTin_DaiLy();
             else if (frmQuanLyDaiLy.mbCopy == true)
                 HienThi_SuaThongTin_DaiLy();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)

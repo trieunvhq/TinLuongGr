@@ -97,8 +97,10 @@ namespace CtyTinLuong
 
         private void frmQuanLyTaiKhoan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -137,13 +139,14 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_DangNhap).ToString() != "")
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     miID_DangNhap = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DangNhap).ToString());
                     mb_TheMoi_TaiKhoan = false;
                     ms_Ten_TaiKhoan = gridView1.GetFocusedRowCellValue(clTen).ToString();
                     ms_MatKhau_TaiKhoan = gridView1.GetFocusedRowCellValue(clMatKhau).ToString();
                     frmChiTietTaiKhoan ff = new frmChiTietTaiKhoan();
                     ff.Show();
-
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch

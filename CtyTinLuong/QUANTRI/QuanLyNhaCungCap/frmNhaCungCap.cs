@@ -93,10 +93,13 @@ namespace CtyTinLuong
 
         private void frmNhaCungCap_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
           
             HienThi();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -137,23 +140,27 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
             frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btCopy_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_NCC = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID).ToString());
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
                 frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -162,12 +169,14 @@ namespace CtyTinLuong
 
             if (gridView1.GetFocusedRowCellValue(clID).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_NCC = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID).ToString());
                 mbThemMoi = false;
                 mbSua = true;
                 mbCopy = false;
                 frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap();
                 ff.Show();
+                Cursor.Current = Cursors.Default;
             }
                
            
@@ -175,7 +184,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmNhaCungCap_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
        

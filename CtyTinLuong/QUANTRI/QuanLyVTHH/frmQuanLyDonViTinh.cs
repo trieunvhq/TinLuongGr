@@ -49,9 +49,11 @@ namespace CtyTinLuong
 
         private void frmQuanLyDonViTinh_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
             checkTheoDoi.Checked = true;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btXoa_Click(object sender, EventArgs e)

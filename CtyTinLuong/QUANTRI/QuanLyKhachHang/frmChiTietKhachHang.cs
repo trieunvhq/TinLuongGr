@@ -133,6 +133,7 @@ namespace CtyTinLuong
 
         private void frmChiTietKhachHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsNganHang_TaiKhoanKeToanCon clsme = new clsNganHang_TaiKhoanKeToanCon();
             DataTable dtme = clsme.SelectAll();
             dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
@@ -149,6 +150,7 @@ namespace CtyTinLuong
                 HienThi_SuaThongTin_KhachHang();
             else
             { }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLuu_Click(object sender, EventArgs e)

@@ -134,9 +134,11 @@ namespace CtyTinLuong
 
         private void frmVatTuHangHoa_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             checkTheoDoi.Checked = true;
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -181,13 +183,14 @@ namespace CtyTinLuong
         {
             if(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 mbThemMoi = false;
                 mbSua = true;
                 mbCopy = false;
                 frmChiTietVTHH ff = new frmChiTietVTHH();
                 ff.Show();
-
+                Cursor.Current = Cursors.Default;
             }
 
         }
@@ -198,10 +201,11 @@ namespace CtyTinLuong
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 clsTbVatTuHangHoa cls1 = new clsTbVatTuHangHoa();
                 cls1.iID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 cls1.Delete_W_TonTai();
-
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã xóa");
                 //HienThi();
             }
@@ -209,18 +213,19 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoi = true;
             mbCopy = false;
             mbSua = false;
             frmChiTietVTHH ff = new frmChiTietVTHH();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             try
             {
-
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
@@ -306,20 +311,23 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmVatTuHangHoa_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btCoPy_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
                 frmChiTietVTHH ff = new frmChiTietVTHH();
                 ff.Show();
-
+                Cursor.Current = Cursors.Default;
             }
         }
     }

@@ -201,7 +201,7 @@ namespace CtyTinLuong
 
         private void frmChiTietNhanSu_Load(object sender, EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             Load_lockUP_EDIT();
             LoadCombobox();
             if (frmNhanSu.mbSua == true)
@@ -210,6 +210,7 @@ namespace CtyTinLuong
                 HienThi_Sua();
             else
             {  }
+            Cursor.Current = Cursors.Default;
         }
 
         private void checkBoxNam_CheckedChanged(object sender, EventArgs e)
