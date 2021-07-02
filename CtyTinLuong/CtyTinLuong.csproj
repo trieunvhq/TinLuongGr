@@ -2151,6 +2151,9 @@
     <EmbeddedResource Include="Luong_ChamCong\T_PrintChamComToGapDan.resx">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\QuyNganHang_Frm_DoiTienUSD.resx">
+      <DependentUpon>QuyNganHang_Frm_DoiTienUSD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>

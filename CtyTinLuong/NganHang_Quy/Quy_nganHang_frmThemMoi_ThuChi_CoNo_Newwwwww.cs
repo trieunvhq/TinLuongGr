@@ -207,8 +207,9 @@ namespace CtyTinLuong
                 cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bTienUSD = checkUSD.Checked;
                 cls1.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
+                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 = bienthangthai;
                 cls1.bDaGhiSo = true;
+                
                 if (checkKhac.Checked == true)
                     cls1.iBienMuaHang1_BanHang2_ConLai_0 = 0;
                 else if (checkKhachHang.Checked == true)
@@ -575,7 +576,7 @@ namespace CtyTinLuong
             Load_LockUp();
           
             if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
-                HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4);
+                HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
             else
                 HienThi_Sua();
         }
@@ -803,25 +804,25 @@ namespace CtyTinLuong
         {
             int kkkk = 0;
            
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 1)
+            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 1)
             {
                 kkkk = 1;
               
 
             }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 2)
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
             {
                 kkkk = 2;
                
 
             }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 3)
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
             {
                 kkkk = 3;
              
 
             }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 == 4)
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
             {
                 kkkk = 4;
                 
@@ -881,7 +882,7 @@ namespace CtyTinLuong
 
         private void btthemmoi_Click(object sender, EventArgs e)
         {
-            HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4);
+            HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
         }
 
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
