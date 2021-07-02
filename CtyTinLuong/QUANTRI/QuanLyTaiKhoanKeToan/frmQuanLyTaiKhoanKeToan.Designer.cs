@@ -359,6 +359,7 @@
             this.btThemMoi_Me.Size = new System.Drawing.Size(133, 23);
             this.btThemMoi_Me.TabIndex = 99;
             this.btThemMoi_Me.Text = "Thêm mới TK mẹ";
+            this.btThemMoi_Me.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // btThemMoi_Con
             // 

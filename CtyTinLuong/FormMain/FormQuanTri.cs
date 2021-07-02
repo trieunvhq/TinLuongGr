@@ -41,75 +41,101 @@ namespace CtyTinLuong.FormMain
 
         private void btnQuanTriTaiKhoan_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             frmQuanLyTaiKhoan ff = new CtyTinLuong.frmQuanLyTaiKhoan();
             ff.Show();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriNhanSu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmNhanSu ff = new frmNhanSu();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriKhachHang_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmKhachHang ff = new frmKhachHang();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriNhaCC_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmNhaCungCap ff = new frmNhaCungCap();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriVTHH_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmVatTuHangHoa ff = new frmVatTuHangHoa();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriDVT_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyDonViTinh ff = new frmQuanLyDonViTinh();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriDaiLy_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyDaiLy ff = new frmQuanLyDaiLy();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnQuanTriMaySX_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyMayMoc ff = new CtyTinLuong.frmQuanLyMayMoc();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnMucLuongCongNhat_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnMucLuongSanLuong_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyDinhMucLuongTheoSanLuong ff = new frmQuanLyDinhMucLuongTheoSanLuong();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnHTTKKeToan_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyTaiKhoanKeToan ff = new CtyTinLuong.frmQuanLyTaiKhoanKeToan();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnMacDinhNguoiKy_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan = true;
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

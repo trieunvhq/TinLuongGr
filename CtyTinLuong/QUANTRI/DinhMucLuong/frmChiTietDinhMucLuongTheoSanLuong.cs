@@ -123,6 +123,7 @@ namespace CtyTinLuong
 
         private void frmChiTietDinhMucLuongTheoSanLuong_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsTbVatTuHangHoa clsVT = new clsTbVatTuHangHoa();
             DataTable dtVT = clsVT.SelectAll();
             dtVT.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
@@ -135,6 +136,8 @@ namespace CtyTinLuong
            
             if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == false)
                 hienthiSUaDuLieu();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
