@@ -21,5 +21,10 @@ namespace CtyTinLuong
         {
             this.Close();
         }
+
+        private void QuyNganHang_Frm_DoiTienUSD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

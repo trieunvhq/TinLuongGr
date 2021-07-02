@@ -371,7 +371,7 @@ namespace CtyTinLuong
                 cls1.bTienUSD = false;
                 cls1.fTiGia = 1;
                 cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = bienthangthai;
-
+                cls1.bCheckDoiTienUSD = false;
                 cls1.iBienMuaHang1_BanHang2_ConLai_0 = 9;
 
                 clsNganHang_tbThuChi cls2 = new clsNganHang_tbThuChi();

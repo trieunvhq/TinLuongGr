@@ -513,7 +513,7 @@ namespace CtyTinLuong
                 cls1.iID_DoiTuong = Convert.ToInt32(gridNCC.EditValue.ToString());
                 cls1.iBienMuaHang1_BanHang2_ConLai_0 = 1;
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
-
+                cls1.bCheckDoiTienUSD = false;
                 DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
                 if (dt1.Rows.Count > 0)
                 {
