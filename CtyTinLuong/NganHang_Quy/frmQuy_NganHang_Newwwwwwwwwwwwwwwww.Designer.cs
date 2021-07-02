@@ -45,6 +45,7 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,8 @@
             this.navBaoNo,
             this.navPhieuThu,
             this.navPhieuChi,
-            this.navBarItem1});
+            this.navBarItem1,
+            this.navBarItem2});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 157;
@@ -82,7 +84,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBaoCo),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBaoNo),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navPhieuThu),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navPhieuChi)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navPhieuChi),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBaoCo
@@ -175,6 +178,11 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Đổi tiền USD";
+            this.navBarItem2.Name = "navBarItem2";
+            // 
             // frmQuy_NganHang_Newwwwwwwwwwwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +221,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
     }
 }
