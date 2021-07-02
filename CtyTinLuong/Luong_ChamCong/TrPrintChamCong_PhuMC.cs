@@ -267,9 +267,9 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.55;
+                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)137.56;
                 //nameTong.WidthF = hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)100.4;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)65.77;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)69.3;
                 //
                 float tmp = 0;
                 float colw = (float)((26.6 * 31) / 28);
@@ -305,9 +305,9 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.55;
+                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)137.56;
                 //nameTong.WidthF = hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)100.4;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)65.77;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)69.3;
                 //
                 float tmp = 0;
                 float colw = (float)((26.6 * 31) / 29);
@@ -335,9 +335,9 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.55;
+                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)137.56;
                 //nameTong.WidthF = hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)100.4;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)65.77;
+                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)69.3;
                 //
                 float tmp = 0;
                 float colw = (float)((26.6 * 31) / 30);
