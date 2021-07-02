@@ -75,6 +75,8 @@ namespace CtyTinLuong
         private void navBarItem17_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
             //this.Hide();
             ff.Show();
@@ -84,6 +86,10 @@ namespace CtyTinLuong
 
         private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void frmQuanLy_Luong_ChamCong_Load(object sender, EventArgs e)
@@ -497,7 +503,11 @@ namespace CtyTinLuong
 
         private void navBTTL_ToIn_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
 
+
+            Cursor.Current = Cursors.Default;
         }
     }
 }
