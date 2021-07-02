@@ -18,7 +18,7 @@ namespace CtyTinLuong
         {
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             DataTable dt1 = cls1.SelectAll();
-            dt1.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =1";
+            dt1.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =1";
             DataView dv1 = dt1.DefaultView;
             DataTable dxxxx1 = dv1.ToTable();
             int k1 = dxxxx1.Rows.Count;
@@ -29,7 +29,7 @@ namespace CtyTinLuong
             }
 
             DataTable dt2 = cls1.SelectAll();
-            dt2.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =2";
+            dt2.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =2";
             DataView dv2 = dt2.DefaultView;
             DataTable dxxxx2 = dv2.ToTable();
             int k2 = dxxxx2.Rows.Count;
@@ -40,7 +40,7 @@ namespace CtyTinLuong
             }
 
             DataTable dt3 = cls1.SelectAll();
-            dt3.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =3";
+            dt3.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =3";
             DataView dv3 = dt3.DefaultView;
             DataTable dxxxx3 = dv3.ToTable();
             int k3 = dxxxx3.Rows.Count;
@@ -51,7 +51,7 @@ namespace CtyTinLuong
             }
 
             DataTable dt4 = cls1.SelectAll();
-            dt4.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =4";
+            dt4.DefaultView.RowFilter = "DaGhiSo = False and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =4";
             DataView dv4 = dt4.DefaultView;
             DataTable dxxxx4 = dv4.ToTable();
             int k4 = dxxxx4.Rows.Count;
@@ -158,10 +158,11 @@ namespace CtyTinLuong
 
         private void navBarItem2_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
-            QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 5;
+            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
 
             doiMauTitle(sender, e);
         }
