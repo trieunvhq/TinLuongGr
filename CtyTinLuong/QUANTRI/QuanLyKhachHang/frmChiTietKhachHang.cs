@@ -155,5 +155,27 @@ namespace CtyTinLuong
         {
             LuuDuLieu();
         }
+
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
+        {
+            clsTbKhachHang cls = new clsTbKhachHang();
+
+            if (cls.SelectOne_MaKH(txtMaKH.Text.Trim()))
+            {
+                MessageBox.Show("Mã khách hàng \"" + txtMaKH.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtMaKH.Focus();
+            }
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+            clsTbKhachHang cls = new clsTbKhachHang();
+
+            if (cls.SelectOne_TenKH(txtTen.Text.Trim()))
+            {
+                MessageBox.Show("Tên khách hàng \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                txtTen.Focus();
+            }
+        }
     }
 }
