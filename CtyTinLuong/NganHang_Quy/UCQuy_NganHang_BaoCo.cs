@@ -47,13 +47,26 @@ namespace CtyTinLuong
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
-        {
-            mbThemMoi_ThuChi = true;
-           
-            Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-            _frmQNH.Hide();
-            ff.ShowDialog();
-            _frmQNH.Show();
+        {         
+
+            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 5)
+            {             
+
+                mbThemMoi_ThuChi = true;
+                QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
+                _frmQNH.Hide();
+                ff.ShowDialog();
+                _frmQNH.Show();
+            }
+            else
+            {
+                mbThemMoi_ThuChi = true;
+
+                Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+                _frmQNH.Hide();
+                ff.ShowDialog();
+                _frmQNH.Show();
+            }
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -72,7 +85,7 @@ namespace CtyTinLuong
                 {
                     mbThemMoi_ThuChi = false;
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
-                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+                    QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
                     _frmQNH.Hide();
                     ff.ShowDialog();
                     _frmQNH.Show();
@@ -81,7 +94,7 @@ namespace CtyTinLuong
                 {
                     mbThemMoi_ThuChi = false;
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
-                    QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
+                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
                     _frmQNH.Hide();
                     ff.ShowDialog();
                     _frmQNH.Show();
