@@ -75,6 +75,7 @@ namespace CtyTinLuong
                     clsxx.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
                     clsxx.sDienGiai = txtDienGiai.Text.ToString();
                     clsxx.bCheck_PhanNganHang = false;
+                 
                     string expressionnhapkho;
                     expressionnhapkho = "ID_TaiKhoanKeToanCon=" + ID_TaiKhoanKeToanConxxxx1 + "";
                     DataRow[] foundRows;
