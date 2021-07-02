@@ -13,7 +13,7 @@ namespace CtyTinLuong
 {
     public partial class frmQuy_NganHang_Newwwwwwwwwwwwwwwww : Form
     {
-        public static int miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4;
+        public static int miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5;
         private void HienThi_Caption()
         {
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
@@ -68,7 +68,7 @@ namespace CtyTinLuong
 
         private void navBaoCo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 1;
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 1;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
@@ -84,7 +84,7 @@ namespace CtyTinLuong
 
         private void navBaoNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 2;
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 2;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
@@ -95,7 +95,7 @@ namespace CtyTinLuong
 
         private void navPhieuThu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 4;
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 4;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
@@ -106,7 +106,7 @@ namespace CtyTinLuong
 
         private void navPhieuChi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 3;
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 3;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
@@ -158,7 +158,7 @@ namespace CtyTinLuong
 
         private void navBarItem2_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
-            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 = 5;
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 5;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
