@@ -21,6 +21,8 @@ namespace CtyTinLuong.Luong_ChamCong
             _thang = thang;
             _nam = nam;
             InitializeComponent();
+
+            pNgay.Value = DateTime.Now;
             //
             Ds_NgayTitle.Add(xrTableCell37);
             Ds_NgayTitle.Add(xrTableCell38);

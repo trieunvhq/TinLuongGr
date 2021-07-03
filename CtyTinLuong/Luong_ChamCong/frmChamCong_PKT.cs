@@ -127,37 +127,37 @@ namespace CtyTinLuong
             return "";
         }
 
-        int Tong_Ngay1 = 0;
-        int Tong_Ngay2 = 0;
-        int Tong_Ngay3 = 0;
-        int Tong_Ngay4 = 0;
-        int Tong_Ngay5 = 0;
-        int Tong_Ngay6 = 0;
-        int Tong_Ngay7 = 0;
-        int Tong_Ngay8 = 0;
-        int Tong_Ngay9 = 0;
-        int Tong_Ngay10 = 0;
-        int Tong_Ngay11 = 0;
-        int Tong_Ngay12 = 0;
-        int Tong_Ngay13 = 0;
-        int Tong_Ngay14 = 0;
-        int Tong_Ngay15 = 0;
-        int Tong_Ngay16 = 0;
-        int Tong_Ngay17 = 0;
-        int Tong_Ngay18 = 0;
-        int Tong_Ngay19 = 0;
-        int Tong_Ngay20 = 0;
-        int Tong_Ngay21 = 0;
-        int Tong_Ngay22 = 0;
-        int Tong_Ngay23 = 0;
-        int Tong_Ngay24 = 0;
-        int Tong_Ngay25 = 0;
-        int Tong_Ngay26 = 0;
-        int Tong_Ngay27 = 0;
-        int Tong_Ngay28 = 0;
-        int Tong_Ngay29 = 0;
-        int Tong_Ngay30 = 0;
-        int Tong_Ngay31 = 0;
+        Double Tong_Ngay1 = 0;
+        Double Tong_Ngay2 = 0;
+        Double Tong_Ngay3 = 0;
+        Double Tong_Ngay4 = 0;
+        Double Tong_Ngay5 = 0;
+        Double Tong_Ngay6 = 0;
+        Double Tong_Ngay7 = 0;
+        Double Tong_Ngay8 = 0;
+        Double Tong_Ngay9 = 0;
+        Double Tong_Ngay10 = 0;
+        Double Tong_Ngay11 = 0;
+        Double Tong_Ngay12 = 0;
+        Double Tong_Ngay13 = 0;
+        Double Tong_Ngay14 = 0;
+        Double Tong_Ngay15 = 0;
+        Double Tong_Ngay16 = 0;
+        Double Tong_Ngay17 = 0;
+        Double Tong_Ngay18 = 0;
+        Double Tong_Ngay19 = 0;
+        Double Tong_Ngay20 = 0;
+        Double Tong_Ngay21 = 0;
+        Double Tong_Ngay22 = 0;
+        Double Tong_Ngay23 = 0;
+        Double Tong_Ngay24 = 0;
+        Double Tong_Ngay25 = 0;
+        Double Tong_Ngay26 = 0;
+        Double Tong_Ngay27 = 0;
+        Double Tong_Ngay28 = 0;
+        Double Tong_Ngay29 = 0;
+        Double Tong_Ngay30 = 0;
+        Double Tong_Ngay31 = 0;
         DataTable _dt_DinhMuc;
         public void LoadData(bool islandau)
         {
@@ -226,73 +226,73 @@ namespace CtyTinLuong
                 _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
                 ds_id_congnhan = new List<int>();
 
-                int Ngay1 = 0;
-                int Ngay2 = 0;
-                int Ngay3 = 0;
-                int Ngay4 = 0;
-                int Ngay5 = 0;
-                int Ngay6 = 0;
-                int Ngay7 = 0;
-                int Ngay8 = 0;
-                int Ngay9 = 0;
-                int Ngay10 = 0;
-                int Ngay11 = 0;
-                int Ngay12 = 0;
-                int Ngay13 = 0;
-                int Ngay14 = 0;
-                int Ngay15 = 0;
-                int Ngay16 = 0;
-                int Ngay17 = 0;
-                int Ngay18 = 0;
-                int Ngay19 = 0;
-                int Ngay20 = 0;
-                int Ngay21 = 0;
-                int Ngay22 = 0;
-                int Ngay23 = 0;
-                int Ngay24 = 0;
-                int Ngay25 = 0;
-                int Ngay26 = 0;
-                int Ngay27 = 0;
-                int Ngay28 = 0;
-                int Ngay29 = 0;
-                int Ngay30 = 0;
-                int Ngay31 = 0;
+                Double Ngay1 = 0;
+                Double Ngay2 = 0;
+                Double Ngay3 = 0;
+                Double Ngay4 = 0;
+                Double Ngay5 = 0;
+                Double Ngay6 = 0;
+                Double Ngay7 = 0;
+                Double Ngay8 = 0;
+                Double Ngay9 = 0;
+                Double Ngay10 = 0;
+                Double Ngay11 = 0;
+                Double Ngay12 = 0;
+                Double Ngay13 = 0;
+                Double Ngay14 = 0;
+                Double Ngay15 = 0;
+                Double Ngay16 = 0;
+                Double Ngay17 = 0;
+                Double Ngay18 = 0;
+                Double Ngay19 = 0;
+                Double Ngay20 = 0;
+                Double Ngay21 = 0;
+                Double Ngay22 = 0;
+                Double Ngay23 = 0;
+                Double Ngay24 = 0;
+                Double Ngay25 = 0;
+                Double Ngay26 = 0;
+                Double Ngay27 = 0;
+                Double Ngay28 = 0;
+                Double Ngay29 = 0;
+                Double Ngay30 = 0;
+                Double Ngay31 = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 { 
                     ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
 
-                    Ngay1 = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
-                    Ngay2 = Convert.ToInt32(_data.Rows[i]["Ngay2"].ToString());
-                    Ngay3 = Convert.ToInt32(_data.Rows[i]["Ngay3"].ToString());
-                    Ngay4 = Convert.ToInt32(_data.Rows[i]["Ngay4"].ToString());
-                    Ngay5 = Convert.ToInt32(_data.Rows[i]["Ngay5"].ToString());
-                    Ngay6 = Convert.ToInt32(_data.Rows[i]["Ngay6"].ToString());
-                    Ngay7 = Convert.ToInt32(_data.Rows[i]["Ngay7"].ToString());
-                    Ngay8 = Convert.ToInt32(_data.Rows[i]["Ngay8"].ToString());
-                    Ngay9 = Convert.ToInt32(_data.Rows[i]["Ngay9"].ToString());
-                    Ngay10 = Convert.ToInt32(_data.Rows[i]["Ngay10"].ToString());
-                    Ngay11 = Convert.ToInt32(_data.Rows[i]["Ngay11"].ToString());
-                    Ngay12 = Convert.ToInt32(_data.Rows[i]["Ngay12"].ToString());
-                    Ngay13 = Convert.ToInt32(_data.Rows[i]["Ngay13"].ToString());
-                    Ngay14 = Convert.ToInt32(_data.Rows[i]["Ngay14"].ToString());
-                    Ngay15 = Convert.ToInt32(_data.Rows[i]["Ngay15"].ToString());
-                    Ngay16 = Convert.ToInt32(_data.Rows[i]["Ngay16"].ToString());
-                    Ngay17 = Convert.ToInt32(_data.Rows[i]["Ngay17"].ToString());
-                    Ngay18 = Convert.ToInt32(_data.Rows[i]["Ngay18"].ToString());
-                    Ngay19 = Convert.ToInt32(_data.Rows[i]["Ngay19"].ToString());
-                    Ngay20 = Convert.ToInt32(_data.Rows[i]["Ngay20"].ToString());
-                    Ngay21 = Convert.ToInt32(_data.Rows[i]["Ngay21"].ToString());
-                    Ngay22 = Convert.ToInt32(_data.Rows[i]["Ngay22"].ToString());
-                    Ngay23 = Convert.ToInt32(_data.Rows[i]["Ngay23"].ToString());
-                    Ngay24 = Convert.ToInt32(_data.Rows[i]["Ngay24"].ToString());
-                    Ngay25 = Convert.ToInt32(_data.Rows[i]["Ngay25"].ToString());
-                    Ngay26 = Convert.ToInt32(_data.Rows[i]["Ngay26"].ToString());
-                    Ngay27 = Convert.ToInt32(_data.Rows[i]["Ngay27"].ToString());
-                    Ngay28 = Convert.ToInt32(_data.Rows[i]["Ngay28"].ToString());
-                    Ngay29 = Convert.ToInt32(_data.Rows[i]["Ngay29"].ToString());
-                    Ngay30 = Convert.ToInt32(_data.Rows[i]["Ngay30"].ToString());
-                    Ngay31 = Convert.ToInt32(_data.Rows[i]["Ngay31"].ToString());
+                    Ngay1 = Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString());
+                    Ngay2 = Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString());
+                    Ngay3 = Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString());
+                    Ngay4 = Convert.ToDouble(_data.Rows[i]["Ngay4"].ToString());
+                    Ngay5 = Convert.ToDouble(_data.Rows[i]["Ngay5"].ToString());
+                    Ngay6 = Convert.ToDouble(_data.Rows[i]["Ngay6"].ToString());
+                    Ngay7 = Convert.ToDouble(_data.Rows[i]["Ngay7"].ToString());
+                    Ngay8 = Convert.ToDouble(_data.Rows[i]["Ngay8"].ToString());
+                    Ngay9 = Convert.ToDouble(_data.Rows[i]["Ngay9"].ToString());
+                    Ngay10 = Convert.ToDouble(_data.Rows[i]["Ngay10"].ToString());
+                    Ngay11 = Convert.ToDouble(_data.Rows[i]["Ngay11"].ToString());
+                    Ngay12 = Convert.ToDouble(_data.Rows[i]["Ngay12"].ToString());
+                    Ngay13 = Convert.ToDouble(_data.Rows[i]["Ngay13"].ToString());
+                    Ngay14 = Convert.ToDouble(_data.Rows[i]["Ngay14"].ToString());
+                    Ngay15 = Convert.ToDouble(_data.Rows[i]["Ngay15"].ToString());
+                    Ngay16 = Convert.ToDouble(_data.Rows[i]["Ngay16"].ToString());
+                    Ngay17 = Convert.ToDouble(_data.Rows[i]["Ngay17"].ToString());
+                    Ngay18 = Convert.ToDouble(_data.Rows[i]["Ngay18"].ToString());
+                    Ngay19 = Convert.ToDouble(_data.Rows[i]["Ngay19"].ToString());
+                    Ngay20 = Convert.ToDouble(_data.Rows[i]["Ngay20"].ToString());
+                    Ngay21 = Convert.ToDouble(_data.Rows[i]["Ngay21"].ToString());
+                    Ngay22 = Convert.ToDouble(_data.Rows[i]["Ngay22"].ToString());
+                    Ngay23 = Convert.ToDouble(_data.Rows[i]["Ngay23"].ToString());
+                    Ngay24 = Convert.ToDouble(_data.Rows[i]["Ngay24"].ToString());
+                    Ngay25 = Convert.ToDouble(_data.Rows[i]["Ngay25"].ToString());
+                    Ngay26 = Convert.ToDouble(_data.Rows[i]["Ngay26"].ToString());
+                    Ngay27 = Convert.ToDouble(_data.Rows[i]["Ngay27"].ToString());
+                    Ngay28 = Convert.ToDouble(_data.Rows[i]["Ngay28"].ToString());
+                    Ngay29 = Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString());
+                    Ngay30 = Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString());
+                    Ngay31 = Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString());
                     //
                     _data.Rows[i]["Ngay1"] = Ngay1.ToString("N0");
                     _data.Rows[i]["Ngay2"] = Ngay2.ToString("N0");
@@ -572,15 +572,15 @@ namespace CtyTinLuong
 
         private void CongTong()
         {
-            int[] _ds_ngay_tong_ = new int[31];
-            int tong_tong_ = 0;
+            Double[] _ds_ngay_tong_ = new Double[31];
+            Double tong_tong_ = 0;
             for (int i = 0; i < _data.Rows.Count - 1; ++i)
             {
                 for (int j = 0; j < 31; ++j)
                 {
-                    _ds_ngay_tong_[j] += Convert.ToInt32(_data.Rows[i]["Ngay" + (j + 1)].ToString());
+                    _ds_ngay_tong_[j] += Convert.ToDouble(_data.Rows[i]["Ngay" + (j + 1)].ToString());
                 }
-                tong_tong_ += Convert.ToInt32(_data.Rows[i]["Tong"].ToString());
+                tong_tong_ += Convert.ToDouble(_data.Rows[i]["Tong"].ToString());
             }
             for (int j = 0; j < 31; ++j)
             {
