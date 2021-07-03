@@ -12883,6 +12883,8 @@ namespace CtyTinLuong {
             
             private global::System.Data.DataColumn columnNgayCong;
             
+            private global::System.Data.DataColumn columnPhuCap;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbBTTL_PKToan_CTDataTable() {
@@ -13006,6 +13008,14 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PhuCapColumn {
+                get {
+                    return this.columnPhuCap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -13041,7 +13051,7 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbBTTL_PKToan_CTRow AddtbBTTL_PKToan_CTRow(string STT, string TenNhanVien, string Cong, double LuongCoBan, double BaoHiem, double TongTien, double TamUng, double ThucNhan, double TrachNhiem, double TongLuong, double NgayCong) {
+            public tbBTTL_PKToan_CTRow AddtbBTTL_PKToan_CTRow(string STT, string TenNhanVien, string Cong, double LuongCoBan, double BaoHiem, double TongTien, double TamUng, double ThucNhan, double TrachNhiem, double TongLuong, double NgayCong, double PhuCap) {
                 tbBTTL_PKToan_CTRow rowtbBTTL_PKToan_CTRow = ((tbBTTL_PKToan_CTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -13054,7 +13064,8 @@ namespace CtyTinLuong {
                         ThucNhan,
                         TrachNhiem,
                         TongLuong,
-                        NgayCong};
+                        NgayCong,
+                        PhuCap};
                 rowtbBTTL_PKToan_CTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbBTTL_PKToan_CTRow);
                 return rowtbBTTL_PKToan_CTRow;
@@ -13088,6 +13099,7 @@ namespace CtyTinLuong {
                 this.columnTrachNhiem = base.Columns["TrachNhiem"];
                 this.columnTongLuong = base.Columns["TongLuong"];
                 this.columnNgayCong = base.Columns["NgayCong"];
+                this.columnPhuCap = base.Columns["PhuCap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13115,6 +13127,8 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnTongLuong);
                 this.columnNgayCong = new global::System.Data.DataColumn("NgayCong", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgayCong);
+                this.columnPhuCap = new global::System.Data.DataColumn("PhuCap", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhuCap);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25239,6 +25253,22 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PhuCap {
+                get {
+                    try {
+                        return ((double)(this[this.tabletbBTTL_PKToan_CT.PhuCapColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PhuCap\' in table \'tbBTTL_PKToan_CT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBTTL_PKToan_CT.PhuCapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSTTNull() {
                 return this.IsNull(this.tabletbBTTL_PKToan_CT.STTColumn);
             }
@@ -25367,6 +25397,18 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNgayCongNull() {
                 this[this.tabletbBTTL_PKToan_CT.NgayCongColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPhuCapNull() {
+                return this.IsNull(this.tabletbBTTL_PKToan_CT.PhuCapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPhuCapNull() {
+                this[this.tabletbBTTL_PKToan_CT.PhuCapColumn] = global::System.Convert.DBNull;
             }
         }
         

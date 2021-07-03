@@ -31,7 +31,7 @@
     <Shape ID="DesignTable:tbBTTL_TMC_CT" ZOrder="6" X="828" Y="350" Height="28" Width="159" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="253" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBTTL_TrgCa_CT" ZOrder="5" X="1087" Y="234" Height="28" Width="166" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="234" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBTTL_PhuMC_CT" ZOrder="4" X="252" Y="160" Height="28" Width="173" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="234" SplitterPosition="24" />
-    <Shape ID="DesignTable:tbBTTL_PKToan_CT" ZOrder="1" X="289" Y="230" Height="28" Width="181" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="234" SplitterPosition="24" />
+    <Shape ID="DesignTable:tbBTTL_PKToan_CT" ZOrder="1" X="289" Y="230" Height="257" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="253" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

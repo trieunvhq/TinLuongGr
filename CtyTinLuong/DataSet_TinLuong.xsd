@@ -582,6 +582,7 @@
               <xs:element name="TrachNhiem" msprop:Generator_ColumnVarNameInTable="columnTrachNhiem" msprop:Generator_ColumnPropNameInRow="TrachNhiem" msprop:Generator_ColumnPropNameInTable="TrachNhiemColumn" msprop:Generator_UserColumnName="TrachNhiem" type="xs:double" minOccurs="0" />
               <xs:element name="TongLuong" msprop:Generator_ColumnVarNameInTable="columnTongLuong" msprop:Generator_ColumnPropNameInRow="TongLuong" msprop:Generator_ColumnPropNameInTable="TongLuongColumn" msprop:Generator_UserColumnName="TongLuong" type="xs:double" minOccurs="0" />
               <xs:element name="NgayCong" msprop:Generator_ColumnVarNameInTable="columnNgayCong" msprop:Generator_ColumnPropNameInRow="NgayCong" msprop:Generator_ColumnPropNameInTable="NgayCongColumn" msprop:Generator_UserColumnName="NgayCong" type="xs:double" minOccurs="0" />
+              <xs:element name="PhuCap" msprop:Generator_ColumnVarNameInTable="columnPhuCap" msprop:Generator_ColumnPropNameInRow="PhuCap" msprop:Generator_ColumnPropNameInTable="PhuCapColumn" msprop:Generator_UserColumnName="PhuCap" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -34,7 +34,7 @@ namespace CtyTinLuong
         {
             _id_bophan = id_bophan;
             InitializeComponent();
-             
+            DonGia.Caption = "LƯƠNG\nCƠ BẢN";
         }
 
         public void LoadData(bool islandau)
@@ -289,7 +289,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT(_thang, _nam);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_PKToan_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_PKToan_CT(_thang, _nam, _data);
             ff.ShowDialog();
         }
 
