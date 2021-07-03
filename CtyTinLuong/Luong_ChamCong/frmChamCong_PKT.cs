@@ -864,9 +864,8 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangChamCong_TBX ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangChamCong_TBX(_thang, _nam);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PKToan ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PKToan(_thang, _nam, _data);
             ff.ShowDialog();
-
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

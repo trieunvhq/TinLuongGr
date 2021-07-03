@@ -379,6 +379,12 @@
     <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.Designer.cs">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCong_PKToan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCong_PKToan.Designer.cs">
+      <DependentUpon>TrPrintChamCong_PKToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCong_PhuMC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -450,6 +456,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_TQ.designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_TBX_TQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_PKToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_PKToan.Designer.cs">
+      <DependentUpon>Tr_frmPrintChamCong_PKToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_PhuMC.cs">
       <SubType>Form</SubType>
@@ -2109,6 +2121,9 @@
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongPTH.resx">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_PKToan.resx">
+      <DependentUpon>TrPrintChamCong_PKToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_PhuMC.resx">
       <DependentUpon>TrPrintChamCong_PhuMC.cs</DependentUpon>
     </EmbeddedResource>
@@ -2144,6 +2159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TBX_TQ.resx">
       <DependentUpon>Tr_frmPrintBTTL_TBX_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCong_PKToan.resx">
+      <DependentUpon>Tr_frmPrintChamCong_PKToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCong_PhuMC.resx">
       <DependentUpon>Tr_frmPrintChamCong_PhuMC.cs</DependentUpon>
