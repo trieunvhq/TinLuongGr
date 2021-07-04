@@ -24,7 +24,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            UCBangLuong uccc_DaNhapKho = new UCBangLuong();
+            UCBangLuong uccc_DaNhapKho = new UCBangLuong(this);
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
             uccc_DaNhapKho.BringToFront();
@@ -208,7 +208,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_);
+            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -317,7 +317,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_);
+            frmChamCong_TBX frm = new frmChamCong_TBX(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();

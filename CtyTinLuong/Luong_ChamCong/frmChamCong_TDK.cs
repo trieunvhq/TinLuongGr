@@ -22,8 +22,12 @@ namespace CtyTinLuong
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmChamCong_TDK(int id_bophan)
+
+        frmQuanLy_Luong_ChamCong _frmQLLCC;
+
+        public frmChamCong_TDK(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
+            _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0; _MaDinhMucLuongCongNhat = "";
              _id_bophan = id_bophan;
             InitializeComponent();
@@ -35,7 +39,6 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
             ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
             ds_grid.Add(Ngay31);
-
 
             this.cbHangHoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbHangHoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; 
@@ -763,7 +766,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            _frmQLLCC.Close();
         }
         private void GuiDuLieuBangLuong()
         {

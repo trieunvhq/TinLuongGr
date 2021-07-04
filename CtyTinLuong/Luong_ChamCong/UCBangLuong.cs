@@ -25,9 +25,10 @@ namespace CtyTinLuong
             gridControl1.DataSource = dxxxx;
         }
 
-
-        public UCBangLuong()
+        frmQuanLy_Luong_ChamCong _frmQLLCC;
+        public UCBangLuong(frmQuanLy_Luong_ChamCong frmQLLCC)
         {
+            _frmQLLCC = frmQLLCC;
             InitializeComponent();
         }
 

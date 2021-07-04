@@ -29,8 +29,12 @@ namespace CtyTinLuong
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmChamCong_PTH(int id_bophan)
+
+        frmQuanLy_Luong_ChamCong _frmQLLCC;
+
+        public frmChamCong_PTH(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
+            _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0;
             _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
@@ -903,7 +907,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            _frmQLLCC.Close();
         }
         private void GuiDuLieuBangLuong()
         {

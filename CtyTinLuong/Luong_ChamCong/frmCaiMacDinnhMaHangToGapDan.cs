@@ -127,6 +127,7 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
 
         }
+
         public frmCaiMacDinnhMaHangToGapDan()
         {
             InitializeComponent();
