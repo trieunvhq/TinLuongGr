@@ -442,6 +442,7 @@
             this.btnPrintTQ.Size = new System.Drawing.Size(82, 25);
             this.btnPrintTQ.TabIndex = 145;
             this.btnPrintTQ.Text = "Tổng quát";
+            this.btnPrintTQ.Click += new System.EventHandler(this.btnPrintTQ_Click);
             // 
             // btnPrint
             // 
