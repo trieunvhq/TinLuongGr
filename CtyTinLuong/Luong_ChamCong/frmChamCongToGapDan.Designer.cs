@@ -225,9 +225,9 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
             this.clTenNhanVien,
+            this.TenVTHH,
             this.DinhMuc,
             this.clTongLuong,
-            this.TenVTHH,
             this.clID_ChiTietChamCong,
             this.clID_ChamCong,
             this.clThang,
@@ -325,6 +325,7 @@
             this.DinhMuc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.DinhMuc.Caption = "Định mức";
             this.DinhMuc.FieldName = "DinhMuc";
+            this.DinhMuc.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.DinhMuc.Name = "DinhMuc";
             this.DinhMuc.Visible = true;
             this.DinhMuc.VisibleIndex = 3;

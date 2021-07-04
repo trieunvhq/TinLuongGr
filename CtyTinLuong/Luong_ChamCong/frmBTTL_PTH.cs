@@ -30,8 +30,12 @@ namespace CtyTinLuong
         private bool isload = true; 
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
-        public frmBTTL_PTH(int id_bophan)
+
+        frmQuanLy_Luong_ChamCong _frmQLLCC;
+
+        public frmBTTL_PTH(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
+            _frmQLLCC = frmQLLCC;
             _id_bophan = id_bophan;
             InitializeComponent();
              
@@ -394,7 +398,7 @@ namespace CtyTinLuong
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            _frmQLLCC.Close();
         }
     }
 }

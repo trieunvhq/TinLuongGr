@@ -204,6 +204,7 @@
             // 
             this.TenVTHH.Caption = "CÔNG";
             this.TenVTHH.FieldName = "TenVTHH";
+            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.TenVTHH.Name = "TenVTHH";
             this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;

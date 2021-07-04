@@ -106,7 +106,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT();
+            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT(this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -190,7 +190,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            frmChamCom_TGD frm = new frmChamCom_TGD();
+            frmChamCom_TGD frm = new frmChamCom_TGD(this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -245,7 +245,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Bốc xếp");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT(id_bophan_);
+            frmBTTL_TBX_CT frm = new frmBTTL_TBX_CT(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -263,7 +263,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng kiện");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TDK frm = new frmChamCong_TDK(id_bophan_);
+            frmChamCong_TDK frm = new frmChamCong_TDK(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -281,7 +281,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Máy cắt");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT(id_bophan_);
+            frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -299,7 +299,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmChamCongToGapDan frm = new frmChamCongToGapDan(id_bophan_);
+            frmChamCongToGapDan frm = new frmChamCongToGapDan(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -335,7 +335,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_TrgCa frm = new frmChamCong_TrgCa(id_bophan_);
+            frmChamCong_TrgCa frm = new frmChamCong_TrgCa(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -365,7 +365,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Trưởng ca");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TrgCa_CT frm = new frmBTTL_TrgCa_CT(id_bophan_);
+            frmBTTL_TrgCa_CT frm = new frmBTTL_TrgCa_CT(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -383,7 +383,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_PTH frm = new frmChamCong_PTH(id_bophan_);
+            frmChamCong_PTH frm = new frmChamCong_PTH(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -401,7 +401,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_PTH frm = new frmBTTL_PTH(id_bophan_);
+            frmBTTL_PTH frm = new frmBTTL_PTH(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -419,7 +419,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Phòng Kế toán");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_PKT frm = new frmChamCong_PKT(id_bophan_);
+            frmChamCong_PKT frm = new frmChamCong_PKT(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -437,7 +437,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Phòng Kế toán");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_PKT frm = new frmBTTL_PKT(id_bophan_);
+            frmBTTL_PKT frm = new frmBTTL_PKT(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -455,7 +455,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_PMC frm = new frmChamCong_PMC(id_bophan_);
+            frmChamCong_PMC frm = new frmChamCong_PMC(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -473,7 +473,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_PMC frm = new frmBTTL_PMC(id_bophan_);
+            frmBTTL_PMC frm = new frmBTTL_PMC(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
@@ -491,7 +491,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Máy in");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_ToIn frm = new frmChamCong_ToIn(id_bophan_);
+            frmChamCong_ToIn frm = new frmChamCong_ToIn(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();

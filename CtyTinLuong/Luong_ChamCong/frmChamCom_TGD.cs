@@ -20,9 +20,12 @@ namespace CtyTinLuong
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
-         
-        public frmChamCom_TGD()
+
+        frmQuanLy_Luong_ChamCong _frmQLLCC;
+
+        public frmChamCom_TGD(frmQuanLy_Luong_ChamCong frmQLLCC)
         {
+            _frmQLLCC = frmQLLCC;
             InitializeComponent();
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -731,7 +734,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            //this.Close();
+            _frmQLLCC.Close();
         }
         private void GuiDuLieuBangLuong()
         {

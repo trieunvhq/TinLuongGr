@@ -100,6 +100,7 @@ namespace CtyTinLuong
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -114,7 +115,6 @@ namespace CtyTinLuong
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -339,6 +339,7 @@ namespace CtyTinLuong
             // 
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
+            this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1323,6 +1324,21 @@ namespace CtyTinLuong
             this.KyNhan.Visible = true;
             this.KyNhan.VisibleIndex = 35;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridColumn2.Caption = "Vượt SL";
+            this.gridColumn2.FieldName = "VuotSanLuong";
+            this.gridColumn2.MaxWidth = 40;
+            this.gridColumn2.MinWidth = 40;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 34;
+            this.gridColumn2.Width = 40;
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1475,21 +1491,6 @@ namespace CtyTinLuong
             this.label5.Size = new System.Drawing.Size(262, 13);
             this.label5.TabIndex = 162;
             this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn2.Caption = "Vượt SL";
-            this.gridColumn2.FieldName = "VuotSanLuong";
-            this.gridColumn2.MaxWidth = 40;
-            this.gridColumn2.MinWidth = 40;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 34;
-            this.gridColumn2.Width = 40;
             // 
             // frmChamCong_ToIn
             // 

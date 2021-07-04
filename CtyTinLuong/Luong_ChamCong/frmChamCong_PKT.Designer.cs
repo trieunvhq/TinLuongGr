@@ -261,6 +261,7 @@ namespace CtyTinLuong
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clTenNhanVien,
+            this.MaDinhMucLuongCongNhat,
             this.Cong,
             this.clTongLuong,
             this.clID_ChiTietChamCong,
@@ -268,7 +269,6 @@ namespace CtyTinLuong
             this.clThang,
             this.clNam,
             this.ID_DinhMucLuong_CongNhat,
-            this.MaDinhMucLuongCongNhat,
             this.clID_CongNhan,
             this.clSLThuong,
             this.clSLTangCa,
@@ -340,6 +340,7 @@ namespace CtyTinLuong
             // 
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
+            this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
