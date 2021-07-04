@@ -30,7 +30,7 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
-        public frmChamCongToGapDan(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
+        public frmChamCongToGapDan(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC = null)
         {
             _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0;
