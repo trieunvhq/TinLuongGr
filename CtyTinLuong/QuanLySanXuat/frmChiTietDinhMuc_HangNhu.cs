@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraLayout.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -213,6 +214,10 @@ namespace CtyTinLuong
             {
                 checkHangSot.Checked = false;
                 checkHangCuc.Checked = false;
+                layout1.Visibility = LayoutVisibility.Always;
+                layout1.Text = "Số cục/bao";
+                layout2.Visibility = LayoutVisibility.Always;
+                layout2.Text = "Số kiện/bao";
             }
         }
 
@@ -222,6 +227,11 @@ namespace CtyTinLuong
             {
                 checkHangNhu.Checked = false;
                 checkHangCuc.Checked = false;
+
+                layout1.Visibility = LayoutVisibility.Always;
+                layout1.Text = "Số Kg/Sọt";
+                layout2.Visibility = LayoutVisibility.Always;
+                layout2.Text = "Số kiện/Sọt";
             }
         }
 
@@ -231,6 +241,11 @@ namespace CtyTinLuong
             {
                 checkHangNhu.Checked = false;
                 checkHangSot.Checked = false;
+
+                layout1.Visibility = LayoutVisibility.Never;
+                //layout1.Text = "Số Kg/Sọt";
+                layout2.Visibility = LayoutVisibility.Always;
+                layout2.Text = "Số Cục/Kiện";
             }
         }
     }

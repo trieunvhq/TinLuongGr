@@ -53,8 +53,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layout1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layout2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -81,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layout1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layout2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
@@ -129,24 +129,24 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(98, 170);
+            this.txtGhiChu.Location = new System.Drawing.Point(67, 170);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(537, 29);
+            this.txtGhiChu.Size = new System.Drawing.Size(568, 29);
             this.txtGhiChu.TabIndex = 9;
             // 
             // txtSoKienMotBao
             // 
-            this.txtSoKienMotBao.Location = new System.Drawing.Point(98, 146);
+            this.txtSoKienMotBao.Location = new System.Drawing.Point(67, 146);
             this.txtSoKienMotBao.Name = "txtSoKienMotBao";
-            this.txtSoKienMotBao.Size = new System.Drawing.Size(537, 20);
+            this.txtSoKienMotBao.Size = new System.Drawing.Size(568, 20);
             this.txtSoKienMotBao.TabIndex = 4;
             // 
             // txtSoKGMotBao
             // 
-            this.txtSoKGMotBao.Location = new System.Drawing.Point(98, 122);
+            this.txtSoKGMotBao.Location = new System.Drawing.Point(67, 122);
             this.txtSoKGMotBao.Name = "txtSoKGMotBao";
-            this.txtSoKGMotBao.Size = new System.Drawing.Size(537, 20);
+            this.txtSoKGMotBao.Size = new System.Drawing.Size(568, 20);
             this.txtSoKGMotBao.TabIndex = 7;
             // 
             // btLuu_va_Dong
@@ -175,7 +175,7 @@
             // dteNgayThang
             // 
             this.dteNgayThang.EditValue = null;
-            this.dteNgayThang.Location = new System.Drawing.Point(98, 50);
+            this.dteNgayThang.Location = new System.Drawing.Point(67, 50);
             this.dteNgayThang.Name = "dteNgayThang";
             this.dteNgayThang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -185,15 +185,15 @@
             this.dteNgayThang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayThang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayThang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayThang.Size = new System.Drawing.Size(211, 20);
+            this.dteNgayThang.Size = new System.Drawing.Size(242, 20);
             this.dteNgayThang.StyleController = this.layoutControl2;
             this.dteNgayThang.TabIndex = 1;
             // 
             // txtSoHieu
             // 
-            this.txtSoHieu.Location = new System.Drawing.Point(98, 26);
+            this.txtSoHieu.Location = new System.Drawing.Point(67, 26);
             this.txtSoHieu.Name = "txtSoHieu";
-            this.txtSoHieu.Size = new System.Drawing.Size(112, 20);
+            this.txtSoHieu.Size = new System.Drawing.Size(143, 20);
             this.txtSoHieu.TabIndex = 2;
             // 
             // txtDVT1
@@ -206,21 +206,21 @@
             // 
             // txtTenVatTu
             // 
-            this.txtTenVatTu.Location = new System.Drawing.Point(98, 98);
+            this.txtTenVatTu.Location = new System.Drawing.Point(67, 98);
             this.txtTenVatTu.Multiline = true;
             this.txtTenVatTu.Name = "txtTenVatTu";
             this.txtTenVatTu.ReadOnly = true;
-            this.txtTenVatTu.Size = new System.Drawing.Size(385, 20);
+            this.txtTenVatTu.Size = new System.Drawing.Size(416, 20);
             this.txtTenVatTu.TabIndex = 6;
             // 
             // gridLookUpEditLoaiHang
             // 
-            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(98, 74);
+            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(67, 74);
             this.gridLookUpEditLoaiHang.Name = "gridLookUpEditLoaiHang";
             this.gridLookUpEditLoaiHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEditLoaiHang.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEditLoaiHang.Size = new System.Drawing.Size(131, 20);
+            this.gridLookUpEditLoaiHang.Size = new System.Drawing.Size(162, 20);
             this.gridLookUpEditLoaiHang.StyleController = this.layoutControl2;
             this.gridLookUpEditLoaiHang.TabIndex = 5;
             this.gridLookUpEditLoaiHang.EditValueChanged += new System.EventHandler(this.gridLookUpEditLoaiHang_EditValueChanged);
@@ -272,8 +272,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.emptySpaceItem1,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
+            this.layout1,
+            this.layout2,
             this.layoutControlItem4,
             this.layoutControlItem9,
             this.emptySpaceItem7,
@@ -296,7 +296,7 @@
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(231, 24);
             this.layoutControlItem23.Text = "Mã VT";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem5
             // 
@@ -305,7 +305,7 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(311, 24);
             this.layoutControlItem5.Text = "Ngày lập";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem1
             // 
@@ -314,7 +314,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem1.Text = "Mã Định mức";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem2
             // 
@@ -342,23 +342,23 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(459, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem7
+            // layout1
             // 
-            this.layoutControlItem7.Control = this.txtSoKGMotBao;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(637, 24);
-            this.layoutControlItem7.Text = "Cục/ bao (Kg/Sọt)";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(93, 13);
+            this.layout1.Control = this.txtSoKGMotBao;
+            this.layout1.Location = new System.Drawing.Point(0, 120);
+            this.layout1.Name = "layout1";
+            this.layout1.Size = new System.Drawing.Size(637, 24);
+            this.layout1.Text = "Cục/ bao";
+            this.layout1.TextSize = new System.Drawing.Size(62, 13);
             // 
-            // layoutControlItem8
+            // layout2
             // 
-            this.layoutControlItem8.Control = this.txtSoKienMotBao;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(637, 24);
-            this.layoutControlItem8.Text = "Kiện/Bao (Kiên/Sọt)";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
+            this.layout2.Control = this.txtSoKienMotBao;
+            this.layout2.Location = new System.Drawing.Point(0, 144);
+            this.layout2.Name = "layout2";
+            this.layout2.Size = new System.Drawing.Size(637, 24);
+            this.layout2.Text = "Kiện/Bao";
+            this.layout2.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem4
             // 
@@ -368,7 +368,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(485, 24);
             this.layoutControlItem4.Text = "Tên VT";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem9
             // 
@@ -414,7 +414,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(637, 33);
             this.layoutControlItem6.Text = "Ghi chú";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(62, 13);
             // 
             // checkHangNhu
             // 
@@ -500,8 +500,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layout1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layout2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
@@ -541,9 +541,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private System.Windows.Forms.TextBox txtSoKGMotBao;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layout1;
         private System.Windows.Forms.TextBox txtSoKienMotBao;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layout2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private System.Windows.Forms.TextBox txtGhiChu;
