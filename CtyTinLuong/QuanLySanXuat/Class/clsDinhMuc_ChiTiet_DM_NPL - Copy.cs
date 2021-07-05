@@ -214,5 +214,54 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+
+        public bool Insert2(string strSoLuong)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_DinhMuc_ChiTiet_DM_NPL_Insert2]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_NPL", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_NPL));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuong));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietDinhMucNPL", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietDinhMucNPL));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@strSoLuong", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, strSoLuong));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                m_iID_ChiTietDinhMucNPL = (SqlInt32)scmCmdToExecute.Parameters["@iID_ChiTietDinhMucNPL"].Value;
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'pr_DinhMuc_ChiTiet_DM_NPL_Insert' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsDinhMuc_ChiTiet_DM_NPL::Insert::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
     }
 }
