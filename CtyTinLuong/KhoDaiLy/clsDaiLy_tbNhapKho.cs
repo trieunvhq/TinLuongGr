@@ -11,7 +11,7 @@ namespace CtyTinLuong
 			private SqlBoolean		m_bCheck_LaiXe, m_bNgungTheoDoi, m_bCheck_DaiLy, m_bBool_TonDauKy, m_bDaNhapKho, m_bTonTai, m_bTrangThaiXuatNhap_Kho_NPL, m_bCheck_BaoVe, m_bHoanThanh, m_bTrangThaiXuatNhap_KhoDaiLy, m_bTrangThaiXuatNhap_Kho_BTP;
 			private SqlDateTime		m_daThoiGian_KhoiTao, m_daThoiGian_DaiLy, m_daThoiGian_BaoVe, m_daThoiGian_LaiXe, m_daNgayChungTu;
 			private SqlDouble		m_fTongTienHang, m_fSoLuongXuat_BaoTo, m_fSoLuongThanhPhamQuyDoi, m_fSoLuongTonThanhPhamQuyDoi, m_fSoLuongXuat_BaoBe;
-			private SqlInt32		m_iHangDoT_1_hangNhu_2_ConLai3, m_iID_DinhMucNguenPhuLieu, m_iID_VTHH_TPQuyDoi, m_iID_DinhMucDot_BaoBe, m_iID_NhapKhoDaiLy, m_iID_DinhMucDot_BaoTo, m_iID_TKCo, m_iID_DaiLy, m_iID_TKNo, m_iID_NguoiNhap;
+			private SqlInt32		m_iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0, m_iID_DinhMucNguenPhuLieu, m_iID_VTHH_TPQuyDoi, m_iID_DinhMucDot_BaoBe, m_iID_NhapKhoDaiLy, m_iID_DinhMucDot_BaoTo, m_iID_TKCo, m_iID_DaiLy, m_iID_TKNo, m_iID_NguoiNhap;
 			private SqlString		m_sSoChungTu, m_sThamChieu, m_sDienGiai, m_sGhiChu;
 		#endregion
 
@@ -66,7 +66,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_DaiLy", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_DaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChu", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bHoanThanh", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bHoanThanh));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iHangDoT_1_hangNhu_2_ConLai3", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iHangDoT_1_hangNhu_2_ConLai3));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKhoDaiLy", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKhoDaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
@@ -145,7 +145,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@daThoiGian_DaiLy", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daThoiGian_DaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChu", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bHoanThanh", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bHoanThanh));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iHangDoT_1_hangNhu_2_ConLai3", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iHangDoT_1_hangNhu_2_ConLai3));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
@@ -285,7 +285,7 @@ namespace CtyTinLuong
 					m_daThoiGian_DaiLy = dtToReturn.Rows[0]["ThoiGian_DaiLy"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)dtToReturn.Rows[0]["ThoiGian_DaiLy"];
 					m_sGhiChu = (string)dtToReturn.Rows[0]["GhiChu"];
 					m_bHoanThanh = (bool)dtToReturn.Rows[0]["HoanThanh"];
-					m_iHangDoT_1_hangNhu_2_ConLai3 = (Int32)dtToReturn.Rows[0]["HangDoT_1_hangNhu_2_ConLai3"];
+					m_iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = (Int32)dtToReturn.Rows[0]["HangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0"];
 				}
 				return dtToReturn;
 			}
@@ -962,20 +962,20 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlInt32 iHangDoT_1_hangNhu_2_ConLai3
+		public SqlInt32 iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0
 		{
 			get
 			{
-				return m_iHangDoT_1_hangNhu_2_ConLai3;
+				return m_iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
 			}
 			set
 			{
-				SqlInt32 iHangDoT_1_hangNhu_2_ConLai3Tmp = (SqlInt32)value;
-				if(iHangDoT_1_hangNhu_2_ConLai3Tmp.IsNull)
+				SqlInt32 iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0Tmp = (SqlInt32)value;
+				if(iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0Tmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("iHangDoT_1_hangNhu_2_ConLai3", "iHangDoT_1_hangNhu_2_ConLai3 can't be NULL");
+					throw new ArgumentOutOfRangeException("iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0", "iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 can't be NULL");
 				}
-				m_iHangDoT_1_hangNhu_2_ConLai3 = value;
+				m_iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = value;
 			}
 		}
 		#endregion

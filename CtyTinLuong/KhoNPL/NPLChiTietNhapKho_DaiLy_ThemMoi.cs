@@ -107,11 +107,11 @@ namespace CtyTinLuong
                 cls1.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
                 DataTable dt22222 = cls1.SelectOne();
                
-                if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 1)
+                if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 1)
                     checkHangDot.Checked = true;
-                else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 2)
+                else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 2)
                     checkHangNhu.Checked = true;
-                else if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 3)
+                else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 3)
                     checkHangSot.Checked = true;
 
                 txtSoLuong_BaoTo.Text = cls1.fSoLuongXuat_BaoTo.Value.ToString();
@@ -136,7 +136,7 @@ namespace CtyTinLuong
                 cls1.iID_NhapKhoDaiLy = UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.miID_NhapKhoDaiLy;
                 DataTable dt22222 = cls1.SelectOne();
 
-                if (cls1.iHangDoT_1_hangNhu_2_ConLai3 == 1)
+                if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 1)
                     checkHangDot.Checked = true;
                 else checkHangNhu.Checked = true;
                 if(cls1.bTrangThaiXuatNhap_Kho_NPL.Value==true)
@@ -880,11 +880,11 @@ namespace CtyTinLuong
 
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
-                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
                 else if (checkHangNhu.Checked == true)
-                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
                 else if (checkHangSot.Checked == true)
-                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
                 int iiiiID_NHapKhoDaiLy;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
                 {
@@ -998,11 +998,11 @@ namespace CtyTinLuong
                
                 cls1.bBool_TonDauKy = false;
                 if (checkHangDot.Checked == true)
-                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 1;
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
                 else if (checkHangNhu.Checked == true)
-                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 2;
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
                 else if (checkHangSot.Checked == true)
-                    cls1.iHangDoT_1_hangNhu_2_ConLai3 = 3;
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
                 int iiiiID_NHapKhoDaiLy;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
                 {

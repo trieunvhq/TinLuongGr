@@ -112,7 +112,7 @@ namespace CtyTinLuong
             cls1.bCheck_LaiXe = false;
             cls1.bDaNhapKho = true;
             cls1.bBool_TonDauKy = false;
-            cls1.iHangDoT_1_hangNhu_2_ConLai3 = clsxx.iHangDoT_1_hangNhu_2_ConLai3;
+            cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = clsxx.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
             cls1.Insert();
             int iiID_Nhapkho;
             iiID_Nhapkho = cls1.iID_NhapKhoDaiLy.Value;          
