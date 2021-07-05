@@ -106,16 +106,19 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCBanHang_BanHang_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void UCBanHang_BanHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
-
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -145,6 +148,7 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 if (gridView1.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
@@ -160,14 +164,17 @@ namespace CtyTinLuong
             {
 
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -186,7 +193,7 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-           
+            Cursor.Current = Cursors.WaitCursor;
 
             DialogResult traloi;
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -229,6 +236,8 @@ namespace CtyTinLuong
                     HienThi_ALL();
 
             }
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -243,8 +252,11 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int xxxmiiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
                 HienThi_Gridcontrol_2(xxxmiiiID_BanHang);
+
+                Cursor.Current = Cursors.Default;
             }
         }
     }

@@ -20,7 +20,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             BanHang_CongNo_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
         public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
@@ -117,11 +119,13 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 int xxid = 268; // // 131 Phải thu của khách hàng
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -193,12 +197,14 @@ namespace CtyTinLuong
 
         private void BanHang_CongNo_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             DateTime ngaydauthang = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dteTuNgay.EditValue = ngaydauthang;
             int xxid = 268; // 131 Phải thu của khách hàng
             LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }

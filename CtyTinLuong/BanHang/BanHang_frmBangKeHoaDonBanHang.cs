@@ -96,6 +96,7 @@ namespace CtyTinLuong
 
         private void BanHang_frmBangKeHoaDonBanHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dteDenNgay.EditValue = DateTime.Now;
@@ -103,6 +104,7 @@ namespace CtyTinLuong
             LoadData(1,20, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView_banhang_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -124,16 +126,19 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 int sodongxxx = Convert.ToInt32(txtSoDong.Text);
                 ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 LoadData(1, sodongxxx, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangTiep.LinkColor == Color.Black)
@@ -164,10 +169,12 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangSau.LinkColor == Color.Black)
@@ -197,6 +204,7 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void txtSoTrang_TextChanged(object sender, EventArgs e)
@@ -224,6 +232,13 @@ namespace CtyTinLuong
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
                 ff.ShowDialog();
             }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            BanHang_frmBangKeHoaDonBanHang_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView_Chitiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

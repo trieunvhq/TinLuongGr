@@ -120,7 +120,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             BanHang_SoTongHopbanHang_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -225,11 +227,12 @@ namespace CtyTinLuong
 
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dteDenNgay.EditValue = DateTime.Now;
             LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
-
+            Cursor.Current = Cursors.Default;
         }
     }
 }

@@ -73,12 +73,15 @@ namespace CtyTinLuong
         private void navBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             //UCBanHang_BanHang
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             UCBanHang_BanHang ucc = new UCBanHang_BanHang(this);
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThooat_Click(object sender, EventArgs e)
@@ -88,11 +91,14 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
 
             UCBanHang_CongNo ucc = new UCBanHang_CongNo();
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -112,48 +118,63 @@ namespace CtyTinLuong
 
         private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
             //this.Hide();
             ucc.Show();
             //this.Show();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
             ff.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navbangKeHoaDonBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
             //this.Hide();
             ff.Show();
             //this.Show();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
             //this.Hide();
             ucc.Show();
             //this.Show();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
             BanHang_CongNo ff = new CtyTinLuong.BanHang_CongNo();
             //this.Hide();
             ff.Show();
             //this.Show();
 
-            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void doiMauTitle(object sender, NavBarLinkEventArgs e)

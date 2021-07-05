@@ -189,11 +189,13 @@ namespace CtyTinLuong
 
         private void frmCaiDatBangGia_BanHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             gridKH.EditValue = null;
             txtTenKH.Text = "";
             gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
             Load_LockUp();
             HienThi_ALLL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btXoa2_Click(object sender, EventArgs e)
@@ -230,6 +232,7 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //try
             //{
             if (gridKH.EditValue != null)
@@ -267,6 +270,8 @@ namespace CtyTinLuong
             //}
             //catch
             //{ }
+
+            Cursor.Current = Cursors.Default;
 
         }
 
@@ -318,7 +323,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmCaiDatBangGia_BanHang_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btPrint_Click(object sender, EventArgs e)
