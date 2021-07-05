@@ -1505,7 +1505,7 @@ namespace CtyTinLuong
                 layoutkg1baoto.Visibility= LayoutVisibility.Always;
                 
                 layoutkg1baoto.Text = "Cục/ 1bao";
-                layoutbaoto.Text = "Số lượng xuất (Cục)";                
+                layoutbaoto.Text = "Số lượng xuất";                
                 layoutControlItem21.Text = "Tổng số cục";
                 layoutkien1baoto.Text = "Số kiện/bao";
                 txtSoLuong_BaoBe.Text = "0";
