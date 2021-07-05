@@ -337,7 +337,11 @@
             // clNgayChungTu
             // 
             this.clNgayChungTu.Caption = "Ngày";
+            this.clNgayChungTu.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.clNgayChungTu.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNgayChungTu.FieldName = "NgayThang";
+            this.clNgayChungTu.GroupFormat.FormatString = "dd/MM/yyyy";
+            this.clNgayChungTu.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clNgayChungTu.Name = "clNgayChungTu";
             this.clNgayChungTu.OptionsColumn.AllowEdit = false;
             this.clNgayChungTu.Visible = true;
