@@ -53,9 +53,14 @@ namespace CtyTinLuong
 
                     cls.fSoKG_MotBao = fsoKG_1bao;
                     cls.fSoKienMotBao = fsokienmotbao;
-                    //cls.bCheckHangNhu_True = true;
-                   
-                    if(UCDinhMucHangNhu.mb_TheMoi_DinhMuc_Dot==true)
+                    if (checkHangNhu.Checked == true)
+                        cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
+                    else if (checkHangCuc.Checked == true)
+                        cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
+                    else if (checkHangSot.Checked == true)
+                        cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
+
+                    if (UCDinhMucHangNhu.mb_TheMoi_DinhMuc_Dot==true)
                     {
                         cls.Insert();
                        
@@ -80,6 +85,7 @@ namespace CtyTinLuong
      
         private void HienThi_ThemMoi_DinhMuc_DOT()
         {
+            checkHangNhu.Checked = true;
           
             dteNgayThang.EditValue = DateTime.Today;
 
@@ -115,7 +121,12 @@ namespace CtyTinLuong
             txtSoKGMotBao.Text = dt2.Rows[0]["SoKG_MotBao"].ToString();          
             txtGhiChu.Text = dt2.Rows[0]["GhiChu"].ToString();
 
-
+            if (cls2.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 2)
+                checkHangNhu.Checked = true;
+            else if (cls2.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 3)
+                checkHangCuc.Checked = true;
+            else if (cls2.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 4)
+                checkHangSot.Checked = true;
         }
 
         private bool KiemTraLuu()
@@ -192,6 +203,35 @@ namespace CtyTinLuong
             }
             catch
             { }
+        }
+
+      
+
+        private void checkHangNhu_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkHangNhu.Checked==true)
+            {
+                checkHangSot.Checked = false;
+                checkHangCuc.Checked = false;
+            }
+        }
+
+        private void checkHangSot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkHangSot.Checked == true)
+            {
+                checkHangNhu.Checked = false;
+                checkHangCuc.Checked = false;
+            }
+        }
+
+        private void checkHangCuc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkHangCuc.Checked == true)
+            {
+                checkHangNhu.Checked = false;
+                checkHangSot.Checked = false;
+            }
         }
     }
 }

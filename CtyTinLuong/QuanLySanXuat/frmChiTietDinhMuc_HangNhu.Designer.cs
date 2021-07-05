@@ -61,9 +61,11 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkHangNhu = new System.Windows.Forms.CheckBox();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkHangCuc = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkHangSot = new System.Windows.Forms.CheckBox();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,8 +106,9 @@
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.checkBox2);
-            this.layoutControl2.Controls.Add(this.checkBox1);
+            this.layoutControl2.Controls.Add(this.checkHangSot);
+            this.layoutControl2.Controls.Add(this.checkHangCuc);
+            this.layoutControl2.Controls.Add(this.checkHangNhu);
             this.layoutControl2.Controls.Add(this.txtGhiChu);
             this.layoutControl2.Controls.Add(this.txtSoKienMotBao);
             this.layoutControl2.Controls.Add(this.txtSoKGMotBao);
@@ -277,6 +281,7 @@
             this.emptySpaceItem3,
             this.layoutControlItem6,
             this.layoutControlItem10,
+            this.layoutControlItem12,
             this.layoutControlItem11});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
@@ -411,39 +416,60 @@
             this.layoutControlItem6.Text = "Ghi chú";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
             // 
-            // checkBox1
+            // checkHangNhu
             // 
-            this.checkBox1.Location = new System.Drawing.Point(2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(314, 20);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Hàng Nhũ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkHangNhu.Location = new System.Drawing.Point(2, 2);
+            this.checkHangNhu.Name = "checkHangNhu";
+            this.checkHangNhu.Size = new System.Drawing.Size(208, 20);
+            this.checkHangNhu.TabIndex = 10;
+            this.checkHangNhu.Text = "Hàng Nhũ";
+            this.checkHangNhu.UseVisualStyleBackColor = true;
+            this.checkHangNhu.CheckedChanged += new System.EventHandler(this.checkHangNhu_CheckedChanged);
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.checkBox1;
+            this.layoutControlItem10.Control = this.checkHangNhu;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(318, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // checkBox2
+            // checkHangCuc
             // 
-            this.checkBox2.Location = new System.Drawing.Point(320, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(315, 20);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkHangCuc.Location = new System.Drawing.Point(214, 2);
+            this.checkHangCuc.Name = "checkHangCuc";
+            this.checkHangCuc.Size = new System.Drawing.Size(208, 20);
+            this.checkHangCuc.TabIndex = 12;
+            this.checkHangCuc.Text = "Hàng Cục";
+            this.checkHangCuc.UseVisualStyleBackColor = true;
+            this.checkHangCuc.CheckedChanged += new System.EventHandler(this.checkHangCuc_CheckedChanged);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.checkHangCuc;
+            this.layoutControlItem12.Location = new System.Drawing.Point(212, 0);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(212, 24);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
+            // 
+            // checkHangSot
+            // 
+            this.checkHangSot.Location = new System.Drawing.Point(426, 2);
+            this.checkHangSot.Name = "checkHangSot";
+            this.checkHangSot.Size = new System.Drawing.Size(209, 20);
+            this.checkHangSot.TabIndex = 13;
+            this.checkHangSot.Text = "Hàng Sọt";
+            this.checkHangSot.UseVisualStyleBackColor = true;
+            this.checkHangSot.CheckedChanged += new System.EventHandler(this.checkHangSot_CheckedChanged);
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.checkBox2;
-            this.layoutControlItem11.Location = new System.Drawing.Point(318, 0);
+            this.layoutControlItem11.Control = this.checkHangSot;
+            this.layoutControlItem11.Location = new System.Drawing.Point(424, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(319, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(213, 24);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -483,6 +509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
@@ -521,9 +548,11 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private System.Windows.Forms.TextBox txtGhiChu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkHangNhu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private System.Windows.Forms.CheckBox checkHangCuc;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private System.Windows.Forms.CheckBox checkHangSot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }
