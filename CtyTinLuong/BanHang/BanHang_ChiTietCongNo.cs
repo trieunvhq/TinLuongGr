@@ -316,8 +316,8 @@ namespace CtyTinLuong
 
 
                         int iDImuahang = Convert.ToInt32(dt3.Rows[i]["ID_MuaHang"].ToString());
-                        clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
-                        cls2.iID_MuaHang = iDImuahang;
+                        clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
+                        cls2.iID_BanHang = iDImuahang;
                         DataTable dtxxx = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
 
                         for (int j = 0; j < dtxxx.Rows.Count; j++)
