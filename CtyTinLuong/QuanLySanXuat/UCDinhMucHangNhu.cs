@@ -49,7 +49,7 @@ namespace CtyTinLuong
         private void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            UCDinhMucHangNhu_Load( sender,  e);
+            Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             Cursor.Current = Cursors.Default;
         }
 
