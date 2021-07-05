@@ -147,7 +147,7 @@ namespace CtyTinLuong
 
                 clSoKG_MotBao.Visible = true;
                 clSoKienMotBao.Caption = "Kiện/Bao";
-                clSoKG_MotBao.Caption = "Kg/Bao";
+                clSoKG_MotBao.Caption = "Cục/Bao";
 
                 Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             }
