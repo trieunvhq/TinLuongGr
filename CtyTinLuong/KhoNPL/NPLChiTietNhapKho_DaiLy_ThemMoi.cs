@@ -1424,6 +1424,10 @@ namespace CtyTinLuong
                 layoutkien1baonho.Visibility = LayoutVisibility.Never;
                 layoutQuyKien_Duoi.Visibility = LayoutVisibility.Never;
                 layoutkg1baoto.Visibility = LayoutVisibility.Always;
+
+                txtSoLuong_BaoBe.Text = "0";
+                txtSoKG1Bao_Be.Text = "0";
+                txtSoKien_1_BaoBe.Text = "0";
             }
         }
 
@@ -1462,6 +1466,8 @@ namespace CtyTinLuong
                 layoutControlItem21.Text = "Tổng số cục";
                 layoutkien1baoto.Text = "Số Cục/Kiện";
                 txtSoLuong_BaoBe.Text = "0";
+                txtSoKG1Bao_Be.Text = "0";
+                txtSoKien_1_BaoBe.Text = "0";
             }
         }
 
@@ -1512,6 +1518,8 @@ namespace CtyTinLuong
                 layoutControlItem21.Text = "Tổng số cục";
                 layoutkien1baoto.Text = "Số kiện/bao";
                 txtSoLuong_BaoBe.Text = "0";
+                txtSoKG1Bao_Be.Text = "0";
+                txtSoKien_1_BaoBe.Text = "0";
             }
         }
         
