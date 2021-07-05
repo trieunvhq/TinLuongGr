@@ -456,6 +456,81 @@ namespace CtyTinLuong
             if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
                 gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
         }
+
+        private void HienThi_CoPy(int bientrangthia)
+        {
+
+            clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+            cls1.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            DataTable dt = cls1.SelectOne();
+            dteNgayChungTu.EditValue = DateTime.Today;
+            HienThiSoChungTu(bientrangthia);
+            
+            gridNguoiLap.EditValue = cls1.iID_NguoiLap.Value;
+            txtSoTien.Text = cls1.fSoTien.Value.ToString();
+            txtThamChieu.Text = cls1.sThamChieu.Value;
+            txtSoTien.Text = cls1.fSoTien.Value.ToString();
+
+            if (cls1.bTienUSD.Value == true)
+                checkUSD.Checked = true;
+            else checkVNĐ.Checked = true;
+            txtDienGiai.Text = cls1.sDienGiai.Value;
+            txtTiGia.Text = cls1.fTiGia.Value.ToString();
+
+
+            if (cls1.iBienMuaHang1_BanHang2_ConLai_0 == 1)
+                checkNhaCungCap.Checked = true;
+            else if (cls1.iBienMuaHang1_BanHang2_ConLai_0 == 2)
+                checkKhachHang.Checked = true;
+            else checkKhac.Checked = true;
+
+            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+          
+
+            clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
+            cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
+            dt2.Columns.Add("ID_ThuChi", typeof(int));
+            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
+            dt2.Columns.Add("No", typeof(double));
+            dt2.Columns.Add("Co", typeof(double));
+            dt2.Columns.Add("TienUSD", typeof(bool));
+            dt2.Columns.Add("TiGia", typeof(double));
+            dt2.Columns.Add("DaGhiSo", typeof(bool));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            dt2.Columns.Add("SoTaiKhoanCon");
+            dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
+            dt2.Columns.Add("HienThi", typeof(string));
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                int ID_TaiKhoanKeToanCon = Convert.ToInt32(dt3.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+                clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
+                clscon.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanCon;
+                DataTable dtcon = clscon.SelectOne();
+                DataRow _ravi = dt2.NewRow();
+                _ravi["ID_ChiTietThuChi"] = Convert.ToInt32(dt3.Rows[i]["ID_ChiTietThuChi"].ToString());
+                _ravi["ID_ThuChi"] = Convert.ToInt32(dt3.Rows[i]["ID_ThuChi"].ToString());
+                _ravi["ID_TaiKhoanKeToanCon"] = Convert.ToInt32(ID_TaiKhoanKeToanCon.ToString());
+                _ravi["No"] = Convert.ToDouble(dt3.Rows[i]["No"].ToString());
+                _ravi["Co"] = Convert.ToDouble(dt3.Rows[i]["Co"].ToString());
+                _ravi["TienUSD"] = Convert.ToBoolean(dt3.Rows[i]["TienUSD"].ToString());
+                _ravi["TiGia"] = Convert.ToDouble(dt3.Rows[i]["TiGia"].ToString());
+                _ravi["DaGhiSo"] = Convert.ToBoolean(dt3.Rows[i]["DaGhiSo"].ToString());
+                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                _ravi["SoTaiKhoanCon"] = ID_TaiKhoanKeToanCon.ToString();
+                _ravi["TenTaiKhoanCon"] = clscon.sTenTaiKhoanCon.Value;
+                _ravi["HienThi"] = "1";
+                dt2.Rows.Add(_ravi);
+            }
+
+            gridControl1.DataSource = dt2;
+
+            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+        }
         private void Load_LockUp_DoiTuong( )
         {
             dtdoituong.Clear();
@@ -580,7 +655,7 @@ namespace CtyTinLuong
             else if (UCQuy_NganHang_BaoCo.mbSua == true)
                 HienThi_Sua();
             else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
-                HienThi_Sua();
+                HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
         }
         
         private void checkKhac_CheckedChanged(object sender, EventArgs e)
@@ -698,7 +773,7 @@ namespace CtyTinLuong
             try
             {
                 double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-                if (checkNhaCungCap.Checked==true) // mua hang
+                if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
                 {
                     gridView4.SetRowCellValue(0, clNo, sotienxxx);
                     gridView4.SetRowCellValue(0, clCo, 0);
@@ -707,7 +782,15 @@ namespace CtyTinLuong
                     gridView4.SetRowCellValue(1, clCo, sotienxxx);
 
                 }
-                else if (checkKhachHang.Checked==true)
+               else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
+                {
+                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
+                    gridView4.SetRowCellValue(0, clCo, 0);
+
+                    gridView4.SetRowCellValue(1, clNo, 0);
+                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
+                }
+                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
                 {
                     gridView4.SetRowCellValue(0, clNo, 0);
                     gridView4.SetRowCellValue(0, clCo, sotienxxx);
@@ -715,7 +798,7 @@ namespace CtyTinLuong
                     gridView4.SetRowCellValue(1, clNo, sotienxxx);
                     gridView4.SetRowCellValue(1, clCo, 0);
                 }
-                else 
+                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
                 {
                     gridView4.SetRowCellValue(0, clNo, sotienxxx);
                     gridView4.SetRowCellValue(0, clCo, 0);
@@ -723,7 +806,6 @@ namespace CtyTinLuong
                     gridView4.SetRowCellValue(1, clNo, 0);
                     gridView4.SetRowCellValue(1, clCo, sotienxxx);
                 }
-
             }
             catch
             {
@@ -842,6 +924,7 @@ namespace CtyTinLuong
                 int ID_Doituongxxx = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 string filterExpression = "ID_DoiTuong=" + ID_Doituongxxx + "";
                 DataRow[] rows = dtdoituong.Select(filterExpression);
+                double sotienthanhtoan = Convert.ToDouble(txtSoTien.Text);
                 if (rows.Length > 0)
                 {
                     txtDoiTuong.Text = rows[0]["TenDoiTuong"].ToString();
@@ -858,10 +941,28 @@ namespace CtyTinLuong
                        
                         gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], txtTiGia.Text);
                         gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TienUSD"], checkUSD.Checked);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], 0);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["DaGhiSo"], false);
+                        if(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
+                        {
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], sotienthanhtoan);
+                        }
+                        else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
+                        {
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], sotienthanhtoan);
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], 0);
+                        }
+                        else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
+                        {
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], sotienthanhtoan);
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], 0);
+                        }
+                        else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
+                        {
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
+                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], sotienthanhtoan);
+                        }
 
+                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["DaGhiSo"], false);
                         gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
                         gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
                         gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
