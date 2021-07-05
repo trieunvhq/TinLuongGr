@@ -794,6 +794,96 @@ namespace CtyTinLuong
             }
         }
 
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtThamChieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtTenNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void gridMaDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtTenDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtSoLuong_BaoTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void gridMaDinhMucDot_BaoTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtSoKG1Bao_To_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtSoKien_1_BaoTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtQuyRaKien_BaoTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtSoLuong_BaoBe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void gridMaDinhMucDot_BaoBe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtSoKG1Bao_Be_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtSoKien_1_BaoBe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtQuyRaKien_BaoBe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
         private void checkHangNhu_CheckedChanged(object sender, EventArgs e)
         {
             if (checkHangNhu.Checked == true)
@@ -937,8 +1027,11 @@ namespace CtyTinLuong
 
         private void DaiLy_ChiTietChoNhapKho_Moi_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             HienThi_Sua_XuatKho(UCChoNhapKho_DaiLy_new.miID_NhapKhoDaiLy);
+
+            txtSoChungTu.Focus();
             Cursor.Current = Cursors.Default;
         }
 

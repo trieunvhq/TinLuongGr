@@ -351,10 +351,14 @@ namespace CtyTinLuong
 
         private void DaiLy_ChiTiet_NhapKho_Khac_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             if (UCThanhPham_NhapKho_Khac.mbThemMoi_NhapKho == true)
                 HienThi_ThemMoi();
             else HienThi_Sua();
+
+            txtSoChungTu.Focus();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat2_Click(object sender, EventArgs e)
@@ -515,6 +519,70 @@ namespace CtyTinLuong
             catch
             {
 
+            }
+        }
+
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgayChungTu.Focus();
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridNguoiLap.Focus();
+            }
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtNguoiNhap.Focus();
+            }
+        }
+
+        private void txtNguoiNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridMaDaiLy.Focus();
+            }
+        }
+
+        private void gridMaDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenDaiLy.Focus();
+            }
+        }
+
+        private void txtTenDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiai.Focus();
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTongTienHang.Focus();
+            }
+        }
+
+        private void txtTongTienHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLuu_Copy.Focus();
             }
         }
     }

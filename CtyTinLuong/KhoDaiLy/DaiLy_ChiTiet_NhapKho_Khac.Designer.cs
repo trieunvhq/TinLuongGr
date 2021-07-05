@@ -396,6 +396,7 @@
             this.txtTongTienHang.ReadOnly = true;
             this.txtTongTienHang.Size = new System.Drawing.Size(869, 20);
             this.txtTongTienHang.TabIndex = 78;
+            this.txtTongTienHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongTienHang_KeyPress);
             // 
             // layoutControl2
             // 
@@ -422,6 +423,7 @@
             this.txtTenDaiLy.ReadOnly = true;
             this.txtTenDaiLy.Size = new System.Drawing.Size(549, 20);
             this.txtTenDaiLy.TabIndex = 21;
+            this.txtTenDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDaiLy_KeyPress);
             // 
             // gridMaDaiLy
             // 
@@ -434,6 +436,7 @@
             this.gridMaDaiLy.StyleController = this.layoutControl2;
             this.gridMaDaiLy.TabIndex = 23;
             this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
+            this.gridMaDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaDaiLy_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -482,6 +485,7 @@
             this.gridNguoiLap.StyleController = this.layoutControl2;
             this.gridNguoiLap.TabIndex = 23;
             this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
+            this.gridNguoiLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNguoiLap_KeyPress);
             // 
             // gridView2
             // 
@@ -524,6 +528,7 @@
             this.txtNguoiNhap.ReadOnly = true;
             this.txtNguoiNhap.Size = new System.Drawing.Size(548, 20);
             this.txtNguoiNhap.TabIndex = 16;
+            this.txtNguoiNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNguoiNhap_KeyPress);
             // 
             // dteNgayChungTu
             // 
@@ -542,6 +547,7 @@
             this.dteNgayChungTu.Size = new System.Drawing.Size(547, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl2;
             this.dteNgayChungTu.TabIndex = 14;
+            this.dteNgayChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChungTu_KeyPress);
             // 
             // txtSoChungTu
             // 
@@ -550,6 +556,7 @@
             this.txtSoChungTu.ReadOnly = true;
             this.txtSoChungTu.Size = new System.Drawing.Size(228, 20);
             this.txtSoChungTu.TabIndex = 10;
+            this.txtSoChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoChungTu_KeyPress);
             // 
             // txtDienGiai
             // 
@@ -558,6 +565,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(869, 29);
             this.txtDienGiai.TabIndex = 6;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // layoutControlGroup2
             // 
