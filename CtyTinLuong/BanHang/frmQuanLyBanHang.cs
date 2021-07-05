@@ -113,9 +113,9 @@ namespace CtyTinLuong
         private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
-            this.Hide();
-            ucc.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ucc.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }
@@ -129,9 +129,9 @@ namespace CtyTinLuong
         private void navbangKeHoaDonBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }
@@ -139,9 +139,9 @@ namespace CtyTinLuong
         private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
-            this.Hide();
-            ucc.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ucc.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }
@@ -149,9 +149,9 @@ namespace CtyTinLuong
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             BanHang_CongNo ff = new CtyTinLuong.BanHang_CongNo();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }

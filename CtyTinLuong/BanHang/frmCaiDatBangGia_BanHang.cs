@@ -279,18 +279,20 @@ namespace CtyTinLuong
         {
             try
             {
-                clsTbKhachHang clsncc = new clsTbKhachHang();
-                int iiIDIIII = Convert.ToInt16(gridKH.EditValue.ToString());
-                clsncc.iID_KhachHang = Convert.ToInt16(gridKH.EditValue.ToString());
-                DataTable dt = clsncc.SelectOne();
-                if (dt.Rows.Count > 0)
+                if (gridKH.EditValue != null)
                 {
-                    txtTenKH.Text = dt.Rows[0]["TenKH"].ToString();
-                    HienThi(iiIDIIII);
+                    clsTbKhachHang clsncc = new clsTbKhachHang();
+                    int iiIDIIII = Convert.ToInt16(gridKH.EditValue.ToString());
+                    clsncc.iID_KhachHang = Convert.ToInt16(gridKH.EditValue.ToString());
+                    DataTable dt = clsncc.SelectOne();
+                    if (dt.Rows.Count > 0)
+                    {
+                        txtTenKH.Text = dt.Rows[0]["TenKH"].ToString();
+                        HienThi(iiIDIIII);
+                    }
+                    if (gridKH.EditValue != null)
+                        gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
                 }
-                if(gridKH.EditValue!=null)
-                    gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
-
             }
             catch
             {
