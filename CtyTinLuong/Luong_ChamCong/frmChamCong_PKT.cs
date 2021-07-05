@@ -22,7 +22,7 @@ namespace CtyTinLuong
     public partial class frmChamCong_PKT : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
-        public int _nam, _thang, _id_bophan = 25;
+        public int _nam, _thang, _id_bophan;
         private string _MaDinhMucLuongCongNhat;
         private DataTable _data;
         private bool isload = true;
@@ -765,7 +765,7 @@ namespace CtyTinLuong
                 _ravi["MaNhanVien"] = "";
                 _ravi["TenNhanVien"] = ten_;
 
-                _ravi["Cong"] = "Tăng";
+                _ravi["Cong"] = "Tăng ca";
                 _ravi["ID_LoaiCong"] = 2;
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                 _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
@@ -937,7 +937,7 @@ namespace CtyTinLuong
                     }
                     string Cong_ = _data.Rows[i]["Cong"].ToString();
                     bool isTang = false;
-                    if (Cong_ == "Tăng")
+                    if (Cong_.Contains("Tăng"))
                     {
                         isTang = true;
                     }

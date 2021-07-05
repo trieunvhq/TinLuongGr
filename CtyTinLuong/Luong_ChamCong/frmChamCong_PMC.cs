@@ -904,7 +904,7 @@ namespace CtyTinLuong
                     }
                     string Cong_ = _data.Rows[i]["Cong"].ToString();
                     bool isTang = false;
-                    if (Cong_ == "Tăng")
+                    if (Cong_.Contains("Tăng"))
                     {
                         isTang = true;
                     }

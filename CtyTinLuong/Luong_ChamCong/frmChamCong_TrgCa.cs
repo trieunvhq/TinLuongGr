@@ -709,33 +709,7 @@ namespace CtyTinLuong
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
 
                 _data.Rows.Add(_ravi);
-
-                //_ravi = _data.NewRow();
-                //_ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
-                //_ravi["ID_CongNhan"] = id_nhansu_;
-                //_ravi["Thang"] = _thang;
-                //_ravi["Nam"] = _nam;
-                //_ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
-                //_ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
-                //_ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
-                //_ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
-                //_ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
-                //_ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
-                //_ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
-                //_ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
-                //_ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
-                //_ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
-                //_ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
-
-                //_ravi["Tong"] = 0;
-                //_ravi["GuiDuLieu"] = false;
-                //_ravi["MaNhanVien"] = "";
-                //_ravi["TenNhanVien"] = ten_;
-                //_ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat; 
-
-                // _ravi["Cong"] = "Tăng";
-
-                //_data.Rows.Add(_ravi);
+ 
             }
             //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
             //{
@@ -902,7 +876,7 @@ namespace CtyTinLuong
                     }
                     string Cong_ = _data.Rows[i]["Cong"].ToString();
                     bool isTang = false;
-                    if (Cong_ == "Tăng")
+                    if (Cong_.Contains("Tăng"))
                     {
                         isTang = true;
                     }

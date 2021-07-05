@@ -64,17 +64,8 @@ namespace CtyTinLuong.Luong_ChamCong
 
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
-                {
-                    if (Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString()))
-                    {
-                        _data.Rows[i]["Cong"] = "Tăng";
-                    }
-                    else
-                    {
-                        _data.Rows[i]["Cong"] = "Công";
-                    }
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
-
+                { 
+                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString())); 
                     //
                     DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
                     _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
