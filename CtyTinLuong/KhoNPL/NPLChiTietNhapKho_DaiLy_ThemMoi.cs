@@ -497,18 +497,15 @@ namespace CtyTinLuong
         private void Load_lock_DinhMucDot(int iiiiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0)
         {
             clsDinhMuc_tbDinhMuc_DOT clsdinhmucdot = new clsDinhMuc_tbDinhMuc_DOT();
-            DataTable dt3 = clsdinhmucdot.SelectAll_TenVTHH();
-            dt3.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv3 = dt3.DefaultView;
-            dv3.Sort = "NgayThang DESC";
-            DataTable dtxx3 = dv3.ToTable();
+            DataTable dt3 = clsdinhmucdot.SA_W_Loaihang(iiiiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+          
 
 
-            gridMaDinhMucDot_BaoTo.Properties.DataSource = dtxx3;
+            gridMaDinhMucDot_BaoTo.Properties.DataSource = dt3;
             gridMaDinhMucDot_BaoTo.Properties.ValueMember = "ID_DinhMuc_Dot";
             gridMaDinhMucDot_BaoTo.Properties.DisplayMember = "SoHieu";
 
-            gridMaDinhMucDot_BaoBe.Properties.DataSource = dtxx3;
+            gridMaDinhMucDot_BaoBe.Properties.DataSource = dt3;
             gridMaDinhMucDot_BaoBe.Properties.ValueMember = "ID_DinhMuc_Dot";
             gridMaDinhMucDot_BaoBe.Properties.DisplayMember = "SoHieu";
         }
