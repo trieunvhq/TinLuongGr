@@ -55,7 +55,7 @@ namespace CtyTinLuong
         private void HienThi_ThemMoi_XuatKho()
         {
             checkHangDot.Checked = true;
-            //Load_LockUp_DinhMucDot();
+           
         
             gridNguoiLap.EditValue = 14;
            
@@ -112,6 +112,8 @@ namespace CtyTinLuong
                 else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 2)
                     checkHangNhu.Checked = true;
                 else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 3)
+                    CheckHangCuc.Checked = true;
+                else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 4)
                     checkHangSot.Checked = true;
 
                 txtSoLuong_BaoTo.Text = cls1.fSoLuongXuat_BaoTo.Value.ToString();
@@ -138,8 +140,14 @@ namespace CtyTinLuong
 
                 if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 1)
                     checkHangDot.Checked = true;
-                else checkHangNhu.Checked = true;
-                if(cls1.bTrangThaiXuatNhap_Kho_NPL.Value==true)
+                else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 2)
+                    checkHangNhu.Checked = true;
+                else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 3)
+                    CheckHangCuc.Checked = true;
+                else if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 4)
+                    checkHangSot.Checked = true;
+
+                if (cls1.bTrangThaiXuatNhap_Kho_NPL.Value==true)
                 {
                     btLuu_Dong.Enabled = false;
                     btLuu_Gui_Dong.Enabled = false;
@@ -486,12 +494,26 @@ namespace CtyTinLuong
 
             }
         }
+        private void Load_lock_DinhMucDot(int iiiiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0)
+        {
+            clsDinhMuc_tbDinhMuc_DOT clsdinhmucdot = new clsDinhMuc_tbDinhMuc_DOT();
+            DataTable dt3 = clsdinhmucdot.SelectAll_TenVTHH();
+            dt3.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            DataView dv3 = dt3.DefaultView;
+            dv3.Sort = "NgayThang DESC";
+            DataTable dtxx3 = dv3.ToTable();
+
+
+            gridMaDinhMucDot_BaoTo.Properties.DataSource = dtxx3;
+            gridMaDinhMucDot_BaoTo.Properties.ValueMember = "ID_DinhMuc_Dot";
+            gridMaDinhMucDot_BaoTo.Properties.DisplayMember = "SoHieu";
+
+            gridMaDinhMucDot_BaoBe.Properties.DataSource = dtxx3;
+            gridMaDinhMucDot_BaoBe.Properties.ValueMember = "ID_DinhMuc_Dot";
+            gridMaDinhMucDot_BaoBe.Properties.DisplayMember = "SoHieu";
+        }
         private void Load_LockUp()
         {
-
-
-           
-
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
             dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=5";
@@ -532,24 +554,7 @@ namespace CtyTinLuong
             gridMaDinhMucNPL.Properties.DataSource = newdtnpl;
             gridMaDinhMucNPL.Properties.ValueMember = "ID_DinhMuc_NPL";
             gridMaDinhMucNPL.Properties.DisplayMember = "MaDinhMuc";
-
-            clsDinhMuc_tbDinhMuc_DOT clsdinhmucdot = new clsDinhMuc_tbDinhMuc_DOT();
-            DataTable dt3 = clsdinhmucdot.SelectAll_TenVTHH();
-            dt3.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv3 = dt3.DefaultView;
-            dv3.Sort = "NgayThang DESC";
-            DataTable dtxx3 = dv3.ToTable();
-
-
-            gridMaDinhMucDot_BaoTo.Properties.DataSource = dtxx3;
-            gridMaDinhMucDot_BaoTo.Properties.ValueMember = "ID_DinhMuc_Dot";
-            gridMaDinhMucDot_BaoTo.Properties.DisplayMember = "SoHieu";
-
-            gridMaDinhMucDot_BaoBe.Properties.DataSource = dtxx3;
-            gridMaDinhMucDot_BaoBe.Properties.ValueMember = "ID_DinhMuc_Dot";
-            gridMaDinhMucDot_BaoBe.Properties.DisplayMember = "SoHieu";
-
-
+            
         }
         private bool KiemTraLuu()
         {
@@ -882,9 +887,11 @@ namespace CtyTinLuong
                 if (checkHangDot.Checked == true)
                     cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
                 else if (checkHangNhu.Checked == true)
-                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
-                else if (checkHangSot.Checked == true)
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;              
+                else if (CheckHangCuc.Checked == true)
                     cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
+                else if (checkHangSot.Checked == true)
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
                 int iiiiID_NHapKhoDaiLy;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
                 {
@@ -1001,8 +1008,10 @@ namespace CtyTinLuong
                     cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
                 else if (checkHangNhu.Checked == true)
                     cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
-                else if (checkHangSot.Checked == true)
+                else if (CheckHangCuc.Checked == true)
                     cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
+                else if (checkHangSot.Checked == true)
+                    cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
                 int iiiiID_NHapKhoDaiLy;
                 if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
                 {
@@ -1394,9 +1403,10 @@ namespace CtyTinLuong
         {
             if (checkHangSot.Checked == true)
             {
-             
+                Load_lock_DinhMucDot(4);
                 checkHangNhu.Checked = false;
                 checkHangDot.Checked = false;
+                CheckHangCuc.Checked = false;
                 layoutbaobe.Visibility = LayoutVisibility.Always;
                 layoutDM_Duoi.Visibility = LayoutVisibility.Always;
                 layoutKg1baonho.Visibility = LayoutVisibility.Always;
@@ -1428,14 +1438,38 @@ namespace CtyTinLuong
 
         }
 
+        private void CheckHangCuc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckHangCuc.Checked == true)
+            {
+                Load_lock_DinhMucDot(3);
+                checkHangNhu.Checked = false;
+                checkHangDot.Checked = false;
+                checkHangSot.Checked = false;
+                layoutbaobe.Visibility = LayoutVisibility.Always;
+                layoutDM_Duoi.Visibility = LayoutVisibility.Always;
+                layoutKg1baonho.Visibility = LayoutVisibility.Always;
+                layoutkien1baonho.Visibility = LayoutVisibility.Always;
+                layoutQuyKien_Duoi.Visibility = LayoutVisibility.Always;
+                layoutkg1baoto.Visibility = LayoutVisibility.Always;
+                layoutkien1baoto.Text = "Số kiện/Sọt to";
+                layoutkien1baonho.Text = "Số kiện/Sọt bé";
+                layoutKg1baonho.Text = "Kg/sọt bé";
+                layoutkg1baoto.Text = "Kg/ sọt to";
+                layoutbaoto.Text = "SL Sọt To";
+                layoutbaobe.Text = "SL Sọt bé";
+                layoutControlItem21.Text = "Tổng số Kg";
+            }
+        }
+
         private void checkHangDot_CheckedChanged(object sender, EventArgs e)
         {
             if (checkHangDot.Checked == true)
             {
-               
+                Load_lock_DinhMucDot(1);
                 checkHangNhu.Checked = false;
                 checkHangSot.Checked = false;
-              
+                CheckHangCuc.Checked = false;
                 layoutbaobe.Visibility = LayoutVisibility.Always;
                 layoutDM_Duoi.Visibility = LayoutVisibility.Always;
                 layoutKg1baonho.Visibility = LayoutVisibility.Always;
@@ -1459,8 +1493,10 @@ namespace CtyTinLuong
         {
             if (checkHangNhu.Checked == true)
             {
+                Load_lock_DinhMucDot(2);
                 checkHangSot.Checked = false;
                 checkHangDot.Checked = false;
+                CheckHangCuc.Checked = false;
                 layoutbaobe.Visibility = LayoutVisibility.Never;
                 layoutDM_Duoi.Visibility = LayoutVisibility.Never;
                 layoutKg1baonho.Visibility = LayoutVisibility.Never;

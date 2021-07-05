@@ -163,6 +163,8 @@
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtID_thanhPham = new System.Windows.Forms.TextBox();
+            this.CheckHangCuc = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -219,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControlItem7
@@ -241,6 +244,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.CheckHangCuc);
             this.layoutControl1.Controls.Add(this.checkHangSot);
             this.layoutControl1.Controls.Add(this.checkHangNhu);
             this.layoutControl1.Controls.Add(this.checkHangDot);
@@ -282,9 +286,9 @@
             // 
             // checkHangSot
             // 
-            this.checkHangSot.Location = new System.Drawing.Point(431, 2);
+            this.checkHangSot.Location = new System.Drawing.Point(565, 2);
             this.checkHangSot.Name = "checkHangSot";
-            this.checkHangSot.Size = new System.Drawing.Size(518, 20);
+            this.checkHangSot.Size = new System.Drawing.Size(174, 20);
             this.checkHangSot.TabIndex = 113;
             this.checkHangSot.Text = "Loại hàng Sọt";
             this.checkHangSot.UseVisualStyleBackColor = true;
@@ -292,9 +296,9 @@
             // 
             // checkHangNhu
             // 
-            this.checkHangNhu.Location = new System.Drawing.Point(194, 2);
+            this.checkHangNhu.Location = new System.Drawing.Point(273, 2);
             this.checkHangNhu.Name = "checkHangNhu";
-            this.checkHangNhu.Size = new System.Drawing.Size(233, 20);
+            this.checkHangNhu.Size = new System.Drawing.Size(288, 20);
             this.checkHangNhu.TabIndex = 112;
             this.checkHangNhu.Text = "Loại hàng Nhũ";
             this.checkHangNhu.UseVisualStyleBackColor = true;
@@ -304,7 +308,7 @@
             // 
             this.checkHangDot.Location = new System.Drawing.Point(2, 2);
             this.checkHangDot.Name = "checkHangDot";
-            this.checkHangDot.Size = new System.Drawing.Size(188, 20);
+            this.checkHangDot.Size = new System.Drawing.Size(267, 20);
             this.checkHangDot.TabIndex = 111;
             this.checkHangDot.Text = "Loại hàng Đột";
             this.checkHangDot.UseVisualStyleBackColor = true;
@@ -912,7 +916,8 @@
             this.layoutkien1baonho,
             this.layoutControlItem29,
             this.layoutControlItem30,
-            this.layoutControlItem31});
+            this.layoutControlItem31,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(951, 295);
@@ -1203,25 +1208,25 @@
             this.layoutControlItem29.Control = this.checkHangDot;
             this.layoutControlItem29.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem29.Name = "layoutControlItem29";
-            this.layoutControlItem29.Size = new System.Drawing.Size(192, 24);
+            this.layoutControlItem29.Size = new System.Drawing.Size(271, 24);
             this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem29.TextVisible = false;
             // 
             // layoutControlItem30
             // 
             this.layoutControlItem30.Control = this.checkHangNhu;
-            this.layoutControlItem30.Location = new System.Drawing.Point(192, 0);
+            this.layoutControlItem30.Location = new System.Drawing.Point(271, 0);
             this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(237, 24);
+            this.layoutControlItem30.Size = new System.Drawing.Size(292, 24);
             this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem30.TextVisible = false;
             // 
             // layoutControlItem31
             // 
             this.layoutControlItem31.Control = this.checkHangSot;
-            this.layoutControlItem31.Location = new System.Drawing.Point(429, 0);
+            this.layoutControlItem31.Location = new System.Drawing.Point(563, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(522, 24);
+            this.layoutControlItem31.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
@@ -1590,6 +1595,25 @@
             this.txtID_thanhPham.TabIndex = 96;
             this.txtID_thanhPham.Visible = false;
             // 
+            // CheckHangCuc
+            // 
+            this.CheckHangCuc.Location = new System.Drawing.Point(743, 2);
+            this.CheckHangCuc.Name = "CheckHangCuc";
+            this.CheckHangCuc.Size = new System.Drawing.Size(206, 20);
+            this.CheckHangCuc.TabIndex = 114;
+            this.CheckHangCuc.Text = "Loại hàng Cục";
+            this.CheckHangCuc.UseVisualStyleBackColor = true;
+            this.CheckHangCuc.CheckedChanged += new System.EventHandler(this.CheckHangCuc_CheckedChanged);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.CheckHangCuc;
+            this.layoutControlItem1.Location = new System.Drawing.Point(741, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(210, 24);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // NPLChiTietNhapKho_DaiLy_ThemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1664,6 +1688,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1793,5 +1818,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
         private System.Windows.Forms.CheckBox checkHangSot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
+        private System.Windows.Forms.CheckBox CheckHangCuc;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
