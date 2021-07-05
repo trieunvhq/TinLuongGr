@@ -39,9 +39,6 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
            
-            
-          
-           
             mb_TheMoi_DinhMuc_Dot = false;
             xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
             checkHangNhu.Checked = true;

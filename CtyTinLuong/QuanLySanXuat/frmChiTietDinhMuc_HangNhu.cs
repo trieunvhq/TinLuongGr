@@ -86,8 +86,13 @@ namespace CtyTinLuong
      
         private void HienThi_ThemMoi_DinhMuc_DOT()
         {
-            checkHangNhu.Checked = true;
           
+            if (UCDinhMucHangNhu.xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 2)
+                checkHangNhu.Checked = true;
+            else if (UCDinhMucHangNhu.xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 3)
+                checkHangCuc.Checked = true;
+            else if (UCDinhMucHangNhu.xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 4)
+                checkHangSot.Checked = true;
             dteNgayThang.EditValue = DateTime.Today;
 
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();

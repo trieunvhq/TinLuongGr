@@ -141,6 +141,7 @@
             this.txtSoKienMotBao.Name = "txtSoKienMotBao";
             this.txtSoKienMotBao.Size = new System.Drawing.Size(568, 20);
             this.txtSoKienMotBao.TabIndex = 4;
+            this.txtSoKienMotBao.Text = "0";
             // 
             // txtSoKGMotBao
             // 
@@ -148,6 +149,7 @@
             this.txtSoKGMotBao.Name = "txtSoKGMotBao";
             this.txtSoKGMotBao.Size = new System.Drawing.Size(568, 20);
             this.txtSoKGMotBao.TabIndex = 7;
+            this.txtSoKGMotBao.Text = "0";
             // 
             // btLuu_va_Dong
             // 
