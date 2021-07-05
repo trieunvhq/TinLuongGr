@@ -117,7 +117,7 @@ namespace CtyTinLuong
         }
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
-        public UCDinhMucDot(SanXuat_frmQuanLySanXuat frmQLSX)
+        public UCDinhMucDot(SanXuat_frmQuanLySanXuat frmQLSX = null)
         {
             _frmQLSX = frmQLSX;
             InitializeComponent();

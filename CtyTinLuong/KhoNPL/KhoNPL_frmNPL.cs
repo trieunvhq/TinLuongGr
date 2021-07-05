@@ -199,14 +199,38 @@ namespace CtyTinLuong
 
         private void navBarItem11_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            //doiMauTitle(sender, e);
+            doiMauTitle(sender, e);
 
-            //Cursor.Current = Cursors.WaitCursor;
-            //ucDinhMucNGuyenPhuLieu ucc = new ucDinhMucNGuyenPhuLieu(frmQLSX);
-            //ucc.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(ucc);
-            //ucc.BringToFront();
-            //Cursor.Current = Cursors.Default;
+            Cursor.Current = Cursors.WaitCursor;
+            ucDinhMucNGuyenPhuLieu ucc = new ucDinhMucNGuyenPhuLieu();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navBarItem12_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            doiMauTitle(sender, e);
+
+            Cursor.Current = Cursors.WaitCursor;
+            UCDinhMucDot ucc = new UCDinhMucDot();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navBarItem13_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            doiMauTitle(sender, e);
+
+            Cursor.Current = Cursors.WaitCursor;
+            UCDinhMucHangNhu ucc = new UCDinhMucHangNhu();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

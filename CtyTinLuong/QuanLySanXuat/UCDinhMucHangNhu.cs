@@ -29,7 +29,7 @@ namespace CtyTinLuong
         }
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
-        public UCDinhMucHangNhu(SanXuat_frmQuanLySanXuat frmQLSX)
+        public UCDinhMucHangNhu(SanXuat_frmQuanLySanXuat frmQLSX = null)
         {
             _frmQLSX = frmQLSX;
             InitializeComponent();
