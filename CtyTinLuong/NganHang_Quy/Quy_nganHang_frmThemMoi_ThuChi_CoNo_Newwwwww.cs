@@ -784,11 +784,11 @@ namespace CtyTinLuong
                 }
                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
                 {
-                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(0, clCo, 0);
+                    gridView4.SetRowCellValue(0, clNo, 0);
+                    gridView4.SetRowCellValue(0, clCo, sotienxxx);
 
-                    gridView4.SetRowCellValue(1, clNo, 0);
-                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
+                    gridView4.SetRowCellValue(1, clNo, sotienxxx);
+                    gridView4.SetRowCellValue(1, clCo, 0);
                 }
                 else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
                 {
