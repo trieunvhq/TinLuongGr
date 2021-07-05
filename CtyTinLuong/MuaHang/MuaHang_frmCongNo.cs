@@ -174,6 +174,12 @@ namespace CtyTinLuong
             }
         }
 
+        private void bandedGridView1_CustomDrawCell_1(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString() != "")
