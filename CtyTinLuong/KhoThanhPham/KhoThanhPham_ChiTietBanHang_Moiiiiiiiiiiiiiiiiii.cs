@@ -30,7 +30,7 @@ namespace CtyTinLuong
             DataTable dt = cls2.SelectAll();
             if (bientrangthaikkkkkkkkkk == 1)
             {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =1 ";
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =1 ";
                 DataView dv2 = dt.DefaultView;
                 DataTable newdt2 = dv2.ToTable();
                 int k = newdt2.Rows.Count;
@@ -50,7 +50,7 @@ namespace CtyTinLuong
 
             else if (bientrangthaikkkkkkkkkk == 2)
             {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =2 ";
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =2 ";
                 DataView dv2 = dt.DefaultView;
                 DataTable newdt2 = dv2.ToTable();
                 int k = newdt2.Rows.Count;
@@ -70,7 +70,7 @@ namespace CtyTinLuong
 
             else if (bientrangthaikkkkkkkkkk == 3)
             {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =3 ";
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =3 ";
                 DataView dv2 = dt.DefaultView;
                 DataTable newdt2 = dv2.ToTable();
                 int k = newdt2.Rows.Count;
@@ -89,7 +89,7 @@ namespace CtyTinLuong
             }
             else if (bientrangthaikkkkkkkkkk == 4)
             {
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4 =4 ";
+                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 =4 ";
                 DataView dv2 = dt.DefaultView;
                 DataTable newdt2 = dv2.ToTable();
                 int k = newdt2.Rows.Count;
