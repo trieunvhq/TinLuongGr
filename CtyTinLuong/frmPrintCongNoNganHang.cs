@@ -183,6 +183,62 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
+
+        private void Print_BanHang_ChiTietCongNo(DataTable dt3)
+        {
+
+            Xtra_DoiChieuCongNo xtr111 = new Xtra_DoiChieuCongNo();
+            //Xtra_DoiChieuCongNo_test xtr111 = new Xtra_DoiChieuCongNo_test();
+
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbChiTietBienDongTaiKhoan.Clone();
+            ds.tbChiTietBienDongTaiKhoan.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbChiTietBienDongTaiKhoan.NewRow();
+
+
+                if (dt3.Rows[i]["NoTrongKy"].ToString() != "")
+                    _ravi["NoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["NoTrongKy"].ToString());
+                else
+                    _ravi["NoTrongKy"] = 0;
+                if (dt3.Rows[i]["CoTrongKy"].ToString() != "")
+                    _ravi["CoTrongKy"] = Convert.ToDouble(dt3.Rows[i]["CoTrongKy"].ToString());
+                else
+                    _ravi["CoTrongKy"] = 0;
+                if (dt3.Rows[i]["NoCuoiKy"].ToString() != "")
+                    _ravi["NoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["NoCuoiKy"].ToString());
+                else
+                    _ravi["NoCuoiKy"] = 0;
+                if (dt3.Rows[i]["CoCuoiKy"].ToString() != "")
+                    _ravi["CoCuoiKy"] = Convert.ToDouble(dt3.Rows[i]["CoCuoiKy"].ToString());
+                else
+                    _ravi["CoCuoiKy"] = 0;
+                if (dt3.Rows[i]["NgayThang"].ToString() != "")
+                {
+                    _ravi["NgayThang"] = Convert.ToDateTime(dt3.Rows[i]["NgayThang"].ToString());
+                }
+                if (dt3.Rows[i]["MaVT"].ToString() != "")
+                {
+                    _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
+                    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                    _ravi["SoLuong"] = dt3.Rows[i]["SoLuong"].ToString();
+                    _ravi["ThanhTien"] = dt3.Rows[i]["ThanhTien"].ToString();
+                }
+
+                _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
+                ds.tbChiTietBienDongTaiKhoan.Rows.Add(_ravi);
+            }
+
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbChiTietBienDongTaiKhoan;
+            xtr111.DataMember = "tbChiTietBienDongTaiKhoan";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
         private void Print_ChiTiet_TAIkHOAN(DataTable dt3)
         {
 
@@ -241,6 +297,8 @@ namespace CtyTinLuong
                 Print_MuaHang_frmChiTietCongNo_MuaHang(MuaHang_frmChiTietCongNo_MuaHang.mdtPrint);
             if(BanHang_CongNo.mbPrint==true)
                 Print_BanHang_CongNo(BanHang_CongNo.mdt_ChiTiet_Print);
+            if (BanHang_ChiTietCongNo.mbPrint)
+                Print_BanHang_ChiTietCongNo(BanHang_ChiTietCongNo.mdtPrint);
         }
 
         private void frmPrintCongNoNganHang_FormClosed(object sender, FormClosedEventArgs e)
@@ -250,6 +308,7 @@ namespace CtyTinLuong
             MuaHang_frmCongNo.mbPrint = false;
             MuaHang_frmChiTietCongNo_MuaHang.mbPrint = false;
             BanHang_CongNo.mbPrint = false;
+            BanHang_ChiTietCongNo.mbPrint = false;
         }
     }
 }

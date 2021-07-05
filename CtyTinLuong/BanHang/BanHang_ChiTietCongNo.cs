@@ -16,7 +16,7 @@ namespace CtyTinLuong
     {
         public static bool mbPrint;
 
-        public static DataTable mdt_ChiTiet_Print;
+        public static DataTable mdtPrint;
         public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
         public static DateTime mdatungay, mdadenngay;
 
@@ -258,14 +258,11 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)gridControl2.DataSource;
-            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdt_ChiTiet_Print = dv1212.ToTable();
+           
 
-            if (mdt_ChiTiet_Print.Rows.Count == 0)
+            DataTable DatatableABC = (DataTable)gridControl2.DataSource;
+
+            if (DatatableABC.Rows.Count == 0)
             {
 
                 MessageBox.Show("Không có dữ liệu");
@@ -273,16 +270,88 @@ namespace CtyTinLuong
 
             else
             {
+                CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dt3 = dv1212.ToTable();
+                mdtPrint = new DataTable();
+
+
+                mdtPrint.Columns.Add("NgayThang", typeof(string));
+                mdtPrint.Columns.Add("SoChungTu", typeof(string));
+                mdtPrint.Columns.Add("DienGiai", typeof(string));
+
+                mdtPrint.Columns.Add("MaVT", typeof(string));
+                mdtPrint.Columns.Add("TenVTHH", typeof(string));
+
+                mdtPrint.Columns.Add("NoTrongKy", typeof(string));
+                mdtPrint.Columns.Add("CoTrongKy", typeof(string));
+                mdtPrint.Columns.Add("NoCuoiKy", typeof(string));
+                mdtPrint.Columns.Add("CoCuoiKy", typeof(string));
+
+                mdtPrint.Columns.Add("SoLuong", typeof(string));
+                mdtPrint.Columns.Add("DonGia", typeof(string));
+                mdtPrint.Columns.Add("ThanhTien", typeof(string));
+                mdtPrint.Columns.Add("STT", typeof(string));
+
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+
+                    if (Convert.ToBoolean(dt3.Rows[i]["HienThi"].ToString()) == false)
+                    {
+                        DataRow _ravi = mdtPrint.NewRow();
+                        _ravi["STT"] = (i + 1).ToString();
+                        _ravi["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
+                        _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                        _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                        _ravi["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
+                        _ravi["CoTrongKy"] = dt3.Rows[i]["CoTrongKy"].ToString();
+                        _ravi["NoCuoiKy"] = dt3.Rows[i]["NoCuoiKy"].ToString();
+                        _ravi["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
+                        mdtPrint.Rows.Add(_ravi);
+                    }
+                    else
+                    {
+
+
+                        int iDImuahang = Convert.ToInt32(dt3.Rows[i]["ID_MuaHang"].ToString());
+                        clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
+                        cls2.iID_MuaHang = iDImuahang;
+                        DataTable dtxxx = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
+
+                        for (int j = 0; j < dtxxx.Rows.Count; j++)
+                        {
+                            DataRow _ravi2 = mdtPrint.NewRow();
+                            _ravi2["STT"] = (i + 1).ToString();
+                            _ravi2["SoLuong"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString());
+                            _ravi2["DonGia"] = Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi2["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi2["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
+                            _ravi2["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
+                            _ravi2["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
+                            _ravi2["NoTrongKy"] = dt3.Rows[i]["NoTrongKy"].ToString();
+                            _ravi2["CoTrongKy"] = dt3.Rows[i]["CoTrongKy"].ToString();
+                            _ravi2["NoCuoiKy"] = dt3.Rows[i]["NoCuoiKy"].ToString();
+                            _ravi2["CoCuoiKy"] = dt3.Rows[i]["CoCuoiKy"].ToString();
+                            _ravi2["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                            _ravi2["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                            mdtPrint.Rows.Add(_ravi2);
+                        }
+                    }
+
+
+                }
+
                 int iiDi = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
                 msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                 msSoTaiKhoan = GridSoTaiKhoan.Text.ToString();
                 msTenTaiKhoan = txtTenTK.Text;
                 mbPrint = true;
                 mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;               
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                 ff.ShowDialog();
-
             }
         }
 
