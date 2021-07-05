@@ -37,13 +37,17 @@ namespace CtyTinLuong
 
                 txtQuyRaKien_BaoBe.Text = (soluongbaobe * sokien1baobe).ToString();
                 txtQuyRaKien_BaoTo.Text= (soluongbaoto * sokien1baoto).ToString();
-                txtSoLuongThanhPhamQuyDoi.Text = (soluongbaobe * sokien1baobe+ soluongbaoto * sokien1baoto).ToString();
+            
                 txtTongSoKG.Text= (soluongbaobe * sokg1baobe + soluongbaoto * sokg1baoto).ToString();
-                if (checkHangNhu.Checked == true)
+                if (CheckHangCuc.Checked == true)
                 {
                     txtTongSoKG.Text = txtSoLuong_BaoTo.Text;
                     txtQuyRaKien_BaoTo.Text = (soluongbaoto / sokien1baoto).ToString();
                     txtSoLuongThanhPhamQuyDoi.Text = txtQuyRaKien_BaoTo.Text;
+                }
+                else
+                {
+                    txtSoLuongThanhPhamQuyDoi.Text = (soluongbaobe * sokien1baobe + soluongbaoto * sokien1baoto).ToString();
                 }
               
             }
@@ -1443,19 +1447,18 @@ namespace CtyTinLuong
                 checkHangNhu.Checked = false;
                 checkHangDot.Checked = false;
                 checkHangSot.Checked = false;
-                layoutbaobe.Visibility = LayoutVisibility.Always;
-                layoutDM_Duoi.Visibility = LayoutVisibility.Always;
-                layoutKg1baonho.Visibility = LayoutVisibility.Always;
-                layoutkien1baonho.Visibility = LayoutVisibility.Always;
-                layoutQuyKien_Duoi.Visibility = LayoutVisibility.Always;
-                layoutkg1baoto.Visibility = LayoutVisibility.Always;
-                layoutkien1baoto.Text = "Số kiện/Sọt to";
-                layoutkien1baonho.Text = "Số kiện/Sọt bé";
-                layoutKg1baonho.Text = "Kg/sọt bé";
-                layoutkg1baoto.Text = "Kg/ sọt to";
-                layoutbaoto.Text = "SL Sọt To";
-                layoutbaobe.Text = "SL Sọt bé";
-                layoutControlItem21.Text = "Tổng số Kg";
+                layoutbaobe.Visibility = LayoutVisibility.Never;
+                layoutDM_Duoi.Visibility = LayoutVisibility.Never;
+                layoutKg1baonho.Visibility = LayoutVisibility.Never;
+                layoutkien1baonho.Visibility = LayoutVisibility.Never;
+                layoutQuyKien_Duoi.Visibility = LayoutVisibility.Never;
+                layoutkg1baoto.Visibility = LayoutVisibility.Never;
+
+             //   layoutkg1baoto.Text = "Cục/ 1bao";
+                layoutbaoto.Text = "Số lượng xuất (Cục)";
+                layoutControlItem21.Text = "Tổng số cục";
+                layoutkien1baoto.Text = "Số Cục/Kiện";
+                txtSoLuong_BaoBe.Text = "0";
             }
         }
 
@@ -1504,7 +1507,7 @@ namespace CtyTinLuong
                 layoutkg1baoto.Text = "Cục/ 1bao";
                 layoutbaoto.Text = "Số lượng xuất (Cục)";                
                 layoutControlItem21.Text = "Tổng số cục";
-                layoutkien1baoto.Text = "Số cục/kiện";
+                layoutkien1baoto.Text = "Số kiện/bao";
                 txtSoLuong_BaoBe.Text = "0";
             }
         }
