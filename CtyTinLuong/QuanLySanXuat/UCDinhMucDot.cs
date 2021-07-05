@@ -18,6 +18,7 @@ namespace CtyTinLuong
         public static bool mb_bool_NgungTheoDoi;
        
         public static int miID_DinhMuc_Dot;
+        int xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
         private void btXoa_Click(object sender, EventArgs e)
         {
             if(Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clKhoa).ToString())==true)
@@ -35,7 +36,7 @@ namespace CtyTinLuong
                     cls1.iID_DinhMuc_Dot = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
                     cls1.Delete();
                     MessageBox.Show("Đã xóa");
-                    HienThi();
+                    Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
                 }
             }
             
@@ -106,45 +107,13 @@ namespace CtyTinLuong
             }
         }
 
-        
-        private void HienThi()
+
+        private void Load_DaTa(int xxxIDLoaiHang)
         {
             clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
-            DataTable dt = cls.SelectAll_TenVTHH();
-            if (checked_ALL.Checked == true)
-            {
+            DataTable dt = cls.SA_W_Loaihang(xxxIDLoaiHang);
+            gridControl1.DataSource = dt;
 
-                dt.DefaultView.RowFilter = "TonTai=True";
-                DataView dv = dt.DefaultView;
-                dv.Sort = "NgayThang DESC";
-                DataTable dxxxx = dv.ToTable();
-                gridControl1.DataSource = dxxxx;
-
-            }
-            else
-            {
-                if (checkTheoDoi.Checked == true)
-                {
-                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-                    DataView dv = dt.DefaultView;
-                    dv.Sort = "NgayThang DESC";
-                    DataTable dxxxx = dv.ToTable();
-                    gridControl1.DataSource = dxxxx;
-
-                }
-                else
-                {
-                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=True";
-                    DataView dv = dt.DefaultView;
-                    dv.Sort = "NgayThang DESC";
-                    DataTable dxxxx = dv.ToTable();
-                    gridControl1.DataSource = dxxxx;
-
-
-                }
-                              
-            }
-            
         }
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
@@ -154,35 +123,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void checked_ALL_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checked_ALL.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checkTheoDoi.Checked = false;
-            }
-            HienThi();
-        }
-
-        private void checkTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkTheoDoi.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
-
-        private void checkNgungTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkNgungTheoDoi.Checked == true)
-            {
-                checkTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
+       
 
         private void UCDinhMucDot_Load(object sender, EventArgs e)
         {
@@ -196,9 +137,10 @@ namespace CtyTinLuong
             //clBooL_NguyenPhuLieu.Caption = "Vật tư\nphụ";
             //clMaThanhPham.Caption = "Mã TP\nQuy đổi";
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
-            checkTheoDoi.Checked = true;
+          
             mb_TheMoi_DinhMuc_Dot = false;
-            HienThi();
+            xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
+            Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             Cursor.Current = Cursors.Default;
         }
     }

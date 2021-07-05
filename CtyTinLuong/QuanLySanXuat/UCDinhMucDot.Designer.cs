@@ -60,9 +60,6 @@
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.checkTheoDoi = new DevExpress.XtraEditors.CheckEdit();
-            this.checkNgungTheoDoi = new DevExpress.XtraEditors.CheckEdit();
-            this.checked_ALL = new DevExpress.XtraEditors.CheckEdit();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,9 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -373,36 +367,6 @@
             this.clKhoa.FieldName = "Khoa";
             this.clKhoa.Name = "clKhoa";
             // 
-            // checkTheoDoi
-            // 
-            this.checkTheoDoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkTheoDoi.Location = new System.Drawing.Point(699, 5);
-            this.checkTheoDoi.Name = "checkTheoDoi";
-            this.checkTheoDoi.Properties.Caption = "Đang theo dõi";
-            this.checkTheoDoi.Size = new System.Drawing.Size(90, 19);
-            this.checkTheoDoi.TabIndex = 67;
-            this.checkTheoDoi.CheckedChanged += new System.EventHandler(this.checkTheoDoi_CheckedChanged);
-            // 
-            // checkNgungTheoDoi
-            // 
-            this.checkNgungTheoDoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkNgungTheoDoi.Location = new System.Drawing.Point(795, 5);
-            this.checkNgungTheoDoi.Name = "checkNgungTheoDoi";
-            this.checkNgungTheoDoi.Properties.Caption = "Ngừng theo dõi";
-            this.checkNgungTheoDoi.Size = new System.Drawing.Size(100, 19);
-            this.checkNgungTheoDoi.TabIndex = 68;
-            this.checkNgungTheoDoi.CheckedChanged += new System.EventHandler(this.checkNgungTheoDoi_CheckedChanged);
-            // 
-            // checked_ALL
-            // 
-            this.checked_ALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checked_ALL.Location = new System.Drawing.Point(637, 5);
-            this.checked_ALL.Name = "checked_ALL";
-            this.checked_ALL.Properties.Caption = "Tất cả";
-            this.checked_ALL.Size = new System.Drawing.Size(56, 19);
-            this.checked_ALL.TabIndex = 69;
-            this.checked_ALL.CheckedChanged += new System.EventHandler(this.checked_ALL_CheckedChanged);
-            // 
             // btThemMoi
             // 
             this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
@@ -428,10 +392,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btRefresh);
-            this.panel1.Controls.Add(this.checkTheoDoi);
-            this.panel1.Controls.Add(this.checkNgungTheoDoi);
             this.panel1.Controls.Add(this.btThemMoi);
-            this.panel1.Controls.Add(this.checked_ALL);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -451,9 +412,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -485,9 +443,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoa;
         private DevExpress.XtraGrid.Columns.GridColumn clGhiChu;
-        private DevExpress.XtraEditors.CheckEdit checkTheoDoi;
-        private DevExpress.XtraEditors.CheckEdit checkNgungTheoDoi;
-        private DevExpress.XtraEditors.CheckEdit checked_ALL;
         private DevExpress.XtraEditors.SimpleButton btThemMoi;
         private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH;
         private DevExpress.XtraEditors.SimpleButton btRefresh;
