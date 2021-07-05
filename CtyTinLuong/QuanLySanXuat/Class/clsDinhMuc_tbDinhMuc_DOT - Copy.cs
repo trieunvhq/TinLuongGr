@@ -16,7 +16,39 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsDinhMuc_tbDinhMuc_DOT : clsDBInteractionBase
 	{
-        //pr_DinhMuc_tbDinhMuc_DOT_Update_W_Khoa_True
+        //pr_DinhMuc_tbDinhMuc_DOT_SA_W_Loaihang
+        public DataTable SA_W_Loaihang(int ___HangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0_)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_DinhMuc_tbDinhMuc_DOT_SA_W_Loaihang]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_DinhMuc_tbDinhMuc_DOT_SA_W_Loaihang");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ___HangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_DinhMuc_tbDinhMuc_DOT_SA_W_Loaihang", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public void Update_W_Khoa_True()
         {
 

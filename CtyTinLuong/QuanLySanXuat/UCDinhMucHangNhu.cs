@@ -18,10 +18,12 @@ namespace CtyTinLuong
         public static bool mb_bool_NgungTheoDoi;
 
         public static int miID_DinhMuc_Dot;
-        private void HienThi()
+
+        int xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
+        private void Load_DaTa(int xxxIDLoaiHang)
         {
             clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
-            DataTable dt = cls.SelectAll_TenVTHH();
+            DataTable dt = cls.SA_W_Loaihang(xxxIDLoaiHang);
             gridControl1.DataSource = dt;
 
         }
@@ -41,13 +43,13 @@ namespace CtyTinLuong
             clSoKG_MotBao.Caption = "Kg/Bao\n Kg/Sọt";
             clTrongLuongKiemTra.Caption = "Trọng\nlượng";
             clQuyRaKien.Caption = "Quy\nra kiện";
-            clPhePham.Caption = "Phế\nphẩm";
-            //clBooL_NguyenPhuLieu.Caption = "Vật tư\nphụ";
-            //clMaThanhPham.Caption = "Mã TP\nQuy đổi";
+            clPhePham.Caption = "Phế\nphẩm";           
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
            
             mb_TheMoi_DinhMuc_Dot = false;
-            HienThi();
+            xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
+            checkHangNhu.Checked = true;
+            Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             Cursor.Current = Cursors.Default;
         }
 
@@ -78,7 +80,7 @@ namespace CtyTinLuong
                     cls1.iID_DinhMuc_Dot = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
                     cls1.Delete();
                     MessageBox.Show("Đã xóa");
-                    HienThi();
+                    Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
                     Cursor.Current = Cursors.Default;
                 }
             }
@@ -139,6 +141,39 @@ namespace CtyTinLuong
             if (e.Column == clSTT)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void checkHangNhu_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkHangNhu.Checked==true)
+            {
+                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
+                checkHangCuc.Checked = false;
+                checkHangSot.Checked = false;
+                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+            }
+        }
+
+        private void checkHangCuc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkHangCuc.Checked == true)
+            {
+                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
+                checkHangNhu.Checked = false;
+                checkHangSot.Checked = false;
+                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+            }
+        }
+
+        private void checkHangSot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkHangSot.Checked == true)
+            {
+                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
+                checkHangNhu.Checked = false;
+                checkHangCuc.Checked = false;
+                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             }
         }
     }
