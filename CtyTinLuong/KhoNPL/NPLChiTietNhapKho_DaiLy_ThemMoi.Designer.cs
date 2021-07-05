@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NPLChiTietNhapKho_DaiLy_ThemMoi));
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtTenThanhPhamQuyDoi = new System.Windows.Forms.TextBox();
@@ -228,18 +228,18 @@
             // 
             this.layoutControlItem7.Control = this.txtTenThanhPhamQuyDoi;
             this.layoutControlItem7.CustomizationFormText = "Tên TP Quy đổi";
-            this.layoutControlItem7.Location = new System.Drawing.Point(471, 223);
+            this.layoutControlItem7.Location = new System.Drawing.Point(458, 223);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(352, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(365, 24);
             this.layoutControlItem7.Text = "Tên TP Quy đổi";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(97, 13);
             // 
             // txtTenThanhPhamQuyDoi
             // 
-            this.txtTenThanhPhamQuyDoi.Location = new System.Drawing.Point(573, 225);
+            this.txtTenThanhPhamQuyDoi.Location = new System.Drawing.Point(560, 225);
             this.txtTenThanhPhamQuyDoi.Name = "txtTenThanhPhamQuyDoi";
             this.txtTenThanhPhamQuyDoi.ReadOnly = true;
-            this.txtTenThanhPhamQuyDoi.Size = new System.Drawing.Size(248, 20);
+            this.txtTenThanhPhamQuyDoi.Size = new System.Drawing.Size(261, 20);
             this.txtTenThanhPhamQuyDoi.TabIndex = 44;
             // 
             // layoutControl1
@@ -554,7 +554,7 @@
             this.txtSoLuongThanhPhamQuyDoi.ForeColor = System.Drawing.Color.Red;
             this.txtSoLuongThanhPhamQuyDoi.Location = new System.Drawing.Point(318, 225);
             this.txtSoLuongThanhPhamQuyDoi.Name = "txtSoLuongThanhPhamQuyDoi";
-            this.txtSoLuongThanhPhamQuyDoi.Size = new System.Drawing.Size(151, 20);
+            this.txtSoLuongThanhPhamQuyDoi.Size = new System.Drawing.Size(138, 20);
             this.txtSoLuongThanhPhamQuyDoi.TabIndex = 45;
             this.txtSoLuongThanhPhamQuyDoi.TextChanged += new System.EventHandler(this.txtSoLuongThanhPhamQuyDoi_TextChanged);
             // 
@@ -1043,7 +1043,7 @@
             this.layoutControlItem8.CustomizationFormText = "Số lượng TP Quy đổi";
             this.layoutControlItem8.Location = new System.Drawing.Point(216, 223);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(255, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(242, 24);
             this.layoutControlItem8.Text = "Số lượng TP Quy đổi";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(97, 13);
             // 
@@ -1310,9 +1310,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1376,9 +1376,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
