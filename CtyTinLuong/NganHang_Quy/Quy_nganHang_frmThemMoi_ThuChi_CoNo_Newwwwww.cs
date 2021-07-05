@@ -336,14 +336,14 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
 
             DataRow _ravi = dt2.NewRow();
-            if (bientrangthia == 1) //báo nợ chi tiền từ ngân hàng ra
+            if (bientrangthia == 1) //báo có 
             {
                 checkNhaCungCap.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 2;
                 _ravi["SoTaiKhoanCon"] = "1121";
                 _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
             }
-            if (bientrangthia == 2) //báo Có
+            if (bientrangthia == 2) //báo nợ chi tiền từ ngân hàng ra
             {
                 checkKhachHang.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 2;
@@ -456,7 +456,30 @@ namespace CtyTinLuong
             if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
                 gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
         }
-
+        private void HienThiDienGiai_ThemMoi(int xxbientrangthai)
+        {
+            //miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5
+            if (UCQuy_NganHang_BaoCo.mbTheMoi==true)
+            {
+                if (xxbientrangthai == 1) //báo có
+                {
+                    txtDienGiai.Text = ""+txtDoiTuong.Text+" thanh toán"; ;
+                }
+               else if (xxbientrangthai == 2) //báo nợ
+                {
+                    txtDienGiai.Text = "Thanh toán cho: " + txtDoiTuong.Text + ""; ;
+                }
+                else if (xxbientrangthai == 3) //phiếu chi
+                {
+                    txtDienGiai.Text = "Thanh toán cho: " + txtDoiTuong.Text + ""; ;
+                }
+                else if (xxbientrangthai == 4) //phiếu thu
+                {
+                    txtDienGiai.Text = "Rút tiền gửi nhập quỹ"; ;
+                }
+            }
+           
+        }
         private void HienThi_CoPy(int bientrangthia)
         {
 
@@ -921,6 +944,8 @@ namespace CtyTinLuong
             try
             {
                 Load_LockUp_DoiTuong();
+                HienThiDienGiai_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+
                 int ID_Doituongxxx = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 string filterExpression = "ID_DoiTuong=" + ID_Doituongxxx + "";
                 DataRow[] rows = dtdoituong.Select(filterExpression);
