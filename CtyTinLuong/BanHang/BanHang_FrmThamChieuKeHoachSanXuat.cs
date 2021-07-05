@@ -49,9 +49,12 @@ namespace CtyTinLuong
 
         private void BanHang_FrmThamChieuKeHoachSanXuat_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgayChungTu.DateTime = BanHang_FrmChiTietBanHang_Newwwwwwww.mdaNgayChungTu;
             txtSoLuongthuc.Text = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbSoLuongXuat.ToString();
+            gridKeHoach.Focus();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridKeHoach_EditValueChanged(object sender, EventArgs e)
@@ -116,6 +119,96 @@ namespace CtyTinLuong
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gridKeHoach_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiai.Focus();
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtKhachHang.Focus();
+            }
+        }
+
+        private void txtKhachHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtmahang.Focus();
+            }
+        }
+
+        private void txtmahang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenVatTu.Focus();
+            }
+        }
+
+        private void txtTenVatTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDVT.Focus();
+            }
+        }
+
+        private void txtDVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtQuyCach.Focus();
+            }
+        }
+
+        private void txtQuyCach_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtChiTieu.Focus();
+            }
+        }
+
+        private void txtChiTieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgayChungTu.Focus();
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtSoLuongthuc.Focus();
+            }
+        }
+
+        private void txtSoLuongthuc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLuu.Focus();
+            }
+
+        }
+
+        private void btLuu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLuu.Focus();
+                btLuu_Click(null, null);
+            }
         }
     }
 }

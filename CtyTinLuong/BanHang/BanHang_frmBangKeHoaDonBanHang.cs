@@ -104,6 +104,9 @@ namespace CtyTinLuong
             LoadData(1,20, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            dteTuNgay.Focus();
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -239,6 +242,32 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             BanHang_frmBangKeHoaDonBanHang_Load(sender, e);
             Cursor.Current = Cursors.Default;
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint.Focus();
+                btLayDuLieu_Click(null, null);
+            }
         }
 
         private void gridView_Chitiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

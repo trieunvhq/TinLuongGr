@@ -191,6 +191,32 @@ namespace CtyTinLuong
             this.Close();
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
         public static DataTable mdt_ChiTiet_Print;
         public BanHang_CongNo()
         {
@@ -206,6 +232,7 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = ngaydauthang;
             int xxid = 268; // 131 Phải thu của khách hàng
             LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            dteTuNgay.Focus();
             Cursor.Current = Cursors.Default;
         }
     }
