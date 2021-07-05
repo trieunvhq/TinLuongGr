@@ -22,36 +22,8 @@ namespace CtyTinLuong
         {
             clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
             DataTable dt = cls.SelectAll_TenVTHH();
-            if (checked_ALL.Checked == true)
-            {
+            gridControl1.DataSource = dt;
 
-                dt.DefaultView.RowFilter = "TonTai=True and CheckHangNhu_True = True";
-                DataView dv = dt.DefaultView;
-                dv.Sort = "NgayThang DESC";
-                DataTable dxxxx = dv.ToTable();
-                gridControl1.DataSource = dxxxx;
-
-            }
-            else
-            {
-                if (checkTheoDoi.Checked == true)
-                {
-                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false and CheckHangNhu_True = True";
-                    DataView dv = dt.DefaultView;
-                    dv.Sort = "NgayThang DESC";
-                    DataTable dxxxx = dv.ToTable();
-                    gridControl1.DataSource = dxxxx;
-
-                }
-                else
-                {
-                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=True and CheckHangNhu_True = True";
-                    DataView dv = dt.DefaultView;
-                    dv.Sort = "NgayThang DESC";
-                    DataTable dxxxx = dv.ToTable();
-                    gridControl1.DataSource = dxxxx;
-                }
-            }
         }
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
@@ -73,7 +45,7 @@ namespace CtyTinLuong
             //clBooL_NguyenPhuLieu.Caption = "Vật tư\nphụ";
             //clMaThanhPham.Caption = "Mã TP\nQuy đổi";
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
-            checkTheoDoi.Checked = true;
+           
             mb_TheMoi_DinhMuc_Dot = false;
             HienThi();
             Cursor.Current = Cursors.Default;
@@ -86,35 +58,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void checked_ALL_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checked_ALL.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checkTheoDoi.Checked = false;
-            }
-            HienThi();
-        }
-
-        private void checkTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkTheoDoi.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
-
-        private void checkNgungTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkNgungTheoDoi.Checked == true)
-            {
-                checkTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
+     
 
         private void btXoa_Click(object sender, EventArgs e)
         {
