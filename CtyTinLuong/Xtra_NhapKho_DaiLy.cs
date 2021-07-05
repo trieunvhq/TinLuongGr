@@ -54,6 +54,7 @@ namespace CtyTinLuong
             pSoDienThoai.Value = NPLChiTietNhapKho_DaiLy_ThemMoi.msSDTDaiLy;
             pDiaChi.Value = NPLChiTietNhapKho_DaiLy_ThemMoi.msDiaChiDaiLy;
             pDVTThanhPham.Value = NPLChiTietNhapKho_DaiLy_ThemMoi.msdvtthanhphamquydoi;
+            pSDTThuKho.Value = "SĐT: 0971.744.943";
         }
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
@@ -72,7 +73,11 @@ namespace CtyTinLuong
                     if (dt.Rows[1]["HoTen"].ToString() != "")
                         pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
                     if (dt.Rows[3]["HoTen"].ToString() != "")
+                    {
                         pThuKho.Value = dt.Rows[3]["HoTen"].ToString();
+                        pSDTThuKho.Value = "SĐT: 0971.744.943";
+                    }
+                    else pThuKho.Value = "Nguyễn Thị Thạnh";
                     if (dt.Rows[6]["HoTen"].ToString() != "")
                         pGiamDoc.Value = dt.Rows[6]["HoTen"].ToString();
                     if (dt.Rows[10]["HoTen"].ToString() != "")
