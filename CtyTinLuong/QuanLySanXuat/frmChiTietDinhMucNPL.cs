@@ -348,7 +348,31 @@ namespace CtyTinLuong
                 gridView1.SetRowCellValue(e.RowHandle, clHienThi, shienthixx);
 
             }
-           
+            //
+            //int index_ = e.RowHandle;
+            //string name_ = e.Column.FieldName;
+            //if (name_.Contains("SoLuong"))
+            //{
+            //    _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+            //    if (_data.Rows.Count > index_)
+            //    {
+            //        double temp_ = Convert.ToDouble(_data.Rows[index_][name_].ToString());
+            //        _data.Rows[index_]["Tong"] = temp_ + Convert.ToDouble(_data.Rows[index_]["Tong"].ToString());
+            //    }
+
+            //}
+            //else if (name_.Contains("TenVTHH"))
+            //{
+            //    if (gridView1.GetFocusedRowCellValue(name_) == null)
+            //    {
+            //        _data.Rows[index_][name_] = "";
+            //    }
+            //    else
+            //    {
+            //        _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+            //    }
+            //}
+            //
         }
 
         private void repositoryItemLookUpEdit2_EditValueChanged(object sender, EventArgs e)
