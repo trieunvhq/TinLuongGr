@@ -159,8 +159,8 @@ namespace CtyTinLuong
                     mbPrint = true;
                     mdteTuNgay = dteTuNgay.DateTime;
                     mdteDenNgay = dteDenNgay.DateTime;
-                    mssoTK_me = "331";
-                    msTenTK_me = "Phải trả cho người bán";
+                    mssoTK_me = "131";
+                    msTenTK_me = "Phải thu của khách hàng";
                     msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
                     ff.ShowDialog();
