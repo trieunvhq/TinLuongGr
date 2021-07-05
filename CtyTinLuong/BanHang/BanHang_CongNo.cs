@@ -171,15 +171,17 @@ namespace CtyTinLuong
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString() != "")
+            if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon) != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 mdteTuNgay = dteTuNgay.DateTime;
                 mdteDenNgay = dteDenNgay.DateTime;
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 BanHang_ChiTietCongNo ff = new BanHang_ChiTietCongNo();
-                this.Hide();
-                ff.ShowDialog();
-                this.Show();
+                //this.Hide();
+                ff.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 

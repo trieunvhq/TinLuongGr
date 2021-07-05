@@ -298,15 +298,19 @@ namespace CtyTinLuong
 
         private void BanHang_ChiTietCongNo_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_lockUp();
             dteTuNgay.EditValue = BanHang_CongNo.mdteTuNgay;
             dteDenNgay.EditValue = BanHang_CongNo.mdteDenNgay;
             GridSoTaiKhoan.EditValue = BanHang_CongNo.miiiID_TaiKhoanKeToanCon;
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             BanHang_ChiTietCongNo_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
     }
 }
