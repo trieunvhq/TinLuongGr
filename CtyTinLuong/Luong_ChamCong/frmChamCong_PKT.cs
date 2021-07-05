@@ -736,7 +736,7 @@ namespace CtyTinLuong
                 _ravi["MaNhanVien"] = "";
                 _ravi["TenNhanVien"] = ten_;
 
-                _ravi["Cong"] = "Công";
+                _ravi["Cong"] = "Công nhật";
                 _ravi["ID_LoaiCong"] = 1;
                 _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                 _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;

@@ -626,7 +626,7 @@ namespace CtyTinLuong
             _ravi["STT"] = (stt_);
             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
             _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
-            _ravi["Cong"] = "Công";
+            _ravi["Cong"] = "Công nhật";
             _ravi["ID_LoaiCong"] = 1;
             _data.Rows.Add(_ravi);
             //
