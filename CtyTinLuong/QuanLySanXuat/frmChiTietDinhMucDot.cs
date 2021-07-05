@@ -77,7 +77,7 @@ namespace CtyTinLuong
                     cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                     cls.sGhiChu = txtGhiChu.Text.ToString();
                     cls.bKhoa = false;
-                    cls.bCheckHangNhu_True = false;
+                    cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
                     cls.Insert();
                     MessageBox.Show("Đã lưu");
                     this.Close();
@@ -158,7 +158,7 @@ namespace CtyTinLuong
                     cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                     cls.sGhiChu = txtGhiChu.Text.ToString();
                     cls.bKhoa = khoadulieu;
-                    cls.bCheckHangNhu_True = false;
+                    cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
                     cls.Update();
                     MessageBox.Show("Đã lưu");
                     this.Close();

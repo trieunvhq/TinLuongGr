@@ -61,6 +61,10 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -83,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -97,6 +103,8 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.checkBox2);
+            this.layoutControl2.Controls.Add(this.checkBox1);
             this.layoutControl2.Controls.Add(this.txtGhiChu);
             this.layoutControl2.Controls.Add(this.txtSoKienMotBao);
             this.layoutControl2.Controls.Add(this.txtSoKGMotBao);
@@ -117,22 +125,22 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(98, 146);
+            this.txtGhiChu.Location = new System.Drawing.Point(98, 170);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(537, 53);
+            this.txtGhiChu.Size = new System.Drawing.Size(537, 29);
             this.txtGhiChu.TabIndex = 9;
             // 
             // txtSoKienMotBao
             // 
-            this.txtSoKienMotBao.Location = new System.Drawing.Point(98, 122);
+            this.txtSoKienMotBao.Location = new System.Drawing.Point(98, 146);
             this.txtSoKienMotBao.Name = "txtSoKienMotBao";
             this.txtSoKienMotBao.Size = new System.Drawing.Size(537, 20);
             this.txtSoKienMotBao.TabIndex = 4;
             // 
             // txtSoKGMotBao
             // 
-            this.txtSoKGMotBao.Location = new System.Drawing.Point(98, 98);
+            this.txtSoKGMotBao.Location = new System.Drawing.Point(98, 122);
             this.txtSoKGMotBao.Name = "txtSoKGMotBao";
             this.txtSoKGMotBao.Size = new System.Drawing.Size(537, 20);
             this.txtSoKGMotBao.TabIndex = 7;
@@ -163,7 +171,7 @@
             // dteNgayThang
             // 
             this.dteNgayThang.EditValue = null;
-            this.dteNgayThang.Location = new System.Drawing.Point(98, 26);
+            this.dteNgayThang.Location = new System.Drawing.Point(98, 50);
             this.dteNgayThang.Name = "dteNgayThang";
             this.dteNgayThang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -179,14 +187,14 @@
             // 
             // txtSoHieu
             // 
-            this.txtSoHieu.Location = new System.Drawing.Point(98, 2);
+            this.txtSoHieu.Location = new System.Drawing.Point(98, 26);
             this.txtSoHieu.Name = "txtSoHieu";
             this.txtSoHieu.Size = new System.Drawing.Size(112, 20);
             this.txtSoHieu.TabIndex = 2;
             // 
             // txtDVT1
             // 
-            this.txtDVT1.Location = new System.Drawing.Point(512, 74);
+            this.txtDVT1.Location = new System.Drawing.Point(512, 98);
             this.txtDVT1.Name = "txtDVT1";
             this.txtDVT1.ReadOnly = true;
             this.txtDVT1.Size = new System.Drawing.Size(123, 20);
@@ -194,7 +202,7 @@
             // 
             // txtTenVatTu
             // 
-            this.txtTenVatTu.Location = new System.Drawing.Point(98, 74);
+            this.txtTenVatTu.Location = new System.Drawing.Point(98, 98);
             this.txtTenVatTu.Multiline = true;
             this.txtTenVatTu.Name = "txtTenVatTu";
             this.txtTenVatTu.ReadOnly = true;
@@ -203,7 +211,7 @@
             // 
             // gridLookUpEditLoaiHang
             // 
-            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(98, 50);
+            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(98, 74);
             this.gridLookUpEditLoaiHang.Name = "gridLookUpEditLoaiHang";
             this.gridLookUpEditLoaiHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -267,7 +275,9 @@
             this.emptySpaceItem7,
             this.emptySpaceItem2,
             this.emptySpaceItem3,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem10,
+            this.layoutControlItem11});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup2.Size = new System.Drawing.Size(637, 227);
@@ -277,7 +287,7 @@
             // 
             this.layoutControlItem23.Control = this.gridLookUpEditLoaiHang;
             this.layoutControlItem23.CustomizationFormText = "Mã VT";
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(231, 24);
             this.layoutControlItem23.Text = "Mã VT";
@@ -286,7 +296,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.dteNgayThang;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(311, 24);
             this.layoutControlItem5.Text = "Ngày lập";
@@ -295,7 +305,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtSoHieu;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem1.Text = "Mã Định mức";
@@ -330,7 +340,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtSoKGMotBao;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(637, 24);
             this.layoutControlItem7.Text = "Cục/ bao (Kg/Sọt)";
@@ -339,7 +349,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtSoKienMotBao;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(637, 24);
             this.layoutControlItem8.Text = "Kiện/Bao (Kiên/Sọt)";
@@ -349,7 +359,7 @@
             // 
             this.layoutControlItem4.Control = this.txtTenVatTu;
             this.layoutControlItem4.CustomizationFormText = "Tên VT";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(485, 24);
             this.layoutControlItem4.Text = "Tên VT";
@@ -359,7 +369,7 @@
             // 
             this.layoutControlItem9.Control = this.txtDVT1;
             this.layoutControlItem9.CustomizationFormText = "ĐVT";
-            this.layoutControlItem9.Location = new System.Drawing.Point(485, 72);
+            this.layoutControlItem9.Location = new System.Drawing.Point(485, 96);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(152, 24);
             this.layoutControlItem9.Text = "ĐVT";
@@ -371,7 +381,7 @@
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
             this.emptySpaceItem7.CustomizationFormText = "emptySpaceItem7";
-            this.emptySpaceItem7.Location = new System.Drawing.Point(231, 48);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(231, 72);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
             this.emptySpaceItem7.Size = new System.Drawing.Size(406, 24);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -379,7 +389,7 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(311, 24);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(311, 48);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(326, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -387,7 +397,7 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(212, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(212, 24);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(425, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -395,11 +405,47 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtGhiChu;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(637, 57);
+            this.layoutControlItem6.Size = new System.Drawing.Size(637, 33);
             this.layoutControlItem6.Text = "Ghi chú";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(2, 2);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(314, 20);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Hàng Nhũ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.checkBox1;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(318, 24);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Location = new System.Drawing.Point(320, 2);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(315, 20);
+            this.checkBox2.TabIndex = 11;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.checkBox2;
+            this.layoutControlItem11.Location = new System.Drawing.Point(318, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(319, 24);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem11.TextVisible = false;
             // 
             // frmChiTietDinhMuc_HangNhu
             // 
@@ -436,6 +482,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,5 +521,9 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private System.Windows.Forms.TextBox txtGhiChu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

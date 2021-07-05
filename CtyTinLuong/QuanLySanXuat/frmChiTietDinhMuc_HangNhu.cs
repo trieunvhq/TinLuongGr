@@ -53,7 +53,7 @@ namespace CtyTinLuong
 
                     cls.fSoKG_MotBao = fsoKG_1bao;
                     cls.fSoKienMotBao = fsokienmotbao;
-                    cls.bCheckHangNhu_True = true;
+                    //cls.bCheckHangNhu_True = true;
                    
                     if(UCDinhMucHangNhu.mb_TheMoi_DinhMuc_Dot==true)
                     {
