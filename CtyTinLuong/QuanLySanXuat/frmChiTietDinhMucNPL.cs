@@ -53,7 +53,7 @@ namespace CtyTinLuong
                         else cls2.fSoLuong = 0;                   
                         cls2.bTonTai = true;
                         cls2.bNgungTheoDoi = false;
-                        cls2.Insert2();
+                        cls2.Insert2(dv3.Rows[i]["strSoLuong"].ToString());
                     }
                     MessageBox.Show("Đã lưu");
                     this.Close();
@@ -106,7 +106,7 @@ namespace CtyTinLuong
                         else cls2.fSoLuong = 0;
                         cls2.bTonTai = true;
                         cls2.bNgungTheoDoi = false;
-                        cls2.Insert2();
+                        cls2.Insert2(dv3.Rows[i]["strSoLuong"].ToString());
                     }
                     MessageBox.Show("Đã lưu");
                     this.Close();
