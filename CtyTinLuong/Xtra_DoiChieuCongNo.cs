@@ -33,7 +33,7 @@ namespace CtyTinLuong
 
                 pTieuDeKH_NCC.Value = "Khách hàng";
                 pKhachHang_NCC.Value = MuaHang_frmChiTietCongNo_MuaHang.msTenKhachHang;
-                PtaiKhoanMe.Value = "331: Phải trả cho người bán";
+                //PtaiKhoanMe.Value = "331: Phải trả cho người bán";
                 pTenTaiKhoan_Con.Value = ""+ MuaHang_frmChiTietCongNo_MuaHang.msSoTaiKhoan+ ": "+ MuaHang_frmChiTietCongNo_MuaHang.msTenTaiKhoan+ "";
             }
         }
