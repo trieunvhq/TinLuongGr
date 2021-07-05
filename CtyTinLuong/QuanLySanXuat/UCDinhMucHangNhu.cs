@@ -19,7 +19,7 @@ namespace CtyTinLuong
 
         public static int miID_DinhMuc_Dot;
 
-        int xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
+        public static int xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
         private void Load_DaTa(int xxxIDLoaiHang)
         {
             clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
@@ -38,13 +38,9 @@ namespace CtyTinLuong
         private void UCDinhMucHangNhu_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            clSoLuongKiemTra.Caption = "SL\nkiểm tra";
-            clSoKienMotBao.Caption = "Cục/Bao\n Tép/Sọt";
-            clSoKG_MotBao.Caption = "Kg/Bao\n Kg/Sọt";
-            clTrongLuongKiemTra.Caption = "Trọng\nlượng";
-            clQuyRaKien.Caption = "Quy\nra kiện";
-            clPhePham.Caption = "Phế\nphẩm";           
-            clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
+           
+            
+          
            
             mb_TheMoi_DinhMuc_Dot = false;
             xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
@@ -151,6 +147,11 @@ namespace CtyTinLuong
                 xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
                 checkHangCuc.Checked = false;
                 checkHangSot.Checked = false;
+
+                clSoKG_MotBao.Visible = true;
+                clSoKienMotBao.Caption = "Kiện/Bao";
+                clSoKG_MotBao.Caption = "Kg/Bao";
+
                 Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             }
         }
@@ -162,6 +163,10 @@ namespace CtyTinLuong
                 xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
                 checkHangNhu.Checked = false;
                 checkHangSot.Checked = false;
+
+                clSoKienMotBao.Caption = "Cục/Kiện";
+                clSoKG_MotBao.Visible = false;
+
                 Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
             }
         }
@@ -170,6 +175,10 @@ namespace CtyTinLuong
         {
             if (checkHangSot.Checked == true)
             {
+                clSoKG_MotBao.Visible = true;
+                clSoKienMotBao.Caption = "Kiện/Sọt";
+                clSoKG_MotBao.Caption = "Kg/Sọt";
+
                 xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
                 checkHangNhu.Checked = false;
                 checkHangCuc.Checked = false;
