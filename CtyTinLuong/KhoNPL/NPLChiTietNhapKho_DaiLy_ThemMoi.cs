@@ -43,6 +43,7 @@ namespace CtyTinLuong
                 {
                     txtTongSoKG.Text = txtSoLuong_BaoTo.Text;
                     txtQuyRaKien_BaoTo.Text = (soluongbaoto / sokien1baoto).ToString();
+                    txtSoLuongThanhPhamQuyDoi.Text = txtQuyRaKien_BaoTo.Text;
                 }
               
             }
@@ -1415,6 +1416,16 @@ namespace CtyTinLuong
         private void txtTongSoKG_TextChanged(object sender, EventArgs e)
         {
             hienthi_DienGai();
+        }
+
+        private void txtQuyRaKien_BaoTo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoLuongThanhPhamQuyDoi_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void checkHangDot_CheckedChanged(object sender, EventArgs e)
