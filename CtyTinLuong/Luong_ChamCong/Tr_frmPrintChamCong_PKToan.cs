@@ -19,7 +19,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         public Tr_frmPrintChamCong_PKToan(int thang, int nam, DataTable data)
         {
-            //_data = data;
+            _data = data;
             _thang = thang;
             _nam = nam;
 
@@ -48,13 +48,13 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintChamCong_PKToan_Load(object sender, EventArgs e)
         {
-            clsThin clsThin_ = new clsThin();
-            _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, KiemTraTenBoPhan("Phòng Kế toán"), 0, "");
+            //clsThin clsThin_ = new clsThin();
+            //_data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, KiemTraTenBoPhan("Phòng Kế toán"), 0, "");
 
             TrPrintChamCong_PKToan xtr111 = new TrPrintChamCong_PKToan(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
            
-            for (int i = 0; i < _data.Rows.Count; ++i)
+            for (int i = 0; i < _data.Rows.Count -1; ++i)
             {
                 DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
 
