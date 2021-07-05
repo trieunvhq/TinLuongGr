@@ -225,6 +225,42 @@ namespace CtyTinLuong
 
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint_ALL.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            btPrint_ALL.Focus();
+
+            Cursor.Current = Cursors.Default;
+        }
+
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -232,6 +268,7 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dteDenNgay.EditValue = DateTime.Now;
             LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
+            dteTuNgay.Focus();
             Cursor.Current = Cursors.Default;
         }
     }

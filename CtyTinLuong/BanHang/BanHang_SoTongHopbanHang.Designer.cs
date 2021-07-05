@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHang_SoTongHopbanHang));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -604,6 +605,8 @@
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 94;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
+            this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
+            this.btLayDuLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btLayDuLieu_KeyPress);
             // 
             // dteDenNgay
             // 
@@ -622,6 +625,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(332, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 93;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // dteTuNgay
             // 
@@ -640,6 +644,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(314, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 93;
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // layoutControlGroup1
             // 

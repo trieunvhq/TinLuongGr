@@ -360,6 +360,66 @@ namespace CtyTinLuong
             this.Close();
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu_Click(null, null);
+                btPrint.Focus();
+            }
+        }
+
+        private void GridSoTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenTK.Focus();
+            }
+        }
+
+        private void txtTenTK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint.Focus();
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+
+
         public BanHang_ChiTietCongNo()
         {
             InitializeComponent();
@@ -372,6 +432,7 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = BanHang_CongNo.mdteTuNgay;
             dteDenNgay.EditValue = BanHang_CongNo.mdteDenNgay;
             GridSoTaiKhoan.EditValue = BanHang_CongNo.miiiID_TaiKhoanKeToanCon;
+            dteTuNgay.Focus();
             Cursor.Current = Cursors.Default;
         }
 
