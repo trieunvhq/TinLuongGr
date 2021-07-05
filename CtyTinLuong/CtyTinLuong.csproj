@@ -1911,6 +1911,12 @@
     <Compile Include="Xtra_CongNo_NganHang.Designer.cs">
       <DependentUpon>Xtra_CongNo_NganHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtra_DoiChieuCongNo_test.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtra_DoiChieuCongNo_test.Designer.cs">
+      <DependentUpon>Xtra_DoiChieuCongNo_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_DoiChieuCongNo.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2860,6 +2866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_CongNo_NganHang.resx">
       <DependentUpon>Xtra_CongNo_NganHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtra_DoiChieuCongNo_test.resx">
+      <DependentUpon>Xtra_DoiChieuCongNo_test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xtra_DoiChieuCongNo.resx">
       <DependentUpon>Xtra_DoiChieuCongNo.cs</DependentUpon>
