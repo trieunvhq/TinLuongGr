@@ -185,18 +185,6 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
         }
 
-        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
-        {
-            foreach (NavBarItem navItem in navBarControl1.Items)
-            {
-                navItem.Appearance.ForeColor = Color.Black;
-                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
-            }
-
-            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
-            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
-        }
-
         private void navBarItem11_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
             doiMauTitle(sender, e);
@@ -231,6 +219,20 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
             Cursor.Current = Cursors.Default;
+        }
+
+
+        //
+        private void doiMauTitle(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (NavBarItem navItem in navBarControl1.Items)
+            {
+                navItem.Appearance.ForeColor = Color.Black;
+                navItem.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Regular);
+            }
+
+            ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
+            ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
     }
 }
