@@ -151,13 +151,13 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                if (gridView1.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
+                if (gridView1.GetFocusedRowCellValue(clID_BanHang) != null)
                 {//msDienGiai
                     miiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
                     BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww();
-                    _frmQLBH.Hide();
-                    ff.ShowDialog();
-                    _frmQLBH.Show();
+                    //_frmQLBH.Hide();
+                    ff.Show();
+                    //_frmQLBH.Show();
                 }
             }
             catch
