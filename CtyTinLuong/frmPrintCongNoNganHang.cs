@@ -94,6 +94,8 @@ namespace CtyTinLuong
         {
 
             Xtra_DoiChieuCongNo xtr111 = new Xtra_DoiChieuCongNo();
+            //Xtra_DoiChieuCongNo_test xtr111 = new Xtra_DoiChieuCongNo_test();
+
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbChiTietBienDongTaiKhoan.Clone();
