@@ -206,7 +206,7 @@ namespace CtyTinLuong
                 cls1.bDaGhiSo = true;
                 cls1.iBienMuaHang1_BanHang2_ConLai_0 = 0;
 
-                if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                if (UCQuy_NganHang_BaoCo.mbSua == false)
                 {
                     cls1.Insert();
                     ID_ThuChixxx = cls1.iID_ThuChi.Value;
@@ -503,7 +503,7 @@ namespace CtyTinLuong
               
                 gridView4.SetRowCellValue(1, clNo, 0);
                 gridView4.SetRowCellValue(1, clCo, sotienxxx);
-                if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                 {
                     string sotien = txtSoTien.Text;
                     string tigia = txtTiGia.Text;
@@ -534,7 +534,7 @@ namespace CtyTinLuong
                         }
                         gridControl1.DataSource = dttttt2;
                     }
-                    if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                    if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                     {
                         string sotien = txtSoTien.Text;
                         string tigia = txtTiGia.Text;
@@ -619,7 +619,7 @@ namespace CtyTinLuong
 
         private void btthemmoi_Click(object sender, EventArgs e)
         {
-            UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
+            UCQuy_NganHang_BaoCo.mbTheMoi = true;
             HienThi_ThemMoi(5);
             txtSoTien.Text = "0";
         }
@@ -814,7 +814,7 @@ namespace CtyTinLuong
             dtdoituong.Columns.Add("ID_TaiKhoanKeToan", typeof(int));
             Load_LockUp();
 
-            if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+            if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                 HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
             else
                 HienThi_Sua();

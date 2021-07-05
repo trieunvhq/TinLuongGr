@@ -216,7 +216,7 @@ namespace CtyTinLuong
                     cls1.iBienMuaHang1_BanHang2_ConLai_0 = 2;
                 else if (checkNhaCungCap.Checked == true)
                     cls1.iBienMuaHang1_BanHang2_ConLai_0 = 1;
-                if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+                if (UCQuy_NganHang_BaoCo.mbSua == false)
                 {
                     cls1.Insert();
                     ID_ThuChixxx = cls1.iID_ThuChi.Value;
@@ -575,9 +575,11 @@ namespace CtyTinLuong
             dtdoituong.Columns.Add("ID_TaiKhoanKeToan", typeof(int));
             Load_LockUp();
           
-            if (UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi == true)
+            if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                 HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
-            else
+            else if (UCQuy_NganHang_BaoCo.mbSua == true)
+                HienThi_Sua();
+            else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
                 HienThi_Sua();
         }
         
@@ -882,7 +884,7 @@ namespace CtyTinLuong
 
         private void btthemmoi_Click(object sender, EventArgs e)
         {
-            UCQuy_NganHang_BaoCo.mbThemMoi_ThuChi = true;
+            UCQuy_NganHang_BaoCo.mbTheMoi = true;
             HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
         }
 

@@ -14,7 +14,7 @@ namespace CtyTinLuong
     public partial class UCQuy_NganHang_BaoCo : UserControl
     {
         public static int miID_ThuChi_Sua;
-        public static bool mbThemMoi_ThuChi, mbooolBitThuChiKhac;
+        public static bool mbTheMoi, mbCoPy, mbSua, mbooolBitThuChiKhac;
 
         private void Load_DaTa(DateTime xxtungay, DateTime  xxdenngay, int bientrangthai)
         {
@@ -35,7 +35,7 @@ namespace CtyTinLuong
 
         private void UCQuy_NganHang_BaoCo_Load(object sender, EventArgs e)
         {
-            mbThemMoi_ThuChi = true;
+           
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Today;
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
@@ -50,9 +50,11 @@ namespace CtyTinLuong
         {         
 
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 5)
-            {             
+            {
 
-                mbThemMoi_ThuChi = true;
+                mbTheMoi = true;
+                mbCoPy = false;
+                mbSua = false;
                 QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
                 _frmQNH.Hide();
                 ff.ShowDialog();
@@ -60,8 +62,9 @@ namespace CtyTinLuong
             }
             else
             {
-                mbThemMoi_ThuChi = true;
-
+                mbTheMoi = true;
+                mbCoPy = false;
+                mbSua = false;
                 Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
                 _frmQNH.Hide();
                 ff.ShowDialog();
@@ -81,9 +84,12 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString() != "")
             {
-                if(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==5)
+                mbTheMoi = false;
+                mbCoPy = false;
+                mbSua = true;
+                if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==5)
                 {
-                    mbThemMoi_ThuChi = false;
+                    
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
                     _frmQNH.Hide();
@@ -91,8 +97,7 @@ namespace CtyTinLuong
                     _frmQNH.Show();
                 }
                 else
-                {
-                    mbThemMoi_ThuChi = false;
+                {                  
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
                     _frmQNH.Hide();
@@ -161,6 +166,37 @@ namespace CtyTinLuong
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btCopY_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString() != "")
+            {
+                if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 5)
+                {
+                    mbTheMoi = false;
+                    mbCoPy = true;
+                    mbSua = false;
+                    miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
+                    QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
+                    _frmQNH.Hide();
+                    ff.ShowDialog();
+                    _frmQNH.Show();
+                }
+                else
+                {
+                    mbTheMoi = false;
+                    mbCoPy = true;
+                    mbSua = false;
+                    miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
+                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+                    _frmQNH.Hide();
+                    ff.ShowDialog();
+                    _frmQNH.Show();
+                }
+
+            }
 
         }
 

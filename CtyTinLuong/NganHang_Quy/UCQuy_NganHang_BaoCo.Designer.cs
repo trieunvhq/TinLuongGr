@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCQuy_NganHang_BaoCo));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -75,6 +81,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clCopy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btCopY = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit5)).BeginInit();
@@ -103,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btCopY)).BeginInit();
             this.SuspendLayout();
             // 
             // clSoTien
@@ -160,7 +169,7 @@
             this.DienGiai.OptionsColumn.AllowEdit = false;
             this.DienGiai.Visible = true;
             this.DienGiai.VisibleIndex = 5;
-            this.DienGiai.Width = 275;
+            this.DienGiai.Width = 244;
             // 
             // repositoryItemMemoEdit4
             // 
@@ -231,7 +240,8 @@
             this.repositoryItemCheckEdit4,
             this.repositoryItemCheckEdit5,
             this.repositoryItemMemoEdit3,
-            this.repositoryItemMemoEdit4});
+            this.repositoryItemMemoEdit4,
+            this.btCopY});
             this.gridControl1.Size = new System.Drawing.Size(996, 557);
             this.gridControl1.TabIndex = 99;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -260,7 +270,8 @@
             this.clBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4,
             this.clDaGhiSo,
             this.clThamChieu,
-            this.clXoa});
+            this.clXoa,
+            this.clCopy});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -348,7 +359,7 @@
             this.clThamChieu.OptionsColumn.AllowEdit = false;
             this.clThamChieu.Visible = true;
             this.clThamChieu.VisibleIndex = 2;
-            this.clThamChieu.Width = 79;
+            this.clThamChieu.Width = 70;
             // 
             // clXoa
             // 
@@ -364,9 +375,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -555,6 +566,27 @@
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             // 
+            // clCopy
+            // 
+            this.clCopy.Caption = "Copy";
+            this.clCopy.ColumnEdit = this.btCopY;
+            this.clCopy.Name = "clCopy";
+            this.clCopy.OptionsColumn.FixedWidth = true;
+            this.clCopy.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.clCopy.Visible = true;
+            this.clCopy.VisibleIndex = 8;
+            this.clCopy.Width = 50;
+            // 
+            // btCopY
+            // 
+            this.btCopY.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btCopY.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btCopY.Name = "btCopY";
+            this.btCopY.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btCopY.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btCopY_ButtonClick);
+            // 
             // UCQuy_NganHang_BaoCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,6 +623,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btCopY)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -637,5 +670,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clDaGhiSo;
         private DevExpress.XtraGrid.Columns.GridColumn clThamChieu;
         private DevExpress.XtraGrid.Columns.GridColumn clXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn clCopy;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btCopY;
     }
 }
