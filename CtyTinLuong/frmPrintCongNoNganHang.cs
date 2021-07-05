@@ -133,7 +133,7 @@ namespace CtyTinLuong
                   
                 _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
                 _ravi["DienGiai"] =dt3.Rows[i]["DienGiai"].ToString();
-            
+                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
                 ds.tbChiTietBienDongTaiKhoan.Rows.Add(_ravi);
             }
 

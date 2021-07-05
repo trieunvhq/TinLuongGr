@@ -332,14 +332,15 @@ namespace CtyTinLuong
                 mdtPrint.Columns.Add("SoLuong", typeof(string));
                 mdtPrint.Columns.Add("DonGia", typeof(string));
                 mdtPrint.Columns.Add("ThanhTien", typeof(string));
+                mdtPrint.Columns.Add("STT", typeof(string));
 
-               
-                for(int i=0; i<dt3.Rows.Count; i++)
+                for (int i=0; i<dt3.Rows.Count; i++)
                 {
-                   
+                    
                     if (Convert.ToBoolean(dt3.Rows[i]["HienThi"].ToString()) == false)
                     {
                         DataRow _ravi = mdtPrint.NewRow();
+                        _ravi["STT"] = (i+1).ToString();
                         _ravi["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();
                         _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
                         _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
@@ -361,6 +362,7 @@ namespace CtyTinLuong
                         for (int j = 0; j < dtxxx.Rows.Count; j++)
                         {
                             DataRow _ravi2 = mdtPrint.NewRow();
+                            _ravi2["STT"] = (i + 1).ToString();
                             _ravi2["SoLuong"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString());
                             _ravi2["DonGia"] = Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
                             _ravi2["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
