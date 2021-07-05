@@ -18,7 +18,40 @@ namespace CtyTinLuong
   
     public partial class clsBanHang_ChiTietBanHang : clsDBInteractionBase
 	{
-        //pr_BanHang_ChiTietBanHang_SelectAll_ngayThang
+        //pr_BanHang_ChiTietBanHang_SelectAll_W_ID_MuaHang_MaVT_TenVT
+        public DataTable SelectAll_W_ID_MuaHang_MaVT_TenVT()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_BanHang_ChiTietBanHang_SelectAll_W_ID_MuaHang_MaVT_TenVT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_BanHang_ChiTietBanHang_SelectAll_W_ID_MuaHang_MaVT_TenVT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BanHang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_BanHang));
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_BanHang_ChiTietBanHang_SelectAll_W_ID_MuaHang_MaVT_TenVT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_ngayThang(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
