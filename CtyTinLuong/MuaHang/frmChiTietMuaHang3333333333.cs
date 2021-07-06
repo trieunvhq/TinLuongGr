@@ -625,7 +625,7 @@ namespace CtyTinLuong
                 // luwu chi tiet mua hang
                 Luu_Chitiet_MuaHang(iiiID_MuaHang);
                 Luu_BienDongTaiKhoan(iiiID_MuaHang);
-                Luu_TbThuChi(iiiID_MuaHang);              
+              //  Luu_TbThuChi(iiiID_MuaHang);              
             }
         }                        
         private void HienThi_themMoi()
@@ -1636,7 +1636,7 @@ namespace CtyTinLuong
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
             LuuDuLieu_Va_GuiDuLieu();
-            MessageBox.Show("Đã lưu và gửi dữ liệu");
+            MessageBox.Show("Đã lưu");
            // this.Close();
 
 
@@ -1704,33 +1704,7 @@ namespace CtyTinLuong
 
 
       
-        private void btLuu_Gui_Copy_Click(object sender, EventArgs e)
-        {
-            LuuDuLieu_Va_GuiDuLieu();
-            UCMuaHang.mbbTheMoi_DonHang = true;
-            clsMH_tbMuaHang cls2 = new clsMH_tbMuaHang();
-            DataTable dt2xxx = cls2.SelectAll();
-            dt2xxx.DefaultView.RowFilter = "TonTai=True";
-            DataView dv2 = dt2xxx.DefaultView;
-
-            DataTable newdt2 = dv2.ToTable();
-            int k = newdt2.Rows.Count;
-            if (k == 0)
-            {
-                txtSoChungTu.Text = "MH 1";
-            }
-            else
-            {
-                string xxx = newdt2.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
-                if (xxx2 >= 10000)
-                    txtSoChungTu.Text = "MH 1";
-                else txtSoChungTu.Text = "MH " + xxx2 + "";
-            }
-
-            MessageBox.Show("Đã lưu");
-            
-        }
+    
 
         private void checkPhieuChi_CheckedChanged(object sender, EventArgs e)
         {
