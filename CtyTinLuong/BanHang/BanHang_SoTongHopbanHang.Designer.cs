@@ -219,7 +219,7 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.VisibleIndex = 5;
             this.gridColumn2.Width = 70;
             // 
             // gridColumn3
@@ -238,7 +238,7 @@
             this.gridColumn3.OptionsColumn.FixedWidth = true;
             this.gridColumn3.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 5;
+            this.gridColumn3.VisibleIndex = 6;
             this.gridColumn3.Width = 120;
             // 
             // gridColumn6
@@ -259,7 +259,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:#,##0.00} (đ)")});
             this.gridColumn6.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.VisibleIndex = 7;
             this.gridColumn6.Width = 120;
             // 
             // gridColumn7
@@ -313,7 +313,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
+            this.gridColumn10.VisibleIndex = 4;
             this.gridColumn10.Width = 333;
             // 
             // repositoryItemMemoEdit2
@@ -327,23 +327,19 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.VisibleIndex = 3;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "TiGia";
             this.gridColumn5.FieldName = "TiGia";
             this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "QuyDoiVND";
             this.gridColumn11.FieldName = "QuyDoiVND";
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
             // 
             // gridControl1
             // 
