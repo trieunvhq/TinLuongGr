@@ -197,7 +197,7 @@ namespace CtyTinLuong
 
                     Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
                     //_frmQLSX.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmQLSX.Show();
 
                     Cursor.Current = Cursors.Default;
@@ -304,7 +304,7 @@ namespace CtyTinLuong
             //
             Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
             //_frmQLSX.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLSX.Show();
 
             Cursor.Current = Cursors.Default;
@@ -384,7 +384,7 @@ namespace CtyTinLuong
 
                     Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
                     //_frmQLSX.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmQLSX.Show();
 
                     Cursor.Current = Cursors.Default;
@@ -529,7 +529,39 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Tr_frmPrintBB_Ktra_DM_HHSX ff = new Tr_frmPrintBB_Ktra_DM_HHSX(_ngay_batdau, _ngay_ketthuc);
-            ff.ShowDialog();
+            ff.Show();
+        }
+
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }
