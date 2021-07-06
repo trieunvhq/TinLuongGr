@@ -15,7 +15,7 @@ namespace CtyTinLuong
 {
     public partial class QuyNganHang_Frm_DoiTienUSD : Form
     {
-        public static DataTable mdtCHiTietTaKhoan_print;
+        public static DataTable mdtPrint;
         public static bool mbPrint = false;
         public static bool mbTienUSD;
         public static DateTime mdaNgayThang;
@@ -331,8 +331,7 @@ namespace CtyTinLuong
             txtTiGia.Text = cls1.fTiGia.Value.ToString();
             
             if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
-                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
-          
+                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;          
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
             cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
@@ -813,7 +812,7 @@ namespace CtyTinLuong
                 string shienthi = "1";
                 dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
                 DataView dv = dttttt2.DefaultView;
-                mdtCHiTietTaKhoan_print = dv.ToTable();
+                mdtPrint = dv.ToTable();
 
                 //mbTienUSD = checkUSD.Checked;
                 mdaNgayThang = dteNgayChungTu.DateTime;
@@ -835,18 +834,18 @@ namespace CtyTinLuong
                 mdbSoTien_Co_USD = Convert.ToDouble(txtSoTien.Text.ToString());
                 mdbSoTien_No_VND = Convert.ToDouble(txtTienVND.Text.ToString());
                 mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                for (int i = 0; i < mdtCHiTietTaKhoan_print.Rows.Count; i++)
+                for (int i = 0; i < mdtPrint.Rows.Count; i++)
                 {
                     clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                    if (Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["No"].ToString()) == 0 & Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["Co"].ToString()) > 0)
+                    if (Convert.ToDouble(mdtPrint.Rows[i]["No"].ToString()) == 0 & Convert.ToDouble(mdtPrint.Rows[i]["Co"].ToString()) > 0)
                     {
-                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtCHiTietTaKhoan_print.Rows[i]["SoTaiKhoanCon"].ToString());
+                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
                         DataTable dtcon = clscon.SelectOne();
                         ms_TaiKhoanCo = clscon.sSoTaiKhoanCon.Value;
                     }
-                    if (Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["No"].ToString()) > 0 & Convert.ToDouble(mdtCHiTietTaKhoan_print.Rows[i]["Co"].ToString()) == 0)
+                    if (Convert.ToDouble(mdtPrint.Rows[i]["No"].ToString()) > 0 & Convert.ToDouble(mdtPrint.Rows[i]["Co"].ToString()) == 0)
                     {
-                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtCHiTietTaKhoan_print.Rows[i]["SoTaiKhoanCon"].ToString());
+                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
                         DataTable dtcon = clscon.SelectOne();
                         msTaiKhoan_No = clscon.sSoTaiKhoanCon.Value;
                     }
@@ -883,7 +882,7 @@ namespace CtyTinLuong
 
             if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                 HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
-            else if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
+            else if (UCQuy_NganHang_BaoCo.mbSua == true)
                 HienThi_Sua();
             else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
                 HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
