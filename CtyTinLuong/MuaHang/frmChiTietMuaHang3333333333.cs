@@ -212,10 +212,34 @@ namespace CtyTinLuong
         }
         private void HienThi_lable_TonKho(int iiID_VTHH)
         {
-           
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = iiID_VTHH;
+            DataTable dt = cls.SelectOne();
+            clsKhoNPL_tbChiTietNhapKho cls1 = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
+            double SoLuong_NhapTruocKy, SoLuong_XuatTruocKy, soluongton=0;
+            DataTable dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH(iiID_VTHH, DateTime.Now);
+            DataTable dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH(iiID_VTHH, DateTime.Now);
+            if (dt_NhapTruoc.Rows.Count > 0)
+            {
+
+                SoLuong_NhapTruocKy = Convert.ToDouble(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
+                if (dt_XuatTruoc.Rows.Count > 0)
+                    SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+                else
+                    SoLuong_XuatTruocKy = 0;
+                SoLuong_XuatTruocKy = SoLuong_NhapTruocKy - SoLuong_XuatTruocKy;
+
+            }
+            else if (dt_XuatTruoc.Rows.Count > 0)
+            {
+                SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+                soluongton = -SoLuong_XuatTruocKy;
+            }
+            else
+                soluongton = 0;
+            label_TonKho.Text = ""+cls.sMaVT.Value+" - "+cls.sTenVTHH.Value+" || Tồn kho: "+soluongton.ToString()+""; 
         }
-
-
         private bool KiemTraLuu()
         {
 
