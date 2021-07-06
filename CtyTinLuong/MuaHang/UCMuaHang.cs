@@ -53,6 +53,45 @@ namespace CtyTinLuong
 
             gridControl2.DataSource = dt2;
         }
+        DataTable dtnganhang;
+        private void HienThi_lableCongNo(int iiiID_NhaCungCap)
+        {
+            clsTbNhaCungCap clsxx = new clsTbNhaCungCap();
+            clsxx.iID_NhaCungCap = iiiID_NhaCungCap;
+            DataTable dtxx = clsxx.SelectOne();
+            string makh = clsxx.sMaNhaCungCap.Value;
+            string tenncc = clsxx.sTenNhaCungCap.Value;          
+            if(dtxx.Rows[0]["ID_TaiKhoanKeToan"].ToString()!="")
+            {
+                double dNoCuoiKy, dCoCuoiKy;
+                double dNo_CuoiKy, dCo_CuoiKy;
+                int iiIDID_TaiKhoanKeToanCon = clsxx.iID_TaiKhoanKeToan.Value;
+                
+                string filterExpression = "ID_TaiKhoanKeToanCon ="+ iiIDID_TaiKhoanKeToanCon + "";
+                DataRow[] foundRows = dtnganhang.Select(filterExpression);
+              
+                if (foundRows.Length > 0)
+                {                   
+                    dNo_CuoiKy = Convert.ToDouble(foundRows[0]["No_CuoiKy"].ToString());
+                    dCo_CuoiKy = Convert.ToDouble(foundRows[0]["Co_CuoiKy"].ToString());
+                    if (dNo_CuoiKy <= dCo_CuoiKy)
+                    {                       
+                        dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;
+                        label_CongNo.Text = ""+makh+": "+tenncc+"|| Dư có: " + dCoCuoiKy.ToString("#,###") + "";
+                    }
+                    else
+                    {
+                        dNoCuoiKy = -dCo_CuoiKy + dNo_CuoiKy;
+                        label_CongNo.Text = "" + makh + ": " + tenncc + "|| Nợ có: " + dNoCuoiKy.ToString("#,###") + "";
+                    }
+                }
+               
+
+               
+            }
+              
+
+        }
         private void HienThi_ALL(bool bxxTranLaiHangMua)
         {
 
@@ -62,7 +101,7 @@ namespace CtyTinLuong
                 dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and CheckTraLaiNhaCungCap = True";
             else dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and CheckTraLaiNhaCungCap = False";
             DataView dv = dt.DefaultView;
-            dv.Sort = " GuiDuLieu ASC, NgayChungTu DESC, ID_MuaHang DESC";
+            dv.Sort = "NgayChungTu DESC, ID_MuaHang DESC";
             DataTable dxxxx = dv.ToTable();
             gridControl1.DataSource = dxxxx;
         }
@@ -83,7 +122,7 @@ namespace CtyTinLuong
                 DataTable dt22 = dv.ToTable();
                 dt22.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
                 DataView dv2 = dt22.DefaultView;
-                dv2.Sort = " GuiDuLieu ASC, NgayChungTu DESC, ID_MuaHang DESC";
+                dv2.Sort = "NgayChungTu DESC, ID_MuaHang DESC";
                 DataTable dxxxx = dv2.ToTable();
                 gridControl1.DataSource = dxxxx;
             }
@@ -122,6 +161,9 @@ namespace CtyTinLuong
 
         private void UCMuaHang_Load(object sender, EventArgs e)
         {
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, DateTime.Now.AddDays(-10), DateTime.Now);
+
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgay.EditValue = null;
@@ -193,16 +235,16 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView View = sender as GridView;
-            if (e.RowHandle >= 0)
-            {
-                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["GuiDuLieu"]));
-                if (category == false)
-                {
-                    e.Appearance.BackColor = Color.Bisque;
+            //GridView View = sender as GridView;
+            //if (e.RowHandle >= 0)
+            //{
+            //    bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["GuiDuLieu"]));
+            //    if (category == false)
+            //    {
+            //        e.Appearance.BackColor = Color.Bisque;
                    
-                }
-            }
+            //    }
+            //}
            
         }
 
@@ -276,6 +318,13 @@ namespace CtyTinLuong
             {
                 int iDImuahang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                 HienThiGridControl_2(iDImuahang);
+             
+            }
+
+            if (gridView1.GetFocusedRowCellValue(clIDNhaCungCap).ToString() != "")
+            {
+                int iiID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clIDNhaCungCap).ToString());
+                HienThi_lableCongNo(iiID);
             }
         }
 
