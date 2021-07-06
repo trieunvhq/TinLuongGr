@@ -140,11 +140,13 @@ namespace CtyTinLuong
 
         private void MuaHang_frmChiTietMotVatTu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();
             gridMaVT.EditValue = UCMuaHang_ChiTietTatCa.miID_VTHH;
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL(UCMuaHang_ChiTietTatCa.miID_VTHH);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridMaVT_EditValueChanged(object sender, EventArgs e)
@@ -170,15 +172,19 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             MuaHang_frmChiTietMotVatTu_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int iiID = Convert.ToInt32(gridMaVT.EditValue.ToString());
                 HienThi(iiID, dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Cursor.Current = Cursors.Default;
             }
         }
 

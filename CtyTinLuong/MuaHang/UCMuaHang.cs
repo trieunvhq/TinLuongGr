@@ -156,7 +156,7 @@ namespace CtyTinLuong
             mbCopY = true;
             frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
             //_frmMH.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmMH.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -178,7 +178,7 @@ namespace CtyTinLuong
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
                     //_frmMH.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmMH.Show();
                     Cursor.Current = Cursors.Default;
                 }
@@ -334,7 +334,7 @@ namespace CtyTinLuong
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
                     //_frmMH.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmMH.Show();
                     Cursor.Current = Cursors.Default;
                 }

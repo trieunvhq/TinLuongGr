@@ -80,8 +80,9 @@ namespace CtyTinLuong
 
         private void UCMuaHang_ChiTietTatCa_Load(object sender, EventArgs e)
         {
-          
+            Cursor.Current = Cursors.WaitCursor;
             HienThi();
+            Cursor.Current = Cursors.Default;
         }
 
     
@@ -105,9 +106,9 @@ namespace CtyTinLuong
             {
                 miID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 MuaHang_frmChiTietMotVatTu ff = new MuaHang_frmChiTietMotVatTu();
-                _frmMH.Hide();
-                ff.ShowDialog();
-                _frmMH.Show();
+                //_frmMH.Hide();
+                ff.Show();
+                //_frmMH.Show();
             }
         }
     }
