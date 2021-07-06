@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -243,6 +242,7 @@
             this.txtDoCao.Size = new System.Drawing.Size(133, 20);
             this.txtDoCao.TabIndex = 117;
             this.txtDoCao.Text = "0";
+            this.txtDoCao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoCao_KeyPress);
             // 
             // txtMaPhieu
             // 
@@ -250,6 +250,7 @@
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(124, 20);
             this.txtMaPhieu.TabIndex = 0;
+            this.txtMaPhieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaPhieu_KeyPress);
             // 
             // txtSanLuong_TrongNgay_DOT
             // 
@@ -258,6 +259,7 @@
             this.txtSanLuong_TrongNgay_DOT.ReadOnly = true;
             this.txtSanLuong_TrongNgay_DOT.Size = new System.Drawing.Size(133, 20);
             this.txtSanLuong_TrongNgay_DOT.TabIndex = 113;
+            this.txtSanLuong_TrongNgay_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSanLuong_TrongNgay_DOT_KeyPress);
             // 
             // txtQuyDoiRaKG
             // 
@@ -268,6 +270,7 @@
             this.txtQuyDoiRaKG.Size = new System.Drawing.Size(169, 20);
             this.txtQuyDoiRaKG.TabIndex = 113;
             this.txtQuyDoiRaKG.Text = "0";
+            this.txtQuyDoiRaKG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuyDoiRaKG_KeyPress);
             // 
             // txtSoKGMotBao
             // 
@@ -277,6 +280,7 @@
             this.txtSoKGMotBao.TabIndex = 7;
             this.txtSoKGMotBao.Text = "1";
             this.txtSoKGMotBao.TextChanged += new System.EventHandler(this.txtSoKGMotBao_TextChanged);
+            this.txtSoKGMotBao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoKGMotBao_KeyPress);
             // 
             // cbCaSanXuat_May_DOT
             // 
@@ -288,6 +292,7 @@
             this.cbCaSanXuat_May_DOT.Name = "cbCaSanXuat_May_DOT";
             this.cbCaSanXuat_May_DOT.Size = new System.Drawing.Size(64, 21);
             this.cbCaSanXuat_May_DOT.TabIndex = 111;
+            this.cbCaSanXuat_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCaSanXuat_May_DOT_KeyPress);
             // 
             // dteNgaySanXuat_May_DOT
             // 
@@ -306,6 +311,7 @@
             this.dteNgaySanXuat_May_DOT.Size = new System.Drawing.Size(466, 20);
             this.dteNgaySanXuat_May_DOT.StyleController = this.layoutControl4;
             this.dteNgaySanXuat_May_DOT.TabIndex = 1;
+            this.dteNgaySanXuat_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgaySanXuat_May_DOT_KeyPress);
             // 
             // gridMaCaTruong_May_DOT
             // 
@@ -318,6 +324,7 @@
             this.gridMaCaTruong_May_DOT.StyleController = this.layoutControl4;
             this.gridMaCaTruong_May_DOT.TabIndex = 2;
             this.gridMaCaTruong_May_DOT.EditValueChanged += new System.EventHandler(this.gridMaCaTruong_May_DOT_EditValueChanged);
+            this.gridMaCaTruong_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaCaTruong_May_DOT_KeyPress);
             // 
             // gridView8
             // 
@@ -361,6 +368,7 @@
             this.txtTenCaTruong_May_DOT.ReadOnly = true;
             this.txtTenCaTruong_May_DOT.Size = new System.Drawing.Size(610, 20);
             this.txtTenCaTruong_May_DOT.TabIndex = 111;
+            this.txtTenCaTruong_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenCaTruong_May_DOT_KeyPress);
             // 
             // txtDinhMucTang_May_DOT
             // 
@@ -370,6 +378,7 @@
             this.txtDinhMucTang_May_DOT.Size = new System.Drawing.Size(226, 20);
             this.txtDinhMucTang_May_DOT.TabIndex = 34;
             this.txtDinhMucTang_May_DOT.TextChanged += new System.EventHandler(this.txtDinhMucTang_May_DOT_TextChanged);
+            this.txtDinhMucTang_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDinhMucTang_May_DOT_KeyPress);
             // 
             // txtDinhMucKhongTang_May_DOT
             // 
@@ -379,6 +388,7 @@
             this.txtDinhMucKhongTang_May_DOT.Size = new System.Drawing.Size(304, 20);
             this.txtDinhMucKhongTang_May_DOT.TabIndex = 33;
             this.txtDinhMucKhongTang_May_DOT.TextChanged += new System.EventHandler(this.txtDinhMucKhongTang_May_DOT_TextChanged);
+            this.txtDinhMucKhongTang_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDinhMucKhongTang_May_DOT_KeyPress);
             // 
             // gridDinhMucSLMay_DOT
             // 
@@ -395,6 +405,7 @@
             this.gridDinhMucSLMay_DOT.StyleController = this.layoutControl4;
             this.gridDinhMucSLMay_DOT.TabIndex = 10;
             this.gridDinhMucSLMay_DOT.EditValueChanged += new System.EventHandler(this.gridDinhMucSLMay_DOT_EditValueChanged);
+            this.gridDinhMucSLMay_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridDinhMucSLMay_DOT_KeyPress);
             // 
             // gridView12
             // 
@@ -439,6 +450,7 @@
             this.txtDonGiaXuat_May_DOT.TabIndex = 30;
             this.txtDonGiaXuat_May_DOT.Text = "0";
             this.txtDonGiaXuat_May_DOT.TextChanged += new System.EventHandler(this.txtDonGiaXuat_May_DOT_TextChanged);
+            this.txtDonGiaXuat_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGiaXuat_May_DOT_KeyPress);
             // 
             // txtDonGiaNhap_May_DOT
             // 
@@ -448,6 +460,7 @@
             this.txtDonGiaNhap_May_DOT.TabIndex = 28;
             this.txtDonGiaNhap_May_DOT.Text = "0";
             this.txtDonGiaNhap_May_DOT.TextChanged += new System.EventHandler(this.txtDonGiaNhap_May_DOT_TextChanged);
+            this.txtDonGiaNhap_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGiaNhap_May_DOT_KeyPress);
             // 
             // txtGhiChu_May_DOT
             // 
@@ -456,6 +469,7 @@
             this.txtGhiChu_May_DOT.Name = "txtGhiChu_May_DOT";
             this.txtGhiChu_May_DOT.Size = new System.Drawing.Size(814, 28);
             this.txtGhiChu_May_DOT.TabIndex = 11;
+            this.txtGhiChu_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChu_May_DOT_KeyPress);
             // 
             // txtTenCongNhan_may_DOT
             // 
@@ -464,6 +478,7 @@
             this.txtTenCongNhan_may_DOT.ReadOnly = true;
             this.txtTenCongNhan_may_DOT.Size = new System.Drawing.Size(610, 20);
             this.txtTenCongNhan_may_DOT.TabIndex = 18;
+            this.txtTenCongNhan_may_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenCongNhan_may_DOT_KeyPress);
             // 
             // gridMaCongNhan_May_DOT
             // 
@@ -476,6 +491,7 @@
             this.gridMaCongNhan_May_DOT.StyleController = this.layoutControl4;
             this.gridMaCongNhan_May_DOT.TabIndex = 9;
             this.gridMaCongNhan_May_DOT.EditValueChanged += new System.EventHandler(this.gridMaCongNhan_May_DOT_EditValueChanged);
+            this.gridMaCongNhan_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaCongNhan_May_DOT_KeyPress);
             // 
             // gridView13
             // 
@@ -519,6 +535,7 @@
             this.txtTenMay_DOT.ReadOnly = true;
             this.txtTenMay_DOT.Size = new System.Drawing.Size(610, 20);
             this.txtTenMay_DOT.TabIndex = 16;
+            this.txtTenMay_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenMay_DOT_KeyPress);
             // 
             // gridMaMay_DOT
             // 
@@ -531,6 +548,7 @@
             this.gridMaMay_DOT.StyleController = this.layoutControl4;
             this.gridMaMay_DOT.TabIndex = 8;
             this.gridMaMay_DOT.EditValueChanged += new System.EventHandler(this.gridMaMay_DOT_EditValueChanged);
+            this.gridMaMay_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaMay_DOT_KeyPress);
             // 
             // gridView14
             // 
@@ -574,6 +592,7 @@
             this.txtPhePham_May_DOT.Size = new System.Drawing.Size(148, 20);
             this.txtPhePham_May_DOT.TabIndex = 13;
             this.txtPhePham_May_DOT.Text = "0";
+            this.txtPhePham_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhePham_May_DOT_KeyPress);
             // 
             // txtSanLuong_may_DOT
             // 
@@ -585,6 +604,7 @@
             this.txtSanLuong_may_DOT.TabIndex = 6;
             this.txtSanLuong_may_DOT.Text = "0";
             this.txtSanLuong_may_DOT.TextChanged += new System.EventHandler(this.txtSanLuong_may_DOT_TextChanged);
+            this.txtSanLuong_may_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSanLuong_may_DOT_KeyPress);
             // 
             // txtSoLuongNhap_May_DOT
             // 
@@ -595,6 +615,7 @@
             this.txtSoLuongNhap_May_DOT.Size = new System.Drawing.Size(124, 20);
             this.txtSoLuongNhap_May_DOT.TabIndex = 5;
             this.txtSoLuongNhap_May_DOT.Text = "0";
+            this.txtSoLuongNhap_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongNhap_May_DOT_KeyPress);
             // 
             // txtTenHangHoaRa_May_DOT
             // 
@@ -603,6 +624,7 @@
             this.txtTenHangHoaRa_May_DOT.ReadOnly = true;
             this.txtTenHangHoaRa_May_DOT.Size = new System.Drawing.Size(466, 20);
             this.txtTenHangHoaRa_May_DOT.TabIndex = 9;
+            this.txtTenHangHoaRa_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenHangHoaRa_May_DOT_KeyPress);
             // 
             // txtTenHangHoaVao_May_DOT
             // 
@@ -611,6 +633,7 @@
             this.txtTenHangHoaVao_May_DOT.ReadOnly = true;
             this.txtTenHangHoaVao_May_DOT.Size = new System.Drawing.Size(466, 20);
             this.txtTenHangHoaVao_May_DOT.TabIndex = 8;
+            this.txtTenHangHoaVao_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenHangHoaVao_May_DOT_KeyPress);
             // 
             // txtDVT_HangRa_MayDOT
             // 
@@ -619,6 +642,7 @@
             this.txtDVT_HangRa_MayDOT.ReadOnly = true;
             this.txtDVT_HangRa_MayDOT.Size = new System.Drawing.Size(115, 20);
             this.txtDVT_HangRa_MayDOT.TabIndex = 7;
+            this.txtDVT_HangRa_MayDOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_HangRa_MayDOT_KeyPress);
             // 
             // txtDVT_HangVao_MayDOT
             // 
@@ -627,6 +651,7 @@
             this.txtDVT_HangVao_MayDOT.ReadOnly = true;
             this.txtDVT_HangVao_MayDOT.Size = new System.Drawing.Size(115, 20);
             this.txtDVT_HangVao_MayDOT.TabIndex = 6;
+            this.txtDVT_HangVao_MayDOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_HangVao_MayDOT_KeyPress);
             // 
             // gridHangHoaXuat_May_DOT
             // 
@@ -643,6 +668,7 @@
             this.gridHangHoaXuat_May_DOT.StyleController = this.layoutControl4;
             this.gridHangHoaXuat_May_DOT.TabIndex = 4;
             this.gridHangHoaXuat_May_DOT.EditValueChanged += new System.EventHandler(this.gridHangHoaXuat_May_DOT_EditValueChanged);
+            this.gridHangHoaXuat_May_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridHangHoaXuat_May_DOT_KeyPress);
             // 
             // gridView15
             // 
@@ -693,6 +719,7 @@
             this.gridHangHoaVao_may_DOT.StyleController = this.layoutControl4;
             this.gridHangHoaVao_may_DOT.TabIndex = 3;
             this.gridHangHoaVao_may_DOT.EditValueChanged += new System.EventHandler(this.gridHangHoaVao_may_DOT_EditValueChanged);
+            this.gridHangHoaVao_may_DOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridHangHoaVao_may_DOT_KeyPress);
             // 
             // gridView16
             // 
@@ -1063,6 +1090,7 @@
             this.gridControl1.TabIndex = 112;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -1241,7 +1269,8 @@
             this.Controls.Add(this.groupBox4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanXuat_frmChiTietPhieu_MayDot";
-            this.Text = "Chi tiết phiếu máy đột";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Chi Tiết Phiếu Máy Đột";
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietPhieu_MayDot_Load);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
