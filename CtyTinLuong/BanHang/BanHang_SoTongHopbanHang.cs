@@ -259,19 +259,18 @@ namespace CtyTinLuong
         private void btPrint_KH_Click(object sender, EventArgs e)
         {
 
-            mbPrint_KhachHang = true;
-            mbPrint_RutGon = false;
-            mbPrint_ALL = false;
-            mdatungay = dteTuNgay.DateTime;
-            mdadenngay = dteDenNgay.DateTime;
+          
             clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-            DataTable dt1 = new DataTable();
+            DataTable dt1 = new DataTable();          
             int iiIID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
             if (iiIID_KhachHang == 0)
                 dt1 = cls.SA_Time_DS_KH(mdatungay, mdadenngay);
             else
             {
-               
+                dt1 = new DataTable();
+                dt1.Columns.Add("ID_KhachHang", typeof(int));
+                dt1.Columns.Add("MaKH", typeof(string));
+                dt1.Columns.Add("TenKH", typeof(string));
                 DataRow _ravi2 = dt1.NewRow();
                 _ravi2["ID_KhachHang"] = iiIID_KhachHang;
                 _ravi2["MaKH"] = gridKH.Text.ToString();
@@ -324,15 +323,16 @@ namespace CtyTinLuong
                     ff.ShowDialog();
 
                 }
+                else
+                {
+                    MessageBox.Show("không có dữ liệu");
+                }
 
             }
 
 
 
-            //else
-            //{
-            //    MessageBox.Show("không có dữ liệu");
-            //}
+
 
 
         }
