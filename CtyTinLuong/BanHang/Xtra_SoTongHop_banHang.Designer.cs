@@ -667,7 +667,7 @@
             this.xrLabel6.SizeF = new System.Drawing.SizeF(159.1912F, 23F);
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Trưởng phòng  TH";
+            this.xrLabel6.Text = "TP Tổng hợp";
             this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrTable4
@@ -708,7 +708,7 @@
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
             this.xrTableCell18.Text = "Tổng";
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell18.Weight = 3.5082270191371125D;
+            this.xrTableCell18.Weight = 3.50822701913711D;
             // 
             // xrTableCell22
             // 
