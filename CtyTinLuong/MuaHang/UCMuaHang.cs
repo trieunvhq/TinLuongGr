@@ -316,7 +316,8 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                gridControl1.Focus();
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
             }
         }
 
