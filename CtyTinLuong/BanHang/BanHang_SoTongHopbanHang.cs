@@ -222,6 +222,69 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
+            //DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            //CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            //string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            //DataView dv1212 = new DataView(DatatableABC);
+            //dv1212.RowFilter = filterString;
+            //DataTable dt1 = dv1212.ToTable();
+
+            //mdtPrint = new DataTable();
+            //mdtPrint.Columns.Add("MaVT", typeof(string));
+            //mdtPrint.Columns.Add("TenVTHH", typeof(string));
+            //mdtPrint.Columns.Add("DonViTinh", typeof(string));
+            //mdtPrint.Columns.Add("TenKH", typeof(string));
+            //mdtPrint.Columns.Add("SoLuong", typeof(string));
+            //mdtPrint.Columns.Add("DonGia", typeof(string));
+            //mdtPrint.Columns.Add("ThanhTien", typeof(string));
+            //mdtPrint.Columns.Add("TiGia", typeof(string));
+            //mdtPrint.Columns.Add("TongTienUSD", typeof(string));
+            //mdtPrint.Columns.Add("TongTienVND");
+            //mdtPrint.Columns.Add("QuyDoiVND", typeof(string));
+            //mdtPrint.Columns.Add("SoChungTu", typeof(string));
+            //mdtPrint.Columns.Add("NgayChungTu", typeof(string));
+            //for (int i = 0; i < dt1.Rows.Count; i++)
+            //{
+
+            //    int xxID_VTHH = Convert.ToInt32(dt1.Rows[i]["ID_VTHH"].ToString());
+
+            //    clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
+            //    DataTable dt2 = cls.SelectAll_ID_VTHH_NgayThang(xxID_VTHH, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    if (dt2.Rows.Count > 0)
+            //    {
+            //        double TongTienUSDxx = Convert.ToDouble(dt2.Compute("sum(ThanhTien)", "ID_VTHH=" + xxID_VTHH + ""));
+            //        double TongTienVNDxxx = Convert.ToDouble(dt2.Compute("sum(QuyDoiVND)", "ID_VTHH=" + xxID_VTHH + ""));
+            //        for (int k = 0; k < dt2.Rows.Count; k++)
+            //        {
+            //            DataRow _ravi = mdtPrint.NewRow();
+            //            _ravi["MaVT"] = dt1.Rows[i]["MaVT"].ToString();
+            //            _ravi["TenVTHH"] = dt1.Rows[i]["TenVTHH"].ToString();
+            //            _ravi["DonViTinh"] = dt1.Rows[i]["DonViTinh"].ToString();
+            //            _ravi["TenKH"] = dt2.Rows[k]["TenKH"].ToString();
+            //            _ravi["SoLuong"] = dt2.Rows[k]["SoLuong"].ToString();
+            //            _ravi["DonGia"] = dt2.Rows[k]["DonGia"].ToString();
+            //            _ravi["ThanhTien"] = dt2.Rows[k]["ThanhTien"].ToString();
+            //            _ravi["TiGia"] = dt2.Rows[k]["TiGia"].ToString();
+            //            _ravi["TongTienUSD"] = TongTienUSDxx;
+            //            _ravi["TongTienVND"] = TongTienVNDxxx;
+            //            _ravi["QuyDoiVND"] = dt2.Rows[k]["QuyDoiVND"].ToString();
+            //            _ravi["SoChungTu"] = dt2.Rows[k]["SoChungTu"].ToString();
+            //            _ravi["NgayChungTu"] = dt2.Rows[k]["NgayChungTu"].ToString();
+            //            mdtPrint.Rows.Add(_ravi);
+            //        }
+            //    }
+
+            //}
+            //if (mdtPrint.Rows.Count > 0)
+            //{
+            //    mbPrint_RutGon = false;
+            //    mbPrint_ALL = true;
+            //    mdatungay = dteTuNgay.DateTime;
+            //    mdadenngay = dteDenNgay.DateTime;
+            //    frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
+            //    ff.ShowDialog();
+
+            //}
 
         }
 

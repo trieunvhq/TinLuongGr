@@ -681,7 +681,7 @@ namespace CtyTinLuong
             DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
             if (dt1.Rows.Count > 0)
             {
-                int bientrangthaixx = Convert.ToInt32(dt1.Rows[0]["BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4"].ToString());
+                int bientrangthaixx = Convert.ToInt32(dt1.Rows[0]["BienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5"].ToString());
                 if (bientrangthaixx == 4)
                 {
                     bienthangthai = 4;
