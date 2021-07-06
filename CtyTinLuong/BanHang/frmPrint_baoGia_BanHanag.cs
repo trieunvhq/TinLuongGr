@@ -119,6 +119,43 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
+
+        private void Print_BanHang_SoTongHopbanHang_RutGon(DataTable dt3)
+        {
+
+
+            Xtra_SoTongHop_banHang xtr111 = new Xtra_SoTongHop_banHang();
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbBan_MuaHang.Clone();
+            ds.tbBan_MuaHang.Clear();
+
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbBan_MuaHang.NewRow();
+
+                _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
+                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                _ravi["TenKH"] = dt3.Rows[i]["TenKH"].ToString();
+                _ravi["SoLuong"] = dt3.Rows[i]["SoLuong"].ToString();
+                _ravi["DonGia"] = dt3.Rows[i]["DonGia"].ToString();
+                _ravi["ThanhTien"] = dt3.Rows[i]["ThanhTien"].ToString();
+                _ravi["TiGia"] = dt3.Rows[i]["TiGia"].ToString();
+                _ravi["TongTienUSD"] = dt3.Rows[i]["TongTienUSD"].ToString();
+                _ravi["TongTienVND"] = dt3.Rows[i]["TongTienVND"].ToString();
+                _ravi["QuyDoiVND"] = dt3.Rows[i]["QuyDoiVND"].ToString();
+                _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
+                _ravi["NgayChungTu"] = dt3.Rows[i]["NgayChungTu"].ToString();
+
+                ds.tbBan_MuaHang.Rows.Add(_ravi);
+            }
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbBan_MuaHang;
+            xtr111.DataMember = "tbBan_MuaHang";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
         public frmPrint_baoGia_BanHanag()
         {
             InitializeComponent();
@@ -132,6 +169,8 @@ namespace CtyTinLuong
                 Print_BanHang_frmBangKeHoaDonBanHang(BanHang_frmBangKeHoaDonBanHang.mdtPrint);
             if (BanHang_SoTongHopbanHang.mbPrint_ALL == true)
                 Print_BanHang_SoTongHopbanHang_ALL(BanHang_SoTongHopbanHang.mdtPrint);
+            if (BanHang_SoTongHopbanHang.mbPrint_RutGon == true)
+                Print_BanHang_SoTongHopbanHang_RutGon(BanHang_SoTongHopbanHang.mdtPrint);
         }
 
         private void frmPrint_baoGia_BanHanag_FormClosed(object sender, FormClosedEventArgs e)
