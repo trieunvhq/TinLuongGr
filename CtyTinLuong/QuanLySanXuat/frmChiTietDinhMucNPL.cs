@@ -48,8 +48,8 @@ namespace CtyTinLuong
                     {
                         cls2.iID_DinhMuc_NPL = iID_DinhMuc_NPLxxxx;
                         cls2.iID_VTHH = Convert.ToInt16(dv3.Rows[i]["ID_VTHH"].ToString());
-                        if (dv3.Rows[i]["SoLuong"].ToString() != "")
-                            cls2.fSoLuong = Convert.ToDouble(dv3.Rows[i]["SoLuong"].ToString());
+                        if (dv3.Rows[i]["strSoLuong"].ToString() != "")
+                            cls2.fSoLuong = convertToDouble(dv3.Rows[i]["strSoLuong"].ToString());
                         else cls2.fSoLuong = 0;                   
                         cls2.bTonTai = true;
                         cls2.bNgungTheoDoi = false;
@@ -65,7 +65,19 @@ namespace CtyTinLuong
 
             }
         }
-
+        private double convertToDouble(string str)
+        {
+            double abc_ = 0; 
+            if(str.Contains("/"))
+            {
+                abc_ = (Convert.ToDouble(str.Split('/')[0])) / (Convert.ToDouble(str.Split('/')[1]));
+            }
+            else
+            {
+                abc_ = Convert.ToDouble(str);
+            }
+            return abc_;
+        }
         private void Luu_Sua__DM_NPL()
         {
             if (!KiemTraLuu()) return;
@@ -101,8 +113,8 @@ namespace CtyTinLuong
                     {
                         cls2.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
                         cls2.iID_VTHH = Convert.ToInt16(dv3.Rows[i]["ID_VTHH"].ToString());
-                        if (dv3.Rows[i]["SoLuong"].ToString() != "")
-                            cls2.fSoLuong = Convert.ToDouble(dv3.Rows[i]["SoLuong"].ToString());
+                        if (dv3.Rows[i]["strSoLuong"].ToString() != "")
+                            cls2.fSoLuong = convertToDouble(dv3.Rows[i]["strSoLuong"].ToString());
                         else cls2.fSoLuong = 0;
                         cls2.bTonTai = true;
                         cls2.bNgungTheoDoi = false;
@@ -123,6 +135,7 @@ namespace CtyTinLuong
            
         }
 
+        DataTable dt2;
         private void HienThi_Sua_DinhMuc_NPL()
         {
             clsDinhMuc_tbDM_NguyenPhuLieu cls1 = new clsDinhMuc_tbDM_NguyenPhuLieu();
@@ -136,11 +149,12 @@ namespace CtyTinLuong
             txtDienGiai.Text = cls1.sDienGiai.Value.ToString();
             checkNgungTheoDoi.Checked = Convert.ToBoolean(cls1.bNgungTheoDoi.Value.ToString());
 
-            DataTable dt2 = new DataTable();
+            dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietDinhMucNPL", typeof(int));
             dt2.Columns.Add("ID_DinhMuc_NPL", typeof(int));
             dt2.Columns.Add("ID_VTHH", typeof(int));
             dt2.Columns.Add("SoLuong", typeof(float));
+            dt2.Columns.Add("strSoLuong", typeof(string));
             dt2.Columns.Add("MaVT");// 
             dt2.Columns.Add("TenVTHH");
             dt2.Columns.Add("DonViTinh");
@@ -156,11 +170,18 @@ namespace CtyTinLuong
             DataTable dt3 = dv.ToTable();
             
             for (int i = 0; i < dt3.Rows.Count; i++)
-            {                
-                if (dt3.Rows[i]["SoLuong"].ToString() == "")
-                    ddsoluong = 0;
-                else ddsoluong = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());                                
+            {
                 DataRow _ravi = dt2.NewRow();
+                if (dt3.Rows[i]["SoLuong"].ToString() == "")
+                {
+                    ddsoluong = 0;
+                    _ravi["strSoLuong"] = "0";
+                }
+                else
+                {
+                    ddsoluong = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
+                    _ravi["strSoLuong"] = dt3.Rows[i]["strSoLuong"].ToString();
+                }
                 _ravi["ID_ChiTietDinhMucNPL"] = Convert.ToInt16(dt3.Rows[i]["ID_ChiTietDinhMucNPL"].ToString());
                 _ravi["ID_DinhMuc_NPL"] = Convert.ToInt16(dt3.Rows[i]["ID_DinhMuc_NPL"].ToString());
                 _ravi["ID_VTHH"] = Convert.ToInt16(dt3.Rows[i]["ID_VTHH"].ToString());                
@@ -271,11 +292,12 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                DataTable dt2 = new DataTable();
+                dt2 = new DataTable();
                 dt2.Columns.Add("ID_ChiTietDinhMucNPL", typeof(int));
                 dt2.Columns.Add("ID_DinhMuc_NPL", typeof(int));
                 dt2.Columns.Add("ID_VTHH", typeof(int));
                 dt2.Columns.Add("SoLuong", typeof(float));
+                dt2.Columns.Add("strSoLuong", typeof(string));
                 dt2.Columns.Add("MaVT");// 
                 dt2.Columns.Add("TenVTHH");
                 dt2.Columns.Add("DonViTinh");
@@ -333,7 +355,9 @@ namespace CtyTinLuong
             
         }
 
-       
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+        }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -348,31 +372,86 @@ namespace CtyTinLuong
                 gridView1.SetRowCellValue(e.RowHandle, clHienThi, shienthixx);
 
             }
-            //
-            //int index_ = e.RowHandle;
-            //string name_ = e.Column.FieldName;
-            //if (name_.Contains("SoLuong"))
-            //{
-            //    _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
-            //    if (_data.Rows.Count > index_)
-            //    {
-            //        double temp_ = Convert.ToDouble(_data.Rows[index_][name_].ToString());
-            //        _data.Rows[index_]["Tong"] = temp_ + Convert.ToDouble(_data.Rows[index_]["Tong"].ToString());
-            //    }
-
-            //}
-            //else if (name_.Contains("TenVTHH"))
-            //{
-            //    if (gridView1.GetFocusedRowCellValue(name_) == null)
-            //    {
-            //        _data.Rows[index_][name_] = "";
-            //    }
-            //    else
-            //    {
-            //        _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
-            //    }
-            //}
-            //
+            else
+            { 
+                int index_ = e.RowHandle;
+                string name_ = e.Column.FieldName;
+                if (name_.Contains("strSoLuong"))
+                {
+                    string str_ = (string)e.Value;
+                    char[] str_array_ = str_.ToCharArray();
+                    if(str_array_.Length>0)
+                    {
+                        if((int)str_array_[0] == 47)
+                        {
+                            str_ = "1" + str_;
+                        }
+                        else if ((int)str_array_[0] == 46)
+                        {
+                            str_ = "0" + str_;
+                        }
+                    }
+                    bool isthaydoi_ = false;
+                    bool daucham = false;
+                    bool dauchia = false;
+                    for (int i = 0; i < str_array_.Length; ++i)
+                    {
+                        int asii_ = (int)str_array_[i];
+                        
+                        if ((asii_ >= 46 && asii_ <= 57) && asii_ != 47 && asii_ != 46)
+                        { }
+                        else if ((asii_ == 46))
+                        {
+                            if(daucham)
+                            {
+                                isthaydoi_ = true;
+                                str_ = str_.Replace(str_array_[i].ToString(), "");
+                                MessageBox.Show("Bạn gõ số lượng không hợp lệ (Chỉ bao gồm số và các ký tự / hoặc .) ở dòng " + (index_ + 1), "Số lượng không hợp lệ", MessageBoxButtons.OK);
+                            }
+                            daucham = true;
+                        }
+                        else if ((asii_ == 47))
+                        {
+                            if (dauchia)
+                            {
+                                isthaydoi_ = true;
+                                str_ = str_.Replace(str_array_[i].ToString(), "");
+                                MessageBox.Show("Bạn gõ số lượng không hợp lệ (Chỉ bao gồm số và các ký tự / hoặc .) ở dòng " + (index_ + 1), "Số lượng không hợp lệ", MessageBoxButtons.OK);
+                            }
+                            dauchia = true;
+                        }
+                        else 
+                        {
+                            isthaydoi_ = true;
+                            str_ = str_.Replace(str_array_[i].ToString(), "");
+                            MessageBox.Show("Bạn gõ số lượng không hợp lệ (Chỉ bao gồm số và các ký tự / hoặc .) ở dòng "+(index_ + 1), "Số lượng không hợp lệ", MessageBoxButtons.OK);
+                        }
+                    }
+                    str_array_ = str_.ToCharArray();
+                    if (str_array_.Length > 1)
+                    {
+                        if ((int)str_array_[str_array_.Length-1] == 47)
+                        {
+                            str_ = str_.Remove(str_.Length-1,1);
+                        }
+                        else if ((int)str_array_[str_array_.Length - 1] == 46)
+                        {
+                            str_ = str_.Remove(str_.Length - 1, 1);
+                        }
+                    }
+                    dt2.Rows[index_][name_] = str_;
+                    if (isthaydoi_)
+                    {
+                        gridControl1.DataSource = null;
+                        gridControl1.DataSource = dt2;
+                        gridView1.FocusedRowHandle = index_;
+                    }
+                    else
+                    {
+                        gridView1.FocusedRowHandle = index_ + 1;
+                    } 
+                }
+            }
         }
 
         private void repositoryItemLookUpEdit2_EditValueChanged(object sender, EventArgs e)
