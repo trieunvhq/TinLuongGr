@@ -336,26 +336,40 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
 
             DataRow _ravi = dt2.NewRow();
+            DataRow _ravi2 = dt2.NewRow();
             if (bientrangthia == 1) //báo có 
             {
                 checkNhaCungCap.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 2;
                 _ravi["SoTaiKhoanCon"] = "1121";
                 _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
+
+                _ravi2["ID_TaiKhoanKeToanCon"] = 0;
+                _ravi2["SoTaiKhoanCon"] = "";
+                _ravi2["TenTaiKhoanCon"] = "";
             }
             if (bientrangthia == 2) //báo nợ chi tiền từ ngân hàng ra
             {
                 checkKhachHang.Checked = true;
-                _ravi["ID_TaiKhoanKeToanCon"] = 2;
-                _ravi["SoTaiKhoanCon"] = "1121";
-                _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
+                _ravi["ID_TaiKhoanKeToanCon"] = 0;
+                _ravi["SoTaiKhoanCon"] = "";
+                _ravi["TenTaiKhoanCon"] = "";
+
+                _ravi2["ID_TaiKhoanKeToanCon"] = 2;
+                _ravi2["SoTaiKhoanCon"] = "1121";
+                _ravi2["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
+
             }
             if (bientrangthia == 3) //Phiếu chi
             {
                 checkNhaCungCap.Checked = true;
-                _ravi["ID_TaiKhoanKeToanCon"] = 294;
-                _ravi["SoTaiKhoanCon"] = "1111";
-                _ravi["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
+                _ravi["ID_TaiKhoanKeToanCon"] = 0;
+                _ravi["SoTaiKhoanCon"] = "";
+                _ravi["TenTaiKhoanCon"] = "";
+
+                _ravi2["ID_TaiKhoanKeToanCon"] = 294;
+                _ravi2["SoTaiKhoanCon"] = "1111";
+                _ravi2["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
             }
             if (bientrangthia == 4) //Phiếu thu
             {
@@ -363,6 +377,10 @@ namespace CtyTinLuong
                 _ravi["ID_TaiKhoanKeToanCon"] = 294;
                 _ravi["SoTaiKhoanCon"] = "1111";
                 _ravi["TenTaiKhoanCon"] = "Tiền mặt VNĐ";
+
+                _ravi2["ID_TaiKhoanKeToanCon"] = 0;
+                _ravi2["SoTaiKhoanCon"] = "";
+                _ravi2["TenTaiKhoanCon"] = "";
             }
             _ravi["No"] =0;
             _ravi["Co"] = 0;
@@ -371,7 +389,17 @@ namespace CtyTinLuong
             _ravi["DaGhiSo"] = false;
             _ravi["GhiChu"] = "";           
             _ravi["HienThi"] = "1";
+
+            _ravi2["No"] = 0;
+            _ravi2["Co"] = 0;
+            _ravi2["TienUSD"] = false;
+            _ravi2["TiGia"] = 1;
+            _ravi2["DaGhiSo"] = false;
+            _ravi2["GhiChu"] = "";
+            _ravi2["HienThi"] = "1";
+
             dt2.Rows.Add(_ravi);
+            dt2.Rows.Add(_ravi2);
             gridControl1.DataSource = dt2;
 
 
@@ -458,20 +486,20 @@ namespace CtyTinLuong
         }
         private void HienThiDienGiai_ThemMoi(int xxbientrangthai)
         {
-            //miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5
+            string tendoituong = txtDoiTuong.Text.ToString();
             if (UCQuy_NganHang_BaoCo.mbTheMoi==true)
             {
                 if (xxbientrangthai == 1) //báo có
                 {
-                    txtDienGiai.Text = ""+txtDoiTuong.Text+" thanh toán"; ;
+                    txtDienGiai.Text = ""+ tendoituong + " thanh toán"; ;
                 }
                else if (xxbientrangthai == 2) //báo nợ
                 {
-                    txtDienGiai.Text = "Thanh toán cho: " + txtDoiTuong.Text + ""; ;
+                    txtDienGiai.Text = "Thanh toán cho: " + tendoituong + ""; ;
                 }
                 else if (xxbientrangthai == 3) //phiếu chi
                 {
-                    txtDienGiai.Text = "Thanh toán cho: " + txtDoiTuong.Text + ""; ;
+                    txtDienGiai.Text = "Thanh toán cho: " + tendoituong + ""; ;
                 }
                 else if (xxbientrangthai == 4) //phiếu thu
                 {
@@ -561,10 +589,8 @@ namespace CtyTinLuong
             if (DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 == 1) // Khác
             {
                 clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-                DataView dv = dt.DefaultView;
-                DataTable dt3 = dv.ToTable();                
+                DataTable dt3 = cls.SelectAll();
+                       
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
                     DataRow _ravi = dtdoituong.NewRow();
@@ -581,10 +607,7 @@ namespace CtyTinLuong
             if (DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 == 2) // NCC
             {
                 clsTbNhaCungCap cls = new clsTbNhaCungCap();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-                DataView dv = dt.DefaultView;
-                DataTable dt3 = dv.ToTable();
+                DataTable dt3 = cls.SelectAll();              
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
                     DataRow _ravi = dtdoituong.NewRow();
@@ -607,10 +630,8 @@ namespace CtyTinLuong
             if (DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 == 3) //  Khách hàng
             {
                 clsTbKhachHang cls = new clsTbKhachHang();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-                DataView dv = dt.DefaultView;
-                DataTable dt3 = dv.ToTable();
+                DataTable dt3 = cls.SelectAll();
+              
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
                     DataRow _ravi = dtdoituong.NewRow();
@@ -687,13 +708,13 @@ namespace CtyTinLuong
             {
                 checkKhachHang.Checked = false;
                 checkNhaCungCap.Checked = false;               
-                try
-                {
+                //try
+                //{
                     DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 = 1;
                     Load_LockUp_DoiTuong();
-                }
-                catch
-                { }
+                //}
+                //catch
+                //{ }
             }
         }
 
@@ -703,13 +724,13 @@ namespace CtyTinLuong
             {
                 checkKhachHang.Checked = false;
                 checkKhac.Checked = false;
-                try
-                {
+                //try
+                //{
                     DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 = 2;
                     Load_LockUp_DoiTuong();
-                }
-                catch
-                { }
+                //}
+                //catch
+                //{ }
             }
         }
 
@@ -719,13 +740,13 @@ namespace CtyTinLuong
             {
                 checkNhaCungCap.Checked = false;
                 checkKhac.Checked = false;
-                try
-                {
+                //try
+                //{
                     DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 = 3;
                     Load_LockUp_DoiTuong();
-                }
-                catch
-                { }
+                //}
+                //catch
+                //{ }
             }
         }
 
@@ -764,31 +785,32 @@ namespace CtyTinLuong
 
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            try
-            {
-                if (e.Column == clSoTaiKhoanCon)
+            //try
+            //{
+                if (e.Column == clID_TaiKhoanKeToanCon)
                 {
-                    double tigiaxx = Convert.ToDouble(txtTiGia.Text);
-                    bool tienussd = checkUSD.Checked;
-                    gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
-                    gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
+                //double tigiaxx = Convert.ToDouble(txtTiGia.Text);
+                //bool tienussd = checkUSD.Checked;
+                //gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
+                //gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
 
-                    clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                    cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                    int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                    DataTable dt = cls.SelectOne();
-                    gridView4.SetRowCellValue(e.RowHandle, clID_TaiKhoanKeToanCon, kk);                 
-                    gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, dt.Rows[0]["TenTaiKhoanCon"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                    gridView4.SetRowCellValue(e.RowHandle, clTienUSD, tienussd);
-                    gridView4.SetFocusedRowCellValue(clTiGia, tigiaxx);
+                clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+                cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+              //  gridView4.SetRowCellValue(e.RowHandle, clID_TaiKhoanKeToanCon, kk);
 
-                }
+                gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, cls.sTenTaiKhoanCon.Value);
+                gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                //gridView4.SetRowCellValue(e.RowHandle, clTienUSD, tienussd);
+                //gridView4.SetFocusedRowCellValue(clTiGia, tigiaxx);
+
+            }
               
-            }
-            catch
-            {
-            }
+            //}
+            //catch
+            //{
+            //}
         }
 
         private void txtSoTien_TextChanged(object sender, EventArgs e)
@@ -796,39 +818,11 @@ namespace CtyTinLuong
             try
             {
                 double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
-                if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
-                {
-                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(0, clCo, 0);
+                gridView4.SetRowCellValue(0, clNo, sotienxxx);
+                gridView4.SetRowCellValue(0, clCo, 0);
+                gridView4.SetRowCellValue(1, clNo, 0);
+                gridView4.SetRowCellValue(1, clCo, sotienxxx);
 
-                    gridView4.SetRowCellValue(1, clNo, 0);
-                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
-
-                }
-               else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
-                {
-                    gridView4.SetRowCellValue(0, clNo, 0);
-                    gridView4.SetRowCellValue(0, clCo, sotienxxx);
-
-                    gridView4.SetRowCellValue(1, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(1, clCo, 0);
-                }
-                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
-                {
-                    gridView4.SetRowCellValue(0, clNo, 0);
-                    gridView4.SetRowCellValue(0, clCo, sotienxxx);
-
-                    gridView4.SetRowCellValue(1, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(1, clCo, 0);
-                }
-                else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
-                {
-                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                    gridView4.SetRowCellValue(0, clCo, 0);
-
-                    gridView4.SetRowCellValue(1, clNo, 0);
-                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
-                }
             }
             catch
             {
@@ -941,13 +935,13 @@ namespace CtyTinLuong
       
         private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Load_LockUp_DoiTuong();
-                HienThiDienGiai_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            //try
+            //{
+            Load_LockUp_DoiTuong();
 
-                int ID_Doituongxxx = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
-                string filterExpression = "ID_DoiTuong=" + ID_Doituongxxx + "";
+
+            int ID_Doituongxxx = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+                string filterExpression = "ID_DoiTuong='" + ID_Doituongxxx + "'";
                 DataRow[] rows = dtdoituong.Select(filterExpression);
                 double sotienthanhtoan = Convert.ToDouble(txtSoTien.Text);
                 if (rows.Length > 0)
@@ -961,43 +955,75 @@ namespace CtyTinLuong
                         clscon.iID_TaiKhoanKeToanCon = iiiiID_TaiKhoanKeToan;
                         DataTable dtcon = clscon.SelectOne();
 
-                        gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
-                        gridView4.AddNewRow();
-                       
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], txtTiGia.Text);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TienUSD"], checkUSD.Checked);
-                        if(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
+                        //gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
+                        //gridView4.AddNewRow();
+
+                        //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], txtTiGia.Text);
+                        //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TienUSD"], checkUSD.Checked);
+                        gridView4.SetRowCellValue(0, gridView4.Columns["TiGia"], txtTiGia.Text);
+                        gridView4.SetRowCellValue(1, gridView4.Columns["TiGia"], txtTiGia.Text);
+                        gridView4.SetRowCellValue(0, gridView4.Columns["TienUSD"], txtTiGia.Text);
+                        gridView4.SetRowCellValue(1, gridView4.Columns["TienUSD"], txtTiGia.Text);
+                        if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
                         {
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], sotienthanhtoan);
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], sotienthanhtoan);
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["DaGhiSo"], false);
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
+
+                            gridView4.SetRowCellValue(1, gridView4.Columns["No"], 0);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["Co"], sotienthanhtoan);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["DaGhiSo"], false);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(1, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
                         else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
                         {
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], sotienthanhtoan);
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], 0);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["No"], sotienthanhtoan);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["Co"], 0);
+
+                            gridView4.SetRowCellValue(0, gridView4.Columns["DaGhiSo"], false);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(0, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
                         else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
                         {
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], sotienthanhtoan);
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], 0);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["No"], sotienthanhtoan);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["Co"], 0);
+
+                            gridView4.SetRowCellValue(0, gridView4.Columns["DaGhiSo"], false);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
+                            gridView4.SetRowCellValue(0, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(0, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
                         else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
                         {
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
-                            gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], sotienthanhtoan);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["No"], 0);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["Co"], sotienthanhtoan);
+
+                            gridView4.SetRowCellValue(1, gridView4.Columns["DaGhiSo"], false);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
+                            gridView4.SetRowCellValue(1, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(1, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
 
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["DaGhiSo"], false);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
-                        gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
+                       
                       
                     }
                 }
-            }
-            catch
-            { }
+               
+            //}
+            //catch
+            //{ }
 
         }
 
@@ -1012,6 +1038,11 @@ namespace CtyTinLuong
         {
             UCQuy_NganHang_BaoCo.mbTheMoi = true;
             HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+        }
+
+        private void txtDoiTuong_TextChanged(object sender, EventArgs e)
+        {
+            HienThiDienGiai_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
         }
 
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
