@@ -264,7 +264,7 @@
             this.xrLabel18.SizeF = new System.Drawing.SizeF(198.2083F, 22.99999F);
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            this.xrLabel18.Text = "NGƯỜI LẬP";
+            this.xrLabel18.Text = "Người lập";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel13
@@ -276,7 +276,7 @@
             this.xrLabel13.SizeF = new System.Drawing.SizeF(169.9053F, 22.99998F);
             this.xrLabel13.StylePriority.UseFont = false;
             this.xrLabel13.StylePriority.UseTextAlignment = false;
-            this.xrLabel13.Text = "KẾ TOÁN";
+            this.xrLabel13.Text = "Kế toán";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel19
