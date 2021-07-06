@@ -2100,6 +2100,9 @@
     <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang_RutGon.resx">
       <DependentUpon>Xtra_SoTongHop_banHang_RutGon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang_TheoKhachHang.resx">
+      <DependentUpon>Xtra_SoTongHop_banHang_TheoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_ChiTietChoXuatKho_Moi.resx">
       <DependentUpon>DaiLy_ChiTietChoXuatKho_Moi.cs</DependentUpon>
     </EmbeddedResource>
