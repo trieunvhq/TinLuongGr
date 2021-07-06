@@ -273,6 +273,15 @@ namespace CtyTinLuong
                 mbPrint_ALL = false;
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
+                clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();               
+                DataTable dt = new DataTable();
+                int iiIID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
+                if (iiIID_KhachHang == 0)
+                    dt = cls.SA_Time_DS_KH(mdatungay, mdadenngay);
+                else
+                {
+
+                }
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
                 ff.ShowDialog();
 
