@@ -1114,7 +1114,7 @@ namespace CtyTinLuong
         }
         private void frmChiTietMuaHang3333333333_Load(object sender, EventArgs e)
         {
-                 
+            Cursor.Current = Cursors.WaitCursor;
             txtTienVAT.Text = "0";
             
             Load_LockUp();
@@ -1130,7 +1130,10 @@ namespace CtyTinLuong
             {
                 HienThi_Sua();
             }
+            Cursor.Current = Cursors.Default;
+            txtSoChungTu.Focus();
         }
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -1500,6 +1503,134 @@ namespace CtyTinLuong
             MessageBox.Show("Đã lưu");
            // this.Close();
 
+        }
+
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgayChungTu.Focus();
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtSoHoaDon.Focus();
+            }
+        }
+
+        private void txtSoHoaDon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtNguoiGiaoHang.Focus();
+            }
+        }
+
+        private void txtNguoiGiaoHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridNguoiLap.Focus();
+            }
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtNguoiMuaHang.Focus();
+            }
+        }
+
+        private void txtNguoiMuaHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridNCC.Focus();
+            }
+        }
+
+        private void gridNCC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenNhaCungCap.Focus();
+            }
+        }
+
+        private void txtTenNhaCungCap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiai.Focus();
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTongTienHangChuaVAT.Focus();
+            }
+        }
+
+        private void txtTongTienHangChuaVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTiGia.Focus();
+            }
+        }
+
+        private void txtTiGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtPhanTramVAT.Focus();
+            }
+        }
+
+        private void txtPhanTramVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTienVAT.Focus();
+            }
+        }
+
+        private void txtTienVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTongTienHangCoVAT.Focus();
+            }
+        }
+
+        private void txtTongTienHangCoVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridView4.Focus();
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)

@@ -429,6 +429,7 @@
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
             this.gridView4.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView4_ValidateRow);
             this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
+            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clID_VTHH
             // 
@@ -522,6 +523,7 @@
             this.txtTienVAT.TabIndex = 97;
             this.txtTienVAT.Text = "0";
             this.txtTienVAT.TextChanged += new System.EventHandler(this.txtTienVAT_TextChanged_1);
+            this.txtTienVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTienVAT_KeyPress);
             // 
             // txtNguoiGiaoHang
             // 
@@ -529,6 +531,7 @@
             this.txtNguoiGiaoHang.Name = "txtNguoiGiaoHang";
             this.txtNguoiGiaoHang.Size = new System.Drawing.Size(835, 20);
             this.txtNguoiGiaoHang.TabIndex = 96;
+            this.txtNguoiGiaoHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNguoiGiaoHang_KeyPress);
             // 
             // txtTongTienHangCoVAT
             // 
@@ -540,6 +543,7 @@
             this.txtTongTienHangCoVAT.TabIndex = 95;
             this.txtTongTienHangCoVAT.Text = "0";
             this.txtTongTienHangCoVAT.TextChanged += new System.EventHandler(this.txtTongTienHangCoVAT_TextChanged);
+            this.txtTongTienHangCoVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongTienHangCoVAT_KeyPress);
             // 
             // txtTiGia
             // 
@@ -550,6 +554,7 @@
             this.txtTiGia.TabIndex = 94;
             this.txtTiGia.Text = "1";
             this.txtTiGia.TextChanged += new System.EventHandler(this.txtTiGia_TextChanged);
+            this.txtTiGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTiGia_KeyPress);
             this.txtTiGia.Leave += new System.EventHandler(this.txtTiGia_Leave);
             // 
             // checkMuaHangNhapKho
@@ -573,6 +578,7 @@
             this.txtPhanTramVAT.TabIndex = 91;
             this.txtPhanTramVAT.Text = "0";
             this.txtPhanTramVAT.TextChanged += new System.EventHandler(this.txtPhanTramVAT_TextChanged);
+            this.txtPhanTramVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhanTramVAT_KeyPress);
             // 
             // checkUSD
             // 
@@ -606,6 +612,7 @@
             this.txtTongTienHangChuaVAT.TabIndex = 78;
             this.txtTongTienHangChuaVAT.Text = "0";
             this.txtTongTienHangChuaVAT.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
+            this.txtTongTienHangChuaVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongTienHangChuaVAT_KeyPress);
             // 
             // gridNguoiLap
             // 
@@ -619,6 +626,7 @@
             this.gridNguoiLap.StyleController = this.layoutControl1;
             this.gridNguoiLap.TabIndex = 23;
             this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
+            this.gridNguoiLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNguoiLap_KeyPress);
             // 
             // gridView2
             // 
@@ -666,6 +674,7 @@
             this.gridNCC.StyleController = this.layoutControl1;
             this.gridNCC.TabIndex = 17;
             this.gridNCC.EditValueChanged += new System.EventHandler(this.gridNCC_EditValueChanged);
+            this.gridNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNCC_KeyPress);
             // 
             // gridView3
             // 
@@ -711,6 +720,7 @@
             this.txtNguoiMuaHang.ReadOnly = true;
             this.txtNguoiMuaHang.Size = new System.Drawing.Size(354, 20);
             this.txtNguoiMuaHang.TabIndex = 16;
+            this.txtNguoiMuaHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNguoiMuaHang_KeyPress);
             // 
             // txtSoHoaDon
             // 
@@ -718,6 +728,7 @@
             this.txtSoHoaDon.Name = "txtSoHoaDon";
             this.txtSoHoaDon.Size = new System.Drawing.Size(188, 20);
             this.txtSoHoaDon.TabIndex = 15;
+            this.txtSoHoaDon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoHoaDon_KeyPress);
             // 
             // dteNgayChungTu
             // 
@@ -736,6 +747,7 @@
             this.dteNgayChungTu.Size = new System.Drawing.Size(118, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl1;
             this.dteNgayChungTu.TabIndex = 14;
+            this.dteNgayChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChungTu_KeyPress);
             // 
             // txtSoChungTu
             // 
@@ -744,6 +756,7 @@
             this.txtSoChungTu.ReadOnly = true;
             this.txtSoChungTu.Size = new System.Drawing.Size(107, 20);
             this.txtSoChungTu.TabIndex = 10;
+            this.txtSoChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoChungTu_KeyPress);
             // 
             // txtDienGiai
             // 
@@ -752,6 +765,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(835, 35);
             this.txtDienGiai.TabIndex = 6;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // txtTenNhaCungCap
             // 
@@ -760,6 +774,7 @@
             this.txtTenNhaCungCap.ReadOnly = true;
             this.txtTenNhaCungCap.Size = new System.Drawing.Size(354, 20);
             this.txtTenNhaCungCap.TabIndex = 5;
+            this.txtTenNhaCungCap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhaCungCap_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -1021,6 +1036,7 @@
             this.gridControl2.TabIndex = 86;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView8});
+            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // gridView8
             // 
