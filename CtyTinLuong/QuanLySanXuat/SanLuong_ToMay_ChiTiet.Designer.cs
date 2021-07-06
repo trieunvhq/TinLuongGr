@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_ToMay_ChiTiet));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -152,6 +151,7 @@
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(190, 20);
             this.txtDVT.TabIndex = 122;
+            this.txtDVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_KeyPress);
             // 
             // GridMaVT
             // 
@@ -168,6 +168,7 @@
             this.GridMaVT.StyleController = this.dataLayoutControl1;
             this.GridMaVT.TabIndex = 121;
             this.GridMaVT.EditValueChanged += new System.EventHandler(this.GridMaVT_EditValueChanged);
+            this.GridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridMaVT_KeyPress);
             // 
             // gridView16
             // 
@@ -210,6 +211,7 @@
             this.txtTenVTHH.Name = "txtTenVTHH";
             this.txtTenVTHH.Size = new System.Drawing.Size(394, 20);
             this.txtTenVTHH.TabIndex = 120;
+            this.txtTenVTHH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVTHH_KeyPress);
             // 
             // btPrint
             // 
@@ -262,6 +264,7 @@
             this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView2
             // 
@@ -512,6 +515,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(415, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 91;
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // btLayDuLieu
             // 
@@ -541,6 +545,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(348, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 88;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -684,7 +689,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanLuong_ToMay_ChiTiet";
-            this.Text = "Chi tiết sản lượng";
+            this.Text = "Chi Tiết Sản Lượng";
             this.Load += new System.EventHandler(this.SanLuong_ToMay_ChiTiet_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

@@ -348,7 +348,7 @@ namespace CtyTinLuong
                     mdatungay = dteTuNgay.DateTime;
                     mdadenngay = dteDenNgay.DateTime;
                     frmPrintChiTietPhieuSanXuat ff = new frmPrintChiTietPhieuSanXuat();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
             }
             catch { }
@@ -356,6 +356,7 @@ namespace CtyTinLuong
         
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangTiep.LinkColor == Color.Black)
@@ -386,10 +387,12 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangSau.LinkColor == Color.Black)
@@ -419,6 +422,7 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void txtSoTrang_Leave(object sender, EventArgs e)
@@ -473,10 +477,28 @@ namespace CtyTinLuong
             //{ }
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }
