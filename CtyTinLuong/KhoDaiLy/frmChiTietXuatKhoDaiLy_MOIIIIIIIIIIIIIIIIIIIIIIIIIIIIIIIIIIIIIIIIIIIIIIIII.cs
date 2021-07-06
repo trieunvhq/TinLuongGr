@@ -1309,6 +1309,86 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenNguoiLap.Focus();
+            }
+        }
+
+        private void txtTenNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridMaDaiLy.Focus();
+            }
+        }
+
+        private void gridMaDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenDaiLy.Focus();
+            }
+        }
+
+        private void txtTenDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtSoChungTu.Focus();
+            }
+        }
+
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgayChungTu.Focus();
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiai.Focus();
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtGhiChu.Focus();
+            }
+        }
+
+        private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridControl1.Focus();
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void btXoa2_Click(object sender, EventArgs e)
         {
             gridView4.SetFocusedRowCellValue(clHienThi1, "0");

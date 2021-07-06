@@ -133,5 +133,31 @@ namespace CtyTinLuong
         {
             //gridControl1.ShowPrintPreview();
         }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgay.Focus();
+            }
+        }
+
+        private void dteNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
     }
 }

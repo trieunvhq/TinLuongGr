@@ -1064,7 +1064,8 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtSoLuong_BaoBe.Focus();
+                if (checkHangNhu.Checked == true) gridMaDinhMucNPL.Focus();
+                else txtSoLuong_BaoBe.Focus();
             }
         }
 
@@ -1186,6 +1187,11 @@ namespace CtyTinLuong
             {
                 btLuu_Dong.Focus();
             }
+        }
+
+        private void txtTongSoKG_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void checkHangSot_CheckedChanged(object sender, EventArgs e)

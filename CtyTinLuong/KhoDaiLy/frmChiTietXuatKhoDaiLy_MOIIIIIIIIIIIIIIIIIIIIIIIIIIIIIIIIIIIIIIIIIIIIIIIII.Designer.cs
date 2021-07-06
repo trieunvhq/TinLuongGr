@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions19 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject73 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject74 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject75 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject76 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions20 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject77 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject78 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject79 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject80 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -196,6 +196,7 @@
             this.txtTenNguoiLap.Name = "txtTenNguoiLap";
             this.txtTenNguoiLap.Size = new System.Drawing.Size(387, 20);
             this.txtTenNguoiLap.TabIndex = 118;
+            this.txtTenNguoiLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNguoiLap_KeyPress);
             // 
             // txtGhiChu
             // 
@@ -203,6 +204,7 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(889, 20);
             this.txtGhiChu.TabIndex = 1;
+            this.txtGhiChu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChu_KeyPress);
             // 
             // txtSoChungTu
             // 
@@ -210,6 +212,7 @@
             this.txtSoChungTu.Name = "txtSoChungTu";
             this.txtSoChungTu.Size = new System.Drawing.Size(116, 20);
             this.txtSoChungTu.TabIndex = 3;
+            this.txtSoChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoChungTu_KeyPress);
             // 
             // dteNgayChungTu
             // 
@@ -228,6 +231,7 @@
             this.dteNgayChungTu.Size = new System.Drawing.Size(190, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl1;
             this.dteNgayChungTu.TabIndex = 4;
+            this.dteNgayChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChungTu_KeyPress);
             // 
             // gridNguoiLap
             // 
@@ -240,6 +244,7 @@
             this.gridNguoiLap.StyleController = this.layoutControl1;
             this.gridNguoiLap.TabIndex = 5;
             this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
+            this.gridNguoiLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNguoiLap_KeyPress);
             // 
             // gridLookUpEdit3View
             // 
@@ -283,6 +288,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(889, 24);
             this.txtDienGiai.TabIndex = 11;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // gridMaDaiLy
             // 
@@ -295,6 +301,7 @@
             this.gridMaDaiLy.StyleController = this.layoutControl1;
             this.gridMaDaiLy.TabIndex = 7;
             this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
+            this.gridMaDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaDaiLy_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -339,6 +346,7 @@
             this.txtTenDaiLy.ReadOnly = true;
             this.txtTenDaiLy.Size = new System.Drawing.Size(231, 20);
             this.txtTenDaiLy.TabIndex = 8;
+            this.txtTenDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDaiLy_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -467,6 +475,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView4
             // 
@@ -587,9 +596,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions7.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions19.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions19, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject73, serializableAppearanceObject74, serializableAppearanceObject75, serializableAppearanceObject76, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -788,6 +797,7 @@
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // gridView2
             // 
@@ -953,9 +963,9 @@
             // btXoaGrid2
             // 
             this.btXoaGrid2.AutoHeight = false;
-            editorButtonImageOptions8.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions20.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoaGrid2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions20, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject77, serializableAppearanceObject78, serializableAppearanceObject79, serializableAppearanceObject80, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoaGrid2.Name = "btXoaGrid2";
             this.btXoaGrid2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoaGrid2.Click += new System.EventHandler(this.btXoaGrid2_Click);
