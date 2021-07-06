@@ -1392,7 +1392,7 @@ namespace CtyTinLuong
             {
                 if (checkBaoVe_LaiXe.Checked == true)
                 {
-                    if (UCMuaHang.mbThemMoi == false)
+                    if (UCMuaHang.mbSua == true)
                     {
                         int ID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
                         clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
