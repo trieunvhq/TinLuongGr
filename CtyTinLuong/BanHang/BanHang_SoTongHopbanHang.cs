@@ -278,6 +278,7 @@ namespace CtyTinLuong
                 dt1.Rows.Add(_ravi2);
             }
             mdtPrint = new DataTable();
+            mdtPrint.Columns.Add("STT", typeof(string));
             mdtPrint.Columns.Add("MaVT", typeof(string));
             mdtPrint.Columns.Add("TenVTHH", typeof(string));
             mdtPrint.Columns.Add("DonViTinh", typeof(string));
@@ -300,6 +301,7 @@ namespace CtyTinLuong
                     for (int k = 0; k < dt2.Rows.Count; k++)
                     {
                         DataRow _ravi = mdtPrint.NewRow();
+                        _ravi["STT"] =(k+1).ToString();
                         _ravi["MaKH"] = dt1.Rows[i]["MaKH"].ToString();
                         _ravi["TenKH"] = dt1.Rows[i]["TenKH"].ToString();
                         _ravi["MaVT"] = dt2.Rows[k]["MaVT"].ToString();

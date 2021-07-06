@@ -97,11 +97,12 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbBan_MuaHang.NewRow();
-
+                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
                 _ravi["TenKH"] = dt3.Rows[i]["TenKH"].ToString();
+                _ravi["MaKH"] = dt3.Rows[i]["MaKH"].ToString();
                 _ravi["SoLuong"] = dt3.Rows[i]["SoLuong"].ToString();
                 _ravi["TongTienUSD"] = dt3.Rows[i]["TongTienUSD"].ToString();
                 ds.tbBan_MuaHang.Rows.Add(_ravi);
