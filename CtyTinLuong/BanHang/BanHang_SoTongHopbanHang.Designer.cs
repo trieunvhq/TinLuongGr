@@ -307,6 +307,7 @@
             // 
             this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn10.Caption = "Khách hàng";
             this.gridColumn10.ColumnEdit = this.repositoryItemMemoEdit2;
             this.gridColumn10.FieldName = "TenKH";
@@ -513,6 +514,8 @@
             // 
             // clTenVTHH
             // 
+            this.clTenVTHH.AppearanceCell.Options.UseTextOptions = true;
+            this.clTenVTHH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.clTenVTHH.Caption = "Tên hàng hoá";
             this.clTenVTHH.FieldName = "TenVTHH";
             this.clTenVTHH.Name = "clTenVTHH";
