@@ -37,6 +37,7 @@ namespace CtyTinLuong
 
         private void navBarItemMuaHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
             mbTraLaiHangMua = false;
@@ -44,6 +45,7 @@ namespace CtyTinLuong
             ucc.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(ucc);
             ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThooat_Click(object sender, EventArgs e)
@@ -70,7 +72,9 @@ namespace CtyTinLuong
 
         private void frmMuaHang2222_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             HienThi_Caption();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem1_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

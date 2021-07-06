@@ -115,11 +115,14 @@ namespace CtyTinLuong
         
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCMuaHang_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void UCMuaHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgay.EditValue = null;
             dteTuNgay.EditValue = null;
@@ -134,7 +137,8 @@ namespace CtyTinLuong
             clTongTienHang.Caption = "Tổng\ntiền hàng";
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             clGuiDuLieu.Caption = "Đã \nGửi DL";
-           
+            Cursor.Current = Cursors.Default;
+            dteTuNgay.Focus();
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -147,12 +151,14 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbbTheMoi_DonHang = true;
             mbCopY = true;
             frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
-            _frmMH.Hide();
+            //_frmMH.Hide();
             ff.ShowDialog();
-            _frmMH.Show();
+            //_frmMH.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -166,13 +172,15 @@ namespace CtyTinLuong
             {
                 if (gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString() != "")
                 {//msDienGiai
+                    Cursor.Current = Cursors.WaitCursor;
                     mbCopY = false;
                     mbbTheMoi_DonHang = false;
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
-                    _frmMH.Hide();
+                    //_frmMH.Hide();
                     ff.ShowDialog();
-                    _frmMH.Show();
+                    //_frmMH.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
@@ -252,9 +260,11 @@ namespace CtyTinLuong
         {
             if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 if (frmMuaHang2222.mbTraLaiHangMua == true)
                     HienThi(true);
                 else HienThi(false);
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -280,20 +290,53 @@ namespace CtyTinLuong
 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgay.Focus();
+            }
+        }
+
+        private void dteNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
         private void btCopy_Click(object sender, EventArgs e)
         {
           
             try
             {
                 if (gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString() != "")
-                {//msDienGiai
+                {
+                    Cursor.Current = Cursors.WaitCursor;
                     mbCopY = true;
                     mbbTheMoi_DonHang = false;
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
-                    _frmMH.Hide();
+                    //_frmMH.Hide();
                     ff.ShowDialog();
-                    _frmMH.Show();
+                    //_frmMH.Show();
+                    Cursor.Current = Cursors.Default;
                 }
             }
             catch
