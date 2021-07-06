@@ -486,6 +486,22 @@ namespace CtyTinLuong
                     }
 
                 }
+                //xoá tôn tai =0
+                DataTable dt2_moi11111 = new DataTable();
+                clsxx = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+                clsxx.iID_ChungTu = xxxID_MuaHang;
+                clsxx.sSoChungTu = txtSoChungTu.Text.ToString();
+                clsxx.daNgayThang = dteNgayChungTu.DateTime;
+                dt2_moi11111 = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
+                dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
+                DataView dvdt2_moi = dt2_moi11111.DefaultView;
+                DataTable dt2_moi = dvdt2_moi.ToTable();
+                for (int i = 0; i < dt2_moi.Rows.Count; i++)
+                {
+                    int xxxID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
+                    clsxx.iID_ChiTietBienDongTaiKhoan = xxxID_ChiTietBienDongTaiKhoan;
+                    clsxx.Delete();
+                }
             }
         }        
     
