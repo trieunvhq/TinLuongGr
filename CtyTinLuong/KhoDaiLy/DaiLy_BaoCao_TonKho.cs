@@ -15,8 +15,8 @@ namespace CtyTinLuong
     {
         public static int miID_VTHHH;
         public static DateTime mdadenngay;
-        public static bool mbPrint;
-        public static DataTable mdtPrint;
+        public static bool mbPrint_ALL, mbPrint_One;
+        public static DataTable mdtPrint_ALL, mdtPrint_One;
         public DaiLy_BaoCao_TonKho()
         {
             InitializeComponent();
@@ -283,24 +283,53 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-          
-          
+
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();
-            if (mdtPrint.Rows.Count == 0)
+            mdtPrint_ALL = dv1212.ToTable();
+            if (mdtPrint_ALL.Rows.Count == 0)
                 MessageBox.Show("Không có dữ liệu");
             else
             {
-                mbPrint = true;
+                mbPrint_ALL = true;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_BaoCao_TonKho ff = new CtyTinLuong.frmPrint_BaoCao_TonKho();
                 ff.ShowDialog();
             }
-         
+
+        }
+
+        private void btPrint_One_Click(object sender, EventArgs e)
+        {
+
+            if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+            {
+                miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                mbPrint_One = true;
+                DataTable DatatableABC = (DataTable)gridControl2.DataSource;
+                CriteriaOperator op = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                mdtPrint_One = dv1212.ToTable();
+                if (mdtPrint_One.Rows.Count == 0)
+                    MessageBox.Show("Không có dữ liệu");
+                else
+                {
+                    mdadenngay = dteDenNgay.DateTime;
+                    frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
+                    ff.ShowDialog();
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+           
         }
     }
 }

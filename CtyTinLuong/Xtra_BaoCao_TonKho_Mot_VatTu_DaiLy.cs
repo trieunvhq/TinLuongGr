@@ -22,6 +22,20 @@ namespace CtyTinLuong
        
 
         }
+
+        private void BaoCao__DaiLy_BaoCao_TonKho_One()
+        {
+
+            DateTime denngay = DaiLy_BaoCao_TonKho.mdadenngay;
+
+            pNgayThang.Value = "Đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = DaiLy_BaoCao_TonKho.miID_VTHHH;
+            DataTable dtxx = cls.SelectOne();
+            pTenVT.Value = " Mã vật tư: " + cls.sMaVT.Value + ",   Tên vật tư: " + cls.sTenVTHH.Value + ",   ĐVT: " + cls.sDonViTinh.Value + "";
+
+
+        }
         public Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy()
         {
             InitializeComponent();
@@ -45,6 +59,8 @@ namespace CtyTinLuong
             }
             if (DaiLy_Frm_TonKho_MotVatTu.mbPrint == true)
                 BaoCao_TonKho_Mot_VatTu_DaiLy();
+            if (DaiLy_BaoCao_TonKho.mbPrint_One == true)
+                BaoCao__DaiLy_BaoCao_TonKho_One();
         }
     }
 }

@@ -12,7 +12,39 @@ namespace CtyTinLuong
 {
     public partial class frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww : Form
     {
+        private void Print_DaiLy_BaoCao_TonKho_One(DataTable dt3)
+        {
 
+            Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy xtr111 = new Xtra_BaoCao_TonKho_Mot_VatTu_DaiLy();
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.NXT_Mot_VatTu_Neww.Clone();
+            ds.NXT_Mot_VatTu_Neww.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.NXT_Mot_VatTu_Neww.NewRow();
+                //if (dt3.Rows[i]["NgayChungTu"].ToString() != "")
+                //{
+                //    DateTime ngay = Convert.ToDateTime(dt3.Rows[i]["NgayChungTu"].ToString());
+                //    _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
+                //}
+
+                if (dt3.Rows[i]["Ton"].ToString() != "")
+                    _ravi["Ton"] = Convert.ToDouble(dt3.Rows[i]["Ton"].ToString());
+                //_ravi["SoChungTu_NhapKho"] = dt3.Rows[i]["SoChungTu_NhapKho"].ToString();
+                //_ravi["SoChungTu_XuatKho"] = dt3.Rows[i]["SoChungTu_XuatKho"].ToString();
+                _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
+                _ravi["TenDaiLy"] = dt3.Rows[i]["TenDaiLy"].ToString();
+                //_ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
+                ds.NXT_Mot_VatTu_Neww.Rows.Add(_ravi);
+            }
+
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.NXT_Mot_VatTu_Neww;
+            xtr111.DataMember = "NXT_Mot_VatTu_Neww";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
         private void Print_DaiLy_Frm_TonKho_MotVatTu(DataTable dt3)
         {
 
@@ -129,8 +161,8 @@ namespace CtyTinLuong
                 Print_DaiLy_frmChiTietNhapXuatTon_MotVatTu_Print_One(DaiLy_frmChiTietNhapXuatTon_MotVatTu.mdtPrint);
             if (DaiLy_Frm_TonKho_MotVatTu.mbPrint == true)
                 Print_DaiLy_Frm_TonKho_MotVatTu(DaiLy_Frm_TonKho_MotVatTu.mdtPrint);
-            
-
+            if (DaiLy_BaoCao_TonKho.mbPrint_One == true)
+                Print_DaiLy_BaoCao_TonKho_One(DaiLy_BaoCao_TonKho.mdtPrint_One);
         }
 
         private void frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww_FormClosed(object sender, FormClosedEventArgs e)
@@ -138,6 +170,7 @@ namespace CtyTinLuong
             DaiLy_frmChiTietNhapXuatTon_MotVatTu.mbPrint_ALL = false;
             DaiLy_frmChiTietNhapXuatTon_MotVatTu.mbPrint_one = false;
             DaiLy_Frm_TonKho_MotVatTu.mbPrint = false;
+            DaiLy_BaoCao_TonKho.mbPrint_One = false;
         }
     }
 }

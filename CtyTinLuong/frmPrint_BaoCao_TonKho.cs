@@ -13,7 +13,7 @@ namespace CtyTinLuong
     public partial class frmPrint_BaoCao_TonKho : Form
     {
     
-        private void TonKho_DaiLy(DataTable dt3)
+        private void TonKho_DaiLy_ALL(DataTable dt3)
         {
             Xtra_BaoCao_TonKho xtr111 = new Xtra_BaoCao_TonKho();
             DataTable dt2 = new DataTable();
@@ -38,6 +38,7 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
+       
         public frmPrint_BaoCao_TonKho()
         {
             InitializeComponent();
@@ -45,16 +46,16 @@ namespace CtyTinLuong
 
         private void frmPrint_BaoCao_TonKho_Load(object sender, EventArgs e)
         {
-            if (DaiLy_BaoCao_TonKho.mbPrint == true)
-                TonKho_DaiLy(DaiLy_BaoCao_TonKho.mdtPrint);
-            if (DaiLy_Frm_TonKho_MotVatTu.mbPrint == true)
-                TonKho_DaiLy(DaiLy_Frm_TonKho_MotVatTu.mdtPrint);
+            if (DaiLy_BaoCao_TonKho.mbPrint_ALL == true)
+                TonKho_DaiLy_ALL(DaiLy_BaoCao_TonKho.mdtPrint_ALL);
+          
         }
 
         private void frmPrint_BaoCao_TonKho_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DaiLy_BaoCao_TonKho.mbPrint = false;
-            DaiLy_Frm_TonKho_MotVatTu.mbPrint = false;
+            DaiLy_BaoCao_TonKho.mbPrint_ALL = false;
+            DaiLy_BaoCao_TonKho.mbPrint_One = false;
+            
         }
     }
 }
