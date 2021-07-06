@@ -555,7 +555,7 @@ namespace CtyTinLuong
                 int xxIDbanhangxx = UCBanHang_BanHang.miiiID_BanHang;
                 // Insert chi tietbanhang
                 Luu_BienDongTaiKhoan(xxIDbanhangxx);
-                Luu_TbThuChi(xxIDbanhangxx);
+                //Luu_TbThuChi(xxIDbanhangxx);
                 Luu_Chitiet_BanHang(xxIDbanhangxx);
                 MessageBox.Show("Đã lưu");
             }
