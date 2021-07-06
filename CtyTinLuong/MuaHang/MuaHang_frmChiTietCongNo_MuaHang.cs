@@ -198,15 +198,19 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             MuaHang_frmChiTietCongNo_MuaHang_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -281,6 +285,32 @@ namespace CtyTinLuong
              
             }
             MessageBox.Show("Đã xong");
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
         }
 
         private void bandedGridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -402,10 +432,13 @@ namespace CtyTinLuong
 
         private void MuaHang_frmChiTietCongNo_MuaHang_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_lockUp();
             dteTuNgay.EditValue = MuaHang_frmCongNo.mdteTuNgay;
             dteDenNgay.EditValue = MuaHang_frmCongNo.mdteDenNgay;
             GridSoTaiKhoan.EditValue = MuaHang_frmCongNo.miiiID_TaiKhoanKeToanCon;
+            Cursor.Current = Cursors.Default;
+            dteTuNgay.Focus();
         }
     }
 }
