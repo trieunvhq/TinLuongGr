@@ -608,8 +608,6 @@
             this.gridColumn1.Caption = "ID_NhomVTHH";
             this.gridColumn1.FieldName = "ID_NhomVTHH";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
             // 
             // layoutControlGroup1
             // 
