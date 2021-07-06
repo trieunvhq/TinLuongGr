@@ -554,7 +554,7 @@
             this.xrLabel3.SizeF = new System.Drawing.SizeF(261.75F, 23F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "Trưởng phòng KH-TH";
+            this.xrLabel3.Text = "TP Tổng hợp";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel13
