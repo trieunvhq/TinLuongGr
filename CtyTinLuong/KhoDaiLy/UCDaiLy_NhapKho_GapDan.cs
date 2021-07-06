@@ -224,7 +224,7 @@ namespace CtyTinLuong
                 miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
                 DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan();
                 //_frmQLKDL.Hide();
-                ff.ShowDialog();
+                ff.Show();
                 //_frmQLKDL.Show();
                 Cursor.Current = Cursors.Default;
             }
@@ -258,8 +258,10 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.DateTime != null & dteTuNgay.DateTime != null)
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
@@ -286,7 +288,7 @@ namespace CtyTinLuong
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
-
+                Cursor.Current = Cursors.WaitCursor;
                 cls1.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
                 cls1.Delete();
                 clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
@@ -298,6 +300,7 @@ namespace CtyTinLuong
                     HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
                 }
                 else HienThi_ALL();
+                Cursor.Current = Cursors.Default;
             }
         }
     }

@@ -148,7 +148,7 @@ namespace CtyTinLuong
             miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
             frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
             //_frmQLKDL.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLKDL.Show();
             Cursor.Current = Cursors.Default;
         }

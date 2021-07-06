@@ -1267,7 +1267,7 @@ namespace CtyTinLuong
                     Luu_NhapKho_Khac_KhoNPL();
                     Luu_NhapKho_Khac_KhoThanhPham();
                 }
-               
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu và gửi dữ liệu");
                 this.Close();
             }
@@ -1280,6 +1280,7 @@ namespace CtyTinLuong
 
         private void DaiLy_FrmChiTiet_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             if (UCDaiLy_XuatKho_GapDan.mbthemmoi == true)
                 HienThi_ThemMoi_XuatKho();
@@ -1297,6 +1298,7 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
 
             gridControl1.DataSource = null;
             DataTable dt2 = new DataTable();
@@ -1392,6 +1394,7 @@ namespace CtyTinLuong
                 //newRow.SetField("Check_VatTu_Phu", maxPremRow.Field<string>("Check_VatTu_Phu"));
             }
             gridControl1.DataSource = new_Table;
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -1522,7 +1525,9 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Luu_ChiLuu();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checkNhapKhoThanhPham_CheckedChanged(object sender, EventArgs e)
@@ -1642,7 +1647,9 @@ namespace CtyTinLuong
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Luu_Va_GuiDuLieu();
+            Cursor.Current = Cursors.Default;
         }
 
     

@@ -92,18 +92,21 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-           
-            mbPrint = true;
-            miID_VTHH = Convert.ToInt32(gridMaVT.EditValue.ToString());
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-            DataView dv1212 = new DataView(DatatableABC);
-            dv1212.RowFilter = filterString;
-            mdtPrint = dv1212.ToTable();           
-            mdadenngay = dteDenNgay.DateTime;        
-            frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
-            ff.ShowDialog();
+            try
+            {
+                mbPrint = true;
+                miID_VTHH = Convert.ToInt32(gridMaVT.EditValue.ToString());
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                mdtPrint = dv1212.ToTable();
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
+                ff.Show();
+            }
+            catch { }
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -127,6 +130,7 @@ namespace CtyTinLuong
 
         private void DaiLy_Frm_TonKho_MotVatTu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();          
             gridMaVT.EditValue = DaiLy_BaoCao_TonKho.miID_VTHHH;
             dteDenNgay.EditValue = DaiLy_BaoCao_TonKho.mdadenngay;

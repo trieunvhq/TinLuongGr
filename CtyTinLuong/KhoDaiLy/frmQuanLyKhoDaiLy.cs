@@ -156,7 +156,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             frmBaoCao_Nhap_Xuat_ton_kho_DaiLy ff = new CtyTinLuong.frmBaoCao_Nhap_Xuat_ton_kho_DaiLy();
             //this.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //this.Show();
 
             doiMauTitle(sender, e);
@@ -234,7 +234,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton uccc_NhapKho = new DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton();
             //this.Hide();
-            uccc_NhapKho.ShowDialog();
+            uccc_NhapKho.Show();
             //this.Show();
 
             doiMauTitle(sender, e);
@@ -246,7 +246,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             DaiLy_BaoCao_TonKho ff = new DaiLy_BaoCao_TonKho();
             //this.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //this.Show();
 
             doiMauTitle(sender, e);
@@ -256,7 +256,7 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void navBangLuongDaiLy_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -264,7 +264,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             DaiLy_BangLuong ff = new CtyTinLuong.DaiLy_BangLuong();
             //this.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //this.Show();
 
             doiMauTitle(sender, e);

@@ -123,7 +123,9 @@ namespace CtyTinLuong
         {
             if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 HienThi();
+                Cursor.Current = Cursors.Default;
             }
         }
 

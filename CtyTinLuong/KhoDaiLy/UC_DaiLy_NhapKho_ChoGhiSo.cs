@@ -81,7 +81,7 @@ namespace CtyTinLuong
             miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
             DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww ff = new DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww();
             //_frmQLKDL.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLKDL.Show();
         }
 

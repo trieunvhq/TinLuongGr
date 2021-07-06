@@ -312,12 +312,13 @@ namespace CtyTinLuong
         {
             if (bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
             {
+                Cursor.Current = Cursors.WaitCursor;
                 miiID_VTHH = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());                
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 GapDan_frmChiTietNhapXuatTon_MotVatTu ff = new GapDan_frmChiTietNhapXuatTon_MotVatTu();
                 ff.Show();
-
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -343,7 +344,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
 
                 frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 

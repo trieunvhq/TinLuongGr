@@ -188,7 +188,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             GapDan_frmChiTietNhapXuatTon_MotVatTu_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -201,8 +203,10 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             int xxid = Convert.ToInt32(gridMaVT.EditValue.ToString());
             LoadDaTa(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridMaVT_EditValueChanged(object sender, EventArgs e)
@@ -226,10 +230,12 @@ namespace CtyTinLuong
 
         private void GapDan_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();
             dteTuNgay.EditValue = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdatungay;
             dteDenNgay.EditValue = DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.mdadenngay;
             gridMaVT.EditValue= DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.miiID_VTHH;
+            Cursor.Current = Cursors.Default;
         }
     }
 }

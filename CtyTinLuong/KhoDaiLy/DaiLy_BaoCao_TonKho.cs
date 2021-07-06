@@ -200,6 +200,7 @@ namespace CtyTinLuong
   
         private void DaiLy_BaoCao_TonKho_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();     
           
             gridMaDaiLy.EditValue = 0;
@@ -275,7 +276,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
                 DaiLy_Frm_TonKho_MotVatTu ff = new DaiLy_Frm_TonKho_MotVatTu();
                 //this.Hide();
-                ff.ShowDialog();
+                ff.Show();
                 //this.Show();
                 Cursor.Current = Cursors.Default;
             }
@@ -297,7 +298,7 @@ namespace CtyTinLuong
                 mbPrint_ALL = true;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_BaoCao_TonKho ff = new CtyTinLuong.frmPrint_BaoCao_TonKho();
-                ff.ShowDialog();
+                ff.Show();
             }
 
         }
@@ -321,7 +322,7 @@ namespace CtyTinLuong
                 {
                     mdadenngay = dteDenNgay.DateTime;
                     frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
                
             }

@@ -1227,6 +1227,7 @@ namespace CtyTinLuong
 
         private void DaiLy_ChiTietChoXuatKho_Moi_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clSoLuongNhap1.Caption = "Số lượng \n nhập";
             Load_LockUp();         
             HienThi_Sua_XuatKho(UC_ChoXuatKho_DaiLy_new.miID_XuatKhoDaiLy);

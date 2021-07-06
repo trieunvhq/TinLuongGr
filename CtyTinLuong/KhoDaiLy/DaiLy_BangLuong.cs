@@ -69,7 +69,7 @@ namespace CtyTinLuong
         }
         private void DaiLy_BangLuong_Load(object sender, EventArgs e)
         {
-            
+            Cursor.Current = Cursors.WaitCursor;
             txtNam.Text = DateTime.Now.Year.ToString();  
             txtThang.Text = (DateTime.Now.Month).ToString();
             Cursor.Current = Cursors.Default;
@@ -130,7 +130,7 @@ namespace CtyTinLuong
                 miThang = Convert.ToInt32(txtThang.Text);
                 miNam = Convert.ToInt32(txtNam.Text);
                 frmPrint_LuongDaiLy_TrongThang ff = new frmPrint_LuongDaiLy_TrongThang();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
@@ -169,7 +169,7 @@ namespace CtyTinLuong
                 miThang = Convert.ToInt32(txtThang.Text);
                 miNam = Convert.ToInt32(txtNam.Text);
                 frmPrint_LuongDaiLy_TrongThang ff = new frmPrint_LuongDaiLy_TrongThang();
-                ff.ShowDialog();
+                ff.Show();
 
             }
         }

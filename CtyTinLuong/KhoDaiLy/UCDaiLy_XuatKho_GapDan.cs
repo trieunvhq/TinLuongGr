@@ -138,7 +138,7 @@ namespace CtyTinLuong
                 miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
                 //_frmQLKDL.Hide();
-                ff.ShowDialog();
+                ff.Show();
                 //_frmQLKDL.Show();
                 Cursor.Current = Cursors.Default;
             }
@@ -163,8 +163,10 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null)
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -189,7 +191,7 @@ namespace CtyTinLuong
             mbcopy = false;
             DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
             //_frmQLKDL.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLKDL.Show();
             Cursor.Current = Cursors.Default;
         }

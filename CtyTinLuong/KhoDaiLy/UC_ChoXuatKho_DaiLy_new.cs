@@ -161,7 +161,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UC_ChoXuatKho_DaiLy_new_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -171,8 +173,8 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.WaitCursor;
                 miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
-                ff.ShowDialog();
-
+                ff.Show();
+                Cursor.Current = Cursors.Default;
             }
 
         }
@@ -181,7 +183,9 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
             }
         }
 
