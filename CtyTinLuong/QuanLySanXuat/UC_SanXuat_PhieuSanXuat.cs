@@ -577,6 +577,30 @@ namespace CtyTinLuong
 
         }
 
+        private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteTuNgay.Focus();
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridControl1.Focus();
+            }
+        }
+
         //
         private void Load_PhieuSX(bool islandau)
         {
