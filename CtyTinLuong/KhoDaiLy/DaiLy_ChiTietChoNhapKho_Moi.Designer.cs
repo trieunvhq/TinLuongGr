@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions19 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject73 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject74 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject75 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject76 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions29 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject113 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject114 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject115 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject116 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_ChiTietChoNhapKho_Moi));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -301,6 +301,7 @@
             this.txtDonGiaThanhPhamQuyDoi.TabIndex = 110;
             this.txtDonGiaThanhPhamQuyDoi.Text = "0";
             this.txtDonGiaThanhPhamQuyDoi.TextChanged += new System.EventHandler(this.txtDonGiaThanhPhamQuyDoi_TextChanged);
+            this.txtDonGiaThanhPhamQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGiaThanhPhamQuyDoi_KeyPress);
             this.txtDonGiaThanhPhamQuyDoi.Leave += new System.EventHandler(this.txtDonGiaThanhPhamQuyDoi_Leave);
             // 
             // txtSoKien_1_BaoBe
@@ -436,6 +437,7 @@
             this.txtTongSoKG.ReadOnly = true;
             this.txtTongSoKG.Size = new System.Drawing.Size(147, 20);
             this.txtTongSoKG.TabIndex = 97;
+            this.txtTongSoKG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongSoKG_KeyPress);
             // 
             // txtSoKG1Bao_Be
             // 
@@ -463,6 +465,7 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(639, 20);
             this.txtGhiChu.TabIndex = 102;
+            this.txtGhiChu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChu_KeyPress);
             // 
             // txtThamChieu
             // 
@@ -481,6 +484,7 @@
             this.txtTongTienHang.Size = new System.Drawing.Size(386, 20);
             this.txtTongTienHang.TabIndex = 52;
             this.txtTongTienHang.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
+            this.txtTongTienHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongTienHang_KeyPress);
             // 
             // txtSoKG1Bao_To
             // 
@@ -498,6 +502,7 @@
             this.txtDVTThanhPhamQuyDoi.ReadOnly = true;
             this.txtDVTThanhPhamQuyDoi.Size = new System.Drawing.Size(111, 20);
             this.txtDVTThanhPhamQuyDoi.TabIndex = 46;
+            this.txtDVTThanhPhamQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVTThanhPhamQuyDoi_KeyPress);
             // 
             // txtSoLuongThanhPhamQuyDoi
             // 
@@ -508,6 +513,7 @@
             this.txtSoLuongThanhPhamQuyDoi.Size = new System.Drawing.Size(143, 20);
             this.txtSoLuongThanhPhamQuyDoi.TabIndex = 45;
             this.txtSoLuongThanhPhamQuyDoi.TextChanged += new System.EventHandler(this.txtSoLuongThanhPhamQuyDoi_TextChanged);
+            this.txtSoLuongThanhPhamQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongThanhPhamQuyDoi_KeyPress);
             // 
             // txtTenThanhPhamQuyDoi
             // 
@@ -516,6 +522,7 @@
             this.txtTenThanhPhamQuyDoi.ReadOnly = true;
             this.txtTenThanhPhamQuyDoi.Size = new System.Drawing.Size(246, 20);
             this.txtTenThanhPhamQuyDoi.TabIndex = 44;
+            this.txtTenThanhPhamQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenThanhPhamQuyDoi_KeyPress);
             // 
             // txtMaTPQuyDoi
             // 
@@ -524,6 +531,7 @@
             this.txtMaTPQuyDoi.ReadOnly = true;
             this.txtMaTPQuyDoi.Size = new System.Drawing.Size(110, 20);
             this.txtMaTPQuyDoi.TabIndex = 43;
+            this.txtMaTPQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaTPQuyDoi_KeyPress);
             // 
             // txtDienGiaiDMNPL
             // 
@@ -532,6 +540,7 @@
             this.txtDienGiaiDMNPL.ReadOnly = true;
             this.txtDienGiaiDMNPL.Size = new System.Drawing.Size(579, 20);
             this.txtDienGiaiDMNPL.TabIndex = 42;
+            this.txtDienGiaiDMNPL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiaiDMNPL_KeyPress);
             // 
             // gridMaDinhMucDot_BaoTo
             // 
@@ -622,6 +631,7 @@
             this.gridMaDinhMucNPL.StyleController = this.layoutControl1;
             this.gridMaDinhMucNPL.TabIndex = 40;
             this.gridMaDinhMucNPL.EditValueChanged += new System.EventHandler(this.gridMaDinhMucNPL_EditValueChanged);
+            this.gridMaDinhMucNPL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaDinhMucNPL_KeyPress);
             // 
             // gridView2
             // 
@@ -1418,9 +1428,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions19.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions29.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions19, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject73, serializableAppearanceObject74, serializableAppearanceObject75, serializableAppearanceObject76, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions29, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject113, serializableAppearanceObject114, serializableAppearanceObject115, serializableAppearanceObject116, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
