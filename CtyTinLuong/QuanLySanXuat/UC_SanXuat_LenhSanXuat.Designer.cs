@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -526,6 +525,7 @@
             this.btLayDuLieu.TabIndex = 91;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
             this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
+            this.btLayDuLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btLayDuLieu_KeyPress);
             // 
             // groupBox2
             // 
@@ -918,6 +918,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(354, 20);
             this.dteDenNgay.StyleController = this.layoutControl1;
             this.dteDenNgay.TabIndex = 89;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // dteTuNgay
             // 
@@ -936,6 +937,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(307, 20);
             this.dteTuNgay.StyleController = this.layoutControl1;
             this.dteTuNgay.TabIndex = 88;
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // layoutControlGroup1
             // 

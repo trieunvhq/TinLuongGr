@@ -616,10 +616,11 @@ namespace CtyTinLuong
 
         private void btLuu_Va_Gui_Click(object sender, EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_Va_Gui_DuLieu();
             HienThi_ThemMoi_LenhSanXuat();
+            Cursor.Current = Cursors.Default;
         }
 
         private void dteNgaySX_EditValueChanged(object sender, EventArgs e)
@@ -655,16 +656,100 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_ChiLuu();
             this.Close();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_Va_Gui_DuLieu();
             this.Close();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void txtLenhSX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgaySX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void cbCaSX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaCaTruong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenCaTruong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaCN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenCN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenNguoilap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLuu_Dong.Focus();
+            }
         }
 
         private void btThoat2222_Click(object sender, EventArgs e)
@@ -708,9 +793,11 @@ namespace CtyTinLuong
 
         private void btLuu_ChiLuu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat =true;
             Luu_ChiLuu();
             HienThi_ThemMoi_LenhSanXuat();
+            Cursor.Current = Cursors.Default;
         }
       
     }
