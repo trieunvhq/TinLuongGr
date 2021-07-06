@@ -92,6 +92,8 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btPrint_KH = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -122,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -138,6 +141,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.btPrint_KH);
             this.dataLayoutControl1.Controls.Add(this.txtTenKH);
             this.dataLayoutControl1.Controls.Add(this.gridKH);
             this.dataLayoutControl1.Controls.Add(this.btPrint_ALL);
@@ -733,7 +737,8 @@
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem12});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(919, 648);
@@ -802,7 +807,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 622);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(533, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(359, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -850,6 +855,28 @@
             this.layoutControlItem11.Text = "Tên khách hàng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(76, 13);
             // 
+            // btPrint_KH
+            // 
+            this.btPrint_KH.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint_KH.Appearance.Options.UseFont = true;
+            this.btPrint_KH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btPrint_KH.Location = new System.Drawing.Point(361, 624);
+            this.btPrint_KH.Name = "btPrint_KH";
+            this.btPrint_KH.Size = new System.Drawing.Size(170, 22);
+            this.btPrint_KH.StyleController = this.dataLayoutControl1;
+            this.btPrint_KH.TabIndex = 99;
+            this.btPrint_KH.Text = "Print_Khách hàng";
+            this.btPrint_KH.Click += new System.EventHandler(this.btPrint_KH_Click);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.btPrint_KH;
+            this.layoutControlItem12.Location = new System.Drawing.Point(359, 622);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(174, 26);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
+            // 
             // BanHang_SoTongHopbanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -891,6 +918,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -959,5 +987,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.TextBox txtTenKH;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraEditors.SimpleButton btPrint_KH;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

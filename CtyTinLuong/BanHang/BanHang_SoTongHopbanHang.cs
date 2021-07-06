@@ -17,6 +17,7 @@ namespace CtyTinLuong
         public static DataTable mdtPrint;
         public static bool mbPrint_RutGon = false;
         public static bool mbPrint_ALL = false;
+        public static bool mbPrint_KhachHang = false;
         private void Load_Lockup(DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt = new DataTable();
@@ -150,6 +151,7 @@ namespace CtyTinLuong
             }
             if (mdtPrint.Rows.Count > 0)
             {
+                mbPrint_KhachHang = false;
                 mbPrint_RutGon = false;
                 mbPrint_ALL = true;
                 mdatungay = dteTuNgay.DateTime;
@@ -185,6 +187,7 @@ namespace CtyTinLuong
                       
             if (mdtPrint.Rows.Count > 0)
             {
+                mbPrint_KhachHang = false;
                 mbPrint_RutGon = true;
                 mbPrint_ALL = false;
                 mdatungay = dteTuNgay.DateTime;
@@ -251,6 +254,13 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 txtTenKH.Text = cls.sTenKH.Value;
             }
+        }
+
+        private void btPrint_KH_Click(object sender, EventArgs e)
+        {
+            mbPrint_KhachHang = true;
+            mbPrint_RutGon = false;
+            mbPrint_ALL = false;
         }
 
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)
