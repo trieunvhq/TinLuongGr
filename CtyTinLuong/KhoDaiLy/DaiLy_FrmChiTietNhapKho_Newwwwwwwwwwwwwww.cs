@@ -1370,6 +1370,7 @@ namespace CtyTinLuong
 
             txtSoChungTu.Focus();
             Cursor.Current = Cursors.Default;
+            txtSoChungTu.Focus();
         }
     }
 }
