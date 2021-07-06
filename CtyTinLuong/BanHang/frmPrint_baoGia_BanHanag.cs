@@ -201,6 +201,8 @@ namespace CtyTinLuong
                 Print_BanHang_SoTongHopbanHang_ALL(BanHang_SoTongHopbanHang.mdtPrint);
             if (BanHang_SoTongHopbanHang.mbPrint_RutGon == true)
                 Print_BanHang_SoTongHopbanHang_RutGon(BanHang_SoTongHopbanHang.mdtPrint);
+            if (BanHang_SoTongHopbanHang.mbPrint_KhachHang == true)
+                Print_BanHang_SoTongHopbanHang_TheoKhachHang(BanHang_SoTongHopbanHang.mdtPrint);
         }
 
         private void frmPrint_baoGia_BanHanag_FormClosed(object sender, FormClosedEventArgs e)
@@ -209,6 +211,7 @@ namespace CtyTinLuong
             BanHang_frmBangKeHoaDonBanHang.mbPrint = false;
             BanHang_SoTongHopbanHang.mbPrint_ALL = false;
             BanHang_SoTongHopbanHang.mbPrint_RutGon = false;
+            BanHang_SoTongHopbanHang.mbPrint_KhachHang = false;
         }
     }
 }

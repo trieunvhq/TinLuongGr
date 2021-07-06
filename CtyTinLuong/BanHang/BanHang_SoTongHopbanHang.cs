@@ -282,7 +282,7 @@ namespace CtyTinLuong
             mdtPrint.Columns.Add("MaVT", typeof(string));
             mdtPrint.Columns.Add("TenVTHH", typeof(string));
             mdtPrint.Columns.Add("DonViTinh", typeof(string));
-            mdtPrint.Columns.Add("TenKH", typeof(string));
+           
             mdtPrint.Columns.Add("SoLuong", typeof(string));     
             mdtPrint.Columns.Add("TongTienUSD", typeof(string));
             mdtPrint.Columns.Add("MaKH", typeof(string));
@@ -306,7 +306,7 @@ namespace CtyTinLuong
                         _ravi["MaVT"] = dt2.Rows[k]["MaVT"].ToString();
                         _ravi["TenVTHH"] = dt2.Rows[k]["TenVTHH"].ToString();
                         _ravi["DonViTinh"] = dt2.Rows[k]["DonViTinh"].ToString();                        
-                        _ravi["SoLuong"] = dt2.Rows[k]["SoLuong"].ToString();                   
+                        _ravi["SoLuong"] = dt2.Rows[k]["SoLuong_Tong"].ToString();                   
                         _ravi["TongTienUSD"] = TongTienUSDxx;
                         mdtPrint.Rows.Add(_ravi);
                     }
@@ -315,9 +315,9 @@ namespace CtyTinLuong
 
                 if (mdtPrint.Rows.Count > 0)
                 {
-                    mbPrint_KhachHang = false;
+                    mbPrint_KhachHang = true;
                     mbPrint_RutGon = false;
-                    mbPrint_ALL = true;
+                    mbPrint_ALL = false;
                     mdatungay = dteTuNgay.DateTime;
                     mdadenngay = dteDenNgay.DateTime;
                     frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
