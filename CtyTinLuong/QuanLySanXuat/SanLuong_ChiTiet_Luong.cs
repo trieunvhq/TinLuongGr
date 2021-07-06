@@ -355,6 +355,7 @@ namespace CtyTinLuong
             Load_LockUp();
             gridCongNhan.EditValue = frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan;
             Cursor.Current = Cursors.Default;
+            txtThang.Focus();
         }
 
 
@@ -425,6 +426,26 @@ namespace CtyTinLuong
                 HienThiGridcontrol2(xxID);
                 Load_LockUp();
             }
+        }
+
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void gridCongNhan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
