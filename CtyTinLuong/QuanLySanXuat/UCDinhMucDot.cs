@@ -48,7 +48,7 @@ namespace CtyTinLuong
             mb_TheMoi_DinhMuc_Dot = true;
             frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
             //_frmQLSX.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLSX.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -66,7 +66,7 @@ namespace CtyTinLuong
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
                     //_frmQLSX.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmQLSX.Show();
                     Cursor.Current = Cursors.Default;
                 }

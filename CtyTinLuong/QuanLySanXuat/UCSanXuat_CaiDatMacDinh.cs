@@ -101,5 +101,13 @@ namespace CtyTinLuong
             cls.Update();
 
         }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
     }
 }
