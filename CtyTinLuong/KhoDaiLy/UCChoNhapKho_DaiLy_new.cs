@@ -151,7 +151,6 @@ namespace CtyTinLuong
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
                 DaiLy_ChiTietChoNhapKho_Moi ff = new DaiLy_ChiTietChoNhapKho_Moi();                
                 ff.Show();
-               
             }
 
         }
@@ -195,6 +194,32 @@ namespace CtyTinLuong
                 Luu_NhapKhoDaiLy(iiIDnhapKhp);
                 MessageBox.Show("Đã nhập kho đại lý");
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
             }
         }
     }
