@@ -277,15 +277,17 @@ namespace CtyTinLuong
                 msTenVT = txtTenVT.Text.ToString();
                 msDonViTinh = txtDVT.Text.ToString();
                 frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             int xidvt = Convert.ToInt32(gridMaVT.EditValue.ToString());
             int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
             LoadDaTa(xidvt, xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridMaVT_EditValueChanged(object sender, EventArgs e)
