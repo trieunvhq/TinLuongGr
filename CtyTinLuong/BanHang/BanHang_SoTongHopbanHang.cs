@@ -94,6 +94,7 @@ namespace CtyTinLuong
 
         private void btPrint_ALL_Click(object sender, EventArgs e)
         {
+            mdtPrint = new DataTable();
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
@@ -174,12 +175,13 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            mdtPrint = new DataTable();
+             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
             DataView dv1212 = new DataView(DatatableABC);
             dv1212.RowFilter = filterString;
-            DataTable mdtPrint = dv1212.ToTable();
+            mdtPrint = dv1212.ToTable();
                       
             if (mdtPrint.Rows.Count > 0)
             {

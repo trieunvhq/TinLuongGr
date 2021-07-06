@@ -83,12 +83,14 @@
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 73.95834F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // BottomMargin
             // 
+            this.BottomMargin.HeightF = 62.70828F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -112,7 +114,7 @@
             this.xrLabel4,
             this.xrLabel3,
             this.xrLabel14});
-            this.PageFooter.HeightF = 256.0417F;
+            this.PageFooter.HeightF = 201.875F;
             this.PageFooter.Name = "PageFooter";
             // 
             // xrLabel1
@@ -244,6 +246,7 @@
             this.xrLine1});
             this.ReportHeader.HeightF = 140.625F;
             this.ReportHeader.Name = "ReportHeader";
+            this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
             // 
             // xrLabel10
             // 
@@ -497,7 +500,7 @@
             this.dataSet_TinLuong1});
             this.DataMember = "tbBan_MuaHang";
             this.DataSource = this.dataSet_TinLuong1;
-            this.Margins = new System.Drawing.Printing.Margins(76, 49, 100, 100);
+            this.Margins = new System.Drawing.Printing.Margins(76, 49, 74, 63);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
