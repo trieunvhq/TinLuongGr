@@ -147,6 +147,7 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = null;
             HienThi_ALL(UCMuaHang_ChiTietTatCa.miID_VTHH);
             Cursor.Current = Cursors.Default;
+            dteTuNgay.Focus();
         }
 
         private void gridMaVT_EditValueChanged(object sender, EventArgs e)
@@ -198,7 +199,31 @@ namespace CtyTinLuong
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
+        }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+                btLayDuLieu_Click(null, null);
+            }
         }
     }
 }
