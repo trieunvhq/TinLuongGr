@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_BaoCao_TonKho));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btPrint_One = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +78,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btPrint_One = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -134,6 +135,19 @@
             this.layoutControl1.Size = new System.Drawing.Size(984, 648);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btPrint_One
+            // 
+            this.btPrint_One.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint_One.Appearance.Options.UseFont = true;
+            this.btPrint_One.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_One.ImageOptions.Image")));
+            this.btPrint_One.Location = new System.Drawing.Point(589, 622);
+            this.btPrint_One.Name = "btPrint_One";
+            this.btPrint_One.Size = new System.Drawing.Size(150, 22);
+            this.btPrint_One.StyleController = this.layoutControl1;
+            this.btPrint_One.TabIndex = 113;
+            this.btPrint_One.Text = "Print_One";
+            this.btPrint_One.Click += new System.EventHandler(this.btPrint_One_Click);
             // 
             // gridControl2
             // 
@@ -249,7 +263,7 @@
             // 
             this.btPrint_ALL.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_ALL.Appearance.Options.UseFont = true;
-            this.btPrint_ALL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
+            this.btPrint_ALL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_ALL.ImageOptions.Image")));
             this.btPrint_ALL.Location = new System.Drawing.Point(743, 622);
             this.btPrint_ALL.Name = "btPrint_ALL";
             this.btPrint_ALL.Size = new System.Drawing.Size(122, 22);
@@ -684,7 +698,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 618);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(523, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(585, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
@@ -696,24 +710,12 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // btPrint_One
-            // 
-            this.btPrint_One.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint_One.Appearance.Options.UseFont = true;
-            this.btPrint_One.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btPrint_One.Location = new System.Drawing.Point(527, 622);
-            this.btPrint_One.Name = "btPrint_One";
-            this.btPrint_One.Size = new System.Drawing.Size(212, 22);
-            this.btPrint_One.StyleController = this.layoutControl1;
-            this.btPrint_One.TabIndex = 113;
-            this.btPrint_One.Text = "Print_One";
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btPrint_One;
-            this.layoutControlItem8.Location = new System.Drawing.Point(523, 618);
+            this.layoutControlItem8.Location = new System.Drawing.Point(585, 618);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(216, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(154, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
