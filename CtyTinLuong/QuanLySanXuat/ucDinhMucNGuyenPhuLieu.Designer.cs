@@ -63,7 +63,7 @@
             this.clTenVTHH2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDonViTinh2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clBooL_NguyenPhuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clSoLuong2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clStrSoLuong2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -354,7 +354,7 @@
             this.clTenVTHH2,
             this.clDonViTinh2,
             this.clBooL_NguyenPhuLieu,
-            this.clSoLuong2});
+            this.clStrSoLuong2});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.NewItemRowText = "Thêm mới tại đây";
@@ -362,6 +362,7 @@
             this.gridView2.OptionsView.RowAutoHeight = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             // 
             // clSTT2
             // 
@@ -449,24 +450,24 @@
             this.clBooL_NguyenPhuLieu.VisibleIndex = 5;
             this.clBooL_NguyenPhuLieu.Width = 80;
             // 
-            // clSoLuong2
+            // clStrSoLuong2
             // 
-            this.clSoLuong2.AppearanceCell.Options.UseTextOptions = true;
-            this.clSoLuong2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSoLuong2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clSoLuong2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSoLuong2.AppearanceHeader.Options.UseFont = true;
-            this.clSoLuong2.AppearanceHeader.Options.UseTextOptions = true;
-            this.clSoLuong2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSoLuong2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clSoLuong2.Caption = "Số lượng";
-            this.clSoLuong2.FieldName = "SoLuong";
-            this.clSoLuong2.Name = "clSoLuong2";
-            this.clSoLuong2.OptionsColumn.AllowEdit = false;
-            this.clSoLuong2.OptionsColumn.FixedWidth = true;
-            this.clSoLuong2.Visible = true;
-            this.clSoLuong2.VisibleIndex = 3;
-            this.clSoLuong2.Width = 100;
+            this.clStrSoLuong2.AppearanceCell.Options.UseTextOptions = true;
+            this.clStrSoLuong2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clStrSoLuong2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clStrSoLuong2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clStrSoLuong2.AppearanceHeader.Options.UseFont = true;
+            this.clStrSoLuong2.AppearanceHeader.Options.UseTextOptions = true;
+            this.clStrSoLuong2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clStrSoLuong2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clStrSoLuong2.Caption = "Số lượng";
+            this.clStrSoLuong2.FieldName = "strSoLuong";
+            this.clStrSoLuong2.Name = "clStrSoLuong2";
+            this.clStrSoLuong2.OptionsColumn.AllowEdit = false;
+            this.clStrSoLuong2.OptionsColumn.FixedWidth = true;
+            this.clStrSoLuong2.Visible = true;
+            this.clStrSoLuong2.VisibleIndex = 3;
+            this.clStrSoLuong2.Width = 100;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -548,7 +549,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clTenVTHH2;
         private DevExpress.XtraGrid.Columns.GridColumn clDonViTinh2;
         private DevExpress.XtraGrid.Columns.GridColumn clBooL_NguyenPhuLieu;
-        private DevExpress.XtraGrid.Columns.GridColumn clSoLuong2;
+        private DevExpress.XtraGrid.Columns.GridColumn clStrSoLuong2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH_ThanhPham;
         private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH_Chinh1;

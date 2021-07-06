@@ -159,7 +159,7 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.Default;
             }
         }
-
+        DataTable _dt2;
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             try
@@ -172,9 +172,9 @@ namespace CtyTinLuong
 
                 dt.DefaultView.RowFilter = "TonTai=True";
                 DataView dv = dt.DefaultView;
-                DataTable dt3 = dv.ToTable();
+                _dt2 = dv.ToTable();
 
-                gridControl2.DataSource = dt3;
+                gridControl2.DataSource = _dt2;
             }
             catch
             {
@@ -206,6 +206,90 @@ namespace CtyTinLuong
             ff.ShowDialog();
             //_frmQLSX.Show();
             Cursor.Current = Cursors.Default;
+        }
+
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if(e.Column==clStrSoLuong2)
+            {
+                int index_ = e.RowHandle;
+                string name_ = e.Column.FieldName;
+                if (name_.Contains("strSoLuong"))
+                {
+                    string str_ = (string)e.Value;
+                    char[] str_array_ = str_.ToCharArray();
+                    if (str_array_.Length > 0)
+                    {
+                        if ((int)str_array_[0] == 47)
+                        {
+                            str_ = "1" + str_;
+                        }
+                        else if ((int)str_array_[0] == 46)
+                        {
+                            str_ = "0" + str_;
+                        }
+                    }
+                    bool isthaydoi_ = false;
+                    bool daucham = false;
+                    bool dauchia = false;
+                    for (int i = 0; i < str_array_.Length; ++i)
+                    {
+                        int asii_ = (int)str_array_[i];
+
+                        if ((asii_ >= 46 && asii_ <= 57) && asii_ != 47 && asii_ != 46)
+                        { }
+                        else if ((asii_ == 46))
+                        {
+                            if (daucham)
+                            {
+                                isthaydoi_ = true;
+                                str_ = str_.Replace(str_array_[i].ToString(), "");
+                                MessageBox.Show("Bạn gõ số lượng không hợp lệ (Chỉ bao gồm số và các ký tự / hoặc .) ở dòng " + (index_ + 1), "Số lượng không hợp lệ", MessageBoxButtons.OK);
+                            }
+                            daucham = true;
+                        }
+                        else if ((asii_ == 47))
+                        {
+                            if (dauchia)
+                            {
+                                isthaydoi_ = true;
+                                str_ = str_.Replace(str_array_[i].ToString(), "");
+                                MessageBox.Show("Bạn gõ số lượng không hợp lệ (Chỉ bao gồm số và các ký tự / hoặc .) ở dòng " + (index_ + 1), "Số lượng không hợp lệ", MessageBoxButtons.OK);
+                            }
+                            dauchia = true;
+                        }
+                        else
+                        {
+                            isthaydoi_ = true;
+                            str_ = str_.Replace(str_array_[i].ToString(), "");
+                            MessageBox.Show("Bạn gõ số lượng không hợp lệ (Chỉ bao gồm số và các ký tự / hoặc .) ở dòng " + (index_ + 1), "Số lượng không hợp lệ", MessageBoxButtons.OK);
+                        }
+                    }
+                    str_array_ = str_.ToCharArray();
+                    if (str_array_.Length > 1)
+                    {
+                        if ((int)str_array_[str_array_.Length - 1] == 47)
+                        {
+                            str_ = str_.Remove(str_.Length - 1, 1);
+                        }
+                        else if ((int)str_array_[str_array_.Length - 1] == 46)
+                        {
+                            str_ = str_.Remove(str_.Length - 1, 1);
+                        }
+                    }
+                    _dt2.Rows[index_][name_] = str_;
+                    if (isthaydoi_)
+                    {
+                        gridControl2.DataSource = null;
+                        gridControl2.DataSource = _dt2;
+                        gridView1.FocusedRowHandle = index_;
+                    }
+                    else
+                    {
+                        gridView1.FocusedRowHandle = index_ + 1;
+                    }
+                }
+            }
         }
     }
 }
