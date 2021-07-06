@@ -132,7 +132,7 @@ namespace CtyTinLuong
                     mb_TheMoi_DinhMuc_NPL = false;
                     frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
                     //_frmQLSX.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmQLSX.Show();
                     Cursor.Current = Cursors.Default;
                 }
@@ -203,7 +203,7 @@ namespace CtyTinLuong
             mb_TheMoi_DinhMuc_NPL = true;
             frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
             //_frmQLSX.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLSX.Show();
             Cursor.Current = Cursors.Default;
         }

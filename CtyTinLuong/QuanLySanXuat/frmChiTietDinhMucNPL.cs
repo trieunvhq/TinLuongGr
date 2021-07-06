@@ -271,9 +271,11 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (ucDinhMucNGuyenPhuLieu.mb_TheMoi_DinhMuc_NPL == true)
                 Luu_ThemMoi_DM_NPL();
             else Luu_Sua__DM_NPL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
@@ -354,7 +356,95 @@ namespace CtyTinLuong
             }
             
         }
-        
+
+        private void gridMaTPQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtMaDinhMucNPL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenThanhPhamQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDVTMaTP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaVTchinh1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenVTchinh1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDVT_VTchinh1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgayLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void checkNgungTheoDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column == clMaVT)
