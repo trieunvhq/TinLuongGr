@@ -17,98 +17,50 @@ namespace CtyTinLuong
         public static DataTable mdtPrint;
         public static bool mbPrint_RutGon = false;
         public static bool mbPrint_ALL = false;
-       
+        private void Load_Lockup(DateTime xxtungay, DateTime xxdenngay)
+        {
+            DataTable dt = new DataTable();
+            clsBanHang_tbBanHang clsxx = new CtyTinLuong.clsBanHang_tbBanHang();
+            dt = clsxx.SA_Time_DS_KH(xxtungay, xxdenngay);           
+            DataTable dtxx2 = new DataTable();
+            dtxx2.Columns.Add("ID_KhachHang", typeof(int));
+            dtxx2.Columns.Add("MaKH", typeof(string));
+            dtxx2.Columns.Add("TenKH", typeof(string));
+            DataRow _ravi = dtxx2.NewRow();
+            _ravi["ID_KhachHang"] = 0;
+            _ravi["MaKH"] = "Tất cả";
+            dtxx2.Rows.Add(_ravi);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int ID_KhachHangxxx = Convert.ToInt16(dt.Rows[i]["ID_KhachHang"].ToString());
+                DataRow _ravi2 = dtxx2.NewRow();
+                _ravi2["ID_KhachHang"] = ID_KhachHangxxx;
+                _ravi2["MaKH"] = dt.Rows[i]["MaKH"].ToString();
+                _ravi2["TenKH"] = dt.Rows[i]["TenKH"].ToString();
+                dtxx2.Rows.Add(_ravi2);
+            }
+
+            gridKH.Properties.DataSource = dtxx2;
+            gridKH.Properties.ValueMember = "ID_KhachHang";
+            gridKH.Properties.DisplayMember = "MaKH";
+
+          
+        }
         private void Hienthigridcontrol2(int xxID_VTHH, DateTime xxtungay, DateTime xxdenngay)
         {
             clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
             
             gridControl2.DataSource= cls.SelectAll_ID_VTHH_NgayThang(xxID_VTHH, xxtungay, xxdenngay);
         }
-        public void LoadData( DateTime xxtungay, DateTime xxdenngay)
+        public void LoadData(int iiIID_KhachHang, DateTime xxtungay, DateTime xxdenngay)
         {
-            gridControl1.DataSource = null;
-            //DataTable dt2 = new DataTable();
-
-            //dt2.Columns.Add("MaVT", typeof(string));
-            //dt2.Columns.Add("TenVTHH", typeof(string));
-            //dt2.Columns.Add("TenKH", typeof(string));
-            //dt2.Columns.Add("MaKH", typeof(string));
-            //dt2.Columns.Add("SoLuong_Tong", typeof(double));
-         
-
             clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-            DataTable dtxxxx = cls.SelectAll_distinct_ID_VTHH_HUU(xxtungay, xxdenngay);
-            gridControl1.DataSource = dtxxxx;
-
-            //int id_vthh_cu_ = 0;
-
-            //for (int k = 0; k < dtxxxx.Rows.Count; k++)
-            //{
-            //    double SoLuong_Tong = Convert.ToDouble(dtxxxx.Rows[k]["SoLuong_Tong"].ToString());
-
-            //    int id_vthh_ = 0;
-            //    if (k < dtxxxx.Rows.Count - 1)
-            //    {
-            //        id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH"].ToString());
-
-            //        if (dtxxxx.Rows[k]["ID_VTHH"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH"].ToString())
-            //        {
-            //            DataRow _ravi_1 = dt2.NewRow();
-            //            DataRow _ravi_2 = dt2.NewRow();
-            //            DataRow _ravi_3 = dt2.NewRow();
-            //            _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
-            //            _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-            //            _ravi_1["TenKH"] = dtxxxx.Rows[k]["TenKH"].ToString();
-            //            _ravi_1["MaKH"] = dtxxxx.Rows[k]["MaKH"].ToString();
-            //            _ravi_1["SoLuong_Tong"] = dtxxxx.Rows[k]["SoLuong_Tong"].ToString();
-            //            dt2.Rows.Add(_ravi_1);
-
-            //            id_vthh_cu_ = id_vthh_;
-            //        }
-            //        else
-            //        {
-            //            DataRow _ravi_1 = dt2.NewRow();
-            //            DataRow _ravi_2 = dt2.NewRow();
-            //            DataRow _ravi_3 = dt2.NewRow();
-            //            _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
-            //            _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-            //            _ravi_1["TenKH"] = dtxxxx.Rows[k]["TenKH"].ToString();
-            //            _ravi_1["MaKH"] = dtxxxx.Rows[k]["MaKH"].ToString();
-            //            _ravi_1["SoLuong_Tong"] = Convert.ToDouble(dtxxxx.Rows[k]["SoLuong_Tong"].ToString()) + Convert.ToDouble(dtxxxx.Rows[k + 1]["SoLuong_Tong"].ToString());
-            //            dt2.Rows.Add(_ravi_1);
-            //            _ravi_2["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
-            //            _ravi_2["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-            //            _ravi_2["TenKH"] = dtxxxx.Rows[k]["TenKH"].ToString();
-            //            _ravi_2["MaKH"] = dtxxxx.Rows[k]["MaKH"].ToString();
-            //            _ravi_2["SoLuong_Tong"] = dtxxxx.Rows[k]["SoLuong_Tong"].ToString();
-            //            dt2.Rows.Add(_ravi_2);
-            //            _ravi_3["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
-            //            _ravi_3["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-            //            _ravi_3["TenKH"] = dtxxxx.Rows[k + 1]["TenKH"].ToString();
-            //            _ravi_3["MaKH"] = dtxxxx.Rows[k + 1]["MaKH"].ToString();
-            //            _ravi_3["SoLuong_Tong"] = dtxxxx.Rows[k + 1]["SoLuong_Tong"].ToString();
-            //            dt2.Rows.Add(_ravi_3);
-            //            _ravi_3 = dt2.NewRow();
-            //            id_vthh_cu_ = id_vthh_;
-
-            //        }
-            //    }
-            //    else
-            //    {
-            //        DataRow _ravi_1 = dt2.NewRow();
-            //        _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
-            //        _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-            //        _ravi_1["TenKH"] = dtxxxx.Rows[k]["TenKH"].ToString();
-            //        _ravi_1["MaKH"] = dtxxxx.Rows[k]["MaKH"].ToString();
-            //        _ravi_1["SoLuong_Tong"] = dtxxxx.Rows[k]["SoLuong_Tong"].ToString();
-
-            //        dt2.Rows.Add(_ravi_1);
-            //        _ravi_1 = dt2.NewRow();
-
-            //    }
-            //}
-
-            //gridControl1.DataSource = dt2;
+            gridControl1.DataSource = null;
+            DataTable dtxxxx = new DataTable();
+            if (iiIID_KhachHang == 0)
+                dtxxxx = cls.SelectAll_distinct_ID_VTHH_HUU(xxtungay, xxdenngay);
+            else dtxxxx = cls.SA_distinct_ID_VTHH_ID_KhachHang(iiIID_KhachHang, xxtungay, xxdenngay);
+            gridControl1.DataSource = dtxxxx;          
 
         }
 
@@ -318,10 +270,27 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            int kkk = Convert.ToInt32(gridKH.EditValue.ToString());
+            LoadData(kkk, dteTuNgay.DateTime, dteDenNgay.DateTime);
             btPrint_ALL.Focus();
 
             Cursor.Current = Cursors.Default;
+        }
+
+        private void gridKH_EditValueChanged(object sender, EventArgs e)
+        {
+            int kkk = Convert.ToInt32(gridKH.EditValue.ToString());
+            LoadData(kkk, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+          
+            if (kkk == 0) txtTenKH.Text = "";
+            else
+            {
+                clsTbKhachHang cls = new clsTbKhachHang();
+                cls.iID_KhachHang = kkk;
+                DataTable dt = cls.SelectOne();
+                txtTenKH.Text = cls.sTenKH.Value;
+            }
         }
 
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)
@@ -330,7 +299,9 @@ namespace CtyTinLuong
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dteDenNgay.EditValue = DateTime.Now;
-            LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
+           
+            Load_Lockup(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            gridKH.EditValue = 0;
             dteTuNgay.Focus();
             Cursor.Current = Cursors.Default;
         }
