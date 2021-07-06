@@ -510,8 +510,9 @@ namespace CtyTinLuong
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Luu_NhapKho_GapDan();
-
+            Cursor.Current = Cursors.Default;
         }
 
         private void btPrint_Click(object sender, EventArgs e)
@@ -537,7 +538,7 @@ namespace CtyTinLuong
                 mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
                 msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
@@ -569,8 +570,169 @@ namespace CtyTinLuong
             }
         }
 
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteNgayChungTu.Focus();
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtThamChieu.Focus();
+            }
+        }
+
+        private void txtThamChieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridNguoiLap.Focus();
+            }
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenNguoiLap.Focus();
+            }
+        }
+
+        private void txtTenNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiai.Focus();
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridDinhMucGapDan.Focus();
+            }
+        }
+
+        private void gridDinhMucGapDan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiaiDMNPL.Focus();
+            }
+        }
+
+        private void txtDienGiaiDMNPL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtMaTPQuyDoi.Focus();
+            }
+        }
+
+        private void txtMaTPQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenThanhPhamQuyDoi.Focus();
+            }
+        }
+
+        private void txtTenThanhPhamQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDVTThanhPhamQuyDoi.Focus();
+            }
+        }
+
+        private void txtDVTThanhPhamQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtMaVTChinh.Focus();
+            }
+        }
+
+        private void txtMaVTChinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtSoLuongVTChinh.Focus();
+            }
+        }
+
+        private void txtSoLuongVTChinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenVatTu_Chinh.Focus();
+            }
+        }
+
+        private void txtTenVatTu_Chinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDVT_VT_CHinh.Focus();
+            }
+        }
+
+        private void txtDVT_VT_CHinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtSoLuongXuat.Focus();
+            }
+        }
+
+        private void txtSoLuongXuat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDonGiaThanhPhamQuyDoi.Focus();
+            }
+        }
+
+        private void txtDonGiaThanhPhamQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTongTienHang.Focus();
+            }
+        }
+
+        private void txtTongTienHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtNguoiNhanHang.Focus();
+            }
+        }
+
+        private void txtNguoiNhanHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLuu_Gui_Dong.Focus();
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void DaiLy_FrmChiTiet_NhapKho_GapDan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();

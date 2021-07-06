@@ -174,6 +174,7 @@
             this.txtTenDaiLy.Name = "txtTenDaiLy";
             this.txtTenDaiLy.Size = new System.Drawing.Size(576, 20);
             this.txtTenDaiLy.TabIndex = 107;
+            this.txtTenDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDaiLy_KeyPress);
             // 
             // btLayDuLieu
             // 
@@ -198,6 +199,7 @@
             this.gridMaVT.StyleController = this.dataLayoutControl1;
             this.gridMaVT.TabIndex = 105;
             this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
+            this.gridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVT_KeyPress);
             // 
             // gridView1
             // 
@@ -246,6 +248,7 @@
             this.gridMaDaiLy.StyleController = this.dataLayoutControl1;
             this.gridMaDaiLy.TabIndex = 106;
             this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
+            this.gridMaDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaDaiLy_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -296,6 +299,7 @@
             this.gridControl1.TabIndex = 99;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -656,6 +660,7 @@
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(117, 20);
             this.txtDVT.TabIndex = 105;
+            this.txtDVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_KeyPress);
             // 
             // txtTenVT
             // 
@@ -663,6 +668,7 @@
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(404, 20);
             this.txtTenVT.TabIndex = 105;
+            this.txtTenVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVT_KeyPress);
             // 
             // dteDenNgay
             // 

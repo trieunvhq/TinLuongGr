@@ -148,5 +148,42 @@ namespace CtyTinLuong
             if(dteDenNgay.EditValue!=null)
                 LoadDaTa(kkk, dteDenNgay.DateTime);
         }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridMaVT.Focus();
+            }
+        }
+
+        private void gridMaVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenVT.Focus();
+            }
+        }
+
+        private void txtTenVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDVT.Focus();
+            }
+        }
+
+        private void txtDVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint.Focus();
+            }
+        }
+
+        private void btPrint_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
