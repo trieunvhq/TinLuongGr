@@ -13,7 +13,7 @@ namespace CtyTinLuong
 {
     public partial class UCMuaHang : UserControl
     {
-        public static bool mbbTheMoi_DonHang,mbCopY;
+        public static bool mbThemMoi, mbSua,mbCopY;
         public static int miiiID_Sua_DonHang;      
         private void HienThiGridControl_2(int xxiDmuahang)
         {
@@ -130,7 +130,7 @@ namespace CtyTinLuong
             HienThi_ALL(true);
             else HienThi_ALL(false);
 
-            mbbTheMoi_DonHang = false;
+        
           
             clKhongNhapKho.Caption = "Mua hàng\n nhập kho";
             //clSoTienDaThanhToan.Caption = "Đã\nthanh toán";
@@ -152,8 +152,9 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            mbbTheMoi_DonHang = true;
-            mbCopY = true;
+            mbThemMoi = true;
+            mbSua = false;
+            mbCopY = false;
             frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
             //_frmMH.Hide();
             ff.Show();
@@ -174,7 +175,8 @@ namespace CtyTinLuong
                 {//msDienGiai
                     Cursor.Current = Cursors.WaitCursor;
                     mbCopY = false;
-                    mbbTheMoi_DonHang = false;
+                    mbThemMoi = false;
+                    mbSua = true;
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
                     //_frmMH.Hide();
@@ -330,7 +332,9 @@ namespace CtyTinLuong
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     mbCopY = true;
-                    mbbTheMoi_DonHang = false;
+                    mbThemMoi = false;
+                    mbSua = false;
+                   
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
                     //_frmMH.Hide();
