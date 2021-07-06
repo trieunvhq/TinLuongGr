@@ -26,6 +26,7 @@ namespace CtyTinLuong
                 pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
                 pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
                 pPhoGiamDoc.Value= dt.Rows[8]["HoTen"].ToString();
+                pThuQuy.Value= dt.Rows[10]["HoTen"].ToString();
             }
             else
             {
