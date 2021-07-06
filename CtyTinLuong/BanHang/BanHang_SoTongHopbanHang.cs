@@ -258,9 +258,31 @@ namespace CtyTinLuong
 
         private void btPrint_KH_Click(object sender, EventArgs e)
         {
-            mbPrint_KhachHang = true;
-            mbPrint_RutGon = false;
-            mbPrint_ALL = false;
+            mdtPrint = new DataTable();
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_KhachHang = true;
+                mbPrint_RutGon = false;
+                mbPrint_ALL = false;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
+                ff.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("không có dữ liệu");
+            }
+
+           
         }
 
         private void BanHang_SoTongHopbanHang_Load(object sender, EventArgs e)

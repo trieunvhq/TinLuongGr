@@ -2031,6 +2031,12 @@
     <Compile Include="BanHang\Xtra_SoTongHop_banHang_RutGon.Designer.cs">
       <DependentUpon>Xtra_SoTongHop_banHang_RutGon.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\Xtra_SoTongHop_banHang_TheoKhachHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BanHang\Xtra_SoTongHop_banHang_TheoKhachHang.Designer.cs">
+      <DependentUpon>Xtra_SoTongHop_banHang_TheoKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
