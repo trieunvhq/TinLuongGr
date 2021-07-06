@@ -103,15 +103,7 @@ namespace CtyTinLuong
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
                 _ravi["TenKH"] = dt3.Rows[i]["TenKH"].ToString();
                 _ravi["SoLuong"] = dt3.Rows[i]["SoLuong"].ToString();
-                _ravi["DonGia"] = dt3.Rows[i]["DonGia"].ToString();
-                _ravi["ThanhTien"] = dt3.Rows[i]["ThanhTien"].ToString();
-                _ravi["TiGia"] = dt3.Rows[i]["TiGia"].ToString();
                 _ravi["TongTienUSD"] = dt3.Rows[i]["TongTienUSD"].ToString();
-                _ravi["TongTienVND"] = dt3.Rows[i]["TongTienVND"].ToString();
-                _ravi["QuyDoiVND"] = dt3.Rows[i]["QuyDoiVND"].ToString();
-                _ravi["SoChungTu"] = dt3.Rows[i]["SoChungTu"].ToString();
-                _ravi["NgayChungTu"] = dt3.Rows[i]["NgayChungTu"].ToString();
-
                 ds.tbBan_MuaHang.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;
@@ -209,6 +201,8 @@ namespace CtyTinLuong
                 Print_BanHang_SoTongHopbanHang_ALL(BanHang_SoTongHopbanHang.mdtPrint);
             if (BanHang_SoTongHopbanHang.mbPrint_RutGon == true)
                 Print_BanHang_SoTongHopbanHang_RutGon(BanHang_SoTongHopbanHang.mdtPrint);
+            if (BanHang_SoTongHopbanHang.mbPrint_KhachHang == true)
+                Print_BanHang_SoTongHopbanHang_TheoKhachHang(BanHang_SoTongHopbanHang.mdtPrint);
         }
 
         private void frmPrint_baoGia_BanHanag_FormClosed(object sender, FormClosedEventArgs e)
@@ -217,6 +211,7 @@ namespace CtyTinLuong
             BanHang_frmBangKeHoaDonBanHang.mbPrint = false;
             BanHang_SoTongHopbanHang.mbPrint_ALL = false;
             BanHang_SoTongHopbanHang.mbPrint_RutGon = false;
+            BanHang_SoTongHopbanHang.mbPrint_KhachHang = false;
         }
     }
 }

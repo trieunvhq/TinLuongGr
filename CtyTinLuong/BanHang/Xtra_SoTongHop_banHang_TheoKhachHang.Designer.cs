@@ -71,6 +71,7 @@
             this.pTruongPhong = new DevExpress.XtraReports.Parameters.Parameter();
             this.pPhoGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -369,6 +370,7 @@
             // xrTableRow5
             // 
             this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell12,
             this.xrTableCell25,
             this.xrTableCell11});
             this.xrTableRow5.Name = "xrTableRow5";
@@ -382,7 +384,7 @@
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell25.Text = "Khách hàng";
-            this.xrTableCell25.Weight = 44.532322487563732D;
+            this.xrTableCell25.Weight = 64.683049809095991D;
             // 
             // GroupHeader1
             // 
@@ -544,6 +546,17 @@
             this.xrTableCell11.TextFormatString = "{0:#.00 usd}";
             this.xrTableCell11.Weight = 17.99364659768527D;
             // 
+            // xrTableCell12
+            // 
+            this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MaKH]")});
+            this.xrTableCell12.Multiline = true;
+            this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell12.StylePriority.UsePadding = false;
+            this.xrTableCell12.Text = "xrTableCell12";
+            this.xrTableCell12.Weight = 24.381595166031481D;
+            // 
             // Xtra_SoTongHop_banHang_TheoKhachHang
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -622,5 +635,6 @@
         private DevExpress.XtraReports.Parameters.Parameter pTruongPhong;
         private DevExpress.XtraReports.Parameters.Parameter pPhoGiamDoc;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
     }
 }
