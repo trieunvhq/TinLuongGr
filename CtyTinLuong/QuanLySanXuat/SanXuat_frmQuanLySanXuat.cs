@@ -88,7 +88,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             SanXuat_frmChiTietSoPhieu_RutGon ff = new SanXuat_frmChiTietSoPhieu_RutGon();
             //this.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //this.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -171,7 +171,7 @@ namespace CtyTinLuong
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
             //this.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //this.Show();
         }
 
@@ -198,7 +198,7 @@ namespace CtyTinLuong
             imay_in_1_Cat_2_dot_3 = 3;
             SanLuong_To_DOT_DAP ucc = new SanLuong_To_DOT_DAP();
             //this.Hide();
-            ucc.ShowDialog();
+            ucc.Show();
             //this.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -211,7 +211,7 @@ namespace CtyTinLuong
             imay_in_1_Cat_2_dot_3 = 1;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
             //this.Hide();
-            ucc.ShowDialog();
+            ucc.Show();
             //this.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -224,7 +224,7 @@ namespace CtyTinLuong
             imay_in_1_Cat_2_dot_3 = 2;
             SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
             //this.Hide();
-            ucc.ShowDialog();
+            ucc.Show();
             //this.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -236,7 +236,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             frmBaoCaoSanLuong_Theo_CongNhan ucc = new frmBaoCaoSanLuong_Theo_CongNhan();
             //this.Hide();
-            ucc.ShowDialog();
+            ucc.Show();
             //this.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -248,7 +248,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             SanLuong_ChiTiet_Luong ff = new SanLuong_ChiTiet_Luong();
             //this.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //this.Show();
             Cursor.Current = Cursors.Default;
         }

@@ -112,7 +112,9 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -141,7 +143,23 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                ff.ShowDialog();
+                ff.Show();
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
             }
         }
 
@@ -161,7 +179,7 @@ namespace CtyTinLuong
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
@@ -175,7 +193,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
                 SanLuong_ChiTiet_SanLuong_Dot_Dap ff = new SanLuong_ChiTiet_SanLuong_Dot_Dap();
                 //this.Hide();
-                ff.ShowDialog();
+                ff.Show();
                 //this.Show();
                 Cursor.Current = Cursors.Default;
             }
