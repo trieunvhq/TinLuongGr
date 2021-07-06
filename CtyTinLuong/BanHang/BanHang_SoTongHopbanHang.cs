@@ -264,7 +264,7 @@ namespace CtyTinLuong
             DataTable dt1 = new DataTable();          
             int iiIID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
             if (iiIID_KhachHang == 0)
-                dt1 = cls.SA_Time_DS_KH(mdatungay, mdadenngay);
+                dt1 = cls.SA_Time_DS_KH(dteTuNgay.DateTime, dteDenNgay.DateTime);
             else
             {
                 dt1 = new DataTable();
@@ -278,6 +278,7 @@ namespace CtyTinLuong
                 dt1.Rows.Add(_ravi2);
             }
             mdtPrint = new DataTable();
+            mdtPrint.Columns.Add("STT", typeof(string));
             mdtPrint.Columns.Add("MaVT", typeof(string));
             mdtPrint.Columns.Add("TenVTHH", typeof(string));
             mdtPrint.Columns.Add("DonViTinh", typeof(string));
@@ -300,6 +301,7 @@ namespace CtyTinLuong
                     for (int k = 0; k < dt2.Rows.Count; k++)
                     {
                         DataRow _ravi = mdtPrint.NewRow();
+                        _ravi["STT"] =(k+1).ToString();
                         _ravi["MaKH"] = dt1.Rows[i]["MaKH"].ToString();
                         _ravi["TenKH"] = dt1.Rows[i]["TenKH"].ToString();
                         _ravi["MaVT"] = dt2.Rows[k]["MaVT"].ToString();
@@ -312,25 +314,25 @@ namespace CtyTinLuong
                 }
 
 
-                if (mdtPrint.Rows.Count > 0)
-                {
-                    mbPrint_KhachHang = true;
-                    mbPrint_RutGon = false;
-                    mbPrint_ALL = false;
-                    mdatungay = dteTuNgay.DateTime;
-                    mdadenngay = dteDenNgay.DateTime;
-                    frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
-                    ff.ShowDialog();
-
-                }
-                else
-                {
-                    MessageBox.Show("không có dữ liệu");
-                }
+               
 
             }
 
+            if (mdtPrint.Rows.Count > 0)
+            {
+                mbPrint_KhachHang = true;
+                mbPrint_RutGon = false;
+                mbPrint_ALL = false;
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+                frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
+                ff.ShowDialog();
 
+            }
+            else
+            {
+                MessageBox.Show("không có dữ liệu");
+            }
 
 
 
