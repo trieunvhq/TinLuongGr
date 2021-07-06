@@ -210,8 +210,12 @@ namespace CtyTinLuong
             }
             gridControl2.DataSource = dt2xx;
         }
-      
-        
+        private void HienThi_lable_TonKho(int iiID_VTHH)
+        {
+           
+        }
+
+
         private bool KiemTraLuu()
         {
 
@@ -1127,6 +1131,11 @@ namespace CtyTinLuong
                     deTOngtien = Convert.ToDouble(xxxx);
                 else deTOngtien = 0;
                 txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
+                if(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
+                {
+                    int xxID = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString());
+                    HienThi_lable_TonKho(xxID);
+                }
             }
             catch
             {

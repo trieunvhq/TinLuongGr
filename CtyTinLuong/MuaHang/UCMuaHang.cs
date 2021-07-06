@@ -53,17 +53,16 @@ namespace CtyTinLuong
 
             gridControl2.DataSource = dt2;
         }
-
+        DataTable dtnganhang;
         private void HienThi_lableCongNo(int iiiID_NhaCungCap)
         {
             clsTbNhaCungCap clsxx = new clsTbNhaCungCap();
             clsxx.iID_NhaCungCap = iiiID_NhaCungCap;
-            DataTable dtxx = clsxx.SelectOne();           
+            DataTable dtxx = clsxx.SelectOne();
+            string makh = clsxx.sMaNhaCungCap.Value;
+            string tenncc = clsxx.sTenNhaCungCap.Value;          
             if(dtxx.Rows[0]["ID_TaiKhoanKeToan"].ToString()!="")
             {
-                clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, DateTime.Now.AddDays(-10), DateTime.Now);
-
                 double dNoCuoiKy, dCoCuoiKy;
                 double dNo_CuoiKy, dCo_CuoiKy;
                 int iiIDID_TaiKhoanKeToanCon = clsxx.iID_TaiKhoanKeToan.Value;
@@ -78,12 +77,12 @@ namespace CtyTinLuong
                     if (dNo_CuoiKy <= dCo_CuoiKy)
                     {                       
                         dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;
-                        label_CongNo.Text = "Dư có: " + dCoCuoiKy.ToString() + "";
+                        label_CongNo.Text = ""+makh+": "+tenncc+"|| Dư có: " + dCoCuoiKy.ToString("#,###") + "";
                     }
                     else
                     {
                         dNoCuoiKy = -dCo_CuoiKy + dNo_CuoiKy;
-                        label_CongNo.Text = "Nợ có: " + dNoCuoiKy.ToString() + "";
+                        label_CongNo.Text = "" + makh + ": " + tenncc + "|| Nợ có: " + dNoCuoiKy.ToString("#,###") + "";
                     }
                 }
                
@@ -162,6 +161,9 @@ namespace CtyTinLuong
 
         private void UCMuaHang_Load(object sender, EventArgs e)
         {
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, DateTime.Now.AddDays(-10), DateTime.Now);
+
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgay.EditValue = null;
