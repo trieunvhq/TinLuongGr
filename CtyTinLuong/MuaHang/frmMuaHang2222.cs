@@ -72,7 +72,9 @@ namespace CtyTinLuong
 
         private void frmMuaHang2222_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             HienThi_Caption();
+            Cursor.Current = Cursors.Default;
         }
 
         private void navBarItem1_LinkClicked_2(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
