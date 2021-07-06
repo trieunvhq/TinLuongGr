@@ -16,17 +16,17 @@ namespace CtyTinLuong
         public static bool mbTraLaiHangMua;
         private void HienThi_Caption()
         {
-            clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();
-            DataTable dt1 = cls1.SelectAll();
-            dt1.DefaultView.RowFilter = "GuiDuLieu = False";
-            DataView dv1 = dt1.DefaultView;
-            DataTable dxxxx1 = dv1.ToTable();
-            int k1 = dxxxx1.Rows.Count;
-            if (k1 > 0)
-            {
-                navMuaHang.Caption = "Mua hàng (" + k1.ToString() + ")";
-                navMuaHang.Appearance.Font = new Font(navMuaHang.Appearance.Font, FontStyle.Bold);
-            }
+            //clsMH_tbMuaHang cls1 = new clsMH_tbMuaHang();
+            //DataTable dt1 = cls1.SelectAll();
+            //dt1.DefaultView.RowFilter = "GuiDuLieu = False";
+            //DataView dv1 = dt1.DefaultView;
+            //DataTable dxxxx1 = dv1.ToTable();
+            //int k1 = dxxxx1.Rows.Count;
+            //if (k1 > 0)
+            //{
+            //    navMuaHang.Caption = "Mua hàng (" + k1.ToString() + ")";
+            //    navMuaHang.Appearance.Font = new Font(navMuaHang.Appearance.Font, FontStyle.Bold);
+            //}
            
         }
 
