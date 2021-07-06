@@ -85,12 +85,16 @@ namespace CtyTinLuong
            
             if (txtNam.Text!="" & txtThang.Text != "" )
             {
+                Cursor.Current = Cursors.WaitCursor;
+
                 int xxthang = Convert.ToInt32(txtThang.Text.ToString());
                 int xxnam = Convert.ToInt32(txtNam.Text.ToString());
                 clsNgayThang cls = new CtyTinLuong.clsNgayThang();
                 ngaybatdau = cls.GetFistDayInMonth(xxnam, xxthang);
                 ngayketthuc = cls.GetLastDayInMonth(xxnam, xxthang);
                 LoadDaTa(xxthang, xxnam,ngaybatdau, ngayketthuc);
+                Cursor.Current = Cursors.Default;
+
             }
 
         }
@@ -99,6 +103,22 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtNam.Focus();
+            }
+        }
+
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint_ALL.Focus();
+            }
         }
 
         private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

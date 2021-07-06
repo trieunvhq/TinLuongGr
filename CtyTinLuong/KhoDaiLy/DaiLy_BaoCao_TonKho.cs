@@ -282,6 +282,30 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                gridMaDaiLy.Focus();
+            }
+        }
+
+        private void gridMaDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenDaiLy.Focus();
+            }
+        }
+
+        private void txtTenDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btPrint_One.Focus();
+            }
+        }
+
         private void btPrint_Click(object sender, EventArgs e)
         {
 
