@@ -124,7 +124,7 @@ namespace CtyTinLuong
         {
 
 
-            Xtra_SoTongHop_banHang xtr111 = new Xtra_SoTongHop_banHang();
+            Xtra_SoTongHop_banHang_RutGon xtr111 = new Xtra_SoTongHop_banHang_RutGon();
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbBan_MuaHang.Clone();

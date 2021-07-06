@@ -2025,6 +2025,12 @@
     <Compile Include="BanHang\Xtra_SoTongHop_banHang.Designer.cs">
       <DependentUpon>Xtra_SoTongHop_banHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\Xtra_SoTongHop_banHang_RutGon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BanHang\Xtra_SoTongHop_banHang_RutGon.Designer.cs">
+      <DependentUpon>Xtra_SoTongHop_banHang_RutGon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xtra_TraLuong.cs">
       <SubType>Component</SubType>
     </Compile>
