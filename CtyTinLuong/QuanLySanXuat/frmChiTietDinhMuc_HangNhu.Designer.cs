@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietDinhMuc_HangNhu));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.checkHangSot = new System.Windows.Forms.CheckBox();
+            this.checkHangCuc = new System.Windows.Forms.CheckBox();
+            this.checkHangNhu = new System.Windows.Forms.CheckBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.txtSoKienMotBao = new System.Windows.Forms.TextBox();
             this.txtSoKGMotBao = new System.Windows.Forms.TextBox();
@@ -61,11 +63,8 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkHangNhu = new System.Windows.Forms.CheckBox();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkHangCuc = new System.Windows.Forms.CheckBox();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkHangSot = new System.Windows.Forms.CheckBox();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -127,6 +126,39 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // checkHangSot
+            // 
+            this.checkHangSot.Location = new System.Drawing.Point(426, 2);
+            this.checkHangSot.Name = "checkHangSot";
+            this.checkHangSot.Size = new System.Drawing.Size(209, 20);
+            this.checkHangSot.TabIndex = 13;
+            this.checkHangSot.Text = "Hàng Sọt";
+            this.checkHangSot.UseVisualStyleBackColor = true;
+            this.checkHangSot.CheckedChanged += new System.EventHandler(this.checkHangSot_CheckedChanged);
+            this.checkHangSot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkHangSot_KeyPress);
+            // 
+            // checkHangCuc
+            // 
+            this.checkHangCuc.Location = new System.Drawing.Point(214, 2);
+            this.checkHangCuc.Name = "checkHangCuc";
+            this.checkHangCuc.Size = new System.Drawing.Size(208, 20);
+            this.checkHangCuc.TabIndex = 12;
+            this.checkHangCuc.Text = "Hàng Cục";
+            this.checkHangCuc.UseVisualStyleBackColor = true;
+            this.checkHangCuc.CheckedChanged += new System.EventHandler(this.checkHangCuc_CheckedChanged);
+            this.checkHangCuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkHangCuc_KeyPress);
+            // 
+            // checkHangNhu
+            // 
+            this.checkHangNhu.Location = new System.Drawing.Point(2, 2);
+            this.checkHangNhu.Name = "checkHangNhu";
+            this.checkHangNhu.Size = new System.Drawing.Size(208, 20);
+            this.checkHangNhu.TabIndex = 10;
+            this.checkHangNhu.Text = "Hàng Nhũ";
+            this.checkHangNhu.UseVisualStyleBackColor = true;
+            this.checkHangNhu.CheckedChanged += new System.EventHandler(this.checkHangNhu_CheckedChanged);
+            this.checkHangNhu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkHangNhu_KeyPress);
+            // 
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(67, 170);
@@ -134,6 +166,7 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(568, 29);
             this.txtGhiChu.TabIndex = 9;
+            this.txtGhiChu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChu_KeyPress);
             // 
             // txtSoKienMotBao
             // 
@@ -142,6 +175,7 @@
             this.txtSoKienMotBao.Size = new System.Drawing.Size(568, 20);
             this.txtSoKienMotBao.TabIndex = 4;
             this.txtSoKienMotBao.Text = "0";
+            this.txtSoKienMotBao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoKienMotBao_KeyPress);
             // 
             // txtSoKGMotBao
             // 
@@ -150,6 +184,7 @@
             this.txtSoKGMotBao.Size = new System.Drawing.Size(568, 20);
             this.txtSoKGMotBao.TabIndex = 7;
             this.txtSoKGMotBao.Text = "0";
+            this.txtSoKGMotBao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoKGMotBao_KeyPress);
             // 
             // btLuu_va_Dong
             // 
@@ -190,6 +225,7 @@
             this.dteNgayThang.Size = new System.Drawing.Size(242, 20);
             this.dteNgayThang.StyleController = this.layoutControl2;
             this.dteNgayThang.TabIndex = 1;
+            this.dteNgayThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayThang_KeyPress);
             // 
             // txtSoHieu
             // 
@@ -197,6 +233,7 @@
             this.txtSoHieu.Name = "txtSoHieu";
             this.txtSoHieu.Size = new System.Drawing.Size(143, 20);
             this.txtSoHieu.TabIndex = 2;
+            this.txtSoHieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoHieu_KeyPress);
             // 
             // txtDVT1
             // 
@@ -205,6 +242,7 @@
             this.txtDVT1.ReadOnly = true;
             this.txtDVT1.Size = new System.Drawing.Size(123, 20);
             this.txtDVT1.TabIndex = 8;
+            this.txtDVT1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT1_KeyPress);
             // 
             // txtTenVatTu
             // 
@@ -214,6 +252,7 @@
             this.txtTenVatTu.ReadOnly = true;
             this.txtTenVatTu.Size = new System.Drawing.Size(416, 20);
             this.txtTenVatTu.TabIndex = 6;
+            this.txtTenVatTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVatTu_KeyPress);
             // 
             // gridLookUpEditLoaiHang
             // 
@@ -226,6 +265,7 @@
             this.gridLookUpEditLoaiHang.StyleController = this.layoutControl2;
             this.gridLookUpEditLoaiHang.TabIndex = 5;
             this.gridLookUpEditLoaiHang.EditValueChanged += new System.EventHandler(this.gridLookUpEditLoaiHang_EditValueChanged);
+            this.gridLookUpEditLoaiHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridLookUpEditLoaiHang_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -418,16 +458,6 @@
             this.layoutControlItem6.Text = "Ghi chú";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(62, 13);
             // 
-            // checkHangNhu
-            // 
-            this.checkHangNhu.Location = new System.Drawing.Point(2, 2);
-            this.checkHangNhu.Name = "checkHangNhu";
-            this.checkHangNhu.Size = new System.Drawing.Size(208, 20);
-            this.checkHangNhu.TabIndex = 10;
-            this.checkHangNhu.Text = "Hàng Nhũ";
-            this.checkHangNhu.UseVisualStyleBackColor = true;
-            this.checkHangNhu.CheckedChanged += new System.EventHandler(this.checkHangNhu_CheckedChanged);
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.checkHangNhu;
@@ -437,16 +467,6 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // checkHangCuc
-            // 
-            this.checkHangCuc.Location = new System.Drawing.Point(214, 2);
-            this.checkHangCuc.Name = "checkHangCuc";
-            this.checkHangCuc.Size = new System.Drawing.Size(208, 20);
-            this.checkHangCuc.TabIndex = 12;
-            this.checkHangCuc.Text = "Hàng Cục";
-            this.checkHangCuc.UseVisualStyleBackColor = true;
-            this.checkHangCuc.CheckedChanged += new System.EventHandler(this.checkHangCuc_CheckedChanged);
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.checkHangCuc;
@@ -455,16 +475,6 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(212, 24);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
-            // 
-            // checkHangSot
-            // 
-            this.checkHangSot.Location = new System.Drawing.Point(426, 2);
-            this.checkHangSot.Name = "checkHangSot";
-            this.checkHangSot.Size = new System.Drawing.Size(209, 20);
-            this.checkHangSot.TabIndex = 13;
-            this.checkHangSot.Text = "Hàng Sọt";
-            this.checkHangSot.UseVisualStyleBackColor = true;
-            this.checkHangSot.CheckedChanged += new System.EventHandler(this.checkHangSot_CheckedChanged);
             // 
             // layoutControlItem11
             // 

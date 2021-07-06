@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -154,6 +153,7 @@
             this.txtSoLuongVTChinh.Size = new System.Drawing.Size(712, 20);
             this.txtSoLuongVTChinh.TabIndex = 1;
             this.txtSoLuongVTChinh.Text = "1";
+            this.txtSoLuongVTChinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongVTChinh_KeyPress);
             // 
             // txtDVT_VTchinh1
             // 
@@ -162,6 +162,7 @@
             this.txtDVT_VTchinh1.ReadOnly = true;
             this.txtDVT_VTchinh1.Size = new System.Drawing.Size(83, 20);
             this.txtDVT_VTchinh1.TabIndex = 24;
+            this.txtDVT_VTchinh1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_VTchinh1_KeyPress);
             // 
             // txtTenVTchinh1
             // 
@@ -170,6 +171,7 @@
             this.txtTenVTchinh1.ReadOnly = true;
             this.txtTenVTchinh1.Size = new System.Drawing.Size(286, 20);
             this.txtTenVTchinh1.TabIndex = 22;
+            this.txtTenVTchinh1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVTchinh1_KeyPress);
             // 
             // gridMaVTchinh1
             // 
@@ -182,6 +184,7 @@
             this.gridMaVTchinh1.StyleController = this.layoutControl1;
             this.gridMaVTchinh1.TabIndex = 20;
             this.gridMaVTchinh1.EditValueChanged += new System.EventHandler(this.gridMaVTchinh1_EditValueChanged);
+            this.gridMaVTchinh1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVTchinh1_KeyPress);
             // 
             // gridView2
             // 
@@ -219,6 +222,7 @@
             this.txtDVTMaTP.ReadOnly = true;
             this.txtDVTMaTP.Size = new System.Drawing.Size(83, 20);
             this.txtDVTMaTP.TabIndex = 19;
+            this.txtDVTMaTP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVTMaTP_KeyPress);
             // 
             // gridMaTPQuyDoi
             // 
@@ -232,6 +236,7 @@
             this.gridMaTPQuyDoi.StyleController = this.layoutControl1;
             this.gridMaTPQuyDoi.TabIndex = 17;
             this.gridMaTPQuyDoi.EditValueChanged += new System.EventHandler(this.gridMaTPQuyDoi_EditValueChanged);
+            this.gridMaTPQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaTPQuyDoi_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -285,6 +290,7 @@
             this.txtMaDinhMucNPL.Name = "txtMaDinhMucNPL";
             this.txtMaDinhMucNPL.Size = new System.Drawing.Size(287, 20);
             this.txtMaDinhMucNPL.TabIndex = 16;
+            this.txtMaDinhMucNPL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaDinhMucNPL_KeyPress);
             // 
             // dteNgayLap
             // 
@@ -303,6 +309,7 @@
             this.dteNgayLap.Size = new System.Drawing.Size(287, 20);
             this.dteNgayLap.StyleController = this.layoutControl1;
             this.dteNgayLap.TabIndex = 13;
+            this.dteNgayLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayLap_KeyPress);
             // 
             // txtDienGiai
             // 
@@ -311,6 +318,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(712, 41);
             this.txtDienGiai.TabIndex = 6;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // txtTenThanhPhamQuyDoi
             // 
@@ -319,6 +327,7 @@
             this.txtTenThanhPhamQuyDoi.ReadOnly = true;
             this.txtTenThanhPhamQuyDoi.Size = new System.Drawing.Size(286, 20);
             this.txtTenThanhPhamQuyDoi.TabIndex = 5;
+            this.txtTenThanhPhamQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenThanhPhamQuyDoi_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -478,6 +487,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -684,7 +694,7 @@
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDinhMuc_ChiTietDinhMucToGapDan";
-            this.Text = "frmDinhMuc_ChiTietDinhMucToGapDan";
+            this.Text = "Chi Tiết Định Mức Tổ Gấp Dán";
             this.Load += new System.EventHandler(this.frmDinhMuc_ChiTietDinhMucToGapDan_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

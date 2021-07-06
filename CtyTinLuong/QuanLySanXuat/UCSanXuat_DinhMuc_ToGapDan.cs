@@ -133,7 +133,7 @@ namespace CtyTinLuong
                     mb_TheMoi_DinhMuc_ToGapDan = false;
                     frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
                     //_frmQLSX.Hide();
-                    ff.ShowDialog();
+                    ff.Show();
                     //_frmQLSX.Show();
                 }
             }
@@ -179,7 +179,7 @@ namespace CtyTinLuong
             mb_TheMoi_DinhMuc_ToGapDan = true;
             frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
             //_frmQLSX.Hide();
-            ff.ShowDialog();
+            ff.Show();
             //_frmQLSX.Show();
             Cursor.Current = Cursors.Default;
         }

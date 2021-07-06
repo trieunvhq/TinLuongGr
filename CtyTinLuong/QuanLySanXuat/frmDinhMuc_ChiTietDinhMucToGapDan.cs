@@ -259,38 +259,46 @@ namespace CtyTinLuong
 
         private void frmDinhMuc_ChiTietDinhMucToGapDan_Load(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_ChiTiet_DinhMuc_ToGapDan", typeof(int));
-            dt2.Columns.Add("ID_DinhMuc_ToGapDan", typeof(int));
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("MaVT");// 
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("HienThi", typeof(string));
-            gridControl1.DataSource = dt2;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("ID_ChiTiet_DinhMuc_ToGapDan", typeof(int));
+                dt2.Columns.Add("ID_DinhMuc_ToGapDan", typeof(int));
+                dt2.Columns.Add("ID_VTHH", typeof(int));
+                dt2.Columns.Add("SoLuong", typeof(float));
+                dt2.Columns.Add("MaVT");// 
+                dt2.Columns.Add("TenVTHH");
+                dt2.Columns.Add("DonViTinh");
+                dt2.Columns.Add("HienThi", typeof(string));
+                gridControl1.DataSource = dt2;
+
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                DataTable dt = cls.SelectAll();
+                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                DataView dv2 = dt.DefaultView;
+                DataTable dtxx2 = dv2.ToTable();
+
+                gridMaTPQuyDoi.Properties.DataSource = dtxx2;
+                gridMaTPQuyDoi.Properties.ValueMember = "ID_VTHH";
+                gridMaTPQuyDoi.Properties.DisplayMember = "MaVT";
+                //
+                gridMaVTchinh1.Properties.DataSource = dtxx2;
+                gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
+                gridMaVTchinh1.Properties.DisplayMember = "MaVT";
+
+                repositoryItemLookUpEdit2.DataSource = dtxx2;
+                repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
+                repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+
+                if (UCSanXuat_DinhMuc_ToGapDan.mb_TheMoi_DinhMuc_ToGapDan == true)
+                    HienThi_ThemMoi_DinhMuc_NPL();
+                else HienThi_Sua_DinhMuc_NPL();
+            }
+            catch { }
             
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
-
-            gridMaTPQuyDoi.Properties.DataSource = dtxx2;
-            gridMaTPQuyDoi.Properties.ValueMember = "ID_VTHH";
-            gridMaTPQuyDoi.Properties.DisplayMember = "MaVT";
-            //
-            gridMaVTchinh1.Properties.DataSource = dtxx2;
-            gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
-            gridMaVTchinh1.Properties.DisplayMember = "MaVT";
-
-            repositoryItemLookUpEdit2.DataSource = dtxx2;
-            repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
-            repositoryItemLookUpEdit2.DisplayMember = "MaVT";
-
-            if (UCSanXuat_DinhMuc_ToGapDan.mb_TheMoi_DinhMuc_ToGapDan == true)
-                HienThi_ThemMoi_DinhMuc_NPL();
-            else HienThi_Sua_DinhMuc_NPL();
+            Cursor.Current = Cursors.Default;
+            txtMaDinhMucNPL.Focus();
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -314,9 +322,11 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (UCSanXuat_DinhMuc_ToGapDan.mb_TheMoi_DinhMuc_ToGapDan == true)
                 Luu_ThemMoi_DM_NPL();
             else Luu_Sua__DM_NPL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
@@ -400,6 +410,94 @@ namespace CtyTinLuong
             catch
             {
 
+            }
+        }
+
+        private void txtMaDinhMucNPL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgayLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaTPQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenThanhPhamQuyDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDVTMaTP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaVTchinh1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenVTchinh1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDVT_VTchinh1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtSoLuongVTChinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
     }
