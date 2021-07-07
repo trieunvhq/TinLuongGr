@@ -120,22 +120,28 @@ namespace CtyTinLuong
 
         private void UCBanThanhPham_XuatKho_Khac_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCBanThanhPham_XuatKho_Khac_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -154,9 +160,9 @@ namespace CtyTinLuong
                 mbThemMoi_XuatKho = false;
                 miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoBTP).ToString());
                 KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
-                _frmKBTP.Hide();
-                ff.ShowDialog();
-                _frmKBTP.Show();
+                //_frmKBTP.Hide();
+                ff.Show();
+                //_frmKBTP.Show();
             }
         }
 
@@ -178,9 +184,9 @@ namespace CtyTinLuong
         {
             mbThemMoi_XuatKho = true;
             KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
-            _frmKBTP.Hide();
-            ff.ShowDialog();
-            _frmKBTP.Show();
+            //_frmKBTP.Hide();
+            ff.Show();
+            //_frmKBTP.Show();
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
@@ -226,6 +232,16 @@ namespace CtyTinLuong
 
 
             }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
