@@ -592,7 +592,7 @@ namespace CtyTinLuong
             }
         }
         public DataTable Select_W_ID_VTHH()
-        {
+        {//
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_KhoNPL_tbChiTietNhapKho_Select_W_ID_VTHH]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
