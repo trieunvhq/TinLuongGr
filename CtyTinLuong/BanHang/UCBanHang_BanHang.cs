@@ -35,12 +35,10 @@ namespace CtyTinLuong
         private void HienThi_ALL()
         {
             clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-            DataTable dt = cls.SelectAll_w_TenKH();
-            dt.DefaultView.RowFilter = " TrangThai_KhoThanhPham= True";
-            DataView dv2 = dt.DefaultView;
-            dv2.Sort = "TrangThaiBanHang ASC, NgayChungTu DESC, ID_BanHang DESC";
-            DataTable dxxxx = dv2.ToTable();
-            gridControl1.DataSource = dxxxx;
+            DataTable dt = cls.SelectAll_w_TenKH(); 
+            gridControl1.DataSource = dt;
+            dt.Dispose();
+            cls.Dispose();
         }
 
         private void Load_LockUp()
@@ -63,38 +61,40 @@ namespace CtyTinLuong
             clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang();
             cls.iID_BanHang = xxID_banHang;
             DataTable dt3 = cls.Select_HienThiSuaDonHang();
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_ChiTietBanHang"); // ID của tbChi tiet don hàng
-            dt2.Columns.Add("ID_BanHang");
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            for (int i = 0; i < dt3.Rows.Count; i++)
-            {
-                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuong"].ToString());
-                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
-                DataRow _ravi = dt2.NewRow();
-                _ravi["ID_ChiTietBanHang"] = dt3.Rows[i]["ID_ChiTietBanHang"].ToString();
-                _ravi["ID_BanHang"] = dt3.Rows[i]["ID_BanHang"].ToString();
-                _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                _ravi["SoLuong"] = xxsoluong;
-                _ravi["DonGia"] = xxdongia;
-                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
-                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                _ravi["HienThi"] = "1";
-                dt2.Rows.Add(_ravi);
-            }
+            //DataTable dt2 = new DataTable();
+            //dt2.Columns.Add("ID_ChiTietBanHang"); // ID của tbChi tiet don hàng
+            //dt2.Columns.Add("ID_BanHang");
+            //dt2.Columns.Add("ID_VTHH");
+            //dt2.Columns.Add("SoLuong", typeof(float));
+            //dt2.Columns.Add("DonGia", typeof(double));
+            //dt2.Columns.Add("MaVT");// tb VTHH
+            //dt2.Columns.Add("TenVTHH");
+            //dt2.Columns.Add("DonViTinh");
+            //dt2.Columns.Add("ThanhTien", typeof(double));
+            //dt2.Columns.Add("HienThi", typeof(string));
+            //dt2.Columns.Add("GhiChu", typeof(string));
+            //for (int i = 0; i < dt3.Rows.Count; i++)
+            //{
+            //    Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuong"].ToString());
+            //    Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
+            //    DataRow _ravi = dt2.NewRow();
+            //    _ravi["ID_ChiTietBanHang"] = dt3.Rows[i]["ID_ChiTietBanHang"].ToString();
+            //    _ravi["ID_BanHang"] = dt3.Rows[i]["ID_BanHang"].ToString();
+            //    _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //    _ravi["SoLuong"] = xxsoluong;
+            //    _ravi["DonGia"] = xxdongia;
+            //    _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+            //    _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+            //    _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+            //    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+            //    _ravi["HienThi"] = "1";
+            //    dt2.Rows.Add(_ravi);
+            //}
 
-            gridControl2.DataSource = dt2;
+            gridControl2.DataSource = dt3;
+            dt3.Dispose();
+            cls.Dispose();
         }
 
         frmQuanLyBanHang _frmQLBH;
@@ -123,7 +123,7 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
+            if (e.Column == clSTT11)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
@@ -239,15 +239,7 @@ namespace CtyTinLuong
 
             Cursor.Current = Cursors.Default;
         }
-
-        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT2)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-
+         
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
