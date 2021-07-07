@@ -45,17 +45,20 @@ namespace CtyTinLuong
 
         private void UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww_Load(object sender, EventArgs e)
         {
-           
+            Cursor.Current = Cursors.WaitCursor;
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);           
             mbThemMoi_XuatKhohoDaiLy = mbCopy = mbSua = false;
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -109,12 +112,14 @@ namespace CtyTinLuong
                     traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (traloi == DialogResult.Yes)
                     {
+                        Cursor.Current = Cursors.WaitCursor;
                         cls1.iID_XuatKhoDaiLy = iiID;
                         cls1.Delete();
                         clsDaiLy_tbChiTietXuatKho_Temp cls2 = new clsDaiLy_tbChiTietXuatKho_Temp();                       
                         cls2.Delete_ALL_W_ID_XuatKhoDaiLy(iiID);
                         clsDaiLy_ThamChieu_TinhXuatKho_Temp cls3 = new CtyTinLuong.clsDaiLy_ThamChieu_TinhXuatKho_Temp();
                         cls3.Delete_ALL_W_ID_XuatKhoDaiLy(iiID);
+                        Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã xóa");
                         Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                     }
@@ -129,6 +134,54 @@ namespace CtyTinLuong
 
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             if(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString()!="")
@@ -139,9 +192,9 @@ namespace CtyTinLuong
                 mbSua = true;
                 miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-                _frmQLKTP.Hide();
-                ff.ShowDialog();
-                _frmQLKTP.Show();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
             }
            
         }
@@ -150,9 +203,9 @@ namespace CtyTinLuong
         {
             mbThemMoi_XuatKhohoDaiLy = true;
             KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-            _frmQLKTP.Hide();
-            ff.ShowDialog();
-            _frmQLKTP.Show();
+            //_frmQLKTP.Hide();
+            ff.Show();
+            //_frmQLKTP.Show();
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
@@ -221,9 +274,9 @@ namespace CtyTinLuong
                 mbSua = false;
                 miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
                 KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
-                _frmQLKTP.Hide();
-                ff.ShowDialog();
-                _frmQLKTP.Show();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
             }
         }
     }

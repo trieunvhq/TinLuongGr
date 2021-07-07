@@ -126,22 +126,28 @@ namespace CtyTinLuong
 
         private void UCThanhPham_XuatKho_Khac_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCThanhPham_XuatKho_Khac_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -162,9 +168,9 @@ namespace CtyTinLuong
                 mbCopy = false;
                 miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                 KhoThanhPham_ChiTiet_XuatKho_Khac ff = new KhoThanhPham_ChiTiet_XuatKho_Khac();
-                _frmQLKTP.Hide();
-                ff.ShowDialog();
-                _frmQLKTP.Show();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
             }
         }
 
@@ -188,9 +194,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopy = false;
             KhoThanhPham_ChiTiet_XuatKho_Khac ff = new KhoThanhPham_ChiTiet_XuatKho_Khac();
-            _frmQLKTP.Hide();
-            ff.ShowDialog();
-            _frmQLKTP.Show();
+            //_frmQLKTP.Hide();
+            ff.Show();
+            //_frmQLKTP.Show();
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
@@ -218,6 +224,7 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     clsKhoThanhPham_tbXuatKho cls1 = new clsKhoThanhPham_tbXuatKho();
                     cls1.iID_XuatKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
 
@@ -226,12 +233,14 @@ namespace CtyTinLuong
                     clsKhoThanhPham_tbChiTietXuatKho cls2 = new clsKhoThanhPham_tbChiTietXuatKho();
                     cls2.iID_XuatKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                     cls2.Delete_ALL_ID_XuatKho_ThanhPham();
-                    MessageBox.Show("Đã xóa");
+
                     if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
                         HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
                     }
                     else HienThi_ALL();
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Đã xóa");
                 }
 
 
@@ -247,9 +256,9 @@ namespace CtyTinLuong
                 mbCopy = true;
                 miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                 KhoThanhPham_ChiTiet_XuatKho_Khac ff = new KhoThanhPham_ChiTiet_XuatKho_Khac();
-                _frmQLKTP.Hide();
-                ff.ShowDialog();
-                _frmQLKTP.Show();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
             }
         }
     }

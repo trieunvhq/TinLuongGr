@@ -174,6 +174,7 @@ namespace CtyTinLuong
                 }
               
                 Luu_ChiTietNhapKho_thanhpham(iiID_nhapkho);
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu");
             }
         }
@@ -320,10 +321,12 @@ namespace CtyTinLuong
 
         private void KhoThanhPham_ChiTiet_NhapKho_Khac_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             if (UCThanhPham_NhapKho_Khac.mbThemMoi_NhapKho == true)
                 HienThi_ThemMoi();
             else HienThi_Sua();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat2_Click(object sender, EventArgs e)
@@ -457,6 +460,110 @@ namespace CtyTinLuong
             }
         }
 
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtThamChieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtNguoiNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenDaiLy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTongTienHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtNguoiGiaohang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -481,7 +588,9 @@ namespace CtyTinLuong
 
         private void btLuu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Luu_NhapKho_ThanhPham();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btPrint_Click(object sender, EventArgs e)
@@ -508,7 +617,7 @@ namespace CtyTinLuong
                 mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
                 msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.ShowDialog();
+                ff.Show();
 
             }
         }

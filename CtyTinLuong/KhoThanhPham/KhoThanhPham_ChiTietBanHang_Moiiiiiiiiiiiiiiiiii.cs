@@ -606,6 +606,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return ;
             else
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int aaiixxID_banHang;
                 string shienthi = "1";
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
@@ -652,6 +653,7 @@ namespace CtyTinLuong
                 //lưu thu chi và tai khoan ke toan
                 Luu_TbThuChi(aaiixxID_banHang);
                 Luu_BienDongTaiKhoan(aaiixxID_banHang);
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu");
                 this.Close();
 
@@ -663,6 +665,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return ;
             else
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int aaiixxID_banHang;
                 string shienthi = "1";
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
@@ -733,7 +736,7 @@ namespace CtyTinLuong
                 // lưu tbthu chi và tailhoan ke toan
                 Luu_TbThuChi(aaiixxID_banHang);
                 Luu_BienDongTaiKhoan(aaiixxID_banHang);
-
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu và gửi dữ liệu");
                
             }
@@ -1000,6 +1003,7 @@ namespace CtyTinLuong
 
         private void KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             if (UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbSua == true)
                 HienThi_Sua();
@@ -1007,6 +1011,7 @@ namespace CtyTinLuong
                 HienThi_Sua();
             else if (UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbThemMoi == true)
                 HienThi_ThemMoi();
+            Cursor.Current = Cursors.Default;
         }
 
         private void checkVNĐ_CheckedChanged(object sender, EventArgs e)
@@ -1295,6 +1300,151 @@ namespace CtyTinLuong
             }
         }
 
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtSoHoaDon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtMaCongTennor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtNguoiMuaHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTongTienHangChuaVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void checkVNĐ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void checkUSD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTiGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhanTramVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTienVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTongTienHangCoVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridView4_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             try
@@ -1316,7 +1466,9 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            LuuDuLieu_Chi_Luu();            
+            Cursor.Current = Cursors.WaitCursor;
+            LuuDuLieu_Chi_Luu();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
@@ -1593,7 +1745,7 @@ namespace CtyTinLuong
 
 
                 frmPrint_BanHang ff = new frmPrint_BanHang();
-                ff.ShowDialog();
+                ff.Show();
 
             }
         }
@@ -1621,7 +1773,7 @@ namespace CtyTinLuong
                 mdbTongTienVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
                 msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.ShowDialog();
+                ff.Show();
 
             }
         }

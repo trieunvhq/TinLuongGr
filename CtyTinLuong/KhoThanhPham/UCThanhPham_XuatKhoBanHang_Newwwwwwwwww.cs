@@ -110,15 +110,19 @@ namespace CtyTinLuong
 
         private void UCThanhPham_XuatKhoBanHang_Newwwwwwwwww_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCThanhPham_XuatKhoBanHang_Newwwwwwwwww_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -128,9 +132,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopY = false;
             KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii ff = new KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
-            _frmQLKTP.Hide();
-            ff.ShowDialog();
-            _frmQLKTP.Show();
+            //_frmQLKTP.Hide();
+            ff.Show();
+            //_frmQLKTP.Show();
         }
 
         private void btCopy_Click(object sender, EventArgs e)
@@ -139,9 +143,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopY = true;
             KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii ff = new KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
-            _frmQLKTP.Hide();
-            ff.ShowDialog();
-            _frmQLKTP.Show();
+            //_frmQLKTP.Hide();
+            ff.Show();
+            //_frmQLKTP.Show();
         }
 
         private void btXoa1_Click(object sender, EventArgs e)
@@ -160,18 +164,22 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     cls1.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
                     cls1.Delete();
                     clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
                     cls2.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
                     cls2.Delete_W_iID_BanHang();
-                    MessageBox.Show("Đã xóa");
+
                     if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
                         HienThi();
                     }
                     else
                         HienThi_ALL();
+
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Đã xóa");
                 }
             }
 
@@ -195,9 +203,9 @@ namespace CtyTinLuong
                 miiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
 
                 KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii ff = new KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii();
-                _frmQLKTP.Hide();
-                ff.ShowDialog();
-                _frmQLKTP.Show();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
             }
         }
 
@@ -246,6 +254,54 @@ namespace CtyTinLuong
             //}
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT)
@@ -259,7 +315,9 @@ namespace CtyTinLuong
         {
             if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 HienThi();
+                Cursor.Current = Cursors.Default;
             }
         }
     }

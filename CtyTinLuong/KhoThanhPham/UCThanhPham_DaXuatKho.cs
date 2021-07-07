@@ -125,22 +125,28 @@ namespace CtyTinLuong
 
         private void UCThanhPham_DaXuatKho_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
         
         private void btRefresh_Click_2(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCThanhPham_DaXuatKho_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -169,6 +175,7 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     clsKhoThanhPham_tbXuatKho cls1 = new clsKhoThanhPham_tbXuatKho();
                     cls1.iID_XuatKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
 
@@ -177,12 +184,13 @@ namespace CtyTinLuong
                     clsKhoThanhPham_tbChiTietXuatKho cls2 = new clsKhoThanhPham_tbChiTietXuatKho();
                     cls2.iID_XuatKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                     cls2.Delete_ALL_ID_XuatKho_ThanhPham();
-                    MessageBox.Show("Đã xóa");
                     if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
                         HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
                     }
                     else HienThi_ALL();
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Đã xóa");
                 }
 
 
@@ -205,14 +213,62 @@ namespace CtyTinLuong
                 {
                     miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                     KhoThanhPham_frmChiTiet_Da_XuatKho ff = new KhoThanhPham_frmChiTiet_Da_XuatKho();
-                    _frmQLKTP.Hide();
-                    ff.ShowDialog();
-                    _frmQLKTP.Show();
+                    //_frmQLKTP.Hide();
+                    ff.Show();
+                    //_frmQLKTP.Show();
                 }
             }
             catch
             {
 
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
     }

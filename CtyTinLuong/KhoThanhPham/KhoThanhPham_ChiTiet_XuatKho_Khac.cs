@@ -320,10 +320,12 @@ namespace CtyTinLuong
 
         private void KhoThanhPham_ChiTiet_XuatKho_Khac_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             if (UCThanhPham_XuatKho_Khac.mbThemMoi_XuatKho == true)
                 HienThi_ThemMoi();
             else HienThi_Sua();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat2_Click(object sender, EventArgs e)
