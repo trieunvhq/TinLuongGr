@@ -237,6 +237,55 @@ namespace CtyTinLuong
            
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridNhomDoiTuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenTKMe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
@@ -249,6 +298,7 @@ namespace CtyTinLuong
 
         private void frmChiTietBienDongTaiKhoan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
@@ -256,7 +306,8 @@ namespace CtyTinLuong
          
            dteTuNgay.EditValue = ngaydauthang;
 
-           // LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            // LoadData(287, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }

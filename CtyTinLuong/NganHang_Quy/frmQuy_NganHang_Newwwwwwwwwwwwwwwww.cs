@@ -129,17 +129,17 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmChiTietBienDongTaiKhoan ff = new CtyTinLuong.frmChiTietBienDongTaiKhoan();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }

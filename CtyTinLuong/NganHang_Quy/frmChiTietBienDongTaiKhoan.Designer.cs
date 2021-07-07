@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietBienDongTaiKhoan));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -148,6 +147,7 @@
             this.txtTenTKMe.Name = "txtTenTKMe";
             this.txtTenTKMe.Size = new System.Drawing.Size(707, 20);
             this.txtTenTKMe.TabIndex = 98;
+            this.txtTenTKMe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenTKMe_KeyPress);
             // 
             // gridNhomDoiTuong
             // 
@@ -160,6 +160,7 @@
             this.gridNhomDoiTuong.StyleController = this.dataLayoutControl1;
             this.gridNhomDoiTuong.TabIndex = 97;
             this.gridNhomDoiTuong.EditValueChanged += new System.EventHandler(this.gridNhomDoiTuong_EditValueChanged);
+            this.gridNhomDoiTuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNhomDoiTuong_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -245,6 +246,7 @@
             this.btLayDuLieu.TabIndex = 94;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
             this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
+            this.btLayDuLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btLayDuLieu_KeyPress);
             // 
             // dteDenNgay
             // 
@@ -263,6 +265,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(551, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 93;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // dteTuNgay
             // 
@@ -282,6 +285,7 @@
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 93;
             this.dteTuNgay.EditValueChanged += new System.EventHandler(this.dteTuNgay_EditValueChanged);
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // gridControl1
             // 
@@ -298,6 +302,7 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 

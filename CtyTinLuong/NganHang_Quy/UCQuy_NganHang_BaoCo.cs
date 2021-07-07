@@ -35,15 +35,18 @@ namespace CtyTinLuong
 
         private void UCQuy_NganHang_BaoCo_Load(object sender, EventArgs e)
         {
-           
+            Cursor.Current = Cursors.WaitCursor;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Today;
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCQuy_NganHang_BaoCo_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
@@ -56,9 +59,9 @@ namespace CtyTinLuong
                 mbCoPy = false;
                 mbSua = false;
                 QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
-                _frmQNH.Hide();
-                ff.ShowDialog();
-                _frmQNH.Show();
+                //_frmQNH.Hide();
+                ff.Show();
+                //_frmQNH.Show();
             }
             else
             {
@@ -66,9 +69,9 @@ namespace CtyTinLuong
                 mbCoPy = false;
                 mbSua = false;
                 Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                _frmQNH.Hide();
-                ff.ShowDialog();
-                _frmQNH.Show();
+                //_frmQNH.Hide();
+                ff.Show();
+                //_frmQNH.Show();
             }
         }
 
@@ -92,17 +95,17 @@ namespace CtyTinLuong
                     
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
-                    _frmQNH.Hide();
-                    ff.ShowDialog();
-                    _frmQNH.Show();
+                    //_frmQNH.Hide();
+                    ff.Show();
+                    //_frmQNH.Show();
                 }
                 else
                 {                  
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                    _frmQNH.Hide();
-                    ff.ShowDialog();
-                    _frmQNH.Show();
+                    //_frmQNH.Hide();
+                    ff.Show();
+                    //_frmQNH.Show();
                 }
                
             }
@@ -113,7 +116,9 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -164,6 +169,22 @@ namespace CtyTinLuong
    
     }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
@@ -180,9 +201,9 @@ namespace CtyTinLuong
                     mbSua = false;
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
-                    _frmQNH.Hide();
-                    ff.ShowDialog();
-                    _frmQNH.Show();
+                    //_frmQNH.Hide();
+                    ff.Show();
+                    //_frmQNH.Show();
                 }
                 else
                 {
@@ -191,9 +212,9 @@ namespace CtyTinLuong
                     mbSua = false;
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                    _frmQNH.Hide();
-                    ff.ShowDialog();
-                    _frmQNH.Show();
+                    //_frmQNH.Hide();
+                    ff.Show();
+                    //_frmQNH.Show();
                 }
 
             }
