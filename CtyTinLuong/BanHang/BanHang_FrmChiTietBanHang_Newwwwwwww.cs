@@ -721,10 +721,10 @@ namespace CtyTinLuong
             repositoryItemGridLookUpEdit2.DisplayMember = "SoTaiKhoanCon";
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            DataTable newdtCaTruong = clsNguoi.T_SelectAll(4);
+            //dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
+            //DataView dvCaTruong = dtNguoi.DefaultView;
+            //DataTable newdtCaTruong = dvCaTruong.ToTable();
 
             gridNguoiLap.Properties.DataSource = newdtCaTruong;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
@@ -1236,6 +1236,16 @@ namespace CtyTinLuong
             {
                 btLuu.Focus();
             }
+        }
+
+        private void gridNguoiLap_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridNguoiLap.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridKH_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridKH.Properties.View.Columns[0].Visible = false;
         }
 
         private void gridView4_RowClick(object sender, RowClickEventArgs e)

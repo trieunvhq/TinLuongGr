@@ -15,6 +15,41 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsNhanSu_tbNhanSu : clsDBInteractionBase
 	{
+        public DataTable T_SelectAll(int id_bophan)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_NhanSu_tbNhanSu_SelectAll]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("NhanSu_tbNhanSu");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsNhanSu_tbNhanSu::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         //pr_NhanSu_tbNhanSu_SO_W_ID_CongNhan
         public DataTable SO_W_ID_CongNhan(int xxxID_Congnhan)
         {
