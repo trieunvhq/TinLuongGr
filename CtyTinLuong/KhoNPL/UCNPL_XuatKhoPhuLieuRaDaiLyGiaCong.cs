@@ -58,13 +58,14 @@ namespace CtyTinLuong
 
         private void UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             mbThemMoi_nhapKhoDaiLy = mbCopy=mbSua = false;                
            
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -84,15 +85,17 @@ namespace CtyTinLuong
                 mbThemMoi_nhapKhoDaiLy = false;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
                 NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
-                _frmKNPL.Hide();
-                ff.ShowDialog();
-                _frmKNPL.Show();
+                //_frmKNPL.Hide();
+                ff.Show();
+                //_frmKNPL.Show();
             }
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -106,9 +109,9 @@ namespace CtyTinLuong
             mbSua = false;
             mbCopy = false;
             NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
-            _frmKNPL.Hide();
-            ff.ShowDialog();
-            _frmKNPL.Show();
+            //_frmKNPL.Hide();
+            ff.Show();
+            //_frmKNPL.Show();
         }
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
@@ -154,6 +157,31 @@ namespace CtyTinLuong
         {
             
           
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
