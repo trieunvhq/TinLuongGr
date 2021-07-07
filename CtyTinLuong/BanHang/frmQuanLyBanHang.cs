@@ -65,21 +65,21 @@ namespace CtyTinLuong
             //}
 
         }
+        UCBanHang_BanHang _UCBanHang_BanHang;
         public frmQuanLyBanHang()
         {
             InitializeComponent();
+            _UCBanHang_BanHang = new UCBanHang_BanHang(this);
         }
-
         private void navBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             //UCBanHang_BanHang
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            UCBanHang_BanHang ucc = new UCBanHang_BanHang(this);
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            _UCBanHang_BanHang.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(_UCBanHang_BanHang);
+            _UCBanHang_BanHang.BringToFront();
 
             Cursor.Current = Cursors.Default;
         }

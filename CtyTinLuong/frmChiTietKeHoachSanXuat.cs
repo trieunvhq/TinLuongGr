@@ -23,22 +23,22 @@ namespace CtyTinLuong
         private void Load_LockUp()
         {
             clsTbKhachHang cls = new clsTbKhachHang();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable newdt = dv.ToTable();
+            DataTable newdt = cls.T_SelectAll();
+           
             gridKH.Properties.DataSource = newdt;
             gridKH.Properties.ValueMember = "ID_KhachHang";
             gridKH.Properties.DisplayMember = "MaKH";
 
             clsTbVatTuHangHoa cls2 = new clsTbVatTuHangHoa();
-            DataTable dt2 = cls2.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt2.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
-            gridMaHang.Properties.DataSource = dtxx2;
+            newdt = cls2.T_SelectAll();
+            
+            gridMaHang.Properties.DataSource = newdt;
             gridMaHang.Properties.ValueMember = "ID_VTHH";
             gridMaHang.Properties.DisplayMember = "MaVT";
+
+            newdt.Dispose();
+            cls.Dispose();
+            cls2.Dispose();
         }
         private void HienThi()
         {
@@ -620,6 +620,16 @@ namespace CtyTinLuong
                     txtPic1.ResetText();
                 }
             }
+        }
+
+        private void gridKH_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridKH.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridMaHang_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaHang.Properties.View.Columns[0].Visible = false;
         }
     }
 }
