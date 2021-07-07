@@ -148,50 +148,12 @@ namespace CtyTinLuong
             dteNgayLap.EditValue = cls1.daNgayLap.Value;
             txtDienGiai.Text = cls1.sDienGiai.Value.ToString();
             checkNgungTheoDoi.Checked = Convert.ToBoolean(cls1.bNgungTheoDoi.Value.ToString());
-
-            dt2 = new DataTable();
-            dt2.Columns.Add("ID_ChiTietDinhMucNPL", typeof(int));
-            dt2.Columns.Add("ID_DinhMuc_NPL", typeof(int));
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("strSoLuong", typeof(string));
-            dt2.Columns.Add("MaVT");// 
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("HienThi", typeof(string));
-           
+             
 
             clsDinhMuc_ChiTiet_DM_NPL cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DM_NPL();
             cls2.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
-            DataTable dtxxx = cls2.SelectAll_HienThi_LookUp();
-            Double ddsoluong;
-            dtxxx.DefaultView.RowFilter = "TonTai=True";
-            DataView dv = dtxxx.DefaultView;
-            DataTable dt3 = dv.ToTable();
+            dt2 = cls2.T_SelectAll_HienThi_LookUp();
             
-            for (int i = 0; i < dt3.Rows.Count; i++)
-            {
-                DataRow _ravi = dt2.NewRow();
-                if (dt3.Rows[i]["SoLuong"].ToString() == "")
-                {
-                    ddsoluong = 0;
-                    _ravi["strSoLuong"] = "0";
-                }
-                else
-                {
-                    ddsoluong = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                    _ravi["strSoLuong"] = dt3.Rows[i]["strSoLuong"].ToString();
-                }
-                _ravi["ID_ChiTietDinhMucNPL"] = Convert.ToInt16(dt3.Rows[i]["ID_ChiTietDinhMucNPL"].ToString());
-                _ravi["ID_DinhMuc_NPL"] = Convert.ToInt16(dt3.Rows[i]["ID_DinhMuc_NPL"].ToString());
-                _ravi["ID_VTHH"] = Convert.ToInt16(dt3.Rows[i]["ID_VTHH"].ToString());                
-                _ravi["SoLuong"] = ddsoluong;
-                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();               
-                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();             
-                _ravi["HienThi"] = "1";
-                dt2.Rows.Add(_ravi);
-            }
             gridControl1.DataSource = dt2;
 
         }

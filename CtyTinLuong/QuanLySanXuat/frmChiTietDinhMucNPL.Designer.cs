@@ -585,6 +585,7 @@
             this.gridMaTPQuyDoi.StyleController = this.layoutControl1;
             this.gridMaTPQuyDoi.TabIndex = 73;
             this.gridMaTPQuyDoi.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.searchLookUpEdit1_QueryPopUp);
+            this.gridMaTPQuyDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaTPQuyDoi_KeyPress);
             // 
             // searchLookUpEdit1View
             // 
@@ -614,6 +615,7 @@
             this.gridMaVTchinh1.TabIndex = 74;
             this.gridMaVTchinh1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaVTchinh1_QueryPopUp);
             this.gridMaVTchinh1.EditValueChanged += new System.EventHandler(this.gridMaVTchinh1_EditValueChanged_1);
+            this.gridMaVTchinh1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVTchinh1_KeyPress);
             // 
             // gridView3
             // 

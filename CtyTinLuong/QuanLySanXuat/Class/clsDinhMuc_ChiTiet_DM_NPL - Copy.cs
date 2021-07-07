@@ -181,6 +181,39 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+        public DataTable T_SelectAll_HienThi_LookUp()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_DinhMuc_ChiTiet_DM_NPL_SelectAll_HienThi_LookUp]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("T_DinhMuc_ChiTiet_DM_NPL_SelectAll_HienThi_LookUp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_NPL", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_NPL));
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_DinhMuc_ChiTiet_DM_NPL_SelectAll_HienThi_LookUp", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_HienThi_ChiTietDinhMuc()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
