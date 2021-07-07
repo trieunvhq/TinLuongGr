@@ -269,6 +269,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaVT.Properties.View.Columns[0].Visible = false;
+        }
+
         private void frmChiTietNhapXuatTon_MotVatTu_khoBanThanhPham_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
