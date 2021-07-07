@@ -13,6 +13,7 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyKhoDaiLy : Form
     {
+        public static bool isNXT;
         private void TinhLuongDaiLy()
         {
 
@@ -153,6 +154,7 @@ namespace CtyTinLuong
 
         private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            isNXT = true;
             Cursor.Current = Cursors.WaitCursor;
             frmBaoCao_Nhap_Xuat_ton_kho_DaiLy ff = new CtyTinLuong.frmBaoCao_Nhap_Xuat_ton_kho_DaiLy();
             //this.Hide();
