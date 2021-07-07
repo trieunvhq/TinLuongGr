@@ -100,32 +100,28 @@ namespace CtyTinLuong
 
                 int ID_VTHHxx = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_VTHH"].ToString());
 
-                clsTbVatTuHangHoa clvthh = new clsTbVatTuHangHoa();
-                clvthh.iID_VTHH = ID_VTHHxx;
-                DataTable dtvth = clvthh.SelectOne();
-                clsKhoNPL_tbChiTietNhapKho xcls = new clsKhoNPL_tbChiTietNhapKho();
-                xcls.iID_VTHH = ID_VTHHxx;
-                DataTable dtbtp = xcls.Select_W_ID_VTHH();
-                clsDinhMuc_ChiTiet_DinhMuc_ToGapDan clsdm = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-                clsdm.iID_DinhMuc_ToGapDan = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
-                clsdm.iID_VTHH = ID_VTHHxx;
-                DataTable dtdm = clsdm.SelectOne_W_ID_DinhMuc_ToGapDan_AND_ID_VTHH();
-                double xxsoluongdinhmuc;
-                if (dtdm.Rows.Count > 0)
-                    xxsoluongdinhmuc = Convert.ToDouble(dtdm.Rows[0]["SoLuong"].ToString());
-                else
-                    xxsoluongdinhmuc = 0;
-            
-               DataRow _ravi3 = dt2.NewRow();
+                //clsTbVatTuHangHoa clvthh = new clsTbVatTuHangHoa();
+                //clvthh.iID_VTHH = ID_VTHHxx;
+                //DataTable dtvth = clvthh.SelectOne();
+                //clsKhoNPL_tbChiTietNhapKho xcls = new clsKhoNPL_tbChiTietNhapKho();
+                //xcls.iID_VTHH = ID_VTHHxx;
+                //DataTable dtbtp = xcls.Select_W_ID_VTHH();
+                //clsDinhMuc_ChiTiet_DinhMuc_ToGapDan clsdm = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+                //clsdm.iID_DinhMuc_ToGapDan = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
+                //clsdm.iID_VTHH = ID_VTHHxx;
+                //DataTable dtdm = clsdm.SelectOne_W_ID_DinhMuc_ToGapDan_AND_ID_VTHH();
+                double xxsoluongdinhmuc = Convert.ToDouble(dtchitietnhapkho.Rows[i]["SoLuong"].ToString());
+
+                DataRow _ravi3 = dt2.NewRow();
                 _ravi3["ID_VTHH"] = ID_VTHHxx;
                 _ravi3["MaVT"] = ID_VTHHxx;
                 _ravi3["DinhMuc"] = xxsoluongdinhmuc;
                 _ravi3["SoLuongTheoDinhMuc"] = xxsoluongdinhmuc * iisoluongxuat;
-                _ravi3["TenVTHH"] = clvthh.sTenVTHH.Value;
-                _ravi3["DonViTinh"] = clvthh.sDonViTinh.Value;
+                _ravi3["TenVTHH"] = dtchitietnhapkho.Rows[i]["TenVTHH"].ToString();
+                _ravi3["DonViTinh"] = dtchitietnhapkho.Rows[i]["DonViTinh"].ToString();
                 _ravi3["SoLuong"] = SoLuong;
-                if (dtbtp.Rows.Count > 0)
-                    _ravi3["SoLuongTon"] = Convert.ToDouble(dtbtp.Rows[0]["SoLuongTon"].ToString());
+
+                _ravi3["SoLuongTon"] = Convert.ToDouble(dtchitietnhapkho.Rows[i]["SoLuongTon"].ToString());
                 _ravi3["DonGia"] = dongiaxxx333;// lay kho NPL
                 _ravi3["GhiChu"] = dtchitietnhapkho.Rows[i]["GhiChu"].ToString();
                 _ravi3["HienThi"] = "1";

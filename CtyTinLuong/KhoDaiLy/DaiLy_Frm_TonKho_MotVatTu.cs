@@ -14,9 +14,10 @@ namespace CtyTinLuong
     public partial class DaiLy_Frm_TonKho_MotVatTu : Form
     {
         public static bool mbPrint = false;
-        public static int miID_VTHH;
+        public static int miID_VTHH, miID_DaiLy;
         public static DataTable mdtPrint;
         public static DateTime mdadenngay;
+        public static bool isNXT = false;
         private void Load_Lockup()
         {
             clsDaiLy_tbChiTietNhapKho cls = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
@@ -184,6 +185,18 @@ namespace CtyTinLuong
         private void btPrint_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString()!="")
+            {
+                isNXT = true;
+                miID_DaiLy = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString());
+                frmBaoCao_Nhap_Xuat_ton_kho_DaiLy ff = new frmBaoCao_Nhap_Xuat_ton_kho_DaiLy();
+                ff.Show();
+            }
+           
         }
     }
 }
