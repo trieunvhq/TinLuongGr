@@ -448,20 +448,12 @@ namespace CtyTinLuong
             gridMaCaTruong_May_DOT.Properties.DisplayMember = "MaNhanVien";
 
             clsTbVatTuHangHoa clsVTxxxx = new clsTbVatTuHangHoa();
-            DataTable dtVTxxx = clsVTxxxx.SelectAll();
-            dtVTxxx.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvVTxxx = dtVTxxx.DefaultView;
-            DataTable xxxxnewdtVT = dvVTxxx.ToTable();
-            gridHangHoaVao_may_DOT.Properties.DataSource = xxxxnewdtVT;
+            DataTable dt = clsVTxxxx.T_SelectAll(); 
+            gridHangHoaVao_may_DOT.Properties.DataSource = dt;
             gridHangHoaVao_may_DOT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaVao_may_DOT.Properties.DisplayMember = "MaVT";
-
-            clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
-            DataTable dtkksss = clsxx.SelectAll();
-            dtkksss.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvcxxx = dtkksss.DefaultView;
-            DataTable vdtrhh = dvcxxx.ToTable();
-            gridHangHoaXuat_May_DOT.Properties.DataSource = vdtrhh;
+             
+            gridHangHoaXuat_May_DOT.Properties.DataSource = dt;
             gridHangHoaXuat_May_DOT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaXuat_May_DOT.Properties.DisplayMember = "MaVT";
 
@@ -1028,6 +1020,16 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void gridHangHoaVao_may_DOT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridHangHoaVao_may_DOT.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridHangHoaXuat_May_DOT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridHangHoaXuat_May_DOT.Properties.View.Columns[0].Visible = false;
         }
     }
 }

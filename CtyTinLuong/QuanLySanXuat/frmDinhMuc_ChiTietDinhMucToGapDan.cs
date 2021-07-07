@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -274,23 +275,21 @@ namespace CtyTinLuong
                 gridControl1.DataSource = dt2;
 
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-                DataView dv2 = dt.DefaultView;
-                DataTable dtxx2 = dv2.ToTable();
+                DataTable dt = cls.T_SelectAll(); 
 
-                gridMaTPQuyDoi.Properties.DataSource = dtxx2;
+                gridMaTPQuyDoi.Properties.DataSource = dt;
                 gridMaTPQuyDoi.Properties.ValueMember = "ID_VTHH";
                 gridMaTPQuyDoi.Properties.DisplayMember = "MaVT";
                 //
-                gridMaVTchinh1.Properties.DataSource = dtxx2;
+                gridMaVTchinh1.Properties.DataSource = dt;
                 gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
                 gridMaVTchinh1.Properties.DisplayMember = "MaVT";
 
-                repositoryItemLookUpEdit2.DataSource = dtxx2;
-                repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
-                repositoryItemLookUpEdit2.DisplayMember = "MaVT";
-
+                repositoryItemSearchLookUpEdit1.DataSource = dt;
+                repositoryItemSearchLookUpEdit1.ValueMember = "ID_VTHH";
+                repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
+                dt.Dispose();
+                cls.Dispose();
                 if (UCSanXuat_DinhMuc_ToGapDan.mb_TheMoi_DinhMuc_ToGapDan == true)
                     HienThi_ThemMoi_DinhMuc_NPL();
                 else HienThi_Sua_DinhMuc_NPL();
@@ -359,25 +358,18 @@ namespace CtyTinLuong
 
             }
         }
-
+        private int _ID_VTHH;
+        private string _TenVTHH = "", _DonViTinh = "";
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column == clMaVT)
             {
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
-                int kk = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
-                if (dt != null)
-                {
-                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
-                    gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
-                    gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
-                    gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                    gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
-
-                }
+                gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, _ID_VTHH);
+                gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, _TenVTHH);
+                gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, _DonViTinh);
+                gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+                gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
             }
 
             //if (e.Column == clMaVT)
@@ -499,6 +491,27 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        { 
+            try
+            {
+                ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+            }
+            catch { }
+        }
+
+        private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+                _ID_VTHH = Convert.ToInt32(row["ID_VTHH"].ToString());
+                _TenVTHH = row["TenVTHH"].ToString();
+                _DonViTinh = row["DonViTinh"].ToString();
+            }
+            catch { }
         }
     }
 }
