@@ -645,6 +645,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\clsTamUng_ChiTietTamUng.cs" />
     <Compile Include="Luong_ChamCong\clsTamUng_New.cs" />
+    <Compile Include="NganHang_Quy\NganHang_frm_ChiTiet_MuaHang_banHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\NganHang_frm_ChiTiet_MuaHang_banHang.Designer.cs">
+      <DependentUpon>NganHang_frm_ChiTiet_MuaHang_banHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Class\clsTr_BB_KtraDinhMuc_HHSX.cs" />
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
@@ -2336,6 +2342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\T_PrintChamComToGapDan.resx">
       <DependentUpon>T_PrintChamComToGapDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\NganHang_frm_ChiTiet_MuaHang_banHang.resx">
+      <DependentUpon>NganHang_frm_ChiTiet_MuaHang_banHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NganHang_Quy\QuyNganHang_Frm_DoiTienUSD.resx">
       <DependentUpon>QuyNganHang_Frm_DoiTienUSD.cs</DependentUpon>
