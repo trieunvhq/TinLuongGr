@@ -74,25 +74,27 @@ namespace CtyTinLuong
             cls.iID_VTHH = xxID_VTHH;
             DataTable dxxxx = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH();
 
-            for (int i = 0; i < dxxxx.Rows.Count; i++)
-            {
-                double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-                double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
-                int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
-                clsTbKhachHang clsncc = new clsTbKhachHang();
-                clsncc.iID_KhachHang = iID_KhachHangccc;
-                DataTable dtncc = clsncc.SelectOne();
-                DataRow _ravi = dt2.NewRow();
-                _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
-                _ravi["DienGiai"] = dxxxx.Rows[i]["DienGiai"].ToString();
-                _ravi["SoLuong"] = SoLuong;
-                _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
-                _ravi["DonGia"] = DonGia;
-                _ravi["ThanhTien"] = SoLuong * DonGia;
-                _ravi["TenKH"] = clsncc.sTenKH.Value;
-                dt2.Rows.Add(_ravi);
-            }
-            gridControl1.DataSource = dt2;
+            //for (int i = 0; i < dxxxx.Rows.Count; i++)
+            //{
+            //    double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
+            //    double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
+            //    int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
+            //    //clsTbKhachHang clsncc = new clsTbKhachHang();
+            //    //clsncc.iID_KhachHang = iID_KhachHangccc;
+            //    //DataTable dtncc = clsncc.SelectOne();
+            //    DataRow _ravi = dt2.NewRow();
+            //    _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
+            //    _ravi["DienGiai"] = dxxxx.Rows[i]["DienGiai"].ToString();
+            //    _ravi["SoLuong"] = SoLuong;
+            //    _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
+            //    _ravi["DonGia"] = DonGia;
+            //    _ravi["ThanhTien"] = SoLuong * DonGia;
+            //    _ravi["TenKH"] = clsncc.sTenKH.Value;
+            //    dt2.Rows.Add(_ravi);
+            //}
+            gridControl1.DataSource = dxxxx;
+            dxxxx.Dispose();
+            cls.Dispose();
 
 
         }
