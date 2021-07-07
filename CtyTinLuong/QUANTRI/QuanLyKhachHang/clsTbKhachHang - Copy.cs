@@ -14,7 +14,42 @@ namespace CtyTinLuong
 	/// Purpose: Data Access class for the table 'tbKhachHang'.
 	/// </summary>
 	public partial class clsTbKhachHang : clsDBInteractionBase
-	{
+    {
+        public DataTable T_SelectAll()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_tbKhachHang_SelectAll]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbKhachHang");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTbKhachHang::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         //SelectAll_W_SoTaiKhoanKeToan
         public DataTable SelectAll_W_SoTaiKhoanKeToan()
         {
