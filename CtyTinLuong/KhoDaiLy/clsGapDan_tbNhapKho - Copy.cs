@@ -137,12 +137,12 @@ namespace CtyTinLuong
                 scmCmdToExecute.Dispose();
             }
         }
-        public DataTable SelectAll_HienThi()
+        public DataTable SelectAll_HienThi2(DateTime tungay, DateTime denngay)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_tbNhapKho_SelectAll_HienThi]";
+            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_tbNhapKho_SelectAll_HienThi_SF]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_GapDan_tbNhapKho_SelectAll_HienThi");
+            DataTable dtToReturn = new DataTable("pr_GapDan_tbNhapKho_SelectAll_HienThi_SF");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -151,8 +151,10 @@ namespace CtyTinLuong
             try
             {
                 m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@tungay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, tungay));
 
-               // scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_NPL", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_NPL));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@denngay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, denngay));
+                // scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_NPL", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_NPL));
                 // Execute query.
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;
