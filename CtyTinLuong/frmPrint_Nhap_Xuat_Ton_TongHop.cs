@@ -169,6 +169,7 @@ namespace CtyTinLuong
 
         private void frmPrint_Nhap_Xuat_Ton_TongHop_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (frmBaoCaoNXT.mbPrint_NXT_Kho_NPL == true)
                 Print_N_X_T(frmBaoCaoNXT.mdt_ChiTiet_Print);
             if (frmBaoCaoNhapXuatTon_BanThanhPham.mbPrint_NXT_Kho_BTP == true)
@@ -183,7 +184,7 @@ namespace CtyTinLuong
 
             if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_One == true)
                 Print_NhapXuatTon_Theo_Tung_DaiLy(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdtPrint);
-
+            Cursor.Current = Cursors.Default;
         }
     }
 }
