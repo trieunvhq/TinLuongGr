@@ -81,7 +81,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                    //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
                     if (!String.IsNullOrEmpty(txtMaVT.Text))
                     {
