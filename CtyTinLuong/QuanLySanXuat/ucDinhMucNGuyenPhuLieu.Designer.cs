@@ -446,8 +446,6 @@
             this.clBooL_NguyenPhuLieu.Name = "clBooL_NguyenPhuLieu";
             this.clBooL_NguyenPhuLieu.OptionsColumn.AllowEdit = false;
             this.clBooL_NguyenPhuLieu.OptionsColumn.FixedWidth = true;
-            this.clBooL_NguyenPhuLieu.Visible = true;
-            this.clBooL_NguyenPhuLieu.VisibleIndex = 5;
             this.clBooL_NguyenPhuLieu.Width = 80;
             // 
             // clStrSoLuong2
