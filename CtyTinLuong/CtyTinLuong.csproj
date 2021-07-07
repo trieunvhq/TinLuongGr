@@ -161,6 +161,12 @@
     <Compile Include="BanHang\BanHang_DoiChieu_CongNo_new.Designer.cs">
       <DependentUpon>BanHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\Tr_Xtra_BanHang_DoiChieuCongNo_new.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BanHang\Tr_Xtra_BanHang_DoiChieuCongNo_new.Designer.cs">
+      <DependentUpon>Tr_Xtra_BanHang_DoiChieuCongNo_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsDelete_ALL_newwww.cs" />
     <Compile Include="clsNgayThang.cs" />
     <Compile Include="clsSoTienBangChu.cs" />
@@ -2111,6 +2117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\BanHang_frmBangKeHoaDonBanHang.resx">
       <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\Tr_Xtra_BanHang_DoiChieuCongNo_new.resx">
+      <DependentUpon>Tr_Xtra_BanHang_DoiChieuCongNo_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang.resx">
       <DependentUpon>Xtra_SoTongHop_banHang.cs</DependentUpon>

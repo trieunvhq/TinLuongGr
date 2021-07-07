@@ -12,6 +12,7 @@ namespace CtyTinLuong
 {
     public partial class BanHang_DoiChieu_CongNo_new : Form
     {
+        DataTable _data;
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -178,6 +179,7 @@ namespace CtyTinLuong
             //    _ravi_cuoi["Co"] = 0;
             //}
             dt2xxxx.Rows.Add(_ravi_cuoi);
+            _data = dt2xxxx;
             gridControl2.DataSource = dt2xxxx;
         }
         public BanHang_DoiChieu_CongNo_new()
@@ -220,7 +222,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             BanHang_DoiChieu_CongNo_new_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -232,6 +236,15 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
+            {
+                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
         }
     }
 }
