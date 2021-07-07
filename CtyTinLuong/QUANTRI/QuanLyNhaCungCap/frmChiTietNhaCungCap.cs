@@ -60,6 +60,31 @@ namespace CtyTinLuong
                 }
                 else
                 {
+                    if (!String.IsNullOrEmpty(txtMaNCC.Text))
+                    {
+                        if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
+                        {
+                            MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                            txtMaNCC.Focus();
+                            return;
+                        }
+                    }
+
+                    //
+                    if (!String.IsNullOrEmpty(txtTen.Text))
+                    {
+                        if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
+                        {
+                            if (MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            {
+                                txtTen.Focus();
+                                return;
+                            }
+                        }
+                    }
+
+                    //
                     cls.Insert();
                     MessageBox.Show("Đã thêm mới"); 
                     this.Close();
@@ -143,30 +168,12 @@ namespace CtyTinLuong
 
         private void txtMaNCC_TextChanged(object sender, EventArgs e)
         {
-            clsTbNhaCungCap cls = new clsTbNhaCungCap();
 
-            if (!String.IsNullOrEmpty(txtMaNCC.Text))
-            {
-                if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
-                {
-                    MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtMaNCC.Focus();
-                }
-            }
         }
 
         private void txtTen_TextChanged(object sender, EventArgs e)
         {
-            clsTbNhaCungCap cls = new clsTbNhaCungCap();
 
-            if (!String.IsNullOrEmpty(txtTen.Text))
-            {
-                if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
-                {
-                    MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtTen.Focus();
-                }
-            }
         }
     }
 }

@@ -81,8 +81,6 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-
                     if (!String.IsNullOrEmpty(txtMaVT.Text))
                     {
                         if (cls.SelectOne_MaVT(txtMaVT.Text.Trim()))
@@ -97,9 +95,12 @@ namespace CtyTinLuong
                     {
                         if (cls.SelectOne_TenVTHH(txtTen.Text.Trim()))
                         {
-                            MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                            txtTen.Focus();
-                            return;
+                            if (MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            {
+                                txtTen.Focus();
+                                return;
+                            }
                         }
                     }
 

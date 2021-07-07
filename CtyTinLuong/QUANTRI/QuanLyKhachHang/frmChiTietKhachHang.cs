@@ -87,6 +87,30 @@ namespace CtyTinLuong
                 }
                 else
                 {
+                    if (!String.IsNullOrEmpty(txtMaKH.Text))
+                    {
+                        if (cls.SelectOne_MaKH(txtMaKH.Text.Trim()))
+                        {
+                            MessageBox.Show("Mã khách hàng \"" + txtMaKH.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                            txtMaKH.Focus();
+                            return;
+                        }
+                    }
+
+                    if (!String.IsNullOrEmpty(txtTen.Text))
+                    {
+                        if (cls.SelectOne_TenKH(txtTen.Text.Trim()))
+                        {
+                            if (MessageBox.Show("Tên khách hàng \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            {
+                                txtTen.Focus();
+                                return;
+                            }
+                        }
+                    }
+
+                    //
                     cls.Insert();
                     MessageBox.Show("Đã thêm mới");
                     this.Close();
@@ -160,30 +184,12 @@ namespace CtyTinLuong
 
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
-            clsTbKhachHang cls = new clsTbKhachHang();
 
-            if (!String.IsNullOrEmpty(txtMaKH.Text))
-            {
-                if (cls.SelectOne_MaKH(txtMaKH.Text.Trim()))
-                {
-                    MessageBox.Show("Mã khách hàng \"" + txtMaKH.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtMaKH.Focus();
-                }
-            }
         }
 
         private void txtTen_TextChanged(object sender, EventArgs e)
         {
-            clsTbKhachHang cls = new clsTbKhachHang();
 
-            if (!String.IsNullOrEmpty(txtTen.Text))
-            {
-                if (cls.SelectOne_TenKH(txtTen.Text.Trim()))
-                {
-                    MessageBox.Show("Tên khách hàng \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtTen.Focus();
-                }
-            }
         }
     }
 }
