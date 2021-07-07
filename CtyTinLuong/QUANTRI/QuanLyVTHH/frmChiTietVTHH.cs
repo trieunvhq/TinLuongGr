@@ -81,6 +81,29 @@ namespace CtyTinLuong
                 }
                 else
                 {
+                    clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+
+                    if (!String.IsNullOrEmpty(txtMaVT.Text))
+                    {
+                        if (cls.SelectOne_MaVT(txtMaVT.Text.Trim()))
+                        {
+                            MessageBox.Show("Mã vật tư \"" + txtMaVT.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                            txtMaVT.Focus();
+                            return;
+                        }
+                    }
+
+                    if (!String.IsNullOrEmpty(txtTen.Text))
+                    {
+                        if (cls.SelectOne_TenVTHH(txtTen.Text.Trim()))
+                        {
+                            MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                            txtTen.Focus();
+                            return;
+                        }
+                    }
+
+                    //
                     cls.Insert();
                     MessageBox.Show("Đã thêm mới");
                     this.Close();
@@ -272,30 +295,12 @@ namespace CtyTinLuong
 
         private void txtMaVT_TextChanged(object sender, EventArgs e)
         {
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
-            if (!String.IsNullOrEmpty(txtMaVT.Text))
-            {
-                if (cls.SelectOne_MaVT(txtMaVT.Text.Trim()))
-                {
-                    MessageBox.Show("Mã vật tư \"" + txtMaVT.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtMaVT.Focus();
-                }
-            }
         }
 
         private void txtTen_TextChanged(object sender, EventArgs e)
         {
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
 
-            if (!String.IsNullOrEmpty(txtTen.Text))
-            {
-                if (cls.SelectOne_TenVTHH(txtTen.Text.Trim()))
-                {
-                    MessageBox.Show("Tên vật tư \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtTen.Focus();
-                }
-            }
         }
     }
 }

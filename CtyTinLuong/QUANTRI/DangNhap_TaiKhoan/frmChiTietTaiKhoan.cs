@@ -164,22 +164,28 @@ namespace CtyTinLuong
         private void btLuu_Click(object sender, EventArgs e)
         {
             if (frmQuanLyTaiKhoan.mb_TheMoi_TaiKhoan == true || CtyTinLuong.FormMain.FormCongCu.mb_Add_TK == true)
+            {
+                clsTbDangNhap cls = new clsTbDangNhap();
+
+                if (!String.IsNullOrEmpty(txtTen.Text))
+                {
+                    if (cls.SelectOne_Ten(txtTen.Text.Trim()))
+                    {
+                        MessageBox.Show("Tên tài khoản \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                        txtTen.Focus();
+                        return;
+                    }
+                }
+
+                //
                 LuuDuLieu_ThemMoiTaiKhoan();
+            }
             else LuuDuLieu_SuaTaiKhoan();
         }
 
         private void txtTen_TextChanged(object sender, EventArgs e)
         {
-            clsTbDangNhap cls = new clsTbDangNhap();
-
-            if (!String.IsNullOrEmpty(txtTen.Text))
-            {
-                if (cls.SelectOne_Ten(txtTen.Text.Trim()))
-                {
-                    MessageBox.Show("Tên tài khoản \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtTen.Focus();
-                }
-            }
+           
         }
     }
 }
