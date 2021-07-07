@@ -73,7 +73,30 @@ namespace CtyTinLuong
                         return;
                     }
                     else
-                    {                        
+                    {
+                        if (!String.IsNullOrEmpty(txtSoTKCon.Text))
+                        {
+                            if (cls.SelectOne_SoTaiKhoanCon(txtSoTKCon.Text.Trim()))
+                            {
+                                MessageBox.Show("Số tài khoản con \"" + txtSoTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                                txtSoTKCon.Focus();
+                            }
+                        }
+
+
+                        if (!String.IsNullOrEmpty(txtTenTKCon.Text))
+                        {
+                            if (cls.SelectOne_TenTaiKhoanCon(txtTenTKCon.Text.Trim()))
+                            {
+                                if (MessageBox.Show("Tên tài khoản con \"" + txtTenTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                                {
+                                    txtTenTKCon.Focus();
+                                    return;
+                                }
+                            }
+                        }
+
                         cls.iID_TaiKhoanKeToanMe = Convert.ToInt16(gridTK_me.EditValue.ToString());
                         cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                         cls.bTonTai = true;
@@ -144,30 +167,12 @@ namespace CtyTinLuong
 
         private void txtSoTKCon_TextChanged(object sender, EventArgs e)
         {
-            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
 
-            if (!String.IsNullOrEmpty(txtSoTKCon.Text))
-            {
-                if (cls.SelectOne_SoTaiKhoanCon(txtSoTKCon.Text.Trim()))
-                {
-                    MessageBox.Show("Số tài khoản con \"" + txtSoTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtSoTKCon.Focus();
-                }
-            }
         }
 
         private void txtTenTKCon_TextChanged(object sender, EventArgs e)
         {
-            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
 
-            if (!String.IsNullOrEmpty(txtTenTKCon.Text))
-            {
-                if (cls.SelectOne_TenTaiKhoanCon(txtTenTKCon.Text.Trim()))
-                {
-                    MessageBox.Show("Tên tài khoản con \"" + txtTenTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                    txtTenTKCon.Focus();
-                }
-            }
         }
     }
 }
