@@ -155,6 +155,12 @@
     <Compile Include="BanHang\BanHang_CongNo.Designer.cs">
       <DependentUpon>BanHang_CongNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\BanHang_DoiChieu_CongNo_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHang_DoiChieu_CongNo_new.Designer.cs">
+      <DependentUpon>BanHang_DoiChieu_CongNo_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsDelete_ALL_newwww.cs" />
     <Compile Include="clsNgayThang.cs" />
     <Compile Include="clsSoTienBangChu.cs" />
@@ -2102,6 +2108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang_TheoKhachHang.resx">
       <DependentUpon>Xtra_SoTongHop_banHang_TheoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\BanHang_DoiChieu_CongNo_new.resx">
+      <DependentUpon>BanHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_ChiTietChoXuatKho_Moi.resx">
       <DependentUpon>DaiLy_ChiTietChoXuatKho_Moi.cs</DependentUpon>
