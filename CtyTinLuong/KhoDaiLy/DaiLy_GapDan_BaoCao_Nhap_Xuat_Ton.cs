@@ -188,6 +188,9 @@ namespace CtyTinLuong
             DataTable dt_Nhap_Xuat_TrongKy = LoadDaTa_Nhap_Xuat_TrongKy(xxtungay, xxdenngay);
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_VTHH", typeof(int));
+            dt2.Columns.Add("ID_NhomVTHH", typeof(int));
+
+          
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("TenVTHH", typeof(string));
             dt2.Columns.Add("DonViTinh", typeof(string));
@@ -233,6 +236,8 @@ namespace CtyTinLuong
                 SoLuongTon_CuoiKy = SoLuong_TonDauKy + SoLuongNhap_TrongKy - SoLuongXuat_TrongKy;
                 GiaTriTon_CuoiKy = GiaTri_TonDauKy + GiaTriNhap_TrongKy - GiaTriXuat_TrongKy;
                 DataRow _ravi = dt2.NewRow();
+              
+                _ravi["ID_NhomVTHH"] = Convert.ToInt16(dt_Nhap_Xuat_TrongKy.Rows[i]["ID_NhomVTHH"].ToString());
                 _ravi["ID_VTHH"] = iiiiiID_VTHH;
                 _ravi["MaVT"] = dt_Nhap_Xuat_TrongKy.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt_Nhap_Xuat_TrongKy.Rows[i]["TenVTHH"].ToString();
@@ -273,7 +278,7 @@ namespace CtyTinLuong
                     GiaTriTon_CuoiKy = GiaTri_TonDauKy;
                     DataRow _ravi = dt2.NewRow();
                     _ravi["ID_VTHH"] = iiiiiID_VTHH;
-
+                    _ravi["ID_NhomVTHH"] = Convert.ToInt16(dt_TonDayKy.Rows[i]["ID_NhomVTHH"].ToString());                                       
                     _ravi["MaVT"] = dt_TonDayKy.Rows[i]["MaVT"].ToString();
                     _ravi["TenVTHH"] = dt_TonDayKy.Rows[i]["TenVTHH"].ToString();
                     _ravi["DonViTinh"] = dt_TonDayKy.Rows[i]["DonViTinh"].ToString();
@@ -293,7 +298,10 @@ namespace CtyTinLuong
 
                 }
             }
+            dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
+            dt2 = dt2.DefaultView.ToTable();
             gridControl1.DataSource = dt2;
+           
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
