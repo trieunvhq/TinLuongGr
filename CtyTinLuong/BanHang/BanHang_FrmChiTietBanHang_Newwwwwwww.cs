@@ -1113,7 +1113,7 @@ namespace CtyTinLuong
 
 
                 frmPrint_BanHang ff = new frmPrint_BanHang();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
@@ -1246,6 +1246,22 @@ namespace CtyTinLuong
         private void gridKH_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridKH.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void gridView4_RowClick(object sender, RowClickEventArgs e)
@@ -1425,7 +1441,7 @@ namespace CtyTinLuong
             mdaNgayChungTu = dteNgayChungTu.DateTime;
             mdbSoLuongXuat = Convert.ToDouble(gridView4.GetRowCellValue(0,clSoLuong).ToString());
             BanHang_FrmThamChieuKeHoachSanXuat ff = new CtyTinLuong.BanHang_FrmThamChieuKeHoachSanXuat();
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -1475,7 +1491,7 @@ namespace CtyTinLuong
                 mdbTongTienVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
                 msDienGiai = txtDienGiai.Text.ToString();
                 frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
     }

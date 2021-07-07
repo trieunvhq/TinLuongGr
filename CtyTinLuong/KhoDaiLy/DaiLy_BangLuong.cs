@@ -121,6 +121,40 @@ namespace CtyTinLuong
             }
         }
 
+        private void btnTungDL_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            DataTable dt27hhhdshjj = dv1212.ToTable();
+
+            string shienthi = "1";
+
+            mdbSumTongTien = Convert.ToDouble(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
+            mdbSumTamUng = Convert.ToDouble(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
+            mdbSumThucNhan = Convert.ToDouble(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
+
+            if (DatatableABC.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                mbPrint_ALL = true;
+                mbPrint_RutGon = false;
+
+                int xxthang = Convert.ToInt32(txtThang.Text.ToString());
+                int xxnam = Convert.ToInt32(txtNam.Text.ToString());
+                clsDaiLy_tbXuatKho cls = new clsDaiLy_tbXuatKho();
+                mdtPrint = cls.SA_TinhLuong_print_ALL(xxthang, xxnam, ngaybatdau, ngayketthuc);
+                mdaNgayThang = DateTime.Now;
+                miThang = Convert.ToInt32(txtThang.Text);
+                miNam = Convert.ToInt32(txtNam.Text);
+                Tr_frmPrint_LuongDaiLy_TrongThang ff = new Tr_frmPrint_LuongDaiLy_TrongThang();
+                ff.Show();
+            }
+        }
+
         private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT2)
