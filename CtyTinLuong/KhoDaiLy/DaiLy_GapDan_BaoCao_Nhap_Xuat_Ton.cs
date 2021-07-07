@@ -33,6 +33,8 @@ namespace CtyTinLuong
             dt2.Columns.Add("DonViTinh", typeof(string));
             dt2.Columns.Add("SoLuong_TonDauKy", typeof(double));
             dt2.Columns.Add("GiaTri_TonDauKy", typeof(double));
+            dt2.Columns.Add("TenNhomVTHH", typeof(string));
+            dt2.Columns.Add("ID_NhomVTHH", typeof(string));
             for (int i = 0; i < dt_NhapTruoc.Rows.Count; i++)
             {
                 int iiiiiID_VTHH;
@@ -65,6 +67,9 @@ namespace CtyTinLuong
                 _ravi["SoLuong_TonDauKy"] = SoLuong_TonDauKy;
                 _ravi["GiaTri_TonDauKy"] = GiaTri_TonDauKy;
 
+                _ravi["TenNhomVTHH"] = dt_NhapTruoc.Rows[i]["TenNhomVTHH"].ToString();
+                _ravi["ID_NhomVTHH"] = dt_NhapTruoc.Rows[i]["ID_NhomVTHH"].ToString();
+
                 dt2.Rows.Add(_ravi);
 
             }
@@ -89,6 +94,8 @@ namespace CtyTinLuong
                     _ravi["DonViTinh"] = dt_XuatTruoc.Rows[i]["DonViTinh"].ToString();
                     _ravi["SoLuong_TonDauKy"] = SoLuong_TonDauKy;
                     _ravi["GiaTri_TonDauKy"] = GiaTri_TonDauKy;
+                    _ravi["TenNhomVTHH"] = dt_XuatTruoc.Rows[i]["TenNhomVTHH"].ToString();
+                    _ravi["ID_NhomVTHH"] = dt_XuatTruoc.Rows[i]["ID_NhomVTHH"].ToString();
                     dt2.Rows.Add(_ravi);
                 }
 
@@ -115,6 +122,9 @@ namespace CtyTinLuong
             dt2.Columns.Add("GiaTriNhap_TrongKy", typeof(double));
             dt2.Columns.Add("SoLuongXuat_TrongKy", typeof(double));
             dt2.Columns.Add("GiaTriXuat_TrongKy", typeof(double));
+            dt2.Columns.Add("TenNhomVTHH", typeof(string));
+            dt2.Columns.Add("ID_NhomVTHH", typeof(string));
+
             for (int i = 0; i < dt_NhapTrongKy.Rows.Count; i++)
             {
                 int iiiiiID_VTHH;
@@ -149,6 +159,9 @@ namespace CtyTinLuong
 
                 _ravi["SoLuongXuat_TrongKy"] = SoLuongXuat_TrongKy;
                 _ravi["GiaTriXuat_TrongKy"] = GiaTriXuat_TrongKy;
+
+                _ravi["TenNhomVTHH"] = dt_NhapTrongKy.Rows[i]["TenNhomVTHH"].ToString();
+                _ravi["ID_NhomVTHH"] = dt_NhapTrongKy.Rows[i]["ID_NhomVTHH"].ToString();
                 dt2.Rows.Add(_ravi);
 
             }
@@ -174,6 +187,9 @@ namespace CtyTinLuong
                     _ravi["GiaTriNhap_TrongKy"] = 0;
                     _ravi["SoLuongXuat_TrongKy"] = SoLuongXuat_TrongKy;
                     _ravi["GiaTriXuat_TrongKy"] = GiaTriXuat_TrongKy;
+
+                    _ravi["TenNhomVTHH"] = dt_XuatTrongKy.Rows[i]["TenNhomVTHH"].ToString();
+                    _ravi["ID_NhomVTHH"] = dt_XuatTrongKy.Rows[i]["ID_NhomVTHH"].ToString();
                     dt2.Rows.Add(_ravi);
                 }
 
@@ -188,9 +204,9 @@ namespace CtyTinLuong
             DataTable dt_Nhap_Xuat_TrongKy = LoadDaTa_Nhap_Xuat_TrongKy(xxtungay, xxdenngay);
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("ID_NhomVTHH", typeof(int));
+            dt2.Columns.Add("TenNhomVTHH", typeof(string));
+            dt2.Columns.Add("ID_NhomVTHH", typeof(string));
 
-          
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("TenVTHH", typeof(string));
             dt2.Columns.Add("DonViTinh", typeof(string));
@@ -236,8 +252,10 @@ namespace CtyTinLuong
                 SoLuongTon_CuoiKy = SoLuong_TonDauKy + SoLuongNhap_TrongKy - SoLuongXuat_TrongKy;
                 GiaTriTon_CuoiKy = GiaTri_TonDauKy + GiaTriNhap_TrongKy - GiaTriXuat_TrongKy;
                 DataRow _ravi = dt2.NewRow();
-              
-                _ravi["ID_NhomVTHH"] = Convert.ToInt16(dt_Nhap_Xuat_TrongKy.Rows[i]["ID_NhomVTHH"].ToString());
+
+                _ravi["TenNhomVTHH"] = dt_Nhap_Xuat_TrongKy.Rows[i]["TenNhomVTHH"].ToString();
+                _ravi["ID_NhomVTHH"] = dt_Nhap_Xuat_TrongKy.Rows[i]["ID_NhomVTHH"].ToString();
+
                 _ravi["ID_VTHH"] = iiiiiID_VTHH;
                 _ravi["MaVT"] = dt_Nhap_Xuat_TrongKy.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt_Nhap_Xuat_TrongKy.Rows[i]["TenVTHH"].ToString();
@@ -278,7 +296,10 @@ namespace CtyTinLuong
                     GiaTriTon_CuoiKy = GiaTri_TonDauKy;
                     DataRow _ravi = dt2.NewRow();
                     _ravi["ID_VTHH"] = iiiiiID_VTHH;
-                    _ravi["ID_NhomVTHH"] = Convert.ToInt16(dt_TonDayKy.Rows[i]["ID_NhomVTHH"].ToString());                                       
+
+                    _ravi["TenNhomVTHH"] = dt_TonDayKy.Rows[i]["TenNhomVTHH"].ToString();
+                    _ravi["ID_NhomVTHH"] = dt_TonDayKy.Rows[i]["ID_NhomVTHH"].ToString();
+
                     _ravi["MaVT"] = dt_TonDayKy.Rows[i]["MaVT"].ToString();
                     _ravi["TenVTHH"] = dt_TonDayKy.Rows[i]["TenVTHH"].ToString();
                     _ravi["DonViTinh"] = dt_TonDayKy.Rows[i]["DonViTinh"].ToString();
