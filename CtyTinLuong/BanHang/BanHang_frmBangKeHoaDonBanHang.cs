@@ -248,7 +248,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                dteDenNgay.Focus();
+                SendKeys.Send("{TAB}");
             }
         }
 
@@ -256,17 +256,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                btLayDuLieu.Focus();
-                btLayDuLieu_Click(null, null);
-            }
-        }
-
-        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                btPrint.Focus();
-                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
             }
         }
 
