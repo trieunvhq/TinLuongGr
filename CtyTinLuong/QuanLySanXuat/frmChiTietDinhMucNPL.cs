@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -424,12 +425,12 @@ namespace CtyTinLuong
 
         private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
-            //repositoryItemSearchLookUpEdit1.Properties.View.Columns[0].Visible = false;
+            ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
         }
 
         private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            //DataRow row = ((DataRowView)repositoryItemSearchLookUpEdit1.row)
+            DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
