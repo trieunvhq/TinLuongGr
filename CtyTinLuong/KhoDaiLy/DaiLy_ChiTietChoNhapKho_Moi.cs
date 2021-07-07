@@ -53,6 +53,12 @@ namespace CtyTinLuong
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = ""+cls.sMaVT.Value+" - "+cls.sTenVTHH.Value+" || Tồn kho: "+soluongton.ToString()+"";
+
+            //if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+            //{
+            //    int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+            //    Hienthi_Lable_TonKho(xxID);
+            //}
         }
         private void TinhTongSoKg_TongSoKien()
         {
