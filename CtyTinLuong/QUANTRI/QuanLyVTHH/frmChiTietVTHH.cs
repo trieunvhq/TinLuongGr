@@ -33,6 +33,11 @@ namespace CtyTinLuong
                 MessageBox.Show("Chưa có ĐVT ");
                 return false;
             }
+            else if (cbNhom.Text.ToString() == "")
+            {
+                MessageBox.Show("Chưa chọn nhóm vật tư ");
+                return false;
+            }
             else return true;
 
         }
@@ -56,7 +61,7 @@ namespace CtyTinLuong
                     cls.blobHinhAnh = pic;
                 }
 
-
+                cls.iID_MaNhom = cbNhom.SelectedIndex;
                 cls.sMaVT = txtMaVT.Text.ToString();
                 cls.sTenVTHH = txtTen.Text.ToString();
                 cls.sDienGiai = txtDienGiai.Text.ToString();
