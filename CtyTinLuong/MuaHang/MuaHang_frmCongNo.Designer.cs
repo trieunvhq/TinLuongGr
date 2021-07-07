@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaHang_frmCongNo));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -93,6 +92,7 @@
             this.gridControl1.TabIndex = 96;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -131,6 +131,7 @@
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell_1);
+            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
             // gridBand6
@@ -381,6 +382,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(257, 20);
             this.dteDenNgay.StyleController = this.layoutControl1;
             this.dteDenNgay.TabIndex = 93;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // layoutControl1
             // 
@@ -416,6 +418,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(256, 20);
             this.dteTuNgay.StyleController = this.layoutControl1;
             this.dteTuNgay.TabIndex = 93;
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // btPrint
             // 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaHang_frmChiTietCongNo_MuaHang));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -161,6 +160,7 @@
             this.gridControl1.TabIndex = 95;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView4
             // 
@@ -191,6 +191,7 @@
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
+            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clSTT2
             // 
@@ -314,6 +315,7 @@
             this.gridControl2.TabIndex = 95;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
+            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -359,6 +361,7 @@
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell_1);
             this.bandedGridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.bandedGridView1_RowCellStyle);
             this.bandedGridView1.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.bandedGridView1_CustomRowFilter);
+            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             // 
             // gridBand6
             // 
@@ -650,6 +653,7 @@
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.Size = new System.Drawing.Size(551, 20);
             this.txtTenTK.TabIndex = 111;
+            this.txtTenTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenTK_KeyPress);
             // 
             // btLayDuLieu
             // 
@@ -661,7 +665,6 @@
             this.btLayDuLieu.TabIndex = 113;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
             this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
-            this.btLayDuLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btLayDuLieu_KeyPress);
             // 
             // GridSoTaiKhoan
             // 
@@ -674,6 +677,7 @@
             this.GridSoTaiKhoan.StyleController = this.layoutControl1;
             this.GridSoTaiKhoan.TabIndex = 112;
             this.GridSoTaiKhoan.EditValueChanged += new System.EventHandler(this.GridSoTaiKhoan_EditValueChanged);
+            this.GridSoTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridSoTaiKhoan_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
