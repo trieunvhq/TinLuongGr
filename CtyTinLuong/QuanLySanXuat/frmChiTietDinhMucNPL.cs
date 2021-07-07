@@ -329,7 +329,7 @@ namespace CtyTinLuong
                     HienThi_ThemMoi_DinhMuc_NPL();
                 else HienThi_Sua_DinhMuc_NPL();
             }
-            catch { }
+            catch(Exception ee) { }
             Cursor.Current = Cursors.Default;
         }
 
@@ -445,6 +445,19 @@ namespace CtyTinLuong
         private void searchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         { 
             gridMaTPQuyDoi.Properties.View.Columns[0].Visible = false;
+             
+        }
+
+        private void gridMaVTchinh1_EditValueChanged_1(object sender, EventArgs e)
+        {
+            DataRow row = ((DataRowView)gridMaVTchinh1.GetSelectedDataRow()).Row;
+            txtTenVTchinh1.Text = row["TenVTHH"].ToString();
+            txtDVT_VTchinh1.Text = row["DonViTinh"].ToString();
+        }
+
+        private void gridMaVTchinh1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaVTchinh1.Properties.View.Columns[0].Visible = false;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

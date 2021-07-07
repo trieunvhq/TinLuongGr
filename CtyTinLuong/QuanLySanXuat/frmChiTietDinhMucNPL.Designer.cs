@@ -612,6 +612,8 @@
             this.gridMaVTchinh1.Size = new System.Drawing.Size(238, 20);
             this.gridMaVTchinh1.StyleController = this.layoutControl1;
             this.gridMaVTchinh1.TabIndex = 74;
+            this.gridMaVTchinh1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaVTchinh1_QueryPopUp);
+            this.gridMaVTchinh1.EditValueChanged += new System.EventHandler(this.gridMaVTchinh1_EditValueChanged_1);
             // 
             // gridView3
             // 
