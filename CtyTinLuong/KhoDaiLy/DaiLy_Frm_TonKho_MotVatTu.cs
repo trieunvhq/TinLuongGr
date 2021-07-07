@@ -185,5 +185,10 @@ namespace CtyTinLuong
         {
 
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
