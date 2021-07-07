@@ -31,16 +31,14 @@ namespace CtyTinLuong
             GridLookUpEdit_MaVatTu.DisplayMember = "MaVT";
 
             clsTbKhachHang cls = new clsTbKhachHang();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable newdt = dv.ToTable();
+            DataTable dt = cls.T_SelectAll(); 
 
-            gridKH.Properties.DataSource = newdt;
+            gridKH.Properties.DataSource = dt;
             gridKH.Properties.ValueMember = "ID_KhachHang";
             gridKH.Properties.DisplayMember = "MaKH";
 
-           
+            dt.Dispose();
+
         }
         private void HienThi_ALLL()
         {
@@ -308,6 +306,11 @@ namespace CtyTinLuong
         private void gridView4_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
 
+        }
+
+        private void gridKH_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridKH.Properties.View.Columns[0].Visible = false;
         }
 
         private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
