@@ -260,45 +260,45 @@ namespace CtyTinLuong
             }
         }
 
-        private void Luu_TbThuChi(int xxxxID_BanHang)
-        {
-            if (!KiemTraLuu()) return;
-            else
-            {
-                HienThiSoChungTu(bienthangthai);
+        //private void Luu_TbThuChi(int xxxxID_BanHang)
+        //{
+        //    if (!KiemTraLuu()) return;
+        //    else
+        //    {
+        //        HienThiSoChungTu(bienthangthai);
                 
-                clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+        //        clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
+        //        cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.fSoTien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                cls1.sThamChieu = txtSoChungTu.Text.ToString();
-                cls1.sDoiTuong = txtTenKH.Text.ToString();
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
-                cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.bTienUSD = checkUSD.Checked;
-                cls1.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 = bienthangthai;
-                cls1.bDaGhiSo = false;
-                cls1.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
-                cls1.iBienMuaHang1_BanHang2_ConLai_0 = 2;
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
-                if (dt1.Rows.Count > 0)
-                {
-                    cls1.sSoChungTu = dt1.Rows[0]["SoChungTu"].ToString();
-                    cls1.iID_ThuChi = Convert.ToInt32(dt1.Rows[0]["ID_ThuChi"].ToString());
-                    cls1.Update();
-                }
-                else
-                {
-                    cls1.sSoChungTu  = txtsochungtu_tbThuChi.Text.ToString();
-                    cls1.Insert();
-                }
+        //        cls1.sDienGiai = txtDienGiai.Text.ToString();
+        //        cls1.fSoTien = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+        //        cls1.sThamChieu = txtSoChungTu.Text.ToString();
+        //        cls1.sDoiTuong = txtTenKH.Text.ToString();
+        //        cls1.bTonTai = true;
+        //        cls1.bNgungTheoDoi = false;
+        //        cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+        //        cls1.bTienUSD = checkUSD.Checked;
+        //        cls1.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
+        //        cls1.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5 = bienthangthai;
+        //        cls1.bDaGhiSo = false;
+        //        cls1.iID_DoiTuong = Convert.ToInt32(gridKH.EditValue.ToString());
+        //        cls1.iBienMuaHang1_BanHang2_ConLai_0 = 2;
+        //        cls1.sDienGiai = txtDienGiai.Text.ToString();
+        //        DataTable dt1 = cls1.SelectOne_W_Ngay_ThamChieu_ID_DoiTuong();
+        //        if (dt1.Rows.Count > 0)
+        //        {
+        //            cls1.sSoChungTu = dt1.Rows[0]["SoChungTu"].ToString();
+        //            cls1.iID_ThuChi = Convert.ToInt32(dt1.Rows[0]["ID_ThuChi"].ToString());
+        //            cls1.Update();
+        //        }
+        //        else
+        //        {
+        //            cls1.sSoChungTu  = txtsochungtu_tbThuChi.Text.ToString();
+        //            cls1.Insert();
+        //        }
               
-            }
-        }
+        //    }
+        //}
         private void HienThi_GridConTrol_SauKhiChon()
         {
             gridControl2.DataSource = null;
@@ -651,7 +651,7 @@ namespace CtyTinLuong
                 // luu chi tiet ban hang
                 Luu_Chitiet_BanHang(aaiixxID_banHang);
                 //lưu thu chi và tai khoan ke toan
-                Luu_TbThuChi(aaiixxID_banHang);
+                //Luu_TbThuChi(aaiixxID_banHang);
                 Luu_BienDongTaiKhoan(aaiixxID_banHang);
                 Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu");
@@ -734,7 +734,7 @@ namespace CtyTinLuong
                 Luu_Chitiet_BanHang(aaiixxID_banHang);
                 Luu_Chitiet_XuatKho_ThanhPham(iiiID_XuatKho_ThanhPham);
                 // lưu tbthu chi và tailhoan ke toan
-                Luu_TbThuChi(aaiixxID_banHang);
+                //Luu_TbThuChi(aaiixxID_banHang);
                 Luu_BienDongTaiKhoan(aaiixxID_banHang);
                 Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu và gửi dữ liệu");
@@ -746,7 +746,7 @@ namespace CtyTinLuong
         {
             gridNguoiLap.EditValue = 14;
             dteNgayChungTu.EditValue = DateTime.Today;
-            checkBaoCo.Checked = true;
+            
             checkUSD.Checked = true;
 
             clsKhoThanhPham_tbXuatKho cls1 = new clsKhoThanhPham_tbXuatKho();
@@ -799,7 +799,7 @@ namespace CtyTinLuong
         {
             gridNguoiLap.EditValue = 11;
             checkUSD.Checked = true;
-            checkBaoCo.Checked = true;
+           
             clsBanHang_tbBanHang cls = new CtyTinLuong.clsBanHang_tbBanHang();
             cls.iID_BanHang = UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.miiiID_BanHang;
             DataTable dt = cls.SelectOne();
@@ -1477,23 +1477,8 @@ namespace CtyTinLuong
 
         }
 
-        private void checkPhieuThu_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkPhieuThu.Checked == true)
-            {
-                bienthangthai = 4;
-                checkBaoCo.Checked = false;
-            }
-        }
+       
 
-        private void checkBaoCo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBaoCo.Checked == true)
-            {
-                bienthangthai = 1;
-                checkPhieuThu.Checked = false;
-            }
-        }
 
         private void gridView8_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
