@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace CtyTinLuong
         public void LoadData(int iiID_Con, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt2xxxx = new DataTable();
-
+            dt2xxxx.Columns.Add("HienThi", typeof(bool));
             dt2xxxx.Columns.Add("NgayThang", typeof(DateTime));
             dt2xxxx.Columns.Add("SoChungTu", typeof(string));
             dt2xxxx.Columns.Add("DienGiai", typeof(string));
@@ -38,7 +39,7 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("CoTrongKy", typeof(double));
             dt2xxxx.Columns.Add("NoCuoiKy", typeof(double));
             dt2xxxx.Columns.Add("CoCuoiKy", typeof(double));
-
+            dt2xxxx.Columns.Add("ID_ChungTu", typeof(string));
             gridControl2.DataSource = null;
 
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -58,6 +59,7 @@ namespace CtyTinLuong
             double No_Co_Khong = Math.Abs(dCoDauKy_0 - dNoDauKy_0);
             DataRow _ravi_Khong = dt2xxxx.NewRow();
             _ravi_Khong["DienGiai"] = "Dư đầu kỳ";
+            _ravi_Khong["HienThi"] = false;
             if (dNoDauKy_0 <= dCoDauKy_0)
             {
                 _ravi_Khong["NoCuoiKy"] = 0;
@@ -76,6 +78,10 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
+                    _ravi["ID_ChungTu"] = dtphatsinh.Rows[i]["ID_ChungTu"].ToString();
+                    if (dtphatsinh.Rows[i]["ID_ChungTu"].ToString() != "" & Convert.ToBoolean(dtphatsinh.Rows[i]["Check_PhanNganHang"].ToString()) == false)
+                        _ravi["HienThi"] = true;
+                    else _ravi["HienThi"] = false;
                     _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
@@ -112,6 +118,7 @@ namespace CtyTinLuong
 
             DataRow _ravi_2 = dt2xxxx.NewRow();
             _ravi_2["DienGiai"] = "Cộng phát sinh trong kỳ";
+            _ravi_2["HienThi"] = false;
             if (Noxx <= Coxx)
             {
                 _ravi_2["NoTrongKy"] = Noxx- dNoDauKy_0;
@@ -127,6 +134,7 @@ namespace CtyTinLuong
 
             DataRow _ravi_cuoi = dt2xxxx.NewRow();
             _ravi_cuoi["DienGiai"] = "Dư cuối kỳ";
+            _ravi_cuoi["HienThi"] = false;
             if (Noxx <= Coxx)
             {
                 _ravi_cuoi["NoCuoiKy"] = 0;
@@ -211,6 +219,30 @@ namespace CtyTinLuong
 
             }
 
+        }
+
+        private void bandedGridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["HienThi"]));
+                if (category == true)
+                {
+                    e.Appearance.BackColor = Color.GreenYellow;
+
+                }
+            }
+        }
+
+        private void bandedGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString() != "")
+            {
+                //int iDImuahang = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
+                //HienThiGridControl_2(iDImuahang);
+            }
+            
         }
 
         private void GridSoTaiKhoan_EditValueChanged(object sender, EventArgs e)

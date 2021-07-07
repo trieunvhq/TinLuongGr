@@ -78,6 +78,9 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.clHienThi = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clID_ChungTu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -102,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -233,7 +237,8 @@
             this.gridControl2.MainView = this.bandedGridView1;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit2});
+            this.repositoryItemMemoEdit2,
+            this.repositoryItemCheckEdit1});
             this.gridControl2.Size = new System.Drawing.Size(948, 413);
             this.gridControl2.TabIndex = 94;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -267,7 +272,9 @@
             this.clTenTaiKhoanCon,
             this.clSoChungTu,
             this.clDienGiai,
-            this.clNgayChungTu});
+            this.clNgayChungTu,
+            this.clHienThi,
+            this.clID_ChungTu});
             this.bandedGridView1.GridControl = this.gridControl2;
             this.bandedGridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Co", this.clCoTrongKy, "{0:#,##0}"),
@@ -278,6 +285,8 @@
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.bandedGridView1_RowCellStyle);
+            this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
             // gridBand6
             // 
@@ -707,6 +716,25 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(733, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // clHienThi
+            // 
+            this.clHienThi.Caption = "HienThi";
+            this.clHienThi.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.clHienThi.FieldName = "HienThi";
+            this.clHienThi.Name = "clHienThi";
+            // 
+            // clID_ChungTu
+            // 
+            this.clID_ChungTu.Caption = "ID_ChungTu";
+            this.clID_ChungTu.FieldName = "ID_ChungTu";
+            this.clID_ChungTu.Name = "clID_ChungTu";
+            this.clID_ChungTu.Visible = true;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // frmChiTietBienDongTaiKhoan_Mot_TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,6 +769,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -794,5 +823,8 @@
         private DevExpress.XtraEditors.SimpleButton btPrint_PhaiTraNguoiBan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clHienThi;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_ChungTu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
     }
 }
