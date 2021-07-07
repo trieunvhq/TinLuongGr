@@ -636,6 +636,7 @@ namespace CtyTinLuong
                 clsbh.sThamChieu = txtSoChungTu_ThanhPham.Text.ToString();
                 clsbh.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
                 clsbh.fTiGia= Convert.ToDouble(txtTiGia.Text.ToString());
+                clsbh.sSoCongTeNo = txtSoCont.Text;
                 clsbh.bDaXong = false;
                 if(UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbSua==true)
                 {
@@ -696,6 +697,7 @@ namespace CtyTinLuong
                 clsbh.bDaXong = false;
                 clsbh.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
                 clsbh.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
+                clsbh.sSoCongTeNo = txtSoCont.Text;
                 Convert.ToDouble(txtTiGia.Text.ToString());
                 if (UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbSua == true)
                 {
@@ -805,6 +807,7 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             if (dt.Rows[0]["MaSoCongTeNo"].ToString() != "")
                 txtMaCongTennor.Text = cls.sMaSoCongTeNo.Value;
+            txtSoCont.Text = cls.sSoCongTeNo.Value;
             if (cls.bCheck_BaoVe == true) checkBaoVe_LaiXe.Checked = true;
             else checkBaoVe_LaiXe.Checked = false;
             if (UCThanhPham_XuatKhoBanHang_Newwwwwwwwww.mbCopY == true)
