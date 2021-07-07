@@ -98,37 +98,17 @@ namespace CtyTinLuong
         }
 
         private void Load_Lockup()
-        {
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-
+        { 
             clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtdistin = cls.SelectAll_Distint_ID_VTHH();
-            if (dtdistin.Rows.Count > 0)
-            {
-                for (int i = 0; i < dtdistin.Rows.Count; i++)
-                {
-
-                    int iiiID_VTHH = Convert.ToInt32(dtdistin.Rows[i]["ID_VTHH"].ToString());
-                    clsvthhh.iID_VTHH = iiiID_VTHH;
-                    DataTable dt = clsvthhh.SelectOne();
-                    DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_VTHH"] = iiiID_VTHH;
-                    _ravi["MaVT"] = clsvthhh.sMaVT.Value;
-                    _ravi["TenVTHH"] = clsvthhh.sTenVTHH.Value;
-                    dt2.Rows.Add(_ravi);
-                }
-            }
-
-
-
-
+            DataTable dt2 = cls.SelectAll_Distint_ID_VTHH();
+         
+            
             gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";
+            dt2.Dispose();
+            cls.Dispose();
         }
         public BanHang_frmChiTietMotVatTu()
         {
@@ -242,6 +222,11 @@ namespace CtyTinLuong
             {
                 gridView1.Focus();
             }
+        }
+         
+        private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaVT.Properties.View.Columns[0].Visible = false;
         }
     }
 }
