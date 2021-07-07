@@ -24,52 +24,37 @@ namespace CtyTinLuong
         public static string msdvtthanhphamquydoi, msMaThanhPham, msTenThanhPham;
         public static double mfPrint_soluongtpqiuydoi;
 
-        public static DateTime GetFistDayInMonth(int year, int month)
+        private void Hienthi_Lable_TonKho(int xxID_VTHH)
         {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            return aDateTime;
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = xxID_VTHH;
+            DataTable dt = cls.SelectOne();
+            double soluongton = 0;
+            clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+            double soluongxuat, soluongnhap;
+            DataTable dt_NhapTruoc = new DataTable();
+            DataTable dt_XuatTruoc = new DataTable();
+            dt_NhapTruoc = cls1.SA_distinct_NhapTruocKy(DateTime.Now);
+            dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy(DateTime.Now);
+            string filterExpression = "ID_VTHH=" + xxID_VTHH + "";
+            DataRow[] rows_Xuat = dt_XuatTruoc.Select(filterExpression);
+            DataRow[] rows_Nhap = dt_NhapTruoc.Select(filterExpression);
+            if (rows_Xuat.Length == 0)
+                soluongxuat = 0;
+            else
+                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+            if (rows_Nhap.Length == 0)
+                soluongnhap = 0;
+            else
+                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+            soluongton = soluongnhap - soluongxuat;
+
+            label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
+
+           
         }
-        public static DateTime GetLastDayInMonth(int year, int month)
-        {
-            DateTime aDateTime = new DateTime(year, month, 1);
-            DateTime retDateTime = aDateTime.AddMonths(1).AddDays(-1);
-            return retDateTime;
-        }
-        //private void Luu_themMoi_DuLieubangLuong()
-        //{
-
-        //    if (!KiemTraLuu()) return ;
-        //    else
-        //    {
-        //        int ID_DaiLyxx = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-        //        int thangx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("MM"));
-        //        int namxx = Convert.ToInt32(dteNgayChungTu.DateTime.ToString("yyyy"));
-        //        DateTime tungay = GetFistDayInMonth(namxx, thangx);
-        //        DateTime denngay = GetLastDayInMonth(namxx, thangx);
-
-        //        clsDaiLy_BangLuong clsxx = new clsDaiLy_BangLuong();
-        //        clsxx.iThang = thangx;
-        //        clsxx.iNam = namxx;
-        //        clsxx.iID_DaiLy = ID_DaiLyxx;
-        //        DataTable dt = clsxx.SelectOne__W_Thang_Nam_ID_DaiLy();
-        //        if (dt.Rows.Count == 0)
-        //        {
-        //            clsxx.iID_DaiLy = ID_DaiLyxx;
-        //            clsxx.iThang = thangx;
-        //            clsxx.iNam = namxx;
-        //            clsxx.dcLuongDaiLy = 0;
-        //            clsxx.dcTamUng = 0;
-        //            clsxx.dcSoTienDaTra = 0;
-        //            clsxx.sDienGiai = "";
-        //            clsxx.bTonTai = true;
-        //            clsxx.bNgungTheoDoi = false;
-        //            clsxx.bDaTraLuong = false;
-        //            clsxx.Insert();
-        //        }
-
-               
-        //    }
-        //}
+        
         private string soChungTu_KhoThanhPham()
         {
             string sochungtu;
@@ -1386,6 +1371,24 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString() != "")
+            {
+                int xxID = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString());
+                Hienthi_Lable_TonKho(xxID);
+            }
+        }
+
+        private void gridView2_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (gridView2.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
+            {
+                int xxID = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH2).ToString());
+                Hienthi_Lable_TonKho(xxID);
             }
         }
 
