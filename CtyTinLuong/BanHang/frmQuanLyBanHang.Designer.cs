@@ -54,6 +54,7 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -158,7 +159,8 @@
             this.navBarItem16,
             this.navbangKeHoaDonBanHang,
             this.navTonghopbanHang,
-            this.navCongNo});
+            this.navCongNo,
+            this.navBarItem1});
             this.navBarControl1.Location = new System.Drawing.Point(6, 14);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -173,7 +175,8 @@
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navbangKeHoaDonBanHang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navTonghopbanHang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navbangKeHoaDonBanHang
@@ -190,7 +193,7 @@
             // 
             // navCongNo
             // 
-            this.navCongNo.Caption = "Công nợ";
+            this.navCongNo.Caption = "Tổng hợp phải thu của khách hàng";
             this.navCongNo.Name = "navCongNo";
             this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
@@ -236,6 +239,11 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Đối chiếu công nợ";
+            this.navBarItem1.Name = "navBarItem1";
             // 
             // frmQuanLyBanHang
             // 
@@ -286,5 +294,6 @@
         private DevExpress.XtraNavBar.NavBarItem navbangKeHoaDonBanHang;
         private DevExpress.XtraNavBar.NavBarItem navTonghopbanHang;
         private DevExpress.XtraNavBar.NavBarItem navCongNo;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
     }
 }
