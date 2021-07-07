@@ -122,6 +122,10 @@ namespace CtyTinLuong
                 txtMaVT.Text = dt.Rows[0]["MaVT"].ToString();
                 txtTen.Text = dt.Rows[0]["TenVTHH"].ToString();
                 cbDVT.Text = dt.Rows[0]["DonViTinh"].ToString();
+                clsTbNhomVTHH clsxx = new clsTbNhomVTHH();
+                clsxx.iID_NhomVTHH= cls.iID_MaNhom.Value;
+                DataTable dtxx = clsxx.SelectOne();
+                cbNhom.Text = clsxx.sTenNhomVTHH.Value;
                 txtQuyCach.Text = dt.Rows[0]["QuyCach"].ToString();
                 txtDienGiai.Text = dt.Rows[0]["DienGiai"].ToString();
                 txtGhiChu.Text = dt.Rows[0]["GhiChu"].ToString();
@@ -165,6 +169,13 @@ namespace CtyTinLuong
             cbDVT.DataSource = dxxxx;
             cbDVT.DisplayMember = "DonViTinh";
             cbDVT.ValueMember = "ID_DonViTinh";
+         
+            clsTbNhomVTHH clsxx = new clsTbNhomVTHH();
+            DataTable dt2 = clsxx.SelectAll();
+            cbNhom.DataSource = dt2;
+            cbNhom.DisplayMember = "TenNhomVTHH";
+            cbNhom.ValueMember = "ID_NhomVTHH";
+
             if (frmVatTuHangHoa.mbSua == true)
                 HienThi_SuaThongTin_VTHH();
             else if (frmVatTuHangHoa.mbCopy == true)
