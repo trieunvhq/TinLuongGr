@@ -283,9 +283,9 @@ namespace CtyTinLuong
                 gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
                 gridMaVTchinh1.Properties.DisplayMember = "MaVT";
 
-                repositoryItemLookUpEdit2.DataSource = dtxx2;
-                repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
-                repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+                repositoryItemSearchLookUpEdit1.DataSource = dtxx2;
+                repositoryItemSearchLookUpEdit1.ValueMember = "ID_VTHH";
+                repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
 
                 if (ucDinhMucNGuyenPhuLieu.mb_TheMoi_DinhMuc_NPL == true)
                     HienThi_ThemMoi_DinhMuc_NPL();
@@ -420,6 +420,16 @@ namespace CtyTinLuong
         private void gridMaVTchinh1_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridMaVTchinh1.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            //repositoryItemSearchLookUpEdit1.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            //DataRow row = ((DataRowView)repositoryItemSearchLookUpEdit1.row)
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

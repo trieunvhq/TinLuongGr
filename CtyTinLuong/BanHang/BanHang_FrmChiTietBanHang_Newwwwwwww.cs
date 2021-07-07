@@ -551,6 +551,7 @@ namespace CtyTinLuong
                 cls.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
                 cls.bTrangThai_KhoThanhPham = true;
                 cls.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
+                cls.sSoCongTeNo = txtSoCont.Text;
                 cls.Update();
                 int xxIDbanhangxx = UCBanHang_BanHang.miiiID_BanHang;
                 // Insert chi tietbanhang
@@ -571,6 +572,7 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             if (dt.Rows[0]["MaSoCongTeNo"].ToString() != "")
                 txtMaCongTennor.Text = cls.sMaSoCongTeNo.Value;
+            txtSoCont.Text = cls.sSoCongTeNo.Value;
             if (cls.bCheck_BaoVe == true) checkBaoVe_LaiXe.Checked = true;
             else checkBaoVe_LaiXe.Checked = false;
 
