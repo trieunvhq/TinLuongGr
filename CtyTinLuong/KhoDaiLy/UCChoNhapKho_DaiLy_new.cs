@@ -173,19 +173,7 @@ namespace CtyTinLuong
                 HienThiGridControl_2(iiIDnhapKhp);
             }
         }
-
-        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT)
-                e.DisplayText = (e.RowHandle + 1).ToString();
-        }
-
-        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT2)
-                e.DisplayText = (e.RowHandle + 1).ToString();
-        }
-
+        
         private void btNhapKho_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString() != "")

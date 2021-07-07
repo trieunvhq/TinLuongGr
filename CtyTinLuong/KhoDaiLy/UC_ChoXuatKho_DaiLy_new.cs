@@ -202,15 +202,18 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
+            try
             {
-                Cursor.Current = Cursors.WaitCursor;
-                miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
-                DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
-                ff.Show();
-                Cursor.Current = Cursors.Default;
+                if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                    DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
+                    ff.Show();
+                    Cursor.Current = Cursors.Default;
+                }
             }
-
+            catch { } 
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
