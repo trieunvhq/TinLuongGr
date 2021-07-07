@@ -65,7 +65,7 @@ namespace CtyTinLuong
                 _ravi_Khong["Co"] = 0;
             }
             dt2xxxx.Rows.Add(_ravi_Khong);
-            double Noxx = dNoDauKy_0, Coxx = dCoDauKy_0;
+            //double Noxx = dNoDauKy_0, Coxx = dCoDauKy_0;
             if (dtphatsinh.Rows.Count > 0)
             {
 
@@ -81,20 +81,21 @@ namespace CtyTinLuong
                     double Noxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
 
-                   
+                    _ravi["No"] = Noxx_hang;
+                    _ravi["Co"] = Coxx_hang;
 
-                    Noxx = Noxx + Noxx_hang;
-                    Coxx = Coxx + Coxx_hang;
-                    if (Noxx <= Coxx)
-                    {
-                        _ravi["No"] = 0;
-                        _ravi["Co"] = Math.Abs(Noxx - Coxx);
-                    }
-                    else
-                    {
-                        _ravi["No"] = Math.Abs(Noxx - Coxx);
-                        _ravi["Co"] = 0;
-                    }
+                    //Noxx = Noxx + Noxx_hang;
+                    //Coxx = Coxx + Coxx_hang;
+                    //if (Noxx <= Coxx)
+                    //{
+                    //    _ravi["No"] = 0;
+                    //    _ravi["Co"] = Math.Abs(Noxx - Coxx);
+                    //}
+                    //else
+                    //{
+                    //    _ravi["No"] = Math.Abs(Noxx - Coxx);
+                    //    _ravi["Co"] = 0;
+                    //}
 
                     dt2xxxx.Rows.Add(_ravi);
 
@@ -124,36 +125,58 @@ namespace CtyTinLuong
 
                 }
             }
-
+            double Nophatsinh =Convert.ToDouble(dtphatsinh.Compute("sum(No)", "TonTai=True"));
+            double Cophatsinh = Convert.ToDouble(dtphatsinh.Compute("sum(Co)", "TonTai=True"));
             DataRow _ravi_2 = dt2xxxx.NewRow();
             _ravi_2["DienGiai"] = "Cộng phát sinh trong kỳ";
             _ravi_2["HienThi"] = false;
-            if (Noxx <= Coxx)
-            {
-                _ravi_2["No"] = Noxx - dNoDauKy_0;
-                _ravi_2["Co"] = Coxx - dCoDauKy_0;
-            }
-            else
-            {
-                _ravi_2["No"] = Noxx - dNoDauKy_0;
-                _ravi_2["Co"] = Coxx - dCoDauKy_0;
-            }
+
+            _ravi_2["No"] = Nophatsinh;
+            _ravi_2["Co"] = Cophatsinh;
+
+            //if (Noxx <= Coxx)
+            //{
+            //    _ravi_2["No"] = Noxx - dNoDauKy_0;
+            //    _ravi_2["Co"] = Coxx - dCoDauKy_0;
+            //}
+            //else
+            //{
+            //    _ravi_2["No"] = Noxx - dNoDauKy_0;
+            //    _ravi_2["Co"] = Coxx - dCoDauKy_0;
+            //}
+           
+           
             dt2xxxx.Rows.Add(_ravi_2);
             gridControl2.DataSource = dt2xxxx;
 
             DataRow _ravi_cuoi = dt2xxxx.NewRow();
             _ravi_cuoi["DienGiai"] = "Dư cuối kỳ";
             _ravi_cuoi["HienThi"] = false;
-            if (Noxx <= Coxx)
+
+            double nocuoiky = Nophatsinh + dNoDauKy_0;
+            double cocuoiky = Cophatsinh + dCoDauKy_0;
+            double No_Co_cuoi = Math.Abs(nocuoiky - cocuoiky);
+            if (nocuoiky <= cocuoiky)
             {
                 _ravi_cuoi["No"] = 0;
-                _ravi_cuoi["Co"] = Math.Abs(Noxx - Coxx);
+                _ravi_cuoi["Co"] = No_Co_cuoi;
             }
             else
             {
-                _ravi_cuoi["No"] = Math.Abs(Noxx - Coxx);
+                _ravi_cuoi["No"] = No_Co_cuoi;
                 _ravi_cuoi["Co"] = 0;
             }
+
+            //if (Noxx <= Coxx)
+            //{
+            //    _ravi_cuoi["No"] = 0;
+            //    _ravi_cuoi["Co"] = Math.Abs(Noxx - Coxx);
+            //}
+            //else
+            //{
+            //    _ravi_cuoi["No"] = Math.Abs(Noxx - Coxx);
+            //    _ravi_cuoi["Co"] = 0;
+            //}
             dt2xxxx.Rows.Add(_ravi_cuoi);
             gridControl2.DataSource = dt2xxxx;
         }
@@ -198,6 +221,17 @@ namespace CtyTinLuong
         private void btRefresh_Click(object sender, EventArgs e)
         {
             BanHang_DoiChieu_CongNo_new_Load( sender,  e);
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
         }
     }
 }
