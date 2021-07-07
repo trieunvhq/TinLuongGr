@@ -333,6 +333,7 @@ namespace CtyTinLuong
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
+            ///dsdsdsds
             if (e.Column == clSTT2)
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
