@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions12 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject45 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject46 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject47 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject48 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhoThanhPham_ChiTiet_XuatKho_Khac));
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -158,6 +157,7 @@
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
             this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
+            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clSTT
             // 
@@ -271,9 +271,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions12.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions12, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject45, serializableAppearanceObject46, serializableAppearanceObject47, serializableAppearanceObject48, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -366,6 +366,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // btLuu_Dong
             // 
@@ -387,6 +388,7 @@
             this.txtTongTienHang.TabIndex = 78;
             this.txtTongTienHang.Text = "0";
             this.txtTongTienHang.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
+            this.txtTongTienHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongTienHang_KeyPress);
             // 
             // layoutControl2
             // 
@@ -414,6 +416,7 @@
             this.txtNguoiNhanHang.Name = "txtNguoiNhanHang";
             this.txtNguoiNhanHang.Size = new System.Drawing.Size(441, 20);
             this.txtNguoiNhanHang.TabIndex = 81;
+            this.txtNguoiNhanHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNguoiNhanHang_KeyPress);
             // 
             // txtThamChieu
             // 
@@ -422,6 +425,7 @@
             this.txtThamChieu.Size = new System.Drawing.Size(225, 20);
             this.txtThamChieu.TabIndex = 80;
             this.txtThamChieu.Text = "Khác";
+            this.txtThamChieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThamChieu_KeyPress);
             // 
             // txtTenKH
             // 
@@ -430,6 +434,7 @@
             this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(542, 20);
             this.txtTenKH.TabIndex = 79;
+            this.txtTenKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKH_KeyPress);
             // 
             // gridKH
             // 
@@ -443,6 +448,7 @@
             this.gridKH.StyleController = this.layoutControl2;
             this.gridKH.TabIndex = 18;
             this.gridKH.EditValueChanged += new System.EventHandler(this.gridKH_EditValueChanged);
+            this.gridKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridKH_KeyPress);
             // 
             // gridView10
             // 
@@ -492,6 +498,7 @@
             this.gridNguoiLap.StyleController = this.layoutControl2;
             this.gridNguoiLap.TabIndex = 23;
             this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
+            this.gridNguoiLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNguoiLap_KeyPress);
             // 
             // gridView2
             // 
@@ -534,6 +541,7 @@
             this.txtNguoiNhap.ReadOnly = true;
             this.txtNguoiNhap.Size = new System.Drawing.Size(541, 20);
             this.txtNguoiNhap.TabIndex = 16;
+            this.txtNguoiNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNguoiNhap_KeyPress);
             // 
             // dteNgayChungTu
             // 
@@ -552,6 +560,7 @@
             this.dteNgayChungTu.Size = new System.Drawing.Size(228, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl2;
             this.dteNgayChungTu.TabIndex = 14;
+            this.dteNgayChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChungTu_KeyPress);
             // 
             // txtSoChungTu
             // 
@@ -560,6 +569,7 @@
             this.txtSoChungTu.ReadOnly = true;
             this.txtSoChungTu.Size = new System.Drawing.Size(243, 20);
             this.txtSoChungTu.TabIndex = 10;
+            this.txtSoChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoChungTu_KeyPress);
             // 
             // txtDienGiai
             // 
@@ -568,6 +578,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(874, 29);
             this.txtDienGiai.TabIndex = 6;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // layoutControlGroup2
             // 
