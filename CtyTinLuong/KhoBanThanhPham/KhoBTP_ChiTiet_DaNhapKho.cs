@@ -198,15 +198,14 @@ namespace CtyTinLuong
             repositoryItemLookUpEdit1.DisplayMember = "MaVT";
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            DataTable dtNguoi = clsNguoi.T_SelectAll(4); 
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.DataSource = dtNguoi;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
+            dtNguoi.Dispose();
+            clsNguoi.Dispose();
         }
         public KhoBTP_ChiTiet_DaNhapKho()
         {
@@ -442,6 +441,11 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void gridNguoiLap_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridNguoiLap.Properties.View.Columns[0].Visible = false;
         }
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)

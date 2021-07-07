@@ -672,31 +672,24 @@ namespace CtyTinLuong
             gridTKNo.Properties.DisplayMember = "SoTaiKhoanCon";
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
-
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            DataTable dt = clsNguoi.T_SelectAll(4);
+           
+            gridNguoiLap.Properties.DataSource = dt;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
 
-            repositoryItemLookUpEdit2.DataSource = dtxx2;
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            dt = cls.T_SelectAll();
+           
+            repositoryItemLookUpEdit2.DataSource = dt;
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
 
             clsTbDanhMuc_DaiLy clsdaily = new clsTbDanhMuc_DaiLy();
-            DataTable dtdaily = clsdaily.SelectAll();
-            dtdaily.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dtdaily.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridMaDaiLy.Properties.DataSource = dtxx;
+            dt = clsdaily.T_SelectAll();
+           
+            gridMaDaiLy.Properties.DataSource = dt;
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
 
@@ -1051,6 +1044,16 @@ namespace CtyTinLuong
         private void btPrint_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridNguoiLap_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridNguoiLap.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridMaDaiLy_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaDaiLy.Properties.View.Columns[0].Visible = false;
         }
 
         private void btLaiXe_Click(object sender, EventArgs e)
