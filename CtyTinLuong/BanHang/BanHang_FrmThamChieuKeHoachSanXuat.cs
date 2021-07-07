@@ -32,15 +32,15 @@ namespace CtyTinLuong
         private void Load_LockUp()
         {
             clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat();
-            DataTable dt = cls.SelectAll_MaVT_Ten_DVT();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridKeHoach.Properties.DataSource = dtxx;
+            DataTable dt = cls.T_SelectAll_MaVT_Ten_DVT();
+           
+            gridKeHoach.Properties.DataSource = dt;
             gridKeHoach.Properties.ValueMember = "ID_KeHoachSanXuat";
             gridKeHoach.Properties.DisplayMember = "MaKeHoach";
 
-        
+
+            dt.Dispose();
+            cls.Dispose();
         }
         public BanHang_FrmThamChieuKeHoachSanXuat()
         {
@@ -209,6 +209,11 @@ namespace CtyTinLuong
                 btLuu.Focus();
                 btLuu_Click(null, null);
             }
+        }
+
+        private void gridKeHoach_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridKeHoach.Properties.View.Columns[0].Visible = false;
         }
     }
 }
