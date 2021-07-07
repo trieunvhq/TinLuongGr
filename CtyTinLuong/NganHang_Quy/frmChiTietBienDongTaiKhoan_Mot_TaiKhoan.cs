@@ -19,7 +19,7 @@ namespace CtyTinLuong
         public static DataTable mdt_ChiTiet_Print;
         public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
         public static DateTime mdatungay, mdadenngay;
-
+        public static int miID_ChungTu;
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -40,6 +40,7 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("NoCuoiKy", typeof(double));
             dt2xxxx.Columns.Add("CoCuoiKy", typeof(double));
             dt2xxxx.Columns.Add("ID_ChungTu", typeof(string));
+            dt2xxxx.Columns.Add("MuaHang_1_BanHang_2", typeof(string));
             gridControl2.DataSource = null;
 
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -80,7 +81,14 @@ namespace CtyTinLuong
                     DataRow _ravi = dt2xxxx.NewRow();
                     _ravi["ID_ChungTu"] = dtphatsinh.Rows[i]["ID_ChungTu"].ToString();
                     if (dtphatsinh.Rows[i]["ID_ChungTu"].ToString() != "" & Convert.ToBoolean(dtphatsinh.Rows[i]["Check_PhanNganHang"].ToString()) == false)
+                    {
                         _ravi["HienThi"] = true;
+                        if (dtphatsinh.Rows[i]["TrangThai_MuaHang1_BanHang2_VAT3"].ToString() == "1")
+                            _ravi["MuaHang_1_BanHang_2"] = "1";
+                        else if (dtphatsinh.Rows[i]["TrangThai_MuaHang1_BanHang2_VAT3"].ToString() == "2")
+                            _ravi["MuaHang_1_BanHang_2"] = "2";
+
+                    }
                     else _ravi["HienThi"] = false;
                     _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
@@ -148,8 +156,76 @@ namespace CtyTinLuong
             dt2xxxx.Rows.Add(_ravi_cuoi);
             gridControl2.DataSource = dt2xxxx;
         }
-    
 
+        private void HienThiGridControl_MuaHang(int xxiDmuahang)
+        {
+            gridControl1.DataSource = null;
+            clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
+            cls2.iID_MuaHang = xxiDmuahang;
+            DataTable dt3 = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
+            DataTable dt2 = new DataTable();
+
+            dt2.Columns.Add("SoLuong", typeof(float));
+            dt2.Columns.Add("DonGia", typeof(double));
+            dt2.Columns.Add("MaVT");
+            dt2.Columns.Add("TenVTHH");
+            dt2.Columns.Add("DonViTinh");
+            dt2.Columns.Add("ThanhTien", typeof(double));
+            dt2.Columns.Add("HienThi", typeof(string));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuong"].ToString());
+                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
+                DataRow _ravi = dt2.NewRow();
+
+                _ravi["SoLuong"] = xxsoluong;
+                _ravi["DonGia"] = xxdongia;
+                _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
+                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                _ravi["HienThi"] = "1";
+                dt2.Rows.Add(_ravi);
+            }
+
+            gridControl1.DataSource = dt2;
+        }
+        private void HienThiGridControl_BanHang(int xxiDmuahang)
+        {
+            gridControl1.DataSource = null;
+            clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
+            cls2.iID_BanHang = xxiDmuahang;
+            DataTable dt3 = cls2.Select_HienThiSuaDonHang();
+            DataTable dt2 = new DataTable();
+         
+            dt2.Columns.Add("SoLuong", typeof(float));
+            dt2.Columns.Add("DonGia", typeof(double));
+            dt2.Columns.Add("MaVT");// tb VTHH
+            dt2.Columns.Add("TenVTHH");
+            dt2.Columns.Add("DonViTinh");
+            dt2.Columns.Add("ThanhTien", typeof(double));
+            dt2.Columns.Add("HienThi", typeof(string));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuong"].ToString());
+                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
+                DataRow _ravi = dt2.NewRow();
+            
+                _ravi["SoLuong"] = xxsoluong;
+                _ravi["DonGia"] = xxdongia;
+                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+                _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                _ravi["HienThi"] = "1";
+                dt2.Rows.Add(_ravi);
+            }
+            gridControl1.DataSource = dt2;
+        }
         public frmChiTietBienDongTaiKhoan_Mot_TaiKhoan()
         {
             InitializeComponent();
@@ -229,7 +305,7 @@ namespace CtyTinLuong
                 bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["HienThi"]));
                 if (category == true)
                 {
-                    e.Appearance.BackColor = Color.GreenYellow;
+                    e.Appearance.BackColor = Color.Beige;
 
                 }
             }
@@ -237,12 +313,21 @@ namespace CtyTinLuong
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
         {
+            
+            
+        }
+
+        private void bandedGridView1_RowClick(object sender, RowClickEventArgs e)
+        {
             if (bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString() != "")
             {
-                //int iDImuahang = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
-                //HienThiGridControl_2(iDImuahang);
+                miID_ChungTu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
+                if (bandedGridView1.GetFocusedRowCellValue(clMuaHang_1_BanHang_2).ToString() == "1")
+                    HienThiGridControl_MuaHang(miID_ChungTu);
+                else if (bandedGridView1.GetFocusedRowCellValue(clMuaHang_1_BanHang_2).ToString() == "2")
+                    HienThiGridControl_BanHang(miID_ChungTu);
+
             }
-            
         }
 
         private void GridSoTaiKhoan_EditValueChanged(object sender, EventArgs e)
