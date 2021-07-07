@@ -200,21 +200,27 @@ namespace CtyTinLuong
 
         private void frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();
             dteTuNgay.EditValue = frmBaoCaoNXT.mdatungay;
             dteDenNgay.EditValue = frmBaoCaoNXT.mdadenngay;
             gridMaVT.EditValue = frmBaoCaoNXT.miiID_VTHH;
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmChiTietNhapXuatTon_MotVatTu_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             int xxid = Convert.ToInt32(gridMaVT.EditValue.ToString());
             LoadDaTa(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridMaVT_EditValueChanged(object sender, EventArgs e)
@@ -233,6 +239,46 @@ namespace CtyTinLuong
             catch
             {
 
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
+        private void gridMaVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtTenVT.Focus();
+            }
+        }
+
+        private void txtTenVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDVT.Focus();
+            }
+        }
+
+        private void txtDVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
 

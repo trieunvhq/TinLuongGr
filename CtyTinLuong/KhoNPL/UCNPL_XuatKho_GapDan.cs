@@ -192,15 +192,19 @@ namespace CtyTinLuong
 
         private void UCNPL_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCNPL_XuatKho_GapDan_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -220,9 +224,9 @@ namespace CtyTinLuong
                 mbSua = true;
                 miiID_NhapKhoGapDan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
                 KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
-                _frmKNPL.Hide();
-                ff.ShowDialog();
-                _frmKNPL.Show();
+                //_frmKNPL.Hide();
+                ff.Show();
+                //_frmKNPL.Show();
             }
         }
 
@@ -277,6 +281,22 @@ namespace CtyTinLuong
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
         private void btXoa_Click(object sender, EventArgs e)
         {
 
@@ -323,9 +343,9 @@ namespace CtyTinLuong
             mbCopy = false;
             mbSua = false;
             KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
-            _frmKNPL.Hide();
-            ff.ShowDialog();
-            _frmKNPL.Show();
+            //_frmKNPL.Hide();
+            ff.Show();
+            //_frmKNPL.Show();
         }
     }
 }
