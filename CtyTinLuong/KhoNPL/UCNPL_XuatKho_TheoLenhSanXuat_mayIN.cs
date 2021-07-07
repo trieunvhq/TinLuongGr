@@ -140,17 +140,21 @@ namespace CtyTinLuong
 
         private void UCNPL_XuatKho_TheoLenhSanXuat_mayIN_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteTuNgay.EditValue = DateTime.Now.AddDays(-10);
             dteDenNgay.EditValue = DateTime.Now;
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btfresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCNPL_XuatKho_TheoLenhSanXuat_mayIN_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
         
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -162,9 +166,9 @@ namespace CtyTinLuong
 
                     mID_iD_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
                     NPL_ChiTietLenhSanXuat ff = new NPL_ChiTietLenhSanXuat();
-                    _frmKNPL.Hide();
-                    ff.ShowDialog();
-                    _frmKNPL.Show();
+                    //_frmKNPL.Hide();
+                    ff.Show();
+                    //_frmKNPL.Show();
                 }
             }
             catch
@@ -190,8 +194,10 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -215,6 +221,7 @@ namespace CtyTinLuong
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangTiep.LinkColor == Color.Black)
@@ -245,10 +252,12 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (isload)
                 return;
             if (btnTrangSau.LinkColor == Color.Black)
@@ -278,6 +287,7 @@ namespace CtyTinLuong
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void txtSoTrang_Leave(object sender, EventArgs e)
@@ -285,6 +295,31 @@ namespace CtyTinLuong
             if (isload)
                 return;
             Load_PhieuSX(false);
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

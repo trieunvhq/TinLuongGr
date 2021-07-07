@@ -128,10 +128,12 @@ namespace CtyTinLuong
 
         private void UCNPL_NhapKho_Khacccccccccccc_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -149,9 +151,9 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 miD_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
                 KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
-                _frmKNPL.Hide();
-                ff.ShowDialog();
-                _frmKNPL.Show();
+                //_frmKNPL.Hide();
+                ff.Show();
+                //_frmKNPL.Show();
             }
         }
 
@@ -159,7 +161,9 @@ namespace CtyTinLuong
         {
             if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 HienThi(dteTuNgay.DateTime, dteNgay.DateTime.AddDays(1));
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -213,9 +217,34 @@ namespace CtyTinLuong
         {
             mbThemMoi = true;
             KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
-            _frmKNPL.Hide();
-            ff.ShowDialog();
-            _frmKNPL.Show();
+            //_frmKNPL.Hide();
+            ff.Show();
+            //_frmKNPL.Show();
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

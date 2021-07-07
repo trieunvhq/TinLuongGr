@@ -126,9 +126,9 @@ namespace CtyTinLuong
         private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmBaoCaoNXT ff = new frmBaoCaoNXT();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }
@@ -149,7 +149,7 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            ff.ShowDialog();
+            ff.Show();
         }
 
      

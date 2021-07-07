@@ -151,6 +151,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView4
             // 
@@ -189,6 +190,7 @@
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
+            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clSTT
             // 
@@ -462,6 +464,7 @@
             this.dteNgayChungTu.Size = new System.Drawing.Size(652, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl1;
             this.dteNgayChungTu.TabIndex = 14;
+            this.dteNgayChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChungTu_KeyPress);
             // 
             // txtSoChungTu
             // 
@@ -469,6 +472,7 @@
             this.txtSoChungTu.Name = "txtSoChungTu";
             this.txtSoChungTu.Size = new System.Drawing.Size(115, 20);
             this.txtSoChungTu.TabIndex = 10;
+            this.txtSoChungTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoChungTu_KeyPress);
             // 
             // txtDienGiai
             // 
@@ -477,6 +481,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(864, 45);
             this.txtDienGiai.TabIndex = 6;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -561,6 +566,7 @@
             this.checkUSD.TabIndex = 89;
             this.checkUSD.Text = "USD";
             this.checkUSD.UseVisualStyleBackColor = true;
+            this.checkUSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkUSD_KeyPress);
             // 
             // checkVNĐ
             // 
@@ -571,6 +577,7 @@
             this.checkVNĐ.TabIndex = 88;
             this.checkVNĐ.Text = "VNĐ";
             this.checkVNĐ.UseVisualStyleBackColor = true;
+            this.checkVNĐ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkVNĐ_KeyPress);
             // 
             // txtTongTienHangCoVAT
             // 
@@ -581,6 +588,7 @@
             this.txtTongTienHangCoVAT.Size = new System.Drawing.Size(371, 20);
             this.txtTongTienHangCoVAT.TabIndex = 78;
             this.txtTongTienHangCoVAT.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
+            this.txtTongTienHangCoVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTongTienHangCoVAT_KeyPress);
             // 
             // gridNguoiLap
             // 
@@ -593,6 +601,7 @@
             this.gridNguoiLap.StyleController = this.layoutControl2;
             this.gridNguoiLap.TabIndex = 23;
             this.gridNguoiLap.EditValueChanged += new System.EventHandler(this.gridNguoiLap_EditValueChanged);
+            this.gridNguoiLap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridNguoiLap_KeyPress);
             // 
             // gridView2
             // 
@@ -635,6 +644,7 @@
             this.txtNguoiNhap.ReadOnly = true;
             this.txtNguoiNhap.Size = new System.Drawing.Size(358, 20);
             this.txtNguoiNhap.TabIndex = 16;
+            this.txtNguoiNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNguoiNhap_KeyPress);
             // 
             // dteNgayChungTuNPL
             // 
@@ -653,6 +663,7 @@
             this.dteNgayChungTuNPL.Size = new System.Drawing.Size(359, 20);
             this.dteNgayChungTuNPL.StyleController = this.layoutControl2;
             this.dteNgayChungTuNPL.TabIndex = 14;
+            this.dteNgayChungTuNPL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChungTuNPL_KeyPress);
             // 
             // txtSoChungTuNhapKhoNPL
             // 
@@ -661,6 +672,7 @@
             this.txtSoChungTuNhapKhoNPL.ReadOnly = true;
             this.txtSoChungTuNhapKhoNPL.Size = new System.Drawing.Size(358, 20);
             this.txtSoChungTuNhapKhoNPL.TabIndex = 10;
+            this.txtSoChungTuNhapKhoNPL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoChungTuNhapKhoNPL_KeyPress);
             // 
             // txtDienGiaiNhapKhoNPL
             // 
@@ -669,6 +681,7 @@
             this.txtDienGiaiNhapKhoNPL.Name = "txtDienGiaiNhapKhoNPL";
             this.txtDienGiaiNhapKhoNPL.Size = new System.Drawing.Size(840, 53);
             this.txtDienGiaiNhapKhoNPL.TabIndex = 6;
+            this.txtDienGiaiNhapKhoNPL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiaiNhapKhoNPL_KeyPress);
             // 
             // layoutControlGroup2
             // 

@@ -110,10 +110,12 @@ namespace CtyTinLuong
 
         private void UC_KhoNVL_frmChoNhapKho_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteNgay.EditValue = null;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
         
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -124,9 +126,9 @@ namespace CtyTinLuong
                 {
                     miID_MuaHang_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                     KhoNPL_frmChiTiet_MuaHang_NhapKho ff = new KhoNPL_frmChiTiet_MuaHang_NhapKho();
-                    _frmKNPL.Hide();
-                    ff.ShowDialog();
-                    _frmKNPL.Show();
+                    //_frmKNPL.Hide();
+                    ff.Show();
+                    //_frmKNPL.Show();
                 }
             }
             catch
@@ -175,6 +177,31 @@ namespace CtyTinLuong
             {
                 int iDImuahang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
                 HienThiGridControl_2(iDImuahang);
+            }
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
+        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
             }
         }
     }
