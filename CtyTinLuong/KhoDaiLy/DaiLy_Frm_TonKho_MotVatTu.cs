@@ -19,8 +19,8 @@ namespace CtyTinLuong
         public static DateTime mdadenngay;
         private void Load_Lockup()
         {
-            clsTbVatTuHangHoa cls = new CtyTinLuong.clsTbVatTuHangHoa();
-            DataTable dt2 = cls.SelectAll();
+            clsDaiLy_tbChiTietNhapKho cls = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            DataTable dt2 = cls.SD_MaVT_Load_lockUP();
             gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";            
