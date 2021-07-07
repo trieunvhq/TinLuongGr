@@ -731,10 +731,8 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
             clsTbKhachHang cls = new clsTbKhachHang();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable newdt = dv.ToTable();
+            DataTable newdt = cls.T_SelectAll();
+           
 
             gridKH.Properties.DataSource = newdt;
             gridKH.Properties.ValueMember = "ID_KhachHang";
