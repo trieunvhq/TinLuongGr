@@ -230,7 +230,7 @@ namespace CtyTinLuong
         {
             if (gridView4.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
             {
-                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
+                int xxID = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 Hienthi_Lable_TonKho(xxID);
             }
         }

@@ -335,8 +335,8 @@ namespace CtyTinLuong
             cls.iID_VTHH = xxID_VTHH;
             DataTable dt = cls.SelectOne();
             double soluongton = 0;
-            clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
-            clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+            clsGapDan_ChiTiet_NhapKho cls1 = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
+            clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
             double soluongxuat, soluongnhap;
             DataTable dt_NhapTruoc = new DataTable();
             DataTable dt_XuatTruoc = new DataTable();
@@ -367,7 +367,7 @@ namespace CtyTinLuong
         {
             if (gridView4.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
             {
-                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
+                int xxID = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 Hienthi_Lable_TonKho(xxID);
             }
         }
