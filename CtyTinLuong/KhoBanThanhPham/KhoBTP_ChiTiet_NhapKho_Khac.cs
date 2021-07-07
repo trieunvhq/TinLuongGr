@@ -493,7 +493,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridNguoiLap_KeyDown(object sender, KeyEventArgs e)
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
@@ -503,10 +503,7 @@ namespace CtyTinLuong
 
         private void txtNguoiNhap_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
+
         }
 
         private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
@@ -548,6 +545,8 @@ namespace CtyTinLuong
                 SendKeys.Send("{TAB}");
             }
         }
+
+
 
         private void btXoa2_Click(object sender, EventArgs e)
         {
