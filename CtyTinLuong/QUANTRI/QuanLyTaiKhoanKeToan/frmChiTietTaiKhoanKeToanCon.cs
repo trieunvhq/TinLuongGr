@@ -55,6 +55,7 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu()
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (!KiemTraLuu()) return;
             else
             {
@@ -78,8 +79,10 @@ namespace CtyTinLuong
                         {
                             if (cls.SelectOne_SoTaiKhoanCon(txtSoTKCon.Text.Trim()))
                             {
+                                Cursor.Current = Cursors.Default;
                                 MessageBox.Show("Số tài khoản con \"" + txtSoTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
                                 txtSoTKCon.Focus();
+                                return;
                             }
                         }
 
@@ -88,6 +91,7 @@ namespace CtyTinLuong
                         {
                             if (cls.SelectOne_TenTaiKhoanCon(txtTenTKCon.Text.Trim()))
                             {
+                                Cursor.Current = Cursors.Default;
                                 if (MessageBox.Show("Tên tài khoản con \"" + txtTenTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo",
                                                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                                 {
@@ -105,6 +109,7 @@ namespace CtyTinLuong
                         cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
                         cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
                         cls.Insert();
+                        Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã lưu");
                     }
                       
@@ -121,11 +126,14 @@ namespace CtyTinLuong
                     cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
                     cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_Sua_TaiKhoan_Con;
                     cls.Update();
+                    Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã lưu");
                 }
             }
-           
+            Cursor.Current = Cursors.Default;
         }
+
+
         public frmChiTietTaiKhoanKeToanCon()
         {
             InitializeComponent();
