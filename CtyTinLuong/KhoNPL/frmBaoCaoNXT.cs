@@ -303,17 +303,21 @@ namespace CtyTinLuong
 
         private void frmBaoCaoNXT_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Now;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
             }
             
         }
@@ -348,9 +352,9 @@ namespace CtyTinLuong
                     miiID_VTHH = Convert.ToInt16(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());                 
 
                     frmChiTietNhapXuatTon_MotVatTu ff2 = new frmChiTietNhapXuatTon_MotVatTu();
-                    this.Hide();
-                    ff2.ShowDialog();
-                    this.Show();
+                    //this.Hide();
+                    ff2.Show();
+                    //this.Show();
                 }
             }
         }
@@ -387,13 +391,32 @@ namespace CtyTinLuong
                     mdadenngay = dteDenNgay.DateTime;
                     msNguoiLap_Prtint = "";
                     frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
             }
         }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btLayDuLieu.Focus();
+            }
+        }
+
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             frmBaoCaoNXT_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
     }
 }

@@ -117,15 +117,19 @@ namespace CtyTinLuong
 
         private void UCNPL_XuatKho_Khacccccccccccccc_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = null;
             HienThi_ALL();
+            Cursor.Current = Cursors.Default;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             UCNPL_XuatKho_Khacccccccccccccc_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -143,9 +147,9 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 miiD_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
                 KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
-                _frmKNPL.Hide();
-                ff.ShowDialog();
-                _frmKNPL.Show();
+                //_frmKNPL.Hide();
+                ff.Show();
+                //_frmKNPL.Show();
             }
         }
 
@@ -198,15 +202,30 @@ namespace CtyTinLuong
         {
             mbThemMoi = true;
             KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
-            _frmKNPL.Hide();
-            ff.ShowDialog();
-            _frmKNPL.Show();
+            //_frmKNPL.Hide();
+            ff.Show();
+            //_frmKNPL.Show();
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.DateTime != null & dteTuNgay.DateTime != null)
                 HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                dteDenNgay.Focus();
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            btLayDuLieu.Focus();
         }
     }
 }
