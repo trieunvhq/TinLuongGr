@@ -154,7 +154,10 @@ namespace CtyTinLuong
             clsDinhMuc_ChiTiet_DM_NPL cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DM_NPL();
             cls2.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
             dt2 = cls2.T_SelectAll_HienThi_LookUp();
-            
+            for(int i=0;i<dt2.Rows.Count;++i)
+            {
+                dt2.Rows[i]["MaVT"] = Convert.ToInt32(dt2.Rows[i]["ID_VTHH"].ToString());
+            }
             gridControl1.DataSource = dt2;
 
         }
@@ -425,12 +428,34 @@ namespace CtyTinLuong
 
         private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
-            ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+            try
+            {
+                ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+            }
+            catch { }
         }
 
         private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
             DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+            iID_VTHH = Convert.ToInt32(row["ID_VTHH"].ToString());
+            sTenVTHH = row["TenVTHH"].ToString();
+            sDonViTinh = row["DonViTinh"].ToString();
+        } 
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowClick_1(object sender, RowClickEventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -441,7 +466,7 @@ namespace CtyTinLuong
                 gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, sTenVTHH);
                 gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, sDonViTinh);                
              
-                gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);                
+                gridView1.SetRowCellValue(e.RowHandle, strSoLuong, "0");                
                 string shienthixx = "1";
                 gridView1.SetRowCellValue(e.RowHandle, clHienThi, shienthixx);
 
