@@ -130,6 +130,40 @@ namespace CtyTinLuong
             }
         }
 
+        public DataTable T_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH(DateTime tungay,DateTime denngay)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_BanHang_ChiTietBanHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_BanHang_ChiTietBanHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@tungay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, tungay));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@denngay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, denngay));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_BanHang_ChiTietBanHang_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable Select_Sum_SoLuong_ThanhTien_W_ID_VTHH()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
