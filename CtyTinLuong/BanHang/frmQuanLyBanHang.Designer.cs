@@ -47,6 +47,7 @@
             this.navbangKeHoaDonBanHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navTonghopbanHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navCongNo = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemDinhMucDOt = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemDinhMucNPL = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
@@ -54,7 +55,6 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -197,6 +197,12 @@
             this.navCongNo.Name = "navCongNo";
             this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Đối chiếu công nợ";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
+            // 
             // navBarItemDinhMucDOt
             // 
             this.navBarItemDinhMucDOt.Caption = "Định mức Đột";
@@ -239,11 +245,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Caption = "Đối chiếu công nợ";
-            this.navBarItem1.Name = "navBarItem1";
             // 
             // frmQuanLyBanHang
             // 
