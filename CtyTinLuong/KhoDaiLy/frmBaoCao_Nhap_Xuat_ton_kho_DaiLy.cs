@@ -351,8 +351,12 @@ namespace CtyTinLuong
            
             dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
             dt2 = dt2.DefaultView.ToTable();
-            gridControl1.DataSource = dt2;
+
+
+            //gridControl1.DataSource = dt2;
+            
         }      
+   
         public frmBaoCao_Nhap_Xuat_ton_kho_DaiLy()
         {
             InitializeComponent();
