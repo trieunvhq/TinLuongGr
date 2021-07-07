@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btPrint_PhaiTraNguoiBan = new DevExpress.XtraEditors.SimpleButton();
@@ -131,7 +131,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1009, 552);
+            this.groupBox1.Size = new System.Drawing.Size(1009, 761);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             // 
@@ -151,7 +151,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(3, 16);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1003, 533);
+            this.layoutControl1.Size = new System.Drawing.Size(1003, 742);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -160,7 +160,7 @@
             this.btPrint_PhaiTraNguoiBan.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint_PhaiTraNguoiBan.Appearance.Options.UseFont = true;
             this.btPrint_PhaiTraNguoiBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_PhaiTraNguoiBan.ImageOptions.Image")));
-            this.btPrint_PhaiTraNguoiBan.Location = new System.Drawing.Point(774, 508);
+            this.btPrint_PhaiTraNguoiBan.Location = new System.Drawing.Point(774, 717);
             this.btPrint_PhaiTraNguoiBan.Name = "btPrint_PhaiTraNguoiBan";
             this.btPrint_PhaiTraNguoiBan.Size = new System.Drawing.Size(108, 22);
             this.btPrint_PhaiTraNguoiBan.StyleController = this.layoutControl1;
@@ -248,16 +248,16 @@
             // 
             // gridControl2
             // 
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(3, 53);
             this.gridControl2.MainView = this.bandedGridView1;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit2,
             this.repositoryItemCheckEdit1});
-            this.gridControl2.Size = new System.Drawing.Size(997, 204);
+            this.gridControl2.Size = new System.Drawing.Size(997, 417);
             this.gridControl2.TabIndex = 94;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
@@ -638,7 +638,7 @@
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(886, 508);
+            this.btThoat.Location = new System.Drawing.Point(886, 717);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(114, 22);
             this.btThoat.StyleController = this.layoutControl1;
@@ -664,13 +664,13 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1003, 533);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1003, 742);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btThoat;
-            this.layoutControlItem2.Location = new System.Drawing.Point(883, 505);
+            this.layoutControlItem2.Location = new System.Drawing.Point(883, 714);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(118, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -708,7 +708,7 @@
             this.layoutControlItem1.Control = this.gridControl2;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1001, 208);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1001, 421);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -742,7 +742,7 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btPrint_PhaiTraNguoiBan;
-            this.layoutControlItem10.Location = new System.Drawing.Point(771, 505);
+            this.layoutControlItem10.Location = new System.Drawing.Point(771, 714);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(112, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -751,19 +751,19 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 505);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 714);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(771, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 261);
+            this.gridControl1.Location = new System.Drawing.Point(3, 474);
             this.gridControl1.MainView = this.gridView4;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(997, 243);
+            this.gridControl1.Size = new System.Drawing.Size(997, 239);
             this.gridControl1.TabIndex = 96;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -796,6 +796,7 @@
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             // 
             // clSTT2
             // 
@@ -908,9 +909,9 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gridControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 258);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 471);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1001, 247);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1001, 243);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -924,10 +925,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 552);
+            this.ClientSize = new System.Drawing.Size(1009, 761);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietBienDongTaiKhoan_Mot_TaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi Tiết Biến Động";
             this.Load += new System.EventHandler(this.frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);

@@ -328,6 +328,13 @@ namespace CtyTinLuong
                     HienThiGridControl_BanHang(miID_ChungTu);
 
             }
+            else gridControl1.DataSource = null;
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
         private void GridSoTaiKhoan_EditValueChanged(object sender, EventArgs e)

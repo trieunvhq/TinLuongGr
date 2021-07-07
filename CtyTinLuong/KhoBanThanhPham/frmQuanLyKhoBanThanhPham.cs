@@ -55,9 +55,9 @@ namespace CtyTinLuong
         private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmBaoCaoNhapXuatTon_BanThanhPham uccc_DaNhapKho = new frmBaoCaoNhapXuatTon_BanThanhPham();
-            this.Hide();
-            uccc_DaNhapKho.ShowDialog();
-            this.Show();
+            //this.Hide();
+            uccc_DaNhapKho.Show();
+            //this.Show();
 
             doiMauTitle(sender, e);
         }
@@ -98,7 +98,7 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
