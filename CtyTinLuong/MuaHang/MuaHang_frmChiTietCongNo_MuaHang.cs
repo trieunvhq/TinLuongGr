@@ -291,7 +291,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                dteDenNgay.Focus();
+                SendKeys.Send("{TAB}");
             }
         }
 
@@ -299,17 +299,55 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                btLayDuLieu.Focus();
-                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
             }
         }
 
-        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
+        private void GridSoTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
-                btLayDuLieu.Focus();
-                btLayDuLieu_Click(null, null);
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenTK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
 

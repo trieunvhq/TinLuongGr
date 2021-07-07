@@ -122,7 +122,9 @@ namespace CtyTinLuong
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             MuaHang_frmCongNo_Load( sender,  e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -160,7 +162,7 @@ namespace CtyTinLuong
                     msTenTK_me = "Phải trả cho người bán";                  
                      msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
             }
         }
@@ -169,8 +171,10 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 int xxid = 287; // 331 phải tra người bán
                 LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -178,6 +182,38 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
@@ -188,9 +224,9 @@ namespace CtyTinLuong
                 mdteDenNgay = dteDenNgay.DateTime;             
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 MuaHang_frmChiTietCongNo_MuaHang ff = new MuaHang_frmChiTietCongNo_MuaHang();
-                _frmMH.Hide();
-                ff.ShowDialog();
-                _frmMH.Show();
+                //_frmMH.Hide();
+                ff.Show();
+                //_frmMH.Show();
             }
         }
 
@@ -201,13 +237,14 @@ namespace CtyTinLuong
 
         private void MuaHang_frmCongNo_Load(object sender, EventArgs e)
         {
-          
+            Cursor.Current = Cursors.WaitCursor;
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Today;
             DateTime ngaydauthang = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dteTuNgay.EditValue = ngaydauthang;
             int xxid = 287; // 331 phải tra người bán
             LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }
