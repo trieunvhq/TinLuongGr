@@ -45,7 +45,7 @@ namespace CtyTinLuong
         }
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
-        public UCSanXuat_DinhMuc_ToGapDan(SanXuat_frmQuanLySanXuat frmQLSX)
+        public UCSanXuat_DinhMuc_ToGapDan(SanXuat_frmQuanLySanXuat frmQLSX = null)
         {
             _frmQLSX = frmQLSX;
             InitializeComponent();

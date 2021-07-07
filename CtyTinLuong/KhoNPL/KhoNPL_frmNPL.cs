@@ -234,5 +234,17 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navBarDMGD_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            doiMauTitle(sender, e);
+
+            Cursor.Current = Cursors.WaitCursor;
+            UCSanXuat_DinhMuc_ToGapDan ucc = new UCSanXuat_DinhMuc_ToGapDan();
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+            Cursor.Current = Cursors.Default;
+        }
     }
 }
