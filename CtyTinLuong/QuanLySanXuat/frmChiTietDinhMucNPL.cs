@@ -311,14 +311,11 @@ namespace CtyTinLuong
 
 
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-                DataView dv2 = dt.DefaultView;
-                DataTable dtxx2 = dv2.ToTable();
-
+                DataTable dtxx2 = cls.T_SelectAll(); 
+                
                 gridMaTPQuyDoi.Properties.DataSource = dtxx2;
                 gridMaTPQuyDoi.Properties.ValueMember = "ID_VTHH";
-                gridMaTPQuyDoi.Properties.DisplayMember = "MaVT";
+                gridMaTPQuyDoi.Properties.DisplayMember = "MaVT"; 
                 //
                 gridMaVTchinh1.Properties.DataSource = dtxx2;
                 gridMaVTchinh1.Properties.ValueMember = "ID_VTHH";
@@ -443,6 +440,11 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void searchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        { 
+            gridMaTPQuyDoi.Properties.View.Columns[0].Visible = false;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

@@ -15,6 +15,43 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsTbVatTuHangHoa : clsDBInteractionBase
 	{
+        public DataTable T_SelectAll()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_tbVatTuHangHoa_SelectAll_T]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbVatTuHangHoa");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn); 
+                 
+
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTbVatTuHangHoa::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
         public bool SelectOne_MaVT(string MaVT)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
