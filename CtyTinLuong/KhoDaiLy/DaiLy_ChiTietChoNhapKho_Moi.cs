@@ -26,7 +26,34 @@ namespace CtyTinLuong
 
         int iiiIDThanhPham_QuyDoi;
       
+        private void Hienthi_Lable_TonKho(int xxID_VTHH)
+        {
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = xxID_VTHH;
+            DataTable dt = cls.SelectOne();
+            double soluongton = 0;
+            clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
+            clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
+            double soluongxuat, soluongnhap;
+            DataTable dt_NhapTruoc = new DataTable();
+            DataTable dt_XuatTruoc = new DataTable();
+            dt_NhapTruoc = cls1.SA_distinct_NhapTruocKy( DateTime.Now);
+            dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy( DateTime.Now);
+            string filterExpression = "ID_VTHH=" + xxID_VTHH + "";
+            DataRow[] rows_Xuat = dt_XuatTruoc.Select(filterExpression);
+            DataRow[] rows_Nhap = dt_NhapTruoc.Select(filterExpression);
+            if (rows_Xuat.Length == 0)
+                soluongxuat = 0;
+            else
+                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+            if (rows_Nhap.Length == 0)
+                soluongnhap = 0;
+            else
+                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+            soluongton = soluongnhap - soluongxuat;
 
+            label_TonKho.Text = ""+cls.sMaVT.Value+" - "+cls.sTenVTHH.Value+" || Tồn kho: "+soluongton.ToString()+"";
+        }
         private void TinhTongSoKg_TongSoKien()
         {
             try
@@ -1015,6 +1042,15 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 btLuu_Dong.Focus();
+            }
+        }
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+            if(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
+            {
+                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                Hienthi_Lable_TonKho(xxID);
             }
         }
 
