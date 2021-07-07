@@ -45,7 +45,7 @@ namespace CtyTinLuong
             }
 
             clsGapDan_tbNhapKho cls7 = new clsGapDan_tbNhapKho();
-            DataTable dt7 = cls7.SelectAll_HienThi();
+            DataTable dt7 = cls7.SelectAll_HienThi2(new DateTime(2010, 1, 1), new DateTime(2030, 1, 1));
             dt7.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and TrangThai_XuatKho_NPL=True and TrangThai_XuatKho_BTP=True and TrangThai_NhapKho_GapDan=False";
             DataView dv7 = dt7.DefaultView;
             DataTable dxxxx7 = dv7.ToTable();
