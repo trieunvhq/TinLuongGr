@@ -58,41 +58,42 @@ namespace CtyTinLuong
 
         private void navDaNhapKho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             UCThanhPham_DaNhapKho uccc_NhapKho = new UCThanhPham_DaNhapKho(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-
-            doiMauTitle(sender, e);
         }
 
         private void navChoNhapKho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww uccc_NhapKho = new UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-
-            doiMauTitle(sender, e);
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             UCThanhPham_XuatKhoBanHang_Newwwwwwwwww uccc_NhapKho = new UCThanhPham_XuatKhoBanHang_Newwwwwwwwww(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-
-            doiMauTitle(sender, e);
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             UCThanhPham_DaXuatKho uccc_NhapKho = new UCThanhPham_DaXuatKho(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-            doiMauTitle(sender, e);
         }
 
     
@@ -100,12 +101,12 @@ namespace CtyTinLuong
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmBaoCaoNXT_KhoThanhPham uccc_NhapKho = new frmBaoCaoNXT_KhoThanhPham();
-            this.Hide();
-            uccc_NhapKho.ShowDialog();
-            this.Show();
-
             doiMauTitle(sender, e);
+
+            frmBaoCaoNXT_KhoThanhPham uccc_NhapKho = new frmBaoCaoNXT_KhoThanhPham();
+            //this.Hide();
+            uccc_NhapKho.Show();
+            //this.Show();
         }
 
 
@@ -118,39 +119,40 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             UCThanhPham_NhapKho_Khac uccc_NhapKho = new UCThanhPham_NhapKho_Khac(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-            doiMauTitle(sender, e);
         }
 
         private void navBarItem13_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            doiMauTitle(sender, e);
+
             UCThanhPham_XuatKho_Khac uccc_NhapKho = new UCThanhPham_XuatKho_Khac(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
-
-            doiMauTitle(sender, e);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new CtyTinLuong.frmPrint_NguoiKy();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void navBarItem10_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
-            this.Hide();
-            ucc.ShowDialog();
-            this.Show();
-
             doiMauTitle(sender, e);
+
+            frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
+            //this.Hide();
+            ucc.Show();
+            //this.Show();
         }
 
         private void doiMauTitle(object sender, NavBarLinkEventArgs e)

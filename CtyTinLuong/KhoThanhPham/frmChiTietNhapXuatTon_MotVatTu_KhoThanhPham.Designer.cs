@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -189,6 +188,7 @@
             this.gridMaVT.StyleController = this.dataLayoutControl1;
             this.gridMaVT.TabIndex = 111;
             this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
+            this.gridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVT_KeyPress);
             // 
             // gridView1
             // 
@@ -231,6 +231,7 @@
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(74, 20);
             this.txtDVT.TabIndex = 105;
+            this.txtDVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_KeyPress);
             // 
             // txtTenVT
             // 
@@ -238,6 +239,7 @@
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(470, 20);
             this.txtTenVT.TabIndex = 105;
+            this.txtTenVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVT_KeyPress);
             // 
             // dteDenNgay
             // 
@@ -256,6 +258,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(470, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 103;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // dteTuNgay
             // 
@@ -274,6 +277,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(172, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 103;
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // btThoat
             // 
@@ -300,6 +304,7 @@
             this.gridControl1.TabIndex = 99;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -341,6 +346,7 @@
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             // 
             // gridBand4
             // 

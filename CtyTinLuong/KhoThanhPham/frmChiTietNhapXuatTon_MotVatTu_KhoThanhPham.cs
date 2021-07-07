@@ -215,12 +215,70 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Load_Lockup();
             dteTuNgay.EditValue = frmBaoCaoNXT_KhoThanhPham.mdatungay;
             dteDenNgay.EditValue = frmBaoCaoNXT_KhoThanhPham.mdadenngay;
             gridMaVT.EditValue = frmBaoCaoNXT_KhoThanhPham.miiID_VTHH;
+            Cursor.Current = Cursors.Default;
         }
     }
 }

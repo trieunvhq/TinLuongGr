@@ -204,9 +204,11 @@ namespace CtyTinLuong
                 traloi = MessageBox.Show("Xóa dữ liệu này. Lưu ý sẽ mất hế dữ liệu?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     clsBanHang_BangGia cls = new clsBanHang_BangGia();
                     cls.iID_BangGia = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_BangGia).ToString());
                     cls.Delete();
+                    Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã xoá");
                     gridView4.SetFocusedRowCellValue(clHienThi, "0");
 
@@ -235,6 +237,7 @@ namespace CtyTinLuong
             //{
             if (gridKH.EditValue != null)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 string shienthi = "1";
                 DataTable dtkkk = (DataTable)gridControl1.DataSource;
                 dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "";
@@ -260,6 +263,7 @@ namespace CtyTinLuong
                         cls.Insert();
                     }
                 }
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu");
             }
 
@@ -311,6 +315,42 @@ namespace CtyTinLuong
         private void gridKH_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridKH.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+
+        }
+
+        private void txtTenKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+
         }
 
         private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
@@ -367,7 +407,7 @@ namespace CtyTinLuong
                 msDienGiai = "Đơn giá bán hàng";
 
                 frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
     }
