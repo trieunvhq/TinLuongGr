@@ -24,6 +24,7 @@ namespace CtyTinLuong
         public void LoadData(int iiID_Con, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt2xxxx = new DataTable();
+            dt2xxxx.Columns.Add("STT", typeof(string));
             dt2xxxx.Columns.Add("HienThi", typeof(string));          
             dt2xxxx.Columns.Add("NgayThang", typeof(string));
             dt2xxxx.Columns.Add("DoiTuong", typeof(string));
@@ -74,7 +75,7 @@ namespace CtyTinLuong
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
                     //_ravi["ID_MuaHang"] = dtphatsinh.Rows[i]["ID_ChungTu"].ToString();
-                   
+                    _ravi["STT"] = (i + 1).ToString(); //
                     DateTime ngay= Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
@@ -234,8 +235,8 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-                e.DisplayText = (e.RowHandle + 1).ToString();
+            //if (e.Column == clSTT)
+            //    e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
         private void btPrint_Click(object sender, EventArgs e)

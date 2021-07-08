@@ -36,7 +36,7 @@ namespace CtyTinLuong
                 DataRow _ravi = ds.tbBH_DoiChieuCongNo_NCC.NewRow();
 
                 //
-                _ravi["STT"] = (i + 1).ToString();
+                _ravi["STT"] = _data.Rows[i]["STT"].ToString(); // (i + 1).ToString();
                 _ravi["DoiTuong"] = _data.Rows[i]["DoiTuong"].ToString();
                 _ravi["NgayThang"] = _data.Rows[i]["NgayThang"].ToString();
                 _ravi["DienGiai"] = _data.Rows[i]["DienGiai"].ToString();
