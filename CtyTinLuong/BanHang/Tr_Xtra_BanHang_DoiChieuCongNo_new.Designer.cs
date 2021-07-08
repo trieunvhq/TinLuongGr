@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong
 {
-    partial class Tr_Xtra_DoiChieuCongNo_Khach
+    partial class Tr_Xtra_BanHang_DoiChieuCongNo_new
     {
         /// <summary>
         /// Required designer variable.
@@ -1030,7 +1030,7 @@
             this.ReportFooter.HeightF = 192.7083F;
             this.ReportFooter.Name = "ReportFooter";
             // 
-            // Tr_Xtra_DoiChieuCongNo_Khach
+            // Tr_Xtra_BanHang_DoiChieuCongNo_new
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,

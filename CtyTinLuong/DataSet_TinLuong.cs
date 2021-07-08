@@ -4,10 +4,6 @@
 
     public partial class DataSet_TinLuong
     {
-        partial class tbBH_DoiChieuCongNo_NCCDataTable
-        {
-        }
-
         partial class tbBTTL_TMC_CTDataTable
         {
         }
