@@ -884,22 +884,14 @@ namespace CtyTinLuong
             //gridCNPhuMayCat.Properties.ValueMember = "ID_NhanSu";
             //gridCNPhuMayCat.Properties.DisplayMember = "MaNhanVien";
 
-            clsTbVatTuHangHoa clsVTxxxx = new clsTbVatTuHangHoa();
-            DataTable dtVTxxx = clsVTxxxx.SelectAll();
-            dtVTxxx.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvVTxxx = dtVTxxx.DefaultView;
-            DataTable xxxxnewdtVT = dvVTxxx.ToTable();
-            gridHangHoaVao_may_CAT.Properties.DataSource = xxxxnewdtVT;
+            clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
+            DataTable dt = clsxx.T_SelectAll();
+            
+            gridHangHoaVao_may_CAT.Properties.DataSource = dt;
             gridHangHoaVao_may_CAT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaVao_may_CAT.Properties.DisplayMember = "MaVT";
-
-            clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
-            DataTable dtkksss = clsxx.SelectAll();
-            dtkksss.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvcxxx = dtkksss.DefaultView;
-            DataTable vdtrhh = dvcxxx.ToTable();
-
-            gridHangHoaXuat_May_CAT.Properties.DataSource = vdtrhh;
+             
+            gridHangHoaXuat_May_CAT.Properties.DataSource = dt;
             gridHangHoaXuat_May_CAT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaXuat_May_CAT.Properties.DisplayMember = "MaVT";
 
@@ -2056,6 +2048,16 @@ namespace CtyTinLuong
         private void searchLookUpEdit2_QueryPopUp(object sender, CancelEventArgs e)
         { 
             gridHangHoaXuat_May_IN.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridHangHoaXuat_May_CAT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridHangHoaXuat_May_CAT.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridHangHoaVao_may_CAT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridHangHoaVao_may_CAT.Properties.View.Columns[0].Visible = false;
         }
 
         private void txtSanLuongTong_May_CAT_TextChanged(object sender, EventArgs e)
