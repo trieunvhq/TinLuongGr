@@ -56,7 +56,7 @@ namespace CtyTinLuong
                 clsxx.iID_ChungTu = xxxID_ThuChi;
                 clsxx.sSoChungTu = txtSoChungTu.Text.ToString();
                 clsxx.daNgayThang = dteNgayChungTu.DateTime;
-                clsxx.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+                clsxx.iID_DoiTuong = 0;
                 clsxx.iID_TaiKhoanKeToanCon = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
                 clsxx.fCo = Convert.ToDouble(dt_gridcontrol.Rows[i]["Co"].ToString());
                 clsxx.fNo = Convert.ToDouble(dt_gridcontrol.Rows[i]["No"].ToString());
@@ -189,10 +189,10 @@ namespace CtyTinLuong
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.fSoTien = Convert.ToDouble(txtSoTien.Text.ToString());
-                cls1.sThamChieu = txtThamChieu.Text;
+                cls1.sThamChieu = "Phiếu kế toán"; 
                 cls1.sDoiTuong = txtDoiTuong.Text.ToString();
                 cls1.bTonTai = true;
-                cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+                cls1.iID_DoiTuong = 0;
                 cls1.bNgungTheoDoi = false;
                 cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bTienUSD = true;
@@ -310,11 +310,7 @@ namespace CtyTinLuong
                 MessageBox.Show("Chưa có người mua hàng ");
                 return false;
             }
-            else if (gridDoiTuong.EditValue == null)
-            {
-                MessageBox.Show("Chưa chọn đối tượng ");
-                return false;
-            }
+           
             else if (dteNgayChungTu.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn ngày chứng từ ");
@@ -330,7 +326,7 @@ namespace CtyTinLuong
             //checkVNĐ.Checked = true;
 
             gridNguoiLap.EditValue = 13;
-            gridDoiTuong.EditValue = 13;
+          
             dteNgayChungTu.EditValue = DateTime.Today;
             HienThiSoChungTu(bientrangthia);
             DataTable dt2 = new DataTable();
@@ -387,13 +383,13 @@ namespace CtyTinLuong
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
             gridNguoiLap.EditValue = cls1.iID_NguoiLap.Value;
             txtSoTien.Text = cls1.fSoTien.Value.ToString();
-            txtThamChieu.Text = cls1.sThamChieu.Value;
+            //txtThamChieu.Text = cls1.sThamChieu.Value;
             txtSoTien.Text = cls1.fSoTien.Value.ToString();
             txtDienGiai.Text = cls1.sDienGiai.Value;
             txtTiGia.Text = cls1.fTiGia.Value.ToString();
 
-            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
-                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+            //if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+            //    gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
             cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
@@ -436,8 +432,8 @@ namespace CtyTinLuong
 
             gridControl1.DataSource = dt2;
 
-            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
-                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+            //if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+            //    gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
         }
 
         private void HienThi_CoPy(int bientrangthia)
@@ -453,13 +449,13 @@ namespace CtyTinLuong
 
             gridNguoiLap.EditValue = cls1.iID_NguoiLap.Value;
             txtSoTien.Text = cls1.fSoTien.Value.ToString();
-            txtThamChieu.Text = cls1.sThamChieu.Value;
+            //txtThamChieu.Text = cls1.sThamChieu.Value;
             txtSoTien.Text = cls1.fSoTien.Value.ToString();
             txtDienGiai.Text = cls1.sDienGiai.Value;
             txtTiGia.Text = cls1.fTiGia.Value.ToString();
 
-            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
-                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+            //if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+            //    gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
 
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
@@ -503,8 +499,8 @@ namespace CtyTinLuong
 
             gridControl1.DataSource = dt2;
 
-            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
-                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+            //if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+            //    gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
         }
 
         private void Load_LockUp()
@@ -552,8 +548,8 @@ namespace CtyTinLuong
                     txtSoChungTu.Text = "DT " + xxx2 + "";
 
             }
-            if (xxbientrangthai == 5)
-                txtThamChieu.Text = "Đổi tiền";
+            //if (xxbientrangthai == 5)
+            //    txtThamChieu.Text = "Đổi tiền";
 
         }
         public QuyNganHang_Frm_PhieuKeToan()

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaHang_DoiChieuCongNo_New));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -39,7 +39,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDoiTuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clDienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -146,9 +146,9 @@
             // 
             // gridControl2
             // 
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl2.Location = new System.Drawing.Point(3, 53);
             this.gridControl2.MainView = this.gridView1;
             this.gridControl2.Name = "gridControl2";
@@ -173,7 +173,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
             this.clNgayChungTu,
-            this.clDoiTuong,
+            this.clSoChungTu,
             this.clDienGiai,
             this.clNoTrongKy,
             this.clCoTrongKy,
@@ -223,18 +223,17 @@
             this.clNgayChungTu.VisibleIndex = 1;
             this.clNgayChungTu.Width = 90;
             // 
-            // clDoiTuong
+            // clSoChungTu
             // 
-            this.clDoiTuong.AppearanceCell.Options.UseTextOptions = true;
-            this.clDoiTuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.clDoiTuong.Caption = "Đối tượng";
-            this.clDoiTuong.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.clDoiTuong.FieldName = "DoiTuong";
-            this.clDoiTuong.Name = "clDoiTuong";
-            this.clDoiTuong.OptionsColumn.AllowEdit = false;
-            this.clDoiTuong.Visible = true;
-            this.clDoiTuong.VisibleIndex = 2;
-            this.clDoiTuong.Width = 243;
+            this.clSoChungTu.AppearanceCell.Options.UseTextOptions = true;
+            this.clSoChungTu.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clSoChungTu.Caption = "Số";
+            this.clSoChungTu.FieldName = "SoChungTu";
+            this.clSoChungTu.Name = "clSoChungTu";
+            this.clSoChungTu.OptionsColumn.AllowEdit = false;
+            this.clSoChungTu.Visible = true;
+            this.clSoChungTu.VisibleIndex = 2;
+            this.clSoChungTu.Width = 97;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -251,7 +250,7 @@
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
             this.clDienGiai.VisibleIndex = 3;
-            this.clDienGiai.Width = 196;
+            this.clDienGiai.Width = 232;
             // 
             // repositoryItemMemoEdit3
             // 
@@ -609,7 +608,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clNgayChungTu;
-        private DevExpress.XtraGrid.Columns.GridColumn clDoiTuong;
+        private DevExpress.XtraGrid.Columns.GridColumn clSoChungTu;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clDienGiai;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
