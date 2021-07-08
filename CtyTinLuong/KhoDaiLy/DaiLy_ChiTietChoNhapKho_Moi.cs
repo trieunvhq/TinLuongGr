@@ -1018,7 +1018,12 @@ namespace CtyTinLuong
             if(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
             {
                 int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-                Hienthi_Lable_TonKho(xxID);
+                try
+                {
+                    Hienthi_Lable_TonKho(xxID);
+                }
+                catch { }
+               
             }
         }
 
