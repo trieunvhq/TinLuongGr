@@ -104,8 +104,8 @@ namespace CtyTinLuong
 
                                 _ravi_con["DienGiai"] = dt3.Rows[k]["TenVTHH"].ToString();
                                 _ravi_con["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
-                                _ravi_con["NgayThang"] = dt3.Rows[k]["SoCongTeNo"].ToString();
-                                _ravi_con["DoiTuong"] = dt3.Rows[k]["MaSoCongTeNo"].ToString();
+                                //_ravi_con["NgayThang"] = dt3.Rows[k]["SoCongTeNo"].ToString();
+                                //_ravi_con["DoiTuong"] = dt3.Rows[k]["SoChungTu"].ToString();
                                 dt2xxxx.Rows.Add(_ravi_con);
                             }
                         }
