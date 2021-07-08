@@ -125,15 +125,14 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             clsTbVatTuHangHoa clsVT = new clsTbVatTuHangHoa();
-            DataTable dtVT = clsVT.SelectAll();
-            dtVT.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvVT = dtVT.DefaultView;
-            DataTable newdtVT = dvVT.ToTable();
+            DataTable dtVT = clsVT.T_SelectAll(); ;
 
-            gridMaVTHH.Properties.DataSource = newdtVT;
+            gridMaVTHH.Properties.DataSource = dtVT;
             gridMaVTHH.Properties.ValueMember = "ID_VTHH";
             gridMaVTHH.Properties.DisplayMember = "MaVT";
-           
+            dtVT.Dispose();
+            clsVT.Dispose();
+
             if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == false)
                 hienthiSUaDuLieu();
 
@@ -203,6 +202,11 @@ namespace CtyTinLuong
 
             }
            
+        }
+
+        private void gridMaVTHH_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaVTHH.Properties.View.Columns[0].Visible = false;
         }
     }
 }
