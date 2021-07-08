@@ -502,12 +502,10 @@ namespace CtyTinLuong
             dtdoituong.Columns.Add("DoiTuong", typeof(string));
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            DataTable dt = clsNguoi.T_SelectAll(4);
+           
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.DataSource = dt;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
@@ -704,6 +702,16 @@ namespace CtyTinLuong
         private void btLuu_Gui_Click(object sender, EventArgs e)
         {
             LuuDuLieu_Va_GuiDuLieu();
+        }
+
+        private void gridNguoiLap_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridNguoiLap.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridDoiTuong_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridDoiTuong.Properties.View.Columns[0].Visible = false;
         }
     }
 }
