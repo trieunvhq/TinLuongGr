@@ -308,9 +308,7 @@ namespace CtyTinLuong
         }
         
         private void HienThi_GridControl_Sua()
-        {
-           
-
+        { 
             double soluongthanhpham = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
             double TongsoKG = Convert.ToDouble(txtTongSoKG.Text.ToString());
            
@@ -389,22 +387,22 @@ namespace CtyTinLuong
                 DataTable dtvth = clvthh.SelectOne();
                 _ravi3["TenVTHH"] = clvthh.sTenVTHH.Value;
                 _ravi3["DonViTinh"] = clvthh.sDonViTinh.Value;
-                if (i == 1)
-                {
-                    clsKhoBTP_tbChiTietNhapKho xcls = new clsKhoBTP_tbChiTietNhapKho();
-                    xcls.iID_VTHH = ID_VTHH;
-                    DataTable dtbtp = xcls.Select_W_ID_VTHH();
-                    if (dtbtp.Rows.Count > 0)
-                        _ravi3["SoLuongTon"] = Convert.ToDouble(dtbtp.Rows[0]["SoLuongTon"].ToString());
-                }
-                else
-                {
-                    clsKhoNPL_tbChiTietNhapKho xcls = new clsKhoNPL_tbChiTietNhapKho();
-                    xcls.iID_VTHH = ID_VTHH;
-                    DataTable dtbtp = xcls.Select_W_ID_VTHH();
-                    if (dtbtp.Rows.Count > 0)
-                        _ravi3["SoLuongTon"] = Convert.ToDouble(dtbtp.Rows[0]["SoLuongTon"].ToString());
-                }
+                //if (i == 1)
+                //{
+                //    clsKhoBTP_tbChiTietNhapKho xcls = new clsKhoBTP_tbChiTietNhapKho();
+                //    xcls.iID_VTHH = ID_VTHH;
+                //    DataTable dtbtp = xcls.Select_W_ID_VTHH();
+                //    if (dtbtp.Rows.Count > 0)
+                //        _ravi3["SoLuongTon"] = Convert.ToDouble(dtbtp.Rows[0]["SoLuongTon"].ToString());
+                //}
+                //else
+                //{
+                //    clsKhoNPL_tbChiTietNhapKho xcls = new clsKhoNPL_tbChiTietNhapKho();
+                //    xcls.iID_VTHH = ID_VTHH;
+                //    DataTable dtbtp = xcls.Select_W_ID_VTHH();
+                //    if (dtbtp.Rows.Count > 0)
+                //        _ravi3["SoLuongTon"] = Convert.ToDouble(dtbtp.Rows[0]["SoLuongTon"].ToString());
+                //}
 
                 clsDinhMuc_ChiTiet_DM_NPL clsdm = new clsDinhMuc_ChiTiet_DM_NPL();
                 clsdm.iID_DinhMuc_NPL = Convert.ToInt32(gridMaDinhMucNPL.EditValue.ToString());
