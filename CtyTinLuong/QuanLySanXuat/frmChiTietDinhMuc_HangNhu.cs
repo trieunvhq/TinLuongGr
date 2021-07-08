@@ -96,14 +96,12 @@ namespace CtyTinLuong
             dteNgayThang.EditValue = DateTime.Today;
 
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridLookUpEditLoaiHang.Properties.DataSource = dtxx;
+            DataTable dt = cls.T_SelectAll(); 
+            gridLookUpEditLoaiHang.Properties.DataSource = dt;
             gridLookUpEditLoaiHang.Properties.ValueMember = "ID_VTHH";
             gridLookUpEditLoaiHang.Properties.DisplayMember = "MaVT";
-
+            dt.Dispose();
+            cls.Dispose();
         }
 
         private void HienThi_Sua_DinhMuc_DOT()
@@ -340,6 +338,11 @@ namespace CtyTinLuong
         private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
         {
             btLuu_va_Dong.Focus();
+        }
+
+        private void gridLookUpEditLoaiHang_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridLookUpEditLoaiHang.Properties.View.Columns[0].Visible = false;
         }
     }
 }
