@@ -284,6 +284,12 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaVT.Properties.View.Columns[0].Visible = false;
+            gridMaVT.Properties.View.Columns[3].Visible = false;
+        }
+
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT)
