@@ -126,6 +126,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void GridMaVT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridMaVT.Properties.View.Columns[0].Visible = false; 
+        }
+
         private void SanLuong_ToMay_ChiTiet_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
