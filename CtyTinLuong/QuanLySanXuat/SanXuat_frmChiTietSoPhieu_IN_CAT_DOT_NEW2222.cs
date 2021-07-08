@@ -612,29 +612,23 @@ namespace CtyTinLuong
         private void Load_lockUP_EDIT_may_IN()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=9";
-            DataView dvCongNhan = dtNguoi.DefaultView;
-            DataTable newdtCongNhan = dvCongNhan.ToTable();
+            DataTable dt = clsNguoi.T_SelectAll(9); 
 
-            gridMaCongNhan_May_IN.Properties.DataSource = newdtCongNhan;
+            gridMaCongNhan_May_IN.Properties.DataSource = dt;
             gridMaCongNhan_May_IN.Properties.ValueMember = "ID_NhanSu";
             gridMaCongNhan_May_IN.Properties.DisplayMember = "MaNhanVien";
 
-         
-            
 
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=8";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
 
-            gridMaCaTruong_May_IN.Properties.DataSource = newdtCaTruong;
+            dt = clsNguoi.T_SelectAll(8); 
+
+            gridMaCaTruong_May_IN.Properties.DataSource = dt;
             gridMaCaTruong_May_IN.Properties.ValueMember = "ID_NhanSu";
             gridMaCaTruong_May_IN.Properties.DisplayMember = "MaNhanVien";
 
 
             clsKhoNPL_tbChiTietNhapKho clsVT = new clsKhoNPL_tbChiTietNhapKho();
-            DataTable dt = clsVT.Select_distinct_HienThiLockUpEdit();
+            dt = clsVT.Select_distinct_HienThiLockUpEdit();
           
             gridHangHoaVao_may_IN.Properties.DataSource = dt;
             gridHangHoaVao_may_IN.Properties.ValueMember = "ID_VTHH";
@@ -2062,6 +2056,16 @@ namespace CtyTinLuong
         {
             gridHangHoaVao_may_CAT.Properties.View.Columns[0].Visible = false;
             gridHangHoaVao_may_CAT.Properties.View.Columns[3].Visible = false;
+        }
+
+        private void gridMaCongNhan_May_IN_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaCongNhan_May_IN.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridMaCongNhan_May_CAT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+
         }
 
         private void txtSanLuongTong_May_CAT_TextChanged(object sender, EventArgs e)
