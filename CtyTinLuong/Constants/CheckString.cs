@@ -413,5 +413,7 @@ namespace CtyTinLuong.Constants
             if (b == 0) return a;
             else return GCD(b, a % b);
         }
+
+
     }
 }

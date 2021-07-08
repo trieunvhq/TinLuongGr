@@ -475,6 +475,7 @@ namespace CtyTinLuong
             gridMaDinhMucNPL.Properties.ValueMember = "ID_DinhMuc_NPL";
             gridMaDinhMucNPL.Properties.DisplayMember = "MaDinhMuc";
              
+
             repositoryItemLookUpEdit2.DataSource = dtset_.Tables[1];
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
