@@ -282,6 +282,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+
+        }
+
         public frmChiTietNhapXuatTon_MotVatTu()
         {
             InitializeComponent();
