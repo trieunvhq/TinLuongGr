@@ -207,6 +207,7 @@ namespace CtyTinLuong
         private void gridMaVTHH_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridMaVTHH.Properties.View.Columns[0].Visible = false;
+            gridMaVTHH.Properties.View.Columns[3].Visible = false;
         }
     }
 }

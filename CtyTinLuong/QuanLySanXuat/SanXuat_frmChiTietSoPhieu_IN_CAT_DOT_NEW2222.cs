@@ -2043,21 +2043,25 @@ namespace CtyTinLuong
         private void gridHangHoaVao_may_IN_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridHangHoaVao_may_IN.Properties.View.Columns[0].Visible = false;
+            gridHangHoaVao_may_IN.Properties.View.Columns[3].Visible = false;
         }
 
         private void searchLookUpEdit2_QueryPopUp(object sender, CancelEventArgs e)
         { 
             gridHangHoaXuat_May_IN.Properties.View.Columns[0].Visible = false;
+            gridHangHoaXuat_May_IN.Properties.View.Columns[3].Visible = false;
         }
 
         private void gridHangHoaXuat_May_CAT_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridHangHoaXuat_May_CAT.Properties.View.Columns[0].Visible = false;
+            gridHangHoaXuat_May_CAT.Properties.View.Columns[3].Visible = false;
         }
 
         private void gridHangHoaVao_may_CAT_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridHangHoaVao_may_CAT.Properties.View.Columns[0].Visible = false;
+            gridHangHoaVao_may_CAT.Properties.View.Columns[3].Visible = false;
         }
 
         private void txtSanLuongTong_May_CAT_TextChanged(object sender, EventArgs e)
