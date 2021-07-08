@@ -7,10 +7,10 @@ using System.Data;
 
 namespace CtyTinLuong
 {
-    public partial class Tr_Xtra_BanHang_DoiChieuCongNo_new : DevExpress.XtraReports.UI.XtraReport
+    public partial class Tr_Xtra_DoiChieuCongNo_Khach : DevExpress.XtraReports.UI.XtraReport
     {
         DateTime _tuNgay, _denNgay;
-        public Tr_Xtra_BanHang_DoiChieuCongNo_new(DateTime tuNgay, DateTime denNgay)
+        public Tr_Xtra_DoiChieuCongNo_Khach(DateTime tuNgay, DateTime denNgay)
         {
             _tuNgay = tuNgay;
             _denNgay = denNgay;
