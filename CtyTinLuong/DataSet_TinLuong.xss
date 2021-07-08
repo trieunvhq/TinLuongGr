@@ -33,7 +33,7 @@
     <Shape ID="DesignTable:tbBTTL_PhuMC_CT" ZOrder="6" X="252" Y="160" Height="28" Width="173" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="234" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBTTL_PKToan_CT" ZOrder="3" X="289" Y="230" Height="28" Width="176" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="253" SplitterPosition="24" />
     <Shape ID="DesignTable:tbBTTL_PTH_CT" ZOrder="2" X="600" Y="183" Height="28" Width="156" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="253" SplitterPosition="24" />
-    <Shape ID="DesignTable:tbBH_DoiChieuCongNo_NCC" ZOrder="1" X="0" Y="0" Height="28" Width="232" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="253" SplitterPosition="24" />
+    <Shape ID="DesignTable:tbBH_DoiChieuCongNo_NCC" ZOrder="1" X="0" Y="0" Height="257" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="253" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

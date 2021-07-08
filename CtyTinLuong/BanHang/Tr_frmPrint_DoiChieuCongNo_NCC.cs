@@ -31,20 +31,66 @@ namespace CtyTinLuong
         {
             DataSet_TinLuong ds = new DataSet_TinLuong();
            
-            for (int i = 0; i < _data.Rows.Count -1; ++i)
+            for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 DataRow _ravi = ds.tbBH_DoiChieuCongNo_NCC.NewRow();
 
                 //
                 _ravi["STT"] = (i + 1).ToString();
                 _ravi["DoiTuong"] = _data.Rows[i]["DoiTuong"].ToString();
-                _ravi["NgayThang"] = Convert.ToDateTime(_data.Rows[i]["NgayThang"].ToString());
-                _ravi["DienGiai"] = Convert.ToDouble(_data.Rows[i]["DienGiai"].ToString());
-                _ravi["SoLuong"] = Convert.ToDouble(_data.Rows[i]["SoLuong"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["DonGia"].ToString());
-                _ravi["ThanhTien"] = Convert.ToDouble(_data.Rows[i]["ThanhTien"].ToString());
-                _ravi["No"] = Convert.ToDouble(_data.Rows[i]["No"].ToString());
-                _ravi["Co"] = Convert.ToDouble(_data.Rows[i]["Co"].ToString());
+                _ravi["NgayThang"] = _data.Rows[i]["NgayThang"].ToString();
+                _ravi["DienGiai"] = _data.Rows[i]["DienGiai"].ToString();
+
+                if (_data.Rows[i]["SoLuong"].ToString() == "")
+                {
+                    _ravi["SoLuong"] = "";
+                }
+                else
+                {
+                    _ravi["SoLuong"] = Convert.ToDouble(_data.Rows[i]["SoLuong"].ToString()).ToString("N2");
+                }
+
+                //
+                if (_data.Rows[i]["DonGia"].ToString() == "")
+                {
+                    _ravi["DonGia"] = "";
+                }
+                else
+                {
+                    _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["DonGia"].ToString()).ToString("N2");
+                }
+
+                //
+                if (_data.Rows[i]["ThanhTien"].ToString() == "")
+                {
+                    _ravi["ThanhTien"] = "";
+                }
+                else
+                {
+                    _ravi["ThanhTien"] = Convert.ToDouble(_data.Rows[i]["ThanhTien"].ToString()).ToString("N2");
+                }
+
+
+                //
+                if (_data.Rows[i]["No"].ToString() == "")
+                {
+                    _ravi["No"] = "";
+                }
+                else
+                {
+                    _ravi["No"] = Convert.ToDouble(_data.Rows[i]["No"].ToString()).ToString("N2");
+                }
+
+
+                //
+                if (_data.Rows[i]["Co"].ToString() == "")
+                {
+                    _ravi["Co"] = "";
+                }
+                else
+                {
+                    _ravi["Co"] = Convert.ToDouble(_data.Rows[i]["Co"].ToString()).ToString("N2");
+                }
 
                 ds.tbBH_DoiChieuCongNo_NCC.Rows.Add(_ravi);
             }
