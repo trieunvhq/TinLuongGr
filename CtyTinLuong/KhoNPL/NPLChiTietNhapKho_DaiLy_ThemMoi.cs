@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout.Utils;
 using System;
@@ -518,47 +519,31 @@ namespace CtyTinLuong
         }
         private void Load_LockUp()
         {
-            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=5";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            clsThin cls = new clsThin();
+            DataSet dtset = cls.T_LockUp_NPLChiTietNhapKho_DaiLy_ThemMoi();
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
+            DataTable dt = clsNguoi.T_SelectAll(5); 
+
+            gridNguoiLap.Properties.DataSource = dtset.Tables[0];
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
-
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
-
-            repositoryItemLookUpEdit2.DataSource = dtxx2;
-            repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
-            repositoryItemLookUpEdit2.DisplayMember = "MaVT";
-
-            clsTbDanhMuc_DaiLy clsdaily = new clsTbDanhMuc_DaiLy();
-            DataTable dtdaily = clsdaily.SelectAll();
-            dtdaily.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dtdaily.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridMaDaiLy.Properties.DataSource = dtxx;
+             
+            repositoryItemSearchLookUpEdit1.DataSource = dtset.Tables[1];
+            repositoryItemSearchLookUpEdit1.ValueMember = "ID_VTHH";
+            repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
+             
+            gridMaDaiLy.Properties.DataSource = dtset.Tables[2];
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
 
-
-            clsDinhMuc_tbDM_NguyenPhuLieu clsdinhmucnpl = new clsDinhMuc_tbDM_NguyenPhuLieu();
-            DataTable dt2 = clsdinhmucnpl.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvnpl = dt2.DefaultView;
-            DataTable newdtnpl = dvnpl.ToTable();
-
-
-            gridMaDinhMucNPL.Properties.DataSource = newdtnpl;
+             
+            gridMaDinhMucNPL.Properties.DataSource = dtset.Tables[3];
             gridMaDinhMucNPL.Properties.ValueMember = "ID_DinhMuc_NPL";
             gridMaDinhMucNPL.Properties.DisplayMember = "MaDinhMuc";
-            
+
+            dt.Dispose(); 
+            cls.Dispose(); 
         }
         private bool KiemTraLuu()
         {
@@ -1707,6 +1692,25 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+            iID_VTHH = Convert.ToInt32(row["ID_VTHH"].ToString());
+            sTenVTHH = row["TenVTHH"].ToString();
+            sDonViTinh = row["DonViTinh"].ToString();
+        }
+
+        int iID_VTHH;
+        string sMaVT, sTenVTHH, sDonViTinh;
+        private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+            }
+            catch { }
         }
 
         private void checkHangDot_CheckedChanged(object sender, EventArgs e)

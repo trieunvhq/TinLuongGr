@@ -247,5 +247,10 @@ namespace CtyTinLuong
             }
 
         }
+
+        private void GridSoTaiKhoan_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridSoTaiKhoan.Properties.View.Columns[0].Visible = false;
+        }
     }
 }

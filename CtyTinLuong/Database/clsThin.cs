@@ -795,5 +795,36 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+        public DataSet T_LockUp_NPLChiTietNhapKho_DaiLy_ThemMoi()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[T_LockUp_NPLChiTietNhapKho_DaiLy_ThemMoi]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataSet dtToReturn = new DataSet("T_LockUp_NPLChiTietNhapKho_DaiLy_ThemMoi");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("T_TongPhieuSX", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
     }
 }
