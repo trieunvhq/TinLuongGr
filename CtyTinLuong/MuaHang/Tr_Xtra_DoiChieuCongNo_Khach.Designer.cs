@@ -316,7 +316,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(1F, 44.66666F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -907,7 +907,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(257.9043F, 26.125F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Nhà cung cấp";
+            this.xrLabel5.Text = "Khách hàng";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // pNgayThang
@@ -932,7 +932,7 @@
             // 
             // pNCC
             // 
-            this.pNCC.Description = "Nhà cung cấp";
+            this.pNCC.Description = "Khách hàng";
             this.pNCC.Name = "pNCC";
             // 
             // dataSet_TinLuong1
