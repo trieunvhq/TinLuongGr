@@ -16,7 +16,7 @@ namespace CtyTinLuong
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dt = cls.SA_BanHang_Select_DISTINCT_Lockup();
+            DataTable dt = cls.Select_DISTINCT_W_ID_TaiKhoanKeToanCon_COngNo_MuaHang_Select_DISTINCT();
             GridSoTaiKhoan.Properties.DataSource = dt;
             GridSoTaiKhoan.Properties.DisplayMember = "SoTaiKhoanCon";
             GridSoTaiKhoan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
@@ -66,14 +66,14 @@ namespace CtyTinLuong
                 _ravi_Khong["Co"] = 0;
             }
             dt2xxxx.Rows.Add(_ravi_Khong);
-            //double Noxx = dNoDauKy_0, Coxx = dCoDauKy_0;
+          
             if (dtphatsinh.Rows.Count > 0)
             {
 
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
-                    //_ravi["ID_MuaHang"] = dtphatsinh.Rows[i]["ID_ChungTu"].ToString();
+                   
 
                     DateTime ngay = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
@@ -85,26 +85,13 @@ namespace CtyTinLuong
                     _ravi["No"] = Noxx_hang;
                     _ravi["Co"] = Coxx_hang;
 
-                    //Noxx = Noxx + Noxx_hang;
-                    //Coxx = Coxx + Coxx_hang;
-                    //if (Noxx <= Coxx)
-                    //{
-                    //    _ravi["No"] = 0;
-                    //    _ravi["Co"] = Math.Abs(Noxx - Coxx);
-                    //}
-                    //else
-                    //{
-                    //    _ravi["No"] = Math.Abs(Noxx - Coxx);
-                    //    _ravi["Co"] = 0;
-                    //}
-
                     dt2xxxx.Rows.Add(_ravi);
 
                     if (dtphatsinh.Rows[i]["ID_ChungTu"].ToString() != "" & Convert.ToBoolean(dtphatsinh.Rows[i]["Check_PhanNganHang"].ToString()) == false)
                     {
-                        clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
-                        cls2.iID_BanHang = Convert.ToInt32(dtphatsinh.Rows[i]["ID_ChungTu"].ToString());
-                        DataTable dt3 = cls2.Select_HienThiSuaDonHang();
+                        clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
+                        cls2.iID_MuaHang = Convert.ToInt32(dtphatsinh.Rows[i]["ID_ChungTu"].ToString());
+                        DataTable dt3 = cls2.SelectAll_W_ID_MuaHang_MaVT_TenVT();
                         if (dt3.Rows.Count > 0)
                         {
                             for (int k = 0; k < dt3.Rows.Count; k++)
@@ -135,18 +122,6 @@ namespace CtyTinLuong
             _ravi_2["No"] = Nophatsinh;
             _ravi_2["Co"] = Cophatsinh;
 
-            //if (Noxx <= Coxx)
-            //{
-            //    _ravi_2["No"] = Noxx - dNoDauKy_0;
-            //    _ravi_2["Co"] = Coxx - dCoDauKy_0;
-            //}
-            //else
-            //{
-            //    _ravi_2["No"] = Noxx - dNoDauKy_0;
-            //    _ravi_2["Co"] = Coxx - dCoDauKy_0;
-            //}
-
-
             dt2xxxx.Rows.Add(_ravi_2);
             gridControl2.DataSource = dt2xxxx;
 
@@ -167,17 +142,7 @@ namespace CtyTinLuong
                 _ravi_cuoi["No"] = No_Co_cuoi;
                 _ravi_cuoi["Co"] = 0;
             }
-
-            //if (Noxx <= Coxx)
-            //{
-            //    _ravi_cuoi["No"] = 0;
-            //    _ravi_cuoi["Co"] = Math.Abs(Noxx - Coxx);
-            //}
-            //else
-            //{
-            //    _ravi_cuoi["No"] = Math.Abs(Noxx - Coxx);
-            //    _ravi_cuoi["Co"] = 0;
-            //}
+            
             dt2xxxx.Rows.Add(_ravi_cuoi);
             _data = dt2xxxx;
             gridControl2.DataSource = dt2xxxx;
