@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -292,9 +293,9 @@ namespace CtyTinLuong
             if (txtTiGia.Text.ToString() != "1")
             {
                 double tigiaxx = Convert.ToDouble(txtTiGia.Text.ToString());
-                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+              
 
-                txtTienVND.Text = (sotienxxx * tigiaxx).ToString();
+               
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
                 try
                 {
@@ -306,12 +307,7 @@ namespace CtyTinLuong
                         }
                         gridControl1.DataSource = dttttt2;
                     }
-                    if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
-                    {
-                        string sotien = txtSoTien.Text;
-                        string tigia = txtTiGia.Text;
-                        txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + " = " + txtTienVND.Text + " vnđ";
-                    }
+                    
                 }
                 catch
                 {
@@ -424,7 +420,7 @@ namespace CtyTinLuong
                 if (Str1 == "DT")
                     msLoaiChungTu = "BÁO CÓ";
                 mdbSoTien_Co_USD = Convert.ToDouble(txtSoTien.Text.ToString());
-                mdbSoTien_No_VND = Convert.ToDouble(txtTienVND.Text.ToString());
+                //mdbSoTien_No_VND = Convert.ToDouble(txtTienVND.Text.ToString());
                 mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
                 for (int i = 0; i < mdtPrint.Rows.Count; i++)
                 {
