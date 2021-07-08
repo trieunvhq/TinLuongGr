@@ -32,32 +32,40 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                Cursor.Current = Cursors.WaitCursor;
-                string ssotkcon = txtSoTKMe.Text.ToString();
                 clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
-                DataTable dt = cls.SelectAll();
-                dt.DefaultView.RowFilter = "TonTai=True and SoTaiKhoanMe ='" + ssotkcon + "'";
-                DataView dv = dt.DefaultView;
-                DataTable newdt = dv.ToTable();
-
-                if (newdt.Rows.Count > 0)
+                cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+                cls.bTonTai = true;
+                cls.sSoTaiKhoanMe = txtSoTKMe.Text.ToString();
+                cls.sTenTaiKhoanMe = txtTenTKMe.Text.ToString();
+                cls.sDienGiaiMe = txtDienGiai.Text.ToString();
+                if (frmQuanLyTaiKhoanKeToan.mbTheMoi==true)
                 {
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("Đã có tài khoản: " + ssotkcon + ". Vui lòng chọn tài khoản khác ");
-                    return;
+                    string ssotkcon = txtSoTKMe.Text.ToString();
+                    DataTable dt = cls.SelectAll();
+                    dt.DefaultView.RowFilter = "TonTai=True and SoTaiKhoanMe ='" + ssotkcon + "'";
+                    DataView dv = dt.DefaultView;
+                    DataTable newdt = dv.ToTable();
+
+                    if (newdt.Rows.Count > 0)
+                    {
+                        Cursor.Current = Cursors.Default;
+                        MessageBox.Show("Đã có tài khoản: " + ssotkcon + ". Vui lòng chọn tài khoản khác ");
+                        return;
+                    }
+                    else
+                    {
+                        cls.Insert();
+                        Cursor.Current = Cursors.Default;                    
+                        
+                    }
                 }
                 else
                 {
-                    cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                    cls.bTonTai = true;
-                    cls.sSoTaiKhoanMe = txtSoTKMe.Text.ToString();
-                    cls.sTenTaiKhoanMe = txtTenTKMe.Text.ToString();
-                    cls.sDienGiaiMe = txtDienGiai.Text.ToString();                   
-                    cls.Insert();
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
+                    cls.iID_TaiKhoanKeToanMe = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                    cls.Update();
                 }
+                Cursor.Current = Cursors.WaitCursor;
+                MessageBox.Show("Đã lưu");
             }
 
         }
@@ -74,6 +82,20 @@ namespace CtyTinLuong
         private void btLuu_Click(object sender, EventArgs e)
         {
             LuuDuLieu();
+        }
+
+        private void frmChiTietTaiKhoanKeToan_Load(object sender, EventArgs e)
+        {
+            if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
+            {               
+                clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+                cls.iID_TaiKhoanKeToanMe = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                DataTable dtcon = cls.SelectOne();
+                txtSoTKMe.Text = cls.sSoTaiKhoanMe.Value.ToString();
+                txtTenTKMe.Text = cls.sTenTaiKhoanMe.Value.ToString();
+                txtDienGiai.Text = cls.sDienGiaiMe.Value.ToString();                
+                checkNgungTheoDoi.Checked = cls.bNgungTheoDoi.Value;
+            }
         }
     }
 }

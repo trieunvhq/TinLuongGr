@@ -57,11 +57,6 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtDVT1 = new System.Windows.Forms.TextBox();
             this.txtTenVatTu = new System.Windows.Forms.TextBox();
-            this.gridLookUpEditLoaiHang = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTrongLuongKiemTra = new System.Windows.Forms.TextBox();
             this.txtSoLuongKiemTra = new System.Windows.Forms.TextBox();
             this.txtLoaiGiay = new System.Windows.Forms.TextBox();
@@ -70,7 +65,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -104,6 +98,9 @@
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridLookUpEditLoaiHang = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -122,14 +119,11 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditLoaiHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -152,6 +146,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditLoaiHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // btXoa
@@ -378,9 +375,9 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.gridLookUpEditLoaiHang);
             this.layoutControl2.Controls.Add(this.txtDVT1);
             this.layoutControl2.Controls.Add(this.txtTenVatTu);
-            this.layoutControl2.Controls.Add(this.gridLookUpEditLoaiHang);
             this.layoutControl2.Controls.Add(this.txtTrongLuongKiemTra);
             this.layoutControl2.Controls.Add(this.txtSoLuongKiemTra);
             this.layoutControl2.Controls.Add(this.txtLoaiGiay);
@@ -410,54 +407,6 @@
             this.txtTenVatTu.Size = new System.Drawing.Size(330, 33);
             this.txtTenVatTu.TabIndex = 6;
             this.txtTenVatTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVatTu_KeyPress);
-            // 
-            // gridLookUpEditLoaiHang
-            // 
-            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(121, 2);
-            this.gridLookUpEditLoaiHang.Name = "gridLookUpEditLoaiHang";
-            this.gridLookUpEditLoaiHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEditLoaiHang.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEditLoaiHang.Size = new System.Drawing.Size(330, 20);
-            this.gridLookUpEditLoaiHang.StyleController = this.layoutControl2;
-            this.gridLookUpEditLoaiHang.TabIndex = 5;
-            this.gridLookUpEditLoaiHang.EditValueChanged += new System.EventHandler(this.gridLookUpEditLoaiHang_EditValueChanged);
-            this.gridLookUpEditLoaiHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridLookUpEditLoaiHang_KeyPress);
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clID_VTHH,
-            this.clMaVT,
-            this.clTenVTHH});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // clID_VTHH
-            // 
-            this.clID_VTHH.Caption = "ID_VTHH";
-            this.clID_VTHH.FieldName = "ID_VTHH";
-            this.clID_VTHH.Name = "clID_VTHH";
-            // 
-            // clMaVT
-            // 
-            this.clMaVT.Caption = "Mã VT";
-            this.clMaVT.FieldName = "MaVT";
-            this.clMaVT.Name = "clMaVT";
-            this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 0;
-            this.clMaVT.Width = 80;
-            // 
-            // clTenVTHH
-            // 
-            this.clTenVTHH.Caption = "Tên VT";
-            this.clTenVTHH.FieldName = "TenVTHH";
-            this.clTenVTHH.Name = "clTenVTHH";
-            this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 1;
-            this.clTenVTHH.Width = 304;
             // 
             // txtTrongLuongKiemTra
             // 
@@ -496,9 +445,9 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem4,
-            this.layoutControlItem23,
             this.emptySpaceItem7,
-            this.layoutControlItem9});
+            this.layoutControlItem9,
+            this.layoutControlItem24});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup2.Size = new System.Drawing.Size(453, 163);
@@ -543,16 +492,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(453, 37);
             this.layoutControlItem4.Text = "Tên VT";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(116, 13);
-            // 
-            // layoutControlItem23
-            // 
-            this.layoutControlItem23.Control = this.gridLookUpEditLoaiHang;
-            this.layoutControlItem23.CustomizationFormText = "Mã VT";
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(453, 24);
-            this.layoutControlItem23.Text = "Loại hàng";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(116, 13);
             // 
             // emptySpaceItem7
             // 
@@ -914,6 +853,35 @@
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem22.TextVisible = false;
             // 
+            // gridLookUpEditLoaiHang
+            // 
+            this.gridLookUpEditLoaiHang.Location = new System.Drawing.Point(121, 2);
+            this.gridLookUpEditLoaiHang.Name = "gridLookUpEditLoaiHang";
+            this.gridLookUpEditLoaiHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEditLoaiHang.Properties.PopupView = this.searchLookUpEdit1View;
+            this.gridLookUpEditLoaiHang.Size = new System.Drawing.Size(330, 20);
+            this.gridLookUpEditLoaiHang.StyleController = this.layoutControl2;
+            this.gridLookUpEditLoaiHang.TabIndex = 9;
+            this.gridLookUpEditLoaiHang.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEditLoaiHang_QueryPopUp);
+            this.gridLookUpEditLoaiHang.EditValueChanged += new System.EventHandler(this.gridLookUpEditLoaiHang_EditValueChanged);
+            this.gridLookUpEditLoaiHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridLookUpEditLoaiHang_KeyPress);
+            // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.gridLookUpEditLoaiHang;
+            this.layoutControlItem24.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(453, 24);
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(116, 13);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // frmChiTietDinhMucDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -951,14 +919,11 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditLoaiHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -981,6 +946,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditLoaiHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1046,16 +1014,13 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private System.Windows.Forms.CheckBox check_KhongDungCongThuc;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditLoaiHang;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH;
-        private DevExpress.XtraGrid.Columns.GridColumn clMaVT;
-        private DevExpress.XtraGrid.Columns.GridColumn clTenVTHH;
         private System.Windows.Forms.TextBox txtTenVatTu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private System.Windows.Forms.TextBox txtDVT1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.SearchLookUpEdit gridLookUpEditLoaiHang;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
     }
 }

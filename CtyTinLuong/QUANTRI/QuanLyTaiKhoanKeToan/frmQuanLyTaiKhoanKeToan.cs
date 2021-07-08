@@ -13,36 +13,25 @@ namespace CtyTinLuong
     public partial class frmQuanLyTaiKhoanKeToan : Form
     {
 
-        public static bool mb_TheMoi_TaiKhoan;
-        public static int miID_Sua_TaiKhoan_Con, miID_Sua_TaiKhoan_Me;
+        public static bool mbTheMoi;
+        public static int miID_TaiKhoan;
 
-        private void HienThi()
+        private void Load_DaTa(bool bMe_True_COn_False)
         {
-            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dt = cls.SelectAll_HienThiGridcontrol();
-
-            if (checked_ALL.Checked == true)
+            if(bMe_True_COn_False==true)
             {
-                dt.DefaultView.RowFilter = " TonTai= True";
-                DataView dv = dt.DefaultView;
-                gridControl1.DataSource = dv;
+                clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+                DataTable dt = cls.SA_new();
+                gridControl1.DataSource = dt;
             }
             else
             {
-                if (checkTheoDoi.Checked == true)
-                {
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-                    DataView dv = dt.DefaultView;
-                    gridControl1.DataSource = dv;
-                }
-                else
-                {
-                    dt.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=true";
-                    DataView dv = dt.DefaultView;
-                    gridControl1.DataSource = dv;
-                }
-
+                clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+                DataTable dt = cls.SA();              
+                gridControl1.DataSource = dt;
             }
+            
+
         }
         public frmQuanLyTaiKhoanKeToan()
         {
@@ -52,11 +41,8 @@ namespace CtyTinLuong
         private void frmQuanLyTaiKhoanKeToan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            mb_TheMoi_TaiKhoan = false;
-            checkTheoDoi.Checked = true;
-            clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
-            mb_TheMoi_TaiKhoan = false;
-            HienThi();
+            mbTheMoi = false;
+            checkCon.Checked = true;
             Cursor.Current = Cursors.Default;
         }
 
@@ -65,35 +51,7 @@ namespace CtyTinLuong
             this.Close();
         }
 
-        private void checked_ALL_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checked_ALL.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checkTheoDoi.Checked = false;
-            }
-            HienThi();
-        }
 
-        private void checkTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkTheoDoi.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
-
-        private void checkNgungTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkNgungTheoDoi.Checked == true)
-            {
-                checkTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
@@ -108,7 +66,7 @@ namespace CtyTinLuong
             try
             {
                 clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                cls.iID_TaiKhoanKeToanCon = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
+                cls.iID_TaiKhoanKeToanCon = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                 cls.Update_NgungTheoDoi();
             }
@@ -125,25 +83,25 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult traloi;
-                traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (traloi == DialogResult.OK)
-                {
-                    Cursor.Current = Cursors.WaitCursor;
-                    clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
-                    cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
-                    cls1.Delete_W_TonTai();
-                    HienThi();
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("Đã xóa");
-                }
-            }
-            catch
-            {
+            //try
+            //{
+            //    DialogResult traloi;
+            //    traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            //    if (traloi == DialogResult.OK)
+            //    {
+            //        Cursor.Current = Cursors.WaitCursor;
+            //        clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
+            //        cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
+            //        cls1.Delete_W_TonTai();
+            //        HienThi();
+            //        Cursor.Current = Cursors.Default;
+            //        MessageBox.Show("Đã xóa");
+            //    }
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -151,11 +109,19 @@ namespace CtyTinLuong
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                miID_Sua_TaiKhoan_Con = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
-                miID_Sua_TaiKhoan_Me = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanMe).ToString());
-                mb_TheMoi_TaiKhoan = false;
-                frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
-                ff.Show();
+                miID_TaiKhoan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());             
+                mbTheMoi = false;
+                if(checkCon.Checked==true)
+                {
+                    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
+                    ff.Show();
+                }
+                else
+                {
+                    frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
+                    ff.Show();
+                }
+               
                 Cursor.Current = Cursors.Default;
             }
             catch
@@ -171,21 +137,47 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
+     
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void checkMe_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkMe.Checked==true)
+            {
+                checkCon.Checked = false;
+                Load_DaTa(true);
+            }
+            
+        }
+
+        private void checkCon_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCon.Checked == true)
+            {
+                checkMe.Checked = false;
+                Load_DaTa(false);
+            }
+           
+        }
+
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            mb_TheMoi_TaiKhoan = true;
-            frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
-            ff.Show();
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void btThemMoi_Con_Click(object sender, EventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            mb_TheMoi_TaiKhoan = true;
-            frmChiTietTaiKhoanKeToanCon ff = new CtyTinLuong.frmChiTietTaiKhoanKeToanCon();
-            ff.Show();
+            mbTheMoi = true;
+            if (checkCon.Checked == true)
+            {
+                frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
+                ff.Show();
+            }
+            else
+            {
+                frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
+                ff.Show();
+            }
             Cursor.Current = Cursors.Default;
         }
     }

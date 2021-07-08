@@ -36,15 +36,11 @@ namespace CtyTinLuong
             gridTK_me.Properties.DataSource = newdtme;
             gridTK_me.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
             gridTK_me.Properties.DisplayMember = "SoTaiKhoanMe";
-            if (frmQuanLyTaiKhoanKeToan.mb_TheMoi_TaiKhoan==true)
+            if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
             {
-
-            }
-            else if (frmQuanLyTaiKhoanKeToan.mb_TheMoi_TaiKhoan == false)
-            {
-                gridTK_me.EditValue = frmQuanLyTaiKhoanKeToan.miID_Sua_TaiKhoan_Me;
+                gridTK_me.EditValue = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
                 clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                clscon.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_Sua_TaiKhoan_Con;
+                clscon.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
                 DataTable dtcon = clscon.SelectOne();
                 txtSoTKCon.Text = clscon.sSoTaiKhoanCon.Value.ToString();
                 txtTenTKCon.Text = clscon.sTenTaiKhoanCon.Value.ToString();
@@ -59,7 +55,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                if (frmQuanLyTaiKhoanKeToan.mb_TheMoi_TaiKhoan == true)
+                if (frmQuanLyTaiKhoanKeToan.mbTheMoi == true)
                 {
                     string ssotkcon = txtSoTKCon.Text.ToString();
                     clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
@@ -114,7 +110,7 @@ namespace CtyTinLuong
                     }
                       
                 }
-                else if (frmQuanLyTaiKhoanKeToan.mb_TheMoi_TaiKhoan == false)
+                else if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
                 {
                     clsNganHang_TaiKhoanKeToanCon cls = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
                     cls.iID_TaiKhoanKeToanMe = Convert.ToInt16(gridTK_me.EditValue.ToString());
@@ -124,7 +120,7 @@ namespace CtyTinLuong
                     cls.sTenTaiKhoanCon = txtTenTKCon.Text.ToString();
                     cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
                     cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
-                    cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_Sua_TaiKhoan_Con;
+                    cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
                     cls.Update();
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã lưu");

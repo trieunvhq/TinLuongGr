@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhapXuatTon_MotVatTu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btLayDuLieu = new DevExpress.XtraEditors.SimpleButton();
-            this.gridMaVT = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtDVT = new System.Windows.Forms.TextBox();
             this.txtTenVT = new System.Windows.Forms.TextBox();
             this.dteDenNgay = new DevExpress.XtraEditors.DateEdit();
@@ -79,14 +75,14 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridMaVT = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -104,9 +100,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -123,9 +121,9 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.gridMaVT);
             this.dataLayoutControl1.Controls.Add(this.btRefresh);
             this.dataLayoutControl1.Controls.Add(this.btLayDuLieu);
-            this.dataLayoutControl1.Controls.Add(this.gridMaVT);
             this.dataLayoutControl1.Controls.Add(this.txtDVT);
             this.dataLayoutControl1.Controls.Add(this.txtTenVT);
             this.dataLayoutControl1.Controls.Add(this.dteDenNgay);
@@ -164,54 +162,6 @@
             this.btLayDuLieu.Text = "Lấy dữ liệu";
             this.btLayDuLieu.Click += new System.EventHandler(this.btLayDuLieu_Click);
             // 
-            // gridMaVT
-            // 
-            this.gridMaVT.Location = new System.Drawing.Point(52, 28);
-            this.gridMaVT.Name = "gridMaVT";
-            this.gridMaVT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaVT.Properties.PopupView = this.gridView1;
-            this.gridMaVT.Size = new System.Drawing.Size(157, 20);
-            this.gridMaVT.StyleController = this.dataLayoutControl1;
-            this.gridMaVT.TabIndex = 107;
-            this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
-            this.gridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVT_KeyPress);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Mã VT";
-            this.gridColumn3.FieldName = "MaVT";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 192;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Tên vật tư";
-            this.gridColumn4.FieldName = "TenVTHH";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 200;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "ID_VTHH";
-            this.gridColumn5.FieldName = "ID_VTHH";
-            this.gridColumn5.Name = "gridColumn5";
-            // 
             // txtDVT
             // 
             this.txtDVT.Location = new System.Drawing.Point(806, 28);
@@ -222,9 +172,9 @@
             // 
             // txtTenVT
             // 
-            this.txtTenVT.Location = new System.Drawing.Point(263, 28);
+            this.txtTenVT.Location = new System.Drawing.Point(157, 28);
             this.txtTenVT.Name = "txtTenVT";
-            this.txtTenVT.Size = new System.Drawing.Size(487, 20);
+            this.txtTenVT.Size = new System.Drawing.Size(593, 20);
             this.txtTenVT.TabIndex = 105;
             this.txtTenVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVT_KeyPress);
             // 
@@ -652,9 +602,9 @@
             this.layoutControlItem8,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem9});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(908, 475);
@@ -723,9 +673,9 @@
             // 
             this.layoutControlItem10.Control = this.txtTenVT;
             this.layoutControlItem10.CustomizationFormText = "Tên VTHH";
-            this.layoutControlItem10.Location = new System.Drawing.Point(211, 26);
+            this.layoutControlItem10.Location = new System.Drawing.Point(105, 26);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(541, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(647, 24);
             this.layoutControlItem10.Text = "Tên VTHH";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(47, 13);
             // 
@@ -740,15 +690,6 @@
             this.layoutControlItem11.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(47, 13);
             this.layoutControlItem11.TextToControlDistance = 5;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.gridMaVT;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(211, 24);
-            this.layoutControlItem3.Text = "Mã VT";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(47, 13);
             // 
             // layoutControlItem4
             // 
@@ -768,6 +709,36 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
+            // gridMaVT
+            // 
+            this.gridMaVT.Location = new System.Drawing.Point(52, 28);
+            this.gridMaVT.Name = "gridMaVT";
+            this.gridMaVT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridMaVT.Properties.PopupView = this.searchLookUpEdit1View;
+            this.gridMaVT.Size = new System.Drawing.Size(51, 20);
+            this.gridMaVT.StyleController = this.dataLayoutControl1;
+            this.gridMaVT.TabIndex = 111;
+            this.gridMaVT.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaVT_QueryPopUp);
+            this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
+            this.gridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVT_KeyPress);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.gridMaVT;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(105, 24);
+            this.layoutControlItem9.Text = "Mã VT";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(47, 13);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // frmChiTietNhapXuatTon_MotVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -784,8 +755,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -803,9 +772,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -855,15 +826,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraEditors.GridLookUpEdit gridMaVT;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.SimpleButton btRefresh;
         private DevExpress.XtraEditors.SimpleButton btLayDuLieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.SearchLookUpEdit gridMaVT;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }
