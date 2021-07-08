@@ -455,57 +455,27 @@ namespace CtyTinLuong
         }
         private void Load_LockUp()
         {
-            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_ChucVu=2";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
-
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            clsThin cls = new clsThin();
+            DataSet dtset_ = cls.T_LockUp_DaiLy_ChiTietChoNhapKho_Moi();
+             
+            gridNguoiLap.Properties.DataSource = dtset_.Tables[0];
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
-
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
-
-            repositoryItemLookUpEdit2.DataSource = dtxx2;
+             
+            repositoryItemLookUpEdit2.DataSource = dtset_.Tables[1];
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
-
-            clsTbDanhMuc_DaiLy clsdaily = new clsTbDanhMuc_DaiLy();
-            DataTable dtdaily = clsdaily.SelectAll();
-            dtdaily.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dtdaily.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridMaDaiLy.Properties.DataSource = dtxx;
+             
+            gridMaDaiLy.Properties.DataSource = dtset_.Tables[2];
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
+             
 
-
-            clsDinhMuc_tbDM_NguyenPhuLieu clsdinhmucnpl = new clsDinhMuc_tbDM_NguyenPhuLieu();
-            DataTable dt2 = clsdinhmucnpl.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvnpl = dt2.DefaultView;
-            DataTable newdtnpl = dvnpl.ToTable();
-
-
-            gridMaDinhMucNPL.Properties.DataSource = newdtnpl;
+            gridMaDinhMucNPL.Properties.DataSource = dtset_.Tables[3];
             gridMaDinhMucNPL.Properties.ValueMember = "ID_DinhMuc_NPL";
             gridMaDinhMucNPL.Properties.DisplayMember = "MaDinhMuc";
-
-          
-
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            repositoryItemLookUpEdit2.DataSource = newdtvthh;
+             
+            repositoryItemLookUpEdit2.DataSource = dtset_.Tables[1];
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
         }
