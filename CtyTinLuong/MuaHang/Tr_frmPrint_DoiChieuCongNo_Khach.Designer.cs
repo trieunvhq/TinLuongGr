@@ -927,7 +927,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tr_frmPrint_DoiChieuCongNo_Khach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Print Đối Chiếu Công Nợ Nhà Cung Cấp";
+            this.Text = "Tr_frmPrint_DoiChieuCongNo_Khach-->Print Đối Chiếu Công Nợ Khách Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Tr_frmPrint_DoiChieuCongNo_Khach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
