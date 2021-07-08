@@ -77,6 +77,11 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
+        private void GridMaVT_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridMaVT.Properties.View.Columns[0].Visible = false; 
+        }
+
         private void GridMaVT_EditValueChanged(object sender, EventArgs e)
         {
             try
