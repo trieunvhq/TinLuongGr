@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -284,6 +285,183 @@ namespace CtyTinLuong
             catch
             {
             }
+        }
+
+        private void txtTiGia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTiGia.Text.ToString() != "1")
+            {
+                double tigiaxx = Convert.ToDouble(txtTiGia.Text.ToString());
+                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+
+                txtTienVND.Text = (sotienxxx * tigiaxx).ToString();
+                DataTable dttttt2 = (DataTable)gridControl1.DataSource;
+                try
+                {
+                    if (dttttt2.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dttttt2.Rows.Count; i++)
+                        {
+                            dttttt2.Rows[i]["TiGia"] = tigiaxx;
+                        }
+                        gridControl1.DataSource = dttttt2;
+                    }
+                    if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
+                    {
+                        string sotien = txtSoTien.Text;
+                        string tigia = txtTiGia.Text;
+                        txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + " = " + txtTienVND.Text + " vnđ";
+                    }
+                }
+                catch
+                {
+                }
+
+            }
+        }
+
+        private void btLuu_Dong_Click(object sender, EventArgs e)
+        {
+            LuuDuLieu_Va_GhiSo(6);
+        }
+
+        private void btXoa2_Click(object sender, EventArgs e)
+        {
+            gridView4.SetFocusedRowCellValue(clHienThi, "0");
+            gridView4.SetFocusedRowCellValue(clNo, 0);
+            gridView4.SetFocusedRowCellValue(clCo, 0);
+        }
+
+        private void btthemmoi_Click(object sender, EventArgs e)
+        {
+            UCQuy_NganHang_BaoCo.mbTheMoi = true;
+            HienThi_ThemMoi(6);
+            txtSoTien.Text = "0";
+        }
+
+        private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+        {
+            GridView view = sender as GridView;
+            DataView dv = view.DataSource as DataView;
+            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
+            {
+                e.Visible = false;
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoTien_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal value = decimal.Parse(txtSoTien.Text);
+                txtSoTien.Text = String.Format("{0:#,##0.00}", value);
+                double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+
+        }
+
+        private void txtSoTien_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    decimal value = decimal.Parse(txtSoTien.Text);
+                    txtSoTien.Text = String.Format("{0:#,##0.00}", value);
+                    double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mbPrint = true;
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dttttt2 = dv1212.ToTable();
+                string shienthi = "1";
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                mdtPrint = dv.ToTable();
+
+                //mbTienUSD = checkUSD.Checked;
+                mdaNgayThang = dteNgayChungTu.DateTime;
+                msNguoiNopTen = txtDoiTuong.Text.ToString();
+                msDiaChi = txtDoiTuong.Text.ToString();
+                msDienGiai = txtDienGiai.Text.ToString();
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                string Str1 = msSoChungTu.Substring(0, 2);//Cắt chuỗi từ vị trí đầu tiên(vị trí 0) đến vị trí số 2
+                if (Str1 == "BC")
+                    msLoaiChungTu = "BÁO CÓ";
+                if (Str1 == "BN")
+                    msLoaiChungTu = "BÁO NỢ";
+                if (Str1 == "PT")
+                    msLoaiChungTu = "PHIẾU THU";
+                if (Str1 == "PC")
+                    msLoaiChungTu = "PHIẾU CHI";
+                if (Str1 == "DT")
+                    msLoaiChungTu = "BÁO CÓ";
+                mdbSoTien_Co_USD = Convert.ToDouble(txtSoTien.Text.ToString());
+                mdbSoTien_No_VND = Convert.ToDouble(txtTienVND.Text.ToString());
+                mdbTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
+                for (int i = 0; i < mdtPrint.Rows.Count; i++)
+                {
+                    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
+                    if (Convert.ToDouble(mdtPrint.Rows[i]["No"].ToString()) == 0 & Convert.ToDouble(mdtPrint.Rows[i]["Co"].ToString()) > 0)
+                    {
+                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
+                        DataTable dtcon = clscon.SelectOne();
+                        ms_TaiKhoanCo = clscon.sSoTaiKhoanCon.Value;
+                    }
+                    if (Convert.ToDouble(mdtPrint.Rows[i]["No"].ToString()) > 0 & Convert.ToDouble(mdtPrint.Rows[i]["Co"].ToString()) == 0)
+                    {
+                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
+                        DataTable dtcon = clscon.SelectOne();
+                        msTaiKhoan_No = clscon.sSoTaiKhoanCon.Value;
+                    }
+                }
+
+                frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No ff = new frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No();
+                ff.Show();
+            }
+            catch { }
+        }
+
+        private void QuyNganHang_Frm_PhieuKeToan_Load(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+         
+            Load_LockUp();
+
+            if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
+                HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            else if (UCQuy_NganHang_BaoCo.mbSua == true)
+                HienThi_Sua();
+            else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
+                HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            Cursor.Current = Cursors.Default;
         }
 
         private bool KiemTraLuu()
