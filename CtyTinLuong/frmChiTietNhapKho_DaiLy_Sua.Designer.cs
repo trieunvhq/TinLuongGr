@@ -1375,7 +1375,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Name = "frmChiTietNhapKho_DaiLy_Sua";
-            this.Text = "frmChiTietNhapKho_DaiLy_Suaxxxxtesst";
+            this.Text = this.Name+"-->frmChiTietNhapKho_DaiLy_Suaxxxxtesst";
             this.Load += new System.EventHandler(this.frmChiTietNhapKho_DaiLy_Sua_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

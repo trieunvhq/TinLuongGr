@@ -926,7 +926,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_SanLuongToMayIn";
-            this.Text = "Báo cáo sản lượng";
+            this.Text = this.Name+"-->Báo cáo sản lượng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_SanLuongToMayIn_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_SanLuongToMayIn_Load);

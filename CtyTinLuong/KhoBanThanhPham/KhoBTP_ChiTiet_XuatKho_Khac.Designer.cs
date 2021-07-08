@@ -655,7 +655,7 @@
             this.Controls.Add(this.btThoat2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoBTP_ChiTiet_XuatKho_Khac";
-            this.Text = "Kho Bán Thành Phẩm - Chi Tiết Xuất Kho - Khác";
+            this.Text = this.Name+"-->Kho Bán Thành Phẩm - Chi Tiết Xuất Kho - Khác";
             this.Load += new System.EventHandler(this.KhoBTP_ChiTiet_XuatKho_Khac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);

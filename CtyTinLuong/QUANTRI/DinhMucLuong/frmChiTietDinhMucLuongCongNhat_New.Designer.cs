@@ -688,7 +688,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMucLuongCongNhat_Newwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Định Mức Lương";
+            this.Text = this.Name+"-->Định Mức Lương";
             this.Load += new System.EventHandler(this.frmChiTietDinhMucLuongCongNhat_Newwwwww_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();

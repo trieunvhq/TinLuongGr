@@ -914,7 +914,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_nhapKho_DaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Print Nhập Kho Đại Lý";
+            this.Text = this.Name+"-->Print Nhập Kho Đại Lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_nhapKho_DaiLy_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_nhapKho_DaiLy_Load);

@@ -675,7 +675,7 @@
             this.MinimizeBox = false;
             this.Name = "Tr_frmChiTietBB_Ktra_DMHH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Biên Bản Kiểm Tra Định Mức Hàng Hóa Sản Xuất";
+            this.Text = this.Name+"-->Chi Tiết Biên Bản Kiểm Tra Định Mức Hàng Hóa Sản Xuất";
             this.Load += new System.EventHandler(this.Tr_frmChiTietBB_Ktra_DMHH_Load);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();

@@ -259,7 +259,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietTaiKhoanKeToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Tài Khoản Mẹ";
+            this.Text = this.Name+"-->Chi Tiết Tài Khoản Mẹ";
             this.Load += new System.EventHandler(this.frmChiTietTaiKhoanKeToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();

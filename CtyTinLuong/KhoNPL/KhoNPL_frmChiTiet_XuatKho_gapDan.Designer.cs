@@ -1076,7 +1076,7 @@
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoNPL_frmChiTiet_XuatKho_gapDan";
-            this.Text = "Chi Tiết Kho Gấp Dán";
+            this.Text = this.Name+"-->Chi Tiết Kho Gấp Dán";
             this.Load += new System.EventHandler(this.KhoNPL_frmChiTiet_XuatKho_gapDan_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

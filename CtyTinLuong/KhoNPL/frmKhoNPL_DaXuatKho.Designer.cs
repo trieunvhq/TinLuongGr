@@ -671,7 +671,7 @@
             this.MinimizeBox = false;
             this.Name = "frmKhoNPL_DaXuatKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Xuất Kho";
+            this.Text = this.Name+"-->Chi Tiết Xuất Kho";
             this.Load += new System.EventHandler(this.frmKhoNPL_DaXuatKho_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

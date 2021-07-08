@@ -1443,7 +1443,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietChamCong_Mot_CongNhan";
-            this.Text = "Chi tiết chấm công một nhân viên";
+            this.Text = this.Name+"-->Chi tiết chấm công một nhân viên";
             this.Load += new System.EventHandler(this.frmChiTietChamCong_Mot_CongNhan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

@@ -876,7 +876,7 @@
             this.Controls.Add(this.groupBox3);
             this.Name = "QuyNganHang_Frm_PhieuKeToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phiếu kế toán";
+            this.Text = this.Name+"-->Phiếu kế toán";
             this.Load += new System.EventHandler(this.QuyNganHang_Frm_PhieuKeToan_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

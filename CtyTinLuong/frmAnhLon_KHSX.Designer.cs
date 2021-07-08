@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(816, 481);
             this.Controls.Add(this.pictureEdit1);
             this.Name = "frmAnhLon_KHSX";
-            this.Text = "Ảnh";
+            this.Text = this.Name+"-->Ảnh";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAnhLon_KHSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();

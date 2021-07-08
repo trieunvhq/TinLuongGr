@@ -953,7 +953,7 @@
             this.Controls.Add(this.groupBox3);
             this.Name = "frmLuong_ChiTietTraLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết trả lương";
+            this.Text = this.Name+"-->Chi tiết trả lương";
             this.Load += new System.EventHandler(this.frmLuong_ChiTietTraLuong_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

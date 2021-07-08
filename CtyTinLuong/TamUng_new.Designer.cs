@@ -855,7 +855,7 @@
             this.Controls.Add(this.groupBox3);
             this.Name = "TamUng_new";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tạm ứng";
+            this.Text = this.Name+"-->Tạm ứng";
             this.Load += new System.EventHandler(this.TamUng_new_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

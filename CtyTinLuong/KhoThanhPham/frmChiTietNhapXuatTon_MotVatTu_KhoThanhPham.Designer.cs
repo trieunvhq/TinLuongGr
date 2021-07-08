@@ -785,7 +785,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Báo cáo NXT";
+            this.Text = this.Name+"-->Báo cáo NXT";
             this.Load += new System.EventHandler(this.frmChiTietNhapXuatTon_MotVatTu_KhoThanhPham_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

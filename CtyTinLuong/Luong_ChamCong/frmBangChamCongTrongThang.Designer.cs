@@ -959,7 +959,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBangChamCongTrongThang";
-            this.Text = "Bảng chấm công";
+            this.Text = this.Name+"-->Bảng chấm công";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBangChamCongTrongThang_FormClosed);
             this.Load += new System.EventHandler(this.frmBangChamCongTrongThang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

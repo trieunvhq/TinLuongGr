@@ -914,7 +914,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Print NXT Chi Tiết";
+            this.Text = this.Name+"-->Print NXT Chi Tiết";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_Load);

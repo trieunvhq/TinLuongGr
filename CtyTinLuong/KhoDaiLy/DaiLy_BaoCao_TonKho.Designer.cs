@@ -728,7 +728,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_BaoCao_TonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Báo Cáo Tồn Kho";
+            this.Text = this.Name+"-->Báo Cáo Tồn Kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DaiLy_BaoCao_TonKho_Load);
             this.groupBox1.ResumeLayout(false);

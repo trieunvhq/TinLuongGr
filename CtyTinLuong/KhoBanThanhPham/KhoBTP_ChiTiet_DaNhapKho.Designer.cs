@@ -602,7 +602,7 @@
             this.MinimizeBox = false;
             this.Name = "KhoBTP_ChiTiet_DaNhapKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Kho Bán Thành Phẩm";
+            this.Text = this.Name+"-->Nhập Kho Bán Thành Phẩm";
             this.Load += new System.EventHandler(this.KhoBTP_ChiTiet_DaNhapKho_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

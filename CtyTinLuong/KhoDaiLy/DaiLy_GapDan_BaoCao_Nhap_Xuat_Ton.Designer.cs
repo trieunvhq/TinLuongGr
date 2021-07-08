@@ -637,7 +637,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Báo Cáo NXT Kho Gấp Dán";
+            this.Text = this.Name+"-->Báo Cáo NXT Kho Gấp Dán";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton_Load);
             this.groupBox1.ResumeLayout(false);

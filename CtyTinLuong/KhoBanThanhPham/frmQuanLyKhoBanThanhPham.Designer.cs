@@ -201,7 +201,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyKhoBanThanhPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kho Bán Thành Phẩm";
+            this.Text = this.Name+"-->Kho Bán Thành Phẩm";
             this.Load += new System.EventHandler(this.frmQuanLyKhoBanThanhPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

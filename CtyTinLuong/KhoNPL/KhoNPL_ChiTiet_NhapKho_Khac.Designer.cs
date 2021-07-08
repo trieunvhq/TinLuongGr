@@ -670,7 +670,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoNPL_ChiTiet_NhapKho_Khac";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Kho Khác";
+            this.Text = this.Name+"-->Nhập Kho Khác";
             this.Load += new System.EventHandler(this.KhoNPL_ChiTiet_NhapKho_Khac_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();

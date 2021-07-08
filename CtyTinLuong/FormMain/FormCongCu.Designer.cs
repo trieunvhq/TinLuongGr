@@ -95,7 +95,7 @@
             this.Controls.Add(this.btnThoatChuongTrinh);
             this.Controls.Add(this.btnTaoTaiKhoan);
             this.Name = "FormCongCu";
-            this.Text = "        CÔNG CỤ";
+            this.Text = this.Name+"-->        CÔNG CỤ";
             this.Load += new System.EventHandler(this.FormCongCu_Load);
             this.ResumeLayout(false);
 

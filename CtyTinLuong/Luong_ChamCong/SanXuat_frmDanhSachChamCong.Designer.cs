@@ -488,7 +488,7 @@
             this.MinimizeBox = false;
             this.Name = "SanXuat_frmDanhSachChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Danh sách chấm công";
+            this.Text = this.Name+"-->Danh sách chấm công";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SanXuat_frmDanhSachChamCong_FormClosed);
             this.Load += new System.EventHandler(this.SanXuat_frmDanhSachChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

@@ -759,7 +759,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GapDan_frmChiTietNhapXuatTon_MotVatTu";
-            this.Text = "Chi Tiết Nhập Xuất Tồn Một Vật Tư";
+            this.Text = this.Name+"-->Chi Tiết Nhập Xuất Tồn Một Vật Tư";
             this.Load += new System.EventHandler(this.GapDan_frmChiTietNhapXuatTon_MotVatTu_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

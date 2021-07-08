@@ -94,7 +94,7 @@
             this.Controls.Add(this.btnThietLapBanDau);
             this.Controls.Add(this.btnSaoLuuCSDL);
             this.Name = "FormSystem";
-            this.Text = "        HỆ THỐNG";
+            this.Text = this.Name+"-->        HỆ THỐNG";
             this.ResumeLayout(false);
 
         }

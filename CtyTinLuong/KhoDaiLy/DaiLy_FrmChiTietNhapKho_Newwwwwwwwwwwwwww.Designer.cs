@@ -1607,7 +1607,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi  Tiết Nhập Kho Đại Lý";
+            this.Text = this.Name+"-->Chi  Tiết Nhập Kho Đại Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_FormClosed);
             this.Load += new System.EventHandler(this.DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_Load);
             this.groupBox3.ResumeLayout(false);

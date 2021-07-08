@@ -41,7 +41,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormBase";
-            this.Text = "FormBase";
+            this.Text = this.Name+"-->FormBase";
             this.ResumeLayout(false);
 
         }

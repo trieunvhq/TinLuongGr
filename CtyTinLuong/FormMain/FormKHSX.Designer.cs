@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(868, 461);
             this.Controls.Add(this.label1);
             this.Name = "FormKHSX";
-            this.Text = "KẾ HOẠCH SẢN XUẤT";
+            this.Text = this.Name+"-->KẾ HOẠCH SẢN XUẤT";
             this.Load += new System.EventHandler(this.FormKHSX_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

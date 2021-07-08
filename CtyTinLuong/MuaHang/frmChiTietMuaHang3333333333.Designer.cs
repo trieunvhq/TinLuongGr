@@ -1432,7 +1432,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietMuaHang3333333333";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Mua Hàng Nhập Kho";
+            this.Text = this.Name+"-->Chi Tiết Mua Hàng Nhập Kho";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmChiTietMuaHang3333333333_FormClosed);
             this.Load += new System.EventHandler(this.frmChiTietMuaHang3333333333_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).EndInit();

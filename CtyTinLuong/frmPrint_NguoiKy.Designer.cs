@@ -323,7 +323,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPrint_NguoiKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cài Đặt Mặc Định Người Ký";
+            this.Text = this.Name+"-->Cài Đặt Mặc Định Người Ký";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_NguoiKy_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_NguoiKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

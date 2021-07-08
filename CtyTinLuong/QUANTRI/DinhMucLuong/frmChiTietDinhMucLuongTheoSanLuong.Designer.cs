@@ -362,7 +362,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMucLuongTheoSanLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Định Mức Lương Theo Sản Lượng";
+            this.Text = this.Name+"-->Chi Tiết Định Mức Lương Theo Sản Lượng";
             this.Load += new System.EventHandler(this.frmChiTietDinhMucLuongTheoSanLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();

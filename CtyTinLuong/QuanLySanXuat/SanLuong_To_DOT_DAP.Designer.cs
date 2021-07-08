@@ -523,7 +523,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanLuong_To_DOT_DAP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Báo Cáo Sản Lượng Tổ Đột Dập";
+            this.Text = this.Name+"-->Báo Cáo Sản Lượng Tổ Đột Dập";
             this.Load += new System.EventHandler(this.SanLuong_To_DOT_DAP_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

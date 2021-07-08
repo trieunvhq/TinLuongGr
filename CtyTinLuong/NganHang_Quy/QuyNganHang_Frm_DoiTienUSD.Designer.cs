@@ -891,7 +891,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuyNganHang_Frm_DoiTienUSD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đổi Tiền ";
+            this.Text = this.Name+"-->Đổi Tiền ";
             this.Load += new System.EventHandler(this.QuyNganHang_Frm_DoiTienUSD_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

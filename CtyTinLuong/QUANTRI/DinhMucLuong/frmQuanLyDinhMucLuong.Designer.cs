@@ -519,7 +519,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyDinhMucLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Định Mức Lương Công Nhật";
+            this.Text = this.Name+"-->Định Mức Lương Công Nhật";
             this.Load += new System.EventHandler(this.frmQuanLyDinhMucLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();

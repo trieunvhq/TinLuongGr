@@ -913,7 +913,7 @@
             this.MinimizeBox = false;
             this.Name = "SanXuat_frmChiTietLenhSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết Lệnh sản xuất";
+            this.Text = this.Name+"-->Chi tiết Lệnh sản xuất";
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietLenhSanXuat_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

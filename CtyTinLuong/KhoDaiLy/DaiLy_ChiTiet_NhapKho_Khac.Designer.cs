@@ -746,7 +746,7 @@
             this.Controls.Add(this.btThoat2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_ChiTiet_NhapKho_Khac";
-            this.Text = "Đại Lý - Chi Tiết Nhập Kho - Khác";
+            this.Text = this.Name+"-->Đại Lý - Chi Tiết Nhập Kho - Khác";
             this.Load += new System.EventHandler(this.DaiLy_ChiTiet_NhapKho_Khac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();

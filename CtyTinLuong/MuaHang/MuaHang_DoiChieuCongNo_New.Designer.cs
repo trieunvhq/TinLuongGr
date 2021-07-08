@@ -568,7 +568,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuaHang_DoiChieuCongNo_New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đối Chiếu Công Nợ";
+            this.Text = this.Name+"-->Đối Chiếu Công Nợ";
             this.Load += new System.EventHandler(this.MuaHang_DoiChieuCongNo_New_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

@@ -341,7 +341,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietDaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Đại Lý";
+            this.Text = this.Name+"-->Chi Tiết Đại Lý";
             this.Load += new System.EventHandler(this.frmChiTietDaiLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

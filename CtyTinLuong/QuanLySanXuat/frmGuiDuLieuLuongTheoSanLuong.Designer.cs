@@ -186,7 +186,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGuiDuLieuLuongTheoSanLuong";
-            this.Text = "frmGuiDuLieuLuongTheoSanLuong";
+            this.Text = this.Name+"-->frmGuiDuLieuLuongTheoSanLuong";
             this.Load += new System.EventHandler(this.frmGuiDuLieuLuongTheoSanLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

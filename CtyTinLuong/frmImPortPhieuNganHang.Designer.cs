@@ -547,7 +547,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmImPortPhieuNganHang";
-            this.Text = "frmImPortPhieuNganHang";
+            this.Text = this.Name+"-->frmImPortPhieuNganHang";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();

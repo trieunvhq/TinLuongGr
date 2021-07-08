@@ -594,7 +594,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_CongNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tổng hợp phải thu của khách hàng";
+            this.Text = this.Name+"-->Tổng hợp phải thu của khách hàng";
             this.Load += new System.EventHandler(this.BanHang_CongNo_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

@@ -53,7 +53,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAnhLON";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ảnh ";
+            this.Text = this.Name+"-->Ảnh ";
             this.Load += new System.EventHandler(this.frmAnhLON_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);

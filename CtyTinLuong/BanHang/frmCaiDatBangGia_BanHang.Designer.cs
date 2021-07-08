@@ -665,7 +665,7 @@
             this.MinimizeBox = false;
             this.Name = "frmCaiDatBangGia_BanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cài Đặt Bảng Giá Bán Hàng";
+            this.Text = this.Name+"-->Cài Đặt Bảng Giá Bán Hàng";
             this.Load += new System.EventHandler(this.frmCaiDatBangGia_BanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();

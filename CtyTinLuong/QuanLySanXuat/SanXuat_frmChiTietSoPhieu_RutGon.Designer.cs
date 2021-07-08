@@ -1416,7 +1416,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanXuat_frmChiTietSoPhieu_RutGon";
-            this.Text = "Chi tiết Phiếu";
+            this.Text = this.Name+"-->Chi tiết Phiếu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietSoPhieu_RutGon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

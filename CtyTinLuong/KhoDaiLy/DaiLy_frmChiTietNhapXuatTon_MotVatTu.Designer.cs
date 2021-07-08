@@ -857,7 +857,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_frmChiTietNhapXuatTon_MotVatTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Nhập Xuất Tồn Một Vật Tư";
+            this.Text = this.Name+"-->Chi Tiết Nhập Xuất Tồn Một Vật Tư";
             this.Load += new System.EventHandler(this.DaiLy_frmChiTietNhapXuatTon_MotVatTu_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

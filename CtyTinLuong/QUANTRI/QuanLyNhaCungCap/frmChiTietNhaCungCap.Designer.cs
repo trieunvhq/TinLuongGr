@@ -483,7 +483,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhà Cung Cấp";
+            this.Text = this.Name+"-->Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmChiTietNhaCungCap_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

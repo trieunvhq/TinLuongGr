@@ -925,7 +925,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPrint_KeHoachSanXuat";
-            this.Text = "Kế hoạch sản xuất";
+            this.Text = this.Name+"-->Kế hoạch sản xuất";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_KeHoachSanXuat_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_KeHoachSanXuat_Load);

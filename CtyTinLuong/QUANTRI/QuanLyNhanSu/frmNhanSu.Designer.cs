@@ -705,7 +705,7 @@
             this.MinimizeBox = false;
             this.Name = "frmNhanSu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhân Sự";
+            this.Text = this.Name+"-->Nhân Sự";
             this.Load += new System.EventHandler(this.frmNhanSu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

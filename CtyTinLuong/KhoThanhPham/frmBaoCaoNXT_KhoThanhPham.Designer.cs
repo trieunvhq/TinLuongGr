@@ -609,7 +609,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCaoNXT_KhoThanhPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Xuất Tồn";
+            this.Text = this.Name+"-->Nhập Xuất Tồn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBaoCaoNXT_KhoThanhPham_Load);
             this.groupBox1.ResumeLayout(false);

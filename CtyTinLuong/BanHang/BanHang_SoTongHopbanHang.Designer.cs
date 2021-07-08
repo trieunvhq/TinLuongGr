@@ -886,7 +886,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_SoTongHopbanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sổ tổng hợp bán hàng";
+            this.Text = this.Name+"-->Sổ tổng hợp bán hàng";
             this.Load += new System.EventHandler(this.BanHang_SoTongHopbanHang_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

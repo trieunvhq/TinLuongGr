@@ -1226,7 +1226,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanXuat_frmChiTietPhieu_MayDot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Phiếu Máy Đột";
+            this.Text = this.Name+"-->Chi Tiết Phiếu Máy Đột";
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietPhieu_MayDot_Load);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();

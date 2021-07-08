@@ -228,7 +228,7 @@
             this.Controls.Add(this.btnQuanTriNhanSu);
             this.Controls.Add(this.btnQuanTriTaiKhoan);
             this.Name = "FormQuanTri";
-            this.Text = "        QUẢN TRỊ";
+            this.Text = this.Name+"-->        QUẢN TRỊ";
             this.Load += new System.EventHandler(this.FormQuanTri_Load);
             this.ResumeLayout(false);
 

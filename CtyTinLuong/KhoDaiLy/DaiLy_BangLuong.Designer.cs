@@ -639,7 +639,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_BangLuong";
-            this.Text = "Bảng Thanh Toán Lương Đại Lý";
+            this.Text = this.Name+"-->Bảng Thanh Toán Lương Đại Lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DaiLy_BangLuong_Load);
             this.groupBox1.ResumeLayout(false);

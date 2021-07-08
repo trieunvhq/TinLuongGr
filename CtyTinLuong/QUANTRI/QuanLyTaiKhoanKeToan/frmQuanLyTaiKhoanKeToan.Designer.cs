@@ -462,7 +462,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyTaiKhoanKeToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Tài Khoản Kế Toán";
+            this.Text = this.Name+"-->Quản Lý Tài Khoản Kế Toán";
             this.Load += new System.EventHandler(this.frmQuanLyTaiKhoanKeToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

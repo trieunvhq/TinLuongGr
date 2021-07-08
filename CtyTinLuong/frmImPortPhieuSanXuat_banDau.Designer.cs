@@ -961,7 +961,7 @@
             this.ClientSize = new System.Drawing.Size(1026, 549);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmImPortPhieuSanXuat_banDau";
-            this.Text = "frmImPortPhieuSanXuat_banDau";
+            this.Text = this.Name+"-->frmImPortPhieuSanXuat_banDau";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmImPortPhieuSanXuat_banDau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

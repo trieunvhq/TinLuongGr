@@ -423,7 +423,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_Frm_TonKho_MotVatTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tồn Kho Theo Kho";
+            this.Text = this.Name+"-->Tồn Kho Theo Kho";
             this.Load += new System.EventHandler(this.DaiLy_Frm_TonKho_MotVatTu_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

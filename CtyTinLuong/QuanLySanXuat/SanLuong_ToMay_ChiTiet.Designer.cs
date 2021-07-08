@@ -655,7 +655,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanLuong_ToMay_ChiTiet";
-            this.Text = "Chi Tiết Sản Lượng";
+            this.Text = this.Name+"-->Chi Tiết Sản Lượng";
             this.Load += new System.EventHandler(this.SanLuong_ToMay_ChiTiet_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

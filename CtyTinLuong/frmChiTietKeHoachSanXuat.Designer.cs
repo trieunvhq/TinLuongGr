@@ -1905,7 +1905,7 @@
             this.Controls.Add(this.btLuu_Copy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietKeHoachSanXuat";
-            this.Text = "Chi Tiết Kế Hoạch Sản Xuất";
+            this.Text = this.Name+"-->Chi Tiết Kế Hoạch Sản Xuất";
             this.Load += new System.EventHandler(this.frmChiTietKeHoachSanXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);

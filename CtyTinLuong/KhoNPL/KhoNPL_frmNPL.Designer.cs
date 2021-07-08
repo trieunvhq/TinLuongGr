@@ -266,7 +266,7 @@
             this.MaximizeBox = false;
             this.Name = "KhoNPL_frmNPL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kho Nguyên Phụ Liệu";
+            this.Text = this.Name+"-->Kho Nguyên Phụ Liệu";
             this.Load += new System.EventHandler(this.KhoNPL_frmNPL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

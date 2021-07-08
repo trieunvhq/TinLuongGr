@@ -360,7 +360,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietTaiKhoanKeToanCon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết Tài khoản Con";
+            this.Text = this.Name+"-->Chi tiết Tài khoản Con";
             this.Load += new System.EventHandler(this.frmChiTietTaiKhoanKeToanCon_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

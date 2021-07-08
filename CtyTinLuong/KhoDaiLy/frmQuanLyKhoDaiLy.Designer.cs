@@ -275,7 +275,7 @@
             this.MaximizeBox = false;
             this.Name = "frmQuanLyKhoDaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đại Lý";
+            this.Text = this.Name+"-->Đại Lý";
             this.Load += new System.EventHandler(this.frmQuanLyKhoDaiLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();

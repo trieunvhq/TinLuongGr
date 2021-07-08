@@ -930,7 +930,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietBienDongTaiKhoan_Mot_TaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Biến Động";
+            this.Text = this.Name+"-->Chi Tiết Biến Động";
             this.Load += new System.EventHandler(this.frmChiTietBienDongTaiKhoan_Mot_TaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

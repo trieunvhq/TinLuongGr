@@ -606,7 +606,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCaoNhapXuatTon_BanThanhPham";
-            this.Text = "Báo Cáo Nhập Xuất Tồn";
+            this.Text = this.Name+"-->Báo Cáo Nhập Xuất Tồn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBaoCaoNhapXuatTon_BanThanhPham_Load);
             this.groupBox1.ResumeLayout(false);

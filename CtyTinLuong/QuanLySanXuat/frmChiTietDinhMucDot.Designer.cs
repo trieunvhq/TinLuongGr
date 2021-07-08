@@ -899,7 +899,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMucDot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết Định mức Đột";
+            this.Text = this.Name+"-->Chi tiết Định mức Đột";
             this.Load += new System.EventHandler(this.frmChiTietDinhMucDot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();

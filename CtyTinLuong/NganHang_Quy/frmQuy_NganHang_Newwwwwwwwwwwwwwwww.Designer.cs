@@ -204,7 +204,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuy_NganHang_Newwwwwwwwwwwwwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Quỹ Ngân Hàng";
+            this.Text = this.Name+"-->Quản Lý Quỹ Ngân Hàng";
             this.Load += new System.EventHandler(this.frmQuy_NganHang_Newwwwwwwwwwwwwwwww_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

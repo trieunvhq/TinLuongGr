@@ -1036,7 +1036,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanLuong_ChiTiet_Luong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Lương Sản Lượng";
+            this.Text = this.Name+"-->Chi Tiết Lương Sản Lượng";
             this.Load += new System.EventHandler(this.SanLuong_ChiTiet_Luong_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

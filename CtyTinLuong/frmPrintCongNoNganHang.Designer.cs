@@ -927,7 +927,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrintCongNoNganHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Print Công Nợ";
+            this.Text = this.Name+"-->Print Công Nợ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrintCongNoNganHang_FormClosed);
             this.Load += new System.EventHandler(this.frmPrintCongNoNganHang_Load);

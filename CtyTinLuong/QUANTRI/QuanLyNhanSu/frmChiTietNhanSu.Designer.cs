@@ -981,7 +981,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietNhanSu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Nhân Sự";
+            this.Text = this.Name+"-->Chi Tiết Nhân Sự";
             this.Load += new System.EventHandler(this.frmChiTietNhanSu_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

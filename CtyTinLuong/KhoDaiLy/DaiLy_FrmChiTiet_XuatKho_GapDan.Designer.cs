@@ -1088,7 +1088,7 @@
             this.Controls.Add(this.btLuu_Gui_Dong);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_FrmChiTiet_XuatKho_GapDan";
-            this.Text = "Xuất Kho Gấp Dán";
+            this.Text = this.Name+"-->Xuất Kho Gấp Dán";
             this.Load += new System.EventHandler(this.DaiLy_FrmChiTiet_XuatKho_GapDan_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

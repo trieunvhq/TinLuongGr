@@ -519,7 +519,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Khách Hàng";
+            this.Text = this.Name+"-->Chi Tiết Khách Hàng";
             this.Load += new System.EventHandler(this.frmChiTietKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();

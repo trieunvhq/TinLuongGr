@@ -466,7 +466,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMuc_HangNhu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Định Mức Hàng Nhũ";
+            this.Text = this.Name+"-->Chi Tiết Định Mức Hàng Nhũ";
             this.Load += new System.EventHandler(this.frmChiTietDinhMuc_HangNhu_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();

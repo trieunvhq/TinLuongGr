@@ -975,7 +975,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_frmBangKeHoaDonBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "BẢNG KÊ HOÁ ĐƠN BÁN HÀNG";
+            this.Text = this.Name+"-->BẢNG KÊ HOÁ ĐƠN BÁN HÀNG";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BanHang_frmBangKeHoaDonBanHang_Load);
             this.groupBox1.ResumeLayout(false);

@@ -146,7 +146,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmImPortDuLieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Dữ Liệu";
+            this.Text = this.Name+"-->Nhập Dữ Liệu";
             this.ResumeLayout(false);
 
         }

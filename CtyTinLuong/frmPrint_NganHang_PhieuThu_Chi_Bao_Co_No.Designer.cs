@@ -913,7 +913,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No";
-            this.Text = "Print Ngân Hàng";
+            this.Text = this.Name+"-->Print Ngân Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No_Load);

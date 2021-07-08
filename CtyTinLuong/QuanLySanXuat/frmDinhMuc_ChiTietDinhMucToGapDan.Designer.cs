@@ -693,7 +693,7 @@
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDinhMuc_ChiTietDinhMucToGapDan";
-            this.Text = "Chi Tiết Định Mức Tổ Gấp Dán";
+            this.Text = this.Name+"-->Chi Tiết Định Mức Tổ Gấp Dán";
             this.Load += new System.EventHandler(this.frmDinhMuc_ChiTietDinhMucToGapDan_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

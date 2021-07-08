@@ -926,7 +926,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPrint_BaoCao_TonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tồn kho";
+            this.Text = this.Name+"-->Tồn kho";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_BaoCao_TonKho_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_BaoCao_TonKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();

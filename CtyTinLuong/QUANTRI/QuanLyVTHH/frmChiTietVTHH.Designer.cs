@@ -417,7 +417,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietVTHH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Vật Tư";
+            this.Text = this.Name+"-->Chi Tiết Vật Tư";
             this.Load += new System.EventHandler(this.frmChiTietVTHH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();

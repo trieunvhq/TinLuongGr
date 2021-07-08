@@ -525,7 +525,7 @@
             this.MinimizeBox = false;
             this.Name = "BanHang_FrmThamChieuKeHoachSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bán hàng - Kế hoạch sản xuất";
+            this.Text = this.Name+"-->Bán hàng - Kế hoạch sản xuất";
             this.Load += new System.EventHandler(this.BanHang_FrmThamChieuKeHoachSanXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).EndInit();

@@ -261,7 +261,7 @@
             this.MinimizeBox = false;
             this.Name = "frmMuaHang2222";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mua Hàng";
+            this.Text = this.Name+"-->Mua Hàng";
             this.Load += new System.EventHandler(this.frmMuaHang2222_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();

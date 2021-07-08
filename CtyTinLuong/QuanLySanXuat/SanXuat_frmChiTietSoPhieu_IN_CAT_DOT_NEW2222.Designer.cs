@@ -2242,7 +2242,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Số Phiếu";
+            this.Text = this.Name+"-->Chi Tiết Số Phiếu";
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();

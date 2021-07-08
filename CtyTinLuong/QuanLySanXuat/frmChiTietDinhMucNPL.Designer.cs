@@ -671,7 +671,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietDinhMucNPL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết định mức NPL";
+            this.Text = this.Name+"-->Chi tiết định mức NPL";
             this.Load += new System.EventHandler(this.frmChiTietDinhMucNPL_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

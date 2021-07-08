@@ -730,7 +730,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMaHang_ChamCong_ToGapDan";
-            this.Text = "Quản lý mã hàng chấm công trong tháng";
+            this.Text = this.Name+"-->Quản lý mã hàng chấm công trong tháng";
             this.Load += new System.EventHandler(this.frmMaHang_ChamCong_ToGapDan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

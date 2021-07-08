@@ -309,7 +309,7 @@
             this.MinimizeBox = false;
             this.Name = "SanXuat_frmQuanLySanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Sản Xuất";
+            this.Text = this.Name+"-->Quản Lý Sản Xuất";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SanXuat_frmQuanLySanXuat_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

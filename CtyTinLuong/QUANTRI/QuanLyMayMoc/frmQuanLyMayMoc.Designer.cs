@@ -328,7 +328,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyMayMoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Máy Sản Xuất";
+            this.Text = this.Name+"-->Máy Sản Xuất";
             this.Load += new System.EventHandler(this.frmQuanLyMayMoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();

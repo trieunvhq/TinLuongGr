@@ -823,7 +823,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCaoSanLuong_Theo_CongNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lương Sản Lượng";
+            this.Text = this.Name+"-->Lương Sản Lượng";
             this.Load += new System.EventHandler(this.frmBaoCaoSanLuong_Theo_CongNhan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

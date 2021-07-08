@@ -719,7 +719,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietBienDongTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tài Khoản Kế Toán";
+            this.Text = this.Name+"-->Tài Khoản Kế Toán";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChiTietBienDongTaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);

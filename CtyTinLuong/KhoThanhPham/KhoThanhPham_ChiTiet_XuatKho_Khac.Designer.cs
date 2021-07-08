@@ -752,7 +752,7 @@
             this.Controls.Add(this.btThoat2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoThanhPham_ChiTiet_XuatKho_Khac";
-            this.Text = "KhoThanhPham_ChiTiet_XuatKho_Khac";
+            this.Text = this.Name+"-->KhoThanhPham_ChiTiet_XuatKho_Khac";
             this.Load += new System.EventHandler(this.KhoThanhPham_ChiTiet_XuatKho_Khac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();

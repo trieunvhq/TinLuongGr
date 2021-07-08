@@ -1057,7 +1057,7 @@
             this.MinimizeBox = false;
             this.Name = "NPL_ChiTietLenhSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Lệnh Sản Xuất";
+            this.Text = this.Name+"-->Chi Tiết Lệnh Sản Xuất";
             this.Load += new System.EventHandler(this.NPL_ChiTietLenhSanXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

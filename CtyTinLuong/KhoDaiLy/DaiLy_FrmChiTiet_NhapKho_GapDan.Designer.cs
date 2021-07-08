@@ -1085,7 +1085,7 @@
             this.MinimizeBox = false;
             this.Name = "DaiLy_FrmChiTiet_NhapKho_GapDan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Kho Gấp Dán";
+            this.Text = this.Name+"-->Nhập Kho Gấp Dán";
             this.Load += new System.EventHandler(this.DaiLy_FrmChiTiet_NhapKho_GapDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDinhMucGapDan.Properties)).EndInit();

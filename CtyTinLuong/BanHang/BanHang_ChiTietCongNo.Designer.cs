@@ -876,7 +876,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_ChiTietCongNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết phaỉ thu khách hàng";
+            this.Text = this.Name+"-->Chi tiết phaỉ thu khách hàng";
             this.Load += new System.EventHandler(this.BanHang_ChiTietCongNo_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

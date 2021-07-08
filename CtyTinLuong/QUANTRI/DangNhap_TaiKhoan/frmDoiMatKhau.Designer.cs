@@ -161,7 +161,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đổi Mật Khẩu";
+            this.Text = this.Name+"-->Đổi Mật Khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

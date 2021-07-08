@@ -1679,7 +1679,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NPLChiTietNhapKho_DaiLy_ThemMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Kho Đại Lý";
+            this.Text = this.Name+"-->Nhập Kho Đại Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NPLChiTietNhapKho_DaiLy_ThemMoi_FormClosed);
             this.Load += new System.EventHandler(this.NPLChiTietNhapKho_DaiLy_ThemMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();

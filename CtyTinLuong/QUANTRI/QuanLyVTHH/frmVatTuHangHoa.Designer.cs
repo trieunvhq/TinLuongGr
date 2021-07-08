@@ -705,7 +705,7 @@
             this.MinimizeBox = false;
             this.Name = "frmVatTuHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vật Tư Hàng Hóa";
+            this.Text = this.Name+"-->Vật Tư Hàng Hóa";
             this.Load += new System.EventHandler(this.frmVatTuHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

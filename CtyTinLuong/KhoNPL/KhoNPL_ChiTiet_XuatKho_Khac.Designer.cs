@@ -669,7 +669,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoNPL_ChiTiet_XuatKho_Khac";
-            this.Text = "Xuất Kho Khác";
+            this.Text = this.Name+"-->Xuất Kho Khác";
             this.Load += new System.EventHandler(this.KhoNPL_ChiTiet_XuatKho_Khac_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

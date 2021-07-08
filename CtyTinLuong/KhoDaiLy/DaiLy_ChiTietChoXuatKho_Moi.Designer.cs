@@ -1093,7 +1093,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_ChiTietChoXuatKho_Moi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Xuất Kho";
+            this.Text = this.Name+"-->Chi Tiết Xuất Kho";
             this.Load += new System.EventHandler(this.DaiLy_ChiTietChoXuatKho_Moi_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

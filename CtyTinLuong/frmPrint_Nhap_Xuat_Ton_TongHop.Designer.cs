@@ -913,7 +913,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_Nhap_Xuat_Ton_TongHop";
-            this.Text = "Báo Cáo NXT";
+            this.Text = this.Name+"-->Báo Cáo NXT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrint_Nhap_Xuat_Ton_TongHop_FormClosed);
             this.Load += new System.EventHandler(this.frmPrint_Nhap_Xuat_Ton_TongHop_Load);

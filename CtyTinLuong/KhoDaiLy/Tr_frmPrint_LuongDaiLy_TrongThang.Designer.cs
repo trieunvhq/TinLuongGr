@@ -914,7 +914,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tr_frmPrint_LuongDaiLy_TrongThang";
-            this.Text = "Print Lương Đại Lý Trong Tháng";
+            this.Text = this.Name+"-->Print Lương Đại Lý Trong Tháng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tr_frmPrint_LuongDaiLy_TrongThang_FormClosed);
             this.Load += new System.EventHandler(this.Tr_frmPrint_LuongDaiLy_TrongThang_Load);

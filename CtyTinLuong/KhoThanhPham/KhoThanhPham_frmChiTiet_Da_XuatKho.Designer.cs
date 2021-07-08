@@ -758,7 +758,7 @@
             this.MinimizeBox = false;
             this.Name = "KhoThanhPham_frmChiTiet_Da_XuatKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Đã Xuất Kho Thành Phẩm";
+            this.Text = this.Name+"-->Chi Tiết Đã Xuất Kho Thành Phẩm";
             this.Load += new System.EventHandler(this.KhoThanhPham_frmChiTiet_Da_XuatKho_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();

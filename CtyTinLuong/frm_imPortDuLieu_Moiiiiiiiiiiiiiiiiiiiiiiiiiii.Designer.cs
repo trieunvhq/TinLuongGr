@@ -654,7 +654,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii";
-            this.Text = "Import dữ liệu ban đầu";
+            this.Text = this.Name+"-->Import dữ liệu ban đầu";
             this.Load += new System.EventHandler(this.frm_imPortDuLieu_Moiiiiiiiiiiiiiiiiiiiiiiiiiii_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();

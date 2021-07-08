@@ -819,7 +819,7 @@
             this.MinimizeBox = false;
             this.Name = "KhoNPL_frmChiTiet_MuaHang_NhapKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập Kho Từ Đơn Mua Hàng";
+            this.Text = this.Name+"-->Nhập Kho Từ Đơn Mua Hàng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.KhoNPL_frmChiTiet_MuaHang_NhapKho_FormClosed);
             this.Load += new System.EventHandler(this.KhoNPL_frmChiTiet_MuaHang_NhapKho_Load_1);
             this.groupBox2.ResumeLayout(false);

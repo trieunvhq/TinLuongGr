@@ -914,7 +914,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrintLenhSanXuat_I_C_D";
-            this.Text = "frmPrintLenhSanXuat_I_C_D";
+            this.Text = this.Name+"-->frmPrintLenhSanXuat_I_C_D";
             this.Load += new System.EventHandler(this.frmPrintLenhSanXuat_I_C_D_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();

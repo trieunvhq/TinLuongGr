@@ -915,7 +915,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrint_TraLuong";
-            this.Text = "In ấn";
+            this.Text = this.Name+"-->In ấn";
             this.Load += new System.EventHandler(this.frmPrint_TraLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();

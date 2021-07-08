@@ -260,7 +260,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý Bán Hàng";
+            this.Text = this.Name+"-->Quản lý Bán Hàng";
             this.Load += new System.EventHandler(this.frmQuanLyBanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
