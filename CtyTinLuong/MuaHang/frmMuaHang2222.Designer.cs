@@ -54,6 +54,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -105,7 +106,8 @@
             this.navChiTiet_ALL,
             this.navPhaiTraNguoiBan,
             this.navDoiChieuCongNo,
-            this.navCongNo});
+            this.navCongNo,
+            this.navBarItem13});
             this.navBarControl1.Location = new System.Drawing.Point(3, 19);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 215;
@@ -121,7 +123,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navMuaHang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChiTiet_ALL),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navCongNo),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navMuaHang
@@ -144,7 +147,7 @@
             // 
             // navCongNo
             // 
-            this.navCongNo.Caption = "Công Nợ";
+            this.navCongNo.Caption = "Phải thu của khách hàng";
             this.navCongNo.Name = "navCongNo";
             this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
@@ -238,6 +241,12 @@
             this.groupBox1.TabIndex = 73;
             this.groupBox1.TabStop = false;
             // 
+            // navBarItem13
+            // 
+            this.navBarItem13.Caption = "Đối chiếu công nợ";
+            this.navBarItem13.Name = "navBarItem13";
+            this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked_1);
+            // 
             // frmMuaHang2222
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,5 +298,6 @@
         private DevExpress.XtraNavBar.NavBarItem navDoiChieuCongNo;
         private DevExpress.XtraNavBar.NavBarItem navCongNo;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem13;
     }
 }

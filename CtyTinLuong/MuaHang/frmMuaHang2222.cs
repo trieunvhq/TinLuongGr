@@ -137,5 +137,19 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navBarItem13_LinkClicked_1(object sender, NavBarLinkEventArgs e)
+        {
+           
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            MuaHang_DoiChieuCongNo_New ff = new CtyTinLuong.MuaHang_DoiChieuCongNo_New();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
+
+            Cursor.Current = Cursors.Default;
+        }
     }
 }
