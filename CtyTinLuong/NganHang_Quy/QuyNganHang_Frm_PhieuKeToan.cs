@@ -61,7 +61,7 @@ namespace CtyTinLuong
                 clsxx.iID_ChungTu = xxxID_ThuChi;
                 clsxx.sSoChungTu = txtSoChungTu.Text.ToString();
                 clsxx.daNgayThang = dteNgayChungTu.DateTime;
-                clsxx.iID_DoiTuong = 0;
+                clsxx.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 clsxx.iID_TaiKhoanKeToanCon = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
                 clsxx.fCo = Convert.ToDouble(dt_gridcontrol.Rows[i]["Co"].ToString());
                 clsxx.fNo = Convert.ToDouble(dt_gridcontrol.Rows[i]["No"].ToString());
@@ -197,7 +197,7 @@ namespace CtyTinLuong
                 cls1.sThamChieu = "Phiếu kế toán"; 
                 cls1.sDoiTuong = txtDoiTuong.Text.ToString();
                 cls1.bTonTai = true;
-                cls1.iID_DoiTuong = 0;
+                cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 cls1.bNgungTheoDoi = false;
                 cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bTienUSD = true;
@@ -571,9 +571,10 @@ namespace CtyTinLuong
             txtSoTien.Text = cls1.fSoTien.Value.ToString();
             txtDienGiai.Text = cls1.sDienGiai.Value;
             txtTiGia.Text = cls1.fTiGia.Value.ToString();
-
-            //if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
-            //    gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
+            if (cls1.bTienUSD == true) checkUSD.Checked = true;
+            else checkVNĐ.Checked = true;
+            if (dt.Rows[0]["ID_DoiTuong"].ToString() != "")
+                gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
             cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
@@ -740,7 +741,7 @@ namespace CtyTinLuong
             else
             {
                 string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                int xxx2 = Convert.ToInt32(xxx.Substring(3).Trim()) + 1;
                 if (xxbientrangthai == 6)
                     txtSoChungTu.Text = "PKT " + xxx2 + "";
 
