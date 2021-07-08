@@ -275,16 +275,11 @@ namespace CtyTinLuong
             {
                 double sotienxxx = Convert.ToDouble(txtSoTien.Text.ToString());
                 double tigiaxxx = Convert.ToDouble(txtTiGia.Text.ToString());
-                txtTienVND.Text = (sotienxxx * tigiaxxx).ToString();
+               
 
                 gridView4.SetRowCellValue(1, clNo, 0);
                 gridView4.SetRowCellValue(1, clCo, sotienxxx);
-                if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
-                {
-                    string sotien = txtSoTien.Text;
-                    string tigia = txtTiGia.Text;
-                    txtDienGiai.Text = "Đổi tiền: " + sotien + " USD * " + tigia + " = " + txtTienVND.Text + " vnđ";
-                }
+               
             }
             catch
             {
