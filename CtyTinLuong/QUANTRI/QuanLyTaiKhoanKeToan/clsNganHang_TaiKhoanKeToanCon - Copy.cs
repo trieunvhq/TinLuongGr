@@ -15,38 +15,7 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsNganHang_TaiKhoanKeToanCon : clsDBInteractionBase
 	{
-        public DataTable SA()
-        {
-            SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_TaiKhoanKeToanCon_SA]";
-            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_NganHang_TaiKhoanKeToanCon_SA");
-            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
-
-            // Use base class' connection object
-            scmCmdToExecute.Connection = m_scoMainConnection;
-
-            try
-            {
-                m_scoMainConnection.Open();
-
-                //scmCmdToExecute.Parameters.Add(new SqlParameter("@sSoTaiKhoanCon", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sSoTaiKhoanCon));
-                sdaAdapter.Fill(dtToReturn);
-                return dtToReturn;
-            }
-            catch (Exception ex)
-            {
-                // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_NganHang_TaiKhoanKeToanCon_SA", ex);
-            }
-            finally
-            {
-                //Close connection.
-                m_scoMainConnection.Close();
-                scmCmdToExecute.Dispose();
-                sdaAdapter.Dispose();
-            }
-        }
+        //pr_NganHang_TaiKhoanKeToanCon_Update_W_TenTaiKhoan_newwww
         public void Update_W_TenTaiKhoan_newwww()
         {
 

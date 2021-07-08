@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,12 +68,16 @@ namespace CtyTinLuong
                 cls2.Delete();
             }
         }
+   
         private void HienThi_CongNhan()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dt = clsNguoi.T_SelectAll(11); 
+            DataTable dtNguoi = clsNguoi.SelectAll();
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=11";
+            DataView dvCaTruong = dtNguoi.DefaultView;
+            DataTable newdtCaTruong = dvCaTruong.ToTable();
 
-            gridMaNhanVien.DataSource = dt;
+            gridMaNhanVien.DataSource = newdtCaTruong;
             gridMaNhanVien.ValueMember = "ID_NhanSu";
             gridMaNhanVien.DisplayMember = "MaNhanVien";
 
@@ -509,9 +512,17 @@ namespace CtyTinLuong
         {
             if (e.Column == clMaNhanVien)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clID_CongNhan, _ID_NhanSu);
-                gridView1.SetRowCellValue(e.RowHandle, clTenNhanVien, _TenNhanVien);
-                gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
+                cls.iID_NhanSu = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                int kk = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+                if (dt != null)
+                {
+                    gridView1.SetRowCellValue(e.RowHandle, clID_CongNhan, kk);
+                    gridView1.SetRowCellValue(e.RowHandle, clTenNhanVien, cls.sTenNhanVien.Value);
+                    gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
+
+                }
             }
         }
 
@@ -1019,24 +1030,6 @@ namespace CtyTinLuong
         private void gridHangHoaXuat_May_DOT_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridHangHoaXuat_May_DOT.Properties.View.Columns[0].Visible = false;
-        }
-
-        private int _ID_NhanSu;
-        private string _MaNhanVien, _TenNhanVien;
-        private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
-            _ID_NhanSu = Convert.ToInt32(row["ID_NhanSu"].ToString());
-            _TenNhanVien = row["TenNhanVien"].ToString(); 
-        }
-
-        private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
-        {
-            try
-            {
-                ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
-            }
-            catch { }
         }
     }
 }

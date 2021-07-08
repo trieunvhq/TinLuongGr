@@ -187,12 +187,6 @@ namespace CtyTinLuong
 
         }
 
-        private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
-        {
-            gridMaVT.Properties.View.Columns[0].Visible = false;
-            gridMaVT.Properties.View.Columns[3].Visible = false;
-        }
-
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             if(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString()!="")

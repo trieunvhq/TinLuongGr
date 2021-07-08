@@ -26,8 +26,7 @@ namespace CtyTinLuong
             gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";
-            dt2.Dispose();
-            cls.Dispose();
+            
         }
         private void LoadDaTa(int xxID_VTHH___, DateTime xxtungay, DateTime xxdenngay)
         {
@@ -250,12 +249,6 @@ namespace CtyTinLuong
             {
                 btPrint.Focus();
             }
-        }
-
-        private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
-        {
-            gridMaVT.Properties.View.Columns[0].Visible = false;
-            gridMaVT.Properties.View.Columns[3].Visible = false;
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)

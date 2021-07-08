@@ -108,27 +108,34 @@ namespace CtyTinLuong
         private void Load_lockUP_EDIT()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.T_SelectAll(8); 
+            DataTable dtNguoi = clsNguoi.SelectAll();
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=8";
+            DataView dvCaTruong = dtNguoi.DefaultView;
+            DataTable newdtCaTruong = dvCaTruong.ToTable();
 
-            gridMaCaTruong.Properties.DataSource = dtNguoi;
+            gridMaCaTruong.Properties.DataSource = newdtCaTruong;
             gridMaCaTruong.Properties.ValueMember = "ID_NhanSu";
             gridMaCaTruong.Properties.DisplayMember = "MaNhanVien";
 
-            dtNguoi = clsNguoi.T_SelectAll(5); 
 
-            gridNguoiLap.Properties.DataSource = dtNguoi;
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=5";
+            DataView dvnguoilap = dtNguoi.DefaultView;
+            DataTable newdtnguoilap = dvnguoilap.ToTable();
+
+            gridNguoiLap.Properties.DataSource = newdtnguoilap;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            dtNguoi = clsNguoi.T_SelectAll_ChucVu(3); 
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_ChucVu=3";
+            DataView dvcongnhan = dtNguoi.DefaultView;
+            DataTable newdvcongnhan = dvcongnhan.ToTable();
 
-            gridMaCN.Properties.DataSource = dtNguoi;
+            gridMaCN.Properties.DataSource = newdvcongnhan;
             gridMaCN.Properties.ValueMember = "ID_NhanSu";
             gridMaCN.Properties.DisplayMember = "MaNhanVien";
 
 
-            dtNguoi.Dispose();
-            clsNguoi.Dispose();
+
         }
         private void HienThi_SUa_LenhSanXuat()
         {
@@ -546,11 +553,6 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
-        }
-
-        private void gridMaCN_QueryPopUp(object sender, CancelEventArgs e)
-        {
-            gridMaCN.Properties.View.Columns[0].Visible = false;
         }
     }
 }
