@@ -161,11 +161,17 @@
     <Compile Include="BanHang\BanHang_DoiChieu_CongNo_new.Designer.cs">
       <DependentUpon>BanHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang\Tr_Xtra_BanHang_DoiChieuCongNo_new.cs">
-      <SubType>Component</SubType>
+    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.cs" />
+    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.Designer.cs">
+      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang\Tr_Xtra_BanHang_DoiChieuCongNo_new.Designer.cs">
-      <DependentUpon>Tr_Xtra_BanHang_DoiChieuCongNo_new.cs</DependentUpon>
+    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_Khach.cs" />
+    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_Khach.Designer.cs">
+      <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.cs" />
+    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.Designer.cs">
+      <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
     <Compile Include="clsDelete_ALL_newwww.cs" />
     <Compile Include="clsNgayThang.cs" />
@@ -1248,6 +1254,7 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat.cs" />
+    <Compile Include="QUANTRI\QuanLyTaiKhoanKeToan\clsNganHang_tbHeThongTaiKhoanKeToanMe - Copy.cs" />
     <Compile Include="QUANTRI\QuanLyTaiKhoanKeToan\frmChiTietTaiKhoanKeToanCon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2115,6 +2122,12 @@
     <EmbeddedResource Include="BanHang\frmQuanLyBanHang.resx">
       <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.resx">
+      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\Tr_Xtra_DoiChieuCongNo_Khach.resx">
+      <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\UCBanHang_ChiTiet_ALL.resx">
       <DependentUpon>UCBanHang_ChiTiet_ALL.cs</DependentUpon>
     </EmbeddedResource>
@@ -2124,8 +2137,8 @@
     <EmbeddedResource Include="BanHang\BanHang_frmBangKeHoaDonBanHang.resx">
       <DependentUpon>BanHang_frmBangKeHoaDonBanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BanHang\Tr_Xtra_BanHang_DoiChieuCongNo_new.resx">
-      <DependentUpon>Tr_Xtra_BanHang_DoiChieuCongNo_new.cs</DependentUpon>
+    <EmbeddedResource Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.resx">
+      <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\Xtra_SoTongHop_banHang.resx">
       <DependentUpon>Xtra_SoTongHop_banHang.cs</DependentUpon>
