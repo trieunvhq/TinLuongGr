@@ -166,7 +166,7 @@
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell12.TextFormatString = "{0:dd/MM/yyyy}";
-            this.xrTableCell12.Weight = 4.9844434218832152D;
+            this.xrTableCell12.Weight = 5.2408914636042638D;
             // 
             // xrTableCell13
             // 
@@ -178,7 +178,7 @@
             this.xrTableCell13.StylePriority.UseFont = false;
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell13.Weight = 6.44575324375943D;
+            this.xrTableCell13.Weight = 6.1893052020383816D;
             // 
             // xrTableCell14
             // 
@@ -383,7 +383,7 @@
             this.xrTableCell47.StylePriority.UseTextAlignment = false;
             this.xrTableCell47.Text = "Đối tượng";
             this.xrTableCell47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell47.Weight = 16.875755637840729D;
+            this.xrTableCell47.Weight = 17.744007942462993D;
             // 
             // xrTableCell48
             // 
@@ -396,7 +396,7 @@
             this.xrTableCell48.StylePriority.UseTextAlignment = false;
             this.xrTableCell48.Text = "Diễn giải";
             this.xrTableCell48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell48.Weight = 21.823289321840132D;
+            this.xrTableCell48.Weight = 20.955037017217869D;
             // 
             // xrTableCell10
             // 
@@ -502,7 +502,7 @@
             this.xrTableCell36.StylePriority.UseTextAlignment = false;
             this.xrTableCell36.Text = "Tên";
             this.xrTableCell36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell36.Weight = 8.1358138615673656D;
+            this.xrTableCell36.Weight = 8.5543991375574162D;
             // 
             // xrTableCell39
             // 
@@ -513,7 +513,7 @@
             this.xrTableCell39.StylePriority.UseFont = false;
             this.xrTableCell39.StylePriority.UseTextAlignment = false;
             this.xrTableCell39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell39.Weight = 10.521034243824165D;
+            this.xrTableCell39.Weight = 10.102448967834114D;
             // 
             // xrTableCell7
             // 
