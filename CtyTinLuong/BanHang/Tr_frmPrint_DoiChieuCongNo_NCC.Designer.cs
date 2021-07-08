@@ -1,4 +1,4 @@
-﻿namespace CtyTinLuong.Luong_ChamCong
+﻿namespace CtyTinLuong
 {
     partial class Tr_frmPrint_DoiChieuCongNo_NCC
     {

@@ -242,8 +242,12 @@ namespace CtyTinLuong
         {
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
             {
-                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
-                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Tr_frmPrint_DoiChieuCongNo_NCC ff = new Tr_frmPrint_DoiChieuCongNo_NCC(dteTuNgay.DateTime, dteDenNgay.DateTime, _data);
+                ff.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để in", "Thông báo!");
             }
         }
     }
