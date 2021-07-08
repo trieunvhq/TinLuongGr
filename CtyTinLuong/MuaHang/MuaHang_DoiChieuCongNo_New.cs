@@ -207,8 +207,10 @@ namespace CtyTinLuong
         {
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
             {
+                string doiTuong = "Đối tượng: " + txtTenTK.Text + "(" + GridSoTaiKhoan.EditValue.ToString() + ")";
+                string taiKhoan = "Tài khoản: Phải trả cho người bán " + "(" + GridSoTaiKhoan.Text + ")";
                 Tr_frmPrint_DoiChieuCongNo_Khach ff = new Tr_frmPrint_DoiChieuCongNo_Khach(dteTuNgay.DateTime,
-                            dteDenNgay.DateTime, _data, GridSoTaiKhoan.Text, txtTenTK.Text);
+                            dteDenNgay.DateTime, _data, taiKhoan, doiTuong);
                 ff.Show();
             }
         }
