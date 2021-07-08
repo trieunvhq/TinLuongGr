@@ -448,6 +448,11 @@ namespace CtyTinLuong
 
         }
 
+        private void gridCongNhan_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridCongNhan.Properties.View.Columns[0].Visible = false;
+        }
+
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
            

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanLuong_ChiTiet_Luong));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.txtNam = new System.Windows.Forms.TextBox();
@@ -93,21 +93,18 @@
             this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.gridCongNhan = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clID_NhanSu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridCongNhan = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -118,18 +115,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memohoten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCongNhan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCongNhan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -147,6 +144,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.gridCongNhan);
             this.dataLayoutControl1.Controls.Add(this.txtNam);
             this.dataLayoutControl1.Controls.Add(this.txtThang);
             this.dataLayoutControl1.Controls.Add(this.gridControl2);
@@ -154,7 +152,6 @@
             this.dataLayoutControl1.Controls.Add(this.btPrint);
             this.dataLayoutControl1.Controls.Add(this.gridControl1);
             this.dataLayoutControl1.Controls.Add(this.txtHoTen);
-            this.dataLayoutControl1.Controls.Add(this.gridCongNhan);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 13);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
@@ -189,9 +186,9 @@
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(2, 26);
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.Name = "gridControl2";
@@ -684,9 +681,9 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode3.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode3});
             this.gridControl1.Location = new System.Drawing.Point(2, 348);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
@@ -903,59 +900,11 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(493, 2);
+            this.txtHoTen.Location = new System.Drawing.Point(584, 2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(661, 20);
+            this.txtHoTen.Size = new System.Drawing.Size(570, 20);
             this.txtHoTen.TabIndex = 17;
             this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
-            // 
-            // gridCongNhan
-            // 
-            this.gridCongNhan.EditValue = "";
-            this.gridCongNhan.Location = new System.Drawing.Point(316, 2);
-            this.gridCongNhan.Name = "gridCongNhan";
-            this.gridCongNhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridCongNhan.Properties.PopupView = this.gridView1;
-            this.gridCongNhan.Size = new System.Drawing.Size(118, 20);
-            this.gridCongNhan.StyleController = this.dataLayoutControl1;
-            this.gridCongNhan.TabIndex = 24;
-            this.gridCongNhan.EditValueChanged += new System.EventHandler(this.gridCongNhan_EditValueChanged);
-            this.gridCongNhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridCongNhan_KeyPress);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clID_NhanSu,
-            this.clMaNV,
-            this.gridColumn1});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // clID_NhanSu
-            // 
-            this.clID_NhanSu.Caption = "ID_NhanSu";
-            this.clID_NhanSu.FieldName = "ID_NhanSu";
-            this.clID_NhanSu.Name = "clID_NhanSu";
-            // 
-            // clMaNV
-            // 
-            this.clMaNV.Caption = "Mã";
-            this.clMaNV.FieldName = "MaNV";
-            this.clMaNV.Name = "clMaNV";
-            this.clMaNV.Visible = true;
-            this.clMaNV.VisibleIndex = 0;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Họ tên";
-            this.gridColumn1.FieldName = "TenNhanVien";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 309;
             // 
             // layoutControlGroup1
             // 
@@ -968,10 +917,10 @@
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.emptySpaceItem1,
-            this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1156, 648);
@@ -1021,21 +970,12 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(962, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.gridCongNhan;
-            this.layoutControlItem8.Location = new System.Drawing.Point(259, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(177, 24);
-            this.layoutControlItem8.Text = "Công nhân";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(52, 13);
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtHoTen;
-            this.layoutControlItem9.Location = new System.Drawing.Point(436, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(527, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(720, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(629, 24);
             this.layoutControlItem9.Text = "Họ tên";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(52, 13);
             // 
@@ -1056,6 +996,36 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(146, 24);
             this.layoutControlItem5.Text = "Năm";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(52, 13);
+            // 
+            // gridCongNhan
+            // 
+            this.gridCongNhan.Location = new System.Drawing.Point(316, 2);
+            this.gridCongNhan.Name = "gridCongNhan";
+            this.gridCongNhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridCongNhan.Properties.PopupView = this.searchLookUpEdit1View;
+            this.gridCongNhan.Size = new System.Drawing.Size(209, 20);
+            this.gridCongNhan.StyleController = this.dataLayoutControl1;
+            this.gridCongNhan.TabIndex = 114;
+            this.gridCongNhan.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridCongNhan_QueryPopUp);
+            this.gridCongNhan.EditValueChanged += new System.EventHandler(this.gridCongNhan_EditValueChanged);
+            this.gridCongNhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridCongNhan_KeyPress);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridCongNhan;
+            this.layoutControlItem1.Location = new System.Drawing.Point(259, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(268, 24);
+            this.layoutControlItem1.Text = "Công nhân";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 13);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // SanLuong_ChiTiet_Luong
             // 
@@ -1078,18 +1048,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memohoten)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCongNhan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCongNhan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1118,12 +1088,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clMaVT;
         private DevExpress.XtraGrid.Columns.GridColumn clDonViTinh;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.GridLookUpEdit gridCongNhan;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_NhanSu;
-        private DevExpress.XtraGrid.Columns.GridColumn clMaNV;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private System.Windows.Forms.TextBox txtHoTen;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraGrid.GridControl gridControl2;
@@ -1173,5 +1137,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.SearchLookUpEdit gridCongNhan;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
