@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
@@ -254,27 +255,23 @@ namespace CtyTinLuong
             txtTongTienHang.Text = deTOngtien.ToString();
 
         }
+        int iID_VTHH;
+        string sMaVT, sTenVTHH, sDonViTinh;
         private void Load_LockUp()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=5";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            DataTable dt = clsNguoi.T_SelectAll(5); 
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.DataSource = dt;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
+            dt = cls.T_SelectAll(); 
 
-            gridMaVT.DataSource = dtxx2;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
+            repositoryItemSearchLookUpEdit1.DataSource = dt;
+            repositoryItemSearchLookUpEdit1.ValueMember = "ID_VTHH";
+            repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
 
 
 
@@ -895,33 +892,26 @@ namespace CtyTinLuong
             double ffdongia, fffsoluong, fffthanhtien;
             if (e.Column == clMaVT)
             {
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
-                int kk = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
-                if (dt != null)
-                {
-                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
-                    gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
-                    gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
-                    gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                    gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clSoLuongTheoDinhMuc, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clDinhMuc, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
+                gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, iID_VTHH);
+                gridView1.SetRowCellValue(e.RowHandle, clTenVTHH,sTenVTHH);
+                gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, sDonViTinh);
+                gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+                gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
+                gridView1.SetRowCellValue(e.RowHandle, clSoLuongTheoDinhMuc, 0);
+                gridView1.SetRowCellValue(e.RowHandle, clDinhMuc, 0);
+                gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
 
-                    if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
-                        ffdongia = 0;
-                    else
-                        ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
-                    if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
-                        fffsoluong = 0;
-                    else
-                        fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
-                    fffthanhtien = fffsoluong * ffdongia;
-                    gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
-                }
+                if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
             if (e.Column == clSoLuong)
             {
@@ -1201,6 +1191,24 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+            }
+            catch { }
+        }
+
+        private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+            DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+            iID_VTHH = Convert.ToInt32(row["ID_VTHH"].ToString());
+            sTenVTHH = row["TenVTHH"].ToString();
+            sDonViTinh = row["DonViTinh"].ToString();
         }
 
         private void txtSoLuongXuat_TextChanged(object sender, EventArgs e)
