@@ -161,21 +161,15 @@
     <Compile Include="BanHang\BanHang_DoiChieu_CongNo_new.Designer.cs">
       <DependentUpon>BanHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.cs" />
     <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.Designer.cs">
       <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_Khach.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_Khach.cs" />
     <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_Khach.Designer.cs">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.cs" />
     <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.Designer.cs">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
@@ -1254,6 +1248,7 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat.cs" />
+    <Compile Include="QUANTRI\QuanLyTaiKhoanKeToan\clsNganHang_tbHeThongTaiKhoanKeToanMe - Copy.cs" />
     <Compile Include="QUANTRI\QuanLyTaiKhoanKeToan\frmChiTietTaiKhoanKeToanCon.cs">
       <SubType>Form</SubType>
     </Compile>
