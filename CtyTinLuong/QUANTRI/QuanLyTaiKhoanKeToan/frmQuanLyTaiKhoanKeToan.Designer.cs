@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyTaiKhoanKeToan));
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.checked_ALL = new DevExpress.XtraEditors.CheckEdit();
-            this.checkNgungTheoDoi = new DevExpress.XtraEditors.CheckEdit();
             this.btCHiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.checkBoTheoDoi = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.clNgungTheoDoi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,13 +59,19 @@
             this.clTenTaiKhoanMe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.checkTheoDoi = new DevExpress.XtraEditors.CheckEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btThemMoi_Me = new DevExpress.XtraEditors.SimpleButton();
-            this.btThemMoi_Con = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).BeginInit();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.btCHiTiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoTheoDoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
@@ -76,44 +81,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // btRefresh
             // 
             this.btRefresh.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Update;
             this.btRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btRefresh.Location = new System.Drawing.Point(293, 16);
+            this.btRefresh.Location = new System.Drawing.Point(277, 7);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(39, 23);
+            this.btRefresh.Size = new System.Drawing.Size(86, 22);
+            this.btRefresh.StyleController = this.layoutControl1;
             this.btRefresh.TabIndex = 97;
             this.btRefresh.ToolTip = "Refesh";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
-            // checked_ALL
-            // 
-            this.checked_ALL.Location = new System.Drawing.Point(697, 12);
-            this.checked_ALL.Name = "checked_ALL";
-            this.checked_ALL.Properties.Caption = "Tất cả";
-            this.checked_ALL.Size = new System.Drawing.Size(56, 19);
-            this.checked_ALL.TabIndex = 95;
-            this.checked_ALL.CheckedChanged += new System.EventHandler(this.checked_ALL_CheckedChanged);
-            // 
-            // checkNgungTheoDoi
-            // 
-            this.checkNgungTheoDoi.Location = new System.Drawing.Point(868, 14);
-            this.checkNgungTheoDoi.Name = "checkNgungTheoDoi";
-            this.checkNgungTheoDoi.Properties.Caption = "Ngừng theo dõi";
-            this.checkNgungTheoDoi.Size = new System.Drawing.Size(104, 19);
-            this.checkNgungTheoDoi.TabIndex = 94;
-            this.checkNgungTheoDoi.CheckedChanged += new System.EventHandler(this.checkNgungTheoDoi_CheckedChanged);
-            // 
             // btCHiTiet
             // 
             this.btCHiTiet.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.notebook;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.notebook;
             this.btCHiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btCHiTiet.Name = "btCHiTiet";
             this.btCHiTiet.Click += new System.EventHandler(this.btCHiTiet_Click);
             // 
@@ -137,16 +133,14 @@
             this.clNgungTheoDoi.Name = "clNgungTheoDoi";
             this.clNgungTheoDoi.OptionsColumn.FixedWidth = true;
             this.clNgungTheoDoi.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.clNgungTheoDoi.Visible = true;
-            this.clNgungTheoDoi.VisibleIndex = 5;
             this.clNgungTheoDoi.Width = 60;
             // 
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -167,7 +161,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 6;
+            this.clXoa.VisibleIndex = 5;
             this.clXoa.Width = 60;
             // 
             // repositoryItemMemoEdit2
@@ -306,7 +300,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 43);
+            this.gridControl1.Location = new System.Drawing.Point(7, 33);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -317,19 +311,10 @@
             this.repositoryItemMemoEdit2,
             this.repositoryItemMemoEdit3,
             this.repositoryItemMemoEdit4});
-            this.gridControl1.Size = new System.Drawing.Size(960, 579);
+            this.gridControl1.Size = new System.Drawing.Size(356, 233);
             this.gridControl1.TabIndex = 92;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // checkTheoDoi
-            // 
-            this.checkTheoDoi.Location = new System.Drawing.Point(759, 12);
-            this.checkTheoDoi.Name = "checkTheoDoi";
-            this.checkTheoDoi.Properties.Caption = "Đang theo dõi";
-            this.checkTheoDoi.Size = new System.Drawing.Size(103, 19);
-            this.checkTheoDoi.TabIndex = 93;
-            this.checkTheoDoi.CheckedChanged += new System.EventHandler(this.checkTheoDoi_CheckedChanged);
             // 
             // btThoat
             // 
@@ -351,39 +336,126 @@
             this.label1.TabIndex = 98;
             this.label1.Text = "label1";
             // 
-            // btThemMoi_Me
+            // checkBox1
             // 
-            this.btThemMoi_Me.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThemMoi_Me.ImageOptions.Image")));
-            this.btThemMoi_Me.Location = new System.Drawing.Point(15, 16);
-            this.btThemMoi_Me.Name = "btThemMoi_Me";
-            this.btThemMoi_Me.Size = new System.Drawing.Size(133, 23);
-            this.btThemMoi_Me.TabIndex = 99;
-            this.btThemMoi_Me.Text = "Thêm mới TK mẹ";
-            this.btThemMoi_Me.Click += new System.EventHandler(this.btThemMoi_Click);
+            this.checkBox1.Location = new System.Drawing.Point(7, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(176, 20);
+            this.checkBox1.TabIndex = 101;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // btThemMoi_Con
+            // checkBox2
             // 
-            this.btThemMoi_Con.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThemMoi_Con.ImageOptions.Image")));
-            this.btThemMoi_Con.Location = new System.Drawing.Point(154, 16);
-            this.btThemMoi_Con.Name = "btThemMoi_Con";
-            this.btThemMoi_Con.Size = new System.Drawing.Size(133, 23);
-            this.btThemMoi_Con.TabIndex = 100;
-            this.btThemMoi_Con.Text = "Thêm mới TK con";
-            this.btThemMoi_Con.Click += new System.EventHandler(this.btThemMoi_Con_Click);
+            this.checkBox2.Location = new System.Drawing.Point(187, 7);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(41, 20);
+            this.checkBox2.TabIndex = 102;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.layoutControl1);
+            this.groupBox1.Location = new System.Drawing.Point(83, 126);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(376, 292);
+            this.groupBox1.TabIndex = 103;
+            this.groupBox1.TabStop = false;
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.btThemMoi);
+            this.layoutControl1.Controls.Add(this.checkBox2);
+            this.layoutControl1.Controls.Add(this.checkBox1);
+            this.layoutControl1.Controls.Add(this.btRefresh);
+            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(3, 16);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(370, 273);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(370, 273);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(360, 237);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.checkBox1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(180, 26);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.checkBox2;
+            this.layoutControlItem3.Location = new System.Drawing.Point(180, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(45, 26);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btRefresh;
+            this.layoutControlItem4.Location = new System.Drawing.Point(270, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(90, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // btThemMoi
+            // 
+            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btThemMoi.Location = new System.Drawing.Point(232, 7);
+            this.btThemMoi.Name = "btThemMoi";
+            this.btThemMoi.Size = new System.Drawing.Size(41, 22);
+            this.btThemMoi.StyleController = this.layoutControl1;
+            this.btThemMoi.TabIndex = 104;
+            this.btThemMoi.ToolTip = "Refesh";
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btThemMoi;
+            this.layoutControlItem5.Location = new System.Drawing.Point(225, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(45, 26);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // frmQuanLyTaiKhoanKeToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 662);
-            this.Controls.Add(this.btThemMoi_Con);
-            this.Controls.Add(this.btThemMoi_Me);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btRefresh);
-            this.Controls.Add(this.checked_ALL);
-            this.Controls.Add(this.checkNgungTheoDoi);
-            this.Controls.Add(this.checkTheoDoi);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btThoat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -393,8 +465,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Tài Khoản Kế Toán";
             this.Load += new System.EventHandler(this.frmQuanLyTaiKhoanKeToan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btCHiTiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoTheoDoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
@@ -404,7 +474,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,8 +491,6 @@
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton btRefresh;
-        private DevExpress.XtraEditors.CheckEdit checked_ALL;
-        private DevExpress.XtraEditors.CheckEdit checkNgungTheoDoi;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btCHiTiet;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit checkBoTheoDoi;
         private DevExpress.XtraGrid.Columns.GridColumn clNgungTheoDoi;
@@ -426,7 +502,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraEditors.CheckEdit checkTheoDoi;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private DevExpress.XtraGrid.Columns.GridColumn clID_TaiKhoanKeToanMe;
         private DevExpress.XtraGrid.Columns.GridColumn clSoTaiKhoanCon;
@@ -434,9 +509,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSoTaiKhoanMe;
         private DevExpress.XtraGrid.Columns.GridColumn clTenTaiKhoanMe;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton btThemMoi_Me;
-        private DevExpress.XtraEditors.SimpleButton btThemMoi_Con;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.SimpleButton btThemMoi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

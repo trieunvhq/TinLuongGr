@@ -20,29 +20,9 @@ namespace CtyTinLuong
         {
             clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
             DataTable dt = cls.SelectAll_HienThiGridcontrol();
+            DataView dv = dt.DefaultView;
+            gridControl1.DataSource = dv;
 
-            if (checked_ALL.Checked == true)
-            {
-                dt.DefaultView.RowFilter = " TonTai= True";
-                DataView dv = dt.DefaultView;
-                gridControl1.DataSource = dv;
-            }
-            else
-            {
-                if (checkTheoDoi.Checked == true)
-                {
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-                    DataView dv = dt.DefaultView;
-                    gridControl1.DataSource = dv;
-                }
-                else
-                {
-                    dt.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=true";
-                    DataView dv = dt.DefaultView;
-                    gridControl1.DataSource = dv;
-                }
-
-            }
         }
         public frmQuanLyTaiKhoanKeToan()
         {
@@ -53,7 +33,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_TaiKhoan = false;
-            checkTheoDoi.Checked = true;
+            
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             mb_TheMoi_TaiKhoan = false;
             HienThi();
@@ -65,35 +45,7 @@ namespace CtyTinLuong
             this.Close();
         }
 
-        private void checked_ALL_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checked_ALL.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checkTheoDoi.Checked = false;
-            }
-            HienThi();
-        }
 
-        private void checkTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkTheoDoi.Checked == true)
-            {
-                checkNgungTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
-
-        private void checkNgungTheoDoi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkNgungTheoDoi.Checked == true)
-            {
-                checkTheoDoi.Checked = false;
-                checked_ALL.Checked = false;
-            }
-            HienThi();
-        }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
