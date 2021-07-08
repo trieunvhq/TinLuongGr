@@ -365,11 +365,11 @@ namespace CtyTinLuong
                 _ravi3["DonViTinh"] = dt_ChiTiet_nhapkho_DaiLy.Rows[i]["DonViTinh"].ToString();
                 if (i == 1)
                 {
-                    //clsKhoBTP_tbChiTietNhapKho xcls = new clsKhoBTP_tbChiTietNhapKho();
-                    //xcls.iID_VTHH = ID_VTHH;
-                    //DataTable dtbtp = xcls.Select_W_ID_VTHH();
-                    //if (dtbtp.Rows.Count > 0)
-                    _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongTon_KhoBTP"].ToString());
+                    clsKhoBTP_tbChiTietNhapKho xcls = new clsKhoBTP_tbChiTietNhapKho();
+                    xcls.iID_VTHH = ID_VTHH;
+                    DataTable dtbtp = xcls.Select_W_ID_VTHH();
+                    if (dtbtp.Rows.Count > 0)
+                        _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongTon_KhoBTP"].ToString());
                 }
                 else
                 {
