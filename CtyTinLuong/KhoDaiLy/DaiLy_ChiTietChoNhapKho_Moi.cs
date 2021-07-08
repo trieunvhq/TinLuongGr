@@ -363,28 +363,28 @@ namespace CtyTinLuong
                 //DataTable dtvth = clvthh.SelectOne();
                 _ravi3["TenVTHH"] = dt_ChiTiet_nhapkho_DaiLy.Rows[i]["TenVTHH"].ToString();
                 _ravi3["DonViTinh"] = dt_ChiTiet_nhapkho_DaiLy.Rows[i]["DonViTinh"].ToString();
-                if (i == 1)
-                {
-                    clsKhoBTP_tbChiTietNhapKho xcls = new clsKhoBTP_tbChiTietNhapKho();
-                    xcls.iID_VTHH = ID_VTHH;
-                    DataTable dtbtp = xcls.Select_W_ID_VTHH();
-                    if (dtbtp.Rows.Count > 0)
-                        _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongTon_KhoBTP"].ToString());
-                }
-                else
-                {
-                //    clsKhoNPL_tbChiTietNhapKho xcls = new clsKhoNPL_tbChiTietNhapKho();
+                //if (i == 1)
+                //{
+                //    clsKhoBTP_tbChiTietNhapKho xcls = new clsKhoBTP_tbChiTietNhapKho();
                 //    xcls.iID_VTHH = ID_VTHH;
                 //    DataTable dtbtp = xcls.Select_W_ID_VTHH();
                 //    if (dtbtp.Rows.Count > 0)
-                    _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[0]["SoLuongTon_KhoNPL"].ToString());
-                }
+                //        _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongTon_KhoBTP"].ToString());
+                //}
+                //else
+                //{
+                ////    clsKhoNPL_tbChiTietNhapKho xcls = new clsKhoNPL_tbChiTietNhapKho();
+                ////    xcls.iID_VTHH = ID_VTHH;
+                ////    DataTable dtbtp = xcls.Select_W_ID_VTHH();
+                ////    if (dtbtp.Rows.Count > 0)
+                //    _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[0]["SoLuongTon_KhoNPL"].ToString());
+                //}
 
                 //clsDinhMuc_ChiTiet_DM_NPL clsdm = new clsDinhMuc_ChiTiet_DM_NPL();
                 //clsdm.iID_DinhMuc_NPL = Convert.ToInt32(gridMaDinhMucNPL.EditValue.ToString());
                 //clsdm.iID_VTHH = ID_VTHH;
                 //DataTable dtctietdinhmuc = clsdm.SelectOne_W_ID_VTHH_W_ID_DinhMuc_NPL();
-                string xxsoluongdmimuc = dt_ChiTiet_nhapkho_DaiLy.Rows[0]["SoLuong_DM"].ToString();
+                string xxsoluongdmimuc = dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuong_DM"].ToString();
                 double xxxxsoluongdmimucc = Math.Round(double.Parse(xxsoluongdmimuc), 3);
 
 
