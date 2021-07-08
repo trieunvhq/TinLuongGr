@@ -25,8 +25,9 @@ namespace CtyTinLuong
         {
             DataTable dt2xxxx = new DataTable();
             dt2xxxx.Columns.Add("HienThi", typeof(string));
+            dt2xxxx.Columns.Add("STT", typeof(string));
             dt2xxxx.Columns.Add("NgayThang", typeof(string));
-            dt2xxxx.Columns.Add("DoiTuong", typeof(string));
+            dt2xxxx.Columns.Add("SoChungTu", typeof(string));
             dt2xxxx.Columns.Add("DienGiai", typeof(string));
             dt2xxxx.Columns.Add("No", typeof(double));
             dt2xxxx.Columns.Add("Co", typeof(double));
@@ -73,12 +74,12 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
-                   
+                    _ravi["STT"] = (i+1).ToString();
 
                     DateTime ngay = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
-                    _ravi["DoiTuong"] = txtTenTK.Text;
+                    _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
                     double Noxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
 
@@ -199,8 +200,8 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-                e.DisplayText = (e.RowHandle + 1).ToString();
+            //if (e.Column == clSTT)
+            //    e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
         private void btPrint_Click(object sender, EventArgs e)
