@@ -10,11 +10,17 @@ namespace CtyTinLuong
     public partial class Tr_Xtra_DoiChieuCongNo_Khach : DevExpress.XtraReports.UI.XtraReport
     {
         DateTime _tuNgay, _denNgay;
-        public Tr_Xtra_DoiChieuCongNo_Khach(DateTime tuNgay, DateTime denNgay)
+        private string _TaiKhoan, _DoiTuong;
+
+        public Tr_Xtra_DoiChieuCongNo_Khach(DateTime tuNgay, DateTime denNgay, string TaiKhoan, string DoiTuong)
         {
             _tuNgay = tuNgay;
             _denNgay = denNgay;
+            _TaiKhoan = TaiKhoan;
+            _DoiTuong = DoiTuong;
+
             InitializeComponent();
+
             pNgayThang.Value = DateTime.Now;
         }
 
@@ -31,6 +37,9 @@ namespace CtyTinLuong
             }
 
             lbTitleNgay.Text = "Từ ngày " + _tuNgay.ToString("dd/MM/yyyy") + " đến ngày " + _denNgay.ToString("dd/MM/yyyy");
+            lbTitleTaiKhoan.Text = _TaiKhoan;
+            lbTitleDoiTuong.Text = _DoiTuong;
+
 
             //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgayThang.Value);

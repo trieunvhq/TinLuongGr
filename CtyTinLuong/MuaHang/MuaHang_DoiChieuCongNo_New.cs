@@ -207,8 +207,9 @@ namespace CtyTinLuong
         {
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
             {
-                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
-                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Tr_frmPrint_DoiChieuCongNo_Khach ff = new Tr_frmPrint_DoiChieuCongNo_Khach(dteTuNgay.DateTime,
+                            dteDenNgay.DateTime, _data, GridSoTaiKhoan.Text, txtTenTK.Text);
+                ff.Show();
             }
         }
 

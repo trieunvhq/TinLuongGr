@@ -15,13 +15,16 @@ namespace CtyTinLuong
 
         public DateTime _tuNgay, _denNgay;
         private DataTable _data;
+        private string _TaiKhoan, _DoiTuong;
 
 
-        public Tr_frmPrint_DoiChieuCongNo_Khach(DateTime tuNgay, DateTime denNgay, DataTable data)
+        public Tr_frmPrint_DoiChieuCongNo_Khach(DateTime tuNgay, DateTime denNgay, DataTable data, string TaiKhoan, string DoiTuong)
         {
             _data = data;
             _tuNgay = tuNgay;
             _denNgay = denNgay;
+            _TaiKhoan = TaiKhoan;
+            _DoiTuong = DoiTuong;
 
             InitializeComponent();
         }
@@ -33,13 +36,15 @@ namespace CtyTinLuong
            
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
-                DataRow _ravi = ds.tbBH_DoiChieuCongNo_NCC.NewRow();
+                DataRow _ravi = ds.tbMH_DoiChieuCongNo_Khach.NewRow();
 
                 //
                 _ravi["STT"] = (i + 1).ToString();
                 _ravi["DoiTuong"] = _data.Rows[i]["DoiTuong"].ToString();
                 _ravi["NgayThang"] = _data.Rows[i]["NgayThang"].ToString();
                 _ravi["DienGiai"] = _data.Rows[i]["DienGiai"].ToString();
+                _ravi["SoChungTu"] = _data.Rows[i]["SoChungTu"].ToString();
+                _ravi["TaiKhoanDoiUng"] = "";
 
                 if (_data.Rows[i]["SoLuong"].ToString() == "")
                 {
@@ -92,13 +97,13 @@ namespace CtyTinLuong
                     _ravi["Co"] = Convert.ToDouble(_data.Rows[i]["Co"].ToString()).ToString("N2");
                 }
 
-                ds.tbBH_DoiChieuCongNo_NCC.Rows.Add(_ravi);
+                ds.tbMH_DoiChieuCongNo_Khach.Rows.Add(_ravi);
             }
 
-            Tr_Xtra_DoiChieuCongNo_NCC xtr111 = new Tr_Xtra_DoiChieuCongNo_NCC(_tuNgay, _denNgay);
+            Tr_Xtra_DoiChieuCongNo_Khach xtr111 = new Tr_Xtra_DoiChieuCongNo_Khach(_tuNgay, _denNgay, _TaiKhoan, _DoiTuong);
             xtr111.DataSource = null;
-            xtr111.DataSource = ds.tbBH_DoiChieuCongNo_NCC;
-            xtr111.DataMember = "tbBH_DoiChieuCongNo_NCC";
+            xtr111.DataSource = ds.tbMH_DoiChieuCongNo_Khach;
+            xtr111.DataMember = "tbMH_DoiChieuCongNo_Khach";
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }

@@ -49,8 +49,8 @@
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbTitleNgay = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbTitleTaiKhoan = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbTitleDoiTuong = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -175,7 +175,7 @@
             // xrTableCell12
             // 
             this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DoiTuong]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SoChungTu]")});
             this.xrTableCell12.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseFont = false;
@@ -198,6 +198,8 @@
             // 
             // xrTableCell33
             // 
+            this.xrTableCell33.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TaiKhoanDoiUng]")});
             this.xrTableCell33.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.xrTableCell33.Multiline = true;
             this.xrTableCell33.Name = "xrTableCell33";
@@ -288,8 +290,8 @@
             this.xrLine1,
             this.xrLabel3,
             this.lbTitleNgay,
-            this.xrLabel1,
-            this.xrLabel6});
+            this.lbTitleTaiKhoan,
+            this.lbTitleDoiTuong});
             this.ReportHeader.HeightF = 147.9167F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
@@ -336,29 +338,29 @@
             this.lbTitleNgay.Text = "Từ ngày   ...  đến ngày ...";
             this.lbTitleNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel1
+            // lbTitleTaiKhoan
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1F, 92.79167F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(1096.292F, 19.87502F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "Tài khoản: Phải trả cho người bán (331)";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lbTitleTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbTitleTaiKhoan.LocationFloat = new DevExpress.Utils.PointFloat(1F, 92.79167F);
+            this.lbTitleTaiKhoan.Name = "lbTitleTaiKhoan";
+            this.lbTitleTaiKhoan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbTitleTaiKhoan.SizeF = new System.Drawing.SizeF(1096.292F, 19.87502F);
+            this.lbTitleTaiKhoan.StylePriority.UseFont = false;
+            this.lbTitleTaiKhoan.StylePriority.UseTextAlignment = false;
+            this.lbTitleTaiKhoan.Text = "Tài khoản: Phải trả cho người bán (331)";
+            this.lbTitleTaiKhoan.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel6
+            // lbTitleDoiTuong
             // 
-            this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(2.708252F, 112.7917F);
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(1096.292F, 19.87502F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Đối tượng: Hợp tác xã sông mã (GSM3)";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lbTitleDoiTuong.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbTitleDoiTuong.LocationFloat = new DevExpress.Utils.PointFloat(2.708252F, 112.7917F);
+            this.lbTitleDoiTuong.Name = "lbTitleDoiTuong";
+            this.lbTitleDoiTuong.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbTitleDoiTuong.SizeF = new System.Drawing.SizeF(1096.292F, 19.87502F);
+            this.lbTitleDoiTuong.StylePriority.UseFont = false;
+            this.lbTitleDoiTuong.StylePriority.UseTextAlignment = false;
+            this.lbTitleDoiTuong.Text = "Đối tượng: xxxxxxxxxx (YYYY)";
+            this.lbTitleDoiTuong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // PageHeader
             // 
@@ -1041,8 +1043,8 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.UI.XRLabel lbTitleTaiKhoan;
+        private DevExpress.XtraReports.UI.XRLabel lbTitleDoiTuong;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell21;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell22;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
