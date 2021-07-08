@@ -1248,6 +1248,7 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsHUU_LenhSanXuat_ChiTietLenhSanXuat.cs" />
+    <Compile Include="QUANTRI\QuanLyTaiKhoanKeToan\clsNganHang_tbHeThongTaiKhoanKeToanMe - Copy.cs" />
     <Compile Include="QUANTRI\QuanLyTaiKhoanKeToan\frmChiTietTaiKhoanKeToanCon.cs">
       <SubType>Form</SubType>
     </Compile>
