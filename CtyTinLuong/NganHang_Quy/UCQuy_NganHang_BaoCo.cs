@@ -58,20 +58,27 @@ namespace CtyTinLuong
                 mbTheMoi = true;
                 mbCoPy = false;
                 mbSua = false;
-                QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
-                //_frmQNH.Hide();
+                QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();              
                 ff.Show();
-                //_frmQNH.Show();
+                
+            }
+            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 6)
+            {
+                mbTheMoi = true;
+                mbCoPy = false;
+                mbSua = false;
+                QuyNganHang_Frm_PhieuKeToan ff = new CtyTinLuong.QuyNganHang_Frm_PhieuKeToan();              
+                ff.Show();
+              
             }
             else
             {
                 mbTheMoi = true;
                 mbCoPy = false;
                 mbSua = false;
-                Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                //_frmQNH.Hide();
+                Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();              
                 ff.Show();
-                //_frmQNH.Show();
+               
             }
         }
 
@@ -200,10 +207,9 @@ namespace CtyTinLuong
                     mbCoPy = true;
                     mbSua = false;
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
-                    QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();
-                    //_frmQNH.Hide();
+                    QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();                  
                     ff.Show();
-                    //_frmQNH.Show();
+                   
                 }
                 else
                 {
@@ -211,10 +217,9 @@ namespace CtyTinLuong
                     mbCoPy = true;
                     mbSua = false;
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
-                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                    //_frmQNH.Hide();
+                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();                 
                     ff.Show();
-                    //_frmQNH.Show();
+                  
                 }
 
             }

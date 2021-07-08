@@ -1838,6 +1838,12 @@
     <Compile Include="NganHang_Quy\QuyNganHang_Frm_DoiTienUSD.Designer.cs">
       <DependentUpon>QuyNganHang_Frm_DoiTienUSD.cs</DependentUpon>
     </Compile>
+    <Compile Include="NganHang_Quy\QuyNganHang_Frm_PhieuKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\QuyNganHang_Frm_PhieuKeToan.Designer.cs">
+      <DependentUpon>QuyNganHang_Frm_PhieuKeToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="TamUng_new.cs">
       <SubType>Form</SubType>
     </Compile>

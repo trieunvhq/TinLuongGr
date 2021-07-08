@@ -35,6 +35,7 @@
             this.navBaoNo = new DevExpress.XtraNavBar.NavBarItem();
             this.navPhieuThu = new DevExpress.XtraNavBar.NavBarItem();
             this.navPhieuChi = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -45,7 +46,7 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,8 @@
             this.navPhieuThu,
             this.navPhieuChi,
             this.navBarItem1,
-            this.navBarItem2});
+            this.navBarItem2,
+            this.navBarItem8});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 157;
@@ -85,7 +87,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBaoNo),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navPhieuThu),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navPhieuChi),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBaoCo
@@ -112,6 +115,12 @@
             this.navPhieuChi.Caption = "Phiếu chi";
             this.navPhieuChi.Name = "navPhieuChi";
             this.navPhieuChi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navPhieuChi_LinkClicked);
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Đổi tiền USD";
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked_1);
             // 
             // navBarGroup2
             // 
@@ -178,11 +187,11 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // navBarItem2
+            // navBarItem8
             // 
-            this.navBarItem2.Caption = "Đổi tiền USD";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked_1);
+            this.navBarItem8.Caption = "Phiếu kế toán";
+            this.navBarItem8.Name = "navBarItem8";
+            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
             // 
             // frmQuy_NganHang_Newwwwwwwwwwwwwwwww
             // 
@@ -223,5 +232,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
     }
 }

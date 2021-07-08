@@ -166,5 +166,16 @@ namespace CtyTinLuong
 
             doiMauTitle(sender, e);
         }
+
+        private void navBarItem8_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 6;
+            UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
+            ucc.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucc);
+            ucc.BringToFront();
+
+            doiMauTitle(sender, e);
+        }
     }
 }
