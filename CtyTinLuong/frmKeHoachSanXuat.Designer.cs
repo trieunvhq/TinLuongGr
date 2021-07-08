@@ -696,7 +696,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmKeHoachSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kế Hoạch Sản Xuất";
+            this.Text = this.Name+"-->Kế Hoạch Sản Xuất";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmKeHoachSanXuat_Load);
             this.groupBox1.ResumeLayout(false);
