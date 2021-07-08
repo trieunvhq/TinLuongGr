@@ -502,6 +502,12 @@ namespace CtyTinLuong
             catch { }
         }
 
+        private void gridMaVTchinh1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            gridMaVTchinh1.Properties.View.Columns[0].Visible = false;
+            gridMaVTchinh1.Properties.View.Columns[3].Visible = false;
+        }
+
         private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
             try
