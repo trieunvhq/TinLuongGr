@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaHang_DoiChieuCongNo_New));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -135,6 +135,7 @@
             this.GridSoTaiKhoan.StyleController = this.layoutControl1;
             this.GridSoTaiKhoan.TabIndex = 114;
             this.GridSoTaiKhoan.EditValueChanged += new System.EventHandler(this.GridSoTaiKhoan_EditValueChanged);
+            this.GridSoTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridSoTaiKhoan_KeyPress);
             // 
             // searchLookUpEdit1View
             // 
@@ -145,9 +146,9 @@
             // 
             // gridControl2
             // 
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(3, 53);
             this.gridControl2.MainView = this.gridView1;
             this.gridControl2.Name = "gridControl2";
@@ -369,6 +370,7 @@
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.Size = new System.Drawing.Size(594, 20);
             this.txtTenTK.TabIndex = 111;
+            this.txtTenTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenTK_KeyPress);
             // 
             // btLayDuLieu
             // 
@@ -398,6 +400,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(439, 20);
             this.dteDenNgay.StyleController = this.layoutControl1;
             this.dteDenNgay.TabIndex = 106;
+            this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
             // 
             // dteTuNgay
             // 
@@ -416,6 +419,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(234, 20);
             this.dteTuNgay.StyleController = this.layoutControl1;
             this.dteTuNgay.TabIndex = 107;
+            this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
             // 
             // btPrint
             // 
@@ -561,9 +565,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuaHang_DoiChieuCongNo_New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đối chiếu công nợ";
+            this.Text = "Đối Chiếu Công Nợ";
             this.Load += new System.EventHandler(this.MuaHang_DoiChieuCongNo_New_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
