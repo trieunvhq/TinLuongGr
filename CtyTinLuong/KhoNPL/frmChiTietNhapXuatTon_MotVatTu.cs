@@ -284,7 +284,8 @@ namespace CtyTinLuong
 
         private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
         {
-
+            gridMaVT.Properties.View.Columns[0].Visible = false;
+            gridMaVT.Properties.View.Columns[3].Visible = false;
         }
 
         public frmChiTietNhapXuatTon_MotVatTu()
