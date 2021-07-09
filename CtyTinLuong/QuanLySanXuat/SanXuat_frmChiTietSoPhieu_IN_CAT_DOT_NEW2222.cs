@@ -856,58 +856,39 @@ namespace CtyTinLuong
      
         private void Load_lockUP_EDIT_May_CAT()
         {
-            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();           
+            clsThin clsThin_ = new clsThin();
+            DataSet dtSet_ = clsThin_.T_LockUp_SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
 
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=8";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
-            gridMaCaTruong_May_CAT.Properties.DataSource = newdtCaTruong;
+            gridMaCaTruong_May_CAT.Properties.DataSource = dtSet_.Tables[0];
             gridMaCaTruong_May_CAT.Properties.ValueMember = "ID_NhanSu";
             gridMaCaTruong_May_CAT.Properties.DisplayMember = "MaNhanVien";
-
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=10";
-            DataView dvCongNhan = dtNguoi.DefaultView;
-            DataTable newdtCongNhan = dvCongNhan.ToTable();
-
-            gridMaCongNhan_May_CAT.Properties.DataSource = newdtCongNhan;
+             
+            gridMaCongNhan_May_CAT.Properties.DataSource = dtSet_.Tables[1];
             gridMaCongNhan_May_CAT.Properties.ValueMember = "ID_NhanSu";
             gridMaCongNhan_May_CAT.Properties.DisplayMember = "MaNhanVien";
 
             //gridCNPhuMayCat.Properties.DataSource = newdtCongNhan;
             //gridCNPhuMayCat.Properties.ValueMember = "ID_NhanSu";
             //gridCNPhuMayCat.Properties.DisplayMember = "MaNhanVien";
-
-            clsTbVatTuHangHoa clsxx = new clsTbVatTuHangHoa();
-            DataTable dt = clsxx.T_SelectAll();
             
-            gridHangHoaVao_may_CAT.Properties.DataSource = dt;
+            gridHangHoaVao_may_CAT.Properties.DataSource = dtSet_.Tables[2];
             gridHangHoaVao_may_CAT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaVao_may_CAT.Properties.DisplayMember = "MaVT";
              
-            gridHangHoaXuat_May_CAT.Properties.DataSource = dt;
+            gridHangHoaXuat_May_CAT.Properties.DataSource = dtSet_.Tables[2];
             gridHangHoaXuat_May_CAT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaXuat_May_CAT.Properties.DisplayMember = "MaVT";
 
 
-            clsT_MayMoc clsMayMoc = new clsT_MayMoc();
-            DataTable dtMayIN = clsMayMoc.SelectAll();
-            dtMayIN.DefaultView.RowFilter = "id_loai=2";
-            DataView dvMayIn = dtMayIN.DefaultView;
-            DataTable newdtMayIn = dvMayIn.ToTable();
+            gridMaMay_IN.Properties.DataSource = dtSet_.Tables[3];
+            gridMaMay_IN.Properties.ValueMember = "id";
+            gridMaMay_IN.Properties.DisplayMember = "MaMay";
 
-            gridMaMay_CAT.Properties.DataSource = newdtMayIn;
+            gridMaMay_CAT.Properties.DataSource = dtSet_.Tables[4];
             gridMaMay_CAT.Properties.ValueMember = "id";
             gridMaMay_CAT.Properties.DisplayMember = "MaMay";
-
-
-            clsDinhMuc_DinhMuc_Luong_TheoSanLuong clssanluong = new CtyTinLuong.clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-            DataTable dtDinhMucSanLuong = clssanluong.SelectAll();
-            dtDinhMucSanLuong.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvsanluiong = dtDinhMucSanLuong.DefaultView;
-            DataTable newdtsanluong = dvsanluiong.ToTable();
-
-            gridDinhMucSLMay_CAT.Properties.DataSource = newdtsanluong;
+             
+            gridDinhMucSLMay_CAT.Properties.DataSource = dtSet_.Tables[5];
             gridDinhMucSLMay_CAT.Properties.ValueMember = "ID_DinhMuc_Luong_SanLuong";
             gridDinhMucSLMay_CAT.Properties.DisplayMember = "MaDinhMuc";
             
@@ -1449,11 +1430,11 @@ namespace CtyTinLuong
 
         private void dteNgayLap_EditValueChanged(object sender, EventArgs e)
         {
+            dteNgaySanXuat_May_IN.EditValue = dteNgayLap.EditValue;
+            
             if (UC_SanXuat_PhieuSanXuat.mb_ThemMoi_SoPhieu == true)
             {
-                dteNgaySanXuat_May_IN.EditValue = dteNgayLap.EditValue;
                 dteNgaySanXuat_May_CAT.EditValue = dteNgayLap.EditValue;
-                
             }
         }
 
@@ -2065,7 +2046,7 @@ namespace CtyTinLuong
 
         private void gridMaCongNhan_May_CAT_QueryPopUp(object sender, CancelEventArgs e)
         {
-
+            gridMaCongNhan_May_CAT.Properties.View.Columns[0].Visible = false;
         }
 
         private void txtSanLuongTong_May_CAT_TextChanged(object sender, EventArgs e)
