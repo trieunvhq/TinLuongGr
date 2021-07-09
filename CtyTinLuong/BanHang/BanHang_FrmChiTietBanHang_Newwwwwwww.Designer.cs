@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -1243,13 +1242,14 @@
             this.txtsochungtu_tbThuChi.ReadOnly = true;
             this.txtsochungtu_tbThuChi.Size = new System.Drawing.Size(25, 20);
             this.txtsochungtu_tbThuChi.TabIndex = 97;
+            this.txtsochungtu_tbThuChi.Visible = false;
             // 
             // checkBaoVe_LaiXe
             // 
             this.checkBaoVe_LaiXe.AutoSize = true;
             this.checkBaoVe_LaiXe.Checked = true;
             this.checkBaoVe_LaiXe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(267, 638);
+            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(433, 636);
             this.checkBaoVe_LaiXe.Name = "checkBaoVe_LaiXe";
             this.checkBaoVe_LaiXe.Size = new System.Drawing.Size(87, 17);
             this.checkBaoVe_LaiXe.TabIndex = 119;
