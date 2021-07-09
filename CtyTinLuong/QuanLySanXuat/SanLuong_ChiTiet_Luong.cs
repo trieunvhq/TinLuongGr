@@ -430,27 +430,71 @@ namespace CtyTinLuong
 
         private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void gridCongNhan_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void gridCongNhan_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridCongNhan.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
