@@ -238,18 +238,13 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                btLayDuLieu.Focus();
-                btLayDuLieu_Click(null, null);
-            }
         }
 
         private void gridMaVT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                dteTuNgay.Focus();
             }
         }
 
@@ -270,7 +265,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                btLayDuLieu.Focus();
             }
         }
 
@@ -335,6 +330,30 @@ namespace CtyTinLuong
                 msDonViTinh = txtDVT.Text.ToString();
                 frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww ff = new frmPrint_Nhap_Xuat_Ton_ChiTiet_Mot_VatTu_newwwwwwwwwwwwww();
                 ff.Show();
+            }
+        }
+
+        private void txtTenDaiLy_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenVT_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
 
