@@ -1152,6 +1152,14 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
