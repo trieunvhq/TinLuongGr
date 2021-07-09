@@ -64,25 +64,10 @@ namespace CtyTinLuong
             gridMaVT.DataSource = newdtvthh;
             gridMaVT.ValueMember = "ID_VTHH";
             gridMaVT.DisplayMember = "MaVT";
-
-            dtNgayDau = DateTime.Now; 
-            cbNgay.Text = dtNgayDau.ToString("dd/MM/yyyy");
-            LoadCombobox(); 
-            cbNgay.SelectedIndex = 200;  
+             
+            cbNgay.EditValue =DateTime.Now;
         }
-        DateTime dtNgayDau;
-        private void LoadCombobox()
-        {
-            DateTime dt_ = dtNgayDau.AddDays(-200);
-
-            List<string> _lst_combobox = new List<string>();
-            for (int i = 0; i < 400; ++i)
-            {
-                _lst_combobox.Add(dtNgayDau.ToString("dd/MM/yyyy"));
-                dtNgayDau = dtNgayDau.AddDays(1);
-            }
-            cbNgay.DataSource = _lst_combobox;
-        } 
+       
         private void HienThiGridControl_2(int xxID_nhapkho)
         {
 
@@ -112,8 +97,9 @@ namespace CtyTinLuong
             Load_LockUp();            
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-60);
-            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime); 
-            
+            Load_DaTa(cbNgay.DateTime, cbNgay.DateTime);
+            //Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+
             mbThemMoi_nhapKhoDaiLy = false;
         }
 
@@ -162,7 +148,8 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                // Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Load_DaTa(cbNgay.DateTime, cbNgay.DateTime);
             }
         }
 
@@ -251,38 +238,9 @@ namespace CtyTinLuong
             }
         }
 
-        private void cbNgay_CursorChanged(object sender, EventArgs e)
+        private void cbNgay_DateTimeChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbNgay_DropDown(object sender, EventArgs e)
-        {
-            try {
-                string[] str_ = cbNgay.Text.Split('/');
-                dtNgayDau = new DateTime(Convert.ToInt16( str_[2]), Convert.ToInt16(str_[1]), Convert.ToInt16(str_[0]));
-            }
-            catch { dtNgayDau = DateTime.Now;
-                cbNgay.Text = dtNgayDau.ToString("dd/MM/yyyy");
-            }
-            LoadCombobox();
-        }
-
-        private void cbNgay_TextChanged(object sender, EventArgs e)
-        {
-            string str_ = cbNgay.Text;
-            if(str_.Length==1)
-            {
-
-            }
-            else if (str_.Length == 21)
-            {
-
-            }
-            else if (str_.Length == 3)
-            {
-
-            }
+            btLayDuLieu_Click(null, null);
         }
     }
 }
