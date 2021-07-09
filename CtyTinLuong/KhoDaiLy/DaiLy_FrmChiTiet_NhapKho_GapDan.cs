@@ -611,7 +611,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtThamChieu.Focus();
+                gridNguoiLap.Focus();
             }
         }
 
@@ -627,7 +627,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenNguoiLap.Focus();
+                txtDienGiai.Focus();
             }
         }
 
@@ -651,7 +651,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtDienGiaiDMNPL.Focus();
+                txtSoLuongXuat.Focus();
             }
         }
 
@@ -731,7 +731,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTongTienHang.Focus();
+                txtNguoiNhanHang.Focus();
             }
         }
 
@@ -765,6 +765,14 @@ namespace CtyTinLuong
             {
                 int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 Hienthi_Lable_TonKho(xxID);
+            }
+        }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
 
