@@ -751,6 +751,22 @@ namespace CtyTinLuong
             gridMaCN.Properties.View.Columns[0].Visible = false;
         }
 
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void btThoat2222_Click(object sender, EventArgs e)
         {
             this.Close();

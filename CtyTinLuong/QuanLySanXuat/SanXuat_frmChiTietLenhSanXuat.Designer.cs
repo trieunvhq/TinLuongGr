@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -36,6 +37,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmChiTietLenhSanXuat));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridMaCN = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridMaNguoiLap = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clID_NhanSu3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +66,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
@@ -98,12 +102,11 @@
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
-            this.gridMaCN = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaCN.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaNguoiLap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaCaTruong.Properties)).BeginInit();
@@ -120,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
@@ -128,9 +132,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_maPhieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaCN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -162,6 +163,27 @@
             this.layoutControl1.Size = new System.Drawing.Size(1126, 135);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gridMaCN
+            // 
+            this.gridMaCN.Location = new System.Drawing.Point(91, 51);
+            this.gridMaCN.Name = "gridMaCN";
+            this.gridMaCN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridMaCN.Properties.PopupView = this.searchLookUpEdit1View;
+            this.gridMaCN.Size = new System.Drawing.Size(332, 20);
+            this.gridMaCN.StyleController = this.layoutControl1;
+            this.gridMaCN.TabIndex = 19;
+            this.gridMaCN.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaCN_QueryPopUp);
+            this.gridMaCN.EditValueChanged += new System.EventHandler(this.gridMaCN_EditValueChanged);
+            this.gridMaCN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaCN_KeyPress);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // gridMaNguoiLap
             // 
@@ -446,6 +468,15 @@
             this.layoutControlItem10.Text = "Mã người lập";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(86, 13);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.gridMaCN;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 49);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(425, 24);
+            this.layoutControlItem4.Text = "Mã Công nhân";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(86, 13);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.gridControl1);
@@ -472,6 +503,7 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1,
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -514,6 +546,7 @@
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.OptionsView.ShowIndicator = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             // 
             // gridBand2
             // 
@@ -866,36 +899,6 @@
             this.btLuu_Dong.Text = "Lưu";
             this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
-            // gridMaCN
-            // 
-            this.gridMaCN.Location = new System.Drawing.Point(91, 51);
-            this.gridMaCN.Name = "gridMaCN";
-            this.gridMaCN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaCN.Properties.PopupView = this.searchLookUpEdit1View;
-            this.gridMaCN.Size = new System.Drawing.Size(332, 20);
-            this.gridMaCN.StyleController = this.layoutControl1;
-            this.gridMaCN.TabIndex = 19;
-            this.gridMaCN.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaCN_QueryPopUp);
-            this.gridMaCN.EditValueChanged += new System.EventHandler(this.gridMaCN_EditValueChanged);
-            this.gridMaCN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaCN_KeyPress);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.gridMaCN;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 49);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(425, 24);
-            this.layoutControlItem4.Text = "Mã Công nhân";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(86, 13);
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
             // SanXuat_frmChiTietLenhSanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -913,11 +916,13 @@
             this.MinimizeBox = false;
             this.Name = "SanXuat_frmChiTietLenhSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Chi tiết Lệnh sản xuất";
+            this.Text = "SanXuat_frmChiTietLenhSanXuat-->Chi tiết Lệnh sản xuất";
             this.Load += new System.EventHandler(this.SanXuat_frmChiTietLenhSanXuat_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaCN.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaNguoiLap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaCaTruong.Properties)).EndInit();
@@ -934,6 +939,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
@@ -942,9 +948,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_maPhieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaCN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }

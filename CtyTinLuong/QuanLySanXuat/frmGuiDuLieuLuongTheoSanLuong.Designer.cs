@@ -84,6 +84,7 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(256, 20);
             this.txtNam.TabIndex = 103;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // txtThang
             // 
@@ -91,6 +92,7 @@
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(256, 20);
             this.txtThang.TabIndex = 102;
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
             // 
             // btThoat2222
             // 
@@ -186,7 +188,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGuiDuLieuLuongTheoSanLuong";
-            this.Text = this.Name+"-->frmGuiDuLieuLuongTheoSanLuong";
+            this.Text = "frmGuiDuLieuLuongTheoSanLuong-->frmGuiDuLieuLuongTheoSanLuong";
             this.Load += new System.EventHandler(this.frmGuiDuLieuLuongTheoSanLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
