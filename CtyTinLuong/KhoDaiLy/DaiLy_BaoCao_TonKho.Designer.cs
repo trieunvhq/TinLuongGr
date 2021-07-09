@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_BaoCao_TonKho));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -160,6 +161,7 @@
             this.gridControl2.TabIndex = 108;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // gridView2
             // 
@@ -183,6 +185,7 @@
             this.gridView2.OptionsView.RowAutoHeight = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView2_KeyPress);
             this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
             // clSTT2
@@ -374,6 +377,7 @@
             this.gridControl1.TabIndex = 105;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -406,6 +410,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clSTT

@@ -512,6 +512,7 @@
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
             this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
+            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clTiLe1
             // 
@@ -836,6 +837,7 @@
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
             this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             this.gridView2.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView2_CustomRowFilter);
+            this.gridView2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView2_KeyPress);
             // 
             // clSTT2
             // 
@@ -1093,7 +1095,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_ChiTietChoXuatKho_Moi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Chi Tiết Xuất Kho";
+            this.Text = "DaiLy_ChiTietChoXuatKho_Moi-->Chi Tiết Xuất Kho";
             this.Load += new System.EventHandler(this.DaiLy_ChiTietChoXuatKho_Moi_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

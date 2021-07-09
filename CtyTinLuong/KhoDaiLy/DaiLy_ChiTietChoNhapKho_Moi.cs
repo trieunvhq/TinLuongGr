@@ -802,7 +802,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtThamChieu.Focus();
+                gridNguoiLap.Focus();
             }
         }
 
@@ -818,7 +818,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenNguoiLap.Focus();
+                gridMaDaiLy.Focus();
             }
         }
 
@@ -834,7 +834,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenDaiLy.Focus();
+                txtDienGiai.Focus();
             }
         }
 
@@ -938,7 +938,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtDienGiaiDMNPL.Focus();
+                txtSoLuongThanhPhamQuyDoi.Focus();
             }
         }
 
@@ -962,7 +962,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenThanhPhamQuyDoi.Focus();
+                txtDonGiaThanhPhamQuyDoi.Focus();
             }
         }
 
@@ -986,7 +986,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTongTienHang.Focus();
+                txtGhiChu.Focus();
             }
         }
 
@@ -1002,7 +1002,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTongSoKG.Focus();
+                SendKeys.Send("{TAB}");
             }
         }
 
@@ -1010,7 +1010,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                btLuu_Dong.Focus();
+                SendKeys.Send("{TAB}");
             }
         }
 
@@ -1025,6 +1025,22 @@ namespace CtyTinLuong
                 }
                 catch { }
                
+            }
+        }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
 

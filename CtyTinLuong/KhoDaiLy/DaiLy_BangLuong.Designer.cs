@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiLy_BangLuong));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnTungDL = new DevExpress.XtraEditors.SimpleButton();
             this.btPrint_ALL = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -74,7 +76,6 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnTungDL = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -128,6 +129,19 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnTungDL
+            // 
+            this.btnTungDL.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTungDL.Appearance.Options.UseFont = true;
+            this.btnTungDL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTungDL.ImageOptions.Image")));
+            this.btnTungDL.Location = new System.Drawing.Point(882, 634);
+            this.btnTungDL.Name = "btnTungDL";
+            this.btnTungDL.Size = new System.Drawing.Size(136, 22);
+            this.btnTungDL.StyleController = this.layoutControl1;
+            this.btnTungDL.TabIndex = 120;
+            this.btnTungDL.Text = "Print từng đại lý";
+            this.btnTungDL.Click += new System.EventHandler(this.btnTungDL_Click);
+            // 
             // btPrint_ALL
             // 
             this.btPrint_ALL.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,6 +167,7 @@
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
+            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // gridView2
             // 
@@ -184,6 +199,7 @@
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView2_KeyPress);
             // 
             // clSTT2
             // 
@@ -344,6 +360,7 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -371,6 +388,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             // 
             // clSTT
             // 
@@ -492,9 +510,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -609,19 +627,6 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // btnTungDL
-            // 
-            this.btnTungDL.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTungDL.Appearance.Options.UseFont = true;
-            this.btnTungDL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnTungDL.Location = new System.Drawing.Point(882, 634);
-            this.btnTungDL.Name = "btnTungDL";
-            this.btnTungDL.Size = new System.Drawing.Size(136, 22);
-            this.btnTungDL.StyleController = this.layoutControl1;
-            this.btnTungDL.TabIndex = 120;
-            this.btnTungDL.Text = "Print từng đại lý";
-            this.btnTungDL.Click += new System.EventHandler(this.btnTungDL_Click);
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnTungDL;
@@ -639,7 +644,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_BangLuong";
-            this.Text = this.Name+"-->Bảng Thanh Toán Lương Đại Lý";
+            this.Text = "DaiLy_BangLuong-->Bảng Thanh Toán Lương Đại Lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DaiLy_BangLuong_Load);
             this.groupBox1.ResumeLayout(false);
