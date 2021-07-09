@@ -100,6 +100,7 @@ namespace CtyTinLuong
                 SoLuong_TonDauKy = SoLuong_NhapTruocKy - SoLuong_XuatTruocKy;
                 _ravi["DienGiai"] = "Tồn đầu kỳ";
                 _ravi["Ton"] = SoLuong_TonDauKy;
+                _ravi["NgayChungTu"] = dt_NhapTruoc.Rows[0]["NgayChungTu"].ToString();
                 dt2xxxx.Rows.Add(_ravi);
             }
             else if (dt_XuatTruoc.Rows.Count > 0)
@@ -109,6 +110,7 @@ namespace CtyTinLuong
                 SoLuong_TonDauKy = -SoLuong_XuatTruocKy;
                 _ravi["DienGiai"] = "Tồn đầu kỳ";
                 _ravi["Ton"] = SoLuong_TonDauKy;
+                _ravi["NgayChungTu"] = dt_XuatTruoc.Rows[0]["NgayChungTu"].ToString();
                 dt2xxxx.Rows.Add(_ravi);
             }
 
