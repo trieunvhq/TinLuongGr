@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
@@ -798,45 +799,27 @@ namespace CtyTinLuong
         }
         private void Load_LockUp()
         {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-            
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-            clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dtcon = clscon.SelectAll();
-            dtcon.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-            DataView dvcon = dtcon.DefaultView;
-            DataTable newdtcon = dvcon.ToTable();
-
-            gridTaiKhoan.DataSource = newdtcon;
+            clsThin clsThin_ = new clsThin();
+            DataSet dtSet_ = clsThin_.T_LockUp_frmChiTietMuaHang3333333333();
+              
+            repositoryItemSearchLookUpEdit1.DataSource = dtSet_.Tables[0];
+            repositoryItemSearchLookUpEdit1.ValueMember = "ID_VTHH";
+            repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
+             
+            gridTaiKhoan.DataSource = dtSet_.Tables[1];
             gridTaiKhoan.ValueMember = "ID_TaiKhoanKeToanCon";
             gridTaiKhoan.DisplayMember = "SoTaiKhoanCon";
-
-            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
-
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+             
+            gridNguoiLap.Properties.DataSource = dtSet_.Tables[2];
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
-
-            clsTbNhaCungCap cls = new clsTbNhaCungCap();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable newdt = dv.ToTable();
-
-            gridNCC.Properties.DataSource = newdt;
+             
+            gridNCC.Properties.DataSource = dtSet_.Tables[3];
             gridNCC.Properties.ValueMember = "ID_NhaCungCap";
             gridNCC.Properties.DisplayMember = "MaNhaCungCap";
+
+            dtSet_.Dispose();
+            clsThin_.Dispose();
         }
         public frmChiTietMuaHang3333333333()
         {
@@ -978,30 +961,22 @@ namespace CtyTinLuong
             double fffthanhtien = 0;
             if (e.Column == clID_VTHH)
             {
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
-                if (dt != null)
-                {
-                    
-                    gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                    gridView4.SetRowCellValue(e.RowHandle, clSoLuong, 0);
-                    gridView4.SetRowCellValue(e.RowHandle, clDonGia, 0);
+                gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, sTenVTHH);
+                gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, sDonViTinh);
+                gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                gridView4.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+                gridView4.SetRowCellValue(e.RowHandle, clDonGia, 0);
 
-                    if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
-                        ffdongia = 0;
-                    else
-                        ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
-                    if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
-                        fffsoluong = 0;
-                    else
-                        fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
-                    fffthanhtien = fffsoluong * ffdongia;
-                    gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
-                }
+                if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
 
             if (e.Column == clSoLuong)
@@ -1437,6 +1412,26 @@ namespace CtyTinLuong
                 e.Visible = false;
                 e.Handled = true;
             }
+        }
+
+        int iID_VTHH;
+        string sMaVT, sTenVTHH, sDonViTinh;
+        private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+            iID_VTHH = Convert.ToInt32(row["ID_VTHH"].ToString());
+            sTenVTHH = row["TenVTHH"].ToString();
+            sDonViTinh = row["DonViTinh"].ToString();
+        }
+
+        private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+                ((SearchLookUpEdit)sender).Properties.View.Columns[3].Visible = false;
+            }
+            catch { }
         }
 
         private void txtTongTienHangCoVAT_KeyPress(object sender, KeyPressEventArgs e)

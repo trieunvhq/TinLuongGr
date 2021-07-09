@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -60,6 +59,8 @@
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -138,20 +139,22 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.checkTraLaiHangMua = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtsochungtu_tbThuChi = new System.Windows.Forms.TextBox();
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
-            this.checkTraLaiHangMua = new System.Windows.Forms.CheckBox();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.label_TonKho = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -410,7 +413,7 @@
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView4_RowClick);
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
-            this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView8_CellValueChanged);
+            this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
             this.gridView4.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView4_ValidateRow);
             this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
             this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
@@ -418,13 +421,30 @@
             // clID_VTHH
             // 
             this.clID_VTHH.Caption = "Mã VT";
-            this.clID_VTHH.ColumnEdit = this.gridMaVT;
+            this.clID_VTHH.ColumnEdit = this.repositoryItemSearchLookUpEdit1;
             this.clID_VTHH.FieldName = "ID_VTHH";
             this.clID_VTHH.Name = "clID_VTHH";
             this.clID_VTHH.OptionsColumn.FixedWidth = true;
             this.clID_VTHH.Visible = true;
             this.clID_VTHH.VisibleIndex = 1;
             this.clID_VTHH.Width = 80;
+            // 
+            // repositoryItemSearchLookUpEdit1
+            // 
+            this.repositoryItemSearchLookUpEdit1.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEdit1.Name = "repositoryItemSearchLookUpEdit1";
+            this.repositoryItemSearchLookUpEdit1.PopupView = this.repositoryItemSearchLookUpEdit1View;
+            this.repositoryItemSearchLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.repositoryItemSearchLookUpEdit1_QueryPopUp);
+            this.repositoryItemSearchLookUpEdit1.EditValueChanged += new System.EventHandler(this.repositoryItemSearchLookUpEdit1_EditValueChanged);
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // clGhiChu
             // 
@@ -449,7 +469,8 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa2,
             this.gridMaVT,
-            this.repositoryItemMemoEdit1});
+            this.repositoryItemMemoEdit1,
+            this.repositoryItemSearchLookUpEdit1});
             this.gridControl1.Size = new System.Drawing.Size(957, 256);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1305,6 +1326,17 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // checkTraLaiHangMua
+            // 
+            this.checkTraLaiHangMua.Enabled = false;
+            this.checkTraLaiHangMua.Location = new System.Drawing.Point(481, 4);
+            this.checkTraLaiHangMua.Name = "checkTraLaiHangMua";
+            this.checkTraLaiHangMua.Size = new System.Drawing.Size(474, 20);
+            this.checkTraLaiHangMua.TabIndex = 90;
+            this.checkTraLaiHangMua.Text = "checkTraLaiHangMua";
+            this.checkTraLaiHangMua.UseVisualStyleBackColor = true;
+            this.checkTraLaiHangMua.Visible = false;
+            // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -1348,6 +1380,15 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.checkTraLaiHangMua;
+            this.layoutControlItem5.Location = new System.Drawing.Point(477, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(478, 24);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // txtsochungtu_tbThuChi
             // 
             this.txtsochungtu_tbThuChi.Location = new System.Drawing.Point(577, 660);
@@ -1369,17 +1410,6 @@
             this.checkBaoVe_LaiXe.UseVisualStyleBackColor = true;
             this.checkBaoVe_LaiXe.CheckedChanged += new System.EventHandler(this.checkBaoVe_LaiXe_CheckedChanged);
             // 
-            // checkTraLaiHangMua
-            // 
-            this.checkTraLaiHangMua.Enabled = false;
-            this.checkTraLaiHangMua.Location = new System.Drawing.Point(481, 4);
-            this.checkTraLaiHangMua.Name = "checkTraLaiHangMua";
-            this.checkTraLaiHangMua.Size = new System.Drawing.Size(474, 20);
-            this.checkTraLaiHangMua.TabIndex = 90;
-            this.checkTraLaiHangMua.Text = "checkTraLaiHangMua";
-            this.checkTraLaiHangMua.UseVisualStyleBackColor = true;
-            this.checkTraLaiHangMua.Visible = false;
-            // 
             // btThemMoi
             // 
             this.btThemMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1391,15 +1421,6 @@
             this.btThemMoi.TabIndex = 91;
             this.btThemMoi.Text = "Thêm mới";
             this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.checkTraLaiHangMua;
-            this.layoutControlItem5.Location = new System.Drawing.Point(477, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(478, 24);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // label_TonKho
             // 
@@ -1432,13 +1453,15 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietMuaHang3333333333";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Chi Tiết Mua Hàng Nhập Kho";
+            this.Text = "frmChiTietMuaHang3333333333-->Chi Tiết Mua Hàng Nhập Kho";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmChiTietMuaHang3333333333_FormClosed);
             this.Load += new System.EventHandler(this.frmChiTietMuaHang3333333333_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -1598,5 +1621,7 @@
         private DevExpress.XtraEditors.SimpleButton btThemMoi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private System.Windows.Forms.Label label_TonKho;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
     }
 }

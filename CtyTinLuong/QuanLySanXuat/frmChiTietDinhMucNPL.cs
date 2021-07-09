@@ -14,8 +14,6 @@ namespace CtyTinLuong
 {
     public partial class frmChiTietDinhMucNPL : Form
     {
-        int  iID_VTHH;
-        string sMaVT, sTenVTHH, sDonViTinh;   
       //  Double fSoLuong;
         private void Luu_ThemMoi_DM_NPL()
         {
@@ -435,6 +433,8 @@ namespace CtyTinLuong
             catch { }
         }
 
+        int iID_VTHH;
+        string sMaVT, sTenVTHH, sDonViTinh;
         private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
             DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
