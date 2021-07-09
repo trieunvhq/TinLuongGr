@@ -831,13 +831,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
+    
 
         private void txtPhanTramVAT_TextChanged(object sender, EventArgs e)
         {
@@ -881,17 +875,7 @@ namespace CtyTinLuong
             gridview_ChiTietBanHang.SetRowCellValue(gridview_ChiTietBanHang.FocusedRowHandle, clSoLuong, 0);
         }
 
-        private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
-        {
-            GridView view = sender as GridView;
-            DataView dv = view.DataSource as DataView;
-            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
-            {
-                e.Visible = false;
-                e.Handled = true;
-            }
-        }
-
+      
         private void txtTongTienHangCoVAT_TextChanged(object sender, EventArgs e)
         {
             try
@@ -1134,9 +1118,116 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridview_ChiTietBanHang_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void gridview_ChiTietBanHang_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            double fffsoluong = 0;
+            double ffdongia = 0;
+            double fffthanhtien = 0;
+            if (e.Column == clID_VTHH)
+            {
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = Convert.ToInt32(gridview_ChiTietBanHang.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+                gridview_ChiTietBanHang.SetRowCellValue(e.RowHandle, clTenVTHH, cls.sTenVTHH.Value);
+                gridview_ChiTietBanHang.SetRowCellValue(e.RowHandle, clDonViTinh, cls.sDonViTinh.Value);
+                gridview_ChiTietBanHang.SetRowCellValue(e.RowHandle, clHienThi1, "1");
+                gridview_ChiTietBanHang.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+                gridview_ChiTietBanHang.SetRowCellValue(e.RowHandle, clDonGia, 0);
+
+                if (gridview_ChiTietBanHang.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridview_ChiTietBanHang.GetFocusedRowCellValue(clDonGia));
+                if (gridview_ChiTietBanHang.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridview_ChiTietBanHang.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridview_ChiTietBanHang.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+
+            if (e.Column == clSoLuong)
+            {
+                if (gridview_ChiTietBanHang.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridview_ChiTietBanHang.GetFocusedRowCellValue(clDonGia));
+                if (gridview_ChiTietBanHang.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridview_ChiTietBanHang.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridview_ChiTietBanHang.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+            if (e.Column == clDonGia)
+            {
+                if (gridview_ChiTietBanHang.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = Convert.ToDouble(gridview_ChiTietBanHang.GetFocusedRowCellValue(clDonGia));
+                if (gridview_ChiTietBanHang.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = Convert.ToDouble(gridview_ChiTietBanHang.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridview_ChiTietBanHang.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+            double deTOngtien;
+            DataTable dataTable = (DataTable)gridControl1.DataSource;
+            string shienthi = "1";
+            object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            if (xxxx.ToString() != "")
+                deTOngtien = Convert.ToDouble(xxxx);
+            else deTOngtien = 0;
+            txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
+
+            try
+            {
+                decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
+                txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
+                double tongtienchuaVAT, tienvat;
+                tongtienchuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                tienvat = Convert.ToDouble(txtTienVAT.Text.ToString());
+                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void gridview_ChiTietBanHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void gridNguoiLap_QueryPopUp(object sender, CancelEventArgs e)
         {
             gridNguoiLap.Properties.View.Columns[0].Visible = false;
+        }
+
+        private void gridview_ChiTietBanHang_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+        {
+            GridView view = sender as GridView;
+            DataView dv = view.DataSource as DataView;
+            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
+            {
+                e.Visible = false;
+                e.Handled = true;
+            }
         }
 
         private void gridKH_QueryPopUp(object sender, CancelEventArgs e)
@@ -1152,51 +1243,11 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
+       
 
-        private void gridView4_RowClick(object sender, RowClickEventArgs e)
-        {
-            try
-            {
-                double deTOngtien;
-                DataTable dataTable = (DataTable)gridControl1.DataSource;
-                string shienthi = "1";
-                object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-                if (xxxx.ToString() != "")
-                    deTOngtien = Convert.ToDouble(xxxx);
-                else deTOngtien = 0;
-                txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
-            }
-            catch
-            {
+     
 
-            }
-        }
-
-        private void gridView4_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-            try
-            {
-                double deTOngtien;
-                DataTable dataTable = (DataTable)gridControl1.DataSource;
-                string shienthi = "1";
-                object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-                if (xxxx.ToString() != "")
-                    deTOngtien = Convert.ToDouble(xxxx);
-                else deTOngtien = 0;
-                txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
-            }
-            catch
-            {
-
-            }
-        }
+      
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
@@ -1304,7 +1355,21 @@ namespace CtyTinLuong
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                double deTOngtien;
+                DataTable dataTable = (DataTable)gridControl1.DataSource;
+                string shienthi = "1";
+                object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+                if (xxxx.ToString() != "")
+                    deTOngtien = Convert.ToDouble(xxxx);
+                else deTOngtien = 0;
+                txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
+            }
+            catch
+            {
 
+            }
         }
 
         private void txtTiGia_TextChanged(object sender, EventArgs e)
