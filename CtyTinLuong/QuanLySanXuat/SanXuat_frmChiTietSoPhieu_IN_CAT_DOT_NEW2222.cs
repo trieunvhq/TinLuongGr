@@ -155,7 +155,7 @@ namespace CtyTinLuong
               
                 Luu_Va_GuiDuLieu_May_CAT(iiiiID_SoPhieu);
                
-                MessageBox.Show("Đã lưu + và gửi dữ liệu");
+                MessageBox.Show("Đã lưu!");
             }
         }
         private void Load_lockUP_Phieu()
@@ -1542,7 +1542,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                cbCaSanXuatPhieu.Focus();
             }
         }
 
@@ -1582,7 +1582,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                dteNgaySanXuat_May_IN.Focus();
             }
         }
 
@@ -1614,7 +1614,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridHangHoaXuat_May_IN.Focus();
             }
         }
 
@@ -1638,7 +1638,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridDinhMucSLMay_IN.Focus();
             }
         }
 
@@ -1662,7 +1662,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDonGiaNhap_May_IN.Focus();
             }
         }
 
@@ -1694,7 +1694,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtSanLuong_Thuong_may_IN.Focus();
             }
         }
 
@@ -1758,7 +1758,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaCongNhan_May_IN.Focus();
             }
         }
 
@@ -1774,7 +1774,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtGhiChu_May_IN.Focus();
             }
         }
 
@@ -1798,7 +1798,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                dteNgaySanXuat_May_CAT.Focus();
             }
         }
 
@@ -1830,7 +1830,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridHangHoaXuat_May_CAT.Focus();
             }
         }
 
@@ -1854,7 +1854,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridDinhMucSLMay_CAT.Focus();
             }
         }
 
@@ -1878,7 +1878,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDonGiaNhap_May_CAT.Focus();
             }
         }
 
@@ -1910,7 +1910,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtSanLuong_Thuong_may_CAT.Focus();
             }
         }
 
@@ -1974,7 +1974,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaCongNhan_May_CAT.Focus();
             }
         }
 
@@ -1990,7 +1990,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtGhiChu_May_CAT.Focus();
             }
         }
 
