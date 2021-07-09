@@ -291,6 +291,22 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void btprint2_Click(object sender, EventArgs e)
         {
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;

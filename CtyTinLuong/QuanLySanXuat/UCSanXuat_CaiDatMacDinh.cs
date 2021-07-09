@@ -109,5 +109,13 @@ namespace CtyTinLuong
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
     }
 }

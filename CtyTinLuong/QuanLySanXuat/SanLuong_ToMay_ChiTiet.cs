@@ -131,6 +131,14 @@ namespace CtyTinLuong
             GridMaVT.Properties.View.Columns[0].Visible = false; 
         }
 
+        private void gridView2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void SanLuong_ToMay_ChiTiet_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
