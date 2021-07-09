@@ -65,7 +65,16 @@ namespace CtyTinLuong
             gridMaVT.ValueMember = "ID_VTHH";
             gridMaVT.DisplayMember = "MaVT";
 
+            DateTime dtnow = DateTime.Now.AddDays(-50);
+            string ngay_ = "/" + dtnow.Day + "/" + dtnow.Year;
+            List<string> lst_ = new List<string>();
 
+            for(int i=0;i<100;++i)
+            {
+                dtnow = dtnow.AddDays(1);
+                lst_.Add(dtnow.ToString("dd/MM/yyyy"));
+            }
+            cbNgay.DataSource = lst_;
         }
         private void HienThiGridControl_2(int xxID_nhapkho)
         {
@@ -233,6 +242,11 @@ namespace CtyTinLuong
                 int xxID = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 Hienthi_Lable_TonKho(xxID);
             }
+        }
+
+        private void cbNgay_CursorChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
