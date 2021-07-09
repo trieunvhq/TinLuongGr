@@ -877,7 +877,7 @@ namespace CtyTinLuong
 
         private void btXoa2_Click(object sender, EventArgs e)
         {
-            gridview_ChiTietBanHang.SetRowCellValue(gridview_ChiTietBanHang.FocusedRowHandle, clHienThi, "0");
+            gridview_ChiTietBanHang.SetRowCellValue(gridview_ChiTietBanHang.FocusedRowHandle, clHienThi1, "0");
             gridview_ChiTietBanHang.SetRowCellValue(gridview_ChiTietBanHang.FocusedRowHandle, clSoLuong, 0);
         }
 
