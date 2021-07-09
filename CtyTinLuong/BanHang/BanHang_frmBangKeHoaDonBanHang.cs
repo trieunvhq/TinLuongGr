@@ -13,12 +13,13 @@ namespace CtyTinLuong
 {
     public partial class BanHang_frmBangKeHoaDonBanHang : Form
     {
+        public static bool isClick = false;
         public static DateTime mdatungay,mdadenngay;
         public static DataTable mdtPrint;
         public static bool mbPrint;
         private int _SoTrang = 1, _SoDong=20;
         private bool isload = false;
-
+        public static int miiiID_BanHang;
         private void HienThi_Gridcontrol_2(int xxID_banHang)
         {
             grid_ChiTiet.DataSource = null;
@@ -120,9 +121,9 @@ namespace CtyTinLuong
 
         private void gridView_banhang_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView_banhang.GetFocusedRowCellValue(ID_BanHang).ToString() != "")
+            if (gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
             {
-                int xxidbanhang = Convert.ToInt16(gridView_banhang.GetFocusedRowCellValue(ID_BanHang).ToString());
+                int xxidbanhang = Convert.ToInt16(gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString());
                 HienThi_Gridcontrol_2(xxidbanhang);
             }
         }
@@ -258,6 +259,28 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void gridView_banhang_DoubleClick(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                if (gridView_banhang.GetFocusedRowCellValue(clID_BanHang) != null)
+                {
+                    isClick = true;
+                    miiiID_BanHang = Convert.ToInt16(gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString());
+                    BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww();
+
+                    ff.Show();
+
+                }
+            }
+            catch
+            {
+
+            }
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView_Chitiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

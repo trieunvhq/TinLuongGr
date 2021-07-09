@@ -13,7 +13,7 @@ namespace CtyTinLuong
 {
     public partial class UCBanHang_BanHang : UserControl
     {
-       
+        public static bool isClick=false;
         public static int miiiID_BanHang;
 
         private void HienThi(DateTime xxtungay, DateTime xxdenngay)
@@ -121,12 +121,13 @@ namespace CtyTinLuong
             try
             {
                 if (gridView1.GetFocusedRowCellValue(clID_BanHang) != null)
-                {//msDienGiai
+                {
+                    isClick = true;
                     miiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
                     BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww();
-                    //_frmQLBH.Hide();
+                   
                     ff.Show();
-                    //_frmQLBH.Show();
+                   
                 }
             }
             catch

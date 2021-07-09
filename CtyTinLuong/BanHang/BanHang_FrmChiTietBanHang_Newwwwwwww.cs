@@ -512,7 +512,7 @@ namespace CtyTinLuong
 
         }
 
-        private void LuuDuLieu()
+        private void LuuDuLieu(int iiID_banHang__)
         {
 
             if (!KiemTraLuu()) return;
@@ -525,11 +525,11 @@ namespace CtyTinLuong
                 DataTable dtmoi = dvmoi.ToTable();
 
                 clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
-                cls1.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
+                cls1.iID_BanHang = iiID_banHang__;
                 DataTable dt1 = cls1.SelectOne();
 
                 clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-                cls.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
+                cls.iID_BanHang = iiID_banHang__;
                 cls.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls.sSoHoaDon = txtSoHoaDon.Text.ToString();
@@ -553,7 +553,7 @@ namespace CtyTinLuong
                 cls.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
                 cls.sSoCongTeNo = txtSoCont.Text;
                 cls.Update();
-                int xxIDbanhangxx = UCBanHang_BanHang.miiiID_BanHang;
+                int xxIDbanhangxx = iiID_banHang__;
                 // Insert chi tietbanhang
                 Luu_BienDongTaiKhoan(xxIDbanhangxx);
                 //Luu_TbThuChi(xxIDbanhangxx);
@@ -562,13 +562,13 @@ namespace CtyTinLuong
             }
         }
         
-        private void HienThi_Sua()
+        private void HienThi_Sua(int iiID_banHang__)
         {
             gridNguoiLap.EditValue = 11;
             checkUSD.Checked = true;
             checkBaoCo.Checked = true;
             clsBanHang_tbBanHang cls = new CtyTinLuong.clsBanHang_tbBanHang();
-            cls.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
+            cls.iID_BanHang = iiID_banHang__;
             DataTable dt = cls.SelectOne();
             if (dt.Rows[0]["MaSoCongTeNo"].ToString() != "")
                 txtMaCongTennor.Text = cls.sMaSoCongTeNo.Value;
@@ -593,7 +593,7 @@ namespace CtyTinLuong
             txtTienVAT.Text = cls.fTienVAT.Value.ToString();
             
             clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
-            cls2.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
+            cls2.iID_BanHang = iiID_banHang__;
             DataTable dt3 = cls2.Select_HienThiSuaDonHang();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietBanHang"); // ID của tbChi tiet don hàng
@@ -630,7 +630,7 @@ namespace CtyTinLuong
 
 
             clsNganHang_ChiTietBienDongTaiKhoanKeToan clstaikhoan = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            clstaikhoan.iID_ChungTu = UCBanHang_BanHang.miiiID_BanHang;
+            clstaikhoan.iID_ChungTu = iiID_banHang__;
             clstaikhoan.sSoChungTu = cls.sSoChungTu.Value;
             clstaikhoan.daNgayThang = cls.daNgayChungTu.Value;
             DataTable dttaikhoanm = clstaikhoan.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
@@ -748,8 +748,11 @@ namespace CtyTinLuong
         private void BanHang_FrmChiTietBanHang_Newwwwwwww_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();            
-            HienThi_Sua();
+            Load_LockUp();
+            if (UCBanHang_BanHang.isClick == true)
+                HienThi_Sua(UCBanHang_BanHang.miiiID_BanHang);
+            else if (BanHang_frmBangKeHoaDonBanHang.isClick == true)
+                HienThi_Sua(BanHang_frmBangKeHoaDonBanHang.miiiID_BanHang);
             txtSoChungTu.Focus();
             Cursor.Current = Cursors.Default;
         }
@@ -1209,7 +1212,10 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            LuuDuLieu();
+            if (UCBanHang_BanHang.isClick == true)
+                LuuDuLieu(UCBanHang_BanHang.miiiID_BanHang);
+            else if (BanHang_frmBangKeHoaDonBanHang.isClick == true)
+                LuuDuLieu(BanHang_frmBangKeHoaDonBanHang.miiiID_BanHang);           
         }
         
         private void checkPhieuThu_CheckedChanged(object sender, EventArgs e)
@@ -1276,21 +1282,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btBaoVe_Click(object sender, EventArgs e)
-        {
-            clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
-            cls1.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
-            DataTable dt = cls1.SelectOne();
-            cls1.Update_W_BaoVe();
-            cls1.Update_TrangThai_DaXong();
-            if (cls1.bCheck_BaoVe.Value == true & cls1.bCheck_LaiXe.Value == true & cls1.bTrangThaiBanHang.Value == true)
-            {
-                clsBanHang_ChiTietBanHang clschitiet = new clsBanHang_ChiTietBanHang();
-                clschitiet.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
-                clschitiet.Update_ALL_W_DaXong();
-            }
-            MessageBox.Show("Đã qua cửa bảo vệ");
-        }
+      
         
         private void gridKH_EditValueChanged(object sender, EventArgs e)
         {
@@ -1319,20 +1311,10 @@ namespace CtyTinLuong
             {
                 if (checkBaoVe_LaiXe.Checked == true)
                 {
-                    clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
-                    cls1.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
-                    DataTable dt = cls1.SelectOne();
-                    cls1.Update_W_BaoVe();
-                    cls1.Update_TrangThai_DaXong();
-                    cls1.Update_W_LaiXe();
-                    cls1.Update_TrangThai_DaXong();
-                    if (cls1.bTrangThaiBanHang.Value == true)
-                    {
-                        clsBanHang_ChiTietBanHang clschitiet = new clsBanHang_ChiTietBanHang();
-                        clschitiet.iID_BanHang = UCBanHang_BanHang.miiiID_BanHang;
-                        clschitiet.Update_ALL_W_DaXong();
-                    }
-                    MessageBox.Show("Đã qua cửa bảo vệ và lái xe");
+                    if (UCBanHang_BanHang.isClick == true)
+                        update_baove(UCBanHang_BanHang.miiiID_BanHang);
+                    else if (BanHang_frmBangKeHoaDonBanHang.isClick == true)
+                        update_baove(BanHang_frmBangKeHoaDonBanHang.miiiID_BanHang);
                 }
             }
             catch
@@ -1340,7 +1322,23 @@ namespace CtyTinLuong
 
             }
         }
-
+        private void update_baove(int iiID_banHang__)
+        {
+            clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+            cls1.iID_BanHang = iiID_banHang__;
+            DataTable dt = cls1.SelectOne();
+            cls1.Update_W_BaoVe();
+            cls1.Update_TrangThai_DaXong();
+            cls1.Update_W_LaiXe();
+            cls1.Update_TrangThai_DaXong();
+            if (cls1.bTrangThaiBanHang.Value == true)
+            {
+                clsBanHang_ChiTietBanHang clschitiet = new clsBanHang_ChiTietBanHang();
+                clschitiet.iID_BanHang = iiID_banHang__;
+                clschitiet.Update_ALL_W_DaXong();
+            }
+            MessageBox.Show("Đã qua cửa bảo vệ và lái xe");
+        }
         private void linkKeHoachSanXuat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             mdaNgayChungTu = dteNgayChungTu.DateTime;
