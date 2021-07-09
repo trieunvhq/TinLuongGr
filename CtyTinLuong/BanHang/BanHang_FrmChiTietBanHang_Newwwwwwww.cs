@@ -1058,7 +1058,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenKH.Focus();
+                txtDienGiai.Focus();
             }
         }
 
@@ -1074,7 +1074,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTongTienHangChuaVAT.Focus();
+                txtTiGia.Focus();
             }
         }
 

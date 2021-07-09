@@ -466,7 +466,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDienGiai.Focus();
             }
         }
 
@@ -482,7 +482,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtNguoiNhanHang.Focus();
             }
         }
 

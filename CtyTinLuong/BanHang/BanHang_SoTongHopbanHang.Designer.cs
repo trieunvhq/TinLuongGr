@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHang_SoTongHopbanHang));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.btPrint_KH = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.gridKH = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -92,7 +93,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btPrint_KH = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -161,12 +161,26 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
+            // btPrint_KH
+            // 
+            this.btPrint_KH.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint_KH.Appearance.Options.UseFont = true;
+            this.btPrint_KH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_KH.ImageOptions.Image")));
+            this.btPrint_KH.Location = new System.Drawing.Point(361, 624);
+            this.btPrint_KH.Name = "btPrint_KH";
+            this.btPrint_KH.Size = new System.Drawing.Size(170, 22);
+            this.btPrint_KH.StyleController = this.dataLayoutControl1;
+            this.btPrint_KH.TabIndex = 99;
+            this.btPrint_KH.Text = "Print_Khách hàng";
+            this.btPrint_KH.Click += new System.EventHandler(this.btPrint_KH_Click);
+            // 
             // txtTenKH
             // 
             this.txtTenKH.Location = new System.Drawing.Point(449, 28);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(468, 20);
             this.txtTenKH.TabIndex = 119;
+            this.txtTenKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKH_KeyPress);
             // 
             // gridKH
             // 
@@ -180,6 +194,7 @@
             this.gridKH.StyleController = this.dataLayoutControl1;
             this.gridKH.TabIndex = 119;
             this.gridKH.EditValueChanged += new System.EventHandler(this.gridKH_EditValueChanged);
+            this.gridKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridKH_KeyPress);
             // 
             // gridView5
             // 
@@ -243,6 +258,7 @@
             this.gridControl2.TabIndex = 98;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // gridView2
             // 
@@ -275,6 +291,7 @@
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView2_KeyPress);
             // 
             // clSTT2
             // 
@@ -429,6 +446,7 @@
             this.gridControl1.TabIndex = 98;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -466,6 +484,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             // 
             // clSTT
             // 
@@ -855,19 +874,6 @@
             this.layoutControlItem11.Text = "Tên khách hàng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(76, 13);
             // 
-            // btPrint_KH
-            // 
-            this.btPrint_KH.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint_KH.Appearance.Options.UseFont = true;
-            this.btPrint_KH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btPrint_KH.Location = new System.Drawing.Point(361, 624);
-            this.btPrint_KH.Name = "btPrint_KH";
-            this.btPrint_KH.Size = new System.Drawing.Size(170, 22);
-            this.btPrint_KH.StyleController = this.dataLayoutControl1;
-            this.btPrint_KH.TabIndex = 99;
-            this.btPrint_KH.Text = "Print_Khách hàng";
-            this.btPrint_KH.Click += new System.EventHandler(this.btPrint_KH_Click);
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btPrint_KH;
@@ -886,7 +892,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_SoTongHopbanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Sổ tổng hợp bán hàng";
+            this.Text = "BanHang_SoTongHopbanHang-->Sổ tổng hợp bán hàng";
             this.Load += new System.EventHandler(this.BanHang_SoTongHopbanHang_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
