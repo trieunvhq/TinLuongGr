@@ -329,6 +329,7 @@
             this.gridMaHang.TabIndex = 112;
             this.gridMaHang.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaHang_QueryPopUp);
             this.gridMaHang.EditValueChanged += new System.EventHandler(this.gridMaHang_EditValueChanged);
+            this.gridMaHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaHang_KeyPress);
             // 
             // gridView5
             // 
@@ -349,6 +350,7 @@
             this.gridKH.TabIndex = 111;
             this.gridKH.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridKH_QueryPopUp);
             this.gridKH.EditValueChanged += new System.EventHandler(this.gridKH_EditValueChanged);
+            this.gridKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridKH_KeyPress);
             // 
             // searchLookUpEdit1View
             // 
@@ -364,6 +366,7 @@
             this.txtDienGiai222222.Name = "txtDienGiai222222";
             this.txtDienGiai222222.Size = new System.Drawing.Size(430, 37);
             this.txtDienGiai222222.TabIndex = 110;
+            this.txtDienGiai222222.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai222222_KeyPress);
             // 
             // txtMaKeHoach
             // 
@@ -371,6 +374,7 @@
             this.txtMaKeHoach.Name = "txtMaKeHoach";
             this.txtMaKeHoach.Size = new System.Drawing.Size(243, 20);
             this.txtMaKeHoach.TabIndex = 109;
+            this.txtMaKeHoach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKeHoach_KeyPress);
             // 
             // checkHoanThanh
             // 
@@ -381,6 +385,7 @@
             this.checkHoanThanh.TabIndex = 108;
             this.checkHoanThanh.Text = "Đã Hoàn thành";
             this.checkHoanThanh.UseVisualStyleBackColor = true;
+            this.checkHoanThanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkHoanThanh_KeyPress);
             // 
             // txtSoCount
             // 
@@ -389,6 +394,7 @@
             this.txtSoCount.Size = new System.Drawing.Size(37, 20);
             this.txtSoCount.TabIndex = 107;
             this.txtSoCount.Text = "0";
+            this.txtSoCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoCount_KeyPress);
             // 
             // txtSoLuongThucGiaoHang
             // 
@@ -397,6 +403,7 @@
             this.txtSoLuongThucGiaoHang.Size = new System.Drawing.Size(269, 20);
             this.txtSoLuongThucGiaoHang.TabIndex = 106;
             this.txtSoLuongThucGiaoHang.Text = "0";
+            this.txtSoLuongThucGiaoHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongThucGiaoHang_KeyPress);
             // 
             // dteNgayGiaoHangThucTe
             // 
@@ -415,6 +422,7 @@
             this.dteNgayGiaoHangThucTe.Size = new System.Drawing.Size(59, 20);
             this.dteNgayGiaoHangThucTe.StyleController = this.layoutControl2;
             this.dteNgayGiaoHangThucTe.TabIndex = 105;
+            this.dteNgayGiaoHangThucTe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayGiaoHangThucTe_KeyPress);
             // 
             // dteNgayDuKienGiaoHang
             // 
@@ -433,6 +441,7 @@
             this.dteNgayDuKienGiaoHang.Size = new System.Drawing.Size(105, 20);
             this.dteNgayDuKienGiaoHang.StyleController = this.layoutControl2;
             this.dteNgayDuKienGiaoHang.TabIndex = 104;
+            this.dteNgayDuKienGiaoHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayDuKienGiaoHang_KeyPress);
             // 
             // txtSoLuong
             // 
@@ -441,6 +450,7 @@
             this.txtSoLuong.Size = new System.Drawing.Size(243, 20);
             this.txtSoLuong.TabIndex = 103;
             this.txtSoLuong.Text = "0";
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // txtDVT
             // 
@@ -448,6 +458,7 @@
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(47, 20);
             this.txtDVT.TabIndex = 100;
+            this.txtDVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDVT_KeyPress);
             // 
             // txtTenVatTu
             // 
@@ -456,6 +467,7 @@
             this.txtTenVatTu.Name = "txtTenVatTu";
             this.txtTenVatTu.Size = new System.Drawing.Size(354, 20);
             this.txtTenVatTu.TabIndex = 100;
+            this.txtTenVatTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVatTu_KeyPress);
             // 
             // txtTenKH
             // 
@@ -463,6 +475,7 @@
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(430, 20);
             this.txtTenKH.TabIndex = 101;
+            this.txtTenKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKH_KeyPress);
             // 
             // txtGhiChu2222
             // 
@@ -471,6 +484,7 @@
             this.txtGhiChu2222.Name = "txtGhiChu2222";
             this.txtGhiChu2222.Size = new System.Drawing.Size(430, 56);
             this.txtGhiChu2222.TabIndex = 102;
+            this.txtGhiChu2222.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChu2222_KeyPress);
             // 
             // dteNgayDatHang
             // 
@@ -489,6 +503,7 @@
             this.dteNgayDatHang.Size = new System.Drawing.Size(243, 20);
             this.dteNgayDatHang.StyleController = this.layoutControl2;
             this.dteNgayDatHang.TabIndex = 30;
+            this.dteNgayDatHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayDatHang_KeyPress);
             // 
             // txtQuyCach
             // 
@@ -497,6 +512,7 @@
             this.txtQuyCach.Name = "txtQuyCach";
             this.txtQuyCach.Size = new System.Drawing.Size(430, 49);
             this.txtQuyCach.TabIndex = 23;
+            this.txtQuyCach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuyCach_KeyPress);
             // 
             // layoutControlGroup2
             // 
@@ -1686,6 +1702,7 @@
             this.pictureEdit1.Size = new System.Drawing.Size(272, 201);
             this.pictureEdit1.TabIndex = 55;
             this.pictureEdit1.DoubleClick += new System.EventHandler(this.pictureEdit1_DoubleClick);
+            this.pictureEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pictureEdit1_KeyPress);
             // 
             // context_Pic1
             // 
@@ -1718,6 +1735,7 @@
             this.pictureEdit2.Size = new System.Drawing.Size(251, 201);
             this.pictureEdit2.TabIndex = 56;
             this.pictureEdit2.DoubleClick += new System.EventHandler(this.pictureEdit2_DoubleClick);
+            this.pictureEdit2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pictureEdit2_KeyPress);
             // 
             // context_Pic2
             // 
@@ -1750,6 +1768,7 @@
             this.pictureEdit3.Size = new System.Drawing.Size(272, 195);
             this.pictureEdit3.TabIndex = 57;
             this.pictureEdit3.DoubleClick += new System.EventHandler(this.pictureEdit3_DoubleClick);
+            this.pictureEdit3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pictureEdit3_KeyPress);
             // 
             // context_Pic3
             // 
@@ -1782,6 +1801,7 @@
             this.pictureEdit4.Size = new System.Drawing.Size(251, 195);
             this.pictureEdit4.TabIndex = 58;
             this.pictureEdit4.DoubleClick += new System.EventHandler(this.pictureEdit4_DoubleClick);
+            this.pictureEdit4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pictureEdit4_KeyPress);
             // 
             // context_Pic4
             // 
@@ -1905,7 +1925,7 @@
             this.Controls.Add(this.btLuu_Copy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietKeHoachSanXuat";
-            this.Text = this.Name+"-->Chi Tiết Kế Hoạch Sản Xuất";
+            this.Text = "frmChiTietKeHoachSanXuat-->Chi Tiết Kế Hoạch Sản Xuất";
             this.Load += new System.EventHandler(this.frmChiTietKeHoachSanXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
