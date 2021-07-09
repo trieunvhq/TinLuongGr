@@ -39,7 +39,7 @@
             this.clTon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_DaiLy2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btPrint_ALL = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat2 = new DevExpress.XtraEditors.SimpleButton();
@@ -173,7 +173,7 @@
             this.gridColumn2,
             this.clTon,
             this.gridColumn3,
-            this.gridColumn4});
+            this.clID_DaiLy2});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
@@ -183,6 +183,7 @@
             this.gridView2.OptionsView.RowAutoHeight = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
             // clSTT2
             // 
@@ -248,11 +249,11 @@
             // 
             this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
             // 
-            // gridColumn4
+            // clID_DaiLy2
             // 
-            this.gridColumn4.Caption = "ID_DaiLy";
-            this.gridColumn4.FieldName = "ID_DaiLy";
-            this.gridColumn4.Name = "gridColumn4";
+            this.clID_DaiLy2.Caption = "ID_DaiLy";
+            this.clID_DaiLy2.FieldName = "ID_DaiLy";
+            this.clID_DaiLy2.Name = "clID_DaiLy2";
             // 
             // repositoryItemMemoEdit3
             // 
@@ -728,7 +729,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_BaoCao_TonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Báo Cáo Tồn Kho";
+            this.Text = "DaiLy_BaoCao_TonKho-->Báo Cáo Tồn Kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DaiLy_BaoCao_TonKho_Load);
             this.groupBox1.ResumeLayout(false);
@@ -805,7 +806,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clTon;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_DaiLy2;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

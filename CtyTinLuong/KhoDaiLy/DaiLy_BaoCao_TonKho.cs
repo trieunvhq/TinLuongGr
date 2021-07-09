@@ -306,6 +306,27 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                int miID_DaiLy = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_DaiLy2).ToString());
+                mdadenngay = dteDenNgay.DateTime;
+             
+
+                DateTime  mdatungay = dteDenNgay.DateTime.AddDays(-30);
+                mdadenngay = dteDenNgay.DateTime;
+                T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy ff
+                    = new T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy(mdatungay, mdadenngay, miID_VTHHH, miID_DaiLy);
+                //this.Hide();
+                ff.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
         private void btPrint_Click(object sender, EventArgs e)
         {
 

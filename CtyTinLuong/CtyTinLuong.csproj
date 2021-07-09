@@ -200,6 +200,12 @@
     <Compile Include="KhoDaiLy\DaiLy_ChiTietChoNhapKho_Moi.Designer.cs">
       <DependentUpon>DaiLy_ChiTietChoNhapKho_Moi.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.Designer.cs">
+      <DependentUpon>T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\Tr_frmPrint_LuongDaiLy_TrongThang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2202,6 +2208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_ChiTietChoNhapKho_Moi.resx">
       <DependentUpon>DaiLy_ChiTietChoNhapKho_Moi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.resx">
+      <DependentUpon>T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.resx">
       <DependentUpon>DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton.cs</DependentUpon>

@@ -498,7 +498,8 @@ namespace CtyTinLuong
 
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-                DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
+                T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy ff 
+                    = new T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy(mdatungay, mdadenngay, miiID_VTHH, miID_DaiLy);
                 //this.Hide();
                 ff.Show();
                 //this.Show();
