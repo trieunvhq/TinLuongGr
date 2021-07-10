@@ -179,7 +179,7 @@
             // 
             // gridMaDaiLy
             // 
-            this.gridMaDaiLy.EditValue = "All";
+            this.gridMaDaiLy.EditValue = "";
             this.gridMaDaiLy.Location = new System.Drawing.Point(65, 28);
             this.gridMaDaiLy.Name = "gridMaDaiLy";
             this.gridMaDaiLy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

@@ -18,7 +18,34 @@ namespace CtyTinLuong
         public static DataTable mdtPrint;
         public static int miiID_VTHH;    
         public static DateTime mdatungay, mdadenngay;
-   
+
+        private void Load_lockup()
+        {
+            
+            DataTable dt3 = new DataTable();
+            dt3.Columns.Add("ID_NhomVTHH", typeof(int));
+            dt3.Columns.Add("TenNhomVTHH", typeof(string));
+            DataRow row0 = dt3.NewRow();
+            DataRow row1 = dt3.NewRow();
+            DataRow row2 = dt3.NewRow();
+            DataRow row3 = dt3.NewRow();
+            row0["ID_NhomVTHH"] = 0;
+            row0["TenNhomVTHH"] = "Tất cả";
+            row1["ID_NhomVTHH"] = 5;
+            row1["TenNhomVTHH"] = "Thành phẩm";
+            row2["ID_NhomVTHH"] = 7;
+            row2["TenNhomVTHH"] = "Bán Thành phẩm";
+            row3["ID_NhomVTHH"] = 8;
+            row3["TenNhomVTHH"] = "Vật tư";
+            dt3.Rows.Add(row0);
+            dt3.Rows.Add(row1);
+            dt3.Rows.Add(row2);
+            dt3.Rows.Add(row3);
+            gridNhomVTHH.Properties.DataSource = dt3;
+            gridNhomVTHH.Properties.ValueMember = "ID_NhomVTHH";
+            gridNhomVTHH.Properties.DisplayMember = "TenNhomVTHH";
+
+        }
         private DataTable LoadDaTa_TonDauKy( DateTime xxtungay)
         {
             DataTable dt_NhapTruoc = new DataTable();
@@ -198,7 +225,7 @@ namespace CtyTinLuong
             }
             return dt2;
         }
-        private void LoadDaTa(DateTime xxtungay, DateTime xxdenngay)
+        private DataTable LoadDaTa_Lan_1(DateTime xxtungay, DateTime xxdenngay)
         {
 
             DataTable dt_TonDayKy = LoadDaTa_TonDauKy(xxtungay);
@@ -322,7 +349,39 @@ namespace CtyTinLuong
             }
             dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
             dt2 = dt2.DefaultView.ToTable();
+            return dt2;
+            
+        }
 
+        private void LoadDaTa(int xxID_MaNhomvthh,DateTime xxtungay, DateTime xxdenngay)
+        {
+
+            DataTable dt = LoadDaTa_Lan_1(xxtungay, xxdenngay);
+            DataTable dt2 = new DataTable();
+            if (xxID_MaNhomvthh == 0)
+            {
+                //dt.DefaultView.RowFilter = "ID_NhomVTHH = 5";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
+            else if (xxID_MaNhomvthh == 5)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 5";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
+            else if (xxID_MaNhomvthh == 7)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 7";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
+            else if (xxID_MaNhomvthh == 8)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 8";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("STT", typeof(string));
             dt2xx.Columns.Add("Font", typeof(string));
@@ -470,8 +529,9 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-          
-            LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            int xidnhom = Convert.ToInt32(gridNhomVTHH.EditValue.ToString());
+            LoadDaTa(xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
+           
         }
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
@@ -590,13 +650,24 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridNhomVTHH_EditValueChanged(object sender, EventArgs e)
+        {           
+                Cursor.Current = Cursors.WaitCursor;                
+                int xidnhom = Convert.ToInt32(gridNhomVTHH.EditValue.ToString());
+                LoadDaTa(xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+           
+        }
+
         private void DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            Load_lockup();
             clsNgayThang cls = new clsNgayThang();
             dteDenNgay.EditValue = DateTime.Now;
-            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);          
-            LoadDaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            gridNhomVTHH.EditValue = 0;   
+            //LoadDaTa(0,dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
     }

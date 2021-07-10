@@ -386,7 +386,7 @@ namespace CtyTinLuong
             DataTable dt2 = new DataTable();
             if (xxID_MaNhomvthh==0)
             {
-                dt.DefaultView.RowFilter = "ID_NhomVTHH = 5";
+                //dt.DefaultView.RowFilter = "ID_NhomVTHH = 5";
                 DataView dv = dt.DefaultView;
                 dt2 = dv.ToTable();
             }
@@ -662,8 +662,7 @@ namespace CtyTinLuong
             int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
             int xidnhom = Convert.ToInt32(gridNhomVTHH.EditValue.ToString());
             if (dteTuNgay.EditValue!=null & dteDenNgay.EditValue!=null)
-            {
-               
+            {               
                 LoadDaTa(xiddaily, xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
            
@@ -775,7 +774,7 @@ namespace CtyTinLuong
 
         private void gridNhomVTHH_EditValueChanged(object sender, EventArgs e)
         {
-            if(gridMaDaiLy.EditValue!=null)
+            if(gridMaDaiLy.EditValue.ToString()!="")
             {
                 Cursor.Current = Cursors.WaitCursor;
                 int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
