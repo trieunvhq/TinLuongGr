@@ -81,7 +81,7 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbNhap_Xuat_Ton.NewRow();
-
+                //_ravi["STT"] = dt3.Rows[i]["STT"].ToString();
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
@@ -119,6 +119,7 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = ds.tbNhap_Xuat_Ton.NewRow();
+                _ravi["STT"] = dt3.Rows[i]["STT"].ToString();
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
