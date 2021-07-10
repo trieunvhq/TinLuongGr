@@ -2428,6 +2428,7 @@
     <EmbeddedResource Include="NganHang_Quy\QuyNganHang_Frm_PhieuKeToan.resx">
       <DependentUpon>QuyNganHang_Frm_PhieuKeToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </EmbeddedResource>

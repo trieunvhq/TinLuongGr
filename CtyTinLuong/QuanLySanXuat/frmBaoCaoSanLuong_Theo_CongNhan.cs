@@ -19,7 +19,33 @@ namespace CtyTinLuong
         public static DateTime mdatungay, mdadenngay;
         public static int miID_CongNhan;
 
-       
+        private void Load_lockup()
+        {
+           
+            DataTable dt3 = new DataTable();
+            dt3.Columns.Add("ID_BoPhan", typeof(int));
+            dt3.Columns.Add("TenBoPhan", typeof(string));
+            DataRow row0 = dt3.NewRow();
+            DataRow row1 = dt3.NewRow();
+            DataRow row2 = dt3.NewRow();
+            DataRow row3 = dt3.NewRow();
+            row0["ID_BoPhan"] = 0;
+            row0["TenBoPhan"] = "Tất cả";
+            row1["ID_BoPhan"] = 1;
+            row1["TenBoPhan"] = "Máy In";
+            row2["ID_BoPhan"] = 2;
+            row2["TenBoPhan"] = "Máy Cắt";
+            row3["ID_BoPhan"] = 3;
+            row3["TenBoPhan"] = "Máy Đột";
+            dt3.Rows.Add(row0);
+            dt3.Rows.Add(row1);
+            dt3.Rows.Add(row2);
+            dt3.Rows.Add(row3);
+            gridBoPhan.Properties.DataSource = dt3;
+            gridBoPhan.Properties.ValueMember = "ID_BoPhan";
+            gridBoPhan.Properties.DisplayMember = "TenBoPhan";
+
+        }
         public static DateTime GetFistDayInMonth(int year, int month)
         {
             DateTime aDateTime = new DateTime(year, month, 1);
@@ -106,7 +132,7 @@ namespace CtyTinLuong
 
         }
 
-        public void LoadData(DateTime xxtungay, DateTime xxdenngay)
+        public void LoadData(int iID_BoPhan_, DateTime xxtungay, DateTime xxdenngay)
         {
 
             grid_ChiTiet.DataSource = null;
@@ -126,14 +152,20 @@ namespace CtyTinLuong
             dt2.Columns.Add("DinhMuc_KhongTang", typeof(double));
             dt2.Columns.Add("DinhMuc_Tang", typeof(double));
             dt2.Columns.Add("ThanhTien", typeof(double));
-
-
-
+            
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
             clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
             clsNhanSu_tbNhanSu clsnhansu = new clsNhanSu_tbNhanSu();
             clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-            DataTable dtxxxx = cls.SelectAll_distinct_W_ID_CongNhan_new(xxtungay, xxdenngay);
+            DataTable dtxxxx = new DataTable();
+            if (iID_BoPhan_ == 0)
+                dtxxxx = cls.SelectAll_distinct_W_ID_CongNhan_new(xxtungay, xxdenngay);
+            else if (iID_BoPhan_ == 1)
+                dtxxxx = cls.SelectAll_distinct_W_ID_CongNhan_new_May_IN(xxtungay, xxdenngay);
+            else if (iID_BoPhan_ == 2)
+                dtxxxx = cls.SelectAll_distinct_W_ID_CongNhan_new_May_CAT(xxtungay, xxdenngay);
+            else if (iID_BoPhan_ == 3)
+                dtxxxx = cls.SelectAll_distinct_W_ID_CongNhan_new_May_DOT(xxtungay, xxdenngay);
             DataRow _ravi_1 = dt2.NewRow();
             int id_congNhan_Cu_ = 0;
             for (int k = 0; k < dtxxxx.Rows.Count; k++)
@@ -175,20 +207,17 @@ namespace CtyTinLuong
                 }
 
             }
-
-
-          
-
+            
             grid_TongLuong.DataSource = dt2;
 
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (gridBoPhan.EditValue.ToString()!="" & dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                
-                LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                int iiD = Convert.ToInt32(gridBoPhan.EditValue.ToString());
+                LoadData(iiD,dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
@@ -271,10 +300,7 @@ namespace CtyTinLuong
             
         }
 
-        private void txtTimKiem_Leave(object sender, EventArgs e)
-        {
-            LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
-        }
+      
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -328,6 +354,12 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridBoPhan_EditValueChanged(object sender, EventArgs e)
+        {
+            int iiD = Convert.ToInt32(gridBoPhan.EditValue.ToString());
+            LoadData(iiD, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
         public frmBaoCaoSanLuong_Theo_CongNhan()
         {
             InitializeComponent();
@@ -339,11 +371,12 @@ namespace CtyTinLuong
             DateTime ngayhomnay = DateTime.Today;
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
             int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
-
+            Load_lockup();
+            
             dteDenNgay.DateTime = DateTime.Today;
             dteTuNgay.DateTime = GetFistDayInMonth(nam, thang);
-            
-            LoadData( dteTuNgay.DateTime, dteDenNgay.DateTime);
+            gridBoPhan.EditValue = 0;
+            //LoadData(0, dteTuNgay.DateTime, dteDenNgay.DateTime);
             gridView2.ExpandAllGroups();
             Cursor.Current = Cursors.Default;
         }
