@@ -16,37 +16,17 @@ namespace CtyTinLuong
 
         public static int miiiID_BanHang;
         public static bool mbCopY, mbThemMoi, mbSua;
-        private void HienThi()
+      
+        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-            if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
-            {
-                DateTime denngay = dteNgay.DateTime;
-                DateTime tungay = dteTuNgay.DateTime;
 
-                clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-                DataTable dt = cls.SelectAll_w_TenKH();
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'";
-                DataView dv = dt.DefaultView;
-                DataTable dt22 = dv.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
-                DataView dv2 = dt22.DefaultView;
-                dv2.Sort = " TrangThai_KhoThanhPham ASC, NgayChungTu DESC, ID_BanHang DESC";
-                DataTable dxxxx = dv2.ToTable();
-                gridControl1.DataSource = dxxxx;
-            }
-
-        }
-        private void HienThi_ALL()
-        {
             clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-            DataTable dt = cls.SelectAll_w_TenKH();
-            //dt.DefaultView.RowFilter = " ID_KhachHang!= null";
-            DataView dv2 = dt.DefaultView;
-            dv2.Sort = "TrangThai_KhoThanhPham ASC, NgayChungTu DESC, ID_BanHang DESC";
-            DataTable dxxxx = dv2.ToTable();
-            gridControl1.DataSource = dxxxx;
-        }
+            DataTable dt = cls.SA_NgayThang_(false, xxtungay, xxdenngay);
+            gridControl1.DataSource = dt;
+            dt.Dispose();
+            cls.Dispose();
 
+        }
         private void Load_LockUp()
         {
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -112,9 +92,9 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
-            dteNgay.EditValue = null;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            dteDenNgay.EditValue = DateTime.Today;
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
@@ -171,12 +151,7 @@ namespace CtyTinLuong
                     cls2.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang1).ToString());
                     cls2.Delete_W_iID_BanHang();
 
-                    if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
-                    {
-                        HienThi();
-                    }
-                    else
-                        HienThi_ALL();
+                    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã xóa");
@@ -313,10 +288,10 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                HienThi();
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }
