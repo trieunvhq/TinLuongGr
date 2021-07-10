@@ -104,6 +104,7 @@ namespace CtyTinLuong
                         cls.sTenTaiKhoanCon = txtTenTKCon.Text.ToString();
                         cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
                         cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
+                        cls.bKhoa = false;
                         cls.Insert();
                         Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã lưu");
@@ -112,6 +113,9 @@ namespace CtyTinLuong
                 }
                 else if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
                 {
+                    clsNganHang_TaiKhoanKeToanCon clsxxx = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
+                    clsxxx.iID_TaiKhoanKeToanCon= frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                    DataTable dtxx = clsxxx.SelectOne();
                     clsNganHang_TaiKhoanKeToanCon cls = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
                     cls.iID_TaiKhoanKeToanMe = Convert.ToInt16(gridTK_me.EditValue.ToString());
                     cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
@@ -121,6 +125,7 @@ namespace CtyTinLuong
                     cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
                     cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
                     cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                    cls.bKhoa = clsxxx.bKhoa.Value;
                     cls.Update();
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã lưu");
