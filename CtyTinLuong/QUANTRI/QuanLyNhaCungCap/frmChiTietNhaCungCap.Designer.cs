@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhaCungCap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
+            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.gridTKKeToan = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -69,13 +72,12 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -103,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -119,6 +122,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Controls.Add(this.btLuu);
             this.layoutControl1.Controls.Add(this.btThemMoi);
             this.layoutControl1.Controls.Add(this.btThoat);
@@ -144,6 +148,41 @@
             this.layoutControl1.Size = new System.Drawing.Size(484, 448);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btLuu
+            // 
+            this.btLuu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
+            this.btLuu.Location = new System.Drawing.Point(267, 424);
+            this.btLuu.Name = "btLuu";
+            this.btLuu.Size = new System.Drawing.Size(102, 22);
+            this.btLuu.StyleController = this.layoutControl1;
+            this.btLuu.TabIndex = 12;
+            this.btLuu.Text = "Lưu";
+            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
+            // 
+            // btThemMoi
+            // 
+            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btThemMoi.Location = new System.Drawing.Point(457, 24);
+            this.btThemMoi.Name = "btThemMoi";
+            this.btThemMoi.Size = new System.Drawing.Size(25, 22);
+            this.btThemMoi.StyleController = this.layoutControl1;
+            this.btThemMoi.TabIndex = 81;
+            this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
+            // 
+            // btThoat
+            // 
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
+            this.btThoat.Location = new System.Drawing.Point(373, 424);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(109, 22);
+            this.btThoat.StyleController = this.layoutControl1;
+            this.btThoat.TabIndex = 11;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click_2);
             // 
             // txtTenTaiKhoan
             // 
@@ -201,10 +240,10 @@
             // 
             // txtChiNhanh
             // 
-            this.txtChiNhanh.Location = new System.Drawing.Point(103, 318);
+            this.txtChiNhanh.Location = new System.Drawing.Point(103, 317);
             this.txtChiNhanh.Multiline = true;
             this.txtChiNhanh.Name = "txtChiNhanh";
-            this.txtChiNhanh.Size = new System.Drawing.Size(379, 28);
+            this.txtChiNhanh.Size = new System.Drawing.Size(379, 29);
             this.txtChiNhanh.TabIndex = 16;
             // 
             // txtTinh_ThanhPho
@@ -212,7 +251,7 @@
             this.txtTinh_ThanhPho.Location = new System.Drawing.Point(103, 285);
             this.txtTinh_ThanhPho.Multiline = true;
             this.txtTinh_ThanhPho.Name = "txtTinh_ThanhPho";
-            this.txtTinh_ThanhPho.Size = new System.Drawing.Size(379, 29);
+            this.txtTinh_ThanhPho.Size = new System.Drawing.Size(379, 28);
             this.txtTinh_ThanhPho.TabIndex = 15;
             // 
             // txtNganHang
@@ -254,10 +293,10 @@
             // 
             // checNgungTheoDoi
             // 
-            this.checNgungTheoDoi.Location = new System.Drawing.Point(2, 400);
+            this.checNgungTheoDoi.Location = new System.Drawing.Point(359, 400);
             this.checNgungTheoDoi.Name = "checNgungTheoDoi";
             this.checNgungTheoDoi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checNgungTheoDoi.Size = new System.Drawing.Size(480, 20);
+            this.checNgungTheoDoi.Size = new System.Drawing.Size(123, 20);
             this.checNgungTheoDoi.TabIndex = 9;
             this.checNgungTheoDoi.Text = "Ngừng theo dõi";
             this.checNgungTheoDoi.UseVisualStyleBackColor = true;
@@ -327,7 +366,8 @@
             this.layoutControlItem16,
             this.layoutControlItem17,
             this.layoutControlItem18,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.layoutControlItem19});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(484, 448);
@@ -377,9 +417,9 @@
             // 
             this.layoutControlItem6.Control = this.checNgungTheoDoi;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 398);
+            this.layoutControlItem6.Location = new System.Drawing.Point(357, 398);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(484, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(127, 24);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -458,7 +498,7 @@
             this.layoutControlItem12.CustomizationFormText = "Tỉnh- Thành phố";
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 283);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(484, 33);
+            this.layoutControlItem12.Size = new System.Drawing.Size(484, 32);
             this.layoutControlItem12.Text = "Tỉnh- Thành phố";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(98, 13);
             // 
@@ -466,9 +506,9 @@
             // 
             this.layoutControlItem13.Control = this.txtChiNhanh;
             this.layoutControlItem13.CustomizationFormText = "Chi nhánh";
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 316);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 315);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(484, 32);
+            this.layoutControlItem13.Size = new System.Drawing.Size(484, 33);
             this.layoutControlItem13.Text = "Chi nhánh";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(98, 13);
             // 
@@ -496,50 +536,15 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(241, 22);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(215, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(214, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btThoat
-            // 
-            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(373, 424);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(109, 22);
-            this.btThoat.StyleController = this.layoutControl1;
-            this.btThoat.TabIndex = 11;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click_2);
-            // 
-            // btLuu
-            // 
-            this.btLuu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu.Location = new System.Drawing.Point(267, 424);
-            this.btLuu.Name = "btLuu";
-            this.btLuu.Size = new System.Drawing.Size(102, 22);
-            this.btLuu.StyleController = this.layoutControl1;
-            this.btLuu.TabIndex = 12;
-            this.btLuu.Text = "Lưu";
-            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
-            // 
-            // btThemMoi
-            // 
-            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
-            this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btThemMoi.Location = new System.Drawing.Point(458, 24);
-            this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(24, 22);
-            this.btThemMoi.StyleController = this.layoutControl1;
-            this.btThemMoi.TabIndex = 81;
-            this.btThemMoi.ToolTip = "Refesh";
-            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.btThemMoi;
-            this.layoutControlItem16.Location = new System.Drawing.Point(456, 22);
+            this.layoutControlItem16.Location = new System.Drawing.Point(455, 22);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(28, 26);
+            this.layoutControlItem16.Size = new System.Drawing.Size(29, 26);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
@@ -568,6 +573,24 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(265, 26);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(2, 400);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(353, 20);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Lưu ý: Mỗi Nhà cung cấp ứng với 1 TK kế toán riêng";
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.label1;
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 398);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(357, 24);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextVisible = false;
             // 
             // frmChiTietNhaCungCap
             // 
@@ -610,6 +633,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -662,5 +686,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
     }
 }
