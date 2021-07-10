@@ -1264,6 +1264,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -1305,6 +1306,7 @@
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView1_CustomRowFilter);
+            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             // 
             // clSTT
             // 
@@ -1607,7 +1609,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Chi  Tiết Nhập Kho Đại Lý";
+            this.Text = "DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww-->Chi  Tiết Nhập Kho Đại Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_FormClosed);
             this.Load += new System.EventHandler(this.DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww_Load);
             this.groupBox3.ResumeLayout(false);

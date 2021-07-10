@@ -1314,7 +1314,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenDaiLy.Focus();
+                txtSoChungTu.Focus();
             }
         }
 
@@ -1389,6 +1389,22 @@ namespace CtyTinLuong
             {
                 int xxID = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 Hienthi_Lable_TonKho(xxID);
+            }
+        }
+
+        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridView2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
 

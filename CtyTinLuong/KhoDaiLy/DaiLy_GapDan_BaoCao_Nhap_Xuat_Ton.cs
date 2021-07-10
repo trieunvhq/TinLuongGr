@@ -420,6 +420,22 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         private void DaiLy_GapDan_BaoCao_Nhap_Xuat_Ton_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;

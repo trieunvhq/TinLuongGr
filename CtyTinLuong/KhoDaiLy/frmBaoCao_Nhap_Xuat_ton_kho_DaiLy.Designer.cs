@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -162,6 +163,7 @@
             this.txtTenDaiLy.Name = "txtTenDaiLy";
             this.txtTenDaiLy.Size = new System.Drawing.Size(646, 20);
             this.txtTenDaiLy.TabIndex = 105;
+            this.txtTenDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDaiLy_KeyPress);
             // 
             // gridMaDaiLy
             // 
@@ -175,6 +177,7 @@
             this.gridMaDaiLy.StyleController = this.dataLayoutControl1;
             this.gridMaDaiLy.TabIndex = 104;
             this.gridMaDaiLy.EditValueChanged += new System.EventHandler(this.gridMaDaiLy_EditValueChanged);
+            this.gridMaDaiLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaDaiLy_KeyPress);
             // 
             // gridLookUpEdit1View
             // 
@@ -249,6 +252,7 @@
             this.gridControl1.TabIndex = 99;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -287,6 +291,7 @@
             this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
             // gridBand6
@@ -732,7 +737,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCao_Nhap_Xuat_ton_kho_DaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Báo Cáo Nhập Xuất Tồn ";
+            this.Text = "frmBaoCao_Nhap_Xuat_ton_kho_DaiLy-->Báo Cáo Nhập Xuất Tồn ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBaoCao_Nhap_Xuat_ton_kho_DaiLy_Load);
             this.groupBox1.ResumeLayout(false);
