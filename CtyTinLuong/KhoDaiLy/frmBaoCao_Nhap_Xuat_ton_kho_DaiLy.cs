@@ -45,6 +45,30 @@ namespace CtyTinLuong
             gridMaDaiLy.Properties.DataSource = dtxx2;
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
+
+            DataTable dt3 = new DataTable();
+            dt3.Columns.Add("ID_NhomVTHH", typeof(int));          
+            dt3.Columns.Add("TenNhomVTHH", typeof(string));
+            DataRow row0 = dt3.NewRow();
+            DataRow row1 = dt3.NewRow();
+            DataRow row2 = dt3.NewRow();
+            DataRow row3 = dt3.NewRow();
+            row0["ID_NhomVTHH"] = 0;
+            row0["TenNhomVTHH"] = "Tất cả";
+            row1["ID_NhomVTHH"] = 5;
+            row1["TenNhomVTHH"] = "Thành phẩm";
+            row2["ID_NhomVTHH"] = 7;
+            row2["TenNhomVTHH"] = "Bán Thành phẩm";
+            row3["ID_NhomVTHH"] = 8;
+            row3["TenNhomVTHH"] = "Vật tư";
+            dt3.Rows.Add(row0);
+            dt3.Rows.Add(row1);
+            dt3.Rows.Add(row2);
+            dt3.Rows.Add(row3);
+            gridNhomVTHH.Properties.DataSource = dt3;
+            gridNhomVTHH.Properties.ValueMember = "ID_NhomVTHH";
+            gridNhomVTHH.Properties.DisplayMember = "TenNhomVTHH";
+
         }
         private DataTable LoadDaTa_TonDauKy(int xxID_DaiLy, DateTime xxtungay )
         {          
@@ -353,6 +377,7 @@ namespace CtyTinLuong
             dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
             dt2 = dt2.DefaultView.ToTable();
 
+       
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("STT", typeof(string));
             dt2xx.Columns.Add("Font", typeof(string));
@@ -380,10 +405,34 @@ namespace CtyTinLuong
             foundRows1 = dt2.Select(expression1);     
             if(foundRows1.Length>0)
             {
+                double TP_SoLuong_TonDauKy, TP_GiaTri_TonDauKy, TP_SoLuongNhap_TrongKy, TP_GiaTriNhap_TrongKy,
+         TP_SoLuongXuat_TrongKy, TP_GiaTriXuat_TrongKy, TP_SoLuongTon_CuoiKy, TP_GiaTriTon_CuoiKy;
+
+                TP_SoLuong_TonDauKy = Convert.ToDouble(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 5"));
+                TP_GiaTri_TonDauKy = Convert.ToDouble(dt2.Compute("sum(GiaTri_TonDauKy)", "ID_NhomVTHH = 5"));
+                TP_SoLuongNhap_TrongKy = Convert.ToDouble(dt2.Compute("sum(SoLuongNhap_TrongKy)", "ID_NhomVTHH = 5"));
+                TP_GiaTriNhap_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriNhap_TrongKy)", "ID_NhomVTHH = 5"));
+                TP_SoLuongXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(SoLuongXuat_TrongKy)", "ID_NhomVTHH = 5"));
+                TP_GiaTriXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriXuat_TrongKy)", "ID_NhomVTHH = 5"));
+                TP_SoLuongTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(SoLuongTon_CuoiKy)", "ID_NhomVTHH = 5"));
+                TP_GiaTriTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(GiaTriTon_CuoiKy)", "ID_NhomVTHH = 5"));
+
                 DataRow _ravi_TP = dt2xx.NewRow();
                 _ravi_TP["STT"] = "A";
                 _ravi_TP["Font"] = "1";
                 _ravi_TP["TenVTHH"] = "Nhóm Thành phẩm";
+                _ravi_TP["SoLuong_TonDauKy"] = TP_SoLuong_TonDauKy;
+                _ravi_TP["GiaTri_TonDauKy"] = TP_GiaTri_TonDauKy;
+
+                _ravi_TP["SoLuongNhap_TrongKy"] = TP_SoLuongNhap_TrongKy;
+                _ravi_TP["GiaTriNhap_TrongKy"] = TP_GiaTriNhap_TrongKy;
+
+                _ravi_TP["SoLuongXuat_TrongKy"] = TP_SoLuongXuat_TrongKy;
+                _ravi_TP["GiaTriXuat_TrongKy"] = TP_GiaTriXuat_TrongKy;
+
+                _ravi_TP["SoLuongTon_CuoiKy"] = TP_SoLuongTon_CuoiKy;
+                _ravi_TP["GiaTriTon_CuoiKy"] = TP_GiaTriTon_CuoiKy;
+
                 dt2xx.Rows.Add(_ravi_TP);
                 for (int i = 0; i < foundRows1.Length; i++)
                 {                 
@@ -418,10 +467,37 @@ namespace CtyTinLuong
             foundRows_BTP = dt2.Select(expression2);
             if (foundRows_BTP.Length > 0)
             {
+                double TP_SoLuong_TonDauKy, TP_GiaTri_TonDauKy, TP_SoLuongNhap_TrongKy, TP_GiaTriNhap_TrongKy,
+         TP_SoLuongXuat_TrongKy, TP_GiaTriXuat_TrongKy, TP_SoLuongTon_CuoiKy, TP_GiaTriTon_CuoiKy;
+
+                TP_SoLuong_TonDauKy = Convert.ToDouble(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 7"));
+                TP_GiaTri_TonDauKy = Convert.ToDouble(dt2.Compute("sum(GiaTri_TonDauKy)", "ID_NhomVTHH = 7"));
+                TP_SoLuongNhap_TrongKy = Convert.ToDouble(dt2.Compute("sum(SoLuongNhap_TrongKy)", "ID_NhomVTHH = 7"));
+                TP_GiaTriNhap_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriNhap_TrongKy)", "ID_NhomVTHH = 7"));
+                TP_SoLuongXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(SoLuongXuat_TrongKy)", "ID_NhomVTHH = 7"));
+                TP_GiaTriXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriXuat_TrongKy)", "ID_NhomVTHH = 7"));
+                TP_SoLuongTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(SoLuongTon_CuoiKy)", "ID_NhomVTHH = 7"));
+                TP_GiaTriTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(GiaTriTon_CuoiKy)", "ID_NhomVTHH = 7"));
+
+              
+
+
                 DataRow _ravi_BTP = dt2xx.NewRow();
                 _ravi_BTP["STT"] = "B";
                 _ravi_BTP["Font"] = "1";
                 _ravi_BTP["TenVTHH"] = "Nhóm Bán Thành phẩm";
+
+                _ravi_BTP["SoLuong_TonDauKy"] = TP_SoLuong_TonDauKy;
+                _ravi_BTP["GiaTri_TonDauKy"] = TP_GiaTri_TonDauKy;
+
+                _ravi_BTP["SoLuongNhap_TrongKy"] = TP_SoLuongNhap_TrongKy;
+                _ravi_BTP["GiaTriNhap_TrongKy"] = TP_GiaTriNhap_TrongKy;
+
+                _ravi_BTP["SoLuongXuat_TrongKy"] = TP_SoLuongXuat_TrongKy;
+                _ravi_BTP["GiaTriXuat_TrongKy"] = TP_GiaTriXuat_TrongKy;
+
+                _ravi_BTP["SoLuongTon_CuoiKy"] = TP_SoLuongTon_CuoiKy;
+                _ravi_BTP["GiaTriTon_CuoiKy"] = TP_GiaTriTon_CuoiKy;
                 dt2xx.Rows.Add(_ravi_BTP);
 
                 for (int i = 0; i < foundRows_BTP.Length; i++)
@@ -457,10 +533,34 @@ namespace CtyTinLuong
             foundRows_VT = dt2.Select(expression3);
             if (foundRows_VT.Length > 0)
             {
+                double TP_SoLuong_TonDauKy, TP_GiaTri_TonDauKy, TP_SoLuongNhap_TrongKy, TP_GiaTriNhap_TrongKy,
+         TP_SoLuongXuat_TrongKy, TP_GiaTriXuat_TrongKy, TP_SoLuongTon_CuoiKy, TP_GiaTriTon_CuoiKy;
+
+                TP_SoLuong_TonDauKy = Convert.ToDouble(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 8"));
+                TP_GiaTri_TonDauKy = Convert.ToDouble(dt2.Compute("sum(GiaTri_TonDauKy)", "ID_NhomVTHH = 8"));
+                TP_SoLuongNhap_TrongKy = Convert.ToDouble(dt2.Compute("sum(SoLuongNhap_TrongKy)", "ID_NhomVTHH = 8"));
+                TP_GiaTriNhap_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriNhap_TrongKy)", "ID_NhomVTHH = 8"));
+                TP_SoLuongXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(SoLuongXuat_TrongKy)", "ID_NhomVTHH = 8"));
+                TP_GiaTriXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriXuat_TrongKy)", "ID_NhomVTHH = 8"));
+                TP_SoLuongTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(SoLuongTon_CuoiKy)", "ID_NhomVTHH = 8"));
+                TP_GiaTriTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(GiaTriTon_CuoiKy)", "ID_NhomVTHH = 8"));
+                
+
                 DataRow _ravi_VT = dt2xx.NewRow();
                 _ravi_VT["STT"] = "C";
                 _ravi_VT["Font"] = "1";
                 _ravi_VT["TenVTHH"] = "Nhóm Vật tư";
+                _ravi_VT["SoLuong_TonDauKy"] = TP_SoLuong_TonDauKy;
+                _ravi_VT["GiaTri_TonDauKy"] = TP_GiaTri_TonDauKy;
+
+                _ravi_VT["SoLuongNhap_TrongKy"] = TP_SoLuongNhap_TrongKy;
+                _ravi_VT["GiaTriNhap_TrongKy"] = TP_GiaTriNhap_TrongKy;
+
+                _ravi_VT["SoLuongXuat_TrongKy"] = TP_SoLuongXuat_TrongKy;
+                _ravi_VT["GiaTriXuat_TrongKy"] = TP_GiaTriXuat_TrongKy;
+
+                _ravi_VT["SoLuongTon_CuoiKy"] = TP_SoLuongTon_CuoiKy;
+                _ravi_VT["GiaTriTon_CuoiKy"] = TP_GiaTriTon_CuoiKy;
                 dt2xx.Rows.Add(_ravi_VT);
                 for (int i = 0; i < foundRows_VT.Length; i++)
                 {
@@ -505,7 +605,8 @@ namespace CtyTinLuong
             dteDenNgay.EditValue = DateTime.Now;
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             Load_lockup();
-            if(DaiLy_Frm_TonKho_MotVatTu.isNXT==true)
+            gridNhomVTHH.EditValue = 0;
+            if (DaiLy_Frm_TonKho_MotVatTu.isNXT==true)
             {
                 frmQuanLyKhoDaiLy.isNXT = false;
                 gridMaDaiLy.EditValue = DaiLy_Frm_TonKho_MotVatTu.miID_DaiLy;
