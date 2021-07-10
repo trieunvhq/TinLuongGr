@@ -208,5 +208,12 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             txtTenTaiKhoan.Text = cls.sTenTaiKhoanCon.Value;
         }
+
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+            frmQuanLyTaiKhoanKeToan.mbTheMoi = true;
+            frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
+            ff.Show();
+        }
     }
 }

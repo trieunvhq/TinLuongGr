@@ -556,6 +556,7 @@
             this.btThemMoi.StyleController = this.layoutControl1;
             this.btThemMoi.TabIndex = 80;
             this.btThemMoi.ToolTip = "Refesh";
+            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // layoutControlItem18
             // 
