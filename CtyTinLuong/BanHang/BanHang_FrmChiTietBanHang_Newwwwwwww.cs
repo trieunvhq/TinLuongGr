@@ -576,6 +576,7 @@ namespace CtyTinLuong
                 Luu_BienDongTaiKhoan(xxIDbanhangxx);
                 //Luu_TbThuChi(xxIDbanhangxx);
                 Luu_Chitiet_BanHang(xxIDbanhangxx);
+                this.Close();
                 MessageBox.Show("Đã lưu");
             }
         }
