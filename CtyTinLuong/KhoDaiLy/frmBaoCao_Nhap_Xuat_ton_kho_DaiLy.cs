@@ -14,7 +14,7 @@ namespace CtyTinLuong
 {
     public partial class frmBaoCao_Nhap_Xuat_ton_kho_DaiLy : Form
     {
-        public static bool mbPrint_ALL, mbPrint_One;      
+        public static bool mbPrint_ALL, mbPrint_One, mbPrint_CoTien;      
         public static DataTable mdtPrint;
         public static int miiID_VTHH,miID_DaiLy;
         public static string msMaDaiLy, msTenDaiLy;
@@ -786,6 +786,40 @@ namespace CtyTinLuong
 
         }
 
+        private void btPrint_khongTien_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv1212 = new DataView(DatatableABC);
+            dv1212.RowFilter = filterString;
+            mdtPrint = dv1212.ToTable();
+            if (mdtPrint.Rows.Count == 0)
+                MessageBox.Show("Không có dữ liệu");
+            else
+            {
+                mbPrint_CoTien = false;
+                if (Convert.ToInt32(gridMaDaiLy.EditValue.ToString()) == 0)
+                {
+                    mbPrint_ALL = true;
+                    mbPrint_One = false;
+                }
+                else
+                {
+                    mbPrint_ALL = false;
+                    mbPrint_One = true;
+                    msMaDaiLy = gridMaDaiLy.Text.ToString();
+                    msTenDaiLy = txtTenDaiLy.Text;
+
+                }
+                mdatungay = dteTuNgay.DateTime;
+                mdadenngay = dteDenNgay.DateTime;
+
+                frmPrint_Nhap_Xuat_Ton_TongHop ff = new frmPrint_Nhap_Xuat_Ton_TongHop();
+                ff.Show();
+            }
+        }
+
         private void btRefresh_Click_1(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -845,6 +879,7 @@ namespace CtyTinLuong
                 MessageBox.Show("Không có dữ liệu");
             else
             {
+                mbPrint_CoTien = true;
                 if (Convert.ToInt32(gridMaDaiLy.EditValue.ToString())==0)
                 {
                     mbPrint_ALL = true;
