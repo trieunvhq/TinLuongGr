@@ -1170,7 +1170,7 @@ namespace CtyTinLuong
                 if (dt.Rows.Count > 0)
                 {
                     txtTenNhaCungCap.Text = dt.Rows[0]["TenNhaCungCap"].ToString();
-                    if (UCMuaHang.mbThemMoi == true)
+                    if (UCMuaHang.mbSua == false)
                     {
                         HienThi_GridConTrol_SauKhiChon();
                     }
