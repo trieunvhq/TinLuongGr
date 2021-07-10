@@ -57,6 +57,7 @@
             this.clSoTaiKhoan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenTaiKhoan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btCHiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -72,7 +73,6 @@
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -203,6 +203,8 @@
             this.clTenTaiKhoan,
             this.clKhoa});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "TenTaiKhoan", null, "(Tên Tài khoản: Count={0})")});
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
@@ -318,6 +320,12 @@
             // repositoryItemMemoEdit3
             // 
             this.repositoryItemMemoEdit3.Name = "repositoryItemMemoEdit3";
+            // 
+            // clKhoa
+            // 
+            this.clKhoa.Caption = "Khoá";
+            this.clKhoa.FieldName = "Khoa";
+            this.clKhoa.Name = "clKhoa";
             // 
             // btCHiTiet
             // 
@@ -449,12 +457,6 @@
             this.groupBox1.Size = new System.Drawing.Size(765, 662);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
-            // 
-            // clKhoa
-            // 
-            this.clKhoa.Caption = "Khoá";
-            this.clKhoa.FieldName = "Khoa";
-            this.clKhoa.Name = "clKhoa";
             // 
             // frmQuanLyTaiKhoanKeToan
             // 
