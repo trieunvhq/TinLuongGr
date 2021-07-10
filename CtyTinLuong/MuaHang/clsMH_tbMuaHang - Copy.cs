@@ -15,7 +15,73 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsMH_tbMuaHang : clsDBInteractionBase
 	{
-        //pr_MH_tbMuaHang_SelectAll_HienThi_GridConTrol
+        //pr_MH_tbMuaHang_SA_NgayThang_TraLai_True
+        public DataTable SA_NgayThang_TraLai_True(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbMuaHang_SA_NgayThang_TraLai_True]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_MH_tbMuaHang_SA_NgayThang_TraLai_True");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_MH_tbMuaHang_SA_NgayThang_TraLai_True", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataTable SA_NgayThang_TraLai_False(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_MH_tbMuaHang_SA_NgayThang_TraLai_False]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_MH_tbMuaHang_SA_NgayThang_TraLai_False");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_MH_tbMuaHang_SA_NgayThang_TraLai_False", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_HienThi_GridConTrol()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

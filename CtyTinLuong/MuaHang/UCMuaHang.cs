@@ -61,58 +61,17 @@ namespace CtyTinLuong
               
 
         }
-        private void HienThi_ALL(bool bxxTranLaiHangMua)
+        private void Load_DaTa(bool bxxTranLaiHangMua, DateTime xxtungay, DateTime xxdenngay)
         {
-
+            DataTable dt = new DataTable();
             clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
-            DataTable dt = cls.SelectAll_HienThi_GridConTrol();
             if (bxxTranLaiHangMua == true)
-                dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and CheckTraLaiNhaCungCap = True";
-            else dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false and CheckTraLaiNhaCungCap = False";
-            DataView dv = dt.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_MuaHang DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
+                dt = cls.SA_NgayThang_TraLai_True(xxtungay, xxdenngay);
+            else if (bxxTranLaiHangMua == false)
+                dt = cls.SA_NgayThang_TraLai_False(xxtungay, xxdenngay);
+            gridControl1.DataSource = dt;
         }
-        private void HienThi(bool bxxTranLaiHangMua)
-        {
-            if (dteTuNgay.EditValue != null & dteNgay.EditValue != null)
-            {
-                DateTime denngay = dteNgay.DateTime;
-                DateTime tungay = dteTuNgay.DateTime;
-
-                clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
-                DataTable dt = cls.SelectAll_HienThi_GridConTrol();
-                if (bxxTranLaiHangMua == true)
-                    dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'and CheckTraLaiNhaCungCap = True";
-                else dt.DefaultView.RowFilter = " NgayChungTu<='" + denngay + "'and CheckTraLaiNhaCungCap = False";
-              
-                DataView dv = dt.DefaultView;
-                DataTable dt22 = dv.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + tungay + "'";
-                DataView dv2 = dt22.DefaultView;
-                dv2.Sort = "NgayChungTu DESC, ID_MuaHang DESC";
-                DataTable dxxxx = dv2.ToTable();
-                gridControl1.DataSource = dxxxx;
-            }
-
-        }
-        private void Load_LockUp()
-        {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-
-        }
-
+       
         frmMuaHang2222 _frmMH;
 
         public UCMuaHang(frmMuaHang2222 frmMH)
@@ -134,17 +93,12 @@ namespace CtyTinLuong
             dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, DateTime.Now.AddDays(-10), DateTime.Now);
 
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
-            dteNgay.EditValue = null;
-            dteTuNgay.EditValue = null;
-            if(frmMuaHang2222.mbTraLaiHangMua==true)
-            HienThi_ALL(true);
-            else HienThi_ALL(false);
-
-        
-          
-            clKhongNhapKho.Caption = "Mua hàng\n nhập kho";
-            //clSoTienDaThanhToan.Caption = "Đã\nthanh toán";
+           
+            dteDenNgay.EditValue = DateTime.Today;
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteDenNgay.DateTime, dteTuNgay.DateTime);
+            
+            clKhongNhapKho.Caption = "Mua hàng\n nhập kho";           
             clTongTienHang.Caption = "Tổng\ntiền hàng";
             clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
             clGuiDuLieu.Caption = "Đã \nGửi DL";
@@ -260,9 +214,7 @@ namespace CtyTinLuong
 
 
                     MessageBox.Show("Đã xóa");
-                    if (frmMuaHang2222.mbTraLaiHangMua == true)
-                        HienThi(true);
-                    else HienThi(false);
+                    Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteDenNgay.DateTime, dteTuNgay.DateTime);
                 }
             }
                 
@@ -271,12 +223,10 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteNgay.EditValue != null & dteTuNgay.EditValue != null)
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                if (frmMuaHang2222.mbTraLaiHangMua == true)
-                    HienThi(true);
-                else HienThi(false);
+                Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteDenNgay.DateTime, dteTuNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -319,7 +269,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                dteNgay.Focus();
+                dteDenNgay.Focus();
             }
         }
 
