@@ -763,6 +763,7 @@
             this.gridNhomVTHH.Size = new System.Drawing.Size(389, 20);
             this.gridNhomVTHH.StyleController = this.dataLayoutControl1;
             this.gridNhomVTHH.TabIndex = 105;
+            this.gridNhomVTHH.EditValueChanged += new System.EventHandler(this.gridNhomVTHH_EditValueChanged);
             // 
             // gridView1
             // 

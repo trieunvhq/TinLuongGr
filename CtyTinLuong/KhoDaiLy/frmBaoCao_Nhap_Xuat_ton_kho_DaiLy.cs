@@ -258,7 +258,7 @@ namespace CtyTinLuong
             }
             return dt2;
         }
-        private void LoadDaTa(int ID_DaiLy_,DateTime xxtungay, DateTime xxdenngay)
+        private DataTable LoadDaTa_Lan_1(int ID_DaiLy_,DateTime xxtungay, DateTime xxdenngay)
         {
             
             DataTable dt_TonDayKy = LoadDaTa_TonDauKy(ID_DaiLy_, xxtungay);
@@ -376,8 +376,38 @@ namespace CtyTinLuong
 
             dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
             dt2 = dt2.DefaultView.ToTable();
+            return dt2;         
 
-       
+        }
+
+        private void LoadDaTa(int ID_DaiLy_, int xxID_MaNhomvthh, DateTime xxtungay, DateTime xxdenngay)
+        {
+            DataTable dt = LoadDaTa_Lan_1(ID_DaiLy_, xxtungay, xxdenngay);
+            DataTable dt2 = new DataTable();
+            if (xxID_MaNhomvthh==0)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 5";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
+           else if (xxID_MaNhomvthh == 5)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 5";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
+            else if (xxID_MaNhomvthh == 7)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 7";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
+            else if (xxID_MaNhomvthh == 8)
+            {
+                dt.DefaultView.RowFilter = "ID_NhomVTHH = 8";
+                DataView dv = dt.DefaultView;
+                dt2 = dv.ToTable();
+            }
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("STT", typeof(string));
             dt2xx.Columns.Add("Font", typeof(string));
@@ -397,13 +427,11 @@ namespace CtyTinLuong
 
             dt2xx.Columns.Add("SoLuongTon_CuoiKy", typeof(double));
             dt2xx.Columns.Add("GiaTriTon_CuoiKy", typeof(double));
-
-
-
+            
             string expression1 = "ID_NhomVTHH = 5";
-            DataRow[] foundRows1;           
-            foundRows1 = dt2.Select(expression1);     
-            if(foundRows1.Length>0)
+            DataRow[] foundRows1;
+            foundRows1 = dt2.Select(expression1);
+            if (foundRows1.Length > 0)
             {
                 double TP_SoLuong_TonDauKy, TP_GiaTri_TonDauKy, TP_SoLuongNhap_TrongKy, TP_GiaTriNhap_TrongKy,
          TP_SoLuongXuat_TrongKy, TP_GiaTriXuat_TrongKy, TP_SoLuongTon_CuoiKy, TP_GiaTriTon_CuoiKy;
@@ -435,7 +463,7 @@ namespace CtyTinLuong
 
                 dt2xx.Rows.Add(_ravi_TP);
                 for (int i = 0; i < foundRows1.Length; i++)
-                {                 
+                {
 
                     DataRow _ravi1 = dt2xx.NewRow();
                     _ravi1["STT"] = (i + 1).ToString();
@@ -460,7 +488,7 @@ namespace CtyTinLuong
 
                 }
             }
-            
+
 
             string expression2 = "ID_NhomVTHH = 7";
             DataRow[] foundRows_BTP;
@@ -478,10 +506,7 @@ namespace CtyTinLuong
                 TP_GiaTriXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriXuat_TrongKy)", "ID_NhomVTHH = 7"));
                 TP_SoLuongTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(SoLuongTon_CuoiKy)", "ID_NhomVTHH = 7"));
                 TP_GiaTriTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(GiaTriTon_CuoiKy)", "ID_NhomVTHH = 7"));
-
-              
-
-
+                
                 DataRow _ravi_BTP = dt2xx.NewRow();
                 _ravi_BTP["STT"] = "B";
                 _ravi_BTP["Font"] = "1";
@@ -525,7 +550,7 @@ namespace CtyTinLuong
 
                 }
             }
-                
+
 
 
             string expression3 = "ID_NhomVTHH = 8";
@@ -544,7 +569,7 @@ namespace CtyTinLuong
                 TP_GiaTriXuat_TrongKy = Convert.ToDouble(dt2.Compute("sum(GiaTriXuat_TrongKy)", "ID_NhomVTHH = 8"));
                 TP_SoLuongTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(SoLuongTon_CuoiKy)", "ID_NhomVTHH = 8"));
                 TP_GiaTriTon_CuoiKy = Convert.ToDouble(dt2.Compute("sum(GiaTriTon_CuoiKy)", "ID_NhomVTHH = 8"));
-                
+
 
                 DataRow _ravi_VT = dt2xx.NewRow();
                 _ravi_VT["STT"] = "C";
@@ -587,12 +612,11 @@ namespace CtyTinLuong
 
                 }
             }
-                
-            
+
+
             gridControl1.DataSource = dt2xx;
 
-        }      
-   
+        }
         public frmBaoCao_Nhap_Xuat_ton_kho_DaiLy()
         {
             InitializeComponent();
@@ -636,10 +660,11 @@ namespace CtyTinLuong
         private void gridMaDaiLy_EditValueChanged(object sender, EventArgs e)
         {
             int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            int xidnhom = Convert.ToInt32(gridNhomVTHH.EditValue.ToString());
             if (dteTuNgay.EditValue!=null & dteDenNgay.EditValue!=null)
             {
                
-                LoadDaTa(xiddaily, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadDaTa(xiddaily, xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
            
             if (xiddaily == 0) txtTenDaiLy.Text = "";
@@ -748,6 +773,20 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridNhomVTHH_EditValueChanged(object sender, EventArgs e)
+        {
+            if(gridMaDaiLy.EditValue!=null)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                int xidnhom = Convert.ToInt32(gridNhomVTHH.EditValue.ToString());
+                LoadDaTa(xiddaily, xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+           
+
+        }
+
         private void btRefresh_Click_1(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -759,8 +798,9 @@ namespace CtyTinLuong
         private void btLayDuLieu_Click_1(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            int xxID = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            LoadDaTa(xxID, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            int xiddaily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+            int xidnhom = Convert.ToInt32(gridNhomVTHH.EditValue.ToString());
+            LoadDaTa(xiddaily, xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
