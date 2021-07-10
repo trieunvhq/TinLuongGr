@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -321,14 +322,150 @@ namespace CtyTinLuong
             }
             dt2.DefaultView.Sort = "ID_NhomVTHH ASC, TenVTHH ASC";
             dt2 = dt2.DefaultView.ToTable();
-            gridControl1.DataSource = dt2;
-           
+
+            DataTable dt2xx = new DataTable();
+            dt2xx.Columns.Add("STT", typeof(string));
+            dt2xx.Columns.Add("Font", typeof(string));
+            dt2xx.Columns.Add("ID_VTHH", typeof(int));
+            dt2xx.Columns.Add("ID_NhomVTHH", typeof(int));
+            dt2xx.Columns.Add("MaVT", typeof(string));
+            dt2xx.Columns.Add("TenVTHH", typeof(string));
+            dt2xx.Columns.Add("DonViTinh", typeof(string));
+            dt2xx.Columns.Add("SoLuong_TonDauKy", typeof(double));
+            dt2xx.Columns.Add("GiaTri_TonDauKy", typeof(double));
+
+            dt2xx.Columns.Add("SoLuongNhap_TrongKy", typeof(double));
+            dt2xx.Columns.Add("GiaTriNhap_TrongKy", typeof(double));
+
+            dt2xx.Columns.Add("SoLuongXuat_TrongKy", typeof(double));
+            dt2xx.Columns.Add("GiaTriXuat_TrongKy", typeof(double));
+
+            dt2xx.Columns.Add("SoLuongTon_CuoiKy", typeof(double));
+            dt2xx.Columns.Add("GiaTriTon_CuoiKy", typeof(double));
+
+
+
+            string expression1 = "ID_NhomVTHH = 5";
+            DataRow[] foundRows1;
+            foundRows1 = dt2.Select(expression1);
+            if (foundRows1.Length > 0)
+            {
+                DataRow _ravi_TP = dt2xx.NewRow();
+                _ravi_TP["STT"] = "A";
+                _ravi_TP["Font"] = "1";
+                _ravi_TP["TenVTHH"] = "Nhóm Thành phẩm";
+                dt2xx.Rows.Add(_ravi_TP);
+                for (int i = 0; i < foundRows1.Length; i++)
+                {
+
+                    DataRow _ravi1 = dt2xx.NewRow();
+                    _ravi1["STT"] = (i + 1).ToString();
+                    _ravi1["ID_VTHH"] = foundRows1[i]["ID_VTHH"];
+                    _ravi1["ID_NhomVTHH"] = foundRows1[i]["ID_NhomVTHH"];
+                    _ravi1["MaVT"] = foundRows1[i]["MaVT"];
+                    _ravi1["TenVTHH"] = foundRows1[i]["TenVTHH"];
+                    _ravi1["DonViTinh"] = foundRows1[i]["DonViTinh"];
+
+                    _ravi1["SoLuong_TonDauKy"] = foundRows1[i]["SoLuong_TonDauKy"];
+                    _ravi1["GiaTri_TonDauKy"] = foundRows1[i]["GiaTri_TonDauKy"];
+
+                    _ravi1["SoLuongNhap_TrongKy"] = foundRows1[i]["SoLuongNhap_TrongKy"];
+                    _ravi1["GiaTriNhap_TrongKy"] = foundRows1[i]["GiaTriNhap_TrongKy"];
+
+                    _ravi1["SoLuongXuat_TrongKy"] = foundRows1[i]["SoLuongXuat_TrongKy"];
+                    _ravi1["GiaTriXuat_TrongKy"] = foundRows1[i]["GiaTriXuat_TrongKy"];
+
+                    _ravi1["SoLuongTon_CuoiKy"] = foundRows1[i]["SoLuongTon_CuoiKy"];
+                    _ravi1["GiaTriTon_CuoiKy"] = foundRows1[i]["GiaTriTon_CuoiKy"];
+                    dt2xx.Rows.Add(_ravi1);
+
+                }
+            }
+
+
+            string expression2 = "ID_NhomVTHH = 7";
+            DataRow[] foundRows_BTP;
+            foundRows_BTP = dt2.Select(expression2);
+            if (foundRows_BTP.Length > 0)
+            {
+                DataRow _ravi_BTP = dt2xx.NewRow();
+                _ravi_BTP["STT"] = "B";
+                _ravi_BTP["Font"] = "1";
+                _ravi_BTP["TenVTHH"] = "Nhóm Bán Thành phẩm";
+                dt2xx.Rows.Add(_ravi_BTP);
+
+                for (int i = 0; i < foundRows_BTP.Length; i++)
+                {
+                    DataRow _ravi1 = dt2xx.NewRow();
+                    _ravi1["STT"] = (i + 1).ToString();
+                    _ravi1["ID_VTHH"] = foundRows_BTP[i]["ID_VTHH"];
+                    _ravi1["ID_NhomVTHH"] = foundRows_BTP[i]["ID_NhomVTHH"];
+                    _ravi1["MaVT"] = foundRows_BTP[i]["MaVT"];
+                    _ravi1["TenVTHH"] = foundRows_BTP[i]["TenVTHH"];
+                    _ravi1["DonViTinh"] = foundRows_BTP[i]["DonViTinh"];
+
+                    _ravi1["SoLuong_TonDauKy"] = foundRows_BTP[i]["SoLuong_TonDauKy"];
+                    _ravi1["GiaTri_TonDauKy"] = foundRows_BTP[i]["GiaTri_TonDauKy"];
+
+                    _ravi1["SoLuongNhap_TrongKy"] = foundRows_BTP[i]["SoLuongNhap_TrongKy"];
+                    _ravi1["GiaTriNhap_TrongKy"] = foundRows_BTP[i]["GiaTriNhap_TrongKy"];
+
+                    _ravi1["SoLuongXuat_TrongKy"] = foundRows_BTP[i]["SoLuongXuat_TrongKy"];
+                    _ravi1["GiaTriXuat_TrongKy"] = foundRows_BTP[i]["GiaTriXuat_TrongKy"];
+
+                    _ravi1["SoLuongTon_CuoiKy"] = foundRows_BTP[i]["SoLuongTon_CuoiKy"];
+                    _ravi1["GiaTriTon_CuoiKy"] = foundRows_BTP[i]["GiaTriTon_CuoiKy"];
+                    dt2xx.Rows.Add(_ravi1);
+
+                }
+            }
+
+
+
+            string expression3 = "ID_NhomVTHH = 8";
+            DataRow[] foundRows_VT;
+            foundRows_VT = dt2.Select(expression3);
+            if (foundRows_VT.Length > 0)
+            {
+                DataRow _ravi_VT = dt2xx.NewRow();
+                _ravi_VT["STT"] = "C";
+                _ravi_VT["Font"] = "1";
+                _ravi_VT["TenVTHH"] = "Nhóm Vật tư";
+                dt2xx.Rows.Add(_ravi_VT);
+                for (int i = 0; i < foundRows_VT.Length; i++)
+                {
+                    DataRow _ravi1 = dt2xx.NewRow();
+                    _ravi1["STT"] = (i + 1).ToString();
+                    _ravi1["ID_VTHH"] = foundRows_VT[i]["ID_VTHH"];
+                    _ravi1["ID_NhomVTHH"] = foundRows_VT[i]["ID_NhomVTHH"];
+                    _ravi1["MaVT"] = foundRows_VT[i]["MaVT"];
+                    _ravi1["TenVTHH"] = foundRows_VT[i]["TenVTHH"];
+                    _ravi1["DonViTinh"] = foundRows_VT[i]["DonViTinh"];
+
+                    _ravi1["SoLuong_TonDauKy"] = foundRows_VT[i]["SoLuong_TonDauKy"];
+                    _ravi1["GiaTri_TonDauKy"] = foundRows_VT[i]["GiaTri_TonDauKy"];
+
+                    _ravi1["SoLuongNhap_TrongKy"] = foundRows_VT[i]["SoLuongNhap_TrongKy"];
+                    _ravi1["GiaTriNhap_TrongKy"] = foundRows_VT[i]["GiaTriNhap_TrongKy"];
+
+                    _ravi1["SoLuongXuat_TrongKy"] = foundRows_VT[i]["SoLuongXuat_TrongKy"];
+                    _ravi1["GiaTriXuat_TrongKy"] = foundRows_VT[i]["GiaTriXuat_TrongKy"];
+
+                    _ravi1["SoLuongTon_CuoiKy"] = foundRows_VT[i]["SoLuongTon_CuoiKy"];
+                    _ravi1["GiaTriTon_CuoiKy"] = foundRows_VT[i]["GiaTriTon_CuoiKy"];
+                    dt2xx.Rows.Add(_ravi1);
+
+                }
+            }
+
+
+            gridControl1.DataSource = dt2xx;
+
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-                e.DisplayText = (e.RowHandle + 1).ToString();
+          
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
@@ -433,6 +570,23 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string category = View.GetRowCellValue(e.RowHandle, View.Columns["Font"]).ToString();
+                if (category == "1")
+                {
+                    e.Appearance.BackColor = Color.Bisque;
+                    FontStyle fs = e.Appearance.Font.Style;
+                    fs |= FontStyle.Bold;
+                    e.Appearance.Font = new Font(e.Appearance.Font, fs);
+                }
             }
         }
 

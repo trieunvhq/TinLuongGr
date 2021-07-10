@@ -57,6 +57,7 @@
             this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.clSoLuongTon_CuoiKy = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clGiaTriTon_CuoiKy = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.dteDenNgay = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -207,7 +208,8 @@
             this.clSoLuongXuat_TrongKy,
             this.clGiaTriXuat_TrongKy,
             this.clSoLuongTon_CuoiKy,
-            this.clGiaTriTon_CuoiKy});
+            this.clGiaTriTon_CuoiKy,
+            this.bandedGridColumn1});
             this.bandedGridView1.GridControl = this.gridControl1;
             this.bandedGridView1.Name = "bandedGridView1";
             this.bandedGridView1.NewItemRowText = "Thêm mới tại đây";
@@ -217,6 +219,7 @@
             this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
+            this.bandedGridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.bandedGridView1_RowCellStyle);
             this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
@@ -248,6 +251,7 @@
             this.clSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSTT.Caption = "STT";
+            this.clSTT.FieldName = "STT";
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.FixedWidth = true;
@@ -499,6 +503,13 @@
             this.clGiaTriTon_CuoiKy.Visible = true;
             this.clGiaTriTon_CuoiKy.Width = 120;
             // 
+            // bandedGridColumn1
+            // 
+            this.bandedGridColumn1.Caption = "font";
+            this.bandedGridColumn1.FieldName = "Font";
+            this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.Visible = true;
+            // 
             // dteTuNgay
             // 
             this.dteTuNgay.EditValue = null;
@@ -705,5 +716,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
     }
 }
