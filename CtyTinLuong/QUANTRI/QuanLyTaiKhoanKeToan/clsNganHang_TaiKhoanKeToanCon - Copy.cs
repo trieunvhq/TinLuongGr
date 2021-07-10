@@ -15,7 +15,72 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsNganHang_TaiKhoanKeToanCon : clsDBInteractionBase
 	{
-        //
+        //pr_NganHang_TaiKhoanKeToanCon_Update_Khoa_True
+        public void Update_Khoa_True(int xxxID_TaiKhoanKeToanCon)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_TaiKhoanKeToanCon_Update_Khoa_True]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanCon_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxxID_TaiKhoanKeToanCon));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@sTenTaiKhoanCon", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sTenTaiKhoanCon));
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_NganHang_TaiKhoanKeToanCon_Update_Khoa_True::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+        public DataTable SA_Khoa_False()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_TaiKhoanKeToanCon_SA_Khoa_False]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_NganHang_TaiKhoanKeToanCon_SA_Khoa_False");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@sSoTaiKhoanCon", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sSoTaiKhoanCon));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_NganHang_TaiKhoanKeToanCon_SA_Khoa_False", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public bool SelectOne_SoTaiKhoanCon(string SoTaiKhoanCon)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -64,8 +129,6 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-
-
         //
         public bool SelectOne_TenTaiKhoanCon(string TenTaiKhoanCon)
         {

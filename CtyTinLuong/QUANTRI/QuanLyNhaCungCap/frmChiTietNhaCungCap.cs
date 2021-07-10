@@ -13,6 +13,14 @@ namespace CtyTinLuong
     public partial class frmChiTietNhaCungCap : Form
     {
 
+        private void Load_lockUp()
+        {
+            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+            DataTable dt = cls.SA_Khoa_False();
+            gridTKKeToan.Properties.DataSource = dt;
+            gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
+            gridTKKeToan.Properties.DisplayMember = "SoTaiKhoanCon";
+        }
         private bool KiemTraLuu()
         {
             if (txtMaNCC.Text.ToString() == "")
@@ -29,11 +37,17 @@ namespace CtyTinLuong
             else return true;
 
         }
+        private void Luu_Khoa_TaiKhoanNganHang(int xxID_TK____)
+        {
+            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+            cls.Update_Khoa_True(xxID_TK____);
+        }
         private void LuuDuLieu()
         {
             if (!KiemTraLuu()) return;
             else
             {
+                Luu_Khoa_TaiKhoanNganHang(Convert.ToInt32(gridTKKeToan.EditValue.ToString()));
                 clsTbNhaCungCap cls = new clsTbNhaCungCap();
                 cls.sMaNhaCungCap = txtMaNCC.Text.ToString();
                 cls.sMaSoThue = txtMaSoThue.Text.ToString();
@@ -148,15 +162,7 @@ namespace CtyTinLuong
         private void frmChiTietNhaCungCap_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            clsNganHang_TaiKhoanKeToanCon clsme = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dtme = clsme.SelectAll();
-            dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-            DataView dvme = dtme.DefaultView;
-            DataTable newdtme = dvme.ToTable();
-
-            gridTKKeToan.Properties.DataSource = newdtme;
-            gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
-            gridTKKeToan.Properties.DisplayMember = "SoTaiKhoanCon";
+            Load_lockUp();
 
             if (frmNhaCungCap.mbSua == true)
                 HienThi_SuaThongTin_NCC();
