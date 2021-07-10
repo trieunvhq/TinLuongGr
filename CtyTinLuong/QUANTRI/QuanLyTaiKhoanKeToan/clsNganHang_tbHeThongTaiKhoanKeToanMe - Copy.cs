@@ -15,6 +15,40 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsNganHang_tbHeThongTaiKhoanKeToanMe : clsDBInteractionBase
 	{
+        //pr_NganHang_tbHeThongTaiKhoanKeToanMe_Update_Khoa_True
+        public void Update_Khoa_True(int xxxID_TaiKhoanKeToanMe)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbHeThongTaiKhoanKeToanMe_Update_Khoa_True]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanMe_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxxID_TaiKhoanKeToanMe));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@sTenTaiKhoanCon", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sTenTaiKhoanCon));
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_NganHang_tbHeThongTaiKhoanKeToanMe_Update_Khoa_True::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         public DataTable SA_new()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
