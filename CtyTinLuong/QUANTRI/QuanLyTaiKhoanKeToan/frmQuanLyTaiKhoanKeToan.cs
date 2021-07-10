@@ -90,22 +90,31 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 bool bkhoa= Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clKhoa).ToString());
-                if (checkMe.Checked == true)
+                if (bkhoa == true)
                 {
-                    clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
-                    cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
-                    
-                    cls1.Delete_W_TonTai();
-                    MessageBox.Show("Đã xóa");
-                    Load_DaTa(true);
+                    MessageBox.Show("Dữ liệu đã khoá, không thể xoá");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Đã xóa");
-                    Load_DaTa(false);
+                    if (checkMe.Checked == true)
+                    {
+                        clsNganHang_tbHeThongTaiKhoanKeToanMe cls1 = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+                        cls1.iID_TaiKhoanKeToanMe = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
+                        cls1.Delete();
+                        MessageBox.Show("Đã xóa");
+                        Load_DaTa(true);
+                    }
+                    else
+                    {
+                        clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
+                        cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
+                        cls1.Delete();
+                        MessageBox.Show("Đã xóa");
+                        Load_DaTa(false);
+                    }
+                    Cursor.Current = Cursors.Default;
                 }
-                Cursor.Current = Cursors.Default;
-               
             }
 
         }
