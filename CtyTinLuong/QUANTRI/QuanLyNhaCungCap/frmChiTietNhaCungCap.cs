@@ -13,10 +13,13 @@ namespace CtyTinLuong
     public partial class frmChiTietNhaCungCap : Form
     {
 
-        private void Load_lockUp()
+        private void Load_lockUp(bool themmoi)
         {
+            DataTable dt = new DataTable();
             clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dt = cls.SA_Khoa_False();
+            if (themmoi == true)
+                dt = cls.SA_Khoa_False();
+            else dt = cls.SelectAll();
             gridTKKeToan.Properties.DataSource = dt;
             gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
             gridTKKeToan.Properties.DisplayMember = "SoTaiKhoanCon";
@@ -162,12 +165,18 @@ namespace CtyTinLuong
         private void frmChiTietNhaCungCap_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_lockUp();
+          
 
             if (frmNhaCungCap.mbSua == true)
+            {
+                Load_lockUp(false);
                 HienThi_SuaThongTin_NCC();
+            }
             else if (frmNhaCungCap.mbCopy == true)
+            {
+                Load_lockUp(true);
                 HienThi_SuaThongTin_NCC();
+            }
 
             Cursor.Current = Cursors.Default;
         }

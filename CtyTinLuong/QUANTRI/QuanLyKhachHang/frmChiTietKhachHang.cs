@@ -58,10 +58,13 @@ namespace CtyTinLuong
             clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
             cls.Update_Khoa_True(xxID_TK____);
         }
-        private void Load_lockUp()
+        private void Load_lockUp(bool themmoi)
         {
+            DataTable dt = new DataTable();
             clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dt = cls.SA_Khoa_False();
+            if (themmoi == true)
+                dt = cls.SA_Khoa_False();
+            else dt = cls.SelectAll();
             gridTKKeToan.Properties.DataSource = dt;
             gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
             gridTKKeToan.Properties.DisplayMember = "SoTaiKhoanCon";
@@ -177,13 +180,21 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            Load_lockUp();
+            
             if (frmKhachHang.mbSua == true)
+            {
+                Load_lockUp(false);
                 HienThi_SuaThongTin_KhachHang();
+            }
             else if (frmKhachHang.mbCopy == true)
+            {
+                Load_lockUp(true);
                 HienThi_SuaThongTin_KhachHang();
+            }
             else
-            { }
+            {
+                Load_lockUp(true);
+            }
             Cursor.Current = Cursors.Default;
         }
 
