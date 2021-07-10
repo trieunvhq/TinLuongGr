@@ -53,6 +53,11 @@ namespace CtyTinLuong
                     cls.iID_TaiKhoanKeToan = Convert.ToInt16(gridTKKeToan.EditValue.ToString());
                 if(frmNhaCungCap.mbSua==true)
                 {
+                    clsTbNhaCungCap clsxx = new clsTbNhaCungCap();
+                    clsxx.iID_NhaCungCap = frmNhaCungCap.miID_Sua_NCC;
+                    DataTable dt = clsxx.SelectOne();
+                    cls.bKhoa = clsxx.bKhoa.Value;
+
                     cls.iID_NhaCungCap = frmNhaCungCap.miID_Sua_NCC;
                     cls.Update();
                     MessageBox.Show("Đã lưu");
@@ -84,7 +89,7 @@ namespace CtyTinLuong
                         }
                     }
 
-                    //
+                    cls.bKhoa = false;
                     cls.Insert();
                     MessageBox.Show("Đã thêm mới"); 
                     this.Close();
