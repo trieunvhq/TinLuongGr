@@ -248,6 +248,8 @@
             this.clXoa.Name = "clXoa";
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.clXoa.Visible = true;
+            this.clXoa.VisibleIndex = 3;
             this.clXoa.Width = 60;
             // 
             // btXoa
@@ -309,7 +311,7 @@
             this.clTenTaiKhoan.OptionsColumn.AllowEdit = false;
             this.clTenTaiKhoan.Visible = true;
             this.clTenTaiKhoan.VisibleIndex = 2;
-            this.clTenTaiKhoan.Width = 417;
+            this.clTenTaiKhoan.Width = 536;
             // 
             // repositoryItemMemoEdit3
             // 
