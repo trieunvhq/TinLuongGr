@@ -72,6 +72,7 @@
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -199,7 +200,8 @@
             this.clXoa,
             this.clNgungTheoDoi,
             this.clSoTaiKhoan,
-            this.clTenTaiKhoan});
+            this.clTenTaiKhoan,
+            this.clKhoa});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -448,6 +450,12 @@
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             // 
+            // clKhoa
+            // 
+            this.clKhoa.Caption = "Khoá";
+            this.clKhoa.FieldName = "Khoa";
+            this.clKhoa.Name = "clKhoa";
+            // 
             // frmQuanLyTaiKhoanKeToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,5 +531,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn clKhoa;
     }
 }

@@ -83,25 +83,31 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DialogResult traloi;
-            //    traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //    if (traloi == DialogResult.OK)
-            //    {
-            //        Cursor.Current = Cursors.WaitCursor;
-            //        clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
-            //        cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
-            //        cls1.Delete_W_TonTai();
-            //        HienThi();
-            //        Cursor.Current = Cursors.Default;
-            //        MessageBox.Show("Đã xóa");
-            //    }
-            //}
-            //catch
-            //{
 
-            //}
+            DialogResult traloi;
+            traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (traloi == DialogResult.OK)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                bool bkhoa= Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clKhoa).ToString());
+                if (checkMe.Checked == true)
+                {
+                    clsNganHang_TaiKhoanKeToanCon cls1 = new clsNganHang_TaiKhoanKeToanCon();
+                    cls1.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
+                    
+                    cls1.Delete_W_TonTai();
+                    MessageBox.Show("Đã xóa");
+                    Load_DaTa(true);
+                }
+                else
+                {
+                    MessageBox.Show("Đã xóa");
+                    Load_DaTa(false);
+                }
+                Cursor.Current = Cursors.Default;
+               
+            }
+
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
