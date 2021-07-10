@@ -65,10 +65,7 @@ namespace CtyTinLuong
         {
             DataTable dt = new DataTable();
             clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
-            if (bxxTranLaiHangMua == true)
-                dt = cls.SA_NgayThang_TraLai_True(xxtungay, xxdenngay);
-            else if (bxxTranLaiHangMua == false)
-                dt = cls.SA_NgayThang_TraLai_False(xxtungay, xxdenngay);
+            dt = cls.SA_NgayThang_(bxxTranLaiHangMua, xxtungay, xxdenngay);
             gridControl1.DataSource = dt;
         }
        
@@ -89,19 +86,20 @@ namespace CtyTinLuong
 
         private void UCMuaHang_Load(object sender, EventArgs e)
         {
-            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, DateTime.Now.AddDays(-10), DateTime.Now);
+           
 
             Cursor.Current = Cursors.WaitCursor;
            
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
-            Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteDenNgay.DateTime, dteTuNgay.DateTime);
+            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+            dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, dteTuNgay.DateTime, DateTime.Now);
+
+            Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteTuNgay.DateTime, dteDenNgay.DateTime);
             
-            clKhongNhapKho.Caption = "Mua hàng\n nhập kho";           
+           
             clTongTienHang.Caption = "Tổng\ntiền hàng";
-            clNgungTheoDoi.Caption = "Bỏ\n theo dõi";
-            clGuiDuLieu.Caption = "Đã \nGửi DL";
+          
             Cursor.Current = Cursors.Default;
             dteTuNgay.Focus();
         }
@@ -214,7 +212,7 @@ namespace CtyTinLuong
 
 
                     MessageBox.Show("Đã xóa");
-                    Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteDenNgay.DateTime, dteTuNgay.DateTime);
+                    Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteTuNgay.DateTime, dteDenNgay.DateTime);
                 }
             }
                 
@@ -223,12 +221,9 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteDenNgay.DateTime, dteTuNgay.DateTime);
-                Cursor.Current = Cursors.Default;
-            }
+            Cursor.Current = Cursors.WaitCursor;
+            Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
