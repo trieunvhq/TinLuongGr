@@ -30,15 +30,15 @@ namespace CtyTinLuong
         {
             clsNganHang_tbHeThongTaiKhoanKeToanMe clsme = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
             DataTable dtme = clsme.SelectAll();
-            dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-            DataView dvme = dtme.DefaultView;
-            DataTable newdtme = dvme.ToTable();
-            gridTK_me.Properties.DataSource = newdtme;
+            //dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
+            //DataView dvme = dtme.DefaultView;
+            //DataTable newdtme = dvme.ToTable();
+            gridTK_me.Properties.DataSource = dtme;
             gridTK_me.Properties.ValueMember = "ID_TaiKhoanKeToanMe";
             gridTK_me.Properties.DisplayMember = "SoTaiKhoanMe";
             if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
             {
-                gridTK_me.EditValue = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                
                 clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
                 clscon.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
                 DataTable dtcon = clscon.SelectOne();
@@ -47,6 +47,7 @@ namespace CtyTinLuong
                 txtDienGiaiCon.Text = clscon.sDienGiaiCon.Value.ToString();
                 txtGhiChuCon.Text = clscon.sGhiChuCon.Value.ToString();
                 checkNgungTheoDoi.Checked = clscon.bNgungTheoDoi.Value;
+                gridTK_me.EditValue = clscon.iID_TaiKhoanKeToanMe.Value;
             }
         }
         private void LuuDuLieu()
