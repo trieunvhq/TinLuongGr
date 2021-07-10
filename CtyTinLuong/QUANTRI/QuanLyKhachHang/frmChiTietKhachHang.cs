@@ -76,11 +76,15 @@ namespace CtyTinLuong
                 cls.bNgungTheoDoi = checNgungTheoDoi.Checked; ;
                 cls.bTonTai = true;
                 cls.sDaiDien = txtDaiDien.Text.ToString();
-                if (gridTKKeToan.EditValue != null)
-                    cls.iID_TaiKhoanKeToan = Convert.ToInt16(gridTKKeToan.EditValue.ToString());
-                if(frmKhachHang.mbSua==true)
+                cls.iID_TaiKhoanKeToan = Convert.ToInt16(gridTKKeToan.EditValue.ToString());
+                if (frmKhachHang.mbSua==true)
                 {
+                    clsTbKhachHang clsxx = new clsTbKhachHang();
+                    clsxx.iID_KhachHang = frmKhachHang.miID_Sua_KH;
+                    DataTable dt = clsxx.SelectOne();
+                    cls.bKhoa = clsxx.bKhoa.Value;
                     cls.iID_KhachHang = frmKhachHang.miID_Sua_KH;
+                    
                     cls.Update();
                     MessageBox.Show("Đã lưu");
                     this.Close();
@@ -109,8 +113,7 @@ namespace CtyTinLuong
                             }
                         }
                     }
-
-                    //
+                    cls.bKhoa = false;
                     cls.Insert();
                     MessageBox.Show("Đã thêm mới");
                     this.Close();
