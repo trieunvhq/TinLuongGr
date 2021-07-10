@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -368,10 +369,10 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
+            //if (e.Column == clSTT)
+            //{
+            //    e.DisplayText = (e.RowHandle + 1).ToString();
+            //}
         }
 
         private void btThoat2_Click(object sender, EventArgs e)
@@ -530,6 +531,22 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.Default;
             }
 
+        }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string category = View.GetRowCellValue(e.RowHandle, View.Columns["Font"]).ToString();
+                if (category == "1")
+                {
+                    e.Appearance.BackColor = Color.Bisque;
+                    FontStyle fs = e.Appearance.Font.Style;
+                    fs |= FontStyle.Bold;
+                    e.Appearance.Font = new Font(e.Appearance.Font, fs);
+                }
+            }
         }
 
         private void btPrint_Click(object sender, EventArgs e)
