@@ -175,5 +175,14 @@ namespace CtyTinLuong
         {
 
         }
+
+        private void gridTKKeToan_EditValueChanged(object sender, EventArgs e)
+        {
+            int xxid = Convert.ToInt32(gridTKKeToan.EditValue.ToString());
+            clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+            cls.iID_TaiKhoanKeToanCon = xxid;
+            DataTable dt = cls.SelectOne();
+            txtTenTaiKhoan.Text = cls.sTenTaiKhoanCon.Value;
+        }
     }
 }
