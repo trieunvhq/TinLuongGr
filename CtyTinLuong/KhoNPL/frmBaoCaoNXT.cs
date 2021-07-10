@@ -412,6 +412,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
