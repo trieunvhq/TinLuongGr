@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietTaiKhoanKeToanCon));
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -38,7 +39,6 @@
             this.txtGhiChuCon = new System.Windows.Forms.TextBox();
             this.txtDienGiaiCon = new System.Windows.Forms.TextBox();
             this.txtSoTKCon = new System.Windows.Forms.TextBox();
-            this.txtDienGiaiMe = new System.Windows.Forms.TextBox();
             this.txtTenTKMe = new System.Windows.Forms.TextBox();
             this.gridTK_me = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -49,7 +49,6 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -64,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -112,7 +110,6 @@
             this.dataLayoutControl1.Controls.Add(this.txtGhiChuCon);
             this.dataLayoutControl1.Controls.Add(this.txtDienGiaiCon);
             this.dataLayoutControl1.Controls.Add(this.txtSoTKCon);
-            this.dataLayoutControl1.Controls.Add(this.txtDienGiaiMe);
             this.dataLayoutControl1.Controls.Add(this.txtTenTKMe);
             this.dataLayoutControl1.Controls.Add(this.gridTK_me);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -135,7 +132,7 @@
             // 
             // txtTenTKCon
             // 
-            this.txtTenTKCon.Location = new System.Drawing.Point(80, 123);
+            this.txtTenTKCon.Location = new System.Drawing.Point(80, 74);
             this.txtTenTKCon.Name = "txtTenTKCon";
             this.txtTenTKCon.Size = new System.Drawing.Size(456, 20);
             this.txtTenTKCon.TabIndex = 92;
@@ -151,34 +148,24 @@
             // 
             // txtDienGiaiCon
             // 
-            this.txtDienGiaiCon.Location = new System.Drawing.Point(80, 147);
+            this.txtDienGiaiCon.Location = new System.Drawing.Point(80, 98);
             this.txtDienGiaiCon.Multiline = true;
             this.txtDienGiaiCon.Name = "txtDienGiaiCon";
-            this.txtDienGiaiCon.Size = new System.Drawing.Size(456, 59);
+            this.txtDienGiaiCon.Size = new System.Drawing.Size(456, 108);
             this.txtDienGiaiCon.TabIndex = 90;
             // 
             // txtSoTKCon
             // 
-            this.txtSoTKCon.Location = new System.Drawing.Point(80, 99);
+            this.txtSoTKCon.Location = new System.Drawing.Point(80, 50);
             this.txtSoTKCon.Name = "txtSoTKCon";
             this.txtSoTKCon.Size = new System.Drawing.Size(456, 20);
             this.txtSoTKCon.TabIndex = 88;
             this.txtSoTKCon.TextChanged += new System.EventHandler(this.txtSoTKCon_TextChanged);
             // 
-            // txtDienGiaiMe
-            // 
-            this.txtDienGiaiMe.Location = new System.Drawing.Point(80, 50);
-            this.txtDienGiaiMe.Multiline = true;
-            this.txtDienGiaiMe.Name = "txtDienGiaiMe";
-            this.txtDienGiaiMe.ReadOnly = true;
-            this.txtDienGiaiMe.Size = new System.Drawing.Size(456, 45);
-            this.txtDienGiaiMe.TabIndex = 87;
-            // 
             // txtTenTKMe
             // 
             this.txtTenTKMe.Location = new System.Drawing.Point(80, 26);
             this.txtTenTKMe.Name = "txtTenTKMe";
-            this.txtTenTKMe.ReadOnly = true;
             this.txtTenTKMe.Size = new System.Drawing.Size(456, 20);
             this.txtTenTKMe.TabIndex = 86;
             // 
@@ -245,7 +232,6 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3,
             this.emptySpaceItem1,
             this.layoutControlItem4,
             this.layoutControlItem6,
@@ -277,16 +263,6 @@
             this.layoutControlItem2.Text = "Tên TK Mẹ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtDienGiaiMe;
-            this.layoutControlItem3.CustomizationFormText = "Diễn giải TK Me";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(538, 49);
-            this.layoutControlItem3.Text = "Diễn giải TK Me";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -300,7 +276,7 @@
             // 
             this.layoutControlItem4.Control = this.txtSoTKCon;
             this.layoutControlItem4.CustomizationFormText = "Số TK Con";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 97);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(538, 24);
             this.layoutControlItem4.Text = "Số TK Con";
@@ -310,9 +286,9 @@
             // 
             this.layoutControlItem6.Control = this.txtDienGiaiCon;
             this.layoutControlItem6.CustomizationFormText = "Diễn giải TK con";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 145);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(538, 63);
+            this.layoutControlItem6.Size = new System.Drawing.Size(538, 112);
             this.layoutControlItem6.Text = "Diễn giải TK con";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(75, 13);
             // 
@@ -330,7 +306,7 @@
             // 
             this.layoutControlItem5.Control = this.txtTenTKCon;
             this.layoutControlItem5.CustomizationFormText = "Tên TK Con";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 121);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(538, 24);
             this.layoutControlItem5.Text = "Tên TK Con";
@@ -360,7 +336,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietTaiKhoanKeToanCon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Chi tiết Tài khoản Con";
+            this.Text = "frmChiTietTaiKhoanKeToanCon-->Chi tiết Tài khoản Con";
             this.Load += new System.EventHandler(this.frmChiTietTaiKhoanKeToanCon_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
@@ -370,7 +346,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -391,7 +366,6 @@
         private System.Windows.Forms.TextBox txtGhiChuCon;
         private System.Windows.Forms.TextBox txtDienGiaiCon;
         private System.Windows.Forms.TextBox txtSoTKCon;
-        private System.Windows.Forms.TextBox txtDienGiaiMe;
         private System.Windows.Forms.TextBox txtTenTKMe;
         private DevExpress.XtraEditors.GridLookUpEdit gridTK_me;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
@@ -401,7 +375,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clDienGiaiMe;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;

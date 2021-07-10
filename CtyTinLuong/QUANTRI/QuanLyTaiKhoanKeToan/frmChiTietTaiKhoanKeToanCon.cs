@@ -50,12 +50,18 @@ namespace CtyTinLuong
                 gridTK_me.EditValue = clscon.iID_TaiKhoanKeToanMe.Value;
             }
         }
+        private void Luu_Khoa_TaiKhoanNganHang(int xxID_TK____)
+        {
+            clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+            cls.Update_Khoa_True(xxID_TK____);
+        }
         private void LuuDuLieu()
         {
             Cursor.Current = Cursors.WaitCursor;
             if (!KiemTraLuu()) return;
             else
             {
+                Luu_Khoa_TaiKhoanNganHang(Convert.ToInt32(gridTK_me.EditValue.ToString()));
                 if (frmQuanLyTaiKhoanKeToan.mbTheMoi == true)
                 {
                     string ssotkcon = txtSoTKCon.Text.ToString();
@@ -165,7 +171,7 @@ namespace CtyTinLuong
                 cls.iID_TaiKhoanKeToanMe = iiID;
                 DataTable dt = cls.SelectOne();
                 txtTenTKMe.Text = cls.sTenTaiKhoanMe.Value.ToString();
-                txtDienGiaiMe.Text = cls.sDienGiaiMe.Value.ToString();
+               
             }
             catch (Exception ex)
             {
