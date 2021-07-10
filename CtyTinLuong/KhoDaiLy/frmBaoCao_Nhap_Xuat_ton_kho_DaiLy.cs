@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -354,6 +355,7 @@ namespace CtyTinLuong
 
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("STT", typeof(string));
+            dt2xx.Columns.Add("Font", typeof(string));
             dt2xx.Columns.Add("ID_VTHH", typeof(int));
             dt2xx.Columns.Add("ID_NhomVTHH", typeof(int));
             dt2xx.Columns.Add("MaVT", typeof(string));
@@ -380,6 +382,7 @@ namespace CtyTinLuong
             {
                 DataRow _ravi_TP = dt2xx.NewRow();
                 _ravi_TP["STT"] = "A";
+                _ravi_TP["Font"] = "1";
                 _ravi_TP["TenVTHH"] = "Nhóm Thành phẩm";
                 dt2xx.Rows.Add(_ravi_TP);
                 for (int i = 0; i < foundRows1.Length; i++)
@@ -417,6 +420,7 @@ namespace CtyTinLuong
             {
                 DataRow _ravi_BTP = dt2xx.NewRow();
                 _ravi_BTP["STT"] = "B";
+                _ravi_BTP["Font"] = "1";
                 _ravi_BTP["TenVTHH"] = "Nhóm Bán Thành phẩm";
                 dt2xx.Rows.Add(_ravi_BTP);
 
@@ -455,6 +459,7 @@ namespace CtyTinLuong
             {
                 DataRow _ravi_VT = dt2xx.NewRow();
                 _ravi_VT["STT"] = "C";
+                _ravi_VT["Font"] = "1";
                 _ravi_VT["TenVTHH"] = "Nhóm Vật tư";
                 dt2xx.Rows.Add(_ravi_VT);
                 for (int i = 0; i < foundRows_VT.Length; i++)
@@ -623,6 +628,22 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string category = View.GetRowCellValue(e.RowHandle, View.Columns["Font"]).ToString();
+                if (category == "1")
+                {
+                    e.Appearance.BackColor = Color.Bisque;
+                    FontStyle fs = e.Appearance.Font.Style;
+                    fs |= FontStyle.Bold;
+                    e.Appearance.Font = new Font(e.Appearance.Font, fs);
+                }
             }
         }
 
