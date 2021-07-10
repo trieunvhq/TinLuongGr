@@ -160,13 +160,13 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(4, 394);
+            this.gridControl2.Location = new System.Drawing.Point(4, 492);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit3,
             this.repositoryItemMemoEdit2});
-            this.gridControl2.Size = new System.Drawing.Size(976, 312);
+            this.gridControl2.Size = new System.Drawing.Size(976, 214);
             this.gridControl2.TabIndex = 108;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -382,7 +382,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(976, 314);
+            this.gridControl1.Size = new System.Drawing.Size(976, 412);
             this.gridControl1.TabIndex = 105;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -413,6 +413,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -651,7 +652,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(980, 318);
+            this.layoutControlItem2.Size = new System.Drawing.Size(980, 416);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -719,9 +720,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl2;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 390);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 488);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(980, 316);
+            this.layoutControlItem7.Size = new System.Drawing.Size(980, 218);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 

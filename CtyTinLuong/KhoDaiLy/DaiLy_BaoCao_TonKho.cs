@@ -359,8 +359,8 @@ namespace CtyTinLuong
         private void DaiLy_BaoCao_TonKho_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_Lockup();     
-          
+            Load_Lockup();
+            gridNhomVTHH.EditValue = 0;
             gridMaDaiLy.EditValue = 0;
             dteDenNgay.DateTime = DateTime.Now;
             Cursor.Current = Cursors.Default;
