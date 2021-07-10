@@ -224,10 +224,14 @@ namespace CtyTinLuong
             cls.iID_TaiKhoanKeToanCon = xxid;
             DataTable dt = cls.SelectOne();
             txtTenTaiKhoan.Text = cls.sTenTaiKhoanCon.Value;
-            if (frmKhachHang.mbSua == false)
-            {
-                
-            }
+            //if(cls.bKhoa==true)
+            //{
+            //    if (frmKhachHang.mbSua == false)
+            //    {
+
+            //    }
+            //}
+            
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
