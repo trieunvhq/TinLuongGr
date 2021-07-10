@@ -48,7 +48,11 @@ namespace CtyTinLuong
                 MessageBox.Show("Chưa có tên ");
                 return false;
             }
-
+            else if (gridTKKeToan.EditValue == null)
+            {
+                MessageBox.Show("Chưa có tài khoản kế toán ");
+                return false;
+            }
             else return true;
 
         }
