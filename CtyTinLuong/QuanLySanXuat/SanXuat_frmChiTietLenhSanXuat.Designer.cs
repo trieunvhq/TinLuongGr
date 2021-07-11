@@ -568,7 +568,7 @@
             this.gridBand2.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 434;
+            this.gridBand2.Width = 486;
             // 
             // clID_VTHH_Vao
             // 
@@ -594,9 +594,10 @@
             // clLoaiMay
             // 
             this.clLoaiMay.Caption = "Loại máy";
-            this.clLoaiMay.FieldName = "LoaiMay";
+            this.clLoaiMay.FieldName = "ID_LoaiMay";
             this.clLoaiMay.Name = "clLoaiMay";
-            this.clLoaiMay.Width = 20;
+            this.clLoaiMay.Visible = true;
+            this.clLoaiMay.Width = 52;
             // 
             // clMaPhieu
             // 
@@ -694,7 +695,7 @@
             this.gridBand3.Columns.Add(this.clPhePham);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 1;
-            this.gridBand3.Width = 733;
+            this.gridBand3.Width = 636;
             // 
             // clID_VTHH_Ra
             // 
@@ -725,7 +726,7 @@
             this.clTenVTHH_Ra.Name = "clTenVTHH_Ra";
             this.clTenVTHH_Ra.OptionsColumn.AllowEdit = false;
             this.clTenVTHH_Ra.Visible = true;
-            this.clTenVTHH_Ra.Width = 393;
+            this.clTenVTHH_Ra.Width = 296;
             // 
             // repositoryItemMemoEdit2
             // 
