@@ -264,65 +264,17 @@ namespace CtyTinLuong
             txtTongTienHang.Text = deTOngtien.ToString();
 
         }
-        private void HienThi_GridControl_Moiiiiiiiiiiii(double soluongxuatxxx)
+        private void HienThi_GridControl_Moiiiiiiiiiiii( double soluongxuatxxx, int iiiID_Dinhmuc)
         {
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("DinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuongTheoDinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuong", typeof(float));          
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
+           
 
             clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls1 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-            DataTable dt422 = cls1.SelectAll_W_ID_DinhMuc_ToGapDan();
-            dt422.DefaultView.RowFilter = " Check_VatTu_Phu = True";
-            DataView dv1 = dt422.DefaultView;
-            DataTable dt1 = dv1.ToTable();        
-            if (dt1.Rows.Count > 0)
-            {
-                for (int i = 0; i < dt1.Rows.Count; i++)
-                {
-                    double dongiaxxx = 0;                 
-                    double iiSoLuong_TheoDinhMuc = Convert.ToDouble(dt1.Rows[i]["SoLuong"].ToString());
-                    int xxID_VTHH = Convert.ToInt32(dt1.Rows[i]["ID_VTHH"].ToString());
-                   
-                    DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_VTHH"] = xxID_VTHH;
-                    _ravi["MaVT"] = Convert.ToInt32(dt1.Rows[i]["ID_VTHH"].ToString());
-                    _ravi["TenVTHH"] = dt1.Rows[i]["TenVTHH"].ToString();
-                    _ravi["DonViTinh"] = dt1.Rows[i]["DonViTinh"].ToString();
-                    _ravi["DinhMuc"] = Convert.ToDouble(dt1.Rows[i]["SoLuong"].ToString());                    
-                    _ravi["SoLuongTheoDinhMuc"] = soluongxuatxxx * iiSoLuong_TheoDinhMuc;
-                    _ravi["SoLuong"] = soluongxuatxxx * iiSoLuong_TheoDinhMuc;
-                    _ravi["DonGia"] = dongiaxxx;
-                    _ravi["GhiChu"] = "";
-                    _ravi["HienThi"] = "1";
-                    _ravi["ThanhTien"] = dongiaxxx * soluongxuatxxx * iiSoLuong_TheoDinhMuc;
-                    _ravi["Check_VatTu_Phu"] = true;
-
-                    dt2.Rows.Add(_ravi);
-                }
-
-            }
+           
+            DataTable dt2 = cls1.SA_IDDM_W_SoLuong(soluongxuatxxx, iiiID_Dinhmuc);          
             gridControl1.DataSource = dt2;
 
-            double deTOngtien;
-
-            string shienthi = "1";
-            object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + " and BoolVTChinh = False");
-            if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
-            else deTOngtien = 0;
-            txtTongTienHang.Text = deTOngtien.ToString();
+         
 
         }
         int iID_VTHH;
@@ -1270,6 +1222,7 @@ namespace CtyTinLuong
                 {
                     clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
                     cls.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                    int xxID= Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
                     DataTable dt = cls.SelectAll_W_ID_DinhMuc_ToGapDan();
 
                     double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
@@ -1282,8 +1235,8 @@ namespace CtyTinLuong
 
                     double SoLuong_VTChinh_DinhMuc = Convert.ToDouble(dt223.Rows[0]["SoLuong"].ToString());
                     txtSoLuongVTChinh.Text = (SoLuong_VTChinh_DinhMuc * xxsoluongxuat).ToString();
-                    //if(UCNPL_XuatKho_GapDan.mbThemMoi==true)
-                    HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat);
+                    if (UCNPL_XuatKho_GapDan.mbSua == false)
+                        HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);
 
                 }
 

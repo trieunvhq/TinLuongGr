@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhoNPL_frmChiTiet_XuatKho_gapDan));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -95,7 +96,8 @@
             this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridMaVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memoTenVTHH = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,14 +108,13 @@
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuongTheoDinhMuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clCheck_VatTu_Phu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridMaVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtID_ThanhPham = new System.Windows.Forms.TextBox();
             this.txtID_VatTuChinh = new System.Windows.Forms.TextBox();
-            this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
-            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -148,11 +149,11 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -376,7 +377,7 @@
             this.txtSoLuongXuat.Name = "txtSoLuongXuat";
             this.txtSoLuongXuat.Size = new System.Drawing.Size(172, 20);
             this.txtSoLuongXuat.TabIndex = 33;
-            this.txtSoLuongXuat.Text = "1";
+            this.txtSoLuongXuat.Text = "0";
             this.txtSoLuongXuat.TextChanged += new System.EventHandler(this.txtSoLuongXuat_TextChanged);
             this.txtSoLuongXuat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongXuat_KeyPress);
             // 
@@ -861,16 +862,22 @@
             this.clMaVT.VisibleIndex = 1;
             this.clMaVT.Width = 65;
             // 
-            // gridMaVT
+            // repositoryItemSearchLookUpEdit1
             // 
-            this.gridMaVT.AutoHeight = false;
-            this.gridMaVT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemSearchLookUpEdit1.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaVT.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_VTHH", "ID_VTHH", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaVT", "MaVT", 60, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenVTHH", "TenVTHH", 200, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.gridMaVT.Name = "gridMaVT";
+            this.repositoryItemSearchLookUpEdit1.Name = "repositoryItemSearchLookUpEdit1";
+            this.repositoryItemSearchLookUpEdit1.PopupView = this.repositoryItemSearchLookUpEdit1View;
+            this.repositoryItemSearchLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.repositoryItemSearchLookUpEdit1_QueryPopUp);
+            this.repositoryItemSearchLookUpEdit1.EditValueChanged += new System.EventHandler(this.repositoryItemSearchLookUpEdit1_EditValueChanged);
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // clTenVTHH
             // 
@@ -941,9 +948,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -980,6 +987,17 @@
             this.clCheck_VatTu_Phu.FieldName = "Check_VatTu_Phu";
             this.clCheck_VatTu_Phu.Name = "clCheck_VatTu_Phu";
             this.clCheck_VatTu_Phu.Width = 32;
+            // 
+            // gridMaVT
+            // 
+            this.gridMaVT.AutoHeight = false;
+            this.gridMaVT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridMaVT.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_VTHH", "ID_VTHH", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaVT", "MaVT", 60, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenVTHH", "TenVTHH", 200, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.gridMaVT.Name = "gridMaVT";
             // 
             // btPrint
             // 
@@ -1044,23 +1062,6 @@
             this.txtID_VatTuChinh.TabIndex = 118;
             this.txtID_VatTuChinh.Visible = false;
             // 
-            // repositoryItemSearchLookUpEdit1
-            // 
-            this.repositoryItemSearchLookUpEdit1.AutoHeight = false;
-            this.repositoryItemSearchLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSearchLookUpEdit1.Name = "repositoryItemSearchLookUpEdit1";
-            this.repositoryItemSearchLookUpEdit1.PopupView = this.repositoryItemSearchLookUpEdit1View;
-            this.repositoryItemSearchLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.repositoryItemSearchLookUpEdit1_QueryPopUp);
-            this.repositoryItemSearchLookUpEdit1.EditValueChanged += new System.EventHandler(this.repositoryItemSearchLookUpEdit1_EditValueChanged);
-            // 
-            // repositoryItemSearchLookUpEdit1View
-            // 
-            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
-            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
             // KhoNPL_frmChiTiet_XuatKho_gapDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1076,7 +1077,7 @@
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KhoNPL_frmChiTiet_XuatKho_gapDan";
-            this.Text = this.Name+"-->Chi Tiết Kho Gấp Dán";
+            this.Text = "KhoNPL_frmChiTiet_XuatKho_gapDan-->Chi Tiết Kho Gấp Dán";
             this.Load += new System.EventHandler(this.KhoNPL_frmChiTiet_XuatKho_gapDan_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -1112,11 +1113,11 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoTenVTHH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
