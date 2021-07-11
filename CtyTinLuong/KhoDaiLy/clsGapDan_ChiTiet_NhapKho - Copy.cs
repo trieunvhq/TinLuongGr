@@ -7,7 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsGapDan_ChiTiet_NhapKho : clsDBInteractionBase
 	{
-        //pr_GapDan_ChiTiet_NhapKho_SA_NhapTrongKy_ID_VTHH
+        //pr_GapDan_ChiTiet_NhapKho_SA_W_ID_NhapKho
         public DataTable SA_NhapTrongKy_ID_VTHH(int xxID_VTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -479,6 +479,41 @@ namespace CtyTinLuong
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
                 throw new Exception("pr_GapDan_ChiTiet_NhapKho_SelectAll_W_ID_NhapKho", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable SA_W_ID_NhapKho()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_ChiTiet_NhapKho_SA_W_ID_NhapKho]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_GapDan_ChiTiet_NhapKho_SA_W_ID_NhapKho");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho));
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_GapDan_ChiTiet_NhapKho_SA_W_ID_NhapKho", ex);
             }
             finally
             {
