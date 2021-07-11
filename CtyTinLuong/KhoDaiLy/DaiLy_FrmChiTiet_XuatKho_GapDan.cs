@@ -195,11 +195,6 @@ namespace CtyTinLuong
             dt.Dispose();
             cls.Dispose();
 
-            //clsGapDan_tbNhapKho clsxx = new clsGapDan_tbNhapKho();
-            //DataTable dt = clsxx.SA_NgayThang(xxtungay, xxdenngay);
-            //gridMaHang.DataSource = dt;
-            //gridMaHang.ValueMember = "ID_NhapKho";
-            //gridMaHang.DisplayMember = "SoChungTu";
         }
         private void Load_LockUp_MaHang(DateTime xxtungay, DateTime xxdenngay)
         {
@@ -208,7 +203,7 @@ namespace CtyTinLuong
             gridMaHang.DataSource = dt;
             gridMaHang.ValueMember = "ID_NhapKho";
             gridMaHang.DisplayMember = "SoChungTu";
-
+            cls.Dispose();
         }
         private bool KiemTraLuu()
         {
@@ -476,6 +471,9 @@ namespace CtyTinLuong
         private void DaiLy_FrmChiTiet_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            dteDenNgay.DateTime = DateTime.Today;
+            dteTuNgay.DateTime = DateTime.Today.AddDays(-60);
+            clSoLuongNhap1.Caption = "SL\n nhập";
             Load_LockUp();
             HienThi_Sua_XuatKho(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
             Cursor.Current = Cursors.Default;
@@ -584,10 +582,10 @@ namespace CtyTinLuong
 
         private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                btLayDuLieu.Focus();
-            }
+            //if (e.KeyChar == (char)13)
+            //{
+            //    btLayDuLieu.Focus();
+            //}
         }
         
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
