@@ -921,23 +921,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                //string ahienthi = "1";
-
-                //double dexxTongSoLuong, dexxTongtienhang;
-                //DataTable adt1 = (DataTable)gridControl2.DataSource;
-                //adt1.DefaultView.RowFilter = "HienThi=" + ahienthi + "";
-                //DataView adv1 = adt1.DefaultView;
-                //DataTable dtaaaaa = adv1.ToTable();
-
-                //object xxTongSoLuong = dtaaaaa.Compute("sum(SoLuongXuat)", "HienThi=" + ahienthi + "");
-                //if (xxTongSoLuong.ToString() != "")
-                //    dexxTongSoLuong = Convert.ToDouble(xxTongSoLuong);
-                //else dexxTongSoLuong = 0;
-
-                //object xxtongtienhang = dtaaaaa.Compute("sum(ThanhTien)", "HienThi=" + ahienthi + "");
-                //if (xxtongtienhang.ToString() != "")
-                //    dexxTongtienhang = Convert.ToDouble(xxtongtienhang);
-                //else dexxTongtienhang = 0;
+                
 
                 clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
@@ -957,6 +941,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                cls1.bGuiDuLieu = true;
                 int iiID_Nhapkho_GapDan;
                 if (UCThanhPham_NhapKhoTu_GapDan.mbSua == false)
                 {
@@ -971,6 +956,20 @@ namespace CtyTinLuong
                 }
                 Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
                 Luu_ThamCHieuTinhXuatKho(iiID_Nhapkho_GapDan);
+
+                if (checkNhapKhoThanhPham.Checked == true) //nhap kho thành pham
+                {
+                    Luu_NhapKhoThanhPham();
+                    Luu_NhapKho_Khac_KhoNPL();
+                    Luu_NhapKho_Khac_Kho_banThanhPham();
+
+                }
+                else
+                {
+                    Luu_NhapKho_Ban___________ThanhPham();
+                    Luu_NhapKho_Khac_KhoNPL();
+                    Luu_NhapKho_Khac_KhoThanhPham();
+                }
             }
 
         }
@@ -979,24 +978,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                ////string ahienthi = "1";
-
-                ////double dexxTongSoLuong, dexxTongtienhang;
-                ////DataTable adt1 = (DataTable)gridControl2.DataSource;
-                ////adt1.DefaultView.RowFilter = "HienThi=" + ahienthi + "";
-                ////DataView adv1 = adt1.DefaultView;
-                ////DataTable dtaaaaa = adv1.ToTable();
-
-                //////object xxTongSoLuong = dtaaaaa.Compute("sum(SoLuongNhap)", "HienThi=" + ahienthi + "");
-                //////if (xxTongSoLuong.ToString() != "")
-                //////    dexxTongSoLuong = Convert.ToDouble(xxTongSoLuong);
-                //else dexxTongSoLuong = 0;
-
-                //object xxtongtienhang = dtaaaaa.Compute("sum(ThanhTien)", "HienThi=" + ahienthi + "");
-                //if (xxtongtienhang.ToString() != "")
-                //    dexxTongtienhang = Convert.ToDouble(xxtongtienhang);
-                //else dexxTongtienhang = 0;
-
+               
                 clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
@@ -1479,19 +1461,7 @@ namespace CtyTinLuong
             else
             {
                 Luu_XuatKho_GapDan_GuDuLieu();
-                if (checkNhapKhoThanhPham.Checked == true) //nhap kho thành pham
-                {
-                    Luu_NhapKhoThanhPham();
-                    Luu_NhapKho_Khac_KhoNPL();
-                    Luu_NhapKho_Khac_Kho_banThanhPham();
-
-                }
-                else
-                {
-                    Luu_NhapKho_Ban___________ThanhPham();
-                    Luu_NhapKho_Khac_KhoNPL();
-                    Luu_NhapKho_Khac_KhoThanhPham();
-                }
+               
                 Cursor.Current = Cursors.Default;
                 MessageBox.Show("Đã lưu và gửi dữ liệu");
                 this.Close();
