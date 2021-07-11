@@ -51,9 +51,9 @@ namespace CtyTinLuong
                 _ravi["TenVatTu_Vao"] = dt3.Rows[i]["TenVatTu_Vao"].ToString();
                 _ravi["TenVatTu_Ra"] = dt3.Rows[i]["TenVatTu_Ra"].ToString();
 
-                _ravi["SoLuong_Vao"] = Convert.ToDouble(dt3.Rows[i]["SoLuong_Vao"].ToString());
-                _ravi["SanLuong_Thuong"] = Convert.ToDouble(dt3.Rows[i]["SanLuong_Thuong"].ToString());
-                _ravi["SanLuong_TangCa"] = Convert.ToDouble(dt3.Rows[i]["SanLuong_TangCa"].ToString());
+                _ravi["SoLuong_Vao"] = Convert.ToDouble(dt3.Rows[i]["SoLuongVao"].ToString());
+                _ravi["SanLuong_Thuong"] = Convert.ToDouble(dt3.Rows[i]["SanLuongThuong"].ToString());
+                _ravi["SanLuong_TangCa"] = Convert.ToDouble(dt3.Rows[i]["SanLuongTangCa"].ToString());
                 _ravi["PhePham"] = Convert.ToDouble(dt3.Rows[i]["PhePham"].ToString());     
                 ds.tbLenhSanXuat_I_C_D.Rows.Add(_ravi);
             }

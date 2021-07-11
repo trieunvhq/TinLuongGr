@@ -499,7 +499,7 @@
             this.xrLabel13,
             this.xrLabel14,
             this.xrLabel15});
-            this.ReportFooter.HeightF = 134.5417F;
+            this.ReportFooter.HeightF = 123.5417F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel3
@@ -507,7 +507,7 @@
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pCongNhan]")});
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 111.5417F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 100.5417F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(223F, 22.99998F);
@@ -521,7 +521,7 @@
             this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pCaTruong]")});
             this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(232.3333F, 111.5417F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(232.3333F, 100.5417F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(251.1038F, 23F);
@@ -535,7 +535,7 @@
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters.pNguoiLap]")});
             this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(491.4585F, 111.5417F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(491.4585F, 100.5417F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(235.5415F, 23F);
@@ -582,17 +582,17 @@
             // 
             // pCongNhan
             // 
-            this.pCongNhan.Description = "pCongNhan";
+            this.pCongNhan.Description = "Công nhân";
             this.pCongNhan.Name = "pCongNhan";
             // 
             // pCaTruong
             // 
-            this.pCaTruong.Description = "pCaTruong";
+            this.pCaTruong.Description = "Ca trưởng";
             this.pCaTruong.Name = "pCaTruong";
             // 
             // pNguoiLap
             // 
-            this.pNguoiLap.Description = "pNguoiLap";
+            this.pNguoiLap.Description = "Người lập";
             this.pNguoiLap.Name = "pNguoiLap";
             // 
             // PageHeader
@@ -601,7 +601,6 @@
             this.xrTable2});
             this.PageHeader.HeightF = 61.45833F;
             this.PageHeader.Name = "PageHeader";
-            this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
             // xrLabel8
             // 
@@ -723,12 +722,12 @@
             // 
             // pNgaySanXuat
             // 
-            this.pNgaySanXuat.Description = "pNgaySanXuat";
+            this.pNgaySanXuat.Description = "Ngày sản xuất";
             this.pNgaySanXuat.Name = "pNgaySanXuat";
             // 
             // pCaSanXuat
             // 
-            this.pCaSanXuat.Description = "pCaSanXuat";
+            this.pCaSanXuat.Description = "Ca sản xuất";
             this.pCaSanXuat.Name = "pCaSanXuat";
             // 
             // ReportHeader
@@ -747,6 +746,7 @@
             this.xrLabel2});
             this.ReportHeader.HeightF = 141.6667F;
             this.ReportHeader.Name = "ReportHeader";
+            this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
             // 
             // Xtra_LenhSanXuat_I_C_D
             // 

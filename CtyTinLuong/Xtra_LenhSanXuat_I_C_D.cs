@@ -13,15 +13,13 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-        
             pCaSanXuat.Value = SanXuat_frmChiTietLenhSanXuat.msCaSanXuat;
             pCaTruong.Value = SanXuat_frmChiTietLenhSanXuat.msCaTruong;
             pCongNhan.Value = SanXuat_frmChiTietLenhSanXuat.msCongNhan;
             pNgaySanXuat.Value = SanXuat_frmChiTietLenhSanXuat.mdaNgayThang.ToString("dd/MM/yyyy");
-            pNguoiLap.Value = SanXuat_frmChiTietLenhSanXuat.msNguoiLap;            
+            pNguoiLap.Value = SanXuat_frmChiTietLenhSanXuat.msNguoiLap;
         }
-
     }
 }
