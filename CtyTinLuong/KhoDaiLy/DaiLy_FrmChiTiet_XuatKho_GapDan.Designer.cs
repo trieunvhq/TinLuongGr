@@ -73,7 +73,6 @@
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clID_NhapKhoDaiLyxxx = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -171,7 +170,7 @@
             // 
             // txtID_ThanhPham
             // 
-            this.txtID_ThanhPham.Location = new System.Drawing.Point(629, 502);
+            this.txtID_ThanhPham.Location = new System.Drawing.Point(618, 502);
             this.txtID_ThanhPham.Name = "txtID_ThanhPham";
             this.txtID_ThanhPham.Size = new System.Drawing.Size(26, 20);
             this.txtID_ThanhPham.TabIndex = 131;
@@ -461,20 +460,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // btLuu_Gui_Dong
-            // 
-            this.btLuu_Gui_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLuu_Gui_Dong.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
-            this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
-            this.btLuu_Gui_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Back;
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(679, 499);
-            this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
-            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(103, 23);
-            this.btLuu_Gui_Dong.TabIndex = 130;
-            this.btLuu_Gui_Dong.Text = "Lưu  + Gửi";
-            this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
             // 
             // gridView2
             // 
@@ -1069,7 +1054,7 @@
             this.label_TonKho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label_TonKho.Location = new System.Drawing.Point(15, 504);
             this.label_TonKho.Name = "label_TonKho";
-            this.label_TonKho.Size = new System.Drawing.Size(608, 17);
+            this.label_TonKho.Size = new System.Drawing.Size(597, 17);
             this.label_TonKho.TabIndex = 146;
             this.label_TonKho.Text = "label1";
             // 
@@ -1087,7 +1072,6 @@
             this.Controls.Add(this.txtID_VatTuChinh);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.btLuu_Gui_Dong);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DaiLy_FrmChiTiet_XuatKho_GapDan";
             this.Text = "DaiLy_FrmChiTiet_XuatKho_GapDan-->Xuất Kho Gấp Dán";
@@ -1154,7 +1138,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoa;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
         private System.Windows.Forms.CheckBox checkNhapKhoThanhPham;
         private System.Windows.Forms.TextBox txtNguoiGiaoHang;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
