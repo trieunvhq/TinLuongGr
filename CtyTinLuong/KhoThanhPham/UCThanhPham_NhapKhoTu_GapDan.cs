@@ -26,18 +26,18 @@ namespace CtyTinLuong
             DataTable dtxx = cls.SA_NgayThang(xxtungay, xxdenngay);
             gridControl1.DataSource = dtxx;
         }
-        private void HienThiGridControl(int xxxxmiID_XuatKhoDaiLyxxxxx)
+        private void HienThiGridControl(int xxxxmiID_XuatKhoxxxxx)
         {
-            //clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
-            //DataTable dt222 = cls2.SA_W_ID_XuatKhoDaiLy(xxxxmiID_XuatKhoDaiLyxxxxx);
-            //gridControl2.DataSource = dt222;
+            clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+            DataTable dt222 = cls2.SA_ID_XuatKho_moi(xxxxmiID_XuatKhoxxxxx);
+            gridControl2.DataSource = dt222;
         }
         private void btXoa1_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString() != "")
             {
                 clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
-                int iiID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                int iiID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 cls1.iID_XuatKho = iiID;
                 DataTable dt1 = cls1.SelectOne();
                 if (cls1.bGuiDuLieu.Value == true)
@@ -69,13 +69,13 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString() != "")
             {
 
                 mbThemMoi = false;
                 mbCopy = false;
                 mbSua = true;
-                miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 KhoThanhPham_NhapKho_TuGapDan ff = new KhoThanhPham_NhapKho_TuGapDan();
                 //_frmQLKTP.Hide();
                 ff.Show();
@@ -116,13 +116,13 @@ namespace CtyTinLuong
 
         private void btCopy_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString() != "")
             {
 
                 mbThemMoi = false;
                 mbCopy = true;
                 mbSua = false;
-                miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
                 //_frmQLKTP.Hide();
                 ff.Show();
@@ -132,9 +132,9 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString() != "")
             {
-                int xxxxmiID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
+                int xxxxmiID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 HienThiGridControl(xxxxmiID_XuatKhoDaiLy);
             }
         }
