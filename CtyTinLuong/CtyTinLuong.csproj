@@ -228,7 +228,10 @@
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsGapDan_ChiTiet_XuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsGapDan_ChiTiet_XuatKho_Temp.cs" />
+    <Compile Include="KhoThanhPham\clsGapDan_tbXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsGapDan_tbXuatKho_Temp.cs" />
+    <Compile Include="KhoThanhPham\clsGapDan_ThamChieuTinhXuatKho_Temp - Copy.cs" />
+    <Compile Include="KhoThanhPham\clsGapDan_ThamChieuTinhXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.cs">
       <SubType>Form</SubType>
     </Compile>

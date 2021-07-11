@@ -20,15 +20,27 @@ namespace CtyTinLuong
         public static DateTime mdaNgayChungTu;
         public static string msDiaChi, msSoDienThoai, msDienGiai, msTenDaiLy, msSoChungTu;
 
+        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
+        {
+            clsGapDan_tbXuatKho_Temp cls = new clsGapDan_tbXuatKho_Temp();
+            DataTable dtxx = cls.SA_NgayThang(xxtungay, xxdenngay);
+            gridControl1.DataSource = dtxx;
+        }
+        private void HienThiGridControl(int xxxxmiID_XuatKhoDaiLyxxxxx)
+        {
+            clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+            DataTable dt222 = cls2.SA_W_ID_XuatKhoDaiLy(xxxxmiID_XuatKhoDaiLyxxxxx);
+            gridControl2.DataSource = dt222;
+        }
         private void btXoa1_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString() != "")
             {
-                clsDaiLy_tbXuatKho_Temp cls1 = new clsDaiLy_tbXuatKho_Temp();
+                clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
                 int iiID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
-                cls1.iID_XuatKhoDaiLy = iiID;
+                cls1.iID_XuatKho = iiID;
                 DataTable dt1 = cls1.SelectOne();
-                if (cls1.bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe.Value == true)
+                if (cls1.bGuiDuLieu.Value == true)
                 {
                     MessageBox.Show("Đã nhập kho, không thể xoá");
                     return;
@@ -40,11 +52,11 @@ namespace CtyTinLuong
                     if (traloi == DialogResult.Yes)
                     {
                         Cursor.Current = Cursors.WaitCursor;
-                        cls1.iID_XuatKhoDaiLy = iiID;
+                        cls1.iID_XuatKho = iiID;
                         cls1.Delete();
-                        clsDaiLy_tbChiTietXuatKho_Temp cls2 = new clsDaiLy_tbChiTietXuatKho_Temp();
-                        cls2.Delete_ALL_W_ID_XuatKhoDaiLy(iiID);
-                        clsDaiLy_ThamChieu_TinhXuatKho_Temp cls3 = new CtyTinLuong.clsDaiLy_ThamChieu_TinhXuatKho_Temp();
+                        clsGapDan_ChiTiet_XuatKho_Temp cls2 = new clsGapDan_ChiTiet_XuatKho_Temp();
+                        cls2.Delete_ALL_W_ID(iiID);
+                        clsGapDan_ThamChieuTinhXuatKho_Temp cls3 = new CtyTinLuong.clsGapDan_ThamChieuTinhXuatKho_Temp();
                         cls3.Delete_ALL_W_ID_XuatKhoDaiLy(iiID);
                         Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã xóa");
@@ -132,18 +144,7 @@ namespace CtyTinLuong
             UCThanhPham_NhapKhoTu_GapDan_Load( sender,  e);
         }
 
-        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
-        {
-            clsDaiLy_tbXuatKho_Temp cls = new clsDaiLy_tbXuatKho_Temp();
-            DataTable dtxx = cls.SA_NgayThang(xxtungay, xxdenngay);
-            gridControl1.DataSource = dtxx;
-        }
-        private void HienThiGridControl(int xxxxmiID_XuatKhoDaiLyxxxxx)
-        {
-            clsDaiLy_ThamChieu_TinhXuatKho_Temp cls2 = new clsDaiLy_ThamChieu_TinhXuatKho_Temp();
-            DataTable dt222 = cls2.SA_W_ID_XuatKhoDaiLy(xxxxmiID_XuatKhoDaiLyxxxxx);
-            gridControl2.DataSource = dt222;
-        }
+   
         public UCThanhPham_NhapKhoTu_GapDan()
         {
             InitializeComponent();
