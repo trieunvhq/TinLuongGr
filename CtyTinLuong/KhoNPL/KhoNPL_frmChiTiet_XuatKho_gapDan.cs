@@ -120,7 +120,7 @@ namespace CtyTinLuong
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = DateTime.Today;
-            txtSoChungTu.Text = cls1.sThamChieu.Value;
+        
             txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
             txtThamChieu.Text = cls1.sThamChieu.Value;
             txtDienGiai.Text = cls1.sDienGiai.Value;
@@ -140,7 +140,7 @@ namespace CtyTinLuong
             txtDienGiai.Text = cls1.sDienGiai.Value;
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
-            txtSoChungTu.Text = cls1.sThamChieu.Value;
+          
             txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
             double iisoluongxuat = cls1.fSoLuongThanhPham_QuyDoi.Value;
             int iiID_dinhmuc = cls1.iID_DinhMuc_ToGapDan.Value;
@@ -278,7 +278,7 @@ namespace CtyTinLuong
 
             string shienthi = "1";
             DataTable dtkkk = (DataTable)gridControl1.DataSource;
-            dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+            dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "and int_TP_1_Chinh_2_Phu_3 =3 ";
             DataView dvmoi = dtkkk.DefaultView;
             DataTable dtmoi = dvmoi.ToTable();
 
@@ -716,7 +716,7 @@ namespace CtyTinLuong
                 gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
                 gridView1.SetRowCellValue(e.RowHandle, clSoLuongTheoDinhMuc, 0);
                 gridView1.SetRowCellValue(e.RowHandle, clDinhMuc, 0);
-                gridView1.SetRowCellValue(e.RowHandle, clint_TP_1_Chinh_2_Phu_3, true);
+                gridView1.SetRowCellValue(e.RowHandle, clint_TP_1_Chinh_2_Phu_3, 3);
 
                 if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
