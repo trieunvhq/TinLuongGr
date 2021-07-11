@@ -573,10 +573,10 @@ namespace CtyTinLuong
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
                     cls2.bBoolTonDauKy = false;
-                    cls2.bCheck_ThanhPham = false;
-                    cls2.bCheck_VatTu_Chinh = false;
+                    cls2.iInt_TP_1_Chinh_2_Phu_3 = Convert.ToInt32(dttttt2.Rows[i]["Int_TP_1_Chinh_2_Phu_3"].ToString());
+                    
                     cls2.bDaNhapKho = true;
-                    cls2.bCheck_VatTu_Phu = true;
+                   
                    
                 string expressionnhapkho;
                     expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
