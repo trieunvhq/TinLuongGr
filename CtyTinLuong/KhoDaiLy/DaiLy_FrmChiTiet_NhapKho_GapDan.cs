@@ -435,7 +435,7 @@ namespace CtyTinLuong
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Luu_NhapKho_GapDan(UCDaiLy_NhapKho_GapDan.miID_NhapKho_GapDan);
+            Luu_NhapKho_GapDan(frmQuanLyKhoDaiLy.isChoNhapKho_GapDan,UCDaiLy_NhapKho_GapDan.miID_NhapKho_GapDan);
             Cursor.Current = Cursors.Default;
         }
 
