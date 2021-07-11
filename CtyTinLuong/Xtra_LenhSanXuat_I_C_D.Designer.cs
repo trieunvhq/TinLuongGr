@@ -226,7 +226,7 @@
             this.xrTableCell7.StylePriority.UsePadding = false;
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "xrTableCell7";
-            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell7.Weight = 0.127932673130692D;
             // 
             // xrTableCell8
@@ -759,7 +759,7 @@
             this.ReportHeader});
             this.DataMember = "tbLenhSanXuat_I_C_D";
             this.DataSource = this.dataSet_TinLuong1;
-            this.Margins = new System.Drawing.Printing.Margins(60, 40, 60, 60);
+            this.Margins = new System.Drawing.Printing.Margins(60, 41, 60, 60);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
