@@ -76,7 +76,7 @@ namespace CtyTinLuong
                 mbCopy = false;
                 mbSua = true;
                 miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
-                KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
+                KhoThanhPham_NhapKho_TuGapDan ff = new KhoThanhPham_NhapKho_TuGapDan();
                 //_frmQLKTP.Hide();
                 ff.Show();
                 //_frmQLKTP.Show();
@@ -86,7 +86,7 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             mbThemMoi = true;
-            KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII ff = new KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII();
+            KhoThanhPham_NhapKho_TuGapDan ff = new KhoThanhPham_NhapKho_TuGapDan();
             //_frmQLKTP.Hide();
             ff.Show();
             //_frmQLKTP.Show();
