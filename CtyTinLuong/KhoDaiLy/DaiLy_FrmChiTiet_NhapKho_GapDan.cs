@@ -66,7 +66,7 @@ namespace CtyTinLuong
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
             DataView dvCaTruong = dtNguoi.DefaultView;
             DataTable newdtCaTruong = dvCaTruong.ToTable();
 
@@ -145,7 +145,7 @@ namespace CtyTinLuong
             else return true;
 
         }
-        private void Luu_NhapKho_GapDan()
+        private void Luu_NhapKho_GapDan(bool isChoNhapKho,int iiID_nhapKho)
         {
             if (!KiemTraLuu()) return;
             else
@@ -170,13 +170,17 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.sNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
                 int iiID_Nhapkho_GapDan;
-               
-                    cls1.iID_NhapKho = UCDaiLy_NhapKho_GapDan.miID_NhapKho_GapDan;
-                    iiID_Nhapkho_GapDan = UCDaiLy_NhapKho_GapDan.miID_NhapKho_GapDan;
-                    cls1.Update();
-             
+                cls1.iID_NhapKho = iiID_nhapKho;
+                iiID_Nhapkho_GapDan = iiID_nhapKho;
+                cls1.Update();
                 Luu_ChiTiet_NhapKho_GapDan(iiID_Nhapkho_GapDan);
+                if(isChoNhapKho==true)
+                {
+                    clsGapDan_tbNhapKho_Temp cls2 = new clsGapDan_tbNhapKho_Temp();                   
+                    cls2.Update_trangthainhapkho_daiLy(iiID_nhapKho);
+                }
                 MessageBox.Show("Đã lưu");
+                this.Close();
             }
 
         }
@@ -260,14 +264,14 @@ namespace CtyTinLuong
         {
             if (isChoNhapKho == false)
             {
-                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
+                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
                 DataTable dt2 = cls2.SA_W_ID_NK_HienThi_(xid_nhapkho, iii_dinhmuc, soluongxuatxxx);
                 gridControl1.DataSource = dt2;
                 txtTongTienHang.Text = dt2.Rows[0][0].ToString();
             }
             else
             {
-                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
+                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
                 DataTable dt2 = cls2.SA_W_ID_NK_HienThi_(xid_nhapkho, iii_dinhmuc, soluongxuatxxx);
                 gridControl1.DataSource = dt2;
                 txtTongTienHang.Text = dt2.Rows[0][0].ToString();
@@ -277,8 +281,9 @@ namespace CtyTinLuong
         }
         private void HienThi_Sua_XuatKho(bool isChoNhapKho, int iiID_nhapkho_)
         {
-            if(isChoNhapKho==false)
+            if(isChoNhapKho==true)
             {
+                btLuu_Gui_Dong.Text = "Nhập kho";
                 clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
                 cls1.iID_NhapKho = iiID_nhapkho_;
                 DataTable dt22222 = cls1.SelectOne();
@@ -296,6 +301,7 @@ namespace CtyTinLuong
             }
             else
             {
+                btLuu_Gui_Dong.Text = "Lưu";
                 clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
                 cls1.iID_NhapKho = iiID_nhapkho_;
                 DataTable dt22222 = cls1.SelectOne();
@@ -316,10 +322,10 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            //if (e.Column == clSTT)
-            //{
-            //    e.DisplayText = (e.RowHandle + 1).ToString();
-            //}
+            if (e.Column == clSTT)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
         }
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
@@ -429,7 +435,7 @@ namespace CtyTinLuong
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Luu_NhapKho_GapDan();
+            Luu_NhapKho_GapDan(UCDaiLy_NhapKho_GapDan.miID_NhapKho_GapDan);
             Cursor.Current = Cursors.Default;
         }
 

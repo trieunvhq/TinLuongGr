@@ -7,6 +7,40 @@ namespace CtyTinLuong
 {
 	public partial class clsGapDan_tbNhapKho_Temp : clsDBInteractionBase
 	{
+        //pr_GapDan_tbNhapKho_Temp_Update_trangthainhapkho_daiLy
+        public void Update_trangthainhapkho_daiLy(int xxID_nhapkho_)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_tbNhapKho_Temp_Update_trangthainhapkho_daiLy]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_nhapkho_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_nhapkho_));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_GapDan_tbNhapKho_Temp_Update_trangthainhapkho_daiLy::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         public DataTable SA_NgayThang_ChoGhiSo(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

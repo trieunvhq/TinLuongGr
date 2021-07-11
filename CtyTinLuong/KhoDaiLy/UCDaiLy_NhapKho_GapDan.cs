@@ -33,11 +33,11 @@ namespace CtyTinLuong
             }
 
         }
-        private void Load_DaTa(bool ischonhakho, DateTime xxtungay, DateTime xxdenngay)
+        private void Load_DaTa(bool ischonhapkho, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt = new DataTable();
           
-            if (ischonhakho == false)
+            if (ischonhapkho == false)
             {
                 clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
                 dt = cls.SelectAll_HienThi2(xxtungay, xxdenngay);
