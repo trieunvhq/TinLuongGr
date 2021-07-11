@@ -2249,6 +2249,9 @@
     <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.resx">
       <DependentUpon>KhoThanhPham_NhapKho_TuGapDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoThanhPham\UCThanhPham_NhapKhoTu_GapDan.resx">
+      <DependentUpon>UCThanhPham_NhapKhoTu_GapDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_ToIn.resx">
       <DependentUpon>frmBTTL_ToIn.cs</DependentUpon>
     </EmbeddedResource>
