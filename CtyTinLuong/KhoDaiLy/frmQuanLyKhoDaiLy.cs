@@ -47,7 +47,7 @@ namespace CtyTinLuong
 
             clsGapDan_tbNhapKho_Temp cls3 = new clsGapDan_tbNhapKho_Temp();
             DataTable dt3 = cls3.SelectAll();
-            dt1.DefaultView.RowFilter = "TrangThai_XuatKho_NPL = False and TrangThai_NhapKho_GapDan = True";
+            dt3.DefaultView.RowFilter = "TrangThai_XuatKho_NPL = True and TrangThai_NhapKho_GapDan = False";
             DataView dv3 = dt3.DefaultView;
             DataTable dxxxx3 = dv3.ToTable();
             int k3 = dxxxx3.Rows.Count;
