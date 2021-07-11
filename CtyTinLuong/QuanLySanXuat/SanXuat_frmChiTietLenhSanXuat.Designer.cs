@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanXuat_frmChiTietLenhSanXuat));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -101,7 +101,6 @@
             this.btThoat2222 = new DevExpress.XtraEditors.SimpleButton();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
-            this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -482,7 +481,7 @@
             this.groupBox2.Controls.Add(this.gridControl1);
             this.groupBox2.Location = new System.Drawing.Point(12, 172);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1132, 436);
+            this.groupBox2.Size = new System.Drawing.Size(1132, 449);
             this.groupBox2.TabIndex = 79;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết lệnh sản xuất";
@@ -498,7 +497,7 @@
             this.repositoryItemLookUpEdit_maPhieu,
             this.repositoryItemMemoEdit1,
             this.repositoryItemMemoEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1126, 417);
+            this.gridControl1.Size = new System.Drawing.Size(1126, 430);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1,
@@ -659,7 +658,7 @@
             this.clSoLuong_Vao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuong_Vao.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clSoLuong_Vao.Caption = "Số lượng";
-            this.clSoLuong_Vao.FieldName = "SoLuong_Vao";
+            this.clSoLuong_Vao.FieldName = "SoLuongVao";
             this.clSoLuong_Vao.Name = "clSoLuong_Vao";
             this.clSoLuong_Vao.OptionsColumn.AllowEdit = false;
             this.clSoLuong_Vao.OptionsColumn.FixedWidth = true;
@@ -671,7 +670,7 @@
             this.clDonGia_Xuat.Caption = "Đơn giá";
             this.clDonGia_Xuat.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Xuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clDonGia_Xuat.FieldName = "DonGia_Xuat";
+            this.clDonGia_Xuat.FieldName = "DonGiaRa";
             this.clDonGia_Xuat.GroupFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Xuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia_Xuat.Name = "clDonGia_Xuat";
@@ -751,7 +750,7 @@
             this.clSanLuong_Thuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSanLuong_Thuong.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clSanLuong_Thuong.Caption = "Sản lượng";
-            this.clSanLuong_Thuong.FieldName = "SanLuong_Thuong";
+            this.clSanLuong_Thuong.FieldName = "SanLuongThuong";
             this.clSanLuong_Thuong.Name = "clSanLuong_Thuong";
             this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Thuong.OptionsColumn.FixedWidth = true;
@@ -764,7 +763,7 @@
             this.clSanLuong_TangCa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSanLuong_TangCa.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clSanLuong_TangCa.Caption = "Tăng ca";
-            this.clSanLuong_TangCa.FieldName = "SanLuong_TangCa";
+            this.clSanLuong_TangCa.FieldName = "SanLuongTangCa";
             this.clSanLuong_TangCa.Name = "clSanLuong_TangCa";
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
@@ -776,7 +775,7 @@
             this.clDonGia_Vao.Caption = "Đơn giá";
             this.clDonGia_Vao.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Vao.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clDonGia_Vao.FieldName = "DonGia_Vao";
+            this.clDonGia_Vao.FieldName = "DonGiaVao";
             this.clDonGia_Vao.GroupFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Vao.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia_Vao.Name = "clDonGia_Vao";
@@ -823,9 +822,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -869,7 +868,7 @@
             // btPrint
             // 
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(734, 627);
+            this.btPrint.Location = new System.Drawing.Point(779, 627);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(115, 23);
             this.btPrint.TabIndex = 89;
@@ -883,22 +882,12 @@
             this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
             this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
             this.btLuu_Gui_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(855, 627);
+            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(900, 627);
             this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
-            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(104, 23);
+            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(163, 23);
             this.btLuu_Gui_Dong.TabIndex = 91;
-            this.btLuu_Gui_Dong.Text = "Lưu + Gửi";
+            this.btLuu_Gui_Dong.Text = "Gửi dữ liệu Xuất - Nhập";
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
-            // 
-            // btLuu_Dong
-            // 
-            this.btLuu_Dong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btLuu_Dong.ImageOptions.Image")));
-            this.btLuu_Dong.Location = new System.Drawing.Point(965, 627);
-            this.btLuu_Dong.Name = "btLuu_Dong";
-            this.btLuu_Dong.Size = new System.Drawing.Size(98, 23);
-            this.btLuu_Dong.TabIndex = 90;
-            this.btLuu_Dong.Text = "Lưu";
-            this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // SanXuat_frmChiTietLenhSanXuat
             // 
@@ -906,7 +895,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.btLuu_Gui_Dong);
-            this.Controls.Add(this.btLuu_Dong);
             this.Controls.Add(this.btPrint);
             this.Controls.Add(this.btThoat2222);
             this.Controls.Add(this.groupBox2);
@@ -1017,7 +1005,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
         private DevExpress.XtraEditors.SimpleButton btPrint;
         private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
         private DevExpress.XtraEditors.SearchLookUpEdit gridMaCN;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
