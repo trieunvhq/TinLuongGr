@@ -28,9 +28,9 @@ namespace CtyTinLuong
         }
         private void HienThiGridControl(int xxxxmiID_XuatKhoDaiLyxxxxx)
         {
-            clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
-            DataTable dt222 = cls2.SA_W_ID_XuatKhoDaiLy(xxxxmiID_XuatKhoDaiLyxxxxx);
-            gridControl2.DataSource = dt222;
+            //clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+            //DataTable dt222 = cls2.SA_W_ID_XuatKhoDaiLy(xxxxmiID_XuatKhoDaiLyxxxxx);
+            //gridControl2.DataSource = dt222;
         }
         private void btXoa1_Click(object sender, EventArgs e)
         {
