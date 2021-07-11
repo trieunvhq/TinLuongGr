@@ -20,15 +20,14 @@ namespace CtyTinLuong
         {
             if (ischoxuatkho == false)
             {
-                clsGapDan_ThamChieuTinhXuatKho cls2 = new clsGapDan_ThamChieuTinhXuatKho();
-                cls2.iID_XuatKhoGapDan = xxID_xuatkho;
-                DataTable dtxxxx = cls2.SelectAll_W_ID_XuatKhoGapDan();
+                clsGapDan_ThamChieuTinhXuatKho cls2 = new clsGapDan_ThamChieuTinhXuatKho();                
+                DataTable dtxxxx = cls2.SA_ID_XuatKho_2(xxID_xuatkho);
                 gridControl3.DataSource = dtxxxx;
             }
             else
             {
                 clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
-                DataTable dtxxxx = cls2.SA_W_ID_XuatKho(xxID_xuatkho);
+                DataTable dtxxxx = cls2.SA_ID_XuatKho_moi(xxID_xuatkho);
                 gridControl3.DataSource = dtxxxx;
             }
 
