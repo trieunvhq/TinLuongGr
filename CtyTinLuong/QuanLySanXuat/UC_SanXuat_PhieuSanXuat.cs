@@ -208,6 +208,8 @@ namespace CtyTinLuong
                     SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
                     //_frmQLSX.Hide();
                     ff.Show();
+                    Cursor.Current = Cursors.WaitCursor;
+                    LoadData(_SoTrang, false);
                     //_frmQLSX.Show();
                     Cursor.Current = Cursors.Default;
                 }
@@ -261,6 +263,7 @@ namespace CtyTinLuong
                     //{
                     //    //  HienThi_ALL();ien
                     LoadData(_SoTrang, false);
+                    Cursor.Current = Cursors.Default;
                     //}
                     MessageBox.Show("Đã xóa");
                 }
@@ -328,6 +331,7 @@ namespace CtyTinLuong
             SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
             //_frmQLSX.Hide();
             ff.Show();
+            btRefresh_Click(null, null);
             //_frmQLSX.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -379,13 +383,14 @@ namespace CtyTinLuong
                 if (gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString() != "")
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    mb_ThemMoi_SoPhieu = false;
+                    mb_ThemMoi_SoPhieu = true;
                     mb_Sua_SoPhieu = false;
                     mbCopy_Phieu = true;
                     msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                     mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
                     SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
                     ff.Show();
+                    btRefresh_Click(null, null);
                     Cursor.Current = Cursors.Default;
                 }
             }

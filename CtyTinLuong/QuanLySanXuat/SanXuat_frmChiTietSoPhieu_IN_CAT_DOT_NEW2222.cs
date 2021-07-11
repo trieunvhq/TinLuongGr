@@ -138,24 +138,47 @@ namespace CtyTinLuong
                 int iiiiID_SoPhieu;
                 if (UC_SanXuat_PhieuSanXuat.mb_Sua_SoPhieu == false)
                 {
-                    cls.Insert();
-                    iiiiID_SoPhieu = cls.iID_SoPhieu.Value;
+                    if (cls.Insert())
+                    {
+                        iiiiID_SoPhieu = cls.iID_SoPhieu.Value;
+                        MIiiiid_SoPhieu = iiiiID_SoPhieu;
+                        cls.iID_SoPhieu = iiiiID_SoPhieu;
+                        cls.Update_Gui_DuLieu();
+
+                        Luu_Va_GuiDuLieu_May_IN(iiiiID_SoPhieu);
+
+                        Luu_Va_GuiDuLieu_May_CAT(iiiiID_SoPhieu);
+                        this.Close();
+
+                        MessageBox.Show("Đã lưu!", "Success!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu dữ liệu không thành công!", "Error!");
+                    }
                 }
                 else
                 {
                     cls.iID_SoPhieu = UC_SanXuat_PhieuSanXuat.mID_iD_SoPhieu;
-                    cls.Update();
-                    iiiiID_SoPhieu = UC_SanXuat_PhieuSanXuat.mID_iD_SoPhieu;
+                    if (cls.Update())
+                    {
+                        iiiiID_SoPhieu = UC_SanXuat_PhieuSanXuat.mID_iD_SoPhieu;
+                        MIiiiid_SoPhieu = iiiiID_SoPhieu;
+                        cls.iID_SoPhieu = iiiiID_SoPhieu;
+                        cls.Update_Gui_DuLieu();
+
+                        Luu_Va_GuiDuLieu_May_IN(iiiiID_SoPhieu);
+
+                        Luu_Va_GuiDuLieu_May_CAT(iiiiID_SoPhieu);
+                        this.Close();
+
+                        MessageBox.Show("Đã lưu!", "Success!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu dữ liệu không thành công!", "Error!");
+                    }
                 }
-                MIiiiid_SoPhieu = iiiiID_SoPhieu;
-                cls.iID_SoPhieu = iiiiID_SoPhieu;
-                cls.Update_Gui_DuLieu();
-                
-                Luu_Va_GuiDuLieu_May_IN(iiiiID_SoPhieu);
-              
-                Luu_Va_GuiDuLieu_May_CAT(iiiiID_SoPhieu);
-               
-                MessageBox.Show("Đã lưu!");
             }
         }
         private void Load_lockUP_Phieu()
@@ -1790,7 +1813,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaCaTruong_May_CAT.Focus();
             }
         }
 
