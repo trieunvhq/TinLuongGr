@@ -31,16 +31,7 @@ namespace CtyTinLuong
                 MessageBox.Show("Chưa chọn ngày chứng từ ");
                 return false;
             }
-            //else if (gridTKCo.EditValue == null)
-            //{
-            //    MessageBox.Show("Chưa chọn TK có");
-            //    return false;
-            //}
-            //else if (gridTKNo.EditValue == null)
-            //{
-            //    MessageBox.Show("Chưa chọn TK nợ");
-            //    return false;
-            //}
+           
 
             else return true;
 
@@ -81,6 +72,7 @@ namespace CtyTinLuong
                     clschitietxuatkho.bTonTai = true;
                     clschitietxuatkho.bNgungTheoDoi = false;
                     clschitietxuatkho.bDaXuatKho = true;
+                    clschitietxuatkho.sGhiChu = "";
                     clschitietxuatkho.Insert();
 
                     // update soluong ton tbnhapkho
@@ -252,27 +244,7 @@ namespace CtyTinLuong
             clSanLuongThuong_May.Caption = "Sản\n lượng";
             
             Load_lockUP_EDIT();
-            DataTable dt2 = new DataTable();
-
-            dt2.Columns.Add("ID_SoPhieu", typeof(int));
-            dt2.Columns.Add("MaPhieu", typeof(string));
-            dt2.Columns.Add("ID_VTHH_Vao", typeof(int));
-            dt2.Columns.Add("ID_VTHH_Ra", typeof(int));
-            dt2.Columns.Add("MaVT_Vao", typeof(string));
-            dt2.Columns.Add("MaVT_Ra", typeof(string));
-            dt2.Columns.Add("DonViTinh_Vao", typeof(string));
-            dt2.Columns.Add("DonViTinh_Ra", typeof(string));
-            dt2.Columns.Add("TenVatTu_Vao", typeof(string));
-            dt2.Columns.Add("TenVatTu_Ra", typeof(string));
-            dt2.Columns.Add("SoLuongNhap_May", typeof(float));
-            dt2.Columns.Add("SanLuongThuong_May", typeof(float));
-            dt2.Columns.Add("SanLuongTangCa_May", typeof(float));
-            dt2.Columns.Add("PhePham_May", typeof(float));            //
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("DonGia_Vao", typeof(float));
-            dt2.Columns.Add("DonGia_Ra", typeof(float));
-            dt2.Columns.Add("SoLuongTon", typeof(float));
-            gridControl1.DataSource = dt2;
+           
             HienThi_SUa_LenhSanXuat();
 
             clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
