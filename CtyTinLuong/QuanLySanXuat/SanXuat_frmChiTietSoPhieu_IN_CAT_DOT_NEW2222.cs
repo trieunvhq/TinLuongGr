@@ -578,6 +578,7 @@ namespace CtyTinLuong
             clsLSX_chitiet.fDonGiaRa = DonGia_Xuat;
             clsLSX_chitiet.bNgungTheoDoi = false;
             clsLSX_chitiet.bTonTai = true;
+
             clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
             cls2.iID_LenhSanXuat = iiID_LenhnhanXuat;
             cls2.iID_ChiTietPhieu = iiiDID_ChiTietPhieu;

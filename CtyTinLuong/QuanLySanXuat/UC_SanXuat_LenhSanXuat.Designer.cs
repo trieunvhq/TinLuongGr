@@ -638,7 +638,7 @@
             this.clID_VTHH_Vao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.clID_VTHH_Vao.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clID_VTHH_Vao.Caption = "ID_VTHH1";
-            this.clID_VTHH_Vao.FieldName = "ID_VTHH_Vao";
+            this.clID_VTHH_Vao.FieldName = "ID_VTHHVao";
             this.clID_VTHH_Vao.Name = "clID_VTHH_Vao";
             this.clID_VTHH_Vao.Width = 245;
             // 
@@ -720,7 +720,7 @@
             this.clSoLuong_Vao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoLuong_Vao.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clSoLuong_Vao.Caption = "Số lượng";
-            this.clSoLuong_Vao.FieldName = "SoLuong_Vao";
+            this.clSoLuong_Vao.FieldName = "SoLuongVao";
             this.clSoLuong_Vao.Name = "clSoLuong_Vao";
             this.clSoLuong_Vao.OptionsColumn.AllowEdit = false;
             this.clSoLuong_Vao.OptionsColumn.FixedWidth = true;
@@ -732,7 +732,7 @@
             this.clDonGia_Xuat.Caption = "Đơn giá";
             this.clDonGia_Xuat.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Xuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clDonGia_Xuat.FieldName = "DonGia_Xuat";
+            this.clDonGia_Xuat.FieldName = "DonGiaRa";
             this.clDonGia_Xuat.GroupFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Xuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia_Xuat.Name = "clDonGia_Xuat";
@@ -761,7 +761,7 @@
             // clID_VTHH_Ra
             // 
             this.clID_VTHH_Ra.Caption = "ID_VTHH_Ra2";
-            this.clID_VTHH_Ra.FieldName = "ID_VTHH_Ra";
+            this.clID_VTHH_Ra.FieldName = "ID_VTHHRa";
             this.clID_VTHH_Ra.Name = "clID_VTHH_Ra";
             this.clID_VTHH_Ra.Width = 104;
             // 
@@ -812,7 +812,7 @@
             this.clSanLuong_Thuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSanLuong_Thuong.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clSanLuong_Thuong.Caption = "Sản lượng";
-            this.clSanLuong_Thuong.FieldName = "SanLuong_Thuong";
+            this.clSanLuong_Thuong.FieldName = "SanLuongThuong";
             this.clSanLuong_Thuong.Name = "clSanLuong_Thuong";
             this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Thuong.OptionsColumn.FixedWidth = true;
@@ -825,7 +825,7 @@
             this.clSanLuong_TangCa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSanLuong_TangCa.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clSanLuong_TangCa.Caption = "Tăng ca";
-            this.clSanLuong_TangCa.FieldName = "SanLuong_TangCa";
+            this.clSanLuong_TangCa.FieldName = "SanLuongTangCa";
             this.clSanLuong_TangCa.Name = "clSanLuong_TangCa";
             this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
@@ -836,7 +836,7 @@
             this.clDonGia_Vao.Caption = "Đơn giá";
             this.clDonGia_Vao.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Vao.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clDonGia_Vao.FieldName = "DonGia_Vao";
+            this.clDonGia_Vao.FieldName = "DonGiaVao";
             this.clDonGia_Vao.GroupFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia_Vao.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia_Vao.Name = "clDonGia_Vao";
