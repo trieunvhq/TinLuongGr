@@ -164,6 +164,31 @@ namespace CtyTinLuong
             cls.Dispose();
             cls1.Dispose();
         }
+
+        private void HienThi_Copy(int iiiiID_XuatKho)
+        {
+            clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
+            cls1.iID_XuatKho = iiiiID_XuatKho;
+            DataTable dt22222 = cls1.SelectOne();           
+            txtSoChungTu.Text = sochungtu_gapdan();
+            dteNgayChungTu.EditValue = DateTime.Today;
+            gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
+            if (cls1.bCheckNhapKhoThanhPham == true)
+                checkNhapKhoThanhPham.Checked = true;
+            else checkNhapKho_banThanhPham.Checked = true;
+            clsGapDan_ThamChieuTinhXuatKho_Temp cls = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+
+            DataTable dt222 = cls.SA_ID_XuatKho_moi(iiiiID_XuatKho);
+            gridControl2.DataSource = dt222;
+
+
+            clsGapDan_ChiTiet_XuatKho_Temp cls2 = new clsGapDan_ChiTiet_XuatKho_Temp();
+            DataTable dtxx = cls2.SA_ID_XuatKho_HienThi(iiiiID_XuatKho);
+            gridControl1.DataSource = dtxx;
+
+            cls.Dispose();
+            cls1.Dispose();
+        }
         private void Load_LockUp()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
@@ -1488,7 +1513,7 @@ namespace CtyTinLuong
             if (UCThanhPham_NhapKhoTu_GapDan.mbThemMoi == true)
                 HienThi_ThemMoi_XuatKho();
             else if (UCThanhPham_NhapKhoTu_GapDan.mbCopy == true)
-                HienThi_ThemMoi_XuatKho();
+                HienThi_Copy(UCThanhPham_NhapKhoTu_GapDan.miID_XuatKho);
             else HienThi_Sua_XuatKho(UCThanhPham_NhapKhoTu_GapDan.miID_XuatKho);
             Cursor.Current = Cursors.Default;
         }
