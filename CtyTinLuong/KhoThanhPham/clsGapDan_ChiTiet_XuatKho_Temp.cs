@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public class clsGapDan_ChiTiet_XuatKho_Temp : clsDBInteractionBase
+	public partial class clsGapDan_ChiTiet_XuatKho_Temp : clsDBInteractionBase
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bTonTai, m_bNgungTheoDoi, m_bDaXuatKho;
