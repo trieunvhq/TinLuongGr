@@ -167,11 +167,11 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThi_Sua_XuatKho()
+        private void HienThi_Sua_XuatKho(int iiiiID_XuatKho)
         {
 
             clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
-            cls1.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+            cls1.iID_XuatKho = iiiiID_XuatKho;
             DataTable dt22222 = cls1.SelectOne();
             if (cls1.bDaXuatKho == true)
             {
@@ -185,7 +185,7 @@ namespace CtyTinLuong
                 checkNhapKhoThanhPham.Checked = true;
             else checkNhapKho_banThanhPham.Checked = true;
             clsGapDan_ThamChieuTinhXuatKho cls = new clsGapDan_ThamChieuTinhXuatKho();
-            cls.iID_XuatKhoGapDan = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+            cls.iID_XuatKhoGapDan = iiiiID_XuatKho;
             DataTable dt222 = cls.SelectAll_W_ID_XuatKhoGapDan();
 
             DataTable dt22xx = new DataTable();
@@ -247,7 +247,7 @@ namespace CtyTinLuong
             dt3.Columns.Add("MaKho", typeof(string));
 
             clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
-            cls2.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+            cls2.iID_XuatKho = iiiiID_XuatKho;
             DataTable dtxx = cls2.SelectAll_ID_XuatKho();
             if (dtxx.Rows.Count > 0)
             {
@@ -972,7 +972,7 @@ namespace CtyTinLuong
 
             }
         }
-        private void Luu_XuatKho_GapDan_GuDuLieu(bool bguidulieu)
+        private void Luu_XuatKho_GapDan_GuDuLieu(bool bguidulieu, int iiiiID_XuatKho)
         {
             if (!KiemTraLuu()) return;
             else
@@ -1014,15 +1014,15 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
                 int iiID_Nhapkho_GapDan;
-                if (UCDaiLy_XuatKho_GapDan.mbsua == false)
+                if (UCThanhPham_NhapKhoTu_GapDan.mbSua == false)
                 {
                     cls1.Insert();
                     iiID_Nhapkho_GapDan = cls1.iID_XuatKho.Value;
                 }
                 else
                 {
-                    cls1.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
-                    iiID_Nhapkho_GapDan = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+                    cls1.iID_XuatKho = iiiiID_XuatKho;
+                    iiID_Nhapkho_GapDan = iiiiID_XuatKho;
                     cls1.Update();
                 }
                 Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
@@ -1030,7 +1030,7 @@ namespace CtyTinLuong
             }
 
         }
-        private void Luu_XuatKho_GapDan_ChiLuuu()
+        private void Luu_XuatKho_GapDan_ChiLuuu(int iiiiID_XuatKho)
         {
             if (!KiemTraLuu()) return;
             else
@@ -1070,7 +1070,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
                 int iiID_Nhapkho_GapDan;
-                if (UCDaiLy_XuatKho_GapDan.mbsua == false)
+                if (UCThanhPham_NhapKhoTu_GapDan.mbSua == false)
                 {
                     cls1.bTrangThaiNhapKhoBTP_ThanhPham = false;
                     cls1.bDaXuatKho = false;
@@ -1080,13 +1080,13 @@ namespace CtyTinLuong
                 else
                 {
                     clsGapDan_tbXuatKho cls2 = new clsGapDan_tbXuatKho();
-                    cls2.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+                    cls2.iID_XuatKho = iiiiID_XuatKho;
                     DataTable dt2 = cls2.SelectOne();
                     cls1.bTrangThaiNhapKhoBTP_ThanhPham = cls2.bTrangThaiNhapKhoBTP_ThanhPham.Value;
                     cls1.bDaXuatKho = cls2.bDaXuatKho.Value;
 
-                    cls1.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
-                    iiID_Nhapkho_GapDan = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+                    cls1.iID_XuatKho = iiiiID_XuatKho;
+                    iiID_Nhapkho_GapDan = iiiiID_XuatKho;
                     cls1.Update();
                 }
                 Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
@@ -1274,13 +1274,13 @@ namespace CtyTinLuong
         private void Luu_ChiLuu()
         {
 
-            if (!KiemTraLuu()) return;
-            else
-            {
-                Luu_XuatKho_GapDan_ChiLuuu();
-                MessageBox.Show("Đã lưu");
-                this.Close();
-            }
+            //if (!KiemTraLuu()) return;
+            //else
+            //{
+            //    Luu_XuatKho_GapDan_ChiLuuu();
+            //    MessageBox.Show("Đã lưu");
+            //    this.Close();
+            //}
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
@@ -1632,27 +1632,27 @@ namespace CtyTinLuong
 
         private void Luu_Va_GuiDuLieu()
         {
-            if (!KiemTraLuu()) return;
-            else
-            {
-                Luu_XuatKho_GapDan_GuDuLieu(true);
-                if (checkNhapKhoThanhPham.Checked == true) //nhap kho thành pham
-                {
-                    Luu_NhapKhoThanhPham();
-                    Luu_NhapKho_Khac_KhoNPL();
-                    Luu_NhapKho_Khac_Kho_banThanhPham();
+            //if (!KiemTraLuu()) return;
+            //else
+            //{
+            //    Luu_XuatKho_GapDan_GuDuLieu(true);
+            //    if (checkNhapKhoThanhPham.Checked == true) //nhap kho thành pham
+            //    {
+            //        Luu_NhapKhoThanhPham();
+            //        Luu_NhapKho_Khac_KhoNPL();
+            //        Luu_NhapKho_Khac_Kho_banThanhPham();
 
-                }
-                else
-                {
-                    Luu_NhapKho_Ban___________ThanhPham();
-                    Luu_NhapKho_Khac_KhoNPL();
-                    Luu_NhapKho_Khac_KhoThanhPham();
-                }
-                Cursor.Current = Cursors.Default;
-                MessageBox.Show("Đã lưu và gửi dữ liệu");
-                this.Close();
-            }
+            //    }
+            //    else
+            //    {
+            //        Luu_NhapKho_Ban___________ThanhPham();
+            //        Luu_NhapKho_Khac_KhoNPL();
+            //        Luu_NhapKho_Khac_KhoThanhPham();
+            //    }
+            //    Cursor.Current = Cursors.Default;
+            //    MessageBox.Show("Đã lưu và gửi dữ liệu");
+            //    this.Close();
+            //}
         }
         public KhoThanhPham_NhapKho_TuGapDan()
         {
@@ -1666,9 +1666,9 @@ namespace CtyTinLuong
             dteTuNgay.DateTime = DateTime.Today.AddDays(-30);
             clSoLuongXuat1.Caption = "Số lượng \n nhập";
             Load_LockUp();
-            if (UCDaiLy_XuatKho_GapDan.mbthemmoi == true)
-                HienThi_ThemMoi_XuatKho();
-            else HienThi_Sua_XuatKho();
+            //if (UCThanhPham_NhapKhoTu_GapDan.mbThemMoi == true)
+            //    HienThi_ThemMoi_XuatKho();
+            //else HienThi_Sua_XuatKho();
             Cursor.Current = Cursors.Default;
         }
 
