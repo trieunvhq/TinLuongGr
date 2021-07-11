@@ -40,7 +40,7 @@ namespace CtyTinLuong
             if (ischonhapkho == false)
             {
                 clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
-                dt = cls.SelectAll_HienThi2(xxtungay, xxdenngay);
+                dt = cls.SA_NgayThang(xxtungay, xxdenngay);
             }
             else
             {
