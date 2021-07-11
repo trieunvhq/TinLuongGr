@@ -69,7 +69,6 @@
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clTiLe1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSTT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuongNhap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenVTHH1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,15 +91,16 @@
             this.clSoLuongThanhPhamQuyDoi1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clMaVT2221 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_VTHH_ThanhPham_QuyDoi1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clTiLe1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_DinhMuc_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_VTHH2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDonGia2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaVT2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridMaVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.clDonGia2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenVTHH2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clDonViTinh2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,7 +110,6 @@
             this.btXoaGrid2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clGhiChu2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuong2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_ChiTietXuatKho2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbKho = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.clHienThi2222 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -127,6 +126,7 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -516,7 +516,8 @@
             this.clSoLuongThanhPhamQuyDoi1,
             this.clMaVT2221,
             this.clID_VTHH_ThanhPham_QuyDoi1,
-            this.clTiLe1});
+            this.clTiLe1,
+            this.clID_DinhMuc_ToGapDan});
             this.gridView4.GridControl = this.gridControl2;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.AllowHtmlDrawHeaders = true;
@@ -525,12 +526,6 @@
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
-            // 
-            // clTiLe1
-            // 
-            this.clTiLe1.Caption = "Tỉ lệ";
-            this.clTiLe1.FieldName = "TiLe";
-            this.clTiLe1.Name = "clTiLe1";
             // 
             // clSTT1
             // 
@@ -642,7 +637,8 @@
             this.gridColumn2ssds,
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn4});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -761,6 +757,18 @@
             this.clID_VTHH_ThanhPham_QuyDoi1.FieldName = "ID_VTHH_ThanhPham_QuyDoi";
             this.clID_VTHH_ThanhPham_QuyDoi1.Name = "clID_VTHH_ThanhPham_QuyDoi1";
             // 
+            // clTiLe1
+            // 
+            this.clTiLe1.Caption = "Tỉ lệ";
+            this.clTiLe1.FieldName = "TiLe";
+            this.clTiLe1.Name = "clTiLe1";
+            // 
+            // clID_DinhMuc_ToGapDan
+            // 
+            this.clID_DinhMuc_ToGapDan.Caption = "ID_DinhMuc_ToGapDan";
+            this.clID_DinhMuc_ToGapDan.FieldName = "ID_DinhMuc_ToGapDan";
+            this.clID_DinhMuc_ToGapDan.Name = "clID_DinhMuc_ToGapDan";
+            // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
@@ -802,7 +810,6 @@
             this.clSTT2,
             this.clID_VTHH2,
             this.clDonGia2,
-            this.clMaVT2,
             this.clTenVTHH2,
             this.clDonViTinh2,
             this.clHienThi2,
@@ -810,7 +817,6 @@
             this.clXoa2,
             this.clGhiChu2,
             this.clSoLuong2,
-            this.clID_ChiTietXuatKho2,
             this.clNhapKho_TP_1_BTP_2_NPL_3_22222,
             this.clHienThi2222,
             this.clMaKho,
@@ -824,6 +830,7 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView1_CustomRowFilter);
             // 
@@ -839,11 +846,25 @@
             // 
             // clID_VTHH2
             // 
-            this.clID_VTHH2.Caption = "ID_VTHH";
+            this.clID_VTHH2.Caption = "Mã VT";
+            this.clID_VTHH2.ColumnEdit = this.gridMaVT;
             this.clID_VTHH2.FieldName = "ID_VTHH";
             this.clID_VTHH2.Name = "clID_VTHH2";
             this.clID_VTHH2.OptionsColumn.FixedWidth = true;
+            this.clID_VTHH2.Visible = true;
+            this.clID_VTHH2.VisibleIndex = 1;
             this.clID_VTHH2.Width = 100;
+            // 
+            // gridMaVT
+            // 
+            this.gridMaVT.AutoHeight = false;
+            this.gridMaVT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridMaVT.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenVTHH", "TenVTHH", 200, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaVT", "MaVT", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_VTHH", "ID_VTHH", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.gridMaVT.Name = "gridMaVT";
             // 
             // clDonGia2
             // 
@@ -861,28 +882,6 @@
             this.clDonGia2.Visible = true;
             this.clDonGia2.VisibleIndex = 5;
             this.clDonGia2.Width = 100;
-            // 
-            // clMaVT2
-            // 
-            this.clMaVT2.Caption = "Mã VT";
-            this.clMaVT2.ColumnEdit = this.gridMaVT;
-            this.clMaVT2.FieldName = "MaVT";
-            this.clMaVT2.Name = "clMaVT2";
-            this.clMaVT2.OptionsColumn.FixedWidth = true;
-            this.clMaVT2.Visible = true;
-            this.clMaVT2.VisibleIndex = 1;
-            this.clMaVT2.Width = 60;
-            // 
-            // gridMaVT
-            // 
-            this.gridMaVT.AutoHeight = false;
-            this.gridMaVT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaVT.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenVTHH", "TenVTHH", 200, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaVT", "MaVT", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_VTHH", "ID_VTHH", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.gridMaVT.Name = "gridMaVT";
             // 
             // clTenVTHH2
             // 
@@ -992,14 +991,6 @@
             this.clSoLuong2.Visible = true;
             this.clSoLuong2.VisibleIndex = 4;
             this.clSoLuong2.Width = 60;
-            // 
-            // clID_ChiTietXuatKho2
-            // 
-            this.clID_ChiTietXuatKho2.Caption = "ID_ChiTietXuatKho";
-            this.clID_ChiTietXuatKho2.FieldName = "ID_ChiTietXuatKho";
-            this.clID_ChiTietXuatKho2.Name = "clID_ChiTietXuatKho2";
-            this.clID_ChiTietXuatKho2.OptionsColumn.FixedWidth = true;
-            this.clID_ChiTietXuatKho2.Width = 100;
             // 
             // clNhapKho_TP_1_BTP_2_NPL_3_22222
             // 
@@ -1161,6 +1152,12 @@
             this.btLuu_Gui_Dong.Text = "Lưu  + Gửi";
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
             // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "ID_DinhMuc_ToGapDan";
+            this.gridColumn4.FieldName = "ID_DinhMuc_ToGapDan";
+            this.gridColumn4.Name = "gridColumn4";
+            // 
             // KhoThanhPham_NhapKho_TuGapDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1254,7 +1251,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSTT2;
         private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH2;
         private DevExpress.XtraGrid.Columns.GridColumn clDonGia2;
-        private DevExpress.XtraGrid.Columns.GridColumn clMaVT2;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gridMaVT;
         private DevExpress.XtraGrid.Columns.GridColumn clTenVTHH2;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
@@ -1265,7 +1261,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoaGrid2;
         private DevExpress.XtraGrid.Columns.GridColumn clGhiChu2;
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuong2;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietXuatKho2;
         private DevExpress.XtraGrid.Columns.GridColumn clNhapKho_TP_1_BTP_2_NPL_3_22222;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cbKho;
         private DevExpress.XtraGrid.Columns.GridColumn clHienThi2222;
@@ -1312,5 +1307,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH_ThanhPham_QuyDoi1;
+        private DevExpress.XtraGrid.Columns.GridColumn clID_DinhMuc_ToGapDan;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

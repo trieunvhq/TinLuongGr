@@ -149,8 +149,7 @@ namespace CtyTinLuong
         }
         private void HienThi_GridControl_Moiiiiiiiiiiii( double soluongxuatxxx, int iiiID_Dinhmuc)
         {
-            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls1 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-           
+            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls1 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();           
             DataTable dt2 = cls1.SA_IDDM_W_SoLuong(soluongxuatxxx, iiiID_Dinhmuc);          
             gridControl1.DataSource = dt2;
             
