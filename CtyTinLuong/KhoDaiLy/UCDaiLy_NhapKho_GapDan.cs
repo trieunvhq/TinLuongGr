@@ -377,5 +377,11 @@ namespace CtyTinLuong
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT233)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
     }
 }
