@@ -196,19 +196,17 @@ namespace CtyTinLuong
                 dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "";
                 DataView dv2232xx = dtkkk.DefaultView;
 
-                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
+                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
                 DataTable dt2_cu = new DataTable();
                 cls2.iID_NhapKho = iiiID_nhapkhogapgan;
-                dt2_cu = cls2.SA_W_ID_NhapKho(iiiID_nhapkhogapgan);
+                dt2_cu = cls2.SA_W_ID_NhapKho();
                 if (dt2_cu.Rows.Count > 0)
                 {
                     cls2.iID_NhapKho = iiiID_nhapkhogapgan;
                     cls2.bTonTai = false;
-                    cls2.Update_ALL_tonTai();
+                    cls2.Update_ALL_tonTai_W_ID_NhapKho();
                 }
-
-
-
+                
                 DataTable dttttt2 = dv2232xx.ToTable();
                 for (int i = 0; i < dttttt2.Rows.Count; i++)
                 {
@@ -246,7 +244,7 @@ namespace CtyTinLuong
                 // xoa ton tai=false
                 DataTable dt2_moi11111 = new DataTable();
                 cls2.iID_NhapKho = iiiID_nhapkhogapgan;
-                dt2_moi11111 = cls2.SA_W_ID_NhapKho(iiiID_nhapkhogapgan);
+                dt2_moi11111 = cls2.SA_W_ID_NhapKho();
                 dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
                 DataView dvdt2_moi = dt2_moi11111.DefaultView;
                 DataTable dt2_moi = dvdt2_moi.ToTable();
@@ -554,8 +552,7 @@ namespace CtyTinLuong
         {
            
         }
-
-     
+             
 
         private void txtSoLuongXuat_KeyPress(object sender, KeyPressEventArgs e)
         {
