@@ -32,43 +32,7 @@ namespace CtyTinLuong
                 gridControl3.DataSource = dtxxxx;
             }
 
-            //DataTable dt2 = new DataTable();
-            //clsGapDan_ChiTiet_XuatKho cls2 = new CtyTinLuong.clsGapDan_ChiTiet_XuatKho();
-            //cls2.iID_XuatKho = xxID_nhapkho;
-            //DataTable dtxxxx = cls2.SelectAll_ID_XuatKho();
-            //dt2.Columns.Add("ID_VTHH", typeof(int));
-            //dt2.Columns.Add("MaVT", typeof(string));
-            //dt2.Columns.Add("DonViTinh", typeof(string));
-            //dt2.Columns.Add("TenVTHH", typeof(string));
-            //dt2.Columns.Add("SoLuong", typeof(float));
-            //dt2.Columns.Add("HienThi", typeof(string));
-            //dt2.Columns.Add("DonGia", typeof(float));
-            //dt2.Columns.Add("ThanhTien", typeof(float));
-            //dt2.Columns.Add("GhiChu", typeof(string));
-            //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-
-            //for (int i = 0; i < dtxxxx.Rows.Count; i++)
-            //{
-            //    double soluong, dongia;
-            //    DataRow _ravi = dt2.NewRow();
-            //    int iiDI_Vthh = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
-            //    _ravi["ID_VTHH"] = iiDI_Vthh;
-            //    cls.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
-            //    DataTable dtVT_vao = cls.SelectOne();
-            //    _ravi["MaVT"] = iiDI_Vthh;
-            //    _ravi["DonViTinh"] = cls.sDonViTinh.Value;
-            //    _ravi["TenVTHH"] = cls.sTenVTHH.Value;
-            //    _ravi["SoLuong"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-            //    _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-            //    soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-            //    dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-            //    _ravi["ThanhTien"] = soluong * dongia;
-            //    _ravi["HienThi"] = "1";
-            //    _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
-            //    dt2.Rows.Add(_ravi);
-            //}
-
-            //gridControl3.DataSource = dt2;
+            
         }
 
         private void Load_DaTa(bool ischonhapkho, DateTime xxtungay, DateTime xxdenngay)
