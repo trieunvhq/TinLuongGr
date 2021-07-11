@@ -216,6 +216,10 @@
     <Compile Include="KhoNPL\clsDaiLy_tbChiTietNhapKho_Temp.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp.cs" />
+    <Compile Include="KhoNPL\clsGapDan_ChiTiet_NhapKho_Temp - Copy.cs" />
+    <Compile Include="KhoNPL\clsGapDan_ChiTiet_NhapKho_Temp.cs" />
+    <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp - Copy.cs" />
+    <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbXuatKho_Temp - Copy.cs" />
