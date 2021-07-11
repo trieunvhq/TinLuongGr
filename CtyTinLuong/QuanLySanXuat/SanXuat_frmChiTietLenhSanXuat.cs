@@ -71,7 +71,7 @@ namespace CtyTinLuong
             {
                 clsHUU_LenhSanXuat cls1 = new clsHUU_LenhSanXuat();            
                 cls1.Update_W_GuiDuLieu(iiDI_LSSX,true);
-                MessageBox.Show("Đã lưu");
+                MessageBox.Show("Đã gửi dữ liệu nhập xuất kho");
             }
         }
      
