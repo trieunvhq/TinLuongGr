@@ -142,15 +142,7 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThi()
-        {
-            clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-            DataTable dt = cls.SelectAll_W_TenCoNhan();       
-            DataView dv = dt.DefaultView;
-            dv.Sort = "NgayThangSanXuat DESC, CaSanXuat DESC, ID_LenhSanXuat DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
-        }
+       
         public UC_SanXuat_LenhSanXuat()
         {
             InitializeComponent();
@@ -214,26 +206,41 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            DialogResult traloi;
-            traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (traloi == DialogResult.Yes)
+
+            if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() == "")
             {
-                if(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString()=="")
+                MessageBox.Show("Vui lòng chọn lại");
+            }
+            else
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                clsHUU_LenhSanXuat cls1 = new clsHUU_LenhSanXuat();
+                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
+                cls1.iID_LenhSanXuat = xxID;
+                cls1.SelectOne();
+                if (cls1.bGuiDuLieu == true)
                 {
-                    MessageBox.Show("Vui lòng chọn lại");
+                    MessageBox.Show("đã gửi dữ liệu, không thể xoá");
                 }
                 else
                 {
-                    Cursor.Current = Cursors.WaitCursor;
-                    clsHUU_LenhSanXuat cls1 = new clsHUU_LenhSanXuat();
-                    cls1.iID_LenhSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
-                    cls1.Delete_W_TonTai();
-                    HienThi();
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("Đã xóa");
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (traloi == DialogResult.Yes)
+                    {
+                        cls1.Delete();
+                        clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
+                        cls2.iID_LenhSanXuat = xxID;
+                        cls2.Delete_w_iID_LenhSanXuat();
+                        Cursor.Current = Cursors.Default;
+                        MessageBox.Show("Đã xóa");
+                    }
                 }
 
+                
             }
+
+
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)

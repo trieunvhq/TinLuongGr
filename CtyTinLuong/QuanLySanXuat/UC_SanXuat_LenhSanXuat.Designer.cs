@@ -334,6 +334,8 @@
             this.clXoa.ColumnEdit = this.btXoa;
             this.clXoa.Name = "clXoa";
             this.clXoa.OptionsColumn.FixedWidth = true;
+            this.clXoa.Visible = true;
+            this.clXoa.VisibleIndex = 8;
             this.clXoa.Width = 50;
             // 
             // btXoa
