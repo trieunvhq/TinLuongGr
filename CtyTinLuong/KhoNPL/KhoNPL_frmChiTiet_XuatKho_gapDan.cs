@@ -123,7 +123,7 @@ namespace CtyTinLuong
             txtSoChungTu.Text = cls1.sThamChieu.Value;
             txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
             txtThamChieu.Text = cls1.sThamChieu.Value;
-
+            txtDienGiai.Text = cls1.sDienGiai.Value;
             double iisoluongxuat = cls1.fSoLuongThanhPham_QuyDoi.Value;
             int iiID_dinhmuc = cls1.iID_DinhMuc_ToGapDan.Value;
             HienThi_GridControl_Sua(iiID_nhapkho_, iiID_dinhmuc, iisoluongxuat);
@@ -137,7 +137,7 @@ namespace CtyTinLuong
             DataTable dt22222 = cls1.SelectOne();
             txtSoLuongXuat.Text = cls1.fSoLuongThanhPham_QuyDoi.Value.ToString();
             gridDinhMucGapDan.EditValue = cls1.iID_DinhMuc_ToGapDan.Value;
-          
+            txtDienGiai.Text = cls1.sDienGiai.Value;
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
             txtSoChungTu.Text = cls1.sThamChieu.Value;

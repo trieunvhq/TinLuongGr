@@ -189,8 +189,9 @@ namespace CtyTinLuong
 
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
             {
-                clsGapDan_tbNhapKho cls2xxxx = new clsGapDan_tbNhapKho();
-                cls2xxxx.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                clsGapDan_tbNhapKho_Temp cls2xxxx = new clsGapDan_tbNhapKho_Temp();
+                int xxid_= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                cls2xxxx.iID_NhapKho = xxid_;
                 DataTable dt1 = cls2xxxx.SelectOne();
                 if (cls2xxxx.bTrangThai_XuatKho_NPL.Value == true)
                 {
@@ -204,14 +205,11 @@ namespace CtyTinLuong
                     traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (traloi == DialogResult.Yes)
                     {
-                        clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
-                        cls1.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-
-
+                        clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
+                        cls1.iID_NhapKho = xxid_;
                         cls1.Delete();
-                        clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
-                        cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                        cls2.Delete_ALL_W_ID_NhapKho();
+                        clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();                       
+                        cls2.Delete_ALL_W_ID(xxid_);
                         MessageBox.Show("Đã xóa");
                         Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                     }
