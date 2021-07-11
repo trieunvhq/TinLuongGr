@@ -229,6 +229,12 @@
     <Compile Include="KhoThanhPham\clsGapDan_ChiTiet_XuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsGapDan_ChiTiet_XuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsGapDan_tbXuatKho_Temp.cs" />
+    <Compile Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.Designer.cs">
+      <DependentUpon>KhoThanhPham_NhapKho_TuGapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\frmBTTL_ToIn.cs">
@@ -2233,6 +2239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.resx">
       <DependentUpon>UC_ChoXuatKho_DaiLy_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.resx">
+      <DependentUpon>KhoThanhPham_NhapKho_TuGapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_ToIn.resx">
       <DependentUpon>frmBTTL_ToIn.cs</DependentUpon>
