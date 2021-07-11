@@ -111,7 +111,7 @@ namespace CtyTinLuong
             }
             
             DataTable dt22xx = new DataTable();
-            dt22xx.Columns.Add("ID_NhapKho", typeof(int));
+            dt22xx.Columns.Add("ID_NhapKhoGapDan", typeof(int));
             dt22xx.Columns.Add("ID_DinhMuc_ToGapDan", typeof(int));
             dt22xx.Columns.Add("ID_VTHH_ThanhPham_QuyDoi", typeof(int));
             dt22xx.Columns.Add("MaVT", typeof(string));
@@ -773,6 +773,8 @@ namespace CtyTinLuong
                     else cls3.fDonGia = Convert.ToDouble(dtthamchieu.Rows[i]["DonGia"].ToString());
 
                     cls3.iID_DinhMuc_ToGapDan = Convert.ToInt32(dtthamchieu.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
+                    cls3.fSoLuongThanhPham_QuyDoi = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongThanhPham_QuyDoi"].ToString());
+                    cls3.iID_NhapKhoGapDan= Convert.ToInt32(dtthamchieu.Rows[i]["ID_NhapKhoGapDan"].ToString());
                     string expression;
                     expression = "ID_VTHH=" + iiiID_VTHHXX + "";
                     DataRow[] foundRows;

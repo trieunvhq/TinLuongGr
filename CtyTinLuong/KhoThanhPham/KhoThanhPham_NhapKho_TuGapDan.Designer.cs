@@ -613,7 +613,7 @@
             // 
             this.clID_NhapKho.Caption = "Tham chiếu";
             this.clID_NhapKho.ColumnEdit = this.gridMaHang;
-            this.clID_NhapKho.FieldName = "ID_NhapKho";
+            this.clID_NhapKho.FieldName = "ID_NhapKhoGapDan";
             this.clID_NhapKho.Name = "clID_NhapKho";
             this.clID_NhapKho.OptionsColumn.FixedWidth = true;
             this.clID_NhapKho.Visible = true;
