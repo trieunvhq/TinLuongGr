@@ -15,7 +15,8 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsGapDan_ChiTiet_XuatKho : clsDBInteractionBase
 	{
-        //pr_GapDan_ChiTiet_XuatKho_SA_XuatTrongKy_ID_VTHH
+        //pr_GapDan_ChiTiet_NhapKho_SA_W_ID_NK_HienThi_
+    
         public DataTable SA_XuatTrongKy_ID_VTHH(int xxID_VTHH, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

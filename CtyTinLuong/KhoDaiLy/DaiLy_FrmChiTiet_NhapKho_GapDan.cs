@@ -258,10 +258,21 @@ namespace CtyTinLuong
 
         private void HienThi_GridControl_Sua(bool isChoNhapKho, int xid_nhapkho, int iii_dinhmuc, double soluongxuatxxx)
         {
-            clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
-            DataTable dt2 = cls2.SA_W_ID_NK_HienThi_(xid_nhapkho, iii_dinhmuc, soluongxuatxxx);
-            gridControl1.DataSource = dt2;
-            txtTongTienHang.Text = dt2.Rows[0][0].ToString();
+            if (isChoNhapKho == false)
+            {
+                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
+                DataTable dt2 = cls2.SA_W_ID_NK_HienThi_(xid_nhapkho, iii_dinhmuc, soluongxuatxxx);
+                gridControl1.DataSource = dt2;
+                txtTongTienHang.Text = dt2.Rows[0][0].ToString();
+            }
+            else
+            {
+                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
+                DataTable dt2 = cls2.SA_W_ID_NK_HienThi_(xid_nhapkho, iii_dinhmuc, soluongxuatxxx);
+                gridControl1.DataSource = dt2;
+                txtTongTienHang.Text = dt2.Rows[0][0].ToString();
+            }
+                
 
         }
         private void HienThi_Sua_XuatKho(bool isChoNhapKho, int iiID_nhapkho_)
@@ -285,7 +296,7 @@ namespace CtyTinLuong
             }
             else
             {
-                clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
+                clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
                 cls1.iID_NhapKho = iiID_nhapkho_;
                 DataTable dt22222 = cls1.SelectOne();
                 txtSoLuongXuat.Text = cls1.fSoLuongThanhPham_QuyDoi.Value.ToString();
@@ -305,10 +316,10 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
+            //if (e.Column == clSTT)
+            //{
+            //    e.DisplayText = (e.RowHandle + 1).ToString();
+            //}
         }
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
@@ -350,7 +361,7 @@ namespace CtyTinLuong
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             double ffdongia, fffsoluong, fffthanhtien;
-            if (e.Column == clMaVT)
+            if (e.Column == clID_VTHH)
             {
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
@@ -358,7 +369,6 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 if (dt != null)
                 {
-                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
                     gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
@@ -595,6 +605,24 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtSoLuongXuat_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSoLuongXuat.Text.ToString() != "" & gridDinhMucGapDan.EditValue.ToString() != "")
+                {
+                    int xxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                    double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
+                    HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);                  
+                }
+
+            }
+            catch
+            {
+
             }
         }
 

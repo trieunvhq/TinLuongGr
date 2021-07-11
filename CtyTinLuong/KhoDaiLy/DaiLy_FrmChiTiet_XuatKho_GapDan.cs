@@ -930,9 +930,9 @@ namespace CtyTinLuong
                     cls2.sGhiChu = dttttt2.Rows[i]["GhiChu"].ToString();
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;                 
-                    cls2.bCheck_ThanhPham = false;
-                    cls2.bCheck_VatTu_Chinh = false;                 
-                    cls2.bCheck_VatTu_Phu = false;
+                    //cls2.bCheck_ThanhPham = false;
+                    //cls2.bCheck_VatTu_Chinh = false;                 
+                    //cls2.bCheck_VatTu_Phu = false;
                     cls2.bDaXuatKho = true;
                     if (dttttt2.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "Kho TP")
                         cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 1;
