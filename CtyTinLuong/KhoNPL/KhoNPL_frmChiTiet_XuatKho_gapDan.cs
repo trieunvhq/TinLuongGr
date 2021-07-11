@@ -148,8 +148,9 @@ namespace CtyTinLuong
                 clsdm.iID_DinhMuc_ToGapDan = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
                 clsdm.iID_VTHH = ID_VTHHxx;
                 DataTable dtdm = clsdm.SelectOne_W_ID_DinhMuc_ToGapDan_AND_ID_VTHH();
-
-                double xxsoluongdinhmuc = Convert.ToDouble(dtdm.Rows[0]["SoLuong"].ToString());
+                double xxsoluongdinhmuc = 0;
+                if (dtdm!=null && dtdm.Rows.Count>0)
+                    xxsoluongdinhmuc = Convert.ToDouble(dtdm.Rows[0]["SoLuong"].ToString());
                 //var xxdinhmuc = Math.Round(double.Parse(xxsoluong), 3);
 
                 DataRow _ravi3 = dt2.NewRow();
