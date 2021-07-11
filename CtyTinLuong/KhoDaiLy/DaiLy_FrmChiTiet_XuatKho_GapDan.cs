@@ -125,216 +125,90 @@ namespace CtyTinLuong
         public static DateTime mdaPrintNgayXuatKho;
         public static DataTable mdtPrint_ChiTietXuatKho;
         public static string msPrintSoChungTu, msPrintDienGiaig, msPrintThuKho, msPrintNguoiNhan, msPrintNguoiLap;
-        private void HienThi_ThemMoi_XuatKho()
-        {
-            checkNhapKhoThanhPham.Checked = true;
-            checkNhapKho_banThanhPham.Checked = false;
-            gridNguoiLap.EditValue = 11;
-            //txtSoLuongXuat.Text = "1";
-            dteNgayChungTu.EditValue = DateTime.Today;
-            clsGapDan_tbXuatKho cls3 = new clsGapDan_tbXuatKho();
-            DataTable dt1 = cls3.SelectAll();
-            dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt1.DefaultView;
-            DataTable dv3 = dv.ToTable();
-            int k = dv3.Rows.Count;
-            if (k == 0)
-                txtSoChungTu.Text = "XKGD 1";
-            else
-            {
-                string xxx = dv3.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;             
-                 txtSoChungTu.Text = "XKGD " + xxx2 + "";
-
-            }
-           
-          
-
-            DataTable dt22xx = new DataTable();
-            dt22xx.Columns.Add("ID_XuatKhoGapDan", typeof(int));            
-            dt22xx.Columns.Add("ID_VTHH", typeof(int));
-            dt22xx.Columns.Add("ID_DinhMuc_ToGapDan", typeof(int));
-            dt22xx.Columns.Add("TenVTHH", typeof(string));
-            dt22xx.Columns.Add("DonViTinh", typeof(string));
-            dt22xx.Columns.Add("MaDinhMuc");           
-            dt22xx.Columns.Add("SoLuongXuat", typeof(double));
-         
-            dt22xx.Columns.Add("DonGia", typeof(double));
-            dt22xx.Columns.Add("GhiChu", typeof(string));
-            dt22xx.Columns.Add("HienThi", typeof(string));
-            dt22xx.Columns.Add("ThanhTien", typeof(double));
-            gridControl2.DataSource = dt22xx;
-
-
-        }
+      
+        
         private void HienThi_Sua_XuatKho(bool isChoXuatKho, int iiID_xuatkho_)
         {
-
-            clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
-            cls1.iID_XuatKho = iiID_xuatkho_;
-            DataTable dt22222 = cls1.SelectOne();
-            
-            txtSoChungTu.Text = cls1.sSoChungTu.Value;
-            dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
-            gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
-            if (cls1.bCheckNhapKhoThanhPham == true)
-                checkNhapKhoThanhPham.Checked = true;
-            else checkNhapKho_banThanhPham.Checked = true;
-            clsGapDan_ThamChieuTinhXuatKho cls = new clsGapDan_ThamChieuTinhXuatKho();
-            cls.iID_XuatKhoGapDan = iiID_xuatkho_;
-            DataTable dt222 = cls.SelectAll_W_ID_XuatKhoGapDan();
-           
-            DataTable dt22xx = new DataTable();
-            dt22xx.Columns.Add("ID_XuatKhoGapDan", typeof(int));
-            dt22xx.Columns.Add("ID_VTHH", typeof(int));
-            dt22xx.Columns.Add("ID_DinhMuc_ToGapDan", typeof(int));
-            dt22xx.Columns.Add("TenVTHH", typeof(string));
-            dt22xx.Columns.Add("DonViTinh", typeof(string));
-            dt22xx.Columns.Add("MaDinhMuc");
-            dt22xx.Columns.Add("SoLuongXuat", typeof(double));
-          
-            dt22xx.Columns.Add("DonGia", typeof(double));
-            dt22xx.Columns.Add("GhiChu", typeof(string));
-            dt22xx.Columns.Add("HienThi", typeof(string));
-            dt22xx.Columns.Add("ThanhTien", typeof(double));
-            if(dt222.Rows.Count>0)
+            if (isChoXuatKho == true)
             {
-                for (int i = 0; i < dt222.Rows.Count; i++)
-                {
+                clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
+                cls1.iID_XuatKho = iiID_xuatkho_;
+                DataTable dt22222 = cls1.SelectOne();
+                txtSoChungTu.Text = cls1.sSoChungTu.Value;
+                dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
+                gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
+                if (cls1.bCheckNhapKhoThanhPham == true)
+                    checkNhapKhoThanhPham.Checked = true;
+                else checkNhapKho_banThanhPham.Checked = true;
+                clsGapDan_ThamChieuTinhXuatKho_Temp cls = new clsGapDan_ThamChieuTinhXuatKho_Temp();
 
-                    DataRow _ravi3 = dt22xx.NewRow();                    
-                    _ravi3["ID_XuatKhoGapDan"] = Convert.ToInt32(dt222.Rows[i]["ID_XuatKhoGapDan"].ToString());
-                    _ravi3["ID_VTHH"] = Convert.ToInt32(dt222.Rows[i]["ID_VTHH"].ToString());
-                    _ravi3["ID_DinhMuc_ToGapDan"] = dt222.Rows[i]["ID_DinhMuc_ToGapDan"].ToString();
-                    _ravi3["MaDinhMuc"] = dt222.Rows[i]["ID_DinhMuc_ToGapDan"].ToString();
-                    int iiiID = Convert.ToInt32(dt222.Rows[i]["ID_VTHH"].ToString());
-                    clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-                    clsvt.iID_VTHH = iiiID;
-                    DataTable dtvt = clsvt.SelectOne();
-                   
-                    _ravi3["TenVTHH"] = clsvt.sTenVTHH.Value;
-                    _ravi3["DonViTinh"] = clsvt.sDonViTinh.Value;
+                DataTable dt222 = cls.SA_ID_XuatKho_moi(iiID_xuatkho_);
+                gridControl2.DataSource = dt222;
 
-                 
-                    _ravi3["SoLuongXuat"] = Convert.ToDouble(dt222.Rows[i]["SoLuongXuat"].ToString());                  
-                    _ravi3["DonGia"] = Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
-                    _ravi3["HienThi"] = "1";
-                    _ravi3["GhiChu"] = "";                  
-                    _ravi3["ThanhTien"] = Convert.ToDouble(dt222.Rows[i]["SoLuongXuat"].ToString()) * Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
-                    dt22xx.Rows.Add(_ravi3);
-                }
+                clsGapDan_ChiTiet_XuatKho_Temp cls2 = new clsGapDan_ChiTiet_XuatKho_Temp();
+                DataTable dtxx = cls2.SA_ID_XuatKho_HienThi(iiID_xuatkho_);
+                gridControl1.DataSource = dtxx;
+                cls.Dispose();
+                cls1.Dispose();
             }
-            gridControl2.DataSource = dt22xx;
-
-            DataTable dt3 = new DataTable();
-        
-            dt3.Columns.Add("Check_VatTu_Phu", typeof(bool));
-            dt3.Columns.Add("ID_VTHH", typeof(int));
-            dt3.Columns.Add("MaVT", typeof(string));
-            dt3.Columns.Add("TenVTHH", typeof(string));
-            dt3.Columns.Add("DonViTinh", typeof(string));
-            dt3.Columns.Add("SoLuong", typeof(double));
-            dt3.Columns.Add("DonGia", typeof(double));
-            dt3.Columns.Add("GhiChu", typeof(string));
-            dt3.Columns.Add("HienThi", typeof(string));
-            dt3.Columns.Add("ThanhTien", typeof(double));
-            dt3.Columns.Add("NhapKho_TP_1_BTP_2_NPL_3", typeof(string));
-            dt3.Columns.Add("HienThi2", typeof(string));
-            dt3.Columns.Add("MaKho", typeof(string));
-          
-            clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
-            cls2.iID_XuatKho= iiID_xuatkho_;
-            DataTable dtxx = cls2.SelectAll_ID_XuatKho();            
-            if (dtxx.Rows.Count > 0)
+            else
             {
-                for (int i = 0; i < dtxx.Rows.Count; i++)
-                {
+                clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
+                cls1.iID_XuatKho = iiID_xuatkho_;
+                DataTable dt22222 = cls1.SelectOne();
+                txtSoChungTu.Text = cls1.sSoChungTu.Value;
+                dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
+                gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
+                if (cls1.bCheckNhapKhoThanhPham == true)
+                    checkNhapKhoThanhPham.Checked = true;
+                else checkNhapKho_banThanhPham.Checked = true;
+                clsGapDan_ThamChieuTinhXuatKho cls = new clsGapDan_ThamChieuTinhXuatKho();
 
-                    DataRow _ravi3 = dt3.NewRow();
-                  
-                    _ravi3["ID_VTHH"] = Convert.ToInt32(dtxx.Rows[i]["ID_VTHH"].ToString());
-                    int iiiID = Convert.ToInt32(dtxx.Rows[i]["ID_VTHH"].ToString());
+                DataTable dt222 = cls.SA_ID_XuatKho_2(iiID_xuatkho_);
+                gridControl2.DataSource = dt222;
 
-                    clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-                    clsvt.iID_VTHH = iiiID;
-                    DataTable dtvt = clsvt.SelectOne();
-
-                    _ravi3["TenVTHH"] = clsvt.sTenVTHH.Value;
-                    _ravi3["DonViTinh"] = clsvt.sDonViTinh.Value;
-                    _ravi3["MaVT"] = dtxx.Rows[i]["ID_VTHH"].ToString();
-                  
-                    _ravi3["SoLuong"] = Convert.ToDouble(dtxx.Rows[i]["SoLuongXuat"].ToString());
-                    _ravi3["DonGia"] = Convert.ToDouble(dtxx.Rows[i]["DonGia"].ToString());
-                    _ravi3["HienThi"] = "1";
-                    _ravi3["Check_VatTu_Phu"] = true;
-
-                    _ravi3["ThanhTien"] = Convert.ToDouble(dtxx.Rows[i]["SoLuongXuat"].ToString()) * Convert.ToDouble(dtxx.Rows[i]["DonGia"].ToString());
-                    _ravi3["GhiChu"] = dtxx.Rows[i]["GhiChu"].ToString();
-                    if (dtxx.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "1")
-                    {
-                        _ravi3["NhapKho_TP_1_BTP_2_NPL_3"] = "Kho TP";
-                        _ravi3["HienThi2"] = "1";
-                        _ravi3["MaKho"] = "1";
-                    }
-                    else if (dtxx.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "2")
-                    {
-                        _ravi3["NhapKho_TP_1_BTP_2_NPL_3"] = "Kho BTP";
-                        _ravi3["HienThi2"] = "1";
-                        _ravi3["MaKho"] = "2";
-                    }
-                    else if (dtxx.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "3")
-                    {
-                        _ravi3["NhapKho_TP_1_BTP_2_NPL_3"] = "Kho NPL";
-                        _ravi3["HienThi2"] = "1";
-                        _ravi3["MaKho"] = "3";
-                    }
-                    else
-                    {
-                        _ravi3["NhapKho_TP_1_BTP_2_NPL_3"] = "";
-                        _ravi3["HienThi2"] = "0";
-                        _ravi3["MaKho"] = "";
-                    }
-                    dt3.Rows.Add(_ravi3);
-                }
+                clsGapDan_ChiTiet_XuatKho_Temp cls2 = new clsGapDan_ChiTiet_XuatKho_Temp();
+                DataTable dtxx = cls2.SA_ID_XuatKho_HienThi(iiID_xuatkho_);
+                gridControl1.DataSource = dtxx;
+                cls.Dispose();
+                cls1.Dispose();
             }
-
-            gridControl1.DataSource = dt3;
-
+               
         }
         private void Load_LockUp()
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.DataSource = dtNguoi;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
+            dtNguoi.Dispose();
+            clsNguoi.Dispose();
 
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
             DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
-
-            gridMaVT.DataSource = dtxx2;
+            gridMaVT.DataSource = dt;
             gridMaVT.ValueMember = "ID_VTHH";
             gridMaVT.DisplayMember = "MaVT";
 
-            clsDinhMuc_DinhMuc_ToGapDan clsdinhmucnpl = new clsDinhMuc_DinhMuc_ToGapDan();
-            DataTable dt2 = clsdinhmucnpl.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvnpl = dt2.DefaultView;
-            DataTable newdtnpl = dvnpl.ToTable();
+            dt.Dispose();
+            cls.Dispose();
 
-           
+            //clsGapDan_tbNhapKho clsxx = new clsGapDan_tbNhapKho();
+            //DataTable dt = clsxx.SA_NgayThang(xxtungay, xxdenngay);
+            //gridMaHang.DataSource = dt;
+            //gridMaHang.ValueMember = "ID_NhapKho";
+            //gridMaHang.DisplayMember = "SoChungTu";
+        }
+        private void Load_LockUp_MaHang(DateTime xxtungay, DateTime xxdenngay)
+        {
+            clsGapDan_tbNhapKho cls = new clsGapDan_tbNhapKho();
+            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);
+            gridMaHang.DataSource = dt;
+            gridMaHang.ValueMember = "ID_NhapKho";
+            gridMaHang.DisplayMember = "SoChungTu";
 
-            gridDinhMucGapDan.DataSource = newdtnpl;
-            gridDinhMucGapDan.ValueMember = "ID_DinhMuc_ToGapDan";
-            gridDinhMucGapDan.DisplayMember = "MaDinhMuc";
-            //ID_DinhMuc_ToGapDan
         }
         private bool KiemTraLuu()
         {
@@ -607,240 +481,6 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT2)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-
-            gridControl1.DataSource = null;
-            DataTable dt2 = new DataTable();
-
-            dt2.Columns.Add("ID_VTHH", typeof(string));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("SoLuong", typeof(double));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(double));
-
-            dt2.Columns.Add("Check_ThanhPham", typeof(bool));
-            dt2.Columns.Add("Check_VatTu_Chinh", typeof(bool));
-            dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
-
-            DataTable new_Table = new DataTable();
-
-
-
-            string shienthi = "1";
-            DataTable dtkkk = (DataTable)gridControl2.DataSource;
-            dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-            DataView dv2232xx = dtkkk.DefaultView;
-            DataTable dt = dv2232xx.ToTable();          
-            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                double soluongxuat= Convert.ToDouble(dt.Rows[i]["SoLuongXuat"].ToString());
-                int ID_DinhMuc_ToGapDan = Convert.ToInt32(dt.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
-                cls.iID_DinhMuc_ToGapDan = ID_DinhMuc_ToGapDan;
-                DataTable dtmnoi = cls.SelectAll_W_ID_DinhMuc_ToGapDan();
-                for (int j = 0; j < dtmnoi.Rows.Count; j++)
-                {
-                    DataRow _ravi2 = dt2.NewRow();                   
-                    _ravi2["ID_VTHH"] = dtmnoi.Rows[j]["ID_VTHH"].ToString();
-                    _ravi2["MaVT"] = dtmnoi.Rows[j]["ID_VTHH"].ToString();
-                    _ravi2["TenVTHH"] = dtmnoi.Rows[j]["TenVTHH"].ToString();
-                    _ravi2["DonViTinh"] = dtmnoi.Rows[j]["DonViTinh"].ToString();
-                    _ravi2["SoLuong"] = soluongxuat* Convert.ToDouble(dtmnoi.Rows[j]["SoLuong"].ToString());
-                  //  _ravi2["DonGia"] = Convert.ToDouble(dtmnoi.Rows[j]["DonGia"].ToString());
-                    _ravi2["HienThi"] = "1";
-                   // _ravi2["ThanhTien"] = soluongxuat* Convert.ToDouble(dtmnoi.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtmnoi.Rows[j]["DonGia"].ToString());
-                    _ravi2["Check_ThanhPham"] = Convert.ToBoolean(dtmnoi.Rows[j]["Check_ThanhPham"].ToString());
-                    _ravi2["Check_VatTu_Chinh"] = Convert.ToBoolean(dtmnoi.Rows[j]["Check_VatTu_Chinh"].ToString());
-                    _ravi2["Check_VatTu_Phu"] = Convert.ToBoolean(dtmnoi.Rows[j]["Check_VatTu_Phu"].ToString());
-                    dt2.Rows.Add(_ravi2);
-
-                }
-
-            }
-
-         
-            new_Table.Columns.Add("ID_VTHH", typeof(string));
-            new_Table.Columns.Add("MaVT", typeof(string));
-            new_Table.Columns.Add("TenVTHH", typeof(string));
-            new_Table.Columns.Add("DonViTinh", typeof(string));
-            new_Table.Columns.Add("SoLuong", typeof(double));
-            new_Table.Columns.Add("DonGia", typeof(double));
-            new_Table.Columns.Add("GhiChu", typeof(string));
-            new_Table.Columns.Add("HienThi", typeof(string));
-            new_Table.Columns.Add("HienThi2", typeof(string));
-            new_Table.Columns.Add("ThanhTien", typeof(double));
-            new_Table.Columns.Add("NhapKho_TP_1_BTP_2_NPL_3", typeof(string));
-            new_Table.Columns.Add("MaKho", typeof(string));
-            //new_Table.Columns.Add("Check_ThanhPham", typeof(bool));
-            //new_Table.Columns.Add("Check_VatTu_Chinh", typeof(bool));
-            //new_Table.Columns.Add("Check_VatTu_Phu", typeof(bool));
-
-            var groupedByState = dt2.AsEnumerable()
-                .GroupBy(r => r.Field<String>("ID_VTHH"));
-            foreach (var group in groupedByState)
-            {
-                DataRow maxPremRow = group.OrderByDescending(r => r.Field<String>("ID_VTHH")).First();
-                DataRow newRow = new_Table.Rows.Add();
-
-                newRow.SetField("ID_VTHH", maxPremRow.Field<string>("ID_VTHH"));
-                newRow.SetField("SoLuong", group.Sum(r => r.Field<double?>("SoLuong")));
-                newRow.SetField("MaVT", maxPremRow.Field<string>("ID_VTHH"));
-                newRow.SetField("TenVTHH", maxPremRow.Field<string>("TenVTHH"));
-                newRow.SetField("DonViTinh", maxPremRow.Field<string>("DonViTinh"));
-                newRow.SetField("GhiChu", "");
-                newRow.SetField("DonGia", 0);
-                newRow.SetField("ThanhTien", 0);
-                newRow.SetField("HienThi", "1");
-                newRow.SetField("HienThi2", "0");
-                newRow.SetField("NhapKho_TP_1_BTP_2_NPL_3", "");
-                newRow.SetField("MaKho", "");
-                //newRow.SetField("Check_ThanhPham", maxPremRow.Field<string>("Check_ThanhPham"));
-                //newRow.SetField("Check_VatTu_Chinh", maxPremRow.Field<string>("Check_VatTu_Chinh"));
-                //newRow.SetField("Check_VatTu_Phu", maxPremRow.Field<string>("Check_VatTu_Phu"));
-            }
-            gridControl1.DataSource = new_Table;
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            double fffsoluong = 0;
-            double ffdongia = 0;
-            double fffthanhtien = 0;
-            if (e.Column == clMaDinhMuc1)
-            {
-                clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-             
-              int ID_DinhMuc_ToGapDanxxx= Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                cls.iID_DinhMuc_ToGapDan = ID_DinhMuc_ToGapDanxxx;
-                DataTable dt = cls.SelectAll_W_ID_DinhMuc_ToGapDan();
-                dt.DefaultView.RowFilter = " Check_ThanhPham = True";
-                DataView dv = dt.DefaultView;
-                DataTable dt22 = dv.ToTable();
-
-                int iiiID_ThanhPham = Convert.ToInt32(dt22.Rows[0]["ID_VTHH"].ToString());
-                clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-                clsvt.iID_VTHH = iiiID_ThanhPham;
-                DataTable dtvt = clsvt.SelectOne();          
-               
-                gridView4.SetRowCellValue(e.RowHandle, clTenVTHH1, clsvt.sTenVTHH.Value);
-                gridView4.SetRowCellValue(e.RowHandle, clDonViTinh1, clsvt.sDonViTinh.Value);
-                //gridView4.SetRowCellValue(e.RowHandle, clMaDinhMuc1, clsvt.sMaVT.Value);
-                gridView4.SetRowCellValue(e.RowHandle, clHienThi1, "1");
-
-                gridView4.SetRowCellValue(e.RowHandle, clSoLuongXuat1, 0);               
-                gridView4.SetRowCellValue(e.RowHandle, clDonGia1, 0);
-                gridView4.SetRowCellValue(e.RowHandle, clThanhTien1, 0);
-                gridView4.SetRowCellValue(e.RowHandle, clID_VTHH1, iiiID_ThanhPham);
-                gridView4.SetRowCellValue(e.RowHandle, clID_DinhMuc_ToGapDan1, ID_DinhMuc_ToGapDanxxx);
-
-            }
-            try
-            {
-                if (e.Column == clSoLuongXuat1)
-                {
-                  
-                
-                    if (gridView4.GetFocusedRowCellValue(clSoLuongXuat1).ToString() == "")
-                        fffsoluong = 0;
-                    else
-                        fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuongXuat1));                   
-
-                    if (gridView4.GetFocusedRowCellValue(clDonGia1).ToString() == "")
-                        ffdongia = 0;
-                    else
-                        ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia1));
-                   
-                    fffthanhtien = fffsoluong * ffdongia;
-                    gridView4.SetFocusedRowCellValue(clThanhTien1, fffthanhtien);
-                }
-                if (e.Column == clDonGia1)
-                {
-
-                    if (gridView4.GetFocusedRowCellValue(clSoLuongXuat1).ToString() == "")
-                        fffsoluong = 0;
-                    else
-                        fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuongXuat1));
-
-
-                    if (gridView4.GetFocusedRowCellValue(clDonGia1).ToString() == "")
-                        ffdongia = 0;
-                    else
-                        ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia1));
-
-                    fffthanhtien = fffsoluong * ffdongia;
-                    gridView4.SetFocusedRowCellValue(clThanhTien1, fffthanhtien);
-
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT1)
-                e.DisplayText = (e.RowHandle + 1).ToString();
-        }
-
-        private void btXoa1_Click(object sender, EventArgs e)
-        {
-            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi1, "0");
-            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clSoLuongXuat1, 0);
-        }
-
-        private void gridView4_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
-        {
-            GridView view = sender as GridView;
-            DataView dv = view.DataSource as DataView;
-            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
-            {
-                e.Visible = false;
-                e.Handled = true;
-            }
-        }
-
-      
-
-        private void gridView1_CustomDrawCell_1(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT2)
-                e.DisplayText = (e.RowHandle + 1).ToString();
-        }
-
-        private void gridView1_CustomRowFilter_1(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
-        {
-            GridView view = sender as GridView;
-            DataView dv = view.DataSource as DataView;
-            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
-            {
-                e.Visible = false;
-                e.Handled = true;
-            }
-        }
-
-        private void btXoaGrid2_Click(object sender, EventArgs e)
-        {
-
-            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clHienThi2, "0");
-            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clSoLuong2, 0);
-        }
 
         private void btLuu_Click(object sender, EventArgs e)
         {
@@ -893,6 +533,47 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+
+        }
+
+        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+        }
+
+        private void btXoaGrid2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+
+        }
+
+        private void btLayDuLieu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
+            {
+                Load_LockUp_MaHang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
+            {
+                Load_LockUp_MaHang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
         private void txtNguoiGiaoHang_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -908,123 +589,7 @@ namespace CtyTinLuong
                 btLayDuLieu.Focus();
             }
         }
-
-        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_RowClick(object sender, RowClickEventArgs e)
-        {
-            if (gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
-            {
-                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
-                Hienthi_Lable_TonKho(xxID);
-            }
-        }
-
-        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            if (e.Column == clMaVT2)
-            {
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
-                int kk = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
-                if (dt != null)
-                {
-                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH2, kk);
-                    gridView1.SetRowCellValue(e.RowHandle, clTenVTHH2, dt.Rows[0]["TenVTHH"].ToString());
-                    gridView1.SetRowCellValue(e.RowHandle, clDonViTinh2, dt.Rows[0]["DonViTinh"].ToString());
-                    gridView1.SetRowCellValue(e.RowHandle, clHienThi2, "1");
-                    gridView1.SetRowCellValue(e.RowHandle, clSoLuong2, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clDonGia2, 0);
-
-
-                }
-            }
-
-            if (e.Column == clNhapKho_TP_1_BTP_2_NPL_3_22222)
-            {
-                if (gridView1.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() != "")
-                    gridView1.SetRowCellValue(e.RowHandle, clHienThi2222, "1");
-
-                if (gridView1.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() == "Kho TP")
-                    gridView1.SetRowCellValue(e.RowHandle, clMaKho, "1");
-                else if (gridView1.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() == "Kho BTP")
-                    gridView1.SetRowCellValue(e.RowHandle, clMaKho, "2");
-                else if (gridView1.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() == "Kho NPL")
-                    gridView1.SetRowCellValue(e.RowHandle, clMaKho, "3");
-                else gridView1.SetRowCellValue(e.RowHandle, clMaKho, "");
-
-            }
-
-            try
-            {
-                double fffsoluong = 0;
-                double ffdongia = 0;
-                double fffthanhtien = 0;
-                if (e.Column == clSoLuong2)
-                {
-
-                    if (gridView1.GetFocusedRowCellValue(clDonGia2).ToString() == "")
-                        ffdongia = 0;
-                    else
-                        ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia2));
-                    if (gridView1.GetFocusedRowCellValue(clSoLuong2).ToString() == "")
-                        fffsoluong = 0;
-                    fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong2));
-                    fffthanhtien = fffsoluong * ffdongia;
-                    gridView1.SetFocusedRowCellValue(clThanhTien2, fffthanhtien);
-                }
-                if (e.Column == clDonGia2)
-                {
-                    if (gridView4.GetFocusedRowCellValue(clDonGia2).ToString() == "")
-                        ffdongia = 0;
-                    else
-                        ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia2));
-                    if (gridView4.GetFocusedRowCellValue(clSoLuong2).ToString() == "")
-                        fffsoluong = 0;
-                    else
-                        fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong2));
-                    fffthanhtien = fffsoluong * ffdongia;
-                    gridView4.SetFocusedRowCellValue(clThanhTien2, fffthanhtien);
-
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
+        
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
         {
             try
