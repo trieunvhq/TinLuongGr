@@ -725,10 +725,11 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dtthamchieu.Rows.Count; i++)
                 {
+                    cls3 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
 
                     cls3.iID_XuatKhoGapDan = iiID_Xuatkhogapdan;
                     cls3.iID_VTHH = Convert.ToInt32(dtthamchieu.Rows[i]["ID_VTHH_ThanhPham_QuyDoi"].ToString());
-                    int iiiID_VTHHXX = Convert.ToInt32(dtthamchieu.Rows[i]["ID_VTHH_ThanhPham_QuyDoi"].ToString());
+                    int iID_NhapKhoGapDanxxx = Convert.ToInt32(dtthamchieu.Rows[i]["ID_NhapKhoGapDan"].ToString());
                     cls3.fSoLuongXuat = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongXuat"].ToString());
                     cls3.bTonTai = true;
                     cls3.bNgungTheoDoi = false;
@@ -740,7 +741,7 @@ namespace CtyTinLuong
                     cls3.fSoLuongThanhPham_QuyDoi = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongThanhPham_QuyDoi"].ToString());
                     cls3.iID_NhapKhoGapDan= Convert.ToInt32(dtthamchieu.Rows[i]["ID_NhapKhoGapDan"].ToString());
                     string expression;
-                    expression = "ID_VTHH=" + iiiID_VTHHXX + "";
+                    expression = "ID_NhapKhoGapDan=" + iID_NhapKhoGapDanxxx + "";
                     DataRow[] foundRows;
                     foundRows = dt3_cu.Select(expression);
                     if (foundRows.Length > 0)
