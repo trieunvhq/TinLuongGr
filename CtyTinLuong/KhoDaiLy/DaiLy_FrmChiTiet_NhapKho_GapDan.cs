@@ -172,7 +172,7 @@ namespace CtyTinLuong
                 cls1.fSoLuongThanhPham_QuyDoi = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
                 cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.sThamChieu = txtSoChungTu.Text.ToString();
+                cls1.sThamChieu = txtThamChieu.Text.ToString();
                 cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
                 cls1.bBool_TonDauKy = false;
                 cls1.bTrangThai_XuatKho_NPL = true;

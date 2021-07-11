@@ -45,52 +45,17 @@ namespace CtyTinLuong
                 navChoXuatKho.Appearance.Font = new Font(navXuatKho.Appearance.Font, FontStyle.Bold);
             }
 
-            clsGapDan_tbNhapKho cls7 = new clsGapDan_tbNhapKho();
-            DataTable dt7 = cls7.SelectAll_HienThi2(new DateTime(2010, 1, 1), new DateTime(2030, 1, 1));
-            dt7.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and TrangThai_XuatKho_NPL=True and TrangThai_XuatKho_BTP=True and TrangThai_NhapKho_GapDan=False";
-            DataView dv7 = dt7.DefaultView;
-            DataTable dxxxx7 = dv7.ToTable();
-            int k7 = dxxxx7.Rows.Count;
-            if (k7 > 0)
+            clsGapDan_tbNhapKho_Temp cls3 = new clsGapDan_tbNhapKho_Temp();
+            DataTable dt3 = cls3.SelectAll();
+            dt1.DefaultView.RowFilter = "TrangThai_XuatKho_NPL = False and TrangThai_NhapKho_GapDan = True";
+            DataView dv3 = dt3.DefaultView;
+            DataTable dxxxx3 = dv3.ToTable();
+            int k3 = dxxxx3.Rows.Count;
+            if (k3 > 0)
             {
-                navNhapKhoGapDan.Caption = "Nhập kho (" + k7.ToString() + ")";
-                navNhapKhoGapDan.Appearance.Font = new Font(navNhapKhoGapDan.Appearance.Font, FontStyle.Bold);
+                navChoNhapKho_GapDan.Caption = "Chờ Nhập kho (" + k3.ToString() + ")";
+                navChoNhapKho_GapDan.Appearance.Font = new Font(navChoNhapKho_GapDan.Appearance.Font, FontStyle.Bold);
             }
-
-            //clsGapDan_tbNhapKho cls8 = new clsGapDan_tbNhapKho();
-            //DataTable dt8 = cls8.SelectAll_HienThi();
-            //dt8.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and TrangThai_XuatKho_NPL=True and TrangThai_XuatKho_BTP=True and TrangThai_NhapKho_GapDan=False";
-            //DataView dv8 = dt8.DefaultView;
-            //DataTable dxxxx8 = dv8.ToTable();
-            //int k8 = dxxxx8.Rows.Count;
-            //if (k8 > 0)
-            //{
-            //    navXuatKhoGapDan.Caption = "Xuất kho (" + k8.ToString() + ")";
-            //    navXuatKhoGapDan.Appearance.Font = new Font(navXuatKhoGapDan.Appearance.Font, FontStyle.Bold);
-            //}
-            //clsKhoBTP_tbNhapKho cls4 = new CtyTinLuong.clsKhoBTP_tbNhapKho();
-            //DataTable dxxxx3xx4 = cls4.SelectAll();
-            //dxxxx3xx4.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            //DataView dvdxxxx3xx4 = dxxxx3xx4.DefaultView;
-
-            //DataTable dxxxx4 = dvdxxxx3xx4.ToTable();
-            //int k4 = dxxxx4.Rows.Count;
-            //if (k4 > 0)
-            //{
-            //    navDaNhapKho.Caption = "Đã nhập kho (" + k4.ToString() + ")";
-            //}
-            //clsKhoBTP_tbNhapKho cls5 = new CtyTinLuong.clsKhoBTP_tbNhapKho();
-            //DataTable dxxxx3xx5 = cls5.SelectAll();
-            //dxxxx3xx5.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            //DataView dvdxxxx3xx5 = dxxxx3xx5.DefaultView;
-
-            //DataTable dxxxx5 = dvdxxxx3xx5.ToTable();
-            //int k5 = dxxxx5.Rows.Count;
-            //if (k5 > 0)
-            //{
-            //    navDaXuatKho.Caption = "Đã xuất kho (" + k5.ToString() + ")";
-            //}
-
         }
         public frmQuanLyKhoDaiLy()
         {
