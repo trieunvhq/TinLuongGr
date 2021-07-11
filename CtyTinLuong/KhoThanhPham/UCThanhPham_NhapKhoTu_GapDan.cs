@@ -100,6 +100,17 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT1)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView View = sender as GridView;
