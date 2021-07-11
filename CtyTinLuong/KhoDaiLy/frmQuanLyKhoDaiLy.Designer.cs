@@ -51,10 +51,12 @@
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navNhapKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
             this.navXuatKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -199,11 +201,13 @@
             this.navXuatKhoGapDan,
             this.navBarItem14,
             this.navBarItem15,
-            this.navBarItem12,
             this.navBarItem13,
             this.navBangLuongDaiLy,
             this.navChoNhapKho,
-            this.navChoXuatKho});
+            this.navChoXuatKho,
+            this.navBarItem8,
+            this.navBarItem9,
+            this.navBarItem11});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -218,7 +222,9 @@
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNhapKhoGapDan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKhoGapDan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navNhapKhoGapDan
@@ -232,12 +238,6 @@
             this.navXuatKhoGapDan.Caption = "Xuất kho";
             this.navXuatKhoGapDan.Name = "navXuatKhoGapDan";
             this.navXuatKhoGapDan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navXuatKhoGapDan_LinkClicked);
-            // 
-            // navBarItem12
-            // 
-            this.navBarItem12.Caption = "Báo cáo NXT";
-            this.navBarItem12.Name = "navBarItem12";
-            this.navBarItem12.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem12_LinkClicked);
             // 
             // navBarItem14
             // 
@@ -262,6 +262,24 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // navBarItem8
+            // 
+            this.navBarItem8.Caption = "Chờ nhập kho";
+            this.navBarItem8.Name = "navBarItem8";
+            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked_1);
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Caption = "Chờ xuất kho";
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
+            // 
+            // navBarItem11
+            // 
+            this.navBarItem11.Caption = "Báo cáo NXT";
+            this.navBarItem11.Name = "navBarItem11";
+            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
+            // 
             // frmQuanLyKhoDaiLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,7 +293,7 @@
             this.MaximizeBox = false;
             this.Name = "frmQuanLyKhoDaiLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Đại Lý";
+            this.Text = "frmQuanLyKhoDaiLy-->Đại Lý";
             this.Load += new System.EventHandler(this.frmQuanLyKhoDaiLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
@@ -306,11 +324,13 @@
         private DevExpress.XtraNavBar.NavBarItem navXuatKhoGapDan;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem12;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBangLuongDaiLy;
         private DevExpress.XtraNavBar.NavBarItem navChoNhapKho;
         private DevExpress.XtraNavBar.NavBarItem navChoXuatKho;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem11;
     }
 }
