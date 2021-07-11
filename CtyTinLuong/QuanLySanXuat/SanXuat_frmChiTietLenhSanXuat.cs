@@ -70,8 +70,17 @@ namespace CtyTinLuong
             else
             {
                 clsHUU_LenhSanXuat cls1 = new clsHUU_LenhSanXuat();            
-                cls1.Update_W_GuiDuLieu(iiDI_LSSX,true);
-                MessageBox.Show("Đã gửi dữ liệu nhập xuất kho");
+                if (cls1.Update_W_GuiDuLieu(iiDI_LSSX, true))
+                {
+                    this.Close();
+                    _ucSXLSX.btRefresh_Click(null, null);
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Đã gửi dữ liệu nhập xuất kho", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Gửi dữ liệu nhập xuất kho không thành công!", "Error");
+                }
             }
         }
      
@@ -294,8 +303,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
           
             Luu_Va_Gui_DuLieu(UC_SanXuat_LenhSanXuat.mID_iD_LenhSanXuat);
-            this.Close();
-            _ucSXLSX.btRefresh_Click(null, null);
+
             Cursor.Current = Cursors.Default;
         }
 

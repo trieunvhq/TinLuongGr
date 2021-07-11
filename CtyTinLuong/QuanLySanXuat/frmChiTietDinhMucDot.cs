@@ -78,9 +78,18 @@ namespace CtyTinLuong
                     cls.sGhiChu = txtGhiChu.Text.ToString();
                     cls.bKhoa = false;
                     cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
-                    cls.Insert();
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
+
+                    if (cls.Insert())
+                    {
+                        this.Close();
+                        MessageBox.Show("Đã lưu!", "Success");
+                        _uccDMD.btRefresh_Click(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu không thành công!", "Error");
+                    }
+
                 }
                 catch
                 {
@@ -159,9 +168,17 @@ namespace CtyTinLuong
                     cls.sGhiChu = txtGhiChu.Text.ToString();
                     cls.bKhoa = khoadulieu;
                     cls.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 1;
-                    cls.Update();
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
+
+                    if (cls.Update())
+                    {
+                        this.Close();
+                        MessageBox.Show("Đã lưu!", "Success");
+                        _uccDMD.btRefresh_Click(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu không thành công!", "Error");
+                    }
                 }
                 catch
                 {
@@ -227,11 +244,13 @@ namespace CtyTinLuong
             if (txtSoHieu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có số hiệu");
+                txtSoHieu.Focus();
                 return false;
             }
             else if (dteNgayThang.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn ngày tháng ");
+                dteNgayThang.Focus();
                 return false;
             }
             //else if (txtLoaiHang.Text.ToString() == "")
@@ -242,50 +261,61 @@ namespace CtyTinLuong
             else if (txtLoaiGiay.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn loại giấy");
+                txtLoaiGiay.Focus();
                 return false;
             }
           
             else if (txtSoLuongKiemTra.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn đơn vị tính");
+                txtSoLuongKiemTra.Focus();
                 return false;
             }
             else if (txtTrongLuongKiemTra.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số lượng kiêm tra");
+                txtTrongLuongKiemTra.Focus();
                 return false;
             }
             else if (txtSoLuongQuyDoi.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có số lượng quy đổi");
+                txtSoLuongQuyDoi.Focus();
                 return false;
             }
             else if (txtQuyRaKien.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có quy ra kiện");
+                txtQuyRaKien.Focus();
                 return false;
             }
             else if (txtDoCao.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn độ cao");
+                txtDoCao.Focus();
                 return false;
             }
             else if (txtSoKienMotBao.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số kiện 1 bao");
+                txtSoKienMotBao.Focus();
                 return false;
             }
             else if (txtSoKGMotBao.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số Kg/ 1bao");
+                txtSoKGMotBao.Focus();
                 return false;
             }
             else return true;
 
         }
 
-        public frmChiTietDinhMucDot()
+        UCDinhMucDot _uccDMD;
+
+        public frmChiTietDinhMucDot(UCDinhMucDot uccDMD)
         {
+            _uccDMD = uccDMD;
             InitializeComponent();
         }
 

@@ -46,7 +46,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_Dot = true;
-            frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
+            frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot(this);
             //_frmQLSX.Hide();
             ff.Show();
             //_frmQLSX.Show();
@@ -64,7 +64,7 @@ namespace CtyTinLuong
                     miDID_VTHH= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());                 
                     mb_TheMoi_DinhMuc_Dot = false;
-                    frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot();
+                    frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot(this);
                     //_frmQLSX.Hide();
                     ff.Show();
                     //_frmQLSX.Show();
@@ -77,7 +77,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UCDinhMucDot_Load(sender, e);

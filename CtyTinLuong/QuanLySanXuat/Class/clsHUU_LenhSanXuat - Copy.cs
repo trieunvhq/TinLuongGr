@@ -121,7 +121,7 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public void Update_W_GuiDuLieu(int xxIDLSX, bool xxguidulieu)
+        public bool Update_W_GuiDuLieu(int xxIDLSX, bool xxguidulieu)
         {
 
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -140,7 +140,7 @@ namespace CtyTinLuong
 
                 // Execute query.
                 scmCmdToExecute.ExecuteNonQuery();
-                //return true;
+                return true;
             }
             catch (Exception ex)
             {
