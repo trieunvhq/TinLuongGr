@@ -1623,8 +1623,7 @@ namespace CtyTinLuong
         private void KhoThanhPham_NhapKho_TuGapDan_Load(object sender, EventArgs e)
         {          
             Cursor.Current = Cursors.WaitCursor;
-            dteDenNgay.DateTime = DateTime.Today;
-            dteTuNgay.DateTime = DateTime.Today.AddDays(-30);
+            
             clSoLuongXuat1.Caption = "Số lượng \n nhập";
             Load_LockUp();
             //if (UCThanhPham_NhapKhoTu_GapDan.mbThemMoi == true)
