@@ -1492,6 +1492,23 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
+        private void gridView4_CustomRowFilter_1(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+        {
+            GridView view = sender as GridView;
+            DataView dv = view.DataSource as DataView;
+            if (dv[e.ListSourceRow]["HienThi"].ToString().Trim() == "0")
+            {
+                e.Visible = false;
+                e.Handled = true;
+            }
+        }
+
+        private void btXoa2_Click(object sender, EventArgs e)
+        {
+            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi1, "0");
+            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clSoLuongNhap1, 0);
+        }
+
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT2)
