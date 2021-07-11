@@ -142,7 +142,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
-            dteTuNgay.EditValue = DateTime.Now.AddDays(-10);
+            dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Now;
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
