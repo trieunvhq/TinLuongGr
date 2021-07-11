@@ -1931,6 +1931,12 @@
     <Compile Include="TrXtraDaiLy_ChiTietLuong_Everyone.Designer.cs">
       <DependentUpon>TrXtraDaiLy_ChiTietLuong_Everyone.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoThanhPham\UCThanhPham_NhapKhoTu_GapDan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoThanhPham\UCThanhPham_NhapKhoTu_GapDan.Designer.cs">
+      <DependentUpon>UCThanhPham_NhapKhoTu_GapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>

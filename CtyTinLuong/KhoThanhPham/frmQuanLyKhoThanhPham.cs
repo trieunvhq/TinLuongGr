@@ -166,5 +166,14 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.ForeColor = Color.Blue;
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
+
+        private void navBarItem11_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            doiMauTitle(sender, e);
+            UCThanhPham_NhapKhoTu_GapDan uccc_NhapKho = new UCThanhPham_NhapKhoTu_GapDan();
+            uccc_NhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_NhapKho);
+            uccc_NhapKho.BringToFront();
+        }
     }
 }
