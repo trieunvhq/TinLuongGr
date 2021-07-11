@@ -274,6 +274,9 @@ namespace CtyTinLuong
             repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
 
 
+            gridMaVT.DataSource = dt;
+            gridMaVT.ValueMember = "ID_VTHH";
+            gridMaVT.DisplayMember = "MaVT";
 
             clsDinhMuc_DinhMuc_ToGapDan clsdinhmucnpl = new clsDinhMuc_DinhMuc_ToGapDan();
             DataTable dt2 = clsdinhmucnpl.SelectAll();
@@ -287,16 +290,9 @@ namespace CtyTinLuong
             gridDinhMucGapDan.Properties.DisplayMember = "MaDinhMuc";
 
 
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
+         
 
 
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
 
 
         }
