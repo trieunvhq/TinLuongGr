@@ -130,7 +130,7 @@ namespace CtyTinLuong
                     Cursor.Current = Cursors.WaitCursor;
                     miID_DinhMuc_NPL = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_NPL).ToString());                   
                     mb_TheMoi_DinhMuc_NPL = false;
-                    frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
+                    frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL(this);
                     //_frmQLSX.Hide();
                     ff.Show();
                     //_frmQLSX.Show();
@@ -190,7 +190,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             ucDinhMucNGuyenPhuLieu_Load(sender, e);
@@ -201,7 +201,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_NPL = true;
-            frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL();
+            frmChiTietDinhMucNPL ff = new frmChiTietDinhMucNPL(this);
             //_frmQLSX.Hide();
             ff.Show();
             //_frmQLSX.Show();

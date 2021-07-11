@@ -54,8 +54,9 @@ namespace CtyTinLuong
                         cls2.bNgungTheoDoi = false;
                         cls2.Insert2(dv3.Rows[i]["strSoLuong"].ToString());
                     }
-                    MessageBox.Show("Đã lưu");
                     this.Close();
+                    _ucDMNPL.btRefresh_Click(null, null);
+                    MessageBox.Show("Đã lưu");
                 }
                 catch
                 {
@@ -119,8 +120,9 @@ namespace CtyTinLuong
                         cls2.bNgungTheoDoi = false;
                         cls2.Insert2(dv3.Rows[i]["strSoLuong"].ToString());
                     }
-                    MessageBox.Show("Đã lưu");
                     this.Close();
+                    _ucDMNPL.btRefresh_Click(null, null);
+                    MessageBox.Show("Đã lưu");
                 }
                 catch
                 {
@@ -170,11 +172,13 @@ namespace CtyTinLuong
             if (txtMaDinhMucNPL.ToString() == "")
             {
                 MessageBox.Show("Chưa có mã Thành phẩm quy đổi");
+                txtMaDinhMucNPL.Focus();
                 return false;
             }
             else if (gridMaTPQuyDoi.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn Bán thành phẩm quy đổi ");
+                gridMaTPQuyDoi.Focus();
                 return false;
             }
             else if (dv3.Rows.Count == 0)
@@ -186,9 +190,11 @@ namespace CtyTinLuong
 
         }
 
+        ucDinhMucNGuyenPhuLieu _ucDMNPL;
 
-        public frmChiTietDinhMucNPL()
+        public frmChiTietDinhMucNPL(ucDinhMucNGuyenPhuLieu ucDMNPL)
         {
+            _ucDMNPL = ucDMNPL;
             InitializeComponent();
         }
 
@@ -330,7 +336,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaVTchinh1.Focus();
             }
         }
 
@@ -354,7 +360,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDienGiai.Focus();
             }
         }
 
@@ -546,17 +552,22 @@ namespace CtyTinLuong
                             str_ = str_.Remove(str_.Length - 1, 1);
                         }
                     }
-                    dt2.Rows[index_][name_] = str_;
-                    if (isthaydoi_)
+
+                    if (index_ >=0)
                     {
-                        gridControl1.DataSource = null;
-                        gridControl1.DataSource = dt2;
-                        gridView1.FocusedRowHandle = index_;
+                        dt2.Rows[index_][name_] = str_;
+                        if (isthaydoi_)
+                        {
+                            gridControl1.DataSource = null;
+                            gridControl1.DataSource = dt2;
+                            gridView1.FocusedRowHandle = index_;
+                        }
+                        else
+                        {
+                            gridView1.FocusedRowHandle = index_ + 1;
+                        }
                     }
-                    else
-                    {
-                        gridView1.FocusedRowHandle = index_ + 1;
-                    } 
+
                 }
             }
         }
