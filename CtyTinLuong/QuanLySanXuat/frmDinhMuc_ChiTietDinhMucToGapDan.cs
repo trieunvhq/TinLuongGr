@@ -40,9 +40,8 @@ namespace CtyTinLuong
                 cls2.fSoLuong = 1;
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
-                cls2.bCheck_ThanhPham = true;
-                cls2.bCheck_VatTu_Chinh = false;
-                cls2.bCheck_VatTu_Phu = false;
+                cls2.iInt_TP_1_Chinh_2_Phu_3 = 1;
+               
                 cls2.Insert();
                 //insert vật tư chính
                 cls2.iID_DinhMuc_ToGapDan = iiiID_DinhMuc_ToGapDan;
@@ -50,9 +49,7 @@ namespace CtyTinLuong
                 cls2.fSoLuong = Convert.ToDouble(txtSoLuongVTChinh.Text.ToString());
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
-                cls2.bCheck_ThanhPham = false;
-                cls2.bCheck_VatTu_Chinh = true;
-                cls2.bCheck_VatTu_Phu = false;
+                cls2.iInt_TP_1_Chinh_2_Phu_3 = 2;
                 cls2.Insert();
 
 
@@ -71,9 +68,7 @@ namespace CtyTinLuong
                     else cls2.fSoLuong = 0;
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
-                    cls2.bCheck_ThanhPham = false;
-                    cls2.bCheck_VatTu_Chinh = false;
-                    cls2.bCheck_VatTu_Phu = true;
+                    cls2.iInt_TP_1_Chinh_2_Phu_3 = 3;
                     cls2.Insert();
                 }
                 MessageBox.Show("Đã lưu");
@@ -112,9 +107,7 @@ namespace CtyTinLuong
                 cls2.fSoLuong = 1;
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
-                cls2.bCheck_ThanhPham = true;
-                cls2.bCheck_VatTu_Chinh = false;
-                cls2.bCheck_VatTu_Phu = false;
+                cls2.iInt_TP_1_Chinh_2_Phu_3 = 1;
                 cls2.Insert();
                 //insert vật tư chính
                 cls2.iID_DinhMuc_ToGapDan = UCSanXuat_DinhMuc_ToGapDan.miID_DinhMuc_ToGapDan;
@@ -122,9 +115,7 @@ namespace CtyTinLuong
                 cls2.fSoLuong = Convert.ToDouble(txtSoLuongVTChinh.Text.ToString());
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
-                cls2.bCheck_ThanhPham = false;
-                cls2.bCheck_VatTu_Chinh = true;
-                cls2.bCheck_VatTu_Phu = false;
+                cls2.iInt_TP_1_Chinh_2_Phu_3 = 2;
                 cls2.Insert();
 
                 string shienthi = "1";
@@ -142,9 +133,7 @@ namespace CtyTinLuong
                     else cls2.fSoLuong = 0;
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
-                    cls2.bCheck_ThanhPham = false;
-                    cls2.bCheck_VatTu_Chinh = false;
-                    cls2.bCheck_VatTu_Phu = true;
+                    cls2.iInt_TP_1_Chinh_2_Phu_3 = 3;
                     cls2.Insert();
                 }
                 MessageBox.Show("Đã lưu");
