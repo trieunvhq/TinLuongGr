@@ -66,26 +66,16 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtmoi.Rows.Count; i++)
                 {
                     clschitietxuatkho.iID_XuatKho = iiiiIDID_XuatKhoNPL;
-                    clschitietxuatkho.iID_VTHH = Convert.ToInt16(dtmoi.Rows[i]["ID_VTHH_Vao"].ToString());
-                    clschitietxuatkho.fSoLuongXuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuongNhap_May"].ToString());
-                    clschitietxuatkho.fDonGia = Convert.ToDouble(dtmoi.Rows[i]["DonGia_Vao"].ToString());
+                    clschitietxuatkho.iID_VTHH = Convert.ToInt16(dtmoi.Rows[i]["ID_VTHHVao"].ToString());
+                    clschitietxuatkho.fSoLuongXuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuongVao"].ToString());
+                    clschitietxuatkho.fDonGia = Convert.ToDouble(dtmoi.Rows[i]["DonGiaVao"].ToString());
                     clschitietxuatkho.bTonTai = true;
                     clschitietxuatkho.bNgungTheoDoi = false;
                     clschitietxuatkho.bDaXuatKho = true;
                     clschitietxuatkho.sGhiChu = "";
                     clschitietxuatkho.Insert();
 
-                    // update soluong ton tbnhapkho
-                    clsKhoNPL_tbChiTietNhapKho clschitietnhapkho = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
-                    int iiiID_VTHH = Convert.ToInt16(dtmoi.Rows[i]["ID_VTHH_Vao"].ToString());
-                    double soluongxuat= Convert.ToDouble(dtmoi.Rows[i]["SoLuongNhap_May"].ToString());
-                    clschitietnhapkho.iID_VTHH = iiiID_VTHH;
-                    DataTable dt2 = clschitietnhapkho.Select_W_ID_VTHH();
-                    Double douSoLuongTonCu;
-                    douSoLuongTonCu = Convert.ToDouble(dt2.Rows[0]["SoLuongTon"].ToString());
-                    clschitietnhapkho.iID_ChiTietNhapKho = Convert.ToInt16(dt2.Rows[0]["ID_ChiTietNhapKho"].ToString());
-                    clschitietnhapkho.fSoLuongTon = douSoLuongTonCu - soluongxuat;
-                    clschitietnhapkho.Update_SoLuongTon();
+                 
                 }
 
                 /// Update trang thai nhap lenh san xuất
@@ -122,79 +112,11 @@ namespace CtyTinLuong
             dtNguoi.Dispose();
             clsNguoi.Dispose();
         }
-        private void HienThi_SUa_LenhSanXuat()
+        private void HienThi_SUa_LenhSanXuat(int xxID_LSX)
         {
             DataTable dt2 = new DataTable();
-            clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
-            cls2.iID_LenhSanXuat = UCNPL_XuatKho_TheoLenhSanXuat_mayIN.mID_iD_LenhSanXuat;
-            DataTable dtxxxx = cls2.SelectAll_w_iID_LenhSanXuat();
-
-            dt2.Columns.Add("ID_SoPhieu", typeof(int));
-            dt2.Columns.Add("MaPhieu", typeof(string));
-            dt2.Columns.Add("ID_VTHH_Vao", typeof(int));
-            dt2.Columns.Add("ID_VTHH_Ra", typeof(int));
-            dt2.Columns.Add("MaVT_Vao", typeof(string));
-            dt2.Columns.Add("MaVT_Ra", typeof(string));
-            dt2.Columns.Add("DonViTinh_Vao", typeof(string));
-            dt2.Columns.Add("DonViTinh_Ra", typeof(string));
-            dt2.Columns.Add("TenVatTu_Vao", typeof(string));
-            dt2.Columns.Add("TenVatTu_Ra", typeof(string));
-            dt2.Columns.Add("SoLuongNhap_May", typeof(float));
-            dt2.Columns.Add("SanLuongThuong_May", typeof(float));
-            dt2.Columns.Add("SanLuongTangCa_May", typeof(float));
-            dt2.Columns.Add("PhePham_May", typeof(float));            //
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("DonGia_Vao", typeof(float));
-            dt2.Columns.Add("DonGia_Ra", typeof(float));
-            dt2.Columns.Add("ThanhTien", typeof(float));
-            dt2.Columns.Add("SoLuongTon", typeof(float));
-            //SoLuongTon
-            clsTbVatTuHangHoa clsVT_Vao = new clsTbVatTuHangHoa();
-            clsTbVatTuHangHoa clsVT_Ra = new clsTbVatTuHangHoa();
-            clsPhieu_tbPhieu clsphieu = new clsPhieu_tbPhieu();
-            clsKhoNPL_tbChiTietNhapKho clsnhapkho = new clsKhoNPL_tbChiTietNhapKho();
-            for (int i = 0; i < dtxxxx.Rows.Count; i++)
-            {
-                double soluong, dongia;
-                DataRow _ravi = dt2.NewRow();
-                _ravi["ID_SoPhieu"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_SoPhieu"].ToString());
-                clsphieu.iID_SoPhieu = Convert.ToInt16(dtxxxx.Rows[i]["ID_SoPhieu"].ToString());
-                DataTable dtphieu = clsphieu.SelectOne();
-                _ravi["MaPhieu"] = dtphieu.Rows[0]["MaPhieu"].ToString();
-                //_ravi["ID_VTHH_Vao"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
-                int iiDI_Vthh_vao = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
-                _ravi["ID_VTHH_Vao"] = iiDI_Vthh_vao;
-                clsVT_Vao.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
-                DataTable dtVT_vao = clsVT_Vao.SelectOne();
-                _ravi["MaVT_Vao"] = dtVT_vao.Rows[0]["MaVT"].ToString();
-                _ravi["DonViTinh_Vao"] = dtVT_vao.Rows[0]["DonViTinh"].ToString();
-                _ravi["TenVatTu_Vao"] = dtVT_vao.Rows[0]["TenVTHH"].ToString();
-
-                _ravi["ID_VTHH_Ra"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHRa"].ToString());
-                clsVT_Ra.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHRa"].ToString());
-                DataTable dtVT_Ra = clsVT_Ra.SelectOne();
-                _ravi["MaVT_Ra"] = dtVT_Ra.Rows[0]["MaVT"].ToString();
-                _ravi["DonViTinh_Ra"] = dtVT_Ra.Rows[0]["DonViTinh"].ToString();
-                _ravi["TenVatTu_Ra"] = dtVT_Ra.Rows[0]["TenVTHH"].ToString();
-
-                _ravi["SoLuongNhap_May"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongVao"].ToString());
-               
-                _ravi["SanLuongThuong_May"] = Convert.ToDouble(dtxxxx.Rows[i]["SanLuongThuong"].ToString());
-                _ravi["SanLuongTangCa_May"] = Convert.ToDouble(dtxxxx.Rows[i]["SanLuongTangCa"].ToString());
-                _ravi["PhePham_May"] = Convert.ToDouble(dtxxxx.Rows[i]["PhePham"].ToString());
-                _ravi["DonGia_Vao"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaVao"].ToString());
-                _ravi["DonGia_Ra"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaRa"].ToString());
-                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongVao"].ToString());
-                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaVao"].ToString());
-                _ravi["ThanhTien"] = soluong * dongia;
-                _ravi["HienThi"] = "1";
-               // clsnhapkho.iID_VTHH = iiDI_Vthh_vao;
-               // DataTable dtnhapkho = new DataTable();
-               // dtnhapkho= clsnhapkho.Select_W_ID_VTHH();
-               //// _ravi["SoLuongTon"] = Convert.ToDouble(dtnhapkho.Rows[0]["SoLuongTon"].ToString());
-                dt2.Rows.Add(_ravi);
-
-            }
+            clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();           
+            dt2 = cls2.SA_new(xxID_LSX);       
             gridControl1.DataSource = dt2;
 
             double deTOngtien;
@@ -206,15 +128,14 @@ namespace CtyTinLuong
             else deTOngtien = 0;
             txtTongTienHang.Text = deTOngtien.ToString();
 
-
             clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-            cls.iID_LenhSanXuat = UCNPL_XuatKho_TheoLenhSanXuat_mayIN.mID_iD_LenhSanXuat;
+            cls.iID_LenhSanXuat = xxID_LSX;
             DataTable dt = cls.SelectOne();
 
             txtLenhSX.Text = cls.sMaLenhSanXuat.Value.ToString();
             dteNgaySX.EditValue = cls.daNgayThangSanXuat.Value;
             cbCaSX.Text = cls.sCaSanXuat.Value.ToString();
-            //checkNgungTheoDoi.Checked = cls.bNgungTheoDoi.Value;
+        
             gridMaCaTruong.EditValue = cls.iID_CaTruong.Value;
             gridMaCN.EditValue = cls.iID_CongNhan.Value;
             
@@ -245,7 +166,7 @@ namespace CtyTinLuong
             
             Load_lockUP_EDIT();
            
-            HienThi_SUa_LenhSanXuat();
+            HienThi_SUa_LenhSanXuat(UCNPL_XuatKho_TheoLenhSanXuat_mayIN.mID_iD_LenhSanXuat);
 
             clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
             DataTable dt1 = cls1.SelectAll();
