@@ -23,44 +23,12 @@ namespace CtyTinLuong
         private void HienThi_ThemMoi_XuatKho()
         {
             gridNguoiLap.EditValue = 14;
-            txtSoLuongXuat.Text = "1";
+          
             dteNgayChungTu.EditValue = DateTime.Today;
-            clsKhoNPL_tbXuatKho cls3 = new clsKhoNPL_tbXuatKho();
-            DataTable dt1 = cls3.SelectAll();
-            dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt1.DefaultView;
-            DataTable dv3 = dv.ToTable();
-            int k = dv3.Rows.Count;
-            if (k == 0)
-                txtSoChungTu.Text = "XKNPL 1";
-            else
-            {
-                string xxx = dv3.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(5).Trim()) + 1;
-                if (xxx2 >= 10000)
-                    txtSoChungTu.Text = "XKNPL 1";
-                else txtSoChungTu.Text = "XKNPL " + xxx2 + "";
-
-            }
-            string sochungtuNhapKho_GapDan;
-            clsGapDan_tbNhapKho_Temp cls = new clsGapDan_tbNhapKho_Temp();
-            DataTable dt1222 = cls.SelectAll();
-            dt1222.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dvxxx = dt1222.DefaultView;
-            DataTable dv3xxx = dvxxx.ToTable();
-            int k2 = dv3xxx.Rows.Count;
-            if (k2 == 0)
-                sochungtuNhapKho_GapDan = "NKGD 1";
-            else
-            {
-                string xxx = dv3xxx.Rows[k2 - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
-                if (xxx2 >= 10000)
-                    sochungtuNhapKho_GapDan = "NKGD 1";
-                sochungtuNhapKho_GapDan = "NKGD " + xxx2 + "";
-
-            }
-            txtSoChungTu.Text = sochungtuNhapKho_GapDan;
+            txtSoChungTu.Text = SoCHungTu_GapDan();
+            txtThamChieu.Text = SoCHungTu_NPL();
+           
+            
         }
         private string SoCHungTu_NPL()
         {
@@ -84,7 +52,28 @@ namespace CtyTinLuong
             }
             return sochungtu;
         }
+        private string SoCHungTu_GapDan()
+        {
+            string sochungtu;
+            clsGapDan_tbNhapKho_Temp cls = new clsGapDan_tbNhapKho_Temp();
+            DataTable dt1222 = cls.SelectAll();
+            dt1222.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            DataView dvxxx = dt1222.DefaultView;
+            DataTable dv3xxx = dvxxx.ToTable();
+            int k2 = dv3xxx.Rows.Count;
+            if (k2 == 0)
+                sochungtu = "NKGD 1";
+            else
+            {
+                string xxx = dv3xxx.Rows[k2 - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
+                if (xxx2 >= 10000)
+                    sochungtu = "NKGD 1";
+              else  sochungtu = "NKGD " + xxx2 + "";
 
+            }
+            return sochungtu;
+        }
         private void hienthi_DienGai()
         {
             try
@@ -111,7 +100,7 @@ namespace CtyTinLuong
 
             }
         }
-        private void HienThi_Sua_XuatKho( int iiID_nhapkho_)
+        private void HienThi_Sua_XuatKho(int iiID_nhapkho_)
         {
 
             clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
@@ -130,165 +119,32 @@ namespace CtyTinLuong
             gridDinhMucGapDan.EditValue = cls1.iID_DinhMuc_ToGapDan.Value;
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
-            dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
+            dteNgayChungTu.EditValue = DateTime.Today;
             txtSoChungTu.Text = cls1.sThamChieu.Value;
             txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
-            double iisoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
+            txtThamChieu.Text = cls1.sThamChieu.Value;
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("DinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuongTheoDinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("SoLuongTon", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
-           
-            clsGapDan_ChiTiet_NhapKho_Temp cls = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho_Temp();
-            cls.iID_NhapKho = iiID_nhapkho_;
-
-            DataTable dtchitiet1 = cls.SA_W_ID_NhapKho(iiID_nhapkho_);
-            dtchitiet1.DefaultView.RowFilter = "Check_VatTu_Phu = True";
-            DataView dv2 = dtchitiet1.DefaultView;
-            DataTable dtchitietnhapkho = dv2.ToTable();
-            for (int i = 0; i < dtchitietnhapkho.Rows.Count; i++)
-            {
-                double SoLuong = Convert.ToDouble(dtchitietnhapkho.Rows[i]["SoLuongNhap"].ToString());
-                double dongiaxxx333 = Convert.ToDouble(dtchitietnhapkho.Rows[i]["DonGia"].ToString());
-
-                int ID_VTHHxx = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_VTHH"].ToString());
-                
-                clsDinhMuc_ChiTiet_DinhMuc_ToGapDan clsdm = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-                clsdm.iID_DinhMuc_ToGapDan = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
-                clsdm.iID_VTHH = ID_VTHHxx;
-                DataTable dtdm = clsdm.SelectOne_W_ID_DinhMuc_ToGapDan_AND_ID_VTHH();
-                double xxsoluongdinhmuc = 0;
-                if (dtdm!=null && dtdm.Rows.Count>0)
-                    xxsoluongdinhmuc = Convert.ToDouble(dtdm.Rows[0]["SoLuong"].ToString());
-                //var xxdinhmuc = Math.Round(double.Parse(xxsoluong), 3);
-
-                //DataRow _ravi3 = dt2.NewRow();
-                //_ravi3["ID_VTHH"] = ID_VTHHxx;
-                //_ravi3["MaVT"] = ID_VTHHxx;
-                //_ravi3["DinhMuc"] = xxsoluongdinhmuc;
-                //_ravi3["SoLuongTheoDinhMuc"] = xxsoluongdinhmuc * iisoluongxuat;
-                //_ravi3["TenVTHH"] = clvthh.sTenVTHH.Value;
-                //_ravi3["DonViTinh"] = clvthh.sDonViTinh.Value;
-                //_ravi3["SoLuong"] = SoLuong;               
-                //_ravi3["DonGia"] = dongiaxxx333;// lay kho NPL
-                //_ravi3["GhiChu"] = dtchitietnhapkho.Rows[i]["GhiChu"].ToString();
-                //_ravi3["HienThi"] = "1";
-                //_ravi3["ThanhTien"] = SoLuong * dongiaxxx333;
-                //if(Convert.ToBoolean(dtchitietnhapkho.Rows[i]["Check_VatTu_Phu"].ToString())==true)
-                //_ravi3["Check_VatTu_Phu"] = true;
-                //else _ravi3["Check_VatTu_Phu"] = false;
-                //dt2.Rows.Add(_ravi3);
-
-            }
-            gridControl1.DataSource = dt2;
-            double deTOngtien;
-            string shienthi = "1";
-            object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + " and Check_VatTu_Phu = True");
-            if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
-            else deTOngtien = 0;
-            txtTongTienHang.Text = deTOngtien.ToString();
-
+            double iisoluongxuat = cls1.fSoLuongThanhPham_QuyDoi.Value;
+            int iiID_dinhmuc = cls1.iID_DinhMuc_ToGapDan.Value;
+            HienThi_GridControl_Sua(iiID_nhapkho_, iiID_dinhmuc, iisoluongxuat);
         }
         private void HienThi_Sua_CoPy(int iiID_nhapkho_)
         {
-
+            txtSoChungTu.Text = SoCHungTu_GapDan();
+            txtThamChieu.Text = SoCHungTu_NPL();
             clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
             cls1.iID_NhapKho = iiID_nhapkho_;
             DataTable dt22222 = cls1.SelectOne();
-            if (cls1.bTrangThai_XuatKho_NPL == true)
-            {
-                btLuu_Dong.Enabled = false;
-                btLuu_Gui_Dong.Enabled = false;
-            }
-            else
-            {
-
-            }
             txtSoLuongXuat.Text = cls1.fSoLuongThanhPham_QuyDoi.Value.ToString();
             gridDinhMucGapDan.EditValue = cls1.iID_DinhMuc_ToGapDan.Value;
-            txtSoChungTu.Text = cls1.sSoChungTu.Value;
+          
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
             txtSoChungTu.Text = cls1.sThamChieu.Value;
             txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
-            double iisoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
-
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("DinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuongTheoDinhMuc", typeof(float));
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("SoLuongTon", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("Check_VatTu_Phu", typeof(bool));
-
-            clsGapDan_ChiTiet_NhapKho_Temp cls = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho_Temp();
-            cls.iID_NhapKho = iiID_nhapkho_;
-
-            DataTable dtchitiet1 = cls.SA_W_ID_NhapKho(iiID_nhapkho_);
-            dtchitiet1.DefaultView.RowFilter = "Check_VatTu_Phu = True";
-            DataView dv2 = dtchitiet1.DefaultView;
-            DataTable dtchitietnhapkho = dv2.ToTable();
-            for (int i = 0; i < dtchitietnhapkho.Rows.Count; i++)
-            {
-                double SoLuong = Convert.ToDouble(dtchitietnhapkho.Rows[i]["SoLuongNhap"].ToString());
-                double dongiaxxx333 = Convert.ToDouble(dtchitietnhapkho.Rows[i]["DonGia"].ToString());
-
-                int ID_VTHHxx = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_VTHH"].ToString());
-
-                clsDinhMuc_ChiTiet_DinhMuc_ToGapDan clsdm = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-                clsdm.iID_DinhMuc_ToGapDan = Convert.ToInt32(dtchitietnhapkho.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
-                clsdm.iID_VTHH = ID_VTHHxx;
-                DataTable dtdm = clsdm.SelectOne_W_ID_DinhMuc_ToGapDan_AND_ID_VTHH();
-                double xxsoluongdinhmuc = 0;
-                if (dtdm != null && dtdm.Rows.Count > 0)
-                    xxsoluongdinhmuc = Convert.ToDouble(dtdm.Rows[0]["SoLuong"].ToString());
-                //var xxdinhmuc = Math.Round(double.Parse(xxsoluong), 3);
-
-                //DataRow _ravi3 = dt2.NewRow();
-                //_ravi3["ID_VTHH"] = ID_VTHHxx;
-                //_ravi3["MaVT"] = ID_VTHHxx;
-                //_ravi3["DinhMuc"] = xxsoluongdinhmuc;
-                //_ravi3["SoLuongTheoDinhMuc"] = xxsoluongdinhmuc * iisoluongxuat;
-                //_ravi3["TenVTHH"] = clvthh.sTenVTHH.Value;
-                //_ravi3["DonViTinh"] = clvthh.sDonViTinh.Value;
-                //_ravi3["SoLuong"] = SoLuong;               
-                //_ravi3["DonGia"] = dongiaxxx333;// lay kho NPL
-                //_ravi3["GhiChu"] = dtchitietnhapkho.Rows[i]["GhiChu"].ToString();
-                //_ravi3["HienThi"] = "1";
-                //_ravi3["ThanhTien"] = SoLuong * dongiaxxx333;
-                //if(Convert.ToBoolean(dtchitietnhapkho.Rows[i]["Check_VatTu_Phu"].ToString())==true)
-                //_ravi3["Check_VatTu_Phu"] = true;
-                //else _ravi3["Check_VatTu_Phu"] = false;
-                //dt2.Rows.Add(_ravi3);
-
-            }
-            gridControl1.DataSource = dt2;
-            double deTOngtien;
-            string shienthi = "1";
-            object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + " and Check_VatTu_Phu = True");
-            if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
-            else deTOngtien = 0;
-            txtTongTienHang.Text = deTOngtien.ToString();
+            double iisoluongxuat = cls1.fSoLuongThanhPham_QuyDoi.Value;
+            int iiID_dinhmuc = cls1.iID_DinhMuc_ToGapDan.Value;
+            HienThi_GridControl_Sua(iiID_nhapkho_, iiID_dinhmuc, iisoluongxuat);
 
         }
         private void HienThi_GridControl_Moiiiiiiiiiiii( double soluongxuatxxx, int iiiID_Dinhmuc)
@@ -298,6 +154,15 @@ namespace CtyTinLuong
             DataTable dt2 = cls1.SA_IDDM_W_SoLuong(soluongxuatxxx, iiiID_Dinhmuc);          
             gridControl1.DataSource = dt2;
             
+        }
+
+        private void HienThi_GridControl_Sua(int xid_nhapkho,int iii_dinhmuc, double soluongxuatxxx)
+        {
+            clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
+            DataTable dt2 = cls2.SA_W_ID_NK_HienThi_(xid_nhapkho, iii_dinhmuc, soluongxuatxxx);
+            gridControl1.DataSource = dt2;
+            txtTongTienHang.Text = dt2.Rows[0][0].ToString();
+
         }
         int iID_VTHH;
         string sMaVT, sTenVTHH, sDonViTinh;
@@ -620,11 +485,23 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
+                DataTable dtkkk = (DataTable)gridControl1.DataSource;
+                
+                string expression;
+                expression = "int_TP_1_Chinh_2_Phu_3=1";
+                DataRow[] foundRows;               
+                foundRows = dtkkk.Select(expression);
+                int iiID_VT_Chinh;
+                if (foundRows.Length > 0)
+                    iiID_VT_Chinh = Convert.ToInt32(foundRows[0]["ID_VTHH"].ToString());
+                else
+                    iiID_VT_Chinh = 0;
+               
                 clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text.ToString());
+                cls1.iID_VTHH_ThanhPham_QuyDoi = iiID_VT_Chinh;
                 cls1.fDonGia_ThanhPham_QuyDoi = Convert.ToDouble(txtDonGiaThanhPhamQuyDoi.Text.ToString());
                 cls1.fSoLuongThanhPham_QuyDoi = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
                 cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
@@ -667,8 +544,7 @@ namespace CtyTinLuong
                 DataTable dtkkk = (DataTable)gridControl1.DataSource;
                 dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "";
                 DataView dv2232xx = dtkkk.DefaultView;
-                DataTable dt232 = dv2232xx.ToTable();
-
+                
                 clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
                 DataTable dt2_cu = new DataTable();
                 cls2.iID_NhapKho = iiiID_nhapkhogapgan;
@@ -679,72 +555,8 @@ namespace CtyTinLuong
                     cls2.bTonTai = false;
                     cls2.Update_ALL_tonTai();
                 }
-                // Nhap kho Thành pham quy doi
-                cls2.iID_NhapKho = iiiID_nhapkhogapgan;
-                cls2.iID_VTHH = Convert.ToInt32(txtID_ThanhPham.Text.ToString());
-                cls2.fSoLuongNhap = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
-                cls2.fSoLuongTon = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
-                if (txtDonGiaThanhPhamQuyDoi.Text.ToString() == "")
-                    cls2.fDonGia = 0;
-                else cls2.fDonGia = Convert.ToDouble(txtDonGiaThanhPhamQuyDoi.Text.ToString());
-                cls2.sGhiChu = "";
-                cls2.bTonTai = true;
-                cls2.bNgungTheoDoi = false;
-                cls2.bDaNhapKho = false;
-                cls2.bBoolTonDauKy = false;
-                cls2.bCheck_ThanhPham = true;
-                cls2.bCheck_VatTu_Chinh = false;
-                cls2.bCheck_VatTu_Phu = false;
-                int ID_VTHHxxx_TP = Convert.ToInt32(txtID_ThanhPham.Text.ToString());
-                string expression_TP;
-                expression_TP = "ID_VTHH=" + ID_VTHHxxx_TP + "";
-                DataRow[] foundRows_TP;
-                foundRows_TP = dt2_cu.Select(expression_TP);
-                if (foundRows_TP.Length > 0)
-                {
-                    cls2.iID_ChiTietNhapKho = Convert.ToInt32(foundRows_TP[0]["ID_ChiTietNhapKho"].ToString());
-                    cls2.Update();
-                }
-                else
-                {
-                    cls2.Insert();
-                }
-
-                // Nhap kho Vật tư chính
-                cls2.iID_NhapKho = iiiID_nhapkhogapgan;
-                cls2.iID_VTHH = Convert.ToInt32(txtID_VatTuChinh.Text.ToString());
-                //cls2.fSoLuongNhap = Convert.ToDouble(txtSoLuongVTChinh.Text.ToString());
-                //cls2.fSoLuongTon = Convert.ToDouble(txtSoLuongVTChinh.Text.ToString());
-                if (txtDonGiaThanhPhamQuyDoi.Text.ToString() == "")
-                    cls2.fDonGia = 0;
-                else cls2.fDonGia = Convert.ToDouble(txtDonGiaThanhPhamQuyDoi.Text.ToString());
-                cls2.sGhiChu = "";
-                cls2.bTonTai = true;
-                cls2.bNgungTheoDoi = false;
-                cls2.bDaNhapKho = false;
-                cls2.bBoolTonDauKy = false;
-                cls2.bCheck_ThanhPham = false;
-                cls2.bCheck_VatTu_Chinh = true;
-                cls2.bCheck_VatTu_Phu = false;
-              
-                int ID_VTHHxxx_vatttuchinh = Convert.ToInt32(txtID_VatTuChinh.Text.ToString());
-                string expression_atttuchinh;
-                expression_atttuchinh = "ID_VTHH=" + ID_VTHHxxx_TP + "";
-                DataRow[] foundRows_atttuchinh;
-                foundRows_atttuchinh = dt2_cu.Select(expression_atttuchinh);
-                if (foundRows_atttuchinh.Length > 0)
-                {
-                    cls2.iID_ChiTietNhapKho = Convert.ToInt32(foundRows_atttuchinh[0]["ID_ChiTietNhapKho"].ToString());
-                    cls2.Update();
-                }
-                else
-                {
-                    cls2.Insert();
-                }
-                // cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-
-
-                // nhap kho vạt tư khác
+               
+            
 
                 DataTable dttttt2 = dv2232xx.ToTable();
                 for (int i = 0; i < dttttt2.Rows.Count; i++)
@@ -875,12 +687,12 @@ namespace CtyTinLuong
             cls.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
             DataTable dt = cls.SelectOne();
             txtDienGiaiDMNPL.Text = cls.sDienGiai.Value;
-           
+
+            double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
+            int xxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+            HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);
             if (UCNPL_XuatKho_GapDan.mbSua == false)
             {
-                double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
-                int xxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);
                 hienthi_DienGai();
             }
 
@@ -1224,11 +1036,11 @@ namespace CtyTinLuong
                     int xxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
                     double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
 
-                    if (UCNPL_XuatKho_GapDan.mbSua == false)
-                    {
+                    //if (UCNPL_XuatKho_GapDan.mbSua == false)
+                    //{
                         HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);
                         hienthi_DienGai();
-                    }
+                    //}
 
                 }
 
