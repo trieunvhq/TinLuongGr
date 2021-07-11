@@ -19,6 +19,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
+                bool ktra = false;
                 clsDinhMuc_DinhMuc_ToGapDan cls1 = new clsDinhMuc_DinhMuc_ToGapDan();
                 cls1.sMaDinhMuc = txtMaDinhMucNPL.Text.ToString().Trim();
                 cls1.sDienGiai = txtDienGiai.Text.ToString().Trim();
@@ -29,7 +30,16 @@ namespace CtyTinLuong
 
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
-                cls1.Insert();
+
+                if (cls1.Insert())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
 
                 int iiiID_DinhMuc_ToGapDan = cls1.iID_DinhMuc_ToGapDan.Value;
                 // insert thành phẩm
@@ -42,7 +52,16 @@ namespace CtyTinLuong
                 cls2.bNgungTheoDoi = false;
                 cls2.iInt_TP_1_Chinh_2_Phu_3 = 1;
                
-                cls2.Insert();
+                //cls2.Insert();
+                if (cls2.Insert())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
                 //insert vật tư chính
                 cls2.iID_DinhMuc_ToGapDan = iiiID_DinhMuc_ToGapDan;
                 cls2.iID_VTHH = Convert.ToInt16(gridMaVTchinh1.EditValue.ToString());
@@ -50,8 +69,16 @@ namespace CtyTinLuong
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.iInt_TP_1_Chinh_2_Phu_3 = 2;
-                cls2.Insert();
-
+                //cls2.Insert();
+                if (cls2.Insert())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
 
                 string shienthi = "1";
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
@@ -69,11 +96,23 @@ namespace CtyTinLuong
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
                     cls2.iInt_TP_1_Chinh_2_Phu_3 = 3;
-                    cls2.Insert();
+                    //cls2.Insert();
+                    if (cls2.Insert())
+                    {
+                        ktra = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu không thành công!", "Error");
+                        return;
+                    }
                 }
-                MessageBox.Show("Đã lưu");
-                this.Close();
-
+                if (ktra)
+                {
+                    this.Close();
+                    _ucDMTGD.btRefresh_Click(null, null);
+                    MessageBox.Show("Đã lưu!", "Success");
+                }
             }
         }
 
@@ -82,6 +121,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
+                bool ktra = false;
                 clsDinhMuc_DinhMuc_ToGapDan cls1 = new clsDinhMuc_DinhMuc_ToGapDan();
                 cls1.sMaDinhMuc = txtMaDinhMucNPL.Text.ToString().Trim();
                 cls1.sDienGiai = txtDienGiai.Text.ToString().Trim();
@@ -93,22 +133,50 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.iID_DinhMuc_ToGapDan = iiID_DinhMuc;
-                cls1.Update();
+                //cls1.Update();
+                if (cls1.Update())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
 
                 // XÓa trước
                 clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls2 = new clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
                 cls2.iID_DinhMuc_ToGapDan = iiID_DinhMuc;
-                cls2.Delete_ALL_W_ID_DinhMuc_ToGapDan();
+                //cls2.Delete_ALL_W_ID_DinhMuc_ToGapDan();
+                if (cls2.Delete_ALL_W_ID_DinhMuc_ToGapDan())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
+
 
                 // insert thành phẩm
-                
+
                 cls2.iID_DinhMuc_ToGapDan = iiID_DinhMuc;
                 cls2.iID_VTHH = Convert.ToInt16(gridMaTPQuyDoi.EditValue.ToString());
                 cls2.fSoLuong = 1;
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.iInt_TP_1_Chinh_2_Phu_3 = 1;
-                cls2.Insert();
+                //cls2.Insert();
+                if (cls2.Insert())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
                 //insert vật tư chính
                 cls2.iID_DinhMuc_ToGapDan = iiID_DinhMuc;
                 cls2.iID_VTHH = Convert.ToInt16(gridMaVTchinh1.EditValue.ToString());
@@ -116,7 +184,16 @@ namespace CtyTinLuong
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.iInt_TP_1_Chinh_2_Phu_3 = 2;
-                cls2.Insert();
+                //cls2.Insert();
+                if (cls2.Insert())
+                {
+                    ktra = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu không thành công!", "Error");
+                    return;
+                }
 
                 string shienthi = "1";
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
@@ -134,11 +211,24 @@ namespace CtyTinLuong
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
                     cls2.iInt_TP_1_Chinh_2_Phu_3 = 3;
-                    cls2.Insert();
+                    //cls2.Insert();
+                    if (cls2.Insert())
+                    {
+                        ktra = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu không thành công!", "Error");
+                        return;
+                    }
                 }
-                MessageBox.Show("Đã lưu");
-                this.Close();
 
+                if (ktra)
+                {
+                    this.Close();
+                    _ucDMTGD.btRefresh_Click(null, null);
+                    MessageBox.Show("Đã lưu!", "Success");
+                }
             }
         }
 
@@ -190,11 +280,13 @@ namespace CtyTinLuong
             if (txtMaDinhMucNPL.ToString() == "")
             {
                 MessageBox.Show("Chưa có mã Thành phẩm quy đổi");
+                txtMaDinhMucNPL.Focus();
                 return false;
             }
             else if (gridMaTPQuyDoi.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn Bán thành phẩm quy đổi ");
+                gridMaTPQuyDoi.Focus();
                 return false;
             }
             else if (dv3.Rows.Count == 0)
@@ -205,8 +297,11 @@ namespace CtyTinLuong
             else return true;
 
         }
-        public frmDinhMuc_ChiTietDinhMucToGapDan()
+
+        UCSanXuat_DinhMuc_ToGapDan _ucDMTGD;
+        public frmDinhMuc_ChiTietDinhMucToGapDan(UCSanXuat_DinhMuc_ToGapDan ucDMTGD)
         {
+            _ucDMTGD = ucDMTGD;
             InitializeComponent();
         }
 

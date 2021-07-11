@@ -136,7 +136,7 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public void Delete_ALL_W_ID_DinhMuc_ToGapDan()
+        public bool Delete_ALL_W_ID_DinhMuc_ToGapDan()
         {
 
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -154,7 +154,7 @@ namespace CtyTinLuong
 
                 // Execute query.
                 scmCmdToExecute.ExecuteNonQuery();
-                //return true;
+                return true;
             }
             catch (Exception ex)
             {

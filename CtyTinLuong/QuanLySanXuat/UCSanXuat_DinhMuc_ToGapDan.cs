@@ -91,7 +91,7 @@ namespace CtyTinLuong
             HienThi();
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UCSanXuat_DinhMuc_ToGapDan_Load( sender,  e);
@@ -131,7 +131,7 @@ namespace CtyTinLuong
                 {
                     miID_DinhMuc_ToGapDan= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_ToGapDan).ToString());
                     mb_TheMoi_DinhMuc_ToGapDan = false;
-                    frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
+                    frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan(this);
                     //_frmQLSX.Hide();
                     ff.Show();
                     //_frmQLSX.Show();
@@ -177,7 +177,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMuc_ToGapDan = true;
-            frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan();
+            frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan(this);
             //_frmQLSX.Hide();
             ff.Show();
             //_frmQLSX.Show();
