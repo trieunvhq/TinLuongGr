@@ -305,27 +305,17 @@ namespace CtyTinLuong
         private string _TenVTHH = "", _DonViTinh = "";
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (e.Column == clMaVT)
+            if (e.Column == clID_VTHH)
             {
-                gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, _ID_VTHH);
+               
                 gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, _TenVTHH);
                 gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, _DonViTinh);
                 gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
                 gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
-                gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
+             
             }
 
-            //if (e.Column == clMaVT)
-            //{
-            //    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, iID_VTHH);
-            //    gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, sTenVTHH);
-            //    gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, sDonViTinh);
-
-            //    gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
-            //    string shienthixx = "1";
-            //    gridView1.SetRowCellValue(e.RowHandle, clHienThi, shienthixx);
-
-            //}
+           
         }
 
         private void gridMaTPQuyDoi_EditValueChanged(object sender, EventArgs e)

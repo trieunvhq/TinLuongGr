@@ -74,7 +74,6 @@
             this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTonTai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgungTheoDoi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +82,6 @@
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clCheck_VatTu_Phu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -490,13 +488,11 @@
             this.clID_VTHH,
             this.clTonTai,
             this.clNgungTheoDoi,
-            this.clMaVT,
             this.clTenVTHH,
             this.clDonViTinh,
             this.clHienThi,
             this.clXoa,
-            this.clSoLuong,
-            this.clCheck_VatTu_Phu});
+            this.clSoLuong});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
@@ -533,9 +529,12 @@
             // 
             // clID_VTHH
             // 
-            this.clID_VTHH.Caption = "ID_VTHH";
+            this.clID_VTHH.Caption = "Mã VT";
+            this.clID_VTHH.ColumnEdit = this.repositoryItemLookUpEdit2;
             this.clID_VTHH.FieldName = "ID_VTHH";
             this.clID_VTHH.Name = "clID_VTHH";
+            this.clID_VTHH.Visible = true;
+            this.clID_VTHH.VisibleIndex = 5;
             // 
             // clTonTai
             // 
@@ -548,17 +547,6 @@
             this.clNgungTheoDoi.Caption = "NgungTheoDoi";
             this.clNgungTheoDoi.FieldName = "NgungTheoDoi";
             this.clNgungTheoDoi.Name = "clNgungTheoDoi";
-            // 
-            // clMaVT
-            // 
-            this.clMaVT.Caption = "Mã VT";
-            this.clMaVT.ColumnEdit = this.repositoryItemSearchLookUpEdit1;
-            this.clMaVT.FieldName = "MaVT";
-            this.clMaVT.Name = "clMaVT";
-            this.clMaVT.OptionsColumn.FixedWidth = true;
-            this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 1;
-            this.clMaVT.Width = 90;
             // 
             // repositoryItemSearchLookUpEdit1
             // 
@@ -587,7 +575,7 @@
             this.clTenVTHH.Name = "clTenVTHH";
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 2;
+            this.clTenVTHH.VisibleIndex = 1;
             this.clTenVTHH.Width = 503;
             // 
             // clDonViTinh
@@ -598,7 +586,7 @@
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
             this.clDonViTinh.OptionsColumn.FixedWidth = true;
             this.clDonViTinh.Visible = true;
-            this.clDonViTinh.VisibleIndex = 3;
+            this.clDonViTinh.VisibleIndex = 2;
             this.clDonViTinh.Width = 80;
             // 
             // clHienThi
@@ -615,7 +603,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 5;
+            this.clXoa.VisibleIndex = 4;
             this.clXoa.Width = 40;
             // 
             // btXoa2
@@ -635,15 +623,8 @@
             this.clSoLuong.Name = "clSoLuong";
             this.clSoLuong.OptionsColumn.FixedWidth = true;
             this.clSoLuong.Visible = true;
-            this.clSoLuong.VisibleIndex = 4;
+            this.clSoLuong.VisibleIndex = 3;
             this.clSoLuong.Width = 100;
-            // 
-            // clCheck_VatTu_Phu
-            // 
-            this.clCheck_VatTu_Phu.Caption = "Check_VatTu_Phu";
-            this.clCheck_VatTu_Phu.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.clCheck_VatTu_Phu.FieldName = "Check_VatTu_Phu";
-            this.clCheck_VatTu_Phu.Name = "clCheck_VatTu_Phu";
             // 
             // repositoryItemCheckEdit1
             // 
@@ -764,7 +745,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clID_VTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clTonTai;
         private DevExpress.XtraGrid.Columns.GridColumn clNgungTheoDoi;
-        private DevExpress.XtraGrid.Columns.GridColumn clMaVT;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn clTenVTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clDonViTinh;
@@ -776,7 +756,6 @@
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.TextBox txtSoLuongVTChinh;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraGrid.Columns.GridColumn clCheck_VatTu_Phu;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
