@@ -118,7 +118,7 @@ namespace CtyTinLuong
             dt22xx.Columns.Add("TenVTHH", typeof(string));          
             dt22xx.Columns.Add("DonViTinh", typeof(string));
            
-            dt22xx.Columns.Add("SoLuongNhap", typeof(double));
+            dt22xx.Columns.Add("SoLuongXuat", typeof(double));
             dt22xx.Columns.Add("SoLuongThanhPham_QuyDoi", typeof(double));           
             dt22xx.Columns.Add("DonGia", typeof(double));
             dt22xx.Columns.Add("TiLe", typeof(double));
@@ -130,14 +130,13 @@ namespace CtyTinLuong
         }
         private void HienThi_Sua_XuatKho(int iiiiID_XuatKho)
         {
-
-            clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
+            clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
             cls1.iID_XuatKho = iiiiID_XuatKho;
             DataTable dt22222 = cls1.SelectOne();
-            if (cls1.bDaXuatKho == true)
+            if (cls1.bGuiDuLieu == true)
             {
                 btLuu_Gui_Dong.Enabled = false;
-                //btLuu.Enabled = false;
+                btLuu.Enabled = false;
             }
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
@@ -145,51 +144,10 @@ namespace CtyTinLuong
             if (cls1.bCheckNhapKhoThanhPham == true)
                 checkNhapKhoThanhPham.Checked = true;
             else checkNhapKho_banThanhPham.Checked = true;
-            clsGapDan_ThamChieuTinhXuatKho cls = new clsGapDan_ThamChieuTinhXuatKho();
-            cls.iID_XuatKhoGapDan = iiiiID_XuatKho;
-            DataTable dt222 = cls.SelectAll_W_ID_XuatKhoGapDan();
-
-            DataTable dt22xx = new DataTable();
-            dt22xx.Columns.Add("ID_XuatKhoGapDan", typeof(int));
-            dt22xx.Columns.Add("ID_VTHH", typeof(int));
-            dt22xx.Columns.Add("ID_DinhMuc_ToGapDan", typeof(int));
-            dt22xx.Columns.Add("TenVTHH", typeof(string));
-            dt22xx.Columns.Add("DonViTinh", typeof(string));
-            dt22xx.Columns.Add("MaDinhMuc");
-            dt22xx.Columns.Add("SoLuongXuat", typeof(double));
-
-            dt22xx.Columns.Add("DonGia", typeof(double));
-            dt22xx.Columns.Add("GhiChu", typeof(string));
-            dt22xx.Columns.Add("HienThi", typeof(string));
-            dt22xx.Columns.Add("ThanhTien", typeof(double));
-            if (dt222.Rows.Count > 0)
-            {
-                for (int i = 0; i < dt222.Rows.Count; i++)
-                {
-
-                    DataRow _ravi3 = dt22xx.NewRow();
-                    _ravi3["ID_XuatKhoGapDan"] = Convert.ToInt32(dt222.Rows[i]["ID_XuatKhoGapDan"].ToString());
-                    _ravi3["ID_VTHH"] = Convert.ToInt32(dt222.Rows[i]["ID_VTHH"].ToString());
-                    _ravi3["ID_DinhMuc_ToGapDan"] = dt222.Rows[i]["ID_DinhMuc_ToGapDan"].ToString();
-                    _ravi3["MaDinhMuc"] = dt222.Rows[i]["ID_DinhMuc_ToGapDan"].ToString();
-                    int iiiID = Convert.ToInt32(dt222.Rows[i]["ID_VTHH"].ToString());
-                    clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-                    clsvt.iID_VTHH = iiiID;
-                    DataTable dtvt = clsvt.SelectOne();
-
-                    _ravi3["TenVTHH"] = clsvt.sTenVTHH.Value;
-                    _ravi3["DonViTinh"] = clsvt.sDonViTinh.Value;
-
-
-                    _ravi3["SoLuongXuat"] = Convert.ToDouble(dt222.Rows[i]["SoLuongXuat"].ToString());
-                    _ravi3["DonGia"] = Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
-                    _ravi3["HienThi"] = "1";
-                    _ravi3["GhiChu"] = "";
-                    _ravi3["ThanhTien"] = Convert.ToDouble(dt222.Rows[i]["SoLuongXuat"].ToString()) * Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
-                    dt22xx.Rows.Add(_ravi3);
-                }
-            }
-            gridControl2.DataSource = dt22xx;
+            clsGapDan_ThamChieuTinhXuatKho_Temp cls = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+            
+            DataTable dt222 = cls.SA_ID_XuatKho_moi(iiiiID_XuatKho);          
+            gridControl2.DataSource = dt222;
 
             DataTable dt3 = new DataTable();
 
@@ -228,12 +186,12 @@ namespace CtyTinLuong
                     _ravi3["DonViTinh"] = clsvt.sDonViTinh.Value;
                     _ravi3["MaVT"] = dtxx.Rows[i]["ID_VTHH"].ToString();
 
-                    _ravi3["SoLuong"] = Convert.ToDouble(dtxx.Rows[i]["SoLuongXuat"].ToString());
+                    _ravi3["SoLuong"] = Convert.ToDouble(dtxx.Rows[i]["SoLuongNhap"].ToString());
                     _ravi3["DonGia"] = Convert.ToDouble(dtxx.Rows[i]["DonGia"].ToString());
                     _ravi3["HienThi"] = "1";
                     _ravi3["Check_VatTu_Phu"] = true;
 
-                    _ravi3["ThanhTien"] = Convert.ToDouble(dtxx.Rows[i]["SoLuongXuat"].ToString()) * Convert.ToDouble(dtxx.Rows[i]["DonGia"].ToString());
+                    _ravi3["ThanhTien"] = Convert.ToDouble(dtxx.Rows[i]["SoLuongNhap"].ToString()) * Convert.ToDouble(dtxx.Rows[i]["DonGia"].ToString());
                     _ravi3["GhiChu"] = dtxx.Rows[i]["GhiChu"].ToString();
                     if (dtxx.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "1")
                     {
@@ -264,7 +222,8 @@ namespace CtyTinLuong
             }
 
             gridControl1.DataSource = dt3;
-
+            cls.Dispose();
+            cls1.Dispose();
         }
         private void Load_LockUp()
         {
@@ -1234,7 +1193,7 @@ namespace CtyTinLuong
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                double soluongxuat = Convert.ToDouble(dt.Rows[i]["SoLuongNhap"].ToString());
+                double soluongxuat = Convert.ToDouble(dt.Rows[i]["SoLuongXuat"].ToString());
                 int _XXID_DinhMuc_ToGapDan = Convert.ToInt32(dt.Rows[i]["ID_DinhMuc_ToGapDan"].ToString());
               
                 DataTable dtmnoi = tinhtoan(soluongxuat, _XXID_DinhMuc_ToGapDan);
