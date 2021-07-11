@@ -234,6 +234,8 @@ namespace CtyTinLuong
                         cls2.Delete_w_iID_LenhSanXuat();
                         Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã xóa");
+                        ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                        LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
                     }
                 }
 
