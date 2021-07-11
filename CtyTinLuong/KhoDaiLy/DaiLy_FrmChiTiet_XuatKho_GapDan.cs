@@ -42,9 +42,9 @@ namespace CtyTinLuong
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
 
-            //if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+            //if (gridView3.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
             //{
-            //    int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+            //    int xxID = Convert.ToInt32(gridView3.GetFocusedRowCellValue(clID_VTHH).ToString());
             //    Hienthi_Lable_TonKho(xxID);
             //}
         }
@@ -531,31 +531,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-
-        }
-
-        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-
-        }
-
-        private void btXoaGrid2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridView1_RowClick(object sender, RowClickEventArgs e)
-        {
-
-        }
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
@@ -569,6 +545,93 @@ namespace CtyTinLuong
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
             {
                 Load_LockUp_MaHang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT1)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView3_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column == clID_VTHH2)
+            {
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = Convert.ToInt16(gridView3.GetRowCellValue(e.RowHandle, e.Column));
+                int kk = Convert.ToInt16(gridView3.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+                if (dt != null)
+                {
+
+                    gridView3.SetRowCellValue(e.RowHandle, clTenVTHH2, dt.Rows[0]["TenVTHH"].ToString());
+                    gridView3.SetRowCellValue(e.RowHandle, clDonViTinh2, dt.Rows[0]["DonViTinh"].ToString());
+                    gridView3.SetRowCellValue(e.RowHandle, clHienThi2, "1");
+                    gridView3.SetRowCellValue(e.RowHandle, clSoLuong2, 0);
+                    gridView3.SetRowCellValue(e.RowHandle, clDonGia2, 0);
+
+
+                }
+            }
+
+            if (e.Column == clNhapKho_TP_1_BTP_2_NPL_3_22222)
+            {
+                if (gridView3.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() != "")
+                    gridView3.SetRowCellValue(e.RowHandle, clHienThi2222, "1");
+
+                if (gridView3.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() == "Kho TP")
+                    gridView3.SetRowCellValue(e.RowHandle, clMaKho, "1");
+                else if (gridView3.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() == "Kho BTP")
+                    gridView3.SetRowCellValue(e.RowHandle, clMaKho, "2");
+                else if (gridView3.GetFocusedRowCellValue(clNhapKho_TP_1_BTP_2_NPL_3_22222).ToString() == "Kho NPL")
+                    gridView3.SetRowCellValue(e.RowHandle, clMaKho, "3");
+                else gridView3.SetRowCellValue(e.RowHandle, clMaKho, "");
+
+            }
+
+            try
+            {
+                double fffsoluong = 0;
+                double ffdongia = 0;
+                double fffthanhtien = 0;
+                if (e.Column == clSoLuong2)
+                {
+
+                    if (gridView3.GetFocusedRowCellValue(clDonGia2).ToString() == "")
+                        ffdongia = 0;
+                    else
+                        ffdongia = Convert.ToDouble(gridView3.GetFocusedRowCellValue(clDonGia2));
+                    if (gridView3.GetFocusedRowCellValue(clSoLuong2).ToString() == "")
+                        fffsoluong = 0;
+                    fffsoluong = Convert.ToDouble(gridView3.GetFocusedRowCellValue(clSoLuong2));
+                    fffthanhtien = fffsoluong * ffdongia;
+                    gridView3.SetFocusedRowCellValue(clThanhTien2, fffthanhtien);
+                }
+                if (e.Column == clDonGia2)
+                {
+                    if (gridView3.GetFocusedRowCellValue(clDonGia2).ToString() == "")
+                        ffdongia = 0;
+                    else
+                        ffdongia = Convert.ToDouble(gridView3.GetFocusedRowCellValue(clDonGia2));
+                    if (gridView3.GetFocusedRowCellValue(clSoLuong2).ToString() == "")
+                        fffsoluong = 0;
+                    else
+                        fffsoluong = Convert.ToDouble(gridView3.GetFocusedRowCellValue(clSoLuong2));
+                    fffthanhtien = fffsoluong * ffdongia;
+                    gridView3.SetFocusedRowCellValue(clThanhTien2, fffthanhtien);
+
+                }
+            }
+            catch
+            {
+
             }
         }
 
