@@ -873,21 +873,19 @@ namespace CtyTinLuong
 
         private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
         {
-            if (gridDinhMucGapDan.EditValue.ToString() != "")
+            clsDinhMuc_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_DinhMuc_ToGapDan();
+            cls.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+            DataTable dt = cls.SelectOne();
+            txtDienGiaiDMNPL.Text = cls.sDienGiai.Value;
+           
+            if (UCNPL_XuatKho_GapDan.mbSua == false)
             {
-                clsDinhMuc_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_DinhMuc_ToGapDan();
-                cls.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                DataTable dt = cls.SelectOne();
-                txtDienGiai.Text = cls.sDienGiai.Value;
                 double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
-                if (UCNPL_XuatKho_GapDan.mbSua == false)
-                {
-                    int xxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                    HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);
-                    hienthi_DienGai();
-
-                }
+                int xxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                HienThi_GridControl_Moiiiiiiiiiiii(xxsoluongxuat, xxID);
+                hienthi_DienGai();
             }
+
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -908,7 +906,7 @@ namespace CtyTinLuong
                 gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
                 gridView1.SetRowCellValue(e.RowHandle, clSoLuongTheoDinhMuc, 0);
                 gridView1.SetRowCellValue(e.RowHandle, clDinhMuc, 0);
-                gridView1.SetRowCellValue(e.RowHandle, clCheck_VatTu_Phu, true);
+                gridView1.SetRowCellValue(e.RowHandle, clint_TP_1_Chinh_2_Phu_3, true);
 
                 if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;

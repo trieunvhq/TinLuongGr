@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhoNPL_frmChiTiet_XuatKho_gapDan));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -91,7 +91,7 @@
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSoLuongTheoDinhMuc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clCheck_VatTu_Phu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clint_TP_1_Chinh_2_Phu_3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -596,7 +596,7 @@
             this.clXoa,
             this.clGhiChu,
             this.clSoLuongTheoDinhMuc,
-            this.clCheck_VatTu_Phu});
+            this.clint_TP_1_Chinh_2_Phu_3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.clThanhTien, "")});
@@ -758,9 +758,9 @@
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
@@ -791,12 +791,12 @@
             this.clSoLuongTheoDinhMuc.VisibleIndex = 5;
             this.clSoLuongTheoDinhMuc.Width = 81;
             // 
-            // clCheck_VatTu_Phu
+            // clint_TP_1_Chinh_2_Phu_3
             // 
-            this.clCheck_VatTu_Phu.Caption = "Check_VatTu_Phu";
-            this.clCheck_VatTu_Phu.FieldName = "Check_VatTu_Phu";
-            this.clCheck_VatTu_Phu.Name = "clCheck_VatTu_Phu";
-            this.clCheck_VatTu_Phu.Width = 32;
+            this.clint_TP_1_Chinh_2_Phu_3.Caption = "int_TP_1_Chinh_2_Phu_3";
+            this.clint_TP_1_Chinh_2_Phu_3.FieldName = "int_TP_1_Chinh_2_Phu_3";
+            this.clint_TP_1_Chinh_2_Phu_3.Name = "clint_TP_1_Chinh_2_Phu_3";
+            this.clint_TP_1_Chinh_2_Phu_3.Width = 32;
             // 
             // repositoryItemSearchLookUpEdit1
             // 
@@ -986,7 +986,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoa2;
         private DevExpress.XtraGrid.Columns.GridColumn clGhiChu;
-        private DevExpress.XtraGrid.Columns.GridColumn clCheck_VatTu_Phu;
+        private DevExpress.XtraGrid.Columns.GridColumn clint_TP_1_Chinh_2_Phu_3;
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuongTheoDinhMuc;
         private DevExpress.XtraEditors.SimpleButton btPrint;
         private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
