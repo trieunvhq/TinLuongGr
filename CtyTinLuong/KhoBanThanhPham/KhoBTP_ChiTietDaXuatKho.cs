@@ -22,26 +22,26 @@ namespace CtyTinLuong
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=8";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            //dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=8";
+            //DataView dvCaTruong = dtNguoi.DefaultView;
+            //DataTable newdtCaTruong = dvCaTruong.ToTable();
 
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
+            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
             DataView dvnguoilap = dtNguoi.DefaultView;
             DataTable newdtnguoilap = dvnguoilap.ToTable();
             gridNguoiLap.Properties.DataSource = newdtnguoilap;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_ChucVu=3";
-            DataView dvcongnhan = dtNguoi.DefaultView;
-            DataTable newdvcongnhan = dvcongnhan.ToTable();
+            //dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_ChucVu=3";
+            //DataView dvcongnhan = dtNguoi.DefaultView;
+            //DataTable newdvcongnhan = dvcongnhan.ToTable();
 
-            clsNganHang_TaiKhoanKeToanCon clsme = new clsNganHang_TaiKhoanKeToanCon();
-            DataTable dtme = clsme.SelectAll();
-            dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-            DataView dvme = dtme.DefaultView;
-            DataTable newdtme = dvme.ToTable();
+            //clsNganHang_TaiKhoanKeToanCon clsme = new clsNganHang_TaiKhoanKeToanCon();
+            //DataTable dtme = clsme.SelectAll();
+            //dtme.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
+            //DataView dvme = dtme.DefaultView;
+            //DataTable newdtme = dvme.ToTable();
 
             //gridTKCo.Properties.DataSource = newdtme;
             //gridTKCo.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
