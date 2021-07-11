@@ -271,10 +271,8 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
             {
                 int xxxmclID_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
-                clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-                cls.iID_LenhSanXuat = xxxmclID_LenhSanXuat;
-                cls.bGuiDuLieu = true;
-                cls.Update_W_GuiDuLieu();
+                clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();              
+                cls.Update_W_GuiDuLieu(xxxmclID_LenhSanXuat,true);
                 MessageBox.Show("Đã gửi dữ liệu nhập xuất kho");
             }
         }

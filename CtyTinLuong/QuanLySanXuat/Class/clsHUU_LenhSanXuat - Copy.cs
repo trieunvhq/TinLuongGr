@@ -121,7 +121,7 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public void Update_W_GuiDuLieu()
+        public void Update_W_GuiDuLieu(int xxIDLSX, bool xxguidulieu)
         {
 
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -133,8 +133,8 @@ namespace CtyTinLuong
 
             try
             {
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_LenhSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_LenhSanXuat));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bGuiDuLieu", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bGuiDuLieu));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_LenhSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxIDLSX));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bGuiDuLieu", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, xxguidulieu));
                 // Open connection.
                 m_scoMainConnection.Open();
 
