@@ -460,9 +460,11 @@ namespace CtyTinLuong
             dtNguoi.Dispose();
             clsNguoi.Dispose();
         }
-        
-        public SanXuat_frmChiTietLenhSanXuat()
+
+        UC_SanXuat_LenhSanXuat _ucSXLSX;
+        public SanXuat_frmChiTietLenhSanXuat(UC_SanXuat_LenhSanXuat ucSXLSX)
         {
+            _ucSXLSX = ucSXLSX;
             InitializeComponent();
         }
 
@@ -654,6 +656,7 @@ namespace CtyTinLuong
             //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_ChiLuu();
             this.Close();
+            _ucSXLSX.btRefresh_Click(null, null);
             Cursor.Current = Cursors.Default;
         }
 
@@ -663,6 +666,7 @@ namespace CtyTinLuong
             //UC_SanXuat_LenhSanXuat.mb_ThemMoi_LenhSanXuat = true;
             Luu_Va_Gui_DuLieu();
             this.Close();
+            _ucSXLSX.btRefresh_Click(null, null);
             Cursor.Current = Cursors.Default;
         }
 

@@ -176,7 +176,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UC_SanXuat_PhieuSanXuat_Load(sender, e);
@@ -205,11 +205,11 @@ namespace CtyTinLuong
                     mbCopy_Phieu = false;
                     msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                     mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-                    SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
+                    SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222(this);
                     //_frmQLSX.Hide();
                     ff.Show();
-                    Cursor.Current = Cursors.WaitCursor;
-                    LoadData(_SoTrang, false);
+                    //Cursor.Current = Cursors.WaitCursor;
+                    //LoadData(_SoTrang, false);
                     //_frmQLSX.Show();
                     Cursor.Current = Cursors.Default;
                 }
@@ -328,10 +328,13 @@ namespace CtyTinLuong
             mb_ThemMoi_SoPhieu = true;
             mb_Sua_SoPhieu = false;
             mbCopy_Phieu = false;
-            SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
+            SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222(this);
             //_frmQLSX.Hide();
             ff.Show();
-            btRefresh_Click(null, null);
+            //btRefresh_Click(sender, e);
+            //Cursor.Current = Cursors.WaitCursor;
+            //UC_SanXuat_PhieuSanXuat_Load(sender, e);
+            //Cursor.Current = Cursors.Default;
             //_frmQLSX.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -388,9 +391,12 @@ namespace CtyTinLuong
                     mbCopy_Phieu = true;
                     msTenSoPhieu = gridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                     mID_iD_SoPhieu = Convert.ToInt16(gridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
-                    SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222();
+                    SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222 ff = new CtyTinLuong.SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222(this);
                     ff.Show();
-                    btRefresh_Click(null, null);
+                    //btRefresh_Click(null, null);
+                    //Cursor.Current = Cursors.WaitCursor;
+                    //UC_SanXuat_PhieuSanXuat_Load(sender, e);
+                    //Cursor.Current = Cursors.Default;
                     Cursor.Current = Cursors.Default;
                 }
             }

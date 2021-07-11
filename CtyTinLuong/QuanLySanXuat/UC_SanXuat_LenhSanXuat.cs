@@ -168,7 +168,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }      
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UC_SanXuat_LenhSanXuat_Load(sender, e);
@@ -201,7 +201,7 @@ namespace CtyTinLuong
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     mID_iD_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());                 
-                    SanXuat_frmChiTietLenhSanXuat ff = new SanXuat_frmChiTietLenhSanXuat();
+                    SanXuat_frmChiTietLenhSanXuat ff = new SanXuat_frmChiTietLenhSanXuat(this);
                     ff.Show();
                     Cursor.Current = Cursors.Default;
                 }

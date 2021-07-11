@@ -93,21 +93,25 @@ namespace CtyTinLuong
             if (txtMaPhieu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn Mã phiếu ");
+                txtMaPhieu.Focus();
                 return false;
             }
             else if (gridMaCaTruongPhieu.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn ca trưởng ");
+                gridMaCaTruongPhieu.Focus();
                 return false;
             }
             else if (cbCaSanXuatPhieu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn ca làm việc ");
+                cbCaSanXuatPhieu.Focus();
                 return false;
             }
             else if (dteNgayLap.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn ngày lập ");
+                dteNgayLap.Focus();
                 return false;
             }
 
@@ -149,7 +153,7 @@ namespace CtyTinLuong
 
                         Luu_Va_GuiDuLieu_May_CAT(iiiiID_SoPhieu);
                         this.Close();
-
+                        _ucSXPSX.btRefresh_Click(null, null);
                         MessageBox.Show("Đã lưu!", "Success!");
                     }
                     else
@@ -171,7 +175,7 @@ namespace CtyTinLuong
 
                         Luu_Va_GuiDuLieu_May_CAT(iiiiID_SoPhieu);
                         this.Close();
-
+                        _ucSXPSX.btRefresh_Click(null, null);
                         MessageBox.Show("Đã lưu!", "Success!");
                     }
                     else
@@ -259,32 +263,38 @@ namespace CtyTinLuong
             if (txtSanLuongTong_May_IN.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có sản lượng ");
+                txtSanLuongTong_May_IN.Focus();
                 return false;
             }
             else if (gridHangHoaVao_may_IN.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn vật tư vào  ");
+                gridHangHoaVao_may_IN.Focus();
                 return false;
             }
             else if (gridHangHoaXuat_May_IN.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn vật tư ra  ");
+                gridHangHoaXuat_May_IN.Focus();
                 return false;
             }
             else if (gridMaMay_IN.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn máy gia công  ");
+                gridMaMay_IN.Focus();
                 return false;
             }
 
             else if (gridMaCongNhan_May_IN.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn công nhân  ");
+                gridMaCongNhan_May_IN.Focus();
                 return false;
             }
             else if (gridDinhMucSLMay_IN.EditValue == null)
             {
                 MessageBox.Show("Chưa định mức lương sản lượng  ");
+                gridDinhMucSLMay_IN.Focus();
                 return false;
             }
             else return true;
@@ -773,32 +783,38 @@ namespace CtyTinLuong
             if (txtSanLuongTong_May_CAT.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có sản lượng ");
+                txtSanLuongTong_May_CAT.Focus();
                 return false;
             }
             else if (gridHangHoaVao_may_CAT.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn vật tư vào  ");
+                gridHangHoaVao_may_CAT.Focus();
                 return false;
             }
             else if (gridHangHoaXuat_May_CAT.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn vật tư ra  ");
+                gridHangHoaXuat_May_CAT.Focus();
                 return false;
             }
             else if (gridMaMay_CAT.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn máy gia công  ");
+                gridMaMay_CAT.Focus();
                 return false;
             }
 
             else if (gridMaCongNhan_May_CAT.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn công nhân  ");
+                gridMaCongNhan_May_CAT.Focus();
                 return false;
             }
             else if (gridDinhMucSLMay_CAT.EditValue == null)
             {
                 MessageBox.Show("Chưa định mức lương sản lượng  ");
+                gridDinhMucSLMay_CAT.Focus();
                 return false;
             }
             else return true;
@@ -916,9 +932,12 @@ namespace CtyTinLuong
             gridDinhMucSLMay_CAT.Properties.DisplayMember = "MaDinhMuc";
             
         }
+
+        UC_SanXuat_PhieuSanXuat _ucSXPSX;
       
-        public SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222()
+        public SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222(UC_SanXuat_PhieuSanXuat ucSXPSX)
         {
+            _ucSXPSX = ucSXPSX;
             InitializeComponent();
         }
 
