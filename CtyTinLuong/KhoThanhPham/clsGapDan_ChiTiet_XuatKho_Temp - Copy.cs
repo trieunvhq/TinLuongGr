@@ -43,9 +43,9 @@ namespace CtyTinLuong
         public DataTable SA_ID_XuatKho(int xxiID_XuatKho_)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_ChiTiet_XuatKho_SA_ID_XuatKho]";
+            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_ChiTiet_XuatKho_Temp_SA_ID_XuatKho]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_GapDan_ChiTiet_XuatKho_SA_ID_XuatKho");
+            DataTable dtToReturn = new DataTable("pr_GapDan_ChiTiet_XuatKho_Temp_SA_ID_XuatKho");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object

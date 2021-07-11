@@ -310,7 +310,6 @@
             // clMaVT2
             // 
             this.clMaVT2.Caption = "Mã VT";
-            this.clMaVT2.ColumnEdit = this.gridMaVT;
             this.clMaVT2.FieldName = "MaVT";
             this.clMaVT2.Name = "clMaVT2";
             this.clMaVT2.OptionsColumn.AllowEdit = false;

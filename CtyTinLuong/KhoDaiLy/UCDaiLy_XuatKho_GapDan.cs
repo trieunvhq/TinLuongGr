@@ -15,34 +15,20 @@ namespace CtyTinLuong
     {
         public static int miID_XuatKho_GapDan;
         public static bool mbthemmoi, mbsua, mbcopy;
-        private void Load_LockUp()
-        {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-
-        }
+     
         private void HienThiGridControl_2(bool ischoxuatkho,int xxID_xuatkho)
         {
             if (ischoxuatkho == false)
             {
-                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
-                cls2.iID_NhapKho = xxID_xuatkho;
-                DataTable dtxxxx = cls2.SA_W_ID_NhapKho();
+                clsGapDan_ThamChieuTinhXuatKho cls2 = new clsGapDan_ThamChieuTinhXuatKho();
+                cls2.iID_XuatKhoGapDan = xxID_xuatkho;
+                DataTable dtxxxx = cls2.SelectAll_W_ID_XuatKhoGapDan();
                 gridControl3.DataSource = dtxxxx;
             }
             else
             {
-                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
-                DataTable dtxxxx = cls2.SA_W_ID_NhapKho(xxID_xuatkho);
+                clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+                DataTable dtxxxx = cls2.SA_W_ID_XuatKho(xxID_xuatkho);
                 gridControl3.DataSource = dtxxxx;
             }
 
@@ -91,31 +77,18 @@ namespace CtyTinLuong
 
             if (ischonhapkho == false)
             {
-                clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
+                clsGapDan_tbXuatKho cls = new CtyTinLuong.clsGapDan_tbXuatKho();
                 dt = cls.SA_NgayThang(xxtungay, xxdenngay);
             }
             else
             {
-                clsGapDan_tbNhapKho_Temp cls = new CtyTinLuong.clsGapDan_tbNhapKho_Temp();
-                dt = cls.SA_NgayThang_ChoGhiSo(xxtungay, xxdenngay);
+                clsGapDan_tbXuatKho_Temp cls = new CtyTinLuong.clsGapDan_tbXuatKho_Temp();
+                dt = cls.SA_NgayThang_ChoXuatKho(xxtungay, xxdenngay);
             }
             gridControl1.DataSource = dt;
 
         }
-        //private void HienThi(DateTime xxtungay, DateTime xxdenngay)
-        //{
-        //    clsGapDan_tbXuatKho cls = new CtyTinLuong.clsGapDan_tbXuatKho();
-        //    DataTable dt = cls.SelectAll();
-        //    dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-        //    DataView dv = dt.DefaultView;
-        //    DataTable dt22 = dv.ToTable();
-        //    dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-        //    DataView dv2 = dt22.DefaultView;
-        //    dv2.Sort = "NgayChungTu DESC, ID_XuatKho DESC";
-        //    DataTable dxxxx = dv2.ToTable();
-        //    gridControl1.DataSource = dxxxx;
-
-        //}
+       
      
 
         frmQuanLyKhoDaiLy _frmQLKDL;
