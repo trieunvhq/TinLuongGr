@@ -15,49 +15,43 @@ namespace CtyTinLuong
     {
         public static int miID_NhapKho_GapDan;
        
-        private void Load_LockUp()
+     
+        private void HienThiGridControl_2(bool ischonhakho,int xxidnhapkhogapdan)
         {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
+            if (ischonhakho == false)
+            {
+                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
+                cls2.iID_NhapKho = xxidnhapkhogapdan;
+                DataTable dtxxxx = cls2.SA_W_ID_NhapKho();
+                gridControl2.DataSource = dtxxxx;
+            }
+            else
+            {
+                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();              
+                DataTable dtxxxx = cls2.SA_W_ID_NhapKho(xxidnhapkhogapdan);
+                gridControl2.DataSource = dtxxxx;
+            }
 
         }
-        private void HienThiGridControl_2(int xxidnhapkhogapdan)
+        private void Load_DaTa(bool ischonhakho, DateTime xxtungay, DateTime xxdenngay)
         {
-
-            clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
-            cls2.iID_NhapKho = xxidnhapkhogapdan;
-            DataTable dtxxxx = cls2.SA_W_ID_NhapKho();
-            
-
-            gridControl2.DataSource = dtxxxx;
-        }
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
-        {
-
-           
-            clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
-            DataTable dt = cls.SelectAll_HienThi2(xxtungay, xxdenngay);
-       
+            DataTable dt = new DataTable();
+          
+            if (ischonhakho == false)
+            {
+                clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
+                dt = cls.SelectAll_HienThi2(xxtungay, xxdenngay);
+            }
+            else
+            {
+                clsGapDan_tbNhapKho_Temp cls = new CtyTinLuong.clsGapDan_tbNhapKho_Temp();
+                dt = cls.SA_NgayThang_ChoGhiSo(xxtungay, xxdenngay);
+            }
             gridControl1.DataSource = dt;
 
         }
-        private void HienThi_ALL()
-        {
-            clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
-            DataTable dt = cls.SelectAll_HienThi2(new DateTime(2010, 1, 1), new DateTime(2030, 1, 1));          
-            gridControl1.DataSource = dt;
-
-        }
-
+      
+    
         frmQuanLyKhoDaiLy _frmQLKDL;
         public UCDaiLy_NhapKho_GapDan(frmQuanLyKhoDaiLy frmQLKDL)
         {
@@ -68,11 +62,14 @@ namespace CtyTinLuong
         private void UCDaiLy_NhapKho_GapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            if (frmQuanLyKhoDaiLy.isChoNhapKho_GapDan == true)
+                clXoa.Visible = false;
+            else clXoa.Visible = true;
 
-            Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            Load_DaTa(frmQuanLyKhoDaiLy.isChoNhapKho_GapDan, dteTuNgay.DateTime, dteDenNgay.DateTime);
+          
             Cursor.Current = Cursors.Default;
         }
 
@@ -107,16 +104,16 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView View = sender as GridView;
-            if (e.RowHandle >= 0)
-            {
-                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["TrangThai_NhapKho_GapDan"]));
-                if (category == false)
-                {
-                    e.Appearance.BackColor = Color.Bisque;
+            //GridView View = sender as GridView;
+            //if (e.RowHandle >= 0)
+            //{
+            //    bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["TrangThai_NhapKho_GapDan"]));
+            //    if (category == false)
+            //    {
+            //        e.Appearance.BackColor = Color.Bisque;
 
-                }
-            }
+            //    }
+            //}
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -135,7 +132,8 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.DateTime != null & dteTuNgay.DateTime != null)
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Load_DaTa(frmQuanLyKhoDaiLy.isChoNhapKho_GapDan, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -144,7 +142,7 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
             {
                 int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                HienThiGridControl_2(iiIDnhapKhp);
+                HienThiGridControl_2(frmQuanLyKhoDaiLy.isChoNhapKho_GapDan,iiIDnhapKhp);
             }
         }
          
@@ -163,11 +161,8 @@ namespace CtyTinLuong
                 cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
                 cls2.Delete_ALL_W_ID_NhapKho();
                 MessageBox.Show("Đã xóa");
-                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-                {
-                    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
-                }
-                else HienThi_ALL();
+                Load_DaTa(frmQuanLyKhoDaiLy.isChoNhapKho_GapDan, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
                 Cursor.Current = Cursors.Default;
             }
         }
