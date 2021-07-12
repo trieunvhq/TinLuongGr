@@ -194,6 +194,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             Luu_DuLieu();
+            txtSoHieu.Focus();
             Cursor.Current = Cursors.Default;
         }
 
