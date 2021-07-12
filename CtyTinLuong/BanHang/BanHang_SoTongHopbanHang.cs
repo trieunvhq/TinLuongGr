@@ -71,7 +71,7 @@ namespace CtyTinLuong
         }
         
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             BanHang_SoTongHopbanHang_Load( sender,  e);
@@ -258,8 +258,6 @@ namespace CtyTinLuong
 
         private void btPrint_KH_Click(object sender, EventArgs e)
         {
-
-          
             clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
             DataTable dt1 = new DataTable();          
             int iiIID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
@@ -312,10 +310,6 @@ namespace CtyTinLuong
                         mdtPrint.Rows.Add(_ravi);
                     }
                 }
-
-
-               
-
             }
 
             if (mdtPrint.Rows.Count > 0)
@@ -333,10 +327,6 @@ namespace CtyTinLuong
             {
                 MessageBox.Show("không có dữ liệu");
             }
-
-
-
-
         }
 
         private void txtTenKH_KeyPress(object sender, KeyPressEventArgs e)
