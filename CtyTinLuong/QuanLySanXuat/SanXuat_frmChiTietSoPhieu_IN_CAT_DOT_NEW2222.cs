@@ -889,7 +889,6 @@ namespace CtyTinLuong
                     cls.Update();
                 }
                 TaoLenhSanXuat_CAT(xxIDSoPhieu, iiiDID_ChiTietPhieuxxx);
-
             }
         }
 
