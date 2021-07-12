@@ -37,6 +37,7 @@ namespace CtyTinLuong
         public Xtra_CongNo_NganHang()
         {
             InitializeComponent();
+            pNgay.Value = DateTime.Now;
         }
 
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -73,6 +74,40 @@ namespace CtyTinLuong
                 Print_MuaHang_frmCongNo();
             if (BanHang_CongNo.mbPrint == true)
                 Print_BanHang_CongNo();
+
+            //Load label ngay ky footer:
+            DateTime d = Convert.ToDateTime(pNgay.Value);
+            if (d.Day > 9)
+            {
+                if (d.Month > 9)
+                {
+                    lbNgayThangNam.Text = "Ngày " + d.Day
+                                        + " tháng " + d.Month
+                                        + " năm " + d.Year;
+                }
+                else
+                {
+                    lbNgayThangNam.Text = "Ngày " + d.Day
+                                        + " tháng 0" + d.Month
+                                        + " năm " + d.Year;
+                }
+
+            }
+            else
+            {
+                if (d.Month > 9)
+                {
+                    lbNgayThangNam.Text = "Ngày 0" + d.Day
+                                        + " tháng " + d.Month
+                                        + " năm " + d.Year;
+                }
+                else
+                {
+                    lbNgayThangNam.Text = "Ngày 0" + d.Day
+                                        + " tháng 0" + d.Month
+                                        + " năm " + d.Year;
+                }
+            }
         }
     }
 }

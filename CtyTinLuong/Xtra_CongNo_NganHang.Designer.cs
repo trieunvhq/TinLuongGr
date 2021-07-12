@@ -64,7 +64,7 @@
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbNgayThangNam = new DevExpress.XtraReports.UI.XRLabel();
             this.pNgayThang = new DevExpress.XtraReports.Parameters.Parameter();
             this.pNguoiLap = new DevExpress.XtraReports.Parameters.Parameter();
             this.pKeToan = new DevExpress.XtraReports.Parameters.Parameter();
@@ -92,6 +92,7 @@
             this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
             this.pTieuDe = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTenTaiKhoan = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pNgay = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -328,7 +329,7 @@
             this.xrLabel16,
             this.xrLabel19,
             this.xrLabel20,
-            this.xrLabel21});
+            this.lbNgayThangNam});
             this.ReportFooter.HeightF = 200F;
             this.ReportFooter.Name = "ReportFooter";
             // 
@@ -548,18 +549,18 @@
             this.xrLabel20.Text = "GIÁM ĐỐC";
             this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel21
+            // lbNgayThangNam
             // 
-            this.xrLabel21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(784.9419F, 41.64594F);
-            this.xrLabel21.Multiline = true;
-            this.xrLabel21.Name = "xrLabel21";
-            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel21.SizeF = new System.Drawing.SizeF(279.0581F, 23.00002F);
-            this.xrLabel21.StylePriority.UseFont = false;
-            this.xrLabel21.StylePriority.UseTextAlignment = false;
-            this.xrLabel21.Text = "Ngày ....... tháng .......năm 20......";
-            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lbNgayThangNam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
+            this.lbNgayThangNam.LocationFloat = new DevExpress.Utils.PointFloat(784.9419F, 41.64594F);
+            this.lbNgayThangNam.Multiline = true;
+            this.lbNgayThangNam.Name = "lbNgayThangNam";
+            this.lbNgayThangNam.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbNgayThangNam.SizeF = new System.Drawing.SizeF(279.0581F, 23.00002F);
+            this.lbNgayThangNam.StylePriority.UseFont = false;
+            this.lbNgayThangNam.StylePriority.UseTextAlignment = false;
+            this.lbNgayThangNam.Text = "Ngày ....... tháng .......năm 20......";
+            this.lbNgayThangNam.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // pNgayThang
             // 
@@ -857,6 +858,12 @@
             this.pTenTaiKhoan.Description = "Tên tài khoản";
             this.pTenTaiKhoan.Name = "pTenTaiKhoan";
             // 
+            // pNgay
+            // 
+            this.pNgay.Description = "Ngày ký";
+            this.pNgay.Name = "pNgay";
+            this.pNgay.Type = typeof(System.DateTime);
+            // 
             // Xtra_CongNo_NganHang
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -876,11 +883,12 @@
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+            this.pTieuDe,
             this.pNgayThang,
+            this.pNgay,
             this.pNguoiLap,
             this.pKeToan,
             this.pPhoGiamDoc,
-            this.pTieuDe,
             this.pTenTaiKhoan});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
@@ -923,7 +931,7 @@
         private DevExpress.XtraReports.Parameters.Parameter pNguoiLap;
         private DevExpress.XtraReports.Parameters.Parameter pKeToan;
         private DevExpress.XtraReports.Parameters.Parameter pPhoGiamDoc;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel21;
+        private DevExpress.XtraReports.UI.XRLabel lbNgayThangNam;
         private DevExpress.XtraReports.UI.XRTable xrTable2;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
@@ -956,5 +964,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell31;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
+        private DevExpress.XtraReports.Parameters.Parameter pNgay;
     }
 }
