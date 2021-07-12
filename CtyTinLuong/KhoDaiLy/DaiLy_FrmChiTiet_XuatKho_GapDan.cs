@@ -48,7 +48,28 @@ namespace CtyTinLuong
         public static DataTable mdtPrint_ChiTietXuatKho;
         public static string msPrintSoChungTu, msPrintDienGiaig, msPrintThuKho, msPrintNguoiNhan, msPrintNguoiLap;
 
+        private string SoCHungTu_GapDan()
+        {
+            string sochungtu;
+            clsGapDan_tbXuatKho cls = new clsGapDan_tbXuatKho();
+            DataTable dt1222 = cls.SelectAll();
+            dt1222.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            DataView dvxxx = dt1222.DefaultView;
+            DataTable dv3xxx = dvxxx.ToTable();
+            int k2 = dv3xxx.Rows.Count;
+            if (k2 == 0)
+                sochungtu = "XKGD 1";
+            else
+            {
+                string xxx = dv3xxx.Rows[k2 - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
+                if (xxx2 >= 10000)
+                    sochungtu = "XKGD 1";
+                else sochungtu = "XKGD " + xxx2 + "";
 
+            }
+            return sochungtu;
+        }
         private void HienThi_Sua_XuatKho(bool isChoXuatKho, int iiID_xuatkho_)
         {
             if (isChoXuatKho == true)
@@ -56,7 +77,7 @@ namespace CtyTinLuong
                 clsGapDan_tbXuatKho_Temp cls1 = new clsGapDan_tbXuatKho_Temp();
                 cls1.iID_XuatKho = iiID_xuatkho_;
                 DataTable dt22222 = cls1.SelectOne();
-                txtSoChungTu.Text = cls1.sSoChungTu.Value;
+                txtSoChungTu.Text = SoCHungTu_GapDan();
                 dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
                 gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
                 if (cls1.bCheckNhapKhoThanhPham == true)
