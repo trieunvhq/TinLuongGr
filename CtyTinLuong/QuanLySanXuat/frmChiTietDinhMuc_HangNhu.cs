@@ -32,6 +32,7 @@ namespace CtyTinLuong
                     else fsokienmotbao = Convert.ToDouble(txtSoKienMotBao.Text.ToString().Trim());
 
                     clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
+
                     if (dteNgayThang.Text.ToString() != "")
                         cls.daNgayThang = dteNgayThang.DateTime;
                     else cls.daNgayThang = DateTime.Today;
@@ -63,17 +64,34 @@ namespace CtyTinLuong
 
                     if (UCDinhMucHangNhu.mb_TheMoi_DinhMuc_Dot==true)
                     {
-                        cls.Insert();
-                       
+                        if (cls.Insert())
+                        {
+                            this.Close();
+                            _ucDMHN.btRefresh_Click(null, null);
+                            MessageBox.Show("Đã lưu!", "Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lưu dữ liệu không thành công!", "Error");
+                        }
+
                     }
                     else
                     {
                         cls.iID_DinhMuc_Dot = UCDinhMucHangNhu.miID_DinhMuc_Dot;
-                        cls.Update();
-                        
+                        //cls.Update();
+                        if (cls.Update())
+                        {
+                            this.Close();
+                            _ucDMHN.btRefresh_Click(null, null);
+                            MessageBox.Show("Đã lưu!", "Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lưu dữ liệu không thành công!", "Error");
+                        }
+
                     }
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
                 }
                 catch
                 {
@@ -139,29 +157,36 @@ namespace CtyTinLuong
             if (txtSoHieu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có mã định mức");
+                txtSoHieu.Focus();
                 return false;
             }
             else if (dteNgayThang.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn ngày tháng ");
+                dteNgayThang.Focus();
                 return false;
             }
            
             else if (txtSoKienMotBao.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số kiện 1 bao");
+                txtSoKienMotBao.Focus();
                 return false;
             }
             else if (txtSoKGMotBao.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số Kg/ 1bao");
+                txtSoKGMotBao.Focus();
                 return false;
             }
             else return true;
 
         }
-        public frmChiTietDinhMuc_HangNhu()
+
+        UCDinhMucHangNhu _ucDMHN;
+        public frmChiTietDinhMuc_HangNhu(UCDinhMucHangNhu ucDMHN)
         {
+            _ucDMHN = ucDMHN;
             InitializeComponent();
         }
 
@@ -299,7 +324,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtSoKGMotBao.Focus();
             }
         }
 
