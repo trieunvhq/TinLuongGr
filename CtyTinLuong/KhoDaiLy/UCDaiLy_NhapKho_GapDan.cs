@@ -73,7 +73,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -94,7 +94,7 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan();
+                DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan(this);
                 //_frmQLKDL.Hide();
                 ff.Show();
                 //_frmQLKDL.Show();
@@ -255,6 +255,11 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT233)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
