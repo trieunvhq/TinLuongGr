@@ -85,9 +85,9 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
 
         private void navBarItem1_LinkClicked_3(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

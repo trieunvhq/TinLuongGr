@@ -85,7 +85,12 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-    
+        public void Refersh()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            UCMuaHang_ChiTietTatCa_Load(null, null);
+            Cursor.Current = Cursors.Default;
+        }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
@@ -105,7 +110,7 @@ namespace CtyTinLuong
             if(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString()!="")
             {
                 miID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-                MuaHang_frmChiTietMotVatTu ff = new MuaHang_frmChiTietMotVatTu();
+                MuaHang_frmChiTietMotVatTu ff = new MuaHang_frmChiTietMotVatTu(this);
                 //_frmMH.Hide();
                 ff.Show();
                 //_frmMH.Show();

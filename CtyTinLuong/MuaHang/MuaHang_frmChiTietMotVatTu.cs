@@ -93,11 +93,12 @@ namespace CtyTinLuong
                 dt2.Rows.Add(_ravi);
             }
             gridControl1.DataSource = dt2;
-
-
         }
-        public MuaHang_frmChiTietMotVatTu()
+
+        UCMuaHang_ChiTietTatCa _ucMHCTTC;
+        public MuaHang_frmChiTietMotVatTu(UCMuaHang_ChiTietTatCa ucMHCTTC)
         {
+            _ucMHCTTC = ucMHCTTC;
             InitializeComponent();
         }
         private void Load_Lockup()
@@ -171,7 +172,7 @@ namespace CtyTinLuong
             { }
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             MuaHang_frmChiTietMotVatTu_Load( sender,  e);
