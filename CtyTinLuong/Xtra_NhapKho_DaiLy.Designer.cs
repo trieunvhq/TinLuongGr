@@ -66,7 +66,6 @@
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -75,6 +74,7 @@
             this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
@@ -234,17 +234,17 @@
             // 
             // xrLine1
             // 
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(50.00002F, 26.12495F);
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(52F, 20.12495F);
             this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(291.6667F, 8.41667F);
+            this.xrLine1.SizeF = new System.Drawing.SizeF(221.4587F, 8.416668F);
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(419.7917F, 26.125F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(326.0417F, 26.125F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "CTY TNHH ĐẦU TƯ TM & SX TÍN LƯỢNG";
@@ -252,8 +252,8 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0.000111262F, 44.79167F);
+            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0.000111262F, 41.79167F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(697F, 26.125F);
@@ -509,23 +509,11 @@
             this.GroupFooter1.HeightF = 121.875F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
-            // xrLabel23
-            // 
-            this.xrLabel23.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(507.7089F, 15.20844F);
-            this.xrLabel23.Name = "xrLabel23";
-            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel23.SizeF = new System.Drawing.SizeF(187.6662F, 28.04166F);
-            this.xrLabel23.StylePriority.UseFont = false;
-            this.xrLabel23.StylePriority.UseTextAlignment = false;
-            this.xrLabel23.Text = "Ngày ....... tháng....... năm 20.....";
-            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // xrLabel8
             // 
             this.xrLabel8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pGhiChu]")});
-            this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0F, 69.79166F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -610,6 +598,18 @@
             // 
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.Weight = 4.9713489716395D;
+            // 
+            // xrLabel23
+            // 
+            this.xrLabel23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(458.7504F, 15.20844F);
+            this.xrLabel23.Name = "xrLabel23";
+            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel23.SizeF = new System.Drawing.SizeF(236.6244F, 28.04166F);
+            this.xrLabel23.StylePriority.UseFont = false;
+            this.xrLabel23.StylePriority.UseTextAlignment = false;
+            this.xrLabel23.Text = "Ngày ....... tháng....... năm 20.....";
+            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel13
             // 
@@ -743,78 +743,78 @@
             // 
             // pNguoiNhanhang
             // 
-            this.pNguoiNhanhang.Description = "pNguoiNhanhang";
+            this.pNguoiNhanhang.Description = "Người nhận hàng";
             this.pNguoiNhanhang.Name = "pNguoiNhanhang";
             // 
             // pDiaChi
             // 
-            this.pDiaChi.Description = "pDiaChi";
+            this.pDiaChi.Description = "Địa chỉ";
             this.pDiaChi.Name = "pDiaChi";
             // 
             // pSoDienThoai
             // 
-            this.pSoDienThoai.Description = "pSoDienThoai";
+            this.pSoDienThoai.Description = "Điện thoại";
             this.pSoDienThoai.Name = "pSoDienThoai";
             // 
             // pMaHang
             // 
-            this.pMaHang.Description = "pMaHang";
+            this.pMaHang.Description = "Mã hàng";
             this.pMaHang.Name = "pMaHang";
             // 
             // pDienGiai
             // 
-            this.pDienGiai.Description = "pDienGiai";
+            this.pDienGiai.Description = "Diễn giải";
             this.pDienGiai.Name = "pDienGiai";
             // 
             // pSoChungTu
             // 
-            this.pSoChungTu.Description = "pSoChungTu";
+            this.pSoChungTu.Description = "Số chứng từ";
             this.pSoChungTu.Name = "pSoChungTu";
             // 
             // pGhiChu
             // 
-            this.pGhiChu.Description = "pGhiChu";
+            this.pGhiChu.Description = "Ghi chú";
             this.pGhiChu.Name = "pGhiChu";
             // 
             // pSoLuongThanhpham
             // 
-            this.pSoLuongThanhpham.Description = "pSoLuongThanhpham";
+            this.pSoLuongThanhpham.Description = "Số lượng thành phẩm";
             this.pSoLuongThanhpham.Name = "pSoLuongThanhpham";
             // 
             // pNgayThang
             // 
-            this.pNgayThang.Description = "pNgayThang";
+            this.pNgayThang.Description = "Ngày tháng";
             this.pNgayThang.Name = "pNgayThang";
             // 
             // pNguoiLap
             // 
-            this.pNguoiLap.Description = "pNguoiLap";
+            this.pNguoiLap.Description = "Người lập";
             this.pNguoiLap.Name = "pNguoiLap";
             // 
             // pThuKho
             // 
-            this.pThuKho.Description = "pThuKho";
+            this.pThuKho.Description = "Thủ kho";
             this.pThuKho.Name = "pThuKho";
             this.pThuKho.ValueInfo = "Nguyễn Thị Thạnh";
             // 
             // pGiamDoc
             // 
-            this.pGiamDoc.Description = "pGiamDoc";
+            this.pGiamDoc.Description = "Giám đốc";
             this.pGiamDoc.Name = "pGiamDoc";
             // 
             // pDVTThanhPham
             // 
-            this.pDVTThanhPham.Description = "pDVTThanhPham";
+            this.pDVTThanhPham.Description = "Đơn vị tính TP";
             this.pDVTThanhPham.Name = "pDVTThanhPham";
             // 
             // pMaHang2
             // 
-            this.pMaHang2.Description = "pMaHang2";
+            this.pMaHang2.Description = "Mã hàng 2";
             this.pMaHang2.Name = "pMaHang2";
             // 
             // pBaoVe
             // 
-            this.pBaoVe.Description = "pBaoVe";
+            this.pBaoVe.Description = "Bảo vệ";
             this.pBaoVe.Name = "pBaoVe";
             // 
             // ReportHeader
@@ -840,7 +840,7 @@
             // 
             // pSDTThuKho
             // 
-            this.pSDTThuKho.Description = "pSDTThuKho";
+            this.pSDTThuKho.Description = "ĐT Thủ kho";
             this.pSDTThuKho.Name = "pSDTThuKho";
             this.pSDTThuKho.ValueInfo = "SĐT: 0971.744.943";
             // 
