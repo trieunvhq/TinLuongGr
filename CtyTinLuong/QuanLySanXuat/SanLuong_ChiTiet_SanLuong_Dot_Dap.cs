@@ -58,8 +58,11 @@ namespace CtyTinLuong
                 gridControl1.DataSource = dt;
 
         }
-        public SanLuong_ChiTiet_SanLuong_Dot_Dap()
+
+        SanLuong_To_DOT_DAP _frmSLTDD;
+        public SanLuong_ChiTiet_SanLuong_Dot_Dap(SanLuong_To_DOT_DAP frmSLTDD)
         {
+            _frmSLTDD = frmSLTDD;
             InitializeComponent();
         }
 

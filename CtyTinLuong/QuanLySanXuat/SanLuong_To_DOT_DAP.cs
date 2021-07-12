@@ -191,7 +191,7 @@ namespace CtyTinLuong
                 miID_VTHH_Ra = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
-                SanLuong_ChiTiet_SanLuong_Dot_Dap ff = new SanLuong_ChiTiet_SanLuong_Dot_Dap();
+                SanLuong_ChiTiet_SanLuong_Dot_Dap ff = new SanLuong_ChiTiet_SanLuong_Dot_Dap(this);
                 //this.Hide();
                 ff.Show();
                 //this.Show();
