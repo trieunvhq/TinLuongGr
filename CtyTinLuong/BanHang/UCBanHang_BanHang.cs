@@ -60,7 +60,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UCBanHang_BanHang_Load(sender, e);
@@ -111,7 +111,7 @@ namespace CtyTinLuong
                 {
                     isClick = true;
                     miiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
-                    BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww();
+                    BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww(this, null);
                    
                     ff.Show();
                    

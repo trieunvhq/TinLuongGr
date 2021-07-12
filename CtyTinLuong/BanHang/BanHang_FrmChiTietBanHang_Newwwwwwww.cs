@@ -503,26 +503,31 @@ namespace CtyTinLuong
             else if (txtSoChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có số CT ");
+                txtSoChungTu.Focus();
                 return false;
             }
             else if (txtTongTienHangCoVAT.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có số CT ");
+                txtTongTienHangCoVAT.Focus();
                 return false;
             }
             else if (gridKH.EditValue.ToString() == "")
             {
                 MessageBox.Show("Chưa có NCC ");
+                gridKH.Focus();
                 return false;
             }
             else if (gridNguoiLap.EditValue.ToString() == "")
             {
                 MessageBox.Show("Chưa có người mua hàng ");
+                gridNguoiLap.Focus();
                 return false;
             }
             else if (dteNgayChungTu.EditValue.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn ngày chứng từ ");
+                dteNgayChungTu.Focus();
                 return false;
             }
 
@@ -536,48 +541,57 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                string shienthi = "1";
-                DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-                DataView dvmoi = dttttt2.DefaultView;
-                DataTable dtmoi = dvmoi.ToTable();
+                try
+                {
+                    string shienthi = "1";
+                    DataTable dttttt2 = (DataTable)gridControl1.DataSource;
+                    dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                    DataView dvmoi = dttttt2.DefaultView;
+                    DataTable dtmoi = dvmoi.ToTable();
 
-                clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
-                cls1.iID_BanHang = iiID_banHang__;
-                DataTable dt1 = cls1.SelectOne();
+                    clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+                    cls1.iID_BanHang = iiID_banHang__;
+                    DataTable dt1 = cls1.SelectOne();
 
-                clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-                cls.iID_BanHang = iiID_banHang__;
-                cls.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls.sSoHoaDon = txtSoHoaDon.Text.ToString();
-                cls.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
-                cls.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
-                cls.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                cls.sDienGiai = txtDienGiai.Text.ToString();
-                cls.bTonTai = true;
-                cls.bNgungTheoDoi = false;
-                cls.iID_NguoiBan = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls.bTienUSD = checkUSD.Checked;
-                cls.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
-                cls.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
-                cls.bTrangThaiBanHang = true;
-                cls.bCheck_BaoVe = cls1.bCheck_BaoVe.Value;
-                cls.bCheck_LaiXe = cls1.bCheck_LaiXe.Value;
-                cls.sThamChieu = txtThamChieu.Text.ToString();
-                cls.bDaXong = cls1.bDaXong.Value;
-                cls.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
-                cls.bTrangThai_KhoThanhPham = true;
-                cls.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
-                cls.sSoCongTeNo = txtSoCont.Text;
-                cls.Update();
-                int xxIDbanhangxx = iiID_banHang__;
-                // Insert chi tietbanhang
-                Luu_BienDongTaiKhoan(xxIDbanhangxx);
-                //Luu_TbThuChi(xxIDbanhangxx);
-                Luu_Chitiet_BanHang(xxIDbanhangxx);
-                this.Close();
-                MessageBox.Show("Đã lưu");
+                    clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
+                    cls.iID_BanHang = iiID_banHang__;
+                    cls.daNgayChungTu = dteNgayChungTu.DateTime;
+                    cls.sSoChungTu = txtSoChungTu.Text.ToString();
+                    cls.sSoHoaDon = txtSoHoaDon.Text.ToString();
+                    cls.iID_KhachHang = Convert.ToInt32(gridKH.EditValue.ToString());
+                    cls.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                    cls.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                    cls.sDienGiai = txtDienGiai.Text.ToString();
+                    cls.bTonTai = true;
+                    cls.bNgungTheoDoi = false;
+                    cls.iID_NguoiBan = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    cls.bTienUSD = checkUSD.Checked;
+                    cls.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
+                    cls.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                    cls.bTrangThaiBanHang = true;
+                    cls.bCheck_BaoVe = cls1.bCheck_BaoVe.Value;
+                    cls.bCheck_LaiXe = cls1.bCheck_LaiXe.Value;
+                    cls.sThamChieu = txtThamChieu.Text.ToString();
+                    cls.bDaXong = cls1.bDaXong.Value;
+                    cls.sMaSoCongTeNo = txtMaCongTennor.Text.ToString();
+                    cls.bTrangThai_KhoThanhPham = true;
+                    cls.fTiGia = Convert.ToDouble(txtTiGia.Text.ToString());
+                    cls.sSoCongTeNo = txtSoCont.Text;
+                    cls.Update();
+                    int xxIDbanhangxx = iiID_banHang__;
+                    // Insert chi tietbanhang
+                    Luu_BienDongTaiKhoan(xxIDbanhangxx);
+                    //Luu_TbThuChi(xxIDbanhangxx);
+                    Luu_Chitiet_BanHang(xxIDbanhangxx);
+                    this.Close();
+                    if (_ucBH != null) _ucBH.btRefresh_Click(null, null);
+                    if (_frmBH != null) _frmBH.btRefresh_Click(null, null);
+                    MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Lưu dữ liệu thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         
@@ -729,8 +743,13 @@ namespace CtyTinLuong
             gridKH.Properties.ValueMember = "ID_KhachHang";
             gridKH.Properties.DisplayMember = "MaKH";
         }
-        public BanHang_FrmChiTietBanHang_Newwwwwwww()
+
+        UCBanHang_BanHang _ucBH;
+        BanHang_frmBangKeHoaDonBanHang _frmBH;
+        public BanHang_FrmChiTietBanHang_Newwwwwwww(UCBanHang_BanHang ucBH = null, BanHang_frmBangKeHoaDonBanHang frmBH = null)
         {
+            _frmBH = frmBH;
+            _ucBH = ucBH;
             InitializeComponent();
         }
 
