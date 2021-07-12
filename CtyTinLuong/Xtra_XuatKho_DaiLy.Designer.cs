@@ -142,7 +142,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[STT]")});
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.Text = "xrTableCell1";
-            this.xrTableCell1.Weight = 0.785699917649921D;
+            this.xrTableCell1.Weight = 0.7048945719181593D;
             // 
             // xrTableCell2
             // 
@@ -150,7 +150,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MaVT]")});
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Text = "xrTableCell2";
-            this.xrTableCell2.Weight = 1.25552966656943D;
+            this.xrTableCell2.Weight = 1.1397809183820569D;
             // 
             // xrTableCell3
             // 
@@ -162,7 +162,7 @@
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "xrTableCell3";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell3.Weight = 3.55752583745687D;
+            this.xrTableCell3.Weight = 3.7540799313760052D;
             // 
             // xrTableCell4
             // 
@@ -179,7 +179,7 @@
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.Text = "xrTableCell5";
             this.xrTableCell5.TextFormatString = "{0:n2}";
-            this.xrTableCell5.Weight = 1.30222609560686D;
+            this.xrTableCell5.Weight = 1.4197428520333666D;
             // 
             // xrTableCell15
             // 
@@ -189,7 +189,7 @@
             this.xrTableCell15.StylePriority.UsePadding = false;
             this.xrTableCell15.StylePriority.UseTextAlignment = false;
             this.xrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell15.Weight = 1.4784994547394D;
+            this.xrTableCell15.Weight = 1.4197428520333666D;
             // 
             // xrTableCell8
             // 
@@ -201,17 +201,18 @@
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.Text = "xrTableCell8";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell8.Weight = 1.47850300575384D;
+            this.xrTableCell8.Weight = 1.4197428520333666D;
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 60F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 53.125F;
+            this.BottomMargin.HeightF = 60F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -233,7 +234,7 @@
             this.xrLabel2,
             this.xrLine1,
             this.xrLabel1});
-            this.ReportHeader.HeightF = 250F;
+            this.ReportHeader.HeightF = 238.5417F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.ReportHeader_BeforePrint);
             // 
@@ -242,10 +243,10 @@
             this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pNgayThang]")});
             this.xrLabel22.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
-            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(19.99989F, 76.04166F);
+            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(1.145681F, 72.04166F);
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel22.SizeF = new System.Drawing.SizeF(683.875F, 20.33335F);
+            this.xrLabel22.SizeF = new System.Drawing.SizeF(698.8543F, 20.33335F);
             this.xrLabel22.StylePriority.UseFont = false;
             this.xrLabel22.StylePriority.UseTextAlignment = false;
             this.xrLabel22.Text = "xrLabel12";
@@ -256,7 +257,7 @@
             this.xrLabel20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pMaHang]")});
             this.xrLabel20.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(78.22898F, 185.0834F);
+            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(78.22898F, 179.0834F);
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel20.SizeF = new System.Drawing.SizeF(489.7082F, 22.99998F);
@@ -270,7 +271,7 @@
             this.xrLabel19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pDiaChi]")});
             this.xrLabel19.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(59.99991F, 162.0833F);
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(59.99991F, 156.0833F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel19.SizeF = new System.Drawing.SizeF(638.1455F, 23.00001F);
@@ -284,7 +285,7 @@
             this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pNguoiGiaoHang]")});
             this.xrLabel18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(133.3537F, 139.0833F);
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(133.3537F, 133.0833F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(390.5422F, 23.00001F);
@@ -296,7 +297,7 @@
             // xrLabel17
             // 
             this.xrLabel17.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(1.145649F, 185.0834F);
+            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(1.145649F, 179.0834F);
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel17.SizeF = new System.Drawing.SizeF(77.08336F, 22.99998F);
@@ -310,7 +311,7 @@
             this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pDienGiai]")});
             this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(78.22901F, 208.0833F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(78.22901F, 202.0833F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel7.SizeF = new System.Drawing.SizeF(616.7921F, 23.00002F);
@@ -324,7 +325,7 @@
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSDT]")});
             this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(523.8961F, 139.0833F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(523.8961F, 133.0833F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(174.2495F, 23.00001F);
@@ -336,7 +337,7 @@
             // xrLabel4
             // 
             this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(1.145522F, 162.0833F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(1.145522F, 156.0833F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(58.85439F, 23.00001F);
@@ -348,7 +349,7 @@
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(1.145522F, 208.0833F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(1.145522F, 202.0833F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(77.0835F, 23F);
@@ -362,10 +363,10 @@
             this.xrLabel21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pSoChungTu]")});
             this.xrLabel21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(19.99989F, 96.37502F);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(3.000005F, 92.37502F);
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel21.SizeF = new System.Drawing.SizeF(680.7507F, 23F);
+            this.xrLabel21.SizeF = new System.Drawing.SizeF(697F, 23F);
             this.xrLabel21.StylePriority.UseFont = false;
             this.xrLabel21.StylePriority.UseTextAlignment = false;
             this.xrLabel21.Text = "Chứng từ xuất kho:";
@@ -374,7 +375,7 @@
             // xrLabel6
             // 
             this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(1.145522F, 139.0833F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(1.145522F, 133.0833F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(129.1667F, 23.00001F);
@@ -385,8 +386,8 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 45.75002F);
+            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(3.00001F, 45.75002F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(697F, 26.125F);
@@ -397,17 +398,17 @@
             // 
             // xrLine1
             // 
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(59.99991F, 27.08333F);
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(52.03646F, 22.08333F);
             this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(291.6667F, 8.41667F);
+            this.xrLine1.SizeF = new System.Drawing.SizeF(251.0417F, 8.416674F);
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(419.7917F, 26.125F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(351.6665F, 26.125F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "CTY TNHH ĐẦU TƯ TM & SX TÍN LƯỢNG";
@@ -455,7 +456,7 @@
             this.xrTableCell9.StylePriority.UseTextAlignment = false;
             this.xrTableCell9.Text = "STT";
             this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell9.Weight = 1.25095665154483D;
+            this.xrTableCell9.Weight = 1.1232947499399222D;
             // 
             // xrTableCell10
             // 
@@ -463,7 +464,7 @@
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
             this.xrTableCell10.Text = "Mã VT";
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell10.Weight = 1.91871450468121D;
+            this.xrTableCell10.Weight = 1.7910526030763021D;
             // 
             // xrTableCell11
             // 
@@ -471,7 +472,7 @@
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Tên vật tư";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell11.Weight = 5.67563854016674D;
+            this.xrTableCell11.Weight = 5.9309623433765557D;
             // 
             // xrTableCell12
             // 
@@ -487,7 +488,7 @@
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.Text = "Số lượng";
             this.xrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell13.Weight = 2.05734826300629D;
+            this.xrTableCell13.Weight = 2.24300874491705D;
             // 
             // xrTableCell7
             // 
@@ -496,7 +497,7 @@
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "Thực nhập";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell7.Weight = 2.33583898587243D;
+            this.xrTableCell7.Weight = 2.24300874491705D;
             // 
             // xrTableCell16
             // 
@@ -504,7 +505,7 @@
             this.xrTableCell16.StylePriority.UseTextAlignment = false;
             this.xrTableCell16.Text = "Ghi chú";
             this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell16.Weight = 2.33583898587243D;
+            this.xrTableCell16.Weight = 2.24300874491705D;
             // 
             // ReportFooter
             // 
@@ -521,13 +522,13 @@
             this.xrLabel15,
             this.xrLabel16,
             this.xrLabel8});
-            this.ReportFooter.HeightF = 252.0833F;
+            this.ReportFooter.HeightF = 199.0834F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel13
             // 
             this.xrLabel13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(10.00007F, 97.50004F);
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(4.00007F, 77.50004F);
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel13.SizeF = new System.Drawing.SizeF(129.1666F, 22.99998F);
@@ -539,7 +540,7 @@
             // xrLabel9
             // 
             this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(139.1666F, 97.50004F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(133.1666F, 77.50004F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel9.SizeF = new System.Drawing.SizeF(140.7919F, 23F);
@@ -551,7 +552,7 @@
             // xrLabel24
             // 
             this.xrLabel24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(279.9585F, 97.5001F);
+            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(273.9585F, 77.5001F);
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel24.SizeF = new System.Drawing.SizeF(140.7919F, 23F);
@@ -563,7 +564,7 @@
             // xrLabel14
             // 
             this.xrLabel14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(420.7504F, 97.5001F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(414.7504F, 77.5001F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel14.SizeF = new System.Drawing.SizeF(145.2916F, 23F);
@@ -575,10 +576,10 @@
             // xrLabel10
             // 
             this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(566.0422F, 97.50004F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(560.0424F, 77.50004F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(140.9578F, 23F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(137.8326F, 23F);
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
             this.xrLabel10.Text = "Giám đốc";
@@ -586,11 +587,11 @@
             // 
             // xrLabel23
             // 
-            this.xrLabel23.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(516.2088F, 69.45839F);
+            this.xrLabel23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(474.7089F, 49.45839F);
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel23.SizeF = new System.Drawing.SizeF(187.6662F, 28.04166F);
+            this.xrLabel23.SizeF = new System.Drawing.SizeF(225.1661F, 23.87499F);
             this.xrLabel23.StylePriority.UseFont = false;
             this.xrLabel23.StylePriority.UseTextAlignment = false;
             this.xrLabel23.Text = "Ngày ....... tháng....... năm 202.....";
@@ -601,10 +602,10 @@
             this.xrLabel11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pGiamDoc]")});
             this.xrLabel11.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(566.0422F, 204.0834F);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(560.0424F, 176.0834F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel11.SizeF = new System.Drawing.SizeF(137.8333F, 23F);
+            this.xrLabel11.SizeF = new System.Drawing.SizeF(134.7081F, 22.99998F);
             this.xrLabel11.StylePriority.UseFont = false;
             this.xrLabel11.StylePriority.UseTextAlignment = false;
             this.xrLabel11.Text = "xrLabel4";
@@ -615,7 +616,7 @@
             this.xrLabel12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pThuKho]")});
             this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(420.7504F, 204.0834F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(414.7504F, 176.0834F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel12.SizeF = new System.Drawing.SizeF(145.2917F, 23F);
@@ -629,7 +630,7 @@
             this.xrLabel25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pBaoVe]")});
             this.xrLabel25.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(283.0001F, 204.0834F);
+            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(277.0001F, 176.0834F);
             this.xrLabel25.Name = "xrLabel25";
             this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel25.SizeF = new System.Drawing.SizeF(137.7503F, 23F);
@@ -643,7 +644,7 @@
             this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pNguoiGiaoHang]")});
             this.xrLabel15.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(142.2082F, 204.0834F);
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(136.2082F, 176.0834F);
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel15.SizeF = new System.Drawing.SizeF(137.7503F, 23F);
@@ -657,7 +658,7 @@
             this.xrLabel16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pNguoiLap]")});
             this.xrLabel16.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(10.00007F, 204.0834F);
+            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(4.00007F, 176.0834F);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel16.SizeF = new System.Drawing.SizeF(129.3157F, 23F);
@@ -670,11 +671,11 @@
             // 
             this.xrLabel8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pGhiChu]")});
-            this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0.000222524F, 10.00001F);
+            this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0.0002543131F, 10.00001F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(696.9999F, 42.79169F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(696.9999F, 26.12502F);
             this.xrLabel8.StylePriority.UseFont = false;
             this.xrLabel8.StylePriority.UseTextAlignment = false;
             this.xrLabel8.Text = "Ghi chú:";
@@ -687,32 +688,32 @@
             // 
             // pNgayThang
             // 
-            this.pNgayThang.Description = "pNgayThang";
+            this.pNgayThang.Description = "Ngày tháng";
             this.pNgayThang.Name = "pNgayThang";
             // 
             // pNguoiGiaoHang
             // 
-            this.pNguoiGiaoHang.Description = "pNguoiGiaoHang";
+            this.pNguoiGiaoHang.Description = "Người giao hàng";
             this.pNguoiGiaoHang.Name = "pNguoiGiaoHang";
             // 
             // pDiaChi
             // 
-            this.pDiaChi.Description = "pDiaChi";
+            this.pDiaChi.Description = "Địa chỉ";
             this.pDiaChi.Name = "pDiaChi";
             // 
             // pMaHang
             // 
-            this.pMaHang.Description = "pMaHang";
+            this.pMaHang.Description = "Mã hàng";
             this.pMaHang.Name = "pMaHang";
             // 
             // pDienGiai
             // 
-            this.pDienGiai.Description = "pDienGiai";
+            this.pDienGiai.Description = "Diễn giải";
             this.pDienGiai.Name = "pDienGiai";
             // 
             // pSDT
             // 
-            this.pSDT.Description = "Số điện thoại";
+            this.pSDT.Description = "Điện thoại";
             this.pSDT.Name = "pSDT";
             // 
             // pMaHang2
@@ -752,14 +753,14 @@
             // 
             // pSoLuongThanhPham
             // 
-            this.pSoLuongThanhPham.Description = "Số lượng Thành phẩm";
+            this.pSoLuongThanhPham.Description = "Số lượng";
             this.pSoLuongThanhPham.Name = "pSoLuongThanhPham";
             this.pSoLuongThanhPham.Type = typeof(double);
             this.pSoLuongThanhPham.ValueInfo = "0";
             // 
             // pDVT
             // 
-            this.pDVT.Description = "ĐVT thành phẩm";
+            this.pDVT.Description = "Đơn vị tính";
             this.pDVT.Name = "pDVT";
             // 
             // Xtra_XuatKho_DaiLy
@@ -775,7 +776,10 @@
             this.dataSet_TinLuong1});
             this.DataMember = "tbNhapKho_XuatKho";
             this.DataSource = this.dataSet_TinLuong1;
-            this.Margins = new System.Drawing.Printing.Margins(76, 67, 100, 53);
+            this.Margins = new System.Drawing.Printing.Margins(76, 50, 60, 60);
+            this.PageHeight = 1169;
+            this.PageWidth = 827;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pNgayThang,
             this.pNguoiGiaoHang,
