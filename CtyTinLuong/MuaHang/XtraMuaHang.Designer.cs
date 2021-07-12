@@ -282,7 +282,7 @@
             // 
             // pNgayThang
             // 
-            this.pNgayThang.Description = "pNgayThang";
+            this.pNgayThang.Description = "Ngày tháng";
             this.pNgayThang.Name = "pNgayThang";
             this.pNgayThang.Visible = false;
             // 
@@ -302,7 +302,7 @@
             // 
             // pTKVAT
             // 
-            this.pTKVAT.Description = "pTKVAT";
+            this.pTKVAT.Description = "TKVAT";
             this.pTKVAT.Name = "pTKVAT";
             this.pTKVAT.Visible = false;
             // 
@@ -323,7 +323,7 @@
             // 
             // pSoTienVAT
             // 
-            this.pSoTienVAT.Description = "pSoTienVAT";
+            this.pSoTienVAT.Description = "Số tiền VAT";
             this.pSoTienVAT.Name = "pSoTienVAT";
             this.pSoTienVAT.Type = typeof(decimal);
             this.pSoTienVAT.ValueInfo = "0";
@@ -346,7 +346,7 @@
             // 
             // pSoTienCo
             // 
-            this.pSoTienCo.Description = "pSoTienCo";
+            this.pSoTienCo.Description = "Số tiền có";
             this.pSoTienCo.Name = "pSoTienCo";
             this.pSoTienCo.Type = typeof(decimal);
             this.pSoTienCo.ValueInfo = "0";
@@ -369,7 +369,7 @@
             // 
             // pSoTienNo
             // 
-            this.pSoTienNo.Description = "pSoTienNo";
+            this.pSoTienNo.Description = "Số tiền nợ";
             this.pSoTienNo.Name = "pSoTienNo";
             this.pSoTienNo.Type = typeof(decimal);
             this.pSoTienNo.ValueInfo = "0";
@@ -388,7 +388,7 @@
             // 
             // pTKCo
             // 
-            this.pTKCo.Description = "pTKCo";
+            this.pTKCo.Description = "TK có";
             this.pTKCo.Name = "pTKCo";
             this.pTKCo.Visible = false;
             // 
@@ -408,7 +408,7 @@
             // 
             // pTKNo
             // 
-            this.pTKNo.Description = "pTKNo";
+            this.pTKNo.Description = "TK nợ";
             this.pTKNo.Name = "pTKNo";
             this.pTKNo.Visible = false;
             // 
@@ -440,7 +440,7 @@
             // 
             // pSoChungTu
             // 
-            this.pSoChungTu.Description = "pSoChungTu";
+            this.pSoChungTu.Description = "Số chứng từ";
             this.pSoChungTu.Name = "pSoChungTu";
             // 
             // xrLabel2
@@ -706,12 +706,12 @@
             // 
             // pNguoiGiao
             // 
-            this.pNguoiGiao.Description = "pNguoiGiao";
+            this.pNguoiGiao.Description = "Người giao";
             this.pNguoiGiao.Name = "pNguoiGiao";
             // 
             // pTongTienCoVAT
             // 
-            this.pTongTienCoVAT.Description = "pTongTienCoVAT";
+            this.pTongTienCoVAT.Description = "Tổng tiền có VAT";
             this.pTongTienCoVAT.Name = "pTongTienCoVAT";
             this.pTongTienCoVAT.Type = typeof(decimal);
             this.pTongTienCoVAT.ValueInfo = "0";
