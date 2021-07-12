@@ -110,32 +110,38 @@ namespace CtyTinLuong
             if (gridControl1.DataSource == null)
             {
                 MessageBox.Show("chưa có hàng hoá");
+                gridControl1.Focus();
                 return false;
             }
 
             else if (gridMaDaiLy.EditValue == null)
             {
                 MessageBox.Show("chưa chọn đại lý");
+                gridMaDaiLy.Focus();
                 return false;
             }
             else if (gridMaDinhMucDot_BaoTo.EditValue == null)
             {
                 MessageBox.Show("chưa chọn Định mức đột bao to");
+                gridMaDinhMucDot_BaoTo.Focus();
                 return false;
             }
             else if (gridMaDinhMucDot_BaoBe.EditValue == null)
             {
                 MessageBox.Show("chưa chọn Định mức đột bao be");
+                gridMaDinhMucDot_BaoBe.Focus();
                 return false;
             }
             else if (gridMaDinhMucNPL.EditValue == null)
             {
                 MessageBox.Show("chưa chọn định mức nguyên phụ liệu");
+                gridMaDinhMucNPL.Focus();
                 return false;
             }
             else if (dteNgayChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Không để trống ngày chứng từ");
+                dteNgayChungTu.Focus();
                 return false;
             }
             else if (dv3.Rows.Count == 0)
@@ -146,11 +152,13 @@ namespace CtyTinLuong
             else if (txtSoChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số chứng từ ");
+                txtSoChungTu.Focus();
                 return false;
             }
             else if (gridNguoiLap.EditValue == null)
             {
                 MessageBox.Show("chưa có người nhập kho");
+                gridNguoiLap.Focus();
                 return false;
             }
             else return true;
@@ -231,7 +239,7 @@ namespace CtyTinLuong
 
         private void Luu_ChiTiet_NhapKho_DaiLy(int iiiID_NhapKhoDaiLy)
         {
-
+            bool ktra = true;
             if (!KiemTraLuu()) return;
             else
             {
@@ -250,7 +258,8 @@ namespace CtyTinLuong
                 {
                     cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
                     cls2.bTonTai = false;
-                    cls2.Update_ALL_TonTai_W_ID_NhapKhoDaiLy();
+
+                    if (!cls2.Update_ALL_TonTai_W_ID_NhapKhoDaiLy()) ktra = false;
                 }
                 cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls2.iID_VTHH = iiiIDThanhPham_QuyDoi;
@@ -271,11 +280,11 @@ namespace CtyTinLuong
                 if (foundRows_TP.Length > 0)
                 {
                     cls2.iID_ChiTietNhapKho_DaiLy = Convert.ToInt32(foundRows_TP[0]["ID_ChiTietNhapKho_DaiLy"].ToString());
-                    cls2.Update();
+                    if (!cls2.Update()) ktra = false;
                 }
                 else
                 {
-                    cls2.Insert();
+                    if (!cls2.Insert()) ktra = false;
                 }
                 // nhap kho vạt tư khác
 
@@ -304,11 +313,11 @@ namespace CtyTinLuong
                     if (foundRows.Length > 0)
                     {
                         cls2.iID_ChiTietNhapKho_DaiLy = Convert.ToInt32(foundRows[0]["ID_ChiTietNhapKho_DaiLy"].ToString());
-                        cls2.Update();
+                        if (!cls2.Update()) ktra = false;
                     }
                     else
                     {
-                        cls2.Insert();
+                        if (!cls2.Insert()) ktra = false;
                     }
                 }
                 // xoa ton tai=false
@@ -322,10 +331,13 @@ namespace CtyTinLuong
                 {
                     int IID_ChiTietNhapKho_DaiLyxxxx = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietNhapKho_DaiLy"].ToString());
                     cls2.iID_ChiTietNhapKho_DaiLy = IID_ChiTietNhapKho_DaiLyxxxx;
-                    cls2.Delete();
+                    if (!cls2.Delete()) ktra = false;
                 }
 
-
+                if (ktra)
+                {
+//
+                }
             }
         }
         private bool Luu_NhapKhoDaiLy()
@@ -1303,12 +1315,16 @@ namespace CtyTinLuong
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
             if (!KiemTraLuu()) return;
-            else if (!Luu_NhapKhoDaiLy()) return;
-        
+            else if (!Luu_NhapKhoDaiLy())
+            {
+                MessageBox.Show("Lưu dữ liệu không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             else
             {
-                MessageBox.Show("Đã lưu");
                 this.Close();
+                _ucDLNK.btRefresh_Click(null, null);
+                MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1422,9 +1438,11 @@ namespace CtyTinLuong
             }
         }
 
-    
-        public DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww()
+        UC_DaiLy_NhapKho_ChoGhiSo _ucDLNK;
+
+        public DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww(UC_DaiLy_NhapKho_ChoGhiSo ucDLNK)
         {
+            _ucDLNK = ucDLNK;
             InitializeComponent();
         }
 

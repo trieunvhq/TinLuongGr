@@ -357,7 +357,7 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public void Update_ALL_TonTai_W_ID_NhapKhoDaiLy()
+        public bool Update_ALL_TonTai_W_ID_NhapKhoDaiLy()
         {
 
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -387,7 +387,7 @@ namespace CtyTinLuong
 
                 // Execute query.
                 scmCmdToExecute.ExecuteNonQuery();
-                //return true;
+                return true;
             }
             catch (Exception ex)
             {

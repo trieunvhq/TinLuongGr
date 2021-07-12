@@ -115,14 +115,14 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             mbThemMoi_nhapKhoDaiLy = false;
             miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
-            DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww ff = new DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww();
+            DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww ff = new DaiLy_FrmChiTietNhapKho_Newwwwwwwwwwwwwww(this);
             //_frmQLKDL.Hide();
             ff.Show();
             //_frmQLKDL.Show();
         }
 
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UC_DaiLy_NhapKho_Load(sender, e);
