@@ -77,7 +77,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
         
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             UCMuaHang_Load(sender, e);
@@ -118,7 +118,7 @@ namespace CtyTinLuong
             mbThemMoi = true;
             mbSua = false;
             mbCopY = false;
-            frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
+            frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333(this);
             //_frmMH.Hide();
             ff.Show();
             //_frmMH.Show();
@@ -141,7 +141,7 @@ namespace CtyTinLuong
                     mbThemMoi = false;
                     mbSua = true;
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
-                    frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
+                    frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333(this);
                     //_frmMH.Hide();
                     ff.Show();
                     //_frmMH.Show();
@@ -299,7 +299,7 @@ namespace CtyTinLuong
                     mbSua = false;
                    
                     miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
-                    frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
+                    frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333(this);
                     //_frmMH.Hide();
                     ff.Show();
                     //_frmMH.Show();

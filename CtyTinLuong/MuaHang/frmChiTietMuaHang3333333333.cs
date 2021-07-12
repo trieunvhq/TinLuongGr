@@ -261,26 +261,31 @@ namespace CtyTinLuong
             else if (txtSoChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có số CT ");
+                txtSoChungTu.Focus();
                 return false;
             }
             else if (txtTongTienHangCoVAT.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa có số CT ");
+                txtTongTienHangCoVAT.Focus();
                 return false;
             }
             else if (gridNCC.EditValue.ToString() == "")
             {
                 MessageBox.Show("Chưa có NCC ");
+                gridNCC.Focus();
                 return false;
             }
             else if (gridNguoiLap.EditValue.ToString() == "")
             {
                 MessageBox.Show("Chưa có người mua hàng ");
+                gridNguoiLap.Focus();
                 return false;
             }
             else if (dteNgayChungTu.EditValue.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn ngày chứng từ ");
+                dteNgayChungTu.Focus();
                 return false;
             }
            
@@ -581,47 +586,58 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu_Va_GuiDuLieu()
         {
-
-            if (!KiemTraLuu()) return;
-            else
+            try
             {
-                clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
-                cls.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls.sSoHoaDon = txtSoHoaDon.Text.ToString();
-                cls.iIDNhaCungCap = Convert.ToInt32(gridNCC.EditValue.ToString());
-                cls.sDienGiai = txtDienGiai.Text.ToString();
-
-                cls.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
-                cls.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-                cls.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
-                cls.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
-                cls.iID_NguoiMua = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls.bGuiDuLieu = true;
-                cls.bTonTai = true;
-                cls.bTrangThaiNhapKho = false;
-                cls.bNgungTheoDoi = false;
-                cls.bMuaHangNhapKho = checkMuaHangNhapKho.Checked;
-                cls.bTienUSD = checkUSD.Checked;
-                cls.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
-                cls.bCheckTraLaiNhaCungCap = checkTraLaiHangMua.Checked;
-                if (UCMuaHang.mbSua == false)
-                {
-                    cls.Insert();
-                    iiiID_MuaHang = cls.iID_MuaHang.Value;
-                } 
+                if (!KiemTraLuu()) return;
                 else
                 {
+                    clsMH_tbMuaHang cls = new clsMH_tbMuaHang();
+                    cls.daNgayChungTu = dteNgayChungTu.DateTime;
+                    cls.sSoChungTu = txtSoChungTu.Text.ToString();
+                    cls.sSoHoaDon = txtSoHoaDon.Text.ToString();
+                    cls.iIDNhaCungCap = Convert.ToInt32(gridNCC.EditValue.ToString());
+                    cls.sDienGiai = txtDienGiai.Text.ToString();
 
-                    iiiID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;                    
-                    cls.iID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
-                    cls.Update();
+                    cls.fTongTienHangChuaVAT = Convert.ToDouble(txtTongTienHangChuaVAT.Text.ToString());
+                    cls.fTongTienHangCoVAT = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                    cls.fPhanTramVAT = Convert.ToDouble(txtPhanTramVAT.Text.ToString());
+                    cls.fTienVAT = Convert.ToDouble(txtTienVAT.Text.ToString());
+                    cls.iID_NguoiMua = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    cls.bGuiDuLieu = true;
+                    cls.bTonTai = true;
+                    cls.bTrangThaiNhapKho = false;
+                    cls.bNgungTheoDoi = false;
+                    cls.bMuaHangNhapKho = checkMuaHangNhapKho.Checked;
+                    cls.bTienUSD = checkUSD.Checked;
+                    cls.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                    cls.bCheckTraLaiNhaCungCap = checkTraLaiHangMua.Checked;
+                    if (UCMuaHang.mbSua == false)
+                    {
+                        cls.Insert();
+                        iiiID_MuaHang = cls.iID_MuaHang.Value;
+                    }
+                    else
+                    {
+
+                        iiiID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
+                        cls.iID_MuaHang = UCMuaHang.miiiID_Sua_DonHang;
+                        cls.Update();
+                    }
+                    // luwu chi tiet mua hang
+                    Luu_Chitiet_MuaHang(iiiID_MuaHang);
+                    Luu_BienDongTaiKhoan(iiiID_MuaHang);
+                    //  Luu_TbThuChi(iiiID_MuaHang);         
+
+                    this.Close();
+                    _ucMH.btRefresh_Click(null, null);
+                    MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                // luwu chi tiet mua hang
-                Luu_Chitiet_MuaHang(iiiID_MuaHang);
-                Luu_BienDongTaiKhoan(iiiID_MuaHang);
-              //  Luu_TbThuChi(iiiID_MuaHang);              
             }
+            catch
+            {
+                MessageBox.Show("Lưu dữ liệu không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }                        
         private void HienThi_themMoi()
         {
@@ -821,8 +837,11 @@ namespace CtyTinLuong
             dtSet_.Dispose();
             clsThin_.Dispose();
         }
-        public frmChiTietMuaHang3333333333()
+
+        UCMuaHang _ucMH;
+        public frmChiTietMuaHang3333333333(UCMuaHang ucMH)
         {
+            _ucMH = ucMH;
             InitializeComponent();
         }
         private void checkVNĐ_CheckedChanged(object sender, EventArgs e)
@@ -1297,7 +1316,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtNguoiMuaHang.Focus();
+                gridNCC.Focus();
             }
         }
 
@@ -1313,7 +1332,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTenNhaCungCap.Focus();
+                txtDienGiai.Focus();
             }
         }
 
@@ -1329,7 +1348,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTongTienHangChuaVAT.Focus();
+                txtTiGia.Focus();
             }
         }
 
@@ -1353,7 +1372,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtTienVAT.Focus();
+                btLuu_Gui_Dong.Focus();
             }
         }
 
@@ -1478,11 +1497,7 @@ namespace CtyTinLuong
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
             LuuDuLieu_Va_GuiDuLieu();
-            MessageBox.Show("Đã lưu");
            // this.Close();
-
-
-
         }
 
         private void frmChiTietMuaHang3333333333_FormClosed(object sender, FormClosedEventArgs e)
