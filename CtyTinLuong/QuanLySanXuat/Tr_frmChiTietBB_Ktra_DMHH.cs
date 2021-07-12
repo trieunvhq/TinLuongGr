@@ -266,8 +266,10 @@ namespace CtyTinLuong
             }
         }
 
-        public Tr_frmChiTietBB_Ktra_DMHH()
+        Tr_UC_BB_Ktra_DM_HHSX _ucBBKTDM;
+        public Tr_frmChiTietBB_Ktra_DMHH(Tr_UC_BB_Ktra_DM_HHSX ucBBKTDM)
         {
+            _ucBBKTDM = ucBBKTDM;
             InitializeComponent();
             dateNgayThang.EditValue = DateTime.Now;
 
@@ -275,6 +277,7 @@ namespace CtyTinLuong
             {
                 Load_frmEdit();
             }
+            dateNgayThang.Focus();
         }
 
         private void Tr_frmChiTietBB_Ktra_DMHH_Load(object sender, EventArgs e)
@@ -297,6 +300,8 @@ namespace CtyTinLuong
                 {
                     if (Insert_BB_Ktra_DMHHSX())
                     {
+                        this.Close();
+                        _ucBBKTDM.btRefresh_Click(null, null);
                         MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -310,6 +315,8 @@ namespace CtyTinLuong
             {
                 if (Update_BB_Ktra_DMHHSX())
                 {
+                    this.Close();
+                    _ucBBKTDM.btRefresh_Click(null, null);
                     MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

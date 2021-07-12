@@ -146,7 +146,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             Tr_UC_BB_Ktra_DM_HHSX_Load(sender, e);
@@ -195,7 +195,7 @@ namespace CtyTinLuong
                     mfSauMuoi_BaoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
                     msGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
 
-                    Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
+                    Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
                     //_frmQLSX.Hide();
                     ff.Show();
                     //_frmQLSX.Show();
@@ -302,7 +302,7 @@ namespace CtyTinLuong
             mb_Sua_BB_Ktra = false;
 
             //
-            Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
+            Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
             //_frmQLSX.Hide();
             ff.Show();
             //_frmQLSX.Show();
@@ -382,7 +382,7 @@ namespace CtyTinLuong
                     mfSauMuoi_BaoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
                     msGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
 
-                    Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH();
+                    Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
                     //_frmQLSX.Hide();
                     ff.Show();
                     //_frmQLSX.Show();
