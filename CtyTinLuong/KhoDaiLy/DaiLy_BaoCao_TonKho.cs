@@ -551,7 +551,6 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
