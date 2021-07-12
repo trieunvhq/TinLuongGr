@@ -1241,16 +1241,20 @@ namespace CtyTinLuong
                     if (dv3cccccc.Rows.Count > 0)
                     {
                         clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                        cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[0]["SoTaiKhoanCon"].ToString());
+                        cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[0]["ID_TaiKhoanKeToanCon"].ToString());
                         DataTable dt1 = cls.SelectOne();
                         msTKCo = dt1.Rows[0]["SoTaiKhoanCon"].ToString();
 
-                        cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[1]["SoTaiKhoanCon"].ToString());
-                        DataTable dt2 = cls.SelectOne();
-                        msTKNo = dt2.Rows[0]["SoTaiKhoanCon"].ToString();
-                        if (dv3cccccc.Rows.Count == 3)
+                        if (dv3cccccc.Rows.Count > 1)
                         {
-                            cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[2]["SoTaiKhoanCon"].ToString());
+                            cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[1]["ID_TaiKhoanKeToanCon"].ToString());
+                            DataTable dt2 = cls.SelectOne();
+                            msTKNo = dt2.Rows[0]["SoTaiKhoanCon"].ToString();
+                        }
+
+                        if (dv3cccccc.Rows.Count > 2)
+                        {
+                            cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(dv3cccccc.Rows[2]["ID_TaiKhoanKeToanCon"].ToString());
                             DataTable dt3 = cls.SelectOne();
                             msTKVAT = dt3.Rows[0]["SoTaiKhoanCon"].ToString();
                         }
