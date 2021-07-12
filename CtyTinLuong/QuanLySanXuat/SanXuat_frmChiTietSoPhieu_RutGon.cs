@@ -319,7 +319,9 @@ namespace CtyTinLuong
 
         private void btTImKiem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             bandedGridView1.OptionsFind.AlwaysVisible = true;
+            Cursor.Current = Cursors.Default;
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

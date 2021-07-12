@@ -138,6 +138,7 @@ namespace CtyTinLuong
             DateTime aDateTime = new DateTime(year, month, 1);
             return aDateTime;
         }
+
         public SanLuong_To_May_IN()
         {
             InitializeComponent();
@@ -305,6 +306,13 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        public void btRefesh_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            SanLuong_To_May_IN_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void btprint2_Click(object sender, EventArgs e)

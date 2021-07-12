@@ -69,8 +69,6 @@ namespace CtyTinLuong
                 gridControl1.DataSource = dt;
 
         }
-       
-       
 
         public SanLuong_ToMay_ChiTiet()
         {
@@ -137,6 +135,13 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void btRefesh_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            SanLuong_ToMay_ChiTiet_Load(sender, e);
+            Cursor.Current = Cursors.Default;
         }
 
         private void SanLuong_ToMay_ChiTiet_Load(object sender, EventArgs e)
