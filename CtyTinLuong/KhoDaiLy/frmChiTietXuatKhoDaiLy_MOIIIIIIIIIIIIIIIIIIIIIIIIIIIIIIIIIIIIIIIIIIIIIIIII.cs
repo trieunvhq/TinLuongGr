@@ -1390,7 +1390,7 @@ namespace CtyTinLuong
 
         private void gridView4_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString() != "")
+            if (gridView4.GetFocusedRowCellValue(clID_VTHH1) != null)
             {
                 int xxID = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString());
                 Hienthi_Lable_TonKho(xxID);
@@ -1399,7 +1399,7 @@ namespace CtyTinLuong
 
         private void gridView2_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView2.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
+            if (gridView2.GetFocusedRowCellValue(clID_VTHH2) != null)
             {
                 int xxID = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 Hienthi_Lable_TonKho(xxID);
