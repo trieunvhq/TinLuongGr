@@ -574,6 +574,26 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                clsTbNhaCungCap cls = new clsTbNhaCungCap();
+                cls.iID_NhaCungCap = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+                DataTable dt = cls.SelectOne();
+                if (dt.Rows.Count > 0)
+                {
+                    txtDoiTuong.Text = dt.Rows[0]["TenNhaCungCap"].ToString();
+
+                }
+
+            }
+            catch
+            {
+
+            }
+        }
+
         private bool KiemTraLuu()
         {
             DataTable dttttt2 = (DataTable)gridControl1.DataSource;
