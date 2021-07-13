@@ -1545,7 +1545,7 @@ namespace CtyTinLuong
             dv222.RowFilter = filterString222;
             DataTable dt222 = dv222.ToTable();
             string xx = "1";
-            dt222.DefaultView.RowFilter = "HienThi2 ='" + xx + "'";
+            dt222.DefaultView.RowFilter = "HienThi ='" + xx + "'";
             DataView dvxxx222 = dt222.DefaultView;
             DataTable mdtKhauTru = dvxxx222.ToTable();
 
@@ -1559,7 +1559,7 @@ namespace CtyTinLuong
                     _ravi3["MaVT"] = mdtPrint_Cu.Rows[i]["MaVT"].ToString();
                     _ravi3["TenVTHH"] = mdtPrint_Cu.Rows[i]["TenVTHH"].ToString();
                     _ravi3["DonViTinh"] = mdtPrint_Cu.Rows[i]["DonViTinh"].ToString();
-                    _ravi3["SoLuongNhap"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["SoLuongNhap"].ToString());
+                    _ravi3["SoLuongNhap"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["SoLuong"].ToString());
                     _ravi3["DonGia"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["DonGia"].ToString());
                     _ravi3["ThanhTien"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["ThanhTien"].ToString());
                     mdtPrint.Rows.Add(_ravi3);
