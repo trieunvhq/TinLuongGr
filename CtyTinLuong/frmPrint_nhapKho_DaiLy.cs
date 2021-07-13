@@ -94,7 +94,40 @@ namespace CtyTinLuong
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
         }
-  
+
+        private void NhapKho_Tu_GapDan_Ve_GiaCongXong(DataTable dt3)
+        {
+            TrXtra_XuatKho_DaiLy xtr111 = new TrXtra_XuatKho_DaiLy();
+
+            DataSet_TinLuong ds = new DataSet_TinLuong();
+            ds.tbNhapKho_XuatKho.Clone();
+            ds.tbNhapKho_XuatKho.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbNhapKho_XuatKho.NewRow();
+                _ravi["STT"] = (i + 1).ToString();
+                int ID_VTHH = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = ID_VTHH;
+                DataTable dt = cls.SelectOne();
+                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap"].ToString());
+                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["MaVT"] = cls.sMaVT.Value;
+                _ravi["TenVTHH"] = cls.sTenVTHH.Value;
+                _ravi["DonViTinh"] = cls.sDonViTinh.Value;
+                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                // _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+                ds.tbNhapKho_XuatKho.Rows.Add(_ravi);
+            }
+
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbNhapKho_XuatKho;
+            xtr111.DataMember = "tbNhapKho_XuatKho";
+            // xtr111.IntData(sgiamdoc);
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+        }
+
         private void XuatKho_RaDaiLy_()
         {
             DataTable dt3 = new DataTable();
@@ -146,6 +179,8 @@ namespace CtyTinLuong
                 XuatKho_RaDaiLy_();
             if (KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mbPrint == true)
                 NhapKho_Tu_DaiLy_Ve_GiaCongXong(KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mdtPrint);
+            if (KhoThanhPham_NhapKho_TuGapDan.mbPrint == true)
+                NhapKho_Tu_GapDan_Ve_GiaCongXong(KhoThanhPham_NhapKho_TuGapDan.mdtPrint);
             if (frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mbPrint == true)
                 NhapKho_Tu_DaiLy_Ve_GiaCongXong(frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mdtPrint);
         }

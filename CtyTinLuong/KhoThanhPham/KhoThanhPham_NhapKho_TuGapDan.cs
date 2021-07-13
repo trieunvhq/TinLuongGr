@@ -15,7 +15,17 @@ namespace CtyTinLuong
 {
     public partial class KhoThanhPham_NhapKho_TuGapDan : Form
     {
-      
+        //
+        public static bool mbThemMoi_XuatKhohoDaiLy, mbCopy, mbSua;
+        public static int miID_XuatKhoDaiLy;
+        public static bool mbPrint;
+        public static DataTable mdtPrint;
+        public static DateTime mdaNgayChungTu;
+        public static string msDiaChi, msSoDienThoai, msDienGiai, msTenDaiLy, msSoChungTu, msGhiChu;
+        public static string msdvtthanhphamquydoi, msMaThanhPham, msTenThanhPham;
+        public static double mfPrint_soluongtpqiuydoi;
+        //
+
         private void HienThi_GridControl_Moiiiiiiiiiiii(double soluongxuatxxx)
         {
 
@@ -1504,6 +1514,87 @@ namespace CtyTinLuong
         {
             gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi1, "0");
             gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clSoLuongNhap1, 0);
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+            CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+            DataView dv = new DataView(DatatableABC);
+            dv.RowFilter = filterString;
+            DataTable dt = dv.ToTable();
+            string shienthi = "1";
+            dt.DefaultView.RowFilter = "HienThi='" + shienthi + "'";
+            DataView dvxxx = dt.DefaultView;
+            DataTable mdtPrint_Cu = dvxxx.ToTable();
+
+            mdtPrint = new DataTable();
+            mdtPrint.Columns.Add("ID_VTHH", typeof(string));
+            mdtPrint.Columns.Add("MaVT", typeof(string));
+            mdtPrint.Columns.Add("TenVTHH", typeof(string));
+            mdtPrint.Columns.Add("DonViTinh", typeof(string));
+            mdtPrint.Columns.Add("SoLuongNhap", typeof(double));
+            mdtPrint.Columns.Add("DonGia", typeof(double));
+            mdtPrint.Columns.Add("ThanhTien", typeof(double));
+
+            DataTable DatatableABC222 = (DataTable)gridControl2.DataSource;
+            CriteriaOperator op222 = gridView2.ActiveFilterCriteria; // filterControl1.FilterCriteria
+            string filterString222 = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op222);
+            DataView dv222 = new DataView(DatatableABC222);
+            dv222.RowFilter = filterString222;
+            DataTable dt222 = dv222.ToTable();
+            string xx = "1";
+            dt222.DefaultView.RowFilter = "HienThi2 ='" + xx + "'";
+            DataView dvxxx222 = dt222.DefaultView;
+            DataTable mdtKhauTru = dvxxx222.ToTable();
+
+
+            if (mdtPrint_Cu.Rows.Count > 0)
+            {
+                for (int i = 0; i < mdtPrint_Cu.Rows.Count; i++)
+                {
+                    DataRow _ravi3 = mdtPrint.NewRow();
+                    _ravi3["ID_VTHH"] = mdtPrint_Cu.Rows[i]["ID_VTHH"].ToString();
+                    _ravi3["MaVT"] = mdtPrint_Cu.Rows[i]["MaVT"].ToString();
+                    _ravi3["TenVTHH"] = mdtPrint_Cu.Rows[i]["TenVTHH"].ToString();
+                    _ravi3["DonViTinh"] = mdtPrint_Cu.Rows[i]["DonViTinh"].ToString();
+                    _ravi3["SoLuongNhap"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["SoLuongNhap"].ToString());
+                    _ravi3["DonGia"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["DonGia"].ToString());
+                    _ravi3["ThanhTien"] = Convert.ToDouble(mdtPrint_Cu.Rows[i]["ThanhTien"].ToString());
+                    mdtPrint.Rows.Add(_ravi3);
+                }
+                if (mdtKhauTru.Rows.Count > 0)
+                {
+                    for (int i = 0; i < mdtKhauTru.Rows.Count; i++)
+                    {
+                        DataRow _ravi3 = mdtPrint.NewRow();
+                        _ravi3["ID_VTHH"] = mdtKhauTru.Rows[i]["ID_VTHH"].ToString();
+                        _ravi3["MaVT"] = mdtKhauTru.Rows[i]["MaVT"].ToString();
+                        _ravi3["TenVTHH"] = mdtKhauTru.Rows[i]["TenVTHH"].ToString();
+                        _ravi3["DonViTinh"] = mdtKhauTru.Rows[i]["DonViTinh"].ToString();
+                        _ravi3["SoLuongNhap"] = Convert.ToDouble(mdtKhauTru.Rows[i]["SoLuong"].ToString());
+                        _ravi3["DonGia"] = Convert.ToDouble(mdtKhauTru.Rows[i]["DonGia"].ToString());
+                        _ravi3["ThanhTien"] = Convert.ToDouble(mdtKhauTru.Rows[i]["ThanhTien"].ToString());
+                        mdtPrint.Rows.Add(_ravi3);
+                    }
+                }
+
+                //int IID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                //clsTbDanhMuc_DaiLy cls = new clsTbDanhMuc_DaiLy();
+                //cls.iID_DaiLy = IID_DaiLy;
+                //DataTable dxckksd = cls.SelectOne();
+                //msDiaChi = cls.sDiaChi.Value;
+                //msSoDienThoai = cls.sSoDienThoai.Value;
+                //msTenDaiLy = cls.sTenDaiLy.Value;
+                msDienGiai = txtDienGiai.Text.ToString();
+                msSoChungTu = txtSoChungTu.Text.ToString();
+                mdaNgayChungTu = dteNgayChungTu.DateTime;
+                //msGhiChu = txtGhiChu.Text.ToString();
+                mbPrint = true;
+                frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
+                ff.ShowDialog();
+            }
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
