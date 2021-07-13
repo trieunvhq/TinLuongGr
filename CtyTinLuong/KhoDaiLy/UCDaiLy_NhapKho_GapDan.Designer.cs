@@ -60,7 +60,6 @@
             this.clTenVTHH2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT33 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,7 +93,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -122,7 +120,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,7 +129,6 @@
             // 
             this.dataLayoutControl1.Controls.Add(this.label_TonKho);
             this.dataLayoutControl1.Controls.Add(this.groupBox2);
-            this.dataLayoutControl1.Controls.Add(this.btThemMoi);
             this.dataLayoutControl1.Controls.Add(this.gridControl1);
             this.dataLayoutControl1.Controls.Add(this.dteTuNgay);
             this.dataLayoutControl1.Controls.Add(this.btRefresh);
@@ -379,18 +375,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // btThemMoi
-            // 
-            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
-            this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btThemMoi.Location = new System.Drawing.Point(846, 2);
-            this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(24, 22);
-            this.btThemMoi.StyleController = this.dataLayoutControl1;
-            this.btThemMoi.TabIndex = 97;
-            this.btThemMoi.ToolTip = "Refesh";
-            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // gridControl1
             // 
@@ -708,9 +692,9 @@
             // 
             this.btRefresh.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Update;
             this.btRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btRefresh.Location = new System.Drawing.Point(874, 2);
+            this.btRefresh.Location = new System.Drawing.Point(865, 2);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(24, 22);
+            this.btRefresh.Size = new System.Drawing.Size(33, 22);
             this.btRefresh.StyleController = this.dataLayoutControl1;
             this.btRefresh.TabIndex = 92;
             this.btRefresh.ToolTip = "Refesh";
@@ -721,7 +705,7 @@
             this.btLayDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.button_yellow;
             this.btLayDuLieu.Location = new System.Drawing.Point(762, 2);
             this.btLayDuLieu.Name = "btLayDuLieu";
-            this.btLayDuLieu.Size = new System.Drawing.Size(80, 22);
+            this.btLayDuLieu.Size = new System.Drawing.Size(99, 22);
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 89;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
@@ -758,7 +742,6 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem2,
-            this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -782,7 +765,7 @@
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(760, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(84, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(103, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -790,9 +773,9 @@
             // 
             this.layoutControlItem4.Control = this.btRefresh;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(872, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(863, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(28, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(37, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -815,16 +798,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(900, 312);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.btThemMoi;
-            this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(844, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(28, 26);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
@@ -888,7 +861,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -898,7 +870,6 @@
 
         #endregion
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
-        private DevExpress.XtraEditors.SimpleButton btThemMoi;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn clSTT33;
@@ -930,7 +901,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.Columns.GridColumn clNgungTheoDoi;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;

@@ -13,7 +13,6 @@ namespace CtyTinLuong
 {
     public partial class GapDan_frmChiTietNhapXuatTon_MotVatTu : Form
     {
-
         public static bool mbPrint = false;
         public static string msMaVT, msTenVTHH, msDonViTinh;
         public static DataTable mdtPrint;

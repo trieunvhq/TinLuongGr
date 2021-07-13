@@ -606,7 +606,7 @@ namespace CtyTinLuong
 
         private void gridView3_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
+            if (gridView3.GetFocusedRowCellValue(clID_VTHH2) != null)
             {
                 int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 Hienthi_Lable_TonKho(xxID);
