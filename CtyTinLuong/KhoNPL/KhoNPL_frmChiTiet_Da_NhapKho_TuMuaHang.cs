@@ -226,31 +226,39 @@ namespace CtyTinLuong
         }
         private void Luu_NhapKho_NPL()
         {
+            try
+            {
+                double tongtienhang;
+                tongtienhang = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                clsKhoNPL_tbNhapKho cls = new clsKhoNPL_tbNhapKho();
+                cls.iID_NhapKho = UC_KhoNVL_frmDaNhapKho.miD_NhapKho;
+                DataTable dt1 = cls.SelectOne();
+                bool NhapKho_Khac = cls.bCheck_NhapKho_Khac.Value;
 
-            double tongtienhang;
-            tongtienhang = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
-            clsKhoNPL_tbNhapKho cls = new clsKhoNPL_tbNhapKho();
-            cls.iID_NhapKho = UC_KhoNVL_frmDaNhapKho.miD_NhapKho;
-            DataTable dt1 = cls.SelectOne();
-            bool NhapKho_Khac = cls.bCheck_NhapKho_Khac.Value;
 
-
-            clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
-            cls1.iID_NhapKho = UC_KhoNVL_frmDaNhapKho.miD_NhapKho;
-            cls1.sDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
-            cls1.daNgayChungTu = dteNgayChungTuNPL.DateTime;
-            cls1.sSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
-            cls1.fTongTienHang = tongtienhang;
-            cls1.iID_NguoiNhapKho = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-            cls1.sThamChieu = txtThamChieu.Text.ToString();
-            cls1.bTonTai = true;
-            cls1.bNgungTheoDoi = false;
-            cls1.bDaNhapKho = true;
-            cls1.bBool_TonDauKy = false;
-            cls1.bCheck_NhapKho_Khac = NhapKho_Khac;
-            cls1.Update();
-            Luu_ChiTietNhapKho(UC_KhoNVL_frmDaNhapKho.miD_NhapKho);
-            MessageBox.Show("Đã lưu");
+                clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
+                cls1.iID_NhapKho = UC_KhoNVL_frmDaNhapKho.miD_NhapKho;
+                cls1.sDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
+                cls1.daNgayChungTu = dteNgayChungTuNPL.DateTime;
+                cls1.sSoChungTu = txtSoChungTuNhapKhoNPL.Text.ToString();
+                cls1.fTongTienHang = tongtienhang;
+                cls1.iID_NguoiNhapKho = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                cls1.sThamChieu = txtThamChieu.Text.ToString();
+                cls1.bTonTai = true;
+                cls1.bNgungTheoDoi = false;
+                cls1.bDaNhapKho = true;
+                cls1.bBool_TonDauKy = false;
+                cls1.bCheck_NhapKho_Khac = NhapKho_Khac;
+                cls1.Update();
+                Luu_ChiTietNhapKho(UC_KhoNVL_frmDaNhapKho.miD_NhapKho);
+                this.Close();
+                _ucKNPLNK.UC_KhoNVL_frmDaNhapKho_Load(null, null);
+                MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Không thể lưu dữ liệu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void HienThi_Gridcontrol()
@@ -330,8 +338,11 @@ namespace CtyTinLuong
             clsNguoi.Dispose();
             clsvthhh.Dispose();
         }
-        public KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang()
+
+        UC_KhoNVL_frmDaNhapKho _ucKNPLNK;
+        public KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang(UC_KhoNVL_frmDaNhapKho ucKNPLNK)
         {
+            _ucKNPLNK = ucKNPLNK;
             InitializeComponent();
         }
 
@@ -339,7 +350,6 @@ namespace CtyTinLuong
         private void KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang_Load_1(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-
             Load_LockUp();
             HienThi();
             Cursor.Current = Cursors.Default;

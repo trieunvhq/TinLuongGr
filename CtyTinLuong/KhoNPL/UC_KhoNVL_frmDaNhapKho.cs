@@ -132,7 +132,7 @@ namespace CtyTinLuong
                 {
                     msThamChieuMuaHang = gridView1.GetFocusedRowCellValue(clThamChieu).ToString();
                     miD_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
-                    KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang ff = new KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang();
+                    KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang ff = new KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang(this);
                     //_frmKNPL.Hide();
                     ff.Show();
                     //_frmKNPL.Show();
@@ -144,7 +144,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void UC_KhoNVL_frmDaNhapKho_Load(object sender, EventArgs e)
+        public void UC_KhoNVL_frmDaNhapKho_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
