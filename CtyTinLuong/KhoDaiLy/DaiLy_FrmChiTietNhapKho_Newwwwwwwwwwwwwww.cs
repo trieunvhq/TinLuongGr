@@ -164,67 +164,91 @@ namespace CtyTinLuong
 
         private void Load_LockUp()
         {
-            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+            clsThin cls = new clsThin();
+            DataSet dtset_ = cls.T_LockUp_DaiLy_ChiTietChoNhapKho_Moi();
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.DataSource = dtset_.Tables[0];
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv2 = dt.DefaultView;
-            DataTable dtxx2 = dv2.ToTable();
-
-            repositoryItemLookUpEdit2.DataSource = dtxx2;
+            repositoryItemLookUpEdit2.DataSource = dtset_.Tables[1];
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
 
-            clsTbDanhMuc_DaiLy clsdaily = new clsTbDanhMuc_DaiLy();
-            DataTable dtdaily = clsdaily.SelectAll();
-            dtdaily.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dtdaily.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridMaDaiLy.Properties.DataSource = dtxx;
+            gridMaDaiLy.Properties.DataSource = dtset_.Tables[2];
             gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
             gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
 
 
-            clsDinhMuc_tbDM_NguyenPhuLieu clsdinhmucnpl = new clsDinhMuc_tbDM_NguyenPhuLieu();
-            DataTable dt2 = clsdinhmucnpl.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvnpl = dt2.DefaultView;
-            DataTable newdtnpl = dvnpl.ToTable();
-
-
-            gridMaDinhMucNPL.Properties.DataSource = newdtnpl;
+            gridMaDinhMucNPL.Properties.DataSource = dtset_.Tables[3];
             gridMaDinhMucNPL.Properties.ValueMember = "ID_DinhMuc_NPL";
             gridMaDinhMucNPL.Properties.DisplayMember = "MaDinhMuc";
 
 
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            repositoryItemLookUpEdit2.DataSource = newdtvthh;
+            repositoryItemLookUpEdit2.DataSource = dtset_.Tables[1];
             repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
             repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+
+            cls.Dispose();
+            //clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
+            //DataTable dtNguoi = clsNguoi.SelectAll();
+            //dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
+            //DataView dvCaTruong = dtNguoi.DefaultView;
+            //DataTable newdtCaTruong = dvCaTruong.ToTable();
+
+            //gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            //gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
+            //gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
+
+            //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            //DataTable dt = cls.SelectAll();
+            //dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            //DataView dv2 = dt.DefaultView;
+            //DataTable dtxx2 = dv2.ToTable();
+
+            //repositoryItemLookUpEdit2.DataSource = dtxx2;
+            //repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
+            //repositoryItemLookUpEdit2.DisplayMember = "MaVT";
+
+            //clsTbDanhMuc_DaiLy clsdaily = new clsTbDanhMuc_DaiLy();
+            //DataTable dtdaily = clsdaily.SelectAll();
+            //dtdaily.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            //DataView dv = dtdaily.DefaultView;
+            //DataTable dtxx = dv.ToTable();
+            //gridMaDaiLy.Properties.DataSource = dtxx;
+            //gridMaDaiLy.Properties.ValueMember = "ID_DaiLy";
+            //gridMaDaiLy.Properties.DisplayMember = "MaDaiLy";
+
+
+            //clsDinhMuc_tbDM_NguyenPhuLieu clsdinhmucnpl = new clsDinhMuc_tbDM_NguyenPhuLieu();
+            //DataTable dt2 = clsdinhmucnpl.SelectAll();
+            //dt2.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            //DataView dvnpl = dt2.DefaultView;
+            //DataTable newdtnpl = dvnpl.ToTable();
+
+
+            //gridMaDinhMucNPL.Properties.DataSource = newdtnpl;
+            //gridMaDinhMucNPL.Properties.ValueMember = "ID_DinhMuc_NPL";
+            //gridMaDinhMucNPL.Properties.DisplayMember = "MaDinhMuc";
+
+
+            //clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
+            //DataTable dtvthh = clsvthhh.SelectAll();
+            //dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            //DataView dvvthh = dtvthh.DefaultView;
+            //DataTable newdtvthh = dvvthh.ToTable();
+
+
+            //repositoryItemLookUpEdit2.DataSource = newdtvthh;
+            //repositoryItemLookUpEdit2.ValueMember = "ID_VTHH";
+            //repositoryItemLookUpEdit2.DisplayMember = "MaVT";
         }
 
         private void Load_lock_DinhMucDot(int iiiiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0)
         {
             clsDinhMuc_tbDinhMuc_DOT clsdinhmucdot = new clsDinhMuc_tbDinhMuc_DOT();
             DataTable dt3 = clsdinhmucdot.SA_W_Loaihang(iiiiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
-
-
-
+            
             gridMaDinhMucDot_BaoTo.Properties.DataSource = dt3;
             gridMaDinhMucDot_BaoTo.Properties.ValueMember = "ID_DinhMuc_Dot";
             gridMaDinhMucDot_BaoTo.Properties.DisplayMember = "SoHieu";
@@ -232,6 +256,8 @@ namespace CtyTinLuong
             gridMaDinhMucDot_BaoBe.Properties.DataSource = dt3;
             gridMaDinhMucDot_BaoBe.Properties.ValueMember = "ID_DinhMuc_Dot";
             gridMaDinhMucDot_BaoBe.Properties.DisplayMember = "SoHieu";
+
+            clsdinhmucdot.Dispose();
         }
 
         private void Luu_ChiTiet_NhapKho_DaiLy(int iiiID_NhapKhoDaiLy)
@@ -335,6 +361,7 @@ namespace CtyTinLuong
                 {
 //
                 }
+                cls2.Dispose();
             }
         }
         private bool Luu_NhapKhoDaiLy()
@@ -398,16 +425,23 @@ namespace CtyTinLuong
                     cls1.Update_TrangThai_DaNhapkho_CheckBaoVe_LaiXe_DaiLy();
                 }
                 Luu_ChiTiet_NhapKho_DaiLy(UC_DaiLy_NhapKho_ChoGhiSo.miID_NhapKhoDaiLy);
-               
+                cls1.Dispose();
                 return true;
             }
 
         }
-        
-        private void HienThi_GridControl_Sua()
+      
+        private void HienThi_GridControl_Sua(int xid_nhapkho)
+        {           
+            clsDaiLy_tbChiTietNhapKho cls = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();           
+            DataTable dt2 = cls.SA_W_ID_NhapKho_(xid_nhapkho);           
+            gridControl1.DataSource = dt2;
+            cls.Dispose();
+
+        }
+
+        private void HienThi_GridControl_Sua_CUUUUUUUUUUU()
         {
-
-
             double soluongthanhpham = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
             double TongsoKG = Convert.ToDouble(txtTongSoKG.Text.ToString());
 
@@ -532,15 +566,13 @@ namespace CtyTinLuong
 
             }
             gridControl1.DataSource = dt2;
-
-           
-
+            
         }
       
-        private void HienThi_Sua_XuatKho()
+        private void HienThi_Sua_XuatKho(int xid_nhapkho)
         {
             clsDaiLy_tbNhapKho cls1 = new clsDaiLy_tbNhapKho();
-            cls1.iID_NhapKhoDaiLy = UC_DaiLy_NhapKho_ChoGhiSo.miID_NhapKhoDaiLy;
+            cls1.iID_NhapKhoDaiLy = xid_nhapkho;
             DataTable dt = cls1.SelectOne();
 
             if (cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 == 1)
@@ -575,8 +607,10 @@ namespace CtyTinLuong
             txtGhiChu.Text = cls1.sGhiChu.Value;
             txtThamChieu.Text = cls1.sThamChieu.Value;
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
-            checkHoanThanh.Checked = cls1.bHoanThanh.Value;          
-            HienThi_GridControl_Sua();
+            checkHoanThanh.Checked = cls1.bHoanThanh.Value;
+
+            cls1.Dispose();
+            HienThi_GridControl_Sua(xid_nhapkho);
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -603,7 +637,7 @@ namespace CtyTinLuong
                 txtSoKG1Bao_To.Text = SoKG_1BaoTo.ToString();
                 txtSoKien_1_BaoTo.Text = SoKienMotBao_To.ToString();
                 TinhTongSoKg_TongSoKien();
-                
+
             }
             catch
             {
@@ -678,7 +712,7 @@ namespace CtyTinLuong
             double fffsoluong = 0;
             double ffdongia = 0;
             double fffthanhtien = 0;
-            if (e.Column == clMaVT)
+            if (e.Column == clID_VTHH)
             {
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = Convert.ToInt16(gridView1.GetRowCellValue(e.RowHandle, e.Column));
@@ -686,15 +720,15 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 if (dt != null)
                 {
-                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
+                    
                     gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");
                     gridView1.SetRowCellValue(e.RowHandle, clSoLuong, 0);
                     gridView1.SetRowCellValue(e.RowHandle, clDonGia, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clSoLuongTheoDinhMuc, 0);
+                   
                     gridView1.SetRowCellValue(e.RowHandle, clDinhMuc, 0);
-                    gridView1.SetRowCellValue(e.RowHandle, clBoolVTChinh, false);
+                    
 
                     if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
                         ffdongia = 0;
@@ -749,9 +783,7 @@ namespace CtyTinLuong
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT)
-            {
                 e.DisplayText = (e.RowHandle + 1).ToString();
-            }
         }
 
         private void btPrint_Click(object sender, EventArgs e)
@@ -1241,11 +1273,17 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+            try
             {
-                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-                Hienthi_Lable_TonKho(xxID);
+                if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
+                {
+                    int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                    Hienthi_Lable_TonKho(xxID);
+                }
             }
+            catch
+            { }
+           
         }
 
         private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
@@ -1448,7 +1486,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
 
-            HienThi_Sua_XuatKho();
+            HienThi_Sua_XuatKho(UC_DaiLy_NhapKho_ChoGhiSo.miID_NhapKhoDaiLy);
 
             txtSoChungTu.Focus();
             Cursor.Current = Cursors.Default;

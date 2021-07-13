@@ -15,7 +15,39 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial  class clsDaiLy_tbChiTietNhapKho : clsDBInteractionBase
     {
-        //pr_DaiLy_tbChiTietNhapKho_SD_MaVT_Load_lockUP
+        //pr_DaiLy_tbChiTietNhapKho_SA_W_ID_NhapKho_
+        public DataTable SA_W_ID_NhapKho_(int xxID_NhapKho_)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_DaiLy_tbChiTietNhapKho_SA_W_ID_NhapKho_]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_DaiLy_tbChiTietNhapKho_SA_W_ID_NhapKho_");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_NhapKho_));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_DaiLy_tbChiTietNhapKho_SA_W_ID_NhapKho_", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SD_MaVT_Load_lockUP()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
