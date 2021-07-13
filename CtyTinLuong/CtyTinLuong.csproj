@@ -212,6 +212,12 @@
     <Compile Include="KhoDaiLy\Tr_frmPrint_LuongDaiLy_TrongThang.Designer.cs">
       <DependentUpon>Tr_frmPrint_LuongDaiLy_TrongThang.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\TrXtra_XuatKho_DaiLy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\TrXtra_XuatKho_DaiLy.Designer.cs">
+      <DependentUpon>TrXtra_XuatKho_DaiLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoNPL\clsDaiLy_tbChiTietNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbChiTietNhapKho_Temp.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp - Copy.cs" />
@@ -2248,6 +2254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UC_ChoXuatKho_DaiLy_new.resx">
       <DependentUpon>UC_ChoXuatKho_DaiLy_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\TrXtra_XuatKho_DaiLy.resx">
+      <DependentUpon>TrXtra_XuatKho_DaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.resx">
       <DependentUpon>KhoThanhPham_NhapKho_TuGapDan.cs</DependentUpon>
