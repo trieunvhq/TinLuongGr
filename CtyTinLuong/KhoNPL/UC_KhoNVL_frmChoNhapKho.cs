@@ -108,7 +108,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void UC_KhoNVL_frmChoNhapKho_Load(object sender, EventArgs e)
+        public void UC_KhoNVL_frmChoNhapKho_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
@@ -125,7 +125,7 @@ namespace CtyTinLuong
                 if (gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString() != "")
                 {
                     miID_MuaHang_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());
-                    KhoNPL_frmChiTiet_MuaHang_NhapKho ff = new KhoNPL_frmChiTiet_MuaHang_NhapKho();
+                    KhoNPL_frmChiTiet_MuaHang_NhapKho ff = new KhoNPL_frmChiTiet_MuaHang_NhapKho(this);
                     //_frmKNPL.Hide();
                     ff.Show();
                     //_frmKNPL.Show();
