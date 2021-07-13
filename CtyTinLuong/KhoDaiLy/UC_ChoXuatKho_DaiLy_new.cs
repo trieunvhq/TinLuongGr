@@ -186,7 +186,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void UC_ChoXuatKho_DaiLy_new_Load(object sender, EventArgs e)
+        public void UC_ChoXuatKho_DaiLy_new_Load(object sender, EventArgs e)
         {
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
@@ -208,7 +208,7 @@ namespace CtyTinLuong
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     miID_XuatKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDaiLy).ToString());
-                    DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi();
+                    DaiLy_ChiTietChoXuatKho_Moi ff = new DaiLy_ChiTietChoXuatKho_Moi(this);
                     ff.Show();
                     Cursor.Current = Cursors.Default;
                 }

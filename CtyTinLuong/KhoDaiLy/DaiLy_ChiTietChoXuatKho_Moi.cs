@@ -264,12 +264,14 @@ namespace CtyTinLuong
             else if (gridMaDaiLy.EditValue == null)
             {
                 MessageBox.Show("chưa chọn đại lý");
+                gridMaDaiLy.Focus();
                 return false;
             }
 
             else if (dteNgayChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Không để trống ngày chứng từ");
+                dteNgayChungTu.Focus();
                 return false;
             }
             else if (dv3.Rows.Count == 0)
@@ -280,11 +282,13 @@ namespace CtyTinLuong
             else if (txtSoChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số chứng từ ");
+                txtSoChungTu.Focus();
                 return false;
             }
             else if (gridNguoiLap.EditValue == null)
             {
                 MessageBox.Show("chưa có người nhập kho");
+                gridNguoiLap.Focus();
                 return false;
             }
             else return true;
@@ -1296,67 +1300,77 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                
-                clsDaiLy_tbXuatKho cls1 = new clsDaiLy_tbXuatKho();
-               
-                string ahienthi = "1";
+                try
+                {
+                    clsDaiLy_tbXuatKho cls1 = new clsDaiLy_tbXuatKho();
 
-                double dexxTongSoLuong, dexxTongtienhang;
-                DataTable adt1 = (DataTable)gridControl1.DataSource;
-                adt1.DefaultView.RowFilter = "HienThi=" + ahienthi + "";
-                DataView adv1 = adt1.DefaultView;
-                DataTable dtaaaaa = adv1.ToTable();
+                    string ahienthi = "1";
 
-                object xxTongSoLuong = dtaaaaa.Compute("sum(SoLuongNhap)", "HienThi=" + ahienthi + "");
-                if (xxTongSoLuong.ToString() != "")
-                    dexxTongSoLuong = Convert.ToDouble(xxTongSoLuong);
-                else dexxTongSoLuong = 0;
+                    double dexxTongSoLuong, dexxTongtienhang;
+                    DataTable adt1 = (DataTable)gridControl1.DataSource;
+                    adt1.DefaultView.RowFilter = "HienThi=" + ahienthi + "";
+                    DataView adv1 = adt1.DefaultView;
+                    DataTable dtaaaaa = adv1.ToTable();
 
-                object xxtongtienhang = dtaaaaa.Compute("sum(ThanhTien)", "HienThi=" + ahienthi + "");
-                if (xxtongtienhang.ToString() != "")
-                    dexxTongtienhang = Convert.ToDouble(xxtongtienhang);
-                else dexxTongtienhang = 0;
+                    object xxTongSoLuong = dtaaaaa.Compute("sum(SoLuongNhap)", "HienThi=" + ahienthi + "");
+                    if (xxTongSoLuong.ToString() != "")
+                        dexxTongSoLuong = Convert.ToDouble(xxTongSoLuong);
+                    else dexxTongSoLuong = 0;
+
+                    object xxtongtienhang = dtaaaaa.Compute("sum(ThanhTien)", "HienThi=" + ahienthi + "");
+                    if (xxtongtienhang.ToString() != "")
+                        dexxTongtienhang = Convert.ToDouble(xxtongtienhang);
+                    else dexxTongtienhang = 0;
 
 
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls1.iID_VTHH = 0;
+                    cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+                    cls1.sSoChungTu = txtSoChungTu.Text.ToString();
+                    cls1.iID_VTHH = 0;
 
-                cls1.fSoLuongThanhPhamQuyDoi = dexxTongSoLuong;
-                if (dexxTongSoLuong != 0)
-                    cls1.fDonGia = dexxTongtienhang / dexxTongSoLuong;
-                else cls1.fDonGia = 0;
-                cls1.fTongTienHang = dexxTongtienhang;
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
+                    cls1.fSoLuongThanhPhamQuyDoi = dexxTongSoLuong;
+                    if (dexxTongSoLuong != 0)
+                        cls1.fDonGia = dexxTongtienhang / dexxTongSoLuong;
+                    else cls1.fDonGia = 0;
+                    cls1.fTongTienHang = dexxTongtienhang;
+                    cls1.sDienGiai = txtDienGiai.Text.ToString();
+                    cls1.bTonTai = true;
+                    cls1.bNgungTheoDoi = false;
 
-                cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                cls1.bCheck_BaoVe = false;
-                cls1.bCheck_DaiLy = false;
-                cls1.bCheck_LaiXe = false;
-                cls1.bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe = true;
-                cls1.bTrangThai_XuatKho_DaiLy_GuiDuLieu = true;
-                cls1.bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False = true;
-                cls1.bDaXuatKho = true;
-                cls1.sGhiChu = txtGhiChu.Text.ToString();                               
-                cls1.Insert();
+                    cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    cls1.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                    cls1.bCheck_BaoVe = false;
+                    cls1.bCheck_DaiLy = false;
+                    cls1.bCheck_LaiXe = false;
+                    cls1.bTrangThaiXuatNhap_ThanhPham_TuDaiLyVe = true;
+                    cls1.bTrangThai_XuatKho_DaiLy_GuiDuLieu = true;
+                    cls1.bCheckNhapKho_ThanhPham_True_nhapKhoBTP_False = true;
+                    cls1.bDaXuatKho = true;
+                    cls1.sGhiChu = txtGhiChu.Text.ToString();
+                    cls1.Insert();
 
-                int xxID_Xuatkhodaily = cls1.iID_XuatKhoDaiLy.Value;   
-                Luu_ChiTiet_XuatKho_DaiLy(xxID_Xuatkhodaily, true);
-                Luu_ThamCHieuTinhXuatKho(xxID_Xuatkhodaily);
-                Luu_NhapKho_Khac(xxID_Xuatkhodaily);
+                    int xxID_Xuatkhodaily = cls1.iID_XuatKhoDaiLy.Value;
+                    Luu_ChiTiet_XuatKho_DaiLy(xxID_Xuatkhodaily, true);
+                    Luu_ThamCHieuTinhXuatKho(xxID_Xuatkhodaily);
+                    Luu_NhapKho_Khac(xxID_Xuatkhodaily);
 
-                // update trang thai
-                clsDaiLy_tbXuatKho_Temp clstxx = new clsDaiLy_tbXuatKho_Temp();             
-                clstxx.Update_GuiDuLieu(UC_ChoXuatKho_DaiLy_new.miID_XuatKhoDaiLy);
-                MessageBox.Show("Đã lưu và gửi");
+                    // update trang thai
+                    clsDaiLy_tbXuatKho_Temp clstxx = new clsDaiLy_tbXuatKho_Temp();
+                    clstxx.Update_GuiDuLieu(UC_ChoXuatKho_DaiLy_new.miID_XuatKhoDaiLy);
+                    this.Close();
+                    _ucXKDL.UC_ChoXuatKho_DaiLy_new_Load(null, null);
+                    MessageBox.Show("Đã lưu và gửi");
+                }
+                catch
+                {
 
+                }
             }
         }
-        public DaiLy_ChiTietChoXuatKho_Moi()
+
+        UC_ChoXuatKho_DaiLy_new _ucXKDL;
+        public DaiLy_ChiTietChoXuatKho_Moi(UC_ChoXuatKho_DaiLy_new ucXKDL)
         {
+            _ucXKDL = ucXKDL;
             InitializeComponent();
         }
 
