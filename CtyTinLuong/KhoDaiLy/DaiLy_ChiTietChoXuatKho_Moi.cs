@@ -1358,11 +1358,11 @@ namespace CtyTinLuong
                     clstxx.Update_GuiDuLieu(UC_ChoXuatKho_DaiLy_new.miID_XuatKhoDaiLy);
                     this.Close();
                     _ucXKDL.UC_ChoXuatKho_DaiLy_new_Load(null, null);
-                    MessageBox.Show("Đã lưu và gửi");
+                    MessageBox.Show("Đã lưu và gửi", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch
                 {
-
+                    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
