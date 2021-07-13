@@ -630,14 +630,14 @@ namespace CtyTinLuong
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             Load_lockup();
             gridNhomVTHH.EditValue = 0;
-            if (DaiLy_Frm_TonKho_MotVatTu.isNXT==true)
+            if (DaiLy_BaoCao_TonKho.isNXT==true)
             {
                 frmQuanLyKhoDaiLy.isNXT = false;
-                gridMaDaiLy.EditValue = DaiLy_Frm_TonKho_MotVatTu.miID_DaiLy;
+                gridMaDaiLy.EditValue = DaiLy_BaoCao_TonKho.mii_ID_DaiLy;
             }
             else
             {
-                DaiLy_Frm_TonKho_MotVatTu.isNXT = false;
+                DaiLy_BaoCao_TonKho.isNXT = false;
                 gridMaDaiLy.EditValue = 0;
             }
            

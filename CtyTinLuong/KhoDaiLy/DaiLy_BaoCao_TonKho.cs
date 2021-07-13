@@ -16,7 +16,7 @@ namespace CtyTinLuong
     {
         public static int miID_VTHHH, mii_ID_DaiLy;
         public static DateTime mdadenngay, mdatungay;
-        public static bool mbPrint_ALL, mbPrint_One;
+        public static bool mbPrint_ALL, mbPrint_One, isNXT=false;
         public static DataTable mdtPrint_ALL, mdtPrint_One;
         public DaiLy_BaoCao_TonKho()
         {
@@ -476,7 +476,7 @@ namespace CtyTinLuong
                 mii_ID_DaiLy = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_DaiLy2).ToString());
                 mdadenngay = dteDenNgay.DateTime;
 
-           
+                isNXT = true;
                 mdatungay = dteDenNgay.DateTime.AddDays(-30);
 
                 //T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy ff = new T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy(mdatungay, mdadenngay, miID_VTHHH, miID_DaiLy);
