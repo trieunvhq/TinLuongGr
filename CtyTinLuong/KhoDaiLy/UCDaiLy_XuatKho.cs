@@ -130,7 +130,6 @@ namespace CtyTinLuong
 
             }
             gridControl2.DataSource = dt2;
-
         }
 
         frmQuanLyKhoDaiLy _frmQLKDL;
@@ -142,7 +141,6 @@ namespace CtyTinLuong
 
         private void Load_LockUp()
         {
-
             clsDaiLy_tbNhapKho clsvattu = new clsDaiLy_tbNhapKho();
             //clsvattu.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
             DataTable dtvattu = clsvattu.SelectAll();
@@ -153,8 +151,6 @@ namespace CtyTinLuong
             gridMaHang.DataSource = newdtvattu;
             gridMaHang.ValueMember = "ID_NhapKhoDaiLy";
             gridMaHang.DisplayMember = "SoChungTu";
-
-
         }
 
         private void UCDaiLy_XuatKho_Load(object sender, EventArgs e)
