@@ -80,10 +80,8 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
         }
 
-        DaiLy_BaoCao_TonKho _frmDLBCTK;
-        public DaiLy_Frm_TonKho_MotVatTu(DaiLy_BaoCao_TonKho frmDLBCTK)
+        public DaiLy_Frm_TonKho_MotVatTu()
         {
-            _frmDLBCTK = frmDLBCTK;
             InitializeComponent();
         }
 

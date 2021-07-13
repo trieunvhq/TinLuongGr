@@ -61,7 +61,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void UCDaiLy_XuatKho_GapDan_Load(object sender, EventArgs e)
+        public void UCDaiLy_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             if (frmQuanLyKhoDaiLy.isChoXuatKho_GapDan == true)
@@ -98,7 +98,7 @@ namespace CtyTinLuong
                 mbsua = true;
                 mbcopy = false;
                 miID_XuatKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
-                DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
+                DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan(this);
                 //_frmQLKDL.Hide();
                 ff.Show();
                 //_frmQLKDL.Show();
@@ -273,7 +273,7 @@ namespace CtyTinLuong
             mbthemmoi = true;
             mbsua = false;
             mbcopy = false;
-            DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan();
+            DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan(this);
             //_frmQLKDL.Hide();
             ff.Show();
             //_frmQLKDL.Show();
