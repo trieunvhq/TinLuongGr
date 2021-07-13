@@ -145,7 +145,7 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString()!="")
+            if(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy) != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
@@ -167,7 +167,7 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy) != null)
             {
                 int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
                 HienThiGridControl_2(iiIDnhapKhp);
@@ -176,7 +176,7 @@ namespace CtyTinLuong
         
         private void btNhapKho_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy) != null)
             {
                 int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
                 Luu_NhapKhoDaiLy(iiIDnhapKhp);
