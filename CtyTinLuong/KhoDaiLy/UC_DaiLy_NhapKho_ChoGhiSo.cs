@@ -65,7 +65,6 @@ namespace CtyTinLuong
             gridMaVT.ValueMember = "ID_VTHH";
             gridMaVT.DisplayMember = "MaVT";
              
-            cbNgay.EditValue =DateTime.Now;
         }
        
         private void HienThiGridControl_2(int xxID_nhapkho)
@@ -91,16 +90,18 @@ namespace CtyTinLuong
             InitializeComponent();
             
         }
-
+        private bool isLoad = false;
         private void UC_DaiLy_NhapKho_Load(object sender, EventArgs e)
         {
+            isLoad = true;
             Load_LockUp();            
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-60);
-            Load_DaTa(cbNgay.DateTime, cbNgay.DateTime);
-            //Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-60); 
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             mbThemMoi_nhapKhoDaiLy = false;
+
+            isLoad = false;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -148,8 +149,7 @@ namespace CtyTinLuong
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
-                // Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                Load_DaTa(cbNgay.DateTime, cbNgay.DateTime);
+                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
@@ -214,21 +214,11 @@ namespace CtyTinLuong
         private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
-            {
-                btLayDuLieu.Focus();
+            { 
                 btLayDuLieu_Click(null, null);
             }
         }
-
-        private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                btLayDuLieu.Focus();
-                btLayDuLieu_Click(null, null);
-            }
-        }
-
+          
         private void gridView4_RowClick(object sender, RowClickEventArgs e)
         {
             if (gridView4.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
@@ -280,6 +270,34 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (isLoad)
+                return;
+            if (dteDenNgay.DateTime>=dteTuNgay.DateTime)
+            {
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            else
+            {
+                MessageBox.Show("Từ ngày không được lớn hơn đến ngày", "Khoảng thời gian không hợp lệ!", MessageBoxButtons.OK);
+            }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (isLoad)
+                return;
+            if (dteDenNgay.DateTime >= dteTuNgay.DateTime)
+            {
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            else
+            {
+                MessageBox.Show("Từ ngày không được lớn hơn đến ngày", "Khoảng thời gian không hợp lệ!", MessageBoxButtons.OK);
             }
         }
     }
