@@ -26,12 +26,12 @@ namespace CtyTinLuong
             gridMaVT.Properties.DataSource = dt2;
             gridMaVT.Properties.ValueMember = "ID_VTHH";
             gridMaVT.Properties.DisplayMember = "MaVT";
-
-
+            cls.Dispose();
+            dt2.Dispose();
             clsDaiLy_tbNhapKho clsxx = new CtyTinLuong.clsDaiLy_tbNhapKho();
             DataTable dtnhapkho = clsxx.SelectAll_DIStintc_LayDanhSachDaiLy_XuatKho();
-
-
+            clsxx.Dispose();
+            dtnhapkho.Dispose();
             DataTable dtxx2 = new DataTable();
             dtxx2.Columns.Add("ID_DaiLy", typeof(int));
             dtxx2.Columns.Add("MaDaiLy", typeof(string));
@@ -400,12 +400,14 @@ namespace CtyTinLuong
         private void DaiLy_frmChiTietNhapXuatTon_MotVatTu_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            dteTuNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
-            dteDenNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;          
-            gridMaVT.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
             Load_Lockup();
-            gridMaDaiLy.EditValue= frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy;
-            LoadDaTa(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH, frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy,dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            dteTuNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdatungay;
+            dteDenNgay.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mdadenngay;
+            gridMaVT.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH;
+            gridMaDaiLy.EditValue = frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy;
+            LoadDaTa(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miiID_VTHH, frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.miID_DaiLy, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
             Cursor.Current = Cursors.Default;
         }
     }

@@ -611,6 +611,7 @@ namespace CtyTinLuong
         {
             if (bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
             {
+                
                 Cursor.Current = Cursors.WaitCursor;
                 miiID_VTHH = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());                
                 mdatungay = dteTuNgay.DateTime;

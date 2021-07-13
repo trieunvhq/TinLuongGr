@@ -772,6 +772,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void gridNhomVTHH_EditValueChanged(object sender, EventArgs e)
         {
             if(gridMaDaiLy.EditValue.ToString()!="")
@@ -858,6 +863,7 @@ namespace CtyTinLuong
 
                 mdatungay = dteTuNgay.DateTime;
                 mdadenngay = dteDenNgay.DateTime;
+              
                 DaiLy_frmChiTietNhapXuatTon_MotVatTu ff
                     = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
                 

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCao_Nhap_Xuat_ton_kho_DaiLy));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.btPrint_khongTien = new DevExpress.XtraEditors.SimpleButton();
             this.gridNhomVTHH = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,7 +85,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btPrint_khongTien = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -148,6 +148,19 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(1156, 648);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // btPrint_khongTien
+            // 
+            this.btPrint_khongTien.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPrint_khongTien.Appearance.Options.UseFont = true;
+            this.btPrint_khongTien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_khongTien.ImageOptions.Image")));
+            this.btPrint_khongTien.Location = new System.Drawing.Point(2, 624);
+            this.btPrint_khongTien.Name = "btPrint_khongTien";
+            this.btPrint_khongTien.Size = new System.Drawing.Size(127, 22);
+            this.btPrint_khongTien.StyleController = this.dataLayoutControl1;
+            this.btPrint_khongTien.TabIndex = 104;
+            this.btPrint_khongTien.Text = "Print_K0_Tien";
+            this.btPrint_khongTien.Click += new System.EventHandler(this.btPrint_khongTien_Click);
             // 
             // gridNhomVTHH
             // 
@@ -307,6 +320,7 @@
             this.gridControl1.TabIndex = 99;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
@@ -812,19 +826,6 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(700, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btPrint_khongTien
-            // 
-            this.btPrint_khongTien.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint_khongTien.Appearance.Options.UseFont = true;
-            this.btPrint_khongTien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btPrint_khongTien.Location = new System.Drawing.Point(2, 624);
-            this.btPrint_khongTien.Name = "btPrint_khongTien";
-            this.btPrint_khongTien.Size = new System.Drawing.Size(127, 22);
-            this.btPrint_khongTien.StyleController = this.dataLayoutControl1;
-            this.btPrint_khongTien.TabIndex = 104;
-            this.btPrint_khongTien.Text = "Print_K0_Tien";
-            this.btPrint_khongTien.Click += new System.EventHandler(this.btPrint_khongTien_Click);
             // 
             // layoutControlItem11
             // 

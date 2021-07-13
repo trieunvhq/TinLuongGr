@@ -14,8 +14,8 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_BaoCao_TonKho : Form
     {
-        public static int miID_VTHHH;
-        public static DateTime mdadenngay;
+        public static int miID_VTHHH, mii_ID_DaiLy;
+        public static DateTime mdadenngay, mdatungay;
         public static bool mbPrint_ALL, mbPrint_One;
         public static DataTable mdtPrint_ALL, mdtPrint_One;
         public DaiLy_BaoCao_TonKho()
@@ -405,7 +405,7 @@ namespace CtyTinLuong
             {
                 int xxID =Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                 HienThi_GridConTrol_2(xxID, dteDenNgay.DateTime);
-
+                miID_VTHHH =Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
             }
         }
 
@@ -469,24 +469,24 @@ namespace CtyTinLuong
 
         private void gridView2_DoubleClick(object sender, EventArgs e)
         {
-        //    if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
-        //    {
-        //        Cursor.Current = Cursors.WaitCursor;
-        //        miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-        //        int miID_DaiLy = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_DaiLy2).ToString());
-        //        mdadenngay = dteDenNgay.DateTime;
-             
+            if (gridView2.GetFocusedRowCellValue(clID_DaiLy2).ToString() != "")
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                //miID_VTHHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                mii_ID_DaiLy = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clID_DaiLy2).ToString());
+                mdadenngay = dteDenNgay.DateTime;
 
-        //        DateTime  mdatungay = dteDenNgay.DateTime.AddDays(-30);
-        //        mdadenngay = dteDenNgay.DateTime;
-        //        //T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy ff = new T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy(mdatungay, mdadenngay, miID_VTHHH, miID_DaiLy);
-        //        DaiLy_frmChiTietNhapXuatTon_MotVatTu ff = new DaiLy_frmChiTietNhapXuatTon_MotVatTu();
+           
+                mdatungay = dteDenNgay.DateTime.AddDays(-30);
 
-        //        //this.Hide();
-        //        ff.Show();
-        //        //this.Show();
-        //        Cursor.Current = Cursors.Default;
-        //    }
+                //T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy ff = new T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy(mdatungay, mdadenngay, miID_VTHHH, miID_DaiLy);
+                frmBaoCao_Nhap_Xuat_ton_kho_DaiLy ff = new frmBaoCao_Nhap_Xuat_ton_kho_DaiLy();
+
+                //this.Hide();
+                ff.Show();
+                //this.Show();
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
