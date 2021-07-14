@@ -274,13 +274,6 @@ namespace CtyTinLuong
 
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
 
         private void gridMaVT_QueryPopUp(object sender, CancelEventArgs e)
         {
@@ -349,18 +342,12 @@ namespace CtyTinLuong
             }
         }
 
-        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
 
         }
+
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
