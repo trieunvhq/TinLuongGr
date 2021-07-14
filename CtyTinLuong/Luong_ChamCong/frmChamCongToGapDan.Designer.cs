@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -47,9 +47,9 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DinhMuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -123,9 +123,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // linkLabel1
@@ -282,6 +282,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clSTT
@@ -319,6 +320,19 @@
             this.clTenNhanVien.VisibleIndex = 1;
             this.clTenNhanVien.Width = 120;
             // 
+            // TenVTHH
+            // 
+            this.TenVTHH.Caption = "Nội dung";
+            this.TenVTHH.FieldName = "TenVTHH";
+            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.TenVTHH.MaxWidth = 185;
+            this.TenVTHH.MinWidth = 185;
+            this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
+            this.TenVTHH.Visible = true;
+            this.TenVTHH.VisibleIndex = 2;
+            this.TenVTHH.Width = 185;
+            // 
             // DinhMuc
             // 
             this.DinhMuc.AppearanceCell.Options.UseTextOptions = true;
@@ -348,19 +362,6 @@
             this.clTongLuong.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
             this.clTongLuong.Width = 80;
-            // 
-            // TenVTHH
-            // 
-            this.TenVTHH.Caption = "Nội dung";
-            this.TenVTHH.FieldName = "TenVTHH";
-            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.TenVTHH.MaxWidth = 185;
-            this.TenVTHH.MinWidth = 185;
-            this.TenVTHH.Name = "TenVTHH";
-            this.TenVTHH.OptionsColumn.AllowEdit = false;
-            this.TenVTHH.Visible = true;
-            this.TenVTHH.VisibleIndex = 2;
-            this.TenVTHH.Width = 185;
             // 
             // clID_ChiTietChamCong
             // 
@@ -1251,6 +1252,7 @@
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // txtDinhMuc
             // 
