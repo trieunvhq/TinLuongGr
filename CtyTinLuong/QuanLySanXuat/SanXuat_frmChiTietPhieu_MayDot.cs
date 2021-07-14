@@ -449,7 +449,8 @@ namespace CtyTinLuong
             gridHangHoaVao_may_DOT.Properties.DataSource = dt;
             gridHangHoaVao_may_DOT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaVao_may_DOT.Properties.DisplayMember = "MaVT";
-             
+            gridHangHoaVao_may_DOT.EditValue = _ID_VTHH_Vao;
+
             gridHangHoaXuat_May_DOT.Properties.DataSource = dt;
             gridHangHoaXuat_May_DOT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaXuat_May_DOT.Properties.DisplayMember = "MaVT";
@@ -478,10 +479,11 @@ namespace CtyTinLuong
 
 
         }
-      
-        public SanXuat_frmChiTietPhieu_MayDot()
+        int _ID_VTHH_Vao = 0;
+        public SanXuat_frmChiTietPhieu_MayDot(int id_vthh_vao)
         {
             InitializeComponent();
+            _ID_VTHH_Vao = id_vthh_vao;
         }
 
         private void SanXuat_frmChiTietPhieu_MayDot_Load(object sender, EventArgs e)

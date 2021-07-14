@@ -913,7 +913,7 @@ namespace CtyTinLuong
             gridHangHoaVao_may_CAT.Properties.DataSource = dtSet_.Tables[2];
             gridHangHoaVao_may_CAT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaVao_may_CAT.Properties.DisplayMember = "MaVT";
-             
+
             gridHangHoaXuat_May_CAT.Properties.DataSource = dtSet_.Tables[2];
             gridHangHoaXuat_May_CAT.Properties.ValueMember = "ID_VTHH";
             gridHangHoaXuat_May_CAT.Properties.DisplayMember = "MaVT";
@@ -1002,7 +1002,11 @@ namespace CtyTinLuong
                 {
                     txtTenHangHoaRa_May_IN.Text = dt.Rows[0]["TenVTHH"].ToString();
                     txtDVT_HangRa_MayIN.Text = dt.Rows[0]["DonViTinh"].ToString();
+
+
+                    gridHangHoaVao_may_CAT.EditValue = clsncc.iID_VTHH;
                 }
+
             }
             catch
             {
@@ -1560,7 +1564,8 @@ namespace CtyTinLuong
 
         private void btChuyen_Click(object sender, EventArgs e)
         {
-            SanXuat_frmChiTietPhieu_MayDot ff = new SanXuat_frmChiTietPhieu_MayDot();
+            
+            SanXuat_frmChiTietPhieu_MayDot ff = new SanXuat_frmChiTietPhieu_MayDot(Convert.ToInt32(gridHangHoaXuat_May_CAT.EditValue.ToString()));
             ff.Show();
         }
 
