@@ -34,29 +34,6 @@ namespace CtyTinLuong
         }
 
   
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
-        {
-
-
-            clsKhoBTP_tbNhapKho cls = new CtyTinLuong.clsKhoBTP_tbNhapKho();
-            DataTable dt2xx = cls.SelectAll();
-            dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=False";
-            DataView dv22xxx = dt2xx.DefaultView;
-            dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
-            DataTable dt = dv22xxx.ToTable();
-
-            dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-            DataView dvxxx = dt.DefaultView;
-            DataTable dt22 = dvxxx.ToTable();
-            dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-            DataView dv2 = dt22.DefaultView;
-            dv2.Sort = "NgayChungTu DESC, ID_NhapKhoBTP DESC";
-            DataTable dxxxx = dv2.ToTable();
-
-            gridControl1.DataSource = dxxxx;
-
-        }
-        
 
         frmQuanLyKhoBanThanhPham _frmKBTP;
         public UCBanThanhPham_DaNhapKho(frmQuanLyKhoBanThanhPham frmKBTP)
@@ -115,7 +92,7 @@ namespace CtyTinLuong
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }
