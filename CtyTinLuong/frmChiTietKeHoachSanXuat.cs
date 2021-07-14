@@ -16,8 +16,11 @@ namespace CtyTinLuong
        
 
         public static MemoryStream stmBLOBData;
-        public frmChiTietKeHoachSanXuat()
+
+        frmKeHoachSanXuat _frmKHSX;
+        public frmChiTietKeHoachSanXuat(frmKeHoachSanXuat frmKHSX)
         {
+            _frmKHSX = frmKHSX;
             InitializeComponent();
         }
         private void Load_LockUp()
@@ -146,6 +149,7 @@ namespace CtyTinLuong
             if (dteNgayDatHang.EditValue == null)
             {
                 MessageBox.Show("Chưa chọn ngày tháng ");
+                dteNgayDatHang.Focus();
                 return false;
             }
 
@@ -182,8 +186,6 @@ namespace CtyTinLuong
                     cls.iID_KeHoachSanXuat = frmKeHoachSanXuat.miID_KeHoachSanXuat;
                     cls.Update();
                     Luu_HinhAnh(miiiiiID_miID_KeHoachSanXuat);
-
-
                 }
                 else
                 {
@@ -381,7 +383,7 @@ namespace CtyTinLuong
         {
             LuuDuLieu();
             this.Close();
-
+            _frmKHSX.frmKeHoachSanXuat_Load(null, null);
         }
 
         private void btLuu_Copy_Click(object sender, EventArgs e)
@@ -391,6 +393,7 @@ namespace CtyTinLuong
             txt_ID_pic2.ResetText();
             txt_ID_pic3.ResetText();
             txt_ID_pic4.ResetText();
+            _frmKHSX.frmKeHoachSanXuat_Load(null, null);
         }
 
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)

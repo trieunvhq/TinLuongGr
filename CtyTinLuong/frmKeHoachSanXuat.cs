@@ -222,8 +222,9 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void frmKeHoachSanXuat_Load(object sender, EventArgs e)
+        public void frmKeHoachSanXuat_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             DateTime ngaydautien, ngaycuoicung;
             DateTime ngayhomnay = DateTime.Today;
             int nam = Convert.ToInt16(ngayhomnay.ToString("yyyy"));
@@ -245,6 +246,7 @@ namespace CtyTinLuong
             clMaKeHoach.Caption = "Mã\n Kế hoạch";
           
             HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -265,16 +267,16 @@ namespace CtyTinLuong
 
         private void btCopY_Click(object sender, EventArgs e)
         {
-            if(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString()!="")
+            if(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat) != null)
             {
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
                 miID_KeHoachSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString());
-                frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
-                this.Hide();
-                ff.ShowDialog();
-                this.Show();
+                frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat(this);
+                //this.Hide();
+                ff.Show();
+                //this.Show();
             }
            
         }
@@ -283,16 +285,16 @@ namespace CtyTinLuong
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString() != "")
+                if (gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat) != null)
                 {
                     mbThemMoi = false;
                     mbSua = true;
                     mbCopy = false;
                     miID_KeHoachSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_KeHoachSanXuat).ToString());
-                    frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
-                    this.Hide();
-                    ff.ShowDialog();
-                    this.Show();
+                    frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat(this);
+                    //this.Hide();
+                    ff.Show();
+                    //this.Show();
                 }
             }
             catch { }
@@ -351,7 +353,6 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-           
             DataTable DatatableABC = (DataTable)gridControl1.DataSource;
             CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
@@ -368,7 +369,7 @@ namespace CtyTinLuong
                 mdaDenNgay = dteDenNgay.DateTime;
                 mPrint = true;
                 frmPrint_KeHoachSanXuat ff= new frmPrint_KeHoachSanXuat();
-                ff.ShowDialog();
+                ff.Show();
             }
             else
             {
@@ -387,10 +388,10 @@ namespace CtyTinLuong
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
-            frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat();
-            this.Hide();
-            ff.ShowDialog();
-            this.Show();
+            frmChiTietKeHoachSanXuat ff = new CtyTinLuong.frmChiTietKeHoachSanXuat(this);
+            //this.Hide();
+            ff.Show();
+            //this.Show();
         }
     }
 }
