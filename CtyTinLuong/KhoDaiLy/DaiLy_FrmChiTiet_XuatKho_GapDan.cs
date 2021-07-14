@@ -41,7 +41,12 @@ namespace CtyTinLuong
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
-
+            cls1.Dispose();
+            cls2.Dispose();
+            cls.Dispose();
+            dt_NhapTruoc.Dispose();
+            dt_XuatTruoc.Dispose();
+            dt.Dispose();
         }
 
         public static DateTime mdaPrintNgayXuatKho;
@@ -139,15 +144,7 @@ namespace CtyTinLuong
             cls.Dispose();
 
         }
-        private void Load_LockUp_MaHang(DateTime xxtungay, DateTime xxdenngay)
-        {
-            clsGapDan_tbNhapKho cls = new clsGapDan_tbNhapKho();
-            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);
-            gridMaHang.DataSource = dt;
-            gridMaHang.ValueMember = "ID_NhapKho";
-            gridMaHang.DisplayMember = "SoChungTu";
-            cls.Dispose();
-        }
+      
         private bool KiemTraLuu()
         {
             DataTable dv3 = new DataTable();
@@ -201,7 +198,7 @@ namespace CtyTinLuong
             else
             {
                 string shienthi = "1";
-                DataTable dtkkk = (DataTable)gridControl2.DataSource;
+                DataTable dtkkk = (DataTable)gridControl1.DataSource;
                 dtkkk.DefaultView.RowFilter = "HienThi=" + shienthi + "";
                 DataView dv2232xx = dtkkk.DefaultView;
                 DataTable dtthamchieu = dv2232xx.ToTable();
@@ -354,7 +351,7 @@ namespace CtyTinLuong
                     string ahienthi = "1";
 
                     double dexxTongSoLuong, dexxTongtienhang;
-                    DataTable adt1 = (DataTable)gridControl2.DataSource;
+                    DataTable adt1 = (DataTable)gridControl1.DataSource;
                     adt1.DefaultView.RowFilter = "HienThi=" + ahienthi + "";
                     DataView adv1 = adt1.DefaultView;
                     DataTable dtaaaaa = adv1.ToTable();
@@ -381,7 +378,7 @@ namespace CtyTinLuong
                     cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                     cls1.sThamChieu = "";
                     cls1.iID_DinhMuc_ToGapDan = 0;
-                    cls1.bCheckNhapKhoThanhPham = checkNhapKhoThanhPham.Checked;
+                  
                     cls1.bTonTai = true;
                     cls1.bNgungTheoDoi = false;
                     cls1.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
@@ -440,9 +437,7 @@ namespace CtyTinLuong
         private void DaiLy_FrmChiTiet_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            dteDenNgay.DateTime = DateTime.Today;
-            dteTuNgay.DateTime = DateTime.Today.AddDays(-60);
-            clSoLuongNhap1.Caption = "SL\n nhập";
+          
             Load_LockUp();
             HienThi_Sua_XuatKho(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
             Cursor.Current = Cursors.Default;
@@ -456,17 +451,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void checkNhapKhoThanhPham_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkNhapKhoThanhPham.Checked == true)
-                checkNhapKho_banThanhPham.Checked = false;
-        }
-
-        private void checkNhapKho_banThanhPham_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkNhapKho_banThanhPham.Checked == true)
-                checkNhapKhoThanhPham.Checked = false;
-        }
+     
 
         private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -501,27 +486,7 @@ namespace CtyTinLuong
         }
 
 
-        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
-        {
-            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
-            {
-                Load_LockUp_MaHang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-        }
 
-        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
-        {
-            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
-            {
-                Load_LockUp_MaHang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-        }
-
-        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT1)
-                e.DisplayText = (e.RowHandle + 1).ToString();
-        }
 
         private void gridView3_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
@@ -606,11 +571,11 @@ namespace CtyTinLuong
 
         private void gridView3_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView3.GetFocusedRowCellValue(clID_VTHH2) != null)
-            {
-                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
-                Hienthi_Lable_TonKho(xxID);
-            }
+            //if (gridView3.GetFocusedRowCellValue(clID_VTHH2) != null)
+            //{
+            //    int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
+            //    Hienthi_Lable_TonKho(xxID);
+            //}
         }
 
         private void txtNguoiGiaoHang_KeyPress(object sender, KeyPressEventArgs e)
