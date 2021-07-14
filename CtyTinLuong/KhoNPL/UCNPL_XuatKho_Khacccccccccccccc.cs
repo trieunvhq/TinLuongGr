@@ -70,7 +70,7 @@ namespace CtyTinLuong
             {
                 mbThemMoi = false;
                 miiD_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
-                KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
+                KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac(this);
                 //_frmKNPL.Hide();
                 ff.Show();
                 //_frmKNPL.Show();
@@ -121,7 +121,7 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             mbThemMoi = true;
-            KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac();
+            KhoNPL_ChiTiet_XuatKho_Khac ff = new KhoNPL_ChiTiet_XuatKho_Khac(this);
             //_frmKNPL.Hide();
             ff.Show();
             //_frmKNPL.Show();

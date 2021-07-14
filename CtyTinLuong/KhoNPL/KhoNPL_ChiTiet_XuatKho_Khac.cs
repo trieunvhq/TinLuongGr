@@ -205,6 +205,7 @@ namespace CtyTinLuong
             if (gridControl1.DataSource == null)
             {
                 MessageBox.Show("chưa có hàng hoá");
+                gridControl1.Focus();
                 return false;
             }
 
@@ -212,6 +213,7 @@ namespace CtyTinLuong
             else if (dteNgayChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Không để trống ngày chứng từ");
+                dteNgayChungTu.Focus();
                 return false;
             }
             else if (dv3.Rows.Count == 0)
@@ -222,11 +224,13 @@ namespace CtyTinLuong
             else if (txtSoChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số chứng từ ");
+                txtSoChungTu.Focus();
                 return false;
             }
             else if (gridNguoiLap.EditValue == null)
             {
                 MessageBox.Show("chưa có người nhập kho");
+                gridNguoiLap.Focus();
                 return false;
             }
             else return true;
@@ -237,34 +241,43 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                double tongtienhang;
-                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
-                clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
+                try
+                {
+                    double tongtienhang;
+                    tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
+                    clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
 
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls1.fTongTienHang = tongtienhang;
-                cls1.iID_NguoiXuatKho = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.sThamChieu = txtThamChieu.Text.ToString();
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
-                cls1.bDaXuatKho = true;               
-                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
-                int xxiD_nhpakho;
-                if (UCNPL_XuatKho_Khacccccccccccccc.mbThemMoi == true)
-                {
-                    cls1.Insert();
-                    xxiD_nhpakho = cls1.iID_XuatKhoNPL.Value;
+                    cls1.sDienGiai = txtDienGiai.Text.ToString();
+                    cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+                    cls1.sSoChungTu = txtSoChungTu.Text.ToString();
+                    cls1.fTongTienHang = tongtienhang;
+                    cls1.iID_NguoiXuatKho = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    cls1.sThamChieu = txtThamChieu.Text.ToString();
+                    cls1.bTonTai = true;
+                    cls1.bNgungTheoDoi = false;
+                    cls1.bDaXuatKho = true;
+                    cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
+                    int xxiD_nhpakho;
+                    if (UCNPL_XuatKho_Khacccccccccccccc.mbThemMoi == true)
+                    {
+                        cls1.Insert();
+                        xxiD_nhpakho = cls1.iID_XuatKhoNPL.Value;
+                    }
+                    else
+                    {
+                        cls1.iID_XuatKhoNPL = UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho;
+                        cls1.Update();
+                        xxiD_nhpakho = UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho;
+                    }
+                    Luu_ChiTiet_ChiTiet_XuatKho_NPL(xxiD_nhpakho);
+                    this.Close();
+                    _ucXKK.btLayDuLieu_Click(null, null);
+                    MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
+                catch
                 {
-                    cls1.iID_XuatKhoNPL = UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho;
-                    cls1.Update();
-                    xxiD_nhpakho = UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho;
+                    MessageBox.Show("Không thể lưu dữ liệu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                Luu_ChiTiet_ChiTiet_XuatKho_NPL(xxiD_nhpakho);
-                MessageBox.Show("Đã lưu");
             }
         }
 
