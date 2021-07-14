@@ -70,7 +70,7 @@ namespace CtyTinLuong
                 if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
                 {
                     miD_XuatKhoNPL = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
-                    frmKhoNPL_DaXuatKho ff = new frmKhoNPL_DaXuatKho();
+                    frmKhoNPL_DaXuatKho ff = new frmKhoNPL_DaXuatKho(this);
                     //_frmKNPL.Hide();
                     ff.Show();
                     //_frmKNPL.Show();
@@ -82,7 +82,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btLayDuLieu_Click(object sender, EventArgs e)
+        public void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
