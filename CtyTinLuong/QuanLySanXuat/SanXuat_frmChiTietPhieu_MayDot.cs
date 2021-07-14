@@ -809,7 +809,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridHangHoaVao_may_DOT.Focus();
             }
         }
 
@@ -825,7 +825,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridHangHoaXuat_May_DOT.Focus();
             }
         }
 
@@ -849,7 +849,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtSoLuongNhap_May_DOT.Focus();
             }
         }
 
@@ -889,7 +889,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDonGiaXuat_May_DOT.Focus();
             }
         }
 
@@ -929,7 +929,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaMay_DOT.Focus();
             }
         }
 
@@ -945,7 +945,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaCongNhan_May_DOT.Focus();
             }
         }
 
@@ -961,7 +961,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridDinhMucSLMay_DOT.Focus();
             }
         }
 
@@ -977,7 +977,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtGhiChu_May_DOT.Focus();
             }
         }
 
@@ -1005,13 +1005,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
 
         private void gridHangHoaVao_may_DOT_QueryPopUp(object sender, CancelEventArgs e)
         {
@@ -1030,14 +1023,6 @@ namespace CtyTinLuong
             DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
             _ID_NhanSu = Convert.ToInt32(row["ID_NhanSu"].ToString());
             _TenNhanVien = row["TenNhanVien"].ToString(); 
-        }
-
-        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
         }
 
         private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)

@@ -116,26 +116,12 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
 
         private void GridMaVT_QueryPopUp(object sender, CancelEventArgs e)
         {
             GridMaVT.Properties.View.Columns[0].Visible = false; 
         }
 
-        private void gridView2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
 
         private void btRefesh_Click(object sender, EventArgs e)
         {

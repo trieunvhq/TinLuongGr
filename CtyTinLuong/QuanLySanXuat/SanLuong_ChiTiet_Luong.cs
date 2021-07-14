@@ -465,35 +465,11 @@ namespace CtyTinLuong
             gridCongNhan.Properties.View.Columns[0].Visible = false;
         }
 
-        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
+        private void gridView3_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            if (e.KeyCode == Keys.Enter)
             {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
+                SendKeys.Send("{DOWN}");
             }
         }
 
