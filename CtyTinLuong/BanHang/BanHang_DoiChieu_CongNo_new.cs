@@ -110,14 +110,14 @@ namespace CtyTinLuong
                         {
                             for (int k = 0; k < dt3.Rows.Count; k++)
                             {
-                                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[k]["SoLuong"].ToString());
-                                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[k]["DonGia"].ToString());
+                                Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[k]["SoLuong"].ToString());
+                                Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[k]["DonGia"].ToString());
                                 DataRow _ravi_con = dt2xxxx.NewRow();
                                 _ravi_con["SoLuong"] = xxsoluong;
                                 _ravi_con["DonGia"] = xxdongia;
 
                                 _ravi_con["DienGiai"] = dt3.Rows[k]["TenVTHH"].ToString();
-                                _ravi_con["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+                                _ravi_con["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
                                 _ravi_con["NgayThang"] = dt3.Rows[k]["SoCongTeNo"].ToString();
                                 _ravi_con["DoiTuong"] = dt3.Rows[k]["MaSoCongTeNo"].ToString();
                                 dt2xxxx.Rows.Add(_ravi_con);

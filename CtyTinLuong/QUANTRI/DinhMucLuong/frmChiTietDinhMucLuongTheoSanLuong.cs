@@ -38,8 +38,8 @@ namespace CtyTinLuong
                 cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
                 cls.sDienGiai = txtDienGiai.Text.ToString();
                 cls.iID_VTHH= Convert.ToInt16(gridMaVTHH.EditValue.ToString());
-                cls.dcDinhMuc_KhongTang = Convert.ToDecimal(txtDonGiaThuong.Text.ToString());            
-                cls.dcDinhMuc_Tang = Convert.ToDecimal(txtDonGiaTang.Text.ToString());               
+                cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());            
+                cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());               
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                 cls.fMaxSanLuongThuong= CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
@@ -59,8 +59,8 @@ namespace CtyTinLuong
                 cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
                 cls.sDienGiai = txtDienGiai.Text.ToString();
                 cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
-                cls.dcDinhMuc_KhongTang = Convert.ToDecimal(txtDonGiaThuong.Text.ToString());
-                cls.dcDinhMuc_Tang = Convert.ToDecimal(txtDonGiaTang.Text.ToString());
+                cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
+                cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
                 cls.bTonTai = true;
                 cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
                 cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;

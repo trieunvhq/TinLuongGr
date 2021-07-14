@@ -49,8 +49,8 @@ namespace CtyTinLuong
                         {
                             clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
                             Decimal SanLuongThuong, SanLuongTangCa;
-                            SanLuongThuong = Convert.ToDecimal(dtChiTietPhieu.Rows[imayin]["SanLuong_Thuong"].ToString());
-                            SanLuongTangCa = Convert.ToDecimal(dtChiTietPhieu.Rows[imayin]["SanLuong_TangCa"].ToString());
+                            SanLuongThuong = CheckString.ConvertToDecimal_My(dtChiTietPhieu.Rows[imayin]["SanLuong_Thuong"].ToString());
+                            SanLuongTangCa = CheckString.ConvertToDecimal_My(dtChiTietPhieu.Rows[imayin]["SanLuong_TangCa"].ToString());
                             decimal DinhMuc_KhongTang, DinhMuc_Tang, ThanhTien;
                             int ID_DinhMuc_Luong = Convert.ToInt32(dtChiTietPhieu.Rows[imayin]["ID_DinhMuc_Luong"].ToString());
                             clsdm.iID_DinhMuc_Luong_SanLuong = ID_DinhMuc_Luong;
@@ -68,7 +68,7 @@ namespace CtyTinLuong
                         string shienthi = "1";
                         decimal deluongsanluong;
                         object tongthanhtienxxx = dtmay.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-                        deluongsanluong = Convert.ToDecimal(tongthanhtienxxx);
+                        deluongsanluong = CheckString.ConvertToDecimal_My(tongthanhtienxxx);
 
                         cls.iID_CongNhan = ID_CongNhan;
                         cls.iThang = thang;
@@ -76,7 +76,7 @@ namespace CtyTinLuong
 
                         DataTable dtChiTietChamCong = cls.SelectOne_W_Thang_Nam_ID_Congnhan();
 
-                        decimal luongcongnhat = Convert.ToDecimal(dtChiTietChamCong.Rows[0]["LuongCongNhat"].ToString());
+                        decimal luongcongnhat = CheckString.ConvertToDecimal_My(dtChiTietChamCong.Rows[0]["LuongCongNhat"].ToString());
                         int ID_DinhMucLuong_CongNhat = Convert.ToInt32(dtChiTietChamCong.Rows[0]["ID_DinhMucLuong_CongNhat"].ToString());
                         clsHUU_DinhMucLuong_CongNhat clsdmcongnhat = new clsHUU_DinhMucLuong_CongNhat();
                         clsdmcongnhat.iID_DinhMucLuong_CongNhat = ID_DinhMucLuong_CongNhat;
@@ -85,7 +85,7 @@ namespace CtyTinLuong
                         if (clsdmcongnhat.iHinhThucTinhLuong == 1) // Luong cố định
                         {
                             cls.dcLuongSanLuong = 0;
-                            cls.dcLuongLonNhat = Convert.ToDecimal(dtChiTietChamCong.Rows[0]["LuongCoDinh"].ToString());
+                            cls.dcLuongLonNhat = CheckString.ConvertToDecimal_My(dtChiTietChamCong.Rows[0]["LuongCoDinh"].ToString());
                             cls.Update_LuongSanLuong_LuongLonNhat_W_ID_CongNhan_W_thang_Nam();
                         }
                         else if (clsdmcongnhat.iHinhThucTinhLuong == 2) // Luong công nhật
@@ -116,7 +116,7 @@ namespace CtyTinLuong
                         cls.dcLuongSanLuong = 0;
                         cls.iThang = thang;
                         cls.iNam = nam;
-                        decimal luongcongnhat = Convert.ToDecimal(dt3.Rows[i]["LuongCongNhat"].ToString());
+                        decimal luongcongnhat = CheckString.ConvertToDecimal_My(dt3.Rows[i]["LuongCongNhat"].ToString());
                         cls.dcLuongLonNhat = luongcongnhat;
                         cls.Update_LuongSanLuong_LuongLonNhat_W_ID_CongNhan_W_thang_Nam();
                     }
@@ -164,7 +164,7 @@ namespace CtyTinLuong
                             DataTable dtdm1 = clsdm.SelectOne();
                             Decimal SanLuong;
                             decimal DinhMuc_KhongTang, ThanhTien;
-                            SanLuong = Convert.ToDecimal(dtgapdan.Rows[j]["SanLuong"].ToString());
+                            SanLuong = CheckString.ConvertToDecimal_My(dtgapdan.Rows[j]["SanLuong"].ToString());
                             DinhMuc_KhongTang = clsdm.dcDinhMuc_KhongTang.Value;                          
                             ThanhTien = SanLuong * DinhMuc_KhongTang;
 
@@ -177,7 +177,7 @@ namespace CtyTinLuong
                         string shienthi = "1";
                         decimal deluongsanluong;
                         object tongthanhtienxxx = dtgapdan_Tong.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-                        deluongsanluong = Convert.ToDecimal(tongthanhtienxxx);
+                        deluongsanluong = CheckString.ConvertToDecimal_My(tongthanhtienxxx);
 
                         cls.iID_CongNhan = ID_CongNhan;
                         cls.iThang = thang;
@@ -185,7 +185,7 @@ namespace CtyTinLuong
 
                         DataTable dtChiTietChamCong = cls.SelectOne_W_Thang_Nam_ID_Congnhan();
 
-                        decimal luongcongnhat = Convert.ToDecimal(dtChiTietChamCong.Rows[0]["LuongCongNhat"].ToString());
+                        decimal luongcongnhat = CheckString.ConvertToDecimal_My(dtChiTietChamCong.Rows[0]["LuongCongNhat"].ToString());
                         int ID_DinhMucLuong_CongNhat = Convert.ToInt32(dtChiTietChamCong.Rows[0]["ID_DinhMucLuong_CongNhat"].ToString());
                         clsHUU_DinhMucLuong_CongNhat clsdmcongnhat = new clsHUU_DinhMucLuong_CongNhat();
                         clsdmcongnhat.iID_DinhMucLuong_CongNhat = ID_DinhMucLuong_CongNhat;
@@ -194,7 +194,7 @@ namespace CtyTinLuong
                         if (clsdmcongnhat.iHinhThucTinhLuong == 1) // Luong cố định
                         {
                             cls.dcLuongSanLuong = 0;
-                            cls.dcLuongLonNhat = Convert.ToDecimal(dtChiTietChamCong.Rows[0]["LuongCoDinh"].ToString());
+                            cls.dcLuongLonNhat = CheckString.ConvertToDecimal_My(dtChiTietChamCong.Rows[0]["LuongCoDinh"].ToString());
                             cls.Update_LuongSanLuong_LuongLonNhat_W_ID_CongNhan_W_thang_Nam();
                         }
                         else if (clsdmcongnhat.iHinhThucTinhLuong == 2) // Luong công nhật
@@ -225,7 +225,7 @@ namespace CtyTinLuong
                         cls.dcLuongSanLuong = 0;
                         cls.iThang = thang;
                         cls.iNam = nam;
-                        decimal luongcongnhat = Convert.ToDecimal(dt3.Rows[i]["LuongCongNhat"].ToString());
+                        decimal luongcongnhat = CheckString.ConvertToDecimal_My(dt3.Rows[i]["LuongCongNhat"].ToString());
                         cls.dcLuongLonNhat = luongcongnhat;
                         cls.Update_LuongSanLuong_LuongLonNhat_W_ID_CongNhan_W_thang_Nam();
                     }

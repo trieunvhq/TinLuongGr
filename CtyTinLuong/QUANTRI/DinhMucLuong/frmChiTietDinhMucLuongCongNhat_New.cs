@@ -62,17 +62,17 @@ namespace CtyTinLuong
                 cls.sMaDinhMucLuongCongNhat = txtMaDinhMuc.Text.ToString();
                 cls.sDienGiai = txtDienGiai.Text.ToString();
                 cls.iHinhThucTinhLuong = HinhThucTinhLuong;
-                cls.dcLuongCoDinh = Convert.ToDecimal(txtLuongCoDinh.Text.ToString());
-                cls.dcPhuCapXangXe = Convert.ToDecimal(txtPhuCapXang.Text.ToString());
-                cls.dcPhuCapDienthoai = Convert.ToDecimal(txtPhuCapDienThoai.Text.ToString());
-                cls.dcPhuCapVeSinhMay = Convert.ToDecimal(txtPhuCapVeSinhMay.Text.ToString());
-                cls.dcPhuCapTienAn = Convert.ToDecimal(txtPhuCapTienAn.Text.ToString());
-                cls.dcTrachNhiem = Convert.ToDecimal(txtTrachNhiem.Text.ToString());
+                cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtLuongCoDinh.Text.ToString());
+                cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtPhuCapXang.Text.ToString());
+                cls.dcPhuCapDienthoai = CheckString.ConvertToDecimal_My(txtPhuCapDienThoai.Text.ToString());
+                cls.dcPhuCapVeSinhMay = CheckString.ConvertToDecimal_My(txtPhuCapVeSinhMay.Text.ToString());
+                cls.dcPhuCapTienAn = CheckString.ConvertToDecimal_My(txtPhuCapTienAn.Text.ToString());
+                cls.dcTrachNhiem = CheckString.ConvertToDecimal_My(txtTrachNhiem.Text.ToString());
                 cls.fPhanTramBaoHiem = CheckString.ConvertToDouble_My(txtPhanTramBaoHiem.Text.ToString());
-                cls.dcLuongCoBanTinhBaoHiem = Convert.ToDecimal(txtLuongCoBan.Text.ToString());
-                cls.dcBaoHiem = Convert.ToDecimal(txtBaoHiem.Text.ToString());
-                cls.dcDinhMucLuongTheoGio = Convert.ToDecimal(txtDMLuongTheoGio.Text.ToString());
-                cls.dcDinhMucLuongTangCa = Convert.ToDecimal(txtDinhMucTangCa.Text.ToString());
+                cls.dcLuongCoBanTinhBaoHiem = CheckString.ConvertToDecimal_My(txtLuongCoBan.Text.ToString());
+                cls.dcBaoHiem = CheckString.ConvertToDecimal_My(txtBaoHiem.Text.ToString());
+                cls.dcDinhMucLuongTheoGio = CheckString.ConvertToDecimal_My(txtDMLuongTheoGio.Text.ToString());
+                cls.dcDinhMucLuongTangCa = CheckString.ConvertToDecimal_My(txtDinhMucTangCa.Text.ToString());
                 cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                 cls.bTonTai = true;
                

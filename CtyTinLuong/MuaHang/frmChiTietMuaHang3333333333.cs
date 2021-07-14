@@ -1259,8 +1259,8 @@ namespace CtyTinLuong
                             msTKVAT = dt3.Rows[0]["SoTaiKhoanCon"].ToString();
                         }
                         else msTKVAT = "";
-                        mdcSoTienNo = Convert.ToDecimal(txtTongTienHangChuaVAT.Text.ToString());
-                        mdcSoTienCo = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
+                        mdcSoTienNo = CheckString.ConvertToDecimal_My(txtTongTienHangChuaVAT.Text.ToString());
+                        mdcSoTienCo = CheckString.ConvertToDecimal_My(txtTongTienHangCoVAT.Text.ToString());
                     }
                     else
                     {
@@ -1270,8 +1270,8 @@ namespace CtyTinLuong
                         mdcSoTienNo = 0;
                         mdcSoTienCo = 0;
                     }
-                    mdcSoTienVAT = Convert.ToDecimal(txtTienVAT.Text.ToString());
-                    mdcTongTienCoVAT = Convert.ToDecimal(txtTongTienHangCoVAT.Text.ToString());
+                    mdcSoTienVAT = CheckString.ConvertToDecimal_My(txtTienVAT.Text.ToString());
+                    mdcTongTienCoVAT = CheckString.ConvertToDecimal_My(txtTongTienHangCoVAT.Text.ToString());
 
                     frmPrintMuaHang ff = new frmPrintMuaHang();
                     ff.ShowDialog();

@@ -61,8 +61,8 @@ namespace CtyTinLuong
             dt2.Columns.Add("GhiChu", typeof(string));
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuong"].ToString());
-                Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
+                Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[i]["SoLuong"].ToString());
+                Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[i]["DonGia"].ToString());
                 DataRow _ravi = dt2.NewRow();
                 _ravi["ID_ChiTietBanHang"] = dt3.Rows[i]["ID_ChiTietBanHang"].ToString();
                 _ravi["ID_BanHang"] = dt3.Rows[i]["ID_BanHang"].ToString();
@@ -72,7 +72,7 @@ namespace CtyTinLuong
                 _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
+                _ravi["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
                 _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
                 _ravi["HienThi"] = "1";
                 dt2.Rows.Add(_ravi);

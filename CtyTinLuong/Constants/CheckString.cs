@@ -424,10 +424,41 @@ namespace CtyTinLuong
             }
             catch
             {
-                str_2_ = str_2_.Replace(",", "*");
-                str_2_ = str_2_.Replace(".", ",");
-                str_2_ = str_2_.Replace("*", ".");
-                temp_ = Convert.ToDouble(str_2_);
+                try
+                {
+                    str_2_ = str_2_.Replace(",", "*");
+                    str_2_ = str_2_.Replace(".", ",");
+                    str_2_ = str_2_.Replace("*", ".");
+                    temp_ = Convert.ToDouble(str_2_);
+                }
+                catch {
+                    return 0;
+                }
+            }
+            return temp_;
+        }
+
+        public static decimal ConvertToDecimal_My(object str)
+        {
+            string str_2_ = str.ToString();
+            decimal temp_ = 0;
+            try
+            {
+                temp_ = CheckString.ConvertToDecimal_My(str);
+            }
+            catch
+            {
+                try
+                {
+                    str_2_ = str_2_.Replace(",", "*");
+                    str_2_ = str_2_.Replace(".", ",");
+                    str_2_ = str_2_.Replace("*", ".");
+                    temp_ = CheckString.ConvertToDecimal_My(str_2_);
+                }
+                catch
+                {
+                    return 0;
+                }
             }
             return temp_;
         }

@@ -485,7 +485,7 @@ namespace CtyTinLuong
             //    clsxx.iID_CongNhan = Convert.ToInt32(dt.Rows[i]["ID_CongNhan"].ToString());
             //    clsxx.iThang = THANG;
             //    clsxx.iNam = NAM;
-            //    clsxx.dcLuongCongNhat = Convert.ToDecimal(dt.Rows[i]["TongLuong"].ToString());
+            //    clsxx.dcLuongCongNhat = CheckString.ConvertToDecimal_My(dt.Rows[i]["TongLuong"].ToString());
             //    clsxx.Update_LuongCongNhat_W_ID_CongNhan_W_thang_Nam();
             //}
 
@@ -508,11 +508,11 @@ namespace CtyTinLuong
                     decimal dmThuong = clsdm.dcDinhMucLuongTheoGio.Value;
                     decimal dmTangCa = clsdm.dcDinhMucLuongTangCa.Value;
 
-                    decimal SLThuong = Convert.ToDecimal(dttttt2.Rows[i]["TongCong"].ToString());
-                    decimal SLTangCa = Convert.ToDecimal(dttttt2.Rows[i + 1]["TongCong"].ToString());
+                    decimal SLThuong = CheckString.ConvertToDecimal_My(dttttt2.Rows[i]["TongCong"].ToString());
+                    decimal SLTangCa = CheckString.ConvertToDecimal_My(dttttt2.Rows[i + 1]["TongCong"].ToString());
                     //double SL_Tong = SLThuong + SLTangCa;
-                    decimal LuongThuowng = Convert.ToDecimal(SLThuong * dmThuong);
-                    decimal LuongTangCa = Convert.ToDecimal(SLTangCa * dmTangCa);
+                    decimal LuongThuowng = CheckString.ConvertToDecimal_My(SLThuong * dmThuong);
+                    decimal LuongTangCa = CheckString.ConvertToDecimal_My(SLTangCa * dmTangCa);
 
                     cls.iID_ChiTietChamCong = Convert.ToInt32(dttttt2.Rows[i]["ID_ChiTietChamCong"].ToString());
                     cls.dcLuongCongNhat = (LuongThuowng + LuongTangCa);

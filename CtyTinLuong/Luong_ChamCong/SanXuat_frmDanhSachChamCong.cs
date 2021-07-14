@@ -411,7 +411,7 @@ namespace CtyTinLuong
 
             //decimal detongluong;
             //object tongluongxx = dt.Compute("sum(TongLuong)", "GuiDuLieu= False");
-            //detongluong = Convert.ToDecimal(tongluongxx);
+            //detongluong = CheckString.ConvertToDecimal_My(tongluongxx);
 
             //clsxx.iID_ChamCong = UCBangLuong.mID_iD_ChamCong;
             //clsxx.dcTongLuong = detongluong;

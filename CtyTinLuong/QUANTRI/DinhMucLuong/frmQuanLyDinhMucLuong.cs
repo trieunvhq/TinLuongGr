@@ -245,7 +245,7 @@ namespace CtyTinLuong
             //GridView View = sender as GridView;
             //if (e.RowHandle >= 0)
             //{
-            //    decimal category = Convert.ToDecimal(View.GetRowCellValue(e.RowHandle, View.Columns["LuongCoDinh"]));
+            //    decimal category = CheckString.ConvertToDecimal_My(View.GetRowCellValue(e.RowHandle, View.Columns["LuongCoDinh"]));
             //    if (category != 0)
             //    {
             //        e.Appearance.BackColor = Color.Orange;
