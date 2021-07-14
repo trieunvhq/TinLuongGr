@@ -14,7 +14,8 @@ namespace CtyTinLuong
     public partial class UCMuaHang : UserControl
     {
         public static bool mbThemMoi, mbSua,mbCopY;
-        public static int miiiID_Sua_DonHang;      
+        public static int miiiID_Sua_DonHang;
+        private bool isload = false;
         private void HienThiGridControl_2(int xxiDmuahang)
         {
             clsMH_tbChiTietMuaHang cls2 = new clsMH_tbChiTietMuaHang();
@@ -86,7 +87,7 @@ namespace CtyTinLuong
 
         private void UCMuaHang_Load(object sender, EventArgs e)
         {
-           
+            isload = true;
 
             Cursor.Current = Cursors.WaitCursor;
            
@@ -102,6 +103,8 @@ namespace CtyTinLuong
           
             Cursor.Current = Cursors.Default;
             dteTuNgay.Focus();
+
+            isload = false;
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -275,6 +278,20 @@ namespace CtyTinLuong
                 btLayDuLieu.Focus();
                 btLayDuLieu_Click(null, null);
             }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+        }
+
+        private void dteTuNgay_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (isload)
+                return;
+            DateTime date1 = (DateTime)e.OldValue;
+            DateTime date2 = (DateTime)e.NewValue;
         }
 
         private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
