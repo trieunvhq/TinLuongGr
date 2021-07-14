@@ -52,11 +52,65 @@ namespace CtyTinLuong
             else return true;
 
         }
-       
-        private void HienThi_Sua()
+
+        private string sochungtu_BTP()
+        {
+            string sochungtu = "";
+            clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
+            DataTable dt1 = cls1.SelectAll();
+           
+            int k = dt1.Rows.Count;
+            if (k == 0)
+            {
+                sochungtu = "XKBTP 1";
+            }
+            else
+            {
+                string xxx = dt1.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(5).Trim()) + 1;
+                sochungtu = "XKBTP " + xxx2.ToString() + "";
+            }
+            cls1.Dispose();
+            dt1.Dispose();
+            return sochungtu;
+        }
+        private void HienThi_Copy(int iiIDXuatkho)
         {
             clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
-            cls1.iID_XuatKhoBTP = UCBanThanhPham_XuatKho_Khac.miID_XuatKho;
+            cls1.iID_XuatKhoBTP = iiIDXuatkho;
+            DataTable dt = cls1.SelectOne();
+            gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
+            dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
+            txtSoChungTu.Text = sochungtu_BTP();
+            txtDienGiai.Text = cls1.sDienGiai.Value;
+            txtThamChieu.Text = cls1.sThamChieu.Value;
+            if (dt.Rows[0]["NguoiNhanHang"].ToString() != "")
+                txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
+            cls1.Dispose();
+           
+            dt.Dispose();
+            clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
+            cls2.iID_XuatKhoBTP = iiIDXuatkho;
+            DataTable dtxx = cls2.SA_ID_XuatKho(iiIDXuatkho);
+            cls2.Dispose();
+            dtxx.Dispose();
+
+            gridControl1.DataSource = dtxx;
+            double deTOngtien;
+            string shienthi = "1";
+            object xxxx = dtxx.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            if (xxxx.ToString() != "")
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
+            else deTOngtien = 0;
+            txtTongTienHang.Text = deTOngtien.ToString();
+           
+           
+          
+        }
+        private void HienThi_Sua(int iiIDXuatkho)
+        {
+            clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
+            cls1.iID_XuatKhoBTP = iiIDXuatkho;
             DataTable dt = cls1.SelectOne();
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
@@ -65,73 +119,31 @@ namespace CtyTinLuong
             txtThamChieu.Text = cls1.sThamChieu.Value;
             if (dt.Rows[0]["NguoiNhanHang"].ToString() != "")
                 txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
+            cls1.Dispose();
+
+            dt.Dispose();
             clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
-            cls2.iID_XuatKhoBTP = UCBanThanhPham_XuatKho_Khac.miID_XuatKho;
-            DataTable dtxx = cls2.SelectOne_W_ID_XuatKhoBTP();
+            cls2.iID_XuatKhoBTP = iiIDXuatkho;
+            DataTable dtxx = cls2.SA_ID_XuatKho(iiIDXuatkho);
+            cls2.Dispose();
+            dtxx.Dispose();
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuongXuat", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            for (int i = 0; i < dtxx.Rows.Count; i++)
-            {
-                double dongiaxxx333 = CheckString.ConvertToDouble_My(dtxx.Rows[i]["DonGia"].ToString());
-                double SoLuongxxx333 = CheckString.ConvertToDouble_My(dtxx.Rows[i]["SoLuongXuat"].ToString());
-                int ID_VTHHxxx = Convert.ToInt16(dtxx.Rows[i]["ID_VTHH"].ToString());
-                clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-                clsvt.iID_VTHH = ID_VTHHxxx;
-                DataTable dtvt = clsvt.SelectOne();
-                DataRow _ravi3 = dt2.NewRow();
-
-                _ravi3["ID_VTHH"] = Convert.ToInt16(dtxx.Rows[i]["ID_VTHH"].ToString());
-                _ravi3["MaVT"] = ID_VTHHxxx;
-                _ravi3["TenVTHH"] = clsvt.sTenVTHH.Value;
-                _ravi3["DonViTinh"] = clsvt.sDonViTinh.Value;
-                _ravi3["SoLuongXuat"] = SoLuongxxx333;
-                _ravi3["DonGia"] = dongiaxxx333;// lay kho NPL
-                _ravi3["GhiChu"] = dtxx.Rows[i]["GhiChu"].ToString();
-                _ravi3["HienThi"] = "1";
-                _ravi3["ThanhTien"] = SoLuongxxx333 * dongiaxxx333;
-                dt2.Rows.Add(_ravi3);
-
-            }
-            gridControl1.DataSource = dt2;
+            gridControl1.DataSource = dtxx;
             double deTOngtien;
             string shienthi = "1";
-            object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            object xxxx = dtxx.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
                 deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongTienHang.Text = deTOngtien.ToString();
+
 
         }
         private void HienThi_ThemMoi()
         {
             gridNguoiLap.EditValue = 12;
             dteNgayChungTu.EditValue = DateTime.Today;
-
-            clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
-            DataTable dt1 = cls1.SelectAll();
-            dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt1.DefaultView;
-            DataTable dv3 = dv.ToTable();
-            int k = dv3.Rows.Count;
-            if (k == 0)
-            {
-                txtSoChungTu.Text = "XKBTP 1";
-            }
-            else
-            {
-                string xxx = dt1.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(5).Trim()) + 1;
-                txtSoChungTu.Text = "XKBTP " + xxx2.ToString() + "";
-            }
+            txtSoChungTu.Text = sochungtu_BTP();            
 
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_VTHH");
@@ -148,28 +160,25 @@ namespace CtyTinLuong
         private void Load_LockUp()
         {
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
+            DataTable dtvthh = clsvthhh.SelectAll();            
 
 
-            repositoryItemGridLookUpEdit1.DataSource = newdtvthh;
+            repositoryItemGridLookUpEdit1.DataSource = dtvthh;
             repositoryItemGridLookUpEdit1.ValueMember = "ID_VTHH";
             repositoryItemGridLookUpEdit1.DisplayMember = "MaVT";
 
-
+            clsvthhh.Dispose();
+            dtvthh.Dispose();
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
-            dtNguoi.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False and ID_BoPhan=4";
-            DataView dvCaTruong = dtNguoi.DefaultView;
-            DataTable newdtCaTruong = dvCaTruong.ToTable();
+           
 
-            gridNguoiLap.Properties.DataSource = newdtCaTruong;
+            gridNguoiLap.Properties.DataSource = dtNguoi;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
-
+            clsNguoi.Dispose();
+            dtNguoi.Dispose();
         }
         private void Luu_ChiTietXuatKho(int iiiDXuatKho)
         {
@@ -273,7 +282,7 @@ namespace CtyTinLuong
                 cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
                 cls1.sNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
                 int xxID_nhapkhobtp;
-                if (UCBanThanhPham_XuatKho_Khac.mbThemMoi_XuatKho == true)
+                if (UCBanThanhPham_XuatKho_Khac.mbSua == false)
                 {
                     cls1.Insert();
                     xxID_nhapkhobtp = cls1.iID_XuatKhoBTP.Value;
@@ -300,9 +309,12 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
-            if (UCBanThanhPham_XuatKho_Khac.mbThemMoi_XuatKho == true)
+            if (UCBanThanhPham_XuatKho_Khac.mbThemMoi == true)
                 HienThi_ThemMoi();
-            else HienThi_Sua();
+            else if (UCBanThanhPham_XuatKho_Khac.mbCopy == true)
+                HienThi_Copy(UCBanThanhPham_XuatKho_Khac.miID_XuatKho);
+            else if (UCBanThanhPham_XuatKho_Khac.mbSua == true)
+                HienThi_Sua(UCBanThanhPham_XuatKho_Khac.miID_XuatKho);
             Cursor.Current = Cursors.Default;
         }
 
@@ -337,7 +349,7 @@ namespace CtyTinLuong
             double fffsoluong = 0;
             double ffdongia = 0;
             double fffthanhtien = 0;
-            if (e.Column == clMaVT)
+            if (e.Column == clID_VTHH)
             {
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
@@ -345,7 +357,7 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 if (dt != null)
                 {
-                    gridView4.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
+                   
                     gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
                     gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
                     gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");

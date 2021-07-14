@@ -15,7 +15,7 @@ namespace CtyTinLuong
     {
 
         public static int miID_XuatKho;
-        public static bool mbThemMoi_XuatKho;
+        public static bool mbThemMoi, mbSua, mbCopy;
      
         private void HienThiGridControl_2(int xxxidxuatkho)
         {
@@ -98,11 +98,23 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_XuatKhoBTP).ToString() != "")
             {
-                mbThemMoi_XuatKho = false;
+                mbThemMoi = false;
+                mbSua = true;
+                mbCopy = false;
                 miID_XuatKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoBTP).ToString());
-                KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
-                //_frmKBTP.Hide();
-                ff.Show();
+                if (frmQuanLyKhoBanThanhPham.mbXuatkhoKhac == true)
+                {
+                    KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
+                    ff.Show();
+                }
+                else
+                {
+                    KhoBTP_ChiTiet_XuatKho_GapDan ff = new KhoBTP_ChiTiet_XuatKho_GapDan();
+                    ff.Show();
+
+                }
+                    //_frmKBTP.Hide();
+                   
                 //_frmKBTP.Show();
             }
         }
@@ -123,10 +135,23 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            mbThemMoi_XuatKho = true;
-            KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
+            mbThemMoi = true;
+            mbSua = false;
+            mbCopy = false;
+
+            if (frmQuanLyKhoBanThanhPham.mbXuatkhoKhac == true)
+            {
+                KhoBTP_ChiTiet_XuatKho_Khac ff = new KhoBTP_ChiTiet_XuatKho_Khac();
+                ff.Show();
+            }
+            else
+            {
+                KhoBTP_ChiTiet_XuatKho_GapDan ff = new KhoBTP_ChiTiet_XuatKho_GapDan();
+                ff.Show();
+
+            }
             //_frmKBTP.Hide();
-            ff.Show();
+           
             //_frmKBTP.Show();
         }
 
