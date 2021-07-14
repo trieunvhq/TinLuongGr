@@ -225,7 +225,7 @@ namespace CtyTinLuong
                 mbThemMoi_nhapKhoDaiLy = false;
                 mbSua = false;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
-                NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
+                NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi(this);
                 ff.Show();
             }
            
