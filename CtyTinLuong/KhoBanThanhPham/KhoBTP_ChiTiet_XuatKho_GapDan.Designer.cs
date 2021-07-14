@@ -161,6 +161,7 @@
             this.txtTongTienHang.ReadOnly = true;
             this.txtTongTienHang.Size = new System.Drawing.Size(387, 20);
             this.txtTongTienHang.TabIndex = 78;
+            this.txtTongTienHang.TextChanged += new System.EventHandler(this.txtTongTienHang_TextChanged);
             // 
             // gridNguoiLap
             // 

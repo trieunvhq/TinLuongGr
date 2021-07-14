@@ -40,7 +40,7 @@ namespace CtyTinLuong
             else
             {
                 clsKhoBTP_tbXuatKho cls = new CtyTinLuong.clsKhoBTP_tbXuatKho();
-                DataTable dt2 = cls.SA_NgayThang_XuatKho_Khac(xxtungay, xxdenngay);
+                DataTable dt2 = cls.SA_NgayThang_XuatKho_GapDan(xxtungay, xxdenngay);
                 gridControl1.DataSource = dt2;
                 cls.Dispose();
                 dt2.Dispose();

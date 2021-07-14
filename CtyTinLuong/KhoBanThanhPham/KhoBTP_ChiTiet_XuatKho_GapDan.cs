@@ -602,6 +602,19 @@ namespace CtyTinLuong
             txtTongTienHang.Text = deTOngtien.ToString();
         }
 
+        private void txtTongTienHang_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal value = decimal.Parse(txtTongTienHang.Text);
+                txtTongTienHang.Text = String.Format("{0:#,##0.00}", value);
+            }
+            catch
+            {
+
+            }
+        }
+
         public KhoBTP_ChiTiet_XuatKho_GapDan()
         {
             InitializeComponent();

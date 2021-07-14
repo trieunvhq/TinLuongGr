@@ -730,12 +730,6 @@
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.Designer.cs">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.Designer.cs">
-      <DependentUpon>frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_NhapKho_XuatKho_LSX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2470,9 +2464,6 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.resx">
-      <DependentUpon>frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoBanThanhPham\KhoBTP_ChiTiet_NhapKho_XuatKho_LSX.resx">
       <DependentUpon>KhoBTP_ChiTiet_NhapKho_XuatKho_LSX.cs</DependentUpon>
