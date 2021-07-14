@@ -138,7 +138,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void UCNPL_XuatKho_TheoLenhSanXuat_mayIN_Load(object sender, EventArgs e)
+        public void UCNPL_XuatKho_TheoLenhSanXuat_mayIN_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();

@@ -126,7 +126,7 @@ namespace CtyTinLuong
             UCNPL_NhapKho_Khacccccccccccc_Load( sender,  e);
         }
 
-        private void UCNPL_NhapKho_Khacccccccccccc_Load(object sender, EventArgs e)
+        public void UCNPL_NhapKho_Khacccccccccccc_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
@@ -150,7 +150,7 @@ namespace CtyTinLuong
             {
                 mbThemMoi = false;
                 miD_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
-                KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
+                KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac(this);
                 //_frmKNPL.Hide();
                 ff.Show();
                 //_frmKNPL.Show();
@@ -216,7 +216,7 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             mbThemMoi = true;
-            KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac();
+            KhoNPL_ChiTiet_NhapKho_Khac ff = new KhoNPL_ChiTiet_NhapKho_Khac(this);
             //_frmKNPL.Hide();
             ff.Show();
             //_frmKNPL.Show();
