@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -289,7 +288,8 @@
             this.dteNgaySX.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgaySX.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgaySX.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgaySX.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgaySX.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteNgaySX.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgaySX.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgaySX.Size = new System.Drawing.Size(251, 20);
             this.dteNgaySX.StyleController = this.layoutControl1;
             this.dteNgaySX.TabIndex = 5;
@@ -639,6 +639,7 @@
             this.clSoLuongTon});
             this.bandedGridView1.GridControl = this.gridControl1;
             this.bandedGridView1.Name = "bandedGridView1";
+            this.bandedGridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowFooter = true;
@@ -646,7 +647,6 @@
             this.bandedGridView1.OptionsView.ShowIndicator = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
             this.bandedGridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.bandedGridView1_CellValueChanged);
-            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             // 
             // gridBand2
             // 
@@ -764,7 +764,6 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1,
             this.gridView1});
-            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // repositoryItemLookUpEdit_maPhieu
             // 
@@ -940,7 +939,8 @@
             this.dteNgayChungTuNPL.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dteNgayChungTuNPL.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayChungTuNPL.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dteNgayChungTuNPL.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayChungTuNPL.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteNgayChungTuNPL.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayChungTuNPL.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayChungTuNPL.Size = new System.Drawing.Size(509, 20);
             this.dteNgayChungTuNPL.StyleController = this.layoutControl2;
             this.dteNgayChungTuNPL.TabIndex = 14;
