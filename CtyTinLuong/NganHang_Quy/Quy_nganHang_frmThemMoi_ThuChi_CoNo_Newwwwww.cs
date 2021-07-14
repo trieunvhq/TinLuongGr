@@ -1052,7 +1052,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                dteNgayChungTu.Focus();
             }
         }
 
@@ -1144,21 +1144,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
 
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

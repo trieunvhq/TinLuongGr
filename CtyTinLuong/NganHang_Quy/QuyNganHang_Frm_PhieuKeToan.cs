@@ -474,7 +474,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                dteNgayChungTu.Focus();
             }
         }
 
@@ -506,7 +506,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDienGiai.Focus();
             }
         }
 
@@ -551,22 +551,6 @@ namespace CtyTinLuong
         }
 
         private void txtTiGia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {

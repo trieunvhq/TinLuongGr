@@ -262,7 +262,8 @@
             this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteDenNgay.Size = new System.Drawing.Size(551, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 93;
@@ -281,7 +282,8 @@
             this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteTuNgay.Size = new System.Drawing.Size(206, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 93;
@@ -302,8 +304,6 @@
             this.gridControl1.TabIndex = 87;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
-            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // bandedGridView1
             // 
@@ -339,13 +339,13 @@
             this.bandedGridView1.Name = "bandedGridView1";
             this.bandedGridView1.NewItemRowText = "Thêm mới tại đây";
             this.bandedGridView1.OptionsFind.AlwaysVisible = true;
+            this.bandedGridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell);
-            this.bandedGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bandedGridView1_KeyPress);
             this.bandedGridView1.DoubleClick += new System.EventHandler(this.bandedGridView1_DoubleClick);
             // 
             // gridBand6

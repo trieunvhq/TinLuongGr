@@ -95,7 +95,6 @@
             this.clTiGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDaGhiSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clTienUSD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -104,6 +103,7 @@
             this.clTenTaiKhoanCon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -144,10 +144,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -404,7 +404,8 @@
             this.dteNgayChungTu.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dteNgayChungTu.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayChungTu.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dteNgayChungTu.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayChungTu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteNgayChungTu.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayChungTu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayChungTu.Size = new System.Drawing.Size(541, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl1;
             this.dteNgayChungTu.TabIndex = 14;
@@ -639,7 +640,6 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
-            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView4
             // 
@@ -670,6 +670,7 @@
             this.clHienThi});
             this.gridView4.GridControl = this.gridControl1;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView4.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView4.OptionsView.RowAutoHeight = true;
@@ -678,7 +679,6 @@
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
             this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
-            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clSTT
             // 
@@ -832,10 +832,6 @@
             this.clGhiChu.VisibleIndex = 7;
             this.clGhiChu.Width = 149;
             // 
-            // repositoryItemMemoEdit1
-            // 
-            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-            // 
             // clXoa
             // 
             this.clXoa.Caption = "Xóa";
@@ -906,6 +902,10 @@
             this.clHienThi.Caption = "HienThi";
             this.clHienThi.FieldName = "HienThi";
             this.clHienThi.Name = "clHienThi";
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
             // repositoryItemCheckEdit1
             // 
@@ -1039,10 +1039,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();

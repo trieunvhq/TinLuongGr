@@ -278,27 +278,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void bandedGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public frmChiTietBienDongTaiKhoan()
         {
             InitializeComponent();
