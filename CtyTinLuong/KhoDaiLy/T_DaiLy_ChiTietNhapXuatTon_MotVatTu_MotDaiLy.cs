@@ -357,6 +357,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
