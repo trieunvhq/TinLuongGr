@@ -307,7 +307,6 @@
             this.clGhiChu.AppearanceCell.Options.UseTextOptions = true;
             this.clGhiChu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.clGhiChu.Caption = "Ghi chú";
-            this.clGhiChu.ColumnEdit = this.repositoryItemMemoEdit1;
             this.clGhiChu.FieldName = "GhiChu";
             this.clGhiChu.Name = "clGhiChu";
             this.clGhiChu.OptionsColumn.FixedWidth = true;
