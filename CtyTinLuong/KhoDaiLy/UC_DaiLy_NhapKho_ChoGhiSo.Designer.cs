@@ -706,7 +706,7 @@
             this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteTuNgay.Size = new System.Drawing.Size(123, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 91;
@@ -726,7 +726,7 @@
             this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteDenNgay.Size = new System.Drawing.Size(128, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 88;
@@ -1110,7 +1110,7 @@
             this.dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit1.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dateEdit1.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEdit1.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dateEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dateEdit1.Size = new System.Drawing.Size(293, 20);
             this.dateEdit1.StyleController = this.dataLayoutControl2;
             this.dateEdit1.TabIndex = 91;
@@ -1139,7 +1139,7 @@
             this.dateEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit2.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dateEdit2.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEdit2.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dateEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dateEdit2.Size = new System.Drawing.Size(320, 20);
             this.dateEdit2.StyleController = this.dataLayoutControl2;
             this.dateEdit2.TabIndex = 88;

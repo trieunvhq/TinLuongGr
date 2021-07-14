@@ -286,7 +286,7 @@
             this.dteNgayLap.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayLap.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayLap.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayLap.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayLap.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayLap.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayLap.Size = new System.Drawing.Size(287, 20);
             this.dteNgayLap.StyleController = this.layoutControl1;
             this.dteNgayLap.TabIndex = 13;

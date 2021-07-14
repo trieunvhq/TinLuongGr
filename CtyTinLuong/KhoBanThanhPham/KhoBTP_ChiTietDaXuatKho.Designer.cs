@@ -224,7 +224,7 @@
             this.dteNgayChungTuNPL.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dteNgayChungTuNPL.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayChungTuNPL.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dteNgayChungTuNPL.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayChungTuNPL.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayChungTuNPL.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayChungTuNPL.Size = new System.Drawing.Size(340, 20);
             this.dteNgayChungTuNPL.StyleController = this.layoutControl2;
             this.dteNgayChungTuNPL.TabIndex = 14;

@@ -418,7 +418,7 @@
             this.dteNgayGiaoHangThucTe.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayGiaoHangThucTe.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayGiaoHangThucTe.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayGiaoHangThucTe.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayGiaoHangThucTe.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayGiaoHangThucTe.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayGiaoHangThucTe.Size = new System.Drawing.Size(59, 20);
             this.dteNgayGiaoHangThucTe.StyleController = this.layoutControl2;
             this.dteNgayGiaoHangThucTe.TabIndex = 105;
@@ -437,7 +437,7 @@
             this.dteNgayDuKienGiaoHang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayDuKienGiaoHang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayDuKienGiaoHang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayDuKienGiaoHang.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayDuKienGiaoHang.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayDuKienGiaoHang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayDuKienGiaoHang.Size = new System.Drawing.Size(105, 20);
             this.dteNgayDuKienGiaoHang.StyleController = this.layoutControl2;
             this.dteNgayDuKienGiaoHang.TabIndex = 104;
@@ -499,7 +499,7 @@
             this.dteNgayDatHang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayDatHang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayDatHang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayDatHang.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayDatHang.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayDatHang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayDatHang.Size = new System.Drawing.Size(243, 20);
             this.dteNgayDatHang.StyleController = this.layoutControl2;
             this.dteNgayDatHang.TabIndex = 30;
@@ -1205,7 +1205,7 @@
             this.dteNgayChungTu.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayChungTu.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayChungTu.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgayChungTu.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgayChungTu.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgayChungTu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgayChungTu.Size = new System.Drawing.Size(191, 20);
             this.dteNgayChungTu.StyleController = this.layoutControl1;
             this.dteNgayChungTu.TabIndex = 30;

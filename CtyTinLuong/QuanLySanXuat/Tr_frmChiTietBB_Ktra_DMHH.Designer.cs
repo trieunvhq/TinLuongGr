@@ -171,7 +171,7 @@
             this.dateNgayThang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateNgayThang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateNgayThang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dateNgayThang.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateNgayThang.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dateNgayThang.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dateNgayThang.Size = new System.Drawing.Size(191, 20);
             this.dateNgayThang.StyleController = this.layoutControl4;
             this.dateNgayThang.TabIndex = 0;

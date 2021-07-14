@@ -349,7 +349,7 @@
             this.dteNgaySanXuat_May_DOT.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgaySanXuat_May_DOT.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgaySanXuat_May_DOT.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteNgaySanXuat_May_DOT.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteNgaySanXuat_May_DOT.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteNgaySanXuat_May_DOT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteNgaySanXuat_May_DOT.Size = new System.Drawing.Size(390, 20);
             this.dteNgaySanXuat_May_DOT.StyleController = this.layoutControl4;
             this.dteNgaySanXuat_May_DOT.TabIndex = 1;
