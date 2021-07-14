@@ -193,7 +193,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()) != 7)
+                    if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString()) != 0)
                     {
                         miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
                         msTenDinhMucLuongCongNhat = gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString();
