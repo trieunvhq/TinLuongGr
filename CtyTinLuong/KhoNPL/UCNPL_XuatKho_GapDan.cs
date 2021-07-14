@@ -15,57 +15,23 @@ namespace CtyTinLuong
     {
         public static int miiID_NhapKhoGapDan;
         public static bool mbThemMoi,mbCopy,mbSua;
-     
-        private void HienThiGridControl_2(int xxidnhapkhogapdan)
+
+        private void HienThiGridControl_2(int xxID_XuatKho)
         {
 
-            clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();
-            cls2.iID_NhapKho = xxidnhapkhogapdan;
-            DataTable dtxxxx = cls2.SA_W_ID_NhapKho(xxidnhapkhogapdan);
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_VTHH", typeof(int));
-            //dt2.Columns.Add("MaVT", typeof(string));
-            //dt2.Columns.Add("DonViTinh", typeof(string));
-            //dt2.Columns.Add("TenVTHH", typeof(string));
-            //dt2.Columns.Add("SoLuong", typeof(float));
-            //dt2.Columns.Add("HienThi", typeof(string));
-            //dt2.Columns.Add("DonGia", typeof(float));
-            //dt2.Columns.Add("ThanhTien", typeof(float));
-            //dt2.Columns.Add("GhiChu", typeof(string));
-            //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-
-            //for (int i = 0; i < dtxxxx.Rows.Count; i++)
-            //{
-            //    double soluong, dongia;
-            //    soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongNhap"].ToString());
-            //    dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-            //    DataRow _ravi = dt2.NewRow();
-            //    int iiDI_Vthh = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
-            //    _ravi["ID_VTHH"] = iiDI_Vthh;
-            //    cls.iID_VTHH = iiDI_Vthh;
-            //    DataTable dtVT_vao = cls.SelectOne();
-            //    _ravi["MaVT"] = iiDI_Vthh;
-            //    _ravi["DonViTinh"] = cls.sDonViTinh.Value;
-            //    _ravi["TenVTHH"] = cls.sTenVTHH.Value;
-            //    _ravi["SoLuong"] = soluong;
-            //    _ravi["DonGia"] = dongia;
-
-            //    _ravi["ThanhTien"] = soluong * dongia;
-            //    _ravi["HienThi"] = "1";
-            //    _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
-            //    dt2.Rows.Add(_ravi);
-            //}
-
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
+            DataTable dtxxxx = cls2.SA_ID_XuatKho(xxID_XuatKho);
+            cls2.Dispose();
             gridControl2.DataSource = dtxxxx;
         }
-
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-        
-            clsGapDan_tbNhapKho_Temp cls = new CtyTinLuong.clsGapDan_tbNhapKho_Temp();
-            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);         
-            gridControl1.DataSource = dt;
 
+            clsKhoNPL_tbXuatKho cls = new CtyTinLuong.clsKhoNPL_tbXuatKho();
+            DataTable dt2xx = cls.SA_NgayThang_XuatKho_GapDan(xxtungay, xxdenngay);
+
+            gridControl1.DataSource = dt2xx;
+            cls.Dispose();
 
         }
    
@@ -104,13 +70,13 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
             {
                 mbThemMoi = false;
                 mbCopy = false;
                 mbSua = true;
-                miiID_NhapKhoGapDan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
+                miiID_NhapKhoGapDan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
+                KhoNPL_frmChiTiet_XuatKho_gapDan_Moi ff = new KhoNPL_frmChiTiet_XuatKho_gapDan_Moi();
                 //_frmKNPL.Hide();
                 ff.Show();
                 //_frmKNPL.Show();
@@ -119,9 +85,9 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
             {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
                 HienThiGridControl_2(iiIDnhapKhp);
             }
         }
@@ -137,13 +103,13 @@ namespace CtyTinLuong
 
         private void btCopy_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
             {
                 mbThemMoi = false;
                 mbCopy = true;
                 mbSua = false;
-                miiID_NhapKhoGapDan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
+                miiID_NhapKhoGapDan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
+                KhoNPL_frmChiTiet_XuatKho_gapDan_Moi ff = new KhoNPL_frmChiTiet_XuatKho_gapDan_Moi();
                 ff.Show();
             }
         }
@@ -187,35 +153,35 @@ namespace CtyTinLuong
         private void btXoa_Click(object sender, EventArgs e)
         {
 
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
-            {
-                clsGapDan_tbNhapKho_Temp cls2xxxx = new clsGapDan_tbNhapKho_Temp();
-                int xxid_= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                cls2xxxx.iID_NhapKho = xxid_;
-                DataTable dt1 = cls2xxxx.SelectOne();
-                if (cls2xxxx.bTrangThai_XuatKho_NPL.Value == true)
-                {
-                    MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
-                    return;
+            //if (gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString() != "")
+            //{
+            //    clsGapDan_tbNhapKho_Temp cls2xxxx = new clsGapDan_tbNhapKho_Temp();
+            //    int xxid_= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
+            //    cls2xxxx.iID_NhapKho = xxid_;
+            //    DataTable dt1 = cls2xxxx.SelectOne();
+            //    if (cls2xxxx.bTrangThai_XuatKho_NPL.Value == true)
+            //    {
+            //        MessageBox.Show("Đã gửi dữ liệu, không thể xoá");
+            //        return;
 
-                }
-                else
-                {
-                    DialogResult traloi;
-                    traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (traloi == DialogResult.Yes)
-                    {
-                        clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
-                        cls1.iID_NhapKho = xxid_;
-                        cls1.Delete();
-                        clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();                       
-                        cls2.Delete_ALL_W_ID(xxid_);
-                        MessageBox.Show("Đã xóa");
-                        Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                    }
-                }
+            //    }
+            //    else
+            //    {
+            //        DialogResult traloi;
+            //        traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //        if (traloi == DialogResult.Yes)
+            //        {
+            //            clsGapDan_tbNhapKho_Temp cls1 = new clsGapDan_tbNhapKho_Temp();
+            //            cls1.iID_NhapKho = xxid_;
+            //            cls1.Delete();
+            //            clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();                       
+            //            cls2.Delete_ALL_W_ID(xxid_);
+            //            MessageBox.Show("Đã xóa");
+            //            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //        }
+            //    }
 
-            }
+            //}
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
@@ -223,7 +189,7 @@ namespace CtyTinLuong
             mbThemMoi = true;
             mbCopy = false;
             mbSua = false;
-            KhoNPL_frmChiTiet_XuatKho_gapDan ff = new KhoNPL_frmChiTiet_XuatKho_gapDan();
+            KhoNPL_frmChiTiet_XuatKho_gapDan_Moi ff = new KhoNPL_frmChiTiet_XuatKho_gapDan_Moi();
             //_frmKNPL.Hide();
             ff.Show();
             //_frmKNPL.Show();

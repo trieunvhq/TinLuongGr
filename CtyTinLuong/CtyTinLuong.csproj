@@ -226,6 +226,12 @@
     <Compile Include="KhoNPL\clsGapDan_ChiTiet_NhapKho_Temp.cs" />
     <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp.cs" />
+    <Compile Include="KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.Designer.cs">
+      <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_tbXuatKho_Temp - Copy.cs" />
