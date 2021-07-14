@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace CtyTinLuong
         public static bool mbPrint;
         public static DateTime mdaNgayChungTu;
         public static DataTable mdtPrint;
-        public static string msSoChungTu, msNguoiNhanHang, msDienGiai;
+        public static string msSoChungTu, msNguoiGiaoHang, msDienGiai;
         public static double mdbTongSotien;
         private string sochungtu_gapdan()
         {
@@ -477,6 +478,59 @@ namespace CtyTinLuong
         {
             gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clHienThi, "0");
             gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clSoLuong, 0);
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void btThoat2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            Luu_ChiLuu();
+        }
+
+        private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
+        {
+            Luu_GuiDuLieu();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                DataView dv1212 = new DataView(DatatableABC);
+                dv1212.RowFilter = filterString;
+                DataTable dttttt2 = dv1212.ToTable();
+                string shienthi = "1";
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                mdtPrint = dv.ToTable();
+                if (mdtPrint.Rows.Count > 0)
+                {
+                    mbPrint = true;
+                    mdaNgayChungTu = dteNgayChungTu.DateTime;
+                    msSoChungTu = txtSoChungTu.Text.ToString();
+                    msNguoiGiaoHang = txtNguoiNhanHang.Text.ToString();
+                    mdbTongSotien = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
+                    msDienGiai = txtDienGiai.Text.ToString();
+                    frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
+                    ff.Show();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu để in!", "Thông báo");
+            }
         }
 
         public KhoBTP_ChiTiet_XuatKho_GapDan()

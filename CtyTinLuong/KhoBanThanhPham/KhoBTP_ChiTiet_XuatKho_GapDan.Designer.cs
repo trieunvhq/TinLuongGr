@@ -405,6 +405,7 @@
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView4_CustomRowFilter);
             // 
             // clSTT
@@ -601,6 +602,7 @@
             this.btLuu.Size = new System.Drawing.Size(98, 23);
             this.btLuu.TabIndex = 112;
             this.btLuu.Text = "Lưu";
+            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
             // btPrint
             // 
@@ -610,6 +612,7 @@
             this.btPrint.Size = new System.Drawing.Size(98, 23);
             this.btPrint.TabIndex = 111;
             this.btPrint.Text = "Print";
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // btThoat2
             // 
@@ -619,6 +622,7 @@
             this.btThoat2.Size = new System.Drawing.Size(84, 23);
             this.btThoat2.TabIndex = 110;
             this.btThoat2.Text = "Thoát";
+            this.btThoat2.Click += new System.EventHandler(this.btThoat2_Click);
             // 
             // btLuu_Gui_Dong
             // 
@@ -632,6 +636,7 @@
             this.btLuu_Gui_Dong.Size = new System.Drawing.Size(128, 23);
             this.btLuu_Gui_Dong.TabIndex = 119;
             this.btLuu_Gui_Dong.Text = "Lưu + Gửi + Đóng";
+            this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
             // 
             // KhoBTP_ChiTiet_XuatKho_GapDan
             // 
