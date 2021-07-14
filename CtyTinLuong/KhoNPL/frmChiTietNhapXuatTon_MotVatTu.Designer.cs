@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhapXuatTon_MotVatTu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.gridMaVT = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btLayDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.txtDVT = new System.Windows.Forms.TextBox();
@@ -77,12 +78,12 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridMaVT = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -102,9 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -138,6 +137,27 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(908, 475);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // gridMaVT
+            // 
+            this.gridMaVT.Location = new System.Drawing.Point(52, 28);
+            this.gridMaVT.Name = "gridMaVT";
+            this.gridMaVT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridMaVT.Properties.PopupView = this.searchLookUpEdit1View;
+            this.gridMaVT.Size = new System.Drawing.Size(51, 20);
+            this.gridMaVT.StyleController = this.dataLayoutControl1;
+            this.gridMaVT.TabIndex = 111;
+            this.gridMaVT.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaVT_QueryPopUp);
+            this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
+            this.gridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVT_KeyPress);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // btRefresh
             // 
@@ -191,7 +211,8 @@
             this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteDenNgay.Size = new System.Drawing.Size(487, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 103;
@@ -210,7 +231,8 @@
             this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteTuNgay.Size = new System.Drawing.Size(157, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 103;
@@ -291,6 +313,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.bandedGridView1.Name = "bandedGridView1";
             this.bandedGridView1.NewItemRowText = "Thêm mới tại đây";
+            this.bandedGridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
@@ -709,20 +732,6 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // gridMaVT
-            // 
-            this.gridMaVT.Location = new System.Drawing.Point(52, 28);
-            this.gridMaVT.Name = "gridMaVT";
-            this.gridMaVT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaVT.Properties.PopupView = this.searchLookUpEdit1View;
-            this.gridMaVT.Size = new System.Drawing.Size(51, 20);
-            this.gridMaVT.StyleController = this.dataLayoutControl1;
-            this.gridMaVT.TabIndex = 111;
-            this.gridMaVT.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridMaVT_QueryPopUp);
-            this.gridMaVT.EditValueChanged += new System.EventHandler(this.gridMaVT_EditValueChanged);
-            this.gridMaVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridMaVT_KeyPress);
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.gridMaVT;
@@ -731,13 +740,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(105, 24);
             this.layoutControlItem9.Text = "Mã VT";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(47, 13);
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // frmChiTietNhapXuatTon_MotVatTu
             // 
@@ -750,11 +752,13 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietNhapXuatTon_MotVatTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Báo Cáo NXT";
+            this.Text = "frmChiTietNhapXuatTon_MotVatTu-->Báo Cáo NXT";
             this.Load += new System.EventHandler(this.frmChiTietNhapXuatTon_MotVatTu_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -774,9 +778,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridMaVT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }

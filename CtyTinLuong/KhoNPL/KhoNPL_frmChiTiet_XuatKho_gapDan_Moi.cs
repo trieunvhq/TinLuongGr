@@ -657,6 +657,70 @@ namespace CtyTinLuong
             Luu_GuiDuLieu();
         }
 
+        private void dteNgayChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtThamChieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtDienGiai.Focus();
+            }
+        }
+
+        private void txtSoChungTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtNguoiNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                txtNguoiNhanHang.Focus();
+            }
+        }
+
+        private void txtTongTienHangCoVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtNguoiNhanHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         public KhoNPL_frmChiTiet_XuatKho_gapDan_Moi()
         {
             InitializeComponent();

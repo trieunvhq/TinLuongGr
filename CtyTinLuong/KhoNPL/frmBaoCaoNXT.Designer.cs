@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoNXT));
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -102,7 +101,8 @@
             this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteTuNgay.Size = new System.Drawing.Size(455, 20);
             this.dteTuNgay.StyleController = this.layoutControl1;
             this.dteTuNgay.TabIndex = 93;
@@ -182,6 +182,7 @@
             this.bandedGridView1.GridControl = this.gridControl1;
             this.bandedGridView1.Name = "bandedGridView1";
             this.bandedGridView1.NewItemRowText = "Thêm mới tại đây";
+            this.bandedGridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
@@ -517,7 +518,8 @@
             this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteDenNgay.Size = new System.Drawing.Size(473, 20);
             this.dteDenNgay.StyleController = this.layoutControl1;
             this.dteDenNgay.TabIndex = 92;

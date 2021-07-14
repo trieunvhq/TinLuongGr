@@ -473,22 +473,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
         int iID_VTHH;
         string sMaVT, sTenVTHH, sDonViTinh;
         private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)

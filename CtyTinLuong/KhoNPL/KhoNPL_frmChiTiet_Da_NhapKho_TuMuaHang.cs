@@ -454,22 +454,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
         private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
             ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
