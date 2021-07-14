@@ -65,7 +65,7 @@ namespace CtyTinLuong
             gridNguoiLap.EditValue = 12;
             dteNgayChungTu.EditValue = DateTime.Today;
             txtSoChungTu.Text = sochungtu_BTP();
-
+            txtThamChieu.Text = sochungtu_gapdan();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_VTHH");
             dt2.Columns.Add("SoLuongXuat", typeof(float));
@@ -87,7 +87,7 @@ namespace CtyTinLuong
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
             txtSoChungTu.Text = sochungtu_BTP();
             txtDienGiai.Text = cls1.sDienGiai.Value;
-            txtThamChieu.Text = cls1.sThamChieu.Value;
+            txtThamChieu.Text = sochungtu_gapdan();
             if (dt.Rows[0]["NguoiNhanHang"].ToString() != "")
                 txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
             cls1.Dispose();
@@ -193,7 +193,7 @@ namespace CtyTinLuong
 
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            dt = clsNguoi.T_SelectAll(5);
+            dt = clsNguoi.T_SelectAll(4);
             gridNguoiLap.Properties.DataSource = dt;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
@@ -476,8 +476,8 @@ namespace CtyTinLuong
 
         private void btXoa2_Click(object sender, EventArgs e)
         {
-            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clHienThi, "0");
-            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, clSoLuong, 0);
+            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
+            gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clSoLuong, 0);
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -506,7 +506,7 @@ namespace CtyTinLuong
             try
             {
                 DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-                CriteriaOperator op = gridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
                 string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
                 DataView dv1212 = new DataView(DatatableABC);
                 dv1212.RowFilter = filterString;
@@ -531,6 +531,75 @@ namespace CtyTinLuong
             {
                 MessageBox.Show("Không có dữ liệu để in!", "Thông báo");
             }
+        }
+
+        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            double fffsoluong = 0;
+            double ffdongia = 0;
+            double fffthanhtien = 0;
+            if (e.Column == clID_VTHH)
+            {
+                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+                cls.iID_VTHH = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                DataTable dt = cls.SelectOne();
+                if (dt != null)
+                {
+
+                    gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
+                    gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
+                    gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                    gridView4.SetRowCellValue(e.RowHandle, clSoLuong, 1);
+                    gridView4.SetRowCellValue(e.RowHandle, clDonGia, 0);
+
+                    if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                        ffdongia = 0;
+                    else
+                        ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
+                    if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                        fffsoluong = 0;
+                    else
+                        fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
+                    fffthanhtien = fffsoluong * ffdongia;
+                    gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+                }
+            }
+
+            if (e.Column == clSoLuong)
+            {
+                if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
+                if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+            if (e.Column == clDonGia)
+            {
+                if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
+                    ffdongia = 0;
+                else
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
+                if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
+                    fffsoluong = 0;
+                else
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
+                fffthanhtien = fffsoluong * ffdongia;
+                gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+            }
+            double deTOngtien;
+            DataTable dataTable = (DataTable)gridControl1.DataSource;
+            string shienthi = "1";
+            object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            if (xxxx.ToString() != "")
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
+            else deTOngtien = 0;
+            txtTongTienHang.Text = deTOngtien.ToString();
         }
 
         public KhoBTP_ChiTiet_XuatKho_GapDan()
