@@ -1076,7 +1076,6 @@
             this.gridView8.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView8_CustomDrawCell);
             this.gridView8.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView8_CellValueChanged);
             this.gridView8.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gridView8_CustomRowFilter);
-            this.gridView8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView8_KeyPress);
             // 
             // gridColumn10
             // 

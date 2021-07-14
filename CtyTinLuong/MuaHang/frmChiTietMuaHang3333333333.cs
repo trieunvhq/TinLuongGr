@@ -1442,19 +1442,12 @@ namespace CtyTinLuong
 
         private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView8_KeyPress(object sender, KeyPressEventArgs e)
-        {
             //if (e.KeyChar == (char)13)
             //{
             //    SendKeys.Send("{TAB}");
             //}
         }
+
 
         private void repositoryItemSearchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
@@ -1492,10 +1485,10 @@ namespace CtyTinLuong
 
         private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
+            //if (e.KeyChar == (char)13)
+            //{
+            //    SendKeys.Send("{TAB}");
+            //}
         }
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
