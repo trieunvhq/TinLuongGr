@@ -297,24 +297,20 @@ namespace CtyTinLuong
                 cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 1;
                 cls1.sNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
                 int xxiD_xuatkho;
-                if (UCBanThanhPham_XuatKho_Khac.mbSua == false)
-                {
-                    cls1.bGuiDuLieu = false;
-                    cls1.Insert();
-                    xxiD_xuatkho = cls1.iID_XuatKhoBTP.Value;
-                }
-                else
-                {
-                    clsKhoBTP_tbXuatKho cls2 = new clsKhoBTP_tbXuatKho();
-                    cls2.iID_XuatKhoBTP = UCBanThanhPham_XuatKho_Khac.miID_XuatKho;
-                    DataTable dt2 = cls2.SelectOne();
-                    cls1.iID_XuatKhoBTP = UCBanThanhPham_XuatKho_Khac.miID_XuatKho;
+                clsKhoBTP_tbXuatKho cls2 = new clsKhoBTP_tbXuatKho();
+                cls2.iID_XuatKhoBTP = UCbanThanhPham_DaXuatKho.miiID_XuatKhoBTP;
+                DataTable dt2 = cls2.SelectOne();
+
+                if (dt2.Rows[0]["GuiDuLieu"].ToString() != "")
                     cls1.bGuiDuLieu = cls2.bGuiDuLieu.Value;
-                    cls1.Update();
-                    xxiD_xuatkho = UCBanThanhPham_XuatKho_Khac.miID_XuatKho;
-                    cls2.Dispose();
-                    dt2.Dispose();
-                }
+                else cls1.bGuiDuLieu = false;
+
+                cls1.iID_XuatKhoBTP = UCbanThanhPham_DaXuatKho.miiID_XuatKhoBTP;             
+                cls1.Update();
+                xxiD_xuatkho = UCbanThanhPham_DaXuatKho.miiID_XuatKhoBTP;
+                cls2.Dispose();
+                dt2.Dispose();
+
                 cls1.Dispose();
 
                 Luu_ChiTietXuatKho_BTP(xxiD_xuatkho);
