@@ -209,7 +209,7 @@ namespace CtyTinLuong
             clsKhoNPL_tbXuatKho cls2 = new clsKhoNPL_tbXuatKho();
             cls2.iID_XuatKhoNPL = UCKhoNPL_DaXuatKho.miD_XuatKhoNPL;
             DataTable dt2 = cls2.SelectOne();
-            bool checkxuatko = cls2.bCheckXuatKho_Khac.Value;
+            int xxxiInt_GapDan_1_Khac_2_binhThuong_0 = cls2.iInt_GapDan_1_Khac_2_binhThuong_0.Value;
             double tongtienhang;
             tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());
             clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
@@ -223,7 +223,7 @@ namespace CtyTinLuong
             cls1.bTonTai = true;
             cls1.bNgungTheoDoi = false;
             cls1.bDaXuatKho = true;
-            cls1.bCheckXuatKho_Khac = checkxuatko;
+            cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = xxxiInt_GapDan_1_Khac_2_binhThuong_0;
             cls1.Update();
             Luu_ChiTiet_XuatKho(UCKhoNPL_DaXuatKho.miD_XuatKhoNPL);
             MessageBox.Show("Đã lưu");

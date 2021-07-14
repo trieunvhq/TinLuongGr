@@ -383,7 +383,7 @@ namespace CtyTinLuong
             clsnplxk.bTonTai = true;
             clsnplxk.bNgungTheoDoi = false;
             clsnplxk.bDaXuatKho = true;
-            clsnplxk.bCheckXuatKho_Khac = false;
+            clsnplxk.iInt_GapDan_1_Khac_2_binhThuong_0 = 1;
             clsnplxk.Insert();
             int iiidxuatkhonpl = clsnplxk.iID_XuatKhoNPL.Value;
             Luu_ChiTiet_ChiTiet_XuatKho_NPL(iiidxuatkhonpl);
@@ -460,27 +460,27 @@ namespace CtyTinLuong
         }
         private void Luu_XuatKho_BanThanhPham()
         {
-            if (!KiemTraLuu()) return;
-            else
-            {                
-                clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = Load_soChungTu_KhoBanThanhPham();
-                cls1.fTongTienHang = 0;
-                cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.sThamChieu = txtSoChungTu.Text.ToString();
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
-                cls1.bDaXuatKho = true;
-                cls1.bCheck_XuatKho_Khac = true;
-                cls1.sNguoiNhanHang = txtTenNguoiLap.Text.ToString();
-                int xxID_nhapkhobtp;
-                cls1.Insert();
-                xxID_nhapkhobtp = cls1.iID_XuatKhoBTP.Value;
-                Luu_ChiTietXuatKho_banThanhPham(xxID_nhapkhobtp);
+            //if (!KiemTraLuu()) return;
+            //else
+            //{                
+            //    clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
+            //    cls1.sDienGiai = txtDienGiai.Text.ToString();
+            //    cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+            //    cls1.sSoChungTu = Load_soChungTu_KhoBanThanhPham();
+            //    cls1.fTongTienHang = 0;
+            //    cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+            //    cls1.sThamChieu = txtSoChungTu.Text.ToString();
+            //    cls1.bTonTai = true;
+            //    cls1.bNgungTheoDoi = false;
+            //    cls1.bDaXuatKho = true;
+            //    cls1.bCheck_XuatKho_Khac = true;
+            //    cls1.sNguoiNhanHang = txtTenNguoiLap.Text.ToString();
+            //    int xxID_nhapkhobtp;
+            //    cls1.Insert();
+            //    xxID_nhapkhobtp = cls1.iID_XuatKhoBTP.Value;
+            //    Luu_ChiTietXuatKho_banThanhPham(xxID_nhapkhobtp);
 
-            }
+            //}
 
         }
         private void Luu_NhapKho_GapDan(bool bbTrangThai_XuatKho_NPL_)

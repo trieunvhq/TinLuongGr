@@ -288,7 +288,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;               
-                cls1.bCheckXuatKho_Khac = true;
+                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
                 int xxiD_nhpakho;
                 if (UCNPL_XuatKho_Khacccccccccccccc.mbThemMoi == true)
                 {

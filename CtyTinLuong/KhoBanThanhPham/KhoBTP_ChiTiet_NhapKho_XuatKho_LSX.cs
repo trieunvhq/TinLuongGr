@@ -125,7 +125,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
-                cls1.bCheck_XuatKho_Khac = false;
+                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 0;
                 cls1.sNguoiNhanHang = txtNguoiGiao_Nhan.Text.ToString();
                 cls1.Insert();
                 // insert tbChiTietNhapKho

@@ -259,7 +259,7 @@ namespace CtyTinLuong
             else
             {
                 double tongtienhang;
-                tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());                
+                tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());
                 clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
@@ -270,10 +270,10 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
-                cls1.bCheck_XuatKho_Khac = true;
+                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
                 cls1.sNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
                 int xxID_nhapkhobtp;
-                if(UCBanThanhPham_XuatKho_Khac.mbThemMoi_XuatKho==true)
+                if (UCBanThanhPham_XuatKho_Khac.mbThemMoi_XuatKho == true)
                 {
                     cls1.Insert();
                     xxID_nhapkhobtp = cls1.iID_XuatKhoBTP.Value;
@@ -289,7 +289,7 @@ namespace CtyTinLuong
                 Luu_ChiTietXuatKho(xxID_nhapkhobtp);
                 MessageBox.Show("Đã lưu");
             }
-           
+
         }
         public KhoBTP_ChiTiet_XuatKho_Khac()
         {

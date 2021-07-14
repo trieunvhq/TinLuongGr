@@ -739,7 +739,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
-                cls1.bCheck_XuatKho_Khac = true;
+                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 0;
                 cls1.sNguoiNhanHang = txtTenNguoiLap.Text.ToString();
                 int xxID_nhapkhobtp;
                 cls1.Insert();
@@ -1042,7 +1042,7 @@ namespace CtyTinLuong
                     clsnplxk.bTonTai = true;
                     clsnplxk.bNgungTheoDoi = false;
                     clsnplxk.bDaXuatKho = true;
-                    clsnplxk.bCheckXuatKho_Khac = false;
+                    clsnplxk.iInt_GapDan_1_Khac_2_binhThuong_0 = 0;
                     if (dt2npl.Rows.Count == 0)
                     {
                         clsnplxk.Insert();
@@ -1172,7 +1172,7 @@ namespace CtyTinLuong
                     clsnplxk.bTonTai = true;
                     clsnplxk.bNgungTheoDoi = false;
                     clsnplxk.bDaXuatKho = true;
-                    clsnplxk.bCheckXuatKho_Khac = false;
+                    clsnplxk.iInt_GapDan_1_Khac_2_binhThuong_0 = 0;
                     if (dt2npl.Rows.Count == 0)
                     {
                         clsnplxk.Insert();
