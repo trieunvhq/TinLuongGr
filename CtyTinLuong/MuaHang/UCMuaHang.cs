@@ -41,8 +41,8 @@ namespace CtyTinLuong
               
                 if (foundRows.Length > 0)
                 {                   
-                    dNo_CuoiKy = Convert.ToDouble(foundRows[0]["No_CuoiKy"].ToString());
-                    dCo_CuoiKy = Convert.ToDouble(foundRows[0]["Co_CuoiKy"].ToString());
+                    dNo_CuoiKy = CheckString.ConvertToDouble_My(foundRows[0]["No_CuoiKy"].ToString());
+                    dCo_CuoiKy = CheckString.ConvertToDouble_My(foundRows[0]["Co_CuoiKy"].ToString());
                     if (dNo_CuoiKy <= dCo_CuoiKy)
                     {                       
                         dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;

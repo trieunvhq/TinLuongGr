@@ -116,11 +116,11 @@ namespace CtyTinLuong
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
                 _ravi["HienThi"] = "1";
-                _ravi["ID_DinhMuc_Luong_SanLuong"] = Convert.ToDouble(dt3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString());
+                _ravi["ID_DinhMuc_Luong_SanLuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString());
                 _ravi["MaDinhMuc"] = dt3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString();
                 //_ravi["MaDinhMuc"] = dt3.Rows[i]["MaDinhMuc"].ToString();
-                _ravi["DinhMuc_KhongTang"] = Convert.ToDouble(dt3.Rows[i]["DinhMuc_KhongTang"].ToString());
-                _ravi["DinhMuc_Tang"] = Convert.ToDouble(dt3.Rows[i]["DinhMuc_Tang"].ToString());
+                _ravi["DinhMuc_KhongTang"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DinhMuc_KhongTang"].ToString());
+                _ravi["DinhMuc_Tang"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DinhMuc_Tang"].ToString());
                 dt2.Rows.Add(_ravi);
             }
 

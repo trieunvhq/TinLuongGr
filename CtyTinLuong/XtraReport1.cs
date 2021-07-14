@@ -37,7 +37,7 @@ namespace CtyTinLuong
             //pDienGiai.Value = "Lý do nhập kho: " + KhoNPL_ChiTiet_NhapKho_Khac.msDienGiai + "";
             //pNguoiNhan_Giao.Value = KhoNPL_ChiTiet_NhapKho_Khac.msNguoiGiaoHang;
             //clsSoTienBangChu cls = new clsSoTienBangChu();
-            //pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoNPL_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
+            //pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoNPL_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
 
             //DateTime ngay = KhoNPL_ChiTiet_NhapKho_Khac.mdaNgayChungTu;
             //pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";

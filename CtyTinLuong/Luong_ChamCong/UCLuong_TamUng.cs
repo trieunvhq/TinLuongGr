@@ -82,7 +82,7 @@ namespace CtyTinLuong
 
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)sodong_)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)sodong_)).ToString();
                 }
                 else
                 {

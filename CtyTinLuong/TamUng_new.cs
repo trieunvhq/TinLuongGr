@@ -320,7 +320,7 @@ namespace CtyTinLuong
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = SoChungTu_tbThuChi();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.fSoTien = Convert.ToDouble(txtTongSoTien.Text.ToString());
+                cls1.fSoTien = CheckString.ConvertToDouble_My(txtTongSoTien.Text.ToString());
                 cls1.sThamChieu = txtSoChungTu.Text;
                 cls1.sDoiTuong = txtDoiTuong.Text.ToString();
                 cls1.bTonTai = true;
@@ -440,7 +440,7 @@ namespace CtyTinLuong
                 cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 cls1.iKhauTruLuongThang = Convert.ToInt32(txtThang.Text);
                 cls1.iKhauTruLuongThang_Nam = Convert.ToInt32(txtNam.Text);             
-                cls1.fTongSoTien = Convert.ToDouble(txtTongSoTien.Text.ToString());
+                cls1.fTongSoTien = CheckString.ConvertToDouble_My(txtTongSoTien.Text.ToString());
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.bCheckTamUngDaiLy = checkDaiLy.Checked;
                 cls1.sGhiChu = txtGhiChu.Text;
@@ -626,7 +626,7 @@ namespace CtyTinLuong
             string shienthi = "1";
             object xxxx = dataTable.Compute("sum(SoTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongSoTien.Text = deTOngtien.ToString();
         }
@@ -691,7 +691,7 @@ namespace CtyTinLuong
                 string shienthi = "1";
                 object xxxx = dataTable.Compute("sum(SoTien)", "HienThi=" + shienthi + "");
                 if (xxxx.ToString() != "")
-                    deTOngtien = Convert.ToDouble(xxxx);
+                    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
                 else deTOngtien = 0;
                 txtTongSoTien.Text = deTOngtien.ToString();
             }

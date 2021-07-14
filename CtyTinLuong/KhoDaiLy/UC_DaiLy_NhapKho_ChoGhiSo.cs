@@ -37,11 +37,11 @@ namespace CtyTinLuong
             if (rows_Xuat.Length == 0)
                 soluongxuat = 0;
             else
-                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+                soluongxuat = CheckString.ConvertToDouble_My(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
             if (rows_Nhap.Length == 0)
                 soluongnhap = 0;
             else
-                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+                soluongnhap = CheckString.ConvertToDouble_My(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";

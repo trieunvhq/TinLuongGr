@@ -732,19 +732,19 @@ namespace CtyTinLuong
                     if (!s.Contains(","))
                         result = double.Parse(s, CultureInfo.InvariantCulture);
                     else
-                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+                        result = CheckString.ConvertToDouble_My(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
             catch
             {
                 try
                 {
-                    result = Convert.ToDouble(s);
+                    result = CheckString.ConvertToDouble_My(s);
                 }
                 catch
                 {
                     try
                     {
-                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                        result = CheckString.ConvertToDouble_My(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
                     }
                     catch
                     {
@@ -793,37 +793,37 @@ namespace CtyTinLuong
                         _nam,
                         id_vthh_,
                         0,
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay1"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay2"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay3"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay4"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay5"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay6"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay7"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay8"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay9"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay10"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay11"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay12"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay13"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay14"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay15"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay16"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay17"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay18"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay19"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay20"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay21"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay22"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay23"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay24"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay25"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay26"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay27"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay28"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay29"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay30"].ToString()),
-                        (float)Convert.ToDouble(_data.Rows[i]["Ngay31"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay3"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay4"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay5"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay6"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay7"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay8"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay9"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay10"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay11"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay12"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay13"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay14"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay15"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay16"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay17"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay18"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay19"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay20"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay21"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay22"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay23"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay24"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay25"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay26"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay27"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay28"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay29"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString()),
                         0, true,false,_id_bophan, _ID_DinhMucLuong_CongNhat,
                         Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }

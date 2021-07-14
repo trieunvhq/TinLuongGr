@@ -262,17 +262,17 @@ namespace CtyTinLuong
                 string CaSanXuat = dt.Rows[i]["CaSanXuat_IN"].ToString();
                 int ID_DinhMuc_Luong =8;
                 int ID_VTHH_Vao = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Vao_IN"].ToString());
-                double SoLuong_Vao = Convert.ToDouble(dt.Rows[i]["SoLuong_Vao_IN"].ToString());
+                double SoLuong_Vao = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong_Vao_IN"].ToString());
                 double DonGia_Vao = 0;
                 int ID_VTHH_Ra = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra_IN"].ToString());
-                double SanLuong_Thuong = Convert.ToDouble(dt.Rows[i]["SoLuong_Ra_IN"].ToString());
+                double SanLuong_Thuong = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong_Ra_IN"].ToString());
                 double SanLuong_TangCa = 0;
                 double SanLuong_Tong = SanLuong_Thuong;
                 double DonGia_Xuat = 0;
                 double PhePham;
                 if (dt.Rows[i]["PhePham_IN"].ToString() == "")
                     PhePham = 0;
-                else  PhePham = Convert.ToDouble(dt.Rows[i]["PhePham_IN"].ToString());
+                else  PhePham = CheckString.ConvertToDouble_My(dt.Rows[i]["PhePham_IN"].ToString());
 
                 cls2.iID_SoPhieu = iiiiID_SoPhieu;
                 cls2.iID_May = ID_May;
@@ -314,16 +314,16 @@ namespace CtyTinLuong
                     cls2.sCaSanXuat = dt.Rows[i]["CaSanXuat_CAT"].ToString();
                     cls2.iID_DinhMuc_Luong = 3;
                     cls2.iID_VTHH_Vao = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Vao_CAT"].ToString());
-                    cls2.fSoLuong_Vao = Convert.ToDouble(dt.Rows[i]["SoLuong_Vao_CAT"].ToString());
+                    cls2.fSoLuong_Vao = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong_Vao_CAT"].ToString());
                     cls2.fDonGia_Vao =0;
                     cls2.iID_VTHH_Ra = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra_CAT"].ToString());
-                    cls2.fSanLuong_Thuong = Convert.ToDouble(dt.Rows[i]["SoLuong_Ra_CAT"].ToString());
+                    cls2.fSanLuong_Thuong = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong_Ra_CAT"].ToString());
                     cls2.fSanLuong_TangCa = 0;
-                    cls2.fSanLuong_Tong = Convert.ToDouble(dt.Rows[i]["SoLuong_Ra_CAT"].ToString());
+                    cls2.fSanLuong_Tong = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong_Ra_CAT"].ToString());
                     cls2.fDonGia_Xuat = 0;
                     if (dt.Rows[i]["PhePham_CAT"].ToString() == "")
                         cls2.fPhePham = 0;
-                  else  cls2.fPhePham = Convert.ToDouble(dt.Rows[i]["PhePham_CAT"].ToString());
+                  else  cls2.fPhePham = CheckString.ConvertToDouble_My(dt.Rows[i]["PhePham_CAT"].ToString());
                     cls2.bBMay_IN = false;
                     cls2.bBMay_CAT = true;
                     cls2.bBMay_DOT = false;

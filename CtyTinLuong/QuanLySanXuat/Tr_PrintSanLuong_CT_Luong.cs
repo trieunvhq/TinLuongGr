@@ -362,11 +362,11 @@ namespace CtyTinLuong
             {
 
                 int xxID_VTHH = Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
-                //double snluong_thuong = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
-                //double snluong_tangca = Convert.ToDouble(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
-                double xxsanluong_thuong = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
-                double xxsanluong_tang = Convert.ToDouble(dtxxxx.Compute("sum(SanLuong_TangCa)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
-                double xxthanhtien = Convert.ToDouble(dtxxxx.Compute("sum(ThanhTien)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                //double snluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
+                //double snluong_tangca = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
+                double xxsanluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                double xxsanluong_tang = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_TangCa)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                double xxthanhtien = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(ThanhTien)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
                 int id_vthh_ = 0;
                 if (k < dtxxxx.Rows.Count - 1)
                 {

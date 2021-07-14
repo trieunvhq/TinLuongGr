@@ -209,9 +209,9 @@ namespace CtyTinLuong
                
                 dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_DOT(miID_VThh, mdatungay, mdadenngay);
               
-                tongsobao_sot = Convert.ToDouble(dt3.Rows[0]["TongSoBao_Sot"].ToString());
-                tongsokg = Convert.ToDouble(dt3.Rows[0]["TongSoKg"].ToString());
-                tongsothanh = Convert.ToDouble(dt3.Rows[0]["TongSoThanh"].ToString());
+                tongsobao_sot = CheckString.ConvertToDouble_My(dt3.Rows[0]["TongSoBao_Sot"].ToString());
+                tongsokg = CheckString.ConvertToDouble_My(dt3.Rows[0]["TongSoKg"].ToString());
+                tongsothanh = CheckString.ConvertToDouble_My(dt3.Rows[0]["TongSoThanh"].ToString());
                
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
                 ff.Show();

@@ -51,7 +51,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["SoLuong"] = Convert.ToDouble(_data.Rows[i]["SoLuong"].ToString()).ToString("N2");
+                    _ravi["SoLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SoLuong"].ToString()).ToString("N2");
                 }
 
                 //
@@ -61,7 +61,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["DonGia"].ToString()).ToString("N2");
+                    _ravi["DonGia"] = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia"].ToString()).ToString("N2");
                 }
 
                 //
@@ -71,7 +71,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["ThanhTien"] = Convert.ToDouble(_data.Rows[i]["ThanhTien"].ToString()).ToString("N2");
+                    _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["ThanhTien"].ToString()).ToString("N2");
                 }
 
 
@@ -82,7 +82,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["No"] = Convert.ToDouble(_data.Rows[i]["No"].ToString()).ToString("N2");
+                    _ravi["No"] = CheckString.ConvertToDouble_My(_data.Rows[i]["No"].ToString()).ToString("N2");
                 }
 
 
@@ -93,7 +93,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["Co"] = Convert.ToDouble(_data.Rows[i]["Co"].ToString()).ToString("N2");
+                    _ravi["Co"] = CheckString.ConvertToDouble_My(_data.Rows[i]["Co"].ToString()).ToString("N2");
                 }
 
                 ds.tbMH_DoiChieuCongNo_Khach.Rows.Add(_ravi);

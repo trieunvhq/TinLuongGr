@@ -46,18 +46,18 @@ namespace CtyTinLuong
                 _ravi["TenVTHH"] =dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
 
-                _ravi["SoLuong_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());
-                _ravi["GiaTri_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
+                _ravi["SoLuong_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());
+                _ravi["GiaTri_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
 
-                _ravi["SoLuongNhap_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                _ravi["GiaTriNhap_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriNhap_TrongKy"].ToString());
+                _ravi["SoLuongNhap_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongNhap_TrongKy"].ToString());
+                _ravi["GiaTriNhap_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriNhap_TrongKy"].ToString());
 
 
-                _ravi["SoLuongXuat_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongXuat_TrongKy"].ToString());
-                _ravi["GiaTriXuat_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriXuat_TrongKy"].ToString());
+                _ravi["SoLuongXuat_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongXuat_TrongKy"].ToString());
+                _ravi["GiaTriXuat_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriXuat_TrongKy"].ToString());
 
-                _ravi["SoLuongTon_CuoiKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongTon_CuoiKy"].ToString());
-                _ravi["GiaTriTon_CuoiKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriTon_CuoiKy"].ToString());
+                _ravi["SoLuongTon_CuoiKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongTon_CuoiKy"].ToString());
+                _ravi["GiaTriTon_CuoiKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriTon_CuoiKy"].ToString());
 
                 ds.tbNhap_Xuat_Ton.Rows.Add(_ravi);
             }
@@ -86,17 +86,17 @@ namespace CtyTinLuong
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
 
-                _ravi["SoLuong_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());               
-                _ravi["SoLuongNhap_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap_TrongKy"].ToString());               
-                _ravi["SoLuongXuat_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongXuat_TrongKy"].ToString());              
-                _ravi["SoLuongTon_CuoiKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongTon_CuoiKy"].ToString());
+                _ravi["SoLuong_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());               
+                _ravi["SoLuongNhap_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongNhap_TrongKy"].ToString());               
+                _ravi["SoLuongXuat_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongXuat_TrongKy"].ToString());              
+                _ravi["SoLuongTon_CuoiKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongTon_CuoiKy"].ToString());
                
                 if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_CoTien == true)
                 {
-                    _ravi["GiaTri_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
-                    _ravi["GiaTriNhap_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriNhap_TrongKy"].ToString());
-                    _ravi["GiaTriXuat_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriXuat_TrongKy"].ToString());
-                    _ravi["GiaTriTon_CuoiKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriTon_CuoiKy"].ToString());
+                    _ravi["GiaTri_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
+                    _ravi["GiaTriNhap_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriNhap_TrongKy"].ToString());
+                    _ravi["GiaTriXuat_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriXuat_TrongKy"].ToString());
+                    _ravi["GiaTriTon_CuoiKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriTon_CuoiKy"].ToString());
                 }
                 ds.tbNhap_Xuat_Ton.Rows.Add(_ravi);
             }
@@ -123,16 +123,16 @@ namespace CtyTinLuong
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["SoLuong_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());
-                _ravi["SoLuongNhap_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                _ravi["SoLuongXuat_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongXuat_TrongKy"].ToString());
-                _ravi["SoLuongTon_CuoiKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuongTon_CuoiKy"].ToString());
+                _ravi["SoLuong_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());
+                _ravi["SoLuongNhap_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongNhap_TrongKy"].ToString());
+                _ravi["SoLuongXuat_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongXuat_TrongKy"].ToString());
+                _ravi["SoLuongTon_CuoiKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuongTon_CuoiKy"].ToString());
                 if (frmBaoCao_Nhap_Xuat_ton_kho_DaiLy.mbPrint_CoTien == true)
                 {
-                    _ravi["GiaTri_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
-                    _ravi["GiaTriNhap_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriNhap_TrongKy"].ToString());
-                    _ravi["GiaTriXuat_TrongKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriXuat_TrongKy"].ToString());
-                    _ravi["GiaTriTon_CuoiKy"] = Convert.ToDouble(dt3.Rows[i]["GiaTriTon_CuoiKy"].ToString());
+                    _ravi["GiaTri_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTri_TonDauKy"].ToString());
+                    _ravi["GiaTriNhap_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriNhap_TrongKy"].ToString());
+                    _ravi["GiaTriXuat_TrongKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriXuat_TrongKy"].ToString());
+                    _ravi["GiaTriTon_CuoiKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["GiaTriTon_CuoiKy"].ToString());
                 }
                 ds.tbNhap_Xuat_Ton.Rows.Add(_ravi);
             }

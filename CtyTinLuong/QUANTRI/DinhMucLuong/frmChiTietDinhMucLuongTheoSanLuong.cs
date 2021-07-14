@@ -42,7 +42,7 @@ namespace CtyTinLuong
                 cls.dcDinhMuc_Tang = Convert.ToDecimal(txtDonGiaTang.Text.ToString());               
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                cls.fMaxSanLuongThuong= Convert.ToDouble(txtMaxSanLuongThuong.Text.ToString());
+                cls.fMaxSanLuongThuong= CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
                 cls.Insert();
                 MessageBox.Show("Đã lưu");
                 this.Close();
@@ -62,7 +62,7 @@ namespace CtyTinLuong
                 cls.dcDinhMuc_KhongTang = Convert.ToDecimal(txtDonGiaThuong.Text.ToString());
                 cls.dcDinhMuc_Tang = Convert.ToDecimal(txtDonGiaTang.Text.ToString());
                 cls.bTonTai = true;
-                cls.fMaxSanLuongThuong = Convert.ToDouble(txtMaxSanLuongThuong.Text.ToString());
+                cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
                 cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                 cls.Update();
                 MessageBox.Show("Đã lưu");

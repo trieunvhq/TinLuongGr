@@ -76,9 +76,9 @@ namespace CtyTinLuong
         //        NgayDuKienXuat = Convert.ToDateTime(dxxxx.Rows[i]["NgayDuKienXuat"].ToString());
         //        NgayXuatThucTe = Convert.ToDateTime(dxxxx.Rows[i]["NgayXuatThucTe"].ToString());
 
-        //        SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
-        //        SoCountner = Convert.ToDouble(dxxxx.Rows[i]["SoCountner"].ToString());
-        //        SoLuongThucXuat = Convert.ToDouble(dxxxx.Rows[i]["SoLuongThucXuat"].ToString());
+        //        SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
+        //        SoCountner = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoCountner"].ToString());
+        //        SoLuongThucXuat = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuongThucXuat"].ToString());
 
         //        QuyCach = dxxxx.Rows[i]["QuyCach"].ToString();
         //        GhiChu = dxxxx.Rows[i]["GhiChu"].ToString();
@@ -173,9 +173,9 @@ namespace CtyTinLuong
                 NgayDuKienXuat = Convert.ToDateTime(dxxxx.Rows[i]["NgayDuKienXuat"].ToString());
                 NgayXuatThucTe = Convert.ToDateTime(dxxxx.Rows[i]["NgayXuatThucTe"].ToString());
 
-                SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
-                SoCountner = Convert.ToDouble(dxxxx.Rows[i]["SoCountner"].ToString());
-                SoLuongThucXuat = Convert.ToDouble(dxxxx.Rows[i]["SoLuongThucXuat"].ToString());
+                SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
+                SoCountner = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoCountner"].ToString());
+                SoLuongThucXuat = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuongThucXuat"].ToString());
 
                 QuyCach = dxxxx.Rows[i]["QuyCach"].ToString();
                 GhiChu = dxxxx.Rows[i]["GhiChu"].ToString();

@@ -44,8 +44,8 @@ namespace CtyTinLuong
             double dNoDauKy_0, dCoDauKy_0;
             if (dtdudau.Rows.Count > 0)
             {
-                dNoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["NoDauKy"].ToString());
-                dCoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["CoDauKy"].ToString());
+                dNoDauKy_0 = CheckString.ConvertToDouble_My(dtdudau.Rows[0]["NoDauKy"].ToString());
+                dCoDauKy_0 = CheckString.ConvertToDouble_My(dtdudau.Rows[0]["CoDauKy"].ToString());
             }
             else
             {
@@ -80,8 +80,8 @@ namespace CtyTinLuong
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
-                    double Noxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
-                    double Coxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
+                    double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
+                    double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
 
                     _ravi["No"] = Noxx_hang;
                     _ravi["Co"] = Coxx_hang;
@@ -114,8 +114,8 @@ namespace CtyTinLuong
 
                 }
             }
-            double Nophatsinh = Convert.ToDouble(dtphatsinh.Compute("sum(No)", "TonTai=True"));
-            double Cophatsinh = Convert.ToDouble(dtphatsinh.Compute("sum(Co)", "TonTai=True"));
+            double Nophatsinh = CheckString.ConvertToDouble_My(dtphatsinh.Compute("sum(No)", "TonTai=True"));
+            double Cophatsinh = CheckString.ConvertToDouble_My(dtphatsinh.Compute("sum(Co)", "TonTai=True"));
             DataRow _ravi_2 = dt2xxxx.NewRow();
             _ravi_2["DienGiai"] = "Cộng phát sinh trong kỳ";
             _ravi_2["HienThi"] = false;

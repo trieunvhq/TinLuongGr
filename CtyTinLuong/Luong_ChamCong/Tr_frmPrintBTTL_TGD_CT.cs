@@ -83,19 +83,19 @@ namespace CtyTinLuong.Luong_ChamCong
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     //  
-                    double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                    double SoNgayAn_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
                     //_data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
-                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     TongLuong_ += (dongia_ * sanluong_);
 
-                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    double TruTienCom_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom_Value"].ToString());
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
-                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                        double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                         _data.Rows[i]["TongLuong"] = TongLuong_.ToString("N0");
 
                         ID_CongNhan_Cu = ID_CongNhan_;
@@ -124,16 +124,16 @@ namespace CtyTinLuong.Luong_ChamCong
                     DataRow _ravi = ds.tbBTTL_TGD_CT.NewRow();
                     _ravi["STT"] = (i + 1).ToString();
                     _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-                    _ravi["TongTien"] = Convert.ToDouble(_data.Rows[i]["TongTien"].ToString());
+                    _ravi["TongTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TongTien"].ToString());
                     _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
-                    _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
-                    _ravi["SoNgayAn"] = Convert.ToDouble(_data.Rows[i]["SoNgayAn"].ToString());
-                    _ravi["TruTienCom"] = Convert.ToDouble(_data.Rows[i]["TruTienCom"].ToString());
-                    _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TamUng"].ToString());
-                    _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
-                    _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["DonGia"].ToString());
-                    _ravi["ThanhTien"] = Convert.ToDouble(_data.Rows[i]["ThanhTien"].ToString());
-                    _ravi["SanLuong"] = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    _ravi["TongLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TongLuong"].ToString());
+                    _ravi["SoNgayAn"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn"].ToString());
+                    _ravi["TruTienCom"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom"].ToString());
+                    _ravi["TamUng"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
+                    _ravi["ThucNhan"] = CheckString.ConvertToDouble_My(_data.Rows[i]["ThucNhan"].ToString());
+                    _ravi["DonGia"] = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia"].ToString());
+                    _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["ThanhTien"].ToString());
+                    _ravi["SanLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     ds.tbBTTL_TGD_CT.Rows.Add(_ravi);
                 }
             }
@@ -210,19 +210,19 @@ namespace CtyTinLuong.Luong_ChamCong
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     //  
-                    double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                    double SoNgayAn_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
                     //_data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
-                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     TongLuong_ += (dongia_ * sanluong_);
 
-                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    double TruTienCom_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom_Value"].ToString());
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
-                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                        double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                         _data.Rows[i]["TongLuong"] = TongLuong_.ToString("N0");
 
                         ID_CongNhan_Cu = ID_CongNhan_;

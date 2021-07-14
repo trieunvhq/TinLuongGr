@@ -36,8 +36,8 @@ namespace CtyTinLuong
             DataTable dxxxx = dv2.ToTable();
             for (int i = 0; i < dxxxx.Rows.Count; i++)
             {
-                double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-                double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
+                double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
                 int IDNhaCungCapxx = Convert.ToInt32(dxxxx.Rows[i]["IDNhaCungCap"].ToString());
                 clsTbNhaCungCap clsncc = new clsTbNhaCungCap();
                 clsncc.iID_NhaCungCap = IDNhaCungCapxx;
@@ -76,8 +76,8 @@ namespace CtyTinLuong
         
             for (int i = 0; i < dxxxx.Rows.Count; i++)
             {
-                double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-                double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
+                double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
                 int IDNhaCungCapxx= Convert.ToInt32(dxxxx.Rows[i]["IDNhaCungCap"].ToString());
                 clsTbNhaCungCap clsncc = new clsTbNhaCungCap();
                 clsncc.iID_NhaCungCap = IDNhaCungCapxx;                

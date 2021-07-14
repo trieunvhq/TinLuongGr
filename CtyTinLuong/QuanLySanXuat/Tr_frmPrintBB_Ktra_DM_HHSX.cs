@@ -43,17 +43,17 @@ namespace CtyTinLuong
                 _ravi["Ca"] = Convert.ToInt32(dt.Rows[i]["Ca"].ToString());
                 _ravi["LoaiHang"] = dt.Rows[i]["LoaiHang"].ToString().Trim();
                 _ravi["LoaiGiay"] = dt.Rows[i]["LoaiGiay"].ToString().Trim();
-                _ravi["SoLuongKtra"] = Convert.ToDouble(dt.Rows[i]["SoLuongKtra"].ToString());
+                _ravi["SoLuongKtra"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuongKtra"].ToString());
                 _ravi["DonVi_first"] = dt.Rows[i]["DonVi_first"].ToString();
-                _ravi["TrongLuong"] = Convert.ToDouble(dt.Rows[i]["TrongLuong"].ToString());
-                _ravi["SoLuong"] = Convert.ToDouble(dt.Rows[i]["SoLuong"].ToString());
+                _ravi["TrongLuong"] = CheckString.ConvertToDouble_My(dt.Rows[i]["TrongLuong"].ToString());
+                _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong"].ToString());
                 _ravi["DonVi_Second"] = dt.Rows[i]["DonVi_Second"].ToString();
-                _ravi["QuyRaKien"] = Convert.ToDouble(dt.Rows[i]["QuyRaKien"].ToString());
-                _ravi["PhePham"] = Convert.ToDouble(dt.Rows[i]["PhePham"].ToString());
-                _ravi["DoCao"] = Convert.ToDouble(dt.Rows[i]["DoCao"].ToString());
-                _ravi["MotBao_kg"] = Convert.ToDouble(dt.Rows[i]["MotBao_kg"].ToString());
-                _ravi["MotBao_SoKien"] = Convert.ToDouble(dt.Rows[i]["MotBao_SoKien"].ToString());
-                _ravi["SauMuoi_BaoKien"] = Convert.ToDouble(dt.Rows[i]["SauMuoi_BaoKien"].ToString());
+                _ravi["QuyRaKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["QuyRaKien"].ToString());
+                _ravi["PhePham"] = CheckString.ConvertToDouble_My(dt.Rows[i]["PhePham"].ToString());
+                _ravi["DoCao"] = CheckString.ConvertToDouble_My(dt.Rows[i]["DoCao"].ToString());
+                _ravi["MotBao_kg"] = CheckString.ConvertToDouble_My(dt.Rows[i]["MotBao_kg"].ToString());
+                _ravi["MotBao_SoKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["MotBao_SoKien"].ToString());
+                _ravi["SauMuoi_BaoKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SauMuoi_BaoKien"].ToString());
                 _ravi["GhiChu"] = dt.Rows[i]["GhiChu"].ToString();
 
                 ds.tbBB_Ktra_DMHHSX.Rows.Add(_ravi);

@@ -248,7 +248,7 @@ namespace CtyTinLuong
                 {
                     cls.iID_KhachHang = Convert.ToInt32(dtkkk.Rows[i]["ID_KhachHang"].ToString());
                     cls.iID_VTHH = Convert.ToInt32(dtkkk.Rows[i]["ID_VTHH"].ToString());
-                    cls.fDonGia = Convert.ToDouble(dtkkk.Rows[i]["DonGia"].ToString());
+                    cls.fDonGia = CheckString.ConvertToDouble_My(dtkkk.Rows[i]["DonGia"].ToString());
                     cls.bTienUSD = Convert.ToBoolean(dtkkk.Rows[i]["TienUSD"].ToString());
                     cls.sDienGiai = dtkkk.Rows[i]["DienGiai"].ToString();
                     cls.sGhiChu = dtkkk.Rows[i]["GhiChu"].ToString();

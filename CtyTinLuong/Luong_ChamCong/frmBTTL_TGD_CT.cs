@@ -1,4 +1,4 @@
-﻿using CtyTinLuong.Constants;
+﻿
 using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
@@ -100,8 +100,8 @@ namespace CtyTinLuong
 
 
 
-                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     sanluong_tong += sanluong_;
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
@@ -109,14 +109,14 @@ namespace CtyTinLuong
                     tongluong_tong += (dongia_ * sanluong_);
                     thanhtien_tong += (dongia_ * sanluong_);
 
-                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    double TruTienCom_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom_Value"].ToString());
                     if (ID_CongNhan_ != ID_CongNhan_Cu || i==_data.Rows.Count-1)
                     {
                         _data.Rows[i]["STT"] = stt.ToString();
                         ++stt;
 
-                           double SoNgayAn_row = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
-                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                           double SoNgayAn_row = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                        double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                         _data.Rows[i]["TongLuong"] = TongLuong_row.ToString("N0");
 
                         ID_CongNhan_Cu = ID_CongNhan_;
@@ -325,19 +325,19 @@ namespace CtyTinLuong
                     if (!s.Contains(","))
                         result = double.Parse(s, CultureInfo.InvariantCulture);
                     else
-                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+                        result = CheckString.ConvertToDouble_My(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
             catch
             {
                 try
                 {
-                    result = Convert.ToDouble(s);
+                    result = CheckString.ConvertToDouble_My(s);
                 }
                 catch
                 {
                     try
                     {
-                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                        result = CheckString.ConvertToDouble_My(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
                     }
                     catch
                     {

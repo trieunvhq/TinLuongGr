@@ -59,7 +59,7 @@ namespace CtyTinLuong
                 DataTable dt_ = cls.SelectAll_Tinh_SoLenh_SX(xxtungay, xxdenngay);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
                 }
                 else
                 {
@@ -119,10 +119,10 @@ namespace CtyTinLuong
                 _ravi["MaVT"] = iiDI_Vthh_vao;
                 _ravi["DonViTinh"] = clsVT_Vao.sDonViTinh.Value;
                 _ravi["TenVTHH"] = clsVT_Vao.sTenVTHH.Value;
-                _ravi["SoLuong"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongVao"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaVao"].ToString());
-                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongVao"].ToString());
-                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGiaVao"].ToString());
+                _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["SoLuongVao"].ToString());
+                _ravi["DonGia"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["DonGiaVao"].ToString());
+                soluong = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["SoLuongVao"].ToString());
+                dongia = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["DonGiaVao"].ToString());
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
                 //_ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();

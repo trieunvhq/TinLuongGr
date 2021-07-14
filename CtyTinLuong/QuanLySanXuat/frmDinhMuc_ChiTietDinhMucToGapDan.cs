@@ -65,7 +65,7 @@ namespace CtyTinLuong
                 //insert vật tư chính
                 cls2.iID_DinhMuc_ToGapDan = iiiID_DinhMuc_ToGapDan;
                 cls2.iID_VTHH = Convert.ToInt16(gridMaVTchinh1.EditValue.ToString());
-                cls2.fSoLuong = Convert.ToDouble(txtSoLuongVTChinh.Text.ToString());
+                cls2.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuongVTChinh.Text.ToString());
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.iInt_TP_1_Chinh_2_Phu_3 = 2;
@@ -91,7 +91,7 @@ namespace CtyTinLuong
                     cls2.iID_DinhMuc_ToGapDan = iiiID_DinhMuc_ToGapDan;
                     cls2.iID_VTHH = Convert.ToInt16(dv3.Rows[i]["ID_VTHH"].ToString());
                     if (dv3.Rows[i]["SoLuong"].ToString() != "")
-                        cls2.fSoLuong = Convert.ToDouble(dv3.Rows[i]["SoLuong"].ToString());
+                        cls2.fSoLuong = CheckString.ConvertToDouble_My(dv3.Rows[i]["SoLuong"].ToString());
                     else cls2.fSoLuong = 0;
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
@@ -180,7 +180,7 @@ namespace CtyTinLuong
                 //insert vật tư chính
                 cls2.iID_DinhMuc_ToGapDan = iiID_DinhMuc;
                 cls2.iID_VTHH = Convert.ToInt16(gridMaVTchinh1.EditValue.ToString());
-                cls2.fSoLuong = Convert.ToDouble(txtSoLuongVTChinh.Text.ToString());
+                cls2.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuongVTChinh.Text.ToString());
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.iInt_TP_1_Chinh_2_Phu_3 = 2;
@@ -206,7 +206,7 @@ namespace CtyTinLuong
                     cls2.iID_DinhMuc_ToGapDan = iiID_DinhMuc; ;
                     cls2.iID_VTHH = Convert.ToInt16(dv3.Rows[i]["ID_VTHH"].ToString());
                     if (dv3.Rows[i]["SoLuong"].ToString() != "")
-                        cls2.fSoLuong = Convert.ToDouble(dv3.Rows[i]["SoLuong"].ToString());
+                        cls2.fSoLuong = CheckString.ConvertToDouble_My(dv3.Rows[i]["SoLuong"].ToString());
                     else cls2.fSoLuong = 0;
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;

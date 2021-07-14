@@ -43,9 +43,9 @@ namespace CtyTinLuong
                     int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                     cls2.iID_DaiLy = Convert.ToInt32(dttttt2.Rows[i]["ID_DaiLy"].ToString());
                     cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                    cls2.fSoLuongNhap = Convert.ToDouble(dttttt2.Rows[i]["SoLuongNhap"].ToString());
-                    cls2.fSoLuongTon = Convert.ToDouble(dttttt2.Rows[i]["SoLuongTon"].ToString());
-                    cls2.fDonGia = Convert.ToDouble(dttttt2.Rows[i]["DonGia"].ToString());
+                    cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongNhap"].ToString());
+                    cls2.fSoLuongTon = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongTon"].ToString());
+                    cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
                     cls2.sGhiChu = dttttt2.Rows[i]["GhiChu"].ToString();
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
@@ -229,11 +229,11 @@ namespace CtyTinLuong
             if (rows_Xuat.Length == 0)
                 soluongxuat = 0;
             else
-                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+                soluongxuat = CheckString.ConvertToDouble_My(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
             if (rows_Nhap.Length == 0)
                 soluongnhap = 0;
             else
-                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+                soluongnhap = CheckString.ConvertToDouble_My(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";

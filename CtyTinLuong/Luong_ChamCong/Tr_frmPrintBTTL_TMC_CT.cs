@@ -42,15 +42,15 @@ namespace CtyTinLuong.Luong_ChamCong
                     _ravi["STT"] = (i + 1).ToString();
                     _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
                     _ravi["Cong"] = _data.Rows[i]["sCong"].ToString();
-                    _ravi["SanLuong"] = Convert.ToDouble(_data.Rows[i]["sSanLuong"].ToString());
-                    _ravi["DonGia"] = Convert.ToDouble(_data.Rows[i]["sDonGia"].ToString());
-                    _ravi["ThanhTien"] = Convert.ToDouble(_data.Rows[i]["sThanhTien"].ToString());
-                    _ravi["XangXe"] = Convert.ToDouble(_data.Rows[i]["sXangXe"].ToString());
-                    _ravi["Tong"] = Convert.ToDouble(_data.Rows[i]["sTong"].ToString());
+                    _ravi["SanLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sSanLuong"].ToString());
+                    _ravi["DonGia"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sDonGia"].ToString());
+                    _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sThanhTien"].ToString());
+                    _ravi["XangXe"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sXangXe"].ToString());
+                    _ravi["Tong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sTong"].ToString());
                     _ravi["TruTienCom"] = 0;
-                    _ravi["BaoHiem"] = Convert.ToDouble(_data.Rows[i]["sBaoHiem"].ToString());
+                    _ravi["BaoHiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sBaoHiem"].ToString());
                     _ravi["TamUng"] = 0;
-                    _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["sThucNhan"].ToString());
+                    _ravi["ThucNhan"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sThucNhan"].ToString());
 
                     ds.tbBTTL_TMC_CT.Rows.Add(_ravi);
                 }

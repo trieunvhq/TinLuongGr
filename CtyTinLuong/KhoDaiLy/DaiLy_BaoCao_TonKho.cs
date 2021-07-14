@@ -43,13 +43,13 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtnhap.Rows.Count; i++)
                 {
                     int iiID_DaiLy = Convert.ToInt32(dtnhap.Rows[i]["ID_DaiLy"].ToString());
-                    double soluongnhap = Convert.ToDouble(dtnhap.Rows[i]["SoLuongNhap"].ToString());
+                    double soluongnhap = CheckString.ConvertToDouble_My(dtnhap.Rows[i]["SoLuongNhap"].ToString());
                     double soluongxuat;
                     string expression = "ID_DaiLy='" + iiID_DaiLy + "'";
                     DataRow[] foundRows;
                     foundRows = dtXuat.Select(expression);
                     if (foundRows.Length > 0)
-                        soluongxuat = Convert.ToDouble(foundRows[0]["SoLuongXuat"].ToString());
+                        soluongxuat = CheckString.ConvertToDouble_My(foundRows[0]["SoLuongXuat"].ToString());
                     else
                         soluongxuat = 0;
                     DataRow _ravi2 = dt2.NewRow();
@@ -65,7 +65,7 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtXuat.Rows.Count; i++)
                 {
                     int iiID_DaiLy = Convert.ToInt32(dtXuat.Rows[i]["ID_DaiLy"].ToString());
-                    double soluongxuat = Convert.ToDouble(dtXuat.Rows[i]["SoLuongXuat"].ToString());
+                    double soluongxuat = CheckString.ConvertToDouble_My(dtXuat.Rows[i]["SoLuongXuat"].ToString());
                     DataRow _ravi2 = dt2.NewRow();
                     _ravi2["ID_DaiLy"] = iiID_DaiLy;
                     _ravi2["Ton"] = - soluongxuat;
@@ -160,8 +160,8 @@ namespace CtyTinLuong
 
                 double SoLuong_NhapTruocKy, GiaTri_NhapTruocKy, SoLuong_XuatTruocKy, GiaTri_XuatTruocKy, SoLuong_TonDauKy, GiaTri_TonDauKy;
 
-                SoLuong_NhapTruocKy = Convert.ToDouble(dt_NhapTruoc.Rows[i]["SoLuong_NhapTruocKy"].ToString());
-                GiaTri_NhapTruocKy = Convert.ToDouble(dt_NhapTruoc.Rows[i]["GiaTri_NhapTruocKy"].ToString());
+                SoLuong_NhapTruocKy = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[i]["SoLuong_NhapTruocKy"].ToString());
+                GiaTri_NhapTruocKy = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[i]["GiaTri_NhapTruocKy"].ToString());
                 string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
                 DataRow[] rows = dt_XuatTruoc.Select(filterExpression);
                 if (rows.Length == 0)
@@ -171,8 +171,8 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    SoLuong_XuatTruocKy = Convert.ToDouble(rows[0]["SoLuong_XuatTruocKy"].ToString());
-                    GiaTri_XuatTruocKy = Convert.ToDouble(rows[0]["GiaTri_XuatTruocKy"].ToString());
+                    SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(rows[0]["SoLuong_XuatTruocKy"].ToString());
+                    GiaTri_XuatTruocKy = CheckString.ConvertToDouble_My(rows[0]["GiaTri_XuatTruocKy"].ToString());
 
                 }
                 SoLuong_TonDauKy = SoLuong_NhapTruocKy - SoLuong_XuatTruocKy;
@@ -199,8 +199,8 @@ namespace CtyTinLuong
                 DataRow[] rows = dt_XuatTruoc.Select(filterExpression);
                 if (rows.Length == 0)
                 {
-                    SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[i]["SoLuong_XuatTruocKy"].ToString());
-                    GiaTri_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[i]["GiaTri_XuatTruocKy"].ToString());
+                    SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[i]["SoLuong_XuatTruocKy"].ToString());
+                    GiaTri_XuatTruocKy = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[i]["GiaTri_XuatTruocKy"].ToString());
                     SoLuong_TonDauKy = -SoLuong_XuatTruocKy;
                     GiaTri_TonDauKy = -GiaTri_XuatTruocKy;
                     DataRow _ravi = dt2.NewRow();
@@ -267,7 +267,7 @@ namespace CtyTinLuong
             if (foundRows1.Length > 0)
             {
                 double TP_SoLuong_TonDauKy;
-                TP_SoLuong_TonDauKy = Convert.ToDouble(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 5"));                          
+                TP_SoLuong_TonDauKy = CheckString.ConvertToDouble_My(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 5"));                          
 
                 DataRow _ravi_TP = dt2xx.NewRow();
                 _ravi_TP["STT"] = "A";
@@ -300,7 +300,7 @@ namespace CtyTinLuong
             {
                 double TP_SoLuong_TonDauKy;
 
-                TP_SoLuong_TonDauKy = Convert.ToDouble(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 7"));
+                TP_SoLuong_TonDauKy = CheckString.ConvertToDouble_My(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 7"));
                
 
                 DataRow _ravi_BTP = dt2xx.NewRow();
@@ -330,7 +330,7 @@ namespace CtyTinLuong
             if (foundRows_VT.Length > 0)
             {
                 double TP_SoLuong_TonDauKy;
-                TP_SoLuong_TonDauKy = Convert.ToDouble(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 8"));               
+                TP_SoLuong_TonDauKy = CheckString.ConvertToDouble_My(dt2.Compute("sum(SoLuong_TonDauKy)", "ID_NhomVTHH = 8"));               
                 DataRow _ravi_VT = dt2xx.NewRow();
                 _ravi_VT["STT"] = "C";
                 _ravi_VT["Font"] = "1";

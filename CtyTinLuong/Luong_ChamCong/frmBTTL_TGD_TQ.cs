@@ -1,4 +1,4 @@
-﻿using CtyTinLuong.Constants;
+﻿
 using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
@@ -101,19 +101,19 @@ namespace CtyTinLuong
                     tamung_ += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
                     tamung_tong_ += tamung_;
                     //  
-                    double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                    double SoNgayAn_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
                     //_data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
 
 
 
-                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     tongluong_ += (dongia_ * sanluong_);
                     tongluong_tong_ += tongluong_;
-                    trutiencom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    trutiencom_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom_Value"].ToString());
                     trutiencom_tong_ += trutiencom_;
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
@@ -124,7 +124,7 @@ namespace CtyTinLuong
                         _ravi2["Nam"] = _nam;
                         _ravi2["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
 
-                        tamung_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                        tamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                         _ravi2["TongLuong"] = tongluong_.ToString("N0");
 
                         ID_CongNhan_Cu = ID_CongNhan_;
@@ -322,19 +322,19 @@ namespace CtyTinLuong
                     if (!s.Contains(","))
                         result = double.Parse(s, CultureInfo.InvariantCulture);
                     else
-                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+                        result = CheckString.ConvertToDouble_My(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
             catch
             {
                 try
                 {
-                    result = Convert.ToDouble(s);
+                    result = CheckString.ConvertToDouble_My(s);
                 }
                 catch
                 {
                     try
                     {
-                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                        result = CheckString.ConvertToDouble_My(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
                     }
                     catch
                     {

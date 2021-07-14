@@ -118,15 +118,15 @@ namespace CtyTinLuong
                         string MaVT_Vao = clsVT_Vao.sMaVT.Value;
                         string DonViTinh_Vao = clsVT_Vao.sDonViTinh.Value;
                         string TenVatTu_Vao = clsVT_Vao.sTenVTHH.Value;
-                        double SoLuong_Vao = Convert.ToDouble(dtmayin.Rows[0]["SoLuong_Vao"].ToString());
+                        double SoLuong_Vao = CheckString.ConvertToDouble_My(dtmayin.Rows[0]["SoLuong_Vao"].ToString());
                         int ID_VTHH_Ra = Convert.ToInt32(dtmayin.Rows[0]["ID_VTHH_Ra"].ToString());
                         clsVT_Ra.iID_VTHH = ID_VTHH_Ra;
                         DataTable dtvt_Ra = clsVT_Ra.SelectOne();
                         string MaVT_Ra = clsVT_Ra.sMaVT.Value;
                         string DonViTinh_Ra = clsVT_Ra.sDonViTinh.Value;
                         string TenVatTu_Ra = clsVT_Ra.sTenVTHH.Value;
-                        double SanLuong_Tong = Convert.ToDouble(dtmayin.Rows[0]["SanLuong_Tong"].ToString());
-                        double PhePham = Convert.ToDouble(dtmayin.Rows[0]["PhePham"].ToString());
+                        double SanLuong_Tong = CheckString.ConvertToDouble_My(dtmayin.Rows[0]["SanLuong_Tong"].ToString());
+                        double PhePham = CheckString.ConvertToDouble_My(dtmayin.Rows[0]["PhePham"].ToString());
                         int ID_Mayxxx = Convert.ToInt32(dtmayin.Rows[0]["ID_May"].ToString());
                         clsmaymoc.iId = ID_Mayxxx;
                         DataTable dtmay = clsmaymoc.SelectOne();
@@ -163,15 +163,15 @@ namespace CtyTinLuong
                         string MaVT_Vao = clsVT_Vao.sMaVT.Value;
                         string DonViTinh_Vao = clsVT_Vao.sDonViTinh.Value;
                         string TenVatTu_Vao = clsVT_Vao.sTenVTHH.Value;
-                        double SoLuong_Vao = Convert.ToDouble(dtmaycat.Rows[0]["SoLuong_Vao"].ToString());
+                        double SoLuong_Vao = CheckString.ConvertToDouble_My(dtmaycat.Rows[0]["SoLuong_Vao"].ToString());
                         int ID_VTHH_Ra = Convert.ToInt32(dtmaycat.Rows[0]["ID_VTHH_Ra"].ToString());
                         clsVT_Ra.iID_VTHH = ID_VTHH_Ra;
                         DataTable dtvt_Ra = clsVT_Ra.SelectOne();
                         string MaVT_Ra = clsVT_Ra.sMaVT.Value;
                         string DonViTinh_Ra = clsVT_Ra.sDonViTinh.Value;
                         string TenVatTu_Ra = clsVT_Ra.sTenVTHH.Value;
-                        double SanLuong_Tong = Convert.ToDouble(dtmaycat.Rows[0]["SanLuong_Tong"].ToString());
-                        double PhePham = Convert.ToDouble(dtmaycat.Rows[0]["PhePham"].ToString());
+                        double SanLuong_Tong = CheckString.ConvertToDouble_My(dtmaycat.Rows[0]["SanLuong_Tong"].ToString());
+                        double PhePham = CheckString.ConvertToDouble_My(dtmaycat.Rows[0]["PhePham"].ToString());
                         int ID_Mayxxx = Convert.ToInt32(dtmaycat.Rows[0]["ID_May"].ToString());
                         clsmaymoc.iId = ID_Mayxxx;
                         DataTable dtmay = clsmaymoc.SelectOne();
@@ -209,15 +209,15 @@ namespace CtyTinLuong
                         string MaVT_Vao = clsVT_Vao.sMaVT.Value;
                         string DonViTinh_Vao = clsVT_Vao.sDonViTinh.Value;
                         string TenVatTu_Vao = clsVT_Vao.sTenVTHH.Value;
-                        double SoLuong_Vao = Convert.ToDouble(dtmaydot.Rows[0]["SoLuong_Vao"].ToString());
+                        double SoLuong_Vao = CheckString.ConvertToDouble_My(dtmaydot.Rows[0]["SoLuong_Vao"].ToString());
                         int ID_VTHH_Ra = Convert.ToInt32(dtmaydot.Rows[0]["ID_VTHH_Ra"].ToString());
                         clsVT_Ra.iID_VTHH = ID_VTHH_Ra;
                         DataTable dtvt_Ra = clsVT_Ra.SelectOne();
                         string MaVT_Ra = clsVT_Ra.sMaVT.Value;
                         string DonViTinh_Ra = clsVT_Ra.sDonViTinh.Value;
                         string TenVatTu_Ra = clsVT_Ra.sTenVTHH.Value;
-                        double SanLuong_Tong = Convert.ToDouble(dtmaydot.Rows[0]["SanLuong_Tong"].ToString());
-                        double PhePham = Convert.ToDouble(dtmaydot.Rows[0]["PhePham"].ToString());
+                        double SanLuong_Tong = CheckString.ConvertToDouble_My(dtmaydot.Rows[0]["SanLuong_Tong"].ToString());
+                        double PhePham = CheckString.ConvertToDouble_My(dtmaydot.Rows[0]["PhePham"].ToString());
                         int ID_Mayxxx = Convert.ToInt32(dtmaydot.Rows[0]["ID_May"].ToString());
                         clsmaymoc.iId = ID_Mayxxx;
                         DataTable dtmay = clsmaymoc.SelectOne();
@@ -277,7 +277,7 @@ namespace CtyTinLuong
                 DataTable dt_ = cls.SelectAll_Tinh_SoPhieu_new(xxtungay, xxdenngay);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
                 }
                 else
                 {

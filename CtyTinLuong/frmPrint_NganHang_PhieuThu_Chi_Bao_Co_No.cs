@@ -26,10 +26,10 @@ namespace CtyTinLuong
                 _ravi["SoTaiKhoanCon"] = dt3.Rows[i]["SoTaiKhoanCon"].ToString();
                 _ravi["TenTaiKhoanCon"] = dt3.Rows[i]["TenTaiKhoanCon"].ToString();
                 _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                _ravi["No"] = Convert.ToDouble(dt3.Rows[i]["No"].ToString());
-                _ravi["Co"] = Convert.ToDouble(dt3.Rows[i]["Co"].ToString());
+                _ravi["No"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["No"].ToString());
+                _ravi["Co"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Co"].ToString());
                 _ravi["TienUSD"] = Convert.ToBoolean(dt3.Rows[i]["TienUSD"].ToString());
-                _ravi["TiGia"] = Convert.ToDouble(dt3.Rows[i]["TiGia"].ToString());
+                _ravi["TiGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TiGia"].ToString());
                 ds.tbNganHang_PhieuThu_Chi_Bao_Co_No.Rows.Add(_ravi);
             }
 
@@ -55,10 +55,10 @@ namespace CtyTinLuong
                 _ravi["SoTaiKhoanCon"] = dt3.Rows[i]["SoTaiKhoanCon"].ToString();
                 _ravi["TenTaiKhoanCon"] = dt3.Rows[i]["TenTaiKhoanCon"].ToString();
                 _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                _ravi["No"] = Convert.ToDouble(dt3.Rows[i]["No"].ToString());
-                _ravi["Co"] = Convert.ToDouble(dt3.Rows[i]["Co"].ToString());
+                _ravi["No"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["No"].ToString());
+                _ravi["Co"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Co"].ToString());
                 _ravi["TienUSD"] = Convert.ToBoolean(dt3.Rows[i]["TienUSD"].ToString());
-                _ravi["TiGia"] = Convert.ToDouble(dt3.Rows[i]["TiGia"].ToString());
+                _ravi["TiGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TiGia"].ToString());
                 ds.tbNganHang_PhieuThu_Chi_Bao_Co_No.Rows.Add(_ravi);
             }
 

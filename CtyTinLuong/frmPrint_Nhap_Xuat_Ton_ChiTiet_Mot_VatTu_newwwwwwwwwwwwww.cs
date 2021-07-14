@@ -30,7 +30,7 @@ namespace CtyTinLuong
                 //}
 
                 if (dt3.Rows[i]["Ton"].ToString() != "")
-                    _ravi["Ton"] = Convert.ToDouble(dt3.Rows[i]["Ton"].ToString());
+                    _ravi["Ton"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ton"].ToString());
                 //_ravi["SoChungTu_NhapKho"] = dt3.Rows[i]["SoChungTu_NhapKho"].ToString();
                 //_ravi["SoChungTu_XuatKho"] = dt3.Rows[i]["SoChungTu_XuatKho"].ToString();
                 _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
@@ -63,7 +63,7 @@ namespace CtyTinLuong
                 //}
               
                 if (dt3.Rows[i]["Ton"].ToString() != "")
-                    _ravi["Ton"] = Convert.ToDouble(dt3.Rows[i]["Ton"].ToString());
+                    _ravi["Ton"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ton"].ToString());
                 //_ravi["SoChungTu_NhapKho"] = dt3.Rows[i]["SoChungTu_NhapKho"].ToString();
                 //_ravi["SoChungTu_XuatKho"] = dt3.Rows[i]["SoChungTu_XuatKho"].ToString();
                 _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
@@ -93,11 +93,11 @@ namespace CtyTinLuong
                     DateTime ngay= Convert.ToDateTime(dt3.Rows[i]["NgayChungTu"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");                }
                 if (dt3.Rows[i]["Nhap"].ToString() != "")
-                    _ravi["Nhap"] = Convert.ToDouble(dt3.Rows[i]["Nhap"].ToString());
+                    _ravi["Nhap"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Nhap"].ToString());
                 if (dt3.Rows[i]["Xuat"].ToString() != "")
-                    _ravi["Xuat"] = Convert.ToDouble(dt3.Rows[i]["Xuat"].ToString());
+                    _ravi["Xuat"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Xuat"].ToString());
                 if (dt3.Rows[i]["Ton"].ToString() != "")
-                    _ravi["Ton"] = Convert.ToDouble(dt3.Rows[i]["Ton"].ToString());
+                    _ravi["Ton"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ton"].ToString());
                 _ravi["SoChungTu_NhapKho"] = dt3.Rows[i]["SoChungTu_NhapKho"].ToString();
                 _ravi["SoChungTu_XuatKho"] = dt3.Rows[i]["SoChungTu_XuatKho"].ToString();
                 _ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();
@@ -129,11 +129,11 @@ namespace CtyTinLuong
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
                 }
                 if (dt3.Rows[i]["Nhap"].ToString() != "")
-                    _ravi["Nhap"] = Convert.ToDouble(dt3.Rows[i]["Nhap"].ToString());
+                    _ravi["Nhap"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Nhap"].ToString());
                 if (dt3.Rows[i]["Xuat"].ToString() != "")
-                    _ravi["Xuat"] = Convert.ToDouble(dt3.Rows[i]["Xuat"].ToString());
+                    _ravi["Xuat"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Xuat"].ToString());
                 if (dt3.Rows[i]["Ton"].ToString() != "")
-                    _ravi["Ton"] = Convert.ToDouble(dt3.Rows[i]["Ton"].ToString());
+                    _ravi["Ton"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ton"].ToString());
                 _ravi["SoChungTu_NhapKho"] = dt3.Rows[i]["SoChungTu_NhapKho"].ToString();
                 _ravi["SoChungTu_XuatKho"] = dt3.Rows[i]["SoChungTu_XuatKho"].ToString();
                 //_ravi["MaDaiLy"] = dt3.Rows[i]["MaDaiLy"].ToString();

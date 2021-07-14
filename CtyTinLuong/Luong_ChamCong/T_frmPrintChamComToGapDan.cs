@@ -76,7 +76,7 @@ namespace CtyTinLuong.Luong_ChamCong
             //    //_ravi["Ngay29"] = Convert.ToInt32(dt3.Rows[i]["Ngay29"].ToString());
             //    //_ravi["Ngay30"] = Convert.ToInt32(dt3.Rows[i]["Ngay30"].ToString());
             //    //_ravi["Ngay31"] = Convert.ToInt32(dt3.Rows[i]["Ngay31"].ToString());
-            //    //_ravi["Tong"] = Convert.ToDouble(dt3.Rows[i]["Tong"].ToString());
+            //    //_ravi["Tong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Tong"].ToString());
             //    //_ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
             //    //_ravi["KyNhan"] = "ấdasd";
 
@@ -129,7 +129,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     _ravi["Ngay29"] = Convert.ToInt32(_data.Rows[i]["Ngay29"].ToString());
                     _ravi["Ngay30"] = Convert.ToInt32(_data.Rows[i]["Ngay30"].ToString());
                     _ravi["Ngay31"] = Convert.ToInt32(_data.Rows[i]["Ngay31"].ToString());
-                    _ravi["Tong"] = Convert.ToDouble(_data.Rows[i]["Tong"].ToString());
+                    _ravi["Tong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["Tong"].ToString());
 
                     ds.tbCongNhatChamCongToGapDan.Rows.Add(_ravi);
                 }

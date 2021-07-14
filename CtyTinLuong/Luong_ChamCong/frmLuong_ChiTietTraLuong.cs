@@ -48,7 +48,7 @@ namespace CtyTinLuong
                     _ravi["DoiTuong"] = dt3.Rows[i]["TenDaiLy"].ToString();
                     _ravi["Luong_Thang"] = Convert.ToInt32(txtThang.Text);
                     _ravi["Luong_Nam"] = Convert.ToInt32(txtNam.Text);
-                    _ravi["SoTien"] =Convert.ToDouble(dt3.Rows[i]["Tongtien"].ToString())- Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                    _ravi["SoTien"] =CheckString.ConvertToDouble_My(dt3.Rows[i]["Tongtien"].ToString())- CheckString.ConvertToDouble_My(dt3.Rows[i]["SoTien_TamUng"].ToString());
                     //_ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
                     _ravi["HienThi"] = "1";
                     dt2xx.Rows.Add(_ravi);
@@ -361,7 +361,7 @@ namespace CtyTinLuong
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = SoChungTu_tbThuChi();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.fSoTien = Convert.ToDouble(txtTongSoTien.Text.ToString());
+                cls1.fSoTien = CheckString.ConvertToDouble_My(txtTongSoTien.Text.ToString());
                 cls1.sThamChieu = txtSoChungTu.Text;
                 cls1.sDoiTuong = txtDoiTuong.Text.ToString();
                 cls1.bTonTai = true;
@@ -481,7 +481,7 @@ namespace CtyTinLuong
                 cls1.iID_DoiTuong = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 cls1.iLuong_Thang = Convert.ToInt32(txtThang.Text);
                 cls1.iLuong_Nam = Convert.ToInt32(txtNam.Text);
-                cls1.fTongSoTien = Convert.ToDouble(txtTongSoTien.Text.ToString());
+                cls1.fTongSoTien = CheckString.ConvertToDouble_My(txtTongSoTien.Text.ToString());
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.bCheckDaiLy = checkDaiLy.Checked;
                 cls1.sGhiChu = txtGhiChu.Text;
@@ -666,7 +666,7 @@ namespace CtyTinLuong
             string shienthi = "1";
             object xxxx = dataTable.Compute("sum(SoTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongSoTien.Text = deTOngtien.ToString();
         }
@@ -730,7 +730,7 @@ namespace CtyTinLuong
                 string shienthi = "1";
                 object xxxx = dataTable.Compute("sum(SoTien)", "HienThi=" + shienthi + "");
                 if (xxxx.ToString() != "")
-                    deTOngtien = Convert.ToDouble(xxxx);
+                    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
                 else deTOngtien = 0;
                 txtTongSoTien.Text = deTOngtien.ToString();
             }

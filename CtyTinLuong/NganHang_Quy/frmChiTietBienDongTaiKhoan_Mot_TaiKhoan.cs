@@ -49,8 +49,8 @@ namespace CtyTinLuong
             double dNoDauKy_0, dCoDauKy_0;
             if (dtdudau.Rows.Count > 0)
             {
-                dNoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["NoDauKy"].ToString());
-                dCoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["CoDauKy"].ToString());
+                dNoDauKy_0 = CheckString.ConvertToDouble_My(dtdudau.Rows[0]["NoDauKy"].ToString());
+                dCoDauKy_0 = CheckString.ConvertToDouble_My(dtdudau.Rows[0]["CoDauKy"].ToString());
             }
             else
             {
@@ -93,8 +93,8 @@ namespace CtyTinLuong
                     _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
-                    double Noxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
-                    double Coxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
+                    double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
+                    double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
 
                     if (Noxx_hang <= Coxx_hang)
                     {

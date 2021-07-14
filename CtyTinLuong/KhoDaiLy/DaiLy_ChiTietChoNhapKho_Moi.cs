@@ -45,11 +45,11 @@ namespace CtyTinLuong
             if (rows_Xuat.Length == 0)
                 soluongxuat = 0;
             else
-                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+                soluongxuat = CheckString.ConvertToDouble_My(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
             if (rows_Nhap.Length == 0)
                 soluongnhap = 0;
             else
-                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+                soluongnhap = CheckString.ConvertToDouble_My(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = ""+cls.sMaVT.Value+" - "+cls.sTenVTHH.Value+" || Tồn kho: "+soluongton.ToString()+"";
@@ -65,12 +65,12 @@ namespace CtyTinLuong
             try
             {
                 double soluongbaoto, soluongbaobe, sokg1baoto, sokg1baobe, sokien1baoto, sokien1baobe;
-                soluongbaoto = Convert.ToDouble(txtSoLuong_BaoTo.Text.ToString());
-                soluongbaobe = Convert.ToDouble(txtSoLuong_BaoBe.Text.ToString());
-                sokg1baoto = Convert.ToDouble(txtSoKG1Bao_To.Text.ToString());
-                sokg1baobe = Convert.ToDouble(txtSoKG1Bao_Be.Text.ToString());
-                sokien1baobe = Convert.ToDouble(txtSoKien_1_BaoBe.Text.ToString());
-                sokien1baoto = Convert.ToDouble(txtSoKien_1_BaoTo.Text.ToString());
+                soluongbaoto = CheckString.ConvertToDouble_My(txtSoLuong_BaoTo.Text.ToString());
+                soluongbaobe = CheckString.ConvertToDouble_My(txtSoLuong_BaoBe.Text.ToString());
+                sokg1baoto = CheckString.ConvertToDouble_My(txtSoKG1Bao_To.Text.ToString());
+                sokg1baobe = CheckString.ConvertToDouble_My(txtSoKG1Bao_Be.Text.ToString());
+                sokien1baobe = CheckString.ConvertToDouble_My(txtSoKien_1_BaoBe.Text.ToString());
+                sokien1baoto = CheckString.ConvertToDouble_My(txtSoKien_1_BaoTo.Text.ToString());
 
                 txtQuyRaKien_BaoBe.Text = (soluongbaobe * sokien1baobe).ToString();
                 txtQuyRaKien_BaoTo.Text = (soluongbaoto * sokien1baoto).ToString();
@@ -182,8 +182,8 @@ namespace CtyTinLuong
                     cls2.iID_NhapKhoDaiLy = iiiID_NhapKhoDaiLy;
                     cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                     cls2.iID_VTHH = iiiIDThanhPham_QuyDoi;
-                    cls2.fSoLuongNhap = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
-                    cls2.fSoLuongTon = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                    cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                    cls2.fSoLuongTon = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
                     cls2.fDonGia = 0;
                     cls2.sGhiChu = "";
                     cls2.bTonTai = true;
@@ -199,11 +199,11 @@ namespace CtyTinLuong
                         int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                         cls2.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                         cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                        cls2.fSoLuongNhap = Convert.ToDouble(dttttt2.Rows[i]["SoLuong"].ToString());
-                        cls2.fSoLuongTon = Convert.ToDouble(dttttt2.Rows[i]["SoLuong"].ToString());
+                        cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuong"].ToString());
+                        cls2.fSoLuongTon = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuong"].ToString());
                         if (dttttt2.Rows[i]["DonGia"].ToString() == "")
                             cls2.fDonGia = 0;
-                        else cls2.fDonGia = Convert.ToDouble(dttttt2.Rows[i]["DonGia"].ToString());
+                        else cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
                         cls2.sGhiChu = dttttt2.Rows[i]["GhiChu"].ToString();
                         cls2.bTonTai = true;
                         cls2.bNgungTheoDoi = false;
@@ -231,17 +231,17 @@ namespace CtyTinLuong
                
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls1.fTongTienHang = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                cls1.fTongTienHang = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                 cls1.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
-                cls1.fSoLuongXuat_BaoTo = Convert.ToDouble(txtSoLuong_BaoTo.Text.ToString());
-                cls1.fSoLuongXuat_BaoBe = Convert.ToDouble(txtSoLuong_BaoBe.Text.ToString());
+                cls1.fSoLuongXuat_BaoTo = CheckString.ConvertToDouble_My(txtSoLuong_BaoTo.Text.ToString());
+                cls1.fSoLuongXuat_BaoBe = CheckString.ConvertToDouble_My(txtSoLuong_BaoBe.Text.ToString());
                 cls1.iID_DinhMucDot_BaoTo = Convert.ToInt32(gridMaDinhMucDot_BaoTo.EditValue.ToString());
                 cls1.iID_DinhMucDot_BaoBe = Convert.ToInt32(gridMaDinhMucDot_BaoBe.EditValue.ToString());
-                cls1.fSoLuongThanhPhamQuyDoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
-                cls1.fSoLuongTonThanhPhamQuyDoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                cls1.fSoLuongThanhPhamQuyDoi = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                cls1.fSoLuongTonThanhPhamQuyDoi = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
                 cls1.iID_DinhMucNguenPhuLieu = Convert.ToInt32(gridMaDinhMucNPL.EditValue.ToString());
                 cls1.iID_VTHH_TPQuyDoi = iiiIDThanhPham_QuyDoi;
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
@@ -299,8 +299,8 @@ namespace CtyTinLuong
         }
         private void HienThi_GridControl_Sua(int iiiixxID_NhapKhodaily)
         {
-            double soluongthanhpham = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
-            double TongsoKG = Convert.ToDouble(txtTongSoKG.Text.ToString());
+            double soluongthanhpham = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+            double TongsoKG = CheckString.ConvertToDouble_My(txtTongSoKG.Text.ToString());
 
             gridControl1.DataSource = null;
             DataTable dt2 = new DataTable();
@@ -349,14 +349,14 @@ namespace CtyTinLuong
             }
             cls.iID_NhapKhoDaiLy = iiiixxID_NhapKhodaily;
             cls.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-            double soluongxuat = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[1]["SoLuongNhap"].ToString());
-            double dongiaxxx = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[1]["DonGia"].ToString());
+            double soluongxuat = CheckString.ConvertToDouble_My(dt_ChiTiet_nhapkho_DaiLy.Rows[1]["SoLuongNhap"].ToString());
+            double dongiaxxx = CheckString.ConvertToDouble_My(dt_ChiTiet_nhapkho_DaiLy.Rows[1]["DonGia"].ToString());
 
             _ravi["ID_VTHH"] = iiID_VatTuChinh1;
             _ravi["MaVT"] = iiID_VatTuChinh1;
 
             _ravi["DinhMuc"] = 1;
-            // _ravi["SoLuongTon"] = Convert.ToDouble(dtkhoBTPvtuchinh1.Rows[0]["SoLuongTon"].ToString());
+            // _ravi["SoLuongTon"] = CheckString.ConvertToDouble_My(dtkhoBTPvtuchinh1.Rows[0]["SoLuongTon"].ToString());
             _ravi["SoLuongTheoDinhMuc"] = TongsoKG;
             _ravi["SoLuong"] = soluongxuat;
             _ravi["DonGia"] = dongiaxxx;
@@ -368,7 +368,7 @@ namespace CtyTinLuong
             dt2.Rows.Add(_ravi);
             for (int i = 2; i < dt_ChiTiet_nhapkho_DaiLy.Rows.Count; i++)
             {
-                double dongiaxxx333 = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["DonGia"].ToString());
+                double dongiaxxx333 = CheckString.ConvertToDouble_My(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["DonGia"].ToString());
                 DataRow _ravi3 = dt2.NewRow();
                 int ID_VTHH = Convert.ToInt32(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["ID_VTHH"].ToString());
                 _ravi3["ID_VTHH"] = ID_VTHH;
@@ -384,7 +384,7 @@ namespace CtyTinLuong
                 //    xcls.iID_VTHH = ID_VTHH;
                 //    DataTable dtbtp = xcls.Select_W_ID_VTHH();
                 //    if (dtbtp.Rows.Count > 0)
-                //        _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongTon_KhoBTP"].ToString());
+                //        _ravi3["SoLuongTon"] = CheckString.ConvertToDouble_My(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongTon_KhoBTP"].ToString());
                 //}
                 //else
                 //{
@@ -392,7 +392,7 @@ namespace CtyTinLuong
                 ////    xcls.iID_VTHH = ID_VTHH;
                 ////    DataTable dtbtp = xcls.Select_W_ID_VTHH();
                 ////    if (dtbtp.Rows.Count > 0)
-                //    _ravi3["SoLuongTon"] = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[0]["SoLuongTon_KhoNPL"].ToString());
+                //    _ravi3["SoLuongTon"] = CheckString.ConvertToDouble_My(dt_ChiTiet_nhapkho_DaiLy.Rows[0]["SoLuongTon_KhoNPL"].ToString());
                 //}
 
                 //clsDinhMuc_ChiTiet_DM_NPL clsdm = new clsDinhMuc_ChiTiet_DM_NPL();
@@ -405,7 +405,7 @@ namespace CtyTinLuong
 
                 _ravi3["DinhMuc"] = xxxxsoluongdmimucc;
                 _ravi3["SoLuongTheoDinhMuc"] = xxxxsoluongdmimucc * soluongthanhpham;
-                double SoLuong = Convert.ToDouble(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongNhap"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dt_ChiTiet_nhapkho_DaiLy.Rows[i]["SoLuongNhap"].ToString());
                 _ravi3["SoLuong"] = SoLuong;
                 _ravi3["DonGia"] = dongiaxxx333;// lay kho NPL
                 _ravi3["GhiChu"] = dt_ChiTiet_nhapkho_DaiLy.Rows[i]["GhiChu"].ToString();
@@ -514,8 +514,8 @@ namespace CtyTinLuong
             try
             {
 
-                double SoKG_1BaoTo = Convert.ToDouble(dt.Rows[0]["SoKG_MotBao"].ToString());
-                double SoKienMotBao_To = Convert.ToDouble(dt.Rows[0]["SoKienMotBao"].ToString());
+                double SoKG_1BaoTo = CheckString.ConvertToDouble_My(dt.Rows[0]["SoKG_MotBao"].ToString());
+                double SoKienMotBao_To = CheckString.ConvertToDouble_My(dt.Rows[0]["SoKienMotBao"].ToString());
                 txtSoKG1Bao_To.Text = SoKG_1BaoTo.ToString();
                 txtSoKien_1_BaoTo.Text = SoKienMotBao_To.ToString();
                 TinhTongSoKg_TongSoKien();
@@ -535,8 +535,8 @@ namespace CtyTinLuong
             try
             {
 
-                double SoKG_1BaoBe = Convert.ToDouble(dt.Rows[0]["SoKG_MotBao"].ToString());
-                double SoKienMotBao_Be = Convert.ToDouble(dt.Rows[0]["SoKienMotBao"].ToString());
+                double SoKG_1BaoBe = CheckString.ConvertToDouble_My(dt.Rows[0]["SoKG_MotBao"].ToString());
+                double SoKienMotBao_Be = CheckString.ConvertToDouble_My(dt.Rows[0]["SoKienMotBao"].ToString());
                 txtSoKG1Bao_Be.Text = SoKG_1BaoBe.ToString();
                 txtSoKien_1_BaoBe.Text = SoKienMotBao_Be.ToString();
                 TinhTongSoKg_TongSoKien();
@@ -615,11 +615,11 @@ namespace CtyTinLuong
                     if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
                         ffdongia = 0;
                     else
-                        ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                        ffdongia = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clDonGia));
                     if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                         fffsoluong = 0;
                     else
-                        fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                        fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuong));
                     fffthanhtien = fffsoluong * ffdongia;
                     gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
                 }
@@ -629,11 +629,11 @@ namespace CtyTinLuong
                 if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clDonGia));
                 if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -642,11 +642,11 @@ namespace CtyTinLuong
                 if (gridView1.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clDonGia));
                 if (gridView1.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
@@ -656,7 +656,7 @@ namespace CtyTinLuong
                 //DataTable dt2 = (DataTable)gridControl1.DataSource;
                 //object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + " and BoolVTChinh = False");
                 //if (xxxx.ToString() != "")
-                //    deTOngtien = Convert.ToDouble(xxxx);
+                //    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
                 //else deTOngtien = 0;
                 //txtTongTienHang.Text = deTOngtien.ToString();
             }
@@ -699,7 +699,7 @@ namespace CtyTinLuong
                 msdvtthanhphamquydoi = txtDVTThanhPhamQuyDoi.Text.ToString();
                 msMaThanhPham = txtMaTPQuyDoi.Text.ToString();
 
-                mfsoluongtpqiuydoi = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                mfsoluongtpqiuydoi = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
 
                 mdaNgayXuatKho = dteNgayChungTu.DateTime;
                 msSoChungTu = txtSoChungTu.Text.ToString();
@@ -1138,8 +1138,8 @@ namespace CtyTinLuong
         {
             try
             {
-                double soluong = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
-                double dongia = Convert.ToDouble(txtDonGiaThanhPhamQuyDoi.Text.ToString());
+                double soluong = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                double dongia = CheckString.ConvertToDouble_My(txtDonGiaThanhPhamQuyDoi.Text.ToString());
                 txtTongTienHang.Text = (soluong * dongia).ToString();
             }
             catch
@@ -1152,8 +1152,8 @@ namespace CtyTinLuong
         {
             try
             {
-                double soluong = Convert.ToDouble(txtSoLuongThanhPhamQuyDoi.Text.ToString());
-                double dongia = Convert.ToDouble(txtDonGiaThanhPhamQuyDoi.Text.ToString());
+                double soluong = CheckString.ConvertToDouble_My(txtSoLuongThanhPhamQuyDoi.Text.ToString());
+                double dongia = CheckString.ConvertToDouble_My(txtDonGiaThanhPhamQuyDoi.Text.ToString());
                 txtTongTienHang.Text = (soluong * dongia).ToString();
             }
             catch

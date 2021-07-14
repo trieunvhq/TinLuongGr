@@ -96,7 +96,7 @@ namespace CtyTinLuong
                 _ravi_hang1["STT"] = (i+1).ToString();
                 _ravi_hang1["TenNhanVien"] = dt3.Rows[i]["TenNhanVien"].ToString();
                 _ravi_hang1["NoiDung"] = "Công nhật";
-                _ravi_hang1["TongCong"] = Convert.ToDouble(dt3.Rows[i]["SLThuong"].ToString());       
+                _ravi_hang1["TongCong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SLThuong"].ToString());       
 
                 _ravi_hang1["ID_ChiTietChamCong"] = Convert.ToInt32(dt3.Rows[i]["ID_ChiTietChamCong"].ToString());
                 _ravi_hang1["ID_ChamCong"] = Convert.ToInt32(dt3.Rows[i]["ID_ChamCong"].ToString());
@@ -104,44 +104,44 @@ namespace CtyTinLuong
                 _ravi_hang1["ID_DinhMucLuong_CongNhat"] = dt3.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString();             
                 _ravi_hang1["Thang"] = Convert.ToInt32(dt3.Rows[i]["Thang"].ToString());
                 _ravi_hang1["Nam"] = Convert.ToInt32(dt3.Rows[i]["Nam"].ToString());
-                _ravi_hang1["SLThuong"] = Convert.ToDouble(dt3.Rows[i]["SLThuong"].ToString());
-                _ravi_hang1["SLTangCa"] = Convert.ToDouble(dt3.Rows[i]["SLTangCa"].ToString());
+                _ravi_hang1["SLThuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SLThuong"].ToString());
+                _ravi_hang1["SLTangCa"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SLTangCa"].ToString());
               
                 _ravi_hang1["GuiDuLieu"] = Convert.ToBoolean(dt3.Rows[i]["GuiDuLieu"].ToString());
 
-                _ravi_hang1["Ngay1"] = Convert.ToDouble(dt3.Rows[i]["Ngay1"].ToString());
-                _ravi_hang1["Ngay2"] = Convert.ToDouble(dt3.Rows[i]["Ngay2"].ToString());
-                _ravi_hang1["Ngay3"] = Convert.ToDouble(dt3.Rows[i]["Ngay3"].ToString());
-                _ravi_hang1["Ngay4"] = Convert.ToDouble(dt3.Rows[i]["Ngay4"].ToString());
-                _ravi_hang1["Ngay5"] = Convert.ToDouble(dt3.Rows[i]["Ngay5"].ToString());
-                _ravi_hang1["Ngay6"] = Convert.ToDouble(dt3.Rows[i]["Ngay6"].ToString());
-                _ravi_hang1["Ngay7"] = Convert.ToDouble(dt3.Rows[i]["Ngay7"].ToString());
-                _ravi_hang1["Ngay8"] = Convert.ToDouble(dt3.Rows[i]["Ngay8"].ToString());
-                _ravi_hang1["Ngay9"] = Convert.ToDouble(dt3.Rows[i]["Ngay9"].ToString());
-                _ravi_hang1["Ngay10"] = Convert.ToDouble(dt3.Rows[i]["Ngay10"].ToString());
+                _ravi_hang1["Ngay1"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay1"].ToString());
+                _ravi_hang1["Ngay2"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay2"].ToString());
+                _ravi_hang1["Ngay3"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay3"].ToString());
+                _ravi_hang1["Ngay4"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay4"].ToString());
+                _ravi_hang1["Ngay5"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay5"].ToString());
+                _ravi_hang1["Ngay6"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay6"].ToString());
+                _ravi_hang1["Ngay7"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay7"].ToString());
+                _ravi_hang1["Ngay8"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay8"].ToString());
+                _ravi_hang1["Ngay9"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay9"].ToString());
+                _ravi_hang1["Ngay10"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay10"].ToString());
 
-                _ravi_hang1["Ngay11"] = Convert.ToDouble(dt3.Rows[i]["Ngay11"].ToString());
-                _ravi_hang1["Ngay12"] = Convert.ToDouble(dt3.Rows[i]["Ngay12"].ToString());
-                _ravi_hang1["Ngay13"] = Convert.ToDouble(dt3.Rows[i]["Ngay13"].ToString());
-                _ravi_hang1["Ngay14"] = Convert.ToDouble(dt3.Rows[i]["Ngay14"].ToString());
-                _ravi_hang1["Ngay15"] = Convert.ToDouble(dt3.Rows[i]["Ngay15"].ToString());
-                _ravi_hang1["Ngay16"] = Convert.ToDouble(dt3.Rows[i]["Ngay16"].ToString());
-                _ravi_hang1["Ngay17"] = Convert.ToDouble(dt3.Rows[i]["Ngay17"].ToString());
-                _ravi_hang1["Ngay18"] = Convert.ToDouble(dt3.Rows[i]["Ngay18"].ToString());
-                _ravi_hang1["Ngay19"] = Convert.ToDouble(dt3.Rows[i]["Ngay19"].ToString());
+                _ravi_hang1["Ngay11"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay11"].ToString());
+                _ravi_hang1["Ngay12"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay12"].ToString());
+                _ravi_hang1["Ngay13"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay13"].ToString());
+                _ravi_hang1["Ngay14"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay14"].ToString());
+                _ravi_hang1["Ngay15"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay15"].ToString());
+                _ravi_hang1["Ngay16"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay16"].ToString());
+                _ravi_hang1["Ngay17"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay17"].ToString());
+                _ravi_hang1["Ngay18"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay18"].ToString());
+                _ravi_hang1["Ngay19"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay19"].ToString());
 
-                _ravi_hang1["Ngay20"] = Convert.ToDouble(dt3.Rows[i]["Ngay20"].ToString());
-                _ravi_hang1["Ngay21"] = Convert.ToDouble(dt3.Rows[i]["Ngay21"].ToString());
-                _ravi_hang1["Ngay22"] = Convert.ToDouble(dt3.Rows[i]["Ngay22"].ToString());
-                _ravi_hang1["Ngay23"] = Convert.ToDouble(dt3.Rows[i]["Ngay23"].ToString());
-                _ravi_hang1["Ngay24"] = Convert.ToDouble(dt3.Rows[i]["Ngay24"].ToString());
-                _ravi_hang1["Ngay25"] = Convert.ToDouble(dt3.Rows[i]["Ngay25"].ToString());
-                _ravi_hang1["Ngay26"] = Convert.ToDouble(dt3.Rows[i]["Ngay26"].ToString());
-                _ravi_hang1["Ngay27"] = Convert.ToDouble(dt3.Rows[i]["Ngay27"].ToString());
-                _ravi_hang1["Ngay28"] = Convert.ToDouble(dt3.Rows[i]["Ngay28"].ToString());
-                _ravi_hang1["Ngay29"] = Convert.ToDouble(dt3.Rows[i]["Ngay29"].ToString());
-                _ravi_hang1["Ngay30"] = Convert.ToDouble(dt3.Rows[i]["Ngay30"].ToString());
-                _ravi_hang1["Ngay31"] = Convert.ToDouble(dt3.Rows[i]["Ngay31"].ToString());               
+                _ravi_hang1["Ngay20"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay20"].ToString());
+                _ravi_hang1["Ngay21"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay21"].ToString());
+                _ravi_hang1["Ngay22"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay22"].ToString());
+                _ravi_hang1["Ngay23"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay23"].ToString());
+                _ravi_hang1["Ngay24"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay24"].ToString());
+                _ravi_hang1["Ngay25"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay25"].ToString());
+                _ravi_hang1["Ngay26"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay26"].ToString());
+                _ravi_hang1["Ngay27"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay27"].ToString());
+                _ravi_hang1["Ngay28"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay28"].ToString());
+                _ravi_hang1["Ngay29"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay29"].ToString());
+                _ravi_hang1["Ngay30"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay30"].ToString());
+                _ravi_hang1["Ngay31"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Ngay31"].ToString());               
                 _ravi_hang1["HienThi"] = "1";
                 dt2.Rows.Add(_ravi_hang1);
 
@@ -149,7 +149,7 @@ namespace CtyTinLuong
                 _ravi_hang2["STT"] = "";
                 _ravi_hang2["TenNhanVien"] = "";
                 _ravi_hang2["NoiDung"] = "Tăng ca";
-                _ravi_hang2["TongCong"] = Convert.ToDouble(dt3.Rows[i]["SLTangCa"].ToString());
+                _ravi_hang2["TongCong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SLTangCa"].ToString());
 
                 _ravi_hang2["ID_ChiTietChamCong"] = Convert.ToInt32(dt3.Rows[i]["ID_ChiTietChamCong"].ToString());
                 _ravi_hang2["ID_ChamCong"] = Convert.ToInt32(dt3.Rows[i]["ID_ChamCong"].ToString());
@@ -157,44 +157,44 @@ namespace CtyTinLuong
                 _ravi_hang2["ID_DinhMucLuong_CongNhat"] = dt3.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString();
                 _ravi_hang2["Thang"] = Convert.ToInt32(dt3.Rows[i]["Thang"].ToString());
                 _ravi_hang2["Nam"] = Convert.ToInt32(dt3.Rows[i]["Nam"].ToString());
-                _ravi_hang2["SLThuong"] = Convert.ToDouble(dt3.Rows[i]["SLThuong"].ToString());
-                _ravi_hang2["SLTangCa"] = Convert.ToDouble(dt3.Rows[i]["SLTangCa"].ToString());
+                _ravi_hang2["SLThuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SLThuong"].ToString());
+                _ravi_hang2["SLTangCa"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SLTangCa"].ToString());
 
                 _ravi_hang2["GuiDuLieu"] = Convert.ToBoolean(dt3.Rows[i]["GuiDuLieu"].ToString());
 
-                _ravi_hang2["Ngay1"] = Convert.ToDouble(dt3.Rows[i]["TCNgay1"].ToString());
-                _ravi_hang2["Ngay2"] = Convert.ToDouble(dt3.Rows[i]["TCNgay2"].ToString());
-                _ravi_hang2["Ngay3"] = Convert.ToDouble(dt3.Rows[i]["TCNgay3"].ToString());
-                _ravi_hang2["Ngay4"] = Convert.ToDouble(dt3.Rows[i]["TCNgay4"].ToString());
-                _ravi_hang2["Ngay5"] = Convert.ToDouble(dt3.Rows[i]["TCNgay5"].ToString());
-                _ravi_hang2["Ngay6"] = Convert.ToDouble(dt3.Rows[i]["TCNgay6"].ToString());
-                _ravi_hang2["Ngay7"] = Convert.ToDouble(dt3.Rows[i]["TCNgay7"].ToString());
-                _ravi_hang2["Ngay8"] = Convert.ToDouble(dt3.Rows[i]["TCNgay8"].ToString());
-                _ravi_hang2["Ngay9"] = Convert.ToDouble(dt3.Rows[i]["TCNgay9"].ToString());
-                _ravi_hang2["Ngay10"] = Convert.ToDouble(dt3.Rows[i]["TCNgay10"].ToString());
+                _ravi_hang2["Ngay1"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay1"].ToString());
+                _ravi_hang2["Ngay2"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay2"].ToString());
+                _ravi_hang2["Ngay3"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay3"].ToString());
+                _ravi_hang2["Ngay4"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay4"].ToString());
+                _ravi_hang2["Ngay5"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay5"].ToString());
+                _ravi_hang2["Ngay6"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay6"].ToString());
+                _ravi_hang2["Ngay7"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay7"].ToString());
+                _ravi_hang2["Ngay8"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay8"].ToString());
+                _ravi_hang2["Ngay9"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay9"].ToString());
+                _ravi_hang2["Ngay10"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay10"].ToString());
 
-                _ravi_hang2["Ngay11"] = Convert.ToDouble(dt3.Rows[i]["TCNgay11"].ToString());
-                _ravi_hang2["Ngay12"] = Convert.ToDouble(dt3.Rows[i]["TCNgay12"].ToString());
-                _ravi_hang2["Ngay13"] = Convert.ToDouble(dt3.Rows[i]["TCNgay13"].ToString());
-                _ravi_hang2["Ngay14"] = Convert.ToDouble(dt3.Rows[i]["TCNgay14"].ToString());
-                _ravi_hang2["Ngay15"] = Convert.ToDouble(dt3.Rows[i]["TCNgay15"].ToString());
-                _ravi_hang2["Ngay16"] = Convert.ToDouble(dt3.Rows[i]["TCNgay16"].ToString());
-                _ravi_hang2["Ngay17"] = Convert.ToDouble(dt3.Rows[i]["TCNgay17"].ToString());
-                _ravi_hang2["Ngay18"] = Convert.ToDouble(dt3.Rows[i]["TCNgay18"].ToString());
-                _ravi_hang2["Ngay19"] = Convert.ToDouble(dt3.Rows[i]["TCNgay19"].ToString());
+                _ravi_hang2["Ngay11"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay11"].ToString());
+                _ravi_hang2["Ngay12"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay12"].ToString());
+                _ravi_hang2["Ngay13"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay13"].ToString());
+                _ravi_hang2["Ngay14"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay14"].ToString());
+                _ravi_hang2["Ngay15"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay15"].ToString());
+                _ravi_hang2["Ngay16"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay16"].ToString());
+                _ravi_hang2["Ngay17"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay17"].ToString());
+                _ravi_hang2["Ngay18"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay18"].ToString());
+                _ravi_hang2["Ngay19"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay19"].ToString());
 
-                _ravi_hang2["Ngay20"] = Convert.ToDouble(dt3.Rows[i]["TCNgay20"].ToString());
-                _ravi_hang2["Ngay21"] = Convert.ToDouble(dt3.Rows[i]["TCNgay21"].ToString());
-                _ravi_hang2["Ngay22"] = Convert.ToDouble(dt3.Rows[i]["TCNgay22"].ToString());
-                _ravi_hang2["Ngay23"] = Convert.ToDouble(dt3.Rows[i]["TCNgay23"].ToString());
-                _ravi_hang2["Ngay24"] = Convert.ToDouble(dt3.Rows[i]["TCNgay24"].ToString());
-                _ravi_hang2["Ngay25"] = Convert.ToDouble(dt3.Rows[i]["TCNgay25"].ToString());
-                _ravi_hang2["Ngay26"] = Convert.ToDouble(dt3.Rows[i]["TCNgay26"].ToString());
-                _ravi_hang2["Ngay27"] = Convert.ToDouble(dt3.Rows[i]["TCNgay27"].ToString());
-                _ravi_hang2["Ngay28"] = Convert.ToDouble(dt3.Rows[i]["TCNgay28"].ToString());
-                _ravi_hang2["Ngay29"] = Convert.ToDouble(dt3.Rows[i]["TCNgay29"].ToString());
-                _ravi_hang2["Ngay30"] = Convert.ToDouble(dt3.Rows[i]["TCNgay30"].ToString());
-                _ravi_hang2["Ngay31"] = Convert.ToDouble(dt3.Rows[i]["TCNgay31"].ToString());
+                _ravi_hang2["Ngay20"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay20"].ToString());
+                _ravi_hang2["Ngay21"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay21"].ToString());
+                _ravi_hang2["Ngay22"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay22"].ToString());
+                _ravi_hang2["Ngay23"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay23"].ToString());
+                _ravi_hang2["Ngay24"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay24"].ToString());
+                _ravi_hang2["Ngay25"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay25"].ToString());
+                _ravi_hang2["Ngay26"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay26"].ToString());
+                _ravi_hang2["Ngay27"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay27"].ToString());
+                _ravi_hang2["Ngay28"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay28"].ToString());
+                _ravi_hang2["Ngay29"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay29"].ToString());
+                _ravi_hang2["Ngay30"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay30"].ToString());
+                _ravi_hang2["Ngay31"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TCNgay31"].ToString());
                 _ravi_hang2["HienThi"] = "0";
                 dt2.Rows.Add(_ravi_hang2);
 
@@ -530,38 +530,38 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString() != "")
             {
                 clsHUU_CongNhat_ChiTiet_ChamCong cls = new CtyTinLuong.clsHUU_CongNhat_ChiTiet_ChamCong();
-                double ngay1 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn1).ToString());
-                double ngay2 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn2).ToString());
-                double ngay3 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn3).ToString());
-                double ngay4 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn4).ToString());
-                double ngay5 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn5).ToString());
-                double ngay6 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn6).ToString());
-                double ngay7 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn7).ToString());
-                double ngay8 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn8).ToString());
-                double ngay9 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn9).ToString());
-                double ngay10 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn10).ToString());
-                double ngay11 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn11).ToString());
-                double ngay12 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn12).ToString());
-                double ngay13 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn13).ToString());
-                double ngay14 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn14).ToString());
-                double ngay15 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn15).ToString());
-                double ngay16 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn16).ToString());
-                double ngay17 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn17).ToString());
-                double ngay18 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn18).ToString());
-                double ngay19 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn19).ToString());
-                double ngay20 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn20).ToString());
-                double ngay21 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn21).ToString());
-                double ngay22 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn22).ToString());
-                double ngay23 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn23).ToString());
-                double ngay24 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn24).ToString());
-                double ngay25 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn25).ToString());
-                double ngay26 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn26).ToString());
-                double ngay27 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn27).ToString());
-                double ngay28 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn28).ToString());
-                double ngay29 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
-                double ngay30 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
-                double ngay31 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
-                double tongcong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clTongCong).ToString());
+                double ngay1 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn1).ToString());
+                double ngay2 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn2).ToString());
+                double ngay3 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn3).ToString());
+                double ngay4 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn4).ToString());
+                double ngay5 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn5).ToString());
+                double ngay6 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn6).ToString());
+                double ngay7 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn7).ToString());
+                double ngay8 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn8).ToString());
+                double ngay9 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn9).ToString());
+                double ngay10 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn10).ToString());
+                double ngay11 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn11).ToString());
+                double ngay12 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn12).ToString());
+                double ngay13 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn13).ToString());
+                double ngay14 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn14).ToString());
+                double ngay15 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn15).ToString());
+                double ngay16 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn16).ToString());
+                double ngay17 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn17).ToString());
+                double ngay18 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn18).ToString());
+                double ngay19 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn19).ToString());
+                double ngay20 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn20).ToString());
+                double ngay21 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn21).ToString());
+                double ngay22 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn22).ToString());
+                double ngay23 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn23).ToString());
+                double ngay24 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn24).ToString());
+                double ngay25 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn25).ToString());
+                double ngay26 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn26).ToString());
+                double ngay27 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn27).ToString());
+                double ngay28 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn28).ToString());
+                double ngay29 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
+                double ngay30 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
+                double ngay31 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
+                double tongcong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clTongCong).ToString());
                 int ID_ChiTietChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
                 if (e.RowHandle % 2 == 0)
                 {
@@ -646,37 +646,37 @@ namespace CtyTinLuong
         {
             #region Tính tổng công làm việc
           
-            double ngay1 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn1).ToString());
-            double ngay2 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn2).ToString());
-            double ngay3 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn3).ToString());
-            double ngay4 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn4).ToString());
-            double ngay5 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn5).ToString());
-            double ngay6 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn6).ToString());
-            double ngay7 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn7).ToString());
-            double ngay8 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn8).ToString());
-            double ngay9 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn9).ToString());
-            double ngay10 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn10).ToString());
-            double ngay11 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn11).ToString());
-            double ngay12 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn12).ToString());
-            double ngay13 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn13).ToString());
-            double ngay14 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn14).ToString());
-            double ngay15 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn15).ToString());
-            double ngay16 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn16).ToString());
-            double ngay17 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn17).ToString());
-            double ngay18 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn18).ToString());
-            double ngay19 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn19).ToString());
-            double ngay20 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn20).ToString());
-            double ngay21 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn21).ToString());
-            double ngay22 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn22).ToString());
-            double ngay23 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn23).ToString());
-            double ngay24 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn24).ToString());
-            double ngay25 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn25).ToString());
-            double ngay26 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn26).ToString());
-            double ngay27 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn27).ToString());
-            double ngay28 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn28).ToString());
-            double ngay29 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
-            double ngay30 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
-            double ngay31 = Convert.ToDouble(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
+            double ngay1 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn1).ToString());
+            double ngay2 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn2).ToString());
+            double ngay3 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn3).ToString());
+            double ngay4 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn4).ToString());
+            double ngay5 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn5).ToString());
+            double ngay6 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn6).ToString());
+            double ngay7 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn7).ToString());
+            double ngay8 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn8).ToString());
+            double ngay9 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn9).ToString());
+            double ngay10 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn10).ToString());
+            double ngay11 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn11).ToString());
+            double ngay12 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn12).ToString());
+            double ngay13 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn13).ToString());
+            double ngay14 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn14).ToString());
+            double ngay15 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn15).ToString());
+            double ngay16 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn16).ToString());
+            double ngay17 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn17).ToString());
+            double ngay18 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn18).ToString());
+            double ngay19 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn19).ToString());
+            double ngay20 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn20).ToString());
+            double ngay21 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn21).ToString());
+            double ngay22 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn22).ToString());
+            double ngay23 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn23).ToString());
+            double ngay24 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn24).ToString());
+            double ngay25 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn25).ToString());
+            double ngay26 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn26).ToString());
+            double ngay27 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn27).ToString());
+            double ngay28 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn28).ToString());
+            double ngay29 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn29).ToString());
+            double ngay30 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn30).ToString());
+            double ngay31 = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(gridColumn31).ToString());
 
             double tongcong = ngay1+ngay2+ngay3+ngay4+ngay5+ngay6+ngay7+ngay8+ngay9+ngay10
                 +ngay11+ngay12+ngay13+ngay14+ngay15+ngay16+ngay17+ngay18+ngay19+ngay20+
@@ -1071,7 +1071,7 @@ namespace CtyTinLuong
                 if (e.RowHandle % 2 == 1)
                 {
                     GridView View = sender as GridView;
-                    double category = Convert.ToDouble(View.GetRowCellValue(e.RowHandle, View.Columns["TongCong"]));
+                    double category = CheckString.ConvertToDouble_My(View.GetRowCellValue(e.RowHandle, View.Columns["TongCong"]));
                     if (category != 0)
                         e.Appearance.BackColor = Color.Bisque;
                 }

@@ -423,8 +423,8 @@ namespace CtyTinLuong
                 DataTable dt_ = clsThin_.T_TongPhieuSX(_ngay_batdau, _ngay_ketthuc, _ma_phieu);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    //lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
-                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20));
+                    //lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20));
                     lbTongSoTrang.Text = "/" + _TongSoTrang.ToString();
                 }
                 else

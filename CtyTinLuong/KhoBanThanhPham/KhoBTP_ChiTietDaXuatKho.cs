@@ -83,20 +83,20 @@ namespace CtyTinLuong
                 _ravi["ID_XuatKho"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_XuatKhoBTP"].ToString());
                 int iiDI_Vthh = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
                 _ravi["ID_VTHH"] = iiDI_Vthh;
-                _ravi["SoLuongXuat"] = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
+                _ravi["SoLuongXuat"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
+                _ravi["DonGia"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["DonGia"].ToString());
                 _ravi["MaVT"] = dtxxxx.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dtxxxx.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dtxxxx.Rows[i]["DonViTinh"].ToString();
-                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
+                soluong = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
+                dongia = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["DonGia"].ToString());
                 _ravi["ThanhTien"] = soluong * dongia;
                 _ravi["HienThi"] = "1";
                 clsnhapkho.iID_VTHH = iiDI_Vthh;
                 DataTable dtnhapkho = new DataTable();
                 dtnhapkho = clsnhapkho.Select_W_ID_VTHH();
                 if (dtnhapkho.Rows.Count > 0)
-                    _ravi["SoLuongTon"] = Convert.ToDouble(dtnhapkho.Rows[0]["SoLuongTon"].ToString());
+                    _ravi["SoLuongTon"] = CheckString.ConvertToDouble_My(dtnhapkho.Rows[0]["SoLuongTon"].ToString());
                 else _ravi["SoLuongTon"] = 0;
                 dt2.Rows.Add(_ravi);
 
@@ -218,7 +218,7 @@ namespace CtyTinLuong
                     mdaNgayChungTu = dteNgayChungTuNPL.DateTime;
                     msSoChungTu = txtSoChungTu.Text.ToString();
                     msNguoiGiaoHang = txtNguoiNhanHang.Text.ToString();
-                    mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                    mdbTongSotien = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                     msDienGiai = txtDienGiaiNPL.Text.ToString();
                     frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ff = new frmPrin_THINxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx();
                     ff.ShowDialog();

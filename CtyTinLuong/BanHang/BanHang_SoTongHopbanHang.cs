@@ -126,8 +126,8 @@ namespace CtyTinLuong
                 DataTable dt2= cls.SelectAll_ID_VTHH_NgayThang(xxID_VTHH, dteTuNgay.DateTime, dteDenNgay.DateTime);
                 if(dt2.Rows.Count>0)
                 {
-                    double TongTienUSDxx=Convert.ToDouble(dt2.Compute("sum(ThanhTien)", "ID_VTHH=" + xxID_VTHH + ""));
-                    double TongTienVNDxxx = Convert.ToDouble(dt2.Compute("sum(QuyDoiVND)", "ID_VTHH=" + xxID_VTHH + ""));
+                    double TongTienUSDxx=CheckString.ConvertToDouble_My(dt2.Compute("sum(ThanhTien)", "ID_VTHH=" + xxID_VTHH + ""));
+                    double TongTienVNDxxx = CheckString.ConvertToDouble_My(dt2.Compute("sum(QuyDoiVND)", "ID_VTHH=" + xxID_VTHH + ""));
                     for (int k = 0; k < dt2.Rows.Count;k++)
                     {
                         DataRow _ravi = mdtPrint.NewRow();
@@ -294,7 +294,7 @@ namespace CtyTinLuong
                 if (dt2.Rows.Count > 0)
                 {
                     string hienthi = "1";
-                    double TongTienUSDxx = Convert.ToDouble(dt2.Compute("sum(ThanhTien)", "HienThi="+ hienthi + ""));
+                    double TongTienUSDxx = CheckString.ConvertToDouble_My(dt2.Compute("sum(ThanhTien)", "HienThi="+ hienthi + ""));
                    
                     for (int k = 0; k < dt2.Rows.Count; k++)
                     {

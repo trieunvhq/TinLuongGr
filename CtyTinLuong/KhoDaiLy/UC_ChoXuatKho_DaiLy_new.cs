@@ -32,11 +32,11 @@ namespace CtyTinLuong
             if (rows_Xuat.Length == 0)
                 soluongxuat = 0;
             else
-                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+                soluongxuat = CheckString.ConvertToDouble_My(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
             if (rows_Nhap.Length == 0)
                 soluongnhap = 0;
             else
-                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+                soluongnhap = CheckString.ConvertToDouble_My(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
@@ -75,8 +75,8 @@ namespace CtyTinLuong
                     cls2.iID_DaiLy = Convert.ToInt32(dttttt2.Rows[i]["ID_DaiLy"].ToString());
                     int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                     cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                    cls2.fSoLuongXuat = Convert.ToDouble(dttttt2.Rows[i]["SoLuong"].ToString());                   
-                    cls2.fDonGia = Convert.ToDouble(dttttt2.Rows[i]["DonGia"].ToString());
+                    cls2.fSoLuongXuat = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuong"].ToString());                   
+                    cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
                     cls2.sGhiChu = dttttt2.Rows[i]["GhiChu"].ToString();
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
@@ -122,11 +122,11 @@ namespace CtyTinLuong
                     cls.iID_DaiLy = Convert.ToInt32(dtthamchieu.Rows[i]["ID_DaiLy"].ToString());
                     cls.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                     cls.iID_VTHH = Convert.ToInt32(dtthamchieu.Rows[i]["ID_VTHH"].ToString());
-                    cls.fSoLuongThanhPhamQuyDoi = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                    cls.fSoLuongNhap = Convert.ToDouble(dtthamchieu.Rows[i]["SoLuongNhap"].ToString());
+                    cls.fSoLuongThanhPhamQuyDoi = CheckString.ConvertToDouble_My(dtthamchieu.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
+                    cls.fSoLuongNhap = CheckString.ConvertToDouble_My(dtthamchieu.Rows[i]["SoLuongNhap"].ToString());
                     cls.bTonTai = true;
                     cls.bNgungTheoDoi = false;
-                    cls.fDonGia = Convert.ToDouble(dtthamchieu.Rows[i]["DonGia"].ToString());
+                    cls.fDonGia = CheckString.ConvertToDouble_My(dtthamchieu.Rows[i]["DonGia"].ToString());
                     cls.Insert();
                 }
             }

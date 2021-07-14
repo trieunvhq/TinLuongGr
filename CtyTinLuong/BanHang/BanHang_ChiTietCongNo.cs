@@ -53,8 +53,8 @@ namespace CtyTinLuong
             double dNoDauKy_0, dCoDauKy_0;
             if (dtdudau.Rows.Count > 0)
             {
-                dNoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["NoDauKy"].ToString());
-                dCoDauKy_0 = Convert.ToDouble(dtdudau.Rows[0]["CoDauKy"].ToString());
+                dNoDauKy_0 = CheckString.ConvertToDouble_My(dtdudau.Rows[0]["NoDauKy"].ToString());
+                dCoDauKy_0 = CheckString.ConvertToDouble_My(dtdudau.Rows[0]["CoDauKy"].ToString());
             }
             else
             {
@@ -90,8 +90,8 @@ namespace CtyTinLuong
                     _ravi["NgayThang"] = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
-                    double Noxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["No"].ToString());
-                    double Coxx_hang = Convert.ToDouble(dtphatsinh.Rows[i]["Co"].ToString());
+                    double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
+                    double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
 
                     if (Noxx_hang <= Coxx_hang)
                     {
@@ -324,9 +324,9 @@ namespace CtyTinLuong
                         {
                             DataRow _ravi2 = mdtPrint.NewRow();
                             _ravi2["STT"] = (i + 1).ToString();
-                            _ravi2["SoLuong"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString());
-                            _ravi2["DonGia"] = Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
-                            _ravi2["ThanhTien"] = Convert.ToDouble(dtxxx.Rows[j]["SoLuong"].ToString()) * Convert.ToDouble(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi2["SoLuong"] = CheckString.ConvertToDouble_My(dtxxx.Rows[j]["SoLuong"].ToString());
+                            _ravi2["DonGia"] = CheckString.ConvertToDouble_My(dtxxx.Rows[j]["DonGia"].ToString());
+                            _ravi2["ThanhTien"] = CheckString.ConvertToDouble_My(dtxxx.Rows[j]["SoLuong"].ToString()) * CheckString.ConvertToDouble_My(dtxxx.Rows[j]["DonGia"].ToString());
                             _ravi2["MaVT"] = dtxxx.Rows[j]["MaVT"].ToString();
                             _ravi2["TenVTHH"] = dtxxx.Rows[j]["TenVTHH"].ToString();
                             _ravi2["NgayThang"] = dt3.Rows[i]["NgayThang"].ToString();

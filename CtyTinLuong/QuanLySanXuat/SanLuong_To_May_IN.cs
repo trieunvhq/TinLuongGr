@@ -59,7 +59,7 @@ namespace CtyTinLuong
                         dtxxxx = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(ID_VTHH_Raxx, xxtungay, xxdenngay);
                     if (dtxxxx.Rows.Count>0)
                     {
-                        if(Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_Tong"].ToString())>0)
+                        if(CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["SanLuong_Tong"].ToString())>0)
                         {
                             DataRow _ravi = dt2.NewRow();
                             clsvt.iID_VTHH = ID_VTHH_Raxx;
@@ -72,10 +72,10 @@ namespace CtyTinLuong
                             _ravi["MaVT_Ra"] = MaVT_Ra;
                             _ravi["DonViTinh_Ra"] = DonViTinh_Ra;
                             _ravi["TenVatTu_Ra"] = TenVatTu_Ra;
-                            _ravi["SanLuong_Tong"] = Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_Tong"].ToString());
-                            _ravi["SanLuong_Thuong"] = Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_Thuong"].ToString());
-                            _ravi["SanLuong_TangCa"] = Convert.ToDouble(dtxxxx.Rows[0]["SanLuong_TangCa"].ToString());
-                            _ravi["PhePham"] = Convert.ToDouble(dtxxxx.Rows[0]["PhePham"].ToString());
+                            _ravi["SanLuong_Tong"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["SanLuong_Tong"].ToString());
+                            _ravi["SanLuong_Thuong"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["SanLuong_Thuong"].ToString());
+                            _ravi["SanLuong_TangCa"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["SanLuong_TangCa"].ToString());
+                            _ravi["PhePham"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["PhePham"].ToString());
                             dt2.Rows.Add(_ravi);
                         }
                         
@@ -117,7 +117,7 @@ namespace CtyTinLuong
                 DataTable dt_ = cls.SelectAll_Tinh_SoPhieu_new(xxtungay, xxdenngay);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
                 }
                 else
                 {

@@ -84,10 +84,10 @@ namespace CtyTinLuong
                             ID_TaiKhoanKeToanMe = 0;
                         }
                         if (dtNganhang.Rows[i][4].ToString() != "")
-                            Co = Convert.ToDouble(dtNganhang.Rows[i][4].ToString());
+                            Co = CheckString.ConvertToDouble_My(dtNganhang.Rows[i][4].ToString());
                         else Co = 0;
                         if (dtNganhang.Rows[i][3].ToString() != "")
-                            No = Convert.ToDouble(dtNganhang.Rows[i][3].ToString());
+                            No = CheckString.ConvertToDouble_My(dtNganhang.Rows[i][3].ToString());
                         else No = 0;
                      
                         clsNganHang_tbHeThongTaiKhoanKeToanMe clsme = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
@@ -173,8 +173,8 @@ namespace CtyTinLuong
             {
                 int ID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
                 int ID_TaiKhoanKeToanMe = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanMe"].ToString());
-                double Co = Convert.ToDouble(dtnganhang.Rows[i]["Co"].ToString());
-                double No = Convert.ToDouble(dtnganhang.Rows[i]["No"].ToString());
+                double Co = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co"].ToString());
+                double No = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No"].ToString());
                 bool TienUSD = Convert.ToBoolean(dtnganhang.Rows[i]["TienUSD"].ToString());
                 double TiGia = 0;
                 clschitietbeindong.iID_ChungTu = 0;
@@ -301,8 +301,8 @@ namespace CtyTinLuong
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
             int xxxID_TaiKhoanKeToanCon = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChiTietBienDongTaiKhoanxxxxxxxxxxxxx).ToString());
-            double Co = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clCoxxxxxxxxxxxx).ToString());
-            double No = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clNoKhong).ToString());
+            double Co = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clCoxxxxxxxxxxxx).ToString());
+            double No = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clNoKhong).ToString());
             cls.iID_ChiTietBienDongTaiKhoan = xxxID_TaiKhoanKeToanCon;
             cls.fCo = Co;
             cls.fNo = No;

@@ -48,49 +48,49 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 if (_data.Rows[i]["LuongTrachNhiem"].ToString() != "")
                 {
-                    _ravi["TrachNhiem"] = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                    _ravi["TrachNhiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem"].ToString());
                 }
                 else _ravi["TrachNhiem"] = 0;
 
                 if (_data.Rows[i]["TongLuong"].ToString() != "")
                 {
-                    _ravi["TongTien"] = Convert.ToDouble(_data.Rows[i]["TongLuong"].ToString());
+                    _ravi["TongTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TongLuong"].ToString());
                 }
                 else _ravi["TongTien"] = 0;
 
                 if (_data.Rows[i]["PhuCap"].ToString() != "")
                 {
-                    _ravi["PhuCap"] = Convert.ToDouble(_data.Rows[i]["PhuCap"].ToString());
+                    _ravi["PhuCap"] = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCap"].ToString());
                 }
                 else _ravi["PhuCap"] = 0;
 
                 if (_data.Rows[i]["BaoHiem"].ToString() != "")
                 {
-                    _ravi["CongBaoHiem"] = Convert.ToDouble(_data.Rows[i]["BaoHiem"].ToString());
+                    _ravi["CongBaoHiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem"].ToString());
                 }
                 else _ravi["BaoHiem"] = 0;
 
                 if (_data.Rows[i]["BaoHiem"].ToString() != "")
                 {
-                    _ravi["TruBaoHiem"] = Convert.ToDouble(_data.Rows[i]["BaoHiem"].ToString());
+                    _ravi["TruBaoHiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem"].ToString());
                 }
                 else _ravi["TruBaoHiem"] = 0;
 
                 if (_data.Rows[i]["TongTien"].ToString() != "")
                 {
-                    _ravi["TongLuong"] = Convert.ToDouble(_data.Rows[i]["TongTien"].ToString());
+                    _ravi["TongLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TongTien"].ToString());
                 }
                 else _ravi["TongLuong"] = 0;
 
                 if (_data.Rows[i]["TamUng"].ToString() != "")
                 {
-                    _ravi["TamUng"] = Convert.ToDouble(_data.Rows[i]["TamUng"].ToString());
+                    _ravi["TamUng"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
                 }
                 else _ravi["TamUng"] = 0;
 
                 if (_data.Rows[i]["ThucNhan"].ToString() != "")
                 {
-                    _ravi["ThucNhan"] = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
+                    _ravi["ThucNhan"] = CheckString.ConvertToDouble_My(_data.Rows[i]["ThucNhan"].ToString());
                 }
                 else _ravi["ThucNhan"] = 0;
 

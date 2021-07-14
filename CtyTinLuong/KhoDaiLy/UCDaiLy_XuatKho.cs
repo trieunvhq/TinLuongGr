@@ -34,11 +34,11 @@ namespace CtyTinLuong
             if (rows_Xuat.Length == 0)
                 soluongxuat = 0;
             else
-                soluongxuat = Convert.ToDouble(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
+                soluongxuat = CheckString.ConvertToDouble_My(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
             if (rows_Nhap.Length == 0)
                 soluongnhap = 0;
             else
-                soluongnhap = Convert.ToDouble(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
+                soluongnhap = CheckString.ConvertToDouble_My(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
             soluongton = soluongnhap - soluongxuat;
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
@@ -119,12 +119,12 @@ namespace CtyTinLuong
                 _ravi3["MaVT"] = dt222.Rows[i]["MaVT"].ToString();
                 _ravi3["TenVTHH"] = dt222.Rows[i]["TenVTHH"].ToString();
                 _ravi3["DonViTinh"] = dt222.Rows[i]["DonViTinh"].ToString();
-                _ravi3["SoLuongNhap"] = Convert.ToDouble(dt222.Rows[i]["SoLuongNhap"].ToString());
-                _ravi3["SoLuongThanhPhamQuyDoi"] = Convert.ToDouble(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi3["DonGia"] = Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
+                _ravi3["SoLuongNhap"] = CheckString.ConvertToDouble_My(dt222.Rows[i]["SoLuongNhap"].ToString());
+                _ravi3["SoLuongThanhPhamQuyDoi"] = CheckString.ConvertToDouble_My(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
+                _ravi3["DonGia"] = CheckString.ConvertToDouble_My(dt222.Rows[i]["DonGia"].ToString());
                 _ravi3["HienThi"] = "1";
-                _ravi3["TiLe"] = Convert.ToDouble(dt222.Rows[i]["SoLuongNhap"].ToString()) / Convert.ToDouble(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
-                _ravi3["ThanhTien"] = Convert.ToDouble(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString()) * Convert.ToDouble(dt222.Rows[i]["DonGia"].ToString());
+                _ravi3["TiLe"] = CheckString.ConvertToDouble_My(dt222.Rows[i]["SoLuongNhap"].ToString()) / CheckString.ConvertToDouble_My(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString());
+                _ravi3["ThanhTien"] = CheckString.ConvertToDouble_My(dt222.Rows[i]["SoLuongThanhPhamQuyDoi"].ToString()) * CheckString.ConvertToDouble_My(dt222.Rows[i]["DonGia"].ToString());
 
                 dt2.Rows.Add(_ravi3);
 

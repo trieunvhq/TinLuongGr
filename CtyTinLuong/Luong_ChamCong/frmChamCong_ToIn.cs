@@ -1,5 +1,5 @@
 ﻿
-using CtyTinLuong.Constants;
+
 using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
@@ -57,7 +57,7 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < _data.Rows.Count - 1; ++i)
                 {
-                    if(Convert.ToDouble(_data.Rows[i]["ID_CongNhan"].ToString())==id_congnhan)
+                    if(CheckString.ConvertToDouble_My(_data.Rows[i]["ID_CongNhan"].ToString())==id_congnhan)
                     {
                         _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                         _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
@@ -208,12 +208,12 @@ namespace CtyTinLuong
                     int ngay_ = Convert.ToInt32(_data.Rows[i]["Ngay"].ToString());
                     if (i<_data.Rows.Count-1)
                     {
-                        Ngay_[ngay_ - 1] = Convert.ToDouble(_data.Rows[i]["SanLuong_Thuong"].ToString());
+                        Ngay_[ngay_ - 1] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong_Thuong"].ToString());
                         NgayTong_[ngay_ - 1] += Ngay_[ngay_ - 1];
                         //
-                        Ngay_TangCa_[ngay_ - 1] = Convert.ToDouble(_data.Rows[i]["SanLuong_TangCa"].ToString());
+                        Ngay_TangCa_[ngay_ - 1] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong_TangCa"].ToString());
                         NgayTong_TangCa_[ngay_ - 1] += Ngay_TangCa_[ngay_ - 1];
-                        if (id_congnhan_ != Convert.ToDouble(_data.Rows[i+1]["ID_CongNhan"].ToString()))
+                        if (id_congnhan_ != CheckString.ConvertToDouble_My(_data.Rows[i+1]["ID_CongNhan"].ToString()))
                         {
                             DataRow ravi_1 = data_hienthi.NewRow();
                             DataRow ravi_2 = data_hienthi.NewRow();
@@ -319,8 +319,8 @@ namespace CtyTinLuong
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 if (_data.Rows.Count > index_)
                 {
-                    double temp_ = Convert.ToDouble(_data.Rows[index_][name_].ToString());
-                    _data.Rows[index_]["Tong"] = temp_ + Convert.ToDouble(_data.Rows[index_]["Tong"].ToString());
+                    double temp_ = CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString());
+                    _data.Rows[index_]["Tong"] = temp_ + CheckString.ConvertToDouble_My(_data.Rows[index_]["Tong"].ToString());
                 }
 
             }
@@ -425,9 +425,9 @@ namespace CtyTinLuong
 
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //miiID_chiTietChamCong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
-            //miiD_DinhMuc_Luong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
-            // miID_congNhan = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
+            //miiID_chiTietChamCong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clID_ChiTietChamCong).ToString());
+            //miiD_DinhMuc_Luong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
+            // miID_congNhan = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
 
             // msTenNhanVien = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
             //frmMaHang_ChamCong_ToGapDan ff = new frmMaHang_ChamCong_ToGapDan(this);
@@ -452,19 +452,19 @@ namespace CtyTinLuong
                     if (!s.Contains(","))
                         result = double.Parse(s, CultureInfo.InvariantCulture);
                     else
-                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+                        result = CheckString.ConvertToDouble_My(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
             catch
             {
                 try
                 {
-                    result = Convert.ToDouble(s);
+                    result = CheckString.ConvertToDouble_My(s);
                 }
                 catch
                 {
                     try
                     {
-                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                        result = CheckString.ConvertToDouble_My(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
                     }
                     catch
                     {

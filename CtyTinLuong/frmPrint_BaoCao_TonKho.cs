@@ -26,7 +26,7 @@ namespace CtyTinLuong
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["SoLuong_TonDauKy"] = Convert.ToDouble(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());             
+                _ravi["SoLuong_TonDauKy"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_TonDauKy"].ToString());             
 
                 ds.tbNhap_Xuat_Ton.Rows.Add(_ravi);
             }

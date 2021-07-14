@@ -104,17 +104,17 @@ namespace CtyTinLuong
                         _ravi["CaSanXuat"] = Convert.ToInt32(dt_.Rows[i]["Ca"].ToString());
                         _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString().Trim();
                         _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString().Trim();
-                        _ravi["SoLuongKiemTra"] = Convert.ToDouble(dt_.Rows[i]["SoLuongKtra"].ToString());
+                        _ravi["SoLuongKiemTra"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SoLuongKtra"].ToString());
                         _ravi["DonVi"] = dt_.Rows[i]["DonVi_first"].ToString();
-                        _ravi["TrongLuong"] = Convert.ToDouble(dt_.Rows[i]["TrongLuong"].ToString());
-                        _ravi["SoLuong"] = Convert.ToDouble(dt_.Rows[i]["SoLuong"].ToString());
+                        _ravi["TrongLuong"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["TrongLuong"].ToString());
+                        _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SoLuong"].ToString());
                         _ravi["DonVi_"] = dt_.Rows[i]["DonVi_Second"].ToString();
-                        _ravi["QuyRaKien"] = Convert.ToDouble(dt_.Rows[i]["QuyRaKien"].ToString());
-                        _ravi["PhePham"] = Convert.ToDouble(dt_.Rows[i]["PhePham"].ToString());
-                        _ravi["DoCao"] = Convert.ToDouble(dt_.Rows[i]["DoCao"].ToString());
-                        _ravi["MotBao_kg"] = Convert.ToDouble(dt_.Rows[i]["MotBao_kg"].ToString());
-                        _ravi["MotBao_SoKien"] = Convert.ToDouble(dt_.Rows[i]["MotBao_SoKien"].ToString());
-                        _ravi["SauMuoi_BaoKien"] = Convert.ToDouble(dt_.Rows[i]["SauMuoi_BaoKien"].ToString());
+                        _ravi["QuyRaKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["QuyRaKien"].ToString());
+                        _ravi["PhePham"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["PhePham"].ToString());
+                        _ravi["DoCao"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["DoCao"].ToString());
+                        _ravi["MotBao_kg"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["MotBao_kg"].ToString());
+                        _ravi["MotBao_SoKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["MotBao_SoKien"].ToString());
+                        _ravi["SauMuoi_BaoKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SauMuoi_BaoKien"].ToString());
                         _ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
 
                         dt2.Rows.Add(_ravi);
@@ -182,17 +182,17 @@ namespace CtyTinLuong
                     miCaSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clCaLamViec).ToString());
                     msLoaiHang = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString().Trim();
                     msLoaiGiay = gridView1.GetFocusedRowCellValue(clLoaiGiay).ToString().Trim();
-                    mfSoLuongKiemTra = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuongKiemTra).ToString());
+                    mfSoLuongKiemTra = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuongKiemTra).ToString());
                     msDonVi = gridView1.GetFocusedRowCellValue(clDonVi).ToString().Trim();
-                    mfTrongLuong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clTrongLuong).ToString());
-                    mfSoLuong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong).ToString());
+                    mfTrongLuong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clTrongLuong).ToString());
+                    mfSoLuong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuong).ToString());
                     msDonVi_ = gridView1.GetFocusedRowCellValue(clDonVi_).ToString().Trim();
-                    mfQuyRaKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clQuyRaKien).ToString());
-                    mfPhePham = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clPhePham).ToString());
-                    mfDoCao = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDoCao).ToString());
-                    mfMotBao_kg = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clMotBao_kg).ToString());
-                    mfMotBao_SoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clMotBao_SoKien).ToString());
-                    mfSauMuoi_BaoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
+                    mfQuyRaKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clQuyRaKien).ToString());
+                    mfPhePham = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clPhePham).ToString());
+                    mfDoCao = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clDoCao).ToString());
+                    mfMotBao_kg = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clMotBao_kg).ToString());
+                    mfMotBao_SoKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clMotBao_SoKien).ToString());
+                    mfSauMuoi_BaoKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
                     msGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
 
                     Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
@@ -369,17 +369,17 @@ namespace CtyTinLuong
                     miCaSanXuat = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clCaLamViec).ToString());
                     msLoaiHang = gridView1.GetFocusedRowCellValue(clLoaiHang).ToString().Trim();
                     msLoaiGiay = gridView1.GetFocusedRowCellValue(clLoaiGiay).ToString().Trim();
-                    mfSoLuongKiemTra = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuongKiemTra).ToString());
+                    mfSoLuongKiemTra = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuongKiemTra).ToString());
                     msDonVi = gridView1.GetFocusedRowCellValue(clDonVi).ToString().Trim();
-                    mfTrongLuong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clTrongLuong).ToString());
-                    mfSoLuong = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSoLuong).ToString());
+                    mfTrongLuong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clTrongLuong).ToString());
+                    mfSoLuong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuong).ToString());
                     msDonVi_ = gridView1.GetFocusedRowCellValue(clDonVi_).ToString().Trim();
-                    mfQuyRaKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clQuyRaKien).ToString());
-                    mfPhePham = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clPhePham).ToString());
-                    mfDoCao = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clDoCao).ToString());
-                    mfMotBao_kg = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clMotBao_kg).ToString());
-                    mfMotBao_SoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clMotBao_SoKien).ToString());
-                    mfSauMuoi_BaoKien = Convert.ToDouble(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
+                    mfQuyRaKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clQuyRaKien).ToString());
+                    mfPhePham = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clPhePham).ToString());
+                    mfDoCao = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clDoCao).ToString());
+                    mfMotBao_kg = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clMotBao_kg).ToString());
+                    mfMotBao_SoKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clMotBao_SoKien).ToString());
+                    mfSauMuoi_BaoKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSauMuoi_BaoKien).ToString());
                     msGhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString().Trim();
 
                     Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
@@ -413,7 +413,7 @@ namespace CtyTinLuong
                 DataTable dt_ = cls.T_TongSoBB(_ngay_batdau, _ngay_ketthuc, _sSearch);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)20));
+                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20));
                     lbTongSoTrang.Text = "/" + _TongSoTrang.ToString();
                 }
                 else

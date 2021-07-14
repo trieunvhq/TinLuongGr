@@ -30,7 +30,7 @@ namespace CtyTinLuong
                 _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
                 _ravi["TenKH"] = dt3.Rows[i]["TenKH"].ToString();
                 if (dt3.Rows[i]["SoLuong"].ToString() != "")
-                    _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
+                    _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong"].ToString());
                 _ravi["QuyCach"] = dt3.Rows[i]["QuyCach"].ToString();
                 if (dt3.Rows[i]["NgayDuKienXuat"].ToString() != "")
                     _ravi["NgayDuKienXuat"] = Convert.ToDateTime(dt3.Rows[i]["NgayDuKienXuat"].ToString());

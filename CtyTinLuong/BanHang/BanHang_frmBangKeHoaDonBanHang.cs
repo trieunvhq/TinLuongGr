@@ -74,7 +74,7 @@ namespace CtyTinLuong
                 DataTable dt_ = cls.Dem_tbBanHang(xxtungay, xxdenngay);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(Convert.ToDouble(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
                 }
                 else
                 {

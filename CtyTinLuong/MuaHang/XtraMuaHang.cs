@@ -43,7 +43,7 @@ namespace CtyTinLuong
             }
        
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(frmChiTietMuaHang3333333333.mdcSoTienNo), "đồng.");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(frmChiTietMuaHang3333333333.mdcSoTienNo), "đồng.");
         }
 
         public XtraMuaHang()

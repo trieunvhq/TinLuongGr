@@ -163,9 +163,9 @@ namespace CtyTinLuong
                 cls.daNgayDatHang = dteNgayDatHang.DateTime;
                 cls.iID_KhachHang = Convert.ToInt32(gridKH.EditValue);
                 cls.iID_VTHH = Convert.ToInt32(gridMaHang.EditValue);
-                cls.fSoLuong = Convert.ToDouble(txtSoLuong.Text.ToString());
-                cls.fSoLuongThucXuat = Convert.ToDouble(txtSoLuongThucGiaoHang.Text.ToString());
-                cls.fSoCountner = Convert.ToDouble(txtSoCount.Text.ToString());
+                cls.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuong.Text.ToString());
+                cls.fSoLuongThucXuat = CheckString.ConvertToDouble_My(txtSoLuongThucGiaoHang.Text.ToString());
+                cls.fSoCountner = CheckString.ConvertToDouble_My(txtSoCount.Text.ToString());
                 cls.sQuyCach = txtQuyCach.Text.ToString();
                 cls.daNgayDuKienXuat = dteNgayDuKienGiaoHang.DateTime;
                 cls.daNgayXuatThucTe = dteNgayGiaoHangThucTe.DateTime;

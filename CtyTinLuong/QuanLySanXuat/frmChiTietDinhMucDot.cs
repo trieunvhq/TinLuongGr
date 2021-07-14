@@ -23,35 +23,35 @@ namespace CtyTinLuong
                     Double fsoluongkiemtra, ftrongluong1, fsoluongQuydoi, fquyrakien, fphepham, fdocao, fsoKG_1bao, fsokienmotbao;
                     if (txtSoLuongKiemTra.Text.ToString() == "")
                         fsoluongkiemtra = 0;
-                    else fsoluongkiemtra = Convert.ToDouble(txtSoLuongKiemTra.Text.ToString().Trim());
+                    else fsoluongkiemtra = CheckString.ConvertToDouble_My(txtSoLuongKiemTra.Text.ToString().Trim());
 
                     if (txtTrongLuongKiemTra.Text.ToString() == "")
                         ftrongluong1 = 0;
-                    else ftrongluong1 = Convert.ToDouble(txtTrongLuongKiemTra.Text.ToString().Trim());
+                    else ftrongluong1 = CheckString.ConvertToDouble_My(txtTrongLuongKiemTra.Text.ToString().Trim());
 
                     if (txtSoLuongQuyDoi.Text.ToString() == "")
                         fsoluongQuydoi = 0;
-                    else fsoluongQuydoi = Convert.ToDouble(txtSoLuongQuyDoi.Text.ToString().Trim());
+                    else fsoluongQuydoi = CheckString.ConvertToDouble_My(txtSoLuongQuyDoi.Text.ToString().Trim());
 
                     if (txtQuyRaKien.Text.ToString() == "")
                         fquyrakien = 0;
-                    else fquyrakien = Convert.ToDouble(txtQuyRaKien.Text.ToString().Trim());
+                    else fquyrakien = CheckString.ConvertToDouble_My(txtQuyRaKien.Text.ToString().Trim());
 
                     if (txtPhePham.Text.ToString() == "")
                         fphepham = 0;
-                    else fphepham = Convert.ToDouble(txtPhePham.Text.ToString().Trim());
+                    else fphepham = CheckString.ConvertToDouble_My(txtPhePham.Text.ToString().Trim());
 
                     if (txtDoCao.Text.ToString() == "")
                         fdocao = 0;
-                    else fdocao = Convert.ToDouble(txtDoCao.Text.ToString().Trim());
+                    else fdocao = CheckString.ConvertToDouble_My(txtDoCao.Text.ToString().Trim());
 
                     if (txtSoKGMotBao.Text.ToString() == "")
                         fsoKG_1bao = 0;
-                    else fsoKG_1bao = Convert.ToDouble(txtSoKGMotBao.Text.ToString().Trim());
+                    else fsoKG_1bao = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString().Trim());
 
                     if (txtSoKienMotBao.Text.ToString() == "")
                         fsokienmotbao = 0;
-                    else fsokienmotbao = Convert.ToDouble(txtSoKienMotBao.Text.ToString().Trim());
+                    else fsokienmotbao = CheckString.ConvertToDouble_My(txtSoKienMotBao.Text.ToString().Trim());
 
                     clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
                     if (dteNgayThang.Text.ToString() != "")
@@ -113,35 +113,35 @@ namespace CtyTinLuong
                     Double fsoluongkiemtra, ftrongluong1, fsoluongQuydoi, fquyrakien, fphepham, fdocao, fsoKG_1bao, fsokienmotbao;
                     if (txtSoLuongKiemTra.Text.ToString() == "")
                         fsoluongkiemtra = 0;
-                    else fsoluongkiemtra = Convert.ToDouble(txtSoLuongKiemTra.Text.ToString().Trim());
+                    else fsoluongkiemtra = CheckString.ConvertToDouble_My(txtSoLuongKiemTra.Text.ToString().Trim());
 
                     if (txtTrongLuongKiemTra.Text.ToString() == "")
                         ftrongluong1 = 0;
-                    else ftrongluong1 = Convert.ToDouble(txtTrongLuongKiemTra.Text.ToString().Trim());
+                    else ftrongluong1 = CheckString.ConvertToDouble_My(txtTrongLuongKiemTra.Text.ToString().Trim());
 
                     if (txtSoLuongQuyDoi.Text.ToString() == "")
                         fsoluongQuydoi = 0;
-                    else fsoluongQuydoi = Convert.ToDouble(txtSoLuongQuyDoi.Text.ToString().Trim());
+                    else fsoluongQuydoi = CheckString.ConvertToDouble_My(txtSoLuongQuyDoi.Text.ToString().Trim());
 
                     if (txtQuyRaKien.Text.ToString() == "")
                         fquyrakien = 0;
-                    else fquyrakien = Convert.ToDouble(txtQuyRaKien.Text.ToString().Trim());
+                    else fquyrakien = CheckString.ConvertToDouble_My(txtQuyRaKien.Text.ToString().Trim());
 
                     if (txtPhePham.Text.ToString() == "")
                         fphepham = 0;
-                    else fphepham = Convert.ToDouble(txtPhePham.Text.ToString());
+                    else fphepham = CheckString.ConvertToDouble_My(txtPhePham.Text.ToString());
 
                     if (txtDoCao.Text.ToString() == "")
                         fdocao = 0;
-                    else fdocao = Convert.ToDouble(txtDoCao.Text.ToString().Trim());
+                    else fdocao = CheckString.ConvertToDouble_My(txtDoCao.Text.ToString().Trim());
 
                     if (txtSoKGMotBao.Text.ToString() == "")
                         fsoKG_1bao = 0;
-                    else fsoKG_1bao = Convert.ToDouble(txtSoKGMotBao.Text.ToString().Trim());
+                    else fsoKG_1bao = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString().Trim());
 
                     if (txtSoKienMotBao.Text.ToString() == "")
                         fsokienmotbao = 0;
-                    else fsokienmotbao = Convert.ToDouble(txtSoKienMotBao.Text.ToString().Trim());
+                    else fsokienmotbao = CheckString.ConvertToDouble_My(txtSoKienMotBao.Text.ToString().Trim());
 
                     clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
                     if (dteNgayThang.Text.ToString() != "")
@@ -360,7 +360,7 @@ namespace CtyTinLuong
             
             if (txtSoLuongQuyDoi.Text.ToString() == "")
                 fsoluongQuydoi = 0;
-            else fsoluongQuydoi = Convert.ToDouble(txtSoLuongQuyDoi.Text.ToString().Trim());
+            else fsoluongQuydoi = CheckString.ConvertToDouble_My(txtSoLuongQuyDoi.Text.ToString().Trim());
 
          
            
@@ -381,11 +381,11 @@ namespace CtyTinLuong
 
             if (txtSoKGMotBao.Text.ToString() == "")
                 fsoKG_1bao = 1;
-            else fsoKG_1bao = Convert.ToDouble(txtSoKGMotBao.Text.ToString().Trim());
+            else fsoKG_1bao = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString().Trim());
 
             if (txtTrongLuongKiemTra.Text.ToString() == "")
                 ftrongluong1 = 0;
-            else ftrongluong1 = Convert.ToDouble(txtTrongLuongKiemTra.Text.ToString().Trim());
+            else ftrongluong1 = CheckString.ConvertToDouble_My(txtTrongLuongKiemTra.Text.ToString().Trim());
 
             if (checkCongThuc2.Checked == true)
             {

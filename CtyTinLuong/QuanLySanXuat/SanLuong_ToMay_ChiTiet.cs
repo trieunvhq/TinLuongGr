@@ -232,10 +232,10 @@ namespace CtyTinLuong
                 else if (xxximay_in_1_Cat_2_dot_3 == 2)
                     dt3 = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_CAT(miID_VThh, mdatungay, mdadenngay);
 
-                 sanluongthuowng = Convert.ToDouble(dt3.Rows[0]["SanLuong_Thuong"].ToString());
-                 sanluongtangca = Convert.ToDouble(dt3.Rows[0]["SanLuong_TangCa"].ToString());
-                 sanluongtong = Convert.ToDouble(dt3.Rows[0]["SanLuong_Tong"].ToString());
-                 phepham = Convert.ToDouble(dt3.Rows[0]["PhePham"].ToString());
+                 sanluongthuowng = CheckString.ConvertToDouble_My(dt3.Rows[0]["SanLuong_Thuong"].ToString());
+                 sanluongtangca = CheckString.ConvertToDouble_My(dt3.Rows[0]["SanLuong_TangCa"].ToString());
+                 sanluongtong = CheckString.ConvertToDouble_My(dt3.Rows[0]["SanLuong_Tong"].ToString());
+                 phepham = CheckString.ConvertToDouble_My(dt3.Rows[0]["PhePham"].ToString());
                 frmPrint_SanLuongToMayIn ff = new frmPrint_SanLuongToMayIn();
                 ff.Show();
 

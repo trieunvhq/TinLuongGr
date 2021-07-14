@@ -70,11 +70,11 @@ namespace CtyTinLuong
             double abc_ = 0; 
             if(str.Contains("/"))
             {
-                abc_ = (Convert.ToDouble(str.Split('/')[0])) / (Convert.ToDouble(str.Split('/')[1]));
+                abc_ = (CheckString.ConvertToDouble_My(str.Split('/')[0])) / (CheckString.ConvertToDouble_My(str.Split('/')[1]));
             }
             else
             {
-                abc_ = Convert.ToDouble(str);
+                abc_ = CheckString.ConvertToDouble_My(str);
             }
             return abc_;
         }
@@ -581,7 +581,7 @@ namespace CtyTinLuong
             sMaVT = editor.GetColumnValue("MaVT").ToString();
             sTenVTHH = editor.GetColumnValue("TenVTHH").ToString();
             sDonViTinh = editor.GetColumnValue("DonViTinh").ToString();            
-            //fSoLuong = Convert.ToDouble(editor.GetColumnValue("SoLuong").ToString());
+            //fSoLuong = CheckString.ConvertToDouble_My(editor.GetColumnValue("SoLuong").ToString());
            
         }
     }

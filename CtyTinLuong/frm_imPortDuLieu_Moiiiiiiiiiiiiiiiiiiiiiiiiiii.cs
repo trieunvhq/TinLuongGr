@@ -27,8 +27,8 @@ namespace CtyTinLuong
             for (int i = 0; i < dt_NPL.Rows.Count; i++)
             {
                 int ID_VTHH = Convert.ToInt32(dt_NPL.Rows[i]["ID_VTHH"].ToString());
-                double SoLuong = Convert.ToDouble(dt_NPL.Rows[i]["SoLuong"].ToString());
-                double DonGia = Convert.ToDouble(dt_NPL.Rows[i]["DonGia"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dt_NPL.Rows[i]["SoLuong"].ToString());
+                double DonGia = CheckString.ConvertToDouble_My(dt_NPL.Rows[i]["DonGia"].ToString());
 
                 clschitietnhapkho_NPL.iID_NhapKho = 0;
                 clschitietnhapkho_NPL.iID_VTHH = ID_VTHH;
@@ -59,8 +59,8 @@ namespace CtyTinLuong
                 {
 
                     int ID_VTHH = Convert.ToInt32(dt_BTP.Rows[i]["ID_VTHH"].ToString());
-                    double SoLuong = Convert.ToDouble(dt_BTP.Rows[i]["SoLuong"].ToString());
-                    double DonGia = Convert.ToDouble(dt_BTP.Rows[i]["DonGia"].ToString());
+                    double SoLuong = CheckString.ConvertToDouble_My(dt_BTP.Rows[i]["SoLuong"].ToString());
+                    double DonGia = CheckString.ConvertToDouble_My(dt_BTP.Rows[i]["DonGia"].ToString());
 
                     clschitietnhapkho_BTP.iID_NhapKho = 0;
                     clschitietnhapkho_BTP.iID_VTHH = ID_VTHH;
@@ -92,8 +92,8 @@ namespace CtyTinLuong
                 {
                     int ID_DaiLy = Convert.ToInt32(dt_DAILY.Rows[i]["ID_DaiLy"].ToString());
                     int ID_VTHH = Convert.ToInt32(dt_DAILY.Rows[i]["ID_VTHH"].ToString());
-                    double SoLuong = Convert.ToDouble(dt_DAILY.Rows[i]["SoLuong"].ToString());
-                    double DonGia = Convert.ToDouble(dt_DAILY.Rows[i]["DonGia"].ToString());
+                    double SoLuong = CheckString.ConvertToDouble_My(dt_DAILY.Rows[i]["SoLuong"].ToString());
+                    double DonGia = CheckString.ConvertToDouble_My(dt_DAILY.Rows[i]["DonGia"].ToString());
 
                     clschitietnhapkho_DAILY.iID_NhapKhoDaiLy = 0;
                     clschitietnhapkho_DAILY.iID_VTHH = ID_VTHH;
@@ -124,8 +124,8 @@ namespace CtyTinLuong
             for (int i = 0; i < dt_THANHPHAM.Rows.Count; i++)
             {
                 int ID_VTHH = Convert.ToInt32(dt_THANHPHAM.Rows[i]["ID_VTHH"].ToString());
-                double SoLuong = Convert.ToDouble(dt_THANHPHAM.Rows[i]["SoLuong"].ToString());
-                double DonGia = Convert.ToDouble(dt_THANHPHAM.Rows[i]["DonGia"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dt_THANHPHAM.Rows[i]["SoLuong"].ToString());
+                double DonGia = CheckString.ConvertToDouble_My(dt_THANHPHAM.Rows[i]["DonGia"].ToString());
 
                 clschitietnhapkho_THANHPHAM.iID_NhapKho_ThanhPham = 0;
                 clschitietnhapkho_THANHPHAM.iID_VTHH = ID_VTHH;
@@ -156,8 +156,8 @@ namespace CtyTinLuong
             for (int i = 0; i < dt_GapDan.Rows.Count; i++)
             {
                 int ID_VTHH = Convert.ToInt32(dt_GapDan.Rows[i]["ID_VTHH"].ToString());
-                double SoLuong = Convert.ToDouble(dt_GapDan.Rows[i]["SoLuong"].ToString());
-                double DonGia = Convert.ToDouble(dt_GapDan.Rows[i]["DonGia"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dt_GapDan.Rows[i]["SoLuong"].ToString());
+                double DonGia = CheckString.ConvertToDouble_My(dt_GapDan.Rows[i]["DonGia"].ToString());
 
                 clsgapdan.iID_NhapKho = 0;
                 clsgapdan.iID_VTHH = ID_VTHH;
@@ -187,8 +187,8 @@ namespace CtyTinLuong
             {
                 int ID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
                 int ID_TaiKhoanKeToanMe = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanMe"].ToString());
-                double Co = Convert.ToDouble(dtnganhang.Rows[i]["Co"].ToString());
-                double No = Convert.ToDouble(dtnganhang.Rows[i]["No"].ToString());
+                double Co = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co"].ToString());
+                double No = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No"].ToString());
                 bool TienUSD = Convert.ToBoolean(dtnganhang.Rows[i]["TienUSD"].ToString());
                 double TiGia = 0;
                 clschitietbeindong.iID_ChungTu = 0;
@@ -270,7 +270,7 @@ namespace CtyTinLuong
                         }
                         else
                         {
-                            SoLuong = Convert.ToDouble(dt.Rows[i][2].ToString());                            
+                            SoLuong = CheckString.ConvertToDouble_My(dt.Rows[i][2].ToString());                            
                         }
 
                         if (dt.Rows[i][3].ToString() == "")
@@ -279,7 +279,7 @@ namespace CtyTinLuong
                         }
                         else
                         {
-                            DonGia = Convert.ToDouble(dt.Rows[i][3].ToString());
+                            DonGia = CheckString.ConvertToDouble_My(dt.Rows[i][3].ToString());
                         }
                         ThanhTien = SoLuong * DonGia;
 
@@ -375,8 +375,8 @@ namespace CtyTinLuong
 
                         ID_TaiKhoanKeToanCon = Convert.ToInt32(dttkcon.Rows[0]["ID_TaiKhoanKeToanCon"].ToString());
                         ID_TaiKhoanKeToanMe = Convert.ToInt32(dttkcon.Rows[0]["ID_TaiKhoanKeToanMe"].ToString());
-                        Co = Convert.ToDouble(dtNganhang.Rows[i][2].ToString());
-                        No = Convert.ToDouble(dtNganhang.Rows[i][3].ToString());                     
+                        Co = CheckString.ConvertToDouble_My(dtNganhang.Rows[i][2].ToString());
+                        No = CheckString.ConvertToDouble_My(dtNganhang.Rows[i][3].ToString());                     
                         TenTaiKhoanCon=dttkcon.Rows[0]["TenTaiKhoanCon"].ToString();
                         clsNganHang_tbHeThongTaiKhoanKeToanMe clsme = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
                         clsme.iID_TaiKhoanKeToanMe = ID_TaiKhoanKeToanMe;
@@ -549,7 +549,7 @@ namespace CtyTinLuong
                         }
                         else
                         {
-                            SoLuong = Convert.ToDouble(dt.Rows[i][2].ToString());
+                            SoLuong = CheckString.ConvertToDouble_My(dt.Rows[i][2].ToString());
                         }
 
                         if (dt.Rows[i][3].ToString() == "")
@@ -558,7 +558,7 @@ namespace CtyTinLuong
                         }
                         else
                         {
-                            DonGia = Convert.ToDouble(dt.Rows[i][3].ToString());
+                            DonGia = CheckString.ConvertToDouble_My(dt.Rows[i][3].ToString());
                         }
                         ThanhTien = SoLuong * DonGia;
 

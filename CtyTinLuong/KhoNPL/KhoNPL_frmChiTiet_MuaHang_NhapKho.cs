@@ -53,7 +53,7 @@ namespace CtyTinLuong
                 try
                 {
                     double tongtienhang;
-                    tongtienhang = Convert.ToDouble(txtTongTienHangCoVAT.Text.ToString());
+                    tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
                     clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
                     cls1.sDienGiai = txtDienGiaiNhapKhoNPL.Text.ToString();
                     cls1.daNgayChungTu = dteNgayChungTuNPL.DateTime;
@@ -82,8 +82,8 @@ namespace CtyTinLuong
 
                         if (dtmoi.Rows[i]["SoLuong"].ToString() != "")
                         {
-                            clschitietNhapkho.fSoLuongNhap = Convert.ToDouble(dtmoi.Rows[i]["SoLuong"].ToString());
-                            clschitietNhapkho.fSoLuongTon = Convert.ToDouble(dtmoi.Rows[i]["SoLuong"].ToString());
+                            clschitietNhapkho.fSoLuongNhap = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["SoLuong"].ToString());
+                            clschitietNhapkho.fSoLuongTon = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["SoLuong"].ToString());
                         }
                         else
                         {
@@ -91,7 +91,7 @@ namespace CtyTinLuong
                             clschitietNhapkho.fSoLuongTon = 0;
                         }
                         if (dtmoi.Rows[i]["DonGia"].ToString() != "")
-                            clschitietNhapkho.fDonGia = Convert.ToDouble(dtmoi.Rows[i]["DonGia"].ToString());
+                            clschitietNhapkho.fDonGia = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["DonGia"].ToString());
                         clschitietNhapkho.bTonTai = true;
                         clschitietNhapkho.bNgungTheoDoi = false;
                         clschitietNhapkho.sGhiChu = dtmoi.Rows[i]["GhiChu"].ToString();
@@ -268,11 +268,11 @@ namespace CtyTinLuong
                 if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
                 if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -282,11 +282,11 @@ namespace CtyTinLuong
                 if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
                 if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -295,11 +295,11 @@ namespace CtyTinLuong
                 if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
                 if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -308,7 +308,7 @@ namespace CtyTinLuong
             //string shienthi = "1";
             //object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
             //if (xxxx.ToString() != "")
-            //    deTOngtien = Convert.ToDouble(xxxx);
+            //    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             //else deTOngtien = 0;
             //txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
         }

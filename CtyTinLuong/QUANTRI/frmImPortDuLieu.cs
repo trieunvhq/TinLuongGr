@@ -114,7 +114,7 @@ namespace CtyTinLuong
                     //cls.sMaNCC = daa.Rows[i][0].ToString();
                     cls.iID_DinhMuc_NPL =Convert.ToInt16(daa.Rows[i][1].ToString());
                     cls.iID_VTHH = Convert.ToInt16(daa.Rows[i][2].ToString());
-                    cls.fSoLuong = Convert.ToDouble(daa.Rows[i][6].ToString());
+                    cls.fSoLuong = CheckString.ConvertToDouble_My(daa.Rows[i][6].ToString());
                     
                     cls.bTonTai = true;
                     cls.bNgungTheoDoi = false;

@@ -90,42 +90,42 @@ namespace CtyTinLuong.Luong_ChamCong
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     thucnhan_ += Convert.ToInt32(_data.Rows[i]["ThucNhan"].ToString());
                     //  
-                    double SoNgayAn_ = Convert.ToDouble(_data.Rows[i]["SoNgayAn_Value"].ToString());
-                    double dongia_ = Convert.ToDouble(_data.Rows[i]["DonGia_Value"].ToString());
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double SoNgayAn_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     TongLuong_ += (dongia_ * sanluong_);
 
-                    double TruTienCom_ = Convert.ToDouble(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    double TruTienCom_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom_Value"].ToString());
                     if (ID_CongNhan_ != ID_CongNhan_Cu)
                     {
                         DataRow _ravi2 = ds.tbBTTL_TGD_TQ.NewRow();
                         _ravi2["STT"] = (i+1).ToString();
                         _ravi2["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
 
-                        double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
-                        _ravi2["TongLuong"] = Convert.ToDouble(TongLuong_);
+                        double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
+                        _ravi2["TongLuong"] = CheckString.ConvertToDouble_My(TongLuong_);
 
                         ID_CongNhan_Cu = ID_CongNhan_;
 
-                        _ravi2["TongTien"] = Convert.ToDouble(TongLuong_ - TruTienCom_);
-                        _ravi2["ThucNhan"] = Convert.ToDouble(TongLuong_ - TruTienCom_ - TamUng_);
+                        _ravi2["TongTien"] = CheckString.ConvertToDouble_My(TongLuong_ - TruTienCom_);
+                        _ravi2["ThucNhan"] = CheckString.ConvertToDouble_My(TongLuong_ - TruTienCom_ - TamUng_);
 
                         if (TruTienCom_ == 0)
-                            _ravi2["TruTienCom"] = Convert.ToDouble(0);
+                            _ravi2["TruTienCom"] = CheckString.ConvertToDouble_My(0);
                         else
-                            _ravi2["TruTienCom"] = Convert.ToDouble(TruTienCom_);
+                            _ravi2["TruTienCom"] = CheckString.ConvertToDouble_My(TruTienCom_);
 
                         if (SoNgayAn_ == 0)
                             _ravi2["SoNgayAn"] = 0;
                         else
-                            _ravi2["SoNgayAn"] = Convert.ToDouble(SoNgayAn_);
+                            _ravi2["SoNgayAn"] = CheckString.ConvertToDouble_My(SoNgayAn_);
 
                         if (TamUng_ == 0)
                             _ravi2["TamUng"] = 0;
                         else
-                            _ravi2["TamUng"] = Convert.ToDouble(TruTienCom_);
+                            _ravi2["TamUng"] = CheckString.ConvertToDouble_My(TruTienCom_);
                         ds.tbBTTL_TGD_TQ.Rows.Add(_ravi2);
 
                         TongLuong_ = 0;
@@ -138,7 +138,7 @@ namespace CtyTinLuong.Luong_ChamCong
                         _data.Rows[i]["TongTien"] = 0;
                         _data.Rows[i]["TamUng"] = 0;
                     }
-                    _data.Rows[i]["ThanhTien"] = Convert.ToDouble(dongia_ * sanluong_);
+                    _data.Rows[i]["ThanhTien"] = CheckString.ConvertToDouble_My(dongia_ * sanluong_);
 
                 }
             }

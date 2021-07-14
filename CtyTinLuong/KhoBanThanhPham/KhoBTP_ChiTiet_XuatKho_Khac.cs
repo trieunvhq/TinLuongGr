@@ -81,8 +81,8 @@ namespace CtyTinLuong
             dt2.Columns.Add("GhiChu", typeof(string));
             for (int i = 0; i < dtxx.Rows.Count; i++)
             {
-                double dongiaxxx333 = Convert.ToDouble(dtxx.Rows[i]["DonGia"].ToString());
-                double SoLuongxxx333 = Convert.ToDouble(dtxx.Rows[i]["SoLuongXuat"].ToString());
+                double dongiaxxx333 = CheckString.ConvertToDouble_My(dtxx.Rows[i]["DonGia"].ToString());
+                double SoLuongxxx333 = CheckString.ConvertToDouble_My(dtxx.Rows[i]["SoLuongXuat"].ToString());
                 int ID_VTHHxxx = Convert.ToInt16(dtxx.Rows[i]["ID_VTHH"].ToString());
                 clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
                 clsvt.iID_VTHH = ID_VTHHxxx;
@@ -106,7 +106,7 @@ namespace CtyTinLuong
             string shienthi = "1";
             object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongTienHang.Text = deTOngtien.ToString();
 
@@ -203,8 +203,8 @@ namespace CtyTinLuong
                 cls.iID_XuatKhoBTP = iiiDXuatKho;
                 if (dt_gridcontrol.Rows[i]["SoLuongXuat"].ToString() != "")
                 {
-                    cls.fSoLuongXuat = Convert.ToDouble(dt_gridcontrol.Rows[i]["SoLuongXuat"].ToString());
-                    //cls.fSoLuongTon = Convert.ToDouble(dt_gridcontrol.Rows[i]["SoLuong"].ToString());
+                    cls.fSoLuongXuat = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["SoLuongXuat"].ToString());
+                    //cls.fSoLuongTon = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["SoLuong"].ToString());
                 }
                 else
                 {
@@ -212,7 +212,7 @@ namespace CtyTinLuong
 
                 }
                 if (dt_gridcontrol.Rows[i]["DonGia"].ToString() != "")
-                    cls.fDonGia = Convert.ToDouble(dt_gridcontrol.Rows[i]["DonGia"].ToString());
+                    cls.fDonGia = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["DonGia"].ToString());
                 else cls.fDonGia = 0;
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = false;
@@ -259,7 +259,7 @@ namespace CtyTinLuong
             else
             {
                 double tongtienhang;
-                tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                 clsKhoBTP_tbXuatKho cls1 = new clsKhoBTP_tbXuatKho();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
@@ -355,11 +355,11 @@ namespace CtyTinLuong
                     if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                         ffdongia = 0;
                     else
-                        ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                        ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
                     if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                         fffsoluong = 0;
                     else
-                        fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                        fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                     fffthanhtien = fffsoluong * ffdongia;
                     gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
                 }
@@ -370,11 +370,11 @@ namespace CtyTinLuong
                 if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
                 if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -383,11 +383,11 @@ namespace CtyTinLuong
                 if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clDonGia));
+                    ffdongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia));
                 if (gridView4.GetFocusedRowCellValue(clSoLuong).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(gridView4.GetFocusedRowCellValue(clSoLuong));
+                    fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -396,7 +396,7 @@ namespace CtyTinLuong
             string shienthi = "1";
             object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongTienHang.Text = deTOngtien.ToString();
         }
@@ -546,7 +546,7 @@ namespace CtyTinLuong
                     mdaNgayChungTu = dteNgayChungTu.DateTime;
                     msSoChungTu = txtSoChungTu.Text.ToString();
                     msNguoiGiaoHang = txtNguoiNhanHang.Text.ToString();
-                    mdbTongSotien = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                    mdbTongSotien = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                     msDienGiai = txtDienGiai.Text.ToString();
                     frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
                     ff.Show();

@@ -25,11 +25,11 @@ namespace CtyTinLuong
                   
                     if (txtSoKGMotBao.Text.ToString() == "")
                         fsoKG_1bao = 0;
-                    else fsoKG_1bao = Convert.ToDouble(txtSoKGMotBao.Text.ToString().Trim());
+                    else fsoKG_1bao = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString().Trim());
 
                     if (txtSoKienMotBao.Text.ToString() == "")
                         fsokienmotbao = 0;
-                    else fsokienmotbao = Convert.ToDouble(txtSoKienMotBao.Text.ToString().Trim());
+                    else fsokienmotbao = CheckString.ConvertToDouble_My(txtSoKienMotBao.Text.ToString().Trim());
 
                     clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
 

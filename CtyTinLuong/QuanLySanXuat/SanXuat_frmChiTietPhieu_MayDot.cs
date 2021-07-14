@@ -136,16 +136,16 @@ namespace CtyTinLuong
                 string CaSanXuat = dt.Rows[0]["CaSanXuat"].ToString();
                 int ID_DinhMuc_Luong = Convert.ToInt32(dt.Rows[0]["ID_DinhMuc_Luong"].ToString());
                 int ID_VTHH_Vao = Convert.ToInt32(dt.Rows[0]["ID_VTHH_Vao"].ToString());
-                double SoLuong_Vao = Convert.ToDouble(dt.Rows[0]["SoLuong_Vao"].ToString());
-                double DonGia_Vao = Convert.ToDouble(dt.Rows[0]["DonGia_Vao"].ToString());
+                double SoLuong_Vao = CheckString.ConvertToDouble_My(dt.Rows[0]["SoLuong_Vao"].ToString());
+                double DonGia_Vao = CheckString.ConvertToDouble_My(dt.Rows[0]["DonGia_Vao"].ToString());
                 int ID_VTHH_Ra = Convert.ToInt32(dt.Rows[0]["ID_VTHH_Ra"].ToString());
 
-                double SanLuong_Thuong = Convert.ToDouble(dt.Rows[0]["SanLuong_Thuong"].ToString());
-                double SanLuong_TangCa = Convert.ToDouble(dt.Rows[0]["SanLuong_TangCa"].ToString());
-                double SanLuong_Tong = Convert.ToDouble(dt.Rows[0]["SanLuong_Tong"].ToString());
-                double DonGia_Xuat = Convert.ToDouble(dt.Rows[0]["DonGia_Xuat"].ToString());
-                double PhePham = Convert.ToDouble(dt.Rows[0]["PhePham"].ToString());
-                double DoCao_Dot = Convert.ToDouble(dt.Rows[0]["DoCao_Dot"].ToString());
+                double SanLuong_Thuong = CheckString.ConvertToDouble_My(dt.Rows[0]["SanLuong_Thuong"].ToString());
+                double SanLuong_TangCa = CheckString.ConvertToDouble_My(dt.Rows[0]["SanLuong_TangCa"].ToString());
+                double SanLuong_Tong = CheckString.ConvertToDouble_My(dt.Rows[0]["SanLuong_Tong"].ToString());
+                double DonGia_Xuat = CheckString.ConvertToDouble_My(dt.Rows[0]["DonGia_Xuat"].ToString());
+                double PhePham = CheckString.ConvertToDouble_My(dt.Rows[0]["PhePham"].ToString());
+                double DoCao_Dot = CheckString.ConvertToDouble_My(dt.Rows[0]["DoCao_Dot"].ToString());
                 gridMaCaTruong_May_DOT.EditValue = ID_CaTruong;
                 dteNgaySanXuat_May_DOT.EditValue = NgaySanXuat;
                 cbCaSanXuat_May_DOT.Text = CaSanXuat;
@@ -164,7 +164,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    double SoKGMotBao = Convert.ToDouble(dt.Rows[0]["SoKG_MotBao_May_Dot"].ToString());
+                    double SoKGMotBao = CheckString.ConvertToDouble_My(dt.Rows[0]["SoKG_MotBao_May_Dot"].ToString());
                     txtSoKGMotBao.Text = dt.Rows[0]["SoKG_MotBao_May_Dot"].ToString();
                     txtQuyDoiRaKG.Text = (SanLuong_Thuong * SoKGMotBao).ToString();
                 }
@@ -253,14 +253,14 @@ namespace CtyTinLuong
                 string CaSanXuat = cbCaSanXuat_May_DOT.Text.ToString();
 
                 int ID_VTHH_Vao = Convert.ToInt32(gridHangHoaVao_may_DOT.EditValue.ToString());
-                double SoLuong_Vao = Convert.ToDouble(txtSoLuongNhap_May_DOT.Text.ToString());
-                double DonGia_Vao = Convert.ToDouble(txtDonGiaNhap_May_DOT.Text.ToString());
+                double SoLuong_Vao = CheckString.ConvertToDouble_My(txtSoLuongNhap_May_DOT.Text.ToString());
+                double DonGia_Vao = CheckString.ConvertToDouble_My(txtDonGiaNhap_May_DOT.Text.ToString());
                 int ID_VTHH_Ra = Convert.ToInt32(gridHangHoaXuat_May_DOT.EditValue.ToString());
-                double SanLuong_Thuong = Convert.ToDouble(txtSanLuong_may_DOT.Text.ToString());                
-                double DonGia_Xuat = Convert.ToDouble(txtDonGiaXuat_May_DOT.Text.ToString());
-                double PhePham = Convert.ToDouble(txtPhePham_May_DOT.Text.ToString());
-                double SOKGMOTBAO=Convert.ToDouble(txtSoKGMotBao.Text.ToString());
-                double docaodot= Convert.ToDouble(txtDoCao.Text.ToString());
+                double SanLuong_Thuong = CheckString.ConvertToDouble_My(txtSanLuong_may_DOT.Text.ToString());                
+                double DonGia_Xuat = CheckString.ConvertToDouble_My(txtDonGiaXuat_May_DOT.Text.ToString());
+                double PhePham = CheckString.ConvertToDouble_My(txtPhePham_May_DOT.Text.ToString());
+                double SOKGMOTBAO=CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString());
+                double docaodot= CheckString.ConvertToDouble_My(txtDoCao.Text.ToString());
                 int ID_DinhMuc_Luong = Convert.ToInt32(gridDinhMucSLMay_DOT.EditValue.ToString());
                 cls.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu; 
                 cls.iID_May = ID_May;
@@ -386,12 +386,12 @@ namespace CtyTinLuong
             string CaSanXuat = cbCaSanXuat_May_DOT.Text.ToString();
 
             int ID_VTHH_Vao = Convert.ToInt32(gridHangHoaVao_may_DOT.EditValue.ToString());
-            double SoLuong_Vao = Convert.ToDouble(txtSoLuongNhap_May_DOT.Text.ToString());
-            double DonGia_Vao = Convert.ToDouble(txtDonGiaNhap_May_DOT.Text.ToString());
+            double SoLuong_Vao = CheckString.ConvertToDouble_My(txtSoLuongNhap_May_DOT.Text.ToString());
+            double DonGia_Vao = CheckString.ConvertToDouble_My(txtDonGiaNhap_May_DOT.Text.ToString());
             int ID_VTHH_Ra = Convert.ToInt32(gridHangHoaXuat_May_DOT.EditValue.ToString());
-            double SanLuong_Thuong = Convert.ToDouble(txtQuyDoiRaKG.Text.ToString());          
-            double DonGia_Xuat = Convert.ToDouble(txtDonGiaXuat_May_DOT.Text.ToString());
-            double PhePham = Convert.ToDouble(txtPhePham_May_DOT.Text.ToString());
+            double SanLuong_Thuong = CheckString.ConvertToDouble_My(txtQuyDoiRaKG.Text.ToString());          
+            double DonGia_Xuat = CheckString.ConvertToDouble_My(txtDonGiaXuat_May_DOT.Text.ToString());
+            double PhePham = CheckString.ConvertToDouble_My(txtPhePham_May_DOT.Text.ToString());
             clsHUU_LenhSanXuat_ChiTietLenhSanXuat clsLSX_chitiet = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
             clsLSX_chitiet.iID_LenhSanXuat = iiID_LenhnhanXuat;
             clsLSX_chitiet.iID_ChiTietPhieu = iiiDID_ChiTietPhieu;
@@ -667,8 +667,8 @@ namespace CtyTinLuong
             {
                 if (txtSanLuong_may_DOT.Text.ToString() != "" & txtSoKGMotBao.Text.ToString() != "")
                 {
-                    double d1 = Convert.ToDouble(txtSanLuong_may_DOT.Text.ToString());
-                    double d2 = Convert.ToDouble(txtSoKGMotBao.Text.ToString());
+                    double d1 = CheckString.ConvertToDouble_My(txtSanLuong_may_DOT.Text.ToString());
+                    double d2 = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString());
                     double d3 = d1 * d2;
                     txtQuyDoiRaKG.Text = d3.ToString();
                 }
@@ -758,8 +758,8 @@ namespace CtyTinLuong
             {
                 if (txtSanLuong_may_DOT.Text.ToString() != "" & txtSoKGMotBao.Text.ToString() != "")
                 {
-                    double d1 = Convert.ToDouble(txtSanLuong_may_DOT.Text.ToString());
-                    double d2 = Convert.ToDouble(txtSoKGMotBao.Text.ToString());
+                    double d1 = CheckString.ConvertToDouble_My(txtSanLuong_may_DOT.Text.ToString());
+                    double d2 = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString());
                     double d3 = d1 * d2;
                     txtQuyDoiRaKG.Text = d3.ToString();
                 }

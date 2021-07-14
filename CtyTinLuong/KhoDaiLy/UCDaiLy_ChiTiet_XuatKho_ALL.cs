@@ -41,8 +41,8 @@ namespace CtyTinLuong
                 DataTable dxxxx = dv2.ToTable();
                 for (int i = 0; i < dxxxx.Rows.Count; i++)
                 {
-                    double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-                    double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuongXuat"].ToString());
+                    double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
+                    double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuongXuat"].ToString());
                     DataRow _ravi = dt2.NewRow();
                     _ravi["ID_VTHH"] = Convert.ToInt16(dxxxx.Rows[i]["ID_VTHH"].ToString());
                     _ravi["MaVT"] = dxxxx.Rows[i]["MaVT"].ToString();
@@ -80,8 +80,8 @@ namespace CtyTinLuong
             DataTable dxxxx = dv2.ToTable();
             for (int i = 0; i < dxxxx.Rows.Count; i++)
             {
-                double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-                double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuongXuat"].ToString());
+                double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
+                double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuongXuat"].ToString());
                 DataRow _ravi = dt2.NewRow();
                 _ravi["ID_VTHH"] = Convert.ToInt16(dxxxx.Rows[i]["ID_VTHH"].ToString());
                 _ravi["MaVT"] = dxxxx.Rows[i]["MaVT"].ToString();

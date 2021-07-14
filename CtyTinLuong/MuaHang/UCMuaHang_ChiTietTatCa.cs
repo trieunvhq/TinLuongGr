@@ -58,9 +58,9 @@ namespace CtyTinLuong
                         DataTable dtvt = clsvt.SelectOne();
                         _ravi["MaVT"] = clsvt.sMaVT.Value;
                         _ravi["TenVTHH"] = clsvt.sTenVTHH.Value;
-                        _ravi["SoLuong"] = Convert.ToDouble(dttong.Rows[0]["SoLuong"].ToString());
+                        _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dttong.Rows[0]["SoLuong"].ToString());
                         _ravi["DonViTinh"] = clsvt.sDonViTinh.Value;
-                        _ravi["ThanhTien"] = Convert.ToDouble(dttong.Rows[0]["ThanhTien"].ToString());
+                        _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(dttong.Rows[0]["ThanhTien"].ToString());
                         dt2.Rows.Add(_ravi);
                     }
                 }

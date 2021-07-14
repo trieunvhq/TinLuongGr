@@ -47,7 +47,7 @@ namespace CtyTinLuong
                 try
                 {
                     double tongtienhang;
-                    tongtienhang = Convert.ToDouble(txtTongTienHang.Text.ToString());
+                    tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                     clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
                     cls1.sDienGiai = txtDienGiaiNPL.Text.ToString();
                     cls1.daNgayChungTu = dteNgayChungTuNPL.DateTime;
@@ -72,8 +72,8 @@ namespace CtyTinLuong
                     {
                         clschitietxuatkho.iID_XuatKho = iiiiIDID_XuatKhoNPL;
                         clschitietxuatkho.iID_VTHH = Convert.ToInt16(dtmoi.Rows[i]["ID_VTHHVao"].ToString());
-                        clschitietxuatkho.fSoLuongXuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuongVao"].ToString());
-                        clschitietxuatkho.fDonGia = Convert.ToDouble(dtmoi.Rows[i]["DonGiaVao"].ToString());
+                        clschitietxuatkho.fSoLuongXuat = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["SoLuongVao"].ToString());
+                        clschitietxuatkho.fDonGia = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["DonGiaVao"].ToString());
                         clschitietxuatkho.bTonTai = true;
                         clschitietxuatkho.bNgungTheoDoi = false;
                         clschitietxuatkho.bDaXuatKho = true;
@@ -134,7 +134,7 @@ namespace CtyTinLuong
             string shienthi = "1";
             object xxxx = dt2.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongTienHang.Text = deTOngtien.ToString();
 
@@ -278,11 +278,11 @@ namespace CtyTinLuong
                 if (bandedGridView1.GetFocusedRowCellValue(clDonGia_Vao).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clDonGia_Vao));
+                    ffdongia = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clDonGia_Vao));
                 if (bandedGridView1.GetFocusedRowCellValue(clSoLuongNhap_May).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuongNhap_May));
+                    fffsoluong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuongNhap_May));
                 fffthanhtien = fffsoluong * ffdongia;
                 bandedGridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -291,11 +291,11 @@ namespace CtyTinLuong
                 if (bandedGridView1.GetFocusedRowCellValue(clDonGia_Vao).ToString() == "")
                     ffdongia = 0;
                 else
-                    ffdongia = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clDonGia_Vao));
+                    ffdongia = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clDonGia_Vao));
                 if (bandedGridView1.GetFocusedRowCellValue(clSoLuongNhap_May).ToString() == "")
                     fffsoluong = 0;
                 else
-                    fffsoluong = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuongNhap_May));
+                    fffsoluong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuongNhap_May));
                 fffthanhtien = fffsoluong * ffdongia;
                 bandedGridView1.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
@@ -304,7 +304,7 @@ namespace CtyTinLuong
             string shienthi = "1";
             object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
             if (xxxx.ToString() != "")
-                deTOngtien = Convert.ToDouble(xxxx);
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
             else deTOngtien = 0;
             txtTongTienHang.Text = deTOngtien.ToString();
         }

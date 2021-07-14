@@ -330,9 +330,9 @@ namespace CtyTinLuong
         {
             try
             {
-                double phantram = Convert.ToDouble(txtPhanTramBaoHiem.Text.ToString());
-                double luongcoban = Convert.ToDouble(txtLuongCoBan.Text.ToString());
-                double baohiem = Convert.ToDouble(phantram * luongcoban / 100);
+                double phantram = CheckString.ConvertToDouble_My(txtPhanTramBaoHiem.Text.ToString());
+                double luongcoban = CheckString.ConvertToDouble_My(txtLuongCoBan.Text.ToString());
+                double baohiem = CheckString.ConvertToDouble_My(phantram * luongcoban / 100);
                 txtBaoHiem.Text = baohiem.ToString();
             }
             catch

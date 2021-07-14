@@ -23,7 +23,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msNguoiNhanHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbTongTienVAT), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdbTongTienVAT), " đồng");
             DateTime ngay = KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.msSoChungTu + "";
@@ -37,7 +37,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + BanHang_FrmChiTietBanHang_Newwwwwwww.msDienGiai + "";
             pNguoiNhan_Giao.Value = BanHang_FrmChiTietBanHang_Newwwwwwww.msNguoiNhanHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(BanHang_FrmChiTietBanHang_Newwwwwwww.mdbTongTienVAT), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(BanHang_FrmChiTietBanHang_Newwwwwwww.mdbTongTienVAT), " đồng");
             DateTime ngay = BanHang_FrmChiTietBanHang_Newwwwwwww.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + BanHang_FrmChiTietBanHang_Newwwwwwww.msSoChungTu + "";
@@ -51,7 +51,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoThanhPham_frmChiTiet_Da_XuatKho.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoThanhPham_frmChiTiet_Da_XuatKho.msNguoinhanhang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoThanhPham_frmChiTiet_Da_XuatKho.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoThanhPham_frmChiTiet_Da_XuatKho.mdbTongSotien), " đồng");
             DateTime ngay = KhoThanhPham_frmChiTiet_Da_XuatKho.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoThanhPham_frmChiTiet_Da_XuatKho.msSoChungTu + "";
@@ -65,7 +65,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoThanhPham_ChiTiet_XuatKho_Khac.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoThanhPham_ChiTiet_XuatKho_Khac.msNguoinhanhang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoThanhPham_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoThanhPham_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
             DateTime ngay = KhoThanhPham_ChiTiet_XuatKho_Khac.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoThanhPham_ChiTiet_XuatKho_Khac.msSoChungTu + "";
@@ -80,7 +80,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do nhập kho: " + KhoThanhPham_ChiTiet_NhapKho_Khac.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoThanhPham_ChiTiet_NhapKho_Khac.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoThanhPham_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoThanhPham_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
             DateTime ngay = KhoThanhPham_ChiTiet_NhapKho_Khac.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoThanhPham_ChiTiet_NhapKho_Khac.msSoChungTu + "";
@@ -96,7 +96,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do nhập kho: " + frmChiTietNhapKhoThanhPham_DaNhapKhoTP.msDienGiai + "";
             pNguoiNhan_Giao.Value = frmChiTietNhapKhoThanhPham_DaNhapKhoTP.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mdbTongSotien), " đồng");
             DateTime ngay = frmChiTietNhapKhoThanhPham_DaNhapKhoTP.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + frmChiTietNhapKhoThanhPham_DaNhapKhoTP.msSoChungTu + "";
@@ -112,7 +112,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoBTP_ChiTiet_XuatKho_Khac.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoBTP_ChiTiet_XuatKho_Khac.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoBTP_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
             DateTime ngay = KhoBTP_ChiTiet_XuatKho_Khac.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoBTP_ChiTiet_XuatKho_Khac.msSoChungTu + "";
@@ -126,7 +126,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoBTP_ChiTietDaXuatKho.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoBTP_ChiTietDaXuatKho.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTietDaXuatKho.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoBTP_ChiTietDaXuatKho.mdbTongSotien), " đồng");
             DateTime ngay = KhoBTP_ChiTiet_DaNhapKho.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoBTP_ChiTietDaXuatKho.msSoChungTu + "";
@@ -140,7 +140,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do nhập kho: " + KhoBTP_ChiTiet_DaNhapKho.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoBTP_ChiTiet_DaNhapKho.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTiet_DaNhapKho.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoBTP_ChiTiet_DaNhapKho.mdbTongSotien), " đồng");
             DateTime ngay = KhoBTP_ChiTiet_DaNhapKho.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoBTP_ChiTiet_DaNhapKho.msSoChungTu + "";
@@ -154,7 +154,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do nhập kho: " + KhoBTP_ChiTiet_NhapKho_Khac.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoBTP_ChiTiet_NhapKho_Khac.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoBTP_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoBTP_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
             DateTime ngay = KhoBTP_ChiTiet_NhapKho_Khac.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoBTP_ChiTiet_NhapKho_Khac.msSoChungTu + "";
@@ -168,7 +168,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoNPL_ChiTiet_XuatKho_Khac.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoNPL_ChiTiet_XuatKho_Khac.msNguoiNhanHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoNPL_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoNPL_ChiTiet_XuatKho_Khac.mdbTongSotien), " đồng");
             DateTime ngay = KhoNPL_ChiTiet_XuatKho_Khac.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoNPL_ChiTiet_XuatKho_Khac.msSoChungTu + "";
@@ -182,7 +182,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: "+ frmKhoNPL_DaXuatKho.msDienGiai+ "";
             pNguoiNhan_Giao.Value = frmKhoNPL_DaXuatKho.msNguoiNhanHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(frmKhoNPL_DaXuatKho.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(frmKhoNPL_DaXuatKho.mdbTongSotien), " đồng");
             DateTime ngay = frmKhoNPL_DaXuatKho.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + frmKhoNPL_DaXuatKho.msSoChungTu + "";
@@ -196,7 +196,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do nhập kho: "+ KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.mdbTongSotien), " đồng");
             DateTime ngay = KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = KhoNPL_frmChiTiet_Da_NhapKho_TuMuaHang.msSoChungTu;
@@ -211,7 +211,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do nhập kho: " + KhoNPL_ChiTiet_NhapKho_Khac.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoNPL_ChiTiet_NhapKho_Khac.msNguoiGiaoHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoNPL_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoNPL_ChiTiet_NhapKho_Khac.mdbTongSotien), " đồng");
 
             DateTime ngay = KhoNPL_ChiTiet_NhapKho_Khac.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
@@ -227,7 +227,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + KhoNPL_frmChiTiet_XuatKho_gapDan.msDienGiai + "";
             pNguoiNhan_Giao.Value = KhoNPL_frmChiTiet_XuatKho_gapDan.msNguoiNhanHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(KhoNPL_frmChiTiet_XuatKho_gapDan.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoNPL_frmChiTiet_XuatKho_gapDan.mdbTongSotien), " đồng");
             DateTime ngay = KhoNPL_frmChiTiet_XuatKho_gapDan.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + KhoNPL_frmChiTiet_XuatKho_gapDan.msSoChungTu + "";
@@ -242,7 +242,7 @@ namespace CtyTinLuong
             pDienGiai.Value = "Lý do xuất kho: " + DaiLy_FrmChiTiet_NhapKho_GapDan.msDienGiai + "";
             pNguoiNhan_Giao.Value = DaiLy_FrmChiTiet_NhapKho_GapDan.msNguoiNhanHang;
             clsSoTienBangChu cls = new clsSoTienBangChu();
-            pSoTienBangChu.Value = cls.DocTienBangChu(Convert.ToDouble(DaiLy_FrmChiTiet_NhapKho_GapDan.mdbTongSotien), " đồng");
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(DaiLy_FrmChiTiet_NhapKho_GapDan.mdbTongSotien), " đồng");
             DateTime ngay = DaiLy_FrmChiTiet_NhapKho_GapDan.mdaNgayChungTu;
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + DaiLy_FrmChiTiet_NhapKho_GapDan.msSoChungTu + "";

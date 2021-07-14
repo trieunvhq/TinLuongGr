@@ -1,4 +1,4 @@
-﻿using CtyTinLuong.Constants;
+﻿
 using CtyTinLuong.Model;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
@@ -80,17 +80,17 @@ namespace CtyTinLuong
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
                     double dongia_;
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
                     if (istangca_)
                     {
-                        dongia_ = Convert.ToDouble(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
+                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
                         _data.Rows[i]["TenVTHH"] = "Tăng ca";
 
                     }
                     else
                     {
-                        dongia_ = Convert.ToDouble(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
+                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
                         _data.Rows[i]["TenVTHH"] = "Công nhật";
                     }
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
@@ -101,14 +101,14 @@ namespace CtyTinLuong
                     tongluong_tong_ += tongluong_;
                     _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
-                    luongtrachnhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
+                    luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
                     luongtrachnhiem_tong_ += luongtrachnhiem_;
                     if (luongtrachnhiem_ == 0)
                         _data.Rows[i]["LuongTrachNhiem"] = "";
                     else
                         _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
 
-                    trutamung_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                    trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                     trutamung_tong_ += trutamung_;
                     if (trutamung_ == 0)
                         _data.Rows[i]["TamUng"] = "";
@@ -334,19 +334,19 @@ namespace CtyTinLuong
                     if (!s.Contains(","))
                         result = double.Parse(s, CultureInfo.InvariantCulture);
                     else
-                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+                        result = CheckString.ConvertToDouble_My(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
             catch
             {
                 try
                 {
-                    result = Convert.ToDouble(s);
+                    result = CheckString.ConvertToDouble_My(s);
                 }
                 catch
                 {
                     try
                     {
-                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                        result = CheckString.ConvertToDouble_My(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
                     }
                     catch
                     {

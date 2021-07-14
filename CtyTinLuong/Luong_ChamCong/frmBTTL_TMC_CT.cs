@@ -1,4 +1,4 @@
-﻿using CtyTinLuong.Constants;
+﻿
 using CtyTinLuong.Model;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Columns;
@@ -91,14 +91,14 @@ namespace CtyTinLuong
                
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    Cong_ = Convert.ToDouble(_data.Rows[i]["Cong"].ToString());
-                    SanLuong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
-                    DonGia_ = Convert.ToDouble(_data.Rows[i]["DonGia"].ToString());
-                    ThanhTien_ = Convert.ToDouble(_data.Rows[i]["ThanhTien"].ToString());
-                    XangXe_ = Convert.ToDouble(_data.Rows[i]["XangXe"].ToString());
-                    Tong_ = Convert.ToDouble(_data.Rows[i]["Tong"].ToString());
-                    BaoHiem_ = Convert.ToDouble(_data.Rows[i]["BaoHiem"].ToString());
-                    ThucNhan_ = Convert.ToDouble(_data.Rows[i]["ThucNhan"].ToString());
+                    Cong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["Cong"].ToString());
+                    SanLuong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
+                    DonGia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia"].ToString());
+                    ThanhTien_ = CheckString.ConvertToDouble_My(_data.Rows[i]["ThanhTien"].ToString());
+                    XangXe_ = CheckString.ConvertToDouble_My(_data.Rows[i]["XangXe"].ToString());
+                    Tong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["Tong"].ToString());
+                    BaoHiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem"].ToString());
+                    ThucNhan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["ThucNhan"].ToString());
                     //
                     _Cong += Cong_;
                     _SanLuong += SanLuong_;
@@ -281,19 +281,19 @@ namespace CtyTinLuong
                     if (!s.Contains(","))
                         result = double.Parse(s, CultureInfo.InvariantCulture);
                     else
-                        result = Convert.ToDouble(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
+                        result = CheckString.ConvertToDouble_My(s.Replace(".", systemSeparator.ToString()).Replace(",", systemSeparator.ToString()));
             }
             catch
             {
                 try
                 {
-                    result = Convert.ToDouble(s);
+                    result = CheckString.ConvertToDouble_My(s);
                 }
                 catch
                 {
                     try
                     {
-                        result = Convert.ToDouble(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
+                        result = CheckString.ConvertToDouble_My(s.Replace(",", ";").Replace(".", ",").Replace(";", "."));
                     }
                     catch
                     {

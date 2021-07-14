@@ -41,8 +41,8 @@ namespace CtyTinLuong
 
                 double SoLuong_NhapTruocKy, GiaTri_NhapTruocKy, SoLuong_XuatTruocKy, GiaTri_XuatTruocKy, SoLuong_TonDauKy, GiaTri_TonDauKy;
 
-                SoLuong_NhapTruocKy = Convert.ToDouble(dt_NhapTruoc.Rows[i]["SoLuong_NhapTruocKy"].ToString());
-                GiaTri_NhapTruocKy = Convert.ToDouble(dt_NhapTruoc.Rows[i]["GiaTri_NhapTruocKy"].ToString());
+                SoLuong_NhapTruocKy = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[i]["SoLuong_NhapTruocKy"].ToString());
+                GiaTri_NhapTruocKy = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[i]["GiaTri_NhapTruocKy"].ToString());
                 string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
                 DataRow[] rows = dt_XuatTruoc.Select(filterExpression);
                 if (rows.Length == 0)
@@ -52,8 +52,8 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    SoLuong_XuatTruocKy = Convert.ToDouble(rows[0]["SoLuong_XuatTruocKy"].ToString());
-                    GiaTri_XuatTruocKy = Convert.ToDouble(rows[0]["GiaTri_XuatTruocKy"].ToString());
+                    SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(rows[0]["SoLuong_XuatTruocKy"].ToString());
+                    GiaTri_XuatTruocKy = CheckString.ConvertToDouble_My(rows[0]["GiaTri_XuatTruocKy"].ToString());
 
                 }
                 SoLuong_TonDauKy = SoLuong_NhapTruocKy - SoLuong_XuatTruocKy;
@@ -79,8 +79,8 @@ namespace CtyTinLuong
                 DataRow[] rows = dt_XuatTruoc.Select(filterExpression);
                 if (rows.Length == 0)
                 {
-                    SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[i]["SoLuong_XuatTruocKy"].ToString());
-                    GiaTri_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[i]["GiaTri_XuatTruocKy"].ToString());
+                    SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[i]["SoLuong_XuatTruocKy"].ToString());
+                    GiaTri_XuatTruocKy = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[i]["GiaTri_XuatTruocKy"].ToString());
                     SoLuong_TonDauKy = -SoLuong_XuatTruocKy;
                     GiaTri_TonDauKy = -GiaTri_XuatTruocKy;
                     DataRow _ravi = dt2.NewRow();
@@ -122,8 +122,8 @@ namespace CtyTinLuong
                 iiiiiID_VTHH = Convert.ToInt16(dt_NhapTrongKy.Rows[i]["ID_VTHH"].ToString());
                 double SoLuongNhap_TrongKy, GiaTriNhap_TrongKy,
                 SoLuongXuat_TrongKy, GiaTriXuat_TrongKy;
-                SoLuongNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                GiaTriNhap_TrongKy = Convert.ToDouble(dt_NhapTrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
+                SoLuongNhap_TrongKy = CheckString.ConvertToDouble_My(dt_NhapTrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
+                GiaTriNhap_TrongKy = CheckString.ConvertToDouble_My(dt_NhapTrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
                 string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
                 DataRow[] rows = dt_XuatTrongKy.Select(filterExpression);
                 if (rows.Length == 0)
@@ -133,8 +133,8 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    SoLuongXuat_TrongKy = Convert.ToDouble(rows[0]["SoLuongXuat_TrongKy"].ToString());
-                    GiaTriXuat_TrongKy = Convert.ToDouble(rows[0]["GiaTriXuat_TrongKy"].ToString());
+                    SoLuongXuat_TrongKy = CheckString.ConvertToDouble_My(rows[0]["SoLuongXuat_TrongKy"].ToString());
+                    GiaTriXuat_TrongKy = CheckString.ConvertToDouble_My(rows[0]["GiaTriXuat_TrongKy"].ToString());
 
                 }
 
@@ -160,8 +160,8 @@ namespace CtyTinLuong
 
                 double SoLuongXuat_TrongKy, GiaTriXuat_TrongKy;
 
-                SoLuongXuat_TrongKy = Convert.ToDouble(dt_XuatTrongKy.Rows[i]["SoLuongXuat_TrongKy"].ToString());
-                GiaTriXuat_TrongKy = Convert.ToDouble(dt_XuatTrongKy.Rows[i]["GiaTriXuat_TrongKy"].ToString());
+                SoLuongXuat_TrongKy = CheckString.ConvertToDouble_My(dt_XuatTrongKy.Rows[i]["SoLuongXuat_TrongKy"].ToString());
+                GiaTriXuat_TrongKy = CheckString.ConvertToDouble_My(dt_XuatTrongKy.Rows[i]["GiaTriXuat_TrongKy"].ToString());
                 string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
                 DataRow[] rows = dt_NhapTrongKy.Select(filterExpression);
                 if (rows.Length == 0)
@@ -213,11 +213,11 @@ namespace CtyTinLuong
                 double SoLuong_TonDauKy, GiaTri_TonDauKy, SoLuongNhap_TrongKy, GiaTriNhap_TrongKy,
                 SoLuongXuat_TrongKy, GiaTriXuat_TrongKy, SoLuongTon_CuoiKy, GiaTriTon_CuoiKy;
 
-                SoLuongNhap_TrongKy = Convert.ToDouble(dt_Nhap_Xuat_TrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
-                GiaTriNhap_TrongKy = Convert.ToDouble(dt_Nhap_Xuat_TrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
+                SoLuongNhap_TrongKy = CheckString.ConvertToDouble_My(dt_Nhap_Xuat_TrongKy.Rows[i]["SoLuongNhap_TrongKy"].ToString());
+                GiaTriNhap_TrongKy = CheckString.ConvertToDouble_My(dt_Nhap_Xuat_TrongKy.Rows[i]["GiaTriNhap_TrongKy"].ToString());
 
-                SoLuongXuat_TrongKy = Convert.ToDouble(dt_Nhap_Xuat_TrongKy.Rows[i]["SoLuongXuat_TrongKy"].ToString());
-                GiaTriXuat_TrongKy = Convert.ToDouble(dt_Nhap_Xuat_TrongKy.Rows[i]["GiaTriXuat_TrongKy"].ToString());
+                SoLuongXuat_TrongKy = CheckString.ConvertToDouble_My(dt_Nhap_Xuat_TrongKy.Rows[i]["SoLuongXuat_TrongKy"].ToString());
+                GiaTriXuat_TrongKy = CheckString.ConvertToDouble_My(dt_Nhap_Xuat_TrongKy.Rows[i]["GiaTriXuat_TrongKy"].ToString());
                 string filterExpression = "ID_VTHH=" + iiiiiID_VTHH + "";
                 DataRow[] rows = dt_TonDayKy.Select(filterExpression);
                 if (rows.Length == 0)
@@ -227,8 +227,8 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    SoLuong_TonDauKy = Convert.ToDouble(rows[0]["SoLuong_TonDauKy"].ToString());
-                    GiaTri_TonDauKy = Convert.ToDouble(rows[0]["GiaTri_TonDauKy"].ToString());
+                    SoLuong_TonDauKy = CheckString.ConvertToDouble_My(rows[0]["SoLuong_TonDauKy"].ToString());
+                    GiaTri_TonDauKy = CheckString.ConvertToDouble_My(rows[0]["GiaTri_TonDauKy"].ToString());
 
                 }
                 SoLuongTon_CuoiKy = SoLuong_TonDauKy + SoLuongNhap_TrongKy - SoLuongXuat_TrongKy;
@@ -267,8 +267,8 @@ namespace CtyTinLuong
                 DataRow[] rows = dt_Nhap_Xuat_TrongKy.Select(filterExpression);
                 if (rows.Length == 0)
                 {
-                    SoLuong_TonDauKy = Convert.ToDouble(dt_TonDayKy.Rows[i]["SoLuong_TonDauKy"].ToString());
-                    GiaTri_TonDauKy = Convert.ToDouble(dt_TonDayKy.Rows[i]["GiaTri_TonDauKy"].ToString());
+                    SoLuong_TonDauKy = CheckString.ConvertToDouble_My(dt_TonDayKy.Rows[i]["SoLuong_TonDauKy"].ToString());
+                    GiaTri_TonDauKy = CheckString.ConvertToDouble_My(dt_TonDayKy.Rows[i]["GiaTri_TonDauKy"].ToString());
 
                     SoLuongTon_CuoiKy = SoLuong_TonDauKy;
                     GiaTriTon_CuoiKy = GiaTri_TonDauKy;
@@ -332,8 +332,8 @@ namespace CtyTinLuong
             //        mdadenngay = dteNgay.DateTime;
             //        miiID_VTHH = Convert.ToInt16(bandedGridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
             //        //msoluongTonDauKy, mGiaTriTonDauKy;
-            //        msoluongTonDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
-            //        mGiaTriTonDauKy = Convert.ToDouble(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
+            //        msoluongTonDauKy = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_TonDauKy).ToString());
+            //        mGiaTriTonDauKy = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clGiaTri_TonDauKy).ToString());
             //        KhoNPL_frmChiTietNhapXuatTon_MotVatTu ff = new KhoNPL_frmChiTietNhapXuatTon_MotVatTu();
             //        ff.Show();
             //    }

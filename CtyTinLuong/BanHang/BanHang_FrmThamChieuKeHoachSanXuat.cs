@@ -108,7 +108,7 @@ namespace CtyTinLuong
                 clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat();
                 cls.iID_KeHoachSanXuat= Convert.ToInt32(gridKeHoach.EditValue.ToString());
                 // update ngày xuất, so luong xuat,hoan thanh
-                cls.fSoLuongThucXuat = Convert.ToDouble(txtSoLuongthuc.Text.ToString());
+                cls.fSoLuongThucXuat = CheckString.ConvertToDouble_My(txtSoLuongthuc.Text.ToString());
                 cls.daNgayXuatThucTe = dteNgayChungTu.DateTime;
                 cls.bDaHoanThanh = checkHoanThanh.Checked;
                 cls.Update_NgayXuatThucTe_SoLuongThucXuat_DaHoanThanh();

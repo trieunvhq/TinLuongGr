@@ -31,7 +31,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi = ds.tbNhapKho_XuatKho.NewRow();
                 _ravi["STT"] = (i + 1).ToString();
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["DonGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
                 _ravi["MaVT"] = cls.sMaVT.Value;
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();               
@@ -62,20 +62,20 @@ namespace CtyTinLuong
               
                 DataRow _ravi = ds.tbBan_MuaHang.NewRow();
                 _ravi["STT"] = (i + 1).ToString();
-                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
-                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["ThanhTien"].ToString());
+                _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong"].ToString());
+                _ravi["DonGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["ThanhTien"].ToString());
                 _ravi["TenKH"] = dt3.Rows[i]["TenKH"].ToString();
                 _ravi["MaVT"] = dt3.Rows[i]["MaVT"].ToString();
                 _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["TienVAT"] = Convert.ToDouble(dt3.Rows[i]["TienVAT"].ToString());
+                _ravi["TienVAT"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TienVAT"].ToString());
                 _ravi["NgayChungTu"] =dt3.Rows[i]["NgayChungTu"].ToString();
                 _ravi["SoChungTu"] =dt3.Rows[i]["SoChungTu"].ToString();
                 _ravi["DienGiai"] = dt3.Rows[i]["DienGiai"].ToString();
-                _ravi["TongTien_CoVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_CoVAT"].ToString());
-                _ravi["TongTien_ChuaVAT"] = Convert.ToDouble(dt3.Rows[i]["TongTien_ChuaVAT"].ToString());
-                _ravi["QuyDoiVND"] = Convert.ToDouble(dt3.Rows[i]["QuyDoiVND"].ToString());
+                _ravi["TongTien_CoVAT"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TongTien_CoVAT"].ToString());
+                _ravi["TongTien_ChuaVAT"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TongTien_ChuaVAT"].ToString());
+                _ravi["QuyDoiVND"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["QuyDoiVND"].ToString());
                 ds.tbBan_MuaHang.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;

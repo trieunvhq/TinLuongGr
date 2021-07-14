@@ -39,12 +39,12 @@ namespace CtyTinLuong
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = ID_VTHH;
                 DataTable dt = cls.SelectOne();
-                _ravi["SoLuong"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString());
-                _ravi["DonGia"] = Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong"].ToString());
+                _ravi["DonGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
                 _ravi["MaVT"] = cls.sMaVT.Value;
                 _ravi["TenVTHH"] = cls.sTenVTHH.Value;
                 _ravi["DonViTinh"] = cls.sDonViTinh.Value;
-                _ravi["ThanhTien"] = Convert.ToDouble(dt3.Rows[i]["SoLuong"].ToString()) * Convert.ToDouble(dt3.Rows[i]["DonGia"].ToString());
+                _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong"].ToString()) * CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
                 ds.tbChiTietMuaHang.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;

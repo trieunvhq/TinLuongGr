@@ -34,44 +34,44 @@ namespace CtyTinLuong
               
                 if (dt3.Rows[i]["SoLuong_Vao_IN"].ToString() == "")
                     SoLuong_Vao_IN = 0;
-                else SoLuong_Vao_IN = Convert.ToDouble(dt3.Rows[i]["SoLuong_Vao_IN"].ToString());
+                else SoLuong_Vao_IN = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_Vao_IN"].ToString());
 
                 if (dt3.Rows[i]["SoLuong_Ra_IN"].ToString() == "")
                     SoLuong_Ra_IN = 0;
-                else SoLuong_Ra_IN = Convert.ToDouble(dt3.Rows[i]["SoLuong_Ra_IN"].ToString());
+                else SoLuong_Ra_IN = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_Ra_IN"].ToString());
 
                 if (dt3.Rows[i]["PhePham_IN"].ToString() == "")
                     PhePham_IN = 0;
-                else PhePham_IN = Convert.ToDouble(dt3.Rows[i]["PhePham_IN"].ToString());
+                else PhePham_IN = CheckString.ConvertToDouble_My(dt3.Rows[i]["PhePham_IN"].ToString());
 
                 double SoLuong_Vao_CAT, SoLuong_Ra_CAT, PhePham_CAT;
 
                 if (dt3.Rows[i]["SoLuong_Vao_CAT"].ToString() == "")
                     SoLuong_Vao_CAT = 0;
-                else SoLuong_Vao_CAT = Convert.ToDouble(dt3.Rows[i]["SoLuong_Vao_CAT"].ToString());
+                else SoLuong_Vao_CAT = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_Vao_CAT"].ToString());
 
                 if (dt3.Rows[i]["SoLuong_Ra_CAT"].ToString() == "")
                     SoLuong_Ra_CAT = 0;
-                else SoLuong_Ra_CAT = Convert.ToDouble(dt3.Rows[i]["SoLuong_Ra_CAT"].ToString());
+                else SoLuong_Ra_CAT = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_Ra_CAT"].ToString());
 
                 if (dt3.Rows[i]["PhePham_CAT"].ToString() == "")
                     PhePham_CAT = 0;
-                else PhePham_CAT = Convert.ToDouble(dt3.Rows[i]["PhePham_CAT"].ToString());
+                else PhePham_CAT = CheckString.ConvertToDouble_My(dt3.Rows[i]["PhePham_CAT"].ToString());
 
 
                 double SoLuong_Vao_DOT, SoLuong_Ra_DOT, PhePham_DOT;
 
                 if (dt3.Rows[i]["SoLuong_Vao_DOT"].ToString() == "")
                     SoLuong_Vao_DOT = 0;
-                else SoLuong_Vao_DOT = Convert.ToDouble(dt3.Rows[i]["SoLuong_Vao_DOT"].ToString());
+                else SoLuong_Vao_DOT = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_Vao_DOT"].ToString());
 
                 if (dt3.Rows[i]["SoLuong_Ra_DOT"].ToString() == "")
                     SoLuong_Ra_DOT = 0;
-                else SoLuong_Ra_DOT = Convert.ToDouble(dt3.Rows[i]["SoLuong_Ra_DOT"].ToString());
+                else SoLuong_Ra_DOT = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoLuong_Ra_DOT"].ToString());
 
                 if (dt3.Rows[i]["PhePham_DOT"].ToString() == "")
                     PhePham_DOT = 0;
-                else PhePham_DOT = Convert.ToDouble(dt3.Rows[i]["PhePham_DOT"].ToString());
+                else PhePham_DOT = CheckString.ConvertToDouble_My(dt3.Rows[i]["PhePham_DOT"].ToString());
 
 
                 DataRow _ravi = ds.tbChiTietPhieuSanXuat.NewRow();

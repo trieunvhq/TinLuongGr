@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-namespace CtyTinLuong.Constants
+namespace CtyTinLuong
 {
     internal static class CheckString
     {
@@ -414,6 +414,22 @@ namespace CtyTinLuong.Constants
             else return GCD(b, a % b);
         }
 
-
+        public static double ConvertToDouble_My(object str)
+        {
+            string str_2_ = str.ToString();
+            double temp_ = 0;
+            try
+            {
+                temp_ = Convert.ToDouble(str);
+            }
+            catch
+            {
+                str_2_ = str_2_.Replace(",", "*");
+                str_2_ = str_2_.Replace(".", ",");
+                str_2_ = str_2_.Replace("*", ".");
+                temp_ = Convert.ToDouble(str_2_);
+            }
+            return temp_;
+        }
     }
 }

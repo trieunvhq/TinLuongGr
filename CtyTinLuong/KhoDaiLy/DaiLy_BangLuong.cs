@@ -51,8 +51,8 @@ namespace CtyTinLuong
             {
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
-                    double tongtienxx = Convert.ToDouble(dt3.Rows[i]["TongTien"].ToString());
-                    double SoTien_TamUngxxx = Convert.ToDouble(dt3.Rows[i]["SoTien_TamUng"].ToString());
+                    double tongtienxx = CheckString.ConvertToDouble_My(dt3.Rows[i]["TongTien"].ToString());
+                    double SoTien_TamUngxxx = CheckString.ConvertToDouble_My(dt3.Rows[i]["SoTien_TamUng"].ToString());
                     DataRow _ravi = dt2.NewRow();
 
                     _ravi["ID_DaiLy"] = dt3.Rows[i]["ID_DaiLy"].ToString();
@@ -132,9 +132,9 @@ namespace CtyTinLuong
 
             string shienthi = "1";
 
-            mdbSumTongTien = Convert.ToDouble(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
-            mdbSumTamUng = Convert.ToDouble(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
-            mdbSumThucNhan = Convert.ToDouble(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
+            mdbSumTongTien = CheckString.ConvertToDouble_My(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
+            mdbSumTamUng = CheckString.ConvertToDouble_My(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
+            mdbSumThucNhan = CheckString.ConvertToDouble_My(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
 
             if (DatatableABC.Rows.Count == 0)
                 MessageBox.Show("Không có dữ liệu");
@@ -233,9 +233,9 @@ namespace CtyTinLuong
            
             string shienthi = "1";
             
-            mdbSumTongTien = Convert.ToDouble(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
-            mdbSumTamUng = Convert.ToDouble(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
-            mdbSumThucNhan = Convert.ToDouble(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
+            mdbSumTongTien = CheckString.ConvertToDouble_My(dt27hhhdshjj.Compute("sum(TongTien)", "HienThi=" + shienthi + ""));
+            mdbSumTamUng = CheckString.ConvertToDouble_My(dt27hhhdshjj.Compute("sum(SoTien_TamUng)", "HienThi=" + shienthi + ""));
+            mdbSumThucNhan = CheckString.ConvertToDouble_My(dt27hhhdshjj.Compute("sum(ThucNhan)", "HienThi=" + shienthi + ""));
            
             if (DatatableABC.Rows.Count == 0)
                 MessageBox.Show("Không có dữ liệu");

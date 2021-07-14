@@ -32,8 +32,8 @@ namespace CtyTinLuong
 
             //for (int i = 0; i < dxxxx.Rows.Count; i++)
             //{
-            //    double DonGia = Convert.ToDouble(dxxxx.Rows[i]["DonGia"].ToString());
-            //    double SoLuong = Convert.ToDouble(dxxxx.Rows[i]["SoLuong"].ToString());
+            //    double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
+            //    double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
             //    int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
             //    //clsTbKhachHang clsncc = new clsTbKhachHang();
             //    //clsncc.iID_KhachHang = iID_KhachHangccc;

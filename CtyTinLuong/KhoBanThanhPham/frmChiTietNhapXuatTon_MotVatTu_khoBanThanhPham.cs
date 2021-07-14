@@ -53,9 +53,9 @@ namespace CtyTinLuong
             if (dt_NhapTruoc.Rows.Count > 0)
             {
                 DataRow _ravi = dt2xxxx.NewRow();
-                SoLuong_NhapTruocKy = Convert.ToDouble(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
+                SoLuong_NhapTruocKy = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
                 if (dt_XuatTruoc.Rows.Count > 0)
-                    SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+                    SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
                 else
                     SoLuong_XuatTruocKy = 0;
                 SoLuong_TonDauKy = SoLuong_NhapTruocKy - SoLuong_XuatTruocKy;
@@ -66,7 +66,7 @@ namespace CtyTinLuong
             else if (dt_XuatTruoc.Rows.Count > 0)
             {
                 DataRow _ravi = dt2xxxx.NewRow();
-                SoLuong_XuatTruocKy = Convert.ToDouble(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+                SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
                 SoLuong_TonDauKy = -SoLuong_XuatTruocKy;
                 _ravi["DienGiai"] = "Tồn đầu kỳ";
                 _ravi["Ton"] = SoLuong_TonDauKy;
@@ -111,7 +111,7 @@ namespace CtyTinLuong
                     {
 
                         DataRow _ravi_Nhap = dt2xxxx.NewRow();
-                        double soluongnhap = Convert.ToDouble(foundRows_Nhap[j]["SoLuongNhap"].ToString());
+                        double soluongnhap = CheckString.ConvertToDouble_My(foundRows_Nhap[j]["SoLuongNhap"].ToString());
                         _ravi_Nhap["NgayChungTu"] = ngaydautien;
                         _ravi_Nhap["DienGiai"] = foundRows_Nhap[j]["DienGiai"].ToString();
                         _ravi_Nhap["SoChungTu_NhapKho"] = foundRows_Nhap[j]["SoChungTu"].ToString();
@@ -128,7 +128,7 @@ namespace CtyTinLuong
                     {
                         DataRow _ravi_Xuat = dt2xxxx.NewRow();
                         _ravi_Xuat["NgayChungTu"] = ngaydautien;
-                        double soluongxuat = Convert.ToDouble(foundRows_Xuat[j]["SoLuongXuat"].ToString());
+                        double soluongxuat = CheckString.ConvertToDouble_My(foundRows_Xuat[j]["SoLuongXuat"].ToString());
                         _ravi_Xuat["Xuat"] = soluongxuat;
                         _ravi_Xuat["SoChungTu_XuatKho"] = foundRows_Xuat[j]["SoChungTu"].ToString();
                         _ravi_Xuat["DienGiai"] = foundRows_Xuat[j]["DienGiai"].ToString();

@@ -52,14 +52,14 @@ namespace CtyTinLuong
                     double dNo_DauKy, dCo_DauKy, dNo_TrongKy, dCo_TrongKy, dNo_CuoiKy, dCo_CuoiKy;
                     iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
 
-                    dNo_DauKy = Convert.ToDouble(dtnganhang.Rows[i]["No_DauKy"].ToString());
-                    dCo_DauKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_DauKy"].ToString());
+                    dNo_DauKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_DauKy"].ToString());
+                    dCo_DauKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_DauKy"].ToString());
 
-                    dNo_TrongKy = Convert.ToDouble(dtnganhang.Rows[i]["No_TrongKy"].ToString());
-                    dCo_TrongKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
+                    dNo_TrongKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_TrongKy"].ToString());
+                    dCo_TrongKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
 
-                    dNo_CuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
-                    dCo_CuoiKy = Convert.ToDouble(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
+                    dNo_CuoiKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
+                    dCo_CuoiKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
 
                     sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
                     sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();

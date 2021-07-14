@@ -68,8 +68,8 @@ namespace CtyTinLuong.Luong_ChamCong
                 dt_ = clsThin_.T_DM_SO(_nam, _thang, _id_bophan);
                 if (dt_ != null && dt_.Rows.Count == 1)
                 {
-                    _dinhmuc_cong = Convert.ToDouble(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
-                    _dinhmuc_tangca = Convert.ToDouble(dt_.Rows[0]["DinhMuc_Tang"].ToString());
+                    _dinhmuc_cong = CheckString.ConvertToDouble_My(dt_.Rows[0]["DinhMuc_KhongTang"].ToString());
+                    _dinhmuc_tangca = CheckString.ConvertToDouble_My(dt_.Rows[0]["DinhMuc_Tang"].ToString());
                 }
             }
 
@@ -88,7 +88,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
                     double dongia_;
-                    double sanluong_ = Convert.ToDouble(_data.Rows[i]["SanLuong"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
                     if (istangca_)
                     {
@@ -108,14 +108,14 @@ namespace CtyTinLuong.Luong_ChamCong
                     TongLuong += (dongia_ * sanluong_);
                     _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
-                    double LuongTrachNhiem_ = Convert.ToDouble(_data.Rows[i]["LuongTrachNhiem"].ToString());
+                    double LuongTrachNhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem"].ToString());
                     LuongTrachNhiem += LuongTrachNhiem_;
                     if (LuongTrachNhiem_ == 0)
                         _data.Rows[i]["LuongTrachNhiem"] = "";
                     else
                         _data.Rows[i]["LuongTrachNhiem"] = LuongTrachNhiem_.ToString("N0");
 
-                    double TamUng_ = Convert.ToDouble(_data.Rows[i]["TamUng_Value"].ToString());
+                    double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                     tamung += TamUng_;
                     if (TamUng_ == 0)
                         _data.Rows[i]["TamUng"] = "";

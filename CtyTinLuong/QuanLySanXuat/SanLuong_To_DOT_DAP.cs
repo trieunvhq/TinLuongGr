@@ -56,7 +56,7 @@ namespace CtyTinLuong
                     dtxxxx = cls.Select_SUM_SanLuong_W_IDVTHH_NgayThang_DOT(ID_VTHH_Raxx, xxtungay, xxdenngay);
                     if (dtxxxx.Rows.Count > 0)
                     {
-                        if (Convert.ToDouble(dtxxxx.Rows[0]["TongSoBao_Sot"].ToString()) > 0)
+                        if (CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["TongSoBao_Sot"].ToString()) > 0)
                         {
                             DataRow _ravi = dt2.NewRow();
                             clsvt.iID_VTHH = ID_VTHH_Raxx;
@@ -69,9 +69,9 @@ namespace CtyTinLuong
                             _ravi["MaVT_Ra"] = MaVT_Ra;
                             _ravi["DonViTinh_Ra"] = DonViTinh_Ra;
                             _ravi["TenVatTu_Ra"] = TenVatTu_Ra;
-                            _ravi["TongSoBao_Sot"] = Convert.ToDouble(dtxxxx.Rows[0]["TongSoBao_Sot"].ToString());
-                            _ravi["TongSoKg"] = Convert.ToDouble(dtxxxx.Rows[0]["TongSoKg"].ToString());
-                            _ravi["TongSoThanh"] = Convert.ToDouble(dtxxxx.Rows[0]["TongSoThanh"].ToString());
+                            _ravi["TongSoBao_Sot"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["TongSoBao_Sot"].ToString());
+                            _ravi["TongSoKg"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["TongSoKg"].ToString());
+                            _ravi["TongSoThanh"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[0]["TongSoThanh"].ToString());
                             
                             dt2.Rows.Add(_ravi);
                         }
