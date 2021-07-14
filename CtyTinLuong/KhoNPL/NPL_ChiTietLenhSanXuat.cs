@@ -354,7 +354,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridMaCN.Focus();
             }
         }
 
@@ -370,7 +370,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtGhiChu.Focus();
             }
         }
 
@@ -386,7 +386,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                dteNgayChungTuNPL.Focus();
             }
         }
 
@@ -402,7 +402,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridNguoiLap.Focus();
             }
         }
 
@@ -410,7 +410,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                txtDienGiaiNPL.Focus();
             }
         }
 
@@ -426,7 +426,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                SendKeys.Send("{TAB}");
+                gridControl1.Focus();
             }
         }
 

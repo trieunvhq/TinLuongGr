@@ -56,7 +56,7 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong_Load(object sender, EventArgs e)
+        public void UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             mbThemMoi_nhapKhoDaiLy = mbCopy=mbSua = false;                
@@ -78,13 +78,13 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy) != null)
             {
                 mbCopy = false;
                 mbSua = true;
                 mbThemMoi_nhapKhoDaiLy = false;
                 miID_NhapKhoDaiLy = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKhoDaiLy).ToString());
-                NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
+                NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi(this);
                 //_frmKNPL.Hide();
                 ff.Show();
                 //_frmKNPL.Show();
@@ -108,7 +108,7 @@ namespace CtyTinLuong
             mbThemMoi_nhapKhoDaiLy = true;
             mbSua = false;
             mbCopy = false;
-            NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi();
+            NPLChiTietNhapKho_DaiLy_ThemMoi ff = new NPLChiTietNhapKho_DaiLy_ThemMoi(this);
             //_frmKNPL.Hide();
             ff.Show();
             //_frmKNPL.Show();
