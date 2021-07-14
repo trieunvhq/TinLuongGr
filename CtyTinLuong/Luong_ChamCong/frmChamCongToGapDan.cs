@@ -850,10 +850,10 @@ namespace CtyTinLuong
 
         private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{DOWN}");
-            }
+            //if (e.KeyChar == (char)13)
+            //{
+            //    SendKeys.Send("{DOWN}");
+            //}
         }
 
         private void label1_Click(object sender, EventArgs e)
