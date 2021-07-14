@@ -611,7 +611,6 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Ghi chú";
-            this.gridColumn1.ColumnEdit = this.repositoryItemMemoEdit2;
             this.gridColumn1.FieldName = "GhiChu";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;

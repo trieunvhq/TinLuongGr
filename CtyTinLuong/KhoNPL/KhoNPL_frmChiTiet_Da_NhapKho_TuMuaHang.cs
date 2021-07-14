@@ -456,8 +456,8 @@ namespace CtyTinLuong
 
         private void repositoryItemSearchLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
-            ((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
-            ((SearchLookUpEdit)sender).Properties.View.Columns[3].Visible = false;
+            //((SearchLookUpEdit)sender).Properties.View.Columns[0].Visible = false;
+            //((SearchLookUpEdit)sender).Properties.View.Columns[3].Visible = false;
         }
 
         int iID_VTHH;

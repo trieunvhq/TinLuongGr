@@ -425,7 +425,6 @@
             this.clTenVTHH_Ra.AppearanceCell.Options.UseTextOptions = true;
             this.clTenVTHH_Ra.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clTenVTHH_Ra.Caption = "Tên TP";
-            this.clTenVTHH_Ra.ColumnEdit = this.repositoryItemMemoEdit2;
             this.clTenVTHH_Ra.FieldName = "TenVatTu_Ra";
             this.clTenVTHH_Ra.Name = "clTenVTHH_Ra";
             this.clTenVTHH_Ra.OptionsColumn.AllowEdit = false;
