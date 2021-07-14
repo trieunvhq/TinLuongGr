@@ -194,22 +194,6 @@ namespace CtyTinLuong
             gridMaVT.Properties.View.Columns[3].Visible = false;
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             if(gridView1.GetFocusedRowCellValue(clID_DaiLy).ToString()!="")
