@@ -14,99 +14,24 @@ namespace CtyTinLuong
     {
         public static int miiD_XuatKho;
         public static bool mbThemMoi;
-        private void Load_LockUp()
-        {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-
-        }
         private void HienThiGridControl_2(int xxiID_XuatKho)
         {
-
             clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
             cls2.iID_XuatKho = xxiID_XuatKho;
-            DataTable dtxxxx = cls2.SelectAll_W_ID_XuatKho();
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_VTHH", typeof(int));
-            dt2.Columns.Add("MaVT", typeof(string));
-            dt2.Columns.Add("DonViTinh", typeof(string));
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("DonGia", typeof(float));
-            dt2.Columns.Add("ThanhTien", typeof(float));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-
-            for (int i = 0; i < dtxxxx.Rows.Count; i++)
-            {
-                double soluong, dongia;
-                soluong = Convert.ToDouble(dtxxxx.Rows[i]["SoLuongXuat"].ToString());
-                dongia = Convert.ToDouble(dtxxxx.Rows[i]["DonGia"].ToString());
-                DataRow _ravi = dt2.NewRow();
-                int iiDI_Vthh = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHH"].ToString());
-                _ravi["ID_VTHH"] = iiDI_Vthh;
-                cls.iID_VTHH = iiDI_Vthh;
-                DataTable dtVT_vao = cls.SelectOne();
-                _ravi["MaVT"] = iiDI_Vthh;
-                _ravi["DonViTinh"] = cls.sDonViTinh.Value;
-                _ravi["TenVTHH"] = cls.sTenVTHH.Value;
-                _ravi["SoLuong"] = soluong;
-                _ravi["DonGia"] = dongia;
-                
-                _ravi["ThanhTien"] = soluong * dongia;
-                _ravi["HienThi"] = "1";
-                _ravi["GhiChu"] = dtxxxx.Rows[i]["GhiChu"].ToString();
-                dt2.Rows.Add(_ravi);
-            }
-            
-            gridControl2.DataSource = dt2;
+            DataTable dtxxxx = cls2.SA_ID_XuatKho(xxiID_XuatKho);
+            gridControl2.DataSource = dtxxxx;
+            cls2.Dispose();
         }
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
+        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-                clsKhoNPL_tbXuatKho cls = new CtyTinLuong.clsKhoNPL_tbXuatKho();
-                DataTable dt2xx = cls.SelectAll();
-                dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and checkXuatKho_Khac=True";
-                DataView dv22xxx = dt2xx.DefaultView;
-               
-                DataTable dt = dv22xxx.ToTable();
-
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-                DataView dvxxx = dt.DefaultView;
-                DataTable dt22 = dvxxx.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-                DataView dv2 = dt22.DefaultView;
-                dv2.Sort = "NgayChungTu DESC, ID_XuatKhoNPL DESC";
-                DataTable dxxxx = dv2.ToTable();
-
-                gridControl1.DataSource = dxxxx;
-         
-
-        }
-        private void HienThi_ALL()
-        {
-
             clsKhoNPL_tbXuatKho cls = new CtyTinLuong.clsKhoNPL_tbXuatKho();
-            DataTable dt2xx = cls.SelectAll();
-            dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and checkXuatKho_Khac=True";
-            DataView dv22xxx = dt2xx.DefaultView;
-          
-            dv22xxx.Sort = "NgayChungTu DESC, ID_XuatKhoNPL DESC";
-            DataTable dxxxx = dv22xxx.ToTable();
+            DataTable dt2xx = cls.SA_NgayThang_XuatKho_Khac(xxtungay, xxdenngay);
 
-            gridControl1.DataSource = dxxxx;
-
+            gridControl1.DataSource = dt2xx;
+            cls.Dispose();
 
         }
+        
 
         KhoNPL_frmNPL _frmKNPL;
         public UCNPL_XuatKho_Khacccccccccccccc(KhoNPL_frmNPL frmKNPL)
@@ -117,11 +42,10 @@ namespace CtyTinLuong
 
         private void UCNPL_XuatKho_Khacccccccccccccc_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
+            Cursor.Current = Cursors.WaitCursor;           
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
@@ -187,11 +111,7 @@ namespace CtyTinLuong
                     cls2.iID_XuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoNPL).ToString());
                     cls2.Delete_W_ID_XuatKho();
                     MessageBox.Show("Đã xóa");
-                    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-                    {
-                        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
-                    }
-                    else HienThi_ALL();
+                    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 }
 
 
@@ -210,8 +130,7 @@ namespace CtyTinLuong
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            if (dteDenNgay.DateTime != null & dteTuNgay.DateTime != null)
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
