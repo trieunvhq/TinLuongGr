@@ -257,7 +257,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btLayDuLieu_Click(object sender, EventArgs e)
+        public void btLayDuLieu_Click(object sender, EventArgs e)
         {
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
@@ -334,6 +334,22 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dteTuNgay_TextChanged(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void dteDenNgay_TextChanged(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            {
+                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 

@@ -383,7 +383,7 @@ namespace CtyTinLuong
         {
             LuuDuLieu();
             this.Close();
-            _frmKHSX.frmKeHoachSanXuat_Load(null, null);
+            _frmKHSX.btLayDuLieu_Click(null, null);
         }
 
         private void btLuu_Copy_Click(object sender, EventArgs e)
@@ -393,7 +393,7 @@ namespace CtyTinLuong
             txt_ID_pic2.ResetText();
             txt_ID_pic3.ResetText();
             txt_ID_pic4.ResetText();
-            _frmKHSX.frmKeHoachSanXuat_Load(null, null);
+            _frmKHSX.btLayDuLieu_Click(null, null);
         }
 
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)
