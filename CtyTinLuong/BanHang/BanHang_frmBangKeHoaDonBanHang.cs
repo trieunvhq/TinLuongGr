@@ -283,6 +283,11 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
+        private void grid_banHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
         private void gridView_Chitiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT2)
