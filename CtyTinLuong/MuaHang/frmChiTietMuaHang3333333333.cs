@@ -1475,22 +1475,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (e.KeyChar == (char)13)
-            //{
-            //    SendKeys.Send("{TAB}");
-            //}
-        }
-
-        private void gridControl2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (e.KeyChar == (char)13)
-            //{
-            //    SendKeys.Send("{TAB}");
-            //}
-        }
-
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
             LuuDuLieu_Va_GuiDuLieu();
