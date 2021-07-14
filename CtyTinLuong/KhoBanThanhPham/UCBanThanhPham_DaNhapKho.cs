@@ -19,6 +19,7 @@ namespace CtyTinLuong
             DataTable dt3 = cls2.SA_ID_NhapKho(xxxidxuatkho);
             gridControl2.DataSource = dt3;
             cls2.Dispose();
+            dt3.Dispose();
 
         }
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
