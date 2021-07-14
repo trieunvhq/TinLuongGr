@@ -362,7 +362,6 @@
             // clGhiChu
             // 
             this.clGhiChu.Caption = "Ghi chú";
-            this.clGhiChu.ColumnEdit = this.repositoryItemMemoEdit1;
             this.clGhiChu.FieldName = "GhiChu";
             this.clGhiChu.Name = "clGhiChu";
             this.clGhiChu.Visible = true;
