@@ -19,12 +19,13 @@ namespace CtyTinLuong
      
         private void HienThiGridControl_2(int xxxidxuatkho)
         {
-           
-                clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
-                DataTable dt3 = cls2.SA_ID_XuatKho(xxxidxuatkho);
-                gridControl2.DataSource = dt3;
-                cls2.Dispose();
-           
+
+            clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
+            DataTable dt3 = cls2.SA_ID_XuatKho(xxxidxuatkho);
+            gridControl2.DataSource = dt3;
+            dt3.Dispose();
+            cls2.Dispose();
+
         }
         private void Load_DaTa(bool xuatkhokhac, DateTime xxtungay, DateTime xxdenngay)
         {
