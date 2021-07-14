@@ -198,7 +198,7 @@ namespace CtyTinLuong
                         miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMucLuong_CongNhat).ToString());
                         msTenDinhMucLuongCongNhat = gridView1.GetFocusedRowCellValue(clMaDinhMucLuongCongNhat).ToString();
                         mb_TheMoi_DinhMucLuongCongNhat = false;
-                        frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww();
+                        frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww(this);
                         ff.Show();
                     }
                     else
@@ -228,7 +228,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMucLuongCongNhat = true;
-            frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww();
+            frmChiTietDinhMucLuongCongNhat_Newwwwww ff = new frmChiTietDinhMucLuongCongNhat_Newwwwww(this);
             ff.Show();
             Cursor.Current = Cursors.Default;
         }
