@@ -495,6 +495,7 @@ namespace CtyTinLuong
                     _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
                 }
 
+                SendKeys.Send("{DOWN}");
             }
             else if (name_.Contains("TenVTHH"))
             {
@@ -840,20 +841,12 @@ namespace CtyTinLuong
 
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{DOWN}");
-            }
-        }
-
         private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{DOWN}");
-            }
+            //if (e.KeyChar == (char)13)
+            //{
+            //    SendKeys.Send("{DOWN}");
+            //}
         }
 
         private void label1_Click(object sender, EventArgs e)

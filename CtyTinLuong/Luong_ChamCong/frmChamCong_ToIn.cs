@@ -323,6 +323,7 @@ namespace CtyTinLuong
                     _data.Rows[index_]["Tong"] = temp_ + CheckString.ConvertToDouble_My(_data.Rows[index_]["Tong"].ToString());
                 }
 
+                SendKeys.Send("{DOWN}");
             }
             else if (name_.Contains("TenVTHH"))
             {
