@@ -20,50 +20,7 @@ namespace CtyTinLuong
         public static DataTable mdtPrint;
         public static string msSoChungTu, msNguoiNhanHang, msDienGiai;
         public static double mdbTongSotien;
-        private void HienThi_Gridcontrol()
-        {
-            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
-            cls2.iID_XuatKho = UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho;
-            DataTable dt3 = cls2.SelectAll_HienThiSuaChiTietXuatKHo();
-            DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_ChiTietXuatKho"); // ID của tbChi tiet don hàng
-            //dt2.Columns.Add("ID_XuatKho");
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(decimal));
-
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("GhiChu");
-
-            dt2.Columns.Add("ThanhTien", typeof(decimal));
-            dt2.Columns.Add("HienThi", typeof(string));
-            if (dt3.Rows.Count > 0)
-            {
-                for (int i = 0; i < dt3.Rows.Count; i++)
-                {
-                    Decimal xxsoluong = Convert.ToDecimal(dt3.Rows[i]["SoLuongXuat"].ToString());
-                    Decimal xxdongia = Convert.ToDecimal(dt3.Rows[i]["DonGia"].ToString());
-                    DataRow _ravi = dt2.NewRow();
-                    //_ravi["ID_ChiTietXuatKho"] = dt3.Rows[i]["ID_ChiTietXuatKho"].ToString();
-                    //_ravi["ID_XuatKho"] = dt3.Rows[i]["ID_XuatKho"].ToString();
-                    _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
-
-                    _ravi["SoLuong"] = xxsoluong;
-                    _ravi["DonGia"] = xxdongia;
-                    _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                    _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                    _ravi["ThanhTien"] = Convert.ToDecimal(xxsoluong * xxdongia);
-                    _ravi["HienThi"] = "1";
-                    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                    dt2.Rows.Add(_ravi);
-                }
-            }
-
-            gridControl1.DataSource = dt2;
-        }
+      
         private void HienThi_ThemMoi()
         {
             gridNguoiLap.EditValue = 14;
@@ -89,7 +46,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("ID_ChiTietXuatKho"); // ID của tbChi tiet don hàng
             dt2.Columns.Add("ID_XuatKho");
             dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuong", typeof(float));
+            dt2.Columns.Add("SoLuongXuat", typeof(float));
             dt2.Columns.Add("DonGia", typeof(decimal));
 
             dt2.Columns.Add("MaVT");// tb VTHH
@@ -103,10 +60,10 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
         }
 
-        private void HienThi_Sua()
+        private void HienThi_Sua(int xxxmiiD_XuatKho)
         {
             clsKhoNPL_tbXuatKho cls1 = new clsKhoNPL_tbXuatKho();
-            cls1.iID_XuatKhoNPL = UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho;
+            cls1.iID_XuatKhoNPL = xxxmiiD_XuatKho;
             DataTable dt1 = cls1.SelectOne();
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
@@ -114,8 +71,13 @@ namespace CtyTinLuong
             txtDienGiai.Text = cls1.sDienGiai.Value;
             txtThamChieu.Text = cls1.sThamChieu.Value;
             txtTongTienHangCoVAT.Text = cls1.fTongTienHang.Value.ToString();
-            HienThi_Gridcontrol();
-
+            cls1.Dispose();
+            dt1.Dispose();
+            clsKhoNPL_tbChiTietXuatKho cls2 = new clsKhoNPL_tbChiTietXuatKho();
+            DataTable dt2 = cls2.SA_ID_XuatKho(xxxmiiD_XuatKho);
+            gridControl1.DataSource = dt2;
+            cls2.Dispose();
+            dt2.Dispose();
         }
 
         private void Load_LockUp()
@@ -167,7 +129,7 @@ namespace CtyTinLuong
                     int ID_VTHHxxx = Convert.ToInt32(dtmoi.Rows[i]["ID_VTHH"].ToString());
                     cls2.iID_XuatKho = iiID_XUatKhoNPL;
                     cls2.iID_VTHH = Convert.ToInt32(dtmoi.Rows[i]["ID_VTHH"].ToString());
-                    cls2.fSoLuongXuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuong"].ToString());
+                    cls2.fSoLuongXuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuongXuat"].ToString());
                     if (dtmoi.Rows[i]["DonGia"].ToString() == "")
                         cls2.fDonGia = 0;
                     else cls2.fDonGia = Convert.ToDouble(dtmoi.Rows[i]["DonGia"].ToString());
@@ -193,7 +155,7 @@ namespace CtyTinLuong
                     {
                         clsKhoNPL_tbChiTietNhapKho clschitietnhapkho = new CtyTinLuong.clsKhoNPL_tbChiTietNhapKho();
                         int iiiID_VTHH = Convert.ToInt32(dtmoi.Rows[i]["ID_VTHH"].ToString());
-                        double soluongxuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuong"].ToString());
+                        double soluongxuat = Convert.ToDouble(dtmoi.Rows[i]["SoLuongXuat"].ToString());
                         clschitietnhapkho.iID_VTHH = iiiID_VTHH;
                         DataTable dt2 = clschitietnhapkho.Select_W_ID_VTHH();
                         if (dt2.Rows.Count > 0)
@@ -321,7 +283,7 @@ namespace CtyTinLuong
             Load_LockUp();
             if (UCNPL_XuatKho_Khacccccccccccccc.mbThemMoi == true)
                 HienThi_ThemMoi();
-            else HienThi_Sua();
+            else HienThi_Sua(UCNPL_XuatKho_Khacccccccccccccc.miiD_XuatKho);
             Cursor.Current = Cursors.Default;
         }
 
@@ -347,7 +309,7 @@ namespace CtyTinLuong
             double fffsoluong = 0;
             double ffdongia = 0;
             double fffthanhtien = 0;
-            if (e.Column == clMaVT)
+            if (e.Column == clID_VTHH)
             {
                 clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
                 cls.iID_VTHH = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, e.Column));
@@ -355,7 +317,7 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 if (dt != null)
                 {
-                    gridView1.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
+                   
                     gridView1.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, clHienThi, "1");

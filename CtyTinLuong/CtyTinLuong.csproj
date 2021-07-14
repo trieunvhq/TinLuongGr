@@ -226,10 +226,10 @@
     <Compile Include="KhoNPL\clsGapDan_ChiTiet_NhapKho_Temp.cs" />
     <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp.cs" />
-    <Compile Include="KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs">
+    <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.Designer.cs">
+    <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.Designer.cs">
       <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoThanhPham\clsDaiLy_tbChiTietXuatKho_Temp - Copy.cs" />
@@ -2263,6 +2263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\TrXtra_XuatKho_DaiLy.resx">
       <DependentUpon>TrXtra_XuatKho_DaiLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.resx">
+      <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_NhapKho_TuGapDan.resx">
       <DependentUpon>KhoThanhPham_NhapKho_TuGapDan.cs</DependentUpon>
