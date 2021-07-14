@@ -247,6 +247,21 @@ namespace CtyTinLuong
             pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
             pSoChungTu.Value = "Số: " + DaiLy_FrmChiTiet_NhapKho_GapDan.msSoChungTu + "";
         }
+
+        private void Print_KhoNPL_frmChiTiet_XuatKho_gapDan_Moi()
+        {
+            pTieuDeNguoiNhap_Giao.Value = "Người nhận hàng";
+            pTieuDe.Value = "PHIẾU XUẤT KHO";
+            pKho.Value = "Xuất tại kho: Kho Nguyên Phụ Liệu";
+            pNguoiGiao_Nhan_TieuDe.Value = "Họ tên người nhận hàng: " + KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.msNguoiNhanHang + "";
+            pDienGiai.Value = "Lý do xuất kho: " + KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.msDienGiai + "";
+            pNguoiNhan_Giao.Value = KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.msNguoiNhanHang;
+            clsSoTienBangChu cls = new clsSoTienBangChu();
+            pSoTienBangChu.Value = cls.DocTienBangChu(CheckString.ConvertToDouble_My(KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.mdbTongSotien), " đồng");
+            DateTime ngay = KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.mdaNgayChungTu;
+            pNgayThang.Value = "Ngày " + ngay.ToString("dd") + " tháng " + ngay.ToString("MM") + " năm " + ngay.ToString("yyyy") + "";
+            pSoChungTu.Value = "Số: " + KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.msSoChungTu + "";
+        }
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             try
@@ -264,6 +279,9 @@ namespace CtyTinLuong
             }
             catch
             { }
+
+            if (KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.mbPrint == true)
+                Print_KhoNPL_frmChiTiet_XuatKho_gapDan_Moi();
 
             if (KhoNPL_frmChiTiet_XuatKho_gapDan.mbPrint == true)
                 Print_KhoNPL_frmChiTiet_XuatKho_gapDan();
