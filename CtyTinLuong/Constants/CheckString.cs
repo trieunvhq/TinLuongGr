@@ -448,7 +448,7 @@ namespace CtyTinLuong
             decimal temp_ = 0;
             try
             {
-                temp_ = CheckString.ConvertToDecimal_My(str);
+                temp_ = Convert.ToDecimal(str);
             }
             catch
             {
@@ -457,7 +457,7 @@ namespace CtyTinLuong
                     str_2_ = str_2_.Replace(",", "*");
                     str_2_ = str_2_.Replace(".", ",");
                     str_2_ = str_2_.Replace("*", ".");
-                    temp_ = CheckString.ConvertToDecimal_My(str_2_);
+                    temp_ = Convert.ToDecimal(str_2_);
                 }
                 catch
                 {
