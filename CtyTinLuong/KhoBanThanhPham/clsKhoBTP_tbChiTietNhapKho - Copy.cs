@@ -15,6 +15,39 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsKhoBTP_tbChiTietNhapKho : clsDBInteractionBase
 	{
+        //H_BTP__tbChitietNhapKho_SA_ID_Nhapkho
+        public DataTable SA_ID_NhapKho(int xxID_nhapkho)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_BTP__tbChitietNhapKho_SA_ID_Nhapkho]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_BTP__tbChitietNhapKho_SA_ID_Nhapkho");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@id_nhapkho_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxID_nhapkho));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_BTP__tbChitietNhapKho_SA_ID_Nhapkho", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SD_MaVT_Load_lockUP()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

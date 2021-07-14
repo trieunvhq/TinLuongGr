@@ -15,6 +15,7 @@ namespace CtyTinLuong
     {
 
         public static bool mbNhapKhoTuLenhSXICD;
+        public static bool mbXuatkhoKhac;
         public frmQuanLyKhoBanThanhPham()
         {
             InitializeComponent();
@@ -87,6 +88,7 @@ namespace CtyTinLuong
 
         private void navBarItem3_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            mbXuatkhoKhac = true;
             UCBanThanhPham_XuatKho_Khac uccc_DaNhapKho = new UCBanThanhPham_XuatKho_Khac(this);
             uccc_DaNhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_DaNhapKho);
@@ -137,7 +139,13 @@ namespace CtyTinLuong
 
         private void navBarItem8_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
+            mbXuatkhoKhac = false;
+            UCBanThanhPham_XuatKho_Khac uccc_DaNhapKho = new UCBanThanhPham_XuatKho_Khac(this);
+            uccc_DaNhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_DaNhapKho);
+            uccc_DaNhapKho.BringToFront();
 
+            doiMauTitle(sender, e);
         }
     }
 }
