@@ -416,6 +416,8 @@ namespace CtyTinLuong
 
         public static double ConvertToDouble_My(object str)
         {
+            if (str == null)
+                return 0;
             string str_2_ = str.ToString();
             double temp_ = 0;
             try
@@ -440,6 +442,8 @@ namespace CtyTinLuong
 
         public static decimal ConvertToDecimal_My(object str)
         {
+            if (str == null)
+                return 0;
             string str_2_ = str.ToString();
             decimal temp_ = 0;
             try
