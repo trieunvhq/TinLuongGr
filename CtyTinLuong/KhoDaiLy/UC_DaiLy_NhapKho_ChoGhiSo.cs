@@ -241,38 +241,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridControl3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void gridView4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                SendKeys.Send("{TAB}");
-            }
-        }
-
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
             if (isLoad)

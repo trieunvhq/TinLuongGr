@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -201,6 +200,7 @@
             this.gridView4.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.clThanhTien, "")});
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView4.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
@@ -389,7 +389,6 @@
             this.gridControl1.TabIndex = 96;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -423,13 +422,13 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
+            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
-            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clSTT33
@@ -682,7 +681,8 @@
             this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteTuNgay.Size = new System.Drawing.Size(361, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 91;
@@ -725,7 +725,8 @@
             this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteDenNgay.Size = new System.Drawing.Size(291, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 88;

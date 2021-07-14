@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -59,13 +58,6 @@
             this.clXoa1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clSoChungTu1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_NhapKhoDaiLy1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clDonGia1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clThanhTien1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clSoLuongThanhPhamQuyDoi1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_VTHH1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clMaVT2221 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_ThamChieu1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridMaHang = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clID_NhapKhoDaiLyxxx = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,6 +65,13 @@
             this.clMaVTXXX = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_NhapKhoDaiLy1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clDonGia1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clThanhTien1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoLuongThanhPhamQuyDoi1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_VTHH1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clMaVT2221 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_ThamChieu1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridThamChieu = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -193,7 +192,6 @@
             this.gridControl2.TabIndex = 100;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
-            this.gridControl2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl2_KeyPress);
             // 
             // gridView4
             // 
@@ -224,12 +222,12 @@
             this.clID_ThamChieu1});
             this.gridView4.GridControl = this.gridControl2;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView4.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
-            this.gridView4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView4_KeyPress);
             // 
             // clTiLe1
             // 
@@ -332,6 +330,72 @@
             this.clSoChungTu1.Visible = true;
             this.clSoChungTu1.VisibleIndex = 1;
             // 
+            // gridMaHang
+            // 
+            this.gridMaHang.AutoHeight = false;
+            this.gridMaHang.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridMaHang.Name = "gridMaHang";
+            this.gridMaHang.PopupView = this.gridView2;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.clID_NhapKhoDaiLyxxx,
+            this.SoChungTu,
+            this.clMaVTXXX,
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.AllowCellMerge = true;
+            this.gridView2.OptionsView.AllowHtmlDrawHeaders = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // clID_NhapKhoDaiLyxxx
+            // 
+            this.clID_NhapKhoDaiLyxxx.Caption = "ID_NhapKhoDaiLy";
+            this.clID_NhapKhoDaiLyxxx.FieldName = "ID_NhapKhoDaiLy";
+            this.clID_NhapKhoDaiLyxxx.Name = "clID_NhapKhoDaiLyxxx";
+            this.clID_NhapKhoDaiLyxxx.Width = 88;
+            // 
+            // SoChungTu
+            // 
+            this.SoChungTu.Caption = "Số";
+            this.SoChungTu.FieldName = "SoChungTu";
+            this.SoChungTu.Name = "SoChungTu";
+            this.SoChungTu.Visible = true;
+            this.SoChungTu.VisibleIndex = 0;
+            this.SoChungTu.Width = 90;
+            // 
+            // clMaVTXXX
+            // 
+            this.clMaVTXXX.Caption = "Mã hàng";
+            this.clMaVTXXX.FieldName = "MaVT";
+            this.clMaVTXXX.Name = "clMaVTXXX";
+            this.clMaVTXXX.Visible = true;
+            this.clMaVTXXX.VisibleIndex = 1;
+            this.clMaVTXXX.Width = 83;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Số lượng";
+            this.gridColumn1.FieldName = "SoLuongThanhPhamQuyDoi";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 80;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên hàng";
+            this.gridColumn2.FieldName = "TenVTHH";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.Width = 144;
+            // 
             // clID_NhapKhoDaiLy1
             // 
             this.clID_NhapKhoDaiLy1.Caption = "ID_NhapKhoDaiLy";
@@ -403,72 +467,6 @@
             this.clID_ThamChieu1.Name = "clID_ThamChieu1";
             this.clID_ThamChieu1.OptionsColumn.AllowEdit = false;
             // 
-            // gridMaHang
-            // 
-            this.gridMaHang.AutoHeight = false;
-            this.gridMaHang.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridMaHang.Name = "gridMaHang";
-            this.gridMaHang.PopupView = this.gridView2;
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clID_NhapKhoDaiLyxxx,
-            this.SoChungTu,
-            this.clMaVTXXX,
-            this.gridColumn1,
-            this.gridColumn2});
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.AllowCellMerge = true;
-            this.gridView2.OptionsView.AllowHtmlDrawHeaders = true;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // clID_NhapKhoDaiLyxxx
-            // 
-            this.clID_NhapKhoDaiLyxxx.Caption = "ID_NhapKhoDaiLy";
-            this.clID_NhapKhoDaiLyxxx.FieldName = "ID_NhapKhoDaiLy";
-            this.clID_NhapKhoDaiLyxxx.Name = "clID_NhapKhoDaiLyxxx";
-            this.clID_NhapKhoDaiLyxxx.Width = 88;
-            // 
-            // SoChungTu
-            // 
-            this.SoChungTu.Caption = "Số";
-            this.SoChungTu.FieldName = "SoChungTu";
-            this.SoChungTu.Name = "SoChungTu";
-            this.SoChungTu.Visible = true;
-            this.SoChungTu.VisibleIndex = 0;
-            this.SoChungTu.Width = 90;
-            // 
-            // clMaVTXXX
-            // 
-            this.clMaVTXXX.Caption = "Mã hàng";
-            this.clMaVTXXX.FieldName = "MaVT";
-            this.clMaVTXXX.Name = "clMaVTXXX";
-            this.clMaVTXXX.Visible = true;
-            this.clMaVTXXX.VisibleIndex = 1;
-            this.clMaVTXXX.Width = 83;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Số lượng";
-            this.gridColumn1.FieldName = "SoLuongThanhPhamQuyDoi";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 80;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên hàng";
-            this.gridColumn2.FieldName = "TenVTHH";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 144;
-            // 
             // repositoryItemMemoEdit2
             // 
             this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
@@ -500,7 +498,6 @@
             this.gridControl1.TabIndex = 83;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
             // gridView1
             // 
@@ -529,6 +526,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
+            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -536,7 +534,6 @@
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
-            this.gridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridView1_KeyPress);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clSTT
@@ -765,7 +762,8 @@
             this.dteTuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteTuNgay.Size = new System.Drawing.Size(315, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 91;
@@ -796,7 +794,8 @@
             this.dteDenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"; this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.dteDenNgay.Size = new System.Drawing.Size(365, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 88;
