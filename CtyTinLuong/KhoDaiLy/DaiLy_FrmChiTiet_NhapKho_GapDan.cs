@@ -173,18 +173,13 @@ namespace CtyTinLuong
                     clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
                     cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                     cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                    cls1.sDienGiai = txtDienGiai.Text.ToString();
-                    cls1.iID_VTHH_ThanhPham_QuyDoi = iiID_VT_Chinh;
-                    cls1.fDonGia_ThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtDonGiaThanhPhamQuyDoi.Text.ToString());
-                    cls1.fSoLuongThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtSoLuongXuat.Text.ToString());
+                    cls1.sDienGiai = txtDienGiai.Text.ToString();                 
                     cls1.fTongTienHang = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                     cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                     cls1.sThamChieu = txtThamChieu.Text.ToString();
-                    cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                    
                     cls1.bBool_TonDauKy = false;
-                    cls1.bTrangThai_XuatKho_NPL = true;
-                    cls1.bTrangThai_XuatKho_BTP = true;
-                    cls1.bTrangThai_NhapKho_GapDan = true;
+                    
                     cls1.bDaNhapKho = true;
                     cls1.bTonTai = true;
                     cls1.bNgungTheoDoi = false;
@@ -256,8 +251,7 @@ namespace CtyTinLuong
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
                     cls2.bBoolTonDauKy = false;
-                    cls2.iInt_TP_1_Chinh_2_Phu_3 = Convert.ToInt32(dttttt2.Rows[i]["Int_TP_1_Chinh_2_Phu_3"].ToString());
-
+                    
                     cls2.bDaNhapKho = true;
 
 
@@ -360,17 +354,17 @@ namespace CtyTinLuong
                 clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
                 cls1.iID_NhapKho = iiID_nhapkho_;
                 DataTable dt22222 = cls1.SelectOne();
-                txtSoLuongXuat.Text = cls1.fSoLuongThanhPham_QuyDoi.Value.ToString();
-                gridDinhMucGapDan.EditValue = cls1.iID_DinhMuc_ToGapDan.Value;
+                //txtSoLuongXuat.Text = cls1.fSoLuongThanhPham_QuyDoi.Value.ToString();
+                //gridDinhMucGapDan.EditValue = cls1.iID_DinhMuc_ToGapDan.Value;
                 txtSoChungTu.Text = cls1.sSoChungTu.Value;
                 gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
                 dteNgayChungTu.EditValue = DateTime.Today;
                 txtNguoiNhanHang.Text = cls1.sNguoiNhanHang.Value;
                 txtThamChieu.Text = cls1.sThamChieu.Value;
                 txtDienGiai.Text = cls1.sDienGiai.Value;
-                double iisoluongxuat = cls1.fSoLuongThanhPham_QuyDoi.Value;
-                int iiID_dinhmuc = cls1.iID_DinhMuc_ToGapDan.Value;
-                HienThi_GridControl_Sua(isChoNhapKho, iiID_nhapkho_, iiID_dinhmuc, iisoluongxuat);
+                //double iisoluongxuat = cls1.fSoLuongThanhPham_QuyDoi.Value;
+                //int iiID_dinhmuc = cls1.iID_DinhMuc_ToGapDan.Value;
+                //HienThi_GridControl_Sua(isChoNhapKho, iiID_nhapkho_, iiID_dinhmuc, iisoluongxuat);
             }
            
         }

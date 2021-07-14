@@ -106,38 +106,7 @@ namespace CtyTinLuong
                 scmCmdToExecute.Dispose();
             }
         }
-        public DataTable SelectALL_W_ID_DinhMuc_ToGapDan()
-        {
-            SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_GapDan_tbNhapKho_SelectALL_W_ID_DinhMuc_ToGapDan]";
-            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_GapDan_tbNhapKho_SelectALL_W_ID_DinhMuc_ToGapDan");
-            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
-
-            // Use base class' connection object
-            scmCmdToExecute.Connection = m_scoMainConnection;
-
-            try
-            {
-                m_scoMainConnection.Open();
-
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_ToGapDan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_ToGapDan));
-                sdaAdapter.Fill(dtToReturn);
-                return dtToReturn;
-            }
-            catch (Exception ex)
-            {
-                // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_GapDan_tbNhapKho_SelectALL_W_ID_DinhMuc_ToGapDan", ex);
-            }
-            finally
-            {
-                //Close connection.
-                m_scoMainConnection.Close();
-                scmCmdToExecute.Dispose();
-                sdaAdapter.Dispose();
-            }
-        }
+   
         //
         public void Update_W_TrangThai_NhapKho_GapDan()
         {
