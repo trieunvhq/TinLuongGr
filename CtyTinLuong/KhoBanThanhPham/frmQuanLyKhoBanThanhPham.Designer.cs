@@ -46,6 +46,7 @@
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +95,8 @@
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navDaXuatKho),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navDaXuatKho
@@ -161,7 +163,8 @@
             this.navBarItem2,
             this.navBarItem3,
             this.navBarItem1,
-            this.navBarItem7});
+            this.navBarItem7,
+            this.navBarItem8});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -187,6 +190,12 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // navBarItem8
+            // 
+            this.navBarItem8.Caption = "Xuất kho gấp dán";
+            this.navBarItem8.Name = "navBarItem8";
+            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked_1);
+            // 
             // frmQuanLyKhoBanThanhPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,7 +210,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyKhoBanThanhPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Kho Bán Thành Phẩm";
+            this.Text = "frmQuanLyKhoBanThanhPham-->Kho Bán Thành Phẩm";
             this.Load += new System.EventHandler(this.frmQuanLyKhoBanThanhPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -228,5 +237,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
     }
 }
