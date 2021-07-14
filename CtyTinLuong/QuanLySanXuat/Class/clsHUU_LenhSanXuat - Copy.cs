@@ -52,12 +52,12 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable SelectAll_NgayThang_XuạtKho_BanThanhPham(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        public DataTable SA_XuatKho_BTP(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_HUU_LenhSanXuat_SelectAll_NgayThang_XuạtKho_BanThanhPham]";
+            scmCmdToExecute.CommandText = "dbo.[pr_HUU_LenhSanXuat_SA_XuatKho_BTP]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_HUU_LenhSanXuat_SelectAll_NgayThang_XuạtKho_BanThanhPham");
+            DataTable dtToReturn = new DataTable("pr_HUU_LenhSanXuat_SA_XuatKho_BTP");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -66,7 +66,7 @@ namespace CtyTinLuong
             try
             {
                 m_scoMainConnection.Open();
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
@@ -76,7 +76,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_HUU_LenhSanXuat_SelectAll_NgayThang_XuạtKho_BanThanhPham", ex);
+                throw new Exception("pr_HUU_LenhSanXuat_SA_XuatKho_BTP", ex);
             }
             finally
             {
@@ -87,12 +87,12 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable SelectAll_NgayThang_NhapKho_BanThanhPham(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        public DataTable SA_NhapKho_BTP(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[pr_HUU_LenhSanXuat_SelectAll_NgayThang_NhapKho_BanThanhPham]";
+            scmCmdToExecute.CommandText = "dbo.[pr_HUU_LenhSanXuat_SA_NhapKho_BTP]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("pr_HUU_LenhSanXuat_SelectAll_NgayThang_NhapKho_BanThanhPham");
+            DataTable dtToReturn = new DataTable("pr_HUU_LenhSanXuat_SA_NhapKho_BTP");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -101,7 +101,7 @@ namespace CtyTinLuong
             try
             {
                 m_scoMainConnection.Open();
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+              
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
@@ -111,7 +111,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("pr_HUU_LenhSanXuat_SelectAll_NgayThang_NhapKho_BanThanhPham", ex);
+                throw new Exception("pr_HUU_LenhSanXuat_SA_NhapKho_BTP", ex);
             }
             finally
             {

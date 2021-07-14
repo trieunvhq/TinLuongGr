@@ -15,81 +15,21 @@ namespace CtyTinLuong
         public static int mID_iD_LenhSanXuat, miID_loaiMay;
         public static string msMaLenhSanxuat;
 
-        private int _SoTrang = 1;
-        private bool isload = false;
-        public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
+      
+        public void LoadData( DateTime xxtungay, DateTime xxdenngay)
         {
-            gridControl1.DataSource = null;
-            isload = true;
-            _SoTrang = sotrang;
+            gridControl1.DataSource = null;          
             clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-            DataTable dt = cls.SelectAll_NgayThang_XuạtKho_BanThanhPham(_SoTrang, xxtungay, xxdenngay);
-
+            DataTable dt = cls.SA_XuatKho_BTP(xxtungay, xxdenngay);
             gridControl1.DataSource = dt;
 
-
-            isload = false;
-        }
-        private void Load_PhieuSX(bool islandau)
-        {
-            int sotrang_ = 1;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-            }
-            catch
-            {
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-            LoadData(sotrang_, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-        }
-        public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
-        {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-
-            using (clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat())
-            {
-                DataTable dt_ = cls.SelectAll_Tinh_SoLenh_SX(xxtungay, xxdenngay);
-                if (dt_ != null && dt_.Rows.Count > 0)
-                {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
-                }
-                else
-                {
-                    lbTongSoTrang.Text = "/1";
-                }
-            }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
-            }
-        }
-
-        private void Load_LockUp()
-        {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
+            cls.Dispose();
+            dt.Dispose();
 
         }
+    
+
+    
         private void HienThiGridControl_2(int xxID_lenhsanxuat)
         {
 
@@ -142,12 +82,11 @@ namespace CtyTinLuong
         private void UCBTP_XuatKho_LSX_I_C_D_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
+          
             dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Now;
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+          
             Cursor.Current = Cursors.Default;
         }
 
@@ -156,8 +95,8 @@ namespace CtyTinLuong
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -215,76 +154,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            if (isload)
-                return;
-            if (btnTrangTiep.LinkColor == Color.Black)
-                return;
-            if (btnTrangSau.LinkColor == Color.Black)
-                btnTrangSau.LinkColor = Color.Blue;
-
-            int sotrang_;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-                int max_ = Convert.ToInt32(lbTongSoTrang.Text.Replace(" ", "").Replace("/", ""));
-                if (sotrang_ < max_)
-                {
-                    txtSoTrang.Text = (sotrang_ + 1).ToString();
-
-                    Load_PhieuSX(false);
-                }
-                else
-                {
-                    txtSoTrang.Text = (max_).ToString();
-                    btnTrangTiep.LinkColor = Color.Black;
-                }
-            }
-            catch
-            {
-                btnTrangTiep.LinkColor = Color.Black;
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void btnTrangSau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            if (isload)
-                return;
-            if (btnTrangSau.LinkColor == Color.Black)
-                return;
-            if (btnTrangTiep.LinkColor == Color.Black)
-                btnTrangTiep.LinkColor = Color.Blue;
-
-            int sotrang_;
-            try
-            {
-                sotrang_ = Convert.ToInt32(txtSoTrang.Text);
-                if (sotrang_ <= 1)
-                {
-                    txtSoTrang.Text = "1";
-                    btnTrangSau.LinkColor = Color.Black;
-
-                }
-                else
-                {
-                    txtSoTrang.Text = (sotrang_ - 1).ToString();
-                    Load_PhieuSX(false);
-                }
-            }
-            catch
-            {
-                btnTrangSau.LinkColor = Color.Black;
-                sotrang_ = 1;
-                txtSoTrang.Text = "1";
-            }
-            Cursor.Current = Cursors.Default;
-        }
+      
 
         private void dteTuNgay_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -334,12 +204,5 @@ namespace CtyTinLuong
             }
         }
 
-        private void txtSoTrang_Leave(object sender, EventArgs e)
-        {
-
-            if (isload)
-                return;
-            Load_PhieuSX(false);
-        }
     }
 }
