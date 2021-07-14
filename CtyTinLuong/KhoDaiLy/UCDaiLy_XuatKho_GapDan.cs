@@ -26,9 +26,9 @@ namespace CtyTinLuong
             }
             else
             {
-                clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
-                DataTable dtxxxx = cls2.SA_ID_XuatKho_moi(xxID_xuatkho);
-                gridControl3.DataSource = dtxxxx;
+                //clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
+                //DataTable dtxxxx = cls2.SA_ID_XuatKho_moi(xxID_xuatkho);
+                //gridControl3.DataSource = dtxxxx;
             }
 
             
@@ -45,8 +45,8 @@ namespace CtyTinLuong
             }
             else
             {
-                clsGapDan_tbXuatKho_Temp cls = new CtyTinLuong.clsGapDan_tbXuatKho_Temp();
-                dt = cls.SA_NgayThang_ChoXuatKho(xxtungay, xxdenngay);
+                //clsGapDan_tbXuatKho_Temp cls = new CtyTinLuong.clsGapDan_tbXuatKho_Temp();
+                //dt = cls.SA_NgayThang_ChoXuatKho(xxtungay, xxdenngay);
             }
             gridControl1.DataSource = dt;
 

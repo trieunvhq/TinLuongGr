@@ -179,8 +179,8 @@ namespace CtyTinLuong
                 XuatKho_RaDaiLy_();
             if (KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mbPrint == true)
                 NhapKho_Tu_DaiLy_Ve_GiaCongXong(KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mdtPrint);
-            if (KhoThanhPham_NhapKho_TuGapDan.mbPrint == true)
-                NhapKho_Tu_GapDan_Ve_GiaCongXong(KhoThanhPham_NhapKho_TuGapDan.mdtPrint);
+            //if (KhoThanhPham_NhapKho_TuGapDan.mbPrint == true)
+            //    NhapKho_Tu_GapDan_Ve_GiaCongXong(KhoThanhPham_NhapKho_TuGapDan.mdtPrint);
             if (frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mbPrint == true)
                 NhapKho_Tu_DaiLy_Ve_GiaCongXong(frmChiTietXuatKhoDaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.mdtPrint);
         }
