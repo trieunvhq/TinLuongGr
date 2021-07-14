@@ -223,7 +223,7 @@
             // clSoLuong2
             // 
             this.clSoLuong2.Caption = "Số lượng";
-            this.clSoLuong2.FieldName = "SoLuong";
+            this.clSoLuong2.FieldName = "SoLuongVao";
             this.clSoLuong2.Name = "clSoLuong2";
             this.clSoLuong2.OptionsColumn.AllowEdit = false;
             this.clSoLuong2.OptionsColumn.FixedWidth = true;
@@ -239,7 +239,7 @@
             this.clDonGia2.Caption = "Đơn giá ";
             this.clDonGia2.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clDonGia2.FieldName = "DonGia";
+            this.clDonGia2.FieldName = "DonGiaVao";
             this.clDonGia2.GroupFormat.FormatString = "{0:#,##0.00}";
             this.clDonGia2.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clDonGia2.Name = "clDonGia2";
@@ -286,7 +286,7 @@
             this.clThanhTien2.Caption = "Thành tiền";
             this.clThanhTien2.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.clThanhTien2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clThanhTien2.FieldName = "ThanhTien";
+            this.clThanhTien2.FieldName = "ThanhTienVao";
             this.clThanhTien2.GroupFormat.FormatString = "{0:#,##0.00}";
             this.clThanhTien2.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.clThanhTien2.Name = "clThanhTien2";

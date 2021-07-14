@@ -34,9 +34,12 @@ namespace CtyTinLuong
         {
 
             DataTable dt2 = new DataTable();
-            clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
-            cls2.iID_LenhSanXuat = xxID_lenhsanxuat;
-            DataTable dtxxxx = cls2.SelectAll_w_iID_LenhSanXuat();
+            clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
+            cls.iID_LenhSanXuat = xxID_lenhsanxuat;
+            DataTable dt = cls.SA_ID_LSX(xxID_lenhsanxuat);
+            gridControl2.DataSource = dt;
+            cls.Dispose();
+            dt.Dispose();
             //dt2.Columns.Add("ID_VTHH", typeof(int));
             //dt2.Columns.Add("MaVT", typeof(string));
             //dt2.Columns.Add("DonViTinh", typeof(string));
@@ -69,7 +72,7 @@ namespace CtyTinLuong
             //    dt2.Rows.Add(_ravi);
             //}
 
-            gridControl2.DataSource = dtxxxx;
+
         }
 
         frmQuanLyKhoBanThanhPham _frmKBTP;
