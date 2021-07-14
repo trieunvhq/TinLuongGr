@@ -19,22 +19,33 @@ namespace CtyTinLuong
      
         private void HienThiGridControl_2(int xxxidxuatkho)
         {
-
-            clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();           
-            DataTable dt3 = cls2.SA_ID_XuatKho(xxxidxuatkho);            
-            gridControl2.DataSource = dt3;
-            cls2.Dispose();
-            dt3.Dispose();
-
+           
+                clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
+                DataTable dt3 = cls2.SA_ID_XuatKho(xxxidxuatkho);
+                gridControl2.DataSource = dt3;
+                cls2.Dispose();
+           
         }
-        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
+        private void Load_DaTa(bool xuatkhokhac, DateTime xxtungay, DateTime xxdenngay)
         {
 
-            clsKhoBTP_tbXuatKho cls = new CtyTinLuong.clsKhoBTP_tbXuatKho();
-            DataTable dt2 = cls.SA_NgayThang(xxtungay,xxdenngay);
-            gridControl1.DataSource = dt2;
-            cls.Dispose();
-            dt2.Dispose();
+            if (xuatkhokhac == true)
+            {
+                clsKhoBTP_tbXuatKho cls = new CtyTinLuong.clsKhoBTP_tbXuatKho();
+                DataTable dt2 = cls.SA_NgayThang_XuatKho_Khac(xxtungay, xxdenngay);
+                gridControl1.DataSource = dt2;
+                cls.Dispose();
+                dt2.Dispose();
+            }
+            else
+            {
+                clsKhoBTP_tbXuatKho cls = new CtyTinLuong.clsKhoBTP_tbXuatKho();
+                DataTable dt2 = cls.SA_NgayThang_XuatKho_Khac(xxtungay, xxdenngay);
+                gridControl1.DataSource = dt2;
+                cls.Dispose();
+                dt2.Dispose();
+            }
+           
 
 
         }
@@ -51,7 +62,10 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;         
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
-            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            if (frmQuanLyKhoBanThanhPham.mbXuatkhoKhac == false)
+                clXoa1.Visible = false;
+            else clXoa1.Visible = true;
+            Load_DaTa(frmQuanLyKhoBanThanhPham.mbXuatkhoKhac,dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
@@ -67,7 +81,7 @@ namespace CtyTinLuong
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Load_DaTa(frmQuanLyKhoBanThanhPham.mbXuatkhoKhac, dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -150,7 +164,7 @@ namespace CtyTinLuong
                     cls2.iID_XuatKhoBTP = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoBTP).ToString());
                     cls2.Delete_ALL_W_ID_XuatKhoBTP();
                     MessageBox.Show("Đã xóa");
-                    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                    Load_DaTa(frmQuanLyKhoBanThanhPham.mbXuatkhoKhac,dteTuNgay.DateTime, dteDenNgay.DateTime);
                 }
 
 
