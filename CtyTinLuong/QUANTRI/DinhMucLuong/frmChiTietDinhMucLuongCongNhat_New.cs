@@ -13,6 +13,7 @@ namespace CtyTinLuong
     public partial class frmChiTietDinhMucLuongCongNhat_Newwwwww : Form
     {
         int HinhThucTinhLuong;
+        frmQuanLyDinhMucLuong _frmQuanLyDinhMucLuong;
         public static decimal Evaluate(string expression)
         {
 
@@ -140,9 +141,10 @@ namespace CtyTinLuong
             txtDinhMucTangCa.Text = "0";
             checkNgungTheoDoi.Checked = false;
         }
-        public frmChiTietDinhMucLuongCongNhat_Newwwwww()
+        public frmChiTietDinhMucLuongCongNhat_Newwwwww(frmQuanLyDinhMucLuong frm)
         {
             InitializeComponent();
+            _frmQuanLyDinhMucLuong = frm;
         }
 
         private void frmChiTietDinhMucLuongCongNhat_Newwwwww_Load(object sender, EventArgs e)
@@ -383,6 +385,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
+            _frmQuanLyDinhMucLuong.HienThi();
             this.Close();
         }
 
@@ -407,6 +410,7 @@ namespace CtyTinLuong
 
             LuuDuLieu();
             MessageBox.Show("Đã lưu");
+            _frmQuanLyDinhMucLuong.HienThi();
             this.Close();
 
         }

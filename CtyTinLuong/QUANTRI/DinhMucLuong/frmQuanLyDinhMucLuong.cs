@@ -18,7 +18,7 @@ namespace CtyTinLuong
         public static bool mb_TheMoi_DinhMucLuongCongNhat;
         public static string msTenDinhMucLuongCongNhat;
         public static int miID_Sua_DinhMucLuongCongNhat;
-        private void HienThi()
+        public void HienThi()
         {
             clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
             DataTable dt = cls.SelectAll();
@@ -94,7 +94,7 @@ namespace CtyTinLuong
             }
             HienThi();
         }
-
+        
         private void frmQuanLyDinhMucLuong_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
