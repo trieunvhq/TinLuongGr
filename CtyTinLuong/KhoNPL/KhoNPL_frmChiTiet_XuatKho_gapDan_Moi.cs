@@ -325,7 +325,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
-                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
+                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 1;
                 int xxiD_nhpakho;
                 if (UCNPL_XuatKho_GapDan.mbSua == false)
                 {
@@ -371,7 +371,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
-                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 2;
+                cls1.iInt_GapDan_1_Khac_2_binhThuong_0 = 1;
                 int xxiD_nhpakho;
                 if (UCNPL_XuatKho_GapDan.mbSua == false)
                 {
