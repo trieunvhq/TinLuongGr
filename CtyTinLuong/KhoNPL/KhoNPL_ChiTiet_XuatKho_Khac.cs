@@ -267,8 +267,11 @@ namespace CtyTinLuong
                 MessageBox.Show("Đã lưu");
             }
         }
-        public KhoNPL_ChiTiet_XuatKho_Khac()
+
+        UCNPL_XuatKho_Khacccccccccccccc _ucXKK;
+        public KhoNPL_ChiTiet_XuatKho_Khac(UCNPL_XuatKho_Khacccccccccccccc ucXKK)
         {
+            _ucXKK = ucXKK;
             InitializeComponent();
         }
 

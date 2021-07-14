@@ -127,7 +127,7 @@ namespace CtyTinLuong
             //_frmKNPL.Show();
         }
 
-        private void btLayDuLieu_Click(object sender, EventArgs e)
+        public void btLayDuLieu_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
