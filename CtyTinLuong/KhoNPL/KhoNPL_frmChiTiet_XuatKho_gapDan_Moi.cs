@@ -96,13 +96,13 @@ namespace CtyTinLuong
             int k = dt1.Rows.Count;
             if (k == 0)
             {
-                sochungtu = "XKGD 1";
+                sochungtu = "NKGD 1";
             }
             else
             {
                 string xxx = dt1.Rows[k - 1]["SoChungTu"].ToString();
                 int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
-                sochungtu = "XKGD " + xxx2.ToString() + "";
+                sochungtu = "NKGD " + xxx2.ToString() + "";
             }
             return sochungtu;
         }

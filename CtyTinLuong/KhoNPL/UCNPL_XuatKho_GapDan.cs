@@ -119,7 +119,7 @@ namespace CtyTinLuong
             GridView View = sender as GridView;
             if (e.RowHandle >= 0)
             {
-                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["TrangThai_XuatKho_NPL"]));
+                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["GuiDuLieu"]));
                 if (category == false)
                 {
                     e.Appearance.BackColor = Color.Bisque;

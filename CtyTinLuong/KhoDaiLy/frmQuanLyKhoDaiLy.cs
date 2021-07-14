@@ -45,29 +45,19 @@ namespace CtyTinLuong
                 navChoXuatKho.Appearance.Font = new Font(navXuatKho.Appearance.Font, FontStyle.Bold);
             }
 
-            clsGapDan_tbNhapKho_Temp cls3 = new clsGapDan_tbNhapKho_Temp();
-            DataTable dt3 = cls3.SelectAll();
-            dt3.DefaultView.RowFilter = "TrangThai_XuatKho_NPL = True and TrangThai_NhapKho_GapDan = False";
-            DataView dv3 = dt3.DefaultView;
-            DataTable dxxxx3 = dv3.ToTable();
-            int k3 = dxxxx3.Rows.Count;
-            if (k3 > 0)
-            {
-                navChoNhapKho_GapDan.Caption = "Chờ Nhập kho (" + k3.ToString() + ")";
-                navChoNhapKho_GapDan.Appearance.Font = new Font(navChoNhapKho_GapDan.Appearance.Font, FontStyle.Bold);
-            }
+           
 
-            clsGapDan_tbXuatKho_Temp cls4 = new clsGapDan_tbXuatKho_Temp();
-            DataTable dt4 = cls4.SelectAll();
-            dt4.DefaultView.RowFilter = "GuiDuLieu = True and TrangThaiNhapKhoBTP_ThanhPham = False";
-            DataView dv4 = dt4.DefaultView;
-            DataTable dxxxx4 = dv4.ToTable();
-            int k4 = dxxxx4.Rows.Count;
-            if (k4 > 0)
-            {
-                navChoXuatKho_GapDan.Caption = "Chờ Xuất kho (" + k4.ToString() + ")";
-                navChoXuatKho_GapDan.Appearance.Font = new Font(navChoXuatKho_GapDan.Appearance.Font, FontStyle.Bold);
-            }
+            //clsGapDan_tbXuatKho_Temp cls4 = new clsGapDan_tbXuatKho_Temp();
+            //DataTable dt4 = cls4.SelectAll();
+            //dt4.DefaultView.RowFilter = "GuiDuLieu = True and TrangThaiNhapKhoBTP_ThanhPham = False";
+            //DataView dv4 = dt4.DefaultView;
+            //DataTable dxxxx4 = dv4.ToTable();
+            //int k4 = dxxxx4.Rows.Count;
+            //if (k4 > 0)
+            //{
+            //    navChoXuatKho_GapDan.Caption = "Chờ Xuất kho (" + k4.ToString() + ")";
+            //    navChoXuatKho_GapDan.Appearance.Font = new Font(navChoXuatKho_GapDan.Appearance.Font, FontStyle.Bold);
+            //}
         }
         public frmQuanLyKhoDaiLy()
         {

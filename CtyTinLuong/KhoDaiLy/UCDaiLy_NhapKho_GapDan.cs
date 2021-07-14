@@ -18,35 +18,22 @@ namespace CtyTinLuong
      
         private void HienThiGridControl_2(bool ischonhakho,int xxidnhapkhogapdan)
         {
-            if (ischonhakho == false)
-            {
+            
                 clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
                 cls2.iID_NhapKho = xxidnhapkhogapdan;
                 DataTable dtxxxx = cls2.SA_W_ID_NhapKho();
                 gridControl2.DataSource = dtxxxx;
-            }
-            else
-            {
-                clsGapDan_ChiTiet_NhapKho_Temp cls2 = new clsGapDan_ChiTiet_NhapKho_Temp();              
-                DataTable dtxxxx = cls2.SA_W_ID_NhapKho(xxidnhapkhogapdan);
-                gridControl2.DataSource = dtxxxx;
-            }
+            
+            
 
         }
         private void Load_DaTa(bool ischonhapkho, DateTime xxtungay, DateTime xxdenngay)
         {
             DataTable dt = new DataTable();
           
-            if (ischonhapkho == false)
-            {
-                clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
+              clsGapDan_tbNhapKho cls = new CtyTinLuong.clsGapDan_tbNhapKho();
                 dt = cls.SA_NgayThang(xxtungay, xxdenngay);
-            }
-            else
-            {
-                clsGapDan_tbNhapKho_Temp cls = new CtyTinLuong.clsGapDan_tbNhapKho_Temp();
-                dt = cls.SA_NgayThang_ChoGhiSo(xxtungay, xxdenngay);
-            }
+          
             gridControl1.DataSource = dt;
 
         }
@@ -92,13 +79,13 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
             {
-                Cursor.Current = Cursors.WaitCursor;
-                miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan(this);
-                //_frmQLKDL.Hide();
-                ff.Show();
-                //_frmQLKDL.Show();
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.WaitCursor;
+                //miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                //DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan(this);
+                ////_frmQLKDL.Hide();
+                //ff.Show();
+                ////_frmQLKDL.Show();
+                //Cursor.Current = Cursors.Default;
             }
         }
 

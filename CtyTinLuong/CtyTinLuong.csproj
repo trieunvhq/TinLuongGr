@@ -222,10 +222,6 @@
     <Compile Include="KhoNPL\clsDaiLy_tbChiTietNhapKho_Temp.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp - Copy.cs" />
     <Compile Include="KhoNPL\clsDaiLy_tbNhapKho_Temp.cs" />
-    <Compile Include="KhoNPL\clsGapDan_ChiTiet_NhapKho_Temp - Copy.cs" />
-    <Compile Include="KhoNPL\clsGapDan_ChiTiet_NhapKho_Temp.cs" />
-    <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp - Copy.cs" />
-    <Compile Include="KhoNPL\clsGapDan_tbNhapKho_Temp.cs" />
     <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -780,12 +776,6 @@
     <Compile Include="KhoNPL\KhoNPL_ChiTiet_XuatKho_Khac.Designer.cs">
       <DependentUpon>KhoNPL_ChiTiet_XuatKho_Khac.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan.Designer.cs">
-      <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoThanhPham\KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1013,12 +1003,6 @@
       <DependentUpon>DaiLy_FrmChiTiet_XuatKho_GapDan.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoBanThanhPham\clsKhoBTP_tbNhapKho - Copy.cs" />
-    <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.Designer.cs">
-      <DependentUpon>DaiLy_FrmChiTiet_NhapKho_GapDan.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataSet_TinLuong.cs">
       <DependentUpon>DataSet_TinLuong.xsd</DependentUpon>
     </Compile>
@@ -2520,9 +2504,6 @@
     <EmbeddedResource Include="KhoNPL\UCNPL_XuatKho_Khacccccccccccccc.resx">
       <DependentUpon>UCNPL_XuatKho_Khacccccccccccccc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan.resx">
-      <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\frmBaoCaoNXT_KhoThanhPham.resx">
       <DependentUpon>frmBaoCaoNXT_KhoThanhPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -2576,9 +2557,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_frmChiTietNhapXuatTon_MotVatTu.resx">
       <DependentUpon>DaiLy_frmChiTietNhapXuatTon_MotVatTu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.resx">
-      <DependentUpon>DaiLy_FrmChiTiet_NhapKho_GapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_FrmChiTiet_XuatKho_GapDan.resx">
       <DependentUpon>DaiLy_FrmChiTiet_XuatKho_GapDan.cs</DependentUpon>

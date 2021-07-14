@@ -370,11 +370,11 @@ namespace CtyTinLuong
             if (KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_XuatKho == true)
                 XuatKho_ThanhPham(KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mdtPrint);
 
-            if (KhoNPL_frmChiTiet_XuatKho_gapDan.mbPrint == true)
-                NhapKho_GapDan(KhoNPL_frmChiTiet_XuatKho_gapDan.mdtPrint);
+            //if (KhoNPL_frmChiTiet_XuatKho_gapDan.mbPrint == true)
+            //    NhapKho_GapDan(KhoNPL_frmChiTiet_XuatKho_gapDan.mdtPrint);
 
-            if (DaiLy_FrmChiTiet_NhapKho_GapDan.mbPrint == true)
-                NhapKho_GapDan(DaiLy_FrmChiTiet_NhapKho_GapDan.mdtPrint);
+            //if (DaiLy_FrmChiTiet_NhapKho_GapDan.mbPrint == true)
+            //    NhapKho_GapDan(DaiLy_FrmChiTiet_NhapKho_GapDan.mdtPrint);
         }
 
         private void frmPrint_Nhap_Xuat_Kho_FormClosed(object sender, FormClosedEventArgs e)
@@ -394,8 +394,8 @@ namespace CtyTinLuong
             KhoThanhPham_frmChiTiet_Da_XuatKho.mbPrint = false;
             BanHang_FrmChiTietBanHang_Newwwwwwww.mbPrint_XuatKho = false;
             KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiii.mbPrint_XuatKho = false;
-            KhoNPL_frmChiTiet_XuatKho_gapDan.mbPrint = false;
-            DaiLy_FrmChiTiet_NhapKho_GapDan.mbPrint = false;
+            //KhoNPL_frmChiTiet_XuatKho_gapDan.mbPrint = false;
+            //DaiLy_FrmChiTiet_NhapKho_GapDan.mbPrint = false;
         }
     }
 }
