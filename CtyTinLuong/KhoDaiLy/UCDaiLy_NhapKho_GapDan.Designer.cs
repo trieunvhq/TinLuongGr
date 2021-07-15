@@ -611,7 +611,7 @@
             // 
             // clMaVT
             // 
-            this.clMaVT.Caption = "MaVT";
+            this.clMaVT.Caption = "Mã VT";
             this.clMaVT.FieldName = "MaVT";
             this.clMaVT.Name = "clMaVT";
             this.clMaVT.OptionsColumn.AllowEdit = false;
