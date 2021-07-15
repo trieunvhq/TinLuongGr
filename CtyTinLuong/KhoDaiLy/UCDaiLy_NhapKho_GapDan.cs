@@ -103,13 +103,7 @@ namespace CtyTinLuong
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
-            {
-                clsGapDan_tbNhapKho cls = new clsGapDan_tbNhapKho();
-                cls.iID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
-                cls.Update_NgungTheoDoi();
-            }
+          
             
         }
 
@@ -147,7 +141,8 @@ namespace CtyTinLuong
                 cls2.Delete_ALL_W_ID_NhapKho();
                 MessageBox.Show("Đã xóa");
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-
+                cls1.Dispose();
+                cls2.Dispose();
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -226,9 +221,5 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
-        private void btThemMoi_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
