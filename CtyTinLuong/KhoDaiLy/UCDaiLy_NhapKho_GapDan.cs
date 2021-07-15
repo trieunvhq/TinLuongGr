@@ -79,7 +79,7 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan(this);
+                DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan();
                 //_frmQLKDL.Hide();
                 ff.Show();
                 //_frmQLKDL.Show();
