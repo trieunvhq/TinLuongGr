@@ -278,17 +278,17 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TrgCa_CT.Designer.cs">
       <DependentUpon>frmBTTL_TrgCa_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_xxxxx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_xxxxx.Designer.cs">
+      <DependentUpon>frmChamCong_xxxxx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDB.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TDB.Designer.cs">
       <DependentUpon>frmChamCong_TDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCong_xxxxxxx.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCong_xxxxxxx.Designer.cs">
-      <DependentUpon>frmChamCong_xxxxxxx.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_ToIn.cs">
       <SubType>UserControl</SubType>
@@ -2284,11 +2284,11 @@
     <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
       <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_xxxxx.resx">
+      <DependentUpon>frmChamCong_xxxxx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDB.resx">
       <DependentUpon>frmChamCong_TDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_xxxxxxx.resx">
-      <DependentUpon>frmChamCong_xxxxxxx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_ToIn.resx">
       <DependentUpon>frmChamCong_ToIn.cs</DependentUpon>

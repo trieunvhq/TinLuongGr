@@ -512,7 +512,6 @@ namespace CtyTinLuong
 
         private void navChamCon_TDB_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
