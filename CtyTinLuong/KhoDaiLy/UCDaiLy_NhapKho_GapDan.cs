@@ -77,13 +77,13 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString() != "")
             {
-                //Cursor.Current = Cursors.WaitCursor;
-                //miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
-                //DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan(this);
-                ////_frmQLKDL.Hide();
-                //ff.Show();
-                ////_frmQLKDL.Show();
-                //Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.WaitCursor;
+                miID_NhapKho_GapDan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho).ToString());
+                DaiLy_FrmChiTiet_NhapKho_GapDan ff = new DaiLy_FrmChiTiet_NhapKho_GapDan(this);
+                //_frmQLKDL.Hide();
+                ff.Show();
+                //_frmQLKDL.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
 

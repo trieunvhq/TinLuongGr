@@ -188,6 +188,12 @@
     <Compile Include="BanHang\frmCaiDatBangGia_BanHang.Designer.cs">
       <DependentUpon>frmCaiDatBangGia_BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.Designer.cs">
+      <DependentUpon>DaiLy_FrmChiTiet_NhapKho_GapDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoBanThanhPham\KhoBTP_ChiTiet_XuatKho_GapDan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2247,6 +2253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DaiLy_ChiTietChoNhapKho_Moi.resx">
       <DependentUpon>DaiLy_ChiTietChoNhapKho_Moi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\DaiLy_FrmChiTiet_NhapKho_GapDan.resx">
+      <DependentUpon>DaiLy_FrmChiTiet_NhapKho_GapDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.resx">
       <DependentUpon>T_DaiLy_ChiTietNhapXuatTon_MotVatTu_MotDaiLy.cs</DependentUpon>
