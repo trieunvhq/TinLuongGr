@@ -104,8 +104,8 @@ namespace CtyTinLuong
             cls1.iID_XuatKhoBTP = iiIDXuatkho;
             DataTable dt = cls1.SelectOne();
             if (cls1.bGuiDuLieu == true)
-                btLuu_Gui_Dong.Visible = false;
-            else btLuu_Gui_Dong.Visible = true;
+                btLuu_Gui_Dong.Enabled = false;
+            else btLuu_Gui_Dong.Enabled = true;
             gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
