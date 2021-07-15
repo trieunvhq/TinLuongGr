@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -460,7 +459,7 @@
             // clSoLuong
             // 
             this.clSoLuong.Caption = "Số lượng";
-            this.clSoLuong.FieldName = "SoLuong";
+            this.clSoLuong.FieldName = "SoLuongXuat";
             this.clSoLuong.Name = "clSoLuong";
             this.clSoLuong.OptionsColumn.AllowEdit = false;
             this.clSoLuong.OptionsColumn.FixedWidth = true;
