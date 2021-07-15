@@ -420,9 +420,30 @@ namespace CtyTinLuong
             }
         }
 
-       
-    
-   
+
+
+        private void TinhToanTHanhPham(int xxID_DMgapdan)
+        {
+
+            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+
+            DataTable dt1 = cls.SA_ID_DinhMuc_VT_Chinh(xxID_DMgapdan);
+            double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
+            txtTenVT_Chinh.Text = dt1.Rows[0]["TenVTHH"].ToString();
+            DVT_Chinh.Text = dt1.Rows[0]["DonViTinh"].ToString();
+
+            cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+            DataTable dt2 = cls.SA_ID_DinhMuc_ThanhPham(xxID_DMgapdan);
+            txtTenVT_ThanhPham.Text = dt2.Rows[0]["TenVTHH"].ToString();
+            DVT_ThanhPham.Text = dt2.Rows[0]["DonViTinh"].ToString();
+
+            double dinhmuc = Convert.ToDouble(dt1.Rows[0]["SoLuong"].ToString());
+            txtSoLuongTP.Text = (xxsoluongxuat / dinhmuc).ToString();
+
+            cls.Dispose();
+            dt1.Dispose();
+            dt2.Dispose();
+        }
         private void btThoat2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -550,46 +571,28 @@ namespace CtyTinLuong
 
         private void txtSoLuongXuat_TextChanged(object sender, EventArgs e)
         {
-          
+            try
+            {
+                int xxxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                TinhToanTHanhPham(xxxID);
+            }
+            catch
+            { }
+           
         }
 
         private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
         {
-
-            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
             int xxxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-            DataTable dt1 = cls.SA_ID_DinhMuc_ThanhPham(xxxID);
-            double xxsoluongxuat = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
-            txtTenVT_Chinh.Text = dt1.Rows[0]["TenVTHH"].ToString();
-            DVT_Chinh.Text = dt1.Rows[0]["DonViTinh"].ToString();
-
-            cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            DataTable dt2 = cls.SA_ID_DinhMuc_ThanhPham(xxxID);
-            txtTenVT_ThanhPham.Text = dt2.Rows[0]["TenVTHH"].ToString();
-            DVT_ThanhPham.Text = dt2.Rows[0]["DonViTinh"].ToString();
-
-            double dinhmuc = Convert.ToDouble(dt1.Rows[0]["SoLuong"].ToString());
-            txtSoLuongTP.Text = (xxsoluongxuat / dinhmuc).ToString();
-            //txtID_ThanhPham.Text = dt22.Rows[0]["ID_VTHH"].ToString();
-            //txtMaTPQuyDoi.Text = dt22.Rows[0]["MaVT"].ToString();
-            //txtTenThanhPhamQuyDoi.Text = dt22.Rows[0]["TenVTHH"].ToString();
-            //txtDVTThanhPhamQuyDoi.Text = dt22.Rows[0]["DonViTinh"].ToString();
-
-            //DataTable dt322 = dt.Copy();
-            //dt322.DefaultView.RowFilter = " Check_VatTu_Chinh = True";
-            //DataView dv2 = dt322.DefaultView;
-            //DataTable dt223 = dv2.ToTable();
-            //txtID_VatTuChinh.Text = dt223.Rows[0]["ID_VTHH"].ToString();
-            //txtMaVTChinh.Text = dt223.Rows[0]["MaVT"].ToString();
-            //txtTenVatTu_Chinh.Text = dt223.Rows[0]["TenVTHH"].ToString();
-
-            //txtDVT_VT_CHinh.Text = dt223.Rows[0]["DonViTinh"].ToString();
-
-            //double SoLuong_VTChinh_DinhMuc = Convert.ToDouble(dt223.Rows[0]["SoLuong"].ToString());
-            //txtSoLuongVTChinh.Text = (SoLuong_VTChinh_DinhMuc * xxsoluongxuat).ToString();
-            cls.Dispose();
-            dt1.Dispose();
+            clsDinhMuc_DinhMuc_ToGapDan cls2 = new clsDinhMuc_DinhMuc_ToGapDan();
+            cls2.iID_DinhMuc_ToGapDan = xxxID;
+            DataTable dt2 = cls2.SelectOne();
+            txtDienGiaiDMNPL.Text = cls2.sDienGiai.Value;
+            if (UCBanThanhPham_XuatKho_Khac.mbThemMoi == true)
+                txtDienGiai.Text = cls2.sDienGiai.Value;
+            cls2.Dispose();
             dt2.Dispose();
+            TinhToanTHanhPham(xxxID);
         }
 
         public KhoBTP_ChiTiet_XuatKho_GapDan()
