@@ -242,6 +242,12 @@
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
+    <Compile Include="Luong_ChamCong\frmBTTL_TDB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmBTTL_TDB.Designer.cs">
+      <DependentUpon>frmBTTL_TDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_xxxxxx.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2265,6 +2271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.resx">
       <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TDB.resx">
+      <DependentUpon>frmBTTL_TDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_xxxxxx.resx">
       <DependentUpon>frmBTTL_xxxxxx.cs</DependentUpon>

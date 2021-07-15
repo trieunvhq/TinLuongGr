@@ -536,14 +536,14 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng Bao");
             if (id_bophan_ == 0) return;
 
-            //frmBTTL_TDB frm = new frmBTTL_TDB(id_bophan_, this);
-            //frm.Dock = DockStyle.Fill;
-            //panelControl1.Controls.Add(frm);
-            //frm.BringToFront();
+            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT(this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
 
-            //frm.LoadData(true);
+            frm.LoadData(true, id_bophan_);
 
-            Cursor.Current = Cursors.Default;
+            Cursor.Current = Cursors.Default; 
         }
 
         private void navBTTL_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
