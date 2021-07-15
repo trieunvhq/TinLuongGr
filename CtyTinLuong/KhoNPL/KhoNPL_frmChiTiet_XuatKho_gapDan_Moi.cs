@@ -107,13 +107,13 @@ namespace CtyTinLuong
             return sochungtu;
         }
 
-        private void HienThi_Gricontrol_themmoi(int xxID_GapDan, double soluongxuat)
+        private void HienThi_Gricontrol_themmoi(double soluongxuat, int xxID_GapDan)
         {
             clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls1 = new clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            DataTable dt1 = cls1.SA_ID_DM_W_SL_NPL(soluongxuat, xxID_GapDan);
+            DataTable dt1 = cls1.SA_ID_DM_W_SL_NPL(soluongxuat,xxID_GapDan);
             gridControl1.DataSource = dt1;
             cls1.Dispose();
-            dt1.Dispose();
+            //dt1.Dispose();
            
             //cls2.Dispose();
             //dt2.Dispose();
