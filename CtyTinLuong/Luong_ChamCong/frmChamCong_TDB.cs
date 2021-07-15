@@ -50,6 +50,8 @@ namespace CtyTinLuong
 
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            cbLoaiCong.Visible = false;
+            label1.Visible = false;
         }
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {

@@ -35,6 +35,7 @@ namespace CtyTinLuong
         {
             _frmQLLCC = frmQLLCC;
             InitializeComponent();
+            TruTienCom.Caption = "TRỪ\nTIỀN CƠM";
         }
 
         public void LoadData(bool islandau, int id_bophan_)

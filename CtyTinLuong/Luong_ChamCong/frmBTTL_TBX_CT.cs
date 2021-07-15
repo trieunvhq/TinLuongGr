@@ -38,7 +38,9 @@ namespace CtyTinLuong
             _frmQLLCC = frmQLLCC;
             _id_bophan = id_bophan;
             InitializeComponent();
-             
+            DonGia.Caption = "LƯƠNG\nCƠ BẢN";
+            LuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
+            TamUng.Caption = "TRỪ\nTẠM ỨNG";
         }
 
         public void LoadData(bool islandau)
