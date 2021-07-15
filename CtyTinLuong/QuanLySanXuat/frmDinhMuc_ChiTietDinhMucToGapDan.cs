@@ -261,7 +261,7 @@ namespace CtyTinLuong
             DataTable dt_chinh = cls2.SA_ID_DinhMuc_VT_Chinh(iiID_DinhMuc);
             DataTable dt_Phu = cls2.SA_ID_DinhMuc_VT_Phu(iiID_DinhMuc);
             DataTable dt_ThanhPham = cls2.SA_ID_DinhMuc_ThanhPham(iiID_DinhMuc);
-
+            txtSoLuongVTChinh.Text = dt_chinh.Rows[0]["SoLuong"].ToString();
             gridControl1.DataSource = dt_Phu;
             gridMaVTchinh1.EditValue = Convert.ToInt32(dt_chinh.Rows[0]["ID_VTHH"].ToString());
             gridMaTPQuyDoi.EditValue = Convert.ToInt32(dt_ThanhPham.Rows[0]["ID_VTHH"].ToString());
