@@ -509,5 +509,47 @@ namespace CtyTinLuong
 
             Cursor.Current = Cursors.Default;
         }
+
+        private void navChamCon_TDB_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng Bao");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_TDB frm = new frmChamCong_TDB(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navBTTL_TDB_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng Bao");
+            if (id_bophan_ == 0) return;
+
+            //frmBTTL_TDB frm = new frmBTTL_TDB(id_bophan_, this);
+            //frm.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(frm);
+            //frm.BringToFront();
+
+            //frm.LoadData(true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navBTTL_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+
+        }
     }
 }

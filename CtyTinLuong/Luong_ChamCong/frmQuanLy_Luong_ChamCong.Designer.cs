@@ -57,6 +57,7 @@
             this.navChamCong_PKT = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PMC = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_ToIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.navChamCon_TDB = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navTTL_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
@@ -66,10 +67,13 @@
             this.navBTTL_PKT = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_PMC = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_ToIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_TDB = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_CongNhat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.navBTTL_TDK = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -226,7 +230,11 @@
             this.navChamCong_PMC,
             this.navBTTL_PMC,
             this.navChamCong_ToIn,
-            this.navBTTL_ToIn});
+            this.navBTTL_ToIn,
+            this.navChamCon_TDB,
+            this.navBTTL_TDB,
+            this.navBTTL_CongNhat,
+            this.navBTTL_TDK});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -249,7 +257,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PKT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PMC),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_ToIn)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_ToIn),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCon_TDB)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navChamCong_CongNhat
@@ -312,6 +321,12 @@
             this.navChamCong_ToIn.Name = "navChamCong_ToIn";
             this.navChamCong_ToIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_ToIn_LinkClicked);
             // 
+            // navChamCon_TDB
+            // 
+            this.navChamCon_TDB.Caption = "Tổ Đóng Bao";
+            this.navChamCon_TDB.Name = "navChamCon_TDB";
+            this.navChamCon_TDB.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCon_TDB_LinkClicked);
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -326,7 +341,10 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PKT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PMC),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_ToIn)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_ToIn),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TDB),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_CongNhat),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TDK)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -385,6 +403,17 @@
             this.navBTTL_ToIn.Name = "navBTTL_ToIn";
             this.navBTTL_ToIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_ToIn_LinkClicked);
             // 
+            // navBTTL_TDB
+            // 
+            this.navBTTL_TDB.Caption = "Tổ Đóng Bao";
+            this.navBTTL_TDB.Name = "navBTTL_TDB";
+            this.navBTTL_TDB.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TDB_LinkClicked);
+            // 
+            // navBTTL_CongNhat
+            // 
+            this.navBTTL_CongNhat.Caption = "Công Nhật";
+            this.navBTTL_CongNhat.Name = "navBTTL_CongNhat";
+            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -419,6 +448,12 @@
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
             // 
+            // navBTTL_TDK
+            // 
+            this.navBTTL_TDK.Caption = "Tổ Đóng Kiện";
+            this.navBTTL_TDK.Name = "navBTTL_TDK";
+            this.navBTTL_TDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TDK_LinkClicked);
+            // 
             // frmQuanLy_Luong_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,7 +467,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLy_Luong_ChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Chấm công";
+            this.Text = "frmQuanLy_Luong_ChamCong-->Chấm công";
             this.Load += new System.EventHandler(this.frmQuanLy_Luong_ChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -483,5 +518,9 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_PMC;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_ToIn;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_ToIn;
+        private DevExpress.XtraNavBar.NavBarItem navChamCon_TDB;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TDB;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_CongNhat;
+        private DevExpress.XtraNavBar.NavBarItem navBTTL_TDK;
     }
 }
