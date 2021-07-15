@@ -75,7 +75,7 @@ namespace CtyTinLuong
             }
             return sochungtu;
         }
-        private void HienThi_Sua_XuatKho(bool isChoXuatKho, int iiID_xuatkho_)
+        private void HienThi_Sua_XuatKho(int iiID_xuatkho_)
         {
             //if (isChoXuatKho == true)
             //{
@@ -341,7 +341,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void Luu_XuatKho_GapDan(bool isChoXuatKho)
+        private void Luu_XuatKho_GapDan()
         {
             if (!KiemTraLuu()) return;
             else
@@ -385,17 +385,7 @@ namespace CtyTinLuong
                     cls1.bTrangThaiNhapKhoBTP_ThanhPham = true;
                     cls1.bDaXuatKho = true;
                     int iiID_Nhapkho_GapDan;
-                    if (isChoXuatKho == true)
-                    {
-                        //clsGapDan_tbXuatKho_Temp cls3 = new CtyTinLuong.clsGapDan_tbXuatKho_Temp();
-                        //cls3.Update_TrangThaiNhapKhoBTP_ThanhPham(UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
-                        //cls3.Dispose();
-
-                        cls1.Insert();
-                        iiID_Nhapkho_GapDan = cls1.iID_XuatKho.Value;
-                    }
-                    else
-                    {
+                   
                         if (UCDaiLy_XuatKho_GapDan.mbsua == false)
                         {
                             cls1.Insert();
@@ -410,7 +400,7 @@ namespace CtyTinLuong
                             cls1.Update();
                         }
 
-                    }
+                   
                     Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
                     Luu_ThamCHieuTinhXuatKho(iiID_Nhapkho_GapDan);
                     cls1.Dispose();
@@ -439,7 +429,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
           
             Load_LockUp();
-            HienThi_Sua_XuatKho(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
+            HienThi_Sua_XuatKho(UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
             Cursor.Current = Cursors.Default;
         }
 
@@ -447,7 +437,7 @@ namespace CtyTinLuong
         private void btLuu_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Luu_XuatKho_GapDan(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan);
+            Luu_XuatKho_GapDan();
             Cursor.Current = Cursors.Default;
         }
 

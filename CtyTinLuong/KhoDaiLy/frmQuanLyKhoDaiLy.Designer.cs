@@ -51,8 +51,6 @@
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navNhapKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
             this.navXuatKhoGapDan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navChoNhapKho_GapDan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navChoXuatKho_GapDan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
@@ -205,8 +203,6 @@
             this.navBangLuongDaiLy,
             this.navChoNhapKho,
             this.navChoXuatKho,
-            this.navChoNhapKho_GapDan,
-            this.navChoXuatKho_GapDan,
             this.navBarItem11});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
@@ -222,8 +218,6 @@
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNhapKhoGapDan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKhoGapDan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChoNhapKho_GapDan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChoXuatKho_GapDan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
@@ -238,18 +232,6 @@
             this.navXuatKhoGapDan.Caption = "Xuất kho";
             this.navXuatKhoGapDan.Name = "navXuatKhoGapDan";
             this.navXuatKhoGapDan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navXuatKhoGapDan_LinkClicked);
-            // 
-            // navChoNhapKho_GapDan
-            // 
-            this.navChoNhapKho_GapDan.Caption = "Chờ nhập kho";
-            this.navChoNhapKho_GapDan.Name = "navChoNhapKho_GapDan";
-            this.navChoNhapKho_GapDan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked_1);
-            // 
-            // navChoXuatKho_GapDan
-            // 
-            this.navChoXuatKho_GapDan.Caption = "Chờ xuất kho";
-            this.navChoXuatKho_GapDan.Name = "navChoXuatKho_GapDan";
-            this.navChoXuatKho_GapDan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
             // 
             // navBarItem11
             // 
@@ -329,8 +311,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBangLuongDaiLy;
         private DevExpress.XtraNavBar.NavBarItem navChoNhapKho;
         private DevExpress.XtraNavBar.NavBarItem navChoXuatKho;
-        private DevExpress.XtraNavBar.NavBarItem navChoNhapKho_GapDan;
-        private DevExpress.XtraNavBar.NavBarItem navChoXuatKho_GapDan;
         private DevExpress.XtraNavBar.NavBarItem navBarItem11;
     }
 }

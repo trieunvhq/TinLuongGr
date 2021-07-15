@@ -13,8 +13,7 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyKhoDaiLy : Form
     {
-        public static bool isNXT;
-        public static bool isChoNhapKho_GapDan, isChoXuatKho_GapDan;
+        public static bool isNXT;      
         private void TinhLuongDaiLy()
         {
 
@@ -161,7 +160,7 @@ namespace CtyTinLuong
         private void navNhapKhoGapDan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            isChoNhapKho_GapDan = false;
+            
             UCDaiLy_NhapKho_GapDan uccc_NhapKho = new UCDaiLy_NhapKho_GapDan(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
@@ -174,7 +173,7 @@ namespace CtyTinLuong
         private void navXuatKhoGapDan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            isChoXuatKho_GapDan = false;
+           
             UCDaiLy_XuatKho_GapDan uccc_NhapKho = new UCDaiLy_XuatKho_GapDan(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
@@ -198,11 +197,6 @@ namespace CtyTinLuong
             //uccc_NhapKho.Dock = DockStyle.Fill;
             //panelControl1.Controls.Add(uccc_NhapKho);
             //uccc_NhapKho.BringToFront();
-        }
-
-        private void navBarItem12_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            
         }
 
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -281,30 +275,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void navBarItem8_LinkClicked_1(object sender, NavBarLinkEventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            isChoNhapKho_GapDan = true;
-            UCDaiLy_NhapKho_GapDan uccc_NhapKho = new UCDaiLy_NhapKho_GapDan(this);
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
+       
 
-            doiMauTitle(sender, e);
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void navBarItem9_LinkClicked_1(object sender, NavBarLinkEventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            isChoXuatKho_GapDan = true;
-            UCDaiLy_XuatKho_GapDan uccc_NhapKho = new UCDaiLy_XuatKho_GapDan(this);
-            uccc_NhapKho.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(uccc_NhapKho);
-            uccc_NhapKho.BringToFront();
-
-            doiMauTitle(sender, e);
-            Cursor.Current = Cursors.Default;
-        }
     }
 }

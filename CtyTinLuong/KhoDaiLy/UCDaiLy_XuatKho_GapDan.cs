@@ -16,40 +16,24 @@ namespace CtyTinLuong
         public static int miID_XuatKho_GapDan;
         public static bool mbthemmoi, mbsua, mbcopy;
      
-        private void HienThiGridControl_2(bool ischoxuatkho,int xxID_xuatkho)
+        private void HienThiGridControl_2(int xxID_xuatkho)
         {
-            if (ischoxuatkho == false)
-            {
-                clsGapDan_ThamChieuTinhXuatKho cls2 = new clsGapDan_ThamChieuTinhXuatKho();                
-                DataTable dtxxxx = cls2.SA_ID_XuatKho_2(xxID_xuatkho);
-                gridControl3.DataSource = dtxxxx;
-            }
-            else
-            {
-                //clsGapDan_ThamChieuTinhXuatKho_Temp cls2 = new clsGapDan_ThamChieuTinhXuatKho_Temp();
-                //DataTable dtxxxx = cls2.SA_ID_XuatKho_moi(xxID_xuatkho);
-                //gridControl3.DataSource = dtxxxx;
-            }
-
             
+                clsGapDan_ThamChieuTinhXuatKho cls2 = new clsGapDan_ThamChieuTinhXuatKho();                
+                DataTable dt = cls2.SA_ID_XuatKho_2(xxID_xuatkho);
+            gridControl3.DataSource = dt;
+            cls2.Dispose();
+            dt.Dispose();
+
         }
 
-        private void Load_DaTa(bool ischonhapkho, DateTime xxtungay, DateTime xxdenngay)
+        private void Load_DaTa( DateTime xxtungay, DateTime xxdenngay)
         {
-            DataTable dt = new DataTable();
-
-            if (ischonhapkho == false)
-            {
                 clsGapDan_tbXuatKho cls = new CtyTinLuong.clsGapDan_tbXuatKho();
-                dt = cls.SA_NgayThang(xxtungay, xxdenngay);
-            }
-            else
-            {
-                //clsGapDan_tbXuatKho_Temp cls = new CtyTinLuong.clsGapDan_tbXuatKho_Temp();
-                //dt = cls.SA_NgayThang_ChoXuatKho(xxtungay, xxdenngay);
-            }
+            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);          
             gridControl1.DataSource = dt;
-
+            cls.Dispose();
+            dt.Dispose();
         }
        
      
@@ -64,13 +48,11 @@ namespace CtyTinLuong
         public void UCDaiLy_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            if (frmQuanLyKhoDaiLy.isChoXuatKho_GapDan == true)
-                clXoa.Visible = false;
-            else clXoa.Visible = true;
+            
 
             dteDenNgay.EditValue = DateTime.Today;
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
-            Load_DaTa(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Load_DaTa( dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
@@ -111,7 +93,7 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString() != "")
             {
                 int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
-                HienThiGridControl_2(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, iiIDnhapKhp);
+                HienThiGridControl_2( iiIDnhapKhp);
             }
         }
 
@@ -127,7 +109,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             if (dteDenNgay.DateTime != null & dteTuNgay.DateTime != null)
-                Load_DaTa(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Load_DaTa( dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             Cursor.Current = Cursors.Default;
         }
@@ -215,7 +197,7 @@ namespace CtyTinLuong
                 cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
                 cls2.Delete_ALL_W_ID_NhapKho();
                 MessageBox.Show("Đã xóa");
-                Load_DaTa(frmQuanLyKhoDaiLy.isChoXuatKho_GapDan, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
                 Cursor.Current = Cursors.Default;
             }
