@@ -26,6 +26,7 @@ namespace CtyTinLuong
             txtThamChieu.Text = cls1.sThamChieu.Value;
             txtTongTienHangCoVAT.Text = cls1.fTongTienHang.Value.ToString();
             gridDinhMucGapDan.EditValue = cls1.iID_DinhMuc_ToGapDan.Value;
+            txtSoLuongTP.Text = cls1.fSoLuongThanhPham_QuyDoi.Value.ToString();
             cls1.Dispose();
             dt1.Dispose();
             clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
@@ -147,10 +148,10 @@ namespace CtyTinLuong
                 
                 clsGapDan_tbNhapKho cls1xx = new clsGapDan_tbNhapKho();
                 cls1xx.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1xx.sSoChungTu = txtThamChieu.Text.ToString();
+                cls1xx.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1xx.sDienGiai = txtDienGiai.Text.ToString();
                 cls1xx.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1xx.sThamChieu = txtSoChungTu.Text.ToString();
+                cls1xx.sThamChieu = txtThamChieu.Text.ToString();
                 cls1xx.fTongTienHang = 0;
                 cls1xx.bBool_TonDauKy = false;
                 cls1xx.bDaNhapKho = true;
@@ -160,7 +161,7 @@ namespace CtyTinLuong
                 cls1xx.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
                 cls1xx.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
                 cls1xx.fDonGia_ThanhPham_QuyDoi = 0;
-                cls1xx.fSoLuongThanhPham_QuyDoi = 0;
+                cls1xx.fSoLuongThanhPham_QuyDoi = Convert.ToInt32(txtSoLuongTP.Text);
                 cls1xx.iID_NhapKho = xxID_nhapkho; 
                 cls1xx.Update();               
                 Luu_ChiTiet_NhapKho_GapDan(xxID_nhapkho);
@@ -366,6 +367,8 @@ namespace CtyTinLuong
             clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
             DataTable dt2 = cls2.SA_ID_DinhMuc_ThanhPham(xxxID);
             txtID_ThanhPham.Text = dt2.Rows[0]["ID_VTHH"].ToString();
+            txtTenVT_ThanhPham.Text = dt2.Rows[0]["TenVTHH"].ToString();
+            DVT_ThanhPham.Text = dt2.Rows[0]["DonViTinh"].ToString();
 
             cls.Dispose();
             dt.Dispose();

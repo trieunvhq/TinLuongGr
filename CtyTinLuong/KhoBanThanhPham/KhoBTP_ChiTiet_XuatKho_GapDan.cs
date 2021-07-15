@@ -255,27 +255,50 @@ namespace CtyTinLuong
                     cls2.bTonTai = false;
                     cls2.Update_ALL_tonTai_W_ID_NhapKho();
                 }
-                int ID_VTHHxxx = Convert.ToInt32(txtID_ThanhPham.Text.ToString());
+                int ID_ThanhPham = Convert.ToInt32(txtID_ThanhPham.Text.ToString());
                 cls2.iID_NhapKho = iiiID_nhapkhogapgan;
-                cls2.iID_VTHH = ID_VTHHxxx;
+                cls2.iID_VTHH = ID_ThanhPham;
                 double soluongthanpham = Convert.ToDouble(txtSoLuongTP.Text.ToString());
                 cls2.fSoLuongNhap = soluongthanpham;
                 cls2.fSoLuongTon = soluongthanpham;
-
                 cls2.fDonGia = 0;
-
                 cls2.sGhiChu = "";
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.bBoolTonDauKy = false;
                 cls2.bDaNhapKho = true;
-                string expressionnhapkho;
-                expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
-                DataRow[] foundRows;
-                foundRows = dt2_cu.Select(expressionnhapkho);
-                if (foundRows.Length > 0)
+                string expression1;
+                expression1 = "ID_VTHH=" + ID_ThanhPham + "";
+                DataRow[] foundRows1;
+                foundRows1 = dt2_cu.Select(expression1);
+                if (foundRows1.Length > 0)
                 {
-                    cls2.iID_ChiTietNhapKho = Convert.ToInt32(foundRows[0]["ID_ChiTietNhapKho"].ToString());
+                    cls2.iID_ChiTietNhapKho = Convert.ToInt32(foundRows1[0]["ID_ChiTietNhapKho"].ToString());
+                    cls2.Update();
+                }
+                else
+                {
+                    cls2.Insert();
+                }
+                int ID_Chinh = Convert.ToInt32(txtID_Chinh.Text.ToString());
+                cls2.iID_NhapKho = iiiID_nhapkhogapgan;
+                cls2.iID_VTHH = ID_Chinh;
+                double soluongchinh = Convert.ToDouble(txtSoLuongXuat.Text.ToString());
+                cls2.fSoLuongNhap = soluongchinh;
+                cls2.fSoLuongTon = soluongchinh;
+                cls2.fDonGia = Convert.ToDouble(txtDonGiaChinh.Text.ToString());
+                cls2.sGhiChu = "";
+                cls2.bTonTai = true;
+                cls2.bNgungTheoDoi = false;
+                cls2.bBoolTonDauKy = false;
+                cls2.bDaNhapKho = true;
+                string expression2;
+                expression2 = "ID_VTHH=" + ID_Chinh + "";
+                DataRow[] foundRows2;
+                foundRows2 = dt2_cu.Select(expression2);
+                if (foundRows2.Length > 0)
+                {
+                    cls2.iID_ChiTietNhapKho = Convert.ToInt32(foundRows2[0]["ID_ChiTietNhapKho"].ToString());
                     cls2.Update();
                 }
                 else
@@ -349,7 +372,7 @@ namespace CtyTinLuong
                 cls1xx.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
                 cls1xx.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
                 cls1xx.fDonGia_ThanhPham_QuyDoi = 0;
-                cls1xx.fSoLuongThanhPham_QuyDoi= Convert.ToDouble(txtSoLuongTP.Text);
+                cls1xx.fSoLuongThanhPham_QuyDoi= Convert.ToDouble(txtSoLuongTP.Text.ToString());
                 int iiID_Nhapkho_GapDan;
                 cls1xx.Insert();
                 iiID_Nhapkho_GapDan = cls1xx.iID_NhapKho.Value;
