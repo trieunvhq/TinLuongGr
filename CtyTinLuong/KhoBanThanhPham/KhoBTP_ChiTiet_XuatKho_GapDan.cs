@@ -79,15 +79,24 @@ namespace CtyTinLuong
             txtDienGiai.Text = cls1.sDienGiai.Value;
             txtThamChieu.Text = sochungtu_gapdan();
 
-            cls1.Dispose();
-            dt.Dispose();
-
+         
+            clsGapDan_tbNhapKho cls3 = new CtyTinLuong.clsGapDan_tbNhapKho();
+            DataTable dt3 = cls3.SO_W_SoChungTu(cls1.sThamChieu.Value);
+            if(dt3.Rows.Count>0)
+            {
+                gridDinhMucGapDan.EditValue = Convert.ToInt32(dt3.Rows[0]["ID_DinhMuc_ToGapDan"].ToString());
+            }
             clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
             DataTable dt2 = cls2.SA_ID_XuatKho(iiIDXuatkho);
             txtSoLuongXuat.Text = dt2.Rows[0]["SoLuongXuat"].ToString();
             txtDonGiaChinh.Text = dt2.Rows[0]["DonGia"].ToString();
+
+            cls1.Dispose();
+            dt.Dispose();
             cls2.Dispose();
             dt2.Dispose();
+            cls3.Dispose();
+            dt3.Dispose();
         }
         private void HienThi_Sua(int iiIDXuatkho)
         {
@@ -102,8 +111,24 @@ namespace CtyTinLuong
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             txtDienGiai.Text = cls1.sDienGiai.Value;
             txtThamChieu.Text = cls1.sThamChieu.Value;
+
+            clsGapDan_tbNhapKho cls3 = new CtyTinLuong.clsGapDan_tbNhapKho();
+            DataTable dt3 = cls3.SO_W_SoChungTu(cls1.sThamChieu.Value);
+            if (dt3.Rows.Count > 0)
+            {
+                gridDinhMucGapDan.EditValue = Convert.ToInt32(dt3.Rows[0]["ID_DinhMuc_ToGapDan"].ToString());
+            }
+            clsKhoBTP_ChiTietXuatKho cls2 = new clsKhoBTP_ChiTietXuatKho();
+            DataTable dt2 = cls2.SA_ID_XuatKho(iiIDXuatkho);
+            txtSoLuongXuat.Text = dt2.Rows[0]["SoLuongXuat"].ToString();
+            txtDonGiaChinh.Text = dt2.Rows[0]["DonGia"].ToString();
+
             cls1.Dispose();
             dt.Dispose();
+            cls2.Dispose();
+            dt2.Dispose();
+            cls3.Dispose();
+            dt3.Dispose();
         }
 
         private bool KiemTraLuu()
@@ -321,6 +346,10 @@ namespace CtyTinLuong
                 cls1xx.bTonTai = true;
                 cls1xx.bNgungTheoDoi = false;
                 cls1xx.sNguoiNhanHang = "";
+                cls1xx.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                cls1xx.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
+                cls1xx.fDonGia_ThanhPham_QuyDoi = 0;
+                cls1xx.fSoLuongThanhPham_QuyDoi= Convert.ToDouble(txtSoLuongTP.Text);
                 int iiID_Nhapkho_GapDan;
                 cls1xx.Insert();
                 iiID_Nhapkho_GapDan = cls1xx.iID_NhapKho.Value;
