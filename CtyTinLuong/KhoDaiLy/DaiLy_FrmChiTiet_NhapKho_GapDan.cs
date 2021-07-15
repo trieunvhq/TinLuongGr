@@ -99,8 +99,8 @@ namespace CtyTinLuong
                     cls2.iID_NhapKho = iiiID_nhapkhogapgan;
                     cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                     int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                    cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongXuat"].ToString());
-                    cls2.fSoLuongTon = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongXuat"].ToString());
+                    cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongNhap"].ToString());
+                    cls2.fSoLuongTon = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongNhap"].ToString());
                     if (dttttt2.Rows[i]["DonGia"].ToString() == "")
                         cls2.fDonGia = 0;
                     else cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
@@ -139,7 +139,7 @@ namespace CtyTinLuong
                 cls2.Dispose();
             }
         }
-        private void Luu_DuLieu()
+        private void Luu_DuLieu(int xxID_nhapkho)
         {
             if (!KiemTraLuu()) return;
             else
@@ -161,12 +161,11 @@ namespace CtyTinLuong
                 cls1xx.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
                 cls1xx.fDonGia_ThanhPham_QuyDoi = 0;
                 cls1xx.fSoLuongThanhPham_QuyDoi = 0;
-                int iiID_Nhapkho_GapDan;
-                cls1xx.Insert();
-                iiID_Nhapkho_GapDan = cls1xx.iID_NhapKho.Value;
-                Luu_ChiTiet_NhapKho_GapDan(iiID_Nhapkho_GapDan);
+                cls1xx.iID_NhapKho = xxID_nhapkho; 
+                cls1xx.Update();               
+                Luu_ChiTiet_NhapKho_GapDan(xxID_nhapkho);
                 cls1xx.Dispose();
-                MessageBox.Show("Đã lưu và gửi dữ liệu");
+                MessageBox.Show("Đã lưu");
                 this.Close();
             }
         }
@@ -352,7 +351,7 @@ namespace CtyTinLuong
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            Luu_DuLieu();
+            Luu_DuLieu(UCDaiLy_NhapKho_GapDan.miID_NhapKho_GapDan);
         }
 
         private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
