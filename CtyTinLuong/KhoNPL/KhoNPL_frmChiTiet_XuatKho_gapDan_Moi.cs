@@ -403,6 +403,10 @@ namespace CtyTinLuong
                 cls1xx.bTonTai = true;
                 cls1xx.bNgungTheoDoi = false;
                 cls1xx.sNguoiNhanHang = txtNguoiNhanHang.Text.ToString();
+                cls1xx.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                cls1xx.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
+                cls1xx.fDonGia_ThanhPham_QuyDoi = 0;
+                cls1xx.fSoLuongThanhPham_QuyDoi = 0;
                 int iiID_Nhapkho_GapDan;
                 cls1xx.Insert();
                 iiID_Nhapkho_GapDan = cls1xx.iID_NhapKho.Value;
@@ -719,6 +723,27 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
+        {
+            int xxxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+            clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
+            cls.iID_DinhMuc_ToGapDan = xxxID;
+            DataTable dt = cls.SelectOne();
+            txtDienGiaiDMNPL.Text = cls.sDienGiai.Value;
+            if (UCNPL_XuatKho_GapDan.mbThemMoi == true)
+                txtDienGiai.Text = cls.sDienGiai.Value;
+
+            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+            DataTable dt2 = cls2.SA_ID_DinhMuc_ThanhPham(xxxID);           
+            txtID_ThanhPham.Text = dt2.Rows[0]["ID_VTHH"].ToString();
+
+            cls.Dispose();
+            dt.Dispose();
+            cls2.Dispose();
+            dt2.Dispose();
+            
         }
 
         public KhoNPL_frmChiTiet_XuatKho_gapDan_Moi()
