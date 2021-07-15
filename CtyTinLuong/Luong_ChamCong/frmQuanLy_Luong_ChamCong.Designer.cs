@@ -69,11 +69,11 @@
             this.navBTTL_ToIn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_TDB = new DevExpress.XtraNavBar.NavBarItem();
             this.navBTTL_CongNhat = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBTTL_TDK = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCom_TGD = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.navBTTL_TDK = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -249,16 +249,16 @@
             this.navBarGroup2.Caption = "CHẤM CÔNG";
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_CongNhat),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TBX),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_CongNhat),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCon_TDB),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TDK),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TGD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_TrgCa),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PKT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PMC),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_ToIn),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCon_TDB)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_ToIn)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navChamCong_CongNhat
@@ -334,17 +334,17 @@
             this.navBarGroup3.Caption = "THANH TOÁN LƯƠNG";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TMC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_CongNhat),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TDB),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TDK),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navTTL_TGD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TrgCa_CT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PKT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_PMC),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_ToIn),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TDB),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_CongNhat),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TDK)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_TMC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBTTL_ToIn)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navTTL_TGD
@@ -414,6 +414,12 @@
             this.navBTTL_CongNhat.Caption = "Công Nhật";
             this.navBTTL_CongNhat.Name = "navBTTL_CongNhat";
             // 
+            // navBTTL_TDK
+            // 
+            this.navBTTL_TDK.Caption = "Tổ Đóng Kiện";
+            this.navBTTL_TDK.Name = "navBTTL_TDK";
+            this.navBTTL_TDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TDK_LinkClicked);
+            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -447,12 +453,6 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(923, 645);
             this.panelControl2.TabIndex = 71;
-            // 
-            // navBTTL_TDK
-            // 
-            this.navBTTL_TDK.Caption = "Tổ Đóng Kiện";
-            this.navBTTL_TDK.Name = "navBTTL_TDK";
-            this.navBTTL_TDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TDK_LinkClicked);
             // 
             // frmQuanLy_Luong_ChamCong
             // 
