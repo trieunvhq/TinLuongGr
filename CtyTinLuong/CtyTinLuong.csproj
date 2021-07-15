@@ -439,6 +439,12 @@
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.Designer.cs">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTDB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTDB.Designer.cs">
+      <DependentUpon>TrPrintChamCongTDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -522,6 +528,12 @@
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TrgCa_TQ.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_TrgCa_TQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongTDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongTDB.Designer.cs">
+      <DependentUpon>Tr_frmPrintChamCongTDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintChamCongPTH.cs">
       <SubType>Form</SubType>
@@ -2314,6 +2326,9 @@
     <EmbeddedResource Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.resx">
       <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTDB.resx">
+      <DependentUpon>TrPrintChamCongTDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongPTH.resx">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
     </EmbeddedResource>
@@ -2355,6 +2370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TrgCa_TQ.resx">
       <DependentUpon>Tr_frmPrintBTTL_TrgCa_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCongTDB.resx">
+      <DependentUpon>Tr_frmPrintChamCongTDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCongPTH.resx">
       <DependentUpon>Tr_frmPrintChamCongPTH.cs</DependentUpon>

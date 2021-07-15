@@ -902,7 +902,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongPTH ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongPTH(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTDB ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTDB(_thang, _nam, _data);
             ff.ShowDialog();
         }
 
