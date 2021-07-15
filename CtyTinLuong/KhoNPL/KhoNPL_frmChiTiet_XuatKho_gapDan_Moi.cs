@@ -107,6 +107,18 @@ namespace CtyTinLuong
             return sochungtu;
         }
 
+        private void HienThi_Gricontrol_themmoi(int xxID_GapDan, double soluongxuat)
+        {
+            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls1 = new clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+            DataTable dt1 = cls1.SA_ID_DM_W_SL_NPL(soluongxuat, xxID_GapDan);
+            gridControl1.DataSource = dt1;
+            cls1.Dispose();
+            dt1.Dispose();
+           
+            //cls2.Dispose();
+            //dt2.Dispose();
+        }
+
         private string sochungtu_NPL()
         {
             string sochungtu = "";
@@ -138,6 +150,11 @@ namespace CtyTinLuong
             repositoryItemSearchLookUpEdit1.DisplayMember = "MaVT";
 
 
+            clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
+            DataTable dt2 = cls.SelectAll();
+            gridDinhMucGapDan.Properties.DataSource = dt2;
+            gridDinhMucGapDan.Properties.ValueMember = "ID_DinhMuc_ToGapDan";
+            gridDinhMucGapDan.Properties.DisplayMember = "MaDinhMuc";
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             dt = clsNguoi.T_SelectAll(5);
@@ -145,6 +162,9 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
+           
+            dt2.Dispose();
+            cls.Dispose();         
             dt.Dispose();
             clsvthhh.Dispose();
             clsNguoi.Dispose();
@@ -733,12 +753,15 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             txtDienGiaiDMNPL.Text = cls.sDienGiai.Value;
             if (UCNPL_XuatKho_GapDan.mbThemMoi == true)
+            {
                 txtDienGiai.Text = cls.sDienGiai.Value;
+                HienThi_Gricontrol_themmoi(1, xxxID);
+            }
 
             clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
             DataTable dt2 = cls2.SA_ID_DinhMuc_ThanhPham(xxxID);           
             txtID_ThanhPham.Text = dt2.Rows[0]["ID_VTHH"].ToString();
-
+           
             cls.Dispose();
             dt.Dispose();
             cls2.Dispose();
