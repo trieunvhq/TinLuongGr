@@ -595,7 +595,7 @@ namespace CtyTinLuong
         {
             int index_ = e.RowHandle;
             string name_ = e.Column.FieldName;
-            if (name_.Contains("Ngay"))
+            if (name_.Contains("Ngay") && index_ >= 0)
             {
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 if (_data.Rows.Count > index_)
