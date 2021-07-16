@@ -128,7 +128,7 @@ namespace CtyTinLuong
                 mbTheMoi = false;
                 if(checkCon.Checked==true)
                 {
-                    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
+                    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
                     ff.Show();
                 }
                 else
@@ -185,7 +185,7 @@ namespace CtyTinLuong
             mbTheMoi = true;
             if (checkCon.Checked == true)
             {
-                frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
+                frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
                 ff.Show();
             }
             else

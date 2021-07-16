@@ -166,7 +166,7 @@ namespace CtyTinLuong
             this.Close();
         }
 
-        private void frmChiTietNhaCungCap_Load(object sender, EventArgs e)
+        public void frmChiTietNhaCungCap_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
           
@@ -212,7 +212,7 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             frmQuanLyTaiKhoanKeToan.mbTheMoi = true;
-            frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon();
+            frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(null, null, this);
             ff.Show();
         }
     }

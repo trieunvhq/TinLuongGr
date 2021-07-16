@@ -141,7 +141,9 @@ namespace CtyTinLuong
                     }
 
                     this.Close();
-                    _frmQLTKKT.btRefresh_Click(null, null);
+                    if (_frmQLTKKT != null) _frmQLTKKT.btRefresh_Click(null, null);
+                    if (_frmCTKH != null) _frmCTKH.frmChiTietKhachHang_Load(null, null);
+                    if (_frmCTNCC != null) _frmCTNCC.frmChiTietNhaCungCap_Load(null, null);
                 }
                 else
                 {
@@ -154,9 +156,13 @@ namespace CtyTinLuong
         }
 
         frmQuanLyTaiKhoanKeToan _frmQLTKKT;
-        public frmChiTietTaiKhoanKeToanCon(frmQuanLyTaiKhoanKeToan frmQLTKKT)
+        frmChiTietKhachHang _frmCTKH;
+        frmChiTietNhaCungCap _frmCTNCC;
+        public frmChiTietTaiKhoanKeToanCon(frmQuanLyTaiKhoanKeToan frmQLTKKT, frmChiTietKhachHang frmCTKH, frmChiTietNhaCungCap frmCTNCC)
         {
             _frmQLTKKT = frmQLTKKT;
+            _frmCTKH = frmCTKH;
+            _frmCTNCC = frmCTNCC;
             InitializeComponent();
         }
 
