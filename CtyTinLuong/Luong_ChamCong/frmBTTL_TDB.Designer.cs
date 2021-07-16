@@ -71,7 +71,7 @@
             this.SanLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clLuongTrachNhiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoNgayAn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TruTienCom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TongTien = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -273,7 +273,7 @@
             this.SanLuong,
             this.DonGia,
             this.ThanhTien,
-            this.TongLuong,
+            this.clLuongTrachNhiem,
             this.SoNgayAn,
             this.TruTienCom,
             this.TongTien,
@@ -498,7 +498,7 @@
             this.SanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.SanLuong.Visible = true;
             this.SanLuong.VisibleIndex = 3;
-            this.SanLuong.Width = 80;
+            this.SanLuong.Width = 92;
             // 
             // DonGia
             // 
@@ -525,7 +525,7 @@
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
             this.DonGia.VisibleIndex = 4;
-            this.DonGia.Width = 80;
+            this.DonGia.Width = 92;
             // 
             // ThanhTien
             // 
@@ -552,34 +552,34 @@
             this.ThanhTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 80;
+            this.ThanhTien.Width = 92;
             // 
-            // TongLuong
+            // clLuongTrachNhiem
             // 
-            this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TongLuong.Caption = "TỔNG LƯƠNG";
-            this.TongLuong.FieldName = "TongLuong";
-            this.TongLuong.MinWidth = 40;
-            this.TongLuong.Name = "TongLuong";
-            this.TongLuong.OptionsColumn.AllowEdit = false;
-            this.TongLuong.OptionsColumn.AllowFocus = false;
-            this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsColumn.FixedWidth = true;
-            this.TongLuong.OptionsFilter.AllowAutoFilter = false;
-            this.TongLuong.OptionsFilter.AllowFilter = false;
-            this.TongLuong.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.TongLuong.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
-            this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 6;
-            this.TongLuong.Width = 80;
+            this.clLuongTrachNhiem.AppearanceCell.Options.UseTextOptions = true;
+            this.clLuongTrachNhiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clLuongTrachNhiem.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.clLuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
+            this.clLuongTrachNhiem.FieldName = "LuongTrachNhiem";
+            this.clLuongTrachNhiem.MinWidth = 40;
+            this.clLuongTrachNhiem.Name = "clLuongTrachNhiem";
+            this.clLuongTrachNhiem.OptionsColumn.AllowEdit = false;
+            this.clLuongTrachNhiem.OptionsColumn.AllowFocus = false;
+            this.clLuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsColumn.FixedWidth = true;
+            this.clLuongTrachNhiem.OptionsFilter.AllowAutoFilter = false;
+            this.clLuongTrachNhiem.OptionsFilter.AllowFilter = false;
+            this.clLuongTrachNhiem.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.clLuongTrachNhiem.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.clLuongTrachNhiem.OptionsFilter.ShowEmptyDateFilter = false;
+            this.clLuongTrachNhiem.Visible = true;
+            this.clLuongTrachNhiem.VisibleIndex = 6;
+            this.clLuongTrachNhiem.Width = 92;
             // 
             // SoNgayAn
             // 
@@ -604,9 +604,7 @@
             this.SoNgayAn.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.SoNgayAn.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.SoNgayAn.OptionsFilter.ShowEmptyDateFilter = false;
-            this.SoNgayAn.Visible = true;
-            this.SoNgayAn.VisibleIndex = 7;
-            this.SoNgayAn.Width = 80;
+            this.SoNgayAn.Width = 92;
             // 
             // TruTienCom
             // 
@@ -631,9 +629,7 @@
             this.TruTienCom.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.TruTienCom.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TruTienCom.OptionsFilter.ShowEmptyDateFilter = false;
-            this.TruTienCom.Visible = true;
-            this.TruTienCom.VisibleIndex = 8;
-            this.TruTienCom.Width = 80;
+            this.TruTienCom.Width = 92;
             // 
             // TongTien
             // 
@@ -658,9 +654,7 @@
             this.TongTien.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsFilter.ShowEmptyDateFilter = false;
-            this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 12;
-            this.TongTien.Width = 80;
+            this.TongTien.Width = 92;
             // 
             // TamUng
             // 
@@ -686,8 +680,8 @@
             this.TamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.TamUng.Visible = true;
-            this.TamUng.VisibleIndex = 9;
-            this.TamUng.Width = 80;
+            this.TamUng.VisibleIndex = 7;
+            this.TamUng.Width = 92;
             // 
             // ThucNhan
             // 
@@ -714,8 +708,8 @@
             this.ThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
-            this.ThucNhan.VisibleIndex = 10;
-            this.ThucNhan.Width = 80;
+            this.ThucNhan.VisibleIndex = 8;
+            this.ThucNhan.Width = 92;
             // 
             // KyNhan
             // 
@@ -742,8 +736,8 @@
             this.KyNhan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.KyNhan.Visible = true;
-            this.KyNhan.VisibleIndex = 11;
-            this.KyNhan.Width = 80;
+            this.KyNhan.VisibleIndex = 9;
+            this.KyNhan.Width = 92;
             // 
             // gridControl1
             // 
@@ -930,7 +924,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn SanLuong;
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn ThanhTien;
-        private DevExpress.XtraGrid.Columns.GridColumn TongLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn clLuongTrachNhiem;
         private DevExpress.XtraGrid.Columns.GridColumn SoNgayAn;
         private DevExpress.XtraGrid.Columns.GridColumn TruTienCom;
         private DevExpress.XtraGrid.Columns.GridColumn TongTien;

@@ -536,7 +536,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng Bao");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_TGD_CT frm = new frmBTTL_TGD_CT(this);
+            frmBTTL_TDB frm = new frmBTTL_TDB(this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
