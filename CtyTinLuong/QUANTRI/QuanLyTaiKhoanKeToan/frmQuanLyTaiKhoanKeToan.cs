@@ -145,7 +145,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             frmQuanLyTaiKhoanKeToan_Load(sender, e);

@@ -61,49 +61,71 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                Luu_Khoa_TaiKhoanNganHang(Convert.ToInt32(gridTK_me.EditValue.ToString()));
-                if (frmQuanLyTaiKhoanKeToan.mbTheMoi == true)
+                if (gridTK_me.EditValue != null)
                 {
-                    string ssotkcon = txtSoTKCon.Text.ToString();
-                    clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                    DataTable dt = cls.SelectAll();
-                    dt.DefaultView.RowFilter = "TonTai=True and SoTaiKhoanCon ='" + ssotkcon + "'";
-                    DataView dv = dt.DefaultView;
-                    DataTable newdt = dv.ToTable();
+                    Luu_Khoa_TaiKhoanNganHang(Convert.ToInt32(gridTK_me.EditValue.ToString()));
+                    if (frmQuanLyTaiKhoanKeToan.mbTheMoi == true)
+                    {
+                        string ssotkcon = txtSoTKCon.Text.ToString();
+                        clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+                        DataTable dt = cls.SelectAll();
+                        dt.DefaultView.RowFilter = "TonTai=True and SoTaiKhoanCon ='" + ssotkcon + "'";
+                        DataView dv = dt.DefaultView;
+                        DataTable newdt = dv.ToTable();
 
-                    if (newdt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Đã có tài khoản: " + ssotkcon + ". Vui lòng chọn tài khoản khác ");
-                        return;
-                    }
-                    else
-                    {
-                        if (!String.IsNullOrEmpty(txtSoTKCon.Text))
+                        if (newdt.Rows.Count > 0)
                         {
-                            if (cls.SelectOne_SoTaiKhoanCon(txtSoTKCon.Text.Trim()))
-                            {
-                                Cursor.Current = Cursors.Default;
-                                MessageBox.Show("Số tài khoản con \"" + txtSoTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                                txtSoTKCon.Focus();
-                                return;
-                            }
+                            MessageBox.Show("Đã có tài khoản: " + ssotkcon + ". Vui lòng chọn tài khoản khác ");
+                            return;
                         }
-
-
-                        if (!String.IsNullOrEmpty(txtTenTKCon.Text))
+                        else
                         {
-                            if (cls.SelectOne_TenTaiKhoanCon(txtTenTKCon.Text.Trim()))
+                            if (!String.IsNullOrEmpty(txtSoTKCon.Text))
                             {
-                                Cursor.Current = Cursors.Default;
-                                if (MessageBox.Show("Tên tài khoản con \"" + txtTenTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo",
-                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                                if (cls.SelectOne_SoTaiKhoanCon(txtSoTKCon.Text.Trim()))
                                 {
-                                    txtTenTKCon.Focus();
+                                    Cursor.Current = Cursors.Default;
+                                    MessageBox.Show("Số tài khoản con \"" + txtSoTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                                    txtSoTKCon.Focus();
                                     return;
                                 }
                             }
+
+
+                            if (!String.IsNullOrEmpty(txtTenTKCon.Text))
+                            {
+                                if (cls.SelectOne_TenTaiKhoanCon(txtTenTKCon.Text.Trim()))
+                                {
+                                    Cursor.Current = Cursors.Default;
+                                    if (MessageBox.Show("Tên tài khoản con \"" + txtTenTKCon.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                                    {
+                                        txtTenTKCon.Focus();
+                                        return;
+                                    }
+                                }
+                            }
+
+                            cls.iID_TaiKhoanKeToanMe = Convert.ToInt16(gridTK_me.EditValue.ToString());
+                            cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+                            cls.bTonTai = true;
+                            cls.sSoTaiKhoanCon = txtSoTKCon.Text.ToString();
+                            cls.sTenTaiKhoanCon = txtTenTKCon.Text.ToString();
+                            cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
+                            cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
+                            cls.bKhoa = false;
+                            cls.Insert();
+                            Cursor.Current = Cursors.Default;
+                            MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
+                    }
+                    else if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
+                    {
+                        clsNganHang_TaiKhoanKeToanCon clsxxx = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
+                        clsxxx.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                        DataTable dtxx = clsxxx.SelectOne();
+                        clsNganHang_TaiKhoanKeToanCon cls = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
                         cls.iID_TaiKhoanKeToanMe = Convert.ToInt16(gridTK_me.EditValue.ToString());
                         cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                         cls.bTonTai = true;
@@ -111,39 +133,30 @@ namespace CtyTinLuong
                         cls.sTenTaiKhoanCon = txtTenTKCon.Text.ToString();
                         cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
                         cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
-                        cls.bKhoa = false;
-                        cls.Insert();
+                        cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
+                        cls.bKhoa = clsxxx.bKhoa.Value;
+                        cls.Update();
                         Cursor.Current = Cursors.Default;
-                        MessageBox.Show("Đã lưu");
+                        MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                      
+
+                    this.Close();
+                    _frmQLTKKT.btRefresh_Click(null, null);
                 }
-                else if (frmQuanLyTaiKhoanKeToan.mbTheMoi == false)
+                else
                 {
-                    clsNganHang_TaiKhoanKeToanCon clsxxx = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
-                    clsxxx.iID_TaiKhoanKeToanCon= frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
-                    DataTable dtxx = clsxxx.SelectOne();
-                    clsNganHang_TaiKhoanKeToanCon cls = new CtyTinLuong.clsNganHang_TaiKhoanKeToanCon();
-                    cls.iID_TaiKhoanKeToanMe = Convert.ToInt16(gridTK_me.EditValue.ToString());
-                    cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                    cls.bTonTai = true;
-                    cls.sSoTaiKhoanCon = txtSoTKCon.Text.ToString();
-                    cls.sTenTaiKhoanCon = txtTenTKCon.Text.ToString();
-                    cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
-                    cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
-                    cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
-                    cls.bKhoa = clsxxx.bKhoa.Value;
-                    cls.Update();
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("Đã lưu");
+                    MessageBox.Show("Chưa chọn TK kế toán mẹ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gridTK_me.Focus();
+                    return;
                 }
             }
             Cursor.Current = Cursors.Default;
         }
 
-
-        public frmChiTietTaiKhoanKeToanCon()
+        frmQuanLyTaiKhoanKeToan _frmQLTKKT;
+        public frmChiTietTaiKhoanKeToanCon(frmQuanLyTaiKhoanKeToan frmQLTKKT)
         {
+            _frmQLTKKT = frmQLTKKT;
             InitializeComponent();
         }
 
@@ -189,6 +202,62 @@ namespace CtyTinLuong
         private void txtTenTKCon_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridTK_me_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenTKMe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtSoTKCon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenTKCon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiaiCon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtGhiChuCon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void checkNgungTheoDoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

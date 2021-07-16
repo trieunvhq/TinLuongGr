@@ -129,6 +129,7 @@
             this.checkNgungTheoDoi.TabIndex = 93;
             this.checkNgungTheoDoi.Text = "Ngừng theo dõi";
             this.checkNgungTheoDoi.UseVisualStyleBackColor = true;
+            this.checkNgungTheoDoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkNgungTheoDoi_KeyPress);
             // 
             // txtTenTKCon
             // 
@@ -137,6 +138,7 @@
             this.txtTenTKCon.Size = new System.Drawing.Size(456, 20);
             this.txtTenTKCon.TabIndex = 92;
             this.txtTenTKCon.TextChanged += new System.EventHandler(this.txtTenTKCon_TextChanged);
+            this.txtTenTKCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenTKCon_KeyPress);
             // 
             // txtGhiChuCon
             // 
@@ -145,6 +147,7 @@
             this.txtGhiChuCon.Name = "txtGhiChuCon";
             this.txtGhiChuCon.Size = new System.Drawing.Size(456, 62);
             this.txtGhiChuCon.TabIndex = 91;
+            this.txtGhiChuCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChuCon_KeyPress);
             // 
             // txtDienGiaiCon
             // 
@@ -153,6 +156,7 @@
             this.txtDienGiaiCon.Name = "txtDienGiaiCon";
             this.txtDienGiaiCon.Size = new System.Drawing.Size(456, 108);
             this.txtDienGiaiCon.TabIndex = 90;
+            this.txtDienGiaiCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiaiCon_KeyPress);
             // 
             // txtSoTKCon
             // 
@@ -161,6 +165,7 @@
             this.txtSoTKCon.Size = new System.Drawing.Size(456, 20);
             this.txtSoTKCon.TabIndex = 88;
             this.txtSoTKCon.TextChanged += new System.EventHandler(this.txtSoTKCon_TextChanged);
+            this.txtSoTKCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTKCon_KeyPress);
             // 
             // txtTenTKMe
             // 
@@ -168,6 +173,7 @@
             this.txtTenTKMe.Name = "txtTenTKMe";
             this.txtTenTKMe.Size = new System.Drawing.Size(456, 20);
             this.txtTenTKMe.TabIndex = 86;
+            this.txtTenTKMe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenTKMe_KeyPress);
             // 
             // gridTK_me
             // 
@@ -180,6 +186,7 @@
             this.gridTK_me.StyleController = this.dataLayoutControl1;
             this.gridTK_me.TabIndex = 85;
             this.gridTK_me.EditValueChanged += new System.EventHandler(this.gridTK_me_EditValueChanged);
+            this.gridTK_me.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridTK_me_KeyPress);
             // 
             // gridView8
             // 
