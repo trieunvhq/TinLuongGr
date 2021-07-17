@@ -203,6 +203,19 @@ namespace CtyTinLuong
             }
         }
 
+        private void btThemMoi_Click_1(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            mbthemmoi = true;
+            mbsua = false;
+            mbcopy = false;          
+            DaiLy_FrmChiTiet_XuatKho_GapDan ff = new DaiLy_FrmChiTiet_XuatKho_GapDan(this);
+            //_frmQLKDL.Hide();
+            ff.Show();
+            //_frmQLKDL.Show();
+            Cursor.Current = Cursors.Default;
+        }
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView View = sender as GridView;

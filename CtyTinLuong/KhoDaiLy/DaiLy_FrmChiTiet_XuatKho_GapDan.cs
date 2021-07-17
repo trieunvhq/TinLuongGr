@@ -576,22 +576,15 @@ namespace CtyTinLuong
         private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
         {
             int xxxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-            clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
-            cls.iID_DinhMuc_ToGapDan = xxxID;
-            DataTable dt = cls.SelectOne();
-            txtDienGiaiDMNPL.Text = cls.sDienGiai.Value;
-
-
-            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            DataTable dt2 = cls2.SA_ID_DinhMuc_ThanhPham(xxxID);
-            txtID_ThanhPham.Text = dt2.Rows[0]["ID_VTHH"].ToString();
-            txtTenVT_ThanhPham.Text = dt2.Rows[0]["TenVTHH"].ToString();
-            DVT_ThanhPham.Text = dt2.Rows[0]["DonViTinh"].ToString();
-
-            cls.Dispose();
-            dt.Dispose();
+            clsDinhMuc_DinhMuc_ToGapDan cls2 = new clsDinhMuc_DinhMuc_ToGapDan();
+            cls2.iID_DinhMuc_ToGapDan = xxxID;
+            DataTable dt2 = cls2.SelectOne();
+            txtDienGiaiDMNPL.Text = cls2.sDienGiai.Value;
+            if (UCDaiLy_XuatKho_GapDan.mbthemmoi == true)
+                txtDienGiai.Text = cls2.sDienGiai.Value;
             cls2.Dispose();
             dt2.Dispose();
+            TinhToanTHanhPham(xxxID);
         }
 
         private void txtSoLuongTP_TextChanged(object sender, EventArgs e)
