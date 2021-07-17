@@ -20,8 +20,8 @@ namespace CtyTinLuong
         {
 
             clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
-            cls2.iID_XuatKho = xxID_xuatkho;
-            DataTable dt = cls2.SelectAll_ID_XuatKho();
+           
+            DataTable dt = cls2.SA_ID_XuatKho(xxID_xuatkho);
             gridControl3.DataSource = dt;
             cls2.Dispose();
             dt.Dispose();

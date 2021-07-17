@@ -52,9 +52,7 @@ namespace CtyTinLuong
         public static DateTime mdaPrintNgayXuatKho;
         public static DataTable mdtPrint_ChiTietXuatKho;
         public static string msPrintSoChungTu, msPrintDienGiaig, msPrintThuKho, msPrintNguoiNhan, msPrintNguoiLap;
-
-       
-
+        
         private void HienThi_Grid_ConTrol_Themmoi(double soluongxuat, int xxID_DMgapdan)
         {
             clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
@@ -99,8 +97,7 @@ namespace CtyTinLuong
             dt.Dispose();
 
             clsGapDan_ChiTiet_XuatKho cls1 = new clsGapDan_ChiTiet_XuatKho();
-            cls1.iID_XuatKho = iiID_xuatkho_;
-            DataTable dt1 = cls1.SelectAll_ID_XuatKho();
+            DataTable dt1 = cls1.SA_ID_XuatKho(iiID_xuatkho_);
             gridControl1.DataSource = dt1;
             cls1.Dispose();
             dt1.Dispose();
@@ -120,8 +117,8 @@ namespace CtyTinLuong
             dt.Dispose();
 
             clsGapDan_ChiTiet_XuatKho cls1 = new clsGapDan_ChiTiet_XuatKho();
-            cls1.iID_XuatKho = iiID_xuatkho_;
-            DataTable dt1 = cls1.SelectAll_ID_XuatKho();
+          
+            DataTable dt1 = cls1.SA_ID_XuatKho(iiID_xuatkho_);
             gridControl1.DataSource = dt1;
             cls1.Dispose();
             dt1.Dispose();
@@ -165,16 +162,7 @@ namespace CtyTinLuong
       
         private bool KiemTraLuu()
         {
-            DataTable dv3 = new DataTable();
-            if (gridControl1.DataSource != null)
-            {
-                string shienthi = "1";
-                DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-                DataView dv = dttttt2.DefaultView;
-                dv3 = dv.ToTable();
-            }
-
+           
             if (gridControl1.DataSource == null)
             {
                 MessageBox.Show("chưa có hàng hoá");
@@ -188,11 +176,7 @@ namespace CtyTinLuong
                 MessageBox.Show("Không để trống ngày chứng từ");
                 return false;
             }
-            else if (dv3.Rows.Count == 0)
-            {
-                MessageBox.Show("Chưa chọn hàng hóa ");
-                return false;
-            }
+           
             else if (txtSoChungTu.Text.ToString() == "")
             {
                 MessageBox.Show("Chưa chọn số chứng từ ");
@@ -202,6 +186,12 @@ namespace CtyTinLuong
             else if (gridNguoiLap.EditValue.ToString() == "")
             {
                 MessageBox.Show("chưa có người nhập kho");
+                gridNguoiLap.Focus();
+                return false;
+            }
+            else if (gridDinhMucGapDan.EditValue.ToString() == "")
+            {
+                MessageBox.Show("chưa chọn định mức");
                 gridNguoiLap.Focus();
                 return false;
             }
