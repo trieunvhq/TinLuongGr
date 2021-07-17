@@ -92,7 +92,8 @@ namespace CtyTinLuong
             dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
             gridNguoiLap.EditValue = cls.iID_NguoiNhap.Value;
             gridDinhMucGapDan.EditValue = cls.iID_DinhMuc_ToGapDan.Value;
-            txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();            
+            txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();
+            txtDienGiai.Text = cls.sDienGiai.Value;    
             cls.Dispose();
             dt.Dispose();
 
@@ -113,6 +114,7 @@ namespace CtyTinLuong
             gridNguoiLap.EditValue = cls.iID_NguoiNhap.Value;
             gridDinhMucGapDan.EditValue = cls.iID_DinhMuc_ToGapDan.Value;
             txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();
+            txtDienGiai.Text = cls.sDienGiai.Value;
             cls.Dispose();
             dt.Dispose();
 
