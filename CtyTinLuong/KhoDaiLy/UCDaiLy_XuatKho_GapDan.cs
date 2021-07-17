@@ -18,9 +18,10 @@ namespace CtyTinLuong
      
         private void HienThiGridControl_2(int xxID_xuatkho)
         {
-            
-                clsGapDan_ThamChieuTinhXuatKho cls2 = new clsGapDan_ThamChieuTinhXuatKho();                
-                DataTable dt = cls2.SA_ID_XuatKho_2(xxID_xuatkho);
+
+            clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
+            cls2.iID_XuatKho = xxID_xuatkho;
+            DataTable dt = cls2.SelectAll_ID_XuatKho();
             gridControl3.DataSource = dt;
             cls2.Dispose();
             dt.Dispose();
@@ -167,11 +168,11 @@ namespace CtyTinLuong
 
             label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
 
-            //if (gridView1.GetFocusedRowCellValue(clID_VTHH).ToString() != "")
-            //{
-            //    int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-            //    Hienthi_Lable_TonKho(xxID);
-            //}
+            cls.Dispose();
+            dt.Dispose();
+            dt_NhapTruoc.Dispose();
+            dt_XuatTruoc.Dispose();
+
         }
         private void gridView4_RowClick(object sender, RowClickEventArgs e)
         {
