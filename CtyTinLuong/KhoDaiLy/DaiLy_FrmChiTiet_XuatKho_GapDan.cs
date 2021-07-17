@@ -53,16 +53,15 @@ namespace CtyTinLuong
         public static DataTable mdtPrint_ChiTietXuatKho;
         public static string msPrintSoChungTu, msPrintDienGiaig, msPrintThuKho, msPrintNguoiNhan, msPrintNguoiLap;
 
-        private void TinhToanTHanhPham(int xxID_DMgapdan)
+       
+
+        private void HienThi_Grid_ConTrol_Themmoi(double soluongxuat, int xxID_DMgapdan)
         {
-            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();                   
-            cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            DataTable dt2 = cls.SA_ID_DinhMuc_ThanhPham(xxID_DMgapdan);
-            txtTenVT_ThanhPham.Text = dt2.Rows[0]["TenVTHH"].ToString();
-            DVT_ThanhPham.Text = dt2.Rows[0]["DonViTinh"].ToString();
-            txtID_ThanhPham.Text = dt2.Rows[0]["ID_VTHH"].ToString();
-            cls.Dispose();            
-            dt2.Dispose();
+            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+            DataTable dt = cls.SA_IDDM_W_SoLuong(soluongxuat,xxID_DMgapdan);
+            gridControl1.DataSource = dt;          
+            cls.Dispose();
+            dt.Dispose();
         }
         private string SoCHungTu_GapDan()
         {
@@ -134,25 +133,40 @@ namespace CtyTinLuong
             //}
 
         }
+        private void HienThiThemMoi()
+        {
+            gridNguoiLap.EditValue = 12;
+            dteNgayChungTu.EditValue = DateTime.Today;          
+            txtSoChungTu.Text = SoCHungTu_GapDan();
+
+        }
         private void Load_LockUp()
         {
-            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
-            DataTable dtNguoi = clsNguoi.SelectAll();
+            clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
+            DataTable dt2 = cls.SelectAll();
+            gridDinhMucGapDan.Properties.DataSource = dt2;
+            gridDinhMucGapDan.Properties.ValueMember = "ID_DinhMuc_ToGapDan";
+            gridDinhMucGapDan.Properties.DisplayMember = "MaDinhMuc";
 
-            gridNguoiLap.Properties.DataSource = dtNguoi;
+            clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
+            DataTable dt = clsNguoi.T_SelectAll(4);
+            gridNguoiLap.Properties.DataSource = dt;
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
-            dtNguoi.Dispose();
+
+            dt.Dispose();
+            dt2.Dispose();
+            cls.Dispose();
             clsNguoi.Dispose();
 
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            gridMaVT.DataSource = dt;
+            clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
+            DataTable dtvt = clsvt.SelectAll();
+            gridMaVT.DataSource = dtvt;
             gridMaVT.ValueMember = "ID_VTHH";
             gridMaVT.DisplayMember = "MaVT";
 
-            dt.Dispose();
-            cls.Dispose();
+            dtvt.Dispose();
+            clsvt.Dispose();
 
         }
       
@@ -392,7 +406,7 @@ namespace CtyTinLuong
                   
                     cls1.bTonTai = true;
                     cls1.bNgungTheoDoi = false;
-                    cls1.sNguoiGiaoHang = txtNguoiGiaoHang.Text.ToString();
+                    cls1.sNguoiGiaoHang = "";
                     cls1.bTrangThaiNhapKhoBTP_ThanhPham = true;
                     cls1.bDaXuatKho = true;
                     int iiID_Nhapkho_GapDan;
@@ -479,7 +493,7 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-                txtNguoiGiaoHang.Focus();
+                ///*txtNguoiGiaoHang*/.Focus();
             }
         }
         
@@ -576,6 +590,17 @@ namespace CtyTinLuong
         private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
         {
             int xxxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+
+            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+
+            DataTable dt = cls.SA_ID_DinhMuc_ThanhPham(xxxID);
+            txtTenVT_ThanhPham.Text = dt.Rows[0]["TenVTHH"].ToString();
+            DVT_ThanhPham.Text = dt.Rows[0]["DonViTinh"].ToString();
+            txtID_ThanhPham.Text = dt.Rows[0]["ID_VTHH"].ToString();
+            cls.Dispose();
+            dt.Dispose();
+
+
             clsDinhMuc_DinhMuc_ToGapDan cls2 = new clsDinhMuc_DinhMuc_ToGapDan();
             cls2.iID_DinhMuc_ToGapDan = xxxID;
             DataTable dt2 = cls2.SelectOne();
@@ -584,7 +609,16 @@ namespace CtyTinLuong
                 txtDienGiai.Text = cls2.sDienGiai.Value;
             cls2.Dispose();
             dt2.Dispose();
-            TinhToanTHanhPham(xxxID);
+
+            try
+            {
+                double soluongxuat = Convert.ToDouble(txtSoLuongTP.Text.ToString());
+                HienThi_Grid_ConTrol_Themmoi(soluongxuat, xxxID);
+            }
+            catch
+            { }
+
+            
         }
 
         private void txtSoLuongTP_TextChanged(object sender, EventArgs e)
@@ -592,7 +626,8 @@ namespace CtyTinLuong
             try
             {
                 int xxxID = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                TinhToanTHanhPham(xxxID);
+                double soluongxuat = Convert.ToDouble(txtSoLuongTP.Text.ToString());
+                HienThi_Grid_ConTrol_Themmoi(soluongxuat, xxxID);
             }
             catch
             { }
