@@ -60,17 +60,19 @@ namespace CtyTinLuong
         {
             doiMauTitle(sender, e);
 
-            UCThanhPham_DaNhapKho uccc_NhapKho = new UCThanhPham_DaNhapKho(this);
+            UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww uccc_NhapKho = new UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
+
         }
 
         private void navChoNhapKho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+
             doiMauTitle(sender, e);
 
-            UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww uccc_NhapKho = new UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww(this);
+            UCThanhPham_DaNhapKho uccc_NhapKho = new UCThanhPham_DaNhapKho(this);
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();

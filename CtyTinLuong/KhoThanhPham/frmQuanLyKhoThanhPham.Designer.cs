@@ -34,6 +34,7 @@
             this.navChoNhapKho_tuDaiLy = new DevExpress.XtraNavBar.NavBarItem();
             this.navDaNhapKho = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navXuatKhoBanHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
@@ -50,7 +51,6 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -99,13 +99,13 @@
             // 
             // navChoNhapKho_tuDaiLy
             // 
-            this.navChoNhapKho_tuDaiLy.Caption = "Nhập kho từ Đại lý";
+            this.navChoNhapKho_tuDaiLy.Caption = "Đã nhập kho";
             this.navChoNhapKho_tuDaiLy.Name = "navChoNhapKho_tuDaiLy";
             this.navChoNhapKho_tuDaiLy.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChoNhapKho_LinkClicked);
             // 
             // navDaNhapKho
             // 
-            this.navDaNhapKho.Caption = "Đã nhập kho";
+            this.navDaNhapKho.Caption = "Nhập kho Đại lý";
             this.navDaNhapKho.Name = "navDaNhapKho";
             this.navDaNhapKho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDaNhapKho_LinkClicked);
             // 
@@ -114,6 +114,12 @@
             this.navBarItem1.Caption = "Nhập kho _ Đóng kiện";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
+            // 
+            // navBarItem11
+            // 
+            this.navBarItem11.Caption = "Nhập kho _ Khác";
+            this.navBarItem11.Name = "navBarItem11";
+            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
             // 
             // navBarGroup2
             // 
@@ -219,12 +225,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Caption = "Nhập kho _ Khác";
-            this.navBarItem11.Name = "navBarItem11";
-            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
             // 
             // frmQuanLyKhoThanhPham
             // 
