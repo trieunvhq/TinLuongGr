@@ -233,7 +233,7 @@ namespace CtyTinLuong
                 clsKhoThanhPham_tbNhapKho cls = new clsKhoThanhPham_tbNhapKho();
                 cls.iID_NhapKho_ThanhPham = UCThanhPham_DaNhapKho.miiID_NhapKho_ThanhPham;
                 DataTable dt1 = cls.SelectOne();
-                bool NhapKho_Khac = cls.bCheck_NhapKho_Khac.Value;
+                int NhapKho_Khac = cls.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0.Value;
 
 
                 clsKhoThanhPham_tbNhapKho cls1 = new clsKhoThanhPham_tbNhapKho();
@@ -250,7 +250,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaNhapKho = true;
                 cls1.bBool_TonDauKy = false;
-                cls1.bCheck_NhapKho_Khac = NhapKho_Khac;
+                cls1.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = NhapKho_Khac;
                 cls1.sNguoiGiaoHang = txtNguoiGiaohang.Text.ToString();
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
                 cls1.Update();

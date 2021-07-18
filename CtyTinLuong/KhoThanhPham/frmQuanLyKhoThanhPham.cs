@@ -122,7 +122,6 @@ namespace CtyTinLuong
         private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             doiMauTitle(sender, e);
-
             UCThanhPham_NhapKho_DongKien uccc_NhapKho = new UCThanhPham_NhapKho_DongKien();
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);

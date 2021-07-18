@@ -488,7 +488,7 @@ namespace CtyTinLuong
                 cls3.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                 cls3.bDaNhapKho = true;
                 cls3.bBool_TonDauKy = false;
-                cls3.bCheck_NhapKho_Khac = false;
+                cls3.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = 3;
                 cls3.sGhiChu = txtGhiChu.Text.ToString();
                 cls3.sNguoiGiaoHang = txtTenDaiLy.Text.ToString();
                 cls3.Insert();
@@ -545,7 +545,7 @@ namespace CtyTinLuong
                     cls3.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                     cls3.bDaNhapKho = true;
                     cls3.bBool_TonDauKy = false;
-                    cls3.bCheck_NhapKho_Khac = false;
+                    cls3.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = 3;
                     cls3.sGhiChu = txtGhiChu.Text.ToString();
                     cls3.sNguoiGiaoHang = txtTenDaiLy.Text.ToString();
                     cls3.Insert();

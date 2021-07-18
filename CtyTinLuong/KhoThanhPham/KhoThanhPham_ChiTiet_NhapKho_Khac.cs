@@ -157,7 +157,7 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaNhapKho = true;
                 cls1.bBool_TonDauKy = false;
-                cls1.bCheck_NhapKho_Khac = true;
+                cls1.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = 4;
                 cls1.sNguoiGiaoHang = txtNguoiGiaohang.Text.ToString();
                 cls1.sGhiChu = txtGhiChu.Text.ToString();
                 int iiID_nhapkho;

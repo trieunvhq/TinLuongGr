@@ -365,7 +365,7 @@ namespace CtyTinLuong
                     cls3.iID_DaiLy = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
                     cls3.bDaNhapKho = true;
                     cls3.bBool_TonDauKy = false;
-                    cls3.bCheck_NhapKho_Khac = true;
+                    cls3.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = 3;
                     cls3.sGhiChu = txtGhiChu.Text.ToString();
                     DataTable dt3thanhpham = cls3.SelectOne_W_ThamChieu_SoChungTu_XuatKho_DaiLy();
                     int iiIDnhapkho_tp;

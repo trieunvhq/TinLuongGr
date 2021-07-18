@@ -8,10 +8,10 @@ namespace CtyTinLuong
 	public partial class clsKhoThanhPham_tbNhapKho : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bDaNhapKho, m_bNgungTheoDoi, m_bTonTai, m_bCheck_NhapKho_Khac, m_bBool_TonDauKy;
+			private SqlBoolean		m_bNgungTheoDoi, m_bTonTai, m_bDaNhapKho, m_bBool_TonDauKy;
 			private SqlDateTime		m_daNgayChungTu;
 			private SqlDouble		m_fTongTienHang;
-			private SqlInt32		m_iID_TKCo, m_iID_DaiLy, m_iID_NguoiNhap, m_iID_NhapKho_ThanhPham, m_iID_TKNo;
+			private SqlInt32		m_iID_DaiLy, m_iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0, m_iID_NhapKho_ThanhPham, m_iID_NguoiNhap;
 			private SqlString		m_sNguoiGiaoHang, m_sGhiChu, m_sThamChieu, m_sSoChungTu, m_sDienGiai;
 		#endregion
 
@@ -40,17 +40,14 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NguoiNhap", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NguoiNhap));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TKNo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TKNo));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TKCo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TKCo));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sThamChieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sThamChieu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DaiLy", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaNhapKho", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaNhapKho));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bbool_TonDauKy", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bBool_TonDauKy));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_NhapKho_Khac", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_NhapKho_Khac));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iint_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChu", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sNguoiGiaoHang", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNguoiGiaoHang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho_ThanhPham));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -58,14 +55,6 @@ namespace CtyTinLuong
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
 				m_iID_NhapKho_ThanhPham = (SqlInt32)scmCmdToExecute.Parameters["@iID_NhapKho_ThanhPham"].Value;
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_KhoThanhPham_tbNhapKho_Insert' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return true;
 			}
 			catch(Exception ex)
@@ -101,30 +90,19 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NguoiNhap", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NguoiNhap));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TKNo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TKNo));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TKCo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TKCo));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sThamChieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sThamChieu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DaiLy", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DaiLy));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaNhapKho", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaNhapKho));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bbool_TonDauKy", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bBool_TonDauKy));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@bCheck_NhapKho_Khac", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bCheck_NhapKho_Khac));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iint_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChu", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sNguoiGiaoHang", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNguoiGiaoHang));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_KhoThanhPham_tbNhapKho_Update' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return true;
 			}
 			catch(Exception ex)
@@ -153,21 +131,12 @@ namespace CtyTinLuong
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho_ThanhPham));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_KhoThanhPham_tbNhapKho_Delete' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return true;
 			}
 			catch(Exception ex)
@@ -198,21 +167,12 @@ namespace CtyTinLuong
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho_ThanhPham));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				sdaAdapter.Fill(dtToReturn);
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_KhoThanhPham_tbNhapKho_SelectOne' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				if(dtToReturn.Rows.Count > 0)
 				{
 					m_iID_NhapKho_ThanhPham = (Int32)dtToReturn.Rows[0]["ID_NhapKho_ThanhPham"];
@@ -223,13 +183,11 @@ namespace CtyTinLuong
 					m_bTonTai = (bool)dtToReturn.Rows[0]["TonTai"];
 					m_bNgungTheoDoi = (bool)dtToReturn.Rows[0]["NgungTheoDoi"];
 					m_iID_NguoiNhap = (Int32)dtToReturn.Rows[0]["ID_NguoiNhap"];
-					m_iID_TKNo = dtToReturn.Rows[0]["ID_TKNo"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["ID_TKNo"];
-					m_iID_TKCo = dtToReturn.Rows[0]["ID_TKCo"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["ID_TKCo"];
 					m_sThamChieu = (string)dtToReturn.Rows[0]["ThamChieu"];
 					m_iID_DaiLy = dtToReturn.Rows[0]["ID_DaiLy"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["ID_DaiLy"];
 					m_bDaNhapKho = (bool)dtToReturn.Rows[0]["DaNhapKho"];
 					m_bBool_TonDauKy = (bool)dtToReturn.Rows[0]["bool_TonDauKy"];
-					m_bCheck_NhapKho_Khac = (bool)dtToReturn.Rows[0]["Check_NhapKho_Khac"];
+					m_iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = (Int32)dtToReturn.Rows[0]["int_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0"];
 					m_sGhiChu = (string)dtToReturn.Rows[0]["GhiChu"];
 					m_sNguoiGiaoHang = (string)dtToReturn.Rows[0]["NguoiGiaoHang"];
 				}
@@ -263,21 +221,12 @@ namespace CtyTinLuong
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				sdaAdapter.Fill(dtToReturn);
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_KhoThanhPham_tbNhapKho_SelectAll' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return dtToReturn;
 			}
 			catch(Exception ex)
@@ -440,42 +389,6 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlInt32 iID_TKNo
-		{
-			get
-			{
-				return m_iID_TKNo;
-			}
-			set
-			{
-				SqlInt32 iID_TKNoTmp = (SqlInt32)value;
-				if(iID_TKNoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("iID_TKNo", "iID_TKNo can't be NULL");
-				}
-				m_iID_TKNo = value;
-			}
-		}
-
-
-		public SqlInt32 iID_TKCo
-		{
-			get
-			{
-				return m_iID_TKCo;
-			}
-			set
-			{
-				SqlInt32 iID_TKCoTmp = (SqlInt32)value;
-				if(iID_TKCoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("iID_TKCo", "iID_TKCo can't be NULL");
-				}
-				m_iID_TKCo = value;
-			}
-		}
-
-
 		public SqlString sThamChieu
 		{
 			get
@@ -548,20 +461,20 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlBoolean bCheck_NhapKho_Khac
+		public SqlInt32 iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0
 		{
 			get
 			{
-				return m_bCheck_NhapKho_Khac;
+				return m_iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0;
 			}
 			set
 			{
-				SqlBoolean bCheck_NhapKho_KhacTmp = (SqlBoolean)value;
-				if(bCheck_NhapKho_KhacTmp.IsNull)
+				SqlInt32 iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0Tmp = (SqlInt32)value;
+				if(iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0Tmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("bCheck_NhapKho_Khac", "bCheck_NhapKho_Khac can't be NULL");
+					throw new ArgumentOutOfRangeException("iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0", "iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 can't be NULL");
 				}
-				m_bCheck_NhapKho_Khac = value;
+				m_iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = value;
 			}
 		}
 

@@ -153,7 +153,7 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bDaNhapKho = true;
                 cls1.bNgungTheoDoi = false;
-                cls1.bCheck_NhapKho_Khac = true;
+                cls1.iInt_Dongkien_1_GapDan_2_DaiLy_3_Khac_4_ConLai_0 = 4;
                 cls1.bBool_TonDauKy = false;
                 //if (gridTKCo.EditValue != null)
                 //    cls1.iID_TKCo = Convert.ToInt16(gridTKCo.EditValue.ToString());
