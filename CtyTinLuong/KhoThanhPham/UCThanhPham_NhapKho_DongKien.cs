@@ -78,7 +78,7 @@ namespace CtyTinLuong
             {
                 mbThemMoi_NhapKho = false;
                 miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
-                KhoThanhPham_ChiTiet_NhapKho_Khac ff = new KhoThanhPham_ChiTiet_NhapKho_Khac();
+                KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
                 //_frmQLKTP.Hide();
                 ff.Show();
                 //_frmQLKTP.Show();
@@ -88,7 +88,7 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             mbThemMoi_NhapKho = true;
-            KhoThanhPham_ChiTiet_NhapKho_Khac ff = new KhoThanhPham_ChiTiet_NhapKho_Khac();
+            KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
             //_frmQLKTP.Hide();
             ff.Show();
             //_frmQLKTP.Show();
