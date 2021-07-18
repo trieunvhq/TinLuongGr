@@ -491,7 +491,16 @@ namespace CtyTinLuong
                             txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + ")";
                         else txtDienGiai.Text = "" + s1 + "/ " + s2 + " sọt to + " + s3 + " sọt bé = " + s5 + " kg= " + s4 + " kiện (ĐM=" + s6 + " to, " + s7 + " bé)";
                     }
+                    else if (CheckHangCuc.Checked == true)
+                    {
+                        string s1 = txtDienGiaiDMNPL.Text.ToString();
+                        string s2 = txtSoLuong_BaoTo.Text.ToString();
 
+                        string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
+                        string s5 = txtTongSoKG.Text.ToString();
+                        string s6 = txtSoKien_1_BaoTo.Text.ToString();
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + ")";
+                    }
                 }
 
             }
@@ -1004,7 +1013,7 @@ namespace CtyTinLuong
                     else if (checkHangSot.Checked == true)
                         cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
                     int iiiiID_NHapKhoDaiLy;
-                    if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
+                    if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
                     {
                         cls1.Insert();
                         iiiiID_NHapKhoDaiLy = cls1.iID_NhapKhoDaiLy.Value;
@@ -1134,7 +1143,7 @@ namespace CtyTinLuong
                     else if (checkHangSot.Checked == true)
                         cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
                     int iiiiID_NHapKhoDaiLy;
-                    if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbThemMoi_nhapKhoDaiLy == true)
+                    if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == true)
                     {
                         cls1.Insert();
                         iiiiID_NHapKhoDaiLy = cls1.iID_NhapKhoDaiLy.Value;
