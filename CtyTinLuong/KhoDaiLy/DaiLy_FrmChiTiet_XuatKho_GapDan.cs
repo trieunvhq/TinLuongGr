@@ -150,6 +150,11 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
+            DataTable dt3 = clsNguoi.T_SelectAll(18);
+            gridCongNhan.DataSource = dt3;
+            gridCongNhan.ValueMember = "ID_NhanSu";
+            gridCongNhan.DisplayMember = "TenNhanVien";
+
             dt.Dispose();
             dt2.Dispose();
             cls.Dispose();
