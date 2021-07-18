@@ -440,14 +440,22 @@ namespace CtyTinLuong
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            double deTOngtien;
-            DataTable dataTable = (DataTable)gridControl1.DataSource;
-            string shienthi = "1";
-            object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-            if (xxxx.ToString() != "")
-                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
-            else deTOngtien = 0;
-            txtTongTienHang.Text = deTOngtien.ToString();
+            try
+            {
+                double deTOngtien;
+                DataTable dataTable = (DataTable)gridControl1.DataSource;
+                string shienthi = "1";
+                object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+                if (xxxx.ToString() != "")
+                    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
+                else deTOngtien = 0;
+                txtTongTienHang.Text = deTOngtien.ToString();
+            }
+            catch
+            {
+
+            }
+           
         }
 
         private void txtTongTienHang_TextChanged(object sender, EventArgs e)
@@ -457,6 +465,26 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTongTienHang.Text);
                 txtTongTienHang.Text = String.Format("{0:#,##0.00}", value);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
+                clsncc.iID_NhanSu = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                DataTable dt = clsncc.SelectOne();
+                if (dt.Rows.Count > 0)
+                {
+                    txtNguoiNhap.Text = dt.Rows[0]["TenNhanVien"].ToString();
+
+                }
+
             }
             catch
             {
