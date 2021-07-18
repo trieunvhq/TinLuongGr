@@ -60,6 +60,26 @@ namespace CtyTinLuong
             
 
         }
+
+        private void HienThi_Copy(int xxID_nhapkho_TP)
+        {
+            clsKhoThanhPham_tbNhapKho cls1 = new clsKhoThanhPham_tbNhapKho();
+            cls1.iID_NhapKho_ThanhPham = UCThanhPham_NhapKho_DongKien.miID_NhapKho;
+            DataTable dt = cls1.SelectOne();
+            gridNguoiLap.EditValue = cls1.iID_NguoiNhap.Value;
+            dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
+            txtSoChungTu.Text = SoCHungTu_NhapKhoThanhPham();
+            txtDienGiai.Text = cls1.sDienGiai.Value;
+            txtGhiChu.Text = cls1.sGhiChu.Value;
+            txtNguoiGiaohang.Text = cls1.sNguoiGiaoHang.Value;
+
+            clsDongKien_ThamChieu_TinhNhapKho cls2 = new clsDongKien_ThamChieu_TinhNhapKho();
+            DataTable dt2 = cls2.SA_ID_NhapKhoTP_HieThi(xxID_nhapkho_TP);
+            gridControl1.DataSource = dt2;
+
+
+
+        }
         private void HienThi_ThemMoi()
         {
             gridNguoiLap.EditValue = 14;
@@ -322,7 +342,7 @@ namespace CtyTinLuong
             else if (UCThanhPham_NhapKho_DongKien.mbSua == true)
                 HienThi_Sua(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
             else if (UCThanhPham_NhapKho_DongKien.mbCopy == true)
-                HienThi_Sua(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
+                HienThi_Copy(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
             Cursor.Current = Cursors.Default;
         }
 
