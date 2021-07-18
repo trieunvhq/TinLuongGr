@@ -171,13 +171,40 @@ namespace CtyTinLuong
                 gridView4.SetRowCellValue(e.RowHandle, clHienThi1, "1");
                 gridView4.SetRowCellValue(e.RowHandle, clSoLuongNhap1, 0);
                 gridView4.SetRowCellValue(e.RowHandle, clDonGia1, 0);
-
+                
+            }
+            try
+            {
                 dongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia1));
                 soluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
                 thanhtien = soluong * dongia;
-                gridView4.SetFocusedRowCellValue(clThanhTien1, thanhtien);
+                if (e.Column == clDonGia1)
+                {                   
+                    gridView4.SetFocusedRowCellValue(clThanhTien1, thanhtien);
+                }
+                if (e.Column == clSoLuongNhap1)
+                {
+                    gridView4.SetFocusedRowCellValue(clThanhTien1, thanhtien);
+                }
+                double deTOngtien;
+                DataTable dataTable = (DataTable)gridControl1.DataSource;
+                string shienthi = "1";
+                object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+                if (xxxx.ToString() != "")
+                    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
+                else deTOngtien = 0;
+                txtTongTienHang.Text = deTOngtien.ToString();
+            }
+            catch
+            {
 
             }
+           
+        }
+
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void Load_LockUp()
