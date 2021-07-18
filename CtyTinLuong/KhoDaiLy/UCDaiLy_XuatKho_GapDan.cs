@@ -30,8 +30,8 @@ namespace CtyTinLuong
 
         private void Load_DaTa( DateTime xxtungay, DateTime xxdenngay)
         {
-                clsGapDan_tbXuatKho cls = new CtyTinLuong.clsGapDan_tbXuatKho();
-            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);          
+            clsGapDan_tbXuatKho cls = new CtyTinLuong.clsGapDan_tbXuatKho();
+            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);
             gridControl1.DataSource = dt;
             cls.Dispose();
             dt.Dispose();
