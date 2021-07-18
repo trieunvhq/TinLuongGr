@@ -16,106 +16,22 @@ namespace CtyTinLuong
 
         public static int miID_XuatKho;
         public static bool mbThemMoi_XuatKho, mbCopy, mbSua;
-        private void Load_LockUp()
-        {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-
-        }
+      
         private void HienThiGridControl_2(int xxidxuatkhp)
         {
 
             clsKhoThanhPham_tbChiTietXuatKho cls2 = new clsKhoThanhPham_tbChiTietXuatKho();
-            cls2.iID_XuatKho_ThanhPham = xxidxuatkhp;
-            DataTable dt3 = cls2.SelectAll_W_ID_XuatKho_HienThi_ChiTiet();
-            DataTable dt2 = new DataTable();
-         
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(decimal));
-
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("GhiChu");
-
-            dt2.Columns.Add("ThanhTien", typeof(decimal));
-            dt2.Columns.Add("HienThi", typeof(string));
-            if (dt3.Rows.Count == 0)
-            {
-                gridControl2.DataSource = null;
-            }
-            else
-            {
-
-
-                for (int i = 0; i < dt3.Rows.Count; i++)
-                {
-                    Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[i]["SoLuongXuat"].ToString());
-                    Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[i]["DonGia"].ToString());
-                    DataRow _ravi = dt2.NewRow();
-                    //_ravi["ID_ChiTietNhapKho"] = dt3.Rows[i]["ID_ChiTietNhapKho"].ToString();
-                    //_ravi["ID_NhapKho"] = dt3.Rows[i]["ID_NhapKho"].ToString();
-                    _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
-
-                    _ravi["SoLuong"] = xxsoluong;
-                    _ravi["DonGia"] = xxdongia;
-                    _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                    _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                    _ravi["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
-                    _ravi["HienThi"] = "1";
-                    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                    dt2.Rows.Add(_ravi);
-                }
-            }
-            gridControl2.DataSource = dt2;
+            DataTable dt = cls2.SA_ID_Xuatkho(xxidxuatkhp);
+            gridControl2.DataSource = dt;
+           
         }
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
-        {
-
-
-            clsKhoThanhPham_tbXuatKho cls = new CtyTinLuong.clsKhoThanhPham_tbXuatKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_XuatKho_Khac=True";
-            DataView dv = dt2.DefaultView;
-            //dv.Sort = "NgayChungTu DESC, ID_XuatKhoBTP DESC";
-            DataTable dt = dv.ToTable();
-
-
-            dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-            DataView dvxxx = dt.DefaultView;
-            DataTable dt22 = dvxxx.ToTable();
-            dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-            DataView dv2 = dt22.DefaultView;
-            dv2.Sort = "DaXuatKho ASC, NgayChungTu DESC, ID_XuatKho_ThanhPham DESC";
-            DataTable dxxxx = dv2.ToTable();
-
-            gridControl1.DataSource = dxxxx;
-
-
-        }
-        private void HienThi_ALL()
+        private void Load_Data(DateTime xxtungay, DateTime xxdenngay)
         {
             clsKhoThanhPham_tbXuatKho cls = new CtyTinLuong.clsKhoThanhPham_tbXuatKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_XuatKho_Khac=True";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "DaXuatKho ASC, NgayChungTu DESC, ID_XuatKho_ThanhPham DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
-
-
+            DataTable dt = cls.SA_Khac(xxtungay, xxdenngay);
+            gridControl1.DataSource = dt;
         }
+
 
         frmQuanLyKhoThanhPham _frmQLKTP;
         public UCThanhPham_XuatKho_Khac(frmQuanLyKhoThanhPham frmQLKTP)
@@ -126,11 +42,11 @@ namespace CtyTinLuong
 
         private void UCThanhPham_XuatKho_Khac_Load(object sender, EventArgs e)
         {
+
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
@@ -146,7 +62,7 @@ namespace CtyTinLuong
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }

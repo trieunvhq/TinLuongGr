@@ -25,14 +25,9 @@ namespace CtyTinLuong
         }
         private void Load_Data(DateTime xxtungay, DateTime xxdenngay)
         {
-
-
             clsKhoThanhPham_tbXuatKho cls = new CtyTinLuong.clsKhoThanhPham_tbXuatKho();
-            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);
-          
-            gridControl1.DataSource = dt;
-
-
+            DataTable dt = cls.SA_NgayThang(xxtungay, xxdenngay);          
+            gridControl1.DataSource = dt;            
         }
    
 
