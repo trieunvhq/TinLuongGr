@@ -167,11 +167,7 @@ namespace CtyTinLuong
                     cls2.iID_XuatKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho_ThanhPham).ToString());
                     cls2.Delete_ALL_ID_XuatKho_ThanhPham();
 
-                    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-                    {
-                        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
-                    }
-                    else HienThi_ALL();
+                    Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã xóa");
                 }
