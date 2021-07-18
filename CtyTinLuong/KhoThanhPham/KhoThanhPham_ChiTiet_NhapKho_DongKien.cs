@@ -406,11 +406,16 @@ namespace CtyTinLuong
                     gridView4.SetFocusedRowCellValue(clThanhTien1, thanhtien);
                     double soluongton= CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongTon));
                     double soluongnhap___ = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
-                    if(soluongnhap___>soluongton)
+                    if(UCThanhPham_NhapKho_DongKien.mbSua==false)
                     {
-                        gridView4.SetFocusedRowCellValue(clSoLuongNhap1, 0);
-                        return;
+                        if (soluongnhap___ > soluongton)
+                        {
+                            MessageBox.Show("Số lượng nhập không lớn hơn số lượng tồn");
+                            gridView4.SetFocusedRowCellValue(clSoLuongNhap1, 0);
+                            return;
+                        }
                     }
+                    
                 }
                 double deTOngtien;
                 DataTable dataTable = (DataTable)gridControl1.DataSource;
