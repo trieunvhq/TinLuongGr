@@ -13,7 +13,7 @@ namespace CtyTinLuong
     public partial class UCThanhPham_NhapKho_DongKien : UserControl
     {
         public static int miID_NhapKho;
-        public static bool mbThemMoi_NhapKho;
+        public static bool mbThemMoi, mbSua, mbCopy;
 
         private void HienThiGridControl_2(int xxIID_NhapKho)
         {
@@ -76,7 +76,9 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
             {
-                mbThemMoi_NhapKho = false;
+                mbThemMoi = false;
+                mbSua = true;
+                mbCopy = false;
                 miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
                 KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
                 //_frmQLKTP.Hide();
@@ -87,7 +89,9 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            mbThemMoi_NhapKho = true;
+            mbThemMoi = true;
+            mbSua = false;
+            mbCopy = false;
             KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
             //_frmQLKTP.Hide();
             ff.Show();
