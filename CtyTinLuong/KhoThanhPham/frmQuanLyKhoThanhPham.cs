@@ -121,7 +121,7 @@ namespace CtyTinLuong
         {
             doiMauTitle(sender, e);
 
-            UCThanhPham_NhapKho_Khac uccc_NhapKho = new UCThanhPham_NhapKho_Khac(this);
+            UCThanhPham_NhapKho_DongKien uccc_NhapKho = new UCThanhPham_NhapKho_DongKien();
             uccc_NhapKho.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(uccc_NhapKho);
             uccc_NhapKho.BringToFront();
@@ -167,6 +167,14 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
 
-      
+        private void navBarItem11_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            doiMauTitle(sender, e);
+
+            UCThanhPham_NhapKho_Khac uccc_NhapKho = new UCThanhPham_NhapKho_Khac(this);
+            uccc_NhapKho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(uccc_NhapKho);
+            uccc_NhapKho.BringToFront();
+        }
     }
 }

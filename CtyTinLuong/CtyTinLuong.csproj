@@ -1985,6 +1985,12 @@
     <Compile Include="TrXtraDaiLy_ChiTietLuong_Everyone.Designer.cs">
       <DependentUpon>TrXtraDaiLy_ChiTietLuong_Everyone.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoThanhPham\UCThanhPham_NhapKho_DongKien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoThanhPham\UCThanhPham_NhapKho_DongKien.Designer.cs">
+      <DependentUpon>UCThanhPham_NhapKho_DongKien.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>
