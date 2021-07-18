@@ -354,6 +354,8 @@ namespace CtyTinLuong
             else
             {
                 clsDongKien_TbNhapKho cls1 = new clsDongKien_TbNhapKho();
+                clsDongKien_TbNhapKho cls2 = new clsDongKien_TbNhapKho();
+                cls1.iID_NhapKhoDongKien = iiID_Xuatkho_Gapdan;
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtThamChieu.Text.ToString();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
@@ -367,14 +369,18 @@ namespace CtyTinLuong
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
                 cls1.sNguoiGiaoHang = "";
-                cls1.bTrangThaiNhapKhoThanhPham = false;
-                cls1.bDaNhapKho = true;
-                cls1.iID_NhapKhoDongKien = iiID_Xuatkho_Gapdan;
+                cls1.bDaNhapKho = true;              
+                DataTable dt2 = cls2.SelectOne();
+                if (dt2.Rows.Count > 0)
+                    cls1.bTrangThaiNhapKhoThanhPham = cls2.bTrangThaiNhapKhoThanhPham.Value;
+                else cls1.bTrangThaiNhapKhoThanhPham = false;              
                 if (UCDaiLy_XuatKho_GapDan.mbsua == false)
                     cls1.Insert();
                 else
                     cls1.Update();
                 cls1.Dispose();
+                cls2.Dispose();
+                dt2.Dispose();
             }
         }
         private void Luu_XuatKho_GapDan()

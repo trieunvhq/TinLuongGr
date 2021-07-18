@@ -186,17 +186,22 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            clsGapDan_tbNhapKho cls1 = new clsGapDan_tbNhapKho();
+            clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
             DialogResult traloi;
             traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (traloi == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                cls1.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
+                int xxID= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
+                cls1.iID_XuatKho = xxID;
                 cls1.Delete();
-                clsGapDan_ChiTiet_NhapKho cls2 = new clsGapDan_ChiTiet_NhapKho();
-                cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKho).ToString());
-                cls2.Delete_ALL_W_ID_NhapKho();
+                clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
+                cls2.iID_XuatKho = xxID;
+                cls2.Delete_All_W_ID_XuatKho();
+
+                clsDongKien_TbNhapKho cls3 = new clsDongKien_TbNhapKho();
+                cls3.iID_NhapKhoDongKien = xxID;
+                cls3.Delete();
                 MessageBox.Show("Đã xóa");
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
