@@ -135,6 +135,13 @@ namespace CtyTinLuong
             string xxx = SoCHungTu_GapDan();
             txtThamChieu.Text = xxx.Replace("XKGD", "NKĐK");
 
+           
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_NhanSu", typeof(int));
+            dt2.Columns.Add("SanLuong", typeof(string));
+            dt2.Columns.Add("DonGia", typeof(string));
+            dt2.Columns.Add("ThanhTien", typeof(string));         
+            gridControl2.DataSource = dt2;
         }
         private void Load_LockUp()
         {
