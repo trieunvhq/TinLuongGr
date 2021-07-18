@@ -145,7 +145,7 @@ namespace CtyTinLuong
 
                     cls1.Delete();
                     clsKhoThanhPham_tbChiTietNhapKho cls2 = new clsKhoThanhPham_tbChiTietNhapKho();
-                    cls2.iID_NhapKho_ThanhPham = xxID_nhapkhothanhpham);
+                    cls2.iID_NhapKho_ThanhPham = xxID_nhapkhothanhpham;
                     cls2.Delete_ALL_W_ID_NhapKho_ThanhPham();
 
                     clsDongKien_ThamChieu_TinhNhapKho cls3 = new clsDongKien_ThamChieu_TinhNhapKho();
