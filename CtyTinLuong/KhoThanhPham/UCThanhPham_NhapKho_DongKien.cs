@@ -16,5 +16,15 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void UCThanhPham_NhapKho_DongKien_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            UCThanhPham_NhapKho_DongKien_Load( sender,  e);
+        }
     }
 }

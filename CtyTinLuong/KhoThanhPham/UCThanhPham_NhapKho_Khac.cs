@@ -15,21 +15,7 @@ namespace CtyTinLuong
     {
         public static int miID_NhapKho;
         public static bool mbThemMoi_NhapKho;
-        private void Load_LockUp()
-        {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
-
-
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-
-        }
+       
         private void HienThiGridControl_2(int xxIID_NhapKho)
         {
 
@@ -80,41 +66,16 @@ namespace CtyTinLuong
             }
             gridControl2.DataSource = dt2;
         }
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
+        private void Load_Data(DateTime xxtungay, DateTime xxdenngay)
         {
 
             clsKhoThanhPham_tbNhapKho cls = new CtyTinLuong.clsKhoThanhPham_tbNhapKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=True";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_NhapKho_ThanhPham DESC";
-            DataTable dt = dv.ToTable();
-
-
-            dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-            DataView dvxxx = dt.DefaultView;
-            DataTable dt22 = dvxxx.ToTable();
-            dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-            DataView dv2 = dt22.DefaultView;
-            dv2.Sort = "DaNhapKho ASC, NgayChungTu DESC, ID_NhapKho_ThanhPham DESC";
-            DataTable dxxxx = dv2.ToTable();
-
-            gridControl1.DataSource = dxxxx;
-          
-
-        }
-        private void HienThi_ALL()
-        {
-            clsKhoThanhPham_tbNhapKho cls = new CtyTinLuong.clsKhoThanhPham_tbNhapKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false and Check_NhapKho_Khac=True";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "DaNhapKho ASC, NgayChungTu DESC, ID_NhapKho_ThanhPham DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
+            DataTable dt2 = cls.SA_NgayThang(xxtungay, xxdenngay);
+            gridControl1.DataSource = dt2;
 
 
         }
+      
 
         frmQuanLyKhoThanhPham _frmQLKTP;
         public UCThanhPham_NhapKho_Khac(frmQuanLyKhoThanhPham frmQLKTP)
@@ -126,10 +87,10 @@ namespace CtyTinLuong
         private void UCThanhPham_NhapKho_Khac_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
+           
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
 
@@ -145,7 +106,7 @@ namespace CtyTinLuong
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }

@@ -247,6 +247,7 @@
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDongKien_TbNhapKho.cs" />
+    <Compile Include="KhoThanhPham\clsKhoThanhPham_tbXuatKho - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_ChiTietTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\clsTraLuong_new - Copy.cs" />
     <Compile Include="Luong_ChamCong\frmBTTL_TDB.cs">
@@ -2311,6 +2312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoNPL\KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.resx">
       <DependentUpon>KhoNPL_frmChiTiet_XuatKho_gapDan_Moi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoThanhPham\UCThanhPham_NhapKho_DongKien.resx">
+      <DependentUpon>UCThanhPham_NhapKho_DongKien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TDB.resx">
       <DependentUpon>frmBTTL_TDB.cs</DependentUpon>
