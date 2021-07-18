@@ -248,6 +248,8 @@
     <Compile Include="KhoThanhPham\clsDaiLy_ThamChieu_TinhXuatKho_Temp.cs" />
     <Compile Include="KhoThanhPham\clsDongKien_TbNhapKho - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDongKien_TbNhapKho.cs" />
+    <Compile Include="KhoThanhPham\clsDongKien_ThamChieu_TinhNhapKho - Copy.cs" />
+    <Compile Include="KhoThanhPham\clsDongKien_ThamChieu_TinhNhapKho.cs" />
     <Compile Include="KhoThanhPham\clsKhoThanhPham_tbXuatKho - Copy.cs" />
     <Compile Include="KhoThanhPham\KhoThanhPham_ChiTiet_NhapKho_DongKien.cs">
       <SubType>Form</SubType>
