@@ -303,7 +303,7 @@ namespace CtyTinLuong
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
                 cls1.fTongTienHang = tongtienhang;
                 cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.sThamChieu = "";
+                cls1.sThamChieu = "Đóng kiện";
                 cls1.iID_DaiLy = 0;
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;

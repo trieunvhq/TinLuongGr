@@ -7,7 +7,39 @@ namespace CtyTinLuong
 {
 	public partial class clsDongKien_ThamChieu_TinhNhapKho : clsDBInteractionBase
 	{
-        //H_DongKien_ThamChieu_SA_ID_NhapKhoTP_HieThi
+        //H_DongKien_ThamChieu_Delete_ALL_ID_NhapKhoTP
+        public void Delete_ALL_ID_NhapKhoTP(int xxid_nhapkho)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_DongKien_ThamChieu_Delete_ALL_ID_NhapKhoTP]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_nhapkhoTP_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxid_nhapkho));
+
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_DongKien_ThamChieu_Delete_ALL_ID_NhapKhoTP::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         public DataTable SA_ID_NhapKhoTP_HieThi(int xxid_nhapkho)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

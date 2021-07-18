@@ -139,14 +139,17 @@ namespace CtyTinLuong
                 if (traloi == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
+                    int xxID_nhapkhothanhpham= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoThanhPham).ToString());
                     clsKhoThanhPham_tbNhapKho cls1 = new clsKhoThanhPham_tbNhapKho();
-                    cls1.iID_NhapKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoThanhPham).ToString());
-
+                    cls1.iID_NhapKho_ThanhPham = xxID_nhapkhothanhpham;
 
                     cls1.Delete();
                     clsKhoThanhPham_tbChiTietNhapKho cls2 = new clsKhoThanhPham_tbChiTietNhapKho();
-                    cls2.iID_NhapKho_ThanhPham = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoThanhPham).ToString());
+                    cls2.iID_NhapKho_ThanhPham = xxID_nhapkhothanhpham);
                     cls2.Delete_ALL_W_ID_NhapKho_ThanhPham();
+
+                    clsDongKien_ThamChieu_TinhNhapKho cls3 = new clsDongKien_ThamChieu_TinhNhapKho();
+                    cls3.Delete_ALL_ID_NhapKhoTP(xxID_nhapkhothanhpham);
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã xóa");
                     Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
