@@ -78,7 +78,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("DonGia", typeof(string));
             dt2.Columns.Add("ThanhTien", typeof(string));
             dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("GhiChu", typeof(string));
+          
             gridControl1.DataSource = dt2;
         }
 
@@ -161,7 +161,7 @@ namespace CtyTinLuong
                 else cls.fDonGia = 0;
                 cls.bTonTai = true;
                 cls.bNgungTheoDoi = false;
-                cls.sGhiChu = dt_gridcontrol.Rows[i]["GhiChu"].ToString();
+                cls.sGhiChu = "";
                 cls.bDaNhapKho = true;
                 cls.bBool_TonDauKy = false;
 
@@ -220,6 +220,7 @@ namespace CtyTinLuong
                 cls.iID_VTHH = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_VTHH"].ToString());
                 cls.iID_NhapKho_ThanhPham = iiIDINhapKho_TP;
                 cls.iID_NhapKhoDongKien = iiID_nhapkho_Dongkien;
+                cls.daNgayChungTu = dteNgayChungTu.DateTime;
                 if (dt_gridcontrol.Rows[i]["SoLuongNhap"].ToString() != "")
                 {
                     cls.fSoLuongNhap = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["SoLuongNhap"].ToString());
@@ -383,6 +384,13 @@ namespace CtyTinLuong
                 if (e.Column == clSoLuongNhap1)
                 {
                     gridView4.SetFocusedRowCellValue(clThanhTien1, thanhtien);
+                    double soluongton= CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongTon));
+                    double soluongnhap___ = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
+                    if(soluongnhap___>soluongton)
+                    {
+                        gridView4.SetFocusedRowCellValue(clSoLuongNhap1, 0);
+                        return;
+                    }
                 }
                 double deTOngtien;
                 DataTable dataTable = (DataTable)gridControl1.DataSource;
@@ -407,7 +415,28 @@ namespace CtyTinLuong
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
+            double deTOngtien;
+            DataTable dataTable = (DataTable)gridControl1.DataSource;
+            string shienthi = "1";
+            object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+            if (xxxx.ToString() != "")
+                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
+            else deTOngtien = 0;
+            txtTongTienHang.Text = deTOngtien.ToString();
+        }
 
+        private void txtTongTienHang_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                decimal value = decimal.Parse(txtTongTienHang.Text);
+                txtTongTienHang.Text = String.Format("{0:#,##0.00}", value);
+            }
+            catch
+            {
+
+            }
         }
 
         private void Load_LockUp()

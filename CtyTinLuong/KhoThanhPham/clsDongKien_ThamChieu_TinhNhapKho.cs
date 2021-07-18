@@ -9,6 +9,7 @@ namespace CtyTinLuong
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bTonTai, m_bNgungTheoDois;
+			private SqlDateTime		m_daNgayChungTu;
 			private SqlDouble		m_fDonGia, m_fSoLuongNhap;
 			private SqlInt32		m_iID_ThamChieu, m_iID_NhapKhoDongKien, m_iID_NhapKho_ThanhPham, m_iID_VTHH;
 		#endregion
@@ -31,6 +32,7 @@ namespace CtyTinLuong
 
 			try
 			{
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@daNgayChungTu", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daNgayChungTu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKhoDongKien", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKhoDongKien));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho_ThanhPham));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
@@ -74,6 +76,7 @@ namespace CtyTinLuong
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ThamChieu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ThamChieu));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@daNgayChungTu", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daNgayChungTu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKhoDongKien", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKhoDongKien));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_NhapKho_ThanhPham", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_NhapKho_ThanhPham));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
@@ -160,6 +163,7 @@ namespace CtyTinLuong
 				if(dtToReturn.Rows.Count > 0)
 				{
 					m_iID_ThamChieu = (Int32)dtToReturn.Rows[0]["ID_ThamChieu"];
+					m_daNgayChungTu = (DateTime)dtToReturn.Rows[0]["NgayChungTu"];
 					m_iID_NhapKhoDongKien = (Int32)dtToReturn.Rows[0]["ID_NhapKhoDongKien"];
 					m_iID_NhapKho_ThanhPham = (Int32)dtToReturn.Rows[0]["ID_NhapKho_ThanhPham"];
 					m_iID_VTHH = (Int32)dtToReturn.Rows[0]["ID_VTHH"];
@@ -236,6 +240,24 @@ namespace CtyTinLuong
 					throw new ArgumentOutOfRangeException("iID_ThamChieu", "iID_ThamChieu can't be NULL");
 				}
 				m_iID_ThamChieu = value;
+			}
+		}
+
+
+		public SqlDateTime daNgayChungTu
+		{
+			get
+			{
+				return m_daNgayChungTu;
+			}
+			set
+			{
+				SqlDateTime daNgayChungTuTmp = (SqlDateTime)value;
+				if(daNgayChungTuTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("daNgayChungTu", "daNgayChungTu can't be NULL");
+				}
+				m_daNgayChungTu = value;
 			}
 		}
 
