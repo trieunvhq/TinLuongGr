@@ -54,7 +54,7 @@ namespace CtyTinLuong
            
 
             clsDongKien_ThamChieu_TinhNhapKho cls2 = new clsDongKien_ThamChieu_TinhNhapKho();
-            DataTable dt2 = cls2.SA_ID_NhapKhoTP(xxID_nhapkho_TP);
+            DataTable dt2 = cls2.SA_ID_NhapKhoTP_HieThi(xxID_nhapkho_TP);
             gridControl1.DataSource = dt2;
               
             
@@ -67,10 +67,9 @@ namespace CtyTinLuong
             txtSoChungTu.Text = SoCHungTu_NhapKhoThanhPham();
 
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_NhapKhoDongKien", typeof(string));           
+            dt2.Columns.Add("ID_NhapKhoDongKien", typeof(string));
             dt2.Columns.Add("SoLuongThanhPham_QuyDoi", typeof(string));
             dt2.Columns.Add("SoLuongTon", typeof(string));
-
             dt2.Columns.Add("ID_VTHH", typeof(string));
             dt2.Columns.Add("MaVT", typeof(string));
             dt2.Columns.Add("TenVTHH", typeof(string));
