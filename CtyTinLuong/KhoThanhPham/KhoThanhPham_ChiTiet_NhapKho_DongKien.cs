@@ -18,6 +18,28 @@ namespace CtyTinLuong
         public static string msSoChungTu, msNguoiGiaoHang, msDienGiai, msGhiChu;
         public static double mdbTongSotien;
 
+        private string SoCHungTu_NhapKhoThanhPham()
+        {
+            string sochungtu;
+            clsKhoThanhPham_tbNhapKho cls = new clsKhoThanhPham_tbNhapKho();
+            DataTable dt1 = cls.SelectAll();
+
+            int k2 = dt1.Rows.Count;
+            if (k2 == 0)
+                sochungtu = "NKTP 1";
+            else
+            {
+                string xxx = dt1.Rows[k2 - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(4).Trim()) + 1;
+                if (xxx2 >= 10000)
+                    sochungtu = "NKTP 1";
+                else sochungtu = "NKTP " + xxx2 + "";
+
+            }
+            cls.Dispose();
+            dt1.Dispose();
+            return sochungtu;
+        }
         private void HienThi_Sua()
         {
             clsKhoThanhPham_tbNhapKho cls1 = new clsKhoThanhPham_tbNhapKho();
@@ -82,7 +104,21 @@ namespace CtyTinLuong
         {
             gridNguoiLap.EditValue = 14;
             dteNgayChungTu.EditValue = DateTime.Today;
-                      
+            txtSoChungTu.Text = SoCHungTu_NhapKhoThanhPham();
+
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_NhapKhoDongKien", typeof(string));
+            dt2.Columns.Add("SoLuongThanhPham_QuyDoi", typeof(string));
+            dt2.Columns.Add("SoLuongTon_SauKhiNhapKhoThanhPham", typeof(string));
+            dt2.Columns.Add("MaVT", typeof(string));
+            dt2.Columns.Add("TenVTHH", typeof(string));
+            dt2.Columns.Add("DonViTinh", typeof(string));
+
+            dt2.Columns.Add("SoLuongNhap", typeof(string));        
+            dt2.Columns.Add("DonGia", typeof(string));
+            dt2.Columns.Add("ThanhTien", typeof(string));
+            dt2.Columns.Add("HienThi", typeof(string));
+            gridControl1.DataSource = dt2;
         }
 
         private void KhoThanhPham_ChiTiet_NhapKho_DongKien_Load(object sender, EventArgs e)
@@ -110,6 +146,38 @@ namespace CtyTinLuong
         {
             if (dteTuNgay.EditValue != null & dteDenNgay.EditValue !=null)
                 Load_LockUp_ThamChieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT1)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            double dongia = 0, soluong = 0, thanhtien = 0;
+            if (e.Column == clID_NhapKhoDongKien1)
+            {
+                int xxIDkk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                clsDongKien_TbNhapKho cls = new clsDongKien_TbNhapKho();           
+                DataTable dt = cls.SO_ID(xxIDkk);             
+                gridView4.SetRowCellValue(e.RowHandle, clTenVTHH1, dt.Rows[0]["TenVTHH"].ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clDonViTinh1, dt.Rows[0]["DonViTinh"].ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clMaVT1, dt.Rows[0]["MaVT"].ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clSoLuongThanhPhamQuyDoi1, dt.Rows[0]["SoLuongThanhPham_QuyDoi"].ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clSoLuongTon_SauKhiNhapKhoThanhPham, dt.Rows[0]["SoLuongTon_SauKhiNhapKhoThanhPham"].ToString());
+
+                gridView4.SetRowCellValue(e.RowHandle, clHienThi1, "1");
+                gridView4.SetRowCellValue(e.RowHandle, clSoLuongNhap1, 0);
+                gridView4.SetRowCellValue(e.RowHandle, clDonGia1, 0);
+
+                dongia = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia1));
+                soluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
+                thanhtien = soluong * dongia;
+                gridView4.SetFocusedRowCellValue(clThanhTien1, thanhtien);
+
+            }
         }
 
         private void Load_LockUp()
