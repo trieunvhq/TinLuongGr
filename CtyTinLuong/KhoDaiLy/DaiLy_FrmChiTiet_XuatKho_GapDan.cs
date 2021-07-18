@@ -93,7 +93,8 @@ namespace CtyTinLuong
             gridNguoiLap.EditValue = cls.iID_NguoiNhap.Value;
             gridDinhMucGapDan.EditValue = cls.iID_DinhMuc_ToGapDan.Value;
             txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();
-            txtDienGiai.Text = cls.sDienGiai.Value;    
+            txtDienGiai.Text = cls.sDienGiai.Value;
+            txtThamChieu.Text = cls.sThamChieu.Value;
             cls.Dispose();
             dt.Dispose();
 
@@ -115,6 +116,7 @@ namespace CtyTinLuong
             gridDinhMucGapDan.EditValue = cls.iID_DinhMuc_ToGapDan.Value;
             txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();
             txtDienGiai.Text = cls.sDienGiai.Value;
+            txtThamChieu.Text = cls.sThamChieu.Value;
             cls.Dispose();
             dt.Dispose();
 
@@ -130,6 +132,8 @@ namespace CtyTinLuong
             gridNguoiLap.EditValue = 12;
             dteNgayChungTu.EditValue = DateTime.Today;          
             txtSoChungTu.Text = SoCHungTu_GapDan();
+            string xxx = SoCHungTu_GapDan();
+            txtThamChieu.Text = xxx.Replace("XKGD", "NKĐK");
 
         }
         private void Load_LockUp()
@@ -311,13 +315,7 @@ namespace CtyTinLuong
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
                     cls2.bDaXuatKho = true;
-                    //if (dttttt2.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "Kho TP")
-                    //    cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 1;
-                    //else if (dttttt2.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "Kho BTP")
-                    //    cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 2;
-                    //if (dttttt2.Rows[i]["NhapKho_TP_1_BTP_2_NPL_3"].ToString() == "Kho NPL")
-                    //    cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 3;
-                    //else cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 0;
+                  
                     cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 0;
                     string expressionnhapkho;
                     expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
@@ -359,47 +357,47 @@ namespace CtyTinLuong
                 //    {            
 
                 clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
-                    cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                    cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                    cls1.sDienGiai = txtDienGiai.Text.ToString();
-                    cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                    cls1.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
-                    cls1.fDonGia_ThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtDonGiaTP.Text);
-                    cls1.fSoLuongThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
-                    cls1.fTongTienHang = CheckString.ConvertToDouble_My(txtThanhTien.Text);
-                    cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                    cls1.sThamChieu = "";
-                    cls1.bTonTai = true;
-                    cls1.bNgungTheoDoi = false;
-                    cls1.sNguoiGiaoHang = "";
-                    cls1.bTrangThaiNhapKhoBTP_ThanhPham = true;
-                    cls1.bDaXuatKho = true;
+                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+                cls1.sSoChungTu = txtSoChungTu.Text.ToString();
+                cls1.sDienGiai = txtDienGiai.Text.ToString();
+                cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
+                cls1.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
+                cls1.fDonGia_ThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtDonGiaTP.Text);
+                cls1.fSoLuongThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
+                cls1.fTongTienHang = CheckString.ConvertToDouble_My(txtThanhTien.Text);
+                cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                cls1.sThamChieu = txtThamChieu.Text;
+                cls1.bTonTai = true;
+                cls1.bNgungTheoDoi = false;
+                cls1.sNguoiGiaoHang = "";
+                cls1.bTrangThaiNhapKhoBTP_ThanhPham = true;
+                cls1.bDaXuatKho = true;
                 cls1.bCheckNhapKhoThanhPham = true;
-                    int iiID_Nhapkho_GapDan;
+                int iiID_Nhapkho_GapDan;
 
-                    if (UCDaiLy_XuatKho_GapDan.mbsua == false)
-                    {
-                        cls1.Insert();
-                        iiID_Nhapkho_GapDan = cls1.iID_XuatKho.Value;
+                if (UCDaiLy_XuatKho_GapDan.mbsua == false)
+                {
+                    cls1.Insert();
+                    iiID_Nhapkho_GapDan = cls1.iID_XuatKho.Value;
 
-                    }
-                    else
-                    {
+                }
+                else
+                {
 
-                        cls1.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
-                        iiID_Nhapkho_GapDan = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
-                        cls1.Update();
-                    }
+                    cls1.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+                    iiID_Nhapkho_GapDan = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+                    cls1.Update();
+                }
 
 
-                    Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
-                    //Luu_ThamCHieuTinhXuatKho(iiID_Nhapkho_GapDan);
-                    cls1.Dispose();
+                Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
+                //Luu_ThamCHieuTinhXuatKho(iiID_Nhapkho_GapDan);
+                cls1.Dispose();
 
-                    //
-                    this.Close();
-                    _ucDLXKGD.UCDaiLy_XuatKho_GapDan_Load(null, null);
-                    MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //
+                this.Close();
+                _ucDLXKGD.UCDaiLy_XuatKho_GapDan_Load(null, null);
+                MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //}
                 //catch
                 //{
