@@ -28,7 +28,7 @@ namespace CtyTinLuong
         {
 
             clsKhoThanhPham_tbNhapKho cls = new CtyTinLuong.clsKhoThanhPham_tbNhapKho();
-            DataTable dt2 = cls.SA_NgayThang(xxtungay, xxdenngay);
+            DataTable dt2 = cls.SA_DongKien(xxtungay, xxdenngay);
             gridControl1.DataSource = dt2;
 
 
