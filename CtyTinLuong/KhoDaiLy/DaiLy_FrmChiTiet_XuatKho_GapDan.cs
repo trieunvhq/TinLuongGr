@@ -385,9 +385,12 @@ namespace CtyTinLuong
                 DataTable dt2 = cls2.SelectOne();
                 if (dt2.Rows.Count > 0)
                     cls1.bTrangThaiNhapKhoThanhPham = cls2.bTrangThaiNhapKhoThanhPham.Value;
-                else cls1.bTrangThaiNhapKhoThanhPham = false;              
+                else cls1.bTrangThaiNhapKhoThanhPham = false;
                 if (UCDaiLy_XuatKho_GapDan.mbsua == false)
+                {
+                    cls1.fSoLuongTon_SauKhiNhapKhoThanhPham= CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
                     cls1.Insert();
+                }
                 else
                     cls1.Update();
                 cls1.Dispose();

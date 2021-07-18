@@ -5,14 +5,14 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public class clsDongKien_TbNhapKho : clsDBInteractionBase
+	public partial class clsDongKien_TbNhapKho : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bTrangThaiNhapKhoThanhPham, m_bDaNhapKho, m_bTonTai, m_bNgungTheoDoi;
+			private SqlBoolean		m_bTrangThaiNhapKhoThanhPham, m_bDaNhapKho, m_bNgungTheoDoi, m_bTonTai;
 			private SqlDateTime		m_daNgayChungTu;
-			private SqlDouble		m_fSoLuongThanhPham_QuyDoi, m_fDonGia_ThanhPham_QuyDoi, m_fTongTienHang;
-			private SqlInt32		m_iID_NhapKhoDongKien, m_iID_NguoiNhap, m_iID_DinhMuc_ToGapDan, m_iID_VTHH_ThanhPham_QuyDoi;
-			private SqlString		m_sDienGiai, m_sSoChungTu, m_sThamChieu, m_sNguoiGiaoHang;
+			private SqlDouble		m_fSoLuongThanhPham_QuyDoi, m_fSoLuongTon_SauKhiNhapKhoThanhPham, m_fTongTienHang, m_fDonGia_ThanhPham_QuyDoi;
+			private SqlInt32		m_iID_NhapKhoDongKien, m_iID_NguoiNhap, m_iID_VTHH_ThanhPham_QuyDoi, m_iID_DinhMuc_ToGapDan;
+			private SqlString		m_sSoChungTu, m_sNguoiGiaoHang, m_sThamChieu, m_sDienGiai;
 		#endregion
 
 
@@ -43,6 +43,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_ThanhPham_QuyDoi", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH_ThanhPham_QuyDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fDonGia_ThanhPham_QuyDoi", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fDonGia_ThanhPham_QuyDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuongThanhPham_QuyDoi", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuongThanhPham_QuyDoi));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuongTon_SauKhiNhapKhoThanhPham", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuongTon_SauKhiNhapKhoThanhPham));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fTongTienHang", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fTongTienHang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaNhapKho", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaNhapKho));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThaiNhapKhoThanhPham", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThaiNhapKhoThanhPham));
@@ -92,6 +93,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_ThanhPham_QuyDoi", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH_ThanhPham_QuyDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fDonGia_ThanhPham_QuyDoi", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fDonGia_ThanhPham_QuyDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuongThanhPham_QuyDoi", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuongThanhPham_QuyDoi));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@fSoLuongTon_SauKhiNhapKhoThanhPham", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoLuongTon_SauKhiNhapKhoThanhPham));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fTongTienHang", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fTongTienHang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaNhapKho", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaNhapKho));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThaiNhapKhoThanhPham", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThaiNhapKhoThanhPham));
@@ -186,6 +188,7 @@ namespace CtyTinLuong
 					m_iID_VTHH_ThanhPham_QuyDoi = (Int32)dtToReturn.Rows[0]["ID_VTHH_ThanhPham_QuyDoi"];
 					m_fDonGia_ThanhPham_QuyDoi = (double)dtToReturn.Rows[0]["DonGia_ThanhPham_QuyDoi"];
 					m_fSoLuongThanhPham_QuyDoi = (double)dtToReturn.Rows[0]["SoLuongThanhPham_QuyDoi"];
+					m_fSoLuongTon_SauKhiNhapKhoThanhPham = dtToReturn.Rows[0]["SoLuongTon_SauKhiNhapKhoThanhPham"] == System.DBNull.Value ? SqlDouble.Null : (double)dtToReturn.Rows[0]["SoLuongTon_SauKhiNhapKhoThanhPham"];
 					m_fTongTienHang = (double)dtToReturn.Rows[0]["TongTienHang"];
 					m_bDaNhapKho = (bool)dtToReturn.Rows[0]["DaNhapKho"];
 					m_bTrangThaiNhapKhoThanhPham = (bool)dtToReturn.Rows[0]["TrangThaiNhapKhoThanhPham"];
@@ -423,6 +426,24 @@ namespace CtyTinLuong
 					throw new ArgumentOutOfRangeException("fSoLuongThanhPham_QuyDoi", "fSoLuongThanhPham_QuyDoi can't be NULL");
 				}
 				m_fSoLuongThanhPham_QuyDoi = value;
+			}
+		}
+
+
+		public SqlDouble fSoLuongTon_SauKhiNhapKhoThanhPham
+		{
+			get
+			{
+				return m_fSoLuongTon_SauKhiNhapKhoThanhPham;
+			}
+			set
+			{
+				SqlDouble fSoLuongTon_SauKhiNhapKhoThanhPhamTmp = (SqlDouble)value;
+				if(fSoLuongTon_SauKhiNhapKhoThanhPhamTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("fSoLuongTon_SauKhiNhapKhoThanhPham", "fSoLuongTon_SauKhiNhapKhoThanhPham can't be NULL");
+				}
+				m_fSoLuongTon_SauKhiNhapKhoThanhPham = value;
 			}
 		}
 
