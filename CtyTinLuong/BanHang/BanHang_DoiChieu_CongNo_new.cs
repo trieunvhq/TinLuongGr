@@ -243,7 +243,7 @@ namespace CtyTinLuong
         {
             if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
             {
-                Tr_frmPrint_DoiChieuCongNo_NCC ff = new Tr_frmPrint_DoiChieuCongNo_NCC(dteTuNgay.DateTime, dteDenNgay.DateTime, _data);
+                Tr_frmPrint_DoiChieuCongNo_KH ff = new Tr_frmPrint_DoiChieuCongNo_KH(dteTuNgay.DateTime, dteDenNgay.DateTime, _data);
                 ff.Show();
             }
             else

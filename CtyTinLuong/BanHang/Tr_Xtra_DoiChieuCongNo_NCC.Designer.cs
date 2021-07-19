@@ -690,7 +690,7 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(257.9043F, 26.125F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Nhà cung cấp";
+            this.xrLabel5.Text = "Khách hàng";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // pNgayThang

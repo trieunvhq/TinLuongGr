@@ -161,11 +161,11 @@
     <Compile Include="BanHang\BanHang_DoiChieu_CongNo_new.Designer.cs">
       <DependentUpon>BanHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.cs">
+    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.Designer.cs">
-      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
+    <Compile Include="BanHang\Tr_frmPrint_DoiChieuCongNo_KH.Designer.cs">
+      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_KH.cs</DependentUpon>
     </Compile>
     <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.cs">
       <SubType>Component</SubType>
@@ -776,23 +776,17 @@
     <Compile Include="MuaHang\MuaHang_DoiChieuCongNo_New.Designer.cs">
       <DependentUpon>MuaHang_DoiChieuCongNo_New.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuaHang\Tr_frmPrint_DoiChieuCongNo_Khach.cs">
+    <Compile Include="MuaHang\Tr_frmPrint_DoiChieuCongNo_NCC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MuaHang\Tr_frmPrint_DoiChieuCongNo_Khach.Designer.cs">
-      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_Khach.cs</DependentUpon>
+    <Compile Include="MuaHang\Tr_frmPrint_DoiChieuCongNo_NCC.Designer.cs">
+      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
     <Compile Include="MuaHang\Tr_Xtra_DoiChieuCongNo_Khach.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MuaHang\Tr_Xtra_DoiChieuCongNo_Khach.Designer.cs">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NganHang_Quy\NganHang_DoiChieu_CongNo_new.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NganHang_Quy\NganHang_DoiChieu_CongNo_new.Designer.cs">
-      <DependentUpon>NganHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsTr_BB_KtraDinhMuc_HHSX.cs" />
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
@@ -2235,8 +2229,8 @@
     <EmbeddedResource Include="BanHang\frmQuanLyBanHang.resx">
       <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BanHang\Tr_frmPrint_DoiChieuCongNo_NCC.resx">
-      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
+    <EmbeddedResource Include="BanHang\Tr_frmPrint_DoiChieuCongNo_KH.resx">
+      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_KH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.resx">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
@@ -2553,14 +2547,11 @@
     <EmbeddedResource Include="MuaHang\MuaHang_DoiChieuCongNo_New.resx">
       <DependentUpon>MuaHang_DoiChieuCongNo_New.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MuaHang\Tr_frmPrint_DoiChieuCongNo_Khach.resx">
-      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_Khach.cs</DependentUpon>
+    <EmbeddedResource Include="MuaHang\Tr_frmPrint_DoiChieuCongNo_NCC.resx">
+      <DependentUpon>Tr_frmPrint_DoiChieuCongNo_NCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\Tr_Xtra_DoiChieuCongNo_Khach.resx">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NganHang_Quy\NganHang_DoiChieu_CongNo_new.resx">
-      <DependentUpon>NganHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NganHang_Quy\QuyNganHang_Frm_DoiTienUSD.resx">
       <DependentUpon>QuyNganHang_Frm_DoiTienUSD.cs</DependentUpon>

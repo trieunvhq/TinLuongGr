@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class Tr_frmPrint_DoiChieuCongNo_NCC : Form
+    public partial class Tr_frmPrint_DoiChieuCongNo_KH : Form
     {
 
         public DateTime _tuNgay, _denNgay;
         private DataTable _data;
 
 
-        public Tr_frmPrint_DoiChieuCongNo_NCC(DateTime tuNgay, DateTime denNgay, DataTable data)
+        public Tr_frmPrint_DoiChieuCongNo_KH(DateTime tuNgay, DateTime denNgay, DataTable data)
         {
             _data = data;
             _tuNgay = tuNgay;
@@ -27,7 +27,7 @@ namespace CtyTinLuong
         }
 
         //
-        private void Tr_frmPrint_DoiChieuCongNo_NCC_Load(object sender, EventArgs e)
+        private void Tr_frmPrint_DoiChieuCongNo_KH_Load(object sender, EventArgs e)
         {
             DataSet_TinLuong ds = new DataSet_TinLuong();
            

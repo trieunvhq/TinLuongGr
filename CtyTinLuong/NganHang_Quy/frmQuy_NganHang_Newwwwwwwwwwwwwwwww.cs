@@ -183,7 +183,20 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            NganHang_DoiChieu_CongNo_new ff = new CtyTinLuong.NganHang_DoiChieu_CongNo_new();
+            BanHang_DoiChieu_CongNo_new ff = new CtyTinLuong.BanHang_DoiChieu_CongNo_new();
+            //this.Hide();
+            ff.Show();
+            //this.Show();
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navDCCN_NCC_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            MuaHang_DoiChieuCongNo_New ff = new CtyTinLuong.MuaHang_DoiChieuCongNo_New();
             //this.Hide();
             ff.Show();
             //this.Show();

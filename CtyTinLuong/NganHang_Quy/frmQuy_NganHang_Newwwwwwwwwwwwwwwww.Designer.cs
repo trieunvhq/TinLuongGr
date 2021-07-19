@@ -39,6 +39,8 @@
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navDoiChieuCongNo = new DevExpress.XtraNavBar.NavBarItem();
+            this.navDCCN_NCC = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
@@ -47,7 +49,6 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navDoiChieuCongNo = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -72,11 +73,12 @@
             this.navBarItem1,
             this.navBarItem2,
             this.navBarItem8,
-            this.navDoiChieuCongNo});
-            this.navBarControl1.Location = new System.Drawing.Point(12, 12);
+            this.navDoiChieuCongNo,
+            this.navDCCN_NCC});
+            this.navBarControl1.Location = new System.Drawing.Point(2, 12);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 157;
-            this.navBarControl1.Size = new System.Drawing.Size(157, 606);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 172;
+            this.navBarControl1.Size = new System.Drawing.Size(172, 606);
             this.navBarControl1.TabIndex = 73;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -136,7 +138,8 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navDoiChieuCongNo)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navDoiChieuCongNo),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navDCCN_NCC)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navBarItem1
@@ -144,6 +147,18 @@
             this.navBarItem1.Caption = "Báo cáo tổng hợp";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
+            // 
+            // navDoiChieuCongNo
+            // 
+            this.navDoiChieuCongNo.Caption = "Đối chiếu công nợ KH";
+            this.navDoiChieuCongNo.Name = "navDoiChieuCongNo";
+            this.navDoiChieuCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDoiChieuCongNo_LinkClicked);
+            // 
+            // navDCCN_NCC
+            // 
+            this.navDCCN_NCC.Caption = "Đối chiếu công nợ NCC";
+            this.navDCCN_NCC.Name = "navDCCN_NCC";
+            this.navDCCN_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDCCN_NCC_LinkClicked);
             // 
             // navBarItem4
             // 
@@ -196,12 +211,6 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // navDoiChieuCongNo
-            // 
-            this.navDoiChieuCongNo.Caption = "Đối chiếu công nợ";
-            this.navDoiChieuCongNo.Name = "navDoiChieuCongNo";
-            this.navDoiChieuCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDoiChieuCongNo_LinkClicked);
-            // 
             // frmQuy_NganHang_Newwwwwwwwwwwwwwwww
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,5 +252,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navDoiChieuCongNo;
+        private DevExpress.XtraNavBar.NavBarItem navDCCN_NCC;
     }
 }

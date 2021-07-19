@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong
 {
-    partial class Tr_frmPrint_DoiChieuCongNo_Khach
+    partial class Tr_frmPrint_DoiChieuCongNo_KH
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmPrint_DoiChieuCongNo_Khach));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmPrint_DoiChieuCongNo_KH));
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
@@ -914,7 +914,7 @@
             this.printPreviewBarCheckItem19.Id = 59;
             this.printPreviewBarCheckItem19.Name = "printPreviewBarCheckItem19";
             // 
-            // Tr_frmPrint_DoiChieuCongNo_Khach
+            // Tr_frmPrint_DoiChieuCongNo_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -925,11 +925,11 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Tr_frmPrint_DoiChieuCongNo_Khach";
+            this.Name = "Tr_frmPrint_DoiChieuCongNo_KH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tr_frmPrint_DoiChieuCongNo_Khach-->Print Đối Chiếu Công Nợ Khách Hàng";
+            this.Text = "Tr_frmPrint_DoiChieuCongNo_KH-->Print Đối Chiếu Công Nợ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Tr_frmPrint_DoiChieuCongNo_Khach_Load);
+            this.Load += new System.EventHandler(this.Tr_frmPrint_DoiChieuCongNo_KH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
