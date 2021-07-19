@@ -474,7 +474,7 @@ namespace CtyTinLuong
                         string s4 = txtSoLuongThanhPhamQuyDoi.Text.ToString();
                         string s5 = txtTongSoKG.Text.ToString();
                         string s6 = txtSoKien_1_BaoTo.Text.ToString();
-                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " cục = " + s4 + " kiện (ĐM=" + s6 + ")";
+                        txtDienGiai.Text = "" + s1 + "/ " + s2 + " bao = " + s4 + " kiện (ĐM=" + s6 + ")";
                     }
                     else if (checkHangSot.Checked == true)
                     {

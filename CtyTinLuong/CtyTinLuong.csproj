@@ -788,6 +788,12 @@
     <Compile Include="MuaHang\Tr_Xtra_DoiChieuCongNo_Khach.Designer.cs">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
     </Compile>
+    <Compile Include="NganHang_Quy\NganHang_DoiChieu_CongNo_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\NganHang_DoiChieu_CongNo_new.Designer.cs">
+      <DependentUpon>NganHang_DoiChieu_CongNo_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Class\clsTr_BB_KtraDinhMuc_HHSX.cs" />
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
@@ -2552,6 +2558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\Tr_Xtra_DoiChieuCongNo_Khach.resx">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\NganHang_DoiChieu_CongNo_new.resx">
+      <DependentUpon>NganHang_DoiChieu_CongNo_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NganHang_Quy\QuyNganHang_Frm_DoiTienUSD.resx">
       <DependentUpon>QuyNganHang_Frm_DoiTienUSD.cs</DependentUpon>
