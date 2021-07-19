@@ -66,7 +66,13 @@ namespace CtyTinLuong
                 clsxx.iID_TaiKhoanKeToanCon = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
                 clsxx.fCo = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["Co"].ToString());
                 clsxx.fNo = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["No"].ToString());
-                clsxx.bTienUSD = Convert.ToBoolean(dt_gridcontrol.Rows[i]["TienUSD"].ToString());
+                
+                if (dt_gridcontrol.Rows[i]["TienUSD"].ToString() != "")
+                {
+                    clsxx.bTienUSD = Convert.ToBoolean(dt_gridcontrol.Rows[i]["TienUSD"].ToString());
+                }
+                else clsxx.bTienUSD = false;
+
                 clsxx.fTiGia = TiGia;
                 clsxx.bTonTai = true;
                 clsxx.bNgungTheoDoi = false;
@@ -149,7 +155,12 @@ namespace CtyTinLuong
                     cls2.iID_TaiKhoanKeToanCon = Convert.ToInt32(dt_gridcontrol.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
                     cls2.fCo = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["Co"].ToString());
                     cls2.fNo = CheckString.ConvertToDouble_My(dt_gridcontrol.Rows[i]["No"].ToString());
-                    cls2.bTienUSD = Convert.ToBoolean(dt_gridcontrol.Rows[i]["TienUSD"].ToString());
+                    if (dt_gridcontrol.Rows[i]["TienUSD"].ToString() != "")
+                    {
+                        cls2.bTienUSD = Convert.ToBoolean(dt_gridcontrol.Rows[i]["TienUSD"].ToString());
+                    }
+                    else cls2.bTienUSD = false;
+
                     cls2.fTiGia = TiGia;
                     cls2.bTonTai = true;
                     cls2.bNgungTheoDoi = false;
@@ -965,8 +976,8 @@ namespace CtyTinLuong
                         //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TienUSD"], checkUSD.Checked);
                         gridView4.SetRowCellValue(0, gridView4.Columns["TiGia"], txtTiGia.Text);
                         gridView4.SetRowCellValue(1, gridView4.Columns["TiGia"], txtTiGia.Text);
-                        gridView4.SetRowCellValue(0, gridView4.Columns["TienUSD"], txtTiGia.Text);
-                        gridView4.SetRowCellValue(1, gridView4.Columns["TienUSD"], txtTiGia.Text);
+                        gridView4.SetRowCellValue(0, gridView4.Columns["TienUSD"], checkUSD.Checked);
+                        gridView4.SetRowCellValue(1, gridView4.Columns["TienUSD"], checkUSD.Checked);
                         if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
                         {
                             //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);

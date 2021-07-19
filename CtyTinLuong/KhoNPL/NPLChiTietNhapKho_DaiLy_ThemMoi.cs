@@ -46,12 +46,12 @@ namespace CtyTinLuong
                     txtQuyRaKien_BaoTo.Text = (soluongbaoto / sokien1baoto).ToString();
                     double soluongthanhphamquydoi = soluongbaoto / sokien1baoto;
                     
-                    txtSoLuongThanhPhamQuyDoi.Text = Math.Round((double)(soluongthanhphamquydoi)).ToString();
+                    txtSoLuongThanhPhamQuyDoi.Text = ((Int32)(soluongthanhphamquydoi)).ToString();
                 }
                 else
                 {
                     double soluongthanhphamquydoi = soluongbaobe * sokien1baobe + soluongbaoto * sokien1baoto;
-                    txtSoLuongThanhPhamQuyDoi.Text = Math.Round((double)(soluongthanhphamquydoi)).ToString();
+                    txtSoLuongThanhPhamQuyDoi.Text = ((Int32)(soluongthanhphamquydoi)).ToString();
                 }
               
             }
