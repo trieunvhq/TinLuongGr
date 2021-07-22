@@ -104,6 +104,31 @@ namespace CtyTinLuong
                 }
             }
         }
+
+        public string SoChungTu_NPL()
+        {
+            string sochungtu = "";
+            clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
+            DataTable dt1 = cls1.SelectAll();
+            dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+            DataView dv = dt1.DefaultView;
+            DataTable dv3 = dv.ToTable();
+            int k = dv3.Rows.Count;
+            if (k == 0)
+            {
+                sochungtu = "NKNPL 1";
+            }
+            else
+            {
+                string xxx = dt1.Rows[k - 1]["SoChungTu"].ToString();
+                int xxx2 = Convert.ToInt32(xxx.Substring(5).Trim()) + 1;
+                if (xxx2 >= 10000)
+                    sochungtu = "NKNPL 1";
+                else sochungtu = "NKNPL " + xxx2.ToString() + "";
+            }
+            return sochungtu;
+           
+        }
         private void  HienThi_GridConTrol_SauKhiChon()
         {
             gridControl2.DataSource = null;
@@ -585,6 +610,73 @@ namespace CtyTinLuong
             }
         }
 
+        private void Luu_NhapKho_NPL(int xxID_muahang)
+        {
+            if (!KiemTraLuu()) return;
+            else
+            {
+                try
+                {
+                    double tongtienhang;
+                    tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
+                    clsKhoNPL_tbNhapKho cls1 = new clsKhoNPL_tbNhapKho();
+                    cls1.sDienGiai = txtDienGiai.Text.ToString();
+                    cls1.daNgayChungTu = dteNgayChungTu.DateTime;
+                    cls1.sSoChungTu = SoChungTu_NPL();
+                    cls1.fTongTienHang = tongtienhang;
+                    cls1.iID_NguoiNhapKho = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    cls1.sThamChieu = txtSoChungTu.Text.ToString();
+                    cls1.bTonTai = true;
+                    cls1.bNgungTheoDoi = false;
+                    cls1.bDaNhapKho = true;
+                    cls1.bBool_TonDauKy = false;
+                    cls1.bCheck_NhapKho_Khac = false;
+                    cls1.Insert();
+                    // insert tbChiTietNhapKho
+                    string shienthi = "1";
+                    int iiiiIDID_NhapKhoNPL = cls1.iID_NhapKho.Value;
+                    clsKhoNPL_tbChiTietNhapKho clschitietNhapkho = new clsKhoNPL_tbChiTietNhapKho();
+                    DataTable dttttt2 = (DataTable)gridControl1.DataSource;
+                    dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                    DataView dvmoi = dttttt2.DefaultView;
+                    DataTable dtmoi = dvmoi.ToTable();
+                    for (int i = 0; i < dtmoi.Rows.Count; i++)
+                    {
+                        clschitietNhapkho.iID_NhapKho = iiiiIDID_NhapKhoNPL;
+                        clschitietNhapkho.iID_VTHH = Convert.ToInt32(dtmoi.Rows[i]["ID_VTHH"].ToString());
+
+                        if (dtmoi.Rows[i]["SoLuong"].ToString() != "")
+                        {
+                            clschitietNhapkho.fSoLuongNhap = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["SoLuong"].ToString());
+                            clschitietNhapkho.fSoLuongTon = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["SoLuong"].ToString());
+                        }
+                        else
+                        {
+                            clschitietNhapkho.fSoLuongNhap = 0;
+                            clschitietNhapkho.fSoLuongTon = 0;
+                        }
+                        if (dtmoi.Rows[i]["DonGia"].ToString() != "")
+                            clschitietNhapkho.fDonGia = CheckString.ConvertToDouble_My(dtmoi.Rows[i]["DonGia"].ToString());
+                        clschitietNhapkho.bTonTai = true;
+                        clschitietNhapkho.bNgungTheoDoi = false;
+                        clschitietNhapkho.sGhiChu = dtmoi.Rows[i]["GhiChu"].ToString();
+                        clschitietNhapkho.bDaNhapKho = true;
+                        clschitietNhapkho.bBoolTonDauKy = false;
+                        clschitietNhapkho.Insert();
+                    }
+
+                    /// Update trang thai nhap kho tbMuahang
+                    clsMH_tbMuaHang clsmuahang = new clsMH_tbMuaHang();
+                    clsmuahang.iID_MuaHang = iiiID_MuaHang;
+                    clsmuahang.Update_TrangThaiNhapKho();
+                    
+                }
+                catch
+                {
+                    MessageBox.Show("Lỗi nhập kho!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void LuuDuLieu_Va_NhapKho()
         {
             try
@@ -631,6 +723,7 @@ namespace CtyTinLuong
                     // luwu chi tiet mua hang
                     Luu_Chitiet_MuaHang(iiiID_MuaHang);
                     Luu_BienDongTaiKhoan(iiiID_MuaHang);
+                    Luu_NhapKho_NPL(iiiID_MuaHang);
                     //  Luu_TbThuChi(iiiID_MuaHang);         
 
                     this.Close();
@@ -705,6 +798,7 @@ namespace CtyTinLuong
         }                        
         private void HienThi_themMoi()
         {
+            btLuu_NhapKho.Visible = true;
             checkBaoVe_LaiXe.Checked = false;
             if (frmMuaHang2222.mbTraLaiHangMua == true)
                 checkTraLaiHangMua.Checked = true;
@@ -774,7 +868,8 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             if (cls.bCheck_BaoVe == true) checkBaoVe_LaiXe.Checked = true;
             else checkBaoVe_LaiXe.Checked = false;
-
+            if (cls.bTrangThaiNhapKho == false) btLuu_NhapKho.Visible = true;
+            else btLuu_NhapKho.Visible = false;
             txtSoChungTu.Text = cls.sSoChungTu.Value.ToString();
 
 
@@ -816,6 +911,7 @@ namespace CtyTinLuong
         }
         private void HienThi_Copy(int xxID_MuaHang)
         {
+            btLuu_NhapKho.Visible = true;
             if (frmMuaHang2222.mbTraLaiHangMua == true)
                 checkTraLaiHangMua.Checked = true;
             else checkTraLaiHangMua.Checked = false;
