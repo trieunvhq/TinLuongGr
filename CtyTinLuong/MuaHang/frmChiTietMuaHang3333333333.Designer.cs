@@ -113,7 +113,6 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -150,6 +149,8 @@
             this.checkBaoVe_LaiXe = new System.Windows.Forms.CheckBox();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.label_TonKho = new System.Windows.Forms.Label();
+            this.btLuu_NhapKho = new DevExpress.XtraEditors.SimpleButton();
+            this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridMaVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
@@ -1004,26 +1005,12 @@
             this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint.Appearance.Options.UseFont = true;
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(697, 657);
+            this.btPrint.Location = new System.Drawing.Point(565, 659);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(98, 23);
             this.btPrint.TabIndex = 79;
             this.btPrint.Text = "Print";
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
-            // 
-            // btLuu_Gui_Dong
-            // 
-            this.btLuu_Gui_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLuu_Gui_Dong.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
-            this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
-            this.btLuu_Gui_Dong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btLuu_Gui_Dong.ImageOptions.Image")));
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(801, 657);
-            this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
-            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(93, 23);
-            this.btLuu_Gui_Dong.TabIndex = 82;
-            this.btLuu_Gui_Dong.Text = "Lưu";
-            this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
             // 
             // gridControl2
             // 
@@ -1393,7 +1380,7 @@
             // 
             // txtsochungtu_tbThuChi
             // 
-            this.txtsochungtu_tbThuChi.Location = new System.Drawing.Point(577, 660);
+            this.txtsochungtu_tbThuChi.Location = new System.Drawing.Point(352, 665);
             this.txtsochungtu_tbThuChi.Name = "txtsochungtu_tbThuChi";
             this.txtsochungtu_tbThuChi.Size = new System.Drawing.Size(10, 20);
             this.txtsochungtu_tbThuChi.TabIndex = 88;
@@ -1404,7 +1391,7 @@
             this.checkBaoVe_LaiXe.AutoSize = true;
             this.checkBaoVe_LaiXe.Checked = true;
             this.checkBaoVe_LaiXe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(490, 660);
+            this.checkBaoVe_LaiXe.Location = new System.Drawing.Point(368, 665);
             this.checkBaoVe_LaiXe.Name = "checkBaoVe_LaiXe";
             this.checkBaoVe_LaiXe.Size = new System.Drawing.Size(87, 17);
             this.checkBaoVe_LaiXe.TabIndex = 89;
@@ -1417,7 +1404,7 @@
             this.btThemMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThemMoi.Appearance.Options.UseFont = true;
             this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
-            this.btThemMoi.Location = new System.Drawing.Point(593, 657);
+            this.btThemMoi.Location = new System.Drawing.Point(461, 659);
             this.btThemMoi.Name = "btThemMoi";
             this.btThemMoi.Size = new System.Drawing.Size(98, 23);
             this.btThemMoi.TabIndex = 91;
@@ -1434,17 +1421,46 @@
             this.label_TonKho.TabIndex = 92;
             this.label_TonKho.Text = "label2";
             // 
+            // btLuu_NhapKho
+            // 
+            this.btLuu_NhapKho.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuu_NhapKho.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.btLuu_NhapKho.Appearance.Options.UseFont = true;
+            this.btLuu_NhapKho.Appearance.Options.UseForeColor = true;
+            this.btLuu_NhapKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btLuu_NhapKho.Location = new System.Drawing.Point(669, 657);
+            this.btLuu_NhapKho.Name = "btLuu_NhapKho";
+            this.btLuu_NhapKho.Size = new System.Drawing.Size(122, 23);
+            this.btLuu_NhapKho.TabIndex = 93;
+            this.btLuu_NhapKho.Text = "Lưu + Nhập kho";
+            this.btLuu_NhapKho.Click += new System.EventHandler(this.btLuu_NhapKho_Click);
+            // 
+            // btLuu_Dong
+            // 
+            this.btLuu_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuu_Dong.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btLuu_Dong.Appearance.Options.UseFont = true;
+            this.btLuu_Dong.Appearance.Options.UseForeColor = true;
+            this.btLuu_Dong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btLuu_Dong.Location = new System.Drawing.Point(801, 657);
+            this.btLuu_Dong.Name = "btLuu_Dong";
+            this.btLuu_Dong.Size = new System.Drawing.Size(93, 23);
+            this.btLuu_Dong.TabIndex = 94;
+            this.btLuu_Dong.Text = "Lưu";
+            this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
+            // 
             // frmChiTietMuaHang3333333333
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 686);
+            this.Controls.Add(this.btLuu_Dong);
+            this.Controls.Add(this.btLuu_NhapKho);
             this.Controls.Add(this.label_TonKho);
             this.Controls.Add(this.btThemMoi);
             this.Controls.Add(this.checkBaoVe_LaiXe);
             this.Controls.Add(this.txtsochungtu_tbThuChi);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btLuu_Gui_Dong);
             this.Controls.Add(this.btPrint);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -1580,7 +1596,6 @@
         private System.Windows.Forms.TextBox txtTongTienHangCoVAT;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.SimpleButton btPrint;
-        private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
         private DevExpress.XtraGrid.Columns.GridColumn clGhiChu;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private System.Windows.Forms.TextBox txtNguoiGiaoHang;
@@ -1625,5 +1640,7 @@
         private System.Windows.Forms.Label label_TonKho;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraEditors.SimpleButton btLuu_NhapKho;
+        private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
     }
 }
