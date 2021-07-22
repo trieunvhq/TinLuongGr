@@ -1253,8 +1253,7 @@ namespace CtyTinLuong
         {
             try
             {
-                decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
-                txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
+               
                 //double tongtienchuaVAT, tienVAT;
                 //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
                 //tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
@@ -1269,6 +1268,9 @@ namespace CtyTinLuong
                 txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
 
                 HienThi_SoTien_CO_No();
+
+                decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
+                txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
             }
             catch
             {
@@ -1321,9 +1323,10 @@ namespace CtyTinLuong
         {
             try
             {
+                
+                HienThi_SoTien_CO_No();
                 decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
                 txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
-                HienThi_SoTien_CO_No();
             }
             catch
             {
@@ -1721,8 +1724,7 @@ namespace CtyTinLuong
         {
             try
             {
-                decimal value = decimal.Parse(txtTienVAT.Text);
-                txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
+               
                 double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
 
                 tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
@@ -1733,6 +1735,9 @@ namespace CtyTinLuong
                 txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
 
                 HienThi_SoTien_CO_No();
+
+                decimal value = decimal.Parse(txtTienVAT.Text);
+                txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
             }
             catch
             {
