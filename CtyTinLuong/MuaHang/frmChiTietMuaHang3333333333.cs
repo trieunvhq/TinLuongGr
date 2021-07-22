@@ -129,12 +129,13 @@ namespace CtyTinLuong
             return sochungtu;
            
         }
-        private void  HienThi_GridConTrol_SauKhiChon()
+
+        private void HienThi_GridConTrol_SauKhiChon()
         {
             gridControl2.DataSource = null;
             DataTable dt2xx = new DataTable();
             dt2xx.Columns.Add("ID_ChiTietBienDongTaiKhoan", typeof(int));
-            dt2xx.Columns.Add("ID_ChungTu", typeof(int));         
+            dt2xx.Columns.Add("ID_ChungTu", typeof(int));
             dt2xx.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
             dt2xx.Columns.Add("No", typeof(double));
             dt2xx.Columns.Add("Co", typeof(double));
@@ -160,7 +161,7 @@ namespace CtyTinLuong
             _ravi["ID_ChiTietBienDongTaiKhoan"] = 0;
             _ravi["ID_ChungTu"] = 0;
             _ravi["ID_TaiKhoanKeToanCon"] = ID_TaiKhoanKeToanCon;
-            if(checkTraLaiHangMua.Checked==false)
+            if (checkTraLaiHangMua.Checked == false)
             {
                 _ravi["No"] = 0;
                 _ravi["Co"] = tongtienhangcoVAT;
@@ -170,7 +171,7 @@ namespace CtyTinLuong
                 _ravi["No"] = tongtienhangcoVAT;
                 _ravi["Co"] = 0;
             }
-           
+
             _ravi["TienUSD"] = checkUSD.Checked;
             _ravi["TiGia"] = 1;
             _ravi["DaGhiSo"] = false;
@@ -179,7 +180,7 @@ namespace CtyTinLuong
             _ravi["TenTaiKhoanCon"] = dtcon.Rows[0]["TenTaiKhoanCon"].ToString();
             _ravi["HienThi"] = "1";
             dt2xx.Rows.Add(_ravi);
-            
+
             DataRow _ravi2 = dt2xx.NewRow();
             clscon.iID_TaiKhoanKeToanCon = 36;
             DataTable dtcon2 = clscon.SelectOne();
@@ -196,7 +197,7 @@ namespace CtyTinLuong
                 _ravi2["No"] = 0;
                 _ravi2["Co"] = tongtienhang_ChuaCoVAT;
             }
-          
+
             _ravi2["TienUSD"] = checkUSD.Checked;
             _ravi2["TiGia"] = 1;
             _ravi2["DaGhiSo"] = false;
@@ -224,7 +225,7 @@ namespace CtyTinLuong
                     _ravi3["No"] = 0;
                     _ravi3["Co"] = tienVAT;
                 }
-               
+
                 _ravi3["TienUSD"] = checkUSD.Checked;
                 _ravi3["TiGia"] = 1;
                 _ravi3["DaGhiSo"] = false;
@@ -235,6 +236,28 @@ namespace CtyTinLuong
                 dt2xx.Rows.Add(_ravi3);
             }
             gridControl2.DataSource = dt2xx;
+        }
+        private void  HienThi_SoTien_CO_No()
+        {
+            
+            try
+            {
+                double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                double TongTien_ChuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                double TongTien_Co_VAT = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
+
+                gridView8.SetRowCellValue(0, clNo, 0);
+                gridView8.SetRowCellValue(0, clCo, TongTien_Co_VAT);
+
+                gridView8.SetRowCellValue(1, clNo, TongTien_ChuaVAT);
+                gridView8.SetRowCellValue(1, clCo, 0);
+
+                gridView8.SetRowCellValue(2, clNo, tienVAT);
+                gridView8.SetRowCellValue(2, clCo, 0);
+            }
+            catch
+            {
+            }
         }
         private void HienThi_lable_TonKho(int iiID_VTHH)
         {
@@ -1232,10 +1255,20 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
                 txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
-                double tongtienchuaVAT, tienVAT;
+                //double tongtienchuaVAT, tienVAT;
+                //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                //tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
+
+                double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
+                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
+                txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
                 tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
+                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+
+                HienThi_SoTien_CO_No();
             }
             catch
             {
@@ -1290,6 +1323,7 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
                 txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
+                HienThi_SoTien_CO_No();
             }
             catch
             {
@@ -1689,7 +1723,16 @@ namespace CtyTinLuong
             {
                 decimal value = decimal.Parse(txtTienVAT.Text);
                 txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
-              
+                double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
+
+                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
+                txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
+                tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+
+                HienThi_SoTien_CO_No();
             }
             catch
             {
