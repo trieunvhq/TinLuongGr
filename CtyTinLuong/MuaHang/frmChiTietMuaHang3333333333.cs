@@ -242,9 +242,17 @@ namespace CtyTinLuong
             
             try
             {
-                double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                double TongTien_ChuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                double TongTien_Co_VAT = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
+                double PhanTramVAT, tienvat, TongTien_ChuaVAT, TongTien_Co_VAT;
+                TongTien_ChuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
+                txtTienVAT.Text = (TongTien_ChuaVAT * PhanTramVAT / 100).ToString();
+               
+                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                txtTongTienHangCoVAT.Text = (TongTien_ChuaVAT + tienvat).ToString();
+
+                //double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                //double TongTien_ChuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                TongTien_Co_VAT = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
 
                 gridView8.SetRowCellValue(0, clNo, 0);
                 gridView8.SetRowCellValue(0, clCo, TongTien_Co_VAT);
@@ -252,7 +260,7 @@ namespace CtyTinLuong
                 gridView8.SetRowCellValue(1, clNo, TongTien_ChuaVAT);
                 gridView8.SetRowCellValue(1, clCo, 0);
 
-                gridView8.SetRowCellValue(2, clNo, tienVAT);
+                gridView8.SetRowCellValue(2, clNo, tienvat);
                 gridView8.SetRowCellValue(2, clCo, 0);
             }
             catch
@@ -1235,13 +1243,14 @@ namespace CtyTinLuong
         {
             try
             {
-                double PhanTramVAT, tongtienhang,tienvat,tongtienchuaVAT;
-                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
-                txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
-                tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+                HienThi_SoTien_CO_No();
+                //double PhanTramVAT, tongtienhang,tienvat,tongtienchuaVAT;
+                //tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                //PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
+                //txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
+                //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                //tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
             }
             catch
             {
@@ -1259,13 +1268,7 @@ namespace CtyTinLuong
                 //tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
                 //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
 
-                double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
-                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
-                txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
-                tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+             
 
                 HienThi_SoTien_CO_No();
 
@@ -1725,14 +1728,14 @@ namespace CtyTinLuong
             try
             {
                
-                double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
+                //double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
 
-                tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
-                txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
-                tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+                //tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                //PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
+                //txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
+                //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                //tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
 
                 HienThi_SoTien_CO_No();
 
