@@ -13,6 +13,8 @@ namespace CtyTinLuong
     public partial class MuaHang_DoiChieuCongNo_New : Form
     {
         DataTable _data;
+        public static bool isChiTiet_thuchi = false;
+        public static int miID_ChungTu, mibientrangthai;
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();

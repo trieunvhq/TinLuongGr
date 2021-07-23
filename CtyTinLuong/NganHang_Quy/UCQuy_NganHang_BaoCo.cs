@@ -98,6 +98,8 @@ namespace CtyTinLuong
             {
                 isChiTiet_thuchi = true;
                 frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
+                BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi = false;
+                MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi = false;
                 mbTheMoi = false;
                 mbCoPy = false;
                 mbSua = true;

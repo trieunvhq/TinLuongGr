@@ -13,6 +13,8 @@ namespace CtyTinLuong
     public partial class BanHang_DoiChieu_CongNo_new : Form
     {
         DataTable _data;
+        public static bool isChiTiet_thuchi = false;
+        public static int miID_ChungTu, mibientrangthai;
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -193,8 +195,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             Load_lockUp();
             dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
-            dteDenNgay.EditValue = DateTime.Today;
-            //GridSoTaiKhoan.EditValue = BanHang_CongNo.miiiID_TaiKhoanKeToanCon;
+            dteDenNgay.EditValue = DateTime.Today;           
             dteTuNgay.Focus();
             Cursor.Current = Cursors.Default;
         }
@@ -250,6 +251,30 @@ namespace CtyTinLuong
             {
                 MessageBox.Show("Không có dữ liệu để in", "Thông báo!");
             }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            //    if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clHienThi).ToString()) == false)
+            //    {
+
+            //        miID_ChungTu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clid).ToString());
+            //        clsNganHang_tbThuChi cls = new clsNganHang_tbThuChi();
+            //        cls.iID_ThuChi = miID_ChungTu;
+            //        DataTable dt = cls.SelectOne();
+            //        if (dt.Rows.Count > 0)
+            //        {
+            //            isChiTiet_thuchi = true;
+            //            UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;                 
+            //            MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi = false;
+            //            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
+            //            mibientrangthai = cls.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5.Value;
+            //            Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+            //            ff.Show();
+            //        }
+
+
+            //    }
         }
     }
 }

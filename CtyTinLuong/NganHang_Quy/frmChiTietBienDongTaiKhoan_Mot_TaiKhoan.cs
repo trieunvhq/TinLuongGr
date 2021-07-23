@@ -315,15 +315,17 @@ namespace CtyTinLuong
         {
             if (Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(clHienThi).ToString())==false)
             {
-                isChiTiet_thuchi = true;
-                //
-                UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
+               
                 miID_ChungTu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
                 clsNganHang_tbThuChi cls = new clsNganHang_tbThuChi();
                 cls.iID_ThuChi = miID_ChungTu;
                 DataTable dt = cls.SelectOne();
                 if(dt.Rows.Count>0)
                 {
+                    isChiTiet_thuchi = true;                    
+                    UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
+                    BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi = false;
+                    MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi = false;
                     mibientrangthai = cls.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5.Value;
                     Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
                     ff.Show();
