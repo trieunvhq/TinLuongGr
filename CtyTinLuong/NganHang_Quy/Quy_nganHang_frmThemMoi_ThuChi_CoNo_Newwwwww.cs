@@ -227,20 +227,32 @@ namespace CtyTinLuong
                     cls1.iBienMuaHang1_BanHang2_ConLai_0 = 2;
                 else if (checkNhaCungCap.Checked == true)
                     cls1.iBienMuaHang1_BanHang2_ConLai_0 = 1;
-                if (UCQuy_NganHang_BaoCo.mbSua == false)
+                if (UCQuy_NganHang_BaoCo.isChiTiet_thuchi == true)
                 {
-                    cls1.Insert();
-                    ID_ThuChixxx = cls1.iID_ThuChi.Value;
+                    if (UCQuy_NganHang_BaoCo.mbSua == false)
+                    {
+                        cls1.Insert();
+                        ID_ThuChixxx = cls1.iID_ThuChi.Value;
 
+                    }
+                    else
+                    {
+                        ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+                        cls1.iID_ThuChi = ID_ThuChixxx;
+                        cls1.Update();
+                    }
+                    Luu_ChiTiet_ThuChi(ID_ThuChixxx);
+                    Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
                 }
-                else
+                else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
                 {
-                    ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+                    ID_ThuChixxx = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu;
                     cls1.iID_ThuChi = ID_ThuChixxx;
                     cls1.Update();
+                    Luu_ChiTiet_ThuChi(ID_ThuChixxx);
+                    Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
                 }
-                Luu_ChiTiet_ThuChi(ID_ThuChixxx);
-                Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
+               
 
                 MessageBox.Show("Đã lưu");
                 this.Close();
@@ -425,7 +437,7 @@ namespace CtyTinLuong
         private void HienThi_Sua(int xxID_Thuchi____, bool hienthi_button)
         {
             btLuu_Dong.Visible = hienthi_button;
-            btthemmoi.Visible = hienthi_button;
+            //btthemmoi.Visible = hienthi_button;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             cls1.iID_ThuChi = xxID_Thuchi____;
             DataTable dt = cls1.SelectOne();
@@ -457,46 +469,7 @@ namespace CtyTinLuong
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
             gridControl1.DataSource = cls2.SA_W_ID_ThuChi(xxID_Thuchi____);
            
-            //cls2.iID_ThuChi = xxID_Thuchi____;
-            //DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
-            //dt2.Columns.Add("ID_ThuChi", typeof(int));
-            //dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));           
-            //dt2.Columns.Add("No", typeof(double));
-            //dt2.Columns.Add("Co", typeof(double));
-            //dt2.Columns.Add("TienUSD", typeof(bool));
-            //dt2.Columns.Add("TiGia", typeof(double));
-            //dt2.Columns.Add("DaGhiSo", typeof(bool));
-            //dt2.Columns.Add("GhiChu", typeof(string));
-            //dt2.Columns.Add("SoTaiKhoanCon");
-            //dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
-            //dt2.Columns.Add("HienThi", typeof(string));
-            //for (int i = 0; i < dt3.Rows.Count; i++)
-            //{
-            //    int ID_TaiKhoanKeToanCon = Convert.ToInt32(dt3.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
-            //    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-            //    clscon.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanCon;
-            //    DataTable dtcon = clscon.SelectOne();
-            //    DataRow _ravi = dt2.NewRow();
-            //    _ravi["ID_ChiTietThuChi"] = Convert.ToInt32(dt3.Rows[i]["ID_ChiTietThuChi"].ToString());
-            //    _ravi["ID_ThuChi"] = Convert.ToInt32(dt3.Rows[i]["ID_ThuChi"].ToString());
-            //    _ravi["ID_TaiKhoanKeToanCon"] = Convert.ToInt32(ID_TaiKhoanKeToanCon.ToString());               
-            //    _ravi["No"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["No"].ToString());
-            //    _ravi["Co"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["Co"].ToString());
-            //    _ravi["TienUSD"] = Convert.ToBoolean(dt3.Rows[i]["TienUSD"].ToString());
-            //    _ravi["TiGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["TiGia"].ToString());
-            //    _ravi["DaGhiSo"] = Convert.ToBoolean(dt3.Rows[i]["DaGhiSo"].ToString());
-            //    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-            //    _ravi["SoTaiKhoanCon"] = ID_TaiKhoanKeToanCon.ToString();
-            //    _ravi["TenTaiKhoanCon"] = clscon.sTenTaiKhoanCon.Value;
-            //    _ravi["HienThi"] = "1";
-            //    dt2.Rows.Add(_ravi);
-            //}
-
-
-
-
+          
         }
         private void HienThiDienGiai_ThemMoi(int xxbientrangthai)
         {
