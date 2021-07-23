@@ -263,7 +263,12 @@ namespace CtyTinLuong
             {
                 MessageBox.Show("Chưa có số tiền ");
                 return false;
-            }           
+            }
+            else if (CheckString.ConvertToDouble_My(txtSoTien.Text.ToString()) == 0)
+            {
+                MessageBox.Show("Chưa có số tiền ");
+                return false;
+            }
             else if (gridNguoiLap.EditValue == null)
             {
                 MessageBox.Show("Chưa có người mua hàng ");
@@ -761,31 +766,29 @@ namespace CtyTinLuong
 
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //try
-            //{
-            if (e.Column == clID_TaiKhoanKeToanCon)
+            try
             {
-                clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
+                if (e.Column == clID_TaiKhoanKeToanCon)
+                {
+                    clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+                    cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                    int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                    DataTable dt = cls.SelectOne();
 
-                gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, cls.sTenTaiKhoanCon.Value);
-                gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                    gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, cls.sTenTaiKhoanCon.Value);
+                    gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
 
 
-            }
-            DataTable dataTable = (DataTable)gridControl1.DataSource;
-            if (dataTable.Rows.Count > 2)
-            {
+                }
+                DataTable dataTable = (DataTable)gridControl1.DataSource;
                 string shienthi = "1";
                 double deTOngtien = CheckString.ConvertToDouble_My(dataTable.Compute("sum(No)", "HienThi=" + shienthi + ""));
                 txtSoTien.Text = deTOngtien.ToString();
+
             }
-            //}
-            //catch
-            //{
-            //}
+            catch
+            {
+            }
         }
 
         private void txtSoTien_TextChanged(object sender, EventArgs e)
@@ -917,12 +920,10 @@ namespace CtyTinLuong
       
         private void gridDoiTuong_EditValueChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            Load_LockUp_DoiTuong();
-
-
-            int ID_Doituongxxx = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
+            try
+            {
+                Load_LockUp_DoiTuong();
+                int ID_Doituongxxx = Convert.ToInt32(gridDoiTuong.EditValue.ToString());
                 string filterExpression = "ID_DoiTuong='" + ID_Doituongxxx + "'";
                 DataRow[] rows = dtdoituong.Select(filterExpression);
                 double sotienthanhtoan = CheckString.ConvertToDouble_My(txtSoTien.Text);
@@ -936,32 +937,17 @@ namespace CtyTinLuong
                         clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
                         clscon.iID_TaiKhoanKeToanCon = iiiiID_TaiKhoanKeToan;
                         DataTable dtcon = clscon.SelectOne();
-
-                        //gridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
-                        //gridView4.AddNewRow();
-
-                        //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TiGia"], txtTiGia.Text);
-                        //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TienUSD"], checkUSD.Checked);
+                    
                         gridView4.SetRowCellValue(0, gridView4.Columns["TiGia"], txtTiGia.Text);
                         gridView4.SetRowCellValue(1, gridView4.Columns["TiGia"], txtTiGia.Text);
                         gridView4.SetRowCellValue(0, gridView4.Columns["TienUSD"], checkUSD.Checked);
                         gridView4.SetRowCellValue(1, gridView4.Columns["TienUSD"], checkUSD.Checked);
                         if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
-                        {
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["No"], 0);
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["Co"], sotienthanhtoan);
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["DaGhiSo"], false);
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
-                            //gridView4.SetRowCellValue(GridControl.NewItemRowHandle, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
-
+                        {                       
                             gridView4.SetRowCellValue(1, gridView4.Columns["No"], 0);
                             gridView4.SetRowCellValue(1, gridView4.Columns["Co"], sotienthanhtoan);
                             gridView4.SetRowCellValue(1, gridView4.Columns["DaGhiSo"], false);
-                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
-                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
-                            gridView4.SetRowCellValue(1, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                           
                             gridView4.SetRowCellValue(1, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
                         else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
@@ -970,9 +956,7 @@ namespace CtyTinLuong
                             gridView4.SetRowCellValue(0, gridView4.Columns["Co"], 0);
 
                             gridView4.SetRowCellValue(0, gridView4.Columns["DaGhiSo"], false);
-                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
-                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
-                            gridView4.SetRowCellValue(0, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                            
                             gridView4.SetRowCellValue(0, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
                         else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
@@ -981,9 +965,7 @@ namespace CtyTinLuong
                             gridView4.SetRowCellValue(0, gridView4.Columns["Co"], 0);
 
                             gridView4.SetRowCellValue(0, gridView4.Columns["DaGhiSo"], false);
-                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
-                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
-                            gridView4.SetRowCellValue(0, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                           
                             gridView4.SetRowCellValue(0, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
                         else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
@@ -992,20 +974,15 @@ namespace CtyTinLuong
                             gridView4.SetRowCellValue(1, gridView4.Columns["Co"], sotienthanhtoan);
 
                             gridView4.SetRowCellValue(1, gridView4.Columns["DaGhiSo"], false);
-                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);
-                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanMe"], clscon.iID_TaiKhoanKeToanMe.Value);
-                            gridView4.SetRowCellValue(1, gridView4.Columns["SoTaiKhoanCon"], iiiiID_TaiKhoanKeToan.ToString());
+                            gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                         
                             gridView4.SetRowCellValue(1, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
-
-                       
-                      
                     }
                 }
-               
-            //}
-            //catch
-            //{ }
+
+        }
+            catch
+            { }
 
         }
 
@@ -1130,6 +1107,20 @@ namespace CtyTinLuong
         }
 
         private void txtSoTien_VisibleChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal value = decimal.Parse(txtSoTien.Text);
+                txtSoTien.Text = String.Format("{0:#,##0.00}", value);
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txtSoTien_Resize(object sender, EventArgs e)
         {
             try
             {
