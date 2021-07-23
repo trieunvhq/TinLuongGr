@@ -357,6 +357,7 @@ namespace CtyTinLuong
             if (bientrangthia == 1) //báo có 
             {
                 checkNhaCungCap.Checked = true;
+                checkUSD.Checked = true;
                 _ravi["ID_TaiKhoanKeToanCon"] = 2;
                 _ravi["SoTaiKhoanCon"] = "1121";
                 _ravi["TenTaiKhoanCon"] = "Tiền gửi ngân hàng VNĐ";
