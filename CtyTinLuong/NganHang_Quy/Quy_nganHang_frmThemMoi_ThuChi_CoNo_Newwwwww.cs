@@ -415,11 +415,11 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThi_Sua()
+        private void HienThi_Sua(int xxID_Thuchi____)
         {
 
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
-            cls1.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls1.iID_ThuChi = xxID_Thuchi____;
             DataTable dt = cls1.SelectOne();
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
@@ -453,7 +453,7 @@ namespace CtyTinLuong
             }
             
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
-            cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls2.iID_ThuChi = xxID_Thuchi____;
             DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
@@ -519,11 +519,11 @@ namespace CtyTinLuong
             }
            
         }
-        private void HienThi_CoPy(int bientrangthia)
+        private void HienThi_CoPy(int bientrangthia, int xxID_Thuchi____)
         {
 
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
-            cls1.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls1.iID_ThuChi = xxID_Thuchi____;
             DataTable dt = cls1.SelectOne();
             dteNgayChungTu.EditValue = DateTime.Today;
             HienThiSoChungTu(bientrangthia);
@@ -551,7 +551,7 @@ namespace CtyTinLuong
           
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
-            cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls2.iID_ThuChi = xxID_Thuchi____;
             DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
             DataTable dt2 = new DataTable();
             dt2.Columns.Add("ID_ChiTietThuChi", typeof(int));
@@ -705,13 +705,19 @@ namespace CtyTinLuong
             dtdoituong.Columns.Add("TenDoiTuong", typeof(string));
             dtdoituong.Columns.Add("ID_TaiKhoanKeToan", typeof(int));
             Load_LockUp();
-          
-            if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
-                HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
-            else if (UCQuy_NganHang_BaoCo.mbSua == true)
-                HienThi_Sua();
-            else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
-                HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            if (UCQuy_NganHang_BaoCo.isChiTiet_thuchi == true)
+            {
+                if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
+                    HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+                else if (UCQuy_NganHang_BaoCo.mbSua == true)
+                    HienThi_Sua(UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
+                else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
+                    HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5, UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
+            }
+            else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
+            {
+                HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu);
+            }
             Cursor.Current = Cursors.Default;
         }
         
@@ -1155,6 +1161,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
+            UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
+        }
 
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

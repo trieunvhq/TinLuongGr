@@ -1006,6 +1006,7 @@
             this.Name = "Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww-->Thu Chi Có Nợ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww_FormClosed);
             this.Load += new System.EventHandler(this.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
