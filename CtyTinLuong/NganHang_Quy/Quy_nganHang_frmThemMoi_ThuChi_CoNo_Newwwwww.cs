@@ -243,6 +243,7 @@ namespace CtyTinLuong
                 Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
 
                 MessageBox.Show("Đã lưu");
+                this.Close();
             }
         }
         private bool KiemTraLuu()
@@ -778,12 +779,18 @@ namespace CtyTinLuong
                     gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, cls.sTenTaiKhoanCon.Value);
                     gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
 
-
+                    gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
+                    gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
                 }
+
                 DataTable dataTable = (DataTable)gridControl1.DataSource;
-                string shienthi = "1";
-                double deTOngtien = CheckString.ConvertToDouble_My(dataTable.Compute("sum(No)", "HienThi=" + shienthi + ""));
-                txtSoTien.Text = deTOngtien.ToString();
+                if(dataTable.Rows.Count>2)
+                {
+                    string shienthi = "1";
+                    double deTOngtien = CheckString.ConvertToDouble_My(dataTable.Compute("sum(No)", "HienThi=" + shienthi + ""));
+                    txtSoTien.Text = deTOngtien.ToString();
+                }
+              
 
             }
             catch
