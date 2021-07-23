@@ -436,8 +436,8 @@ namespace CtyTinLuong
         }
         private void HienThi_Sua(int xxID_Thuchi____, bool hienthi_button)
         {
-            btLuu_Dong.Visible = hienthi_button;
-            //btthemmoi.Visible = hienthi_button;
+            //btLuu_Dong.Visible = hienthi_button;
+            btthemmoi.Visible = hienthi_button;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             cls1.iID_ThuChi = xxID_Thuchi____;
             DataTable dt = cls1.SelectOne();
@@ -656,6 +656,16 @@ namespace CtyTinLuong
             {
                 bientrangthoi_moi = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mibientrangthai;
                 HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu,false);
+            }
+            else if (MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi == true)
+            {
+                bientrangthoi_moi = MuaHang_DoiChieuCongNo_New.mibientrangthai;
+                HienThi_Sua(MuaHang_DoiChieuCongNo_New.miID_ChungTu, false);
+            }
+            else if (BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi == true)
+            {
+                bientrangthoi_moi = BanHang_DoiChieu_CongNo_new.mibientrangthai;
+                HienThi_Sua(BanHang_DoiChieu_CongNo_new.miID_ChungTu, false);
             }
             Cursor.Current = Cursors.Default;
         }
@@ -1062,6 +1072,8 @@ namespace CtyTinLuong
         {
             frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
             UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
+            MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi = false;
+            BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi = false;
         }
 
         private void txtSoTien_VisibleChanged(object sender, EventArgs e)

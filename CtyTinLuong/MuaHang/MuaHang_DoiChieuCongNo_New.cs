@@ -36,7 +36,7 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("SoLuong", typeof(double));
             dt2xxxx.Columns.Add("DonGia", typeof(double));
             dt2xxxx.Columns.Add("ThanhTien", typeof(double));
-
+            dt2xxxx.Columns.Add("ID_ChungTu", typeof(string));
             //TK_DoiUng
             gridControl2.DataSource = null;
 
@@ -76,8 +76,12 @@ namespace CtyTinLuong
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
                     DataRow _ravi = dt2xxxx.NewRow();
-                    _ravi["STT"] = (i + 1).ToString();
-
+                    if (Convert.ToBoolean(dtphatsinh.Rows[i]["Check_PhanNganHang"].ToString()) == true)
+                    {
+                        _ravi["ID_ChungTu"] = dtphatsinh.Rows[i]["ID_ChungTu"].ToString();
+                    }
+                       
+                    _ravi["STT"] = (i + 1).ToString();                   
                     DateTime ngay = Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
@@ -255,6 +259,28 @@ namespace CtyTinLuong
                 SendKeys.Send("{TAB}");
             }
 
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(gridView1.GetFocusedRowCellValue(clID_ChungTu).ToString()!="")
+            {
+                miID_ChungTu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
+                clsNganHang_tbThuChi cls = new clsNganHang_tbThuChi();
+                cls.iID_ThuChi = miID_ChungTu;
+                DataTable dt = cls.SelectOne();
+                if (dt.Rows.Count > 0)
+                {
+                    isChiTiet_thuchi = true;
+                    UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
+                    frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
+                    BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi = false;
+                    mibientrangthai = cls.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5.Value;
+                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+                    ff.Show();
+                }
+            }
+           
         }
 
         private void GridSoTaiKhoan_QueryPopUp(object sender, CancelEventArgs e)
