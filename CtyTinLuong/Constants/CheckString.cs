@@ -418,7 +418,12 @@ namespace CtyTinLuong
         {
             if (str == null)
                 return 0;
+
             string str_2_ = str.ToString();
+
+            if (str_2_ == "")
+                return 0;
+
             double temp_ = 0;
             try
             {
