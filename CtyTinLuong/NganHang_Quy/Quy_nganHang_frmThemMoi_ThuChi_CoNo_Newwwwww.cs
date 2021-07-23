@@ -654,7 +654,7 @@ namespace CtyTinLuong
             }
             else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
             {
-                bientrangthoi_moi = frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5;
+                bientrangthoi_moi = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mibientrangthai;
                 HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu,false);
             }
             Cursor.Current = Cursors.Default;

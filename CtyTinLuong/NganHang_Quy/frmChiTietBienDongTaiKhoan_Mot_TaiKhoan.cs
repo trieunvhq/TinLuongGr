@@ -19,7 +19,7 @@ namespace CtyTinLuong
         public static DataTable mdt_ChiTiet_Print;
         public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
         public static DateTime mdatungay, mdadenngay;
-        public static int miID_ChungTu;
+        public static int miID_ChungTu, mibientrangthai;
         private void Load_lockUp()
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -316,10 +316,19 @@ namespace CtyTinLuong
             if (Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(clHienThi).ToString())==false)
             {
                 isChiTiet_thuchi = true;
+                //
                 UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
                 miID_ChungTu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
-                Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
-                ff.Show();
+                clsNganHang_tbThuChi cls = new clsNganHang_tbThuChi();
+                cls.iID_ThuChi = miID_ChungTu;
+                DataTable dt = cls.SelectOne();
+                if(dt.Rows.Count>0)
+                {
+                    mibientrangthai = cls.iBienTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien_5.Value;
+                    Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+                    ff.Show();
+                }
+                
 
             }
          
