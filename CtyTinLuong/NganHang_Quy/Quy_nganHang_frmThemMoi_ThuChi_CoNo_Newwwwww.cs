@@ -204,7 +204,7 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return ;
             else
             {
-                int ID_ThuChixxx;
+                int ID_ThuChixxx=0;
                 clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
@@ -241,19 +241,28 @@ namespace CtyTinLuong
                         cls1.iID_ThuChi = ID_ThuChixxx;
                         cls1.Update();
                     }
-                    Luu_ChiTiet_ThuChi(ID_ThuChixxx);
-                    Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
+                  
                 }
                 else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
                 {
                     ID_ThuChixxx = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu;
                     cls1.iID_ThuChi = ID_ThuChixxx;
-                    cls1.Update();
-                    Luu_ChiTiet_ThuChi(ID_ThuChixxx);
-                    Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
+                    cls1.Update();                    
                 }
-               
-
+                else if (MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi == true)
+                {
+                    ID_ThuChixxx = MuaHang_DoiChieuCongNo_New.miID_ChungTu;
+                    cls1.iID_ThuChi = ID_ThuChixxx;
+                    cls1.Update();
+                }
+                else if (BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi == true)
+                {
+                    ID_ThuChixxx = BanHang_DoiChieu_CongNo_new.miID_ChungTu;
+                    cls1.iID_ThuChi = ID_ThuChixxx;
+                    cls1.Update();
+                }
+                Luu_ChiTiet_ThuChi(ID_ThuChixxx);
+                Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
                 MessageBox.Show("Đã lưu");
                 this.Close();
             }
