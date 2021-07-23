@@ -159,37 +159,37 @@ namespace CtyTinLuong
             gridControl1.DataSource = null;
             clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
             cls2.iID_BanHang = xxiDmuahang;
-            DataTable dt3 = cls2.Select_HienThiSuaDonHang();
-            DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_ChiTietBanHang"); // ID của tbChi tiet don hàng
-            //dt2.Columns.Add("ID_BanHang");
-            //dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("ThanhTien", typeof(double));
-            dt2.Columns.Add("HienThi", typeof(string));
-            dt2.Columns.Add("GhiChu", typeof(string));
-            for (int i = 0; i < dt3.Rows.Count; i++)
-            {
-                Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[i]["SoLuong"].ToString());
-                Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[i]["DonGia"].ToString());
-                DataRow _ravi = dt2.NewRow();
-                //_ravi["ID_ChiTietBanHang"] = dt3.Rows[i]["ID_ChiTietBanHang"].ToString();
-                //_ravi["ID_BanHang"] = dt3.Rows[i]["ID_BanHang"].ToString();
-                //_ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                _ravi["SoLuong"] = xxsoluong;
-                _ravi["DonGia"] = xxdongia;
-                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
-                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                _ravi["HienThi"] = "1";
-                dt2.Rows.Add(_ravi);
-            }
+            DataTable dt2 = cls2.Select_HienThiSuaDonHang();
+            //DataTable dt2 = new DataTable();
+            ////dt2.Columns.Add("ID_ChiTietBanHang"); // ID của tbChi tiet don hàng
+            ////dt2.Columns.Add("ID_BanHang");
+            ////dt2.Columns.Add("ID_VTHH");
+            //dt2.Columns.Add("SoLuong", typeof(float));
+            //dt2.Columns.Add("DonGia", typeof(double));
+            //dt2.Columns.Add("MaVT");// tb VTHH
+            //dt2.Columns.Add("TenVTHH");
+            //dt2.Columns.Add("DonViTinh");
+            //dt2.Columns.Add("ThanhTien", typeof(double));
+            //dt2.Columns.Add("HienThi", typeof(string));
+            //dt2.Columns.Add("GhiChu", typeof(string));
+            //for (int i = 0; i < dt3.Rows.Count; i++)
+            //{
+            //    Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[i]["SoLuong"].ToString());
+            //    Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[i]["DonGia"].ToString());
+            //    DataRow _ravi = dt2.NewRow();
+            //    //_ravi["ID_ChiTietBanHang"] = dt3.Rows[i]["ID_ChiTietBanHang"].ToString();
+            //    //_ravi["ID_BanHang"] = dt3.Rows[i]["ID_BanHang"].ToString();
+            //    //_ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //    _ravi["SoLuong"] = xxsoluong;
+            //    _ravi["DonGia"] = xxdongia;
+            //    _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+            //    _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+            //    _ravi["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
+            //    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+            //    _ravi["HienThi"] = "1";
+            //    dt2.Rows.Add(_ravi);
+            //}
             gridControl1.DataSource = dt2;
         }
 
