@@ -211,6 +211,7 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString() != "")
             {
+                isChiTiet_thuchi = true;
                 if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 5)
                 {
                     mbTheMoi = false;

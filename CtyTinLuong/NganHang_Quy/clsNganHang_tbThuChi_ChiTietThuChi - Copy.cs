@@ -7,7 +7,39 @@ namespace CtyTinLuong
 {
 	public partial class clsNganHang_tbThuChi_ChiTietThuChi : clsDBInteractionBase
 	{
-        //pr_NganHang_tbThuChi_ChiTietThuChi_Update_ALL_TonTai
+        //pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_ID_ThuChi
+        public DataTable SA_W_ID_ThuChi(int xxid_thuChiiiii)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_ID_ThuChi]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_ID_ThuChi");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ThuChi__", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxid_thuChiiiii));
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("pr_NganHang_tbThuChi_ChiTietThuChi_SA_W_ID_ThuChi", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public void Update_ALL_TonTai()
         {
 
