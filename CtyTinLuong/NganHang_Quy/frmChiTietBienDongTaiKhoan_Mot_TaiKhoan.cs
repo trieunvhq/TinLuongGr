@@ -15,7 +15,7 @@ namespace CtyTinLuong
     public partial class frmChiTietBienDongTaiKhoan_Mot_TaiKhoan : Form
     {
         public static bool mbPrint;
-
+        public static bool isChiTiet_thuchi=false;
         public static DataTable mdt_ChiTiet_Print;
         public static string msTieuDe, msSoTaiKhoan, msTenTaiKhoan;
         public static DateTime mdatungay, mdadenngay;
@@ -313,8 +313,16 @@ namespace CtyTinLuong
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
         {
-            
-            
+            if (Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(clHienThi).ToString())==false)
+            {
+                isChiTiet_thuchi = false;
+                UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
+                miID_ChungTu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
+                Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
+                ff.Show();
+
+            }
+         
         }
 
         private void bandedGridView1_RowClick(object sender, RowClickEventArgs e)

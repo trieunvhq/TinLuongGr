@@ -15,7 +15,7 @@ namespace CtyTinLuong
     {
         public static int miID_ThuChi_Sua;
         public static bool mbTheMoi, mbCoPy, mbSua, mbooolBitThuChiKhac;
-
+        public static bool isChiTiet_thuchi = false;
         private void Load_DaTa(DateTime xxtungay, DateTime  xxdenngay, int bientrangthai)
         {
             DataTable dt = new DataTable();
@@ -50,7 +50,9 @@ namespace CtyTinLuong
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
-        {         
+        {
+            isChiTiet_thuchi = true;
+            frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
 
             if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 5)
             {
@@ -94,6 +96,8 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString() != "")
             {
+                isChiTiet_thuchi = true;
+                frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi = false;
                 mbTheMoi = false;
                 mbCoPy = false;
                 mbSua = true;
