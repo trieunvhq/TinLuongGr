@@ -159,17 +159,17 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            //GridView View = sender as GridView;
-            //if (e.RowHandle >= 0)
-            //{
-            //    bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["GuiDuLieu"]));
-            //    if (category == false)
-            //    {
-            //        e.Appearance.BackColor = Color.Bisque;
-                   
-            //    }
-            //}
-           
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["TrangThaiNhapKho"]));
+                if (category == false)
+                {
+                    e.Appearance.BackColor = Color.Bisque;
+
+                }
+            }
+
         }
 
         private void btXoa_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
