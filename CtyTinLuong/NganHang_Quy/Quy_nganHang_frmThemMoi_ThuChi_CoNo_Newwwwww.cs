@@ -763,26 +763,25 @@ namespace CtyTinLuong
         {
             //try
             //{
-                if (e.Column == clID_TaiKhoanKeToanCon)
-                {
-                //double tigiaxx = CheckString.ConvertToDouble_My(txtTiGia.Text);
-                //bool tienussd = checkUSD.Checked;
-                //gridView4.SetRowCellValue(e.RowHandle, clNo, 0);
-                //gridView4.SetRowCellValue(e.RowHandle, clCo, 0);
-
+            if (e.Column == clID_TaiKhoanKeToanCon)
+            {
                 clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
                 cls.iID_TaiKhoanKeToanCon = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                 int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                 DataTable dt = cls.SelectOne();
-              //  gridView4.SetRowCellValue(e.RowHandle, clID_TaiKhoanKeToanCon, kk);
 
                 gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, cls.sTenTaiKhoanCon.Value);
                 gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                //gridView4.SetRowCellValue(e.RowHandle, clTienUSD, tienussd);
-                //gridView4.SetFocusedRowCellValue(clTiGia, tigiaxx);
+
 
             }
-              
+            DataTable dataTable = (DataTable)gridControl1.DataSource;
+            if (dataTable.Rows.Count > 2)
+            {
+                string shienthi = "1";
+                double deTOngtien = CheckString.ConvertToDouble_My(dataTable.Compute("sum(No)", "HienThi=" + shienthi + ""));
+                txtSoTien.Text = deTOngtien.ToString();
+            }
             //}
             //catch
             //{
@@ -793,11 +792,17 @@ namespace CtyTinLuong
         {
             try
             {
-                double sotienxxx = CheckString.ConvertToDouble_My(txtSoTien.Text.ToString());
-                gridView4.SetRowCellValue(0, clNo, sotienxxx);
-                gridView4.SetRowCellValue(0, clCo, 0);
-                gridView4.SetRowCellValue(1, clNo, 0);
-                gridView4.SetRowCellValue(1, clCo, sotienxxx);
+                DataTable dataTable = (DataTable)gridControl1.DataSource;
+                if (dataTable.Rows.Count == 2)
+                {
+                    double sotienxxx = CheckString.ConvertToDouble_My(txtSoTien.Text.ToString());
+                    gridView4.SetRowCellValue(0, clNo, sotienxxx);
+                    gridView4.SetRowCellValue(0, clCo, 0);
+                    gridView4.SetRowCellValue(1, clNo, 0);
+                    gridView4.SetRowCellValue(1, clCo, sotienxxx);
+                }
+
+                
 
             }
             catch
