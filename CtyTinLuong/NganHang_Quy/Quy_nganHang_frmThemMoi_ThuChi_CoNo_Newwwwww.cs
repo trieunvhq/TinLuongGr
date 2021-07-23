@@ -24,7 +24,7 @@ namespace CtyTinLuong
         public static double mdbSoTien, mdbTiGia;
         int DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 = 0;
         DataTable dtdoituong = new DataTable();
-
+        int bientrangthoi_moi;
         private void Luu_BienDongTaiKhoanKeToan(int xxxID_ThuChi)
         {
             clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
@@ -644,15 +644,17 @@ namespace CtyTinLuong
             Load_LockUp();
             if (UCQuy_NganHang_BaoCo.isChiTiet_thuchi == true)
             {
+                bientrangthoi_moi = frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5;
                 if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
-                    HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+                    HienThi_ThemMoi(bientrangthoi_moi);
                 else if (UCQuy_NganHang_BaoCo.mbSua == true)
                     HienThi_Sua(UCQuy_NganHang_BaoCo.miID_ThuChi_Sua,true);
                 else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
-                    HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5, UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
+                    HienThi_CoPy(bientrangthoi_moi, UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
             }
             else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
             {
+                bientrangthoi_moi = frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5;
                 HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu,false);
             }
             Cursor.Current = Cursors.Default;
@@ -869,32 +871,7 @@ namespace CtyTinLuong
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            int kkkk = 0;
-           
-            if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 1)
-            {
-                kkkk = 1;
-              
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
-            {
-                kkkk = 2;
-               
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
-            {
-                kkkk = 3;
-             
-
-            }
-            else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
-            {
-                kkkk = 4;
-                
-            }
-            LuuDuLieu_Va_GhiSo(kkkk);
+            LuuDuLieu_Va_GhiSo(bientrangthoi_moi);
             Cursor.Current = Cursors.Default;
         }
 
@@ -923,7 +900,7 @@ namespace CtyTinLuong
                         gridView4.SetRowCellValue(1, gridView4.Columns["TiGia"], txtTiGia.Text);
                         gridView4.SetRowCellValue(0, gridView4.Columns["TienUSD"], checkUSD.Checked);
                         gridView4.SetRowCellValue(1, gridView4.Columns["TienUSD"], checkUSD.Checked);
-                        if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5==1)
+                        if (bientrangthoi_moi==1)
                         {                       
                             gridView4.SetRowCellValue(1, gridView4.Columns["No"], 0);
                             gridView4.SetRowCellValue(1, gridView4.Columns["Co"], sotienthanhtoan);
@@ -931,7 +908,7 @@ namespace CtyTinLuong
                             gridView4.SetRowCellValue(1, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                           
                             gridView4.SetRowCellValue(1, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
-                        else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 2)
+                        else if (bientrangthoi_moi == 2)
                         {
                             gridView4.SetRowCellValue(0, gridView4.Columns["No"], sotienthanhtoan);
                             gridView4.SetRowCellValue(0, gridView4.Columns["Co"], 0);
@@ -940,7 +917,7 @@ namespace CtyTinLuong
                             gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                            
                             gridView4.SetRowCellValue(0, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
-                        else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 3)
+                        else if (bientrangthoi_moi == 3)
                         {
                             gridView4.SetRowCellValue(0, gridView4.Columns["No"], sotienthanhtoan);
                             gridView4.SetRowCellValue(0, gridView4.Columns["Co"], 0);
@@ -949,7 +926,7 @@ namespace CtyTinLuong
                             gridView4.SetRowCellValue(0, gridView4.Columns["ID_TaiKhoanKeToanCon"], iiiiID_TaiKhoanKeToan);                           
                             gridView4.SetRowCellValue(0, gridView4.Columns["TenTaiKhoanCon"], clscon.sTenTaiKhoanCon.Value);
                         }
-                        else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 4)
+                        else if (bientrangthoi_moi == 4)
                         {
                             gridView4.SetRowCellValue(1, gridView4.Columns["No"], 0);
                             gridView4.SetRowCellValue(1, gridView4.Columns["Co"], sotienthanhtoan);
@@ -977,12 +954,12 @@ namespace CtyTinLuong
         private void btthemmoi_Click(object sender, EventArgs e)
         {
             UCQuy_NganHang_BaoCo.mbTheMoi = true;
-            HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            HienThi_ThemMoi(bientrangthoi_moi);
         }
 
         private void txtDoiTuong_TextChanged(object sender, EventArgs e)
         {
-            HienThiDienGiai_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+            HienThiDienGiai_ThemMoi(bientrangthoi_moi);
         }
 
         private void gridNguoiLap_KeyPress(object sender, KeyPressEventArgs e)
