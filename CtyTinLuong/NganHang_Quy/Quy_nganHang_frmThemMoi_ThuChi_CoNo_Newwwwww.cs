@@ -1124,6 +1124,20 @@ namespace CtyTinLuong
             UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
         }
 
+        private void txtSoTien_VisibleChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal value = decimal.Parse(txtSoTien.Text);
+                txtSoTien.Text = String.Format("{0:#,##0.00}", value);
+
+            }
+            catch
+            {
+
+            }
+        }
+
         private void btXoa2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");

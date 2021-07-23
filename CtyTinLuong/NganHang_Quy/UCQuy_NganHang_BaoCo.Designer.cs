@@ -162,6 +162,8 @@
             // 
             // DienGiai
             // 
+            this.DienGiai.AppearanceCell.Options.UseTextOptions = true;
+            this.DienGiai.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.DienGiai.Caption = "Diễn giải";
             this.DienGiai.ColumnEdit = this.repositoryItemMemoEdit4;
             this.DienGiai.FieldName = "DienGiai";

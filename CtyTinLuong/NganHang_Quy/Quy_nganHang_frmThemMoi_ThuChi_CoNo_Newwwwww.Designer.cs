@@ -331,6 +331,7 @@
             this.txtSoTien.TabIndex = 78;
             this.txtSoTien.Text = "0";
             this.txtSoTien.TextChanged += new System.EventHandler(this.txtSoTien_TextChanged);
+            this.txtSoTien.VisibleChanged += new System.EventHandler(this.txtSoTien_VisibleChanged);
             this.txtSoTien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoTien_KeyDown);
             this.txtSoTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTien_KeyPress);
             this.txtSoTien.Leave += new System.EventHandler(this.txtSoTien_Leave);
