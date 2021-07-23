@@ -443,10 +443,10 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThi_Sua(int xxID_Thuchi____, bool hienthi_button)
+        private void HienThi_Sua(int xxID_Thuchi____, bool hienthithemmoi,bool hienthiluu)
         {
-            //btLuu_Dong.Visible = hienthi_button;
-            btthemmoi.Visible = hienthi_button;
+            btLuu_Dong.Visible = hienthiluu;
+            btthemmoi.Visible = hienthithemmoi;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             cls1.iID_ThuChi = xxID_Thuchi____;
             DataTable dt = cls1.SelectOne();
@@ -657,24 +657,24 @@ namespace CtyTinLuong
                 if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                     HienThi_ThemMoi(bientrangthoi_moi);
                 else if (UCQuy_NganHang_BaoCo.mbSua == true)
-                    HienThi_Sua(UCQuy_NganHang_BaoCo.miID_ThuChi_Sua,true);
+                    HienThi_Sua(UCQuy_NganHang_BaoCo.miID_ThuChi_Sua,true,true);
                 else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
                     HienThi_CoPy(bientrangthoi_moi, UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
             }
             else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
             {
                 bientrangthoi_moi = frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.mibientrangthai;
-                HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu,false);
+                HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu,false,true);
             }
             else if (MuaHang_DoiChieuCongNo_New.isChiTiet_thuchi == true)
             {
-                bientrangthoi_moi = MuaHang_DoiChieuCongNo_New.mibientrangthai;
-                HienThi_Sua(MuaHang_DoiChieuCongNo_New.miID_ChungTu, false);
+                bientrangthoi_moi = MuaHang_DoiChieuCongNo_New.mibientrangthai;                
+                HienThi_Sua(MuaHang_DoiChieuCongNo_New.miID_ChungTu, false, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.mbclick_DoiChieuCongNo);
             }
             else if (BanHang_DoiChieu_CongNo_new.isChiTiet_thuchi == true)
             {
                 bientrangthoi_moi = BanHang_DoiChieu_CongNo_new.mibientrangthai;
-                HienThi_Sua(BanHang_DoiChieu_CongNo_new.miID_ChungTu, false);
+                HienThi_Sua(BanHang_DoiChieu_CongNo_new.miID_ChungTu, false, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.mbclick_DoiChieuCongNo);
             }
             Cursor.Current = Cursors.Default;
         }
