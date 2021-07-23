@@ -942,6 +942,7 @@
             this.txtID_DoiTuong.ReadOnly = true;
             this.txtID_DoiTuong.Size = new System.Drawing.Size(100, 20);
             this.txtID_DoiTuong.TabIndex = 105;
+            this.txtID_DoiTuong.Visible = false;
             // 
             // btLuu_Dong
             // 

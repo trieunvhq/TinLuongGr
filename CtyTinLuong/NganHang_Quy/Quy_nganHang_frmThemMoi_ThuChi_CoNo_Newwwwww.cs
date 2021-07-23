@@ -415,9 +415,10 @@ namespace CtyTinLuong
 
 
         }
-        private void HienThi_Sua(int xxID_Thuchi____)
+        private void HienThi_Sua(int xxID_Thuchi____, bool hienthi_button)
         {
-
+            btLuu_Dong.Visible = hienthi_button;
+            btthemmoi.Visible = hienthi_button;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
             cls1.iID_ThuChi = xxID_Thuchi____;
             DataTable dt = cls1.SelectOne();
@@ -710,13 +711,13 @@ namespace CtyTinLuong
                 if (UCQuy_NganHang_BaoCo.mbTheMoi == true)
                     HienThi_ThemMoi(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
                 else if (UCQuy_NganHang_BaoCo.mbSua == true)
-                    HienThi_Sua(UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
+                    HienThi_Sua(UCQuy_NganHang_BaoCo.miID_ThuChi_Sua,true);
                 else if (UCQuy_NganHang_BaoCo.mbCoPy == true)
                     HienThi_CoPy(frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5, UCQuy_NganHang_BaoCo.miID_ThuChi_Sua);
             }
             else if (frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.isChiTiet_thuchi == true)
             {
-                HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu);
+                HienThi_Sua(frmChiTietBienDongTaiKhoan_Mot_TaiKhoan.miID_ChungTu,false);
             }
             Cursor.Current = Cursors.Default;
         }

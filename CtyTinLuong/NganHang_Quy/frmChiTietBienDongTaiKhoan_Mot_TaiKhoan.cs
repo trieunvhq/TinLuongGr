@@ -315,7 +315,7 @@ namespace CtyTinLuong
         {
             if (Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(clHienThi).ToString())==false)
             {
-                isChiTiet_thuchi = false;
+                isChiTiet_thuchi = true;
                 UCQuy_NganHang_BaoCo.isChiTiet_thuchi = false;
                 miID_ChungTu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_ChungTu).ToString());
                 Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
