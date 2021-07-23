@@ -14,6 +14,7 @@ namespace CtyTinLuong
     public partial class frmQuy_NganHang_Newwwwwwwwwwwwwwwww : Form
     {
         public static int miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5;
+        public static bool mbclick_DoiChieuCongNo=false;
         private void HienThi_Caption()
         {
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
@@ -182,7 +183,9 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
-
+            mbclick_DoiChieuCongNo = true;
+            frmMuaHang2222.mbclick_DoiChieuCongNo = false;
+            frmQuanLyBanHang.mbclick_DoiChieuCongNo = false;
             BanHang_DoiChieu_CongNo_new ff = new CtyTinLuong.BanHang_DoiChieu_CongNo_new();
             //this.Hide();
             ff.Show();
@@ -195,7 +198,9 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
-
+            mbclick_DoiChieuCongNo = true;
+            frmMuaHang2222.mbclick_DoiChieuCongNo = false;
+            frmQuanLyBanHang.mbclick_DoiChieuCongNo = false;
             MuaHang_DoiChieuCongNo_New ff = new CtyTinLuong.MuaHang_DoiChieuCongNo_New();
             //this.Hide();
             ff.Show();

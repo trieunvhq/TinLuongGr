@@ -13,6 +13,7 @@ namespace CtyTinLuong
 {
     public partial class frmQuanLyBanHang : Form
     {
+        public static bool mbclick_DoiChieuCongNo = false;
         private void HienThi_Caption()
         {
 
@@ -193,7 +194,9 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
-
+            mbclick_DoiChieuCongNo = true;
+            frmMuaHang2222.mbclick_DoiChieuCongNo = false;
+            frmQuy_NganHang_Newwwwwwwwwwwwwwwww.mbclick_DoiChieuCongNo = false;
             BanHang_DoiChieu_CongNo_new ff = new CtyTinLuong.BanHang_DoiChieu_CongNo_new();
             //this.Hide();
             ff.Show();
