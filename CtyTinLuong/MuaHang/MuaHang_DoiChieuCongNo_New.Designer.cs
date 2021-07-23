@@ -354,8 +354,6 @@
             this.clID_ChungTu.Caption = "ID_ChungTu";
             this.clID_ChungTu.FieldName = "ID_ChungTu";
             this.clID_ChungTu.Name = "clID_ChungTu";
-            this.clID_ChungTu.Visible = true;
-            this.clID_ChungTu.VisibleIndex = 9;
             // 
             // repositoryItemMemoEdit2
             // 
