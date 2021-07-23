@@ -49,6 +49,7 @@
             this.clDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clHienThi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clID_ChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenTK = new System.Windows.Forms.TextBox();
@@ -68,7 +69,7 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.clID_ChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clSoChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -171,6 +172,7 @@
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.clSoChungTu,
             this.clSTT,
             this.clNgayChungTu,
             this.clDoiTuong,
@@ -238,8 +240,8 @@
             this.clDoiTuong.Name = "clDoiTuong";
             this.clDoiTuong.OptionsColumn.AllowEdit = false;
             this.clDoiTuong.Visible = true;
-            this.clDoiTuong.VisibleIndex = 2;
-            this.clDoiTuong.Width = 243;
+            this.clDoiTuong.VisibleIndex = 3;
+            this.clDoiTuong.Width = 203;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -255,8 +257,8 @@
             this.clDienGiai.Name = "clDienGiai";
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
-            this.clDienGiai.VisibleIndex = 3;
-            this.clDienGiai.Width = 196;
+            this.clDienGiai.VisibleIndex = 4;
+            this.clDienGiai.Width = 166;
             // 
             // repositoryItemMemoEdit3
             // 
@@ -279,7 +281,7 @@
             this.clNoTrongKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "No", "N")});
             this.clNoTrongKy.Visible = true;
-            this.clNoTrongKy.VisibleIndex = 7;
+            this.clNoTrongKy.VisibleIndex = 8;
             this.clNoTrongKy.Width = 110;
             // 
             // clCoTrongKy
@@ -299,7 +301,7 @@
             this.clCoTrongKy.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Co", "N")});
             this.clCoTrongKy.Visible = true;
-            this.clCoTrongKy.VisibleIndex = 8;
+            this.clCoTrongKy.VisibleIndex = 9;
             this.clCoTrongKy.Width = 110;
             // 
             // clSoLuong
@@ -313,7 +315,7 @@
             this.clSoLuong.OptionsColumn.AllowEdit = false;
             this.clSoLuong.OptionsColumn.FixedWidth = true;
             this.clSoLuong.Visible = true;
-            this.clSoLuong.VisibleIndex = 4;
+            this.clSoLuong.VisibleIndex = 5;
             // 
             // clDonGia
             // 
@@ -328,7 +330,7 @@
             this.clDonGia.OptionsColumn.AllowEdit = false;
             this.clDonGia.OptionsColumn.FixedWidth = true;
             this.clDonGia.Visible = true;
-            this.clDonGia.VisibleIndex = 5;
+            this.clDonGia.VisibleIndex = 6;
             this.clDonGia.Width = 100;
             // 
             // clThanhTien
@@ -344,7 +346,7 @@
             this.clThanhTien.OptionsColumn.AllowEdit = false;
             this.clThanhTien.OptionsColumn.FixedWidth = true;
             this.clThanhTien.Visible = true;
-            this.clThanhTien.VisibleIndex = 6;
+            this.clThanhTien.VisibleIndex = 7;
             this.clThanhTien.Width = 100;
             // 
             // clHienThi
@@ -352,6 +354,12 @@
             this.clHienThi.Caption = "HienThi";
             this.clHienThi.FieldName = "HienThi";
             this.clHienThi.Name = "clHienThi";
+            // 
+            // clID_ChungTu
+            // 
+            this.clID_ChungTu.Caption = "ID_ChungTu";
+            this.clID_ChungTu.FieldName = "ID_ChungTu";
+            this.clID_ChungTu.Name = "clID_ChungTu";
             // 
             // repositoryItemMemoEdit2
             // 
@@ -562,11 +570,16 @@
             this.layoutControlItem11.Text = "Mã đối tượng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(67, 13);
             // 
-            // clID_ChungTu
+            // clSoChungTu
             // 
-            this.clID_ChungTu.Caption = "ID_ChungTu";
-            this.clID_ChungTu.FieldName = "ID_ChungTu";
-            this.clID_ChungTu.Name = "clID_ChungTu";
+            this.clSoChungTu.Caption = "Số CT";
+            this.clSoChungTu.FieldName = "SoChungTu";
+            this.clSoChungTu.Name = "clSoChungTu";
+            this.clSoChungTu.OptionsColumn.AllowEdit = false;
+            this.clSoChungTu.OptionsColumn.FixedWidth = true;
+            this.clSoChungTu.Visible = true;
+            this.clSoChungTu.VisibleIndex = 2;
+            this.clSoChungTu.Width = 70;
             // 
             // BanHang_DoiChieu_CongNo_new
             // 
@@ -649,5 +662,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChungTu;
+        private DevExpress.XtraGrid.Columns.GridColumn clSoChungTu;
     }
 }

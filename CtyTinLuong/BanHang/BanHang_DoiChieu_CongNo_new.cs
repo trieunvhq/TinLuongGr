@@ -37,6 +37,7 @@ namespace CtyTinLuong
             dt2xxxx.Columns.Add("DonGia", typeof(double));
             dt2xxxx.Columns.Add("ThanhTien", typeof(double));
             dt2xxxx.Columns.Add("ID_ChungTu", typeof(string));
+            dt2xxxx.Columns.Add("SoChungTu", typeof(string));
             //TK_DoiUng
             gridControl2.DataSource = null;
 
@@ -84,6 +85,7 @@ namespace CtyTinLuong
                     DateTime ngay= Convert.ToDateTime(dtphatsinh.Rows[i]["NgayThang"].ToString());
                     _ravi["NgayThang"] = ngay.ToString("dd/MM/yyyy");
                     _ravi["DienGiai"] = dtphatsinh.Rows[i]["DienGiai"].ToString();
+                    _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
                     _ravi["DoiTuong"] = txtTenTK.Text;
                     double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
