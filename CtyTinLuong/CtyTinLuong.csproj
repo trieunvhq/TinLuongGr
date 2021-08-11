@@ -788,6 +788,12 @@
     <Compile Include="MuaHang\Tr_Xtra_DoiChieuCongNo_Khach.Designer.cs">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_Khach.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\PhieuSanXuat_IN_CAT_New_thang8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\PhieuSanXuat_IN_CAT_New_thang8.Designer.cs">
+      <DependentUpon>PhieuSanXuat_IN_CAT_New_thang8.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Class\clsTr_BB_KtraDinhMuc_HHSX.cs" />
     <Compile Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.cs">
       <SubType>Form</SubType>
@@ -2558,6 +2564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NganHang_Quy\QuyNganHang_Frm_PhieuKeToan.resx">
       <DependentUpon>QuyNganHang_Frm_PhieuKeToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\PhieuSanXuat_IN_CAT_New_thang8.resx">
+      <DependentUpon>PhieuSanXuat_IN_CAT_New_thang8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
