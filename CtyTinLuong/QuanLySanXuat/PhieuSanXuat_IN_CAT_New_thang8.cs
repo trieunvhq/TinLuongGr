@@ -394,5 +394,10 @@ namespace CtyTinLuong
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
