@@ -7,7 +7,41 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
+        public DataTable H_PhieuX_SUM_TinhSanLuong_Thang8(int iID_CongNhan__, DateTime daNgaySanXuat__,string casanxuat___, int iID_VTHH_Ra____)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_PhieuX_SUM_TinhSanLuong_Thang8]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("dtin");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_CongNhan_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_CongNhan__));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@daNgaySanXuat_", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, daNgaySanXuat__));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@CaSanXuat_", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, casanxuat___));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_Ra_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_VTHH_Ra____));
+
+                m_scoMainConnection.Open();
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_PhieuX_SUM_TinhSanLuong_Thang8", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable H_Tinh_SoPhieu_T8_IN(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

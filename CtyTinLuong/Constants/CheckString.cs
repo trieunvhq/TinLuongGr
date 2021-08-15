@@ -414,6 +414,38 @@ namespace CtyTinLuong
             else return GCD(b, a % b);
         }
 
+        public static int ConvertTo_Int_My(object str)
+        {
+            if (str == null)
+                return 0;
+
+            string str_2_ = str.ToString();
+
+            if (str_2_ == "")
+                return 0;
+
+            int temp_ = 0;
+            try
+            {
+                temp_ = Convert.ToInt32(str);
+            }
+            catch
+            {
+                try
+                {
+                    str_2_ = str_2_.Replace(",", "*");
+                    str_2_ = str_2_.Replace(".", ",");
+                    str_2_ = str_2_.Replace("*", ".");
+                    temp_ = Convert.ToInt32(str_2_);
+                }
+                catch
+                {
+                    return 0;
+                }
+            }
+            return temp_;
+        }
+
         public static double ConvertToDouble_My(object str)
         {
             if (str == null)

@@ -20,6 +20,7 @@ namespace CtyTinLuong
 
         string sTenVTHH_vao, sDonViTinh_vao;
         string sTenVTHH_ra, sDonViTinh_ra;
+        double sanluongthuong_ = 0, sanluongtangca_ = 0;
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay, int xxid_loaiMay)
         {
             gridControl1.DataSource = null;
@@ -153,6 +154,52 @@ namespace CtyTinLuong
             }
 
             cls.Dispose();
+        }
+
+        private void Tinh_SanLuong(double sanluongtong, int iiID_DinhmucLuong, int iiID_CongNhan, int iiID_VTHH_Ra__, DateTime ngaysanxuat__, string casanxxutaxx_)
+        {           
+            clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls1 = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
+            cls1.iID_DinhMuc_Luong_SanLuong = iiID_DinhmucLuong;
+            DataTable dt2222 = cls1.SelectOne();
+            double maxSanluongDinhMuc = cls1.fMaxSanLuongThuong.Value;
+
+            clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
+            clsncc.iID_NhanSu = iiID_CongNhan;
+            DataTable dt = clsncc.SelectOne();
+           
+            clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();       
+                    
+            DataTable dtin = cls2.H_PhieuX_SUM_TinhSanLuong_Thang8(iiID_CongNhan, ngaysanxuat__, casanxxutaxx_, iiID_VTHH_Ra__);
+            double SanluongHienCo = Convert.ToDouble(dtin.Rows[0]["SanLuong_Thuong"].ToString());
+          
+          
+            if (maxSanluongDinhMuc == 0)
+            {
+                sanluongthuong_ = sanluongtong;
+                sanluongtangca_ = 0;
+            }
+            else
+            {
+                if (SanluongHienCo >= maxSanluongDinhMuc)
+                {
+                    sanluongthuong_ = 0;
+                    sanluongtangca_ = sanluongtong;
+                }
+                else
+                {
+                    double TongSanLuongMoi = SanluongHienCo + sanluongtong;
+                    if (TongSanLuongMoi <= maxSanluongDinhMuc)
+                    {
+                        sanluongtangca_ = 0;
+                        sanluongthuong_ = sanluongtong;
+                    }
+                    else
+                    {
+                        sanluongtangca_ = TongSanLuongMoi - maxSanluongDinhMuc;
+                        sanluongthuong_ = maxSanluongDinhMuc - SanluongHienCo;
+                    }
+                }
+            }
         }
         public PhieuSanXuat_IN_CAT_New_thang8()
         {
@@ -343,6 +390,39 @@ namespace CtyTinLuong
                 bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Ra, sTenVTHH_ra);
                 bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Ra, sDonViTinh_ra);
             }
+            try
+            {
+                double xsanluongtong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong).ToString());
+                int xiD_dinhMucluong = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong).ToString());
+                int xidcongnhan = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
+                int xidvthhra = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
+                DateTime xngaysanxuat = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat).ToString());
+                string xcasanxuat = bandedGridView1.GetFocusedRowCellValue(clCaSanXuat).ToString();
+                                
+                if(e.Column == clSanLuong_Tong)
+                {                   
+                    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong,xidcongnhan,xidvthhra,xngaysanxuat,xcasanxuat);                    
+                }
+                //if (e.Column == clID_DinhMuc_Luong)
+                //{
+
+                //    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
+                //}
+                //if (e.Column == clID_CongNhan)
+                //{
+
+                //    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
+                //}
+                //if (e.Column == clID_VTHH_Ra)
+                //{
+                //    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
+                //}
+                bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Thuong, sanluongthuong_);
+                bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_TangCa, sanluongtangca_);
+            }
+            catch
+            { }
+            
         }
 
         private void txtSoTrang_TextChanged(object sender, EventArgs e)
