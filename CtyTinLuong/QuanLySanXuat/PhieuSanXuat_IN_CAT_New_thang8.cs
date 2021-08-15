@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,9 @@ namespace CtyTinLuong
         private int _SoDong = 25;
         private int _Loaimay = 1;
         private bool isload = false;
+
+        string sTenVTHH_vao, sDonViTinh_vao;
+        string sTenVTHH_ra, sDonViTinh_ra;
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay, int xxid_loaiMay)
         {
             gridControl1.DataSource = null;
@@ -63,7 +67,7 @@ namespace CtyTinLuong
             txtSoTrang.Visible = true;
             btnTrangSau.LinkColor = Color.Black;
             btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
+            //txtSoTrang.Text = "1";
 
             using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
             {
@@ -185,11 +189,12 @@ namespace CtyTinLuong
             dteDenNgay.DateTime = DateTime.Today;
             dteTuNgay.DateTime = DateTime.Today.AddDays(-7);
 
-            _Loaimay = Convert.ToInt32(gridLoaiMay.EditValue);
+            _Loaimay = 1;
+         
+         
+           // ResetSoTrang(_SoDong,dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
             Load_LockUp(_Loaimay);
-            _SoDong = 25;
-            ResetSoTrang(_SoDong,dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
-            LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+            //LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
         }
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -265,9 +270,7 @@ namespace CtyTinLuong
 
         private void txtSoTrang_Leave(object sender, EventArgs e)
         {
-            if (isload)
-                return;
-            Load_PhieuSX(false);
+          
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
@@ -321,10 +324,59 @@ namespace CtyTinLuong
 
         private void txtSoDong_TextChanged(object sender, EventArgs e)
         {
-            _SoDong = Convert.ToInt32(txtSoDong.Text);          
-           
-           // ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+            _SoDong = Convert.ToInt32(txtSoDong.Text);
+
+            ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
             LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+        }
+        
+        private void bandedGridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if(e.Column==clID_VTHH_Vao)
+            {
+                bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao, sTenVTHH_vao);
+                bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Vao, sDonViTinh_vao);
+            }
+
+            if (e.Column == clID_VTHH_Ra)
+            {
+                bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Ra, sTenVTHH_ra);
+                bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Ra, sDonViTinh_ra);
+            }
+        }
+
+        private void txtSoTrang_TextChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            Load_PhieuSX(false);
+        }
+
+        private void gridMaVT_Ra_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;                
+                sTenVTHH_ra = row["TenVTHH"].ToString();
+                sDonViTinh_ra = row["DonViTinh"].ToString();
+            }
+            catch
+            { }
+            
+        }
+
+        private void gridMaVT_Vao_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;               
+                sTenVTHH_vao = row["TenVTHH"].ToString();
+                sDonViTinh_vao = row["DonViTinh"].ToString();
+               
+            }
+            catch
+            { }
+           
         }
     }
 }
