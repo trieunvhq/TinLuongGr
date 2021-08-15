@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -201,6 +204,21 @@ namespace CtyTinLuong
                 }
             }
         }
+
+        private bool KiemTraLuu(int iiID_loaimay)
+        {
+            if (iiID_loaimay == 1) // máy in
+            {                
+                return false;
+            }
+            else return true;
+
+            if (iiID_loaimay == 2) // máy cắt
+            {
+                return false;
+            }
+            else return true;
+        }
         public PhieuSanXuat_IN_CAT_New_thang8()
         {
             InitializeComponent();
@@ -208,6 +226,8 @@ namespace CtyTinLuong
 
         private void PhieuSanXuat_IN_CAT_New_thang8_Load(object sender, EventArgs e)
         {
+            clSanLuong_Tong.Caption = "Sản\nlượng";
+            clID_DinhMuc_Luong.Caption = "ĐM\nlương";
             DataTable dt = new DataTable();
             dt.Columns.Add("id", typeof(int));
             dt.Columns.Add("loaimay", typeof(String));
@@ -361,6 +381,7 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.WaitCursor;
                 _Loaimay = Convert.ToInt32(gridLoaiMay.EditValue);
                 Load_LockUp(_Loaimay);
+                txtSoTrang.Text = "1";
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
                 Cursor.Current = Cursors.Default;
@@ -398,31 +419,33 @@ namespace CtyTinLuong
                 int xidvthhra = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
                 DateTime xngaysanxuat = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat).ToString());
                 string xcasanxuat = bandedGridView1.GetFocusedRowCellValue(clCaSanXuat).ToString();
-                                
-                if(e.Column == clSanLuong_Tong)
-                {                   
-                    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong,xidcongnhan,xidvthhra,xngaysanxuat,xcasanxuat);                    
+
+                if (e.Column == clSanLuong_Tong)
+                {
+                    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
+                    bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Thuong, sanluongthuong_);
+                    bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_TangCa, sanluongtangca_);
                 }
-                //if (e.Column == clID_DinhMuc_Luong)
-                //{
+                if (!KiemTraLuu(_Loaimay)) return;
+                else
+                {
 
-                //    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
-                //}
-                //if (e.Column == clID_CongNhan)
-                //{
-
-                //    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
-                //}
-                //if (e.Column == clID_VTHH_Ra)
-                //{
-                //    Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
-                //}
-                bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Thuong, sanluongthuong_);
-                bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_TangCa, sanluongtangca_);
+                }
             }
             catch
             { }
             
+        }
+
+        private void bandedGridView1_ClipboardRowPasting(object sender, DevExpress.XtraGrid.Views.Grid.ClipboardRowPastingEventArgs e)
+        {
+            //GridView view = sender as GridView;
+            //GridColumn column = view.Columns["Department"];
+
+            //string pastedString = e.Values[column].ToString();
+            //string newString = pastedString.Replace('_', ' ');
+            //string newCapitalizedString = Regex.Replace(newString, @"(^\w)|(\s\w)", m => m.Value.ToUpper());
+            //e.Values[column] = newCapitalizedString;
         }
 
         private void txtSoTrang_TextChanged(object sender, EventArgs e)
