@@ -13,250 +13,48 @@ namespace CtyTinLuong
     public partial class PhieuSanXuat_IN_CAT_New_thang8 : Form
     {
         private int _SoTrang = 1;
+        private int _SoDong = 25;
+        private int _Loaimay = 1;
         private bool isload = false;
-        public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
+        public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay, int xxid_loaiMay)
         {
             gridControl1.DataSource = null;
             isload = true;
             _SoTrang = sotrang;
-
+            _SoDong = sodong;
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_SoPhieu", typeof(int));
-            dt2.Columns.Add("MaPhieu", typeof(string));
-
-            dt2.Columns.Add("ID_VTHH_Vao_IN", typeof(string));
-            dt2.Columns.Add("ID_VTHH_Ra_IN", typeof(string));
-            dt2.Columns.Add("MaVT_Vao_IN", typeof(string));
-            dt2.Columns.Add("MaVT_Ra_IN", typeof(string));
-            dt2.Columns.Add("DonViTinh_Vao_IN", typeof(string));
-            dt2.Columns.Add("DonViTinh_Ra_IN", typeof(string));
-            dt2.Columns.Add("TenVatTu_Vao_IN", typeof(string));
-            dt2.Columns.Add("TenVatTu_Ra_IN", typeof(string));
-            dt2.Columns.Add("SoLuong_Vao_IN", typeof(string));
-            dt2.Columns.Add("SoLuong_Ra_IN", typeof(string));
-            dt2.Columns.Add("PhePham_IN", typeof(string));
-            dt2.Columns.Add("NgaySanXuat_IN", typeof(string));
-            dt2.Columns.Add("CaSanXuat_IN", typeof(string));
-            dt2.Columns.Add("CongNhan_IN", typeof(string));
-            dt2.Columns.Add("MaMay_IN", typeof(string));
-
-            dt2.Columns.Add("ID_VTHH_Vao_CAT", typeof(string));
-            dt2.Columns.Add("ID_VTHH_Ra_CAT", typeof(string));
-            dt2.Columns.Add("MaVT_Vao_CAT", typeof(string));
-            dt2.Columns.Add("MaVT_Ra_CAT", typeof(string));
-            dt2.Columns.Add("DonViTinh_Vao_CAT", typeof(string));
-            dt2.Columns.Add("DonViTinh_Ra_CAT", typeof(string));
-            dt2.Columns.Add("TenVatTu_Vao_CAT", typeof(string));
-            dt2.Columns.Add("TenVatTu_Ra_CAT", typeof(string));
-            dt2.Columns.Add("SoLuong_Vao_CAT", typeof(string));
-            dt2.Columns.Add("SoLuong_Ra_CAT", typeof(string));
-            dt2.Columns.Add("PhePham_CAT", typeof(string));
-            dt2.Columns.Add("NgaySanXuat_CAT", typeof(string));
-            dt2.Columns.Add("CaSanXuat_CAT", typeof(string));
-            dt2.Columns.Add("CongNhan_CAT", typeof(string));
-            dt2.Columns.Add("MaMay_CAT", typeof(string));
-
-            dt2.Columns.Add("ID_VTHH_Vao_DOT", typeof(string));
-            dt2.Columns.Add("ID_VTHH_Ra_DOT", typeof(string));
-            dt2.Columns.Add("MaVT_Vao_DOT", typeof(string));
-            dt2.Columns.Add("MaVT_Ra_DOT", typeof(string));
-            dt2.Columns.Add("DonViTinh_Vao_DOT", typeof(string));
-            dt2.Columns.Add("DonViTinh_Ra_DOT", typeof(string));
-            dt2.Columns.Add("TenVatTu_Vao_DOT", typeof(string));
-            dt2.Columns.Add("TenVatTu_Ra_DOT", typeof(string));
-            dt2.Columns.Add("SoLuong_Vao_DOT", typeof(string));
-            dt2.Columns.Add("SoLuong_Ra_DOT", typeof(string));
-            dt2.Columns.Add("PhePham_DOT", typeof(string));
-            dt2.Columns.Add("NgaySanXuat_DOT", typeof(string));
-            dt2.Columns.Add("CaSanXuat_DOT", typeof(string));
-            dt2.Columns.Add("CongNhan_DOT", typeof(string));
-            dt2.Columns.Add("MaMay_DOT", typeof(string));
-
-            clsTbVatTuHangHoa clsVT_Vao = new clsTbVatTuHangHoa();
-            clsTbVatTuHangHoa clsVT_Ra = new clsTbVatTuHangHoa();
-            clsNhanSu_tbNhanSu clsnhansu = new clsNhanSu_tbNhanSu();
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            clsPhieu_tbPhieu clsphieu = new clsPhieu_tbPhieu();
-            clsT_MayMoc clsmaymoc = new clsT_MayMoc();
-            DataTable dtphieu = clsphieu.SelectAll_Load_DaTa_Day(_SoTrang, xxtungay, xxdenngay);
-
-
-            if (dtphieu.Rows.Count > 0)
-            {
-                for (int i = 0; i < dtphieu.Rows.Count; i++)
-                {
-
-                    int ID_SoPhieu = Convert.ToInt32(dtphieu.Rows[i]["ID_SoPhieu"].ToString());
-
-                    DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_SoPhieu"] = ID_SoPhieu;
-                    _ravi["MaPhieu"] = dtphieu.Rows[i]["MaPhieu"].ToString();
-
-                    cls.iID_SoPhieu = ID_SoPhieu;
-
-
-                    DataTable dtmaycat = cls.SelectAll_W_iID_SoPhieu_May_CAT();
-                    DataTable dtmaydot = cls.SelectAll_W_iID_SoPhieu_May_DOT();
-                    DataTable dtmayin = cls.SelectAll_W_iID_SoPhieu_May_IN();
-                    if (dtmayin.Rows.Count > 0)
-                    {
-                        int ID_CongNhan = Convert.ToInt32(dtmayin.Rows[0]["ID_CongNhan"].ToString());
-                        clsnhansu.iID_NhanSu = ID_CongNhan;
-                        DataTable dtnhansu = clsnhansu.SelectOne();
-                        string CongNhan = clsnhansu.sTenNhanVien.Value;
-                        DateTime daNgaySanXuat = Convert.ToDateTime(dtmayin.Rows[0]["NgaySanXuat"].ToString());
-                        string NgaySanXuat = daNgaySanXuat.ToString("dd/MM/yyyy");
-                        string CaSanXuat = dtmayin.Rows[0]["CaSanXuat"].ToString();
-                        int ID_VTHH_Vao = Convert.ToInt32(dtmayin.Rows[0]["ID_VTHH_Vao"].ToString());
-                        clsVT_Vao.iID_VTHH = ID_VTHH_Vao;
-                        DataTable dtvtvao = clsVT_Vao.SelectOne();
-                        string MaVT_Vao = clsVT_Vao.sMaVT.Value;
-                        string DonViTinh_Vao = clsVT_Vao.sDonViTinh.Value;
-                        string TenVatTu_Vao = clsVT_Vao.sTenVTHH.Value;
-                        double SoLuong_Vao = CheckString.ConvertToDouble_My(dtmayin.Rows[0]["SoLuong_Vao"].ToString());
-                        int ID_VTHH_Ra = Convert.ToInt32(dtmayin.Rows[0]["ID_VTHH_Ra"].ToString());
-                        clsVT_Ra.iID_VTHH = ID_VTHH_Ra;
-                        DataTable dtvt_Ra = clsVT_Ra.SelectOne();
-                        string MaVT_Ra = clsVT_Ra.sMaVT.Value;
-                        string DonViTinh_Ra = clsVT_Ra.sDonViTinh.Value;
-                        string TenVatTu_Ra = clsVT_Ra.sTenVTHH.Value;
-                        double SanLuong_Tong = CheckString.ConvertToDouble_My(dtmayin.Rows[0]["SanLuong_Tong"].ToString());
-                        double PhePham = CheckString.ConvertToDouble_My(dtmayin.Rows[0]["PhePham"].ToString());
-                        int ID_Mayxxx = Convert.ToInt32(dtmayin.Rows[0]["ID_May"].ToString());
-                        clsmaymoc.iId = ID_Mayxxx;
-                        DataTable dtmay = clsmaymoc.SelectOne();
-                        string MaMay_IN = clsmaymoc.sMaMay.Value;
-                        _ravi["ID_VTHH_Vao_IN"] = ID_VTHH_Vao;
-                        _ravi["ID_VTHH_Ra_IN"] = ID_VTHH_Ra;
-                        _ravi["MaVT_Vao_IN"] = MaVT_Vao;
-                        _ravi["MaVT_Ra_IN"] = MaVT_Ra;
-                        _ravi["DonViTinh_Vao_IN"] = DonViTinh_Vao;
-                        _ravi["DonViTinh_Ra_IN"] = DonViTinh_Ra;
-                        _ravi["TenVatTu_Vao_IN"] = TenVatTu_Vao;
-                        _ravi["TenVatTu_Ra_IN"] = TenVatTu_Ra;
-                        _ravi["SoLuong_Vao_IN"] = SoLuong_Vao.ToString();
-                        _ravi["SoLuong_Ra_IN"] = SanLuong_Tong.ToString();
-                        _ravi["PhePham_IN"] = PhePham;
-                        _ravi["NgaySanXuat_IN"] = NgaySanXuat;
-                        _ravi["CaSanXuat_IN"] = CaSanXuat;
-                        _ravi["CongNhan_IN"] = CongNhan;
-                        _ravi["MaMay_IN"] = MaMay_IN;
-                    }
-
-                    if (dtmaycat.Rows.Count > 0)
-                    {
-                        int ID_CongNhan = Convert.ToInt32(dtmaycat.Rows[0]["ID_CongNhan"].ToString());
-                        clsnhansu.iID_NhanSu = ID_CongNhan;
-                        DataTable dtnhansu = clsnhansu.SelectOne();
-                        string CongNhan = clsnhansu.sTenNhanVien.Value;
-                        DateTime daNgaySanXuat = Convert.ToDateTime(dtmaycat.Rows[0]["NgaySanXuat"].ToString());
-                        string NgaySanXuat = daNgaySanXuat.ToString("dd/MM/yyyy");
-                        string CaSanXuat = dtmaycat.Rows[0]["CaSanXuat"].ToString();
-                        int ID_VTHH_Vao = Convert.ToInt32(dtmaycat.Rows[0]["ID_VTHH_Vao"].ToString());
-                        clsVT_Vao.iID_VTHH = ID_VTHH_Vao;
-                        DataTable dtvtvao = clsVT_Vao.SelectOne();
-                        string MaVT_Vao = clsVT_Vao.sMaVT.Value;
-                        string DonViTinh_Vao = clsVT_Vao.sDonViTinh.Value;
-                        string TenVatTu_Vao = clsVT_Vao.sTenVTHH.Value;
-                        double SoLuong_Vao = CheckString.ConvertToDouble_My(dtmaycat.Rows[0]["SoLuong_Vao"].ToString());
-                        int ID_VTHH_Ra = Convert.ToInt32(dtmaycat.Rows[0]["ID_VTHH_Ra"].ToString());
-                        clsVT_Ra.iID_VTHH = ID_VTHH_Ra;
-                        DataTable dtvt_Ra = clsVT_Ra.SelectOne();
-                        string MaVT_Ra = clsVT_Ra.sMaVT.Value;
-                        string DonViTinh_Ra = clsVT_Ra.sDonViTinh.Value;
-                        string TenVatTu_Ra = clsVT_Ra.sTenVTHH.Value;
-                        double SanLuong_Tong = CheckString.ConvertToDouble_My(dtmaycat.Rows[0]["SanLuong_Tong"].ToString());
-                        double PhePham = CheckString.ConvertToDouble_My(dtmaycat.Rows[0]["PhePham"].ToString());
-                        int ID_Mayxxx = Convert.ToInt32(dtmaycat.Rows[0]["ID_May"].ToString());
-                        clsmaymoc.iId = ID_Mayxxx;
-                        DataTable dtmay = clsmaymoc.SelectOne();
-                        string MaMay_CAT = clsmaymoc.sMaMay.Value;
-
-                        _ravi["ID_VTHH_Vao_CAT"] = ID_VTHH_Vao;
-                        _ravi["ID_VTHH_Ra_CAT"] = ID_VTHH_Ra;
-                        _ravi["MaVT_Vao_CAT"] = MaVT_Vao;
-                        _ravi["MaVT_Ra_CAT"] = MaVT_Ra;
-                        _ravi["DonViTinh_Vao_CAT"] = DonViTinh_Vao;
-                        _ravi["DonViTinh_Ra_CAT"] = DonViTinh_Ra;
-                        _ravi["TenVatTu_Vao_CAT"] = TenVatTu_Vao;
-                        _ravi["TenVatTu_Ra_CAT"] = TenVatTu_Ra;
-                        _ravi["SoLuong_Vao_CAT"] = SoLuong_Vao.ToString();
-                        _ravi["SoLuong_Ra_CAT"] = SanLuong_Tong.ToString();
-                        _ravi["PhePham_CAT"] = PhePham;
-                        _ravi["NgaySanXuat_CAT"] = NgaySanXuat;
-                        _ravi["CaSanXuat_CAT"] = CaSanXuat;
-                        _ravi["CongNhan_CAT"] = CongNhan;
-                        _ravi["MaMay_CAT"] = MaMay_CAT;
-                    }
-
-                    if (dtmaydot.Rows.Count > 0)
-                    {
-                        int ID_CongNhan = Convert.ToInt32(dtmaydot.Rows[0]["ID_CongNhan"].ToString());
-                        clsnhansu.iID_NhanSu = ID_CongNhan;
-                        DataTable dtnhansu = clsnhansu.SelectOne();
-                        string CongNhan = clsnhansu.sTenNhanVien.Value;
-                        DateTime daNgaySanXuat = Convert.ToDateTime(dtmaydot.Rows[0]["NgaySanXuat"].ToString());
-                        string NgaySanXuat = daNgaySanXuat.ToString("dd/MM/yyyy");
-                        string CaSanXuat = dtmaydot.Rows[0]["CaSanXuat"].ToString();
-                        int ID_VTHH_Vao = Convert.ToInt32(dtmaydot.Rows[0]["ID_VTHH_Vao"].ToString());
-                        clsVT_Vao.iID_VTHH = ID_VTHH_Vao;
-                        DataTable dtvtvao = clsVT_Vao.SelectOne();
-                        string MaVT_Vao = clsVT_Vao.sMaVT.Value;
-                        string DonViTinh_Vao = clsVT_Vao.sDonViTinh.Value;
-                        string TenVatTu_Vao = clsVT_Vao.sTenVTHH.Value;
-                        double SoLuong_Vao = CheckString.ConvertToDouble_My(dtmaydot.Rows[0]["SoLuong_Vao"].ToString());
-                        int ID_VTHH_Ra = Convert.ToInt32(dtmaydot.Rows[0]["ID_VTHH_Ra"].ToString());
-                        clsVT_Ra.iID_VTHH = ID_VTHH_Ra;
-                        DataTable dtvt_Ra = clsVT_Ra.SelectOne();
-                        string MaVT_Ra = clsVT_Ra.sMaVT.Value;
-                        string DonViTinh_Ra = clsVT_Ra.sDonViTinh.Value;
-                        string TenVatTu_Ra = clsVT_Ra.sTenVTHH.Value;
-                        double SanLuong_Tong = CheckString.ConvertToDouble_My(dtmaydot.Rows[0]["SanLuong_Tong"].ToString());
-                        double PhePham = CheckString.ConvertToDouble_My(dtmaydot.Rows[0]["PhePham"].ToString());
-                        int ID_Mayxxx = Convert.ToInt32(dtmaydot.Rows[0]["ID_May"].ToString());
-                        clsmaymoc.iId = ID_Mayxxx;
-                        DataTable dtmay = clsmaymoc.SelectOne();
-                        string MaMay_DOT = clsmaymoc.sMaMay.Value;
-                        _ravi["ID_VTHH_Vao_DOT"] = ID_VTHH_Vao;
-                        _ravi["ID_VTHH_Ra_DOT"] = ID_VTHH_Ra;
-                        _ravi["MaVT_Vao_DOT"] = MaVT_Vao;
-                        _ravi["MaVT_Ra_DOT"] = MaVT_Ra;
-                        _ravi["DonViTinh_Vao_DOT"] = DonViTinh_Vao;
-                        _ravi["DonViTinh_Ra_DOT"] = DonViTinh_Ra;
-                        _ravi["TenVatTu_Vao_DOT"] = TenVatTu_Vao;
-                        _ravi["TenVatTu_Ra_DOT"] = TenVatTu_Ra;
-                        _ravi["SoLuong_Vao_DOT"] = SoLuong_Vao.ToString();
-                        _ravi["SoLuong_Ra_DOT"] = SanLuong_Tong.ToString();
-                        _ravi["PhePham_DOT"] = PhePham;
-                        _ravi["NgaySanXuat_DOT"] = NgaySanXuat;
-                        _ravi["CaSanXuat_DOT"] = CaSanXuat;
-                        _ravi["CongNhan_DOT"] = CongNhan;
-                        _ravi["MaMay_DOT"] = MaMay_DOT;
-                    }
-
-                    dt2.Rows.Add(_ravi);
-
-                }
-                gridControl1.DataSource = dt2;
-            }
+            if (xxid_loaiMay == 1)
+                dt2 = cls.H_load_Phieu_T8_ngaythang_IN(sotrang, _SoDong, xxtungay, xxdenngay);
+            else if (xxid_loaiMay ==2)
+                dt2 = cls.H_load_Phieu_T8_ngaythang_CAT(sotrang, _SoDong, xxtungay, xxdenngay);
+            else if (xxid_loaiMay == 3)
+                dt2 = cls.H_load_Phieu_T8_ngaythang_DOT(sotrang, _SoDong, xxtungay, xxdenngay);
+            gridControl1.DataSource = dt2;
 
             isload = false;
         }
         private void Load_PhieuSX(bool islandau)
         {
             int sotrang_ = 1;
+            int sodong_ = 25;
             try
             {
                 sotrang_ = Convert.ToInt32(txtSoTrang.Text);
+                sodong_ = Convert.ToInt32(txtSoDong.Text);
             }
             catch
             {
                 sotrang_ = 1;
                 txtSoTrang.Text = "1";
+
+                sodong_ = 1;
+                txtSoDong.Text = "25";
             }
-            LoadData(sotrang_, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            int xxid = Convert.ToInt32(gridLoaiMay.EditValue);
+            LoadData(sotrang_, sodong_, true, dteTuNgay.DateTime, dteDenNgay.DateTime, xxid);
         }
-        public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
+        public void ResetSoTrang(int xxsodong,DateTime xxtungay, DateTime xxdenngay, int xxid_loaiMay)
         {
 
             btnTrangSau.Visible = true;
@@ -267,12 +65,19 @@ namespace CtyTinLuong
             btnTrangTiep.LinkColor = Color.Blue;
             txtSoTrang.Text = "1";
 
-            using (clsPhieu_tbPhieu cls = new clsPhieu_tbPhieu())
+            using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
             {
-                DataTable dt_ = cls.SelectAll_Tinh_SoPhieu_new(xxtungay, xxdenngay);
+                DataTable dt_ = new DataTable();
+                if (xxid_loaiMay == 1)
+                    dt_ = cls.H_Tinh_SoPhieu_T8_IN(xxtungay, xxdenngay);
+                else if (xxid_loaiMay == 2)
+                    dt_ = cls.H_Tinh_SoPhieu_T8_CAT(xxtungay, xxdenngay);
+                else if (xxid_loaiMay == 3)
+                    dt_ = cls.H_Tinh_SoPhieu_T8_DOT(xxtungay, xxdenngay);
+              
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
                 }
                 else
                 {
@@ -288,6 +93,63 @@ namespace CtyTinLuong
             }
         }
 
+        private void Load_LockUp(int iiID_loaimay)
+        {
+            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+            DataSet dtset = cls.H_LockUp_PhieuSanXuat_thang8();                   
+
+            gridMaVT_Vao.DataSource = dtset.Tables[4];
+            gridMaVT_Vao.ValueMember = "ID_VTHH";
+            gridMaVT_Vao.DisplayMember = "MaVT";
+
+            gridMaVT_Ra.DataSource = dtset.Tables[4];
+            gridMaVT_Ra.ValueMember = "ID_VTHH";
+            gridMaVT_Ra.DisplayMember = "MaVT";
+
+
+            gridDMLuong.DataSource = dtset.Tables[8];
+            gridDMLuong.ValueMember = "ID_DinhMuc_Luong_SanLuong";
+            gridDMLuong.DisplayMember = "MaDinhMuc";
+
+            gridCaTruong.DataSource = dtset.Tables[0];
+            gridCaTruong.ValueMember = "ID_NhanSu";
+            gridCaTruong.DisplayMember = "MaNhanVien";
+
+            if (iiID_loaimay==1) // máy in
+            {
+                gridCongNhan.DataSource = dtset.Tables[1];
+                gridCongNhan.ValueMember = "ID_NhanSu";
+                gridCongNhan.DisplayMember = "TenNhanVien";               
+
+                gridMaMay.DataSource = dtset.Tables[5];
+                gridMaMay.ValueMember = "ID_May";
+                gridMaMay.DisplayMember = "TenMay";
+            }
+
+            if (iiID_loaimay == 2) // máy cắt
+            {
+                gridCongNhan.DataSource = dtset.Tables[2];
+                gridCongNhan.ValueMember = "ID_NhanSu";
+                gridCongNhan.DisplayMember = "TenNhanVien";
+
+            
+                gridMaMay.DataSource = dtset.Tables[6];
+                gridMaMay.ValueMember = "ID_May";
+                gridMaMay.DisplayMember = "TenMay";
+            }
+            if (iiID_loaimay == 3) // máy đột
+            {
+                gridCongNhan.DataSource = dtset.Tables[3];
+                gridCongNhan.ValueMember = "ID_NhanSu";
+                gridCongNhan.DisplayMember = "TenNhanVien";
+
+                gridMaMay.DataSource = dtset.Tables[7];
+                gridMaMay.ValueMember = "ID_May";
+                gridMaMay.DisplayMember = "TenMay";
+            }
+
+            cls.Dispose();
+        }
         public PhieuSanXuat_IN_CAT_New_thang8()
         {
             InitializeComponent();
@@ -295,10 +157,39 @@ namespace CtyTinLuong
 
         private void PhieuSanXuat_IN_CAT_New_thang8_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("id", typeof(int));
+            dt.Columns.Add("loaimay", typeof(String));
+            DataRow row1 = dt.NewRow();
+            row1["id"] = 1;
+            row1["loaimay"] = "Máy In";
+            dt.Rows.Add(row1);
+
+            DataRow row2 = dt.NewRow();
+            row2["id"] = 2;
+            row2["loaimay"] = "Máy Cắt";
+            dt.Rows.Add(row2);
+
+            DataRow row3 = dt.NewRow();
+            row3["id"] = 3;
+            row3["loaimay"] = "Máy Đột";
+            dt.Rows.Add(row3);
+
+
+            gridLoaiMay.Properties.DataSource = dt;
+            gridLoaiMay.Properties.ValueMember = "id";
+            gridLoaiMay.Properties.DisplayMember = "loaimay";
+
+            gridLoaiMay.EditValue = 1;
+
             dteDenNgay.DateTime = DateTime.Today;
             dteTuNgay.DateTime = DateTime.Today.AddDays(-7);
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+            _Loaimay = Convert.ToInt32(gridLoaiMay.EditValue);
+            Load_LockUp(_Loaimay);
+            _SoDong = 25;
+            ResetSoTrang(_SoDong,dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+            LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
         }
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -381,23 +272,59 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                //int xxid = Convert.ToInt32(gridLoaiMay.EditValue);
+                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
+           
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                //int xxid = Convert.ToInt32(gridLoaiMay.EditValue);
+                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridLoaiMay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                _Loaimay = Convert.ToInt32(gridLoaiMay.EditValue);
+                Load_LockUp(_Loaimay);
+                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
+        }
+
+        private void txtSoDong_TextChanged(object sender, EventArgs e)
+        {
+            _SoDong = Convert.ToInt32(txtSoDong.Text);          
+           
+           // ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
+            LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
         }
     }
 }

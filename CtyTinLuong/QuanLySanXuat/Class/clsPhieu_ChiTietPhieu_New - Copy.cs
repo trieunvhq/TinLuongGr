@@ -7,7 +7,249 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
-        //pr_Phieu_ChiTietPhieu_New_SelectAll_distinct_W_ID_CongNhan_new_May_DOT
+
+        public DataTable H_Tinh_SoPhieu_T8_IN(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_Tinh_SoPhieu_T8_IN]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_Tinh_SoPhieu_T8_IN");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_Tinh_SoPhieu_T8_IN", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable H_Tinh_SoPhieu_T8_CAT(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_Tinh_SoPhieu_T8_CAT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_Tinh_SoPhieu_T8_CAT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_Tinh_SoPhieu_T8_CAT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable H_Tinh_SoPhieu_T8_DOT(DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_Tinh_SoPhieu_T8_DOT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_Tinh_SoPhieu_T8_DOT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_Tinh_SoPhieu_T8_DOT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataTable H_load_Phieu_T8_ngaythang_IN(int sotrang, int sodong, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_load_Phieu_T8_ngaythang_IN]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_load_Phieu_T8_ngaythang_IN");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_load_Phieu_T8_ngaythang_IN", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable H_load_Phieu_T8_ngaythang_CAT(int sotrang, int sodong, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_load_Phieu_T8_ngaythang_CAT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_load_Phieu_T8_ngaythang_CAT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_load_Phieu_T8_ngaythang_CAT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable H_load_Phieu_T8_ngaythang_DOT(int sotrang, int sodong, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_load_Phieu_T8_ngaythang_DOT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_load_Phieu_T8_ngaythang_DOT");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoTrang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sotrang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_load_Phieu_T8_ngaythang_DOT", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+        public DataSet H_LockUp_PhieuSanXuat_thang8()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_LockUp_PhieuSanXuat_thang8]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataSet dtToReturn = new DataSet("H_LockUp_PhieuSanXuat_thang8");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_LockUp_PhieuSanXuat_thang8", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_distinct_W_ID_CongNhan_new_May_DOT(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

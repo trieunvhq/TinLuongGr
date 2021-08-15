@@ -1631,7 +1631,7 @@
     <Compile Include="QuanLySanXuat\SanXuat_frmChiTietLenhSanXuat.Designer.cs">
       <DependentUpon>SanXuat_frmChiTietLenhSanXuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuaHang\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLySanXuat\SanXuat_frmQuanLySanXuat.cs">
       <SubType>Form</SubType>

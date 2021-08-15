@@ -29,12 +29,19 @@ namespace CtyTinLuong
 
         private void navBarItemPhieuSanXuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            //doiMauTitle(sender, e);
+
+            //Cursor.Current = Cursors.WaitCursor;
+            //ucc.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(ucc);
+            //ucc.BringToFront();
+            //Cursor.Current = Cursors.Default;
+
             doiMauTitle(sender, e);
 
             Cursor.Current = Cursors.WaitCursor;
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
+            PhieuSanXuat_IN_CAT_New_thang8 ff = new PhieuSanXuat_IN_CAT_New_thang8();
+            ff.Show();
             Cursor.Current = Cursors.Default;
         }
 
