@@ -255,13 +255,7 @@ namespace CtyTinLuong
                             cls4.Delete();
                         }
                     }
-                    //if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-                    //{
-                    //    HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                    //}
-                    //else
-                    //{
-                    //    //  HienThi_ALL();ien
+                   
                     LoadData(_SoTrang, false);
                     Cursor.Current = Cursors.Default;
                     //}
