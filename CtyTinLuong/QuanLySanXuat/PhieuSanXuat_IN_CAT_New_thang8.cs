@@ -17,6 +17,7 @@ namespace CtyTinLuong
 {
     public partial class PhieuSanXuat_IN_CAT_New_thang8 : Form
     {
+        public static int miID_SoPhieu;
         int iMacDinh_Luong = 0;
         int iMacDinh_CaTruong = 0;
         string sMacDinh_CaSX = "";
@@ -475,6 +476,7 @@ namespace CtyTinLuong
       
         private void PhieuSanXuat_IN_CAT_New_thang8_Load(object sender, EventArgs e)
         {
+            clDot.Visible = false;
             gridMacDinh_Luong.EditValue = 8;
             _SoDong = Convert.ToInt32(txtSoDong.Text);
             dteNgayMacDinh.DateTime= DateTime.Today;
@@ -493,10 +495,10 @@ namespace CtyTinLuong
             row2["loaimay"] = "Máy Cắt";
             dt.Rows.Add(row2);
 
-            DataRow row3 = dt.NewRow();
-            row3["id"] = 3;
-            row3["loaimay"] = "Máy Đột";
-            dt.Rows.Add(row3);
+            //DataRow row3 = dt.NewRow();
+            //row3["id"] = 3;
+            //row3["loaimay"] = "Máy Đột";
+            //dt.Rows.Add(row3);
 
             gridLoaiMay.Properties.DataSource = dt;
             gridLoaiMay.Properties.ValueMember = "id";
@@ -611,6 +613,7 @@ namespace CtyTinLuong
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+
                 //int xxid = Convert.ToInt32(gridLoaiMay.EditValue);
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
@@ -650,7 +653,10 @@ namespace CtyTinLuong
                 txtSoTrang.Text = "1";
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
-                Cursor.Current = Cursors.Default;
+                if (_Loaimay == 1) clDot.Visible = false;
+                else clDot.Visible = true;
+                Cursor.Current = Cursors.Default;               
+
             }
             catch
             { }
@@ -705,8 +711,11 @@ namespace CtyTinLuong
                     bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Ra, sTenVTHH_ra);
                     bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Ra, sDonViTinh_ra);
                     bandedGridView1.SetRowCellValue(e.RowHandle, clChange, "1");
-                }            
-
+                }
+                if (e.Column == clNgaySanXuat || e.Column == clCaSanXuat || e.Column == clID_May || e.Column == clSoLuong_Vao || e.Column == clID_CongNhan || e.Column == clID_DinhMuc_Luong || e.Column == clID_CaTruong || e.Column == clGhiChu)
+                {                  
+                    bandedGridView1.SetRowCellValue(e.RowHandle, clChange, "1");
+                }
                 if (e.Column == clSanLuong_Tong)
                 {
                     double xsanluongtong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong).ToString());
@@ -721,7 +730,7 @@ namespace CtyTinLuong
                     bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_TangCa, sanluongtangca_);
                     bandedGridView1.SetRowCellValue(e.RowHandle, clChange, "1");
                 }
-
+                
             }
             catch
             { }
@@ -740,9 +749,7 @@ namespace CtyTinLuong
             //else if (e.Values[columnInfo].ToString() == "CHO")
             //    e.Values[columnText] = _lookups["CHO"].Where(x => x.DisplayName == e.Values[columnText].ToString()).FirstOrDefault().Name;
         }
-
        
-
         private void bandedGridView1_InitNewRow(object sender, InitNewRowEventArgs e)
         {
             bandedGridView1.SetRowCellValue(e.RowHandle, clNgaySanXuat, daNgayMacdinh);
@@ -774,21 +781,52 @@ namespace CtyTinLuong
             catch
             { }
             
-        }
-
-       
+        }       
 
         private void dteNgayMacDinh_EditValueChanged(object sender, EventArgs e)
         {
             daNgayMacdinh = dteNgayMacDinh.DateTime;
         }
 
+        private void bandedGridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {          
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string change = View.GetRowCellValue(e.RowHandle, View.Columns["Change"]).ToString();
+                string sstesst = View.GetRowCellValue(e.RowHandle, View.Columns["Test"]).ToString();
+                if (sstesst == "1")
+                {
+                    e.Appearance.BackColor = Color.OrangeRed;
+
+                }
+                else if (change == "1")
+                {
+                    e.Appearance.BackColor = Color.PaleTurquoise;
+
+                }
+                
+            }
+        }
         private void bandedGridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
            
-            if(KiemTraLuu_In_CAT()==true)
-                bandedGridView1.SetRowCellValue(e.RowHandle, clChange, "1");
-            else bandedGridView1.SetRowCellValue(e.RowHandle, clChange, "0");
+                if (KiemTraLuu_In_CAT() == false)
+                {                   
+                    bandedGridView1.SetRowCellValue(e.RowHandle, clTest, "1");
+                }
+                else bandedGridView1.SetRowCellValue(e.RowHandle, clTest, "0");
+          
+            //if (bandedGridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString() == "")
+            //{
+            //    if (KiemTraLuu_In_CAT() == false)
+            //    {
+            //        bandedGridView1.SetRowCellValue(e.RowHandle, clChange, "0");
+            //        bandedGridView1.SetRowCellValue(e.RowHandle, clTest, "1");
+            //    }
+            //    else bandedGridView1.SetRowCellValue(e.RowHandle, clTest, "0");
+            //}
+
         }
 
         private void gridMacDinh_Luong_EditValueChanged(object sender, EventArgs e)
@@ -854,9 +892,11 @@ namespace CtyTinLuong
                     LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime, _Loaimay);
                 }
             }
-        }
-
-      
+            else
+            {
+                bandedGridView1.DeleteRow(bandedGridView1.FocusedRowHandle);
+            }
+        }      
 
         private void btThoat_Click(object sender, EventArgs e)
         {
@@ -886,8 +926,7 @@ namespace CtyTinLuong
 
             }
         }
-
-       
+               
         private void gridControl1_ProcessGridKey(object sender, KeyEventArgs e)
         {
             GridControl grid = sender as GridControl;
@@ -910,6 +949,19 @@ namespace CtyTinLuong
             e.Handled = handled;
             e.SuppressKeyPress = handled;
         }
+
+        private void btDot_Click(object sender, EventArgs e)
+        {
+            if(bandedGridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString()!="" & bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra).ToString() != "")
+            {
+                int xxID_VTHHRa= Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra).ToString());
+                miID_SoPhieu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(CLID_SoPhieu).ToString());
+                SanXuat_frmChiTietPhieu_MayDot ff = new SanXuat_frmChiTietPhieu_MayDot(xxID_VTHHRa);
+                ff.Show();
+            }
+        }
+
+      
 
         private void txtSoTrang_TextChanged(object sender, EventArgs e)
         {

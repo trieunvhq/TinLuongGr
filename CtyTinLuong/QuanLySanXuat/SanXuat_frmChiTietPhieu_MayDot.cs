@@ -69,7 +69,7 @@ namespace CtyTinLuong
                 cls2.Delete();
             }
         }
-        private void HienThi_CongNhan()
+        private void HienThi_CongNhan(int iiID_Sophieu_)
         {
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dt = clsNguoi.T_SelectAll(11); 
@@ -89,7 +89,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("HienThi", typeof(string));
             dt2.Columns.Add("MaNhanVien", typeof(string));
             clsPhieu_ChiTietPhieu_New_BoSungCongNhan_MayDot cls = new CtyTinLuong.clsPhieu_ChiTietPhieu_New_BoSungCongNhan_MayDot();
-            cls.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
+            cls.iID_SoPhieu = iiID_Sophieu_;
             DataTable dt3 = cls.SelectAll_W_ID_SoPhieu();
             if (dt3.Rows.Count > 0)
             {
@@ -110,17 +110,17 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt2;
         }
        
-        private void HienThi_May_DOT()
+        private void HienThi_May_DOT(int iiID_Sophieu_)
         {
 
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            cls.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
+            cls.iID_SoPhieu = iiID_Sophieu_;
             DataTable dxxxx = cls.SelectAll_W_iID_SoPhieu();
             dxxxx.DefaultView.RowFilter = "bMay_DOT = True";
             DataView dv = dxxxx.DefaultView;
             DataTable dt = dv.ToTable();
             clsPhieu_tbPhieu cls2 = new clsPhieu_tbPhieu();
-            cls2.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
+            cls2.iID_SoPhieu = iiID_Sophieu_;
             DataTable dt2 = cls2.SelectOne();
             txtMaPhieu.Text = cls2.sMaPhieu.Value;
             if (dt.Rows.Count > 0)
@@ -222,13 +222,13 @@ namespace CtyTinLuong
             else return true;
 
         }
-        private void Luu_Va_GuiDuLieu_May_DOT()
+        private void Luu_Va_GuiDuLieu_May_DOT(int iiID_Sophieu_)
         {
             if (!KiemTraLuu_May_DOT()) return;
             else
             {
                 clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
-                cls2.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
+                cls2.iID_SoPhieu = iiID_Sophieu_;
                 cls2.sCaSanXuat = cbCaSanXuat_May_DOT.Text.ToString();
                 cls2.daNgaySanXuat = dteNgaySanXuat_May_DOT.DateTime;
                 DataTable dt3 = cls2.SelectAll_W_iID_SoPhieu_W_NgayThangSX_W_Ca_SX_Chon_May_DOT();
@@ -262,7 +262,7 @@ namespace CtyTinLuong
                 double SOKGMOTBAO=CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString());
                 double docaodot= CheckString.ConvertToDouble_My(txtDoCao.Text.ToString());
                 int ID_DinhMuc_Luong = Convert.ToInt32(gridDinhMucSLMay_DOT.EditValue.ToString());
-                cls.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu; 
+                cls.iID_SoPhieu = iiID_Sophieu_; 
                 cls.iID_May = ID_May;
                 cls.iID_CongNhan = ID_CongNhan;
                 cls.iID_CaTruong = ID_CaTruong;
@@ -298,10 +298,10 @@ namespace CtyTinLuong
                     cls.iID_ChiTietPhieu = ID_ChiTietPhieuxxxx;
                     cls.Update();
                 }
-                TaoLenhSanXuat_DOT(SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu, ID_ChiTietPhieuxxxx);
+                TaoLenhSanXuat_DOT(iiID_Sophieu_, ID_ChiTietPhieuxxxx);
 
                 clsPhieu_tbPhieu cls22222 = new clsPhieu_tbPhieu();
-                cls22222.iID_SoPhieu = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu;
+                cls22222.iID_SoPhieu = iiID_Sophieu_;
                 cls22222.Update_Gui_DuLieu();
             }
 
@@ -488,11 +488,11 @@ namespace CtyTinLuong
 
         private void SanXuat_frmChiTietPhieu_MayDot_Load(object sender, EventArgs e)
         {
-            //txtmidsohieu.Text = SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu.ToString();
+            //txtmidsohieu.Text = iiID_Sophieu_.ToString();
             Cursor.Current = Cursors.WaitCursor;
-            HienThi_CongNhan();
+            HienThi_CongNhan(PhieuSanXuat_IN_CAT_New_thang8.miID_SoPhieu);
             Load_lockUP_EDIT_May_DOT();
-            HienThi_May_DOT();
+            HienThi_May_DOT(PhieuSanXuat_IN_CAT_New_thang8.miID_SoPhieu);
             Cursor.Current = Cursors.Default;
         }
 
@@ -775,8 +775,8 @@ namespace CtyTinLuong
 
         private void btChiLuu_Click(object sender, EventArgs e)
         {
-            Luu_Va_GuiDuLieu_May_DOT();
-            LuuDuLieu_BoSungCongNhan(SanXuat_frmChiTietSoPhieu_IN_CAT_DOT_NEW2222.MIiiiid_SoPhieu);
+            Luu_Va_GuiDuLieu_May_DOT(PhieuSanXuat_IN_CAT_New_thang8.miID_SoPhieu);
+            LuuDuLieu_BoSungCongNhan(PhieuSanXuat_IN_CAT_New_thang8.miID_SoPhieu);
             MessageBox.Show("Đã lưu");
 
         }

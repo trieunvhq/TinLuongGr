@@ -1564,8 +1564,10 @@ namespace CtyTinLuong
 
         private void btChuyen_Click(object sender, EventArgs e)
         {
-            
+
             SanXuat_frmChiTietPhieu_MayDot ff = new SanXuat_frmChiTietPhieu_MayDot(Convert.ToInt32(gridHangHoaXuat_May_CAT.EditValue.ToString()));
+
+            //SanXuat_frmChiTietPhieu_MayDot ff = new SanXuat_frmChiTietPhieu_MayDot();
             ff.Show();
         }
 
