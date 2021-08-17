@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
@@ -884,6 +885,30 @@ namespace CtyTinLuong
                 }
 
             }
+        }
+
+       
+        private void gridControl1_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            GridControl grid = sender as GridControl;
+            GridView view = grid.FocusedView as GridView;
+            bool handled = false;
+            if (e.KeyData == (Keys.C | Keys.Control))
+            {
+                //value = view.GetFocusedRow();
+                //handled = true;
+                bandedGridView1.CopyToClipboard();
+            }
+
+            if (e.KeyData == (Keys.V | Keys.Control))
+            {
+                //view.SetFocusedRowCellValue(view.FocusedColumn, value);
+                //handled = true;
+                bandedGridView1.PasteFromClipboard();
+            }
+
+            e.Handled = handled;
+            e.SuppressKeyPress = handled;
         }
 
         private void txtSoTrang_TextChanged(object sender, EventArgs e)
