@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuSanXuat_IN_CAT_New_thang8));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridMacDinh_VatTu_Ra = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -981,7 +981,7 @@
             this.gridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 403;
+            this.gridBand1.Width = 163;
             // 
             // clSTT
             // 
@@ -1023,7 +1023,6 @@
             this.clChange_IN.FieldName = "Change_IN";
             this.clChange_IN.Name = "clChange_IN";
             this.clChange_IN.OptionsColumn.FixedWidth = true;
-            this.clChange_IN.Visible = true;
             this.clChange_IN.Width = 40;
             // 
             // clChange_CAT
@@ -1031,7 +1030,6 @@
             this.clChange_CAT.Caption = "Change_CAT";
             this.clChange_CAT.FieldName = "Change_CAT";
             this.clChange_CAT.Name = "clChange_CAT";
-            this.clChange_CAT.Visible = true;
             this.clChange_CAT.Width = 40;
             // 
             // clChange_DOT
@@ -1039,7 +1037,6 @@
             this.clChange_DOT.Caption = "Change_DOT";
             this.clChange_DOT.FieldName = "Change_DOT";
             this.clChange_DOT.Name = "clChange_DOT";
-            this.clChange_DOT.Visible = true;
             this.clChange_DOT.Width = 40;
             // 
             // clTest_CAT
@@ -1047,7 +1044,6 @@
             this.clTest_CAT.Caption = "Test_CAT";
             this.clTest_CAT.FieldName = "Test_CAT";
             this.clTest_CAT.Name = "clTest_CAT";
-            this.clTest_CAT.Visible = true;
             this.clTest_CAT.Width = 40;
             // 
             // clTest_DOT
@@ -1055,7 +1051,6 @@
             this.clTest_DOT.Caption = "Test_DOT";
             this.clTest_DOT.FieldName = "Test_DOT";
             this.clTest_DOT.Name = "clTest_DOT";
-            this.clTest_DOT.Visible = true;
             this.clTest_DOT.Width = 40;
             // 
             // clTest_IN
@@ -1064,7 +1059,6 @@
             this.clTest_IN.FieldName = "Test_IN";
             this.clTest_IN.Name = "clTest_IN";
             this.clTest_IN.OptionsColumn.FixedWidth = true;
-            this.clTest_IN.Visible = true;
             this.clTest_IN.Width = 40;
             // 
             // clNgayLapPhieu
@@ -2391,6 +2385,7 @@
             // 
             this.clCaSanXuat_DOT.Caption = "Ca";
             this.clCaSanXuat_DOT.ColumnEdit = this.cbCaSanXuat_DOT;
+            this.clCaSanXuat_DOT.FieldName = "CaSanXuat_DOT";
             this.clCaSanXuat_DOT.Name = "clCaSanXuat_DOT";
             this.clCaSanXuat_DOT.OptionsColumn.FixedWidth = true;
             this.clCaSanXuat_DOT.Visible = true;
@@ -2841,9 +2836,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa2_Click);
