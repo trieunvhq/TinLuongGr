@@ -35,11 +35,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,15 +63,16 @@
             this.btnTrangTiep = new System.Windows.Forms.LinkLabel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.clSTT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CLID_SoPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clMaPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clHienThi = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clChange = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clNgaySanXuat = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clCaSanXuat = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clNgayLapPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clCaSanXuat_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.cbCaSanXuat = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.clID_VTHH_Vao = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.clID_VTHH_Vao_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridMaVT_Vao = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,34 +80,35 @@
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenVTHH_Vao = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clTenVTHH_Vao_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.clDonViTinh_Vao = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clID_May = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clDonViTinh_Vao_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clID_May_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridMaMay = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clSoLuong_Vao = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clID_VTHH_Ra = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clSoLuong_Vao_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.clID_VTHH_Ra_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridMaVT_Ra = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clTenVTHH_Ra = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clTenVTHH_Ra_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.clDonViTinh_Ra = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clID_CongNhan = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clDonViTinh_Ra_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clID_CongNhan_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridCongNhan = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.clID_DinhMuc_Luong = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clID_DinhMuc_Luong_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridDMLuong = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -121,23 +118,21 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clSanLuong_Tong = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clSanLuong_Thuong = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clSanLuong_TangCa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clPhePham = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clID_CaTruong = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clSanLuong_Tong_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clSanLuong_Thuong_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clSanLuong_TangCa_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clPhePham_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clID_CaTruong_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridCaTruong = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clGhiChu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clGhiChu_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clXoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.clDot = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.btDot = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.clID_ChiTietPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clTest = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clID_ChiTietPhieu_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clTest_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.dteDenNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
@@ -167,9 +162,6 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -203,7 +195,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridCaTruong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btDot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -545,7 +536,6 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa2,
-            this.btDot,
             this.gridCongNhan,
             this.gridCaTruong,
             this.gridMaMay,
@@ -578,32 +568,30 @@
             this.gridBand2});
             this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.clSTT,
-            this.clID_ChiTietPhieu,
             this.CLID_SoPhieu,
             this.clMaPhieu,
-            this.clID_May,
-            this.clID_CongNhan,
-            this.clID_CaTruong,
-            this.clNgaySanXuat,
-            this.clCaSanXuat,
-            this.clID_DinhMuc_Luong,
-            this.clID_VTHH_Vao,
-            this.clSoLuong_Vao,
-            this.clID_VTHH_Ra,
-            this.clSanLuong_Thuong,
-            this.clSanLuong_TangCa,
-            this.clSanLuong_Tong,
-            this.clPhePham,
-            this.clGhiChu,
-            this.clTenVTHH_Vao,
-            this.clTenVTHH_Ra,
-            this.clDonViTinh_Ra,
-            this.clDonViTinh_Vao,
-            this.clDot,
+            this.clNgayLapPhieu,
+            this.clID_ChiTietPhieu_IN,
+            this.clID_May_IN,
+            this.clID_CongNhan_IN,
+            this.clID_CaTruong_IN,
+            this.clCaSanXuat_IN,
+            this.clID_DinhMuc_Luong_IN,
+            this.clID_VTHH_Vao_IN,
+            this.clSoLuong_Vao_IN,
+            this.clID_VTHH_Ra_IN,
+            this.clSanLuong_Thuong_IN,
+            this.clSanLuong_TangCa_IN,
+            this.clSanLuong_Tong_IN,
+            this.clPhePham_IN,
+            this.clGhiChu_IN,
+            this.clTenVTHH_Vao_IN,
+            this.clTenVTHH_Ra_IN,
+            this.clDonViTinh_Ra_IN,
+            this.clDonViTinh_Vao_IN,
             this.clXoa,
             this.clChange,
-            this.clHienThi,
-            this.clTest});
+            this.clTest_IN});
             this.bandedGridView1.GridControl = this.gridControl1;
             this.bandedGridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao_IN", null, ""),
@@ -630,6 +618,26 @@
             this.bandedGridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.bandedGridView1_InitNewRow);
             this.bandedGridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.bandedGridView1_CellValueChanged);
             this.bandedGridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.bandedGridView1_ValidateRow);
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridBand1.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridBand1.AppearanceHeader.Options.UseFont = true;
+            this.gridBand1.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand1.Caption = "Phiếu";
+            this.gridBand1.Columns.Add(this.clSTT);
+            this.gridBand1.Columns.Add(this.CLID_SoPhieu);
+            this.gridBand1.Columns.Add(this.clMaPhieu);
+            this.gridBand1.Columns.Add(this.clChange);
+            this.gridBand1.Columns.Add(this.clNgayLapPhieu);
+            this.gridBand1.Columns.Add(this.clCaSanXuat_IN);
+            this.gridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 213;
             // 
             // clSTT
             // 
@@ -665,12 +673,6 @@
             this.clMaPhieu.Visible = true;
             this.clMaPhieu.Width = 60;
             // 
-            // clHienThi
-            // 
-            this.clHienThi.Caption = "HienThi";
-            this.clHienThi.FieldName = "HienThi";
-            this.clHienThi.Name = "clHienThi";
-            // 
             // clChange
             // 
             this.clChange.Caption = "Change";
@@ -679,30 +681,30 @@
             this.clChange.OptionsColumn.FixedWidth = true;
             this.clChange.Width = 40;
             // 
-            // clNgaySanXuat
+            // clNgayLapPhieu
             // 
-            this.clNgaySanXuat.Caption = "Ngày SX";
-            this.clNgaySanXuat.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.clNgaySanXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clNgaySanXuat.FieldName = "NgaySanXuat";
-            this.clNgaySanXuat.GroupFormat.FormatString = "dd/MM/yyyy";
-            this.clNgaySanXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clNgaySanXuat.Name = "clNgaySanXuat";
-            this.clNgaySanXuat.OptionsColumn.FixedWidth = true;
-            this.clNgaySanXuat.Visible = true;
-            this.clNgaySanXuat.Width = 68;
+            this.clNgayLapPhieu.Caption = "Ngày lập";
+            this.clNgayLapPhieu.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.clNgayLapPhieu.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNgayLapPhieu.FieldName = "NgayLapPhieu";
+            this.clNgayLapPhieu.GroupFormat.FormatString = "dd/MM/yyyy";
+            this.clNgayLapPhieu.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.clNgayLapPhieu.Name = "clNgayLapPhieu";
+            this.clNgayLapPhieu.OptionsColumn.FixedWidth = true;
+            this.clNgayLapPhieu.Visible = true;
+            this.clNgayLapPhieu.Width = 68;
             // 
-            // clCaSanXuat
+            // clCaSanXuat_IN
             // 
-            this.clCaSanXuat.AppearanceCell.Options.UseTextOptions = true;
-            this.clCaSanXuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clCaSanXuat.Caption = "Ca SX";
-            this.clCaSanXuat.ColumnEdit = this.cbCaSanXuat;
-            this.clCaSanXuat.FieldName = "CaSanXuat";
-            this.clCaSanXuat.Name = "clCaSanXuat";
-            this.clCaSanXuat.OptionsColumn.FixedWidth = true;
-            this.clCaSanXuat.Visible = true;
-            this.clCaSanXuat.Width = 45;
+            this.clCaSanXuat_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clCaSanXuat_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clCaSanXuat_IN.Caption = "Ca SX";
+            this.clCaSanXuat_IN.ColumnEdit = this.cbCaSanXuat;
+            this.clCaSanXuat_IN.FieldName = "CaSanXuat_IN";
+            this.clCaSanXuat_IN.Name = "clCaSanXuat_IN";
+            this.clCaSanXuat_IN.OptionsColumn.FixedWidth = true;
+            this.clCaSanXuat_IN.Visible = true;
+            this.clCaSanXuat_IN.Width = 45;
             // 
             // cbCaSanXuat
             // 
@@ -714,15 +716,34 @@
             "Ca 2"});
             this.cbCaSanXuat.Name = "cbCaSanXuat";
             // 
-            // clID_VTHH_Vao
+            // gridBand3
             // 
-            this.clID_VTHH_Vao.Caption = "Mã hàng";
-            this.clID_VTHH_Vao.ColumnEdit = this.gridMaVT_Vao;
-            this.clID_VTHH_Vao.FieldName = "ID_VTHH_Vao";
-            this.clID_VTHH_Vao.Name = "clID_VTHH_Vao";
-            this.clID_VTHH_Vao.OptionsColumn.FixedWidth = true;
-            this.clID_VTHH_Vao.Visible = true;
-            this.clID_VTHH_Vao.Width = 60;
+            this.gridBand3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridBand3.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridBand3.AppearanceHeader.Options.UseFont = true;
+            this.gridBand3.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand3.Caption = "Vật tư sử dụng";
+            this.gridBand3.Columns.Add(this.clID_VTHH_Vao_IN);
+            this.gridBand3.Columns.Add(this.clTenVTHH_Vao_IN);
+            this.gridBand3.Columns.Add(this.clDonViTinh_Vao_IN);
+            this.gridBand3.Columns.Add(this.clID_May_IN);
+            this.gridBand3.Columns.Add(this.clSoLuong_Vao_IN);
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 1;
+            this.gridBand3.Width = 303;
+            // 
+            // clID_VTHH_Vao_IN
+            // 
+            this.clID_VTHH_Vao_IN.Caption = "Mã hàng";
+            this.clID_VTHH_Vao_IN.ColumnEdit = this.gridMaVT_Vao;
+            this.clID_VTHH_Vao_IN.FieldName = "ID_VTHH_Vao_IN";
+            this.clID_VTHH_Vao_IN.Name = "clID_VTHH_Vao_IN";
+            this.clID_VTHH_Vao_IN.OptionsColumn.FixedWidth = true;
+            this.clID_VTHH_Vao_IN.Visible = true;
+            this.clID_VTHH_Vao_IN.Width = 60;
             // 
             // gridMaVT_Vao
             // 
@@ -784,45 +805,45 @@
             this.gridColumn4.VisibleIndex = 2;
             this.gridColumn4.Width = 60;
             // 
-            // clTenVTHH_Vao
+            // clTenVTHH_Vao_IN
             // 
-            this.clTenVTHH_Vao.Caption = "Tên VTHH vào";
-            this.clTenVTHH_Vao.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.clTenVTHH_Vao.FieldName = "TenVTHH_Vao";
-            this.clTenVTHH_Vao.Name = "clTenVTHH_Vao";
-            this.clTenVTHH_Vao.OptionsColumn.AllowEdit = false;
-            this.clTenVTHH_Vao.OptionsColumn.AllowFocus = false;
-            this.clTenVTHH_Vao.Visible = true;
-            this.clTenVTHH_Vao.Width = 73;
+            this.clTenVTHH_Vao_IN.Caption = "Tên VTHH vào";
+            this.clTenVTHH_Vao_IN.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.clTenVTHH_Vao_IN.FieldName = "TenVTHH_Vao_IN";
+            this.clTenVTHH_Vao_IN.Name = "clTenVTHH_Vao_IN";
+            this.clTenVTHH_Vao_IN.OptionsColumn.AllowEdit = false;
+            this.clTenVTHH_Vao_IN.OptionsColumn.AllowFocus = false;
+            this.clTenVTHH_Vao_IN.Visible = true;
+            this.clTenVTHH_Vao_IN.Width = 73;
             // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // clDonViTinh_Vao
+            // clDonViTinh_Vao_IN
             // 
-            this.clDonViTinh_Vao.AppearanceCell.Options.UseTextOptions = true;
-            this.clDonViTinh_Vao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clDonViTinh_Vao.Caption = "ĐVT";
-            this.clDonViTinh_Vao.FieldName = "DonViTinh_Vao";
-            this.clDonViTinh_Vao.Name = "clDonViTinh_Vao";
-            this.clDonViTinh_Vao.OptionsColumn.AllowEdit = false;
-            this.clDonViTinh_Vao.OptionsColumn.AllowFocus = false;
-            this.clDonViTinh_Vao.OptionsColumn.FixedWidth = true;
-            this.clDonViTinh_Vao.Visible = true;
-            this.clDonViTinh_Vao.Width = 50;
+            this.clDonViTinh_Vao_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clDonViTinh_Vao_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clDonViTinh_Vao_IN.Caption = "ĐVT";
+            this.clDonViTinh_Vao_IN.FieldName = "DonViTinh_Vao_IN";
+            this.clDonViTinh_Vao_IN.Name = "clDonViTinh_Vao_IN";
+            this.clDonViTinh_Vao_IN.OptionsColumn.AllowEdit = false;
+            this.clDonViTinh_Vao_IN.OptionsColumn.AllowFocus = false;
+            this.clDonViTinh_Vao_IN.OptionsColumn.FixedWidth = true;
+            this.clDonViTinh_Vao_IN.Visible = true;
+            this.clDonViTinh_Vao_IN.Width = 50;
             // 
-            // clID_May
+            // clID_May_IN
             // 
-            this.clID_May.AppearanceCell.Options.UseTextOptions = true;
-            this.clID_May.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clID_May.Caption = "Máy SX";
-            this.clID_May.ColumnEdit = this.gridMaMay;
-            this.clID_May.FieldName = "ID_May";
-            this.clID_May.Name = "clID_May";
-            this.clID_May.OptionsColumn.FixedWidth = true;
-            this.clID_May.Visible = true;
-            this.clID_May.Width = 60;
+            this.clID_May_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clID_May_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clID_May_IN.Caption = "Máy SX";
+            this.clID_May_IN.ColumnEdit = this.gridMaMay;
+            this.clID_May_IN.FieldName = "ID_May_IN";
+            this.clID_May_IN.Name = "clID_May_IN";
+            this.clID_May_IN.OptionsColumn.FixedWidth = true;
+            this.clID_May_IN.Visible = true;
+            this.clID_May_IN.Width = 60;
             // 
             // gridMaMay
             // 
@@ -865,26 +886,54 @@
             this.gridColumn15.VisibleIndex = 0;
             this.gridColumn15.Width = 200;
             // 
-            // clSoLuong_Vao
+            // clSoLuong_Vao_IN
             // 
-            this.clSoLuong_Vao.AppearanceCell.Options.UseTextOptions = true;
-            this.clSoLuong_Vao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSoLuong_Vao.Caption = "SL Vào";
-            this.clSoLuong_Vao.FieldName = "SoLuong_Vao";
-            this.clSoLuong_Vao.Name = "clSoLuong_Vao";
-            this.clSoLuong_Vao.OptionsColumn.FixedWidth = true;
-            this.clSoLuong_Vao.Visible = true;
-            this.clSoLuong_Vao.Width = 60;
+            this.clSoLuong_Vao_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clSoLuong_Vao_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSoLuong_Vao_IN.Caption = "SL Vào";
+            this.clSoLuong_Vao_IN.FieldName = "SoLuong_Vao_IN";
+            this.clSoLuong_Vao_IN.Name = "clSoLuong_Vao_IN";
+            this.clSoLuong_Vao_IN.OptionsColumn.FixedWidth = true;
+            this.clSoLuong_Vao_IN.Visible = true;
+            this.clSoLuong_Vao_IN.Width = 60;
             // 
-            // clID_VTHH_Ra
+            // gridBand2
             // 
-            this.clID_VTHH_Ra.Caption = "Mã hàng";
-            this.clID_VTHH_Ra.ColumnEdit = this.gridMaVT_Ra;
-            this.clID_VTHH_Ra.FieldName = "ID_VTHH_Ra";
-            this.clID_VTHH_Ra.Name = "clID_VTHH_Ra";
-            this.clID_VTHH_Ra.OptionsColumn.FixedWidth = true;
-            this.clID_VTHH_Ra.Visible = true;
-            this.clID_VTHH_Ra.Width = 60;
+            this.gridBand2.AppearanceHeader.BackColor = System.Drawing.Color.White;
+            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridBand2.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridBand2.AppearanceHeader.Options.UseBackColor = true;
+            this.gridBand2.AppearanceHeader.Options.UseFont = true;
+            this.gridBand2.AppearanceHeader.Options.UseForeColor = true;
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand2.Caption = "Thành phẩm";
+            this.gridBand2.Columns.Add(this.clID_VTHH_Ra_IN);
+            this.gridBand2.Columns.Add(this.clTenVTHH_Ra_IN);
+            this.gridBand2.Columns.Add(this.clDonViTinh_Ra_IN);
+            this.gridBand2.Columns.Add(this.clID_CongNhan_IN);
+            this.gridBand2.Columns.Add(this.clID_DinhMuc_Luong_IN);
+            this.gridBand2.Columns.Add(this.clSanLuong_Tong_IN);
+            this.gridBand2.Columns.Add(this.clSanLuong_Thuong_IN);
+            this.gridBand2.Columns.Add(this.clSanLuong_TangCa_IN);
+            this.gridBand2.Columns.Add(this.clPhePham_IN);
+            this.gridBand2.Columns.Add(this.clID_CaTruong_IN);
+            this.gridBand2.Columns.Add(this.clGhiChu_IN);
+            this.gridBand2.Columns.Add(this.clXoa);
+            this.gridBand2.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 2;
+            this.gridBand2.Width = 754;
+            // 
+            // clID_VTHH_Ra_IN
+            // 
+            this.clID_VTHH_Ra_IN.Caption = "Mã hàng";
+            this.clID_VTHH_Ra_IN.ColumnEdit = this.gridMaVT_Ra;
+            this.clID_VTHH_Ra_IN.FieldName = "ID_VTHH_Ra_IN";
+            this.clID_VTHH_Ra_IN.Name = "clID_VTHH_Ra_IN";
+            this.clID_VTHH_Ra_IN.OptionsColumn.FixedWidth = true;
+            this.clID_VTHH_Ra_IN.Visible = true;
+            this.clID_VTHH_Ra_IN.Width = 60;
             // 
             // gridMaVT_Ra
             // 
@@ -940,45 +989,45 @@
             this.gridColumn5.VisibleIndex = 2;
             this.gridColumn5.Width = 70;
             // 
-            // clTenVTHH_Ra
+            // clTenVTHH_Ra_IN
             // 
-            this.clTenVTHH_Ra.Caption = "Tên VTHH";
-            this.clTenVTHH_Ra.ColumnEdit = this.repositoryItemMemoEdit2;
-            this.clTenVTHH_Ra.FieldName = "TenVTHH_Ra";
-            this.clTenVTHH_Ra.Name = "clTenVTHH_Ra";
-            this.clTenVTHH_Ra.OptionsColumn.AllowEdit = false;
-            this.clTenVTHH_Ra.OptionsColumn.AllowFocus = false;
-            this.clTenVTHH_Ra.Visible = true;
-            this.clTenVTHH_Ra.Width = 124;
+            this.clTenVTHH_Ra_IN.Caption = "Tên VTHH";
+            this.clTenVTHH_Ra_IN.ColumnEdit = this.repositoryItemMemoEdit2;
+            this.clTenVTHH_Ra_IN.FieldName = "TenVTHH_Ra_IN";
+            this.clTenVTHH_Ra_IN.Name = "clTenVTHH_Ra_IN";
+            this.clTenVTHH_Ra_IN.OptionsColumn.AllowEdit = false;
+            this.clTenVTHH_Ra_IN.OptionsColumn.AllowFocus = false;
+            this.clTenVTHH_Ra_IN.Visible = true;
+            this.clTenVTHH_Ra_IN.Width = 124;
             // 
             // repositoryItemMemoEdit2
             // 
             this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
             // 
-            // clDonViTinh_Ra
+            // clDonViTinh_Ra_IN
             // 
-            this.clDonViTinh_Ra.AppearanceCell.Options.UseTextOptions = true;
-            this.clDonViTinh_Ra.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clDonViTinh_Ra.Caption = "ĐVT";
-            this.clDonViTinh_Ra.FieldName = "DonViTinh_Ra";
-            this.clDonViTinh_Ra.Name = "clDonViTinh_Ra";
-            this.clDonViTinh_Ra.OptionsColumn.AllowEdit = false;
-            this.clDonViTinh_Ra.OptionsColumn.AllowFocus = false;
-            this.clDonViTinh_Ra.OptionsColumn.FixedWidth = true;
-            this.clDonViTinh_Ra.Visible = true;
-            this.clDonViTinh_Ra.Width = 50;
+            this.clDonViTinh_Ra_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clDonViTinh_Ra_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clDonViTinh_Ra_IN.Caption = "ĐVT";
+            this.clDonViTinh_Ra_IN.FieldName = "DonViTinh_Ra_IN";
+            this.clDonViTinh_Ra_IN.Name = "clDonViTinh_Ra_IN";
+            this.clDonViTinh_Ra_IN.OptionsColumn.AllowEdit = false;
+            this.clDonViTinh_Ra_IN.OptionsColumn.AllowFocus = false;
+            this.clDonViTinh_Ra_IN.OptionsColumn.FixedWidth = true;
+            this.clDonViTinh_Ra_IN.Visible = true;
+            this.clDonViTinh_Ra_IN.Width = 50;
             // 
-            // clID_CongNhan
+            // clID_CongNhan_IN
             // 
-            this.clID_CongNhan.AppearanceCell.Options.UseTextOptions = true;
-            this.clID_CongNhan.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.clID_CongNhan.Caption = "Công nhân";
-            this.clID_CongNhan.ColumnEdit = this.gridCongNhan;
-            this.clID_CongNhan.FieldName = "ID_CongNhan";
-            this.clID_CongNhan.Name = "clID_CongNhan";
-            this.clID_CongNhan.OptionsColumn.FixedWidth = true;
-            this.clID_CongNhan.Visible = true;
-            this.clID_CongNhan.Width = 95;
+            this.clID_CongNhan_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clID_CongNhan_IN.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.clID_CongNhan_IN.Caption = "Công nhân";
+            this.clID_CongNhan_IN.ColumnEdit = this.gridCongNhan;
+            this.clID_CongNhan_IN.FieldName = "ID_CongNhan_IN";
+            this.clID_CongNhan_IN.Name = "clID_CongNhan_IN";
+            this.clID_CongNhan_IN.OptionsColumn.FixedWidth = true;
+            this.clID_CongNhan_IN.Visible = true;
+            this.clID_CongNhan_IN.Width = 95;
             // 
             // gridCongNhan
             // 
@@ -1028,15 +1077,15 @@
             // 
             this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
-            // clID_DinhMuc_Luong
+            // clID_DinhMuc_Luong_IN
             // 
-            this.clID_DinhMuc_Luong.Caption = "ĐM Lương";
-            this.clID_DinhMuc_Luong.ColumnEdit = this.gridDMLuong;
-            this.clID_DinhMuc_Luong.FieldName = "ID_DinhMuc_Luong";
-            this.clID_DinhMuc_Luong.Name = "clID_DinhMuc_Luong";
-            this.clID_DinhMuc_Luong.OptionsColumn.FixedWidth = true;
-            this.clID_DinhMuc_Luong.Visible = true;
-            this.clID_DinhMuc_Luong.Width = 60;
+            this.clID_DinhMuc_Luong_IN.Caption = "ĐM Lương";
+            this.clID_DinhMuc_Luong_IN.ColumnEdit = this.gridDMLuong;
+            this.clID_DinhMuc_Luong_IN.FieldName = "ID_DinhMuc_Luong_IN";
+            this.clID_DinhMuc_Luong_IN.Name = "clID_DinhMuc_Luong_IN";
+            this.clID_DinhMuc_Luong_IN.OptionsColumn.FixedWidth = true;
+            this.clID_DinhMuc_Luong_IN.Visible = true;
+            this.clID_DinhMuc_Luong_IN.Width = 60;
             // 
             // gridDMLuong
             // 
@@ -1133,71 +1182,71 @@
             this.gridColumn29.VisibleIndex = 4;
             this.gridColumn29.Width = 70;
             // 
-            // clSanLuong_Tong
+            // clSanLuong_Tong_IN
             // 
-            this.clSanLuong_Tong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSanLuong_Tong.AppearanceCell.Options.UseFont = true;
-            this.clSanLuong_Tong.AppearanceCell.Options.UseTextOptions = true;
-            this.clSanLuong_Tong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSanLuong_Tong.Caption = "Sản lượng";
-            this.clSanLuong_Tong.FieldName = "SanLuong_Tong";
-            this.clSanLuong_Tong.Name = "clSanLuong_Tong";
-            this.clSanLuong_Tong.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_Tong.Visible = true;
-            this.clSanLuong_Tong.Width = 55;
+            this.clSanLuong_Tong_IN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clSanLuong_Tong_IN.AppearanceCell.Options.UseFont = true;
+            this.clSanLuong_Tong_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clSanLuong_Tong_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSanLuong_Tong_IN.Caption = "Sản lượng";
+            this.clSanLuong_Tong_IN.FieldName = "SanLuong_Tong_IN";
+            this.clSanLuong_Tong_IN.Name = "clSanLuong_Tong_IN";
+            this.clSanLuong_Tong_IN.OptionsColumn.FixedWidth = true;
+            this.clSanLuong_Tong_IN.Visible = true;
+            this.clSanLuong_Tong_IN.Width = 55;
             // 
-            // clSanLuong_Thuong
+            // clSanLuong_Thuong_IN
             // 
-            this.clSanLuong_Thuong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSanLuong_Thuong.AppearanceCell.Options.UseFont = true;
-            this.clSanLuong_Thuong.AppearanceCell.Options.UseTextOptions = true;
-            this.clSanLuong_Thuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSanLuong_Thuong.Caption = "Thường";
-            this.clSanLuong_Thuong.FieldName = "SanLuong_Thuong";
-            this.clSanLuong_Thuong.Name = "clSanLuong_Thuong";
-            this.clSanLuong_Thuong.OptionsColumn.AllowEdit = false;
-            this.clSanLuong_Thuong.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_Thuong.Visible = true;
-            this.clSanLuong_Thuong.Width = 55;
+            this.clSanLuong_Thuong_IN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clSanLuong_Thuong_IN.AppearanceCell.Options.UseFont = true;
+            this.clSanLuong_Thuong_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clSanLuong_Thuong_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSanLuong_Thuong_IN.Caption = "Thường";
+            this.clSanLuong_Thuong_IN.FieldName = "SanLuong_Thuong_IN";
+            this.clSanLuong_Thuong_IN.Name = "clSanLuong_Thuong_IN";
+            this.clSanLuong_Thuong_IN.OptionsColumn.AllowEdit = false;
+            this.clSanLuong_Thuong_IN.OptionsColumn.FixedWidth = true;
+            this.clSanLuong_Thuong_IN.Visible = true;
+            this.clSanLuong_Thuong_IN.Width = 55;
             // 
-            // clSanLuong_TangCa
+            // clSanLuong_TangCa_IN
             // 
-            this.clSanLuong_TangCa.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clSanLuong_TangCa.AppearanceCell.Options.UseFont = true;
-            this.clSanLuong_TangCa.AppearanceCell.Options.UseTextOptions = true;
-            this.clSanLuong_TangCa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clSanLuong_TangCa.Caption = "Tăng";
-            this.clSanLuong_TangCa.FieldName = "SanLuong_TangCa";
-            this.clSanLuong_TangCa.Name = "clSanLuong_TangCa";
-            this.clSanLuong_TangCa.OptionsColumn.AllowEdit = false;
-            this.clSanLuong_TangCa.OptionsColumn.AllowFocus = false;
-            this.clSanLuong_TangCa.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_TangCa.Visible = true;
-            this.clSanLuong_TangCa.Width = 50;
+            this.clSanLuong_TangCa_IN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clSanLuong_TangCa_IN.AppearanceCell.Options.UseFont = true;
+            this.clSanLuong_TangCa_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clSanLuong_TangCa_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clSanLuong_TangCa_IN.Caption = "Tăng";
+            this.clSanLuong_TangCa_IN.FieldName = "SanLuong_TangCa_IN";
+            this.clSanLuong_TangCa_IN.Name = "clSanLuong_TangCa_IN";
+            this.clSanLuong_TangCa_IN.OptionsColumn.AllowEdit = false;
+            this.clSanLuong_TangCa_IN.OptionsColumn.AllowFocus = false;
+            this.clSanLuong_TangCa_IN.OptionsColumn.FixedWidth = true;
+            this.clSanLuong_TangCa_IN.Visible = true;
+            this.clSanLuong_TangCa_IN.Width = 50;
             // 
-            // clPhePham
+            // clPhePham_IN
             // 
-            this.clPhePham.AppearanceCell.Options.UseTextOptions = true;
-            this.clPhePham.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clPhePham.Caption = "P.phẩm";
-            this.clPhePham.FieldName = "PhePham";
-            this.clPhePham.Name = "clPhePham";
-            this.clPhePham.OptionsColumn.AllowFocus = false;
-            this.clPhePham.OptionsColumn.FixedWidth = true;
-            this.clPhePham.Visible = true;
-            this.clPhePham.Width = 50;
+            this.clPhePham_IN.AppearanceCell.Options.UseTextOptions = true;
+            this.clPhePham_IN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clPhePham_IN.Caption = "P.phẩm";
+            this.clPhePham_IN.FieldName = "PhePham_IN";
+            this.clPhePham_IN.Name = "clPhePham_IN";
+            this.clPhePham_IN.OptionsColumn.AllowFocus = false;
+            this.clPhePham_IN.OptionsColumn.FixedWidth = true;
+            this.clPhePham_IN.Visible = true;
+            this.clPhePham_IN.Width = 50;
             // 
-            // clID_CaTruong
+            // clID_CaTruong_IN
             // 
-            this.clID_CaTruong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clID_CaTruong.AppearanceCell.Options.UseFont = true;
-            this.clID_CaTruong.Caption = "Ca trưởng";
-            this.clID_CaTruong.ColumnEdit = this.gridCaTruong;
-            this.clID_CaTruong.FieldName = "ID_CaTruong";
-            this.clID_CaTruong.Name = "clID_CaTruong";
-            this.clID_CaTruong.OptionsColumn.FixedWidth = true;
-            this.clID_CaTruong.Visible = true;
-            this.clID_CaTruong.Width = 70;
+            this.clID_CaTruong_IN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clID_CaTruong_IN.AppearanceCell.Options.UseFont = true;
+            this.clID_CaTruong_IN.Caption = "Ca trưởng";
+            this.clID_CaTruong_IN.ColumnEdit = this.gridCaTruong;
+            this.clID_CaTruong_IN.FieldName = "ID_CaTruong_IN";
+            this.clID_CaTruong_IN.Name = "clID_CaTruong_IN";
+            this.clID_CaTruong_IN.OptionsColumn.FixedWidth = true;
+            this.clID_CaTruong_IN.Visible = true;
+            this.clID_CaTruong_IN.Width = 70;
             // 
             // gridCaTruong
             // 
@@ -1243,14 +1292,14 @@
             this.gridColumn12.VisibleIndex = 1;
             this.gridColumn12.Width = 304;
             // 
-            // clGhiChu
+            // clGhiChu_IN
             // 
-            this.clGhiChu.Caption = "Ghi chú";
-            this.clGhiChu.FieldName = "GhiChu";
-            this.clGhiChu.Name = "clGhiChu";
-            this.clGhiChu.OptionsColumn.FixedWidth = true;
-            this.clGhiChu.Visible = true;
-            this.clGhiChu.Width = 50;
+            this.clGhiChu_IN.Caption = "Ghi chú";
+            this.clGhiChu_IN.FieldName = "GhiChu_IN";
+            this.clGhiChu_IN.Name = "clGhiChu_IN";
+            this.clGhiChu_IN.OptionsColumn.FixedWidth = true;
+            this.clGhiChu_IN.Visible = true;
+            this.clGhiChu_IN.Width = 50;
             // 
             // clXoa
             // 
@@ -1270,38 +1319,18 @@
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
             // 
-            // clDot
+            // clID_ChiTietPhieu_IN
             // 
-            this.clDot.Caption = "Đột";
-            this.clDot.ColumnEdit = this.btDot;
-            this.clDot.Name = "clDot";
-            this.clDot.OptionsColumn.FixedWidth = true;
-            this.clDot.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.clDot.Visible = true;
-            this.clDot.Width = 40;
+            this.clID_ChiTietPhieu_IN.Caption = "ID_ChiTietPhieu";
+            this.clID_ChiTietPhieu_IN.FieldName = "ID_ChiTietPhieu_IN";
+            this.clID_ChiTietPhieu_IN.Name = "clID_ChiTietPhieu_IN";
             // 
-            // btDot
+            // clTest_IN
             // 
-            this.btDot.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.btDot.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btDot.Name = "btDot";
-            this.btDot.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btDot.Click += new System.EventHandler(this.btDot_Click);
-            // 
-            // clID_ChiTietPhieu
-            // 
-            this.clID_ChiTietPhieu.Caption = "ID_ChiTietPhieu";
-            this.clID_ChiTietPhieu.FieldName = "ID_ChiTietPhieu";
-            this.clID_ChiTietPhieu.Name = "clID_ChiTietPhieu";
-            // 
-            // clTest
-            // 
-            this.clTest.Caption = "Test";
-            this.clTest.FieldName = "Test";
-            this.clTest.Name = "clTest";
-            this.clTest.Visible = true;
+            this.clTest_IN.Caption = "Test";
+            this.clTest_IN.FieldName = "Test_IN";
+            this.clTest_IN.Name = "clTest_IN";
+            this.clTest_IN.Visible = true;
             // 
             // lbTongSoTrang
             // 
@@ -1614,75 +1643,6 @@
             this.layoutControlItem12.Text = "Ngày mặc định";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // gridBand1
-            // 
-            this.gridBand1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridBand1.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridBand1.AppearanceHeader.Options.UseFont = true;
-            this.gridBand1.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand1.Caption = "Phiếu";
-            this.gridBand1.Columns.Add(this.clSTT);
-            this.gridBand1.Columns.Add(this.CLID_SoPhieu);
-            this.gridBand1.Columns.Add(this.clMaPhieu);
-            this.gridBand1.Columns.Add(this.clHienThi);
-            this.gridBand1.Columns.Add(this.clChange);
-            this.gridBand1.Columns.Add(this.clNgaySanXuat);
-            this.gridBand1.Columns.Add(this.clCaSanXuat);
-            this.gridBand1.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 213;
-            // 
-            // gridBand3
-            // 
-            this.gridBand3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridBand3.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridBand3.AppearanceHeader.Options.UseFont = true;
-            this.gridBand3.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridBand3.Caption = "Vật tư sử dụng";
-            this.gridBand3.Columns.Add(this.clID_VTHH_Vao);
-            this.gridBand3.Columns.Add(this.clTenVTHH_Vao);
-            this.gridBand3.Columns.Add(this.clDonViTinh_Vao);
-            this.gridBand3.Columns.Add(this.clID_May);
-            this.gridBand3.Columns.Add(this.clSoLuong_Vao);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 1;
-            this.gridBand3.Width = 303;
-            // 
-            // gridBand2
-            // 
-            this.gridBand2.AppearanceHeader.BackColor = System.Drawing.Color.White;
-            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridBand2.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridBand2.AppearanceHeader.Options.UseBackColor = true;
-            this.gridBand2.AppearanceHeader.Options.UseFont = true;
-            this.gridBand2.AppearanceHeader.Options.UseForeColor = true;
-            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand2.Caption = "Thành phẩm";
-            this.gridBand2.Columns.Add(this.clID_VTHH_Ra);
-            this.gridBand2.Columns.Add(this.clTenVTHH_Ra);
-            this.gridBand2.Columns.Add(this.clDonViTinh_Ra);
-            this.gridBand2.Columns.Add(this.clID_CongNhan);
-            this.gridBand2.Columns.Add(this.clID_DinhMuc_Luong);
-            this.gridBand2.Columns.Add(this.clSanLuong_Tong);
-            this.gridBand2.Columns.Add(this.clSanLuong_Thuong);
-            this.gridBand2.Columns.Add(this.clSanLuong_TangCa);
-            this.gridBand2.Columns.Add(this.clPhePham);
-            this.gridBand2.Columns.Add(this.clID_CaTruong);
-            this.gridBand2.Columns.Add(this.clGhiChu);
-            this.gridBand2.Columns.Add(this.clXoa);
-            this.gridBand2.Columns.Add(this.clDot);
-            this.gridBand2.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 2;
-            this.gridBand2.Width = 794;
-            // 
             // PhieuSanXuat_IN_CAT_New_thang8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1727,7 +1687,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridCaTruong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btDot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -1784,26 +1743,24 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSTT;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CLID_SoPhieu;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clMaPhieu;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_VTHH_Vao;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clTenVTHH_Vao;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clDonViTinh_Vao;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_May;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSoLuong_Vao;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_VTHH_Ra;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clTenVTHH_Ra;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clDonViTinh_Ra;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSanLuong_Tong;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSanLuong_Thuong;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSanLuong_TangCa;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clPhePham;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clNgaySanXuat;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_CongNhan;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_CaTruong;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_DinhMuc_Luong;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clCaSanXuat;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clGhiChu;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clDot;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btDot;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_VTHH_Vao_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clTenVTHH_Vao_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clDonViTinh_Vao_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_May_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSoLuong_Vao_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_VTHH_Ra_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clTenVTHH_Ra_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clDonViTinh_Ra_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSanLuong_Tong_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSanLuong_Thuong_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clSanLuong_TangCa_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clPhePham_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clNgayLapPhieu;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_CongNhan_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_CaTruong_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_DinhMuc_Luong_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clCaSanXuat_IN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clGhiChu_IN;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gridCongNhan;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
@@ -1846,7 +1803,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_ChiTietPhieu;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clID_ChiTietPhieu_IN;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cbCaSanXuat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCaTruongMacDinh;
@@ -1857,7 +1814,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clChange;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clHienThi;
         private DevExpress.XtraEditors.GridLookUpEdit gridMacDinh_Luong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
@@ -1879,7 +1835,7 @@
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clTest;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clTest_IN;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
