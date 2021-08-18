@@ -54,12 +54,9 @@ namespace CtyTinLuong
             _SoDong = sodong;
             DataTable dt2 = new DataTable();
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            if (xxid_loaiMay == 1)
-                dt2 = cls.H_load_Phieu_T8_ngaythang_IN(sotrang, _SoDong, xxtungay, xxdenngay);
-            else if (xxid_loaiMay ==2)
-                dt2 = cls.H_load_Phieu_T8_ngaythang_CAT(sotrang, _SoDong, xxtungay, xxdenngay);
-            else if (xxid_loaiMay == 3)
-                dt2 = cls.H_load_Phieu_T8_ngaythang_DOT(sotrang, _SoDong, xxtungay, xxdenngay);
+
+            dt2 = cls.H_load_Phieu_ngaythang_T8(sotrang, _SoDong, xxtungay, xxdenngay);
+
             gridControl1.DataSource = dt2;
 
             isload = false;
@@ -98,13 +95,9 @@ namespace CtyTinLuong
             using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
             {
                 DataTable dt_ = new DataTable();
-                if (xxid_loaiMay == 1)
-                    dt_ = cls.H_Tinh_SoPhieu_T8_IN(xxtungay, xxdenngay);
-                else if (xxid_loaiMay == 2)
-                    dt_ = cls.H_Tinh_SoPhieu_T8_CAT(xxtungay, xxdenngay);
-                else if (xxid_loaiMay == 3)
-                    dt_ = cls.H_Tinh_SoPhieu_T8_DOT(xxtungay, xxdenngay);
               
+                    dt_ = cls.H_Tinh_SoPhieu_T8(xxtungay, xxdenngay);
+               
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
@@ -475,8 +468,8 @@ namespace CtyTinLuong
 
       
         private void PhieuSanXuat_IN_CAT_New_thang8_Load(object sender, EventArgs e)
-        {
-            clDot.Visible = false;
+        {            
+            
             gridMacDinh_Luong.EditValue = 8;
             _SoDong = Convert.ToInt32(txtSoDong.Text);
             dteNgayMacDinh.DateTime= DateTime.Today;
@@ -495,10 +488,10 @@ namespace CtyTinLuong
             row2["loaimay"] = "Máy Cắt";
             dt.Rows.Add(row2);
 
-            //DataRow row3 = dt.NewRow();
-            //row3["id"] = 3;
-            //row3["loaimay"] = "Máy Đột";
-            //dt.Rows.Add(row3);
+            DataRow row3 = dt.NewRow();
+            row3["id"] = 3;
+            row3["loaimay"] = "Máy Đột";
+            dt.Rows.Add(row3);
 
             gridLoaiMay.Properties.DataSource = dt;
             gridLoaiMay.Properties.ValueMember = "id";
