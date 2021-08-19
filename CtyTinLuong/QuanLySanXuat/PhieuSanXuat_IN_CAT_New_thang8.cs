@@ -1484,7 +1484,15 @@ namespace CtyTinLuong
 
         private void btDot_Click(object sender, EventArgs e)
         {
-
+            if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() != "")
+            {
+                int xxiID_SoPhieu = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
+                int xxidcatruong= Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_DOT).ToString());
+                string casxxx = bandedGridView1.GetFocusedRowCellValue(clCaSanXuat_DOT).ToString();
+                DateTime ngaythangxx= Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString());
+                BoSungCongNhanMayDot ff = new BoSungCongNhanMayDot(xxiID_SoPhieu,xxidcatruong,casxxx,ngaythangxx);
+                ff.Show();
+            }
         }
 
         private void bandedGridView1_FocusedColumnChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs e)
