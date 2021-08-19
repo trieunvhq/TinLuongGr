@@ -1495,6 +1495,14 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridMaVT_Vao_IN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar == (char)71)
+            //{
+            //    MessageBox.Show("helo");
+            //}
+        }
+
         private void bandedGridView1_FocusedColumnChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs e)
         {
             //if (e.FocusedColumn == clID_VTHH_Vao_IN)
