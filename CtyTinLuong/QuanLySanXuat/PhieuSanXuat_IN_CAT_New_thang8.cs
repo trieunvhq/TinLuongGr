@@ -145,7 +145,7 @@ namespace CtyTinLuong
                 clNgayLapPhieu.OptionsColumn.AllowEdit = false;
                 clMaPhieu.OptionsColumn.AllowFocus = false;
                 clNgayLapPhieu.OptionsColumn.AllowFocus = false;
-                bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
+                bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
                 clDot.Visible = false;
             }
             else if (iiID_loaimay == 3)
@@ -1098,6 +1098,20 @@ namespace CtyTinLuong
                 else if (_Loaimay == 2)
                 {
                     #region cat
+                    //if (e.Column == clMaPhieu)
+                    //{
+                    //    if (bandedGridView1.GetRowCellValue(e.RowHandle, clNgayLapPhieu).ToString() != "")
+                    //    {
+                    //        string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
+                    //        DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgayLapPhieu).ToString());
+                    //        if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat) == false)
+                    //        {
+                    //            bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
+                    //            return;
+                    //        }
+                    //        else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                    //    }
+                    //}
                     if (e.Column == clID_VTHH_Vao_CAT)
                     {
                         bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_CAT, sTenVTHH_vao_CAT);
