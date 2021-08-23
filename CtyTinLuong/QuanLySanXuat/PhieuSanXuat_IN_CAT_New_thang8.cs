@@ -1517,6 +1517,13 @@ namespace CtyTinLuong
             //}
         }
 
+        private void btCpopy_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridView gridView = gridControl1.FocusedView as GridView;
+            object row = gridView.GetRow(gridView.FocusedRowHandle);
+            MessageBox.Show(row.ToString());
+        }
+
         private void bandedGridView1_FocusedColumnChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs e)
         {
             //if (e.FocusedColumn == clID_VTHH_Vao_IN)

@@ -30,16 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuSanXuat_IN_CAT_New_thang8));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridMacDinh_VatTu_Ra = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -256,13 +261,15 @@
             this.clSoKG_MotBao_May_Dot = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clDoCao_Dot = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clPhePham_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clXoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clDot = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.btDot = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.clXoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clID_ChiTietPhieu_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_ChiTietPhieu_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_ChiTietPhieu_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clCopy = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.btCpopy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lbTongSoTrang = new System.Windows.Forms.Label();
             this.dteDenNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtSoTrang = new System.Windows.Forms.TextBox();
@@ -364,8 +371,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDMLuong_DOT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btDot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btCpopy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -845,7 +853,8 @@
             this.repositoryItemMemoEdit8,
             this.repositoryItemMemoEdit9,
             this.repositoryItemMemoEdit10,
-            this.btDot});
+            this.btDot,
+            this.btCpopy});
             this.gridControl1.Size = new System.Drawing.Size(1356, 452);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -938,7 +947,8 @@
             this.clChange_CAT,
             this.clChange_DOT,
             this.clXoa,
-            this.clDot});
+            this.clDot,
+            this.clCopy});
             this.bandedGridView1.GridControl = this.gridControl1;
             this.bandedGridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao_IN", null, ""),
@@ -1141,7 +1151,7 @@
             this.clTenVTHH_Vao_IN.OptionsColumn.AllowEdit = false;
             this.clTenVTHH_Vao_IN.OptionsColumn.AllowFocus = false;
             this.clTenVTHH_Vao_IN.Visible = true;
-            this.clTenVTHH_Vao_IN.Width = 120;
+            this.clTenVTHH_Vao_IN.Width = 20;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -1386,7 +1396,7 @@
             this.clTenVTHH_Ra_IN.OptionsColumn.AllowEdit = false;
             this.clTenVTHH_Ra_IN.OptionsColumn.AllowFocus = false;
             this.clTenVTHH_Ra_IN.Visible = true;
-            this.clTenVTHH_Ra_IN.Width = 120;
+            this.clTenVTHH_Ra_IN.Width = 20;
             // 
             // repositoryItemMemoEdit2
             // 
@@ -1698,7 +1708,7 @@
             this.clTenVTHH_Vao_CAT.OptionsColumn.AllowEdit = false;
             this.clTenVTHH_Vao_CAT.OptionsColumn.AllowFocus = false;
             this.clTenVTHH_Vao_CAT.Visible = true;
-            this.clTenVTHH_Vao_CAT.Width = 120;
+            this.clTenVTHH_Vao_CAT.Width = 20;
             // 
             // repositoryItemMemoEdit7
             // 
@@ -1936,7 +1946,7 @@
             this.clTenVTHH_Ra_CAT.OptionsColumn.AllowEdit = false;
             this.clTenVTHH_Ra_CAT.OptionsColumn.AllowFocus = false;
             this.clTenVTHH_Ra_CAT.Visible = true;
-            this.clTenVTHH_Ra_CAT.Width = 120;
+            this.clTenVTHH_Ra_CAT.Width = 20;
             // 
             // repositoryItemMemoEdit8
             // 
@@ -2216,7 +2226,7 @@
             this.clTenVTHH_Vao_DOT.Name = "clTenVTHH_Vao_DOT";
             this.clTenVTHH_Vao_DOT.OptionsColumn.AllowFocus = false;
             this.clTenVTHH_Vao_DOT.Visible = true;
-            this.clTenVTHH_Vao_DOT.Width = 120;
+            this.clTenVTHH_Vao_DOT.Width = 20;
             // 
             // repositoryItemMemoEdit9
             // 
@@ -2454,7 +2464,7 @@
             this.clTenVTHH_Ra_DOT.Name = "clTenVTHH_Ra_DOT";
             this.clTenVTHH_Ra_DOT.OptionsColumn.AllowFocus = false;
             this.clTenVTHH_Ra_DOT.Visible = true;
-            this.clTenVTHH_Ra_DOT.Width = 120;
+            this.clTenVTHH_Ra_DOT.Width = 20;
             // 
             // repositoryItemMemoEdit10
             // 
@@ -2661,24 +2671,6 @@
             this.clPhePham_DOT.Visible = true;
             this.clPhePham_DOT.Width = 50;
             // 
-            // clXoa
-            // 
-            this.clXoa.ColumnEdit = this.btXoa;
-            this.clXoa.Name = "clXoa";
-            this.clXoa.OptionsColumn.FixedWidth = true;
-            this.clXoa.Visible = true;
-            this.clXoa.Width = 35;
-            // 
-            // btXoa
-            // 
-            this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
-            this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btXoa.Name = "btXoa";
-            this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btXoa.Click += new System.EventHandler(this.btXoa2_Click);
-            // 
             // clDot
             // 
             this.clDot.Caption = "Đột";
@@ -2698,6 +2690,24 @@
             this.btDot.Name = "btDot";
             this.btDot.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btDot.Click += new System.EventHandler(this.btDot_Click);
+            // 
+            // clXoa
+            // 
+            this.clXoa.ColumnEdit = this.btXoa;
+            this.clXoa.Name = "clXoa";
+            this.clXoa.OptionsColumn.FixedWidth = true;
+            this.clXoa.Visible = true;
+            this.clXoa.Width = 35;
+            // 
+            // btXoa
+            // 
+            this.btXoa.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btXoa.Name = "btXoa";
+            this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btXoa.Click += new System.EventHandler(this.btXoa2_Click);
             // 
             // clID_ChiTietPhieu_IN
             // 
@@ -2721,6 +2731,26 @@
             this.clID_ChiTietPhieu_DOT.Name = "clID_ChiTietPhieu_DOT";
             this.clID_ChiTietPhieu_DOT.OptionsColumn.FixedWidth = true;
             this.clID_ChiTietPhieu_DOT.Visible = true;
+            // 
+            // clCopy
+            // 
+            this.clCopy.Caption = "Copy";
+            this.clCopy.ColumnEdit = this.btCpopy;
+            this.clCopy.Name = "clCopy";
+            this.clCopy.OptionsColumn.FixedWidth = true;
+            this.clCopy.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.clCopy.Visible = true;
+            this.clCopy.Width = 40;
+            // 
+            // btCpopy
+            // 
+            this.btCpopy.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.btCpopy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btCpopy.Name = "btCpopy";
+            this.btCpopy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btCpopy.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btCpopy_ButtonClick);
             // 
             // lbTongSoTrang
             // 
@@ -3084,7 +3114,7 @@
             this.gridBand_VatTu_IN.Columns.Add(this.clID_CaTruong_IN);
             this.gridBand_VatTu_IN.Name = "gridBand_VatTu_IN";
             this.gridBand_VatTu_IN.VisibleIndex = 1;
-            this.gridBand_VatTu_IN.Width = 535;
+            this.gridBand_VatTu_IN.Width = 435;
             // 
             // gridBand_ThanhPham_IN
             // 
@@ -3108,7 +3138,7 @@
             this.gridBand_ThanhPham_IN.Columns.Add(this.clPhePham_IN);
             this.gridBand_ThanhPham_IN.Name = "gridBand_ThanhPham_IN";
             this.gridBand_ThanhPham_IN.VisibleIndex = 2;
-            this.gridBand_ThanhPham_IN.Width = 610;
+            this.gridBand_ThanhPham_IN.Width = 510;
             // 
             // gridBand_VatTu_CAT
             // 
@@ -3130,7 +3160,7 @@
             this.gridBand_VatTu_CAT.Columns.Add(this.clID_CaTruong_CAT);
             this.gridBand_VatTu_CAT.Name = "gridBand_VatTu_CAT";
             this.gridBand_VatTu_CAT.VisibleIndex = 3;
-            this.gridBand_VatTu_CAT.Width = 550;
+            this.gridBand_VatTu_CAT.Width = 450;
             // 
             // gridBand_ThanhPham_CAT
             // 
@@ -3153,7 +3183,7 @@
             this.gridBand_ThanhPham_CAT.Columns.Add(this.clPhePham_CAT);
             this.gridBand_ThanhPham_CAT.Name = "gridBand_ThanhPham_CAT";
             this.gridBand_ThanhPham_CAT.VisibleIndex = 4;
-            this.gridBand_ThanhPham_CAT.Width = 630;
+            this.gridBand_ThanhPham_CAT.Width = 530;
             // 
             // gridBand_VatTu_DOT
             // 
@@ -3175,7 +3205,7 @@
             this.gridBand_VatTu_DOT.Columns.Add(this.clID_CaTruong_DOT);
             this.gridBand_VatTu_DOT.Name = "gridBand_VatTu_DOT";
             this.gridBand_VatTu_DOT.VisibleIndex = 5;
-            this.gridBand_VatTu_DOT.Width = 550;
+            this.gridBand_VatTu_DOT.Width = 450;
             // 
             // gridBand_ThanhPham_DOT
             // 
@@ -3199,7 +3229,7 @@
             this.gridBand_ThanhPham_DOT.Columns.Add(this.clDot);
             this.gridBand_ThanhPham_DOT.Name = "gridBand_ThanhPham_DOT";
             this.gridBand_ThanhPham_DOT.VisibleIndex = 6;
-            this.gridBand_ThanhPham_DOT.Width = 650;
+            this.gridBand_ThanhPham_DOT.Width = 550;
             // 
             // gridBand2
             // 
@@ -3212,10 +3242,11 @@
             this.gridBand2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridBand2.Caption = "Xoá";
             this.gridBand2.Columns.Add(this.clXoa);
+            this.gridBand2.Columns.Add(this.clCopy);
             this.gridBand2.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 7;
-            this.gridBand2.Width = 35;
+            this.gridBand2.Width = 75;
             // 
             // PhieuSanXuat_IN_CAT_New_thang8
             // 
@@ -3292,8 +3323,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDMLuong_DOT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btDot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btCpopy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -3580,6 +3612,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clDot;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btDot;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn clCopy;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btCpopy;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_VatTu_IN;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_ThanhPham_IN;
