@@ -1519,9 +1519,18 @@ namespace CtyTinLuong
 
         private void btCpopy_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            GridView gridView = gridControl1.FocusedView as GridView;
-            object row = gridView.GetRow(gridView.FocusedRowHandle);
-            MessageBox.Show(row.ToString());
+            //GridView gridView = gridControl1.FocusedView as GridView;
+            //DataRow row = gridView.GetDataRow(gridView.FocusedRowHandle);            
+            //MessageBox.Show(row.ToString());
+        }
+
+        private void bandedGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == (Keys.Control | Keys.C))
+            //{
+            //    MessageBox.Show("You pressed Ctrl+C!");
+            //}
+
         }
 
         private void bandedGridView1_FocusedColumnChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs e)
@@ -1560,24 +1569,31 @@ namespace CtyTinLuong
 
             }
         }
-               
+
+     
         private void gridControl1_ProcessGridKey(object sender, KeyEventArgs e)
         {
             GridControl grid = sender as GridControl;
             GridView view = grid.FocusedView as GridView;
             bool handled = false;
+            GridView gridView = gridControl1.FocusedView as GridView;
+            DataRow row = gridView.GetDataRow(gridView.FocusedRowHandle);
             if (e.KeyData == (Keys.C | Keys.Control))
             {
                 //value = view.GetFocusedRow();
                 //handled = true;
-                bandedGridView1.CopyToClipboard();
+               
+             
+                MessageBox.Show(""+ row["ID_SoPhieu"].ToString() + ", " + row["MaPhieu"].ToString() + "");
+
+                //bandedGridView1.CopyToClipboard();
+
             }
 
             if (e.KeyData == (Keys.V | Keys.Control))
             {
-                //view.SetFocusedRowCellValue(view.FocusedColumn, value);
-                //handled = true;
-                bandedGridView1.PasteFromClipboard();
+                //bandedGridView1.SetFocusedRowCellValue(clMaPhieu, row["MaPhieu"].ToString());
+                //bandedGridView1.PasteFromClipboard();
             }
 
             e.Handled = handled;
