@@ -1577,7 +1577,7 @@ namespace CtyTinLuong
             GridView view = grid.FocusedView as GridView;
             bool handled = false;
             GridView gridView = gridControl1.FocusedView as GridView;
-            DataRow row = gridView.GetDataRow(gridView.FocusedRowHandle);
+            DataRow row = gridView.GetDataRow(bandedGridView1.FocusedRowHandle);
             if (e.KeyData == (Keys.C | Keys.Control))
             {
                 //value = view.GetFocusedRow();
