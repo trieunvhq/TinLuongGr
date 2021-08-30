@@ -33,8 +33,7 @@ namespace CtyTinLuong
         }
         private void frmtestcopy_Load(object sender, EventArgs e)
         {
-            load_locup();
-           
+            load_locup();           
         }
 
         
