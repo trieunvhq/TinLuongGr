@@ -1249,8 +1249,8 @@ namespace CtyTinLuong
                 bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Ra_DOT, sMacDinh_DVT_Ra);
             }
 
-           
-          
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1596,23 +1596,22 @@ namespace CtyTinLuong
             GridView view = grid.FocusedView as GridView;            
             GridView gridView = gridControl1.FocusedView as GridView;
             DataRow row = gridView.GetDataRow(bandedGridView1.FocusedRowHandle);
-          
-
-          
 
             if (bandedGridView1.FocusedRowHandle == bandedGridView1.RowCount - 1)
                 return;
 
-            if (e.Control && e.KeyCode == Keys.C)
+            else if (e.Control && e.KeyCode == Keys.C)
             {
-                if(_Loaimay==1)
+                if (_Loaimay == 1)
                 {
                     ngaylap = Convert.ToDateTime(row["NgayLapPhieu"].ToString());
-                    sssmaphieu = row["MaPhieu"].ToString();
+                    //sssmaphieu = row["MaPhieu"].ToString();
+                    sssmaphieu = "";
+
 
                     iID_VTHH_Vao_IN = Convert.ToInt32(row["ID_VTHH_Vao_IN"].ToString());
                     sTenVTHH_vao_IN = row["TenVTHH_Vao_IN"].ToString();
-                    sDonViTinh_vao_IN= row["DonViTinh_Vao_IN"].ToString();
+                    sDonViTinh_vao_IN = row["DonViTinh_Vao_IN"].ToString();
                     dddsoluongvao_IN = Convert.ToDouble(row["SoLuong_Vao_IN"].ToString());
                     ngaysx_IN = Convert.ToDateTime(row["NgaySanXuat_IN"].ToString());
                     ssscasx_IN = row["CaSanXuat_IN"].ToString();
@@ -1627,6 +1626,8 @@ namespace CtyTinLuong
                     dddsanluongtong_IN = Convert.ToDouble(row["SanLuong_Tong_IN"].ToString());
                     dddphepham_IN = Convert.ToDouble(row["PhePham_IN"].ToString());
                     e.Handled = true;
+                    Clipboard.SetText("Hello, clipboard");
+                    
                 }
                 if (_Loaimay == 2)
                 {
@@ -1672,13 +1673,14 @@ namespace CtyTinLuong
                     e.Handled = true;
                 }
             }
-            if (e.Control && e.KeyCode == Keys.V)
+           else if (e.Control && e.KeyCode == Keys.V)
             {
+               textBox1.Text= Clipboard.GetText().ToString();
                 if (_Loaimay == 1)
                 {
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clNgayLapPhieu, ngaylap);
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clMaPhieu, sssmaphieu);
-                    
+
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_VTHH_Vao_IN, iID_VTHH_Vao_IN);
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clTenVTHH_Vao_IN, sTenVTHH_vao_IN);
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clDonViTinh_Vao_IN, sDonViTinh_vao_IN);
@@ -1699,7 +1701,7 @@ namespace CtyTinLuong
                     e.Handled = true;
                 }
                 if (_Loaimay == 2)
-                {                    
+                {
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_VTHH_Vao_CAT, iID_VTHH_Vao_CAT);
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clTenVTHH_Vao_CAT, sTenVTHH_vao_CAT);
                     bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clDonViTinh_Vao_CAT, sDonViTinh_vao_CAT);
@@ -1746,9 +1748,10 @@ namespace CtyTinLuong
                     e.Handled = true;
                 }
             }
+            else Clipboard.Clear();
         }
 
-      
+
         private void txtSoTrang_TextChanged(object sender, EventArgs e)
         {
             if (KiemTra_Luu_DuLieu(_Loaimay) == true)
