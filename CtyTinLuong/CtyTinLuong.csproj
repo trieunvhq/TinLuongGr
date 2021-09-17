@@ -2277,6 +2277,7 @@
     <EmbeddedResource Include="frmtestcopy.resx">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\BoSungCongNhanMayDot.resx">
       <DependentUpon>BoSungCongNhanMayDot.cs</DependentUpon>
     </EmbeddedResource>
