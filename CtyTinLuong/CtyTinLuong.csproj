@@ -2586,7 +2586,6 @@
     <EmbeddedResource Include="QuanLySanXuat\PhieuSanXuat_IN_CAT_New_thang8.resx">
       <DependentUpon>PhieuSanXuat_IN_CAT_New_thang8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\frmPrint_SanLuongToMayIn.resx">
       <DependentUpon>frmPrint_SanLuongToMayIn.cs</DependentUpon>
     </EmbeddedResource>
