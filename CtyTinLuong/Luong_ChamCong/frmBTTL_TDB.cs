@@ -53,8 +53,8 @@ namespace CtyTinLuong
             else
             {
             }
-            _nam = DateTime.Now.Year;
-            _thang = DateTime.Now.Month;
+            _nam = Convert.ToInt16(txtNam.Text);
+            _thang = Convert.ToInt16(txtThang.Text);
 
             double sanluong_tong = 0;
             double thanhtien_tong = 0;

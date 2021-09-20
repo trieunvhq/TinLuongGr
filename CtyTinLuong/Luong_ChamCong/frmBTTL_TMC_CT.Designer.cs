@@ -62,7 +62,7 @@
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SoNgayAn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.XangXe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThucNhan = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -242,7 +242,7 @@
             this.DonGia,
             this.ThanhTien,
             this.TongLuong,
-            this.SoNgayAn,
+            this.XangXe,
             this.colBaoHiem,
             this.TamUng,
             this.ThucNhan,
@@ -429,30 +429,30 @@
             this.TongLuong.VisibleIndex = 7;
             this.TongLuong.Width = 80;
             // 
-            // SoNgayAn
+            // XangXe
             // 
-            this.SoNgayAn.AppearanceCell.Options.UseTextOptions = true;
-            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.SoNgayAn.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.SoNgayAn.Caption = "XĂNG XE";
-            this.SoNgayAn.FieldName = "sXangXe";
-            this.SoNgayAn.MinWidth = 10;
-            this.SoNgayAn.Name = "SoNgayAn";
-            this.SoNgayAn.OptionsColumn.AllowEdit = false;
-            this.SoNgayAn.OptionsColumn.FixedWidth = true;
-            this.SoNgayAn.OptionsFilter.AllowAutoFilter = false;
-            this.SoNgayAn.OptionsFilter.AllowFilter = false;
-            this.SoNgayAn.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayAn.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayAn.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.SoNgayAn.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayAn.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayAn.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayAn.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayAn.OptionsFilter.ShowEmptyDateFilter = false;
-            this.SoNgayAn.Visible = true;
-            this.SoNgayAn.VisibleIndex = 6;
-            this.SoNgayAn.Width = 80;
+            this.XangXe.AppearanceCell.Options.UseTextOptions = true;
+            this.XangXe.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.XangXe.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.XangXe.Caption = "XĂNG XE";
+            this.XangXe.FieldName = "sXangXe";
+            this.XangXe.MinWidth = 10;
+            this.XangXe.Name = "XangXe";
+            this.XangXe.OptionsColumn.AllowEdit = false;
+            this.XangXe.OptionsColumn.FixedWidth = true;
+            this.XangXe.OptionsFilter.AllowAutoFilter = false;
+            this.XangXe.OptionsFilter.AllowFilter = false;
+            this.XangXe.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.XangXe.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.XangXe.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.XangXe.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.XangXe.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.XangXe.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.XangXe.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.XangXe.OptionsFilter.ShowEmptyDateFilter = false;
+            this.XangXe.Visible = true;
+            this.XangXe.VisibleIndex = 6;
+            this.XangXe.Width = 80;
             // 
             // colBaoHiem
             // 
@@ -754,7 +754,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn ThanhTien;
         private DevExpress.XtraGrid.Columns.GridColumn TongLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn SoNgayAn;
+        private DevExpress.XtraGrid.Columns.GridColumn XangXe;
         private DevExpress.XtraGrid.Columns.GridColumn colBaoHiem;
         private DevExpress.XtraGrid.Columns.GridColumn TamUng;
         private DevExpress.XtraGrid.Columns.GridColumn ThucNhan;

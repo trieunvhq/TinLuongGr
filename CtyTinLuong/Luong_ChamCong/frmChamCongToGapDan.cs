@@ -486,29 +486,34 @@ namespace CtyTinLuong
         {
             int index_ = e.RowHandle;
             string name_ = e.Column.FieldName;
-            if (name_.Contains("Ngay"))
-            {
-                _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
-                if (_data.Rows.Count > index_)
-                {
-                    int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
-                    _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
-                }
 
-                SendKeys.Send("{DOWN}");
-            }
-            else if (name_.Contains("TenVTHH"))
+            //
+            if (index_ >= 0)
             {
-                if (gridView1.GetFocusedRowCellValue(name_) == null)
-                {
-                    _data.Rows[index_][name_] = "";
-                }
-                else
+                if (name_.Contains("Ngay"))
                 {
                     _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+                    if (_data.Rows.Count > index_)
+                    {
+                        int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
+                        _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
+                    }
+
+                    SendKeys.Send("{DOWN}");
                 }
+                else if (name_.Contains("TenVTHH"))
+                {
+                    if (gridView1.GetFocusedRowCellValue(name_) == null)
+                    {
+                        _data.Rows[index_][name_] = "";
+                    }
+                    else
+                    {
+                        _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+                    }
+                }
+                CongTong();
             }
-            CongTong();
         }
 
         private void CongTong()
