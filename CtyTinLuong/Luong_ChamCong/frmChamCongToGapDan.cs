@@ -720,8 +720,9 @@ namespace CtyTinLuong
                     ThemMotCongNhanVaoBang(id_congnhan_, cbNhanVien.Text, true);
                 }
             }
-            catch {
-                MessageBox.Show("Chưa chọn nhân viên");
+            catch (Exception ge)
+            { 
+                MessageBox.Show("Lỗi chọn nhân viên......" + ge);
             }
         }
 
