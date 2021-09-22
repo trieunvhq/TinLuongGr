@@ -68,7 +68,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     _ravi["CongBaoHiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem"].ToString());
                 }
-                else _ravi["BaoHiem"] = 0;
+                else _ravi["CongBaoHiem"] = 0;
 
                 if (_data.Rows[i]["BaoHiem"].ToString() != "")
                 {
