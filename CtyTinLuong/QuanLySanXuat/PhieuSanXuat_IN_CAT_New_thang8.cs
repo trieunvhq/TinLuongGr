@@ -143,10 +143,10 @@ namespace CtyTinLuong
                 gridBand_ThanhPham_CAT.Visible = true;
                 gridBand_VatTu_DOT.Visible = false;
                 gridBand_ThanhPham_DOT.Visible = false;
-                clMaPhieu.OptionsColumn.AllowEdit = false;
-                clNgayLapPhieu.OptionsColumn.AllowEdit = false;
-                clMaPhieu.OptionsColumn.AllowFocus = false;
-                clNgayLapPhieu.OptionsColumn.AllowFocus = false;
+                clMaPhieu.OptionsColumn.AllowEdit = true;
+                clNgayLapPhieu.OptionsColumn.AllowEdit = true;
+                clMaPhieu.OptionsColumn.AllowFocus = true;
+                clNgayLapPhieu.OptionsColumn.AllowFocus = true;
                 bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
                 clDot.Visible = false;
             }
@@ -743,8 +743,7 @@ namespace CtyTinLuong
             }
             MessageBox.Show("Đã lưu");
         }
-        private void TaoLenhSanXuat(int xxID_LoaiMay, int xxIDSoPhieu, int iiiDID_ChiTietPhieu, int xxid_Catruong, int xxid_congnhan,
-            DateTime ngaysanxuat, string casanxuat, int xxID_VTHH_Vao, int xxID_VTHH_Ra, double xxSoLuong_Vao, double xxSanLuong_Thuong, double xxSanLuong_TangCa, double xxPhePham)
+        private void TaoLenhSanXuat(int xxID_LoaiMay, int xxIDSoPhieu, int iiiDID_ChiTietPhieu, int xxid_Catruong, int xxid_congnhan, DateTime ngaysanxuat, string casanxuat, int xxID_VTHH_Vao, int xxID_VTHH_Ra, double xxSoLuong_Vao, double xxSanLuong_Thuong, double xxSanLuong_TangCa, double xxPhePham)
         {
 
             clsHUU_LenhSanXuat clsLSX = new clsHUU_LenhSanXuat();
@@ -849,9 +848,7 @@ namespace CtyTinLuong
                 clsLSX_chitiet.Insert();
             }
         }
-
-
-
+                
         public PhieuSanXuat_IN_CAT_New_thang8()
         {
             InitializeComponent();
@@ -1626,7 +1623,7 @@ namespace CtyTinLuong
                     dddsanluongtong_IN = Convert.ToDouble(row["SanLuong_Tong_IN"].ToString());
                     dddphepham_IN = Convert.ToDouble(row["PhePham_IN"].ToString());
                     e.Handled = true;
-                    Clipboard.SetText("Hello, clipboard");
+                    Clipboard.SetText(""+ iID_VTHH_Vao_IN + "|"+ sTenVTHH_vao_IN + "|"+ sDonViTinh_vao_IN + "|"+ dddsoluongvao_IN + "|"+ ngaysx_IN + "|"+ iimaysx_IN + "|"+ iiiID_catruong_IN + "|"+ iID_VTHH_Ra_IN + "|"+ sTenVTHH_ra_IN + "|"+ sDonViTinh_ra_IN + "|"+ iiiidID_CongNhan_IN + "|"+ iiiD_dmluong_IN + "|"+ dddsanluongtong_IN + "|"+ dddphepham_IN + "");
                     
                 }
                 if (_Loaimay == 2)

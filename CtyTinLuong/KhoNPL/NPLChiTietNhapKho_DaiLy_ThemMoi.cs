@@ -280,9 +280,10 @@ namespace CtyTinLuong
                 _ravi3["TenVTHH"] = dtchitietDMNPL.Rows[i]["TenVTHH"].ToString();
                 _ravi3["DonViTinh"] = dtchitietDMNPL.Rows[i]["DonViTinh"].ToString();
                 _ravi3["SoLuongTon"] = SoLuongTonxxxx;
-                string xxsoluong = dtchitietDMNPL.Rows[i]["SoLuong"].ToString();
-                var xxdinhmuc = Math.Round(double.Parse(xxsoluong), 3);
-                _ravi3["DinhMuc"] = xxdinhmuc;
+                //string xxsoluong = dtchitietDMNPL.Rows[i]["SoLuong"].ToString();
+                //var xxdinhmuc = Math.Round(double.Parse(xxsoluong), 3);
+            double xxdinhmuc=    Convert.ToDouble(dtchitietDMNPL.Rows[i]["SoLuong"].ToString());
+                _ravi3["DinhMuc"] = Convert.ToDouble(dtchitietDMNPL.Rows[i]["SoLuong"].ToString());
                 _ravi3["SoLuongTheoDinhMuc"] = xxdinhmuc * soluongthanhphamquydoi;
                 _ravi3["SoLuong"] = xxdinhmuc * soluongthanhphamquydoi;
                 _ravi3["DonGia"] = dongiaxxx333;
@@ -411,8 +412,9 @@ namespace CtyTinLuong
                 double xxxxsoluongdmimucc=0;
                 if (dtctietdinhmuc.Rows.Count>0)
                 {
-                    string xxsoluongdmimuc = dtctietdinhmuc.Rows[0]["SoLuong"].ToString();
-                     xxxxsoluongdmimucc = Math.Round(double.Parse(xxsoluongdmimuc), 3);
+                    //string xxsoluongdmimuc = dtctietdinhmuc.Rows[0]["SoLuong"].ToString();
+                    // xxxxsoluongdmimucc = Math.Round(double.Parse(xxsoluongdmimuc), 3);
+                    xxxxsoluongdmimucc = Convert.ToDouble(dtctietdinhmuc.Rows[0]["SoLuong"].ToString());
                 }
                 else
                 {
@@ -1143,7 +1145,7 @@ namespace CtyTinLuong
                     else if (checkHangSot.Checked == true)
                         cls1.iHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
                     int iiiiID_NHapKhoDaiLy;
-                    if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == true)
+                    if (UCNPL_XuatKhoPhuLieuRaDaiLyGiaCong.mbSua == false)
                     {
                         cls1.Insert();
                         iiiiID_NHapKhoDaiLy = cls1.iID_NhapKhoDaiLy.Value;
