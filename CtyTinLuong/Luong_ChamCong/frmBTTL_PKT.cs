@@ -78,65 +78,95 @@ namespace CtyTinLuong
             {
                 _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang, _id_bophan);
 
+                int ID_congNhanRoot = -1;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
                     double dongia_;
+
+                    int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+
                     double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
+
                     bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
+
                     if (istangca_)
                     {
                         dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
                         _data.Rows[i]["TenVTHH"] = "Tăng ca";
-
                     }
                     else
                     {
                         dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
                         _data.Rows[i]["TenVTHH"] = "Công nhật";
                     }
+
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+
                     //
-                    _data.Rows[i]["STT"] = (i / 2) + 1;
+                    if (ID_congNhanRoot != ID_congNhan)
+                    {
+                        //
+                        ID_congNhanRoot = ID_congNhan;
 
-                    tongluong_ = (dongia_ * sanluong_);
-                    tongluong_tong_ += tongluong_;
-                    _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
+                        _data.Rows[i]["STT"] = (i / 2) + 1;
 
-                    luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
-                    luongtrachnhiem_tong_ += luongtrachnhiem_;
-                    if (luongtrachnhiem_ == 0)
+                        tongluong_ = (dongia_ * sanluong_);
+                        tongluong_tong_ += tongluong_;
+                        _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
+
+                        luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
+                        luongtrachnhiem_tong_ += luongtrachnhiem_;
+                        if (luongtrachnhiem_ == 0)
+                            _data.Rows[i]["LuongTrachNhiem"] = "";
+                        else
+                            _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
+
+                        phucap_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCap_Value"].ToString());
+                        phucap_tong_ += phucap_;
+                        if (phucap_ == 0)
+                            _data.Rows[i]["PhuCap"] = "";
+                        else
+                            _data.Rows[i]["PhuCap"] = phucap_.ToString("N0");
+
+
+                        trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
+                        trutamung_tong_ += trutamung_;
+                        if (trutamung_ == 0)
+                            _data.Rows[i]["TamUng"] = "";
+                        else
+                            _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
+
+
+
+                        tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
+                        tong_tong_ += tong_;
+                        _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
+
+                        thuclinh_ = (tong_ - trutamung_ + phucap_);
+                        thuclinh_tong_ += thuclinh_;
+                        _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
+                    }
+                    else
+                    {
+                         _data.Rows[i]["STT"] = (i / 2) + 1;
+
+                        tongluong_ = (dongia_ * sanluong_);
+                        tongluong_tong_ += tongluong_;
+                        _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
+
                         _data.Rows[i]["LuongTrachNhiem"] = "";
-                    else
-                        _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
-
-                    phucap_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCap_Value"].ToString());
-                    phucap_tong_ += phucap_;
-                    if (phucap_ == 0)
                         _data.Rows[i]["PhuCap"] = "";
-                    else
-                        _data.Rows[i]["PhuCap"] = phucap_.ToString("N0");
-
-
-                    trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
-                    trutamung_tong_ += trutamung_;
-                    if (trutamung_ == 0)
                         _data.Rows[i]["TamUng"] = "";
-                    else
-                        _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
 
+                        tong_ = (dongia_ * sanluong_);
+                        tong_tong_ += tong_;
+                        _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-
-                    tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
-                    tong_tong_ += tong_;
-                    _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
-
-                    thuclinh_ = (tong_ - trutamung_ + phucap_);
-                    thuclinh_tong_ += thuclinh_;
-                    _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
-
-
-
+                        thuclinh_ = tong_;
+                        thuclinh_tong_ += thuclinh_;
+                        _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
+                    }
                 }
             }
 
