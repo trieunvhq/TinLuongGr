@@ -424,7 +424,7 @@
             this.TruBaoHiem.AppearanceCell.Options.UseTextOptions = true;
             this.TruBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TruBaoHiem.Caption = "TRỪ BẢO HIỂM";
-            this.TruBaoHiem.FieldName = "TruBaoHiem";
+            this.TruBaoHiem.FieldName = "BaoHiem";
             this.TruBaoHiem.MinWidth = 50;
             this.TruBaoHiem.Name = "TruBaoHiem";
             this.TruBaoHiem.OptionsColumn.AllowEdit = false;
