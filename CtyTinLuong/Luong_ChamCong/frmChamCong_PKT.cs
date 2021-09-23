@@ -673,9 +673,6 @@ namespace CtyTinLuong
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
             GuiDuLieuBangLuong();
-
-            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
-            //ff.Show();
         }
 
 
@@ -695,7 +692,7 @@ namespace CtyTinLuong
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
                 {
-                    MessageBox.Show("Đã tồn tại công nhân này trong bảng");
+                    MessageBox.Show("Đã tồn tại công nhân này trong bảng!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -985,7 +982,7 @@ namespace CtyTinLuong
                 }
                 if (isGuiThanhCong)
                 {
-                    MessageBox.Show("Gửi dữ liệu chấm công thành công!");
+                    MessageBox.Show("Lưu dữ liệu chấm công thành công!");
                 }
                 else
                 {

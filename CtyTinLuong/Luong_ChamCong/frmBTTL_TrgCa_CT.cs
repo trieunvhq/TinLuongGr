@@ -39,6 +39,7 @@ namespace CtyTinLuong
             _id_bophan = id_bophan;
             InitializeComponent();
             ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
+            ColTongLuong.Caption = "TỔNG\nLƯƠNG";
         }
 
         public void LoadData(bool islandau)
@@ -97,19 +98,23 @@ namespace CtyTinLuong
                     }
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
                     //
-                    _data.Rows[i]["STT"] = (i / 2) + 1;
+                    _data.Rows[i]["STT"] = i + 1;
 
-                    tongluong_ = (dongia_ * sanluong_);
-                    tongluong_tong_ += tongluong_;
-                    _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
+                    //Tổng:
+                    tong_ = dongia_ * sanluong_;
+                    tong_tong_ += tong_;
+                    _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
+
+                    //Trách nhiệm
                     luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
                     luongtrachnhiem_tong_ += luongtrachnhiem_;
                     if (luongtrachnhiem_ == 0)
                         _data.Rows[i]["LuongTrachNhiem"] = "";
                     else
                         _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
-                    //
+
+                    //Bảo hiểm:
                     baohiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem_Value"].ToString());
                     baohiem_tong_ += baohiem_;
                     if (baohiem_ == 0)
@@ -117,7 +122,7 @@ namespace CtyTinLuong
                     else
                         _data.Rows[i]["BaoHiem"] = baohiem_.ToString("N0");
 
-                    //
+                    //Tạm ứng:
                     trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                     trutamung_tong_ += trutamung_;
                     if (trutamung_ == 0)
@@ -125,18 +130,15 @@ namespace CtyTinLuong
                     else
                         _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
 
+                    //Tổng lương
+                    tongluong_ = (dongia_ * sanluong_ + luongtrachnhiem_);
+                    tongluong_tong_ += tongluong_;
+                    _data.Rows[i]["TongLuong"] = (tongluong_).ToString("N0");
 
-
-                    tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
-                    tong_tong_ += tong_;
-                    _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
-
-                    thuclinh_ = (tong_ - trutamung_);
+                    //Thực nhận
+                    thuclinh_ = (tongluong_ - trutamung_ - baohiem_);
                     thuclinh_tong_ += thuclinh_;
                     _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
-
-
-
                 }
             }
 
@@ -144,7 +146,7 @@ namespace CtyTinLuong
             _ravi["ID_CongNhan"] = 0;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
-            _ravi["TenNhanVien"] = "TỔNG";
+            _ravi["TenNhanVien"] = "Tổng";
             if (tongluong_tong_ == 0)
             {
                 _ravi["TongLuong"] = "";
@@ -311,7 +313,7 @@ namespace CtyTinLuong
             GridView view = sender as GridView;
             if (e.RowHandle == _data.Rows.Count - 1)
             {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             }
         }
 
