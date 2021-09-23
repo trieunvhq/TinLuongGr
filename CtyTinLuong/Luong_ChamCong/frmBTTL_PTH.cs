@@ -69,14 +69,17 @@ namespace CtyTinLuong
             double tong_tong_ = 0;
             double trutamung_tong_ = 0;
             double thuclinh_tong_ = 0;
-            double baohiem_tong_ = 0;
+            double _TruBaoHiem_Tong = 0;
+            double _CongBaoHiem_Tong = 0;
+
 
 
             double tongluong_ = 0;
             double luongtrachnhiem_ = 0;
             double tong_ = 0;
             double trutamung_ = 0;
-            double baohiem_ = 0;
+            double _TruBaoHiem = 0;
+            double _CongBaoHiem = 0;
             double thuclinh_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
@@ -120,13 +123,22 @@ namespace CtyTinLuong
                         tongluong_ = (dongia_ * sanluong_);
                         tongluong_tong_ += tongluong_;
                         _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
-                        //
-                        baohiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem_Value"].ToString());
-                        baohiem_tong_ += baohiem_;
-                        if (baohiem_ == 0)
+
+                        //Cộng bảo hiểm: Chưa có dữ liệu trong db:
+                        //_CongBaoHiem = CheckString.ConvertToDouble_My(_data.Rows[i]["CongBaoHiem_Value"].ToString());
+                        _CongBaoHiem_Tong += _CongBaoHiem;
+                        if (_CongBaoHiem == 0)
+                            _data.Rows[i]["CongBaoHiem"] = "";
+                        else
+                            _data.Rows[i]["CongBaoHiem"] = _CongBaoHiem.ToString("N0");
+
+                        //Trừ bảo hiểm
+                        _TruBaoHiem = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem_Value"].ToString());
+                        _TruBaoHiem_Tong += _TruBaoHiem;
+                        if (_TruBaoHiem == 0)
                             _data.Rows[i]["BaoHiem"] = "";
                         else
-                            _data.Rows[i]["BaoHiem"] = baohiem_.ToString("N0");
+                            _data.Rows[i]["BaoHiem"] = _TruBaoHiem.ToString("N0");
 
                         //
                         luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
@@ -147,7 +159,7 @@ namespace CtyTinLuong
                         tong_tong_ += tong_;
                         _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-                        thuclinh_ = (tong_ - trutamung_ - baohiem_);
+                        thuclinh_ = (tong_ - trutamung_ - _TruBaoHiem);
                         thuclinh_tong_ += thuclinh_;
                         _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
                     }
@@ -160,17 +172,9 @@ namespace CtyTinLuong
                         _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
                         //
+                        _data.Rows[i]["CongBaoHiem"] = "";
                         _data.Rows[i]["BaoHiem"] = "";
-
-                        //
-                        luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
-                        luongtrachnhiem_tong_ += luongtrachnhiem_;
-                        if (luongtrachnhiem_ == 0)
-                            _data.Rows[i]["LuongTrachNhiem"] = "";
-                        else
-                            _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
-
-                        //
+                        _data.Rows[i]["LuongTrachNhiem"] = "";
                         _data.Rows[i]["TamUng"] = "";
 
                         tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
@@ -244,14 +248,25 @@ namespace CtyTinLuong
                 _ravi["LuongTrachNhiem"] = luongtrachnhiem_tong_.ToString("N0");
             } 
             // 
-            if (baohiem_tong_ == 0)
+            if (_TruBaoHiem_Tong == 0)
             {
                 _ravi["BaoHiem"] = "";
             }
             else
             {
-                _ravi["BaoHiem"] = baohiem_tong_.ToString("N0");
+                _ravi["BaoHiem"] = _TruBaoHiem_Tong.ToString("N0");
             }
+
+            //
+            if (_CongBaoHiem_Tong == 0)
+            {
+                _ravi["CongBaoHiem"] = "";
+            }
+            else
+            {
+                _ravi["CongBaoHiem"] = _CongBaoHiem_Tong.ToString("N0");
+            }
+
             _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;
             //  

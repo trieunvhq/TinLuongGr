@@ -198,7 +198,7 @@ namespace CtyTinLuong
             _ravi["ID_CongNhan"] = 0;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
-            _ravi["TenNhanVien"] = "TỔNG";
+            _ravi["TenNhanVien"] = "Tổng";
             if (tongluong_tong_ == 0)
             {
                 _ravi["TongLuong"] = "";

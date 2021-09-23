@@ -131,37 +131,37 @@ namespace CtyTinLuong
             return "";
         }
 
-        int Tong_Ngay1 = 0;
-        int Tong_Ngay2 = 0;
-        int Tong_Ngay3 = 0;
-        int Tong_Ngay4 = 0;
-        int Tong_Ngay5 = 0;
-        int Tong_Ngay6 = 0;
-        int Tong_Ngay7 = 0;
-        int Tong_Ngay8 = 0;
-        int Tong_Ngay9 = 0;
-        int Tong_Ngay10 = 0;
-        int Tong_Ngay11 = 0;
-        int Tong_Ngay12 = 0;
-        int Tong_Ngay13 = 0;
-        int Tong_Ngay14 = 0;
-        int Tong_Ngay15 = 0;
-        int Tong_Ngay16 = 0;
-        int Tong_Ngay17 = 0;
-        int Tong_Ngay18 = 0;
-        int Tong_Ngay19 = 0;
-        int Tong_Ngay20 = 0;
-        int Tong_Ngay21 = 0;
-        int Tong_Ngay22 = 0;
-        int Tong_Ngay23 = 0;
-        int Tong_Ngay24 = 0;
-        int Tong_Ngay25 = 0;
-        int Tong_Ngay26 = 0;
-        int Tong_Ngay27 = 0;
-        int Tong_Ngay28 = 0;
-        int Tong_Ngay29 = 0;
-        int Tong_Ngay30 = 0;
-        int Tong_Ngay31 = 0;
+        double Tong_Ngay1 = 0;
+        double Tong_Ngay2 = 0;
+        double Tong_Ngay3 = 0;
+        double Tong_Ngay4 = 0;
+        double Tong_Ngay5 = 0;
+        double Tong_Ngay6 = 0;
+        double Tong_Ngay7 = 0;
+        double Tong_Ngay8 = 0;
+        double Tong_Ngay9 = 0;
+        double Tong_Ngay10 = 0;
+        double Tong_Ngay11 = 0;
+        double Tong_Ngay12 = 0;
+        double Tong_Ngay13 = 0;
+        double Tong_Ngay14 = 0;
+        double Tong_Ngay15 = 0;
+        double Tong_Ngay16 = 0;
+        double Tong_Ngay17 = 0;
+        double Tong_Ngay18 = 0;
+        double Tong_Ngay19 = 0;
+        double Tong_Ngay20 = 0;
+        double Tong_Ngay21 = 0;
+        double Tong_Ngay22 = 0;
+        double Tong_Ngay23 = 0;
+        double Tong_Ngay24 = 0;
+        double Tong_Ngay25 = 0;
+        double Tong_Ngay26 = 0;
+        double Tong_Ngay27 = 0;
+        double Tong_Ngay28 = 0;
+        double Tong_Ngay29 = 0;
+        double Tong_Ngay30 = 0;
+        double Tong_Ngay31 = 0;
         DataTable _dt_DinhMuc;
         public void LoadData(bool islandau)
         {
@@ -235,37 +235,37 @@ namespace CtyTinLuong
                 _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
                 ds_id_congnhan = new List<int>();
 
-                int Ngay1 = 0;
-                int Ngay2 = 0;
-                int Ngay3 = 0;
-                int Ngay4 = 0;
-                int Ngay5 = 0;
-                int Ngay6 = 0;
-                int Ngay7 = 0;
-                int Ngay8 = 0;
-                int Ngay9 = 0;
-                int Ngay10 = 0;
-                int Ngay11 = 0;
-                int Ngay12 = 0;
-                int Ngay13 = 0;
-                int Ngay14 = 0;
-                int Ngay15 = 0;
-                int Ngay16 = 0;
-                int Ngay17 = 0;
-                int Ngay18 = 0;
-                int Ngay19 = 0;
-                int Ngay20 = 0;
-                int Ngay21 = 0;
-                int Ngay22 = 0;
-                int Ngay23 = 0;
-                int Ngay24 = 0;
-                int Ngay25 = 0;
-                int Ngay26 = 0;
-                int Ngay27 = 0;
-                int Ngay28 = 0;
-                int Ngay29 = 0;
-                int Ngay30 = 0;
-                int Ngay31 = 0;
+                double Ngay1 = 0;
+                double Ngay2 = 0;
+                double Ngay3 = 0;
+                double Ngay4 = 0;
+                double Ngay5 = 0;
+                double Ngay6 = 0;
+                double Ngay7 = 0;
+                double Ngay8 = 0;
+                double Ngay9 = 0;
+                double Ngay10 = 0;
+                double Ngay11 = 0;
+                double Ngay12 = 0;
+                double Ngay13 = 0;
+                double Ngay14 = 0;
+                double Ngay15 = 0;
+                double Ngay16 = 0;
+                double Ngay17 = 0;
+                double Ngay18 = 0;
+                double Ngay19 = 0;
+                double Ngay20 = 0;
+                double Ngay21 = 0;
+                double Ngay22 = 0;
+                double Ngay23 = 0;
+                double Ngay24 = 0;
+                double Ngay25 = 0;
+                double Ngay26 = 0;
+                double Ngay27 = 0;
+                double Ngay28 = 0;
+                double Ngay29 = 0;
+                double Ngay30 = 0;
+                double Ngay31 = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {  
@@ -586,15 +586,15 @@ namespace CtyTinLuong
 
         private void CongTong()
         {
-            int[] _ds_ngay_tong_ = new int[31];
-            int tong_tong_ = 0;
+            double[] _ds_ngay_tong_ = new double[31];
+            double tong_tong_ = 0;
             for (int i = 0; i < _data.Rows.Count - 1; ++i)
             {
                 for (int j = 0; j < 31; ++j)
                 {
-                    _ds_ngay_tong_[j] += Convert.ToInt32(_data.Rows[i]["Ngay" + (j + 1)].ToString());
+                    _ds_ngay_tong_[j] += CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay" + (j + 1)].ToString());
                 }
-                tong_tong_ += Convert.ToInt32(_data.Rows[i]["Tong"].ToString());
+                tong_tong_ += CheckString.ConvertToDouble_My(_data.Rows[i]["Tong"].ToString());
             }
             for (int j = 0; j < 31; ++j)
             {
@@ -682,9 +682,6 @@ namespace CtyTinLuong
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
             GuiDuLieuBangLuong();
-
-            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
-            //ff.Show();
         }
 
 
@@ -720,7 +717,7 @@ namespace CtyTinLuong
                 {
                     if(Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()) == id_loaicong_)
                     {
-                        MessageBox.Show("Đã tồn tại công nhân này và loại công này trong bảng");
+                        MessageBox.Show("Đã tồn tại công nhân trong bảng này!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -783,7 +780,7 @@ namespace CtyTinLuong
             _ravi2["ID_CongNhan"] = 0;
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
-            _ravi2["TenNhanVien"] = "TỔNG";
+            _ravi2["TenNhanVien"] = "Tổng";
             _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
             _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
             _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
@@ -883,12 +880,13 @@ namespace CtyTinLuong
             }
         }
 
+        //Tô đậm dòng tổng:
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
             if (e.RowHandle == _data.Rows.Count - 1)
             {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             }
         }
 

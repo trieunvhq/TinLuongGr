@@ -64,7 +64,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
                 else _ravi["PhuCap"] = 0;
 
-                if (_data.Rows[i]["BaoHiem"].ToString() != "")
+                if (_data.Rows[i]["CongBaoHiem"].ToString() != "")
                 {
                     _ravi["CongBaoHiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem"].ToString());
                 }
