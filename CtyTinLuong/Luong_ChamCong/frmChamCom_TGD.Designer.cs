@@ -385,6 +385,8 @@
             // 
             // NoiDung
             // 
+            this.NoiDung.AppearanceCell.Options.UseTextOptions = true;
+            this.NoiDung.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NoiDung.Caption = "Nội dung";
             this.NoiDung.FieldName = "NoiDung";
             this.NoiDung.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;

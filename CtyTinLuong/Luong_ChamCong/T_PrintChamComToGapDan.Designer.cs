@@ -300,7 +300,7 @@
             this.cong.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.cong.StylePriority.UseFont = false;
             this.cong.StylePriority.UseTextAlignment = false;
-            this.cong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.cong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.cong.TextFormatString = "{0:#,#}";
             this.cong.Weight = 0.87045071618827752D;
             // 

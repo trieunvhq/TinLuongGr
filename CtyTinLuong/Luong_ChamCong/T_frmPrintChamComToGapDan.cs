@@ -17,8 +17,6 @@ namespace CtyTinLuong.Luong_ChamCong
         public int _id_bophan;
         public string _tennhanvien = "", _BoPhan;
         private DataTable _data;
-        private bool isload = true;
-        private List<GridColumn> ds_grid = new List<GridColumn>();
         public T_frmPrintChamComToGapDan(int thang, int nam, int id_bophan, string BoPhan)
         {
             _thang = thang;
