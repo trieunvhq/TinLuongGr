@@ -432,7 +432,7 @@
             // 
             // navChamCom_TGD
             // 
-            this.navChamCom_TGD.Caption = "Tổ Gấn Dán";
+            this.navChamCom_TGD.Caption = "Các Bộ Phận";
             this.navChamCom_TGD.Name = "navChamCom_TGD";
             this.navChamCom_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCom_TGD_LinkClicked);
             // 

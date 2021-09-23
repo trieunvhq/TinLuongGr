@@ -99,8 +99,10 @@ namespace CtyTinLuong
         int Tong_Ngay30 = 0;
         int Tong_Ngay31 = 0;
         //
-        public void LoadData(bool islandau)
+        public void LoadData(bool islandau, int IDBoPhan)
         {
+            _id_bophan = IDBoPhan;
+
             isload = true; 
 
             cbNhanVien.Text = "";
@@ -169,7 +171,7 @@ namespace CtyTinLuong
                      
                     try
                     { 
-                        _id_bophan = (int)cbBoPhan.SelectedValue; 
+                        IDBoPhan = (int)cbBoPhan.SelectedValue; 
                     }
                     catch { }
                 }
@@ -212,7 +214,7 @@ namespace CtyTinLuong
             //
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_ChamCom_SF(_nam, _thang, _id_bophan);
+                _data = clsThin_.T_ChamCom_SF(_nam, _thang, IDBoPhan);
 
                 int Ngay1 = 0;
                 int Ngay2 = 0;
@@ -424,7 +426,7 @@ namespace CtyTinLuong
             }
             // 
             DataRow _ravi = _data.NewRow();
-            _ravi["ID_ChamCom"] = 0;
+            _ravi["ID_ChamCom"] = -99;
             _ravi["ID_CongNhan"] = id_nhansu_;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
@@ -538,7 +540,7 @@ namespace CtyTinLuong
                     int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
                     _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
                 } 
-                SendKeys.Send("{DOWN}");
+                //SendKeys.Send("{DOWN}");
             }
             else if (name_.Contains("TenVTHH"))
             {
@@ -601,7 +603,7 @@ namespace CtyTinLuong
             try
             {
                 _thang = Convert.ToInt32(txtThang.Text);
-                LoadData(false);
+                LoadData(false, _id_bophan);
             }
             catch {
                 MessageBox.Show("Tháng không hợp lệ","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -612,7 +614,7 @@ namespace CtyTinLuong
             try
             {
                 _nam = Convert.ToInt32(txtNam.Text);
-                LoadData(false);
+                LoadData(false, _id_bophan);
             }
             catch
             {
@@ -642,7 +644,14 @@ namespace CtyTinLuong
         
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            GuiDuLieuBangLuong();
+            if(GuiDuLieuBangLuong())
+            {
+                MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Gửi dữ liệu không thành công. Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
          
 
@@ -681,27 +690,33 @@ namespace CtyTinLuong
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
-            int id_congnhan_ = (int)cbNhanVien.SelectedValue;
-            if (id_congnhan_ == 0)
-            { 
+            if (cbNhanVien.SelectedValue != null && cbNhanVien.Text != "")
+            {
+                int id_congnhan_ = (int)cbNhanVien.SelectedValue;
+                if (id_congnhan_ == 0)
+                {
+                }
+                else
+                {
+                    ThemMotCongNhanVaoBang(id_congnhan_, cbNhanVien.Text, true);
+                    GuiDuLieuBangLuong();
+                }
             }
             else
-            { 
-                ThemMotCongNhanVaoBang(id_congnhan_, cbNhanVien.Text,true); 
+            {
+                MessageBox.Show("Bạn chưa chọn nhân sự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            cbBoPhan.SelectedValue = 18;
-           
             try
             {
                 _id_bophan = (int)cbBoPhan.SelectedValue;
             }
             catch { }
 
-            CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan(_thang, _nam, _id_bophan);
+            CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan(_thang, _nam, _id_bophan, cbBoPhan.Text);
             ff.ShowDialog();
 
         }
@@ -717,11 +732,27 @@ namespace CtyTinLuong
 
         private void cbBoPhan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_SF((int)cbBoPhan.SelectedValue + ",");
                 cbNhanVien.DataSource = dt_;
+
+                if (dt_.Rows.Count > 0) cbNhanVien.SelectedIndex = 0;
+                //else cbNhanVien.SelectedValue = null;
+                //
+                try
+                {
+                    int IDBoPhan = (int)cbBoPhan.SelectedValue;
+                    _id_bophan = IDBoPhan;
+                    LoadData(false, IDBoPhan);
+                }
+                catch (Exception tr)
+                {
+                    MessageBox.Show("Error: " +tr.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void cbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
@@ -736,12 +767,12 @@ namespace CtyTinLuong
         {
             _frmQLLCC.Close();
         }
-        private void GuiDuLieuBangLuong()
+        private bool GuiDuLieuBangLuong()
         {
             bool isGuiThanhCong = false;
             using (clsThin clsThin_ = new clsThin())
             {
-                for (int i = 0; i < _data.Rows.Count; ++i)
+                for (int i = 0; i < _data.Rows.Count -1; ++i)
                 {
                     int ID_ChamCom_ = Convert.ToInt32(_data.Rows[i]["ID_ChamCom"].ToString());
                     if (ID_ChamCom_ == -1)
@@ -786,16 +817,16 @@ namespace CtyTinLuong
                 }
                 if (_data.Rows.Count>1)
                 {
-                    MessageBox.Show("Gửi dữ liệu chấm cơm thành công!");
+                    isGuiThanhCong = true;
+                    LoadData(false, _id_bophan);
                 }
                 else
                 {
-                    MessageBox.Show( "Chưa chọn công nhân","Lỗi",
-       MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    isGuiThanhCong = false;
                 }
             }
-               
 
+            return isGuiThanhCong;
         }
     }
 }

@@ -11,14 +11,16 @@ namespace CtyTinLuong.Luong_ChamCong
     {
         private int _thang;
         private int _nam;
+        private string _BoPhan;
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
 
-        public T_PrintChamComToGapDan(int thang, int nam)
+        public T_PrintChamComToGapDan(int thang, int nam, string BoPhan)
         {
             _thang = thang;
             _nam = nam;
+            _BoPhan = BoPhan;
 
             InitializeComponent();
             Ds_Ngay.Add(Ngay1);
@@ -119,6 +121,11 @@ namespace CtyTinLuong.Luong_ChamCong
             Ds_Ngay_Footer.Add(tg31);
 
 
+            if (_BoPhan.Contains("tất cả"))
+                _BoPhan = "TOÀN BỘ CÔNG TY";
+
+            pTitle.Value = "BẢNG CHẤM CÔNG " + _BoPhan.ToUpper();
+
             //setThu();
             // setMauTableDetail();
         }
@@ -126,6 +133,7 @@ namespace CtyTinLuong.Luong_ChamCong
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             setThu();
+
 
             //Load label ngay thang nam header:
             if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();

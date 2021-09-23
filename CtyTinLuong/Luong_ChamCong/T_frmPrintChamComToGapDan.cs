@@ -15,15 +15,16 @@ namespace CtyTinLuong.Luong_ChamCong
     {
         private int _thang, _nam;
         public int _id_bophan;
-        public string _tennhanvien = "";
+        public string _tennhanvien = "", _BoPhan;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
-        public T_frmPrintChamComToGapDan(int thang, int nam, int id_bophan)
+        public T_frmPrintChamComToGapDan(int thang, int nam, int id_bophan, string BoPhan)
         {
             _thang = thang;
             _nam = nam;
             _id_bophan = id_bophan;
+            _BoPhan = BoPhan;
             InitializeComponent();
         }
 
@@ -31,7 +32,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void T_frmPrintChamCongToGapDan_Load(object sender, EventArgs e)
         {
-            T_PrintChamComToGapDan xtr111 = new T_PrintChamComToGapDan(_thang, _nam);
+            T_PrintChamComToGapDan xtr111 = new T_PrintChamComToGapDan(_thang, _nam, _BoPhan);
 
             DataSet_TinLuong ds = new DataSet_TinLuong();
             ds.tbCongNhatChamCongToGapDan.Clone();

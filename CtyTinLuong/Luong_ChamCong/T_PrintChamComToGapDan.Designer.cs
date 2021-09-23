@@ -205,6 +205,7 @@
             this.pNgay = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.pTitle = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tr_xrTbHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -757,6 +758,8 @@
             // 
             // xrLabel2
             // 
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pTitle]")});
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 15.83334F);
             this.xrLabel2.Multiline = true;
@@ -2510,6 +2513,11 @@
             this.PageHeader.HeightF = 58.90154F;
             this.PageHeader.Name = "PageHeader";
             // 
+            // pTitle
+            // 
+            this.pTitle.Description = "Tiêu đề";
+            this.pTitle.Name = "pTitle";
+            // 
             // T_PrintChamComToGapDan
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2529,6 +2537,7 @@
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+            this.pTitle,
             this.pNgay,
             this.pGiamDoc,
             this.pTongHop,
@@ -2721,5 +2730,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell36;
         private DataSet_TinLuong dataSet_TinLuong1;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
+        private DevExpress.XtraReports.Parameters.Parameter pTitle;
     }
 }
