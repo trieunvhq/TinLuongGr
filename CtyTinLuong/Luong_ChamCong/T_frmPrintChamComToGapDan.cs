@@ -98,7 +98,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
 
                     _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-                    //_ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
+                    _ravi["TenVTHH"] = _data.Rows[i]["NoiDung"].ToString();
                     _ravi["Ngay1"] = Convert.ToInt32(_data.Rows[i]["Ngay1"].ToString());
                     _ravi["Ngay2"] = Convert.ToInt32(_data.Rows[i]["Ngay2"].ToString());
                     _ravi["Ngay3"] = Convert.ToInt32(_data.Rows[i]["Ngay3"].ToString());

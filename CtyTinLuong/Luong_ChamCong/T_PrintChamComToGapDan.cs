@@ -121,7 +121,7 @@ namespace CtyTinLuong.Luong_ChamCong
             Ds_Ngay_Footer.Add(tg31);
 
 
-            if (_BoPhan.Contains("tất cả"))
+            if (_BoPhan.ToLower().Contains("tất cả"))
                 _BoPhan = "TOÀN BỘ CÔNG TY";
 
             pTitle.Value = "BẢNG CHẤM CÔNG " + _BoPhan.ToUpper();
