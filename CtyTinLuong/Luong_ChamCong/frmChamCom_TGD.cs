@@ -411,7 +411,7 @@ namespace CtyTinLuong
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
                 {
-                    MessageBox.Show("Đã tồn tại công nhân này trong bảng");
+                    MessageBox.Show("Đã tồn tại công nhân này trong bảng!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -511,6 +511,9 @@ namespace CtyTinLuong
             _data.Rows.Add(_ravi2);
             //
             gridControl1.DataSource = _data;
+
+            //
+            GuiDuLieuBangLuong();
         }
         private string thutrongtuanxyz(int ewwd)
         {
@@ -558,6 +561,8 @@ namespace CtyTinLuong
             CongTong();
             // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
         }
+
+
         private void CongTong()
         { 
             int[] _ds_ngay_tong_ = new int[31];
@@ -701,7 +706,6 @@ namespace CtyTinLuong
                 else
                 {
                     ThemMotCongNhanVaoBang(id_congnhan_, cbNhanVien.Text, true);
-                    GuiDuLieuBangLuong();
                 }
             }
             else

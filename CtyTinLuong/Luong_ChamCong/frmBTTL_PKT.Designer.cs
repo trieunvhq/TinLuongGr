@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtThang = new System.Windows.Forms.TextBox();
@@ -46,9 +45,9 @@
             this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SanLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LuongTrachNhiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TongTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LuongTrachNhiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThucNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,6 +56,7 @@
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.clTruBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -70,21 +70,10 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(24, 590);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(149, 13);
-            this.linkLabel1.TabIndex = 123;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Cài định mức  toàn danh sách";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label3
             // 
@@ -146,13 +135,14 @@
             this.TenVTHH,
             this.DonGia,
             this.SanLuong,
-            this.TongLuong,
-            this.LuongTrachNhiem,
             this.TongTien,
+            this.colPhuCap,
+            this.TongLuong,
+            this.clTruBaoHiem,
+            this.LuongTrachNhiem,
             this.TamUng,
             this.ThucNhan,
-            this.KyNhan,
-            this.colPhuCap});
+            this.KyNhan});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -204,6 +194,8 @@
             // 
             // TenVTHH
             // 
+            this.TenVTHH.AppearanceCell.Options.UseTextOptions = true;
+            this.TenVTHH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TenVTHH.Caption = "CÔNG";
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Name = "TenVTHH";
@@ -236,7 +228,7 @@
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 4;
+            this.DonGia.VisibleIndex = 3;
             this.DonGia.Width = 80;
             // 
             // SanLuong
@@ -262,50 +254,15 @@
             this.SanLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.SanLuong.Visible = true;
-            this.SanLuong.VisibleIndex = 3;
+            this.SanLuong.VisibleIndex = 4;
             this.SanLuong.Width = 80;
-            // 
-            // TongLuong
-            // 
-            this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TongLuong.Caption = "TỔNG";
-            this.TongLuong.FieldName = "TongLuong";
-            this.TongLuong.MinWidth = 10;
-            this.TongLuong.Name = "TongLuong";
-            this.TongLuong.OptionsColumn.AllowEdit = false;
-            this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsColumn.FixedWidth = true;
-            this.TongLuong.OptionsFilter.AllowAutoFilter = false;
-            this.TongLuong.OptionsFilter.AllowFilter = false;
-            this.TongLuong.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.TongLuong.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
-            this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 5;
-            this.TongLuong.Width = 80;
-            // 
-            // LuongTrachNhiem
-            // 
-            this.LuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
-            this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
-            this.LuongTrachNhiem.Name = "LuongTrachNhiem";
-            this.LuongTrachNhiem.OptionsColumn.AllowEdit = false;
-            this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.LuongTrachNhiem.Width = 80;
             // 
             // TongTien
             // 
             this.TongTien.AppearanceCell.Options.UseTextOptions = true;
             this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TongTien.Caption = "TỔNG LƯƠNG";
+            this.TongTien.Caption = "TỔNG";
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 10;
             this.TongTien.Name = "TongTien";
@@ -323,8 +280,43 @@
             this.TongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 7;
+            this.TongTien.VisibleIndex = 5;
             this.TongTien.Width = 80;
+            // 
+            // LuongTrachNhiem
+            // 
+            this.LuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
+            this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
+            this.LuongTrachNhiem.Name = "LuongTrachNhiem";
+            this.LuongTrachNhiem.OptionsColumn.AllowEdit = false;
+            this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.LuongTrachNhiem.Width = 80;
+            // 
+            // TongLuong
+            // 
+            this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
+            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.TongLuong.Caption = "TỔNG LƯƠNG";
+            this.TongLuong.FieldName = "TongLuong";
+            this.TongLuong.MinWidth = 10;
+            this.TongLuong.Name = "TongLuong";
+            this.TongLuong.OptionsColumn.AllowEdit = false;
+            this.TongLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsColumn.FixedWidth = true;
+            this.TongLuong.OptionsFilter.AllowAutoFilter = false;
+            this.TongLuong.OptionsFilter.AllowFilter = false;
+            this.TongLuong.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.TongLuong.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
+            this.TongLuong.Visible = true;
+            this.TongLuong.VisibleIndex = 7;
+            this.TongLuong.Width = 80;
             // 
             // TamUng
             // 
@@ -349,7 +341,7 @@
             this.TamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.TamUng.Visible = true;
-            this.TamUng.VisibleIndex = 8;
+            this.TamUng.VisibleIndex = 9;
             this.TamUng.Width = 80;
             // 
             // ThucNhan
@@ -357,7 +349,7 @@
             this.ThucNhan.AppearanceCell.Options.UseTextOptions = true;
             this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ThucNhan.Caption = "THỰC LĨNH";
+            this.ThucNhan.Caption = "THỰC NHẬN";
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
@@ -376,7 +368,7 @@
             this.ThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
-            this.ThucNhan.VisibleIndex = 9;
+            this.ThucNhan.VisibleIndex = 10;
             this.ThucNhan.Width = 80;
             // 
             // KyNhan
@@ -403,7 +395,7 @@
             this.KyNhan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.KyNhan.Visible = true;
-            this.KyNhan.VisibleIndex = 10;
+            this.KyNhan.VisibleIndex = 11;
             this.KyNhan.Width = 80;
             // 
             // colPhuCap
@@ -471,6 +463,14 @@
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
+            // clTruBaoHiem
+            // 
+            this.clTruBaoHiem.Caption = "TRỪ BẢO HIỂM";
+            this.clTruBaoHiem.FieldName = "BaoHiem";
+            this.clTruBaoHiem.Name = "clTruBaoHiem";
+            this.clTruBaoHiem.Visible = true;
+            this.clTruBaoHiem.VisibleIndex = 8;
+            // 
             // frmBTTL_PKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,7 +483,6 @@
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmBTTL_PKT";
             this.Size = new System.Drawing.Size(913, 635);
@@ -499,7 +498,6 @@
 
         #endregion
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtThang;
@@ -509,8 +507,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn SanLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn TongLuong;
         private DevExpress.XtraGrid.Columns.GridColumn TongTien;
+        private DevExpress.XtraGrid.Columns.GridColumn TongLuong;
         private DevExpress.XtraGrid.Columns.GridColumn TamUng;
         private DevExpress.XtraGrid.Columns.GridColumn ThucNhan;
         private DevExpress.XtraGrid.Columns.GridColumn KyNhan;
@@ -522,5 +520,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btThoat;
+        private DevExpress.XtraGrid.Columns.GridColumn clTruBaoHiem;
     }
 }

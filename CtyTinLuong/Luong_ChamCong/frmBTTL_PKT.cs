@@ -65,6 +65,7 @@ namespace CtyTinLuong
             double trutamung_tong_ = 0;
             double thuclinh_tong_ = 0;
             double phucap_tong_ = 0;
+            double _TruBaoHiem_Tong = 0;
 
 
             double tongluong_ = 0;
@@ -73,6 +74,7 @@ namespace CtyTinLuong
             double trutamung_ = 0;
             double thuclinh_ = 0;
             double phucap_ = 0;
+            double _TruBaoHiem = 0; 
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -111,10 +113,15 @@ namespace CtyTinLuong
 
                         _data.Rows[i]["STT"] = (i / 2) + 1;
 
-                        tongluong_ = (dongia_ * sanluong_);
-                        tongluong_tong_ += tongluong_;
-                        _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
+                        //trừ bảo hiểm:
+                        _TruBaoHiem = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem_Value"].ToString());
+                        _TruBaoHiem_Tong += _TruBaoHiem;
+                        if (_TruBaoHiem == 0)
+                            _data.Rows[i]["BaoHiem"] = "";
+                        else
+                            _data.Rows[i]["BaoHiem"] = _TruBaoHiem.ToString("N0");
 
+                        //lương trách nhiệm:
                         luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
                         luongtrachnhiem_tong_ += luongtrachnhiem_;
                         if (luongtrachnhiem_ == 0)
@@ -122,6 +129,7 @@ namespace CtyTinLuong
                         else
                             _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
 
+                        //Phụ cấp:
                         phucap_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCap_Value"].ToString());
                         phucap_tong_ += phucap_;
                         if (phucap_ == 0)
@@ -129,7 +137,7 @@ namespace CtyTinLuong
                         else
                             _data.Rows[i]["PhuCap"] = phucap_.ToString("N0");
 
-
+                        //Trừ tạm ứng:
                         trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
                         trutamung_tong_ += trutamung_;
                         if (trutamung_ == 0)
@@ -137,33 +145,49 @@ namespace CtyTinLuong
                         else
                             _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
 
-
-
-                        tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
+                        //Tổng:
+                        tong_ = (dongia_ * sanluong_);
                         tong_tong_ += tong_;
                         _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-                        thuclinh_ = (tong_ - trutamung_ + phucap_);
+                        //Tổng lương:
+                        tongluong_ = (dongia_ * sanluong_ + phucap_);
+                        tongluong_tong_ += tongluong_;
+                        _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_ + phucap_).ToString("N0");
+
+                        //Thực nhận:
+                        thuclinh_ = (tongluong_ - trutamung_);
                         thuclinh_tong_ += thuclinh_;
                         _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
                     }
                     else
                     {
-                         _data.Rows[i]["STT"] = (i / 2) + 1;
+                        _data.Rows[i]["STT"] = (i / 2) + 1;
 
-                        tongluong_ = (dongia_ * sanluong_);
-                        tongluong_tong_ += tongluong_;
-                        _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
+                        //trừ bảo hiểm:
+                        _data.Rows[i]["BaoHiem"] = "";
 
+                        //lương trách nhiệm:
                         _data.Rows[i]["LuongTrachNhiem"] = "";
-                        _data.Rows[i]["PhuCap"] = "";
-                        _data.Rows[i]["TamUng"] = "";
 
+                        //Phụ cấp:
+                        _data.Rows[i]["PhuCap"] = "";
+
+                        //Trừ tạm ứng:
+                         _data.Rows[i]["TamUng"] = "";
+
+                        //Tổng:
                         tong_ = (dongia_ * sanluong_);
                         tong_tong_ += tong_;
                         _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-                        thuclinh_ = tong_;
+                        //Tổng lương:
+                        tongluong_ = (dongia_ * sanluong_);
+                        tongluong_tong_ += tongluong_;
+                        _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
+
+                        //Thực nhận:
+                        thuclinh_ = tongluong_;
                         thuclinh_tong_ += thuclinh_;
                         _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
                     }
@@ -227,6 +251,16 @@ namespace CtyTinLuong
             else
             {
                 _ravi["PhuCap"] = phucap_tong_.ToString("N0");
+            }
+
+            // 
+            if (_TruBaoHiem_Tong == 0)
+            {
+                _ravi["BaoHiem"] = "";
+            }
+            else
+            {
+                _ravi["BaoHiem"] = phucap_tong_.ToString("N0");
             }
 
             _data.Rows.Add(_ravi);
@@ -336,10 +370,6 @@ namespace CtyTinLuong
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
 
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
         {

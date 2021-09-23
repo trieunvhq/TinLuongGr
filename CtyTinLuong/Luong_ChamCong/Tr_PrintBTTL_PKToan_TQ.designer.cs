@@ -244,7 +244,7 @@
             // xrlbNam
             // 
             this.xrlbNam.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrlbNam.LocationFloat = new DevExpress.Utils.PointFloat(580.7916F, 50.90279F);
+            this.xrlbNam.LocationFloat = new DevExpress.Utils.PointFloat(398.7539F, 50.90279F);
             this.xrlbNam.Multiline = true;
             this.xrlbNam.Name = "xrlbNam";
             this.xrlbNam.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -256,7 +256,7 @@
             // xrlbThang
             // 
             this.xrlbThang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrlbThang.LocationFloat = new DevExpress.Utils.PointFloat(494.2674F, 50.90279F);
+            this.xrlbThang.LocationFloat = new DevExpress.Utils.PointFloat(312.2297F, 50.90279F);
             this.xrlbThang.Multiline = true;
             this.xrlbThang.Name = "xrlbThang";
             this.xrlbThang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -267,7 +267,7 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(538.8924F, 50.90277F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(356.8547F, 50.90277F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -305,7 +305,7 @@
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(443.5833F, 50.90278F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(261.5456F, 50.90278F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
