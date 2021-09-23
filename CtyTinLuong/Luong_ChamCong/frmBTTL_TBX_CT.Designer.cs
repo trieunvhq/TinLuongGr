@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -69,9 +69,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // linkLabel1
@@ -235,7 +235,7 @@
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 4;
+            this.DonGia.VisibleIndex = 3;
             this.DonGia.Width = 80;
             // 
             // SanLuong
@@ -261,7 +261,7 @@
             this.SanLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.SanLuong.Visible = true;
-            this.SanLuong.VisibleIndex = 3;
+            this.SanLuong.VisibleIndex = 4;
             this.SanLuong.Width = 80;
             // 
             // TongLuong
@@ -269,7 +269,7 @@
             this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
             this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.TongLuong.Caption = "TỔNG";
+            this.TongLuong.Caption = "TỔNG LƯƠNG";
             this.TongLuong.FieldName = "TongLuong";
             this.TongLuong.MinWidth = 10;
             this.TongLuong.Name = "TongLuong";
@@ -287,18 +287,20 @@
             this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 6;
+            this.TongLuong.VisibleIndex = 5;
             this.TongLuong.Width = 80;
             // 
             // LuongTrachNhiem
             // 
+            this.LuongTrachNhiem.AppearanceCell.Options.UseTextOptions = true;
+            this.LuongTrachNhiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.LuongTrachNhiem.Caption = "L.TRÁCH NHIỆM";
             this.LuongTrachNhiem.FieldName = "LuongTrachNhiem";
             this.LuongTrachNhiem.Name = "LuongTrachNhiem";
             this.LuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.LuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.LuongTrachNhiem.Visible = true;
-            this.LuongTrachNhiem.VisibleIndex = 5;
+            this.LuongTrachNhiem.VisibleIndex = 6;
             this.LuongTrachNhiem.Width = 80;
             // 
             // TongTien
@@ -358,7 +360,7 @@
             this.ThucNhan.AppearanceCell.Options.UseTextOptions = true;
             this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.ThucNhan.Caption = "THỰC LĨNH";
+            this.ThucNhan.Caption = "THỰC NHẬN";
             this.ThucNhan.FieldName = "ThucNhan";
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
