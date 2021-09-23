@@ -539,8 +539,10 @@ namespace CtyTinLuong
                 {
                     int temp_ = Convert.ToInt32(_data.Rows[index_][name_].ToString());
                     _data.Rows[index_]["Tong"] = temp_ + Convert.ToInt32(_data.Rows[index_]["Tong"].ToString());
-                } 
-                //SendKeys.Send("{DOWN}");
+                }
+
+                //
+                SendKeys.Send("{DOWN}");
             }
             else if (name_.Contains("TenVTHH"))
             {
@@ -761,6 +763,15 @@ namespace CtyTinLuong
 
         private void cbNhanVien_TextUpdate(object sender, EventArgs e)
         {
+        }
+
+        private void gridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar == (char)13)
+            //{
+            //    SendKeys.Send("{DOWN}");
+            //    SendKeys.Send("{DOWN}");
+            //}
         }
 
         private void btThoat_Click(object sender, EventArgs e)
