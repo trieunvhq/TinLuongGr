@@ -124,8 +124,8 @@ namespace CtyTinLuong.Luong_ChamCong
             if (_BoPhan.ToLower().Contains("tất cả"))
                 _BoPhan = "TOÀN BỘ CÔNG TY";
 
-            pTitle.Value = "BẢNG CHẤM CÔNG " + _BoPhan.ToUpper();
-
+            pTitle.Value = "BẢNG CHẤM CƠM " + _BoPhan.ToUpper();
+            pNgay.Value = DateTime.Now;
             //setThu();
             // setMauTableDetail();
         }
