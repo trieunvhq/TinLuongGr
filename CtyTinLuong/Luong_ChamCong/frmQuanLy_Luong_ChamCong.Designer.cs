@@ -265,7 +265,7 @@
             // 
             this.navChamCong_TBX.Appearance.ForeColor = System.Drawing.Color.Black;
             this.navChamCong_TBX.Appearance.Options.UseForeColor = true;
-            this.navChamCong_TBX.Caption = "Bốc Xếp";
+            this.navChamCong_TBX.Caption = "Tổ Bốc Xếp";
             this.navChamCong_TBX.Name = "navChamCong_TBX";
             this.navChamCong_TBX.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TBX_LinkClicked);
             // 
@@ -349,7 +349,7 @@
             // 
             // navBarItem15
             // 
-            this.navBarItem15.Caption = "Bốc Xếp";
+            this.navBarItem15.Caption = "Tổ Bốc Xếp";
             this.navBarItem15.Name = "navBarItem15";
             this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked_1);
             // 

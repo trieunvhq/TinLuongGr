@@ -39,6 +39,9 @@ namespace CtyTinLuong
             _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
             InitializeComponent();
+
+            MaDinhMucLuongCongNhat.Caption = "Đ.MỨC\nLƯƠNG";
+
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
             ds_grid.Add(Ngay6); ds_grid.Add(Ngay7); ds_grid.Add(Ngay8); ds_grid.Add(Ngay9); ds_grid.Add(Ngay10);
@@ -558,7 +561,7 @@ namespace CtyTinLuong
                     _data.Rows[index_]["Tong"] = temp_ + CheckString.ConvertToDouble_My(_data.Rows[index_]["Tong"].ToString());
                 }
 
-                SendKeys.Send("{DOWN}");
+                //SendKeys.Send("{DOWN}");
             }
             else if (name_.Contains("TenVTHH"))
             {
@@ -907,6 +910,14 @@ namespace CtyTinLuong
             catch (Exception ee)
             {
 
+            }
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{DOWN}");
             }
         }
 

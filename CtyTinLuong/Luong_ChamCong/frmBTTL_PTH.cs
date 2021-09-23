@@ -370,7 +370,7 @@ namespace CtyTinLuong
             GridView view = sender as GridView;
             if (e.RowHandle == _data.Rows.Count - 1)
             {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             }
         }
 
