@@ -38,7 +38,11 @@ namespace CtyTinLuong
             _ID_DinhMucLuong_CongNhat = 0;
             _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
+
             InitializeComponent();
+
+            radioCa1.Checked = true;
+
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
             ds_grid.Add(Ngay6); ds_grid.Add(Ngay7); ds_grid.Add(Ngay8); ds_grid.Add(Ngay9); ds_grid.Add(Ngay10);
@@ -165,7 +169,7 @@ namespace CtyTinLuong
         DataTable _dt_DinhMuc;
 
 
-        public void LoadData(bool islandau)
+        public void LoadData(bool islandau, bool CaLamViec)  //CaLamViec = true là Ca1 else là Ca2
         {
             isload = true;
             if (islandau)
@@ -232,9 +236,41 @@ namespace CtyTinLuong
                 cbLoaiCong.ValueMember = "ID_LoaiCong";
             }
 
+            Tong_Ngay1 = 0;
+            Tong_Ngay2 = 0;
+            Tong_Ngay3 = 0;
+            Tong_Ngay4 = 0;
+            Tong_Ngay5 = 0;
+            Tong_Ngay6 = 0;
+            Tong_Ngay7 = 0;
+            Tong_Ngay8 = 0;
+            Tong_Ngay9 = 0;
+            Tong_Ngay10 = 0;
+            Tong_Ngay11 = 0;
+            Tong_Ngay12 = 0;
+            Tong_Ngay13 = 0;
+            Tong_Ngay14 = 0;
+            Tong_Ngay15 = 0;
+            Tong_Ngay16 = 0;
+            Tong_Ngay17 = 0;
+            Tong_Ngay18 = 0;
+            Tong_Ngay19 = 0;
+            Tong_Ngay20 = 0;
+            Tong_Ngay21 = 0;
+            Tong_Ngay22 = 0;
+            Tong_Ngay23 = 0;
+            Tong_Ngay24 = 0;
+            Tong_Ngay25 = 0;
+            Tong_Ngay26 = 0;
+            Tong_Ngay27 = 0;
+            Tong_Ngay28 = 0;
+            Tong_Ngay29 = 0;
+            Tong_Ngay30 = 0;
+            Tong_Ngay31 = 0;
+
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
+                _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_PMC(_nam, _thang, _id_bophan, 0, "", CaLamViec);
                 ds_id_congnhan = new List<int>();
 
                 double Ngay1 = 0;
@@ -594,7 +630,7 @@ namespace CtyTinLuong
             try
             {
                 _thang = Convert.ToInt32(txtThang.Text);
-                LoadData(false);
+                LoadData(false, radioCa1.Checked);
             }
             catch
             {
@@ -606,7 +642,7 @@ namespace CtyTinLuong
             try
             {
                 _nam = Convert.ToInt32(txtNam.Text);
-                LoadData(false);
+                LoadData(false, radioCa1.Checked);
             }
             catch
             {
@@ -646,9 +682,6 @@ namespace CtyTinLuong
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
             GuiDuLieuBangLuong();
-
-            //CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamCongToGapDan(7,2021);
-            //ff.Show();
         }
 
 
@@ -666,25 +699,13 @@ namespace CtyTinLuong
         }
         private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew, int id_loaicong_, string ten_loaicong_)
         {
-            bool IsTangCa_ = false;
-            switch (id_loaicong_)
-            {
-                case 1:
-                    IsTangCa_ = false;
-                    break;
-                case 2:
-                    IsTangCa_ = true;
-                    break;
-                case 3:
-                    break;
-            }
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
                 {
                     if (Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()) == id_loaicong_)
                     {
-                        MessageBox.Show("Đã tồn tại công nhân này và loại công này trong bảng");
+                        MessageBox.Show("Đã tồn tại công nhân này và loại công này trong bảng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -733,6 +754,8 @@ namespace CtyTinLuong
 
             _ravi["Cong"] = ten_loaicong_;
             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+
+            _ravi["IsTangCa"] = radioCa1.Checked;
 
             //
             if (_data.Rows.Count > 0)
@@ -840,7 +863,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC(_thang, _nam, _id_bophan);
             ff.ShowDialog();
         }
 
@@ -892,6 +915,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void radioCa1_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadData(false, radioCa1.Checked);
+        }
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             _frmQLLCC.Close();
@@ -915,12 +943,7 @@ namespace CtyTinLuong
                     {
                         isGuiThanhCong = true;
                     }
-                    string Cong_ = _data.Rows[i]["Cong"].ToString();
-                    bool isTang = false;
-                    if (Cong_.Contains("Tăng"))
-                    {
-                        isTang = true;
-                    }
+
                     clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
                         ID_CongNhan_,
                         _thang,
@@ -958,18 +981,17 @@ namespace CtyTinLuong
                         (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay29"].ToString()),
                         (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString()),
                         (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString()),
-                        0, true, isTang, _id_bophan,
+                        0, true, radioCa1.Checked, _id_bophan,
                         Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()),
                         Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
                 }
                 if (isGuiThanhCong)
                 {
-                    MessageBox.Show("Gửi dữ liệu chấm công thành công!");
+                    MessageBox.Show("Lưu dữ liệu chấm công thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Chưa chọn loại hàng hóa", "Lỗi",
-       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lưu dữ liệu chấm công không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

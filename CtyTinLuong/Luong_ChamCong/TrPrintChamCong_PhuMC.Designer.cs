@@ -199,10 +199,48 @@
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
+            this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell19 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell21 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell25 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell26 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell27 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell28 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell29 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell30 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell32 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell69 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell70 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell71 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell72 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell73 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell74 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell75 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -218,12 +256,12 @@
             // 
             this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable1.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTable1.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(1093F, 19.89795F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(1107.583F, 19.89795F);
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
@@ -273,7 +311,7 @@
             // 
             this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TenNhanVien]")});
-            this.xrTableCell10.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.xrTableCell10.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
@@ -281,13 +319,13 @@
             this.xrTableCell10.StylePriority.UsePadding = false;
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell10.Weight = 1.7439475653926764D;
+            this.xrTableCell10.Weight = 1.6266570945405259D;
             // 
             // cong
             // 
             this.cong.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Cong]")});
-            this.cong.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.cong.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.cong.Multiline = true;
             this.cong.Name = "cong";
             this.cong.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
@@ -296,363 +334,363 @@
             this.cong.StylePriority.UseTextAlignment = false;
             this.cong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.cong.TextFormatString = "{0:#,#}";
-            this.cong.Weight = 0.87855180602358784D;
+            this.cong.Weight = 0.8915841441968686D;
             // 
             // Ngay1
             // 
             this.Ngay1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay1]")});
-            this.Ngay1.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay1.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay1.Multiline = true;
             this.Ngay1.Name = "Ngay1";
             this.Ngay1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay1.StylePriority.UseFont = false;
-            this.Ngay1.Weight = 0.3371850856060139D;
+            this.Ngay1.Weight = 0.34433181475217584D;
             // 
             // Ngay2
             // 
             this.Ngay2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay2]")});
-            this.Ngay2.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay2.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay2.Multiline = true;
             this.Ngay2.Name = "Ngay2";
             this.Ngay2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay2.StylePriority.UseFont = false;
             this.Ngay2.StylePriority.UsePadding = false;
-            this.Ngay2.Weight = 0.3371850856060139D;
+            this.Ngay2.Weight = 0.34433181475217584D;
             // 
             // Ngay3
             // 
             this.Ngay3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay3]")});
-            this.Ngay3.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay3.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay3.Multiline = true;
             this.Ngay3.Name = "Ngay3";
             this.Ngay3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay3.StylePriority.UseFont = false;
             this.Ngay3.StylePriority.UsePadding = false;
-            this.Ngay3.Weight = 0.3371850856060139D;
+            this.Ngay3.Weight = 0.34433181475217584D;
             // 
             // Ngay4
             // 
             this.Ngay4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay4]")});
-            this.Ngay4.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay4.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay4.Multiline = true;
             this.Ngay4.Name = "Ngay4";
             this.Ngay4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay4.StylePriority.UseFont = false;
             this.Ngay4.StylePriority.UsePadding = false;
-            this.Ngay4.Weight = 0.3371850856060139D;
+            this.Ngay4.Weight = 0.34433181475217584D;
             // 
             // Ngay5
             // 
             this.Ngay5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay5]")});
-            this.Ngay5.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay5.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay5.Multiline = true;
             this.Ngay5.Name = "Ngay5";
             this.Ngay5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay5.StylePriority.UseFont = false;
             this.Ngay5.StylePriority.UsePadding = false;
-            this.Ngay5.Weight = 0.3371850856060139D;
+            this.Ngay5.Weight = 0.34433181475217584D;
             // 
             // Ngay6
             // 
             this.Ngay6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay6]")});
-            this.Ngay6.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay6.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay6.Multiline = true;
             this.Ngay6.Name = "Ngay6";
             this.Ngay6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay6.StylePriority.UseFont = false;
             this.Ngay6.StylePriority.UsePadding = false;
-            this.Ngay6.Weight = 0.3371850856060139D;
+            this.Ngay6.Weight = 0.34433181475217584D;
             // 
             // Ngay7
             // 
             this.Ngay7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay7]")});
-            this.Ngay7.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay7.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay7.Multiline = true;
             this.Ngay7.Name = "Ngay7";
             this.Ngay7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay7.StylePriority.UseFont = false;
             this.Ngay7.StylePriority.UsePadding = false;
-            this.Ngay7.Weight = 0.3371850856060139D;
+            this.Ngay7.Weight = 0.34433181475217584D;
             // 
             // Ngay8
             // 
             this.Ngay8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay8]")});
-            this.Ngay8.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay8.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay8.Multiline = true;
             this.Ngay8.Name = "Ngay8";
             this.Ngay8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay8.StylePriority.UseFont = false;
             this.Ngay8.StylePriority.UsePadding = false;
-            this.Ngay8.Weight = 0.3371850856060139D;
+            this.Ngay8.Weight = 0.34433181475217584D;
             // 
             // Ngay9
             // 
             this.Ngay9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay9]")});
-            this.Ngay9.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay9.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay9.Multiline = true;
             this.Ngay9.Name = "Ngay9";
             this.Ngay9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay9.StylePriority.UseFont = false;
             this.Ngay9.StylePriority.UsePadding = false;
-            this.Ngay9.Weight = 0.3371850856060139D;
+            this.Ngay9.Weight = 0.34433181475217584D;
             // 
             // Ngay10
             // 
             this.Ngay10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay10]")});
-            this.Ngay10.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay10.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay10.Multiline = true;
             this.Ngay10.Name = "Ngay10";
             this.Ngay10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay10.StylePriority.UseFont = false;
             this.Ngay10.StylePriority.UsePadding = false;
-            this.Ngay10.Weight = 0.3371850856060139D;
+            this.Ngay10.Weight = 0.34433181475217584D;
             // 
             // Ngay11
             // 
             this.Ngay11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay11]")});
-            this.Ngay11.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay11.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay11.Multiline = true;
             this.Ngay11.Name = "Ngay11";
             this.Ngay11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay11.StylePriority.UseFont = false;
             this.Ngay11.StylePriority.UsePadding = false;
-            this.Ngay11.Weight = 0.3371850856060139D;
+            this.Ngay11.Weight = 0.34433181475217584D;
             // 
             // Ngay12
             // 
             this.Ngay12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay12]")});
-            this.Ngay12.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay12.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay12.Multiline = true;
             this.Ngay12.Name = "Ngay12";
             this.Ngay12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay12.StylePriority.UseFont = false;
             this.Ngay12.StylePriority.UsePadding = false;
-            this.Ngay12.Weight = 0.3371850856060139D;
+            this.Ngay12.Weight = 0.34433181475217584D;
             // 
             // Ngay13
             // 
             this.Ngay13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay13]")});
-            this.Ngay13.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay13.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay13.Multiline = true;
             this.Ngay13.Name = "Ngay13";
             this.Ngay13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay13.StylePriority.UseFont = false;
             this.Ngay13.StylePriority.UsePadding = false;
-            this.Ngay13.Weight = 0.3371850856060139D;
+            this.Ngay13.Weight = 0.34433181475217584D;
             // 
             // Ngay14
             // 
             this.Ngay14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay14]")});
-            this.Ngay14.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay14.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay14.Multiline = true;
             this.Ngay14.Name = "Ngay14";
             this.Ngay14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay14.StylePriority.UseFont = false;
             this.Ngay14.StylePriority.UsePadding = false;
-            this.Ngay14.Weight = 0.3371850856060139D;
+            this.Ngay14.Weight = 0.34433181475217584D;
             // 
             // Ngay15
             // 
             this.Ngay15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay15]")});
-            this.Ngay15.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay15.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay15.Multiline = true;
             this.Ngay15.Name = "Ngay15";
             this.Ngay15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay15.StylePriority.UseFont = false;
             this.Ngay15.StylePriority.UsePadding = false;
-            this.Ngay15.Weight = 0.3371850856060139D;
+            this.Ngay15.Weight = 0.34433181475217584D;
             // 
             // Ngay16
             // 
             this.Ngay16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay16]")});
-            this.Ngay16.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay16.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay16.Multiline = true;
             this.Ngay16.Name = "Ngay16";
             this.Ngay16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay16.StylePriority.UseFont = false;
             this.Ngay16.StylePriority.UsePadding = false;
-            this.Ngay16.Weight = 0.3371850856060139D;
+            this.Ngay16.Weight = 0.34433181475217584D;
             // 
             // Ngay17
             // 
             this.Ngay17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay17]")});
-            this.Ngay17.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay17.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay17.Multiline = true;
             this.Ngay17.Name = "Ngay17";
             this.Ngay17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay17.StylePriority.UseFont = false;
             this.Ngay17.StylePriority.UsePadding = false;
-            this.Ngay17.Weight = 0.3371850856060139D;
+            this.Ngay17.Weight = 0.34433181475217584D;
             // 
             // Ngay18
             // 
             this.Ngay18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay18]")});
-            this.Ngay18.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay18.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay18.Multiline = true;
             this.Ngay18.Name = "Ngay18";
             this.Ngay18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay18.StylePriority.UseFont = false;
             this.Ngay18.StylePriority.UsePadding = false;
-            this.Ngay18.Weight = 0.3371850856060139D;
+            this.Ngay18.Weight = 0.34433181475217584D;
             // 
             // Ngay19
             // 
             this.Ngay19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay19]")});
-            this.Ngay19.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay19.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay19.Multiline = true;
             this.Ngay19.Name = "Ngay19";
             this.Ngay19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay19.StylePriority.UseFont = false;
             this.Ngay19.StylePriority.UsePadding = false;
-            this.Ngay19.Weight = 0.3371850856060139D;
+            this.Ngay19.Weight = 0.34433181475217584D;
             // 
             // Ngay20
             // 
             this.Ngay20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay20]")});
-            this.Ngay20.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay20.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay20.Multiline = true;
             this.Ngay20.Name = "Ngay20";
             this.Ngay20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay20.StylePriority.UseFont = false;
             this.Ngay20.StylePriority.UsePadding = false;
-            this.Ngay20.Weight = 0.3371850856060139D;
+            this.Ngay20.Weight = 0.34433181475217584D;
             // 
             // Ngay21
             // 
             this.Ngay21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay21]")});
-            this.Ngay21.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay21.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay21.Multiline = true;
             this.Ngay21.Name = "Ngay21";
             this.Ngay21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay21.StylePriority.UseFont = false;
             this.Ngay21.StylePriority.UsePadding = false;
-            this.Ngay21.Weight = 0.3371850856060139D;
+            this.Ngay21.Weight = 0.34433181475217584D;
             // 
             // Ngay22
             // 
             this.Ngay22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay22]")});
-            this.Ngay22.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay22.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay22.Multiline = true;
             this.Ngay22.Name = "Ngay22";
             this.Ngay22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay22.StylePriority.UseFont = false;
             this.Ngay22.StylePriority.UsePadding = false;
-            this.Ngay22.Weight = 0.3371850856060139D;
+            this.Ngay22.Weight = 0.34433181475217584D;
             // 
             // Ngay23
             // 
             this.Ngay23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay23]")});
-            this.Ngay23.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay23.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay23.Multiline = true;
             this.Ngay23.Name = "Ngay23";
             this.Ngay23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay23.StylePriority.UseFont = false;
             this.Ngay23.StylePriority.UsePadding = false;
-            this.Ngay23.Weight = 0.3371850856060139D;
+            this.Ngay23.Weight = 0.34433181475217584D;
             // 
             // Ngay24
             // 
             this.Ngay24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay24]")});
-            this.Ngay24.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay24.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay24.Multiline = true;
             this.Ngay24.Name = "Ngay24";
             this.Ngay24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay24.StylePriority.UseFont = false;
             this.Ngay24.StylePriority.UsePadding = false;
-            this.Ngay24.Weight = 0.3371850856060139D;
+            this.Ngay24.Weight = 0.34433181475217584D;
             // 
             // Ngay25
             // 
             this.Ngay25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay25]")});
-            this.Ngay25.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay25.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay25.Multiline = true;
             this.Ngay25.Name = "Ngay25";
             this.Ngay25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay25.StylePriority.UseFont = false;
             this.Ngay25.StylePriority.UsePadding = false;
-            this.Ngay25.Weight = 0.3371850856060139D;
+            this.Ngay25.Weight = 0.34433181475217584D;
             // 
             // Ngay26
             // 
             this.Ngay26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay26]")});
-            this.Ngay26.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay26.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay26.Multiline = true;
             this.Ngay26.Name = "Ngay26";
             this.Ngay26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay26.StylePriority.UseFont = false;
             this.Ngay26.StylePriority.UsePadding = false;
-            this.Ngay26.Weight = 0.3371850856060139D;
+            this.Ngay26.Weight = 0.34433181475217584D;
             // 
             // Ngay27
             // 
             this.Ngay27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay27]")});
-            this.Ngay27.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay27.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay27.Multiline = true;
             this.Ngay27.Name = "Ngay27";
             this.Ngay27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay27.StylePriority.UseFont = false;
             this.Ngay27.StylePriority.UsePadding = false;
-            this.Ngay27.Weight = 0.3371850856060139D;
+            this.Ngay27.Weight = 0.34433181475217584D;
             // 
             // Ngay28
             // 
             this.Ngay28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay28]")});
-            this.Ngay28.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay28.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay28.Multiline = true;
             this.Ngay28.Name = "Ngay28";
             this.Ngay28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay28.StylePriority.UseFont = false;
             this.Ngay28.StylePriority.UsePadding = false;
-            this.Ngay28.Weight = 0.3371850856060139D;
+            this.Ngay28.Weight = 0.34433181475217584D;
             // 
             // Ngay29
             // 
             this.Ngay29.BorderWidth = 1F;
             this.Ngay29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay29]")});
-            this.Ngay29.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay29.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay29.Multiline = true;
             this.Ngay29.Name = "Ngay29";
             this.Ngay29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay29.StylePriority.UseBorderWidth = false;
             this.Ngay29.StylePriority.UseFont = false;
             this.Ngay29.StylePriority.UsePadding = false;
-            this.Ngay29.Weight = 0.3371850856060139D;
+            this.Ngay29.Weight = 0.34433181475217584D;
             // 
             // Ngay30
             // 
             this.Ngay30.BorderWidth = 1F;
             this.Ngay30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay30]")});
-            this.Ngay30.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay30.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay30.Multiline = true;
             this.Ngay30.Name = "Ngay30";
             this.Ngay30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -660,21 +698,21 @@
             this.Ngay30.StylePriority.UseBorderWidth = false;
             this.Ngay30.StylePriority.UseFont = false;
             this.Ngay30.StylePriority.UsePadding = false;
-            this.Ngay30.Weight = 0.3371850856060139D;
+            this.Ngay30.Weight = 0.34433181475217584D;
             // 
             // Ngay31
             // 
             this.Ngay31.BorderWidth = 1F;
             this.Ngay31.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay31]")});
-            this.Ngay31.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.Ngay31.Font = new System.Drawing.Font("Times New Roman", 8F);
             this.Ngay31.Multiline = true;
             this.Ngay31.Name = "Ngay31";
             this.Ngay31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Ngay31.StylePriority.UseBorderWidth = false;
             this.Ngay31.StylePriority.UseFont = false;
             this.Ngay31.StylePriority.UsePadding = false;
-            this.Ngay31.Weight = 0.3371850856060139D;
+            this.Ngay31.Weight = 0.34433181475217584D;
             // 
             // TongCel
             // 
@@ -685,7 +723,7 @@
             this.TongCel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.TongCel.StylePriority.UsePadding = false;
             this.TongCel.TextFormatString = "{0:n2}";
-            this.TongCel.Weight = 0.78172035583435706D;
+            this.TongCel.Weight = 0.66442988498220656D;
             // 
             // TopMargin
             // 
@@ -716,11 +754,11 @@
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 1.833344F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(2.999989F, 1.833344F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(1083F, 27.16665F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(1104.917F, 27.16665F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "BẢNG CHẤM CÔNG PHỤ MÁY CẮT";
@@ -729,7 +767,7 @@
             // xrlbNam
             // 
             this.xrlbNam.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrlbNam.LocationFloat = new DevExpress.Utils.PointFloat(587.7916F, 26.90279F);
+            this.xrlbNam.LocationFloat = new DevExpress.Utils.PointFloat(597.7916F, 26.90279F);
             this.xrlbNam.Multiline = true;
             this.xrlbNam.Name = "xrlbNam";
             this.xrlbNam.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -740,7 +778,7 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(545.8924F, 26.90277F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(555.8924F, 26.90277F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -752,7 +790,7 @@
             // xrlbThang
             // 
             this.xrlbThang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrlbThang.LocationFloat = new DevExpress.Utils.PointFloat(501.2674F, 26.90279F);
+            this.xrlbThang.LocationFloat = new DevExpress.Utils.PointFloat(511.2674F, 26.90279F);
             this.xrlbThang.Multiline = true;
             this.xrlbThang.Name = "xrlbThang";
             this.xrlbThang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -764,7 +802,7 @@
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(450.5833F, 26.90278F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(460.5833F, 26.90278F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -790,7 +828,7 @@
             this.xrTableRow1,
             this.xrTableRow2,
             this.xrTableRow4});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(1093F, 59.69385F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(1107.583F, 59.69385F);
             this.xrTable2.StylePriority.UseBorders = false;
             this.xrTable2.StylePriority.UseFont = false;
             this.xrTable2.StylePriority.UseTextAlignment = false;
@@ -819,7 +857,7 @@
             this.xrTableCell4.StylePriority.UsePadding = false;
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.xrTableCell4.Weight = 1.7439475653926766D;
+            this.xrTableCell4.Weight = 1.6266571175271678D;
             // 
             // xrTableCell2
             // 
@@ -835,7 +873,7 @@
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             this.xrTableCell2.TextFormatString = "{0:#,#}";
-            this.xrTableCell2.Weight = 0.878551806023588D;
+            this.xrTableCell2.Weight = 0.8915841416427851D;
             // 
             // xrTableCell3
             // 
@@ -849,7 +887,7 @@
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.Text = "NGÀY CHẤM CÔNG";
-            this.xrTableCell3.Weight = 10.452736748555418D;
+            this.xrTableCell3.Weight = 10.674285308667239D;
             // 
             // xrTableCell34
             // 
@@ -860,7 +898,7 @@
             this.xrTableCell34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell34.StylePriority.UseBorders = false;
             this.xrTableCell34.StylePriority.UsePadding = false;
-            this.xrTableCell34.Weight = 0.78171854537235064D;
+            this.xrTableCell34.Weight = 0.66442809750684184D;
             // 
             // xrTableRow2
             // 
@@ -916,7 +954,7 @@
             this.xrTableCell5.Text = "Họ tên";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell5.TextTrimming = System.Drawing.StringTrimming.Word;
-            this.xrTableCell5.Weight = 1.7439475653926764D;
+            this.xrTableCell5.Weight = 1.6266570945405259D;
             // 
             // xrTableCell36
             // 
@@ -933,7 +971,7 @@
             this.xrTableCell36.Text = "Công";
             this.xrTableCell36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell36.TextTrimming = System.Drawing.StringTrimming.Word;
-            this.xrTableCell36.Weight = 0.87855180602358784D;
+            this.xrTableCell36.Weight = 0.8915841441968686D;
             // 
             // xrTableCell37
             // 
@@ -944,7 +982,7 @@
             this.xrTableCell37.StylePriority.UseFont = false;
             this.xrTableCell37.StylePriority.UsePadding = false;
             this.xrTableCell37.Text = "01";
-            this.xrTableCell37.Weight = 0.3371850856060139D;
+            this.xrTableCell37.Weight = 0.34433181475217589D;
             // 
             // xrTableCell38
             // 
@@ -955,7 +993,7 @@
             this.xrTableCell38.StylePriority.UseFont = false;
             this.xrTableCell38.StylePriority.UsePadding = false;
             this.xrTableCell38.Text = "02";
-            this.xrTableCell38.Weight = 0.3371850856060139D;
+            this.xrTableCell38.Weight = 0.34433181475217589D;
             // 
             // xrTableCell39
             // 
@@ -966,7 +1004,7 @@
             this.xrTableCell39.StylePriority.UseFont = false;
             this.xrTableCell39.StylePriority.UsePadding = false;
             this.xrTableCell39.Text = "03";
-            this.xrTableCell39.Weight = 0.3371850856060139D;
+            this.xrTableCell39.Weight = 0.34433181475217589D;
             // 
             // xrTableCell40
             // 
@@ -977,7 +1015,7 @@
             this.xrTableCell40.StylePriority.UseFont = false;
             this.xrTableCell40.StylePriority.UsePadding = false;
             this.xrTableCell40.Text = "04";
-            this.xrTableCell40.Weight = 0.3371850856060139D;
+            this.xrTableCell40.Weight = 0.34433181475217589D;
             // 
             // xrTableCell41
             // 
@@ -988,7 +1026,7 @@
             this.xrTableCell41.StylePriority.UseFont = false;
             this.xrTableCell41.StylePriority.UsePadding = false;
             this.xrTableCell41.Text = "05";
-            this.xrTableCell41.Weight = 0.3371850856060139D;
+            this.xrTableCell41.Weight = 0.34433181475217589D;
             // 
             // xrTableCell42
             // 
@@ -999,7 +1037,7 @@
             this.xrTableCell42.StylePriority.UseFont = false;
             this.xrTableCell42.StylePriority.UsePadding = false;
             this.xrTableCell42.Text = "06";
-            this.xrTableCell42.Weight = 0.3371850856060139D;
+            this.xrTableCell42.Weight = 0.34433181475217589D;
             // 
             // xrTableCell43
             // 
@@ -1010,7 +1048,7 @@
             this.xrTableCell43.StylePriority.UseFont = false;
             this.xrTableCell43.StylePriority.UsePadding = false;
             this.xrTableCell43.Text = "07";
-            this.xrTableCell43.Weight = 0.3371850856060139D;
+            this.xrTableCell43.Weight = 0.34433181475217589D;
             // 
             // xrTableCell44
             // 
@@ -1021,7 +1059,7 @@
             this.xrTableCell44.StylePriority.UseFont = false;
             this.xrTableCell44.StylePriority.UsePadding = false;
             this.xrTableCell44.Text = "08";
-            this.xrTableCell44.Weight = 0.3371850856060139D;
+            this.xrTableCell44.Weight = 0.34433181475217589D;
             // 
             // xrTableCell45
             // 
@@ -1032,7 +1070,7 @@
             this.xrTableCell45.StylePriority.UseFont = false;
             this.xrTableCell45.StylePriority.UsePadding = false;
             this.xrTableCell45.Text = "09";
-            this.xrTableCell45.Weight = 0.3371850856060139D;
+            this.xrTableCell45.Weight = 0.34433181475217589D;
             // 
             // xrTableCell46
             // 
@@ -1043,7 +1081,7 @@
             this.xrTableCell46.StylePriority.UseFont = false;
             this.xrTableCell46.StylePriority.UsePadding = false;
             this.xrTableCell46.Text = "10";
-            this.xrTableCell46.Weight = 0.3371850856060139D;
+            this.xrTableCell46.Weight = 0.34433181475217589D;
             // 
             // xrTableCell47
             // 
@@ -1054,7 +1092,7 @@
             this.xrTableCell47.StylePriority.UseFont = false;
             this.xrTableCell47.StylePriority.UsePadding = false;
             this.xrTableCell47.Text = "11";
-            this.xrTableCell47.Weight = 0.3371850856060139D;
+            this.xrTableCell47.Weight = 0.34433181475217589D;
             // 
             // xrTableCell48
             // 
@@ -1065,7 +1103,7 @@
             this.xrTableCell48.StylePriority.UseFont = false;
             this.xrTableCell48.StylePriority.UsePadding = false;
             this.xrTableCell48.Text = "12";
-            this.xrTableCell48.Weight = 0.3371850856060139D;
+            this.xrTableCell48.Weight = 0.34433181475217589D;
             // 
             // xrTableCell49
             // 
@@ -1076,7 +1114,7 @@
             this.xrTableCell49.StylePriority.UseFont = false;
             this.xrTableCell49.StylePriority.UsePadding = false;
             this.xrTableCell49.Text = "13";
-            this.xrTableCell49.Weight = 0.3371850856060139D;
+            this.xrTableCell49.Weight = 0.34433181475217589D;
             // 
             // xrTableCell50
             // 
@@ -1087,7 +1125,7 @@
             this.xrTableCell50.StylePriority.UseFont = false;
             this.xrTableCell50.StylePriority.UsePadding = false;
             this.xrTableCell50.Text = "14";
-            this.xrTableCell50.Weight = 0.3371850856060139D;
+            this.xrTableCell50.Weight = 0.34433181475217589D;
             // 
             // xrTableCell51
             // 
@@ -1098,7 +1136,7 @@
             this.xrTableCell51.StylePriority.UseFont = false;
             this.xrTableCell51.StylePriority.UsePadding = false;
             this.xrTableCell51.Text = "15";
-            this.xrTableCell51.Weight = 0.3371850856060139D;
+            this.xrTableCell51.Weight = 0.34433181475217589D;
             // 
             // xrTableCell52
             // 
@@ -1109,7 +1147,7 @@
             this.xrTableCell52.StylePriority.UseFont = false;
             this.xrTableCell52.StylePriority.UsePadding = false;
             this.xrTableCell52.Text = "16";
-            this.xrTableCell52.Weight = 0.3371850856060139D;
+            this.xrTableCell52.Weight = 0.34433181475217589D;
             // 
             // xrTableCell53
             // 
@@ -1120,7 +1158,7 @@
             this.xrTableCell53.StylePriority.UseFont = false;
             this.xrTableCell53.StylePriority.UsePadding = false;
             this.xrTableCell53.Text = "17";
-            this.xrTableCell53.Weight = 0.3371850856060139D;
+            this.xrTableCell53.Weight = 0.34433181475217589D;
             // 
             // xrTableCell54
             // 
@@ -1131,7 +1169,7 @@
             this.xrTableCell54.StylePriority.UseFont = false;
             this.xrTableCell54.StylePriority.UsePadding = false;
             this.xrTableCell54.Text = "18";
-            this.xrTableCell54.Weight = 0.3371850856060139D;
+            this.xrTableCell54.Weight = 0.34433181475217589D;
             // 
             // xrTableCell55
             // 
@@ -1142,7 +1180,7 @@
             this.xrTableCell55.StylePriority.UseFont = false;
             this.xrTableCell55.StylePriority.UsePadding = false;
             this.xrTableCell55.Text = "19";
-            this.xrTableCell55.Weight = 0.3371850856060139D;
+            this.xrTableCell55.Weight = 0.34433181475217589D;
             // 
             // xrTableCell56
             // 
@@ -1153,7 +1191,7 @@
             this.xrTableCell56.StylePriority.UseFont = false;
             this.xrTableCell56.StylePriority.UsePadding = false;
             this.xrTableCell56.Text = "20";
-            this.xrTableCell56.Weight = 0.3371850856060139D;
+            this.xrTableCell56.Weight = 0.34433181475217589D;
             // 
             // xrTableCell57
             // 
@@ -1164,7 +1202,7 @@
             this.xrTableCell57.StylePriority.UseFont = false;
             this.xrTableCell57.StylePriority.UsePadding = false;
             this.xrTableCell57.Text = "21";
-            this.xrTableCell57.Weight = 0.3371850856060139D;
+            this.xrTableCell57.Weight = 0.34433181475217589D;
             // 
             // xrTableCell58
             // 
@@ -1175,7 +1213,7 @@
             this.xrTableCell58.StylePriority.UseFont = false;
             this.xrTableCell58.StylePriority.UsePadding = false;
             this.xrTableCell58.Text = "22";
-            this.xrTableCell58.Weight = 0.3371850856060139D;
+            this.xrTableCell58.Weight = 0.34433181475217589D;
             // 
             // xrTableCell59
             // 
@@ -1186,7 +1224,7 @@
             this.xrTableCell59.StylePriority.UseFont = false;
             this.xrTableCell59.StylePriority.UsePadding = false;
             this.xrTableCell59.Text = "23";
-            this.xrTableCell59.Weight = 0.3371850856060139D;
+            this.xrTableCell59.Weight = 0.34433181475217589D;
             // 
             // xrTableCell60
             // 
@@ -1197,7 +1235,7 @@
             this.xrTableCell60.StylePriority.UseFont = false;
             this.xrTableCell60.StylePriority.UsePadding = false;
             this.xrTableCell60.Text = "24";
-            this.xrTableCell60.Weight = 0.3371850856060139D;
+            this.xrTableCell60.Weight = 0.34433181475217589D;
             // 
             // xrTableCell61
             // 
@@ -1208,7 +1246,7 @@
             this.xrTableCell61.StylePriority.UseFont = false;
             this.xrTableCell61.StylePriority.UsePadding = false;
             this.xrTableCell61.Text = "25";
-            this.xrTableCell61.Weight = 0.3371850856060139D;
+            this.xrTableCell61.Weight = 0.34433181475217589D;
             // 
             // xrTableCell62
             // 
@@ -1219,7 +1257,7 @@
             this.xrTableCell62.StylePriority.UseFont = false;
             this.xrTableCell62.StylePriority.UsePadding = false;
             this.xrTableCell62.Text = "26";
-            this.xrTableCell62.Weight = 0.3371850856060139D;
+            this.xrTableCell62.Weight = 0.34433181475217589D;
             // 
             // xrTableCell63
             // 
@@ -1230,7 +1268,7 @@
             this.xrTableCell63.StylePriority.UseFont = false;
             this.xrTableCell63.StylePriority.UsePadding = false;
             this.xrTableCell63.Text = "27";
-            this.xrTableCell63.Weight = 0.3371850856060139D;
+            this.xrTableCell63.Weight = 0.34433181475217589D;
             // 
             // xrTableCell64
             // 
@@ -1241,7 +1279,7 @@
             this.xrTableCell64.StylePriority.UseFont = false;
             this.xrTableCell64.StylePriority.UsePadding = false;
             this.xrTableCell64.Text = "28";
-            this.xrTableCell64.Weight = 0.3371850856060139D;
+            this.xrTableCell64.Weight = 0.34433181475217589D;
             // 
             // xrTableCell65
             // 
@@ -1254,7 +1292,7 @@
             this.xrTableCell65.StylePriority.UseFont = false;
             this.xrTableCell65.StylePriority.UsePadding = false;
             this.xrTableCell65.Text = "29";
-            this.xrTableCell65.Weight = 0.3371850856060139D;
+            this.xrTableCell65.Weight = 0.34433181475217589D;
             // 
             // xrTableCell66
             // 
@@ -1267,7 +1305,7 @@
             this.xrTableCell66.StylePriority.UseFont = false;
             this.xrTableCell66.StylePriority.UsePadding = false;
             this.xrTableCell66.Text = "30";
-            this.xrTableCell66.Weight = 0.3371850856060139D;
+            this.xrTableCell66.Weight = 0.34433181475217589D;
             // 
             // xrTableCell67
             // 
@@ -1280,7 +1318,7 @@
             this.xrTableCell67.StylePriority.UseFont = false;
             this.xrTableCell67.StylePriority.UsePadding = false;
             this.xrTableCell67.Text = "31";
-            this.xrTableCell67.Weight = 0.3371850856060139D;
+            this.xrTableCell67.Weight = 0.34433181475217589D;
             // 
             // xrTableCell68
             // 
@@ -1293,7 +1331,7 @@
             this.xrTableCell68.StylePriority.UseFont = false;
             this.xrTableCell68.StylePriority.UsePadding = false;
             this.xrTableCell68.Text = "Tổng";
-            this.xrTableCell68.Weight = 0.78172035583435706D;
+            this.xrTableCell68.Weight = 0.66442988498220656D;
             // 
             // xrTableRow4
             // 
@@ -1345,7 +1383,7 @@
             this.xrTableCell6.StylePriority.UsePadding = false;
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.xrTableCell6.Weight = 1.7439475653926764D;
+            this.xrTableCell6.Weight = 1.6266570945405259D;
             // 
             // congHeader
             // 
@@ -1360,7 +1398,7 @@
             this.congHeader.StylePriority.UsePadding = false;
             this.congHeader.StylePriority.UseTextAlignment = false;
             this.congHeader.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.congHeader.Weight = 0.87855180602358784D;
+            this.congHeader.Weight = 0.8915841441968686D;
             // 
             // ng1
             // 
@@ -1370,7 +1408,7 @@
             this.ng1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng1.StylePriority.UseFont = false;
             this.ng1.StylePriority.UsePadding = false;
-            this.ng1.Weight = 0.3371850856060139D;
+            this.ng1.Weight = 0.34433181475217578D;
             // 
             // ng2
             // 
@@ -1380,7 +1418,7 @@
             this.ng2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng2.StylePriority.UseFont = false;
             this.ng2.StylePriority.UsePadding = false;
-            this.ng2.Weight = 0.3371850856060139D;
+            this.ng2.Weight = 0.34433181475217578D;
             // 
             // ng3
             // 
@@ -1390,7 +1428,7 @@
             this.ng3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng3.StylePriority.UseFont = false;
             this.ng3.StylePriority.UsePadding = false;
-            this.ng3.Weight = 0.3371850856060139D;
+            this.ng3.Weight = 0.34433181475217578D;
             // 
             // ng4
             // 
@@ -1400,7 +1438,7 @@
             this.ng4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng4.StylePriority.UseFont = false;
             this.ng4.StylePriority.UsePadding = false;
-            this.ng4.Weight = 0.3371850856060139D;
+            this.ng4.Weight = 0.34433181475217578D;
             // 
             // ng5
             // 
@@ -1410,7 +1448,7 @@
             this.ng5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng5.StylePriority.UseFont = false;
             this.ng5.StylePriority.UsePadding = false;
-            this.ng5.Weight = 0.3371850856060139D;
+            this.ng5.Weight = 0.34433181475217578D;
             // 
             // ng6
             // 
@@ -1420,7 +1458,7 @@
             this.ng6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng6.StylePriority.UseFont = false;
             this.ng6.StylePriority.UsePadding = false;
-            this.ng6.Weight = 0.3371850856060139D;
+            this.ng6.Weight = 0.34433181475217578D;
             // 
             // ng7
             // 
@@ -1430,7 +1468,7 @@
             this.ng7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng7.StylePriority.UseFont = false;
             this.ng7.StylePriority.UsePadding = false;
-            this.ng7.Weight = 0.3371850856060139D;
+            this.ng7.Weight = 0.34433181475217578D;
             // 
             // ng8
             // 
@@ -1440,7 +1478,7 @@
             this.ng8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng8.StylePriority.UseFont = false;
             this.ng8.StylePriority.UsePadding = false;
-            this.ng8.Weight = 0.3371850856060139D;
+            this.ng8.Weight = 0.34433181475217578D;
             // 
             // ng9
             // 
@@ -1450,7 +1488,7 @@
             this.ng9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng9.StylePriority.UseFont = false;
             this.ng9.StylePriority.UsePadding = false;
-            this.ng9.Weight = 0.3371850856060139D;
+            this.ng9.Weight = 0.34433181475217578D;
             // 
             // ng10
             // 
@@ -1460,7 +1498,7 @@
             this.ng10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng10.StylePriority.UseFont = false;
             this.ng10.StylePriority.UsePadding = false;
-            this.ng10.Weight = 0.3371850856060139D;
+            this.ng10.Weight = 0.34433181475217578D;
             // 
             // ng11
             // 
@@ -1470,7 +1508,7 @@
             this.ng11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng11.StylePriority.UseFont = false;
             this.ng11.StylePriority.UsePadding = false;
-            this.ng11.Weight = 0.3371850856060139D;
+            this.ng11.Weight = 0.34433181475217578D;
             // 
             // ng12
             // 
@@ -1480,7 +1518,7 @@
             this.ng12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng12.StylePriority.UseFont = false;
             this.ng12.StylePriority.UsePadding = false;
-            this.ng12.Weight = 0.3371850856060139D;
+            this.ng12.Weight = 0.34433181475217578D;
             // 
             // ng13
             // 
@@ -1490,7 +1528,7 @@
             this.ng13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng13.StylePriority.UseFont = false;
             this.ng13.StylePriority.UsePadding = false;
-            this.ng13.Weight = 0.3371850856060139D;
+            this.ng13.Weight = 0.34433181475217578D;
             // 
             // ng14
             // 
@@ -1500,7 +1538,7 @@
             this.ng14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng14.StylePriority.UseFont = false;
             this.ng14.StylePriority.UsePadding = false;
-            this.ng14.Weight = 0.3371850856060139D;
+            this.ng14.Weight = 0.34433181475217578D;
             // 
             // ng15
             // 
@@ -1510,7 +1548,7 @@
             this.ng15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng15.StylePriority.UseFont = false;
             this.ng15.StylePriority.UsePadding = false;
-            this.ng15.Weight = 0.3371850856060139D;
+            this.ng15.Weight = 0.34433181475217578D;
             // 
             // ng16
             // 
@@ -1520,7 +1558,7 @@
             this.ng16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng16.StylePriority.UseFont = false;
             this.ng16.StylePriority.UsePadding = false;
-            this.ng16.Weight = 0.3371850856060139D;
+            this.ng16.Weight = 0.34433181475217578D;
             // 
             // ng17
             // 
@@ -1530,7 +1568,7 @@
             this.ng17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng17.StylePriority.UseFont = false;
             this.ng17.StylePriority.UsePadding = false;
-            this.ng17.Weight = 0.3371850856060139D;
+            this.ng17.Weight = 0.34433181475217578D;
             // 
             // ng18
             // 
@@ -1540,7 +1578,7 @@
             this.ng18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng18.StylePriority.UseFont = false;
             this.ng18.StylePriority.UsePadding = false;
-            this.ng18.Weight = 0.3371850856060139D;
+            this.ng18.Weight = 0.34433181475217578D;
             // 
             // ng19
             // 
@@ -1550,7 +1588,7 @@
             this.ng19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng19.StylePriority.UseFont = false;
             this.ng19.StylePriority.UsePadding = false;
-            this.ng19.Weight = 0.3371850856060139D;
+            this.ng19.Weight = 0.34433181475217578D;
             // 
             // ng20
             // 
@@ -1560,7 +1598,7 @@
             this.ng20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng20.StylePriority.UseFont = false;
             this.ng20.StylePriority.UsePadding = false;
-            this.ng20.Weight = 0.3371850856060139D;
+            this.ng20.Weight = 0.34433181475217578D;
             // 
             // ng21
             // 
@@ -1570,7 +1608,7 @@
             this.ng21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng21.StylePriority.UseFont = false;
             this.ng21.StylePriority.UsePadding = false;
-            this.ng21.Weight = 0.3371850856060139D;
+            this.ng21.Weight = 0.34433181475217578D;
             // 
             // ng22
             // 
@@ -1580,7 +1618,7 @@
             this.ng22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng22.StylePriority.UseFont = false;
             this.ng22.StylePriority.UsePadding = false;
-            this.ng22.Weight = 0.3371850856060139D;
+            this.ng22.Weight = 0.34433181475217578D;
             // 
             // ng23
             // 
@@ -1590,7 +1628,7 @@
             this.ng23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng23.StylePriority.UseFont = false;
             this.ng23.StylePriority.UsePadding = false;
-            this.ng23.Weight = 0.3371850856060139D;
+            this.ng23.Weight = 0.34433181475217578D;
             // 
             // ng24
             // 
@@ -1600,7 +1638,7 @@
             this.ng24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng24.StylePriority.UseFont = false;
             this.ng24.StylePriority.UsePadding = false;
-            this.ng24.Weight = 0.3371850856060139D;
+            this.ng24.Weight = 0.34433181475217578D;
             // 
             // ng25
             // 
@@ -1610,7 +1648,7 @@
             this.ng25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng25.StylePriority.UseFont = false;
             this.ng25.StylePriority.UsePadding = false;
-            this.ng25.Weight = 0.3371850856060139D;
+            this.ng25.Weight = 0.34433181475217578D;
             // 
             // ng26
             // 
@@ -1620,7 +1658,7 @@
             this.ng26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng26.StylePriority.UseFont = false;
             this.ng26.StylePriority.UsePadding = false;
-            this.ng26.Weight = 0.3371850856060139D;
+            this.ng26.Weight = 0.34433181475217578D;
             // 
             // ng27
             // 
@@ -1630,7 +1668,7 @@
             this.ng27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng27.StylePriority.UseFont = false;
             this.ng27.StylePriority.UsePadding = false;
-            this.ng27.Weight = 0.3371850856060139D;
+            this.ng27.Weight = 0.34433181475217578D;
             // 
             // ng28
             // 
@@ -1640,7 +1678,7 @@
             this.ng28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ng28.StylePriority.UseFont = false;
             this.ng28.StylePriority.UsePadding = false;
-            this.ng28.Weight = 0.3371850856060139D;
+            this.ng28.Weight = 0.34433181475217578D;
             // 
             // ng29
             // 
@@ -1652,7 +1690,7 @@
             this.ng29.StylePriority.UseBorderWidth = false;
             this.ng29.StylePriority.UseFont = false;
             this.ng29.StylePriority.UsePadding = false;
-            this.ng29.Weight = 0.3371850856060139D;
+            this.ng29.Weight = 0.34433181475217578D;
             // 
             // ng30
             // 
@@ -1664,7 +1702,7 @@
             this.ng30.StylePriority.UseBorderWidth = false;
             this.ng30.StylePriority.UseFont = false;
             this.ng30.StylePriority.UsePadding = false;
-            this.ng30.Weight = 0.3371850856060139D;
+            this.ng30.Weight = 0.34433181475217578D;
             // 
             // ng31
             // 
@@ -1676,7 +1714,7 @@
             this.ng31.StylePriority.UseBorderWidth = false;
             this.ng31.StylePriority.UseFont = false;
             this.ng31.StylePriority.UsePadding = false;
-            this.ng31.Weight = 0.3371850856060139D;
+            this.ng31.Weight = 0.34433181475217578D;
             // 
             // xrTableCell102
             // 
@@ -1684,7 +1722,7 @@
             this.xrTableCell102.Name = "xrTableCell102";
             this.xrTableCell102.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell102.StylePriority.UsePadding = false;
-            this.xrTableCell102.Weight = 0.78172035583435706D;
+            this.xrTableCell102.Weight = 0.66442988498220656D;
             // 
             // ReportFooter
             // 
@@ -1697,8 +1735,10 @@
             this.xrLabel23,
             this.xrLabel24,
             this.lbNgayThangNam});
+            this.ReportFooter.Font = new System.Drawing.Font("Times New Roman", 11F);
             this.ReportFooter.HeightF = 135.8343F;
             this.ReportFooter.Name = "ReportFooter";
+            this.ReportFooter.StylePriority.UseFont = false;
             // 
             // xrTable3
             // 
@@ -1709,7 +1749,7 @@
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow5});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(1093F, 19.89795F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(1107.583F, 19.89795F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseFont = false;
             this.xrTable3.StylePriority.UseTextAlignment = false;
@@ -1768,7 +1808,7 @@
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.Text = "Tổng:";
             this.xrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell13.Weight = 1.7439475653926764D;
+            this.xrTableCell13.Weight = 1.6266570945405259D;
             // 
             // congFooter
             // 
@@ -1783,363 +1823,363 @@
             this.congFooter.StylePriority.UseTextAlignment = false;
             this.congFooter.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             this.congFooter.TextFormatString = "{0:#,#}";
-            this.congFooter.Weight = 0.87855180602358784D;
+            this.congFooter.Weight = 0.8915841441968686D;
             // 
             // tg1
             // 
             this.tg1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay1])")});
-            this.tg1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg1.Multiline = true;
             this.tg1.Name = "tg1";
             this.tg1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg1.StylePriority.UseFont = false;
-            this.tg1.Weight = 0.3371850856060139D;
+            this.tg1.Weight = 0.34433181475217584D;
             // 
             // tg2
             // 
             this.tg2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay2])")});
-            this.tg2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg2.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg2.Multiline = true;
             this.tg2.Name = "tg2";
             this.tg2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg2.StylePriority.UseFont = false;
             this.tg2.StylePriority.UsePadding = false;
-            this.tg2.Weight = 0.3371850856060139D;
+            this.tg2.Weight = 0.34433181475217584D;
             // 
             // tg3
             // 
             this.tg3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay3])")});
-            this.tg3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg3.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg3.Multiline = true;
             this.tg3.Name = "tg3";
             this.tg3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg3.StylePriority.UseFont = false;
             this.tg3.StylePriority.UsePadding = false;
-            this.tg3.Weight = 0.3371850856060139D;
+            this.tg3.Weight = 0.34433181475217584D;
             // 
             // tg4
             // 
             this.tg4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay4])")});
-            this.tg4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg4.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg4.Multiline = true;
             this.tg4.Name = "tg4";
             this.tg4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg4.StylePriority.UseFont = false;
             this.tg4.StylePriority.UsePadding = false;
-            this.tg4.Weight = 0.3371850856060139D;
+            this.tg4.Weight = 0.34433181475217584D;
             // 
             // tg5
             // 
             this.tg5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay5])")});
-            this.tg5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg5.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg5.Multiline = true;
             this.tg5.Name = "tg5";
             this.tg5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg5.StylePriority.UseFont = false;
             this.tg5.StylePriority.UsePadding = false;
-            this.tg5.Weight = 0.3371850856060139D;
+            this.tg5.Weight = 0.34433181475217584D;
             // 
             // tg6
             // 
             this.tg6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay6])")});
-            this.tg6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg6.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg6.Multiline = true;
             this.tg6.Name = "tg6";
             this.tg6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg6.StylePriority.UseFont = false;
             this.tg6.StylePriority.UsePadding = false;
-            this.tg6.Weight = 0.3371850856060139D;
+            this.tg6.Weight = 0.34433181475217584D;
             // 
             // tg7
             // 
             this.tg7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay7])")});
-            this.tg7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg7.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg7.Multiline = true;
             this.tg7.Name = "tg7";
             this.tg7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg7.StylePriority.UseFont = false;
             this.tg7.StylePriority.UsePadding = false;
-            this.tg7.Weight = 0.3371850856060139D;
+            this.tg7.Weight = 0.34433181475217584D;
             // 
             // tg8
             // 
             this.tg8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay8])")});
-            this.tg8.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg8.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg8.Multiline = true;
             this.tg8.Name = "tg8";
             this.tg8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg8.StylePriority.UseFont = false;
             this.tg8.StylePriority.UsePadding = false;
-            this.tg8.Weight = 0.3371850856060139D;
+            this.tg8.Weight = 0.34433181475217584D;
             // 
             // tg9
             // 
             this.tg9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay9])")});
-            this.tg9.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg9.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg9.Multiline = true;
             this.tg9.Name = "tg9";
             this.tg9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg9.StylePriority.UseFont = false;
             this.tg9.StylePriority.UsePadding = false;
-            this.tg9.Weight = 0.3371850856060139D;
+            this.tg9.Weight = 0.34433181475217584D;
             // 
             // tg10
             // 
             this.tg10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay10])")});
-            this.tg10.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg10.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg10.Multiline = true;
             this.tg10.Name = "tg10";
             this.tg10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg10.StylePriority.UseFont = false;
             this.tg10.StylePriority.UsePadding = false;
-            this.tg10.Weight = 0.3371850856060139D;
+            this.tg10.Weight = 0.34433181475217584D;
             // 
             // tg11
             // 
             this.tg11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay11])")});
-            this.tg11.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg11.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg11.Multiline = true;
             this.tg11.Name = "tg11";
             this.tg11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg11.StylePriority.UseFont = false;
             this.tg11.StylePriority.UsePadding = false;
-            this.tg11.Weight = 0.3371850856060139D;
+            this.tg11.Weight = 0.34433181475217584D;
             // 
             // tg12
             // 
             this.tg12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay12])")});
-            this.tg12.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg12.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg12.Multiline = true;
             this.tg12.Name = "tg12";
             this.tg12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg12.StylePriority.UseFont = false;
             this.tg12.StylePriority.UsePadding = false;
-            this.tg12.Weight = 0.3371850856060139D;
+            this.tg12.Weight = 0.34433181475217584D;
             // 
             // tg13
             // 
             this.tg13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay13])")});
-            this.tg13.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg13.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg13.Multiline = true;
             this.tg13.Name = "tg13";
             this.tg13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg13.StylePriority.UseFont = false;
             this.tg13.StylePriority.UsePadding = false;
-            this.tg13.Weight = 0.3371850856060139D;
+            this.tg13.Weight = 0.34433181475217584D;
             // 
             // tg14
             // 
             this.tg14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay14])")});
-            this.tg14.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg14.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg14.Multiline = true;
             this.tg14.Name = "tg14";
             this.tg14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg14.StylePriority.UseFont = false;
             this.tg14.StylePriority.UsePadding = false;
-            this.tg14.Weight = 0.3371850856060139D;
+            this.tg14.Weight = 0.34433181475217584D;
             // 
             // tg15
             // 
             this.tg15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay15])")});
-            this.tg15.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg15.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg15.Multiline = true;
             this.tg15.Name = "tg15";
             this.tg15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg15.StylePriority.UseFont = false;
             this.tg15.StylePriority.UsePadding = false;
-            this.tg15.Weight = 0.3371850856060139D;
+            this.tg15.Weight = 0.34433181475217584D;
             // 
             // tg16
             // 
             this.tg16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay16])")});
-            this.tg16.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg16.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg16.Multiline = true;
             this.tg16.Name = "tg16";
             this.tg16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg16.StylePriority.UseFont = false;
             this.tg16.StylePriority.UsePadding = false;
-            this.tg16.Weight = 0.3371850856060139D;
+            this.tg16.Weight = 0.34433181475217584D;
             // 
             // tg17
             // 
             this.tg17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay17])")});
-            this.tg17.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg17.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg17.Multiline = true;
             this.tg17.Name = "tg17";
             this.tg17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg17.StylePriority.UseFont = false;
             this.tg17.StylePriority.UsePadding = false;
-            this.tg17.Weight = 0.3371850856060139D;
+            this.tg17.Weight = 0.34433181475217584D;
             // 
             // tg18
             // 
             this.tg18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay18])")});
-            this.tg18.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg18.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg18.Multiline = true;
             this.tg18.Name = "tg18";
             this.tg18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg18.StylePriority.UseFont = false;
             this.tg18.StylePriority.UsePadding = false;
-            this.tg18.Weight = 0.3371850856060139D;
+            this.tg18.Weight = 0.34433181475217584D;
             // 
             // tg19
             // 
             this.tg19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay19])")});
-            this.tg19.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg19.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg19.Multiline = true;
             this.tg19.Name = "tg19";
             this.tg19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg19.StylePriority.UseFont = false;
             this.tg19.StylePriority.UsePadding = false;
-            this.tg19.Weight = 0.3371850856060139D;
+            this.tg19.Weight = 0.34433181475217584D;
             // 
             // tg20
             // 
             this.tg20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay20])")});
-            this.tg20.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg20.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg20.Multiline = true;
             this.tg20.Name = "tg20";
             this.tg20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg20.StylePriority.UseFont = false;
             this.tg20.StylePriority.UsePadding = false;
-            this.tg20.Weight = 0.3371850856060139D;
+            this.tg20.Weight = 0.34433181475217584D;
             // 
             // tg21
             // 
             this.tg21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay21])")});
-            this.tg21.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg21.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg21.Multiline = true;
             this.tg21.Name = "tg21";
             this.tg21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg21.StylePriority.UseFont = false;
             this.tg21.StylePriority.UsePadding = false;
-            this.tg21.Weight = 0.3371850856060139D;
+            this.tg21.Weight = 0.34433181475217584D;
             // 
             // tg22
             // 
             this.tg22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay22])")});
-            this.tg22.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg22.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg22.Multiline = true;
             this.tg22.Name = "tg22";
             this.tg22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg22.StylePriority.UseFont = false;
             this.tg22.StylePriority.UsePadding = false;
-            this.tg22.Weight = 0.3371850856060139D;
+            this.tg22.Weight = 0.34433181475217584D;
             // 
             // tg23
             // 
             this.tg23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay23])")});
-            this.tg23.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg23.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg23.Multiline = true;
             this.tg23.Name = "tg23";
             this.tg23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg23.StylePriority.UseFont = false;
             this.tg23.StylePriority.UsePadding = false;
-            this.tg23.Weight = 0.3371850856060139D;
+            this.tg23.Weight = 0.34433181475217584D;
             // 
             // tg24
             // 
             this.tg24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay24])")});
-            this.tg24.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg24.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg24.Multiline = true;
             this.tg24.Name = "tg24";
             this.tg24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg24.StylePriority.UseFont = false;
             this.tg24.StylePriority.UsePadding = false;
-            this.tg24.Weight = 0.3371850856060139D;
+            this.tg24.Weight = 0.34433181475217584D;
             // 
             // tg25
             // 
             this.tg25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay25])")});
-            this.tg25.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg25.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg25.Multiline = true;
             this.tg25.Name = "tg25";
             this.tg25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg25.StylePriority.UseFont = false;
             this.tg25.StylePriority.UsePadding = false;
-            this.tg25.Weight = 0.3371850856060139D;
+            this.tg25.Weight = 0.34433181475217584D;
             // 
             // tg26
             // 
             this.tg26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay26])")});
-            this.tg26.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg26.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg26.Multiline = true;
             this.tg26.Name = "tg26";
             this.tg26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg26.StylePriority.UseFont = false;
             this.tg26.StylePriority.UsePadding = false;
-            this.tg26.Weight = 0.3371850856060139D;
+            this.tg26.Weight = 0.34433181475217584D;
             // 
             // tg27
             // 
             this.tg27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay27])")});
-            this.tg27.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg27.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg27.Multiline = true;
             this.tg27.Name = "tg27";
             this.tg27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg27.StylePriority.UseFont = false;
             this.tg27.StylePriority.UsePadding = false;
-            this.tg27.Weight = 0.3371850856060139D;
+            this.tg27.Weight = 0.34433181475217584D;
             // 
             // tg28
             // 
             this.tg28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay28])")});
-            this.tg28.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg28.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg28.Multiline = true;
             this.tg28.Name = "tg28";
             this.tg28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg28.StylePriority.UseFont = false;
             this.tg28.StylePriority.UsePadding = false;
-            this.tg28.Weight = 0.3371850856060139D;
+            this.tg28.Weight = 0.34433181475217584D;
             // 
             // tg29
             // 
             this.tg29.BorderWidth = 1F;
             this.tg29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay29])")});
-            this.tg29.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg29.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg29.Multiline = true;
             this.tg29.Name = "tg29";
             this.tg29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg29.StylePriority.UseBorderWidth = false;
             this.tg29.StylePriority.UseFont = false;
             this.tg29.StylePriority.UsePadding = false;
-            this.tg29.Weight = 0.3371850856060139D;
+            this.tg29.Weight = 0.34433181475217584D;
             // 
             // tg30
             // 
             this.tg30.BorderWidth = 1F;
             this.tg30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay30])")});
-            this.tg30.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg30.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg30.Multiline = true;
             this.tg30.Name = "tg30";
             this.tg30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2147,34 +2187,34 @@
             this.tg30.StylePriority.UseBorderWidth = false;
             this.tg30.StylePriority.UseFont = false;
             this.tg30.StylePriority.UsePadding = false;
-            this.tg30.Weight = 0.3371850856060139D;
+            this.tg30.Weight = 0.34433181475217584D;
             // 
             // tg31
             // 
             this.tg31.BorderWidth = 1F;
             this.tg31.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Ngay31])")});
-            this.tg31.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tg31.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tg31.Multiline = true;
             this.tg31.Name = "tg31";
             this.tg31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tg31.StylePriority.UseBorderWidth = false;
             this.tg31.StylePriority.UseFont = false;
             this.tg31.StylePriority.UsePadding = false;
-            this.tg31.Weight = 0.3371850856060139D;
+            this.tg31.Weight = 0.34433181475217584D;
             // 
             // tgSum
             // 
             this.tgSum.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Tong])")});
-            this.tgSum.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.tgSum.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold);
             this.tgSum.Multiline = true;
             this.tgSum.Name = "tgSum";
             this.tgSum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.tgSum.StylePriority.UseFont = false;
             this.tgSum.StylePriority.UsePadding = false;
             this.tgSum.TextFormatString = "{0:n2}";
-            this.tgSum.Weight = 0.78172035583435706D;
+            this.tgSum.Weight = 0.66442988498220656D;
             // 
             // xrLabel19
             // 
@@ -2303,6 +2343,422 @@
             this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
             this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // GroupHeader1
+            // 
+            this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable4});
+            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+            new DevExpress.XtraReports.UI.GroupField("CaLamViec", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeader1.HeightF = 19.89795F;
+            this.GroupHeader1.Name = "GroupHeader1";
+            // 
+            // xrTable4
+            // 
+            this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTable4.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrTable4.Name = "xrTable4";
+            this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow6});
+            this.xrTable4.SizeF = new System.Drawing.SizeF(1107.583F, 19.89795F);
+            this.xrTable4.StylePriority.UseBorders = false;
+            this.xrTable4.StylePriority.UseFont = false;
+            this.xrTable4.StylePriority.UseTextAlignment = false;
+            this.xrTable4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // xrTableRow6
+            // 
+            this.xrTableRow6.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell1,
+            this.xrTableCell7,
+            this.xrTableCell8,
+            this.xrTableCell9,
+            this.xrTableCell11,
+            this.xrTableCell12,
+            this.xrTableCell14,
+            this.xrTableCell15,
+            this.xrTableCell16,
+            this.xrTableCell17,
+            this.xrTableCell18,
+            this.xrTableCell19,
+            this.xrTableCell20,
+            this.xrTableCell21,
+            this.xrTableCell22,
+            this.xrTableCell23,
+            this.xrTableCell24,
+            this.xrTableCell25,
+            this.xrTableCell26,
+            this.xrTableCell27,
+            this.xrTableCell28,
+            this.xrTableCell29,
+            this.xrTableCell30,
+            this.xrTableCell31,
+            this.xrTableCell32,
+            this.xrTableCell33,
+            this.xrTableCell35,
+            this.xrTableCell69,
+            this.xrTableCell70,
+            this.xrTableCell71,
+            this.xrTableCell72,
+            this.xrTableCell73,
+            this.xrTableCell74,
+            this.xrTableCell75});
+            this.xrTableRow6.Name = "xrTableRow6";
+            this.xrTableRow6.Weight = 1D;
+            // 
+            // xrTableCell1
+            // 
+            this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CaLamViec]")});
+            this.xrTableCell1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Multiline = true;
+            this.xrTableCell1.Name = "xrTableCell1";
+            this.xrTableCell1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
+            this.xrTableCell1.StylePriority.UseFont = false;
+            this.xrTableCell1.StylePriority.UsePadding = false;
+            this.xrTableCell1.StylePriority.UseTextAlignment = false;
+            this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell1.Weight = 1.6266570945405259D;
+            // 
+            // xrTableCell7
+            // 
+            this.xrTableCell7.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.xrTableCell7.Multiline = true;
+            this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 2, 0, 100F);
+            this.xrTableCell7.StylePriority.UseFont = false;
+            this.xrTableCell7.StylePriority.UsePadding = false;
+            this.xrTableCell7.StylePriority.UseTextAlignment = false;
+            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell7.TextFormatString = "{0:#,#}";
+            this.xrTableCell7.Weight = 0.8915841441968686D;
+            // 
+            // xrTableCell8
+            // 
+            this.xrTableCell8.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell8.Multiline = true;
+            this.xrTableCell8.Name = "xrTableCell8";
+            this.xrTableCell8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell8.StylePriority.UseFont = false;
+            this.xrTableCell8.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell9
+            // 
+            this.xrTableCell9.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell9.Multiline = true;
+            this.xrTableCell9.Name = "xrTableCell9";
+            this.xrTableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell9.StylePriority.UseFont = false;
+            this.xrTableCell9.StylePriority.UsePadding = false;
+            this.xrTableCell9.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell11
+            // 
+            this.xrTableCell11.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell11.Multiline = true;
+            this.xrTableCell11.Name = "xrTableCell11";
+            this.xrTableCell11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell11.StylePriority.UseFont = false;
+            this.xrTableCell11.StylePriority.UsePadding = false;
+            this.xrTableCell11.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell12
+            // 
+            this.xrTableCell12.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell12.Multiline = true;
+            this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell12.StylePriority.UseFont = false;
+            this.xrTableCell12.StylePriority.UsePadding = false;
+            this.xrTableCell12.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell14
+            // 
+            this.xrTableCell14.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell14.Multiline = true;
+            this.xrTableCell14.Name = "xrTableCell14";
+            this.xrTableCell14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell14.StylePriority.UseFont = false;
+            this.xrTableCell14.StylePriority.UsePadding = false;
+            this.xrTableCell14.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell15
+            // 
+            this.xrTableCell15.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell15.Multiline = true;
+            this.xrTableCell15.Name = "xrTableCell15";
+            this.xrTableCell15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell15.StylePriority.UseFont = false;
+            this.xrTableCell15.StylePriority.UsePadding = false;
+            this.xrTableCell15.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell16
+            // 
+            this.xrTableCell16.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell16.Multiline = true;
+            this.xrTableCell16.Name = "xrTableCell16";
+            this.xrTableCell16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell16.StylePriority.UseFont = false;
+            this.xrTableCell16.StylePriority.UsePadding = false;
+            this.xrTableCell16.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell17
+            // 
+            this.xrTableCell17.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell17.Multiline = true;
+            this.xrTableCell17.Name = "xrTableCell17";
+            this.xrTableCell17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell17.StylePriority.UseFont = false;
+            this.xrTableCell17.StylePriority.UsePadding = false;
+            this.xrTableCell17.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell18
+            // 
+            this.xrTableCell18.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell18.Multiline = true;
+            this.xrTableCell18.Name = "xrTableCell18";
+            this.xrTableCell18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell18.StylePriority.UseFont = false;
+            this.xrTableCell18.StylePriority.UsePadding = false;
+            this.xrTableCell18.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell19
+            // 
+            this.xrTableCell19.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell19.Multiline = true;
+            this.xrTableCell19.Name = "xrTableCell19";
+            this.xrTableCell19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell19.StylePriority.UseFont = false;
+            this.xrTableCell19.StylePriority.UsePadding = false;
+            this.xrTableCell19.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell20
+            // 
+            this.xrTableCell20.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell20.Multiline = true;
+            this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell20.StylePriority.UseFont = false;
+            this.xrTableCell20.StylePriority.UsePadding = false;
+            this.xrTableCell20.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell21
+            // 
+            this.xrTableCell21.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell21.Multiline = true;
+            this.xrTableCell21.Name = "xrTableCell21";
+            this.xrTableCell21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell21.StylePriority.UseFont = false;
+            this.xrTableCell21.StylePriority.UsePadding = false;
+            this.xrTableCell21.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell22
+            // 
+            this.xrTableCell22.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell22.Multiline = true;
+            this.xrTableCell22.Name = "xrTableCell22";
+            this.xrTableCell22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell22.StylePriority.UseFont = false;
+            this.xrTableCell22.StylePriority.UsePadding = false;
+            this.xrTableCell22.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell23
+            // 
+            this.xrTableCell23.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell23.Multiline = true;
+            this.xrTableCell23.Name = "xrTableCell23";
+            this.xrTableCell23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell23.StylePriority.UseFont = false;
+            this.xrTableCell23.StylePriority.UsePadding = false;
+            this.xrTableCell23.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell24
+            // 
+            this.xrTableCell24.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell24.Multiline = true;
+            this.xrTableCell24.Name = "xrTableCell24";
+            this.xrTableCell24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell24.StylePriority.UseFont = false;
+            this.xrTableCell24.StylePriority.UsePadding = false;
+            this.xrTableCell24.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell25
+            // 
+            this.xrTableCell25.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell25.Multiline = true;
+            this.xrTableCell25.Name = "xrTableCell25";
+            this.xrTableCell25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell25.StylePriority.UseFont = false;
+            this.xrTableCell25.StylePriority.UsePadding = false;
+            this.xrTableCell25.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell26
+            // 
+            this.xrTableCell26.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell26.Multiline = true;
+            this.xrTableCell26.Name = "xrTableCell26";
+            this.xrTableCell26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell26.StylePriority.UseFont = false;
+            this.xrTableCell26.StylePriority.UsePadding = false;
+            this.xrTableCell26.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell27
+            // 
+            this.xrTableCell27.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell27.Multiline = true;
+            this.xrTableCell27.Name = "xrTableCell27";
+            this.xrTableCell27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell27.StylePriority.UseFont = false;
+            this.xrTableCell27.StylePriority.UsePadding = false;
+            this.xrTableCell27.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell28
+            // 
+            this.xrTableCell28.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell28.Multiline = true;
+            this.xrTableCell28.Name = "xrTableCell28";
+            this.xrTableCell28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell28.StylePriority.UseFont = false;
+            this.xrTableCell28.StylePriority.UsePadding = false;
+            this.xrTableCell28.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell29
+            // 
+            this.xrTableCell29.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell29.Multiline = true;
+            this.xrTableCell29.Name = "xrTableCell29";
+            this.xrTableCell29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell29.StylePriority.UseFont = false;
+            this.xrTableCell29.StylePriority.UsePadding = false;
+            this.xrTableCell29.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell30
+            // 
+            this.xrTableCell30.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell30.Multiline = true;
+            this.xrTableCell30.Name = "xrTableCell30";
+            this.xrTableCell30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell30.StylePriority.UseFont = false;
+            this.xrTableCell30.StylePriority.UsePadding = false;
+            this.xrTableCell30.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell31
+            // 
+            this.xrTableCell31.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell31.Multiline = true;
+            this.xrTableCell31.Name = "xrTableCell31";
+            this.xrTableCell31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell31.StylePriority.UseFont = false;
+            this.xrTableCell31.StylePriority.UsePadding = false;
+            this.xrTableCell31.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell32
+            // 
+            this.xrTableCell32.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell32.Multiline = true;
+            this.xrTableCell32.Name = "xrTableCell32";
+            this.xrTableCell32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell32.StylePriority.UseFont = false;
+            this.xrTableCell32.StylePriority.UsePadding = false;
+            this.xrTableCell32.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell33
+            // 
+            this.xrTableCell33.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell33.Multiline = true;
+            this.xrTableCell33.Name = "xrTableCell33";
+            this.xrTableCell33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell33.StylePriority.UseFont = false;
+            this.xrTableCell33.StylePriority.UsePadding = false;
+            this.xrTableCell33.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell35
+            // 
+            this.xrTableCell35.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell35.Multiline = true;
+            this.xrTableCell35.Name = "xrTableCell35";
+            this.xrTableCell35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell35.StylePriority.UseFont = false;
+            this.xrTableCell35.StylePriority.UsePadding = false;
+            this.xrTableCell35.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell69
+            // 
+            this.xrTableCell69.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell69.Multiline = true;
+            this.xrTableCell69.Name = "xrTableCell69";
+            this.xrTableCell69.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell69.StylePriority.UseFont = false;
+            this.xrTableCell69.StylePriority.UsePadding = false;
+            this.xrTableCell69.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell70
+            // 
+            this.xrTableCell70.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell70.Multiline = true;
+            this.xrTableCell70.Name = "xrTableCell70";
+            this.xrTableCell70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell70.StylePriority.UseFont = false;
+            this.xrTableCell70.StylePriority.UsePadding = false;
+            this.xrTableCell70.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell71
+            // 
+            this.xrTableCell71.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell71.Multiline = true;
+            this.xrTableCell71.Name = "xrTableCell71";
+            this.xrTableCell71.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell71.StylePriority.UseFont = false;
+            this.xrTableCell71.StylePriority.UsePadding = false;
+            this.xrTableCell71.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell72
+            // 
+            this.xrTableCell72.BorderWidth = 1F;
+            this.xrTableCell72.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell72.Multiline = true;
+            this.xrTableCell72.Name = "xrTableCell72";
+            this.xrTableCell72.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell72.StylePriority.UseBorderWidth = false;
+            this.xrTableCell72.StylePriority.UseFont = false;
+            this.xrTableCell72.StylePriority.UsePadding = false;
+            this.xrTableCell72.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell73
+            // 
+            this.xrTableCell73.BorderWidth = 1F;
+            this.xrTableCell73.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell73.Multiline = true;
+            this.xrTableCell73.Name = "xrTableCell73";
+            this.xrTableCell73.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell73.RowSpan = 0;
+            this.xrTableCell73.StylePriority.UseBorderWidth = false;
+            this.xrTableCell73.StylePriority.UseFont = false;
+            this.xrTableCell73.StylePriority.UsePadding = false;
+            this.xrTableCell73.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell74
+            // 
+            this.xrTableCell74.BorderWidth = 1F;
+            this.xrTableCell74.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell74.Multiline = true;
+            this.xrTableCell74.Name = "xrTableCell74";
+            this.xrTableCell74.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell74.StylePriority.UseBorderWidth = false;
+            this.xrTableCell74.StylePriority.UseFont = false;
+            this.xrTableCell74.StylePriority.UsePadding = false;
+            this.xrTableCell74.Weight = 0.34433181475217584D;
+            // 
+            // xrTableCell75
+            // 
+            this.xrTableCell75.Multiline = true;
+            this.xrTableCell75.Name = "xrTableCell75";
+            this.xrTableCell75.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell75.StylePriority.UsePadding = false;
+            this.xrTableCell75.TextFormatString = "{0:n2}";
+            this.xrTableCell75.Weight = 0.66442988498220656D;
+            // 
             // TrPrintChamCong_PhuMC
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2311,13 +2767,14 @@
             this.BottomMargin,
             this.ReportHeader,
             this.PageHeader,
-            this.ReportFooter});
+            this.ReportFooter,
+            this.GroupHeader1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dataSet_TinLuong1});
             this.DataMember = "tbCongNhatChamCongToGapDan";
             this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(45, 31, 40, 40);
+            this.Margins = new System.Drawing.Printing.Margins(30, 29, 40, 40);
             this.PageHeight = 827;
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
@@ -2331,6 +2788,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -2508,5 +2966,42 @@
         private DevExpress.XtraReports.Parameters.Parameter pGiamDoc;
         private DevExpress.XtraReports.Parameters.Parameter pTongHop;
         private DevExpress.XtraReports.Parameters.Parameter pLapBieu;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
+        private DevExpress.XtraReports.UI.XRTable xrTable4;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow6;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell14;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell15;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell20;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell21;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell22;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell23;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell24;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell25;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell26;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell27;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell28;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell29;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell30;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell31;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell32;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell33;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell35;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell69;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell70;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell71;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell72;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell73;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell74;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell75;
     }
 }
