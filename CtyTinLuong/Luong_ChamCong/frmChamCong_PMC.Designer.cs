@@ -321,6 +321,7 @@ namespace CtyTinLuong
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clTenNhanVien
@@ -354,6 +355,8 @@ namespace CtyTinLuong
             // 
             // Cong
             // 
+            this.Cong.AppearanceCell.Options.UseTextOptions = true;
+            this.Cong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
             this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
@@ -1429,7 +1432,7 @@ namespace CtyTinLuong
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(412, 11);
+            this.label1.Location = new System.Drawing.Point(408, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 148;

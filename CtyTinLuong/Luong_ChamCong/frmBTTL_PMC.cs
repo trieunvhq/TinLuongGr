@@ -86,23 +86,31 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    double dongia_;
+                    double dongia_ = 0;
                     double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
-                    bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
-                    if (istangca_)
-                    {
-                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
-                        _data.Rows[i]["TenVTHH"] = "Tăng ca";
+                    string LoaiCong = _data.Rows[i]["Cong"].ToString();
 
+                    _data.Rows[i]["TenVTHH"] = LoaiCong;
+
+                    if (LoaiCong.ToLower().Contains("tăng"))
+                    {
+                        //Đơn giá tăng ca:
+                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
+                    }
+                    else if (LoaiCong.ToLower().Contains("công nhật"))
+                    {
+                        //Đơn giá công nhật
+                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
                     }
                     else
                     {
-                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
-                        _data.Rows[i]["TenVTHH"] = "Công nhật";
+                        //Đơn giá của các loại công còn lại:
+                        dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
                     }
+
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
                     //
-                    _data.Rows[i]["STT"] = (i / 2) + 1;
+                    _data.Rows[i]["STT"] = i + 1;
 
                     tongluong_ = (dongia_ * sanluong_);
                     tongluong_tong_ += tongluong_;

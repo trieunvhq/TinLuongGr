@@ -220,7 +220,7 @@ namespace CtyTinLuong
             }
             using (clsThin clsThin_ = new clsThin())
             {
-                _dt_DinhMuc = clsThin_.T_NhanSu_SF("0");
+                _dt_DinhMuc = clsThin_.T_NhanSu_SF(_id_bophan + ",");   //T_NhanSu_SF("0");
                 cbNhanSu.DataSource = _dt_DinhMuc;
                 cbNhanSu.DisplayMember = "TenNhanVien";
                 cbNhanSu.ValueMember = "ID_NhanSu"; 
