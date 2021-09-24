@@ -55,6 +55,7 @@ namespace CtyTinLuong
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +63,6 @@ namespace CtyTinLuong
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLThuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -315,7 +315,6 @@ namespace CtyTinLuong
             this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -337,6 +336,21 @@ namespace CtyTinLuong
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 0;
             this.clTenNhanVien.Width = 114;
+            // 
+            // MaDinhMucLuongCongNhat
+            // 
+            this.MaDinhMucLuongCongNhat.AppearanceCell.Options.UseTextOptions = true;
+            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MaDinhMucLuongCongNhat.Caption = "ĐM Lương";
+            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
+            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.MaDinhMucLuongCongNhat.Visible = true;
+            this.MaDinhMucLuongCongNhat.VisibleIndex = 1;
+            this.MaDinhMucLuongCongNhat.Width = 71;
             // 
             // Cong
             // 
@@ -401,21 +415,6 @@ namespace CtyTinLuong
             this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
             this.ID_DinhMucLuong_CongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
-            // 
-            // MaDinhMucLuongCongNhat
-            // 
-            this.MaDinhMucLuongCongNhat.AppearanceCell.Options.UseTextOptions = true;
-            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MaDinhMucLuongCongNhat.Caption = "ĐM Lương";
-            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
-            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.MaDinhMucLuongCongNhat.Visible = true;
-            this.MaDinhMucLuongCongNhat.VisibleIndex = 1;
-            this.MaDinhMucLuongCongNhat.Width = 71;
             // 
             // clID_CongNhan
             // 
@@ -1388,9 +1387,9 @@ namespace CtyTinLuong
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(730, 3);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(730, 8);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 52);
+            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 48);
             this.btnThemNhanVien.TabIndex = 137;
             this.btnThemNhanVien.Text = "Thêm nhân viên";
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
@@ -1421,7 +1420,7 @@ namespace CtyTinLuong
             // 
             this.cbLoaiCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiCong.FormattingEnabled = true;
-            this.cbLoaiCong.Location = new System.Drawing.Point(511, 0);
+            this.cbLoaiCong.Location = new System.Drawing.Point(511, 8);
             this.cbLoaiCong.Name = "cbLoaiCong";
             this.cbLoaiCong.Size = new System.Drawing.Size(204, 21);
             this.cbLoaiCong.TabIndex = 149;
@@ -1430,11 +1429,11 @@ namespace CtyTinLuong
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(406, 3);
+            this.label1.Location = new System.Drawing.Point(412, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 148;
-            this.label1.Text = "Chọn loại công";
+            this.label1.Text = "Chọn loại công:";
             // 
             // btnPrint
             // 

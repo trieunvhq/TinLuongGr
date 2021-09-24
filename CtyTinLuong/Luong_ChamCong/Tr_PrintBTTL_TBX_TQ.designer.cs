@@ -64,8 +64,10 @@
             this.pGiamDoc = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTongHop = new DevExpress.XtraReports.Parameters.Parameter();
             this.pLapBieu = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TinLuong1 = new CtyTinLuong.DataSet_TinLuong();
             ((System.ComponentModel.ISupportInitialize)(this.xrTbContent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTbHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -194,7 +196,7 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 86.93633F;
+            this.BottomMargin.HeightF = 87F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -461,6 +463,11 @@
             this.pLapBieu.Name = "pLapBieu";
             this.pLapBieu.ValueInfo = "Phạm Thị Lành";
             // 
+            // dataSet_TinLuong1
+            // 
+            this.dataSet_TinLuong1.DataSetName = "DataSet_TinLuong";
+            this.dataSet_TinLuong1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Tr_PrintBTTL_TBX_TQ
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -470,7 +477,11 @@
             this.ReportHeader,
             this.PageHeader,
             this.ReportFooter});
-            this.Margins = new System.Drawing.Printing.Margins(75, 55, 66, 87);
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.dataSet_TinLuong1});
+            this.DataMember = "tbBTTL_TBX_CT";
+            this.DataSource = this.dataSet_TinLuong1;
+            this.Margins = new System.Drawing.Printing.Margins(75, 52, 66, 87);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
@@ -481,6 +492,7 @@
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTbContent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTbHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TinLuong1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -523,5 +535,6 @@
         private DevExpress.XtraReports.Parameters.Parameter pGiamDoc;
         private DevExpress.XtraReports.Parameters.Parameter pTongHop;
         private DevExpress.XtraReports.Parameters.Parameter pLapBieu;
+        private DataSet_TinLuong dataSet_TinLuong1;
     }
 }

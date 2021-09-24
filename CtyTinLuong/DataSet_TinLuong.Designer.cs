@@ -9388,6 +9388,8 @@ namespace CtyTinLuong {
             
             private global::System.Data.DataColumn columnTenVTHH;
             
+            private global::System.Data.DataColumn columnTongLuong;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbBTTL_TBX_CTDataTable() {
@@ -9495,6 +9497,14 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongLuongColumn {
+                get {
+                    return this.columnTongLuong;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9530,7 +9540,7 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbBTTL_TBX_CTRow AddtbBTTL_TBX_CTRow(int STT, string TenNhanVien, int DonGia, double SanLuong, int LuongTrachNhiem, int TongTien, int TamUng, int ThucNhan, string TenVTHH) {
+            public tbBTTL_TBX_CTRow AddtbBTTL_TBX_CTRow(string STT, string TenNhanVien, string DonGia, string SanLuong, string LuongTrachNhiem, string TongTien, string TamUng, string ThucNhan, string TenVTHH, string TongLuong) {
                 tbBTTL_TBX_CTRow rowtbBTTL_TBX_CTRow = ((tbBTTL_TBX_CTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -9541,7 +9551,8 @@ namespace CtyTinLuong {
                         TongTien,
                         TamUng,
                         ThucNhan,
-                        TenVTHH};
+                        TenVTHH,
+                        TongLuong};
                 rowtbBTTL_TBX_CTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbBTTL_TBX_CTRow);
                 return rowtbBTTL_TBX_CTRow;
@@ -9573,29 +9584,32 @@ namespace CtyTinLuong {
                 this.columnTamUng = base.Columns["TamUng"];
                 this.columnThucNhan = base.Columns["ThucNhan"];
                 this.columnTenVTHH = base.Columns["TenVTHH"];
+                this.columnTongLuong = base.Columns["TongLuong"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnSTT = new global::System.Data.DataColumn("STT", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnSTT = new global::System.Data.DataColumn("STT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTT);
                 this.columnTenNhanVien = new global::System.Data.DataColumn("TenNhanVien", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenNhanVien);
-                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDonGia);
-                this.columnSanLuong = new global::System.Data.DataColumn("SanLuong", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnSanLuong = new global::System.Data.DataColumn("SanLuong", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSanLuong);
-                this.columnLuongTrachNhiem = new global::System.Data.DataColumn("LuongTrachNhiem", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnLuongTrachNhiem = new global::System.Data.DataColumn("LuongTrachNhiem", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLuongTrachNhiem);
-                this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien);
-                this.columnTamUng = new global::System.Data.DataColumn("TamUng", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnTamUng = new global::System.Data.DataColumn("TamUng", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTamUng);
-                this.columnThucNhan = new global::System.Data.DataColumn("ThucNhan", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnThucNhan = new global::System.Data.DataColumn("ThucNhan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThucNhan);
                 this.columnTenVTHH = new global::System.Data.DataColumn("TenVTHH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenVTHH);
+                this.columnTongLuong = new global::System.Data.DataColumn("TongLuong", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongLuong);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22988,10 +23002,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int STT {
+            public string STT {
                 get {
                     try {
-                        return ((int)(this[this.tabletbBTTL_TBX_CT.STTColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.STTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'STT\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23020,10 +23034,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DonGia {
+            public string DonGia {
                 get {
                     try {
-                        return ((int)(this[this.tabletbBTTL_TBX_CT.DonGiaColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.DonGiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DonGia\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23036,10 +23050,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double SanLuong {
+            public string SanLuong {
                 get {
                     try {
-                        return ((double)(this[this.tabletbBTTL_TBX_CT.SanLuongColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.SanLuongColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SanLuong\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23052,10 +23066,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int LuongTrachNhiem {
+            public string LuongTrachNhiem {
                 get {
                     try {
-                        return ((int)(this[this.tabletbBTTL_TBX_CT.LuongTrachNhiemColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.LuongTrachNhiemColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'LuongTrachNhiem\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23068,10 +23082,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TongTien {
+            public string TongTien {
                 get {
                     try {
-                        return ((int)(this[this.tabletbBTTL_TBX_CT.TongTienColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.TongTienColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TongTien\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23084,10 +23098,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TamUng {
+            public string TamUng {
                 get {
                     try {
-                        return ((int)(this[this.tabletbBTTL_TBX_CT.TamUngColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.TamUngColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TamUng\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23100,10 +23114,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ThucNhan {
+            public string ThucNhan {
                 get {
                     try {
-                        return ((int)(this[this.tabletbBTTL_TBX_CT.ThucNhanColumn]));
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.ThucNhanColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ThucNhan\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
@@ -23127,6 +23141,22 @@ namespace CtyTinLuong {
                 }
                 set {
                     this[this.tabletbBTTL_TBX_CT.TenVTHHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TongLuong {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbBTTL_TBX_CT.TongLuongColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongLuong\' in table \'tbBTTL_TBX_CT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBTTL_TBX_CT.TongLuongColumn] = value;
                 }
             }
             
@@ -23236,6 +23266,18 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTenVTHHNull() {
                 this[this.tabletbBTTL_TBX_CT.TenVTHHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongLuongNull() {
+                return this.IsNull(this.tabletbBTTL_TBX_CT.TongLuongColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongLuongNull() {
+                this[this.tabletbBTTL_TBX_CT.TongLuongColumn] = global::System.Convert.DBNull;
             }
         }
         
