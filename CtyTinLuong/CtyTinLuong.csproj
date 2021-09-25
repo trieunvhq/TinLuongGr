@@ -179,6 +179,12 @@
     <Compile Include="frmtestcopy.Designer.cs">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TMC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TMC.Designer.cs">
+      <DependentUpon>frmChamCong_TMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\BoSungCongNhanMayDot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2276,6 +2282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmtestcopy.resx">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TMC.resx">
+      <DependentUpon>frmChamCong_TMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\BoSungCongNhanMayDot.resx">

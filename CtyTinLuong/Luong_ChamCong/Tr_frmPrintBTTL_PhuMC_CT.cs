@@ -42,7 +42,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 _ravi["STT"] = _data.Rows[i]["STT"].ToString();
                 _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
                 _ravi["Cong"] = _data.Rows[i]["TenVTHH"].ToString();
-                _ravi["NgayCong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString()).ToString("N1");
+                _ravi["NgayCong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString()).ToString("N2");
                 _ravi["LuongCoBan"] = _data.Rows[i]["DonGia"].ToString();
                 _ravi["TongLuong"] = _data.Rows[i]["TongLuong"].ToString();
                 _ravi["TrachNhiem"] = _data.Rows[i]["LuongTrachNhiem"].ToString();

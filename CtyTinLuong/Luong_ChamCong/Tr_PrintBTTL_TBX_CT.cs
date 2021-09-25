@@ -22,7 +22,7 @@ namespace CtyTinLuong.Luong_ChamCong
             _thang = thang;
             _nam = nam;
             InitializeComponent();
-
+            pNgay.Value = DateTime.Now;
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)

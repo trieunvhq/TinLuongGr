@@ -111,11 +111,10 @@ namespace CtyTinLuong
 
                     //Lương cơ bản:
                     double LuongCoBan = 0;
-                    _data.Rows[i]["DonGia"] = LuongCoBan.ToString("N0");
 
                     //Ngày công:
-                    _NgayCong_Ca1 = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
-                    _data.Rows[i]["SanLuong"] = _NgayCong_Ca1.ToString("N1");
+                    _NgayCong_Ca1 = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong_Value"].ToString());
+                    _data.Rows[i]["SanLuong"] = _NgayCong_Ca1.ToString("N2");
                     _NgayCong_Tong_Ca1 += _NgayCong_Ca1;
 
                     //Loại công:
@@ -260,11 +259,10 @@ namespace CtyTinLuong
 
                     //Lương cơ bản:
                     double LuongCoBan = 0;
-                    _ravi_Ca2["DonGia"] = LuongCoBan.ToString("N0");
 
                     //Ngày công:
-                    _NgayCong_Ca2 = CheckString.ConvertToDouble_My(_data_Ca2.Rows[i]["SanLuong"].ToString());
-                    _ravi_Ca2["SanLuong"] = _NgayCong_Ca2.ToString("N1");
+                    _NgayCong_Ca2 = CheckString.ConvertToDouble_My(_data_Ca2.Rows[i]["SanLuong_Value"].ToString());
+                    _ravi_Ca2["SanLuong"] = _NgayCong_Ca2.ToString("N2");
                     _NgayCong_Tong_Ca2 += _NgayCong_Ca2;
 
                     //Loại công:

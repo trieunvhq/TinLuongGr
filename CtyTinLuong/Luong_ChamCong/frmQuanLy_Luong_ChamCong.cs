@@ -452,7 +452,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
+            int id_bophan_ = KiemTraTenBoPhan("PMC");
             if (id_bophan_ == 0) return;
 
             frmChamCong_PMC frm = new frmChamCong_PMC(id_bophan_, this);
@@ -470,7 +470,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            int id_bophan_ = KiemTraTenBoPhan("Phụ Máy cắt");
+            int id_bophan_ = KiemTraTenBoPhan("PMC"); //Trong db PMC = Phụ máy cắt
             if (id_bophan_ == 0) return;
 
             frmBTTL_PMC frm = new frmBTTL_PMC(id_bophan_, this);
@@ -549,6 +549,24 @@ namespace CtyTinLuong
         private void navBTTL_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
 
+        }
+
+        private void navToMayCat_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy cắt");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_TMC frm = new frmChamCong_TMC(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true, true);
+
+            Cursor.Current = Cursors.Default;
         }
     }
 }

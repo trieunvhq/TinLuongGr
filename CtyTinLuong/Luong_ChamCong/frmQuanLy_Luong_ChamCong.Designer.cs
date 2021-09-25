@@ -57,6 +57,7 @@
             this.navChamCong_PTH = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PKT = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_PMC = new DevExpress.XtraNavBar.NavBarItem();
+            this.navToMayCat = new DevExpress.XtraNavBar.NavBarItem();
             this.navChamCong_ToIn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
@@ -234,7 +235,8 @@
             this.navChamCon_TDB,
             this.navBTTL_TDB,
             this.navBTTL_CongNhat,
-            this.navBTTL_TDK});
+            this.navBTTL_TDK,
+            this.navToMayCat});
             this.navBarControl1.Location = new System.Drawing.Point(6, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -258,6 +260,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PTH),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PKT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_PMC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navToMayCat),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navChamCong_ToIn)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
@@ -320,6 +323,12 @@
             this.navChamCong_PMC.Caption = "Phụ Máy Cắt";
             this.navChamCong_PMC.Name = "navChamCong_PMC";
             this.navChamCong_PMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_PMC_LinkClicked);
+            // 
+            // navToMayCat
+            // 
+            this.navToMayCat.Caption = "Tổ Máy Cắt";
+            this.navToMayCat.Name = "navToMayCat";
+            this.navToMayCat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navToMayCat_LinkClicked);
             // 
             // navChamCong_ToIn
             // 
@@ -410,7 +419,7 @@
             // 
             // navBTTL_TMC
             // 
-            this.navBTTL_TMC.Caption = "Máy Cắt";
+            this.navBTTL_TMC.Caption = "Tổ Máy Cắt";
             this.navBTTL_TMC.Name = "navBTTL_TMC";
             this.navBTTL_TMC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBTTL_TMC_LinkClicked);
             // 
@@ -522,5 +531,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TDB;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_CongNhat;
         private DevExpress.XtraNavBar.NavBarItem navBTTL_TDK;
+        private DevExpress.XtraNavBar.NavBarItem navToMayCat;
     }
 }

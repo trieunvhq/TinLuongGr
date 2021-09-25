@@ -29,31 +29,22 @@ namespace CtyTinLuong.Luong_ChamCong
             Tr_PrintBTTL_TMC_CT xtr111 = new Tr_PrintBTTL_TMC_CT(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
-
-            DateTime date_ = new DateTime(_nam, _thang, 1);
-            int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
-
-            using (clsThin clsThin_ = new clsThin())
+            for (int i = 0; i < _data.Rows.Count -1; ++i)
             {
-                for (int i = 0; i < _data.Rows.Count -1; ++i)
-                {
-                    DataRow _ravi = ds.tbBTTL_TMC_CT.NewRow();
+                DataRow _ravi = ds.tbBTTL_TMC_CT.NewRow();
 
-                    _ravi["STT"] = (i + 1).ToString();
-                    _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-                    _ravi["Cong"] = _data.Rows[i]["sCong"].ToString();
-                    _ravi["SanLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sSanLuong"].ToString());
-                    _ravi["DonGia"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sDonGia"].ToString());
-                    _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sThanhTien"].ToString());
-                    _ravi["XangXe"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sXangXe"].ToString());
-                    _ravi["Tong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sTong"].ToString());
-                    _ravi["TruTienCom"] = 0;
-                    _ravi["BaoHiem"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sBaoHiem"].ToString());
-                    _ravi["TamUng"] = 0;
-                    _ravi["ThucNhan"] = CheckString.ConvertToDouble_My(_data.Rows[i]["sThucNhan"].ToString());
+                _ravi["STT"] = _data.Rows[i]["STT"].ToString();
+                _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                _ravi["Cong"] = _data.Rows[i]["Cong"].ToString();
+                _ravi["SanLuong"] = _data.Rows[i]["SanLuong"].ToString();
+                _ravi["DonGia"] = _data.Rows[i]["DonGia"].ToString();
+                _ravi["ThanhTien"] = _data.Rows[i]["ThanhTien"].ToString();
+                _ravi["XangXe"] = _data.Rows[i]["XangXe"].ToString();
+                _ravi["Tong"] = _data.Rows[i]["Tong"].ToString();
+                _ravi["BaoHiem"] = _data.Rows[i]["BaoHiem"].ToString();
+                _ravi["ThucNhan"] = _data.Rows[i]["ThucNhan"].ToString();
 
-                    ds.tbBTTL_TMC_CT.Rows.Add(_ravi);
-                }
+                ds.tbBTTL_TMC_CT.Rows.Add(_ravi);
             }
 
             xtr111.DataSource = null;
