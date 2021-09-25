@@ -28,6 +28,8 @@ namespace CtyTinLuong.Luong_ChamCong
             else xrlbThang.Text = _thang.ToString();
             xrlbNam.Text = _nam.ToString();
 
+            xrTable1.Rows[10].Font = new Font(xrTable1.Rows[10].Font.FontFamily, 11, FontStyle.Bold);
+
             //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgay.Value);
             if (d.Day > 9)

@@ -44,7 +44,7 @@ namespace CtyTinLuong
             ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
             ColTongTien.Caption = "TỔNG\nLƯƠNG";
             TruBaoHiem.Caption = "TRỪ BẢO\nHIỂM";
-
+            DonGia.Caption = "LƯƠNG\nCƠ BẢN";
         }
 
         public void LoadData(bool islandau)
@@ -397,6 +397,65 @@ namespace CtyTinLuong
                 }
 
                 _data.Rows.Add(_ravi2);
+
+                //Add thêm row tổng ca1+ ca2:
+                DataRow _ravi2_Tong2Ca = _data.NewRow();
+                _ravi2_Tong2Ca["ID_CongNhan"] = 0;
+                _ravi2_Tong2Ca["Thang"] = _thang;
+                _ravi2_Tong2Ca["Nam"] = _nam;
+                _ravi2_Tong2Ca["TenNhanVien"] = "Tổng cộng";
+
+                //
+                if (_NgayCong_Tong_Ca1 + _NgayCong_Tong_Ca2 == 0)
+                {
+                    _ravi2_Tong2Ca["SanLuong"] = "";
+                }
+                else
+                {
+                    _ravi2_Tong2Ca["SanLuong"] = (_NgayCong_Tong_Ca1 + _NgayCong_Tong_Ca2).ToString("N0");
+                }
+
+                //
+                if (tongluong_tong_Ca1 + tongluong_tong_Ca2 == 0)
+                {
+                    _ravi2_Tong2Ca["TongLuong"] = "";
+                }
+                else
+                {
+                    _ravi2_Tong2Ca["TongLuong"] = (tongluong_tong_Ca1 + tongluong_tong_Ca2).ToString("N0");
+                }
+
+                // 
+                if (luongtrachnhiem_tong_Ca1 + luongtrachnhiem_tong_Ca2 == 0)
+                {
+                    _ravi2_Tong2Ca["LuongTrachNhiem"] = "";
+                }
+                else
+                {
+                    _ravi2_Tong2Ca["LuongTrachNhiem"] = (luongtrachnhiem_tong_Ca1 + luongtrachnhiem_tong_Ca2).ToString("N0");
+                }
+
+                // 
+                if (trutamung_tong_Ca1 + trutamung_tong_Ca2 == 0)
+                {
+                    _ravi2_Tong2Ca["TamUng"] = "";
+                }
+                else
+                {
+                    _ravi2_Tong2Ca["TamUng"] = (trutamung_tong_Ca1 + trutamung_tong_Ca2).ToString("N0");
+                }
+
+                // 
+                if (thuclinh_tong_Ca1 + thuclinh_tong_Ca2 == 0)
+                {
+                    _ravi2_Tong2Ca["ThucNhan"] = "";
+                }
+                else
+                {
+                    _ravi2_Tong2Ca["ThucNhan"] = (thuclinh_tong_Ca1 + thuclinh_tong_Ca2).ToString("N0");
+                }
+
+                _data.Rows.Add(_ravi2_Tong2Ca);
             }
 
             
@@ -501,7 +560,7 @@ namespace CtyTinLuong
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1 || e.RowHandle == _indexTongCa1)
+            if (e.RowHandle == _data.Rows.Count - 1 || e.RowHandle == _data.Rows.Count - 2 || e.RowHandle == _indexTongCa1)
             {
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             }
