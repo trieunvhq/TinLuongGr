@@ -29,7 +29,7 @@ namespace CtyTinLuong.Luong_ChamCong
             Tr_PrintBTTL_TMC_CT xtr111 = new Tr_PrintBTTL_TMC_CT(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
-            for (int i = 0; i < _data.Rows.Count -1; ++i)
+            for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 DataRow _ravi = ds.tbBTTL_TMC_CT.NewRow();
 
