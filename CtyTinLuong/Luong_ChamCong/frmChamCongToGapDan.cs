@@ -107,6 +107,66 @@ namespace CtyTinLuong
         int Tong_Ngay30 = 0;
         int Tong_Ngay31 = 0;
 
+        //
+        public void Load_DinhMuc(int id_dinhmuc, string ma, int id_congnhan)
+        {
+            _ID_DinhMucLuong_CongNhat = id_dinhmuc;
+            _MaDinhMucLuongCongNhat = ma;
+            if (id_congnhan > 0)
+            {
+                for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                {
+                    if (Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()) == id_congnhan)
+                    {
+                        _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
+                        if (i > 0)
+                        {
+                            int j = i - 1;
+                            int id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            while (id_congnhan1_ == id_congnhan)
+                            {
+                                _data.Rows[j]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                                _data.Rows[j]["MaDinhMucLuongCongNhat"] = ma;
+                                --j;
+                                if (j < 0)
+                                    break;
+
+                                id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            }
+                        }
+                        if (i < _data.Rows.Count - 1)
+                        {
+                            int j = i + 1;
+                            int id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            while (id_congnhan1_ == id_congnhan)
+                            {
+                                _data.Rows[j]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                                _data.Rows[j]["MaDinhMucLuongCongNhat"] = ma;
+                                ++j;
+                                if (j >= _data.Rows.Count - 1)
+                                    break;
+
+                                id_congnhan1_ = Convert.ToInt32(_data.Rows[j]["ID_CongNhan"].ToString());
+                            }
+                        }
+                        break;
+                    }
+                    else
+                    { }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                {
+                    _data.Rows[i]["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                    _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
+                }
+            }
+            gridControl1.DataSource = _data;
+        }
+
         public void LoadData(bool islandau)
         {
             isload = true;
