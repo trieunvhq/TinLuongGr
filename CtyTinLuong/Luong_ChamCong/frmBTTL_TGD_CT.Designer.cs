@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -108,9 +108,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // btThoat
@@ -183,9 +183,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -307,7 +307,6 @@
             this.clSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSTT.Caption = "STT";
             this.clSTT.FieldName = "STT";
-            this.clSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
@@ -323,14 +322,13 @@
             this.clTenNhanVien.Caption = "HỌ TÊN";
             this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit3;
             this.clTenNhanVien.FieldName = "TenNhanVien";
-            this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.OptionsColumn.AllowFocus = false;
             this.clTenNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
-            this.clTenNhanVien.Width = 120;
+            this.clTenNhanVien.Width = 130;
             // 
             // clTongLuong
             // 
@@ -354,9 +352,10 @@
             // 
             // Cong
             // 
+            this.Cong.AppearanceCell.Options.UseTextOptions = true;
+            this.Cong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "TenVTHH";
-            this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Cong.MinWidth = 50;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
@@ -364,7 +363,7 @@
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 2;
-            this.Cong.Width = 100;
+            this.Cong.Width = 73;
             // 
             // clID_ChiTietChamCong
             // 
@@ -476,7 +475,7 @@
             // SanLuong
             // 
             this.SanLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.SanLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SanLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.SanLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SanLuong.Caption = "SẢN LƯỢNG";
             this.SanLuong.FieldName = "SanLuong";
@@ -498,12 +497,12 @@
             this.SanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.SanLuong.Visible = true;
             this.SanLuong.VisibleIndex = 3;
-            this.SanLuong.Width = 80;
+            this.SanLuong.Width = 73;
             // 
             // DonGia
             // 
             this.DonGia.AppearanceCell.Options.UseTextOptions = true;
-            this.DonGia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DonGia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DonGia.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.DonGia.Caption = "ĐƠN GIÁ";
             this.DonGia.FieldName = "DonGia";
@@ -525,12 +524,12 @@
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
             this.DonGia.VisibleIndex = 4;
-            this.DonGia.Width = 80;
+            this.DonGia.Width = 73;
             // 
             // ThanhTien
             // 
             this.ThanhTien.AppearanceCell.Options.UseTextOptions = true;
-            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThanhTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThanhTien.Caption = "THÀNH TIỀN";
             this.ThanhTien.FieldName = "ThanhTien";
@@ -552,12 +551,12 @@
             this.ThanhTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 80;
+            this.ThanhTien.Width = 73;
             // 
             // TongLuong
             // 
             this.TongLuong.AppearanceCell.Options.UseTextOptions = true;
-            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TongLuong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongLuong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongLuong.Caption = "TỔNG LƯƠNG";
             this.TongLuong.FieldName = "TongLuong";
@@ -579,12 +578,12 @@
             this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongLuong.Visible = true;
             this.TongLuong.VisibleIndex = 6;
-            this.TongLuong.Width = 80;
+            this.TongLuong.Width = 73;
             // 
             // SoNgayAn
             // 
             this.SoNgayAn.AppearanceCell.Options.UseTextOptions = true;
-            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SoNgayAn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.SoNgayAn.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SoNgayAn.Caption = "SỐ NGÀY ĂN";
             this.SoNgayAn.FieldName = "SoNgayAn";
@@ -606,12 +605,12 @@
             this.SoNgayAn.OptionsFilter.ShowEmptyDateFilter = false;
             this.SoNgayAn.Visible = true;
             this.SoNgayAn.VisibleIndex = 7;
-            this.SoNgayAn.Width = 80;
+            this.SoNgayAn.Width = 73;
             // 
             // TruTienCom
             // 
             this.TruTienCom.AppearanceCell.Options.UseTextOptions = true;
-            this.TruTienCom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TruTienCom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TruTienCom.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TruTienCom.Caption = "TRỪ TIỀN CƠM";
             this.TruTienCom.FieldName = "TruTienCom";
@@ -633,12 +632,12 @@
             this.TruTienCom.OptionsFilter.ShowEmptyDateFilter = false;
             this.TruTienCom.Visible = true;
             this.TruTienCom.VisibleIndex = 8;
-            this.TruTienCom.Width = 80;
+            this.TruTienCom.Width = 73;
             // 
             // TongTien
             // 
             this.TongTien.AppearanceCell.Options.UseTextOptions = true;
-            this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TongTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TongTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TongTien.Caption = "TỔNG TIỀN";
             this.TongTien.FieldName = "TongTien";
@@ -659,13 +658,13 @@
             this.TongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 12;
-            this.TongTien.Width = 80;
+            this.TongTien.VisibleIndex = 11;
+            this.TongTien.Width = 73;
             // 
             // TamUng
             // 
             this.TamUng.AppearanceCell.Options.UseTextOptions = true;
-            this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TamUng.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.TamUng.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TamUng.Caption = "TẠM ỨNG";
             this.TamUng.FieldName = "TamUng";
@@ -687,12 +686,12 @@
             this.TamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.TamUng.Visible = true;
             this.TamUng.VisibleIndex = 9;
-            this.TamUng.Width = 80;
+            this.TamUng.Width = 73;
             // 
             // ThucNhan
             // 
             this.ThucNhan.AppearanceCell.Options.UseTextOptions = true;
-            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThucNhan.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThucNhan.Caption = "THỰC NHẬN";
             this.ThucNhan.FieldName = "ThucNhan";
@@ -715,7 +714,7 @@
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
             this.ThucNhan.VisibleIndex = 10;
-            this.ThucNhan.Width = 80;
+            this.ThucNhan.Width = 73;
             // 
             // KyNhan
             // 
@@ -741,8 +740,6 @@
             this.KyNhan.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
-            this.KyNhan.Visible = true;
-            this.KyNhan.VisibleIndex = 11;
             this.KyNhan.Width = 80;
             // 
             // gridControl1

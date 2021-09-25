@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,9 +99,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // linkLabel1
@@ -160,9 +160,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -294,7 +294,7 @@
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
-            this.clTenNhanVien.Width = 100;
+            this.clTenNhanVien.Width = 130;
             // 
             // clTongLuong
             // 
@@ -322,12 +322,12 @@
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
             this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.Cong.MinWidth = 100;
+            this.Cong.MinWidth = 50;
             this.Cong.Name = "Cong";
             this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 2;
-            this.Cong.Width = 100;
+            this.Cong.Width = 90;
             // 
             // SanLuong
             // 
@@ -352,7 +352,7 @@
             this.SanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.SanLuong.Visible = true;
             this.SanLuong.VisibleIndex = 3;
-            this.SanLuong.Width = 80;
+            this.SanLuong.Width = 88;
             // 
             // DonGia
             // 
@@ -377,7 +377,7 @@
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
             this.DonGia.VisibleIndex = 4;
-            this.DonGia.Width = 80;
+            this.DonGia.Width = 88;
             // 
             // ThanhTien
             // 
@@ -402,7 +402,7 @@
             this.ThanhTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 80;
+            this.ThanhTien.Width = 88;
             // 
             // Tong
             // 
@@ -427,7 +427,7 @@
             this.Tong.OptionsFilter.ShowEmptyDateFilter = false;
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 7;
-            this.Tong.Width = 80;
+            this.Tong.Width = 88;
             // 
             // XangXe
             // 
@@ -452,7 +452,7 @@
             this.XangXe.OptionsFilter.ShowEmptyDateFilter = false;
             this.XangXe.Visible = true;
             this.XangXe.VisibleIndex = 6;
-            this.XangXe.Width = 80;
+            this.XangXe.Width = 88;
             // 
             // colBaoHiem
             // 
@@ -477,7 +477,7 @@
             this.colBaoHiem.OptionsFilter.ShowEmptyDateFilter = false;
             this.colBaoHiem.Visible = true;
             this.colBaoHiem.VisibleIndex = 8;
-            this.colBaoHiem.Width = 80;
+            this.colBaoHiem.Width = 88;
             // 
             // TamUng
             // 
@@ -500,7 +500,7 @@
             this.TamUng.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsFilter.ShowEmptyDateFilter = false;
-            this.TamUng.Width = 80;
+            this.TamUng.Width = 85;
             // 
             // ThucNhan
             // 
@@ -526,7 +526,7 @@
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
             this.ThucNhan.VisibleIndex = 9;
-            this.ThucNhan.Width = 80;
+            this.ThucNhan.Width = 88;
             // 
             // KyNhan
             // 
@@ -550,8 +550,6 @@
             this.KyNhan.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.KyNhan.OptionsFilter.ShowEmptyDateFilter = false;
-            this.KyNhan.Visible = true;
-            this.KyNhan.VisibleIndex = 10;
             this.KyNhan.Width = 80;
             // 
             // GhiChu
@@ -560,8 +558,6 @@
             this.GhiChu.FieldName = "GhiChu";
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.OptionsColumn.AllowEdit = false;
-            this.GhiChu.Visible = true;
-            this.GhiChu.VisibleIndex = 11;
             this.GhiChu.Width = 80;
             // 
             // gridControl1

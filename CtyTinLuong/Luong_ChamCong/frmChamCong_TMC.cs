@@ -899,11 +899,10 @@ namespace CtyTinLuong
                  
                 frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_TMC", this);
                 ff.ShowDialog();
-
             }
             catch (Exception ee)
             {
-
+                MessageBox.Show(ee.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

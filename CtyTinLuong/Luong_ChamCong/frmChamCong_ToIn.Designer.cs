@@ -333,7 +333,7 @@ namespace CtyTinLuong
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 0;
-            this.clTenNhanVien.Width = 82;
+            this.clTenNhanVien.Width = 130;
             // 
             // Cong
             // 
@@ -345,7 +345,7 @@ namespace CtyTinLuong
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 1;
-            this.Cong.Width = 39;
+            this.Cong.Width = 65;
             // 
             // clTongLuong
             // 
@@ -456,7 +456,6 @@ namespace CtyTinLuong
             this.Ngay1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay1.Caption = "01";
             this.Ngay1.FieldName = "Ngay1";
-            this.Ngay1.MaxWidth = 35;
             this.Ngay1.MinWidth = 35;
             this.Ngay1.Name = "Ngay1";
             this.Ngay1.OptionsColumn.AllowEdit = false;
@@ -474,7 +473,7 @@ namespace CtyTinLuong
             this.Ngay1.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay1.Visible = true;
             this.Ngay1.VisibleIndex = 2;
-            this.Ngay1.Width = 23;
+            this.Ngay1.Width = 45;
             // 
             // Ngay2
             // 
@@ -483,7 +482,6 @@ namespace CtyTinLuong
             this.Ngay2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay2.Caption = "02";
             this.Ngay2.FieldName = "Ngay2";
-            this.Ngay2.MaxWidth = 35;
             this.Ngay2.MinWidth = 35;
             this.Ngay2.Name = "Ngay2";
             this.Ngay2.OptionsColumn.AllowEdit = false;
@@ -501,7 +499,7 @@ namespace CtyTinLuong
             this.Ngay2.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay2.Visible = true;
             this.Ngay2.VisibleIndex = 3;
-            this.Ngay2.Width = 26;
+            this.Ngay2.Width = 45;
             // 
             // Ngay3
             // 
@@ -510,7 +508,6 @@ namespace CtyTinLuong
             this.Ngay3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay3.Caption = "03";
             this.Ngay3.FieldName = "Ngay3";
-            this.Ngay3.MaxWidth = 35;
             this.Ngay3.MinWidth = 35;
             this.Ngay3.Name = "Ngay3";
             this.Ngay3.OptionsColumn.AllowEdit = false;
@@ -528,7 +525,7 @@ namespace CtyTinLuong
             this.Ngay3.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay3.Visible = true;
             this.Ngay3.VisibleIndex = 4;
-            this.Ngay3.Width = 27;
+            this.Ngay3.Width = 45;
             // 
             // Ngay4
             // 
@@ -537,7 +534,6 @@ namespace CtyTinLuong
             this.Ngay4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay4.Caption = "04";
             this.Ngay4.FieldName = "Ngay4";
-            this.Ngay4.MaxWidth = 35;
             this.Ngay4.MinWidth = 35;
             this.Ngay4.Name = "Ngay4";
             this.Ngay4.OptionsColumn.AllowEdit = false;
@@ -555,7 +551,7 @@ namespace CtyTinLuong
             this.Ngay4.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay4.Visible = true;
             this.Ngay4.VisibleIndex = 5;
-            this.Ngay4.Width = 27;
+            this.Ngay4.Width = 45;
             // 
             // Ngay5
             // 
@@ -564,7 +560,6 @@ namespace CtyTinLuong
             this.Ngay5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay5.Caption = "05";
             this.Ngay5.FieldName = "Ngay5";
-            this.Ngay5.MaxWidth = 35;
             this.Ngay5.MinWidth = 35;
             this.Ngay5.Name = "Ngay5";
             this.Ngay5.OptionsColumn.AllowEdit = false;
@@ -582,7 +577,7 @@ namespace CtyTinLuong
             this.Ngay5.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay5.Visible = true;
             this.Ngay5.VisibleIndex = 6;
-            this.Ngay5.Width = 26;
+            this.Ngay5.Width = 45;
             // 
             // Ngay6
             // 
@@ -591,7 +586,6 @@ namespace CtyTinLuong
             this.Ngay6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay6.Caption = "06";
             this.Ngay6.FieldName = "Ngay6";
-            this.Ngay6.MaxWidth = 35;
             this.Ngay6.MinWidth = 35;
             this.Ngay6.Name = "Ngay6";
             this.Ngay6.OptionsColumn.AllowEdit = false;
@@ -609,7 +603,7 @@ namespace CtyTinLuong
             this.Ngay6.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay6.Visible = true;
             this.Ngay6.VisibleIndex = 7;
-            this.Ngay6.Width = 25;
+            this.Ngay6.Width = 45;
             // 
             // Ngay7
             // 
@@ -618,7 +612,6 @@ namespace CtyTinLuong
             this.Ngay7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay7.Caption = "07";
             this.Ngay7.FieldName = "Ngay7";
-            this.Ngay7.MaxWidth = 35;
             this.Ngay7.MinWidth = 35;
             this.Ngay7.Name = "Ngay7";
             this.Ngay7.OptionsColumn.AllowEdit = false;
@@ -636,7 +629,7 @@ namespace CtyTinLuong
             this.Ngay7.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay7.Visible = true;
             this.Ngay7.VisibleIndex = 8;
-            this.Ngay7.Width = 22;
+            this.Ngay7.Width = 45;
             // 
             // Ngay8
             // 
@@ -645,7 +638,6 @@ namespace CtyTinLuong
             this.Ngay8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay8.Caption = "08";
             this.Ngay8.FieldName = "Ngay8";
-            this.Ngay8.MaxWidth = 35;
             this.Ngay8.MinWidth = 35;
             this.Ngay8.Name = "Ngay8";
             this.Ngay8.OptionsColumn.AllowEdit = false;
@@ -663,7 +655,7 @@ namespace CtyTinLuong
             this.Ngay8.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay8.Visible = true;
             this.Ngay8.VisibleIndex = 9;
-            this.Ngay8.Width = 20;
+            this.Ngay8.Width = 45;
             // 
             // Ngay9
             // 
@@ -672,7 +664,6 @@ namespace CtyTinLuong
             this.Ngay9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay9.Caption = "09";
             this.Ngay9.FieldName = "Ngay9";
-            this.Ngay9.MaxWidth = 35;
             this.Ngay9.MinWidth = 35;
             this.Ngay9.Name = "Ngay9";
             this.Ngay9.OptionsColumn.AllowEdit = false;
@@ -690,7 +681,7 @@ namespace CtyTinLuong
             this.Ngay9.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay9.Visible = true;
             this.Ngay9.VisibleIndex = 10;
-            this.Ngay9.Width = 27;
+            this.Ngay9.Width = 45;
             // 
             // Ngay10
             // 
@@ -699,7 +690,6 @@ namespace CtyTinLuong
             this.Ngay10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay10.Caption = "10";
             this.Ngay10.FieldName = "Ngay10";
-            this.Ngay10.MaxWidth = 35;
             this.Ngay10.MinWidth = 35;
             this.Ngay10.Name = "Ngay10";
             this.Ngay10.OptionsColumn.AllowEdit = false;
@@ -718,7 +708,7 @@ namespace CtyTinLuong
             this.Ngay10.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay10.Visible = true;
             this.Ngay10.VisibleIndex = 11;
-            this.Ngay10.Width = 27;
+            this.Ngay10.Width = 45;
             // 
             // Ngay11
             // 
@@ -727,7 +717,6 @@ namespace CtyTinLuong
             this.Ngay11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay11.Caption = "11";
             this.Ngay11.FieldName = "Ngay11";
-            this.Ngay11.MaxWidth = 35;
             this.Ngay11.MinWidth = 35;
             this.Ngay11.Name = "Ngay11";
             this.Ngay11.OptionsColumn.AllowEdit = false;
@@ -745,7 +734,7 @@ namespace CtyTinLuong
             this.Ngay11.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay11.Visible = true;
             this.Ngay11.VisibleIndex = 12;
-            this.Ngay11.Width = 27;
+            this.Ngay11.Width = 45;
             // 
             // Ngay12
             // 
@@ -754,7 +743,6 @@ namespace CtyTinLuong
             this.Ngay12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay12.Caption = "12";
             this.Ngay12.FieldName = "Ngay12";
-            this.Ngay12.MaxWidth = 35;
             this.Ngay12.MinWidth = 35;
             this.Ngay12.Name = "Ngay12";
             this.Ngay12.OptionsColumn.AllowEdit = false;
@@ -772,7 +760,7 @@ namespace CtyTinLuong
             this.Ngay12.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay12.Visible = true;
             this.Ngay12.VisibleIndex = 13;
-            this.Ngay12.Width = 27;
+            this.Ngay12.Width = 45;
             // 
             // Ngay13
             // 
@@ -781,7 +769,6 @@ namespace CtyTinLuong
             this.Ngay13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay13.Caption = "13";
             this.Ngay13.FieldName = "Ngay13";
-            this.Ngay13.MaxWidth = 35;
             this.Ngay13.MinWidth = 35;
             this.Ngay13.Name = "Ngay13";
             this.Ngay13.OptionsColumn.AllowEdit = false;
@@ -799,7 +786,7 @@ namespace CtyTinLuong
             this.Ngay13.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay13.Visible = true;
             this.Ngay13.VisibleIndex = 14;
-            this.Ngay13.Width = 27;
+            this.Ngay13.Width = 45;
             // 
             // Ngay14
             // 
@@ -808,7 +795,6 @@ namespace CtyTinLuong
             this.Ngay14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay14.Caption = "14";
             this.Ngay14.FieldName = "Ngay14";
-            this.Ngay14.MaxWidth = 35;
             this.Ngay14.MinWidth = 35;
             this.Ngay14.Name = "Ngay14";
             this.Ngay14.OptionsColumn.AllowEdit = false;
@@ -826,7 +812,7 @@ namespace CtyTinLuong
             this.Ngay14.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay14.Visible = true;
             this.Ngay14.VisibleIndex = 15;
-            this.Ngay14.Width = 27;
+            this.Ngay14.Width = 45;
             // 
             // Ngay15
             // 
@@ -835,7 +821,6 @@ namespace CtyTinLuong
             this.Ngay15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay15.Caption = "15";
             this.Ngay15.FieldName = "Ngay15";
-            this.Ngay15.MaxWidth = 35;
             this.Ngay15.MinWidth = 35;
             this.Ngay15.Name = "Ngay15";
             this.Ngay15.OptionsColumn.AllowEdit = false;
@@ -853,7 +838,7 @@ namespace CtyTinLuong
             this.Ngay15.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay15.Visible = true;
             this.Ngay15.VisibleIndex = 16;
-            this.Ngay15.Width = 27;
+            this.Ngay15.Width = 45;
             // 
             // Ngay16
             // 
@@ -862,7 +847,6 @@ namespace CtyTinLuong
             this.Ngay16.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay16.Caption = "16";
             this.Ngay16.FieldName = "Ngay16";
-            this.Ngay16.MaxWidth = 35;
             this.Ngay16.MinWidth = 35;
             this.Ngay16.Name = "Ngay16";
             this.Ngay16.OptionsColumn.AllowEdit = false;
@@ -880,7 +864,7 @@ namespace CtyTinLuong
             this.Ngay16.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay16.Visible = true;
             this.Ngay16.VisibleIndex = 17;
-            this.Ngay16.Width = 27;
+            this.Ngay16.Width = 45;
             // 
             // Ngay17
             // 
@@ -889,7 +873,6 @@ namespace CtyTinLuong
             this.Ngay17.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay17.Caption = "17";
             this.Ngay17.FieldName = "Ngay17";
-            this.Ngay17.MaxWidth = 35;
             this.Ngay17.MinWidth = 35;
             this.Ngay17.Name = "Ngay17";
             this.Ngay17.OptionsColumn.AllowEdit = false;
@@ -907,7 +890,7 @@ namespace CtyTinLuong
             this.Ngay17.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay17.Visible = true;
             this.Ngay17.VisibleIndex = 18;
-            this.Ngay17.Width = 24;
+            this.Ngay17.Width = 45;
             // 
             // Ngay18
             // 
@@ -916,7 +899,6 @@ namespace CtyTinLuong
             this.Ngay18.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay18.Caption = "18";
             this.Ngay18.FieldName = "Ngay18";
-            this.Ngay18.MaxWidth = 35;
             this.Ngay18.MinWidth = 35;
             this.Ngay18.Name = "Ngay18";
             this.Ngay18.OptionsColumn.AllowEdit = false;
@@ -934,7 +916,7 @@ namespace CtyTinLuong
             this.Ngay18.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay18.Visible = true;
             this.Ngay18.VisibleIndex = 19;
-            this.Ngay18.Width = 27;
+            this.Ngay18.Width = 45;
             // 
             // Ngay19
             // 
@@ -943,7 +925,6 @@ namespace CtyTinLuong
             this.Ngay19.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay19.Caption = "19";
             this.Ngay19.FieldName = "Ngay19";
-            this.Ngay19.MaxWidth = 35;
             this.Ngay19.MinWidth = 35;
             this.Ngay19.Name = "Ngay19";
             this.Ngay19.OptionsColumn.AllowEdit = false;
@@ -961,7 +942,7 @@ namespace CtyTinLuong
             this.Ngay19.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay19.Visible = true;
             this.Ngay19.VisibleIndex = 20;
-            this.Ngay19.Width = 22;
+            this.Ngay19.Width = 45;
             // 
             // Ngay20
             // 
@@ -970,7 +951,6 @@ namespace CtyTinLuong
             this.Ngay20.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay20.Caption = "20";
             this.Ngay20.FieldName = "Ngay20";
-            this.Ngay20.MaxWidth = 35;
             this.Ngay20.MinWidth = 35;
             this.Ngay20.Name = "Ngay20";
             this.Ngay20.OptionsColumn.AllowEdit = false;
@@ -988,7 +968,7 @@ namespace CtyTinLuong
             this.Ngay20.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay20.Visible = true;
             this.Ngay20.VisibleIndex = 21;
-            this.Ngay20.Width = 20;
+            this.Ngay20.Width = 45;
             // 
             // Ngay21
             // 
@@ -997,7 +977,6 @@ namespace CtyTinLuong
             this.Ngay21.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay21.Caption = "21";
             this.Ngay21.FieldName = "Ngay21";
-            this.Ngay21.MaxWidth = 35;
             this.Ngay21.MinWidth = 35;
             this.Ngay21.Name = "Ngay21";
             this.Ngay21.OptionsColumn.AllowEdit = false;
@@ -1015,7 +994,7 @@ namespace CtyTinLuong
             this.Ngay21.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay21.Visible = true;
             this.Ngay21.VisibleIndex = 22;
-            this.Ngay21.Width = 27;
+            this.Ngay21.Width = 45;
             // 
             // Ngay22
             // 
@@ -1024,7 +1003,6 @@ namespace CtyTinLuong
             this.Ngay22.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay22.Caption = "22";
             this.Ngay22.FieldName = "Ngay22";
-            this.Ngay22.MaxWidth = 35;
             this.Ngay22.MinWidth = 35;
             this.Ngay22.Name = "Ngay22";
             this.Ngay22.OptionsColumn.AllowEdit = false;
@@ -1042,7 +1020,7 @@ namespace CtyTinLuong
             this.Ngay22.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay22.Visible = true;
             this.Ngay22.VisibleIndex = 23;
-            this.Ngay22.Width = 27;
+            this.Ngay22.Width = 45;
             // 
             // Ngay23
             // 
@@ -1051,7 +1029,6 @@ namespace CtyTinLuong
             this.Ngay23.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay23.Caption = "23";
             this.Ngay23.FieldName = "Ngay23";
-            this.Ngay23.MaxWidth = 35;
             this.Ngay23.MinWidth = 35;
             this.Ngay23.Name = "Ngay23";
             this.Ngay23.OptionsColumn.AllowEdit = false;
@@ -1069,7 +1046,7 @@ namespace CtyTinLuong
             this.Ngay23.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay23.Visible = true;
             this.Ngay23.VisibleIndex = 24;
-            this.Ngay23.Width = 25;
+            this.Ngay23.Width = 45;
             // 
             // Ngay24
             // 
@@ -1078,7 +1055,6 @@ namespace CtyTinLuong
             this.Ngay24.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay24.Caption = "24";
             this.Ngay24.FieldName = "Ngay24";
-            this.Ngay24.MaxWidth = 35;
             this.Ngay24.MinWidth = 35;
             this.Ngay24.Name = "Ngay24";
             this.Ngay24.OptionsColumn.AllowEdit = false;
@@ -1096,7 +1072,7 @@ namespace CtyTinLuong
             this.Ngay24.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay24.Visible = true;
             this.Ngay24.VisibleIndex = 25;
-            this.Ngay24.Width = 27;
+            this.Ngay24.Width = 45;
             // 
             // Ngay25
             // 
@@ -1105,7 +1081,6 @@ namespace CtyTinLuong
             this.Ngay25.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay25.Caption = "25";
             this.Ngay25.FieldName = "Ngay25";
-            this.Ngay25.MaxWidth = 35;
             this.Ngay25.MinWidth = 35;
             this.Ngay25.Name = "Ngay25";
             this.Ngay25.OptionsColumn.AllowEdit = false;
@@ -1123,7 +1098,7 @@ namespace CtyTinLuong
             this.Ngay25.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay25.Visible = true;
             this.Ngay25.VisibleIndex = 26;
-            this.Ngay25.Width = 21;
+            this.Ngay25.Width = 45;
             // 
             // Ngay26
             // 
@@ -1132,7 +1107,6 @@ namespace CtyTinLuong
             this.Ngay26.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay26.Caption = "26";
             this.Ngay26.FieldName = "Ngay26";
-            this.Ngay26.MaxWidth = 35;
             this.Ngay26.MinWidth = 35;
             this.Ngay26.Name = "Ngay26";
             this.Ngay26.OptionsColumn.AllowEdit = false;
@@ -1150,7 +1124,7 @@ namespace CtyTinLuong
             this.Ngay26.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay26.Visible = true;
             this.Ngay26.VisibleIndex = 27;
-            this.Ngay26.Width = 27;
+            this.Ngay26.Width = 45;
             // 
             // Ngay27
             // 
@@ -1159,7 +1133,6 @@ namespace CtyTinLuong
             this.Ngay27.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay27.Caption = "27";
             this.Ngay27.FieldName = "Ngay27";
-            this.Ngay27.MaxWidth = 35;
             this.Ngay27.MinWidth = 35;
             this.Ngay27.Name = "Ngay27";
             this.Ngay27.OptionsColumn.AllowEdit = false;
@@ -1177,7 +1150,7 @@ namespace CtyTinLuong
             this.Ngay27.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay27.Visible = true;
             this.Ngay27.VisibleIndex = 28;
-            this.Ngay27.Width = 27;
+            this.Ngay27.Width = 45;
             // 
             // Ngay28
             // 
@@ -1186,7 +1159,6 @@ namespace CtyTinLuong
             this.Ngay28.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay28.Caption = "28";
             this.Ngay28.FieldName = "Ngay28";
-            this.Ngay28.MaxWidth = 35;
             this.Ngay28.MinWidth = 35;
             this.Ngay28.Name = "Ngay28";
             this.Ngay28.OptionsColumn.AllowEdit = false;
@@ -1204,7 +1176,7 @@ namespace CtyTinLuong
             this.Ngay28.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay28.Visible = true;
             this.Ngay28.VisibleIndex = 29;
-            this.Ngay28.Width = 20;
+            this.Ngay28.Width = 45;
             // 
             // Ngay29
             // 
@@ -1213,7 +1185,6 @@ namespace CtyTinLuong
             this.Ngay29.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay29.Caption = "29";
             this.Ngay29.FieldName = "Ngay29";
-            this.Ngay29.MaxWidth = 35;
             this.Ngay29.MinWidth = 35;
             this.Ngay29.Name = "Ngay29";
             this.Ngay29.OptionsColumn.AllowEdit = false;
@@ -1231,7 +1202,7 @@ namespace CtyTinLuong
             this.Ngay29.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay29.Visible = true;
             this.Ngay29.VisibleIndex = 30;
-            this.Ngay29.Width = 20;
+            this.Ngay29.Width = 45;
             // 
             // Ngay30
             // 
@@ -1240,7 +1211,6 @@ namespace CtyTinLuong
             this.Ngay30.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay30.Caption = "30";
             this.Ngay30.FieldName = "Ngay30";
-            this.Ngay30.MaxWidth = 35;
             this.Ngay30.MinWidth = 35;
             this.Ngay30.Name = "Ngay30";
             this.Ngay30.OptionsColumn.AllowEdit = false;
@@ -1258,7 +1228,7 @@ namespace CtyTinLuong
             this.Ngay30.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay30.Visible = true;
             this.Ngay30.VisibleIndex = 31;
-            this.Ngay30.Width = 21;
+            this.Ngay30.Width = 45;
             // 
             // Ngay31
             // 
@@ -1267,7 +1237,6 @@ namespace CtyTinLuong
             this.Ngay31.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay31.Caption = "31";
             this.Ngay31.FieldName = "Ngay31";
-            this.Ngay31.MaxWidth = 35;
             this.Ngay31.MinWidth = 35;
             this.Ngay31.Name = "Ngay31";
             this.Ngay31.OptionsColumn.AllowEdit = false;
@@ -1285,7 +1254,7 @@ namespace CtyTinLuong
             this.Ngay31.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay31.Visible = true;
             this.Ngay31.VisibleIndex = 32;
-            this.Ngay31.Width = 20;
+            this.Ngay31.Width = 45;
             // 
             // clGuiDuLieu
             // 
@@ -1305,13 +1274,13 @@ namespace CtyTinLuong
             this.Tong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Tong.Caption = "TỔNG";
             this.Tong.FieldName = "Tong";
-            this.Tong.MaxWidth = 50;
+            this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.Tong.MinWidth = 50;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 33;
+            this.Tong.VisibleIndex = 34;
             this.Tong.Width = 50;
             // 
             // KyNhan
@@ -1321,8 +1290,6 @@ namespace CtyTinLuong
             this.KyNhan.Name = "KyNhan";
             this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.KyNhan.Visible = true;
-            this.KyNhan.VisibleIndex = 35;
             // 
             // gridColumn2
             // 
@@ -1336,7 +1303,7 @@ namespace CtyTinLuong
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 34;
+            this.gridColumn2.VisibleIndex = 33;
             this.gridColumn2.Width = 40;
             // 
             // gridControl1
