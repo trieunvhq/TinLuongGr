@@ -24,7 +24,7 @@ namespace CtyTinLuong
         public int miiID_ChamCong;
         public string msTenNhanVien;
 
-        public int _nam, _thang, _id_bophan;
+        public int _nam, _thang, _id_bophan, _indexTongCa1 = 0;
         public string _ten_vthh;
         private DataTable _data;
         private DataTable _data_Ca2;
@@ -40,7 +40,6 @@ namespace CtyTinLuong
             _frmQLLCC = frmQLLCC;
             _id_bophan = id_bophan;
             InitializeComponent();
-            ColSanLuong.Caption = "CÔNG/\nTĂNG/SL";
             ColCongBaoHiem.Caption = "CỘNG\nBẢO HIỂM";
             ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
             ColTongTien.Caption = "TỔNG\nLƯƠNG";
@@ -97,11 +96,11 @@ namespace CtyTinLuong
             {
                 //Lấy dữ liệu ca1
                 _data = clsThin_.Tr_BTTL_PMC(_nam, _thang, _id_bophan, true);
-
+                _indexTongCa1 = _data.Rows.Count;
                 //Lấy dữ liệu ca2
                 _data_Ca2 = clsThin_.Tr_BTTL_PMC(_nam, _thang, _id_bophan, false);
 
-                int SttCa1 = 1;
+                int SttCa1 = 0;
                 int ID_congNhanRoot = -1;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
@@ -154,7 +153,8 @@ namespace CtyTinLuong
                         ID_congNhanRoot = ID_congNhan;
 
                         //STT
-                        _data.Rows[i]["STT"] = SttCa1; SttCa1++;
+                        SttCa1++;
+                        _data.Rows[i]["STT"] = SttCa1; 
 
                         //
                         luongtrachnhiem_Ca1 = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
@@ -248,7 +248,7 @@ namespace CtyTinLuong
                 _data.Rows.Add(_ravi);
 
                 //Ca 2:
-                int SttCa2 = 1;
+                int SttCa2 = 0;
                 ID_congNhanRoot = -1;
                 for (int i = 0; i < _data_Ca2.Rows.Count; ++i)
                 {
@@ -302,7 +302,8 @@ namespace CtyTinLuong
                         ID_congNhanRoot = ID_congNhan;
 
                         //STT
-                        _ravi_Ca2["STT"] = SttCa2; SttCa2++;
+                        SttCa2++;
+                        _ravi_Ca2["STT"] = SttCa2; 
 
                         //
                         luongtrachnhiem_Ca2 = CheckString.ConvertToDouble_My(_data_Ca2.Rows[i]["LuongTrachNhiem_Value"].ToString());
@@ -500,7 +501,7 @@ namespace CtyTinLuong
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1)
+            if (e.RowHandle == _data.Rows.Count - 1 || e.RowHandle == _indexTongCa1)
             {
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             }
