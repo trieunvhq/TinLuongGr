@@ -503,5 +503,39 @@ namespace CtyTinLuong
             }
             return temp_;
         }
+
+        public static string ChuanHoaHoTen(string FullName)
+        {
+            string Result = "";
+            FullName = FullName.Trim();
+
+            /* 
+             * Trong khi còn tìm thấy 2 khoảng trắng
+             * thì thực hiện thay thế 2 khoảng trắng bằng 1 khoảng trắng
+             */
+            while (FullName.IndexOf("  ") != -1)
+            {
+                FullName = FullName.Replace("  ", " ");
+            }
+            /*
+             * Cắt chuỗi họ tên ra thành mảng các từ.
+             * Sau đó duyệt mảng để chuẩn hoá từng từ một.
+             * Khi duyệt mỗi từ ta thực hiện cắt ra chữ cái đầu trên và lưu trong biến FirstChar
+             * Cắt các chữ cái còn lại và lưu trong biến OtherChar.
+             * Thực hiện viết hoa chữ cái đầu và viết thường các chữ cái còn lại.
+             * Cuối cùng là lưu chữ vừa chuẩn hoá vào biến Result.
+             */
+            string[] SubName = FullName.Split(' ');
+
+            for (int i = 0; i < SubName.Length; i++)
+            {
+                string FirstChar = SubName[i].Substring(0, 1);
+                string OtherChar = SubName[i].Substring(1);
+                SubName[i] = FirstChar.ToUpper() + OtherChar.ToLower();
+                Result += SubName[i] + " ";
+            }
+
+            return Result;
+        }
     }
 }

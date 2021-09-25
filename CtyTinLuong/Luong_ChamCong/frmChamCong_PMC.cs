@@ -988,6 +988,7 @@ namespace CtyTinLuong
                 if (isGuiThanhCong)
                 {
                     MessageBox.Show("Lưu dữ liệu chấm công thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData(false, radioCa1.Checked);
                 }
                 else
                 {
