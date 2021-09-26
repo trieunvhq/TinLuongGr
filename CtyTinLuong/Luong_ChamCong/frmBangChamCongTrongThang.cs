@@ -1107,7 +1107,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmChamCongToGapDan ff = new frmChamCongToGapDan(id_bophan_);
+            frmChamCong_TGD ff = new frmChamCong_TGD(id_bophan_);
             ff.Show();
         }
         private int KiemTraTenBoPhan(string tenbophan)

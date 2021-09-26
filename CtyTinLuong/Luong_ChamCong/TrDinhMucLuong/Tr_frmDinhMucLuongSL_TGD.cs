@@ -87,9 +87,9 @@ namespace CtyTinLuong
                 {
                     switch (_Type)
                     {
-                        case "frmChamCongToGapDan":
+                        case "frmChamCong_TGD":
                             this.Close(); 
-                            ((frmChamCongToGapDan)_frm).Load_DinhMuc
+                            ((frmChamCong_TGD)_frm).Load_DinhMuc
                                 (Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_DinhMucLuong).ToString())
                                 , gridView1.GetFocusedRowCellValue(MaDinhMucLuong).ToString(),
                                 _ID_CongNhan);

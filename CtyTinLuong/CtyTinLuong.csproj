@@ -179,7 +179,13 @@
     <Compile Include="frmtestcopy.Designer.cs">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\clsTr_DinhMucLuongSL_TGD.cs" />
+    <Compile Include="Luong_ChamCong\frmChamCong_TGD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TGD.Designer.cs">
+      <DependentUpon>frmChamCong_TGD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_DinhMucLuongSL_TGD.cs" />
     <Compile Include="Luong_ChamCong\frmChamCong_TMC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -463,11 +469,11 @@
     <Compile Include="Luong_ChamCong\frmBTTL_TMC_CT.Designer.cs">
       <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCongToGapDan.cs">
+    <Compile Include="Luong_ChamCong\frmChamCong_TGD_Old.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCongToGapDan.Designer.cs">
-      <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\frmChamCong_TGD_Old.Designer.cs">
+      <DependentUpon>frmChamCong_TGD_Old.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TrgCa.cs">
       <SubType>UserControl</SubType>
@@ -2290,6 +2296,9 @@
     <EmbeddedResource Include="frmtestcopy.resx">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TGD.resx">
+      <DependentUpon>frmChamCong_TGD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TMC.resx">
       <DependentUpon>frmChamCong_TMC.cs</DependentUpon>
     </EmbeddedResource>
@@ -2402,8 +2411,8 @@
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TMC_CT.resx">
       <DependentUpon>frmBTTL_TMC_CT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\frmChamCongToGapDan.resx">
-      <DependentUpon>frmChamCongToGapDan.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TGD_Old.resx">
+      <DependentUpon>frmChamCong_TGD_Old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_xxxxx.resx">
       <DependentUpon>frmChamCong_xxxxx.cs</DependentUpon>

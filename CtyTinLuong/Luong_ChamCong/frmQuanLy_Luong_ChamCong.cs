@@ -299,7 +299,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Tổ Gấp dán");
             if (id_bophan_ == 0) return;
 
-            frmChamCongToGapDan frm = new frmChamCongToGapDan(id_bophan_, this);
+            frmChamCong_TGD frm = new frmChamCong_TGD(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();

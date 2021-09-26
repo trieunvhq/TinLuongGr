@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCongToGapDan : UserControl
+    public partial class frmChamCong_TGD_Old : UserControl
     {
         public int _nam, _thang, _id_bophan, _id_vthh, _ID_DinhMucLuong_CongNhat;
         public string _ten_vthh, _MaDinhMucLuongCongNhat;
@@ -30,7 +30,7 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
-        public frmChamCongToGapDan(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC = null)
+        public frmChamCong_TGD_Old(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC = null)
         {
             _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0;
@@ -538,7 +538,7 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
-        private void frmChamCongToGapDan_Load(object sender, EventArgs e)
+        private void frmChamCong_TGD_Old_Load(object sender, EventArgs e)
         {
         }
 
