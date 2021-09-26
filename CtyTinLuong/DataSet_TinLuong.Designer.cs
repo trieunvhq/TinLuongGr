@@ -8079,40 +8079,40 @@ namespace CtyTinLuong {
                         string ID_CongNhan, 
                         string Thang, 
                         string Nam, 
-                        double Ngay1, 
-                        double Ngay2, 
-                        double Ngay3, 
-                        double Ngay4, 
-                        double Ngay5, 
-                        double Ngay6, 
-                        double Ngay7, 
-                        double Ngay8, 
-                        double Ngay9, 
-                        double Ngay10, 
-                        double Ngay11, 
-                        double Ngay12, 
-                        double Ngay13, 
-                        double Ngay14, 
-                        double Ngay15, 
-                        double Ngay16, 
-                        double Ngay17, 
-                        double Ngay18, 
-                        double Ngay19, 
-                        double Ngay20, 
-                        double Ngay21, 
-                        double Ngay22, 
-                        double Ngay23, 
-                        double Ngay24, 
-                        double Ngay25, 
-                        double Ngay26, 
-                        double Ngay27, 
-                        double Ngay28, 
-                        double Ngay29, 
-                        double Ngay30, 
-                        double Ngay31, 
+                        string Ngay1, 
+                        string Ngay2, 
+                        string Ngay3, 
+                        string Ngay4, 
+                        string Ngay5, 
+                        string Ngay6, 
+                        string Ngay7, 
+                        string Ngay8, 
+                        string Ngay9, 
+                        string Ngay10, 
+                        string Ngay11, 
+                        string Ngay12, 
+                        string Ngay13, 
+                        string Ngay14, 
+                        string Ngay15, 
+                        string Ngay16, 
+                        string Ngay17, 
+                        string Ngay18, 
+                        string Ngay19, 
+                        string Ngay20, 
+                        string Ngay21, 
+                        string Ngay22, 
+                        string Ngay23, 
+                        string Ngay24, 
+                        string Ngay25, 
+                        string Ngay26, 
+                        string Ngay27, 
+                        string Ngay28, 
+                        string Ngay29, 
+                        string Ngay30, 
+                        string Ngay31, 
                         string SanLuong, 
                         string ID_NhanSu, 
-                        double Tong, 
+                        string Tong, 
                         string MaNhanVien, 
                         string TenNhanVien, 
                         string TenVTHH, 
@@ -8120,8 +8120,8 @@ namespace CtyTinLuong {
                         string ID_VTHH, 
                         string ID_DinhMuc_Luong_SanLuong, 
                         string MaDinhMuc, 
-                        double DinhMuc_KhongTang, 
-                        double DinhMuc_Tang, 
+                        string DinhMuc_KhongTang, 
+                        string DinhMuc_Tang, 
                         string Cong, 
                         string STT, 
                         string MaDinhMucLuongCongNhat, 
@@ -8265,73 +8265,73 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnThang);
                 this.columnNam = new global::System.Data.DataColumn("Nam", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNam);
-                this.columnNgay1 = new global::System.Data.DataColumn("Ngay1", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay1 = new global::System.Data.DataColumn("Ngay1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay1);
-                this.columnNgay2 = new global::System.Data.DataColumn("Ngay2", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay2 = new global::System.Data.DataColumn("Ngay2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay2);
-                this.columnNgay3 = new global::System.Data.DataColumn("Ngay3", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay3 = new global::System.Data.DataColumn("Ngay3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay3);
-                this.columnNgay4 = new global::System.Data.DataColumn("Ngay4", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay4 = new global::System.Data.DataColumn("Ngay4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay4);
-                this.columnNgay5 = new global::System.Data.DataColumn("Ngay5", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay5 = new global::System.Data.DataColumn("Ngay5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay5);
-                this.columnNgay6 = new global::System.Data.DataColumn("Ngay6", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay6 = new global::System.Data.DataColumn("Ngay6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay6);
-                this.columnNgay7 = new global::System.Data.DataColumn("Ngay7", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay7 = new global::System.Data.DataColumn("Ngay7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay7);
-                this.columnNgay8 = new global::System.Data.DataColumn("Ngay8", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay8 = new global::System.Data.DataColumn("Ngay8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay8);
-                this.columnNgay9 = new global::System.Data.DataColumn("Ngay9", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay9 = new global::System.Data.DataColumn("Ngay9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay9);
-                this.columnNgay10 = new global::System.Data.DataColumn("Ngay10", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay10 = new global::System.Data.DataColumn("Ngay10", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay10);
-                this.columnNgay11 = new global::System.Data.DataColumn("Ngay11", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay11 = new global::System.Data.DataColumn("Ngay11", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay11);
-                this.columnNgay12 = new global::System.Data.DataColumn("Ngay12", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay12 = new global::System.Data.DataColumn("Ngay12", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay12);
-                this.columnNgay13 = new global::System.Data.DataColumn("Ngay13", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay13 = new global::System.Data.DataColumn("Ngay13", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay13);
-                this.columnNgay14 = new global::System.Data.DataColumn("Ngay14", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay14 = new global::System.Data.DataColumn("Ngay14", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay14);
-                this.columnNgay15 = new global::System.Data.DataColumn("Ngay15", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay15 = new global::System.Data.DataColumn("Ngay15", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay15);
-                this.columnNgay16 = new global::System.Data.DataColumn("Ngay16", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay16 = new global::System.Data.DataColumn("Ngay16", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay16);
-                this.columnNgay17 = new global::System.Data.DataColumn("Ngay17", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay17 = new global::System.Data.DataColumn("Ngay17", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay17);
-                this.columnNgay18 = new global::System.Data.DataColumn("Ngay18", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay18 = new global::System.Data.DataColumn("Ngay18", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay18);
-                this.columnNgay19 = new global::System.Data.DataColumn("Ngay19", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay19 = new global::System.Data.DataColumn("Ngay19", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay19);
-                this.columnNgay20 = new global::System.Data.DataColumn("Ngay20", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay20 = new global::System.Data.DataColumn("Ngay20", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay20);
-                this.columnNgay21 = new global::System.Data.DataColumn("Ngay21", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay21 = new global::System.Data.DataColumn("Ngay21", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay21);
-                this.columnNgay22 = new global::System.Data.DataColumn("Ngay22", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay22 = new global::System.Data.DataColumn("Ngay22", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay22);
-                this.columnNgay23 = new global::System.Data.DataColumn("Ngay23", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay23 = new global::System.Data.DataColumn("Ngay23", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay23);
-                this.columnNgay24 = new global::System.Data.DataColumn("Ngay24", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay24 = new global::System.Data.DataColumn("Ngay24", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay24);
-                this.columnNgay25 = new global::System.Data.DataColumn("Ngay25", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay25 = new global::System.Data.DataColumn("Ngay25", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay25);
-                this.columnNgay26 = new global::System.Data.DataColumn("Ngay26", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay26 = new global::System.Data.DataColumn("Ngay26", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay26);
-                this.columnNgay27 = new global::System.Data.DataColumn("Ngay27", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay27 = new global::System.Data.DataColumn("Ngay27", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay27);
-                this.columnNgay28 = new global::System.Data.DataColumn("Ngay28", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay28 = new global::System.Data.DataColumn("Ngay28", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay28);
-                this.columnNgay29 = new global::System.Data.DataColumn("Ngay29", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay29 = new global::System.Data.DataColumn("Ngay29", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay29);
-                this.columnNgay30 = new global::System.Data.DataColumn("Ngay30", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay30 = new global::System.Data.DataColumn("Ngay30", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay30);
-                this.columnNgay31 = new global::System.Data.DataColumn("Ngay31", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnNgay31 = new global::System.Data.DataColumn("Ngay31", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgay31);
                 this.columnSanLuong = new global::System.Data.DataColumn("SanLuong", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSanLuong);
                 this.columnID_NhanSu = new global::System.Data.DataColumn("ID_NhanSu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_NhanSu);
-                this.columnTong = new global::System.Data.DataColumn("Tong", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnTong = new global::System.Data.DataColumn("Tong", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTong);
                 this.columnMaNhanVien = new global::System.Data.DataColumn("MaNhanVien", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaNhanVien);
@@ -8347,9 +8347,9 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnID_DinhMuc_Luong_SanLuong);
                 this.columnMaDinhMuc = new global::System.Data.DataColumn("MaDinhMuc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaDinhMuc);
-                this.columnDinhMuc_KhongTang = new global::System.Data.DataColumn("DinhMuc_KhongTang", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnDinhMuc_KhongTang = new global::System.Data.DataColumn("DinhMuc_KhongTang", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDinhMuc_KhongTang);
-                this.columnDinhMuc_Tang = new global::System.Data.DataColumn("DinhMuc_Tang", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnDinhMuc_Tang = new global::System.Data.DataColumn("DinhMuc_Tang", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDinhMuc_Tang);
                 this.columnCong = new global::System.Data.DataColumn("Cong", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCong);
@@ -20816,10 +20816,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay1 {
+            public string Ngay1 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay1Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay1\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20832,10 +20832,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay2 {
+            public string Ngay2 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay2Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay2\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20848,10 +20848,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay3 {
+            public string Ngay3 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay3Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay3Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay3\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20864,10 +20864,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay4 {
+            public string Ngay4 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay4Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay4Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay4\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20880,10 +20880,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay5 {
+            public string Ngay5 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay5Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay5Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay5\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20896,10 +20896,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay6 {
+            public string Ngay6 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay6Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay6Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay6\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20912,10 +20912,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay7 {
+            public string Ngay7 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay7Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay7Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay7\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20928,10 +20928,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay8 {
+            public string Ngay8 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay8Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay8Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay8\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20944,10 +20944,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay9 {
+            public string Ngay9 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay9Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay9Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay9\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20960,10 +20960,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay10 {
+            public string Ngay10 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay10Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay10Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay10\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20976,10 +20976,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay11 {
+            public string Ngay11 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay11Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay11Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay11\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -20992,10 +20992,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay12 {
+            public string Ngay12 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay12Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay12Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay12\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21008,10 +21008,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay13 {
+            public string Ngay13 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay13Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay13Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay13\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21024,10 +21024,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay14 {
+            public string Ngay14 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay14Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay14Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay14\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21040,10 +21040,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay15 {
+            public string Ngay15 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay15Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay15Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay15\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21056,10 +21056,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay16 {
+            public string Ngay16 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay16Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay16Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay16\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21072,10 +21072,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay17 {
+            public string Ngay17 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay17Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay17Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay17\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21088,10 +21088,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay18 {
+            public string Ngay18 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay18Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay18Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay18\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21104,10 +21104,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay19 {
+            public string Ngay19 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay19Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay19Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay19\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21120,10 +21120,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay20 {
+            public string Ngay20 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay20Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay20Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay20\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21136,10 +21136,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay21 {
+            public string Ngay21 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay21Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay21Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay21\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21152,10 +21152,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay22 {
+            public string Ngay22 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay22Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay22Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay22\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21168,10 +21168,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay23 {
+            public string Ngay23 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay23Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay23Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay23\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21184,10 +21184,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay24 {
+            public string Ngay24 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay24Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay24Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay24\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21200,10 +21200,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay25 {
+            public string Ngay25 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay25Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay25Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay25\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21216,10 +21216,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay26 {
+            public string Ngay26 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay26Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay26Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay26\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21232,10 +21232,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay27 {
+            public string Ngay27 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay27Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay27Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay27\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21248,10 +21248,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay28 {
+            public string Ngay28 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay28Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay28Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay28\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21264,10 +21264,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay29 {
+            public string Ngay29 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay29Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay29Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay29\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21280,10 +21280,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay30 {
+            public string Ngay30 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay30Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay30Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay30\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21296,10 +21296,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Ngay31 {
+            public string Ngay31 {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.Ngay31Column]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.Ngay31Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Ngay31\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21345,10 +21345,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Tong {
+            public string Tong {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.TongColumn]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.TongColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Tong\' in table \'tbCongNhatChamCongToGapDan\' is DBNull.", e);
@@ -21477,10 +21477,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double DinhMuc_KhongTang {
+            public string DinhMuc_KhongTang {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.DinhMuc_KhongTangColumn]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.DinhMuc_KhongTangColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DinhMuc_KhongTang\' in table \'tbCongNhatChamCongToGapDan\' is" +
@@ -21494,10 +21494,10 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double DinhMuc_Tang {
+            public string DinhMuc_Tang {
                 get {
                     try {
-                        return ((double)(this[this.tabletbCongNhatChamCongToGapDan.DinhMuc_TangColumn]));
+                        return ((string)(this[this.tabletbCongNhatChamCongToGapDan.DinhMuc_TangColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DinhMuc_Tang\' in table \'tbCongNhatChamCongToGapDan\' is DBNu" +

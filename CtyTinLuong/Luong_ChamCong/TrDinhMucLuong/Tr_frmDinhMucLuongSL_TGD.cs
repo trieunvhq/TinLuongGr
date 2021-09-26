@@ -32,6 +32,8 @@ namespace CtyTinLuong
             _ID_CongNhan = -1;
             _Type = "";
             InitializeComponent();
+
+            MessageBox.Show("dsflkfsssssssssssssss");
         }
         private object _frm;
         public Tr_frmDinhMucLuongSL_TGD(int id_nhanvien, string type, object frm)

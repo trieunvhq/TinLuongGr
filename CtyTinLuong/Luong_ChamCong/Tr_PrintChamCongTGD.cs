@@ -14,7 +14,6 @@ namespace CtyTinLuong.Luong_ChamCong
         List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
 
         public Tr_PrintChamCongTGD(int thang, int nam)
         {
@@ -120,39 +119,6 @@ namespace CtyTinLuong.Luong_ChamCong
             Ds_Ngay_Header.Add(ng29);
             Ds_Ngay_Header.Add(ng30);
             Ds_Ngay_Header.Add(ng31);
-
-            //
-            Ds_Ngay_Footer.Add(tg1);
-            Ds_Ngay_Footer.Add(tg2);
-            Ds_Ngay_Footer.Add(tg3);
-            Ds_Ngay_Footer.Add(tg4);
-            Ds_Ngay_Footer.Add(tg5);
-            Ds_Ngay_Footer.Add(tg6);
-            Ds_Ngay_Footer.Add(tg7);
-            Ds_Ngay_Footer.Add(tg8);
-            Ds_Ngay_Footer.Add(tg9);
-            Ds_Ngay_Footer.Add(tg10);
-            Ds_Ngay_Footer.Add(tg11);
-            Ds_Ngay_Footer.Add(tg12);
-            Ds_Ngay_Footer.Add(tg13);
-            Ds_Ngay_Footer.Add(tg14);
-            Ds_Ngay_Footer.Add(tg15);
-            Ds_Ngay_Footer.Add(tg16);
-            Ds_Ngay_Footer.Add(tg17);
-            Ds_Ngay_Footer.Add(tg18);
-            Ds_Ngay_Footer.Add(tg19);
-            Ds_Ngay_Footer.Add(tg20);
-            Ds_Ngay_Footer.Add(tg21);
-            Ds_Ngay_Footer.Add(tg22);
-            Ds_Ngay_Footer.Add(tg23);
-            Ds_Ngay_Footer.Add(tg24);
-            Ds_Ngay_Footer.Add(tg25);
-            Ds_Ngay_Footer.Add(tg26);
-            Ds_Ngay_Footer.Add(tg27);
-            Ds_Ngay_Footer.Add(tg28);
-            Ds_Ngay_Footer.Add(tg29);
-            Ds_Ngay_Footer.Add(tg30);
-            Ds_Ngay_Footer.Add(tg31);
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -240,7 +206,6 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     xrTable2.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable3.DeleteColumn(tg31);
                     _flag_31 = "deleted";
                 }
 
@@ -249,7 +214,6 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     xrTable2.DeleteColumn(ng30);
                     xrTable1.DeleteColumn(Ngay30);
-                    xrTable3.DeleteColumn(tg30);
                     _flag_30 = "deleted";
                 }
 
@@ -258,14 +222,13 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     xrTable2.DeleteColumn(ng29);
                     xrTable1.DeleteColumn(Ngay29);
-                    xrTable3.DeleteColumn(tg29);
                     _flag_29 = "deleted";
                 }
 
                 //
                 //
-                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)139.93;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)128.31;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)139.93;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)128.31;
                 //
                 float tmp = 0;
                 for (int i = 0; i < ngaycuathang_; ++i)
@@ -273,7 +236,6 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_NgayTitle[i].WidthF = (float)27.233;
                     Ds_Ngay_Header[i].WidthF = (float)27.233;
                     Ds_Ngay[i].WidthF = (float)27.233;
-                    Ds_Ngay_Footer[i].WidthF = (float)27.233;
                     tmp += (float)27.233;
                 }
                 xrTableCell3.WidthF = tmp;
@@ -284,7 +246,6 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     xrTable2.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable3.DeleteColumn(tg31);
                     _flag_31 = "deleted";
                 }
 
@@ -293,13 +254,12 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     xrTable2.DeleteColumn(ng30);
                     xrTable1.DeleteColumn(Ngay30);
-                    xrTable3.DeleteColumn(tg30);
                     _flag_30 = "deleted";
                 }
 
                 //
-                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
                 //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
                 float tmp = 0;
@@ -308,7 +268,6 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_NgayTitle[i].WidthF = (float)26.2101111;
                     Ds_Ngay_Header[i].WidthF = (float)26.2101111;
                     Ds_Ngay[i].WidthF = (float)26.2101111;
-                    Ds_Ngay_Footer[i].WidthF = (float)26.2101111;
                     tmp += (float)26.2101111;
                 }
                 xrTableCell3.WidthF = tmp;
@@ -319,14 +278,13 @@ namespace CtyTinLuong.Luong_ChamCong
                 {
                     xrTable2.DeleteColumn(ng31);
                     xrTable1.DeleteColumn(Ngay31);
-                    xrTable3.DeleteColumn(tg31);
 
                     _flag_31 = "deleted";
                 }
 
                 //
-                hoTen.WidthF = nameTong.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF;
                 //xrTableCell3.WidthF = xrTableCell3.WidthF - (float)0.828479;
                 //
                 float tmp = 0;
@@ -336,7 +294,6 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_NgayTitle[i].WidthF = (float)25.260899;
                     Ds_Ngay_Header[i].WidthF = (float)25.260899;
                     Ds_Ngay[i].WidthF = (float)25.260899;
-                    Ds_Ngay_Footer[i].WidthF = (float)25.260899;
                     tmp += (float)25.260899;
                 }
                 xrTableCell3.WidthF = tmp;
@@ -358,10 +315,6 @@ namespace CtyTinLuong.Luong_ChamCong
                     //detail
                     Ds_Ngay[i].BackColor = Color.LightGray;
                     Ds_Ngay[i].ForeColor = Color.Red;
-
-                    //footer
-                    Ds_Ngay_Footer[i].BackColor = Color.LightGray;
-                    Ds_Ngay_Footer[i].ForeColor = Color.Red;
                 }
             }
         }

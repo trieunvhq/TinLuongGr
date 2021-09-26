@@ -198,6 +198,12 @@
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmDinhMucLuongSL_TGD.Designer.cs">
       <DependentUpon>Tr_frmDinhMucLuongSL_TGD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT_Old.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT_Old.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_TGD_CT_Old.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\BoSungCongNhanMayDot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2304,6 +2310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmDinhMucLuongSL_TGD.resx">
       <DependentUpon>Tr_frmDinhMucLuongSL_TGD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TGD_CT_Old.resx">
+      <DependentUpon>Tr_PrintBTTL_TGD_CT_Old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\BoSungCongNhanMayDot.resx">

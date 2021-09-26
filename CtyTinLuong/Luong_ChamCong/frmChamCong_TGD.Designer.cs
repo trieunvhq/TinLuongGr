@@ -29,16 +29,16 @@ namespace CtyTinLuong
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -139,9 +139,9 @@ namespace CtyTinLuong
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions9.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
@@ -189,9 +189,9 @@ namespace CtyTinLuong
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions10.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -334,8 +334,6 @@ namespace CtyTinLuong
             this.STT.FieldName = "STT";
             this.STT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.STT.Name = "STT";
-            this.STT.Visible = true;
-            this.STT.VisibleIndex = 0;
             this.STT.Width = 35;
             // 
             // clTenNhanVien
@@ -349,7 +347,7 @@ namespace CtyTinLuong
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 1;
+            this.clTenNhanVien.VisibleIndex = 0;
             this.clTenNhanVien.Width = 114;
             // 
             // MaDinhMucLuongCongNhat
@@ -363,7 +361,7 @@ namespace CtyTinLuong
             this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
             this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
             this.MaDinhMucLuongCongNhat.Visible = true;
-            this.MaDinhMucLuongCongNhat.VisibleIndex = 2;
+            this.MaDinhMucLuongCongNhat.VisibleIndex = 1;
             this.MaDinhMucLuongCongNhat.Width = 71;
             // 
             // Cong
@@ -375,7 +373,7 @@ namespace CtyTinLuong
             this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
-            this.Cong.VisibleIndex = 3;
+            this.Cong.VisibleIndex = 2;
             // 
             // clTongLuong
             // 
@@ -481,7 +479,7 @@ namespace CtyTinLuong
             this.Ngay1.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay1.Visible = true;
-            this.Ngay1.VisibleIndex = 4;
+            this.Ngay1.VisibleIndex = 3;
             this.Ngay1.Width = 45;
             // 
             // Ngay2
@@ -506,7 +504,7 @@ namespace CtyTinLuong
             this.Ngay2.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay2.Visible = true;
-            this.Ngay2.VisibleIndex = 5;
+            this.Ngay2.VisibleIndex = 4;
             this.Ngay2.Width = 45;
             // 
             // Ngay3
@@ -531,7 +529,7 @@ namespace CtyTinLuong
             this.Ngay3.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay3.Visible = true;
-            this.Ngay3.VisibleIndex = 6;
+            this.Ngay3.VisibleIndex = 5;
             this.Ngay3.Width = 45;
             // 
             // Ngay4
@@ -556,7 +554,7 @@ namespace CtyTinLuong
             this.Ngay4.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay4.Visible = true;
-            this.Ngay4.VisibleIndex = 7;
+            this.Ngay4.VisibleIndex = 6;
             this.Ngay4.Width = 45;
             // 
             // Ngay5
@@ -581,7 +579,7 @@ namespace CtyTinLuong
             this.Ngay5.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay5.Visible = true;
-            this.Ngay5.VisibleIndex = 8;
+            this.Ngay5.VisibleIndex = 7;
             this.Ngay5.Width = 45;
             // 
             // Ngay6
@@ -606,7 +604,7 @@ namespace CtyTinLuong
             this.Ngay6.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay6.Visible = true;
-            this.Ngay6.VisibleIndex = 9;
+            this.Ngay6.VisibleIndex = 8;
             this.Ngay6.Width = 45;
             // 
             // Ngay7
@@ -631,7 +629,7 @@ namespace CtyTinLuong
             this.Ngay7.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay7.Visible = true;
-            this.Ngay7.VisibleIndex = 10;
+            this.Ngay7.VisibleIndex = 9;
             this.Ngay7.Width = 45;
             // 
             // Ngay8
@@ -656,7 +654,7 @@ namespace CtyTinLuong
             this.Ngay8.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay8.Visible = true;
-            this.Ngay8.VisibleIndex = 11;
+            this.Ngay8.VisibleIndex = 10;
             this.Ngay8.Width = 45;
             // 
             // Ngay9
@@ -681,7 +679,7 @@ namespace CtyTinLuong
             this.Ngay9.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay9.Visible = true;
-            this.Ngay9.VisibleIndex = 12;
+            this.Ngay9.VisibleIndex = 11;
             this.Ngay9.Width = 45;
             // 
             // Ngay10
@@ -707,7 +705,7 @@ namespace CtyTinLuong
             this.Ngay10.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay10.Visible = true;
-            this.Ngay10.VisibleIndex = 13;
+            this.Ngay10.VisibleIndex = 12;
             this.Ngay10.Width = 45;
             // 
             // Ngay11
@@ -732,7 +730,7 @@ namespace CtyTinLuong
             this.Ngay11.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay11.Visible = true;
-            this.Ngay11.VisibleIndex = 14;
+            this.Ngay11.VisibleIndex = 13;
             this.Ngay11.Width = 45;
             // 
             // Ngay12
@@ -757,7 +755,7 @@ namespace CtyTinLuong
             this.Ngay12.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay12.Visible = true;
-            this.Ngay12.VisibleIndex = 15;
+            this.Ngay12.VisibleIndex = 14;
             this.Ngay12.Width = 45;
             // 
             // Ngay13
@@ -782,7 +780,7 @@ namespace CtyTinLuong
             this.Ngay13.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay13.Visible = true;
-            this.Ngay13.VisibleIndex = 16;
+            this.Ngay13.VisibleIndex = 15;
             this.Ngay13.Width = 45;
             // 
             // Ngay14
@@ -807,7 +805,7 @@ namespace CtyTinLuong
             this.Ngay14.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay14.Visible = true;
-            this.Ngay14.VisibleIndex = 17;
+            this.Ngay14.VisibleIndex = 16;
             this.Ngay14.Width = 45;
             // 
             // Ngay15
@@ -832,7 +830,7 @@ namespace CtyTinLuong
             this.Ngay15.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay15.Visible = true;
-            this.Ngay15.VisibleIndex = 18;
+            this.Ngay15.VisibleIndex = 17;
             this.Ngay15.Width = 45;
             // 
             // Ngay16
@@ -857,7 +855,7 @@ namespace CtyTinLuong
             this.Ngay16.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay16.Visible = true;
-            this.Ngay16.VisibleIndex = 19;
+            this.Ngay16.VisibleIndex = 18;
             this.Ngay16.Width = 45;
             // 
             // Ngay17
@@ -882,7 +880,7 @@ namespace CtyTinLuong
             this.Ngay17.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay17.Visible = true;
-            this.Ngay17.VisibleIndex = 20;
+            this.Ngay17.VisibleIndex = 19;
             this.Ngay17.Width = 45;
             // 
             // Ngay18
@@ -907,7 +905,7 @@ namespace CtyTinLuong
             this.Ngay18.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay18.Visible = true;
-            this.Ngay18.VisibleIndex = 21;
+            this.Ngay18.VisibleIndex = 20;
             this.Ngay18.Width = 45;
             // 
             // Ngay19
@@ -932,7 +930,7 @@ namespace CtyTinLuong
             this.Ngay19.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay19.Visible = true;
-            this.Ngay19.VisibleIndex = 22;
+            this.Ngay19.VisibleIndex = 21;
             this.Ngay19.Width = 45;
             // 
             // Ngay20
@@ -957,7 +955,7 @@ namespace CtyTinLuong
             this.Ngay20.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay20.Visible = true;
-            this.Ngay20.VisibleIndex = 23;
+            this.Ngay20.VisibleIndex = 22;
             this.Ngay20.Width = 45;
             // 
             // Ngay21
@@ -982,7 +980,7 @@ namespace CtyTinLuong
             this.Ngay21.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay21.Visible = true;
-            this.Ngay21.VisibleIndex = 24;
+            this.Ngay21.VisibleIndex = 23;
             this.Ngay21.Width = 45;
             // 
             // Ngay22
@@ -1007,7 +1005,7 @@ namespace CtyTinLuong
             this.Ngay22.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay22.Visible = true;
-            this.Ngay22.VisibleIndex = 25;
+            this.Ngay22.VisibleIndex = 24;
             this.Ngay22.Width = 45;
             // 
             // Ngay23
@@ -1032,7 +1030,7 @@ namespace CtyTinLuong
             this.Ngay23.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay23.Visible = true;
-            this.Ngay23.VisibleIndex = 26;
+            this.Ngay23.VisibleIndex = 25;
             this.Ngay23.Width = 45;
             // 
             // Ngay24
@@ -1057,7 +1055,7 @@ namespace CtyTinLuong
             this.Ngay24.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay24.Visible = true;
-            this.Ngay24.VisibleIndex = 27;
+            this.Ngay24.VisibleIndex = 26;
             this.Ngay24.Width = 45;
             // 
             // Ngay25
@@ -1082,7 +1080,7 @@ namespace CtyTinLuong
             this.Ngay25.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay25.Visible = true;
-            this.Ngay25.VisibleIndex = 28;
+            this.Ngay25.VisibleIndex = 27;
             this.Ngay25.Width = 45;
             // 
             // Ngay26
@@ -1107,7 +1105,7 @@ namespace CtyTinLuong
             this.Ngay26.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay26.Visible = true;
-            this.Ngay26.VisibleIndex = 29;
+            this.Ngay26.VisibleIndex = 28;
             this.Ngay26.Width = 45;
             // 
             // Ngay27
@@ -1132,7 +1130,7 @@ namespace CtyTinLuong
             this.Ngay27.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay27.Visible = true;
-            this.Ngay27.VisibleIndex = 30;
+            this.Ngay27.VisibleIndex = 29;
             this.Ngay27.Width = 45;
             // 
             // Ngay28
@@ -1157,7 +1155,7 @@ namespace CtyTinLuong
             this.Ngay28.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay28.Visible = true;
-            this.Ngay28.VisibleIndex = 31;
+            this.Ngay28.VisibleIndex = 30;
             this.Ngay28.Width = 45;
             // 
             // Ngay29
@@ -1182,7 +1180,7 @@ namespace CtyTinLuong
             this.Ngay29.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay29.Visible = true;
-            this.Ngay29.VisibleIndex = 32;
+            this.Ngay29.VisibleIndex = 31;
             this.Ngay29.Width = 45;
             // 
             // Ngay30
@@ -1207,7 +1205,7 @@ namespace CtyTinLuong
             this.Ngay30.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay30.Visible = true;
-            this.Ngay30.VisibleIndex = 33;
+            this.Ngay30.VisibleIndex = 32;
             this.Ngay30.Width = 45;
             // 
             // Ngay31
@@ -1232,7 +1230,7 @@ namespace CtyTinLuong
             this.Ngay31.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay31.Visible = true;
-            this.Ngay31.VisibleIndex = 34;
+            this.Ngay31.VisibleIndex = 33;
             this.Ngay31.Width = 45;
             // 
             // clGuiDuLieu
@@ -1258,7 +1256,7 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 36;
+            this.Tong.VisibleIndex = 34;
             this.Tong.Width = 45;
             // 
             // Xoa
@@ -1268,8 +1266,6 @@ namespace CtyTinLuong
             this.Xoa.FieldName = "Xoa";
             this.Xoa.Name = "Xoa";
             this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.Xoa.Visible = true;
-            this.Xoa.VisibleIndex = 35;
             this.Xoa.Width = 35;
             // 
             // gridControl1
