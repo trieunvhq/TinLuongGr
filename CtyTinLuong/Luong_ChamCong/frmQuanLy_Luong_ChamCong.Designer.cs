@@ -296,7 +296,7 @@
             // 
             // navChamCong_TGD
             // 
-            this.navChamCong_TGD.Caption = "Gấp Dán";
+            this.navChamCong_TGD.Caption = "Tổ Gấp Dán";
             this.navChamCong_TGD.Name = "navChamCong_TGD";
             this.navChamCong_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navChamCong_TGD_LinkClicked);
             // 
@@ -389,7 +389,7 @@
             this.navTTL_TGD.AppearanceHotTracked.Options.UseForeColor = true;
             this.navTTL_TGD.AppearancePressed.ForeColor = System.Drawing.Color.Blue;
             this.navTTL_TGD.AppearancePressed.Options.UseForeColor = true;
-            this.navTTL_TGD.Caption = "Gấp Dán";
+            this.navTTL_TGD.Caption = "Tổ Gấp Dán";
             this.navTTL_TGD.Name = "navTTL_TGD";
             this.navTTL_TGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navTTL_TGD_LinkClicked);
             // 

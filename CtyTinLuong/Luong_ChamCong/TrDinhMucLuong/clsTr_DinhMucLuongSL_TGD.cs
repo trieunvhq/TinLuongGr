@@ -17,7 +17,7 @@ namespace CtyTinLuong
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bNgungTheoDoi;
-			private SqlDecimal		m_dcLoaiHang3, m_dcLoaiHang2, m_dcLoaiHang1, m_dcLoaiHang4, m_dcLoaiHang7, m_dcLoaiHang6, m_dcLoaiHang5, m_dcGiaNghia2, m_dcGiaNgia, m_dcNCBat6, m_dcThoKimBat3, m_dcNCBat6Buoc;
+			private SqlDecimal		m_dcLoaiHang3, m_dcLoaiHang2, m_dcLoaiHang1, m_dcLoaiHang4, m_dcLoaiHang7, m_dcLoaiHang6, m_dcLoaiHang5, m_dcGiaNghia2, m_dcGiaNghia, m_dcNCBat6, m_dcThoKimBat3, m_dcNCBat6Buoc;
 			private SqlInt32		m_iID_DinhMucLuong;
 			private SqlString		m_sDienGiai, m_sMaDinhMucLuong;
 		#endregion
@@ -41,7 +41,7 @@ namespace CtyTinLuong
 		/// <UL>
 		///		 <LI>sMaDinhMucLuong. May be SqlString.Null</LI>
 		///		 <LI>sDienGiai. May be SqlString.Null</LI>
-		///		 <LI>dcGiaNgia. May be SqlDecimal.Null</LI>
+		///		 <LI>dcGiaNghia. May be SqlDecimal.Null</LI>
 		///		 <LI>dcGiaNghia2. May be SqlDecimal.Null</LI>
 		///		 <LI>dcNCBat6. May be SqlDecimal.Null</LI>
 		///		 <LI>dcNCBat6Buoc. May be SqlDecimal.Null</LI>
@@ -73,7 +73,7 @@ namespace CtyTinLuong
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaDinhMucLuong", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMaDinhMucLuong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiai", SqlDbType.NVarChar, 350, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiai));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcGiaNgia", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcGiaNgia));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcGiaNghia", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcGiaNghia));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcGiaNghia2", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcGiaNghia2));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcNCBat6", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcNCBat6));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcNCBat6Buoc", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcNCBat6Buoc));
@@ -120,7 +120,7 @@ namespace CtyTinLuong
 		///		 <LI>iID_DinhMucLuong</LI>
 		///		 <LI>sMaDinhMucLuong. May be SqlString.Null</LI>
 		///		 <LI>sDienGiai. May be SqlString.Null</LI>
-		///		 <LI>dcGiaNgia. May be SqlDecimal.Null</LI>
+		///		 <LI>dcGiaNghia. May be SqlDecimal.Null</LI>
 		///		 <LI>dcGiaNghia2. May be SqlDecimal.Null</LI>
 		///		 <LI>dcNCBat6. May be SqlDecimal.Null</LI>
 		///		 <LI>dcNCBat6Buoc. May be SqlDecimal.Null</LI>
@@ -149,7 +149,7 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMucLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMucLuong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaDinhMucLuong", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMaDinhMucLuong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiai", SqlDbType.NVarChar, 350, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiai));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcGiaNgia", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcGiaNgia));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcGiaNghia", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcGiaNghia));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcGiaNghia2", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcGiaNghia2));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcNCBat6", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcNCBat6));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcNCBat6Buoc", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcNCBat6Buoc));
@@ -240,7 +240,7 @@ namespace CtyTinLuong
 		///		 <LI>iID_DinhMucLuong</LI>
 		///		 <LI>sMaDinhMucLuong</LI>
 		///		 <LI>sDienGiai</LI>
-		///		 <LI>dcGiaNgia</LI>
+		///		 <LI>dcGiaNghia</LI>
 		///		 <LI>dcGiaNghia2</LI>
 		///		 <LI>dcNCBat6</LI>
 		///		 <LI>dcNCBat6Buoc</LI>
@@ -280,7 +280,7 @@ namespace CtyTinLuong
 					m_iID_DinhMucLuong = (Int32)dtToReturn.Rows[0]["ID_DinhMucLuong"];
 					m_sMaDinhMucLuong = dtToReturn.Rows[0]["MaDinhMucLuong"] == System.DBNull.Value ? SqlString.Null : (string)dtToReturn.Rows[0]["MaDinhMucLuong"];
 					m_sDienGiai = dtToReturn.Rows[0]["DienGiai"] == System.DBNull.Value ? SqlString.Null : (string)dtToReturn.Rows[0]["DienGiai"];
-					m_dcGiaNgia = dtToReturn.Rows[0]["GiaNgia"] == System.DBNull.Value ? SqlDecimal.Null : (Decimal)dtToReturn.Rows[0]["GiaNgia"];
+					m_dcGiaNghia = dtToReturn.Rows[0]["GiaNghia"] == System.DBNull.Value ? SqlDecimal.Null : (Decimal)dtToReturn.Rows[0]["GiaNghia"];
 					m_dcGiaNghia2 = dtToReturn.Rows[0]["GiaNghia2"] == System.DBNull.Value ? SqlDecimal.Null : (Decimal)dtToReturn.Rows[0]["GiaNghia2"];
 					m_dcNCBat6 = dtToReturn.Rows[0]["NCBat6"] == System.DBNull.Value ? SqlDecimal.Null : (Decimal)dtToReturn.Rows[0]["NCBat6"];
 					m_dcNCBat6Buoc = dtToReturn.Rows[0]["NCBat6Buoc"] == System.DBNull.Value ? SqlDecimal.Null : (Decimal)dtToReturn.Rows[0]["NCBat6Buoc"];
@@ -408,20 +408,20 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlDecimal dcGiaNgia
+		public SqlDecimal dcGiaNghia
 		{
 			get
 			{
-				return m_dcGiaNgia;
+				return m_dcGiaNghia;
 			}
 			set
 			{
-				SqlDecimal dcGiaNgiaTmp = (SqlDecimal)value;
-				if(dcGiaNgiaTmp.IsNull)
+				SqlDecimal dcGiaNghiaTmp = (SqlDecimal)value;
+				if(dcGiaNghiaTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("dcGiaNgia", "dcGiaNgia can't be NULL");
+					throw new ArgumentOutOfRangeException("dcGiaNghia", "dcGiaNghia can't be NULL");
 				}
-				m_dcGiaNgia = value;
+				m_dcGiaNghia = value;
 			}
 		}
 

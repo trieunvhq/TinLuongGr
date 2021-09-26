@@ -24,7 +24,7 @@ namespace CtyTinLuong
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
         public int _nam, _thang, _id_bophan = 25;
-        private DataTable _data;
+        private DataTable _data, _dt_DinhMuc, _dt_LoaiHang;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
@@ -165,8 +165,7 @@ namespace CtyTinLuong
         double Tong_Ngay29 = 0;
         double Tong_Ngay30 = 0;
         double Tong_Ngay31 = 0;
-        DataTable _dt_DinhMuc;
-        DataTable _dt_LoaiHang;
+
 
         public void LoadData(bool islandau)
         {
@@ -223,7 +222,7 @@ namespace CtyTinLuong
             }
             using (clsThin clsThin_ = new clsThin())
             {
-                _dt_DinhMuc = clsThin_.T_NhanSu_SF("0");
+                _dt_DinhMuc = clsThin_.Tr_NhanSu_TGD("0");
                 cbNhanSu.DataSource = _dt_DinhMuc;
                 cbNhanSu.DisplayMember = "TenNhanVien";
                 cbNhanSu.ValueMember = "ID_NhanSu";
@@ -284,9 +283,26 @@ namespace CtyTinLuong
                 double Ngay30 = 0;
                 double Ngay31 = 0;
 
+                //
+                int ID_congNhanRoot = -1;
+                int stt_tmp = 0;
+
                 for (int i = 0; i < _data.Rows.Count; ++i)
-                {  
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
+                {
+                    int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+                    ds_id_congnhan.Add(ID_congNhan);    // Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
+
+                    if (ID_congNhanRoot != ID_congNhan)
+                    {
+                        ID_congNhanRoot = ID_congNhan;
+                        stt_tmp++;
+                        _data.Rows[i]["STT"] = stt_tmp;
+                    }
+                    else
+                    {
+                        _data.Rows[i]["STT"] = stt_tmp;
+                    }
+
 
                     Ngay1 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString());
                     Ngay2 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString());
@@ -396,15 +412,34 @@ namespace CtyTinLuong
             int stt_ = 0;
             if (_data != null && _data.Rows.Count > 0)
             {
-                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString());
+                //int ID_congNhanRoot = -1;
+                //int stt_tmp = 0;
+                //for (int i = 0; i < _data.Rows.Count; ++i)
+                //{
+                //    int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+                //    if (ID_congNhanRoot != ID_congNhan)
+                //    {
+                //        //
+                //        ID_congNhanRoot = ID_congNhan;
+                //        stt_tmp++;
+                //        _data.Rows[i]["STT"] = stt_tmp;
+                //    }
+                //    else
+                //    {
+                //        _data.Rows[i]["STT"] = stt_tmp;
+                //    }
 
+                //}
+
+                //Lấy số thứ tự hiện tại
+                stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString());
             }
+
             //
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt_ = clsThin_.T_NhanSu_SF(_id_bophan + ",");
+                DataTable dt_ = clsThin_.Tr_NhanSu_TGD(_id_bophan + ",");
 
-                
                 for (int i = 0; i < dt_.Rows.Count; ++i)
                 {
                     if (_ID_DinhMucLuong_CongNhat == 0)
@@ -420,79 +455,82 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        // Load ID_LoaiCong = 1 (công nhật):
-                        DataRow _ravi = _data.NewRow();
-                        _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
-                        _ravi["ID_CongNhan"] = id_nhansu_;
-                        _ravi["Thang"] = _thang;
-                        _ravi["Nam"] = _nam;
-                        _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
-                        _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
-                        _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
-                        _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
-                        _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
-                        _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
-                        _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
-                        _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
-                        _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
-                        _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
-                        _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
-
-                        _ravi["SanLuong"] = 0;
-                        _ravi["Tong"] = 0;
-                        _ravi["GuiDuLieu"] = false;
-                        _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
-                        _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
-
-                        _ravi["MaDinhMuc"] = "";
-                        _ravi["DinhMuc_KhongTang"] = 0;
-                        _ravi["DinhMuc_Tang"] = 0;
-                        _ravi["ID_LoaiCong"] = 0;
-
                         ++stt_;
-                        _ravi["STT"] = (stt_);
-                        _ravi["Cong"] = "Công nhật";
-                        _ravi["ID_LoaiCong"] = 1;
-                        _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                        _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
-                        _data.Rows.Add(_ravi);
+                        for (int j = 0; j < _dt_LoaiHang.Rows.Count; j++)
+                        {
+                            DataRow _ravi = _data.NewRow();
+                            _ravi["STT"] = (stt_);
+                            _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
+                            _ravi["ID_CongNhan"] = id_nhansu_;
+                            _ravi["Thang"] = _thang;
+                            _ravi["Nam"] = _nam;
+                            _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
+                            _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
+                            _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
+                            _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
+                            _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
+                            _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
+                            _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
+                            _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
+                            _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
+                            _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
+                            _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
 
-                        // Load ID_LoaiCong = 2 (tang ca):
-                        _ravi = _data.NewRow();
-                        _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
-                        _ravi["ID_CongNhan"] = id_nhansu_;
-                        _ravi["Thang"] = _thang;
-                        _ravi["Nam"] = _nam;
-                        _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
-                        _ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
-                        _ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
-                        _ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
-                        _ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
-                        _ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
-                        _ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
-                        _ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
-                        _ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
-                        _ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
-                        _ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
+                            _ravi["SanLuong"] = 0;
+                            _ravi["Tong"] = 0;
+                            _ravi["GuiDuLieu"] = false;
+                            _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
+                            _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
 
-                        _ravi["SanLuong"] = 0;
-                        _ravi["Tong"] = 0;
-                        _ravi["GuiDuLieu"] = false;
-                        _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
-                        _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
+                            _ravi["MaDinhMuc"] = "";
+                            _ravi["DinhMuc_KhongTang"] = 0;
+                            _ravi["DinhMuc_Tang"] = 0;
+                            _ravi["ID_LoaiCong"] = 0;
 
-                        _ravi["MaDinhMuc"] = "";
-                        _ravi["DinhMuc_KhongTang"] = 0;
-                        _ravi["DinhMuc_Tang"] = 0;
-                        _ravi["ID_LoaiCong"] = 0;
+                            _ravi["Cong"] = _dt_LoaiHang.Rows[j]["Ten"].ToString();
+                            _ravi["ID_LoaiCong"] = _dt_LoaiHang.Rows[j]["ID_LoaiCong"].ToString();
+                            _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                            _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
+                            _data.Rows.Add(_ravi);
+                        }
+                        
 
-                        ++stt_;
-                        _ravi["STT"] = (stt_);
-                        _ravi["Cong"] = "Tăng ca";
-                        _ravi["ID_LoaiCong"] = 2;
-                        _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                        _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
-                        _data.Rows.Add(_ravi);
+                        //// Load ID_LoaiCong = 2 (tang ca):
+                        //_ravi = _data.NewRow();
+                        //_ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
+                        //_ravi["ID_CongNhan"] = id_nhansu_;
+                        //_ravi["Thang"] = _thang;
+                        //_ravi["Nam"] = _nam;
+                        //_ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
+                        //_ravi["Ngay4"] = 0; _ravi["Ngay5"] = 0; _ravi["Ngay6"] = 0;
+                        //_ravi["Ngay7"] = 0; _ravi["Ngay8"] = 0; _ravi["Ngay9"] = 0;
+                        //_ravi["Ngay10"] = 0; _ravi["Ngay11"] = 0;
+                        //_ravi["Ngay12"] = 0; _ravi["Ngay13"] = 0; _ravi["Ngay14"] = 0;
+                        //_ravi["Ngay15"] = 0; _ravi["Ngay16"] = 0; _ravi["Ngay17"] = 0;
+                        //_ravi["Ngay18"] = 0; _ravi["Ngay19"] = 0; _ravi["Ngay20"] = 0;
+                        //_ravi["Ngay21"] = 0; _ravi["Ngay22"] = 0; _ravi["Ngay23"] = 0;
+                        //_ravi["Ngay24"] = 0; _ravi["Ngay25"] = 0; _ravi["Ngay26"] = 0;
+                        //_ravi["Ngay27"] = 0; _ravi["Ngay28"] = 0; _ravi["Ngay29"] = 0;
+                        //_ravi["Ngay30"] = 0; _ravi["Ngay31"] = 0;
+
+                        //_ravi["SanLuong"] = 0;
+                        //_ravi["Tong"] = 0;
+                        //_ravi["GuiDuLieu"] = false;
+                        //_ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
+                        //_ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
+
+                        //_ravi["MaDinhMuc"] = "";
+                        //_ravi["DinhMuc_KhongTang"] = 0;
+                        //_ravi["DinhMuc_Tang"] = 0;
+                        //_ravi["ID_LoaiCong"] = 0;
+
+                        //++stt_;
+                        //_ravi["STT"] = (stt_);
+                        //_ravi["Cong"] = "Tăng ca";
+                        //_ravi["ID_LoaiCong"] = 2;
+                        //_ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
+                        //_ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
+                        //_data.Rows.Add(_ravi);
                     }
                 }
             }
