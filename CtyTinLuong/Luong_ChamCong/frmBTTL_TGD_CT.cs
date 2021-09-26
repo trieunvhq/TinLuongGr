@@ -91,7 +91,7 @@ namespace CtyTinLuong
                     //
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
-                    _data.Rows[i]["TenVTHH"] = CheckString.ChuanHoaHoTen(_data.Rows[i]["TenNhanVien"].ToString());
+                    _data.Rows[i]["TenNhanVien"] = CheckString.ChuanHoaHoTen(_data.Rows[i]["TenNhanVien"].ToString());
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                     songayan_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
@@ -400,9 +400,8 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_CT(6, 2021);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_CT(_thang, _nam, _data);
             ff.ShowDialog();
-
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -432,7 +431,7 @@ namespace CtyTinLuong
 
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ(6, 2021);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ(_thang, _nam, _data);
             ff.ShowDialog();
         }
 
