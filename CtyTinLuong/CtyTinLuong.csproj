@@ -179,6 +179,12 @@
     <Compile Include="frmtestcopy.Designer.cs">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TDK.Designer.cs">
+      <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TGD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -493,11 +499,11 @@
     <Compile Include="Luong_ChamCong\frmChamCong_TrgCa.Designer.cs">
       <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCong_TDK.cs">
+    <Compile Include="Luong_ChamCong\frmChamCong_TDK_Old.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\frmChamCong_TDK.Designer.cs">
-      <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\frmChamCong_TDK_Old.Designer.cs">
+      <DependentUpon>frmChamCong_TDK_Old.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.cs">
       <SubType>UserControl</SubType>
@@ -2308,6 +2314,9 @@
     <EmbeddedResource Include="frmtestcopy.resx">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
+      <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TGD.resx">
       <DependentUpon>frmChamCong_TGD.cs</DependentUpon>
     </EmbeddedResource>
@@ -2453,8 +2462,8 @@
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TrgCa.resx">
       <DependentUpon>frmChamCong_TrgCa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
-      <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK_Old.resx">
+      <DependentUpon>frmChamCong_TDK_Old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TBX.resx">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
