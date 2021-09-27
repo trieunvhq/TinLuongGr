@@ -515,7 +515,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            int id_bophan_ = KiemTraTenBoPhan("Tổ Đóng Bao");
+            int id_bophan_ = KiemTraTenBoPhan("Tổ đóng bao");
             if (id_bophan_ == 0) return;
 
             frmChamCong_TDB frm = new frmChamCong_TDB(id_bophan_, this);
@@ -523,7 +523,7 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
 
-            frm.LoadData(true);
+            frm.LoadData(true, true);
 
             Cursor.Current = Cursors.Default;
         }

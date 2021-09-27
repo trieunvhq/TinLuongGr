@@ -420,9 +420,9 @@ namespace CtyTinLuong
 
                         _ravi["SanLuong"] = 0;
                         _ravi["Tong"] = 0;
-                        _ravi["ID_LoaiCong"] = 1;
+                        _ravi["ID_LoaiCong"] = -1;
                         _ravi["GuiDuLieu"] = false;
-                        _ravi["MaNhanVien"] = _dt_HangHoa.Rows[i]["ID_VTHH"].ToString();
+                        _ravi["MaNhanVien"] = _dt_HangHoa.Rows[i]["MaVT"].ToString();
                         _ravi["TenVTHH"] = _dt_HangHoa.Rows[i]["TenVTHH"].ToString();
 
                         _ravi["MaDinhMuc"] = "";
@@ -697,7 +697,7 @@ namespace CtyTinLuong
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
                 {
-                    MessageBox.Show("Đã tồn tại công nhân này trong bảng");
+                    MessageBox.Show("Đã tồn tại hàng hóa này trong bảng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
