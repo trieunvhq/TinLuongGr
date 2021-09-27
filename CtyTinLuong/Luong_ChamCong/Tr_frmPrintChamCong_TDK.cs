@@ -38,7 +38,10 @@ namespace CtyTinLuong.Luong_ChamCong
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
-                _ravi["STT"] = (i +1).ToString();
+
+                if (i != _data.Rows.Count - 1) _ravi["STT"] = (i + 1).ToString();
+                else _ravi["STT"] = "";
+
                 _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                 _ravi["Ngay1"] = _data.Rows[i]["Ngay1"].ToString();
