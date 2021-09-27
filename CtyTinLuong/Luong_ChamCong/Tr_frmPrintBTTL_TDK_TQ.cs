@@ -26,7 +26,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintBTTL_TDK_TQ_Load(object sender, EventArgs e)
         {
-            Tr_PrintBTTL_TDK_CT xtr111 = new Tr_PrintBTTL_TDK_CT(_thang, _nam);
+            Tr_PrintBTTL_TDK_TQ xtr111 = new Tr_PrintBTTL_TDK_TQ(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
             for (int i = 0; i < _data.Rows.Count; ++i)

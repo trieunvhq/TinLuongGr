@@ -387,7 +387,7 @@ namespace CtyTinLuong
 
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TGD_TQ(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK_TQ(_thang, _nam, _data);
             ff.ShowDialog();
         }
 
