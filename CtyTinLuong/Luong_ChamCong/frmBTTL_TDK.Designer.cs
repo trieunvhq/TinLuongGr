@@ -316,7 +316,7 @@
             this.TenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 1;
-            this.TenVTHH.Width = 255;
+            this.TenVTHH.Width = 300;
             // 
             // clTongLuong
             // 
@@ -533,7 +533,7 @@
             this.ThanhTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 4;
-            this.ThanhTien.Width = 73;
+            this.ThanhTien.Width = 80;
             // 
             // TongLuong
             // 
@@ -558,8 +558,6 @@
             this.TongLuong.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongLuong.OptionsFilter.ShowEmptyDateFilter = false;
-            this.TongLuong.Visible = true;
-            this.TongLuong.VisibleIndex = 5;
             this.TongLuong.Width = 73;
             // 
             // SoNgayAn
@@ -611,8 +609,8 @@
             this.LuongTrachNhiem.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.LuongTrachNhiem.OptionsFilter.ShowEmptyDateFilter = false;
             this.LuongTrachNhiem.Visible = true;
-            this.LuongTrachNhiem.VisibleIndex = 6;
-            this.LuongTrachNhiem.Width = 73;
+            this.LuongTrachNhiem.VisibleIndex = 5;
+            this.LuongTrachNhiem.Width = 80;
             // 
             // TongTien
             // 
@@ -638,8 +636,8 @@
             this.TongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 7;
-            this.TongTien.Width = 73;
+            this.TongTien.VisibleIndex = 6;
+            this.TongTien.Width = 80;
             // 
             // TamUng
             // 
@@ -665,8 +663,8 @@
             this.TamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.TamUng.Visible = true;
-            this.TamUng.VisibleIndex = 8;
-            this.TamUng.Width = 73;
+            this.TamUng.VisibleIndex = 7;
+            this.TamUng.Width = 80;
             // 
             // ThucNhan
             // 
@@ -693,8 +691,8 @@
             this.ThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
-            this.ThucNhan.VisibleIndex = 9;
-            this.ThucNhan.Width = 73;
+            this.ThucNhan.VisibleIndex = 8;
+            this.ThucNhan.Width = 80;
             // 
             // KyNhan
             // 

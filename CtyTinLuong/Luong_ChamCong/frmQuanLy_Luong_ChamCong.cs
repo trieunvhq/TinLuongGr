@@ -548,7 +548,20 @@ namespace CtyTinLuong
 
         private void navBTTL_TDK_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
 
+            int id_bophan_ = KiemTraTenBoPhan("Tổ đóng kiện");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_TDK frm = new frmBTTL_TDK(this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true, id_bophan_);
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void navToMayCat_LinkClicked(object sender, NavBarLinkEventArgs e)
