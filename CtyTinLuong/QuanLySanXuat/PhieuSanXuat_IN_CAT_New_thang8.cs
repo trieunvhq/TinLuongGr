@@ -119,6 +119,7 @@ namespace CtyTinLuong
 
         private void HienThi_Pannel(int iiID_loaimay)
         {
+            
             if (iiID_loaimay == 1) // máy in
             {
                 gridBand_VatTu_IN.Visible = true;
@@ -148,7 +149,7 @@ namespace CtyTinLuong
                 clNgayLapPhieu.OptionsColumn.AllowEdit = true;
                 clMaPhieu.OptionsColumn.AllowFocus = true;
                 clNgayLapPhieu.OptionsColumn.AllowFocus = true;
-                bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
+                bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
                 clDot.Visible = false;
                 clCopy.Visible = true;
             }
@@ -1579,7 +1580,9 @@ namespace CtyTinLuong
 
         private void btCpopy_Click(object sender, EventArgs e)
         {
-           
+            bandedGridView1.AddNewRow();
+            //set a new row cell value. The static GridControl.NewItemRowHandle field allows you to retrieve the added row
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, bandedGridView1.Columns["MaPhieu"], "xxx");
         }
         int iimaysx_IN = 0, iiiID_catruong_IN = 0, iiiidID_CongNhan_IN = 0, iiiD_dmluong_IN = 0;
 
@@ -1690,6 +1693,7 @@ namespace CtyTinLuong
 
                     if (_Loaimay == 1)
                     {
+
                         bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clNgayLapPhieu, ngaylap);
                         bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clMaPhieu, sssmaphieu);
 
