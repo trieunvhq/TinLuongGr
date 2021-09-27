@@ -9786,6 +9786,8 @@ namespace CtyTinLuong {
             
             private global::System.Data.DataColumn columnLuongTrachNhiem;
             
+            private global::System.Data.DataColumn columnDonViTinh;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbBTTL_TGD_CTDataTable() {
@@ -9933,6 +9935,14 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DonViTinhColumn {
+                get {
+                    return this.columnDonViTinh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9968,7 +9978,7 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbBTTL_TGD_CTRow AddtbBTTL_TGD_CTRow(string STT, string TenNhanVien, string TongLuong, string SoNgayAn, string TruTienCom, string TongTien, string TamUng, string ThucNhan, string SanLuong, string TenVTHH, string DonGia, string ThanhTien, string NgayCong, string LuongTrachNhiem) {
+            public tbBTTL_TGD_CTRow AddtbBTTL_TGD_CTRow(string STT, string TenNhanVien, string TongLuong, string SoNgayAn, string TruTienCom, string TongTien, string TamUng, string ThucNhan, string SanLuong, string TenVTHH, string DonGia, string ThanhTien, string NgayCong, string LuongTrachNhiem, string DonViTinh) {
                 tbBTTL_TGD_CTRow rowtbBTTL_TGD_CTRow = ((tbBTTL_TGD_CTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -9984,7 +9994,8 @@ namespace CtyTinLuong {
                         DonGia,
                         ThanhTien,
                         NgayCong,
-                        LuongTrachNhiem};
+                        LuongTrachNhiem,
+                        DonViTinh};
                 rowtbBTTL_TGD_CTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbBTTL_TGD_CTRow);
                 return rowtbBTTL_TGD_CTRow;
@@ -10021,6 +10032,7 @@ namespace CtyTinLuong {
                 this.columnThanhTien = base.Columns["ThanhTien"];
                 this.columnNgayCong = base.Columns["NgayCong"];
                 this.columnLuongTrachNhiem = base.Columns["LuongTrachNhiem"];
+                this.columnDonViTinh = base.Columns["DonViTinh"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10054,6 +10066,8 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnNgayCong);
                 this.columnLuongTrachNhiem = new global::System.Data.DataColumn("LuongTrachNhiem", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLuongTrachNhiem);
+                this.columnDonViTinh = new global::System.Data.DataColumn("DonViTinh", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDonViTinh);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23565,6 +23579,22 @@ namespace CtyTinLuong {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DonViTinh {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbBTTL_TGD_CT.DonViTinhColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DonViTinh\' in table \'tbBTTL_TGD_CT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBTTL_TGD_CT.DonViTinhColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSTTNull() {
                 return this.IsNull(this.tabletbBTTL_TGD_CT.STTColumn);
             }
@@ -23729,6 +23759,18 @@ namespace CtyTinLuong {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLuongTrachNhiemNull() {
                 this[this.tabletbBTTL_TGD_CT.LuongTrachNhiemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDonViTinhNull() {
+                return this.IsNull(this.tabletbBTTL_TGD_CT.DonViTinhColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDonViTinhNull() {
+                this[this.tabletbBTTL_TGD_CT.DonViTinhColumn] = global::System.Convert.DBNull;
             }
         }
         
