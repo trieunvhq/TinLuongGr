@@ -54,7 +54,8 @@ namespace CtyTinLuong
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,7 +64,6 @@ namespace CtyTinLuong
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLThuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -263,7 +263,8 @@ namespace CtyTinLuong
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.clTenNhanVien,
+            this.TenVTHH,
+            this.ID_VTHH,
             this.MaDinhMucLuongCongNhat,
             this.Cong,
             this.clTongLuong,
@@ -272,7 +273,6 @@ namespace CtyTinLuong
             this.clThang,
             this.clNam,
             this.ID_DinhMucLuong_CongNhat,
-            this.clID_CongNhan,
             this.clSLThuong,
             this.clSLTangCa,
             this.Ngay1,
@@ -326,19 +326,25 @@ namespace CtyTinLuong
             this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // clTenNhanVien
+            // TenVTHH
             // 
-            this.clTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clTenNhanVien.AppearanceCell.Options.UseFont = true;
-            this.clTenNhanVien.Caption = "HỌ TÊN";
-            this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit3;
-            this.clTenNhanVien.FieldName = "TenNhanVien";
-            this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.clTenNhanVien.Name = "clTenNhanVien";
-            this.clTenNhanVien.OptionsColumn.AllowEdit = false;
-            this.clTenNhanVien.Visible = true;
-            this.clTenNhanVien.VisibleIndex = 0;
-            this.clTenNhanVien.Width = 300;
+            this.TenVTHH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenVTHH.AppearanceCell.Options.UseFont = true;
+            this.TenVTHH.Caption = "TÊN HÀNG";
+            this.TenVTHH.ColumnEdit = this.repositoryItemMemoEdit3;
+            this.TenVTHH.FieldName = "TenVTHH";
+            this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.TenVTHH.Name = "TenVTHH";
+            this.TenVTHH.OptionsColumn.AllowEdit = false;
+            this.TenVTHH.Visible = true;
+            this.TenVTHH.VisibleIndex = 0;
+            this.TenVTHH.Width = 300;
+            // 
+            // ID_VTHH
+            // 
+            this.ID_VTHH.Caption = "ID VTHH";
+            this.ID_VTHH.FieldName = "ID_VTHH";
+            this.ID_VTHH.Name = "ID_VTHH";
             // 
             // MaDinhMucLuongCongNhat
             // 
@@ -416,12 +422,6 @@ namespace CtyTinLuong
             this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
             this.ID_DinhMucLuong_CongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
-            // 
-            // clID_CongNhan
-            // 
-            this.clID_CongNhan.Caption = "ID_CongNhan";
-            this.clID_CongNhan.FieldName = "ID_CongNhan";
-            this.clID_CongNhan.Name = "clID_CongNhan";
             // 
             // clSLThuong
             // 
@@ -1523,7 +1523,7 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn TenVTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clTongLuong;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietChamCong;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChamCong;
@@ -1531,7 +1531,7 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn clNam;
         private DevExpress.XtraGrid.Columns.GridColumn ID_DinhMucLuong_CongNhat;
         private DevExpress.XtraGrid.Columns.GridColumn MaDinhMucLuongCongNhat;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_CongNhan;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_VTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clSLThuong;
         private DevExpress.XtraGrid.Columns.GridColumn clSLTangCa;
         private DevExpress.XtraGrid.Columns.GridColumn Ngay1;

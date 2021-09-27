@@ -11,25 +11,27 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class Tr_frmPrintChamCong_TDK : Form
+    public partial class Tr_frmPrintChamCong_TDB : Form
     {
         private int _thang, _nam;
         public int _id_bophan;
         public string _TenVTHH;
         private DataTable _data;
+        private bool _isTo1;
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
-        public Tr_frmPrintChamCong_TDK(int thang, int nam, DataTable data)
+        public Tr_frmPrintChamCong_TDB(int thang, int nam, DataTable data, bool isTo1)
         {
+            _isTo1 = isTo1;
             _data = data;
             _thang = thang;
             _nam = nam;
             InitializeComponent();
         }
 
-        private void Tr_frmPrintChamCong_TDK_Load(object sender, EventArgs e)
+        private void Tr_frmPrintChamCong_TDB_Load(object sender, EventArgs e)
         {
-            Tr_PrintChamCong_TDK xtr111 = new Tr_PrintChamCong_TDK(_thang, _nam);
+            Tr_PrintChamCong_TDB xtr111 = new Tr_PrintChamCong_TDB(_thang, _nam, _isTo1);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
             DateTime date_ = new DateTime(_nam, _thang, 1);

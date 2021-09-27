@@ -63,7 +63,7 @@ namespace CtyTinLuong
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLThuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -269,7 +269,7 @@ namespace CtyTinLuong
             this.clThang,
             this.clNam,
             this.ID_DinhMucLuong_CongNhat,
-            this.clID_CongNhan,
+            this.ID_VTHH,
             this.clSLThuong,
             this.clSLTangCa,
             this.Ngay1,
@@ -415,11 +415,11 @@ namespace CtyTinLuong
             this.ID_DinhMucLuong_CongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
             // 
-            // clID_CongNhan
+            // ID_VTHH
             // 
-            this.clID_CongNhan.Caption = "ID_CongNhan";
-            this.clID_CongNhan.FieldName = "ID_CongNhan";
-            this.clID_CongNhan.Name = "clID_CongNhan";
+            this.ID_VTHH.Caption = "ID VTHH";
+            this.ID_VTHH.FieldName = "ID_VTHH";
+            this.ID_VTHH.Name = "ID_VTHH";
             // 
             // clSLThuong
             // 
@@ -1498,7 +1498,7 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn clNam;
         private DevExpress.XtraGrid.Columns.GridColumn ID_DinhMucLuong_CongNhat;
         private DevExpress.XtraGrid.Columns.GridColumn MaDinhMucLuongCongNhat;
-        private DevExpress.XtraGrid.Columns.GridColumn clID_CongNhan;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_VTHH;
         private DevExpress.XtraGrid.Columns.GridColumn clSLThuong;
         private DevExpress.XtraGrid.Columns.GridColumn clSLTangCa;
         private DevExpress.XtraGrid.Columns.GridColumn Ngay1;

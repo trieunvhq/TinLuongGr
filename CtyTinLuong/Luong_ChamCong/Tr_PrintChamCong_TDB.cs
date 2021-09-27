@@ -7,16 +7,19 @@ using System.Collections.Generic;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class Tr_PrintChamCong_TDK : DevExpress.XtraReports.UI.XtraReport
+    public partial class Tr_PrintChamCong_TDB : DevExpress.XtraReports.UI.XtraReport
     {
         private int _thang;
         private int _nam;
+        private bool _isTo1;
+
         List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
 
-        public Tr_PrintChamCong_TDK(int thang, int nam)
+        public Tr_PrintChamCong_TDB(int thang, int nam, bool isTo1)
         {
+            _isTo1 = isTo1;
             _thang = thang;
             _nam = nam;
             InitializeComponent();
@@ -125,6 +128,8 @@ namespace CtyTinLuong.Luong_ChamCong
         {
             setThu();
 
+            if (_isTo1) lbTitle.Text = "BẢNG CHẤM CÔNG TỔ 1 ĐÓNG BAO";
+            else lbTitle.Text = "BẢNG CHẤM CÔNG TỔ 2 ĐÓNG BAO";
 
             //Load label ngay thang nam header:
             if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();

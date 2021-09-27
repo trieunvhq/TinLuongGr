@@ -69,15 +69,6 @@ namespace CtyTinLuong
             double tamung_tong = 0;
             double thucnhan_tong = 0;
 
-            //double Tong_sanluong_tong = 0;
-            //double Tong_thanhtien_tong = 0;
-            //double Tong_tongluong_tong = 0;
-            //double Tong__LuongTrachNhiem_Tong = 0;
-            //double Tong_trutiencom_tong = 0;
-            //double Tong_tongtien_tong = 0;
-            //double Tong_tamung_tong = 0;
-            //double Tong_thucnhan_tong = 0;
-
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.Tr_BTTL_TDK(_nam, _thang,_id_bophan);
@@ -90,7 +81,6 @@ namespace CtyTinLuong
 
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
-                    //_data.Rows[i]["TenNhanVien"] = CheckString.ChuanHoaHoTen(_data.Rows[i]["TenNhanVien"].ToString());
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                     _LuongTrachNhiem_Tong += CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
@@ -100,24 +90,6 @@ namespace CtyTinLuong
 
                     double dongia_ = 0;
 
-                    ////Loại công:
-                    //string LoaiCong = _data.Rows[i]["Cong"].ToString();
-
-                    //if (LoaiCong.ToLower().Contains("tăng"))
-                    //{
-                    //    //Đơn giá tăng ca:
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
-                    //}
-                    //else if (LoaiCong.ToLower().Contains("công nhật"))
-                    //{
-                    //    //Đơn giá công nhật
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
-                    //}
-                    //else
-                    //{
-                    //    //Đơn giá của các loại công còn lại:
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
-                    //}
                     dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
