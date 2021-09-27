@@ -60,7 +60,6 @@ namespace CtyTinLuong
 
                 _nam = DateTime.Now.Year;
                 _thang = DateTime.Now.Month;
-                 
             }
             else
             {

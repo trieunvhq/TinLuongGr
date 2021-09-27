@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmBTTL_TDK : UserControl
+    public partial class frmBTTL_TDB_Old : UserControl
     {  
 
         public int _nam, _thang, _id_bophan;
@@ -31,15 +31,11 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
-        public frmBTTL_TDK(frmQuanLy_Luong_ChamCong frmQLLCC)
+        public frmBTTL_TDB_Old(frmQuanLy_Luong_ChamCong frmQLLCC)
         {
             _frmQLLCC = frmQLLCC;
             InitializeComponent();
-            LuongTrachNhiem.Caption = "LƯƠNG\nT.NHIỆM";
-            ThanhTien.Caption = "THÀNH\nTIỀN";
-            TongLuong.Caption = "TỔNG\nLƯƠNG";
-            SoNgayAn.Caption = "SỐ NGÀY\nĂN";
-            SanLuong.Caption = "SẢN\nLƯỢNG";
+            clLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
         }
 
         public void LoadData(bool islandau, int id_bophan_)
@@ -53,19 +49,17 @@ namespace CtyTinLuong
                 txtThang.Text = dtnow.Month.ToString();
                 DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
                 int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-
-                _nam = DateTime.Now.Year;
-                _thang = DateTime.Now.Month;
             }
             else
             {
             }
-
+            _nam = Convert.ToInt16(txtNam.Text);
+            _thang = Convert.ToInt16(txtThang.Text);
 
             double sanluong_tong = 0;
             double thanhtien_tong = 0;
             double tongluong_tong = 0;
-            double _LuongTrachNhiem_Tong = 0;
+            double songayan_tong = 0;
             double trutiencom_tong = 0;
             double tongtien_tong = 0;
             double tamung_tong = 0;
@@ -73,75 +67,94 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.Tr_BTTL_TDK(_nam, _thang,_id_bophan);
-                int stt = 0;
-
+                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang,_id_bophan);
+                double TongLuong_row = 0; 
+                int ID_CongNhan_Cu = 0;
+                int stt = 1;
+                if (_data != null && _data.Rows.Count > 0)
+                {
+                    ID_CongNhan_Cu = Convert.ToInt32(_data.Rows[0]["ID_CongNhan"].ToString());
+                }
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    stt++;
-                    _data.Rows[i]["STT"] = stt;
-
+                    int ID_CongNhan_;
+                    if (i < _data.Rows.Count - 1)
+                    {
+                        ID_CongNhan_ = Convert.ToInt32(_data.Rows[i + 1]["ID_CongNhan"].ToString());
+                    }
+                    else
+                    {
+                        ID_CongNhan_ = 0;
+                    }
                     int id_vthh_ = Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString());
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
-
-                    _LuongTrachNhiem_Tong += CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
-                    trutiencom_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom"].ToString());
-                    tamung_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
+                    
+                    songayan_tong += Convert.ToInt32(_data.Rows[i]["SoNgayAn"].ToString());
+                    trutiencom_tong += Convert.ToInt32(_data.Rows[i]["TruTienCom"].ToString());
+                    tamung_tong += Convert.ToInt32(_data.Rows[i]["TamUng"].ToString());
                     //  
+                    //_data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
-                    double dongia_ = 0;
 
-                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
+
+
+                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
+                    sanluong_tong += sanluong_;
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
-                    //Sản lượng:
-                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong_Value"].ToString());
-                    sanluong_tong += sanluong_;
-                    if (sanluong_ == 0)
-                        _data.Rows[i]["SanLuong"] = "";
-                    else
-                        _data.Rows[i]["SanLuong"] = sanluong_.ToString();
+                    TongLuong_row += (dongia_ * sanluong_);
+                    tongluong_tong += (dongia_ * sanluong_);
+                    thanhtien_tong += (dongia_ * sanluong_);
 
-                    //Thành tiền:
-                    double thanhtien_ = dongia_ * sanluong_;
-                    thanhtien_tong += thanhtien_;
-                    if (thanhtien_ == 0)
-                        _data.Rows[i]["ThanhTien"] = "";
-                    else
-                        _data.Rows[i]["ThanhTien"] = thanhtien_.ToString("N0");
+                    double TruTienCom_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom_Value"].ToString());
+                    if (ID_CongNhan_ != ID_CongNhan_Cu || i==_data.Rows.Count-1)
+                    {
+                        _data.Rows[i]["STT"] = stt.ToString();
+                        ++stt;
 
-                    //Trách nhiệm:
-                    double LuongTrachNhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
-                    _LuongTrachNhiem_Tong += LuongTrachNhiem_;
-                    if (LuongTrachNhiem_ == 0)
-                        _data.Rows[i]["LuongTrachNhiem"] = "";
-                    else
-                        _data.Rows[i]["LuongTrachNhiem"] = LuongTrachNhiem_.ToString();
+                           double SoNgayAn_row = CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                        double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
+                        _data.Rows[i]["TongLuong"] = TongLuong_row.ToString("N0");
 
-                    //Tổng Tiền:
-                    double TongTien = thanhtien_ + LuongTrachNhiem_;
-                    tongtien_tong += TongTien;
-                    if (TongTien == 0)
+                        ID_CongNhan_Cu = ID_CongNhan_;
+
+                        _data.Rows[i]["TongTien"] = (TongLuong_row - TruTienCom_).ToString("N0");
+                        tongtien_tong += (TongLuong_row - TruTienCom_);
+                        _data.Rows[i]["ThucNhan"] = (TongLuong_row - TruTienCom_ - TamUng_).ToString("N0");
+                        thucnhan_tong += (TongLuong_row - TruTienCom_ - TamUng_);
+                        if (TruTienCom_ == 0)
+                            _data.Rows[i]["TruTienCom"] = "";
+                        else
+                            _data.Rows[i]["TruTienCom"] = TruTienCom_.ToString("N0");
+
+                        if (SoNgayAn_row == 0)
+                            _data.Rows[i]["SoNgayAn"] = "";
+                        else
+                            _data.Rows[i]["SoNgayAn"] = SoNgayAn_row.ToString("N0");
+
+                        if (TamUng_ == 0)
+                            _data.Rows[i]["TamUng"] = "";
+                        else
+                            _data.Rows[i]["TamUng"] = TruTienCom_.ToString("N0");
+
+                        trutiencom_tong += TruTienCom_;
+                        songayan_tong += SoNgayAn_row;
+                       
+                        TongLuong_row = 0;
+                    }
+                    else
+                    {
+                        _data.Rows[i]["TongLuong"] = "";
+                        _data.Rows[i]["TruTienCom"] = "";
+                        _data.Rows[i]["SoNgayAn"] = "";
                         _data.Rows[i]["TongTien"] = "";
-                    else
-                        _data.Rows[i]["TongTien"] = TongTien.ToString("N0");
-
-                    //Tạm ứng:
-                    double TamUng_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
-                    tamung_tong += TamUng_;
-                    if (TamUng_ == 0)
                         _data.Rows[i]["TamUng"] = "";
-                    else
-                        _data.Rows[i]["TamUng"] = TamUng_.ToString("N0");
-
-                    //Thực nhận:
-                    double ThucNhan = TongTien - TamUng_;
-                    thucnhan_tong += ThucNhan;
-                    if (ThucNhan == 0)
                         _data.Rows[i]["ThucNhan"] = "";
-                    else
-                        _data.Rows[i]["ThucNhan"] = ThucNhan.ToString("N0");
+                    }
+                    _data.Rows[i]["ThanhTien"] = (dongia_ * sanluong_).ToString("N0");
+                    
                 }
             }
 
@@ -150,19 +163,14 @@ namespace CtyTinLuong
             _ravi["ID_CongNhan"] = 0;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
-            _ravi["TenVTHH"] = "Tổng";
+            _ravi["TenNhanVien"] = "TỔNG";
             _ravi["SanLuong"] = sanluong_tong.ToString("N0");
             _ravi["ThucNhan"] = thucnhan_tong.ToString("N0"); 
             _ravi["TongLuong"] = tongluong_tong.ToString("N0");
-
-            if (_LuongTrachNhiem_Tong == 0) _ravi["LuongTrachNhiem"] = "";
-            else _ravi["LuongTrachNhiem"] = _LuongTrachNhiem_Tong.ToString("N0");
-
+            _ravi["SoNgayAn"] = songayan_tong.ToString("N0");
+            _ravi["TruTienCom"] = trutiencom_tong.ToString("N0");
             _ravi["TongTien"] = tongtien_tong.ToString("N0");
-
-            if (tamung_tong == 0) _ravi["TamUng"] = "";
-            else _ravi["TamUng"] = tamung_tong.ToString("N0");
-
+            _ravi["TamUng"] = tamung_tong.ToString("N0");
             _ravi["ThanhTien"] = thanhtien_tong.ToString("N0");
 
             _data.Rows.Add(_ravi);
@@ -170,69 +178,9 @@ namespace CtyTinLuong
             //  
             isload = false;
         }
-        private void frmBTTL_TDK_Load(object sender, EventArgs e)
+        private void frmBTTL_TDB_Old_Load(object sender, EventArgs e)
         {
             //Cursor.Current = Cursors.Default;
-        }
-
-        //Hàm tính tổng lương của từng công nhân theo ID_CongNhan:
-        private double TinhTongLuongMotCongNhan (DataTable dt, int ID_CongNhan)
-        {
-            double result = 0;
-            //Tổng lương:
-            if (_data != null && _data.Rows.Count > 0)
-            {
-                for (int i = 0; i < _data.Rows.Count; i++)
-                {
-                    if (ID_CongNhan == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
-                    {
-                        double DonGia_Sub = 0;
-                        double SanLuong_Sub = 0;
-
-                        //Loại công:
-                        string LoaiCong = _data.Rows[i]["Cong"].ToString();
-
-                        if (LoaiCong.ToLower().Contains("gia nghĩa 2"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["GiaNgia2_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("gia nghĩa"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["GiaNghia_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("thọ kim bật 3"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["ThoKimBat3_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("nc bật 6 buộc"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["NCBat6Buoc_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("nc bật 6"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["NCBat6_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("cuc đột")
-                            || LoaiCong.ToLower().Contains("cục đột")
-                            || LoaiCong.ToLower().Contains("cúc đột"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["CucDot_Value"].ToString());
-                        }
-                        else
-                        {
-                            //Đơn giá của các loại công còn lại:
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["MacDinh_Value"].ToString());
-                        }
-
-                        //Sản lượng:
-                        SanLuong_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong_Value"].ToString());
-
-                        result += (SanLuong_Sub * DonGia_Sub);
-                    }
-                }
-            }
-
-            return result;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -330,7 +278,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_CT(_thang, _nam, _data);
             ff.ShowDialog();
         }
 
@@ -361,7 +309,7 @@ namespace CtyTinLuong
 
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK_TQ(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_TQ(_thang, _nam, _data);
             ff.ShowDialog();
         }
 
