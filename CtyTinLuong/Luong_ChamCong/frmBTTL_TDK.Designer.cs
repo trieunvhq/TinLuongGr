@@ -316,7 +316,7 @@
             this.TenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 1;
-            this.TenVTHH.Width = 300;
+            this.TenVTHH.Width = 290;
             // 
             // clTongLuong
             // 
