@@ -47,6 +47,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gridMacDinh_VatTu_Ra = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -307,7 +308,6 @@
             this.vvvvvvvvvvvvvvvvvvvvv = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -448,6 +448,13 @@
             this.layoutControl1.Size = new System.Drawing.Size(1364, 534);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1254, 20);
+            this.textBox1.TabIndex = 132;
             // 
             // gridMacDinh_VatTu_Ra
             // 
@@ -2911,6 +2918,7 @@
             this.btCpopy.Name = "btCpopy";
             this.btCpopy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btCpopy.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btCpopy_ButtonClick);
+            this.btCpopy.Click += new System.EventHandler(this.btCpopy_Click);
             // 
             // clID_ChiTietPhieu_IN
             // 
@@ -3253,13 +3261,6 @@
             this.layoutControlItem21.Size = new System.Drawing.Size(198, 24);
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem21.TextVisible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(106, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1254, 20);
-            this.textBox1.TabIndex = 132;
             // 
             // layoutControlItem18
             // 
