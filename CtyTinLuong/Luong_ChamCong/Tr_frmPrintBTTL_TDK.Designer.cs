@@ -927,7 +927,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tr_frmPrintBTTL_TDK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Print Bảng Tính Lương Tổ Gấp Dán Chi Tiết";
+            this.Text = "Tr_frmPrintBTTL_TDK-->Print Bảng Tính Lương Tổ Đóng Kiện Chi Tiết";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Tr_frmPrintBTTL_TDK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
