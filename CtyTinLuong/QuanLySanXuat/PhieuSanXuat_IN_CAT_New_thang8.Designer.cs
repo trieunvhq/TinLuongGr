@@ -47,6 +47,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.checkthemmoi = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.gridMacDinh_VatTu_Ra = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -307,7 +308,6 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checkthemmoi = new System.Windows.Forms.CheckBox();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -448,6 +448,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(1364, 534);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // checkthemmoi
+            // 
+            this.checkthemmoi.Location = new System.Drawing.Point(4, 28);
+            this.checkthemmoi.Name = "checkthemmoi";
+            this.checkthemmoi.Size = new System.Drawing.Size(185, 20);
+            this.checkthemmoi.TabIndex = 133;
+            this.checkthemmoi.Text = "Cài đặt mặc định khi thêm mới:";
+            this.checkthemmoi.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -969,7 +978,7 @@
             this.bandedGridView1.OptionsNavigation.UseTabKey = false;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
-            this.bandedGridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.bandedGridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.OptionsView.ShowIndicator = false;
@@ -2891,7 +2900,7 @@
             // 
             // clCopy
             // 
-            this.clCopy.Caption = "Copy";
+            this.clCopy.Caption = "CN 2";
             this.clCopy.ColumnEdit = this.btCpopy;
             this.clCopy.Name = "clCopy";
             this.clCopy.OptionsColumn.FixedWidth = true;
@@ -2923,7 +2932,6 @@
             this.clID_ChiTietPhieu_CAT.FieldName = "ID_ChiTietPhieu_CAT";
             this.clID_ChiTietPhieu_CAT.Name = "clID_ChiTietPhieu_CAT";
             this.clID_ChiTietPhieu_CAT.OptionsColumn.FixedWidth = true;
-            this.clID_ChiTietPhieu_CAT.Visible = true;
             // 
             // clID_ChiTietPhieu_DOT
             // 
@@ -3250,15 +3258,6 @@
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.Size = new System.Drawing.Size(1360, 24);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // checkthemmoi
-            // 
-            this.checkthemmoi.Location = new System.Drawing.Point(4, 28);
-            this.checkthemmoi.Name = "checkthemmoi";
-            this.checkthemmoi.Size = new System.Drawing.Size(185, 20);
-            this.checkthemmoi.TabIndex = 133;
-            this.checkthemmoi.Text = "Cài đặt mặc định khi thêm mới:";
-            this.checkthemmoi.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem22
             // 
