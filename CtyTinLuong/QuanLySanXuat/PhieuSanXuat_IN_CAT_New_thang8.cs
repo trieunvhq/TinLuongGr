@@ -1573,16 +1573,16 @@ namespace CtyTinLuong
 
         private void PhieuSanXuat_IN_CAT_New_thang8_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (KiemTra_Luu_DuLieu(_Loaimay) == true)
-            {
-                DialogResult traloi;
-                traloi = MessageBox.Show("Đã có sự thay đổi dữ liệu. Có muốn lưu lại", "Lưu dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (traloi == DialogResult.Yes)
-                {
-                    Luu_DuLieu(_Loaimay);
-                }
+            //if (KiemTra_Luu_DuLieu(_Loaimay) == true)
+            //{
+            //    DialogResult traloi;
+            //    traloi = MessageBox.Show("Đã có sự thay đổi dữ liệu. Có muốn lưu lại", "Lưu dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    if (traloi == DialogResult.Yes)
+            //    {
+            //        Luu_DuLieu(_Loaimay);
+            //    }
 
-            }
+            //}
         }
 
         DateTime ngaylap = DateTime.Today;
@@ -1619,22 +1619,22 @@ namespace CtyTinLuong
             bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_ChiTietPhieu_CAT, "");
             bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_SoPhieu, id_soPhieu);
             bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clMaPhieu, smaphieu__);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_VTHH_Vao_CAT, iID_VTHH_Vao_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clTenVTHH_Vao_CAT, sTenVTHH_vao_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clDonViTinh_Vao_CAT, sDonViTinh_vao_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clSoLuong_Vao_CAT, dddsoluongvao_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clNgaySanXuat_CAT, ngaysx_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clCaSanXuat_CAT, ssscasx_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_May_CAT, iimaysx_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_CaTruong_CAT, iiiID_catruong_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_VTHH_Vao_CAT, iID_VTHH_Vao_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clTenVTHH_Vao_CAT, sTenVTHH_vao_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDonViTinh_Vao_CAT, sDonViTinh_vao_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSoLuong_Vao_CAT, dddsoluongvao_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clNgaySanXuat_CAT, ngaysx_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clCaSanXuat_CAT, ssscasx_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_May_CAT, iimaysx_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_CaTruong_CAT, iiiID_catruong_CAT);
 
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_VTHH_Ra_CAT, iID_VTHH_Ra_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clTenVTHH_Ra_CAT, sTenVTHH_ra_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clDonViTinh_Ra_CAT, sDonViTinh_ra_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_CongNhan_CAT, iiiidID_CongNhan_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clID_DinhMuc_Luong_CAT, iiiD_dmluong_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clSanLuong_Tong_CAT, dddsanluongtong_CAT);
-            //bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clPhePham_CAT, dddphepham_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_VTHH_Ra_CAT, iID_VTHH_Ra_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clTenVTHH_Ra_CAT, sTenVTHH_ra_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDonViTinh_Ra_CAT, sDonViTinh_ra_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_CongNhan_CAT, iiiidID_CongNhan_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_DinhMuc_Luong_CAT, iiiD_dmluong_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSanLuong_Tong_CAT, dddsanluongtong_CAT);
+            bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clPhePham_CAT, dddphepham_CAT);
         }
         int iimaysx_IN = 0, iiiID_catruong_IN = 0, iiiidID_CongNhan_IN = 0, iiiD_dmluong_IN = 0;
 
