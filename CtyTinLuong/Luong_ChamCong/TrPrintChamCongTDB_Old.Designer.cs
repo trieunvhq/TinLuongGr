@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong.Luong_ChamCong
 {
-    partial class TrPrintChamCongTDB
+    partial class TrPrintChamCongTDB_Old
     {
         /// <summary>
         /// Required designer variable.

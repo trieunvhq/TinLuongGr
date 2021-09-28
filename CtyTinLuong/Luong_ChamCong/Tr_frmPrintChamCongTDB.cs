@@ -31,7 +31,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintChamCongTDB_Load(object sender, EventArgs e)
         {
-            TrPrintChamCongTDB xtr111 = new TrPrintChamCongTDB(_thang, _nam);
+            TrPrintChamCongTDB_Old xtr111 = new TrPrintChamCongTDB_Old(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
            
             for (int i = 0; i < _data.Rows.Count -1; ++i)

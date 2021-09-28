@@ -12,9 +12,11 @@ namespace CtyTinLuong.Luong_ChamCong
     {
         private int _thang;
         private int _nam;
+        private bool _isTo1;
 
-        public Tr_PrintBTTL_TDB_CT(int thang, int nam)
+        public Tr_PrintBTTL_TDB_CT(int thang, int nam, bool isTo1)
         {
+            _isTo1 = isTo1;
             _thang = thang;
             _nam = nam;
             InitializeComponent();
@@ -23,6 +25,9 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
+            if (_isTo1) lbTitle.Text = "BẢNG THANH TOÁN LƯƠNG TỔ 1 ĐÓNG BAO";
+            else lbTitle.Text = "BẢNG THANH TOÁN LƯƠNG TỔ 2 ĐÓNG BAO";
+
             //Load label ngay thang nam header:
             if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();
             else xrlbThang.Text = _thang.ToString();

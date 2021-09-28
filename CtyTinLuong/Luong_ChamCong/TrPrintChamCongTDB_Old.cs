@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class TrPrintChamCongTDB : DevExpress.XtraReports.UI.XtraReport
+    public partial class TrPrintChamCongTDB_Old : DevExpress.XtraReports.UI.XtraReport
     {
 
         List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
@@ -18,7 +18,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private int _nam, _thang;
 
-        public TrPrintChamCongTDB(int thang, int nam)
+        public TrPrintChamCongTDB_Old(int thang, int nam)
         {
             _thang = thang;
             _nam = nam;

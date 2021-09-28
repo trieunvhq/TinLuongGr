@@ -595,11 +595,11 @@
     <Compile Include="Luong_ChamCong\frmChamCong_TBX.Designer.cs">
       <DependentUpon>frmChamCong_TBX.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\TrPrintChamCongTDB.cs">
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTDB_Old.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\TrPrintChamCongTDB.Designer.cs">
-      <DependentUpon>TrPrintChamCongTDB.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\TrPrintChamCongTDB_Old.Designer.cs">
+      <DependentUpon>TrPrintChamCongTDB_Old.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.cs">
       <SubType>Component</SubType>
@@ -2597,8 +2597,8 @@
     <EmbeddedResource Include="Luong_ChamCong\frmLuong_ChiTietTraLuong.resx">
       <DependentUpon>frmLuong_ChiTietTraLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTDB.resx">
-      <DependentUpon>TrPrintChamCongTDB.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongTDB_Old.resx">
+      <DependentUpon>TrPrintChamCongTDB_Old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongPTH.resx">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
