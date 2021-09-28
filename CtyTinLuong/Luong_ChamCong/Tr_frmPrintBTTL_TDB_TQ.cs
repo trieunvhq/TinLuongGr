@@ -15,9 +15,11 @@ namespace CtyTinLuong.Luong_ChamCong
         private int _thang;
         private int _nam;
         private DataTable _data;
+        private bool _isTo1;
 
-        public Tr_frmPrintBTTL_TDB_TQ(int thang, int nam, DataTable data)
+        public Tr_frmPrintBTTL_TDB_TQ(int thang, int nam, DataTable data, bool isTo1)
         {
+            _isTo1 = isTo1;
             _data = data;
             _thang = thang;
             _nam = nam;
@@ -26,7 +28,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintBTTL_TDB_TQ_Load(object sender, EventArgs e)
         {
-            Tr_PrintBTTL_TDB_TQ xtr111 = new Tr_PrintBTTL_TDB_TQ(_thang, _nam);
+            Tr_PrintBTTL_TDB_TQ xtr111 = new Tr_PrintBTTL_TDB_TQ(_thang, _nam, _isTo1);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
             for (int i = 0; i < _data.Rows.Count; ++i)
