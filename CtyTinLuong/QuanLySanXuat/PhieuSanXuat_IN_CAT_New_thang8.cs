@@ -47,6 +47,9 @@ namespace CtyTinLuong
         double sanluongthuong_ = 0, sanluongtangca_ = 0;
         DataTable dt_Change_;
 
+
+
+
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
             gridControl1.DataSource = null;
