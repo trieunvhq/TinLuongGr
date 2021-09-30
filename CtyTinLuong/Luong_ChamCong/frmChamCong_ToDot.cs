@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCong_ToIn : UserControl
+    public partial class frmChamCong_ToDot : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
@@ -32,7 +32,7 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
-        public frmChamCong_ToIn(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
+        public frmChamCong_ToDot(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
             _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0;
@@ -210,7 +210,7 @@ namespace CtyTinLuong
                 if (radioCa1.Checked) CaLamViec_ = "Ca 1";
                 else CaLamViec_ = "Ca 2";
 
-                DataTable dt_ = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, CaLamViec_);
+                DataTable dt_ = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec_);
 
                 foreach (DataRow item in dt_.Rows)
                 {
@@ -606,7 +606,7 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
-        private void frmChamCong_ToIn_Load(object sender, EventArgs e)
+        private void frmChamCong_ToDot_Load(object sender, EventArgs e)
         {
         }
 
@@ -942,13 +942,13 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_ToIn ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_ToIn(_thang, _nam, _id_bophan);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC(_thang, _nam, _id_bophan);
             ff.ShowDialog();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_ToIn", this);
+            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_ToDot", this);
             ff.ShowDialog();
         }
         
@@ -976,7 +976,7 @@ namespace CtyTinLuong
             {
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
                  
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_ToIn", this);
+                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_ToDot", this);
                 ff.ShowDialog();
             }
             catch (Exception ee)

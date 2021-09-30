@@ -1,7 +1,7 @@
 ﻿
 namespace CtyTinLuong
 {
-    partial class frmChamCong_ToIn
+    partial class frmChamCong_ToIn_Old
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,6 @@ namespace CtyTinLuong
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +62,7 @@ namespace CtyTinLuong
             this.clThang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLThuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSLTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,7 +100,7 @@ namespace CtyTinLuong
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IsTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -110,16 +110,11 @@ namespace CtyTinLuong
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.cbNhanSu = new System.Windows.Forms.ComboBox();
-            this.btnThemNhanVien = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioCa1 = new System.Windows.Forms.RadioButton();
-            this.radioCa2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -148,7 +143,7 @@ namespace CtyTinLuong
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 23);
+            this.label3.Location = new System.Drawing.Point(67, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -158,7 +153,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(149, 24);
+            this.label4.Location = new System.Drawing.Point(223, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -167,7 +162,7 @@ namespace CtyTinLuong
             // txtThang
             // 
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(57, 21);
+            this.txtThang.Location = new System.Drawing.Point(117, 23);
             this.txtThang.MaxLength = 2;
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(64, 20);
@@ -178,7 +173,7 @@ namespace CtyTinLuong
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(188, 21);
+            this.txtNam.Location = new System.Drawing.Point(262, 23);
             this.txtNam.MaxLength = 4;
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(66, 20);
@@ -264,7 +259,6 @@ namespace CtyTinLuong
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clTenNhanVien,
-            this.MaDinhMucLuongCongNhat,
             this.Cong,
             this.clTongLuong,
             this.clID_ChiTietChamCong,
@@ -272,6 +266,7 @@ namespace CtyTinLuong
             this.clThang,
             this.clNam,
             this.ID_DinhMucLuong_CongNhat,
+            this.MaDinhMucLuongCongNhat,
             this.clID_CongNhan,
             this.clSLThuong,
             this.clSLTangCa,
@@ -309,7 +304,7 @@ namespace CtyTinLuong
             this.clGuiDuLieu,
             this.Tong,
             this.KyNhan,
-            this.IsTangCa});
+            this.gridColumn2});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -317,13 +312,13 @@ namespace CtyTinLuong
             this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
-            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // clTenNhanVien
@@ -338,34 +333,18 @@ namespace CtyTinLuong
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 0;
-            this.clTenNhanVien.Width = 114;
-            // 
-            // MaDinhMucLuongCongNhat
-            // 
-            this.MaDinhMucLuongCongNhat.AppearanceCell.Options.UseTextOptions = true;
-            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MaDinhMucLuongCongNhat.Caption = "ĐM Lương";
-            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
-            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.MaDinhMucLuongCongNhat.Visible = true;
-            this.MaDinhMucLuongCongNhat.VisibleIndex = 1;
-            this.MaDinhMucLuongCongNhat.Width = 71;
+            this.clTenNhanVien.Width = 130;
             // 
             // Cong
             // 
-            this.Cong.AppearanceCell.Options.UseTextOptions = true;
-            this.Cong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Cong.Caption = "CÔNG";
             this.Cong.FieldName = "Cong";
             this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Cong.Name = "Cong";
+            this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
-            this.Cong.VisibleIndex = 2;
+            this.Cong.VisibleIndex = 1;
             this.Cong.Width = 65;
             // 
             // clTongLuong
@@ -392,12 +371,14 @@ namespace CtyTinLuong
             this.clID_ChiTietChamCong.Caption = "ID_ChiTietChamCong";
             this.clID_ChiTietChamCong.FieldName = "ID_ChiTietChamCong";
             this.clID_ChiTietChamCong.Name = "clID_ChiTietChamCong";
+            this.clID_ChiTietChamCong.OptionsColumn.AllowEdit = false;
             // 
             // clID_ChamCong
             // 
             this.clID_ChamCong.Caption = "ID_ChamCong";
             this.clID_ChamCong.FieldName = "ID_ChamCong";
             this.clID_ChamCong.Name = "clID_ChamCong";
+            this.clID_ChamCong.OptionsColumn.AllowEdit = false;
             // 
             // clThang
             // 
@@ -413,6 +394,7 @@ namespace CtyTinLuong
             this.clNam.Caption = "Năm";
             this.clNam.FieldName = "Nam";
             this.clNam.Name = "clNam";
+            this.clNam.OptionsColumn.AllowEdit = false;
             this.clNam.OptionsColumn.FixedWidth = true;
             // 
             // ID_DinhMucLuong_CongNhat
@@ -421,12 +403,27 @@ namespace CtyTinLuong
             this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
             this.ID_DinhMucLuong_CongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
+            this.ID_DinhMucLuong_CongNhat.OptionsColumn.AllowEdit = false;
+            // 
+            // MaDinhMucLuongCongNhat
+            // 
+            this.MaDinhMucLuongCongNhat.AppearanceCell.Options.UseTextOptions = true;
+            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MaDinhMucLuongCongNhat.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MaDinhMucLuongCongNhat.Caption = "ĐM Lương";
+            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
+            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.MaDinhMucLuongCongNhat.Width = 71;
             // 
             // clID_CongNhan
             // 
             this.clID_CongNhan.Caption = "ID_CongNhan";
             this.clID_CongNhan.FieldName = "ID_CongNhan";
             this.clID_CongNhan.Name = "clID_CongNhan";
+            this.clID_CongNhan.OptionsColumn.AllowEdit = false;
             // 
             // clSLThuong
             // 
@@ -437,6 +434,7 @@ namespace CtyTinLuong
             this.clSLThuong.FieldName = "SLThuong";
             this.clSLThuong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLThuong.Name = "clSLThuong";
+            this.clSLThuong.OptionsColumn.AllowEdit = false;
             this.clSLThuong.Width = 52;
             // 
             // clSLTangCa
@@ -448,6 +446,7 @@ namespace CtyTinLuong
             this.clSLTangCa.FieldName = "SLTangCa";
             this.clSLTangCa.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.clSLTangCa.Name = "clSLTangCa";
+            this.clSLTangCa.OptionsColumn.AllowEdit = false;
             this.clSLTangCa.Width = 53;
             // 
             // Ngay1
@@ -457,8 +456,9 @@ namespace CtyTinLuong
             this.Ngay1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay1.Caption = "01";
             this.Ngay1.FieldName = "Ngay1";
-            this.Ngay1.MinWidth = 27;
+            this.Ngay1.MinWidth = 35;
             this.Ngay1.Name = "Ngay1";
+            this.Ngay1.OptionsColumn.AllowEdit = false;
             this.Ngay1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsColumn.FixedWidth = true;
             this.Ngay1.OptionsFilter.AllowAutoFilter = false;
@@ -472,7 +472,7 @@ namespace CtyTinLuong
             this.Ngay1.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay1.Visible = true;
-            this.Ngay1.VisibleIndex = 3;
+            this.Ngay1.VisibleIndex = 2;
             this.Ngay1.Width = 45;
             // 
             // Ngay2
@@ -482,8 +482,9 @@ namespace CtyTinLuong
             this.Ngay2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay2.Caption = "02";
             this.Ngay2.FieldName = "Ngay2";
-            this.Ngay2.MinWidth = 27;
+            this.Ngay2.MinWidth = 35;
             this.Ngay2.Name = "Ngay2";
+            this.Ngay2.OptionsColumn.AllowEdit = false;
             this.Ngay2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsColumn.FixedWidth = true;
             this.Ngay2.OptionsFilter.AllowAutoFilter = false;
@@ -497,7 +498,7 @@ namespace CtyTinLuong
             this.Ngay2.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay2.Visible = true;
-            this.Ngay2.VisibleIndex = 4;
+            this.Ngay2.VisibleIndex = 3;
             this.Ngay2.Width = 45;
             // 
             // Ngay3
@@ -507,8 +508,9 @@ namespace CtyTinLuong
             this.Ngay3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay3.Caption = "03";
             this.Ngay3.FieldName = "Ngay3";
-            this.Ngay3.MinWidth = 27;
+            this.Ngay3.MinWidth = 35;
             this.Ngay3.Name = "Ngay3";
+            this.Ngay3.OptionsColumn.AllowEdit = false;
             this.Ngay3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsColumn.FixedWidth = true;
             this.Ngay3.OptionsFilter.AllowAutoFilter = false;
@@ -522,7 +524,7 @@ namespace CtyTinLuong
             this.Ngay3.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay3.Visible = true;
-            this.Ngay3.VisibleIndex = 5;
+            this.Ngay3.VisibleIndex = 4;
             this.Ngay3.Width = 45;
             // 
             // Ngay4
@@ -532,8 +534,9 @@ namespace CtyTinLuong
             this.Ngay4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay4.Caption = "04";
             this.Ngay4.FieldName = "Ngay4";
-            this.Ngay4.MinWidth = 27;
+            this.Ngay4.MinWidth = 35;
             this.Ngay4.Name = "Ngay4";
+            this.Ngay4.OptionsColumn.AllowEdit = false;
             this.Ngay4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsColumn.FixedWidth = true;
             this.Ngay4.OptionsFilter.AllowAutoFilter = false;
@@ -547,7 +550,7 @@ namespace CtyTinLuong
             this.Ngay4.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay4.Visible = true;
-            this.Ngay4.VisibleIndex = 6;
+            this.Ngay4.VisibleIndex = 5;
             this.Ngay4.Width = 45;
             // 
             // Ngay5
@@ -557,8 +560,9 @@ namespace CtyTinLuong
             this.Ngay5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay5.Caption = "05";
             this.Ngay5.FieldName = "Ngay5";
-            this.Ngay5.MinWidth = 27;
+            this.Ngay5.MinWidth = 35;
             this.Ngay5.Name = "Ngay5";
+            this.Ngay5.OptionsColumn.AllowEdit = false;
             this.Ngay5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsColumn.FixedWidth = true;
             this.Ngay5.OptionsFilter.AllowAutoFilter = false;
@@ -572,7 +576,7 @@ namespace CtyTinLuong
             this.Ngay5.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay5.Visible = true;
-            this.Ngay5.VisibleIndex = 7;
+            this.Ngay5.VisibleIndex = 6;
             this.Ngay5.Width = 45;
             // 
             // Ngay6
@@ -582,8 +586,9 @@ namespace CtyTinLuong
             this.Ngay6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay6.Caption = "06";
             this.Ngay6.FieldName = "Ngay6";
-            this.Ngay6.MinWidth = 27;
+            this.Ngay6.MinWidth = 35;
             this.Ngay6.Name = "Ngay6";
+            this.Ngay6.OptionsColumn.AllowEdit = false;
             this.Ngay6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsColumn.FixedWidth = true;
             this.Ngay6.OptionsFilter.AllowAutoFilter = false;
@@ -597,7 +602,7 @@ namespace CtyTinLuong
             this.Ngay6.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay6.Visible = true;
-            this.Ngay6.VisibleIndex = 8;
+            this.Ngay6.VisibleIndex = 7;
             this.Ngay6.Width = 45;
             // 
             // Ngay7
@@ -607,8 +612,9 @@ namespace CtyTinLuong
             this.Ngay7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay7.Caption = "07";
             this.Ngay7.FieldName = "Ngay7";
-            this.Ngay7.MinWidth = 27;
+            this.Ngay7.MinWidth = 35;
             this.Ngay7.Name = "Ngay7";
+            this.Ngay7.OptionsColumn.AllowEdit = false;
             this.Ngay7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsColumn.FixedWidth = true;
             this.Ngay7.OptionsFilter.AllowAutoFilter = false;
@@ -622,7 +628,7 @@ namespace CtyTinLuong
             this.Ngay7.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay7.Visible = true;
-            this.Ngay7.VisibleIndex = 9;
+            this.Ngay7.VisibleIndex = 8;
             this.Ngay7.Width = 45;
             // 
             // Ngay8
@@ -632,8 +638,9 @@ namespace CtyTinLuong
             this.Ngay8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay8.Caption = "08";
             this.Ngay8.FieldName = "Ngay8";
-            this.Ngay8.MinWidth = 27;
+            this.Ngay8.MinWidth = 35;
             this.Ngay8.Name = "Ngay8";
+            this.Ngay8.OptionsColumn.AllowEdit = false;
             this.Ngay8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsColumn.FixedWidth = true;
             this.Ngay8.OptionsFilter.AllowAutoFilter = false;
@@ -647,7 +654,7 @@ namespace CtyTinLuong
             this.Ngay8.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay8.Visible = true;
-            this.Ngay8.VisibleIndex = 10;
+            this.Ngay8.VisibleIndex = 9;
             this.Ngay8.Width = 45;
             // 
             // Ngay9
@@ -657,8 +664,9 @@ namespace CtyTinLuong
             this.Ngay9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay9.Caption = "09";
             this.Ngay9.FieldName = "Ngay9";
-            this.Ngay9.MinWidth = 27;
+            this.Ngay9.MinWidth = 35;
             this.Ngay9.Name = "Ngay9";
+            this.Ngay9.OptionsColumn.AllowEdit = false;
             this.Ngay9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsColumn.FixedWidth = true;
             this.Ngay9.OptionsFilter.AllowAutoFilter = false;
@@ -672,7 +680,7 @@ namespace CtyTinLuong
             this.Ngay9.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay9.Visible = true;
-            this.Ngay9.VisibleIndex = 11;
+            this.Ngay9.VisibleIndex = 10;
             this.Ngay9.Width = 45;
             // 
             // Ngay10
@@ -682,8 +690,9 @@ namespace CtyTinLuong
             this.Ngay10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay10.Caption = "10";
             this.Ngay10.FieldName = "Ngay10";
-            this.Ngay10.MinWidth = 27;
+            this.Ngay10.MinWidth = 35;
             this.Ngay10.Name = "Ngay10";
+            this.Ngay10.OptionsColumn.AllowEdit = false;
             this.Ngay10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsColumn.FixedWidth = true;
             this.Ngay10.OptionsFilter.AllowAutoFilter = false;
@@ -698,7 +707,7 @@ namespace CtyTinLuong
             this.Ngay10.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay10.Visible = true;
-            this.Ngay10.VisibleIndex = 12;
+            this.Ngay10.VisibleIndex = 11;
             this.Ngay10.Width = 45;
             // 
             // Ngay11
@@ -708,8 +717,9 @@ namespace CtyTinLuong
             this.Ngay11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay11.Caption = "11";
             this.Ngay11.FieldName = "Ngay11";
-            this.Ngay11.MinWidth = 27;
+            this.Ngay11.MinWidth = 35;
             this.Ngay11.Name = "Ngay11";
+            this.Ngay11.OptionsColumn.AllowEdit = false;
             this.Ngay11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsColumn.FixedWidth = true;
             this.Ngay11.OptionsFilter.AllowAutoFilter = false;
@@ -723,7 +733,7 @@ namespace CtyTinLuong
             this.Ngay11.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay11.Visible = true;
-            this.Ngay11.VisibleIndex = 13;
+            this.Ngay11.VisibleIndex = 12;
             this.Ngay11.Width = 45;
             // 
             // Ngay12
@@ -733,8 +743,9 @@ namespace CtyTinLuong
             this.Ngay12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay12.Caption = "12";
             this.Ngay12.FieldName = "Ngay12";
-            this.Ngay12.MinWidth = 27;
+            this.Ngay12.MinWidth = 35;
             this.Ngay12.Name = "Ngay12";
+            this.Ngay12.OptionsColumn.AllowEdit = false;
             this.Ngay12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsColumn.FixedWidth = true;
             this.Ngay12.OptionsFilter.AllowAutoFilter = false;
@@ -748,7 +759,7 @@ namespace CtyTinLuong
             this.Ngay12.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay12.Visible = true;
-            this.Ngay12.VisibleIndex = 14;
+            this.Ngay12.VisibleIndex = 13;
             this.Ngay12.Width = 45;
             // 
             // Ngay13
@@ -758,8 +769,9 @@ namespace CtyTinLuong
             this.Ngay13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay13.Caption = "13";
             this.Ngay13.FieldName = "Ngay13";
-            this.Ngay13.MinWidth = 27;
+            this.Ngay13.MinWidth = 35;
             this.Ngay13.Name = "Ngay13";
+            this.Ngay13.OptionsColumn.AllowEdit = false;
             this.Ngay13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsColumn.FixedWidth = true;
             this.Ngay13.OptionsFilter.AllowAutoFilter = false;
@@ -773,7 +785,7 @@ namespace CtyTinLuong
             this.Ngay13.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay13.Visible = true;
-            this.Ngay13.VisibleIndex = 15;
+            this.Ngay13.VisibleIndex = 14;
             this.Ngay13.Width = 45;
             // 
             // Ngay14
@@ -783,8 +795,9 @@ namespace CtyTinLuong
             this.Ngay14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay14.Caption = "14";
             this.Ngay14.FieldName = "Ngay14";
-            this.Ngay14.MinWidth = 27;
+            this.Ngay14.MinWidth = 35;
             this.Ngay14.Name = "Ngay14";
+            this.Ngay14.OptionsColumn.AllowEdit = false;
             this.Ngay14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsColumn.FixedWidth = true;
             this.Ngay14.OptionsFilter.AllowAutoFilter = false;
@@ -798,7 +811,7 @@ namespace CtyTinLuong
             this.Ngay14.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay14.Visible = true;
-            this.Ngay14.VisibleIndex = 16;
+            this.Ngay14.VisibleIndex = 15;
             this.Ngay14.Width = 45;
             // 
             // Ngay15
@@ -808,8 +821,9 @@ namespace CtyTinLuong
             this.Ngay15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay15.Caption = "15";
             this.Ngay15.FieldName = "Ngay15";
-            this.Ngay15.MinWidth = 27;
+            this.Ngay15.MinWidth = 35;
             this.Ngay15.Name = "Ngay15";
+            this.Ngay15.OptionsColumn.AllowEdit = false;
             this.Ngay15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsColumn.FixedWidth = true;
             this.Ngay15.OptionsFilter.AllowAutoFilter = false;
@@ -823,7 +837,7 @@ namespace CtyTinLuong
             this.Ngay15.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay15.Visible = true;
-            this.Ngay15.VisibleIndex = 17;
+            this.Ngay15.VisibleIndex = 16;
             this.Ngay15.Width = 45;
             // 
             // Ngay16
@@ -833,8 +847,9 @@ namespace CtyTinLuong
             this.Ngay16.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay16.Caption = "16";
             this.Ngay16.FieldName = "Ngay16";
-            this.Ngay16.MinWidth = 27;
+            this.Ngay16.MinWidth = 35;
             this.Ngay16.Name = "Ngay16";
+            this.Ngay16.OptionsColumn.AllowEdit = false;
             this.Ngay16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsColumn.FixedWidth = true;
             this.Ngay16.OptionsFilter.AllowAutoFilter = false;
@@ -848,7 +863,7 @@ namespace CtyTinLuong
             this.Ngay16.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay16.Visible = true;
-            this.Ngay16.VisibleIndex = 18;
+            this.Ngay16.VisibleIndex = 17;
             this.Ngay16.Width = 45;
             // 
             // Ngay17
@@ -858,8 +873,9 @@ namespace CtyTinLuong
             this.Ngay17.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay17.Caption = "17";
             this.Ngay17.FieldName = "Ngay17";
-            this.Ngay17.MinWidth = 27;
+            this.Ngay17.MinWidth = 35;
             this.Ngay17.Name = "Ngay17";
+            this.Ngay17.OptionsColumn.AllowEdit = false;
             this.Ngay17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsColumn.FixedWidth = true;
             this.Ngay17.OptionsFilter.AllowAutoFilter = false;
@@ -873,7 +889,7 @@ namespace CtyTinLuong
             this.Ngay17.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay17.Visible = true;
-            this.Ngay17.VisibleIndex = 19;
+            this.Ngay17.VisibleIndex = 18;
             this.Ngay17.Width = 45;
             // 
             // Ngay18
@@ -883,8 +899,9 @@ namespace CtyTinLuong
             this.Ngay18.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay18.Caption = "18";
             this.Ngay18.FieldName = "Ngay18";
-            this.Ngay18.MinWidth = 27;
+            this.Ngay18.MinWidth = 35;
             this.Ngay18.Name = "Ngay18";
+            this.Ngay18.OptionsColumn.AllowEdit = false;
             this.Ngay18.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsColumn.FixedWidth = true;
             this.Ngay18.OptionsFilter.AllowAutoFilter = false;
@@ -898,7 +915,7 @@ namespace CtyTinLuong
             this.Ngay18.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay18.Visible = true;
-            this.Ngay18.VisibleIndex = 20;
+            this.Ngay18.VisibleIndex = 19;
             this.Ngay18.Width = 45;
             // 
             // Ngay19
@@ -908,8 +925,9 @@ namespace CtyTinLuong
             this.Ngay19.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay19.Caption = "19";
             this.Ngay19.FieldName = "Ngay19";
-            this.Ngay19.MinWidth = 27;
+            this.Ngay19.MinWidth = 35;
             this.Ngay19.Name = "Ngay19";
+            this.Ngay19.OptionsColumn.AllowEdit = false;
             this.Ngay19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsColumn.FixedWidth = true;
             this.Ngay19.OptionsFilter.AllowAutoFilter = false;
@@ -923,7 +941,7 @@ namespace CtyTinLuong
             this.Ngay19.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay19.Visible = true;
-            this.Ngay19.VisibleIndex = 21;
+            this.Ngay19.VisibleIndex = 20;
             this.Ngay19.Width = 45;
             // 
             // Ngay20
@@ -933,8 +951,9 @@ namespace CtyTinLuong
             this.Ngay20.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay20.Caption = "20";
             this.Ngay20.FieldName = "Ngay20";
-            this.Ngay20.MinWidth = 27;
+            this.Ngay20.MinWidth = 35;
             this.Ngay20.Name = "Ngay20";
+            this.Ngay20.OptionsColumn.AllowEdit = false;
             this.Ngay20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsColumn.FixedWidth = true;
             this.Ngay20.OptionsFilter.AllowAutoFilter = false;
@@ -948,7 +967,7 @@ namespace CtyTinLuong
             this.Ngay20.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay20.Visible = true;
-            this.Ngay20.VisibleIndex = 22;
+            this.Ngay20.VisibleIndex = 21;
             this.Ngay20.Width = 45;
             // 
             // Ngay21
@@ -958,8 +977,9 @@ namespace CtyTinLuong
             this.Ngay21.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay21.Caption = "21";
             this.Ngay21.FieldName = "Ngay21";
-            this.Ngay21.MinWidth = 27;
+            this.Ngay21.MinWidth = 35;
             this.Ngay21.Name = "Ngay21";
+            this.Ngay21.OptionsColumn.AllowEdit = false;
             this.Ngay21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsColumn.FixedWidth = true;
             this.Ngay21.OptionsFilter.AllowAutoFilter = false;
@@ -973,7 +993,7 @@ namespace CtyTinLuong
             this.Ngay21.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay21.Visible = true;
-            this.Ngay21.VisibleIndex = 23;
+            this.Ngay21.VisibleIndex = 22;
             this.Ngay21.Width = 45;
             // 
             // Ngay22
@@ -983,8 +1003,9 @@ namespace CtyTinLuong
             this.Ngay22.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay22.Caption = "22";
             this.Ngay22.FieldName = "Ngay22";
-            this.Ngay22.MinWidth = 27;
+            this.Ngay22.MinWidth = 35;
             this.Ngay22.Name = "Ngay22";
+            this.Ngay22.OptionsColumn.AllowEdit = false;
             this.Ngay22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsColumn.FixedWidth = true;
             this.Ngay22.OptionsFilter.AllowAutoFilter = false;
@@ -998,7 +1019,7 @@ namespace CtyTinLuong
             this.Ngay22.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay22.Visible = true;
-            this.Ngay22.VisibleIndex = 24;
+            this.Ngay22.VisibleIndex = 23;
             this.Ngay22.Width = 45;
             // 
             // Ngay23
@@ -1008,8 +1029,9 @@ namespace CtyTinLuong
             this.Ngay23.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay23.Caption = "23";
             this.Ngay23.FieldName = "Ngay23";
-            this.Ngay23.MinWidth = 27;
+            this.Ngay23.MinWidth = 35;
             this.Ngay23.Name = "Ngay23";
+            this.Ngay23.OptionsColumn.AllowEdit = false;
             this.Ngay23.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsColumn.FixedWidth = true;
             this.Ngay23.OptionsFilter.AllowAutoFilter = false;
@@ -1023,7 +1045,7 @@ namespace CtyTinLuong
             this.Ngay23.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay23.Visible = true;
-            this.Ngay23.VisibleIndex = 25;
+            this.Ngay23.VisibleIndex = 24;
             this.Ngay23.Width = 45;
             // 
             // Ngay24
@@ -1033,8 +1055,9 @@ namespace CtyTinLuong
             this.Ngay24.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay24.Caption = "24";
             this.Ngay24.FieldName = "Ngay24";
-            this.Ngay24.MinWidth = 27;
+            this.Ngay24.MinWidth = 35;
             this.Ngay24.Name = "Ngay24";
+            this.Ngay24.OptionsColumn.AllowEdit = false;
             this.Ngay24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsColumn.FixedWidth = true;
             this.Ngay24.OptionsFilter.AllowAutoFilter = false;
@@ -1048,7 +1071,7 @@ namespace CtyTinLuong
             this.Ngay24.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay24.Visible = true;
-            this.Ngay24.VisibleIndex = 26;
+            this.Ngay24.VisibleIndex = 25;
             this.Ngay24.Width = 45;
             // 
             // Ngay25
@@ -1058,8 +1081,9 @@ namespace CtyTinLuong
             this.Ngay25.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay25.Caption = "25";
             this.Ngay25.FieldName = "Ngay25";
-            this.Ngay25.MinWidth = 27;
+            this.Ngay25.MinWidth = 35;
             this.Ngay25.Name = "Ngay25";
+            this.Ngay25.OptionsColumn.AllowEdit = false;
             this.Ngay25.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsColumn.FixedWidth = true;
             this.Ngay25.OptionsFilter.AllowAutoFilter = false;
@@ -1073,7 +1097,7 @@ namespace CtyTinLuong
             this.Ngay25.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay25.Visible = true;
-            this.Ngay25.VisibleIndex = 27;
+            this.Ngay25.VisibleIndex = 26;
             this.Ngay25.Width = 45;
             // 
             // Ngay26
@@ -1083,8 +1107,9 @@ namespace CtyTinLuong
             this.Ngay26.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay26.Caption = "26";
             this.Ngay26.FieldName = "Ngay26";
-            this.Ngay26.MinWidth = 27;
+            this.Ngay26.MinWidth = 35;
             this.Ngay26.Name = "Ngay26";
+            this.Ngay26.OptionsColumn.AllowEdit = false;
             this.Ngay26.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsColumn.FixedWidth = true;
             this.Ngay26.OptionsFilter.AllowAutoFilter = false;
@@ -1098,7 +1123,7 @@ namespace CtyTinLuong
             this.Ngay26.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay26.Visible = true;
-            this.Ngay26.VisibleIndex = 28;
+            this.Ngay26.VisibleIndex = 27;
             this.Ngay26.Width = 45;
             // 
             // Ngay27
@@ -1108,8 +1133,9 @@ namespace CtyTinLuong
             this.Ngay27.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay27.Caption = "27";
             this.Ngay27.FieldName = "Ngay27";
-            this.Ngay27.MinWidth = 27;
+            this.Ngay27.MinWidth = 35;
             this.Ngay27.Name = "Ngay27";
+            this.Ngay27.OptionsColumn.AllowEdit = false;
             this.Ngay27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsColumn.FixedWidth = true;
             this.Ngay27.OptionsFilter.AllowAutoFilter = false;
@@ -1123,7 +1149,7 @@ namespace CtyTinLuong
             this.Ngay27.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay27.Visible = true;
-            this.Ngay27.VisibleIndex = 29;
+            this.Ngay27.VisibleIndex = 28;
             this.Ngay27.Width = 45;
             // 
             // Ngay28
@@ -1133,8 +1159,9 @@ namespace CtyTinLuong
             this.Ngay28.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay28.Caption = "28";
             this.Ngay28.FieldName = "Ngay28";
-            this.Ngay28.MinWidth = 27;
+            this.Ngay28.MinWidth = 35;
             this.Ngay28.Name = "Ngay28";
+            this.Ngay28.OptionsColumn.AllowEdit = false;
             this.Ngay28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsColumn.FixedWidth = true;
             this.Ngay28.OptionsFilter.AllowAutoFilter = false;
@@ -1148,7 +1175,7 @@ namespace CtyTinLuong
             this.Ngay28.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay28.Visible = true;
-            this.Ngay28.VisibleIndex = 30;
+            this.Ngay28.VisibleIndex = 29;
             this.Ngay28.Width = 45;
             // 
             // Ngay29
@@ -1158,8 +1185,9 @@ namespace CtyTinLuong
             this.Ngay29.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay29.Caption = "29";
             this.Ngay29.FieldName = "Ngay29";
-            this.Ngay29.MinWidth = 27;
+            this.Ngay29.MinWidth = 35;
             this.Ngay29.Name = "Ngay29";
+            this.Ngay29.OptionsColumn.AllowEdit = false;
             this.Ngay29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsColumn.FixedWidth = true;
             this.Ngay29.OptionsFilter.AllowAutoFilter = false;
@@ -1173,7 +1201,7 @@ namespace CtyTinLuong
             this.Ngay29.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay29.Visible = true;
-            this.Ngay29.VisibleIndex = 31;
+            this.Ngay29.VisibleIndex = 30;
             this.Ngay29.Width = 45;
             // 
             // Ngay30
@@ -1183,8 +1211,9 @@ namespace CtyTinLuong
             this.Ngay30.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay30.Caption = "30";
             this.Ngay30.FieldName = "Ngay30";
-            this.Ngay30.MinWidth = 27;
+            this.Ngay30.MinWidth = 35;
             this.Ngay30.Name = "Ngay30";
+            this.Ngay30.OptionsColumn.AllowEdit = false;
             this.Ngay30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsColumn.FixedWidth = true;
             this.Ngay30.OptionsFilter.AllowAutoFilter = false;
@@ -1198,7 +1227,7 @@ namespace CtyTinLuong
             this.Ngay30.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay30.Visible = true;
-            this.Ngay30.VisibleIndex = 32;
+            this.Ngay30.VisibleIndex = 31;
             this.Ngay30.Width = 45;
             // 
             // Ngay31
@@ -1208,8 +1237,9 @@ namespace CtyTinLuong
             this.Ngay31.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay31.Caption = "31";
             this.Ngay31.FieldName = "Ngay31";
-            this.Ngay31.MinWidth = 27;
+            this.Ngay31.MinWidth = 35;
             this.Ngay31.Name = "Ngay31";
+            this.Ngay31.OptionsColumn.AllowEdit = false;
             this.Ngay31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsColumn.FixedWidth = true;
             this.Ngay31.OptionsFilter.AllowAutoFilter = false;
@@ -1223,7 +1253,7 @@ namespace CtyTinLuong
             this.Ngay31.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay31.Visible = true;
-            this.Ngay31.VisibleIndex = 33;
+            this.Ngay31.VisibleIndex = 32;
             this.Ngay31.Width = 45;
             // 
             // clGuiDuLieu
@@ -1231,6 +1261,7 @@ namespace CtyTinLuong
             this.clGuiDuLieu.Caption = "GuiDuLieu";
             this.clGuiDuLieu.FieldName = "GuiDuLieu";
             this.clGuiDuLieu.Name = "clGuiDuLieu";
+            this.clGuiDuLieu.OptionsColumn.AllowEdit = false;
             // 
             // Tong
             // 
@@ -1244,33 +1275,43 @@ namespace CtyTinLuong
             this.Tong.Caption = "TỔNG";
             this.Tong.FieldName = "Tong";
             this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.Tong.MinWidth = 27;
+            this.Tong.MinWidth = 50;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 34;
-            this.Tong.Width = 45;
+            this.Tong.Width = 50;
             // 
             // KyNhan
             // 
             this.KyNhan.Caption = "KÝ NHẬN";
             this.KyNhan.FieldName = "KyNhan";
             this.KyNhan.Name = "KyNhan";
+            this.KyNhan.OptionsColumn.AllowEdit = false;
             this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // IsTangCa
+            // gridColumn2
             // 
-            this.IsTangCa.Caption = "Ca làm việc";
-            this.IsTangCa.FieldName = "IsTangCa";
-            this.IsTangCa.Name = "IsTangCa";
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridColumn2.Caption = "Vượt SL";
+            this.gridColumn2.FieldName = "VuotSanLuong";
+            this.gridColumn2.MaxWidth = 40;
+            this.gridColumn2.MinWidth = 40;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 33;
+            this.gridColumn2.Width = 40;
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 61);
+            this.gridControl1.Location = new System.Drawing.Point(0, 49);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1282,7 +1323,7 @@ namespace CtyTinLuong
             this.repositoryItemLookUpEdit1,
             this.comboThin,
             this.gridThin});
-            this.gridControl1.Size = new System.Drawing.Size(908, 518);
+            this.gridControl1.Size = new System.Drawing.Size(913, 518);
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1354,35 +1395,6 @@ namespace CtyTinLuong
             // 
             this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
             // 
-            // cbNhanSu
-            // 
-            this.cbNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNhanSu.FormattingEnabled = true;
-            this.cbNhanSu.Location = new System.Drawing.Point(546, 22);
-            this.cbNhanSu.Name = "cbNhanSu";
-            this.cbNhanSu.Size = new System.Drawing.Size(204, 21);
-            this.cbNhanSu.TabIndex = 138;
-            // 
-            // btnThemNhanVien
-            // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(765, 20);
-            this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 24);
-            this.btnThemNhanVien.TabIndex = 137;
-            this.btnThemNhanVien.Text = "Thêm nhân viên";
-            this.btnThemNhanVien.UseVisualStyleBackColor = true;
-            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(441, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 13);
-            this.label7.TabIndex = 136;
-            this.label7.Text = "Thêm nhân viên:";
-            // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
@@ -1400,7 +1412,7 @@ namespace CtyTinLuong
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btnPrint.Location = new System.Drawing.Point(742, 595);
+            this.btnPrint.Location = new System.Drawing.Point(743, 595);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(82, 25);
             this.btnPrint.TabIndex = 161;
@@ -1415,7 +1427,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu.Appearance.Options.UseFont = true;
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
             this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(657, 595);
+            this.btGuiDuLieu.Location = new System.Drawing.Point(658, 595);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
             this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
             this.btGuiDuLieu.TabIndex = 160;
@@ -1429,7 +1441,7 @@ namespace CtyTinLuong
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(826, 595);
+            this.btThoat.Location = new System.Drawing.Point(827, 595);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(82, 25);
             this.btThoat.TabIndex = 159;
@@ -1441,58 +1453,30 @@ namespace CtyTinLuong
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(263, 601);
+            this.label5.Location = new System.Drawing.Point(259, 602);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(262, 13);
             this.label5.TabIndex = 162;
             this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
             // 
-            // radioCa1
-            // 
-            this.radioCa1.AutoSize = true;
-            this.radioCa1.Location = new System.Drawing.Point(297, 23);
-            this.radioCa1.Name = "radioCa1";
-            this.radioCa1.Size = new System.Drawing.Size(47, 17);
-            this.radioCa1.TabIndex = 163;
-            this.radioCa1.TabStop = true;
-            this.radioCa1.Text = "Ca 1";
-            this.radioCa1.UseVisualStyleBackColor = true;
-            this.radioCa1.CheckedChanged += new System.EventHandler(this.radioCa1_CheckedChanged);
-            // 
-            // radioCa2
-            // 
-            this.radioCa2.AutoSize = true;
-            this.radioCa2.Location = new System.Drawing.Point(358, 24);
-            this.radioCa2.Name = "radioCa2";
-            this.radioCa2.Size = new System.Drawing.Size(47, 17);
-            this.radioCa2.TabIndex = 164;
-            this.radioCa2.TabStop = true;
-            this.radioCa2.Text = "Ca 2";
-            this.radioCa2.UseVisualStyleBackColor = true;
-            // 
-            // frmChamCong_ToIn
+            // frmChamCong_ToIn_Old
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.radioCa2);
-            this.Controls.Add(this.radioCa1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.cbNhanSu);
-            this.Controls.Add(this.btnThemNhanVien);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmChamCong_ToIn";
+            this.Name = "frmChamCong_ToIn_Old";
             this.Size = new System.Drawing.Size(913, 635);
-            this.Load += new System.EventHandler(this.frmChamCong_ToIn_Load);
+            this.Load += new System.EventHandler(this.frmChamCong_ToIn_Old_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
@@ -1581,9 +1565,6 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
-        private System.Windows.Forms.ComboBox cbNhanSu;
-        private System.Windows.Forms.Button btnThemNhanVien;
-        private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.Columns.GridColumn Cong;
         private DevExpress.XtraGrid.Columns.GridColumn KyNhan;
         private System.Windows.Forms.LinkLabel linkLabel2;
@@ -1591,8 +1572,6 @@ namespace CtyTinLuong
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioCa1;
-        private System.Windows.Forms.RadioButton radioCa2;
-        private DevExpress.XtraGrid.Columns.GridColumn IsTangCa;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

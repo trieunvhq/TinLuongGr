@@ -3254,6 +3254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 553);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PhieuSanXuat_IN_CAT_New_thang8";
             this.Text = "Phiếu sản xuất";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

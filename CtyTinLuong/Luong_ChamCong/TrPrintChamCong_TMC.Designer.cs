@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong.Luong_ChamCong
 {
-    partial class TrPrintChamCong_PhuMC
+    partial class TrPrintChamCong_TMC
     {
         /// <summary>
         /// Required designer variable.
@@ -724,7 +724,7 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(1104.917F, 27.16665F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "BẢNG CHẤM CÔNG PHỤ MÁY CẮT";
+            this.xrLabel2.Text = "BẢNG CHẤM CÔNG TỔ MÁY CẮT";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrlbNam
@@ -2245,7 +2245,7 @@
             this.xrTableCell75.TextFormatString = "{0:n2}";
             this.xrTableCell75.Weight = 0.66442988498220656D;
             // 
-            // TrPrintChamCong_PhuMC
+            // TrPrintChamCong_TMC
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,

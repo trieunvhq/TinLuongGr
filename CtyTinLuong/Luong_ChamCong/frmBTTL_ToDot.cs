@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmBTTL_ToIn : UserControl
+    public partial class frmBTTL_ToDot : UserControl
     { 
         public int miiID_chiTietChamCong, miiD_DinhMuc_Luong, miID_congNhan;
         public int miiID_ChamCong;
@@ -35,7 +35,7 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
-        public frmBTTL_ToIn(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
+        public frmBTTL_ToDot(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
             _data = new DataTable();
             _data.Columns.Add("Thang", typeof(int));
@@ -103,11 +103,11 @@ namespace CtyTinLuong
             {
                 //Lấy dữ liệu ca1
                 _dtCong_Ca1 = clsThin_.Tr_BTTL_PMC(_nam, _thang, _id_bophan, true);
-                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 1");
+                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 1");
 
                 //Lấy dữ liệu ca2
                 _dtCong_Ca2 = clsThin_.Tr_BTTL_PMC(_nam, _thang, _id_bophan, false);
-                _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 2");
+                _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 2");
 
                 int SttCa1 = 0;
                 int ID_congNhanRoot = -1;
@@ -615,7 +615,7 @@ namespace CtyTinLuong
         //            }
 
 
-        private void frmBTTL_ToIn_Load(object sender, EventArgs e)
+        private void frmBTTL_ToDot_Load(object sender, EventArgs e)
         {
         }
 

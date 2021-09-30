@@ -8,18 +8,19 @@ using System.Collections.Generic;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class TrPrintChamCong_PhuMC : DevExpress.XtraReports.UI.XtraReport
+    public partial class TrPrintChamCong_PhuMC_Old : DevExpress.XtraReports.UI.XtraReport
     {
 
         List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
+        List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
         List<XRTableCell> Ds_GrHeader = new List<XRTableCell>();
 
 
         private int _nam, _thang;
 
-        public TrPrintChamCong_PhuMC(int thang, int nam)
+        public TrPrintChamCong_PhuMC_Old(int thang, int nam)
         {
             _thang = thang;
             _nam = nam;
@@ -123,6 +124,39 @@ namespace CtyTinLuong.Luong_ChamCong
             Ds_Ngay_Header.Add(ng29);
             Ds_Ngay_Header.Add(ng30);
             Ds_Ngay_Header.Add(ng31);
+
+            //
+            Ds_Ngay_Footer.Add(tg1);
+            Ds_Ngay_Footer.Add(tg2);
+            Ds_Ngay_Footer.Add(tg3);
+            Ds_Ngay_Footer.Add(tg4);
+            Ds_Ngay_Footer.Add(tg5);
+            Ds_Ngay_Footer.Add(tg6);
+            Ds_Ngay_Footer.Add(tg7);
+            Ds_Ngay_Footer.Add(tg8);
+            Ds_Ngay_Footer.Add(tg9);
+            Ds_Ngay_Footer.Add(tg10);
+            Ds_Ngay_Footer.Add(tg11);
+            Ds_Ngay_Footer.Add(tg12);
+            Ds_Ngay_Footer.Add(tg13);
+            Ds_Ngay_Footer.Add(tg14);
+            Ds_Ngay_Footer.Add(tg15);
+            Ds_Ngay_Footer.Add(tg16);
+            Ds_Ngay_Footer.Add(tg17);
+            Ds_Ngay_Footer.Add(tg18);
+            Ds_Ngay_Footer.Add(tg19);
+            Ds_Ngay_Footer.Add(tg20);
+            Ds_Ngay_Footer.Add(tg21);
+            Ds_Ngay_Footer.Add(tg22);
+            Ds_Ngay_Footer.Add(tg23);
+            Ds_Ngay_Footer.Add(tg24);
+            Ds_Ngay_Footer.Add(tg25);
+            Ds_Ngay_Footer.Add(tg26);
+            Ds_Ngay_Footer.Add(tg27);
+            Ds_Ngay_Footer.Add(tg28);
+            Ds_Ngay_Footer.Add(tg29);
+            Ds_Ngay_Footer.Add(tg30);
+            Ds_Ngay_Footer.Add(tg31);
 
             //
             Ds_GrHeader.Add(xrTableCell8);
@@ -248,6 +282,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     xrTable2.DeleteColumn(ng31);
                     xrTable4.DeleteColumn(xrTableCell74);
                     xrTable1.DeleteColumn(Ngay31);
+                    xrTable3.DeleteColumn(tg31);
                     _flag_31 = "deleted";
                 }
 
@@ -257,6 +292,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     xrTable2.DeleteColumn(ng30);
                     xrTable4.DeleteColumn(xrTableCell73);
                     xrTable1.DeleteColumn(Ngay30);
+                    xrTable3.DeleteColumn(tg30);
                     _flag_30 = "deleted";
                 }
 
@@ -266,12 +302,13 @@ namespace CtyTinLuong.Luong_ChamCong
                     xrTable2.DeleteColumn(ng29);
                     xrTable4.DeleteColumn(xrTableCell72);
                     xrTable1.DeleteColumn(Ngay29);
+                    xrTable3.DeleteColumn(tg29);
                     _flag_29 = "deleted";
                 }
 
                 //
-                xrTableCell10.WidthF = xrTableCell1.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.02;
-                cong.WidthF = xrTableCell7.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.26;
+                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell1.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.02;
+                congFooter.WidthF = cong.WidthF = xrTableCell7.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.26;
                 //
                 float tmp = 0;
                 float colw = (float)((27.52 * 31) / 28);
@@ -282,10 +319,11 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_Ngay_Header[i].WidthF = colw;
                     Ds_GrHeader[i].WidthF = colw;
                     Ds_Ngay[i].WidthF = colw;
+                    Ds_Ngay_Footer[i].WidthF = colw;
                     tmp += colw;
                 }
                 xrTableCell3.WidthF = tmp;
-                TongCel.WidthF = xrTableCell75.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.11;
+                tgSum.WidthF = TongCel.WidthF = xrTableCell75.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.11;
             }
             else if (ngaycuathang_ == 29)
             {
@@ -294,6 +332,7 @@ namespace CtyTinLuong.Luong_ChamCong
                     xrTable2.DeleteColumn(ng31);
                     xrTable4.DeleteColumn(xrTableCell74);
                     xrTable1.DeleteColumn(Ngay31);
+                    xrTable3.DeleteColumn(tg31);
                     _flag_31 = "deleted";
                 }
 
@@ -303,12 +342,13 @@ namespace CtyTinLuong.Luong_ChamCong
                     xrTable2.DeleteColumn(ng30);
                     xrTable4.DeleteColumn(xrTableCell73);
                     xrTable1.DeleteColumn(Ngay30);
+                    xrTable3.DeleteColumn(tg30);
                     _flag_30 = "deleted";
                 }
 
                 //
-                xrTableCell10.WidthF = xrTableCell1.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.02;
-                cong.WidthF = xrTableCell7.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.26;
+                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell1.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.02;
+                congFooter.WidthF = cong.WidthF = xrTableCell7.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.26;
                 //
                 float tmp = 0;
                 float colw = (float)((27.52 * 31) / 29);
@@ -318,10 +358,11 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_Ngay_Header[i].WidthF = colw;
                     Ds_GrHeader[i].WidthF = colw;
                     Ds_Ngay[i].WidthF = colw;
+                    Ds_Ngay_Footer[i].WidthF = colw;
                     tmp += colw;
                 }
                 xrTableCell3.WidthF = tmp;
-                TongCel.WidthF = xrTableCell75.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.11;
+                tgSum.WidthF = TongCel.WidthF = xrTableCell75.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.11;
             }
             else if (ngaycuathang_ == 30)
             {
@@ -330,13 +371,14 @@ namespace CtyTinLuong.Luong_ChamCong
                     xrTable2.DeleteColumn(ng31);
                     xrTable4.DeleteColumn(xrTableCell74);
                     xrTable1.DeleteColumn(Ngay31);
+                    xrTable3.DeleteColumn(tg31);
 
                     _flag_31 = "deleted";
                 }
 
                 //
-                xrTableCell10.WidthF = xrTableCell1.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.02;
-                cong.WidthF = xrTableCell7.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.26;
+                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell1.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)130.02;
+                congFooter.WidthF = cong.WidthF = xrTableCell7.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.26;
                 //
                 float tmp = 0;
                 float colw = (float)((27.52 * 31) / 30);
@@ -346,10 +388,11 @@ namespace CtyTinLuong.Luong_ChamCong
                     Ds_Ngay_Header[i].WidthF = colw;
                     Ds_GrHeader[i].WidthF = colw;
                     Ds_Ngay[i].WidthF = colw;
+                    Ds_Ngay_Footer[i].WidthF = colw;
                     tmp += colw;
                 }
                 xrTableCell3.WidthF = tmp;
-                TongCel.WidthF = xrTableCell75.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.11;
+                tgSum.WidthF = TongCel.WidthF = xrTableCell75.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.11;
             }
             else if (ngaycuathang_ == 31)
             {
@@ -368,6 +411,10 @@ namespace CtyTinLuong.Luong_ChamCong
                     //detail
                     Ds_Ngay[i].BackColor = Color.LightGray;
                     Ds_Ngay[i].ForeColor = Color.Red;
+
+                    //footer
+                    Ds_Ngay_Footer[i].BackColor = Color.LightGray;
+                    Ds_Ngay_Footer[i].ForeColor = Color.Red;
                 }
             }
         }

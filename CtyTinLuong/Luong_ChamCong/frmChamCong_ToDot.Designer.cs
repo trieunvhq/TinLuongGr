@@ -1,7 +1,7 @@
 ﻿
 namespace CtyTinLuong
 {
-    partial class frmChamCong_ToIn
+    partial class frmChamCong_ToDot
     {
         /// <summary>
         /// Required designer variable.
@@ -1470,7 +1470,7 @@ namespace CtyTinLuong
             this.radioCa2.Text = "Ca 2";
             this.radioCa2.UseVisualStyleBackColor = true;
             // 
-            // frmChamCong_ToIn
+            // frmChamCong_ToDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1490,9 +1490,9 @@ namespace CtyTinLuong
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmChamCong_ToIn";
+            this.Name = "frmChamCong_ToDot";
             this.Size = new System.Drawing.Size(913, 635);
-            this.Load += new System.EventHandler(this.frmChamCong_ToIn_Load);
+            this.Load += new System.EventHandler(this.frmChamCong_ToDot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();

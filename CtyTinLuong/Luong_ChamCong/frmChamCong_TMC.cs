@@ -241,8 +241,8 @@ namespace CtyTinLuong
             { 
                 DateTime dtnow = DateTime.Now;
                 _nam = DateTime.Now.Year;
-                //_thang = DateTime.Now.Month;
-                _thang = 4;
+                _thang = DateTime.Now.Month;
+                //_thang = 4;
 
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
@@ -946,7 +946,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC(_thang, _nam, _id_bophan);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TMC ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TMC(_thang, _nam, _id_bophan);
             ff.ShowDialog();
         }
 

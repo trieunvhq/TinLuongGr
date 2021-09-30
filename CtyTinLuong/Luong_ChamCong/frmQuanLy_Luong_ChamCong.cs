@@ -278,7 +278,7 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
-            int id_bophan_ = KiemTraTenBoPhan("Tổ Máy cắt");
+            int id_bophan_ = KiemTraTenBoPhan("Máy cắt");
             if (id_bophan_ == 0) return;
 
             frmBTTL_TMC_CT frm = new frmBTTL_TMC_CT(id_bophan_, this);
@@ -496,7 +496,7 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
 
-            frm.LoadData(true);
+            frm.LoadData(true, true);
 
             Cursor.Current = Cursors.Default;
         }
@@ -506,6 +506,15 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             doiMauTitle(sender, e);
 
+            int id_bophan_ = KiemTraTenBoPhan("Máy in");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_ToIn frm = new frmBTTL_ToIn(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
 
             Cursor.Current = Cursors.Default;
         }
@@ -578,6 +587,42 @@ namespace CtyTinLuong
             frm.BringToFront();
 
             frm.LoadData(true, true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navToDot_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy đột");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_ToDot frm = new frmChamCong_ToDot(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true, true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navBTTLToDot_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy đột");
+            if (id_bophan_ == 0) return;
+
+            frmBTTL_ToDot frm = new frmBTTL_ToDot(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
 
             Cursor.Current = Cursors.Default;
         }

@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong
 {
-    partial class frmBTTL_ToIn
+    partial class frmBTTL_ToDot
     {
         /// <summary>
         /// Required designer variable.
@@ -689,7 +689,7 @@
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // frmBTTL_ToIn
+            // frmBTTL_ToDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -703,9 +703,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmBTTL_ToIn";
+            this.Name = "frmBTTL_ToDot";
             this.Size = new System.Drawing.Size(913, 635);
-            this.Load += new System.EventHandler(this.frmBTTL_ToIn_Load);
+            this.Load += new System.EventHandler(this.frmBTTL_ToDot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
