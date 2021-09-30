@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong.Luong_ChamCong
 {
-    public partial class Tr_frmPrintBTTL_ToIn : Form
+    public partial class Tr_frmPrintBTTL_ToIn_CT : Form
     {
         private int _thang;
         private int _nam;
         private DataTable _data;
 
-        public Tr_frmPrintBTTL_ToIn(int thang, int nam, DataTable data)
+        public Tr_frmPrintBTTL_ToIn_CT(int thang, int nam, DataTable data)
         {
             _data = data;
             _thang = thang;
@@ -26,7 +26,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintBTTL_ToIn_Load(object sender, EventArgs e)
         {
-            Tr_PrintBTTL_TMC_CT xtr111 = new Tr_PrintBTTL_TMC_CT(_thang, _nam);
+            Tr_PrintBTTL_ToIn_CT xtr111 = new Tr_PrintBTTL_ToIn_CT(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
             for (int i = 0; i < _data.Rows.Count; ++i)

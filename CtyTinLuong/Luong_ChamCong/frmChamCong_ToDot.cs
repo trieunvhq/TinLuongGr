@@ -942,7 +942,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_PhuMC(_thang, _nam, _id_bophan);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_ToDot ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_ToDot(_thang, _nam, _id_bophan);
             ff.ShowDialog();
         }
 

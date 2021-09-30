@@ -284,17 +284,29 @@
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_TDK.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_TDK.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn.cs">
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn_TQ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn.Designer.cs">
-      <DependentUpon>Tr_frmPrintBTTL_ToIn.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn_TQ.Designer.cs">
+      <DependentUpon>Tr_frmPrintBTTL_ToIn_TQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn_CT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn_CT.Designer.cs">
+      <DependentUpon>Tr_frmPrintBTTL_ToIn_CT.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToDot.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToDot.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_ToDot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_ToDot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_ToDot.Designer.cs">
+      <DependentUpon>Tr_frmPrintChamCong_ToDot.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_ToIn.cs">
       <SubType>Form</SubType>
@@ -355,6 +367,18 @@
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ_Old.designer.cs">
       <DependentUpon>Tr_PrintBTTL_TGD_TQ_Old.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_ToIn_TQ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_ToIn_TQ.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_ToIn_TQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_ToIn_CT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_PrintBTTL_ToIn_CT.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_ToIn_CT.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\Tr_PrintChamCong_TDB.cs">
       <SubType>Component</SubType>
@@ -2517,11 +2541,17 @@
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_TDK.resx">
       <DependentUpon>Tr_frmPrintBTTL_TDK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn.resx">
-      <DependentUpon>Tr_frmPrintBTTL_ToIn.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn_TQ.resx">
+      <DependentUpon>Tr_frmPrintBTTL_ToIn_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_ToIn_CT.resx">
+      <DependentUpon>Tr_frmPrintBTTL_ToIn_CT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_ToDot.resx">
       <DependentUpon>Tr_frmPrintBTTL_ToDot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCong_ToDot.resx">
+      <DependentUpon>Tr_frmPrintChamCong_ToDot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCong_ToIn.resx">
       <DependentUpon>Tr_frmPrintChamCong_ToIn.cs</DependentUpon>
@@ -2552,6 +2582,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_TGD_TQ_Old.resx">
       <DependentUpon>Tr_PrintBTTL_TGD_TQ_Old.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_ToIn_TQ.resx">
+      <DependentUpon>Tr_PrintBTTL_ToIn_TQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_PrintBTTL_ToIn_CT.resx">
+      <DependentUpon>Tr_PrintBTTL_ToIn_CT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintChamCong_TDB.resx">
       <DependentUpon>Tr_PrintChamCong_TDB.cs</DependentUpon>

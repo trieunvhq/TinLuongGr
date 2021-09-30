@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong.Luong_ChamCong
 {
-    partial class Tr_frmPrintBTTL_ToIn
+    partial class Tr_frmPrintBTTL_ToIn_CT
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmPrintBTTL_ToIn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmPrintBTTL_ToIn_CT));
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
