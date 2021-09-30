@@ -120,6 +120,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -194,6 +195,7 @@ namespace CtyTinLuong
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // repositoryItemMemoEdit1
             // 
@@ -309,7 +311,8 @@ namespace CtyTinLuong
             this.Ngay31,
             this.clGuiDuLieu,
             this.Tong,
-            this.Xoa});
+            this.Xoa,
+            this.ID_ChiTietChamCong_ToGapDan});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -1256,7 +1259,7 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 34;
+            this.Tong.VisibleIndex = 35;
             this.Tong.Width = 45;
             // 
             // Xoa
@@ -1266,6 +1269,8 @@ namespace CtyTinLuong
             this.Xoa.FieldName = "Xoa";
             this.Xoa.Name = "Xoa";
             this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Xoa.Visible = true;
+            this.Xoa.VisibleIndex = 34;
             this.Xoa.Width = 35;
             // 
             // gridControl1
@@ -1469,6 +1474,12 @@ namespace CtyTinLuong
             this.label5.TabIndex = 162;
             this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
             // 
+            // ID_ChiTietChamCong_ToGapDan
+            // 
+            this.ID_ChiTietChamCong_ToGapDan.Caption = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.FieldName = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.Name = "ID_ChiTietChamCong_ToGapDan";
+            // 
             // frmChamCong_TGD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1593,5 +1604,6 @@ namespace CtyTinLuong
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietChamCong_ToGapDan;
     }
 }
