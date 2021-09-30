@@ -99,7 +99,7 @@ namespace CtyTinLuong
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IsTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -122,6 +122,7 @@ namespace CtyTinLuong
             this.label5 = new System.Windows.Forms.Label();
             this.radioCa1 = new System.Windows.Forms.RadioButton();
             this.radioCa2 = new System.Windows.Forms.RadioButton();
+            this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -196,6 +197,7 @@ namespace CtyTinLuong
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // repositoryItemMemoEdit1
             // 
@@ -310,8 +312,9 @@ namespace CtyTinLuong
             this.Ngay31,
             this.clGuiDuLieu,
             this.Tong,
-            this.KyNhan,
-            this.IsTangCa});
+            this.ID_ChiTietChamCong_ToGapDan,
+            this.IsTangCa,
+            this.Xoa});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -1250,15 +1253,15 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 34;
+            this.Tong.VisibleIndex = 35;
             this.Tong.Width = 45;
             // 
-            // KyNhan
+            // ID_ChiTietChamCong_ToGapDan
             // 
-            this.KyNhan.Caption = "KÝ NHẬN";
-            this.KyNhan.FieldName = "KyNhan";
-            this.KyNhan.Name = "KyNhan";
-            this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.ID_ChiTietChamCong_ToGapDan.Caption = "ID_ChiTietChamCong ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.FieldName = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.Name = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             // 
             // IsTangCa
             // 
@@ -1490,6 +1493,15 @@ namespace CtyTinLuong
             this.radioCa2.Text = "Ca 2";
             this.radioCa2.UseVisualStyleBackColor = true;
             // 
+            // Xoa
+            // 
+            this.Xoa.Caption = "XÓA";
+            this.Xoa.ColumnEdit = this.btXoa;
+            this.Xoa.FieldName = "Xoa";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Visible = true;
+            this.Xoa.VisibleIndex = 34;
+            // 
             // frmChamCong_PMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1607,7 +1619,7 @@ namespace CtyTinLuong
         private System.Windows.Forms.Button btnThemNhanVien;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.Columns.GridColumn Cong;
-        private DevExpress.XtraGrid.Columns.GridColumn KyNhan;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietChamCong_ToGapDan;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.ComboBox cbLoaiCong;
         private System.Windows.Forms.Label label1;
@@ -1618,5 +1630,6 @@ namespace CtyTinLuong
         private System.Windows.Forms.RadioButton radioCa1;
         private System.Windows.Forms.RadioButton radioCa2;
         private DevExpress.XtraGrid.Columns.GridColumn IsTangCa;
+        private DevExpress.XtraGrid.Columns.GridColumn Xoa;
     }
 }

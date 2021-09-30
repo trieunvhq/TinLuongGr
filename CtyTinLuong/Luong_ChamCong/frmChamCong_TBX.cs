@@ -299,37 +299,37 @@ namespace CtyTinLuong
                     Ngay30 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString());
                     Ngay31 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString());
                     //
-                    _data.Rows[i]["Ngay1"] = Ngay1.ToString("N0");
-                    _data.Rows[i]["Ngay2"] = Ngay2.ToString("N0");
-                    _data.Rows[i]["Ngay3"] = Ngay3.ToString("N0");
-                    _data.Rows[i]["Ngay4"] = Ngay4.ToString("N0");
-                    _data.Rows[i]["Ngay5"] = Ngay5.ToString("N0");
-                    _data.Rows[i]["Ngay6"] = Ngay6.ToString("N0");
-                    _data.Rows[i]["Ngay7"] = Ngay7.ToString("N0");
-                    _data.Rows[i]["Ngay8"] = Ngay8.ToString("N0");
-                    _data.Rows[i]["Ngay9"] = Ngay9.ToString("N0");
-                    _data.Rows[i]["Ngay10"] = Ngay10.ToString("N0");
-                    _data.Rows[i]["Ngay11"] = Ngay11.ToString("N0");
-                    _data.Rows[i]["Ngay12"] = Ngay12.ToString("N0");
-                    _data.Rows[i]["Ngay13"] = Ngay13.ToString("N0");
-                    _data.Rows[i]["Ngay14"] = Ngay14.ToString("N0");
-                    _data.Rows[i]["Ngay15"] = Ngay15.ToString("N0");
-                    _data.Rows[i]["Ngay16"] = Ngay16.ToString("N0");
-                    _data.Rows[i]["Ngay17"] = Ngay17.ToString("N0");
-                    _data.Rows[i]["Ngay18"] = Ngay18.ToString("N0");
-                    _data.Rows[i]["Ngay19"] = Ngay19.ToString("N0");
-                    _data.Rows[i]["Ngay20"] = Ngay20.ToString("N0");
-                    _data.Rows[i]["Ngay21"] = Ngay21.ToString("N0");
-                    _data.Rows[i]["Ngay22"] = Ngay22.ToString("N0");
-                    _data.Rows[i]["Ngay23"] = Ngay23.ToString("N0");
-                    _data.Rows[i]["Ngay24"] = Ngay24.ToString("N0");
-                    _data.Rows[i]["Ngay25"] = Ngay25.ToString("N0");
-                    _data.Rows[i]["Ngay26"] = Ngay26.ToString("N0");
-                    _data.Rows[i]["Ngay27"] = Ngay27.ToString("N0");
-                    _data.Rows[i]["Ngay28"] = Ngay28.ToString("N0");
-                    _data.Rows[i]["Ngay29"] = Ngay29.ToString("N0");
-                    _data.Rows[i]["Ngay30"] = Ngay30.ToString("N0");
-                    _data.Rows[i]["Ngay31"] = Ngay31.ToString("N0");
+                    _data.Rows[i]["Ngay1"] = Ngay1.ToString();
+                    _data.Rows[i]["Ngay2"] = Ngay2.ToString();
+                    _data.Rows[i]["Ngay3"] = Ngay3.ToString();
+                    _data.Rows[i]["Ngay4"] = Ngay4.ToString();
+                    _data.Rows[i]["Ngay5"] = Ngay5.ToString();
+                    _data.Rows[i]["Ngay6"] = Ngay6.ToString();
+                    _data.Rows[i]["Ngay7"] = Ngay7.ToString();
+                    _data.Rows[i]["Ngay8"] = Ngay8.ToString();
+                    _data.Rows[i]["Ngay9"] = Ngay9.ToString();
+                    _data.Rows[i]["Ngay10"] = Ngay10.ToString();
+                    _data.Rows[i]["Ngay11"] = Ngay11.ToString();
+                    _data.Rows[i]["Ngay12"] = Ngay12.ToString();
+                    _data.Rows[i]["Ngay13"] = Ngay13.ToString();
+                    _data.Rows[i]["Ngay14"] = Ngay14.ToString();
+                    _data.Rows[i]["Ngay15"] = Ngay15.ToString();
+                    _data.Rows[i]["Ngay16"] = Ngay16.ToString();
+                    _data.Rows[i]["Ngay17"] = Ngay17.ToString();
+                    _data.Rows[i]["Ngay18"] = Ngay18.ToString();
+                    _data.Rows[i]["Ngay19"] = Ngay19.ToString();
+                    _data.Rows[i]["Ngay20"] = Ngay20.ToString();
+                    _data.Rows[i]["Ngay21"] = Ngay21.ToString();
+                    _data.Rows[i]["Ngay22"] = Ngay22.ToString();
+                    _data.Rows[i]["Ngay23"] = Ngay23.ToString();
+                    _data.Rows[i]["Ngay24"] = Ngay24.ToString();
+                    _data.Rows[i]["Ngay25"] = Ngay25.ToString();
+                    _data.Rows[i]["Ngay26"] = Ngay26.ToString();
+                    _data.Rows[i]["Ngay27"] = Ngay27.ToString();
+                    _data.Rows[i]["Ngay28"] = Ngay28.ToString();
+                    _data.Rows[i]["Ngay29"] = Ngay29.ToString();
+                    _data.Rows[i]["Ngay30"] = Ngay30.ToString();
+                    _data.Rows[i]["Ngay31"] = Ngay31.ToString();
 
                     Tong_Ngay1 += Ngay1;
                     Tong_Ngay2 += Ngay2;
@@ -487,37 +487,37 @@ namespace CtyTinLuong
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
             _ravi2["TenNhanVien"] = "Tổng";
-            _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
-            _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
-            _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
-            _ravi2["Ngay4"] = Tong_Ngay4.ToString("N0");
-            _ravi2["Ngay5"] = Tong_Ngay5.ToString("N0");
-            _ravi2["Ngay6"] = Tong_Ngay6.ToString("N0");
-            _ravi2["Ngay7"] = Tong_Ngay7.ToString("N0");
-            _ravi2["Ngay8"] = Tong_Ngay8.ToString("N0");
-            _ravi2["Ngay9"] = Tong_Ngay9.ToString("N0");
-            _ravi2["Ngay10"] = Tong_Ngay10.ToString("N0");
-            _ravi2["Ngay11"] = Tong_Ngay11.ToString("N0");
-            _ravi2["Ngay12"] = Tong_Ngay12.ToString("N0");
-            _ravi2["Ngay13"] = Tong_Ngay13.ToString("N0");
-            _ravi2["Ngay14"] = Tong_Ngay14.ToString("N0");
-            _ravi2["Ngay15"] = Tong_Ngay15.ToString("N0");
-            _ravi2["Ngay16"] = Tong_Ngay16.ToString("N0");
-            _ravi2["Ngay17"] = Tong_Ngay17.ToString("N0");
-            _ravi2["Ngay18"] = Tong_Ngay18.ToString("N0");
-            _ravi2["Ngay19"] = Tong_Ngay19.ToString("N0");
-            _ravi2["Ngay20"] = Tong_Ngay20.ToString("N0");
-            _ravi2["Ngay21"] = Tong_Ngay21.ToString("N0");
-            _ravi2["Ngay22"] = Tong_Ngay22.ToString("N0");
-            _ravi2["Ngay23"] = Tong_Ngay23.ToString("N0");
-            _ravi2["Ngay24"] = Tong_Ngay24.ToString("N0");
-            _ravi2["Ngay25"] = Tong_Ngay25.ToString("N0");
-            _ravi2["Ngay26"] = Tong_Ngay26.ToString("N0");
-            _ravi2["Ngay27"] = Tong_Ngay27.ToString("N0");
-            _ravi2["Ngay28"] = Tong_Ngay28.ToString("N0");
-            _ravi2["Ngay29"] = Tong_Ngay29.ToString("N0");
-            _ravi2["Ngay30"] = Tong_Ngay30.ToString("N0");
-            _ravi2["Ngay31"] = Tong_Ngay31.ToString("N0");
+            _ravi2["Ngay1"] = Tong_Ngay1.ToString();
+            _ravi2["Ngay2"] = Tong_Ngay2.ToString();
+            _ravi2["Ngay3"] = Tong_Ngay3.ToString();
+            _ravi2["Ngay4"] = Tong_Ngay4.ToString();
+            _ravi2["Ngay5"] = Tong_Ngay5.ToString();
+            _ravi2["Ngay6"] = Tong_Ngay6.ToString();
+            _ravi2["Ngay7"] = Tong_Ngay7.ToString();
+            _ravi2["Ngay8"] = Tong_Ngay8.ToString();
+            _ravi2["Ngay9"] = Tong_Ngay9.ToString();
+            _ravi2["Ngay10"] = Tong_Ngay10.ToString();
+            _ravi2["Ngay11"] = Tong_Ngay11.ToString();
+            _ravi2["Ngay12"] = Tong_Ngay12.ToString();
+            _ravi2["Ngay13"] = Tong_Ngay13.ToString();
+            _ravi2["Ngay14"] = Tong_Ngay14.ToString();
+            _ravi2["Ngay15"] = Tong_Ngay15.ToString();
+            _ravi2["Ngay16"] = Tong_Ngay16.ToString();
+            _ravi2["Ngay17"] = Tong_Ngay17.ToString();
+            _ravi2["Ngay18"] = Tong_Ngay18.ToString();
+            _ravi2["Ngay19"] = Tong_Ngay19.ToString();
+            _ravi2["Ngay20"] = Tong_Ngay20.ToString();
+            _ravi2["Ngay21"] = Tong_Ngay21.ToString();
+            _ravi2["Ngay22"] = Tong_Ngay22.ToString();
+            _ravi2["Ngay23"] = Tong_Ngay23.ToString();
+            _ravi2["Ngay24"] = Tong_Ngay24.ToString();
+            _ravi2["Ngay25"] = Tong_Ngay25.ToString();
+            _ravi2["Ngay26"] = Tong_Ngay26.ToString();
+            _ravi2["Ngay27"] = Tong_Ngay27.ToString();
+            _ravi2["Ngay28"] = Tong_Ngay28.ToString();
+            _ravi2["Ngay29"] = Tong_Ngay29.ToString();
+            _ravi2["Ngay30"] = Tong_Ngay30.ToString();
+            _ravi2["Ngay31"] = Tong_Ngay31.ToString();
 
 
             _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
@@ -525,7 +525,7 @@ namespace CtyTinLuong
                 + Tong_Ngay11 + Tong_Ngay12 + Tong_Ngay13 + Tong_Ngay14 + Tong_Ngay15
                 + Tong_Ngay16 + Tong_Ngay17 + Tong_Ngay18 + Tong_Ngay19 + Tong_Ngay20
                 + Tong_Ngay21 + Tong_Ngay22 + Tong_Ngay23 + Tong_Ngay24 + Tong_Ngay25
-                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString("N0");
+                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString();
 
             _data.Rows.Add(_ravi2);
             //
@@ -586,7 +586,7 @@ namespace CtyTinLuong
                 tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
             }
 
-            _data.Rows[index]["Tong"] = tong_row.ToString("N0");
+            _data.Rows[index]["Tong"] = tong_row.ToString();
         }
 
         private void CongTong()
@@ -804,37 +804,37 @@ namespace CtyTinLuong
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
             _ravi2["TenNhanVien"] = "TỔNG";
-            _ravi2["Ngay1"] = Tong_Ngay1.ToString("N0");
-            _ravi2["Ngay2"] = Tong_Ngay2.ToString("N0");
-            _ravi2["Ngay3"] = Tong_Ngay3.ToString("N0");
-            _ravi2["Ngay4"] = Tong_Ngay4.ToString("N0");
-            _ravi2["Ngay5"] = Tong_Ngay5.ToString("N0");
-            _ravi2["Ngay6"] = Tong_Ngay6.ToString("N0");
-            _ravi2["Ngay7"] = Tong_Ngay7.ToString("N0");
-            _ravi2["Ngay8"] = Tong_Ngay8.ToString("N0");
-            _ravi2["Ngay9"] = Tong_Ngay9.ToString("N0");
-            _ravi2["Ngay10"] = Tong_Ngay10.ToString("N0");
-            _ravi2["Ngay11"] = Tong_Ngay11.ToString("N0");
-            _ravi2["Ngay12"] = Tong_Ngay12.ToString("N0");
-            _ravi2["Ngay13"] = Tong_Ngay13.ToString("N0");
-            _ravi2["Ngay14"] = Tong_Ngay14.ToString("N0");
-            _ravi2["Ngay15"] = Tong_Ngay15.ToString("N0");
-            _ravi2["Ngay16"] = Tong_Ngay16.ToString("N0");
-            _ravi2["Ngay17"] = Tong_Ngay17.ToString("N0");
-            _ravi2["Ngay18"] = Tong_Ngay18.ToString("N0");
-            _ravi2["Ngay19"] = Tong_Ngay19.ToString("N0");
-            _ravi2["Ngay20"] = Tong_Ngay20.ToString("N0");
-            _ravi2["Ngay21"] = Tong_Ngay21.ToString("N0");
-            _ravi2["Ngay22"] = Tong_Ngay22.ToString("N0");
-            _ravi2["Ngay23"] = Tong_Ngay23.ToString("N0");
-            _ravi2["Ngay24"] = Tong_Ngay24.ToString("N0");
-            _ravi2["Ngay25"] = Tong_Ngay25.ToString("N0");
-            _ravi2["Ngay26"] = Tong_Ngay26.ToString("N0");
-            _ravi2["Ngay27"] = Tong_Ngay27.ToString("N0");
-            _ravi2["Ngay28"] = Tong_Ngay28.ToString("N0");
-            _ravi2["Ngay29"] = Tong_Ngay29.ToString("N0");
-            _ravi2["Ngay30"] = Tong_Ngay30.ToString("N0");
-            _ravi2["Ngay31"] = Tong_Ngay31.ToString("N0");
+            _ravi2["Ngay1"] = Tong_Ngay1.ToString();
+            _ravi2["Ngay2"] = Tong_Ngay2.ToString();
+            _ravi2["Ngay3"] = Tong_Ngay3.ToString();
+            _ravi2["Ngay4"] = Tong_Ngay4.ToString();
+            _ravi2["Ngay5"] = Tong_Ngay5.ToString();
+            _ravi2["Ngay6"] = Tong_Ngay6.ToString();
+            _ravi2["Ngay7"] = Tong_Ngay7.ToString();
+            _ravi2["Ngay8"] = Tong_Ngay8.ToString();
+            _ravi2["Ngay9"] = Tong_Ngay9.ToString();
+            _ravi2["Ngay10"] = Tong_Ngay10.ToString();
+            _ravi2["Ngay11"] = Tong_Ngay11.ToString();
+            _ravi2["Ngay12"] = Tong_Ngay12.ToString();
+            _ravi2["Ngay13"] = Tong_Ngay13.ToString();
+            _ravi2["Ngay14"] = Tong_Ngay14.ToString();
+            _ravi2["Ngay15"] = Tong_Ngay15.ToString();
+            _ravi2["Ngay16"] = Tong_Ngay16.ToString();
+            _ravi2["Ngay17"] = Tong_Ngay17.ToString();
+            _ravi2["Ngay18"] = Tong_Ngay18.ToString();
+            _ravi2["Ngay19"] = Tong_Ngay19.ToString();
+            _ravi2["Ngay20"] = Tong_Ngay20.ToString();
+            _ravi2["Ngay21"] = Tong_Ngay21.ToString();
+            _ravi2["Ngay22"] = Tong_Ngay22.ToString();
+            _ravi2["Ngay23"] = Tong_Ngay23.ToString();
+            _ravi2["Ngay24"] = Tong_Ngay24.ToString();
+            _ravi2["Ngay25"] = Tong_Ngay25.ToString();
+            _ravi2["Ngay26"] = Tong_Ngay26.ToString();
+            _ravi2["Ngay27"] = Tong_Ngay27.ToString();
+            _ravi2["Ngay28"] = Tong_Ngay28.ToString();
+            _ravi2["Ngay29"] = Tong_Ngay29.ToString();
+            _ravi2["Ngay30"] = Tong_Ngay30.ToString();
+            _ravi2["Ngay31"] = Tong_Ngay31.ToString();
 
 
             _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
@@ -842,7 +842,7 @@ namespace CtyTinLuong
                 + Tong_Ngay11 + Tong_Ngay12 + Tong_Ngay13 + Tong_Ngay14 + Tong_Ngay15
                 + Tong_Ngay16 + Tong_Ngay17 + Tong_Ngay18 + Tong_Ngay19 + Tong_Ngay20
                 + Tong_Ngay21 + Tong_Ngay22 + Tong_Ngay23 + Tong_Ngay24 + Tong_Ngay25
-                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString("N0");
+                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString();
 
 
             _data.Rows.Add(_ravi2);
@@ -939,7 +939,6 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            //int id_congnhan_ = Convert.ToInt16(gridView1.inde(clID_CongNhan).ToString());
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
@@ -997,7 +996,8 @@ namespace CtyTinLuong
                             _data.Rows.Remove(row);
                         }
 
-                        ds_id_congnhan.Remove(id_cn);
+                        if (ds_id_congnhan.Contains(id_cn)) ds_id_congnhan.Remove(id_cn);
+
                         gridControl1.DataSource = _data;
                         MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
