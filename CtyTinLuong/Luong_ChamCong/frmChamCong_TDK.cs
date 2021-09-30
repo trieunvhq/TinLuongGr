@@ -890,6 +890,85 @@ namespace CtyTinLuong
             }
         }
 
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                if (gridView1.GetFocusedRowCellValue(TenVTHH).ToString().ToLower().Contains("tổng"))
+                {
+                    return;
+                }
+
+                int id_cn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
+                int ID_ChiTietChamCong_TGD = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan).ToString());
+
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xác nhận xóa mặt hàng: " + gridView1.GetFocusedRowCellValue(TenVTHH).ToString(), "Delete",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
+                {
+                    bool deleted = false;
+
+                    if (ID_ChiTietChamCong_TGD == 0)
+                    {
+                        DataRow[] rows;
+                        rows = _data.Select("ID_VTHH=' " + id_cn + " ' ");
+                        foreach (DataRow row in rows)
+                        {
+                            _data.Rows.Remove(row);
+                            deleted = true;
+                        }
+                    }
+                    else
+                    {
+                        using (clsThin clsThin_ = new clsThin())
+                        {
+                            for (int i = 0; i < _data.Rows.Count; i++)
+                            {
+                                if (Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()) == id_cn)
+                                {
+                                    int id_ChiTietChamCong_TGD_ = Convert.ToInt32(_data.Rows[i]["ID_ChiTietChamCong_ToGapDan"].ToString());
+                                    if (clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_Delete(id_ChiTietChamCong_TGD_))
+                                    {
+                                        deleted = true;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    if (deleted)
+                    {
+                        DataRow[] rows;
+                        rows = _data.Select("ID_VTHH=' " + id_cn + " ' ");
+                        foreach (DataRow row in rows)
+                        {
+                            _data.Rows.Remove(row);
+                        }
+
+                        if (_ListID_HangHoa.Contains(id_cn)) _ListID_HangHoa.Remove(id_cn);
+
+                        gridControl1.DataSource = _data;
+                        MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại. Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Error xóa công nhân khỏi bảng..." + ee.ToString(), "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             _frmQLLCC.Close();
