@@ -596,6 +596,7 @@ namespace CtyTinLuong
 
             for (int j = 0; j < 31; ++j)
             {
+                //tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
                 tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
             }
 

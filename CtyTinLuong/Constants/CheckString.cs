@@ -459,7 +459,7 @@ namespace CtyTinLuong
             }
             return temp_;
         }
-
+        
         public static double ConvertToDouble_My(object str)
         {
             if (str == null)
@@ -473,16 +473,21 @@ namespace CtyTinLuong
             double temp_ = 0;
             try
             {
-                temp_ = Convert.ToDouble(str);
+                temp_ = Convert.ToDouble(new DataTable().Compute(str.ToString(), null));
+                //Convert.ToDouble(str);
             }
             catch
             {
                 try
                 {
-                    str_2_ = str_2_.Replace(",", "*");
-                    str_2_ = str_2_.Replace(".", ",");
-                    str_2_ = str_2_.Replace("*", ".");
-                    temp_ = Convert.ToDouble(str_2_);
+                    try { temp_ = Convert.ToDouble(str); }
+                    catch
+                    {
+                        str_2_ = str_2_.Replace(",", "*");
+                        str_2_ = str_2_.Replace(".", ",");
+                        str_2_ = str_2_.Replace("*", ".");
+                        temp_ = Convert.ToDouble(str_2_);
+                    }
                 }
                 catch {
                     return 0;

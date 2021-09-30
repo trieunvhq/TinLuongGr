@@ -2620,10 +2620,10 @@
     <EmbeddedResource Include="Luong_ChamCong\Tr_PrintChamCong_TDB.resx">
       <DependentUpon>Tr_PrintChamCong_TDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\PhieuSanXuat_Thang9.resx">
       <DependentUpon>PhieuSanXuat_Thang9.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\BoSungCongNhanMayDot.resx">
       <DependentUpon>BoSungCongNhanMayDot.cs</DependentUpon>
     </EmbeddedResource>
