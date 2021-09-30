@@ -566,8 +566,9 @@ namespace CtyTinLuong
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
                 if (_data.Rows.Count > index_)
                 {
-                    double temp_ = CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString());
-                    _data.Rows[index_]["Tong"] = temp_ + CheckString.ConvertToDouble_My(_data.Rows[index_]["Tong"].ToString());
+                    //double temp_ = CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString());
+                    //_data.Rows[index_]["Tong"] = temp_ + CheckString.ConvertToDouble_My(_data.Rows[index_]["Tong"].ToString());
+                    CongTong_Row(index_);
                 }
                 //SendKeys.Send("{DOWN}");
 
@@ -585,6 +586,20 @@ namespace CtyTinLuong
             }
             CongTong();
             // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+        }
+
+
+        //CongTong_Row(index_);
+        private void CongTong_Row(int index)
+        {
+            double tong_row = 0;
+
+            for (int j = 0; j < 31; ++j)
+            {
+                tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
+            }
+
+            _data.Rows[index]["Tong"] = tong_row.ToString("N0");
         }
 
         private void CongTong()
