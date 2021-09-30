@@ -944,7 +944,11 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+                if (gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString().ToLower().Contains("tổng"))
+                {
+                    return;
+                }
+
                 int id_cn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
                 int ID_ChiTietChamCong_TGD = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan).ToString());
 
