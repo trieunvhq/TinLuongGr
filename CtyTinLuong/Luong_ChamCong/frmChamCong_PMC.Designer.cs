@@ -101,6 +101,7 @@ namespace CtyTinLuong
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IsTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -122,7 +123,6 @@ namespace CtyTinLuong
             this.label5 = new System.Windows.Forms.Label();
             this.radioCa1 = new System.Windows.Forms.RadioButton();
             this.radioCa2 = new System.Windows.Forms.RadioButton();
-            this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -1269,6 +1269,17 @@ namespace CtyTinLuong
             this.IsTangCa.FieldName = "IsTangCa";
             this.IsTangCa.Name = "IsTangCa";
             // 
+            // Xoa
+            // 
+            this.Xoa.Caption = "XÓA";
+            this.Xoa.ColumnEdit = this.btXoa;
+            this.Xoa.FieldName = "Xoa";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Xoa.Visible = true;
+            this.Xoa.VisibleIndex = 34;
+            this.Xoa.Width = 35;
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1492,15 +1503,6 @@ namespace CtyTinLuong
             this.radioCa2.TabStop = true;
             this.radioCa2.Text = "Ca 2";
             this.radioCa2.UseVisualStyleBackColor = true;
-            // 
-            // Xoa
-            // 
-            this.Xoa.Caption = "XÓA";
-            this.Xoa.ColumnEdit = this.btXoa;
-            this.Xoa.FieldName = "Xoa";
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Visible = true;
-            this.Xoa.VisibleIndex = 34;
             // 
             // frmChamCong_PMC
             // 
