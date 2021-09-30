@@ -604,7 +604,7 @@ namespace CtyTinLuong
             }
             for (int j = 0; j < 31; ++j)
             {
-                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = _ds_ngay_tong_[j];
+                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = String.Format("{0:0.##}", _ds_ngay_tong_[j]);
             }
             _data.Rows[_data.Rows.Count - 1]["Tong"] = String.Format("{0:0.##}",tong_tong_);
             gridControl1.DataSource = _data;

@@ -336,37 +336,37 @@ namespace CtyTinLuong
                     Ngay30 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString());
                     Ngay31 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString());
                     //
-                    _data.Rows[i]["Ngay1"] = Ngay1.ToString("N2");
-                    _data.Rows[i]["Ngay2"] = Ngay2.ToString("N2");
-                    _data.Rows[i]["Ngay3"] = Ngay3.ToString("N2");
-                    _data.Rows[i]["Ngay4"] = Ngay4.ToString("N2");
-                    _data.Rows[i]["Ngay5"] = Ngay5.ToString("N2");
-                    _data.Rows[i]["Ngay6"] = Ngay6.ToString("N2");
-                    _data.Rows[i]["Ngay7"] = Ngay7.ToString("N2");
-                    _data.Rows[i]["Ngay8"] = Ngay8.ToString("N2");
-                    _data.Rows[i]["Ngay9"] = Ngay9.ToString("N2");
-                    _data.Rows[i]["Ngay10"] = Ngay10.ToString("N2");
-                    _data.Rows[i]["Ngay11"] = Ngay11.ToString("N2");
-                    _data.Rows[i]["Ngay12"] = Ngay12.ToString("N2");
-                    _data.Rows[i]["Ngay13"] = Ngay13.ToString("N2");
-                    _data.Rows[i]["Ngay14"] = Ngay14.ToString("N2");
-                    _data.Rows[i]["Ngay15"] = Ngay15.ToString("N2");
-                    _data.Rows[i]["Ngay16"] = Ngay16.ToString("N2");
-                    _data.Rows[i]["Ngay17"] = Ngay17.ToString("N2");
-                    _data.Rows[i]["Ngay18"] = Ngay18.ToString("N2");
-                    _data.Rows[i]["Ngay19"] = Ngay19.ToString("N2");
-                    _data.Rows[i]["Ngay20"] = Ngay20.ToString("N2");
-                    _data.Rows[i]["Ngay21"] = Ngay21.ToString("N2");
-                    _data.Rows[i]["Ngay22"] = Ngay22.ToString("N2");
-                    _data.Rows[i]["Ngay23"] = Ngay23.ToString("N2");
-                    _data.Rows[i]["Ngay24"] = Ngay24.ToString("N2");
-                    _data.Rows[i]["Ngay25"] = Ngay25.ToString("N2");
-                    _data.Rows[i]["Ngay26"] = Ngay26.ToString("N2");
-                    _data.Rows[i]["Ngay27"] = Ngay27.ToString("N2");
-                    _data.Rows[i]["Ngay28"] = Ngay28.ToString("N2");
-                    _data.Rows[i]["Ngay29"] = Ngay29.ToString("N2");
-                    _data.Rows[i]["Ngay30"] = Ngay30.ToString("N2");
-                    _data.Rows[i]["Ngay31"] = Ngay31.ToString("N2");
+                    _data.Rows[i]["Ngay1"] = String.Format("{0:0.##}", Ngay1);
+                    _data.Rows[i]["Ngay2"] = String.Format("{0:0.##}", Ngay2);
+                    _data.Rows[i]["Ngay3"] = String.Format("{0:0.##}", Ngay3);
+                    _data.Rows[i]["Ngay4"] = String.Format("{0:0.##}", Ngay4);
+                    _data.Rows[i]["Ngay5"] = String.Format("{0:0.##}", Ngay5);
+                    _data.Rows[i]["Ngay6"] = String.Format("{0:0.##}", Ngay6);
+                    _data.Rows[i]["Ngay7"] = String.Format("{0:0.##}", Ngay7);
+                    _data.Rows[i]["Ngay8"] = String.Format("{0:0.##}", Ngay8);
+                    _data.Rows[i]["Ngay9"] = String.Format("{0:0.##}", Ngay9);
+                    _data.Rows[i]["Ngay10"] = String.Format("{0:0.##}", Ngay10);
+                    _data.Rows[i]["Ngay11"] = String.Format("{0:0.##}", Ngay11);
+                    _data.Rows[i]["Ngay12"] = String.Format("{0:0.##}", Ngay12);
+                    _data.Rows[i]["Ngay13"] = String.Format("{0:0.##}", Ngay13);
+                    _data.Rows[i]["Ngay14"] = String.Format("{0:0.##}", Ngay14);
+                    _data.Rows[i]["Ngay15"] = String.Format("{0:0.##}", Ngay15);
+                    _data.Rows[i]["Ngay16"] = String.Format("{0:0.##}", Ngay16);
+                    _data.Rows[i]["Ngay17"] = String.Format("{0:0.##}", Ngay17);
+                    _data.Rows[i]["Ngay18"] = String.Format("{0:0.##}", Ngay18);
+                    _data.Rows[i]["Ngay19"] = String.Format("{0:0.##}", Ngay19);
+                    _data.Rows[i]["Ngay20"] = String.Format("{0:0.##}", Ngay20);
+                    _data.Rows[i]["Ngay21"] = String.Format("{0:0.##}", Ngay21);
+                    _data.Rows[i]["Ngay22"] = String.Format("{0:0.##}", Ngay22);
+                    _data.Rows[i]["Ngay23"] = String.Format("{0:0.##}", Ngay23);
+                    _data.Rows[i]["Ngay24"] = String.Format("{0:0.##}", Ngay24);
+                    _data.Rows[i]["Ngay25"] = String.Format("{0:0.##}", Ngay25);
+                    _data.Rows[i]["Ngay26"] = String.Format("{0:0.##}", Ngay26);
+                    _data.Rows[i]["Ngay27"] = String.Format("{0:0.##}", Ngay27);
+                    _data.Rows[i]["Ngay28"] = String.Format("{0:0.##}", Ngay28);
+                    _data.Rows[i]["Ngay29"] = String.Format("{0:0.##}", Ngay29);
+                    _data.Rows[i]["Ngay30"] = String.Format("{0:0.##}", Ngay30);
+                    _data.Rows[i]["Ngay31"] = String.Format("{0:0.##}", Ngay31);
 
                     Tong_Ngay1 += Ngay1;
                     Tong_Ngay2 += Ngay2;
@@ -512,45 +512,45 @@ namespace CtyTinLuong
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
             _ravi2["TenNhanVien"] = "Tổng";
-            _ravi2["Ngay1"] = Tong_Ngay1.ToString("N2");
-            _ravi2["Ngay2"] = Tong_Ngay2.ToString("N2");
-            _ravi2["Ngay3"] = Tong_Ngay3.ToString("N2");
-            _ravi2["Ngay4"] = Tong_Ngay4.ToString("N2");
-            _ravi2["Ngay5"] = Tong_Ngay5.ToString("N2");
-            _ravi2["Ngay6"] = Tong_Ngay6.ToString("N2");
-            _ravi2["Ngay7"] = Tong_Ngay7.ToString("N2");
-            _ravi2["Ngay8"] = Tong_Ngay8.ToString("N2");
-            _ravi2["Ngay9"] = Tong_Ngay9.ToString("N2");
-            _ravi2["Ngay10"] = Tong_Ngay10.ToString("N2");
-            _ravi2["Ngay11"] = Tong_Ngay11.ToString("N2");
-            _ravi2["Ngay12"] = Tong_Ngay12.ToString("N2");
-            _ravi2["Ngay13"] = Tong_Ngay13.ToString("N2");
-            _ravi2["Ngay14"] = Tong_Ngay14.ToString("N2");
-            _ravi2["Ngay15"] = Tong_Ngay15.ToString("N2");
-            _ravi2["Ngay16"] = Tong_Ngay16.ToString("N2");
-            _ravi2["Ngay17"] = Tong_Ngay17.ToString("N2");
-            _ravi2["Ngay18"] = Tong_Ngay18.ToString("N2");
-            _ravi2["Ngay19"] = Tong_Ngay19.ToString("N2");
-            _ravi2["Ngay20"] = Tong_Ngay20.ToString("N2");
-            _ravi2["Ngay21"] = Tong_Ngay21.ToString("N2");
-            _ravi2["Ngay22"] = Tong_Ngay22.ToString("N2");
-            _ravi2["Ngay23"] = Tong_Ngay23.ToString("N2");
-            _ravi2["Ngay24"] = Tong_Ngay24.ToString("N2");
-            _ravi2["Ngay25"] = Tong_Ngay25.ToString("N2");
-            _ravi2["Ngay26"] = Tong_Ngay26.ToString("N2");
-            _ravi2["Ngay27"] = Tong_Ngay27.ToString("N2");
-            _ravi2["Ngay28"] = Tong_Ngay28.ToString("N2");
-            _ravi2["Ngay29"] = Tong_Ngay29.ToString("N2");
-            _ravi2["Ngay30"] = Tong_Ngay30.ToString("N2");
-            _ravi2["Ngay31"] = Tong_Ngay31.ToString("N2");
+            _ravi2["Ngay1"] = String.Format("{0:0.##}", Tong_Ngay1);
+            _ravi2["Ngay2"] = String.Format("{0:0.##}", Tong_Ngay2);
+            _ravi2["Ngay3"] = String.Format("{0:0.##}", Tong_Ngay3);
+            _ravi2["Ngay4"] = String.Format("{0:0.##}", Tong_Ngay4);
+            _ravi2["Ngay5"] = String.Format("{0:0.##}", Tong_Ngay5);
+            _ravi2["Ngay6"] = String.Format("{0:0.##}", Tong_Ngay6);
+            _ravi2["Ngay7"] = String.Format("{0:0.##}", Tong_Ngay7);
+            _ravi2["Ngay8"] = String.Format("{0:0.##}", Tong_Ngay8);
+            _ravi2["Ngay9"] = String.Format("{0:0.##}", Tong_Ngay9);
+            _ravi2["Ngay10"] = String.Format("{0:0.##}", Tong_Ngay10);
+            _ravi2["Ngay11"] = String.Format("{0:0.##}", Tong_Ngay11);
+            _ravi2["Ngay12"] = String.Format("{0:0.##}", Tong_Ngay12);
+            _ravi2["Ngay13"] = String.Format("{0:0.##}", Tong_Ngay13);
+            _ravi2["Ngay14"] = String.Format("{0:0.##}", Tong_Ngay14);
+            _ravi2["Ngay15"] = String.Format("{0:0.##}", Tong_Ngay15);
+            _ravi2["Ngay16"] = String.Format("{0:0.##}", Tong_Ngay16);
+            _ravi2["Ngay17"] = String.Format("{0:0.##}", Tong_Ngay17);
+            _ravi2["Ngay18"] = String.Format("{0:0.##}", Tong_Ngay18);
+            _ravi2["Ngay19"] = String.Format("{0:0.##}", Tong_Ngay19);
+            _ravi2["Ngay20"] = String.Format("{0:0.##}", Tong_Ngay20);
+            _ravi2["Ngay21"] = String.Format("{0:0.##}", Tong_Ngay21);
+            _ravi2["Ngay22"] = String.Format("{0:0.##}", Tong_Ngay22);
+            _ravi2["Ngay23"] = String.Format("{0:0.##}", Tong_Ngay23);
+            _ravi2["Ngay24"] = String.Format("{0:0.##}", Tong_Ngay24);
+            _ravi2["Ngay25"] = String.Format("{0:0.##}", Tong_Ngay25);
+            _ravi2["Ngay26"] = String.Format("{0:0.##}", Tong_Ngay26);
+            _ravi2["Ngay27"] = String.Format("{0:0.##}", Tong_Ngay27);
+            _ravi2["Ngay28"] = String.Format("{0:0.##}", Tong_Ngay28);
+            _ravi2["Ngay29"] = String.Format("{0:0.##}", Tong_Ngay29);
+            _ravi2["Ngay30"] = String.Format("{0:0.##}", Tong_Ngay30);
+            _ravi2["Ngay31"] = String.Format("{0:0.##}", Tong_Ngay31);
 
 
-            _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
+            _ravi2["Tong"] = String.Format("{0:0.##}", (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
                 + Tong_Ngay6 + Tong_Ngay7 + Tong_Ngay8 + Tong_Ngay9 + Tong_Ngay10
                 + Tong_Ngay11 + Tong_Ngay12 + Tong_Ngay13 + Tong_Ngay14 + Tong_Ngay15
                 + Tong_Ngay16 + Tong_Ngay17 + Tong_Ngay18 + Tong_Ngay19 + Tong_Ngay20
                 + Tong_Ngay21 + Tong_Ngay22 + Tong_Ngay23 + Tong_Ngay24 + Tong_Ngay25
-                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString("N2");
+                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31));
 
             _data.Rows.Add(_ravi2);
             //
@@ -578,6 +578,8 @@ namespace CtyTinLuong
             if (name_.Contains("Ngay"))
             {
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+
+                _data.Rows[index_][name_] = String.Format("{0:0.##}", CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString()));
                 if (_data.Rows.Count > index_)
                 {
                     //double temp_ = CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString());
@@ -612,7 +614,7 @@ namespace CtyTinLuong
                 tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
             }
 
-            _data.Rows[index]["Tong"] = tong_row.ToString("N0");
+            _data.Rows[index]["Tong"] = String.Format("{0:0.##}", tong_row);
         }
 
         private void CongTong()
@@ -629,9 +631,9 @@ namespace CtyTinLuong
             }
             for (int j = 0; j < 31; ++j)
             {
-                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = _ds_ngay_tong_[j];
+                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = String.Format("{0:0.##}", _ds_ngay_tong_[j]);
             }
-            _data.Rows[_data.Rows.Count - 1]["Tong"] = tong_tong_;
+            _data.Rows[_data.Rows.Count - 1]["Tong"] = String.Format("{0:0.##}", tong_tong_);
             gridControl1.DataSource = _data;
         }
         private void linkQuanLyMaHang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -800,45 +802,45 @@ namespace CtyTinLuong
             _ravi2["Thang"] = _thang;
             _ravi2["Nam"] = _nam;
             _ravi2["TenNhanVien"] = "Tổng";
-            _ravi2["Ngay1"] = Tong_Ngay1.ToString("N2");
-            _ravi2["Ngay2"] = Tong_Ngay2.ToString("N2");
-            _ravi2["Ngay3"] = Tong_Ngay3.ToString("N2");
-            _ravi2["Ngay4"] = Tong_Ngay4.ToString("N2");
-            _ravi2["Ngay5"] = Tong_Ngay5.ToString("N2");
-            _ravi2["Ngay6"] = Tong_Ngay6.ToString("N2");
-            _ravi2["Ngay7"] = Tong_Ngay7.ToString("N2");
-            _ravi2["Ngay8"] = Tong_Ngay8.ToString("N2");
-            _ravi2["Ngay9"] = Tong_Ngay9.ToString("N2");
-            _ravi2["Ngay10"] = Tong_Ngay10.ToString("N2");
-            _ravi2["Ngay11"] = Tong_Ngay11.ToString("N2");
-            _ravi2["Ngay12"] = Tong_Ngay12.ToString("N2");
-            _ravi2["Ngay13"] = Tong_Ngay13.ToString("N2");
-            _ravi2["Ngay14"] = Tong_Ngay14.ToString("N2");
-            _ravi2["Ngay15"] = Tong_Ngay15.ToString("N2");
-            _ravi2["Ngay16"] = Tong_Ngay16.ToString("N2");
-            _ravi2["Ngay17"] = Tong_Ngay17.ToString("N2");
-            _ravi2["Ngay18"] = Tong_Ngay18.ToString("N2");
-            _ravi2["Ngay19"] = Tong_Ngay19.ToString("N2");
-            _ravi2["Ngay20"] = Tong_Ngay20.ToString("N2");
-            _ravi2["Ngay21"] = Tong_Ngay21.ToString("N2");
-            _ravi2["Ngay22"] = Tong_Ngay22.ToString("N2");
-            _ravi2["Ngay23"] = Tong_Ngay23.ToString("N2");
-            _ravi2["Ngay24"] = Tong_Ngay24.ToString("N2");
-            _ravi2["Ngay25"] = Tong_Ngay25.ToString("N2");
-            _ravi2["Ngay26"] = Tong_Ngay26.ToString("N2");
-            _ravi2["Ngay27"] = Tong_Ngay27.ToString("N2");
-            _ravi2["Ngay28"] = Tong_Ngay28.ToString("N2");
-            _ravi2["Ngay29"] = Tong_Ngay29.ToString("N2");
-            _ravi2["Ngay30"] = Tong_Ngay30.ToString("N2");
-            _ravi2["Ngay31"] = Tong_Ngay31.ToString("N2");
+            _ravi2["Ngay1"] = String.Format("{0:0.##}", Tong_Ngay1);
+            _ravi2["Ngay2"] = String.Format("{0:0.##}", Tong_Ngay2);
+            _ravi2["Ngay3"] = String.Format("{0:0.##}", Tong_Ngay3);
+            _ravi2["Ngay4"] = String.Format("{0:0.##}", Tong_Ngay4);
+            _ravi2["Ngay5"] = String.Format("{0:0.##}", Tong_Ngay5);
+            _ravi2["Ngay6"] = String.Format("{0:0.##}", Tong_Ngay6);
+            _ravi2["Ngay7"] = String.Format("{0:0.##}", Tong_Ngay7);
+            _ravi2["Ngay8"] = String.Format("{0:0.##}", Tong_Ngay8);
+            _ravi2["Ngay9"] = String.Format("{0:0.##}", Tong_Ngay9);
+            _ravi2["Ngay10"] = String.Format("{0:0.##}", Tong_Ngay10);
+            _ravi2["Ngay11"] = String.Format("{0:0.##}", Tong_Ngay11);
+            _ravi2["Ngay12"] = String.Format("{0:0.##}", Tong_Ngay12);
+            _ravi2["Ngay13"] = String.Format("{0:0.##}", Tong_Ngay13);
+            _ravi2["Ngay14"] = String.Format("{0:0.##}", Tong_Ngay14);
+            _ravi2["Ngay15"] = String.Format("{0:0.##}", Tong_Ngay15);
+            _ravi2["Ngay16"] = String.Format("{0:0.##}", Tong_Ngay16);
+            _ravi2["Ngay17"] = String.Format("{0:0.##}", Tong_Ngay17);
+            _ravi2["Ngay18"] = String.Format("{0:0.##}", Tong_Ngay18);
+            _ravi2["Ngay19"] = String.Format("{0:0.##}", Tong_Ngay19);
+            _ravi2["Ngay20"] = String.Format("{0:0.##}", Tong_Ngay20);
+            _ravi2["Ngay21"] = String.Format("{0:0.##}", Tong_Ngay21);
+            _ravi2["Ngay22"] = String.Format("{0:0.##}", Tong_Ngay22);
+            _ravi2["Ngay23"] = String.Format("{0:0.##}", Tong_Ngay23);
+            _ravi2["Ngay24"] = String.Format("{0:0.##}", Tong_Ngay24);
+            _ravi2["Ngay25"] = String.Format("{0:0.##}", Tong_Ngay25);
+            _ravi2["Ngay26"] = String.Format("{0:0.##}", Tong_Ngay26);
+            _ravi2["Ngay27"] = String.Format("{0:0.##}", Tong_Ngay27);
+            _ravi2["Ngay28"] = String.Format("{0:0.##}", Tong_Ngay28);
+            _ravi2["Ngay29"] = String.Format("{0:0.##}", Tong_Ngay29);
+            _ravi2["Ngay30"] = String.Format("{0:0.##}", Tong_Ngay30);
+            _ravi2["Ngay31"] = String.Format("{0:0.##}", Tong_Ngay31);
 
 
-            _ravi2["Tong"] = (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
+            _ravi2["Tong"] = String.Format("{0:0.##}", (Tong_Ngay1 + Tong_Ngay2 + Tong_Ngay3 + Tong_Ngay4 + Tong_Ngay5
                 + Tong_Ngay6 + Tong_Ngay7 + Tong_Ngay8 + Tong_Ngay9 + Tong_Ngay10
                 + Tong_Ngay11 + Tong_Ngay12 + Tong_Ngay13 + Tong_Ngay14 + Tong_Ngay15
                 + Tong_Ngay16 + Tong_Ngay17 + Tong_Ngay18 + Tong_Ngay19 + Tong_Ngay20
                 + Tong_Ngay21 + Tong_Ngay22 + Tong_Ngay23 + Tong_Ngay24 + Tong_Ngay25
-                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31).ToString("N2");
+                + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31));
 
 
             _data.Rows.Add(_ravi2);
