@@ -99,7 +99,7 @@ namespace CtyTinLuong
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KyNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -305,7 +305,7 @@ namespace CtyTinLuong
             this.Ngay31,
             this.clGuiDuLieu,
             this.Tong,
-            this.KyNhan});
+            this.Xoa});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -1245,15 +1245,18 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 34;
+            this.Tong.VisibleIndex = 35;
             this.Tong.Width = 44;
             // 
-            // KyNhan
+            // Xoa
             // 
-            this.KyNhan.Caption = "KÝ NHẬN";
-            this.KyNhan.FieldName = "KyNhan";
-            this.KyNhan.Name = "KyNhan";
-            this.KyNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Xoa.Caption = "XÓA";
+            this.Xoa.FieldName = "Xoa";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Xoa.Visible = true;
+            this.Xoa.VisibleIndex = 34;
+            this.Xoa.Width = 35;
             // 
             // gridControl1
             // 
@@ -1550,7 +1553,7 @@ namespace CtyTinLuong
         private System.Windows.Forms.Button btnThemNhanVien;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.Columns.GridColumn Cong;
-        private DevExpress.XtraGrid.Columns.GridColumn KyNhan;
+        private DevExpress.XtraGrid.Columns.GridColumn Xoa;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
