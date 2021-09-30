@@ -39,6 +39,7 @@
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navChiTiet_ALL = new DevExpress.XtraNavBar.NavBarItem();
             this.navCongNo = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
@@ -54,7 +55,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -151,6 +151,12 @@
             this.navCongNo.Name = "navCongNo";
             this.navCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navCongNo_LinkClicked);
             // 
+            // navBarItem13
+            // 
+            this.navBarItem13.Caption = "Đối chiếu công nợ";
+            this.navBarItem13.Name = "navBarItem13";
+            this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked_1);
+            // 
             // navBarItem4
             // 
             this.navBarItem4.Caption = "4. Học việc";
@@ -241,12 +247,6 @@
             this.groupBox1.TabIndex = 73;
             this.groupBox1.TabStop = false;
             // 
-            // navBarItem13
-            // 
-            this.navBarItem13.Caption = "Đối chiếu công nợ";
-            this.navBarItem13.Name = "navBarItem13";
-            this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked_1);
-            // 
             // frmMuaHang2222
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,10 +258,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmMuaHang2222";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Mua Hàng";
+            this.Text = "frmMuaHang2222-->Mua Hàng";
             this.Load += new System.EventHandler(this.frmMuaHang2222_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();

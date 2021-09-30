@@ -111,6 +111,8 @@ namespace CtyTinLuong
             }
         }
 
+
+
         public DataTable H_load_Phieu_ngaythang_T8(int sotrang, int sodong, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

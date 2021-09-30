@@ -220,6 +220,7 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmQuy_NganHang_Newwwwwwwwwwwwwwwww";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuy_NganHang_Newwwwwwwwwwwwwwwww-->Quản Lý Quỹ Ngân Hàng";
