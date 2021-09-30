@@ -41,8 +41,12 @@ namespace CtyTinLuong
             _SoDong = sodong;
             DataTable dt2 = new DataTable();
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-
-            dt2 = cls.H_load_Phieu_ngaythang_T8(sotrang, _SoDong, xxtungay, xxdenngay);
+            if (_Loaimay == 1)
+                dt2 = cls.H_Load_Phieu_IN_Thang_10(sotrang, _SoDong, xxtungay, xxdenngay);
+            else if (_Loaimay == 1)
+                dt2 = cls.H_Load_Phieu_CAT_Thang_10(sotrang, _SoDong, xxtungay, xxdenngay);
+            else if (_Loaimay == 1)
+                dt2 = cls.H_Load_Phieu_DOT_Thang_10(sotrang, _SoDong, xxtungay, xxdenngay);
 
             gridControl1.DataSource = dt2;
 
@@ -82,9 +86,12 @@ namespace CtyTinLuong
             using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
             {
                 DataTable dt_ = new DataTable();
-
-                dt_ = cls.H_Tinh_SoPhieu_T8(xxtungay, xxdenngay);
-
+                if(_Loaimay==1)
+                    dt_ = cls.H_Tinh_SoPhieu_T8_IN(xxtungay, xxdenngay);
+                else if (_Loaimay == 1)
+                    dt_ = cls.H_Tinh_SoPhieu_T8_CAT(xxtungay, xxdenngay);
+                else if (_Loaimay == 1)
+                    dt_ = cls.H_Tinh_SoPhieu_T8_DOT(xxtungay, xxdenngay);
                 if (dt_ != null && dt_.Rows.Count > 0)
                 {
                     lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
@@ -103,71 +110,7 @@ namespace CtyTinLuong
             }
         }
 
-        private void HienThi_Pannel(int iiID_loaimay)
-        {
-            //if (checkthemmoi.Checked == false)
-            //{
-            //    bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
-            //}
-            //else
-            //{
-            //    if (iiID_loaimay == 1) // máy in
-            //    {
-            //        bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
-            //    }
-            //    else
-            //        bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
-            //}
-            if (iiID_loaimay == 1) // máy in
-            {
-                gridBand_VatTu_IN.Visible = true;
-                gridBand_ThanhPham_IN.Visible = true;
-                gridBand_VatTu_CAT.Visible = false;
-                gridBand_ThanhPham_CAT.Visible = false;
-                gridBand_VatTu_DOT.Visible = false;
-                gridBand_ThanhPham_DOT.Visible = false;
-
-                clMaPhieu.OptionsColumn.AllowEdit = true;
-                clNgayLapPhieu.OptionsColumn.AllowEdit = true;
-                clMaPhieu.OptionsColumn.AllowFocus = true;
-                clNgayLapPhieu.OptionsColumn.AllowFocus = true;
-                //bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom;
-                clDot.Visible = false;
-                clCopy.Visible = false;
-            }
-            else if (iiID_loaimay == 2)
-            {
-                gridBand_VatTu_IN.Visible = false;
-                gridBand_ThanhPham_IN.Visible = false;
-                gridBand_VatTu_CAT.Visible = true;
-                gridBand_ThanhPham_CAT.Visible = true;
-                gridBand_VatTu_DOT.Visible = false;
-                gridBand_ThanhPham_DOT.Visible = false;
-                clMaPhieu.OptionsColumn.AllowEdit = true;
-                clNgayLapPhieu.OptionsColumn.AllowEdit = true;
-                clMaPhieu.OptionsColumn.AllowFocus = true;
-                clNgayLapPhieu.OptionsColumn.AllowFocus = true;
-                //bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
-                clDot.Visible = false;
-                clCopy.Visible = true;
-            }
-            else if (iiID_loaimay == 3)
-            {
-                gridBand_VatTu_IN.Visible = false;
-                gridBand_ThanhPham_IN.Visible = false;
-                gridBand_VatTu_CAT.Visible = false;
-                gridBand_ThanhPham_CAT.Visible = false;
-                gridBand_VatTu_DOT.Visible = true;
-                gridBand_ThanhPham_DOT.Visible = true;
-                clMaPhieu.OptionsColumn.AllowEdit = false;
-                clNgayLapPhieu.OptionsColumn.AllowEdit = false;
-                clMaPhieu.OptionsColumn.AllowFocus = false;
-                clNgayLapPhieu.OptionsColumn.AllowFocus = false;
-                //bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
-                clDot.Visible = true;
-                clCopy.Visible = false;
-            }
-        }
+     
         private void Load_LockUp()
         {
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
@@ -360,17 +303,22 @@ namespace CtyTinLuong
 
         private bool KiemTra_TrungMaPhieu(string xsmaphieu, DateTime ngaykethuc)
         {
-            DateTime ngaybatdau;
-            DataTable dt = new DataTable();
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            ngaybatdau = ngaykethuc.AddDays(-30);
-            dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc);
-            if (dt.Rows.Count > 0)
+            if(_Loaimay==1)
             {
-                MessageBox.Show("Đã có Mã phiếu: " + xsmaphieu + "\nVui lòng thử lại", "Kiểm tra");
-                return false;
+                DateTime ngaybatdau;
+                DataTable dt = new DataTable();
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                ngaybatdau = ngaykethuc.AddDays(-30);
+                dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Đã có Mã phiếu: " + xsmaphieu + "\nVui lòng thử lại", "Kiểm tra");
+                    return false;
+                }
+                else return true;
             }
             else return true;
+
         }
         private bool KiemTra_Hang(int xxloaimay)
         {
@@ -851,6 +799,60 @@ namespace CtyTinLuong
             }
         }
 
+        private void HienThi_Pannel(int iiID_loaimay)
+        {          
+            if (iiID_loaimay == 1) // máy in
+            {
+                gridBand_VatTu_IN.Visible = true;
+                gridBand_ThanhPham_IN.Visible = true;
+                gridBand_VatTu_CAT.Visible = false;
+                gridBand_ThanhPham_CAT.Visible = false;
+                gridBand_VatTu_DOT.Visible = false;
+                gridBand_ThanhPham_DOT.Visible = false;
+
+                clMaPhieu.OptionsColumn.AllowEdit = true;
+                clNgayLapPhieu.OptionsColumn.AllowEdit = true;
+                clMaPhieu.OptionsColumn.AllowFocus = true;
+                clNgayLapPhieu.OptionsColumn.AllowFocus = true;
+                //bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
+                clDot.Visible = false;
+                clCopy.Visible = false;
+            }
+            else if (iiID_loaimay == 2)
+            {
+                clMaPhieu_CAT.Visible = true;
+                gridBand_VatTu_IN.Visible = false;
+                gridBand_ThanhPham_IN.Visible = false;
+                gridBand_VatTu_CAT.Visible = true;
+                gridBand_ThanhPham_CAT.Visible = true;
+                gridBand_VatTu_DOT.Visible = false;
+                gridBand_ThanhPham_DOT.Visible = false;
+                clMaPhieu.OptionsColumn.AllowEdit = true;
+                clNgayLapPhieu.OptionsColumn.AllowEdit = true;
+                clMaPhieu.OptionsColumn.AllowFocus = true;
+                clNgayLapPhieu.OptionsColumn.AllowFocus = true;
+                //bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
+                clDot.Visible = false;
+                clCopy.Visible = true;
+            }
+            else if (iiID_loaimay == 3)
+            {
+                clMaPhieu_DOT.Visible = true;
+                gridBand_VatTu_IN.Visible = false;
+                gridBand_ThanhPham_IN.Visible = false;
+                gridBand_VatTu_CAT.Visible = false;
+                gridBand_ThanhPham_CAT.Visible = false;
+                gridBand_VatTu_DOT.Visible = true;
+                gridBand_ThanhPham_DOT.Visible = true;
+                clMaPhieu.OptionsColumn.AllowEdit = false;
+                clNgayLapPhieu.OptionsColumn.AllowEdit = false;
+                clMaPhieu.OptionsColumn.AllowFocus = false;
+                clNgayLapPhieu.OptionsColumn.AllowFocus = false;
+                //bandedGridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
+                clDot.Visible = true;
+                clCopy.Visible = false;
+            }
+        }
         public PhieuSanXuat_Thang9()
         {
             InitializeComponent();
@@ -859,7 +861,7 @@ namespace CtyTinLuong
         private void PhieuSanXuat_Thang9_Load(object sender, EventArgs e)
         {
             dteDenNgay.DateTime = DateTime.Today;
-            dteTuNgay.DateTime = DateTime.Today.AddDays(-7);
+            dteTuNgay.DateTime = DateTime.Today;
             //gridMacDinh_Luong.EditValue = 8;
             _SoDong = Convert.ToInt32(txtSoDong.Text);
             
@@ -1178,36 +1180,23 @@ namespace CtyTinLuong
             GridView View = sender as GridView;
             if (e.RowHandle >= 0)
             {
-                string change = "", sstesst = "";
-                if (_Loaimay == 1)
-                {
-                    change = View.GetRowCellValue(e.RowHandle, View.Columns["Change_IN"]).ToString();
-                    sstesst = View.GetRowCellValue(e.RowHandle, View.Columns["Test_IN"]).ToString();
-                }
-                else if (_Loaimay == 2)
-                {
-                    change = View.GetRowCellValue(e.RowHandle, View.Columns["Change_CAT"]).ToString();
-                    sstesst = View.GetRowCellValue(e.RowHandle, View.Columns["Test_CAT"]).ToString();
+                string change_in = "", sstesst_in = "";
+                string change_cat = "", sstesst_cat = "";
+                string change_dot = "", sstesst_dot = "";
 
-                }
-                else if (_Loaimay == 3)
-                {
-                    change = View.GetRowCellValue(e.RowHandle, View.Columns["Change_DOT"]).ToString();
-                    sstesst = View.GetRowCellValue(e.RowHandle, View.Columns["Test_DOT"]).ToString();
+                change_in = View.GetRowCellValue(e.RowHandle, View.Columns["Change_IN"]).ToString();
+                sstesst_in = View.GetRowCellValue(e.RowHandle, View.Columns["Test_IN"]).ToString();
 
-                }
-                if (sstesst == "1")
-                {
-                    e.Appearance.BackColor = Color.OrangeRed;
+                change_cat = View.GetRowCellValue(e.RowHandle, View.Columns["Change_CAT"]).ToString();
+                sstesst_cat = View.GetRowCellValue(e.RowHandle, View.Columns["Test_CAT"]).ToString();
 
-                }
-                else if (change == "1")
-                {
-                    e.Appearance.BackColor = Color.PaleTurquoise;
+                change_dot = View.GetRowCellValue(e.RowHandle, View.Columns["Change_DOT"]).ToString();
+                sstesst_dot = View.GetRowCellValue(e.RowHandle, View.Columns["Test_DOT"]).ToString();
 
-                }
-
-
+                if (change_in == "1" || change_cat == "1" || change_dot == "1" )                
+                    e.Appearance.BackColor = Color.OrangeRed;                              
+                else if (sstesst_in == "1"|| sstesst_cat == "1" || sstesst_dot == "1")               
+                    e.Appearance.BackColor = Color.PaleTurquoise;                
             }
         }
 
