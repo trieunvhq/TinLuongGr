@@ -40,7 +40,8 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
 
             Cursor.Current = Cursors.WaitCursor;
-            PhieuSanXuat_IN_CAT_New_thang8 ff = new PhieuSanXuat_IN_CAT_New_thang8();
+            //PhieuSanXuat_IN_CAT_New_thang8 ff = new PhieuSanXuat_IN_CAT_New_thang8();
+            PhieuSanXuat_Thang9 ff = new PhieuSanXuat_Thang9();
             ff.Show();
             Cursor.Current = Cursors.Default;
         }
