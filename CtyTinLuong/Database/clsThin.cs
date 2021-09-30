@@ -45,6 +45,74 @@ namespace CtyTinLuong
             }
         }
 
+        public bool Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_Delete(int ID_ChiTietChamCong_ToGapDan)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_Delete]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietChamCong_ToGapDan", SqlDbType.Int, 4, 
+                    ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_ChiTietChamCong_ToGapDan));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_Delete::Delete::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+
+        public bool Tr_T_ChamCom_Delete(int ID_ChamCom)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_T_ChamCom_Delete]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChamCom", SqlDbType.Int, 4,
+                    ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_ChamCom));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_Delete::Delete::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+
         public DataTable T_PhieuSX_SF(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc, string ma_phieu)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

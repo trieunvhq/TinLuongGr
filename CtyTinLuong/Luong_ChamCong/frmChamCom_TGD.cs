@@ -426,7 +426,7 @@ namespace CtyTinLuong
             }
             // 
             DataRow _ravi = _data.NewRow();
-            _ravi["ID_ChamCom"] = -99;
+            _ravi["ID_ChamCom"] = 0;
             _ravi["ID_CongNhan"] = id_nhansu_;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
@@ -787,6 +787,79 @@ namespace CtyTinLuong
             if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{DOWN}");
+            }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+                int id_cn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
+                int ID_ChamCom = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_ChamCom).ToString());
+
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xác nhận xóa công nhân: " + gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString(), "Delete",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
+                {
+                    bool deleted = false;
+
+                    if (ID_ChamCom == 0)
+                    {
+                        DataRow[] rows;
+                        rows = _data.Select("ID_CongNhan=' " + id_cn + " ' ");
+                        foreach (DataRow row in rows)
+                        {
+                            _data.Rows.Remove(row);
+                            deleted = true;
+                        }
+                    }
+                    else
+                    {
+                        using (clsThin clsThin_ = new clsThin())
+                        {
+                            for (int i = 0; i < _data.Rows.Count; i++)
+                            {
+                                if (Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()) == id_cn)
+                                {
+                                    int ID_ChCom = Convert.ToInt32(_data.Rows[i]["ID_ChamCom"].ToString());
+                                    if (clsThin_.Tr_T_ChamCom_Delete(ID_ChCom))
+                                    {
+                                        deleted = true;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    if (deleted)
+                    {
+                        DataRow[] rows;
+                        rows = _data.Select("ID_CongNhan=' " + id_cn + " ' ");
+                        foreach (DataRow row in rows)
+                        {
+                            _data.Rows.Remove(row);
+                        }
+
+                        gridControl1.DataSource = _data;
+                        MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại. Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Error xóa công nhân khỏi bảng..." + ee.ToString(), "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

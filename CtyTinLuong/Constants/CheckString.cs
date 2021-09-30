@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,19 @@ namespace CtyTinLuong
 {
     internal static class CheckString
     {
+
+        private static double TinhToan(string str)
+        {
+            try
+            {
+                //double result = Convert.ToDouble(new DataTable().Compute("(3+3)*2+1", null));
+                double result = Convert.ToDouble(new DataTable().Compute(str, null));
+
+                return result;
+            }
+            catch { return 0; }
+        }
+
 
         public static string CheckMailString(string str)
         {
