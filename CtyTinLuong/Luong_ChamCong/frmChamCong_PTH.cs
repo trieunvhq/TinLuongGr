@@ -600,10 +600,7 @@ namespace CtyTinLuong
                 //tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
                 tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
             }
-            if(tong_row==0)
-                _data.Rows[index]["Tong"] = "0";
-            else
-                _data.Rows[index]["Tong"] = String.Format("{0:0.##}", tong_row);
+         _data.Rows[index]["Tong"] = String.Format("{0:0.##}", tong_row);
         }
 
         private void CongTong()
