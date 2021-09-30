@@ -939,6 +939,7 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
+            //int id_congnhan_ = Convert.ToInt16(gridView1.inde(clID_CongNhan).ToString());
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
