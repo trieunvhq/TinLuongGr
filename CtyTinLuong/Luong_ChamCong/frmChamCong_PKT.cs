@@ -589,7 +589,7 @@ namespace CtyTinLuong
                 tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
             }
 
-            _data.Rows[index]["Tong"] = tong_row.ToString("N0");
+            _data.Rows[index]["Tong"] = tong_row.ToString();
         }
 
         private void CongTong()
