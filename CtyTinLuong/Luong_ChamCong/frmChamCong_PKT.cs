@@ -935,6 +935,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             _frmQLLCC.Close();
