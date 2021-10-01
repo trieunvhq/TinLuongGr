@@ -492,13 +492,16 @@ namespace CtyTinLuong
                             _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
                             _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
 
+
                             _ravi["MaDinhMuc"] = "";
                             _ravi["DinhMuc_KhongTang"] = 0;
                             _ravi["DinhMuc_Tang"] = 0;
                             _ravi["ID_LoaiCong"] = 0;
 
-                            _ravi["Cong"] = _dt_LoaiHang.Rows[j]["Ten"].ToString();
-                            _ravi["ID_LoaiCong"] = _dt_LoaiHang.Rows[j]["ID_LoaiCong"].ToString();
+                            _ravi["TenVTHH"] = _dt_LoaiHang.Rows[j]["TenVTHH"].ToString();
+                            _ravi["ID_VTHH"] = Convert.ToInt32(_dt_LoaiHang.Rows[j]["ID_VTHH"].ToString());
+
+                            _ravi["ID_LoaiCong"] = 1; //Công nhật
                             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
                             _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                             _data.Rows.Add(_ravi);
@@ -672,10 +675,10 @@ namespace CtyTinLuong
         {
             try
             {
-                _thang = Convert.ToInt32(txtThang.Text);
+                _thang = Convert.ToInt32(txtThang.Text.Trim());
                 LoadData(false);
             }
-            catch
+            catch (Exception bb)
             {
                 MessageBox.Show("Tháng không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -684,7 +687,7 @@ namespace CtyTinLuong
         {
             try
             {
-                _nam = Convert.ToInt32(txtNam.Text);
+                _nam = Convert.ToInt32(txtNam.Text.Trim());
                 LoadData(false);
             }
             catch
@@ -730,25 +733,30 @@ namespace CtyTinLuong
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
-            if ((int)cbNhanSu.SelectedValue == 0)
+            if (cbLoaiCong.Text != "" && cbNhanSu.Text != "")
             {
-            }
-            else
-            {
-                int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
-               
-                ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_,cbLoaiCong.Text);
+                if ((int)cbNhanSu.SelectedValue == 0)
+                {
+                }
+                else
+                {
+                    int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
+
+                    ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_, cbLoaiCong.Text);
+                }
             }
         }
-        private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew,int id_loaicong_,string ten_loaicong_)
+
+
+        private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew, int idvthh, string tenVTHH)
         {
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 if (id_nhansu_ == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
                 {
-                    if(Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()) == id_loaicong_)
+                    if(Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()) == idvthh)
                     {
-                        MessageBox.Show("Đã tồn tại công nhân trong bảng này!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Đã tồn tại công nhân và hàng hóa trong bảng này!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -774,7 +782,7 @@ namespace CtyTinLuong
             //
             DataRow _ravi = _data.NewRow();
             _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
-            _ravi["ID_LoaiCong"] = id_loaicong_;
+            _ravi["ID_LoaiCong"] = 1; //Công nhật
             _ravi["ID_CongNhan"] = id_nhansu_;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
@@ -795,7 +803,11 @@ namespace CtyTinLuong
             _ravi["MaNhanVien"] = "";
             _ravi["TenNhanVien"] = ten_;
 
-            _ravi["Cong"] = ten_loaicong_;
+            _ravi["TenVTHH"] = tenVTHH;
+            _ravi["ID_VTHH"] = idvthh;
+
+            _ravi["ID_LoaiCong"] = 1; //Công nhật
+
             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
 
             _data.Rows.InsertAt(_ravi, pos_);
@@ -1084,7 +1096,7 @@ namespace CtyTinLuong
                         ID_CongNhan_,
                         _thang,
                         _nam,
-                        0,
+                        Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()),
                         0,
                         (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()),
                         (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString()),
