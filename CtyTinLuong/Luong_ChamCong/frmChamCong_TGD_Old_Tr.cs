@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class frmChamCong_TGD : UserControl
+    public partial class frmChamCong_TGD_Old_Tr : UserControl
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
@@ -32,7 +32,7 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
-        public frmChamCong_TGD(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC = null)
+        public frmChamCong_TGD_Old_Tr(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC = null)
         {
             _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0;
@@ -567,7 +567,7 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
-        private void frmChamCong_TGD_Load(object sender, EventArgs e)
+        private void frmChamCong_TGD_Old_Tr_Load(object sender, EventArgs e)
         {
         }
 
@@ -888,16 +888,8 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            //doiMauTitle(sender, e);
-
-            frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
-            //this.Hide();
-            ff.Show();
-            //this.Show();
-            Cursor.Current = Cursors.Default;
-            //Tr_frmDinhMucLuongSL_TGD ff = new Tr_frmDinhMucLuongSL_TGD(0, "frmChamCong_TGD", this);
-            //ff.ShowDialog();
+            Tr_frmDinhMucLuongSL_TGD ff = new Tr_frmDinhMucLuongSL_TGD(0, "frmChamCong_TGD_Old_Tr", this);
+            ff.ShowDialog();
         }
         
 
@@ -1000,24 +992,18 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
-            ff.Show();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
+                 
+                Tr_frmDinhMucLuongSL_TGD ff = new Tr_frmDinhMucLuongSL_TGD(id_congnhan_, "frmChamCong_TGD_Old_Tr", this);
+                ff.ShowDialog();
 
-            //Mở bảng định mức lương công nhật:
-            //try
-            //{
-            //    int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
+            }
+            catch (Exception ee)
+            {
 
-            //    Tr_frmDinhMucLuongSL_TGD ff = new Tr_frmDinhMucLuongSL_TGD(id_congnhan_, "frmChamCong_TGD", this);
-            //    ff.ShowDialog();
-
-            //}
-            //catch (Exception ee)
-            //{
-
-            //}
+            }
         }
 
         private void gridView1_KeyDown(object sender, KeyEventArgs e)
