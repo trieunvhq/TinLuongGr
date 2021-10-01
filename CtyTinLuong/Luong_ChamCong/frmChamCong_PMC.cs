@@ -1,6 +1,7 @@
 ﻿
 
 using CtyTinLuong.Model;
+using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
@@ -32,6 +33,7 @@ namespace CtyTinLuong
 
         frmQuanLy_Luong_ChamCong _frmQLLCC;
 
+        DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
         public frmChamCong_PMC(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
             _frmQLLCC = frmQLLCC;
@@ -54,6 +56,11 @@ namespace CtyTinLuong
 
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+
+            emptyEditor = new RepositoryItemButtonEdit();
+            emptyEditor.Buttons.Clear();
+            emptyEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            gridControl1.RepositoryItems.Add(emptyEditor);
         }
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
@@ -1011,6 +1018,17 @@ namespace CtyTinLuong
             catch (Exception ee)
             {
                 MessageBox.Show("Error xóa công nhân khỏi bảng..." + ee.ToString(), "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridView1_CustomRowCellEdit(object sender, CustomRowCellEditEventArgs e)
+        {
+            if (e.RowHandle == _data.Rows.Count - 1)
+            {
+                if (e.Column.FieldName == "Xoa")
+                {
+                    e.RepositoryItem = emptyEditor;
+                }
             }
         }
 
