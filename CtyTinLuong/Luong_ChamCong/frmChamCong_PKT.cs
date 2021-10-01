@@ -1,6 +1,7 @@
 ﻿
 
 using CtyTinLuong.Model;
+using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
@@ -53,6 +54,12 @@ namespace CtyTinLuong
 
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+
+            emptyEditor = new RepositoryItemButtonEdit();
+            emptyEditor.Buttons.Clear();
+            emptyEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            gridControl1.RepositoryItems.Add(emptyEditor);
+
         }
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
@@ -907,8 +914,12 @@ namespace CtyTinLuong
         {
             GridView view = sender as GridView;
             if (e.RowHandle == _data.Rows.Count - 1)
-            {
+            { 
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                //if(e.Column.FieldName == "Xoa")
+                //{
+                //    e.Appearance.Font = new System.Drawing.Font("Tahoma",1, System.Drawing.FontStyle.Bold);
+                //}
             }
         }
 
@@ -1014,6 +1025,17 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridView1_CustomRowCellEdit(object sender, CustomRowCellEditEventArgs e)
+        {
+            if (e.RowHandle == _data.Rows.Count - 1)
+            { 
+                if (e.Column.FieldName == "Xoa")
+                {
+                    e.RepositoryItem = emptyEditor;
+                }
+            } 
+        }
+        RepositoryItemButtonEdit emptyEditor;
         private void btThoat_Click(object sender, EventArgs e)
         {
             _frmQLLCC.Close();
