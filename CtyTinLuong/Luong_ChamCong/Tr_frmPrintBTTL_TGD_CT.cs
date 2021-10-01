@@ -34,7 +34,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 DataRow _ravi = ds.tbBTTL_TGD_CT.NewRow();
                 _ravi["STT"] = _data.Rows[i]["STT"].ToString();
                 _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-                _ravi["TenVTHH"] = _data.Rows[i]["Cong"].ToString();
+                _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
                 _ravi["SanLuong"] = _data.Rows[i]["SanLuong"].ToString();
                 _ravi["DonGia"] = _data.Rows[i]["DonGia"].ToString();
                 _ravi["ThanhTien"] = _data.Rows[i]["ThanhTien"].ToString();
