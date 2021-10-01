@@ -346,6 +346,7 @@ namespace CtyTinLuong
                     Ngay30 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString());
                     Ngay31 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString());
                     //
+                    _data.Rows[i]["TenVTHH"] = CheckString.ChuanHoaHoTen(_data.Rows[i]["TenVTHH"].ToString());
                     _data.Rows[i]["Ngay1"] = String.Format("{0:0.##}", Ngay1);
                     _data.Rows[i]["Ngay2"] = String.Format("{0:0.##}", Ngay2);
                     _data.Rows[i]["Ngay3"] = String.Format("{0:0.##}", Ngay3);

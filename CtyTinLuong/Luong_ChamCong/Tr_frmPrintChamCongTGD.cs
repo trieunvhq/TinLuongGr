@@ -32,7 +32,7 @@ namespace CtyTinLuong.Luong_ChamCong
             {
                 DataRow _ravi = ds.tbCongNhatChamCongToGapDan.NewRow();
 
-                _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                _ravi["TenNhanVien"] = CheckString.ChuanHoaHoTen(_data.Rows[i]["TenNhanVien"].ToString());
                 _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
                 if (CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()) == 0)
