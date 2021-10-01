@@ -235,23 +235,25 @@ namespace CtyTinLuong
                 cbNhanSu.DisplayMember = "TenNhanVien";
                 cbNhanSu.ValueMember = "ID_NhanSu";
 
-                //Xóa các loại công không có trong gấp dán từ db:
-                _dt_LoaiHang = clsThin_.T_LoaiCong_SA();
-                for (int i = _dt_LoaiHang.Rows.Count - 1; i >= 0; i--)
-                {
-                    DataRow dr = _dt_LoaiHang.Rows[i];
-                    if (dr["Ten"].ToString().ToLower().Contains("công nhật")
-                        || dr["Ten"].ToString().ToLower().Contains("tăng ca")
-                        || dr["Ten"].ToString().ToLower().Contains("sản lượng")
-                        || dr["Ten"].ToString().ToLower().Contains("công thiếu tháng trước")
-                        || dr["Ten"].ToString().ToLower().Contains("công 7 giờ")
-                        || dr["Ten"].ToString().ToLower().Contains("công phụ máy")) 
-                        dr.Delete();
-                }
-                _dt_LoaiHang.AcceptChanges();
+                ////Xóa các loại công không có trong gấp dán từ db:
+                //_dt_LoaiHang = clsThin_.T_LoaiCong_SA();
+                //for (int i = _dt_LoaiHang.Rows.Count - 1; i >= 0; i--)
+                //{
+                //    DataRow dr = _dt_LoaiHang.Rows[i];
+                //    if (dr["Ten"].ToString().ToLower().Contains("công nhật")
+                //        || dr["Ten"].ToString().ToLower().Contains("tăng ca")
+                //        || dr["Ten"].ToString().ToLower().Contains("sản lượng")
+                //        || dr["Ten"].ToString().ToLower().Contains("công thiếu tháng trước")
+                //        || dr["Ten"].ToString().ToLower().Contains("công 7 giờ")
+                //        || dr["Ten"].ToString().ToLower().Contains("công phụ máy")) 
+                //        dr.Delete();
+                //}
+                //_dt_LoaiHang.AcceptChanges();
+
+                _dt_LoaiHang = clsThin_.Tr_Huu_CongNhat_MaHang_ToGapDan_CaiMacDinh_Select(_nam, _thang);
                 cbLoaiCong.DataSource = _dt_LoaiHang;
-                cbLoaiCong.DisplayMember = "Ten";
-                cbLoaiCong.ValueMember = "ID_LoaiCong";
+                cbLoaiCong.DisplayMember = "TenVTHH";
+                cbLoaiCong.ValueMember = "ID_VTHH";
             }
 
             using (clsThin clsThin_ = new clsThin())

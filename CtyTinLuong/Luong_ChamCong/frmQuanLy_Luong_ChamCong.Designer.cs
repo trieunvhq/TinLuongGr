@@ -45,7 +45,6 @@
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navChamCong_TBX = new DevExpress.XtraNavBar.NavBarItem();
@@ -169,8 +168,7 @@
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNhapKho_TuMuaHang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem17)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarItem9
@@ -180,14 +178,6 @@
             this.navBarItem9.Caption = "Tạm Ứng";
             this.navBarItem9.Name = "navBarItem9";
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
-            // 
-            // navBarItem17
-            // 
-            this.navBarItem17.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.navBarItem17.Appearance.Options.UseForeColor = true;
-            this.navBarItem17.Caption = "Mã Hàng Tổ Gấp Dán";
-            this.navBarItem17.Name = "navBarItem17";
-            this.navBarItem17.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem17_LinkClicked);
             // 
             // navBarControl1
             // 
@@ -213,7 +203,6 @@
             this.navBarItem13,
             this.navBarItem2,
             this.navBarItem9,
-            this.navBarItem17,
             this.navChamCong_TBX,
             this.navChamCong_TDK,
             this.navTTL_TGD,
@@ -501,7 +490,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem17;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_TBX;
         private DevExpress.XtraNavBar.NavBarItem navChamCong_TDK;
