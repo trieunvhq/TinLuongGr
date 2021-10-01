@@ -1,7 +1,7 @@
 ﻿
 namespace CtyTinLuong
 {
-    partial class frmChamCong_TGD
+    partial class frmChamCong_TGD_Old_Tr
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,6 @@ namespace CtyTinLuong
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -121,6 +120,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -1273,12 +1273,6 @@ namespace CtyTinLuong
             this.Xoa.VisibleIndex = 34;
             this.Xoa.Width = 35;
             // 
-            // ID_ChiTietChamCong_ToGapDan
-            // 
-            this.ID_ChiTietChamCong_ToGapDan.Caption = "ID_ChiTietChamCong_ToGapDan";
-            this.ID_ChiTietChamCong_ToGapDan.FieldName = "ID_ChiTietChamCong_ToGapDan";
-            this.ID_ChiTietChamCong_ToGapDan.Name = "ID_ChiTietChamCong_ToGapDan";
-            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1402,10 +1396,10 @@ namespace CtyTinLuong
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(2, 601);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(103, 13);
+            this.linkLabel2.Size = new System.Drawing.Size(149, 13);
             this.linkLabel2.TabIndex = 146;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Mã hàng tổ gấp dán";
+            this.linkLabel2.Text = "Cài định mức  toàn danh sách";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // cbLoaiCong
@@ -1480,7 +1474,13 @@ namespace CtyTinLuong
             this.label5.TabIndex = 162;
             this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
             // 
-            // frmChamCong_TGD
+            // ID_ChiTietChamCong_ToGapDan
+            // 
+            this.ID_ChiTietChamCong_ToGapDan.Caption = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.FieldName = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.Name = "ID_ChiTietChamCong_ToGapDan";
+            // 
+            // frmChamCong_TGD_Old_Tr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1500,9 +1500,9 @@ namespace CtyTinLuong
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmChamCong_TGD";
+            this.Name = "frmChamCong_TGD_Old_Tr";
             this.Size = new System.Drawing.Size(913, 635);
-            this.Load += new System.EventHandler(this.frmChamCong_TGD_Load);
+            this.Load += new System.EventHandler(this.frmChamCong_TGD_Old_Tr_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();

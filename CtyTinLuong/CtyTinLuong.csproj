@@ -215,6 +215,12 @@
     <Compile Include="Luong_ChamCong\frmChamCong_TDK.Designer.cs">
       <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TGD_Old_Tr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_TGD_Old_Tr.Designer.cs">
+      <DependentUpon>frmChamCong_TGD_Old_Tr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmChamCong_TGD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2526,6 +2532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TDK.resx">
       <DependentUpon>frmChamCong_TDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TGD_Old_Tr.resx">
+      <DependentUpon>frmChamCong_TGD_Old_Tr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TGD.resx">
       <DependentUpon>frmChamCong_TGD.cs</DependentUpon>
