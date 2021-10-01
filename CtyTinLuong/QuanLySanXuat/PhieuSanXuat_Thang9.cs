@@ -42,11 +42,11 @@ namespace CtyTinLuong
             DataTable dt2 = new DataTable();
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
             if (_Loaimay == 1)
-                dt2 = cls.H_Load_Phieu_IN_Thang_10(sotrang, _SoDong, xxtungay, xxdenngay);
-            else if (_Loaimay == 1)
-                dt2 = cls.H_Load_Phieu_CAT_Thang_10(sotrang, _SoDong, xxtungay, xxdenngay);
-            else if (_Loaimay == 1)
-                dt2 = cls.H_Load_Phieu_DOT_Thang_10(sotrang, _SoDong, xxtungay, xxdenngay);
+                dt2 = cls.H_Load_Phieu_IN_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+            else if (_Loaimay == 2)
+                dt2 = cls.H_Load_Phieu_CAT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+            else if (_Loaimay == 3)
+                dt2 = cls.H_Load_Phieu_DOT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
 
             gridControl1.DataSource = dt2;
 
@@ -110,7 +110,22 @@ namespace CtyTinLuong
             }
         }
 
-     
+        private void Load_LockUp_MaPhieu(DateTime xxtungay, DateTime xxdenngay)
+        {
+            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+            DataTable dt = cls.H_Load_lockup_Phieu_T10(xxtungay, xxdenngay);
+            SearchLookUp_MaPhieu_CAT.DataSource = dt;
+            SearchLookUp_MaPhieu_CAT.DisplayMember = "MaPhieu";
+            SearchLookUp_MaPhieu_CAT.ValueMember = "ID_SoPhieu";
+
+            SearchLookUp_MaPhieu_DOT.DataSource = dt;
+            SearchLookUp_MaPhieu_DOT.DisplayMember = "MaPhieu";
+            SearchLookUp_MaPhieu_DOT.ValueMember = "ID_SoPhieu";
+
+            cls.Dispose();
+
+
+        }
         private void Load_LockUp()
         {
             clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
@@ -248,11 +263,11 @@ namespace CtyTinLuong
             //cbCaSXMacDinh.DataSource = dt2;
             //cbCaSXMacDinh.ValueMember = "id";
             //cbCaSXMacDinh.DisplayMember = "Ca";
-            //cbCaSXMacDinh.SelectedIndex = 1;
-
-
-
+            //cbCaSXMacDinh.SelectedIndex = 1;           
+            
             cls.Dispose();
+
+
         }
 
         private void Tinh_SanLuong(double sanluongtong, int iiID_DinhmucLuong, int iiID_CongNhan, int iiID_VTHH_Ra__, DateTime ngaysanxuat__, string casanxxutaxx_)
@@ -322,6 +337,7 @@ namespace CtyTinLuong
         }
         private bool KiemTra_Hang(int xxloaimay)
         {
+           
             if (xxloaimay == 1)
             {
                 int xID_CaTruong_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_IN).ToString());
@@ -803,6 +819,9 @@ namespace CtyTinLuong
         {          
             if (iiID_loaimay == 1) // máy in
             {
+                Band_IN.Visible = true;
+                Band_CAT.Visible = false;
+                Band_DOT.Visible = false;
                 gridBand_VatTu_IN.Visible = true;
                 gridBand_ThanhPham_IN.Visible = true;
                 gridBand_VatTu_CAT.Visible = false;
@@ -820,7 +839,10 @@ namespace CtyTinLuong
             }
             else if (iiID_loaimay == 2)
             {
-                clMaPhieu_CAT.Visible = true;
+                Band_IN.Visible = false;
+                Band_CAT.Visible = true;
+                Band_DOT.Visible = false;
+               
                 gridBand_VatTu_IN.Visible = false;
                 gridBand_ThanhPham_IN.Visible = false;
                 gridBand_VatTu_CAT.Visible = true;
@@ -837,7 +859,10 @@ namespace CtyTinLuong
             }
             else if (iiID_loaimay == 3)
             {
-                clMaPhieu_DOT.Visible = true;
+                Band_IN.Visible = false;
+                Band_CAT.Visible = false;
+                Band_DOT.Visible = true;
+              
                 gridBand_VatTu_IN.Visible = false;
                 gridBand_ThanhPham_IN.Visible = false;
                 gridBand_VatTu_CAT.Visible = false;
@@ -972,10 +997,11 @@ namespace CtyTinLuong
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-
+                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 //int xxid = Convert.ToInt32(gridLoaiMay.EditValue);
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
                 Cursor.Current = Cursors.Default;
             }
             catch
@@ -987,6 +1013,7 @@ namespace CtyTinLuong
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 //int xxid = Convert.ToInt32(gridLoaiMay.EditValue);
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
@@ -1006,8 +1033,9 @@ namespace CtyTinLuong
                 txtSoTrang.Text = "1";
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            
                 Cursor.Current = Cursors.Default;
-
+               
             }
             catch
             { }
@@ -1089,20 +1117,34 @@ namespace CtyTinLuong
                 else if (_Loaimay == 2)
                 {
                     #region cat
-                    //if (e.Column == clMaPhieu)
-                    //{
-                    //    if (bandedGridView1.GetRowCellValue(e.RowHandle, clNgayLapPhieu).ToString() != "")
-                    //    {
-                    //        string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
-                    //        DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgayLapPhieu).ToString());
-                    //        if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat) == false)
-                    //        {
-                    //            bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
-                    //            return;
-                    //        }
-                    //        else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
-                    //    }
-                    //}
+                    if (e.Column == clMaPhieu_CAT)
+                    {
+                        if (bandedGridView1.GetRowCellValue(e.RowHandle, clID_ChiTietPhieu_CAT).ToString() == "")
+                        {
+                            int xid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clMaPhieu_CAT).ToString());
+                            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                            DataTable dt = cls.H_ChiTietPhieu_SO_W_iID_SoPhieu_May_IN(xid_sophieu_);
+                            if(dt.Rows.Count>0)
+                            {
+                                int iid_vthh_ra_in = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Ra"].ToString());
+                                int id_catruong_in= CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_CaTruong"].ToString());
+                                DateTime ngaysx_in = Convert.ToDateTime(dt.Rows[0]["NgaySanXuat"].ToString());
+                                string casx_in = dt.Rows[0]["CaSanXuat"].ToString();
+                                double sanluong_in= CheckString.ConvertToDouble_My(dt.Rows[0]["SanLuong_Tong"].ToString());
+                                string tenvthh = dt.Rows[0]["TenVTHH"].ToString();
+                                string dvt = dt.Rows[0]["DonViTinh"].ToString();
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clID_VTHH_Vao_CAT, iid_vthh_ra_in);
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_CAT, tenvthh);
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Vao_CAT, dvt);
+
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clID_CaTruong_CAT, id_catruong_in);
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clNgaySanXuat_CAT, ngaysx_in);
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clCaSanXuat_CAT, casx_in);
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clSoLuong_Vao_CAT, sanluong_in);
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clChange_CAT, "1");
+                            }
+                        }
+                    }
                     if (e.Column == clID_VTHH_Vao_CAT)
                     {
                         bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_CAT, sTenVTHH_vao_CAT);
@@ -1139,6 +1181,31 @@ namespace CtyTinLuong
                 else if (_Loaimay == 3)
                 {
                     #region dot
+                    if (bandedGridView1.GetRowCellValue(e.RowHandle, clID_ChiTietPhieu_DOT).ToString() == "")
+                    {
+                        int xid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clMaPhieu_DOT).ToString());
+                        clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                        DataTable dt = cls.H_ChiTietPhieu_SO_W_iID_SoPhieu_May_CAT(xid_sophieu_);
+                        if (dt.Rows.Count > 0)
+                        {
+                            int iid_vthh_ra_in = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Ra"].ToString());
+                            int id_catruong_in = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_CaTruong"].ToString());
+                            DateTime ngaysx_in = Convert.ToDateTime(dt.Rows[0]["NgaySanXuat"].ToString());
+                            string casx_in = dt.Rows[0]["CaSanXuat"].ToString();
+                            double sanluong_in = CheckString.ConvertToDouble_My(dt.Rows[0]["SanLuong_Tong"].ToString());
+                            string tenvthh = dt.Rows[0]["TenVTHH"].ToString();
+                            string dvt = dt.Rows[0]["DonViTinh"].ToString();
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clID_VTHH_Vao_DOT, iid_vthh_ra_in);
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_DOT, tenvthh);
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Vao_DOT, dvt);
+
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clID_CaTruong_DOT, id_catruong_in);
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clNgaySanXuat_DOT, ngaysx_in);
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clCaSanXuat_DOT, casx_in);
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clSoLuong_Vao_DOT, sanluong_in);
+                            bandedGridView1.SetRowCellValue(e.RowHandle, clChange_DOT, "1");
+                        }
+                    }
                     if (e.Column == clID_VTHH_Vao_DOT)
                     {
                         bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_DOT, sTenVTHH_vao_DOT);
@@ -1180,54 +1247,62 @@ namespace CtyTinLuong
             GridView View = sender as GridView;
             if (e.RowHandle >= 0)
             {
-                string change_in = "", sstesst_in = "";
-                string change_cat = "", sstesst_cat = "";
-                string change_dot = "", sstesst_dot = "";
+                //string change_in = "", sstesst_in = "";
+                //string change_cat = "", sstesst_cat = "";
+                //string change_dot = "", sstesst_dot = "";
 
-                change_in = View.GetRowCellValue(e.RowHandle, View.Columns["Change_IN"]).ToString();
-                sstesst_in = View.GetRowCellValue(e.RowHandle, View.Columns["Test_IN"]).ToString();
+                //change_in = View.GetRowCellValue(e.RowHandle, View.Columns["Change_IN"]).ToString();
+                //sstesst_in = View.GetRowCellValue(e.RowHandle, View.Columns["Test_IN"]).ToString();
 
-                change_cat = View.GetRowCellValue(e.RowHandle, View.Columns["Change_CAT"]).ToString();
-                sstesst_cat = View.GetRowCellValue(e.RowHandle, View.Columns["Test_CAT"]).ToString();
+                //change_cat = View.GetRowCellValue(e.RowHandle, View.Columns["Change_CAT"]).ToString();
+                //sstesst_cat = View.GetRowCellValue(e.RowHandle, View.Columns["Test_CAT"]).ToString();
 
-                change_dot = View.GetRowCellValue(e.RowHandle, View.Columns["Change_DOT"]).ToString();
-                sstesst_dot = View.GetRowCellValue(e.RowHandle, View.Columns["Test_DOT"]).ToString();
+                //change_dot = View.GetRowCellValue(e.RowHandle, View.Columns["Change_DOT"]).ToString();
+                //sstesst_dot = View.GetRowCellValue(e.RowHandle, View.Columns["Test_DOT"]).ToString();
 
-                if (change_in == "1" || change_cat == "1" || change_dot == "1" )                
-                    e.Appearance.BackColor = Color.OrangeRed;                              
-                else if (sstesst_in == "1"|| sstesst_cat == "1" || sstesst_dot == "1")               
-                    e.Appearance.BackColor = Color.PaleTurquoise;                
+                //if (change_in == "1" || change_cat == "1" || change_dot == "1" )                
+                //    e.Appearance.BackColor = Color.OrangeRed;                              
+                //else if (sstesst_in == "1"|| sstesst_cat == "1" || sstesst_dot == "1")               
+                //    e.Appearance.BackColor = Color.PaleTurquoise;                
             }
         }
 
         private void bandedGridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            if (_Loaimay == 1)
+            try
             {
-                if (KiemTra_Hang(_Loaimay) == false)
+                if (_Loaimay == 1)
                 {
-                    bandedGridView1.SetRowCellValue(e.RowHandle, clTest_IN, "1");
+                    if (KiemTra_Hang(_Loaimay) == false)
+                    {
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clTest_IN, "1");
+                    }
+                    else bandedGridView1.SetRowCellValue(e.RowHandle, clTest_IN, "0");
                 }
-                else bandedGridView1.SetRowCellValue(e.RowHandle, clTest_IN, "0");
+                else if (_Loaimay == 2)
+                {
+                    if (KiemTra_Hang(_Loaimay) == false)
+                    {
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clTest_CAT, "1");
+                    }
+                    else bandedGridView1.SetRowCellValue(e.RowHandle, clTest_CAT, "0");
+
+                }
+                else if (_Loaimay == 3)
+                {
+                    if (KiemTra_Hang(_Loaimay) == false)
+                    {
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clTest_DOT, "1");
+                    }
+                    else bandedGridView1.SetRowCellValue(e.RowHandle, clTest_DOT, "0");
+
+                }
             }
-            else if (_Loaimay == 2)
+            catch
             {
-                if (KiemTra_Hang(_Loaimay) == false)
-                {
-                    bandedGridView1.SetRowCellValue(e.RowHandle, clTest_CAT, "1");
-                }
-                else bandedGridView1.SetRowCellValue(e.RowHandle, clTest_CAT, "0");
 
             }
-            else if (_Loaimay == 3)
-            {
-                if (KiemTra_Hang(_Loaimay) == false)
-                {
-                    bandedGridView1.SetRowCellValue(e.RowHandle, clTest_DOT, "1");
-                }
-                else bandedGridView1.SetRowCellValue(e.RowHandle, clTest_DOT, "0");
-
-            }
+            
         }
 
         private void btXoa_Click(object sender, EventArgs e)
