@@ -182,6 +182,7 @@
             this.xrTableCell11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell11.StylePriority.UsePadding = false;
             this.xrTableCell11.Text = "xrTableCell11";
+            this.xrTableCell11.TextFormatString = "{0:n2}";
             this.xrTableCell11.Weight = 1.3098344898482321D;
             // 
             // xrTableCell20
@@ -702,6 +703,7 @@
             this.xrTableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell12.StylePriority.UsePadding = false;
             this.xrTableCell12.Text = "xrTableCell12";
+            this.xrTableCell12.TextFormatString = "{0:n2}";
             this.xrTableCell12.Weight = 1.3098344898482321D;
             // 
             // xrTableCell33
