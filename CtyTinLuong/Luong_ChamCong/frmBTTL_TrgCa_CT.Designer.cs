@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.PhuCapBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -69,9 +70,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
@@ -134,6 +135,7 @@
             this.ColTenVTHH,
             this.DonGia,
             this.ColSanLuong,
+            this.PhuCapBaoHiem,
             this.ColTongTien,
             this.ColLuongTrachNhiem,
             this.ColTongLuong,
@@ -203,7 +205,7 @@
             this.ColTenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColTenVTHH.Visible = true;
             this.ColTenVTHH.VisibleIndex = 2;
-            this.ColTenVTHH.Width = 91;
+            this.ColTenVTHH.Width = 80;
             // 
             // DonGia
             // 
@@ -253,7 +255,7 @@
             this.ColSanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColSanLuong.Visible = true;
             this.ColSanLuong.VisibleIndex = 3;
-            this.ColSanLuong.Width = 91;
+            this.ColSanLuong.Width = 80;
             // 
             // ColTongTien
             // 
@@ -278,8 +280,8 @@
             this.ColTongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColTongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongTien.Visible = true;
-            this.ColTongTien.VisibleIndex = 4;
-            this.ColTongTien.Width = 91;
+            this.ColTongTien.VisibleIndex = 5;
+            this.ColTongTien.Width = 80;
             // 
             // ColLuongTrachNhiem
             // 
@@ -292,8 +294,8 @@
             this.ColLuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.ColLuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColLuongTrachNhiem.Visible = true;
-            this.ColLuongTrachNhiem.VisibleIndex = 5;
-            this.ColLuongTrachNhiem.Width = 91;
+            this.ColLuongTrachNhiem.VisibleIndex = 6;
+            this.ColLuongTrachNhiem.Width = 80;
             // 
             // ColTongLuong
             // 
@@ -318,8 +320,8 @@
             this.ColTongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColTongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongLuong.Visible = true;
-            this.ColTongLuong.VisibleIndex = 6;
-            this.ColTongLuong.Width = 91;
+            this.ColTongLuong.VisibleIndex = 7;
+            this.ColTongLuong.Width = 80;
             // 
             // gridColumn1
             // 
@@ -331,8 +333,8 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
-            this.gridColumn1.Width = 91;
+            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.Width = 80;
             // 
             // ColTamUng
             // 
@@ -357,8 +359,8 @@
             this.ColTamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColTamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTamUng.Visible = true;
-            this.ColTamUng.VisibleIndex = 8;
-            this.ColTamUng.Width = 91;
+            this.ColTamUng.VisibleIndex = 9;
+            this.ColTamUng.Width = 80;
             // 
             // ColThucNhan
             // 
@@ -384,8 +386,8 @@
             this.ColThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColThucNhan.Tag = "Thuc";
             this.ColThucNhan.Visible = true;
-            this.ColThucNhan.VisibleIndex = 9;
-            this.ColThucNhan.Width = 91;
+            this.ColThucNhan.VisibleIndex = 10;
+            this.ColThucNhan.Width = 80;
             // 
             // KyNhan
             // 
@@ -465,6 +467,18 @@
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
+            // PhuCapBaoHiem
+            // 
+            this.PhuCapBaoHiem.AppearanceCell.Options.UseTextOptions = true;
+            this.PhuCapBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.PhuCapBaoHiem.Caption = "PHỤ CẤP BẢO HIỂM";
+            this.PhuCapBaoHiem.FieldName = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.Name = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.PhuCapBaoHiem.Visible = true;
+            this.PhuCapBaoHiem.VisibleIndex = 4;
+            this.PhuCapBaoHiem.Width = 80;
+            // 
             // frmBTTL_TrgCa_CT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,5 +528,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn PhuCapBaoHiem;
     }
 }

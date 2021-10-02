@@ -40,6 +40,7 @@ namespace CtyTinLuong
             InitializeComponent();
             ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
             ColTongLuong.Caption = "TỔNG\nLƯƠNG";
+            PhuCapBaoHiem.Caption = "PHỤ CẤ\nBẢO HIỂM";
         }
 
         public void LoadData(bool islandau)
@@ -66,6 +67,8 @@ namespace CtyTinLuong
             double trutamung_tong_ = 0;
             double thuclinh_tong_ = 0;
             double baohiem_tong_ = 0;
+            double PhuCapBH_Tong = 0;
+
 
 
             double tongluong_ = 0;
@@ -74,6 +77,7 @@ namespace CtyTinLuong
             double trutamung_ = 0;
             double thuclinh_ = 0;
             double baohiem_ = 0;
+            double PhuCapBH_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -82,7 +86,11 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    double dongia_ = 0;
+                    double LuongCoBan_ = 0;
+                    PhuCapBH_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCapBaoHiem_Value"].ToString());
+                    _data.Rows[i]["PhuCapBaoHiem"] = PhuCapBH_.ToString("N0");
+                    PhuCapBH_Tong += PhuCapBH_;
+
                     double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
                     bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
                     int hinhThucTinhLuong = Convert.ToInt32(_data.Rows[i]["HinhThucTinhLuong"].ToString());
@@ -92,15 +100,15 @@ namespace CtyTinLuong
                         case 0:
                             if (istangca_)
                             {
-                                dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
+                                LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
                             }
                             else
                             {
-                                dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
+                                LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
                             }
                             break;
                         case 1:
-                            dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
+                            LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
                             break;
                         case 2:
                             break;
@@ -110,7 +118,7 @@ namespace CtyTinLuong
                             break;
                     }
 
-                    _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+                    _data.Rows[i]["DonGia"] = LuongCoBan_.ToString("N0");
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["Cong"].ToString();
 
                     //
@@ -118,8 +126,8 @@ namespace CtyTinLuong
 
 
                     //Tổng:
-                    //tong_ = dongia_ * sanluong_;
-                    tong_ = dongia_;
+                    //tong_ = LuongCoBan_ * sanluong_;
+                    tong_ = LuongCoBan_ + PhuCapBH_;
                     tong_tong_ += tong_;
                     _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
@@ -148,8 +156,8 @@ namespace CtyTinLuong
                         _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
 
                     //Tổng lương
-                    //tongluong_ = (dongia_ * sanluong_ + luongtrachnhiem_);
-                    tongluong_ = (dongia_ + luongtrachnhiem_);
+                    //tongluong_ = (LuongCoBan_ * sanluong_ + luongtrachnhiem_);
+                    tongluong_ = (LuongCoBan_ + luongtrachnhiem_ + PhuCapBH_);
                     tongluong_tong_ += tongluong_;
                     _data.Rows[i]["TongLuong"] = (tongluong_).ToString("N0");
 
@@ -226,6 +234,16 @@ namespace CtyTinLuong
             else
             {
                 _ravi["BaoHiem"] = baohiem_tong_.ToString("N0");
+            }
+
+            // 
+            if (PhuCapBH_Tong == 0)
+            {
+                _ravi["PhuCapBaoHiem"] = "";
+            }
+            else
+            {
+                _ravi["PhuCapBaoHiem"] = PhuCapBH_Tong.ToString("N0");
             }
 
             _data.Rows.Add(_ravi);
