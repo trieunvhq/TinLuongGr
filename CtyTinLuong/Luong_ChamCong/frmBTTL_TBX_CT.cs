@@ -80,6 +80,7 @@ namespace CtyTinLuong
                 _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang, _id_bophan);
 
                 int ID_congNhanRoot = -1;
+                int stt = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
@@ -109,7 +110,8 @@ namespace CtyTinLuong
                     {
                         //
                         ID_congNhanRoot = ID_congNhan;
-                        _data.Rows[i]["STT"] = (i / 2) + 1;
+                        stt++;
+                        _data.Rows[i]["STT"] = stt;
 
                         //Tổng lương (đơn giá * sản lượng):
                         tongluong_ = (dongia_ * sanluong_);
@@ -145,7 +147,7 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        _data.Rows[i]["STT"] = (i / 2) + 1;
+                        _data.Rows[i]["STT"] = stt;
 
                         //Tổng lương (đơn giá * sản lượng):
                         tongluong_ = dongia_ * sanluong_;

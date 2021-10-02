@@ -39,9 +39,9 @@ namespace CtyTinLuong.Luong_ChamCong
                 _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
                 _ravi["DonGia"] = _data.Rows[i]["DonGia"].ToString();       //Lương cơ bản
                 _ravi["SanLuong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString()).ToString("N1");   //Ngày công
-                _ravi["TongLuong"] = _data.Rows[i]["TongTien"].ToString();  //Tổng
+                _ravi["TongLuong"] = _data.Rows[i]["TongLuong"].ToString();  //Tổng
                 _ravi["LuongTrachNhiem"] = _data.Rows[i]["LuongTrachNhiem"].ToString();
-                _ravi["TongTien"] = _data.Rows[i]["TongLuong"].ToString();
+                _ravi["TongTien"] = _data.Rows[i]["TongTien"].ToString();
                 _ravi["TamUng"] = _data.Rows[i]["TamUng"].ToString();
                 _ravi["ThucNhan"] = _data.Rows[i]["ThucNhan"].ToString();
 
