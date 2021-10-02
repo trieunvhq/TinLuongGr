@@ -72,6 +72,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.PhuCapBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
@@ -151,7 +152,7 @@
             this.clNgungTheoDoi.OptionsColumn.FixedWidth = true;
             this.clNgungTheoDoi.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clNgungTheoDoi.Visible = true;
-            this.clNgungTheoDoi.VisibleIndex = 12;
+            this.clNgungTheoDoi.VisibleIndex = 13;
             this.clNgungTheoDoi.Width = 40;
             // 
             // checkNgungTheoDoi
@@ -251,6 +252,7 @@
             this.PhanTramBaoHiem,
             this.LuongCoBanTinhBaoHiem,
             this.BaoHiem,
+            this.PhuCapBaoHiem,
             this.DinhMucLuongTheoGio,
             this.DinhMucLuongTangCa,
             this.HinhThucTinhLuong});
@@ -418,7 +420,7 @@
             this.DinhMucLuongTheoGio.AppearanceCell.Options.UseTextOptions = true;
             this.DinhMucLuongTheoGio.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DinhMucLuongTheoGio.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.DinhMucLuongTheoGio.Caption = "ĐM thường";
+            this.DinhMucLuongTheoGio.Caption = "Công thường";
             this.DinhMucLuongTheoGio.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.DinhMucLuongTheoGio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.DinhMucLuongTheoGio.FieldName = "DinhMucLuongTheoGio";
@@ -428,7 +430,7 @@
             this.DinhMucLuongTheoGio.OptionsColumn.AllowEdit = false;
             this.DinhMucLuongTheoGio.OptionsColumn.FixedWidth = true;
             this.DinhMucLuongTheoGio.Visible = true;
-            this.DinhMucLuongTheoGio.VisibleIndex = 10;
+            this.DinhMucLuongTheoGio.VisibleIndex = 11;
             this.DinhMucLuongTheoGio.Width = 90;
             // 
             // DinhMucLuongTangCa
@@ -438,7 +440,7 @@
             this.DinhMucLuongTangCa.AppearanceCell.Options.UseTextOptions = true;
             this.DinhMucLuongTangCa.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DinhMucLuongTangCa.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.DinhMucLuongTangCa.Caption = "Tăng ca";
+            this.DinhMucLuongTangCa.Caption = "Công tăng ca";
             this.DinhMucLuongTangCa.DisplayFormat.FormatString = "{0:#,##0.00}";
             this.DinhMucLuongTangCa.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.DinhMucLuongTangCa.FieldName = "DinhMucLuongTangCa";
@@ -448,7 +450,7 @@
             this.DinhMucLuongTangCa.OptionsColumn.AllowEdit = false;
             this.DinhMucLuongTangCa.OptionsColumn.FixedWidth = true;
             this.DinhMucLuongTangCa.Visible = true;
-            this.DinhMucLuongTangCa.VisibleIndex = 11;
+            this.DinhMucLuongTangCa.VisibleIndex = 12;
             this.DinhMucLuongTangCa.Width = 90;
             // 
             // HinhThucTinhLuong
@@ -501,6 +503,14 @@
             this.btRefresh.ToolTip = "Refesh";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
+            // PhuCapBaoHiem
+            // 
+            this.PhuCapBaoHiem.Caption = "Phụ cấp bảo hiểm";
+            this.PhuCapBaoHiem.FieldName = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.Name = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.Visible = true;
+            this.PhuCapBaoHiem.VisibleIndex = 10;
+            // 
             // frmQuanLyDinhMucLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,7 +529,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyDinhMucLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Định Mức Lương Công Nhật";
+            this.Text = "frmQuanLyDinhMucLuong-->Định Mức Lương Công Nhật";
             this.Load += new System.EventHandler(this.frmQuanLyDinhMucLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).EndInit();
@@ -570,5 +580,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn DinhMucLuongTheoGio;
         private DevExpress.XtraGrid.Columns.GridColumn DinhMucLuongTangCa;
         private DevExpress.XtraGrid.Columns.GridColumn HinhThucTinhLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn PhuCapBaoHiem;
     }
 }

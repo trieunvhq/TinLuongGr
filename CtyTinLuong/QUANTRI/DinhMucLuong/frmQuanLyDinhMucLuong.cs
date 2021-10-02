@@ -50,6 +50,7 @@ namespace CtyTinLuong
             _ID_CongNhan = -1;
             _Type = "";
             InitializeComponent();
+            PhuCapBaoHiem.Caption = "Phụ cấp\nbảo hiểm";
         }
         private object _frm;
         public frmQuanLyDinhMucLuong(int id_nhanvien, string type, object frm)
@@ -58,6 +59,7 @@ namespace CtyTinLuong
             _Type = type;
             _frm = frm;
             InitializeComponent();
+            PhuCapBaoHiem.Caption = "Phụ cấp\nbảo hiểm";
         }
 
         private void btThoat_Click(object sender, EventArgs e)

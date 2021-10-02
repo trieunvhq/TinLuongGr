@@ -54,41 +54,45 @@ namespace CtyTinLuong
             else return true;
 
         }
-        private void LuuDuLieu()
+        private void LuuDuLieu(bool LuuVaDong)
         {
            if (!KiemTraLuu()) return;
+           if (!CheckDataInput()) return;
+            
+            clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
+            cls.sMaDinhMucLuongCongNhat = txtMaDinhMuc.Text.ToString();
+            cls.sDienGiai = txtDienGiai.Text.ToString();
+            cls.iHinhThucTinhLuong = HinhThucTinhLuong;
+            cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtLuongCoDinh.Text.ToString());
+            cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtPhuCapXang.Text.ToString());
+            cls.dcPhuCapDienthoai = CheckString.ConvertToDecimal_My(txtPhuCapDienThoai.Text.ToString());
+            cls.dcPhuCapVeSinhMay = CheckString.ConvertToDecimal_My(txtPhuCapVeSinhMay.Text.ToString());
+            cls.dcPhuCapTienAn = CheckString.ConvertToDecimal_My(txtPhuCapTienAn.Text.ToString());
+            cls.dcTrachNhiem = CheckString.ConvertToDecimal_My(txtTrachNhiem.Text.ToString());
+            cls.fPhanTramBaoHiem = CheckString.ConvertToDouble_My(txtPhanTramBaoHiem.Text.ToString());
+            cls.dcLuongCoBanTinhBaoHiem = CheckString.ConvertToDecimal_My(txtLuongCoBan.Text.ToString());
+            cls.dcBaoHiem = CheckString.ConvertToDecimal_My(txtBaoHiem.Text.ToString());
+            cls.dcPhuCapBaoHiem = CheckString.ConvertToDecimal_My(txtPhuCapBH.Text.ToString());
+            cls.dcDinhMucLuongTheoGio = CheckString.ConvertToDecimal_My(txtDMLuongTheoGio.Text.ToString());
+            cls.dcDinhMucLuongTangCa = CheckString.ConvertToDecimal_My(txtDinhMucTangCa.Text.ToString());
+            cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+            cls.bTonTai = true;
+
+
+            if (frmQuanLyDinhMucLuong.mb_TheMoi_DinhMucLuongCongNhat == true)
+            {
+                if (cls.Insert())
+                    MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
-                clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
-                cls.sMaDinhMucLuongCongNhat = txtMaDinhMuc.Text.ToString();
-                cls.sDienGiai = txtDienGiai.Text.ToString();
-                cls.iHinhThucTinhLuong = HinhThucTinhLuong;
-                cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtLuongCoDinh.Text.ToString());
-                cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtPhuCapXang.Text.ToString());
-                cls.dcPhuCapDienthoai = CheckString.ConvertToDecimal_My(txtPhuCapDienThoai.Text.ToString());
-                cls.dcPhuCapVeSinhMay = CheckString.ConvertToDecimal_My(txtPhuCapVeSinhMay.Text.ToString());
-                cls.dcPhuCapTienAn = CheckString.ConvertToDecimal_My(txtPhuCapTienAn.Text.ToString());
-                cls.dcTrachNhiem = CheckString.ConvertToDecimal_My(txtTrachNhiem.Text.ToString());
-                cls.fPhanTramBaoHiem = CheckString.ConvertToDouble_My(txtPhanTramBaoHiem.Text.ToString());
-                cls.dcLuongCoBanTinhBaoHiem = CheckString.ConvertToDecimal_My(txtLuongCoBan.Text.ToString());
-                cls.dcBaoHiem = CheckString.ConvertToDecimal_My(txtBaoHiem.Text.ToString());
-                cls.dcDinhMucLuongTheoGio = CheckString.ConvertToDecimal_My(txtDMLuongTheoGio.Text.ToString());
-                cls.dcDinhMucLuongTangCa = CheckString.ConvertToDecimal_My(txtDinhMucTangCa.Text.ToString());
-                cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                cls.bTonTai = true;
-               
-
-                if (frmQuanLyDinhMucLuong.mb_TheMoi_DinhMucLuongCongNhat == true)
-                {
-                    cls.Insert();
-                }
-                else
-                {
-                    cls.iID_DinhMucLuong_CongNhat = frmQuanLyDinhMucLuong.miID_Sua_DinhMucLuongCongNhat;
-                    cls.Update();
-                }
-                frmQuanLyDinhMucLuong.mb_TheMoi_DinhMucLuongCongNhat = true;
+                cls.iID_DinhMucLuong_CongNhat = frmQuanLyDinhMucLuong.miID_Sua_DinhMucLuongCongNhat;
+                if (cls.Update())
+                    MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            frmQuanLyDinhMucLuong.mb_TheMoi_DinhMucLuongCongNhat = true;
+            
+            if (LuuVaDong) this.Close();
         }
         private void hienthiSUaDuLieu()
         {
@@ -117,6 +121,7 @@ namespace CtyTinLuong
                 txtPhanTramBaoHiem.Text = cls.fPhanTramBaoHiem.Value.ToString();
                 txtLuongCoBan.Text = cls.dcLuongCoBanTinhBaoHiem.Value.ToString();
                 txtBaoHiem.Text = cls.dcBaoHiem.Value.ToString();
+                txtPhuCapBH.Text = cls.dcPhuCapBaoHiem.Value.ToString();
                 txtDMLuongTheoGio.Text = cls.dcDinhMucLuongTheoGio.Value.ToString();
                 txtDinhMucTangCa.Text = cls.dcDinhMucLuongTangCa.Value.ToString();
                 checkNgungTheoDoi.Checked = cls.bNgungTheoDoi.Value;
@@ -137,6 +142,7 @@ namespace CtyTinLuong
             txtPhanTramBaoHiem.Text = "0";
             txtLuongCoBan.Text = "4729400";
             txtBaoHiem.Text = "0";
+            txtPhuCapBH.Text = "0";
             txtDMLuongTheoGio.Text = "0";
             txtDinhMucTangCa.Text = "0";
             checkNgungTheoDoi.Checked = false;
@@ -397,6 +403,9 @@ namespace CtyTinLuong
                 double luongcoban = CheckString.ConvertToDouble_My(txtLuongCoBan.Text.ToString());
                 double baohiem = CheckString.ConvertToDouble_My(phantram * luongcoban / 100);
                 txtBaoHiem.Text = baohiem.ToString();
+
+                if(frmQuanLyDinhMucLuong.mb_TheMoi_DinhMucLuongCongNhat == true)
+                    txtPhuCapBH.Text = baohiem.ToString();
             }
             catch
             {
@@ -408,20 +417,173 @@ namespace CtyTinLuong
         private void btLUU_Click(object sender, EventArgs e)
         {
 
-            LuuDuLieu();
-            MessageBox.Show("Đã lưu");
+            LuuDuLieu(true);
             _frmQuanLyDinhMucLuong.HienThi();
-            this.Close();
 
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            LuuDuLieu();
-            MessageBox.Show("Đã lưu");
+            LuuDuLieu(false);
             txtMaDinhMuc.ResetText();        
         }
 
-      
+        private void txtPhuCapBH_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                decimal value = decimal.Parse(txtPhuCapBH.Text, System.Globalization.NumberStyles.AllowThousands);
+                txtPhuCapBH.Text = String.Format(culture, "{0:N0}", value);
+                txtPhuCapBH.Select(txtPhuCapBH.Text.Length, 0);
+            }
+            catch
+            {
+            }
+        }
+
+        private bool CheckDataInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaDinhMuc.Text))
+            {
+                MessageBox.Show("Kiểm tra lại mã định mức!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaDinhMuc.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtLuongCoDinh.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương cố định!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLuongCoDinh.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtLuongCoDinh.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương cố định. Lương cố định phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLuongCoDinh.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhuCapXang.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp xăng xe!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapXang.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtPhuCapXang.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp xăng xe. Phụ cấp xăng xe phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapXang.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhuCapDienThoai.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapDienThoai.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtPhuCapDienThoai.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp điện thoại. Phụ cấp điện thoại phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapDienThoai.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhuCapVeSinhMay.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp vệ sinh máy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapVeSinhMay.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtPhuCapVeSinhMay.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp vệ sinh máy. Phụ cấp vệ sinh máy phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapVeSinhMay.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhuCapTienAn.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp tiền ăn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapTienAn.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtPhuCapTienAn.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp tiền ăn. Phụ cấp tiền ăn phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapTienAn.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtTrachNhiem.Text))
+            {
+                MessageBox.Show("Kiểm tra lại tiền trách nhiệm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTrachNhiem.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtTrachNhiem.Text))
+            {
+                MessageBox.Show("Kiểm tra lại tiền trách nhiệm. Tiền trách nhiệm phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTrachNhiem.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhanTramBaoHiem.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phần trăm bảo hiểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhanTramBaoHiem.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtPhanTramBaoHiem.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phần trăm bảo hiểm. Phần trăm bảo hiểm phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhanTramBaoHiem.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtLuongCoBan.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương cơ bản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLuongCoBan.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtLuongCoBan.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương cơ bản. Lương cơ bản phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLuongCoBan.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtPhuCapBH.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp bảo hiểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapBH.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtPhuCapBH.Text))
+            {
+                MessageBox.Show("Kiểm tra lại phụ cấp bảo hiểm. Phụ cấp bảo hiểm phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhuCapBH.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDMLuongTheoGio.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương/ngày thường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDMLuongTheoGio.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtDMLuongTheoGio.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương/ngày thường. Lương/ngày thường phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDMLuongTheoGio.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDinhMucTangCa.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương/ngày tăng ca!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDinhMucTangCa.Focus();
+                return false;
+            }
+            else if (!CheckString.CheckIsNumber(txtDinhMucTangCa.Text))
+            {
+                MessageBox.Show("Kiểm tra lại lương/ngày tăng ca. Lương/ngày tăng ca phải nhập vào là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDinhMucTangCa.Focus();
+                return false;
+            }
+            
+            else return true;
+        }
     }
 }

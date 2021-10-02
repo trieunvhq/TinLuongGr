@@ -10,6 +10,22 @@ namespace CtyTinLuong
     internal static class CheckString
     {
 
+        //
+        public static bool CheckIsNumber(string Value)
+        {
+            double OutVal;
+            if (Double.TryParse(Value, out OutVal))
+            {
+                // it is a number
+                return true;
+            }
+            else
+            {
+                // it is not a number
+                return false;
+            }
+        }
+
         private static double TinhToan(string str)
         {
             try

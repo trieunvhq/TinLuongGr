@@ -17,7 +17,8 @@ namespace CtyTinLuong
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bNgungTheoDoi, m_bTonTai;
-			private SqlDecimal		m_dcLuongCoBanTinhBaoHiem, m_dcPhuCapTienAn, m_dcDinhMucLuongTangCa, m_dcDinhMucLuongTheoGio, m_dcBaoHiem, m_dcPhuCapXangXe, m_dcLuongCoDinh, m_dcTrachNhiem, m_dcPhuCapVeSinhMay, m_dcPhuCapDienthoai;
+			private SqlDecimal		m_dcLuongCoBanTinhBaoHiem, m_dcPhuCapTienAn, m_dcDinhMucLuongTangCa, m_dcDinhMucLuongTheoGio, 
+                                    m_dcBaoHiem, m_dcPhuCapBaoHiem, m_dcPhuCapXangXe, m_dcLuongCoDinh, m_dcTrachNhiem, m_dcPhuCapVeSinhMay, m_dcPhuCapDienthoai;
 			private SqlDouble		m_fPhanTramBaoHiem;
 			private SqlInt32		m_iHinhThucTinhLuong, m_iID_DinhMucLuong_CongNhat;
 			private SqlString		m_sMaDinhMucLuongCongNhat, m_sDienGiai;
@@ -84,8 +85,9 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcTrachNhiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcTrachNhiem));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fPhanTramBaoHiem", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fPhanTramBaoHiem));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcLuongCoBanTinhBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcLuongCoBanTinhBaoHiem));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcBaoHiem));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMucLuongTheoGio", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMucLuongTheoGio));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcBaoHiem)); 
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@dcPhuCapBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcPhuCapBaoHiem)); 
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMucLuongTheoGio", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMucLuongTheoGio));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMucLuongTangCa", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMucLuongTangCa));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
@@ -176,7 +178,8 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fPhanTramBaoHiem", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fPhanTramBaoHiem));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcLuongCoBanTinhBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcLuongCoBanTinhBaoHiem));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcBaoHiem));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMucLuongTheoGio", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMucLuongTheoGio));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@dcPhuCapBaoHiem", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcPhuCapBaoHiem));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMucLuongTheoGio", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMucLuongTheoGio));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMucLuongTangCa", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMucLuongTangCa));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
@@ -344,7 +347,8 @@ namespace CtyTinLuong
 					m_fPhanTramBaoHiem = (double)dtToReturn.Rows[0]["PhanTramBaoHiem"];
 					m_dcLuongCoBanTinhBaoHiem = (Decimal)dtToReturn.Rows[0]["LuongCoBanTinhBaoHiem"];
 					m_dcBaoHiem = (Decimal)dtToReturn.Rows[0]["BaoHiem"];
-					m_dcDinhMucLuongTheoGio = (Decimal)dtToReturn.Rows[0]["DinhMucLuongTheoGio"];
+                    m_dcPhuCapBaoHiem = (Decimal)dtToReturn.Rows[0]["PhuCapBaoHiem"];
+                    m_dcDinhMucLuongTheoGio = (Decimal)dtToReturn.Rows[0]["DinhMucLuongTheoGio"];
 					m_dcDinhMucLuongTangCa = (Decimal)dtToReturn.Rows[0]["DinhMucLuongTangCa"];
 					m_bTonTai = (bool)dtToReturn.Rows[0]["TonTai"];
 					m_bNgungTheoDoi = (bool)dtToReturn.Rows[0]["NgungTheoDoi"];
@@ -620,8 +624,8 @@ namespace CtyTinLuong
 			}
 		}
 
-
-		public SqlDecimal dcBaoHiem
+        
+        public SqlDecimal dcBaoHiem
 		{
 			get
 			{
@@ -638,8 +642,25 @@ namespace CtyTinLuong
 			}
 		}
 
+        public SqlDecimal dcPhuCapBaoHiem
+        {
+            get
+            {
+                return m_dcPhuCapBaoHiem;
+            }
+            set
+            {
+                SqlDecimal dcPhuCapBaoHiemTmp = (SqlDecimal)value;
+                if (dcPhuCapBaoHiemTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("dcPhuCapBaoHiem", "dcPhuCapBaoHiem can't be NULL");
+                }
+                m_dcPhuCapBaoHiem = value;
+            }
+        }
 
-		public SqlDecimal dcDinhMucLuongTheoGio
+
+        public SqlDecimal dcDinhMucLuongTheoGio
 		{
 			get
 			{
