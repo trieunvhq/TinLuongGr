@@ -1639,6 +1639,12 @@ namespace CtyTinLuong
             bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSanLuong_Tong_CAT, dddsanluongtong_CAT);
             bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clPhePham_CAT, dddphepham_CAT);
         }
+
+        private void checkthemmoi_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         int iimaysx_IN = 0, iiiID_catruong_IN = 0, iiiidID_CongNhan_IN = 0, iiiD_dmluong_IN = 0;
 
         DateTime ngaysx_CAT = DateTime.Today;

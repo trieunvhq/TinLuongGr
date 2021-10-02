@@ -410,6 +410,7 @@
     <Compile Include="Luong_ChamCong\Tr_PrintChamCong_TDB.designer.cs">
       <DependentUpon>Tr_PrintChamCong_TDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\Class\clsHUU_CaiMacDinh_DinhMuc_SanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New - Copy %282%29.cs" />
     <Compile Include="QuanLySanXuat\PhieuSanXuat_Thang9.cs">
       <SubType>Form</SubType>

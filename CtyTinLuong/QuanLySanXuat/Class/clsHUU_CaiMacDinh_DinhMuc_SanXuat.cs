@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace CtyTinLuong
 {
-	public class clsHUU_CaiMacDinh_DinhMuc_SanXuat : clsDBInteractionBase
+	public partial class clsHUU_CaiMacDinh_DinhMuc_SanXuat : clsDBInteractionBase
 	{
 		#region Class Member Declarations
 			private SqlInt32		m_iID_DinhMucLuong_TheoSanLuong, m_iID_MacDinhSanXuat;

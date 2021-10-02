@@ -453,6 +453,7 @@
             this.checkthemmoi.TabIndex = 133;
             this.checkthemmoi.Text = "Cài đặt mặc định khi thêm mới:";
             this.checkthemmoi.UseVisualStyleBackColor = true;
+            this.checkthemmoi.CheckedChanged += new System.EventHandler(this.checkthemmoi_CheckedChanged);
             // 
             // gridMacDinh_VatTu_Ra
             // 
