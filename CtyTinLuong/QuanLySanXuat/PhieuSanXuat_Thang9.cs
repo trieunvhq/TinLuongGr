@@ -58,6 +58,50 @@ namespace CtyTinLuong
         double dddsoluongvao_DOT_copy = 0, dddsanluongtong_DOT_copy = 0, dddphepham_DOT_copy = 0, xxsokgmotbao_dot_copy = 0, xxdocao_dot_copy = 0;
         int iimaysx_DOT_copy = 0, iiiID_catruong_DOT_copy = 0, iiiidID_CongNhan_DOT_copy = 0, iiiD_dmluong_DOT_copy = 0;
 
+        private void Luu_MacDinhSanXuat(int xloaimay_)
+        {
+            clsHUU_CaiMacDinh_DinhMuc_SanXuat cls = new clsHUU_CaiMacDinh_DinhMuc_SanXuat();
+            if(gridMacDinh_VatTu_Ra.EditValue!=null & gridMacDinh_VatTu_Vao.EditValue != null & gridMacDinh_Luong.EditValue != null)
+            {
+
+                DataTable dt = cls.H_HienThi_MacDinh_PhieuSX(xloaimay_);
+                if(dt.Rows.Count>0)
+                {
+                    int iiid= Convert.ToInt32(dt.Rows[0]["ID_MacDinhSanXuat"].ToString());
+                    cls.iID_MacDinhSanXuat = iiid;
+                    cls.iID_LoaiMay = Convert.ToInt32(gridLoaiMay.EditValue.ToString());
+                    cls.iID_VTHH_Vao = Convert.ToInt32(gridMacDinh_VatTu_Vao.EditValue.ToString());
+                    cls.iID_VTHH_Ra = Convert.ToInt32(gridMacDinh_VatTu_Ra.EditValue.ToString());
+                    cls.iID_DinhMucLuong = Convert.ToInt32(gridMacDinh_Luong.EditValue.ToString());
+                    cls.Update();
+                }
+                else
+                {
+                    cls.iID_LoaiMay = Convert.ToInt32(gridLoaiMay.EditValue.ToString());
+                    cls.iID_VTHH_Vao = Convert.ToInt32(gridMacDinh_VatTu_Vao.EditValue.ToString());
+                    cls.iID_VTHH_Ra = Convert.ToInt32(gridMacDinh_VatTu_Ra.EditValue.ToString());
+                    cls.iID_DinhMucLuong = Convert.ToInt32(gridMacDinh_Luong.EditValue.ToString());
+                    cls.Insert();
+                }
+            }
+        }
+        private void HienThi_MacDinhSanXuat(int xloaimay_)
+        {
+            clsHUU_CaiMacDinh_DinhMuc_SanXuat cls = new clsHUU_CaiMacDinh_DinhMuc_SanXuat();
+            DataTable dt = cls.H_HienThi_MacDinh_PhieuSX(xloaimay_);
+            if(dt.Rows.Count>0)
+            {
+                gridMacDinh_VatTu_Vao.EditValue= CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Vao"].ToString());
+                gridMacDinh_VatTu_Ra.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Ra"].ToString());
+                gridMacDinh_Luong.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_DinhMucLuong"].ToString());
+            }
+            else
+            {
+                gridMacDinh_VatTu_Vao.EditValue = null;
+                gridMacDinh_VatTu_Ra.EditValue = null;
+                gridMacDinh_Luong.EditValue = null;
+            }
+        }
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
             gridControl1.DataSource = null;
@@ -734,9 +778,8 @@ namespace CtyTinLuong
 
         private void HienThi_Pannel(int iiID_loaimay)
         {
-            clsHUU_CaiMacDinh_DinhMuc_SanXuat cls = new clsHUU_CaiMacDinh_DinhMuc_SanXuat();
-            DataTable dt = cls.SelectAll();
-
+           
+            HienThi_MacDinhSanXuat(iiID_loaimay);
             if (iiID_loaimay == 1) // máy in
             {
                 Band_IN.Visible = true;
@@ -752,12 +795,11 @@ namespace CtyTinLuong
                 clMaPhieu.OptionsColumn.AllowEdit = true;             
                 clMaPhieu.OptionsColumn.AllowFocus = true;             
                 clDot.Visible = false;             
-                gridMacDinh_Luong.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_DinhMucLuong_TheoSanLuong"].ToString());
-
+                
             }
             else if (iiID_loaimay == 2)
             {
-                gridMacDinh_Luong.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[1]["ID_DinhMucLuong_TheoSanLuong"].ToString());
+              
                 Band_IN.Visible = false;
                 Band_CAT.Visible = true;
                 Band_DOT.Visible = false;
@@ -775,7 +817,7 @@ namespace CtyTinLuong
             }
             else if (iiID_loaimay == 3)
             {
-                gridMacDinh_Luong.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[2]["ID_DinhMucLuong_TheoSanLuong"].ToString());
+                //
                 Band_IN.Visible = false;
                 Band_CAT.Visible = false;
                 Band_DOT.Visible = true;
@@ -1193,6 +1235,7 @@ namespace CtyTinLuong
                 sMacDinh_TenVTHH_Vao = row["TenVTHH"].ToString();
                 sMacDinh_DVT_Vao = row["DonViTinh"].ToString();
                 //MessageBox.Show("id: " + iMacDinh_VTHH_Vao.ToString() + " ten: " + sMacDinh_TenVTHH_Vao + ", dvt: " + sMacDinh_DVT_Vao + "");
+                Luu_MacDinhSanXuat(_Loaimay);
             }
             catch
             { }
@@ -1206,6 +1249,7 @@ namespace CtyTinLuong
                 iMacDinh_VTHH_Ra = CheckString.ConvertTo_Int_My(row["ID_VTHH"].ToString());
                 sMacDinh_TenVTHH_Ra = row["TenVTHH"].ToString();
                 sMacDinh_DVT_Ra = row["DonViTinh"].ToString();
+                Luu_MacDinhSanXuat(_Loaimay);
             }
             catch
             { }
@@ -1216,6 +1260,7 @@ namespace CtyTinLuong
             try
             {
                 iMacDinh_Luong = (int)gridMacDinh_Luong.EditValue;
+                Luu_MacDinhSanXuat(_Loaimay);
             }
             catch
             { }

@@ -8,8 +8,7 @@ namespace CtyTinLuong
 	public partial class clsHUU_CaiMacDinh_DinhMuc_SanXuat : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlInt32		m_iID_DinhMucLuong_TheoSanLuong, m_iID_MacDinhSanXuat;
-			private SqlString		m_sNoiDung;
+			private SqlInt32		m_iID_DinhMucLuong, m_iID_VTHH_Vao, m_iID_VTHH_Ra, m_iID_MacDinhSanXuat, m_iID_LoaiMay;
 		#endregion
 
 
@@ -30,10 +29,11 @@ namespace CtyTinLuong
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMucLuong_TheoSanLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMucLuong_TheoSanLuong));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@sNoiDung", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNoiDung));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_LoaiMay", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_LoaiMay));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH_Ra));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMucLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMucLuong));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_Vao", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH_Vao));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MacDinhSanXuat", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MacDinhSanXuat));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -41,14 +41,6 @@ namespace CtyTinLuong
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
 				m_iID_MacDinhSanXuat = (SqlInt32)scmCmdToExecute.Parameters["@iID_MacDinhSanXuat"].Value;
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_HUU_CaiMacDinh_DinhMuc_SanXuat_Insert' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return true;
 			}
 			catch(Exception ex)
@@ -77,23 +69,16 @@ namespace CtyTinLuong
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MacDinhSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MacDinhSanXuat));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMucLuong_TheoSanLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMucLuong_TheoSanLuong));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@sNoiDung", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNoiDung));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_LoaiMay", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_LoaiMay));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_Ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH_Ra));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMucLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMucLuong));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH_Vao", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH_Vao));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_HUU_CaiMacDinh_DinhMuc_SanXuat_Update' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return true;
 			}
 			catch(Exception ex)
@@ -122,21 +107,12 @@ namespace CtyTinLuong
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MacDinhSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MacDinhSanXuat));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_HUU_CaiMacDinh_DinhMuc_SanXuat_Delete' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return true;
 			}
 			catch(Exception ex)
@@ -167,26 +143,19 @@ namespace CtyTinLuong
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MacDinhSanXuat", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MacDinhSanXuat));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				sdaAdapter.Fill(dtToReturn);
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_HUU_CaiMacDinh_DinhMuc_SanXuat_SelectOne' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				if(dtToReturn.Rows.Count > 0)
 				{
 					m_iID_MacDinhSanXuat = (Int32)dtToReturn.Rows[0]["ID_MacDinhSanXuat"];
-					m_iID_DinhMucLuong_TheoSanLuong = (Int32)dtToReturn.Rows[0]["ID_DinhMucLuong_TheoSanLuong"];
-					m_sNoiDung = (string)dtToReturn.Rows[0]["NoiDung"];
+					m_iID_LoaiMay = (Int32)dtToReturn.Rows[0]["ID_LoaiMay"];
+					m_iID_VTHH_Ra = (Int32)dtToReturn.Rows[0]["ID_VTHH_Ra"];
+					m_iID_DinhMucLuong = (Int32)dtToReturn.Rows[0]["ID_DinhMucLuong"];
+					m_iID_VTHH_Vao = (Int32)dtToReturn.Rows[0]["ID_VTHH_Vao"];
 				}
 				return dtToReturn;
 			}
@@ -218,21 +187,12 @@ namespace CtyTinLuong
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				sdaAdapter.Fill(dtToReturn);
-				m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
-
-				if(m_iErrorCode != (int)LLBLError.AllOk)
-				{
-					// Throw error.
-					throw new Exception("Stored Procedure 'pr_HUU_CaiMacDinh_DinhMuc_SanXuat_SelectAll' reported the ErrorCode: " + m_iErrorCode);
-				}
-
 				return dtToReturn;
 			}
 			catch(Exception ex)
@@ -269,38 +229,74 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlInt32 iID_DinhMucLuong_TheoSanLuong
+		public SqlInt32 iID_LoaiMay
 		{
 			get
 			{
-				return m_iID_DinhMucLuong_TheoSanLuong;
+				return m_iID_LoaiMay;
 			}
 			set
 			{
-				SqlInt32 iID_DinhMucLuong_TheoSanLuongTmp = (SqlInt32)value;
-				if(iID_DinhMucLuong_TheoSanLuongTmp.IsNull)
+				SqlInt32 iID_LoaiMayTmp = (SqlInt32)value;
+				if(iID_LoaiMayTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("iID_DinhMucLuong_TheoSanLuong", "iID_DinhMucLuong_TheoSanLuong can't be NULL");
+					throw new ArgumentOutOfRangeException("iID_LoaiMay", "iID_LoaiMay can't be NULL");
 				}
-				m_iID_DinhMucLuong_TheoSanLuong = value;
+				m_iID_LoaiMay = value;
 			}
 		}
 
 
-		public SqlString sNoiDung
+		public SqlInt32 iID_VTHH_Ra
 		{
 			get
 			{
-				return m_sNoiDung;
+				return m_iID_VTHH_Ra;
 			}
 			set
 			{
-				SqlString sNoiDungTmp = (SqlString)value;
-				if(sNoiDungTmp.IsNull)
+				SqlInt32 iID_VTHH_RaTmp = (SqlInt32)value;
+				if(iID_VTHH_RaTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("sNoiDung", "sNoiDung can't be NULL");
+					throw new ArgumentOutOfRangeException("iID_VTHH_Ra", "iID_VTHH_Ra can't be NULL");
 				}
-				m_sNoiDung = value;
+				m_iID_VTHH_Ra = value;
+			}
+		}
+
+
+		public SqlInt32 iID_DinhMucLuong
+		{
+			get
+			{
+				return m_iID_DinhMucLuong;
+			}
+			set
+			{
+				SqlInt32 iID_DinhMucLuongTmp = (SqlInt32)value;
+				if(iID_DinhMucLuongTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("iID_DinhMucLuong", "iID_DinhMucLuong can't be NULL");
+				}
+				m_iID_DinhMucLuong = value;
+			}
+		}
+
+
+		public SqlInt32 iID_VTHH_Vao
+		{
+			get
+			{
+				return m_iID_VTHH_Vao;
+			}
+			set
+			{
+				SqlInt32 iID_VTHH_VaoTmp = (SqlInt32)value;
+				if(iID_VTHH_VaoTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("iID_VTHH_Vao", "iID_VTHH_Vao can't be NULL");
+				}
+				m_iID_VTHH_Vao = value;
 			}
 		}
 		#endregion

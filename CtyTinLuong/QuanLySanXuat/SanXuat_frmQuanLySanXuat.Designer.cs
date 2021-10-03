@@ -41,7 +41,6 @@
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemPhieuSanXuat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemLenhSanXuat = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem20 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemDinhMucDOt = new DevExpress.XtraNavBar.NavBarItem();
@@ -118,8 +117,7 @@
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemPhieuSanXuat),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemLenhSanXuat),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem20)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemLenhSanXuat)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarItemPhieuSanXuat
@@ -133,12 +131,6 @@
             this.navBarItemLenhSanXuat.Caption = "Lệnh Sản Xuất IN_CAT_DOT";
             this.navBarItemLenhSanXuat.Name = "navBarItemLenhSanXuat";
             this.navBarItemLenhSanXuat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemLenhSanXuat_LinkClicked);
-            // 
-            // navBarItem20
-            // 
-            this.navBarItem20.Caption = "Cài Đặt Mặc Định";
-            this.navBarItem20.Name = "navBarItem20";
-            this.navBarItem20.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem20_LinkClicked);
             // 
             // navBarControl1
             // 
@@ -163,7 +155,6 @@
             this.navBarItemDinhMucDOt,
             this.navBarItemDinhMucNPL,
             this.navBarItem8,
-            this.navBarItem20,
             this.navBarItem13,
             this.navBarItem16,
             this.navBarItem15,
@@ -339,7 +330,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemDinhMucNPL;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem20;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private System.Windows.Forms.LinkLabel linkLabel1;

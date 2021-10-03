@@ -639,7 +639,7 @@
             this.checkthemmoi.Name = "checkthemmoi";
             this.checkthemmoi.Size = new System.Drawing.Size(177, 20);
             this.checkthemmoi.TabIndex = 138;
-            this.checkthemmoi.Text = "Cài đặt mặc định khi thêm mới:";
+            this.checkthemmoi.Text = "Cài mặc định thêm mới";
             this.checkthemmoi.UseVisualStyleBackColor = true;
             this.checkthemmoi.CheckedChanged += new System.EventHandler(this.checkthemmoi_CheckedChanged);
             // 

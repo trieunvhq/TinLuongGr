@@ -2016,12 +2016,6 @@
     <Compile Include="MuaHang\UCMuaHang_ChiTietTatCa.Designer.cs">
       <DependentUpon>UCMuaHang_ChiTietTatCa.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_CaiDatMacDinh.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanLySanXuat\UCSanXuat_CaiDatMacDinh.Designer.cs">
-      <DependentUpon>UCSanXuat_CaiDatMacDinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="KhoDaiLy\UCDaiLy_ChiTietNHapKho_ALL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -3260,9 +3254,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCDinhMucHangNhu.resx">
       <DependentUpon>UCDinhMucHangNhu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_CaiDatMacDinh.resx">
-      <DependentUpon>UCSanXuat_CaiDatMacDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\UCSanXuat_DinhMuc_ToGapDan.resx">
       <DependentUpon>UCSanXuat_DinhMuc_ToGapDan.cs</DependentUpon>

@@ -110,14 +110,14 @@ namespace CtyTinLuong
 
         private void navBarItem20_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            doiMauTitle(sender, e);
+            //doiMauTitle(sender, e);
 
-            Cursor.Current = Cursors.WaitCursor;
-            UCSanXuat_CaiDatMacDinh ucc = new UCSanXuat_CaiDatMacDinh();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-            Cursor.Current = Cursors.Default;
+            //Cursor.Current = Cursors.WaitCursor;
+            //UCSanXuat_CaiDatMacDinh ucc = new UCSanXuat_CaiDatMacDinh();
+            //ucc.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(ucc);
+            //ucc.BringToFront();
+            //Cursor.Current = Cursors.Default;
         }
 
        
