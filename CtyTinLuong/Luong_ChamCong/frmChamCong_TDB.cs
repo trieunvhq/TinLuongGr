@@ -176,6 +176,66 @@ namespace CtyTinLuong
         double Tong_Ngay31 = 0;
         DataTable _dt_HangHoa;
 
+        private void ChangeColTitle(int thang, int nam)
+        {
+            if (thang <= 0 || thang > 12 || nam <= 1900)
+            {
+                DateTime dtnow = DateTime.Now;
+                nam = DateTime.Now.Year;
+                thang = DateTime.Now.Month;
+            }
+            DateTime date_ = new DateTime(nam, thang, 1);
+            int ngaycuathang_ = (((new DateTime(nam, thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+            if (ngaycuathang_ == 28)
+            {
+                Ngay31.Visible = false;
+                Ngay30.Visible = false;
+                Ngay29.Visible = false;
+            }
+            else if (ngaycuathang_ == 29)
+            {
+                Ngay31.Visible = false;
+                Ngay30.Visible = false;
+                Ngay29.Visible = true;
+                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+            }
+            else if (ngaycuathang_ == 30)
+            {
+                Ngay31.Visible = false;
+                Ngay30.Visible = true;
+                Ngay29.Visible = true;
+                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+            }
+            else if (ngaycuathang_ == 31)
+            {
+                Ngay31.Visible = true;
+                Ngay30.Visible = true;
+                Ngay29.Visible = true;
+                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+                Ngay31.VisibleIndex = Ngay30.VisibleIndex + 1;
+            }
+            string thu_ = LayThu(date_);
+            for (int i = 0; i < ngaycuathang_; ++i)
+            {
+                ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(nam, thang, (i + 1)));
+                if (ds_grid[i].Caption.Contains("CN"))
+                {
+                    ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
+                    ds_grid[i].AppearanceHeader.BackColor = Color.LightGray;
+                    ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
+                    ds_grid[i].AppearanceCell.ForeColor = Color.Red;
+                }
+                else
+                {
+                    ds_grid[i].AppearanceCell.BackColor = Color.White;
+                    ds_grid[i].AppearanceHeader.BackColor = Color.White;
+                    ds_grid[i].AppearanceHeader.ForeColor = Color.Black;
+                    ds_grid[i].AppearanceCell.ForeColor = Color.Black;
+                }
+            }
+        }
 
         public void LoadData(bool islandau, bool CaLamViec)  //CaLamViec = true là Ca1 else là Ca2
         {
@@ -187,49 +247,13 @@ namespace CtyTinLuong
                 _thang = DateTime.Now.Month;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
-                DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
-                int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-                if (ngaycuathang_ == 28)
-                {
-                    Ngay31.Visible = false;
-                    Ngay30.Visible = false;
-                    Ngay29.Visible = false;
-                }
-                else if (ngaycuathang_ == 29)
-                {
-                    Ngay31.Visible = false;
-                    Ngay30.Visible = false;
-                    Ngay29.Visible = true;
-                }
-                else if (ngaycuathang_ == 30)
-                {
-                    Ngay31.Visible = false;
-                    Ngay30.Visible = true;
-                    Ngay29.Visible = true;
-                }
-                else if (ngaycuathang_ == 31)
-                {
-                    Ngay31.Visible = true;
-                    Ngay30.Visible = true;
-                    Ngay29.Visible = true;
-                }
-                string thu_ = LayThu(date_);
-                for (int i = 0; i < ngaycuathang_; ++i)
-                {
-                    ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(dtnow.Year, dtnow.Month, (i + 1)));
-                    if (ds_grid[i].Caption.Contains("CN"))
-                    {
-                        ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
-                        ds_grid[i].AppearanceHeader.BackColor = Color.LightGray;
-                        ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
-                        ds_grid[i].AppearanceCell.ForeColor = Color.Red;
-                    }
-                }
-
             }
             else
             {
             }
+
+            ChangeColTitle(_thang, _nam);
+
             using (clsThin clsThin_ = new clsThin())
             {
                 _dt_HangHoa = clsThin_.T_LoaiHangSX_SF(0);
