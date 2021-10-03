@@ -66,13 +66,13 @@
             this.PhanTramBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LuongCoBanTinhBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PhuCapBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DinhMucLuongTheoGio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DinhMucLuongTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HinhThucTinhLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.PhuCapBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTheoDoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
@@ -413,6 +413,16 @@
             this.BaoHiem.VisibleIndex = 9;
             this.BaoHiem.Width = 90;
             // 
+            // PhuCapBaoHiem
+            // 
+            this.PhuCapBaoHiem.Caption = "Phụ cấp bảo hiểm";
+            this.PhuCapBaoHiem.FieldName = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.Name = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.OptionsColumn.AllowEdit = false;
+            this.PhuCapBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.PhuCapBaoHiem.Visible = true;
+            this.PhuCapBaoHiem.VisibleIndex = 10;
+            // 
             // DinhMucLuongTheoGio
             // 
             this.DinhMucLuongTheoGio.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -502,14 +512,6 @@
             this.btRefresh.TabIndex = 87;
             this.btRefresh.ToolTip = "Refesh";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
-            // 
-            // PhuCapBaoHiem
-            // 
-            this.PhuCapBaoHiem.Caption = "Phụ cấp bảo hiểm";
-            this.PhuCapBaoHiem.FieldName = "PhuCapBaoHiem";
-            this.PhuCapBaoHiem.Name = "PhuCapBaoHiem";
-            this.PhuCapBaoHiem.Visible = true;
-            this.PhuCapBaoHiem.VisibleIndex = 10;
             // 
             // frmQuanLyDinhMucLuong
             // 

@@ -70,7 +70,7 @@ namespace CtyTinLuong
             double trutamung_tong_ = 0;
             double thuclinh_tong_ = 0;
             double _TruBaoHiem_Tong = 0;
-            double _CongBaoHiem_Tong = 0;
+            double PhuCapBH_Tong = 0;
 
 
 
@@ -79,7 +79,7 @@ namespace CtyTinLuong
             double tong_ = 0;
             double trutamung_ = 0;
             double _TruBaoHiem = 0;
-            double _CongBaoHiem = 0;
+            double PhuCapBH_ = 0;
             double thuclinh_ = 0;
 
             using (clsThin clsThin_ = new clsThin())
@@ -98,6 +98,34 @@ namespace CtyTinLuong
                     double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
 
                     bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
+
+                    int hinhThucTinhLuong = Convert.ToInt32(_data.Rows[i]["HinhThucTinhLuong"].ToString());
+
+                    switch (hinhThucTinhLuong)
+                    {
+                        case 0:
+                        case 2:
+                        case 3:
+                        case 4:
+                            if (istangca_)
+                            {
+                                dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
+                            }
+                            else
+                            {
+                                dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
+                            }
+                            break;
+                        case 1:
+                            dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
+                            break;
+                        //case 2:
+                        //    break;
+                        //case 3:
+                        //    break;
+                        //case 4:
+                        //    break;
+                    }
 
                     if (istangca_)
                     {
@@ -125,12 +153,12 @@ namespace CtyTinLuong
                         _data.Rows[i]["TongLuong"] = (dongia_ * sanluong_).ToString("N0");
 
                         //Cộng bảo hiểm: Chưa có dữ liệu trong db:
-                        //_CongBaoHiem = CheckString.ConvertToDouble_My(_data.Rows[i]["CongBaoHiem_Value"].ToString());
-                        _CongBaoHiem_Tong += _CongBaoHiem;
-                        if (_CongBaoHiem == 0)
+                        PhuCapBH_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCapBaoHiem_Value"].ToString());
+                        PhuCapBH_Tong += PhuCapBH_;
+                        if (PhuCapBH_ == 0)
                             _data.Rows[i]["CongBaoHiem"] = "";
                         else
-                            _data.Rows[i]["CongBaoHiem"] = _CongBaoHiem.ToString("N0");
+                            _data.Rows[i]["CongBaoHiem"] = PhuCapBH_.ToString("N0");
 
                         //Trừ bảo hiểm
                         _TruBaoHiem = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem_Value"].ToString());
@@ -258,13 +286,13 @@ namespace CtyTinLuong
             }
 
             //
-            if (_CongBaoHiem_Tong == 0)
+            if (PhuCapBH_Tong == 0)
             {
                 _ravi["CongBaoHiem"] = "";
             }
             else
             {
-                _ravi["CongBaoHiem"] = _CongBaoHiem_Tong.ToString("N0");
+                _ravi["CongBaoHiem"] = PhuCapBH_Tong.ToString("N0");
             }
 
             _data.Rows.Add(_ravi);

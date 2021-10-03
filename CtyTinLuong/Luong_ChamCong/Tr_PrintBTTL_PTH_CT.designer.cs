@@ -475,7 +475,7 @@
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell13.StylePriority.UsePadding = false;
-            this.xrTableCell13.Text = "CÔNG\r\n/TĂNG";
+            this.xrTableCell13.Text = "NGÀY\r\nCÔNG";
             this.xrTableCell13.Weight = 1.0845600639736157D;
             // 
             // xrTableCell3
@@ -493,7 +493,7 @@
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 3, 0, 100F);
             this.xrTableCell11.StylePriority.UsePadding = false;
-            this.xrTableCell11.Text = "CỘNG BẢO HIỂM";
+            this.xrTableCell11.Text = "PHỤ CẤP BẢO HIỂM";
             this.xrTableCell11.Weight = 1.0845600639736157D;
             // 
             // xrTableCell4
