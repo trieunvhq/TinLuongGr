@@ -35,6 +35,7 @@ namespace CtyTinLuong
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
         public frmChamCong_TBX(int id_bophan, frmQuanLy_Luong_ChamCong frmQLLCC)
         {
+
             _frmQLLCC = frmQLLCC;
             _ID_DinhMucLuong_CongNhat = 0;
             _MaDinhMucLuongCongNhat = "";
@@ -51,6 +52,7 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
             ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
             ds_grid.Add(Ngay31);
+            ChangeColTitle(_thang, _nam);
 
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
@@ -251,7 +253,6 @@ namespace CtyTinLuong
             {
             }
 
-            ChangeColTitle(_thang, _nam);
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -840,6 +841,8 @@ namespace CtyTinLuong
             try
             {
                 _thang = Convert.ToInt32(txtThang.Text);
+                ChangeColTitle(_thang, _nam);
+
                 LoadData(false);
             }
             catch
@@ -852,6 +855,8 @@ namespace CtyTinLuong
             try
             {
                 _nam = Convert.ToInt32(txtNam.Text);
+                ChangeColTitle(_thang, _nam);
+
                 LoadData(false);
             }
             catch
