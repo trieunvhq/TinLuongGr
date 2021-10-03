@@ -482,9 +482,7 @@ namespace CtyTinLuong
                 else return true;
             }
             else return true;
-        }
-
-     
+        }     
 
         private void LuuDuLieu_Phieu_Va_May_IN(string xmaphieu_, DateTime ngaylapphieu_, string casx_, int idcatruong_,
           int idcongnhan_, int idmayin_, int iddinhmucluong_, int idvthh_vao_, int idvthh_ra_, 
