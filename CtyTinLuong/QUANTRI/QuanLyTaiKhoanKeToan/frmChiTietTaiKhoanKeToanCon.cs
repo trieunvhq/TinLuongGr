@@ -12,6 +12,7 @@ namespace CtyTinLuong
 {
     public partial class frmChiTietTaiKhoanKeToanCon : Form
     {
+        private int _ID_TKme = -1;
         private bool KiemTraLuu()
         {
            if (txtSoTKCon.Text.ToString() == "")
@@ -117,6 +118,7 @@ namespace CtyTinLuong
                             cls.Insert();
                             Cursor.Current = Cursors.Default;
                             MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            _frmCTNCC.GetTKngamDinh(txtSoTKCon.Text.Trim(), _ID_TKme);
                         }
 
                     }
@@ -138,6 +140,7 @@ namespace CtyTinLuong
                         cls.Update();
                         Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _frmCTNCC.GetTKngamDinh(txtSoTKCon.Text.Trim(), _ID_TKme);
                     }
 
                     this.Close();
@@ -166,6 +169,12 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
+        public frmChiTietTaiKhoanKeToanCon(frmChiTietNhaCungCap frmCTNCC)
+        {
+            _frmCTNCC = frmCTNCC;
+            InitializeComponent();
+        }
+
         private void frmChiTietTaiKhoanKeToanCon_Load(object sender, EventArgs e)
         {
             HienThi();
@@ -186,6 +195,7 @@ namespace CtyTinLuong
             try
             {
                 int iiID = Convert.ToInt16(gridTK_me.EditValue.ToString());
+                _ID_TKme = iiID;
                 clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new CtyTinLuong.clsNganHang_tbHeThongTaiKhoanKeToanMe();
                 cls.iID_TaiKhoanKeToanMe = iiID;
                 DataTable dt = cls.SelectOne();

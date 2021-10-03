@@ -212,8 +212,26 @@ namespace CtyTinLuong
         private void btThemMoi_Click(object sender, EventArgs e)
         {
             frmQuanLyTaiKhoanKeToan.mbTheMoi = true;
-            frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(null, null, this);
+            frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this);
             ff.Show();
+        }
+
+        public void GetTKngamDinh(string stk, int ID_TKme)
+        {
+            if (ID_TKme != -1)
+            {
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    DataTable dt = clsThin_.Tr_NganHang_TaiKhoanKeToanCon_SelectOne(ID_TKme, stk);
+                    if (dt.Rows.Count > 0)
+                    {
+                        gridTKKeToan.Properties.DataSource = dt;
+                        gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
+                        gridTKKeToan.Properties.DisplayMember = "SoTaiKhoanCon";
+                        gridTKKeToan.EditValue = dt.Rows[0]["ID_TaiKhoanKeToanCon"].ToString();
+                    }
+                }
+            }
         }
     }
 }

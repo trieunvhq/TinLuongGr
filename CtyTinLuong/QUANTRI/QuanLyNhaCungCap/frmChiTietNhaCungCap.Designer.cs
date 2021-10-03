@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietNhaCungCap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -76,7 +76,6 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -148,6 +147,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(484, 448);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(2, 400);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(353, 20);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Lưu ý: Mỗi Nhà cung cấp ứng với 1 TK kế toán riêng";
             // 
             // btLuu
             // 
@@ -574,15 +582,6 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(265, 26);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // label1
-            // 
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(2, 400);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 20);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Lưu ý: Mỗi Nhà cung cấp ứng với 1 TK kế toán riêng";
-            // 
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.label1;
@@ -604,7 +603,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChiTietNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmChiTietNhaCungCap-->Nhà Cung Cấp";
+            this.Text = "f";
             this.Load += new System.EventHandler(this.frmChiTietNhaCungCap_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
