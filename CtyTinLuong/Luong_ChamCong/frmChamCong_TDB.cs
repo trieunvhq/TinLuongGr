@@ -43,7 +43,6 @@ namespace CtyTinLuong
 
             InitializeComponent();
 
-            radioTo1.Checked = true;
 
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -62,6 +61,7 @@ namespace CtyTinLuong
             emptyEditor.Buttons.Clear();
             emptyEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             gridControl1.RepositoryItems.Add(emptyEditor);
+            radioTo1.Checked = true;
         }
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
