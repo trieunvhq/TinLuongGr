@@ -22,7 +22,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCong_PKT : UserControl
     {
-        public int  _ID_DinhMucLuong_CongNhat = 0;
+        public int  _ID_DinhMucLuong_CongNhat;
         public int _nam, _thang, _id_bophan;
         private string _MaDinhMucLuongCongNhat;
         private DataTable _data;
@@ -487,6 +487,8 @@ namespace CtyTinLuong
                             _data.Rows.Add(_ravi);
                         }
                     }
+
+                    if (dt_.Rows.Count > 0) GuiDuLieuBangLuong();
                 }
             }
 
@@ -547,6 +549,8 @@ namespace CtyTinLuong
             //
             gridControl1.DataSource = _data;
         }
+
+
         private string thutrongtuanxyz(int ewwd)
         {
 
@@ -558,6 +562,7 @@ namespace CtyTinLuong
             else xxx = "Thứ " + ewwd.ToString() + "";
             return xxx;
         }
+
         private void frmChamCong_PKT_Load(object sender, EventArgs e)
         {
         }
@@ -603,6 +608,7 @@ namespace CtyTinLuong
 
             _data.Rows[index]["Tong"] = String.Format("{0:0.##}", tong_row);
         }
+
 
         private void CongTong()
         {
@@ -799,10 +805,8 @@ namespace CtyTinLuong
 
                 _data.Rows.Add(_ravi);
             }
-            //for(int i=0; i<_dataLoaiHang.Rows.Count; i++)
-            //{
-            //    comboThin.Items.Add(_dataLoaiHang.Rows[i]["TenVTHH"].ToString());
-            //}
+
+
             gridThin.EditValueChanged += (o, e) => {
 
             };
@@ -855,10 +859,11 @@ namespace CtyTinLuong
                 + Tong_Ngay21 + Tong_Ngay22 + Tong_Ngay23 + Tong_Ngay24 + Tong_Ngay25
                 + Tong_Ngay26 + Tong_Ngay27 + Tong_Ngay28 + Tong_Ngay29 + Tong_Ngay30 + Tong_Ngay31));
 
-
             _data.Rows.Add(_ravi2);
             //
-            gridControl1.DataSource = _data;
+            //gridControl1.DataSource = _data;
+            SaveOneCN(id_nhansu_);
+            LoadData(false);
         }
         private float ConvertToFloat(string s)
         {
@@ -920,10 +925,6 @@ namespace CtyTinLuong
             if (e.RowHandle == _data.Rows.Count - 1)
             { 
                 e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-                //if(e.Column.FieldName == "Xoa")
-                //{
-                //    e.Appearance.Font = new System.Drawing.Font("Tahoma",1, System.Drawing.FontStyle.Bold);
-                //}
             }
         }
 
@@ -935,7 +936,6 @@ namespace CtyTinLuong
                  
                 frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_PKT", this);
                 ff.ShowDialog();
-
             }
             catch (Exception ee)
             {
@@ -1112,16 +1112,81 @@ namespace CtyTinLuong
                 }
                 if (isGuiThanhCong)
                 {
-                    MessageBox.Show("Lưu dữ liệu chấm công thành công!");
+                    LoadData(false);
+                    MessageBox.Show("Lưu dữ liệu chấm công thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Chưa chọn loại hàng hóa", "Lỗi",
-       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lưu dữ liệu lỗi", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
 
-
+        private void SaveOneCN(int idcn_)
+        {
+            try
+            {
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    for (int i = 0; i < _data.Rows.Count; ++i)
+                    {
+                        int ID_CongNhan_ = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+                        if (ID_CongNhan_ == idcn_)
+                        {
+                            string Cong_ = _data.Rows[i]["Cong"].ToString();
+                            bool isTang = false;
+                            if (Cong_.Contains("Tăng"))
+                            {
+                                isTang = true;
+                            }
+                            clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                                ID_CongNhan_,
+                                _thang,
+                                _nam,
+                                0,
+                                0,
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay3"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay4"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay5"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay6"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay7"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay8"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay9"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay10"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay11"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay12"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay13"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay14"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay15"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay16"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay17"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay18"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay19"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay20"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay21"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay22"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay23"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay24"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay25"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay26"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay27"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay28"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay29"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString()),
+                                0, true, isTang, _id_bophan,
+                                Convert.ToInt32(_data.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString()),
+                                Convert.ToInt32(_data.Rows[i]["ID_LoaiCong"].ToString()));
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể đồng bộ dữ liệu. Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
