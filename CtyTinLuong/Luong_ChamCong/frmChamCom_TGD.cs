@@ -15,7 +15,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCom_TGD : UserControl
     {  
-        public int _nam, _thang, _id_bophan;
+        public int _nam = 0, _thang = 0, _id_bophan;
         public string _tennhanvien = "";
         private DataTable _data;
         private bool isload = true;
@@ -110,7 +110,8 @@ namespace CtyTinLuong
 
             isload = true; 
 
-            cbNhanVien.Text = "";
+            //cbNhanVien.Text = "";
+
 
             if (islandau)
             {
@@ -120,44 +121,7 @@ namespace CtyTinLuong
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
 
-                DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
-                int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-                if (ngaycuathang_ == 28)
-                {
-                    Ngay31.Visible = false;
-                    Ngay30.Visible = false;
-                    Ngay29.Visible = false;
-                }
-                else if (ngaycuathang_ == 29)
-                {
-                    Ngay31.Visible = false;
-                    Ngay30.Visible = false;
-                    Ngay29.Visible = true;
-                }
-                else if (ngaycuathang_ == 30)
-                {
-                    Ngay31.Visible = false;
-                    Ngay30.Visible = true;
-                    Ngay29.Visible = true;
-                }
-                else if (ngaycuathang_ == 31)
-                {
-                    Ngay31.Visible = true;
-                    Ngay30.Visible = true;
-                    Ngay29.Visible = true;
-                }
-                string thu_ = LayThu(date_);
-                for (int i = 0; i < ngaycuathang_; ++i)
-                {
-                    ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(dtnow.Year, dtnow.Month, (i + 1)));
-                    if (ds_grid[i].Caption.Contains("CN"))
-                    {
-                        ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
-                        ds_grid[i].AppearanceHeader.BackColor = Color.LightGray;
-                        ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
-                        ds_grid[i].AppearanceCell.ForeColor = Color.Red;
-                    }
-                }
+                
                 //
                 using (clsThin clsThin_ = new clsThin())
                 {
@@ -185,7 +149,9 @@ namespace CtyTinLuong
             {
             }
 
-             Tong_Ngay1 = 0;
+            ChangeColTitle(_thang, _nam);
+
+            Tong_Ngay1 = 0;
              Tong_Ngay2 = 0;
              Tong_Ngay3 = 0;
              Tong_Ngay4 = 0;
@@ -404,6 +370,69 @@ namespace CtyTinLuong
             gridControl1.DataSource = _data;
             isload = false;
         } 
+
+        //
+        private void ChangeColTitle(int thang, int nam)
+        {
+            if (thang <= 0 || thang > 12 || nam <= 1900)
+            {
+                DateTime dtnow = DateTime.Now;
+                nam = DateTime.Now.Year;
+                thang = DateTime.Now.Month;
+            }
+            DateTime date_ = new DateTime(nam, thang, 1);
+            int ngaycuathang_ = (((new DateTime(nam, thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+            if (ngaycuathang_ == 28)
+            {
+                Ngay31.Visible = false;
+                Ngay30.Visible = false;
+                Ngay29.Visible = false;
+            }
+            else if (ngaycuathang_ == 29)
+            {
+                Ngay31.Visible = false;
+                Ngay30.Visible = false;
+                Ngay29.Visible = true;
+                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+            }
+            else if (ngaycuathang_ == 30)
+            {
+                Ngay31.Visible = false;
+                Ngay30.Visible = true;
+                Ngay29.Visible = true;
+                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+            }
+            else if (ngaycuathang_ == 31)
+            {
+                Ngay31.Visible = true;
+                Ngay30.Visible = true;
+                Ngay29.Visible = true;
+                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+                Ngay31.VisibleIndex = Ngay30.VisibleIndex + 1;
+            }
+            string thu_ = LayThu(date_);
+            for (int i = 0; i < ngaycuathang_; ++i)
+            {
+                ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(nam, thang, (i + 1)));
+                if (ds_grid[i].Caption.Contains("CN"))
+                {
+                    ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
+                    ds_grid[i].AppearanceHeader.BackColor = Color.LightGray;
+                    ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
+                    ds_grid[i].AppearanceCell.ForeColor = Color.Red;
+                }
+                else
+                {
+                    ds_grid[i].AppearanceCell.BackColor = Color.White;
+                    ds_grid[i].AppearanceHeader.BackColor = Color.White;
+                    ds_grid[i].AppearanceHeader.ForeColor = Color.Black;
+                    ds_grid[i].AppearanceCell.ForeColor = Color.Black;
+                }
+            }
+        }
+
         private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew)
         {
             int stt_ = 0;
@@ -883,6 +912,7 @@ namespace CtyTinLuong
                 }
             }
         }
+
 
         private void btThoat_Click(object sender, EventArgs e)
         {
