@@ -143,6 +143,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 13);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(705, 213, 650, 400);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(484, 448);
             this.layoutControl1.TabIndex = 0;
@@ -376,7 +377,7 @@
             this.layoutControlItem18,
             this.emptySpaceItem3,
             this.layoutControlItem19});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(484, 448);
             this.layoutControlGroup1.TextVisible = false;
