@@ -927,6 +927,7 @@
             this.bandedGridView1.OptionsNavigation.UseTabKey = false;
             this.bandedGridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.bandedGridView1.OptionsView.RowAutoHeight = true;
+            this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
             this.bandedGridView1.OptionsView.ShowIndicator = false;
             this.bandedGridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.bandedGridView1_RowCellStyle);
@@ -1318,6 +1319,8 @@
             this.clSoLuong_Vao_IN.FieldName = "SoLuong_Vao_IN";
             this.clSoLuong_Vao_IN.Name = "clSoLuong_Vao_IN";
             this.clSoLuong_Vao_IN.OptionsColumn.FixedWidth = true;
+            this.clSoLuong_Vao_IN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao_IN", "{0:0.##}")});
             this.clSoLuong_Vao_IN.Visible = true;
             this.clSoLuong_Vao_IN.Width = 60;
             // 
@@ -1740,6 +1743,8 @@
             this.clSanLuong_Tong_IN.FieldName = "SanLuong_Tong_IN";
             this.clSanLuong_Tong_IN.Name = "clSanLuong_Tong_IN";
             this.clSanLuong_Tong_IN.OptionsColumn.FixedWidth = true;
+            this.clSanLuong_Tong_IN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SanLuong_Tong_IN", "{0:0.##}")});
             this.clSanLuong_Tong_IN.Visible = true;
             this.clSanLuong_Tong_IN.Width = 55;
             // 
@@ -1779,6 +1784,8 @@
             this.clPhePham_IN.Name = "clPhePham_IN";
             this.clPhePham_IN.OptionsColumn.AllowFocus = false;
             this.clPhePham_IN.OptionsColumn.FixedWidth = true;
+            this.clPhePham_IN.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PhePham_IN", "{0:0.##}")});
             this.clPhePham_IN.Visible = true;
             this.clPhePham_IN.Width = 50;
             // 
@@ -1905,6 +1912,8 @@
             this.clSoLuong_Vao_CAT.FieldName = "SoLuong_Vao_CAT";
             this.clSoLuong_Vao_CAT.Name = "clSoLuong_Vao_CAT";
             this.clSoLuong_Vao_CAT.OptionsColumn.FixedWidth = true;
+            this.clSoLuong_Vao_CAT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao_CAT", "{0:0.##}")});
             this.clSoLuong_Vao_CAT.Visible = true;
             // 
             // clNgaySanXuat_CAT
@@ -2308,6 +2317,8 @@
             this.clSanLuong_Tong_CAT.FieldName = "SanLuong_Tong_CAT";
             this.clSanLuong_Tong_CAT.Name = "clSanLuong_Tong_CAT";
             this.clSanLuong_Tong_CAT.OptionsColumn.FixedWidth = true;
+            this.clSanLuong_Tong_CAT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SanLuong_Tong_CAT", "{0:0.##}")});
             this.clSanLuong_Tong_CAT.Visible = true;
             this.clSanLuong_Tong_CAT.Width = 55;
             // 
@@ -2342,6 +2353,8 @@
             this.clPhePham_CAT.FieldName = "PhePham_CAT";
             this.clPhePham_CAT.Name = "clPhePham_CAT";
             this.clPhePham_CAT.OptionsColumn.FixedWidth = true;
+            this.clPhePham_CAT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PhePham_CAT", "{0:0.##}")});
             this.clPhePham_CAT.Visible = true;
             // 
             // gridBand_VatTu_DOT
@@ -2466,6 +2479,8 @@
             this.clSoLuong_Vao_DOT.FieldName = "SoLuong_Vao_DOT";
             this.clSoLuong_Vao_DOT.Name = "clSoLuong_Vao_DOT";
             this.clSoLuong_Vao_DOT.OptionsColumn.FixedWidth = true;
+            this.clSoLuong_Vao_DOT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong_Vao_DOT", "{0:0.##}")});
             this.clSoLuong_Vao_DOT.Visible = true;
             // 
             // clNgaySanXuat_DOT
@@ -2868,6 +2883,8 @@
             this.clSanLuong_Tong_DOT.FieldName = "SanLuong_Tong_DOT";
             this.clSanLuong_Tong_DOT.Name = "clSanLuong_Tong_DOT";
             this.clSanLuong_Tong_DOT.OptionsColumn.FixedWidth = true;
+            this.clSanLuong_Tong_DOT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SanLuong_Tong_DOT", "{0:0.##}")});
             this.clSanLuong_Tong_DOT.Visible = true;
             this.clSanLuong_Tong_DOT.Width = 60;
             // 
@@ -2904,6 +2921,8 @@
             this.clPhePham_DOT.FieldName = "PhePham_DOT";
             this.clPhePham_DOT.Name = "clPhePham_DOT";
             this.clPhePham_DOT.OptionsColumn.FixedWidth = true;
+            this.clPhePham_DOT.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PhePham_DOT", "{0:0.##}")});
             this.clPhePham_DOT.Visible = true;
             this.clPhePham_DOT.Width = 50;
             // 
