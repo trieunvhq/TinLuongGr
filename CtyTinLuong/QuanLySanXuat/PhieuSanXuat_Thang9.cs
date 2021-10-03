@@ -1731,6 +1731,7 @@ namespace CtyTinLuong
            xID_CongNhan_IN, xIDmay_IN, xID_DinhMuc_Luong_IN, xID_VTHH_Vao_IN, xID_VTHH_Ra_IN,
           xxSoLuong_Vao_IN, xxSanLuong_Thuong_IN, xxSanLuong_TangCa_IN, sSanLuong_Tong_IN, xxphepham_IN,
           xxid_sophieu_, xxid_chitietphieu_in, xxthemmoiphieu);
+                        LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime);
                     }
                 }
 
