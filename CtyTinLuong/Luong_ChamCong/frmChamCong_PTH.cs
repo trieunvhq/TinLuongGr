@@ -417,7 +417,8 @@ namespace CtyTinLuong
                 stt_ = Convert.ToInt32(_data.Rows[_data.Rows.Count - 1]["STT"].ToString());
 
             }
-            //
+
+            //Load toàn bộ danh sách công nhân vào bảng.
             using (clsThin clsThin_ = new clsThin())
             {
                 DataTable dt_ = clsThin_.T_NhanSu_SF(_id_bophan + ",");

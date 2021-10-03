@@ -42,8 +42,6 @@
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtThang = new System.Windows.Forms.TextBox();
-            this.txtNam = new System.Windows.Forms.TextBox();
             this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -88,6 +86,8 @@
             this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNam = new System.Windows.Forms.NumericUpDown();
+            this.txtThang = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -102,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridThin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemButtonEdit1
@@ -130,7 +132,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(333, 13);
+            this.label3.Location = new System.Drawing.Point(328, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -145,28 +147,6 @@
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
             this.label4.Text = "Năm:";
-            // 
-            // txtThang
-            // 
-            this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(381, 10);
-            this.txtThang.MaxLength = 2;
-            this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new System.Drawing.Size(64, 20);
-            this.txtThang.TabIndex = 1;
-            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
-            this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
-            // 
-            // txtNam
-            // 
-            this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(536, 10);
-            this.txtNam.MaxLength = 4;
-            this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(65, 20);
-            this.txtNam.TabIndex = 2;
-            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
-            this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
             // 
             // btXoa
             // 
@@ -843,15 +823,63 @@
             this.btnPrintTQ.Text = "Tổng quát";
             this.btnPrintTQ.Click += new System.EventHandler(this.btnPrintTQ_Click);
             // 
+            // txtNam
+            // 
+            this.txtNam.Location = new System.Drawing.Point(537, 10);
+            this.txtNam.Maximum = new decimal(new int[] {
+            2100,
+            0,
+            0,
+            0});
+            this.txtNam.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(70, 20);
+            this.txtNam.TabIndex = 170;
+            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNam.Value = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
+            // 
+            // txtThang
+            // 
+            this.txtThang.Location = new System.Drawing.Point(379, 10);
+            this.txtThang.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.txtThang.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.Name = "txtThang";
+            this.txtThang.Size = new System.Drawing.Size(66, 20);
+            this.txtThang.TabIndex = 169;
+            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtThang.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
+            // 
             // frmBTTL_TGD_CT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.btnPrintTQ);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
+            this.Controls.Add(this.btnPrintTQ);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btThoat);
@@ -873,6 +901,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridThin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -883,8 +913,6 @@
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtThang;
-        private System.Windows.Forms.TextBox txtNam;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
@@ -929,5 +957,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
+        private System.Windows.Forms.NumericUpDown txtNam;
+        private System.Windows.Forms.NumericUpDown txtThang;
     }
 }
