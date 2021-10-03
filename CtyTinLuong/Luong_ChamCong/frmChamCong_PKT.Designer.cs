@@ -1393,6 +1393,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
             this.btGuiDuLieu.TabIndex = 160;
             this.btGuiDuLieu.Text = "Lưu lại";
+            this.btGuiDuLieu.Visible = false;
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
             // 
             // btThoat
