@@ -301,6 +301,38 @@ namespace CtyTinLuong
                 double Ngay30 = 0;
                 double Ngay31 = 0;
 
+                Tong_Ngay1 = 0;
+                Tong_Ngay2 = 0;
+                Tong_Ngay3 = 0;
+                Tong_Ngay4 = 0;
+                Tong_Ngay5 = 0;
+                Tong_Ngay6 = 0;
+                Tong_Ngay7 = 0;
+                Tong_Ngay8 = 0;
+                Tong_Ngay9 = 0;
+                Tong_Ngay10 = 0;
+                Tong_Ngay11 = 0;
+                Tong_Ngay12 = 0;
+                Tong_Ngay13 = 0;
+                Tong_Ngay14 = 0;
+                Tong_Ngay15 = 0;
+                Tong_Ngay16 = 0;
+                Tong_Ngay17 = 0;
+                Tong_Ngay18 = 0;
+                Tong_Ngay19 = 0;
+                Tong_Ngay20 = 0;
+                Tong_Ngay21 = 0;
+                Tong_Ngay22 = 0;
+                Tong_Ngay23 = 0;
+                Tong_Ngay24 = 0;
+                Tong_Ngay25 = 0;
+                Tong_Ngay26 = 0;
+                Tong_Ngay27 = 0;
+                Tong_Ngay28 = 0;
+                Tong_Ngay29 = 0;
+                Tong_Ngay30 = 0;
+                Tong_Ngay31 = 0;
+
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 { 
                     ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
@@ -488,47 +520,12 @@ namespace CtyTinLuong
                             _data.Rows.Add(_ravi);
                         }
                     }
-
-                    if (dt_.Rows.Count > 0)
-                    {
-                        Tong_Ngay1 = 0;
-                        Tong_Ngay2 = 0;
-                        Tong_Ngay3 = 0;
-                        Tong_Ngay4 = 0;
-                        Tong_Ngay5 = 0;
-                        Tong_Ngay6 = 0;
-                        Tong_Ngay7 = 0;
-                        Tong_Ngay8 = 0;
-                        Tong_Ngay9 = 0;
-                        Tong_Ngay10 = 0;
-                        Tong_Ngay11 = 0;
-                        Tong_Ngay12 = 0;
-                        Tong_Ngay13 = 0;
-                        Tong_Ngay14 = 0;
-                        Tong_Ngay15 = 0;
-                        Tong_Ngay16 = 0;
-                        Tong_Ngay17 = 0;
-                        Tong_Ngay18 = 0;
-                        Tong_Ngay19 = 0;
-                        Tong_Ngay20 = 0;
-                        Tong_Ngay21 = 0;
-                        Tong_Ngay22 = 0;
-                        Tong_Ngay23 = 0;
-                        Tong_Ngay24 = 0;
-                        Tong_Ngay25 = 0;
-                        Tong_Ngay26 = 0;
-                        Tong_Ngay27 = 0;
-                        Tong_Ngay28 = 0;
-                        Tong_Ngay29 = 0;
-                        Tong_Ngay30 = 0;
-                        Tong_Ngay31 = 0;
-                        GuiDuLieuBangLuong();
-                    }
                 }
             }
 
 
-            gridThin.EditValueChanged += (o, e) => {
+            gridThin.EditValueChanged += (o, e) =>
+            {
 
             };
             // dat doan cuoi nay đi
