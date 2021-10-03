@@ -82,12 +82,11 @@
             this.clSTT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_SoPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clChange_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clMaPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clTest_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.clTest_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clTest_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clMaPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clSTT_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clChange_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clTest_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_SoPhieu_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.SearchLookUp_MaPhieu_CAT = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -96,6 +95,7 @@
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSTT_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clChange_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.clTest_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.clID_SoPhieu_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.SearchLookUp_MaPhieu_DOT = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -965,6 +965,14 @@
             this.clChange_IN.OptionsColumn.FixedWidth = true;
             this.clChange_IN.Width = 40;
             // 
+            // clTest_IN
+            // 
+            this.clTest_IN.Caption = "Test_IN";
+            this.clTest_IN.FieldName = "Test_IN";
+            this.clTest_IN.Name = "clTest_IN";
+            this.clTest_IN.OptionsColumn.FixedWidth = true;
+            this.clTest_IN.Width = 40;
+            // 
             // clMaPhieu
             // 
             this.clMaPhieu.AppearanceCell.Options.UseTextOptions = true;
@@ -975,28 +983,6 @@
             this.clMaPhieu.OptionsColumn.FixedWidth = true;
             this.clMaPhieu.Visible = true;
             this.clMaPhieu.Width = 60;
-            // 
-            // clTest_CAT
-            // 
-            this.clTest_CAT.Caption = "Test_CAT";
-            this.clTest_CAT.FieldName = "Test_CAT";
-            this.clTest_CAT.Name = "clTest_CAT";
-            this.clTest_CAT.Width = 40;
-            // 
-            // clTest_DOT
-            // 
-            this.clTest_DOT.Caption = "Test_DOT";
-            this.clTest_DOT.FieldName = "Test_DOT";
-            this.clTest_DOT.Name = "clTest_DOT";
-            this.clTest_DOT.Width = 40;
-            // 
-            // clTest_IN
-            // 
-            this.clTest_IN.Caption = "Test_IN";
-            this.clTest_IN.FieldName = "Test_IN";
-            this.clTest_IN.Name = "clTest_IN";
-            this.clTest_IN.OptionsColumn.FixedWidth = true;
-            this.clTest_IN.Width = 40;
             // 
             // clSTT_CAT
             // 
@@ -1012,6 +998,13 @@
             this.clChange_CAT.FieldName = "Change_CAT";
             this.clChange_CAT.Name = "clChange_CAT";
             this.clChange_CAT.Width = 40;
+            // 
+            // clTest_CAT
+            // 
+            this.clTest_CAT.Caption = "Test_CAT";
+            this.clTest_CAT.FieldName = "Test_CAT";
+            this.clTest_CAT.Name = "clTest_CAT";
+            this.clTest_CAT.Width = 40;
             // 
             // clID_SoPhieu_CAT
             // 
@@ -1080,7 +1073,16 @@
             this.clChange_DOT.Caption = "Change_DOT";
             this.clChange_DOT.FieldName = "Change_DOT";
             this.clChange_DOT.Name = "clChange_DOT";
+            this.clChange_DOT.Visible = true;
             this.clChange_DOT.Width = 40;
+            // 
+            // clTest_DOT
+            // 
+            this.clTest_DOT.Caption = "Test_DOT";
+            this.clTest_DOT.FieldName = "Test_DOT";
+            this.clTest_DOT.Name = "clTest_DOT";
+            this.clTest_DOT.Visible = true;
+            this.clTest_DOT.Width = 40;
             // 
             // clID_SoPhieu_DOT
             // 
@@ -1647,7 +1649,6 @@
             this.clSanLuong_Thuong_IN.Name = "clSanLuong_Thuong_IN";
             this.clSanLuong_Thuong_IN.OptionsColumn.AllowEdit = false;
             this.clSanLuong_Thuong_IN.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_Thuong_IN.Visible = true;
             this.clSanLuong_Thuong_IN.Width = 55;
             // 
             // clSanLuong_TangCa_IN
@@ -1662,7 +1663,6 @@
             this.clSanLuong_TangCa_IN.OptionsColumn.AllowEdit = false;
             this.clSanLuong_TangCa_IN.OptionsColumn.AllowFocus = false;
             this.clSanLuong_TangCa_IN.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_TangCa_IN.Visible = true;
             this.clSanLuong_TangCa_IN.Width = 50;
             // 
             // clPhePham_IN
@@ -2170,7 +2170,6 @@
             this.clSanLuong_Thuong_CAT.FieldName = "SanLuong_Thuong_CAT";
             this.clSanLuong_Thuong_CAT.Name = "clSanLuong_Thuong_CAT";
             this.clSanLuong_Thuong_CAT.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_Thuong_CAT.Visible = true;
             this.clSanLuong_Thuong_CAT.Width = 50;
             // 
             // clSanLuong_TangCa_CAT
@@ -2182,7 +2181,6 @@
             this.clSanLuong_TangCa_CAT.FieldName = "SanLuong_TangCa_CAT";
             this.clSanLuong_TangCa_CAT.Name = "clSanLuong_TangCa_CAT";
             this.clSanLuong_TangCa_CAT.OptionsColumn.FixedWidth = true;
-            this.clSanLuong_TangCa_CAT.Visible = true;
             this.clSanLuong_TangCa_CAT.Width = 50;
             // 
             // clPhePham_CAT
@@ -3078,10 +3076,8 @@
             this.Band_IN.Columns.Add(this.clSTT);
             this.Band_IN.Columns.Add(this.clID_SoPhieu);
             this.Band_IN.Columns.Add(this.clChange_IN);
-            this.Band_IN.Columns.Add(this.clMaPhieu);
-            this.Band_IN.Columns.Add(this.clTest_CAT);
-            this.Band_IN.Columns.Add(this.clTest_DOT);
             this.Band_IN.Columns.Add(this.clTest_IN);
+            this.Band_IN.Columns.Add(this.clMaPhieu);
             this.Band_IN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Band_IN.Name = "Band_IN";
             this.Band_IN.VisibleIndex = 0;
@@ -3099,6 +3095,7 @@
             this.Band_CAT.Caption = "Phiếu";
             this.Band_CAT.Columns.Add(this.clSTT_CAT);
             this.Band_CAT.Columns.Add(this.clChange_CAT);
+            this.Band_CAT.Columns.Add(this.clTest_CAT);
             this.Band_CAT.Columns.Add(this.clID_SoPhieu_CAT);
             this.Band_CAT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Band_CAT.Name = "Band_CAT";
@@ -3116,12 +3113,13 @@
             this.Band_DOT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Band_DOT.Caption = "Phiếu";
             this.Band_DOT.Columns.Add(this.clSTT_DOT);
-            this.Band_DOT.Columns.Add(this.clChange_DOT);
             this.Band_DOT.Columns.Add(this.clID_SoPhieu_DOT);
+            this.Band_DOT.Columns.Add(this.clTest_DOT);
+            this.Band_DOT.Columns.Add(this.clChange_DOT);
             this.Band_DOT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Band_DOT.Name = "Band_DOT";
             this.Band_DOT.VisibleIndex = 2;
-            this.Band_DOT.Width = 110;
+            this.Band_DOT.Width = 190;
             // 
             // gridBand_VatTu_IN
             // 
@@ -3167,7 +3165,7 @@
             this.gridBand_ThanhPham_IN.Columns.Add(this.clPhePham_IN);
             this.gridBand_ThanhPham_IN.Name = "gridBand_ThanhPham_IN";
             this.gridBand_ThanhPham_IN.VisibleIndex = 4;
-            this.gridBand_ThanhPham_IN.Width = 510;
+            this.gridBand_ThanhPham_IN.Width = 405;
             // 
             // gridBand_VatTu_CAT
             // 
@@ -3212,7 +3210,7 @@
             this.gridBand_ThanhPham_CAT.Columns.Add(this.clPhePham_CAT);
             this.gridBand_ThanhPham_CAT.Name = "gridBand_ThanhPham_CAT";
             this.gridBand_ThanhPham_CAT.VisibleIndex = 6;
-            this.gridBand_ThanhPham_CAT.Width = 530;
+            this.gridBand_ThanhPham_CAT.Width = 430;
             // 
             // gridBand_VatTu_DOT
             // 

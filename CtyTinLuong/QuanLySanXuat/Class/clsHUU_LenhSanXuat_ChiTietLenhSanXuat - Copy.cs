@@ -15,6 +15,39 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsHUU_LenhSanXuat_ChiTietLenhSanXuat : clsDBInteractionBase
 	{
+        public void H_Delete_ChiTietLSX_W_ID_ChiTietPhieu(int id_chietphieu_x, int id_sophieu_x_)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_Delete_ChiTietLSX_W_ID_ChiTietPhieu]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_chitietphieu_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_chietphieu_x));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_sophieu_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_sophieu_x_));
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_Delete_ChiTietLSX_W_ID_ChiTietPhieu::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         //pr_HUU_LenhSanXuat_ChiTietLenhSanXuat_SA_ID_LSX
         public DataTable SA_ID_LSX(int xxID_LenhSanXuat)
         {
