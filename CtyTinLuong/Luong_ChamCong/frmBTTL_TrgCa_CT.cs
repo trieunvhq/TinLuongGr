@@ -40,7 +40,7 @@ namespace CtyTinLuong
             InitializeComponent();
             ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
             ColTongLuong.Caption = "TỔNG\nLƯƠNG";
-            PhuCapBaoHiem.Caption = "PHỤ CẤ\nBẢO HIỂM";
+            PhuCapBaoHiem.Caption = "PHỤ CẤP\nBẢO HIỂM";
         }
 
         public void LoadData(bool islandau)
@@ -127,7 +127,7 @@ namespace CtyTinLuong
 
                     //Tổng:
                     //tong_ = LuongCoBan_ * sanluong_;
-                    tong_ = LuongCoBan_ + PhuCapBH_;
+                    tong_ = LuongCoBan_;
                     tong_tong_ += tong_;
                     _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
