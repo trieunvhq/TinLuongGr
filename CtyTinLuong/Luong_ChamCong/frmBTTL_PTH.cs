@@ -183,7 +183,7 @@ namespace CtyTinLuong
                         else
                             _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
 
-                        tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_);
+                        tong_ = ((dongia_ * sanluong_) + luongtrachnhiem_ + PhuCapBH_);
                         tong_tong_ += tong_;
                         _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
