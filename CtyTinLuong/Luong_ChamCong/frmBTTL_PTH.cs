@@ -88,6 +88,7 @@ namespace CtyTinLuong
 
                 //
                 int ID_congNhanRoot = -1;
+                int stt = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
@@ -146,7 +147,8 @@ namespace CtyTinLuong
                         ID_congNhanRoot = ID_congNhan;
 
                         //
-                        _data.Rows[i]["STT"] = (i / 2) + 1;
+                        stt++;
+                        _data.Rows[i]["STT"] = stt;
 
                         tongluong_ = (dongia_ * sanluong_);
                         tongluong_tong_ += tongluong_;
@@ -193,7 +195,7 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        _data.Rows[i]["STT"] = (i / 2) + 1;
+                        _data.Rows[i]["STT"] = stt;
 
                         tongluong_ = (dongia_ * sanluong_);
                         tongluong_tong_ += tongluong_;

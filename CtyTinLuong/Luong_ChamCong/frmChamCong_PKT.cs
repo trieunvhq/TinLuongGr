@@ -627,7 +627,7 @@ namespace CtyTinLuong
             }
 
             CongTong();
-            SaveOneCN_Datarow(_data.Rows[index_]);
+            if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
         }
 
         //Tính tổng theo hàng:
@@ -743,7 +743,6 @@ namespace CtyTinLuong
         {
             if (GuiDuLieuBangLuong())
             {
-                LoadData(false);
                 MessageBox.Show("Lưu dữ liệu chấm công thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else

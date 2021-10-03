@@ -792,7 +792,7 @@ namespace CtyTinLuong
                 }
             }
             CongTong();
-            SaveOneCN_Datarow(_data.Rows[index_]);
+            if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
         }
 
 
