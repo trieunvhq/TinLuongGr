@@ -52,7 +52,6 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay21); ds_grid.Add(Ngay22); ds_grid.Add(Ngay23); ds_grid.Add(Ngay24); ds_grid.Add(Ngay25);
             ds_grid.Add(Ngay26); ds_grid.Add(Ngay27); ds_grid.Add(Ngay28); ds_grid.Add(Ngay29); ds_grid.Add(Ngay30);
             ds_grid.Add(Ngay31);
-            ChangeColTitle(_thang, _nam);
 
             this.cbNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNhanSu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
@@ -177,6 +176,10 @@ namespace CtyTinLuong
         double Tong_Ngay31 = 0;
         DataTable _dt_DinhMuc;
 
+        private bool _deleted_29 = false;
+        private bool _deleted_30 = false;
+        private bool _deleted_31 = false;
+
         private void ChangeColTitle(int thang, int nam)
         {
             if (thang <= 0 || thang > 12 || nam <= 1900)
@@ -192,30 +195,47 @@ namespace CtyTinLuong
                 Ngay31.Visible = false;
                 Ngay30.Visible = false;
                 Ngay29.Visible = false;
-            }
+
+                _deleted_29 = true;
+                _deleted_30 = true;
+                _deleted_31 = true;
+    }
             else if (ngaycuathang_ == 29)
             {
                 Ngay31.Visible = false;
                 Ngay30.Visible = false;
                 Ngay29.Visible = true;
-                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                if (_deleted_29) Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+
+                _deleted_29 = false;
+                _deleted_30 = true;
+                _deleted_31 = true;
             }
             else if (ngaycuathang_ == 30)
             {
                 Ngay31.Visible = false;
                 Ngay29.Visible = true;
                 Ngay30.Visible = true;
-                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
-                Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+                _deleted_31 = true;
+
+                if (_deleted_29) Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                if (_deleted_30) Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+
+                _deleted_29 = false;
+                _deleted_30 = false;
             }
             else if (ngaycuathang_ == 31)
             {
                 Ngay29.Visible = true;
                 Ngay30.Visible = true;
                 Ngay31.Visible = true;
-                Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
-                Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
-                Ngay31.VisibleIndex = Ngay30.VisibleIndex + 1;
+                if (_deleted_29) Ngay29.VisibleIndex = Ngay28.VisibleIndex + 1;
+                if (_deleted_30) Ngay30.VisibleIndex = Ngay29.VisibleIndex + 1;
+                if (_deleted_31) Ngay31.VisibleIndex = Ngay30.VisibleIndex + 1;
+
+                _deleted_29 = false;
+                _deleted_30 = false;
+                _deleted_31 = false;
             }
             string thu_ = LayThu(date_);
             for (int i = 0; i < ngaycuathang_; ++i)
@@ -253,6 +273,7 @@ namespace CtyTinLuong
             {
             }
 
+            ChangeColTitle(_thang, _nam);
 
             using (clsThin clsThin_ = new clsThin())
             {
@@ -841,7 +862,6 @@ namespace CtyTinLuong
             try
             {
                 _thang = Convert.ToInt32(txtThang.Text);
-                ChangeColTitle(_thang, _nam);
 
                 LoadData(false);
             }
@@ -855,7 +875,6 @@ namespace CtyTinLuong
             try
             {
                 _nam = Convert.ToInt32(txtNam.Text);
-                ChangeColTitle(_thang, _nam);
 
                 LoadData(false);
             }
