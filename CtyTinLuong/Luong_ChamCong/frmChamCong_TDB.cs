@@ -119,7 +119,8 @@ namespace CtyTinLuong
                     _data.Rows[i]["MaDinhMucLuongCongNhat"] = ma;
                 }
             }
-            gridControl1.DataSource = _data;
+            //gridControl1.DataSource = _data;
+            GuiDuLieuBangLuong();
         }
         private string LayThu(DateTime date)
         {
@@ -471,7 +472,7 @@ namespace CtyTinLuong
             //Add công nhân tháng trước tự động nếu tháng mới chưa có dữ liệu:
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt_ = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectCNtheoThang(_thang, _nam, _id_bophan);
+                DataTable dt_ = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectCNtheoThang_CaLV(_thang, _nam, _id_bophan, radioTo1.Checked);
                 if (dt_.Rows.Count == 0)
                 {
                     int thangTruoc = 1;
@@ -488,7 +489,7 @@ namespace CtyTinLuong
                             break;
                     }
 
-                    dt_ = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectCNtheoThang(thangTruoc, namTruoc, _id_bophan);
+                    dt_ = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectCNtheoThang_CaLV(thangTruoc, namTruoc, _id_bophan, radioTo1.Checked);
                     for (int i = 0; i < dt_.Rows.Count; ++i)
                     {
                         //if (_ID_DinhMucLuong_CongNhat == 0)
@@ -497,8 +498,8 @@ namespace CtyTinLuong
                         _MaDinhMucLuongCongNhat = dt_.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
                         //}
                         //
-                        int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_CongNhan"].ToString());
-                        if (ds_id_congnhan.Contains(id_nhansu_))
+                        int id_vthh_ = Convert.ToInt32(dt_.Rows[i]["ID_VTHH"].ToString());
+                        if (_ListID_HangHoa.Contains(id_vthh_))
                         {
 
                         }
@@ -506,7 +507,8 @@ namespace CtyTinLuong
                         {
                             DataRow _ravi = _data.NewRow();
                             _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
-                            _ravi["ID_CongNhan"] = id_nhansu_;
+                            _ravi["ID_VTHH"] = id_vthh_;
+                            _ravi["TenVTHH"] = dt_.Rows[i]["TenVTHH"].ToString();
                             _ravi["Thang"] = _thang;
                             _ravi["Nam"] = _nam;
                             _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;
@@ -524,13 +526,6 @@ namespace CtyTinLuong
                             _ravi["SanLuong"] = 0;
                             _ravi["Tong"] = 0;
                             _ravi["GuiDuLieu"] = false;
-                            _ravi["MaNhanVien"] = dt_.Rows[i]["MaNhanVien"].ToString();
-                            _ravi["TenNhanVien"] = dt_.Rows[i]["TenNhanVien"].ToString();
-
-                            _ravi["MaDinhMuc"] = "";
-                            _ravi["DinhMuc_KhongTang"] = 0;
-                            _ravi["DinhMuc_Tang"] = 0;
-                            _ravi["Cong"] = dt_.Rows[i]["Cong"].ToString();
                             _ravi["ID_LoaiCong"] = dt_.Rows[i]["ID_LoaiCong"].ToString();
 
                             ++stt_;
@@ -750,8 +745,6 @@ namespace CtyTinLuong
                 _data.Rows[index_][name_] = String.Format("{0:0.##}", CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString()));
                 if (_data.Rows.Count > index_)
                 {
-                    //double temp_ = CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString());
-                    //_data.Rows[index_]["Tong"] = temp_ + CheckString.ConvertToDouble_My(_data.Rows[index_]["Tong"].ToString());
                     CongTong_Row(index_);
                 }
 
@@ -769,7 +762,7 @@ namespace CtyTinLuong
                 }
             }
             CongTong();
-            // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+            if (!_data.Rows[index_]["TenVTHH"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
         }
 
         //CongTong_Row(index_);
@@ -882,7 +875,14 @@ namespace CtyTinLuong
 
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            GuiDuLieuBangLuong();
+            if (GuiDuLieuBangLuong())
+            {
+                MessageBox.Show("Lưu dữ liệu chấm công thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Lưu dữ liệu lỗi", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -961,13 +961,13 @@ namespace CtyTinLuong
 
             _ravi["SanLuong"] = 0;
             _ravi["Tong"] = 0;
-            _ravi["ID_LoaiCong"] = -1;
+            _ravi["ID_LoaiCong"] = 1;
             _ravi["GuiDuLieu"] = false;
 
             _ravi["MaDinhMuc"] = "";
             _ravi["DinhMuc_KhongTang"] = 0;
             _ravi["DinhMuc_Tang"] = 0;
-            _ravi["Cong"] = "Công nhật";
+            //_ravi["Cong"] = "Công nhật";
 
             _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
             _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;

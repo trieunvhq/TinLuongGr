@@ -1504,7 +1504,7 @@ namespace CtyTinLuong
         private void SaveOneCN_Datarow(DataRow dt_row)
         {
             string tenCongNhan_ = "";
-
+            
             try
             {
                 using (clsThin clsThin_ = new clsThin())
