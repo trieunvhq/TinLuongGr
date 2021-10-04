@@ -23,7 +23,7 @@ namespace CtyTinLuong
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
-        public int _nam, _thang, _id_bophan = 25;
+        public int _nam, _thang, _id_bophan;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -930,7 +930,14 @@ namespace CtyTinLuong
 
         private void btGuiDuLieu_Click(object sender, EventArgs e)
         {
-            GuiDuLieuBangLuong();
+            if (GuiDuLieuBangLuong())
+            {
+                MessageBox.Show("Lưu dữ liệu chấm công thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Lưu dữ liệu lỗi", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
