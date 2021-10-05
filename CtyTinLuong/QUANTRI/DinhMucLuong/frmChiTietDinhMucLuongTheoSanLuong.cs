@@ -14,18 +14,27 @@ namespace CtyTinLuong
     {
         private void hienthiSUaDuLieu()
         {
-            clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new CtyTinLuong.clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-            cls.iID_DinhMuc_Luong_SanLuong = frmQuanLyDinhMucLuongTheoSanLuong.miID_Sua_DinhMucLuongTheoSanLuong;
-            DataTable dt = cls.SelectOne();
-            if (dt.Rows.Count > 0)
+            try
             {
-                txtMaDinhMuc.Text = dt.Rows[0]["MaDinhMuc"].ToString();
-                txtDienGiai.Text = dt.Rows[0]["DienGiai"].ToString();
-                gridMaVTHH.EditValue = frmQuanLyDinhMucLuongTheoSanLuong.miiiID_VTHH;
-                txtDonGiaTang.Text = dt.Rows[0]["DinhMuc_Tang"].ToString();
-                txtDonGiaThuong.Text = dt.Rows[0]["DinhMuc_KhongTang"].ToString();             
-                checkNgungTheoDoi.Checked = Convert.ToBoolean(dt.Rows[0]["NgungTheoDoi"].ToString());
-                txtMaxSanLuongThuong.Text = cls.fMaxSanLuongThuong.Value.ToString();
+                using (clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new CtyTinLuong.clsDinhMuc_DinhMuc_Luong_TheoSanLuong())
+                {
+                    cls.iID_DinhMuc_Luong_SanLuong = frmQuanLyDinhMucLuongTheoSanLuong.miID_Sua_DinhMucLuongTheoSanLuong;
+                    DataTable dt = cls.SelectOne();
+                    if (dt.Rows.Count > 0)
+                    {
+                        txtMaDinhMuc.Text = dt.Rows[0]["MaDinhMuc"].ToString();
+                        txtDienGiai.Text = dt.Rows[0]["DienGiai"].ToString();
+                        gridMaVTHH.EditValue = frmQuanLyDinhMucLuongTheoSanLuong.miiiID_VTHH;
+                        txtDonGiaTang.Text = dt.Rows[0]["DinhMuc_Tang"].ToString();
+                        txtDonGiaThuong.Text = dt.Rows[0]["DinhMuc_KhongTang"].ToString();
+                        checkNgungTheoDoi.Checked = Convert.ToBoolean(dt.Rows[0]["NgungTheoDoi"].ToString());
+                        txtMaxSanLuongThuong.Text = cls.fMaxSanLuongThuong.Value.ToString();
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     
@@ -36,91 +45,115 @@ namespace CtyTinLuong
                 if (!KiemTraLuu()) return;
                 else
                 {
-                    clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-                    cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
-                    cls.sDienGiai = txtDienGiai.Text.ToString();
-                    cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
-                    cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
-                    cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
-                    cls.bTonTai = true;
-                    cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                    cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
-                    cls.Insert();
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
+                    using (clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong())
+                    {
+                        cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
+                        cls.sDienGiai = txtDienGiai.Text.ToString();
+                        cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
+                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
+                        cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
+                        cls.bTonTai = true;
+                        cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+                        cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
+                        cls.Insert();
+                        MessageBox.Show("Đã lưu! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ee)
             {
-                MessageBox.Show("Lỗi: Dữ liệu nhập vào không hợp lệ!" + ee.Message.ToString(), "Lỗi nhập dữ liệu!");
+                MessageBox.Show("Lỗi: Dữ liệu nhập vào không hợp lệ!" + ee.Message.ToString(), "Lỗi nhập dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Luu_Sua_DinhMuc()
         {
-            if (!KiemTraLuu()) return;
-            else
+            try
             {
-
-                clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-                cls.iID_DinhMuc_Luong_SanLuong = frmQuanLyDinhMucLuongTheoSanLuong.miID_Sua_DinhMucLuongTheoSanLuong;               
-                cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
-                cls.sDienGiai = txtDienGiai.Text.ToString();
-                cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
-                cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
-                cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
-                cls.bTonTai = true;
-                cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
-                cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                cls.Update();
-                MessageBox.Show("Đã lưu");
-                this.Close();
+                using (clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong())
+                {
+                    if (!KiemTraLuu()) return;
+                    else
+                    {
+                        cls.iID_DinhMuc_Luong_SanLuong = frmQuanLyDinhMucLuongTheoSanLuong.miID_Sua_DinhMucLuongTheoSanLuong;
+                        cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
+                        cls.sDienGiai = txtDienGiai.Text.ToString();
+                        cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
+                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
+                        cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
+                        cls.bTonTai = true;
+                        cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
+                        cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+                        cls.Update();
+                        MessageBox.Show("Đã lưu! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: Dữ liệu nhập vào không hợp lệ!" + ea.Message.ToString(), "Lỗi nhập dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
         private bool KiemTraLuu()
         {
-            clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt.DefaultView;
-            DataTable dxxxx = dv.ToTable();
-            string maLuong = txtMaDinhMuc.Text.ToString();
-            string filterExpression = "";
-            filterExpression = "MaDinhMuc ='" + maLuong + "'";
-            DataRow[] rows = dxxxx.Select(filterExpression);
-            int k = rows.Length;
-
-            if (txtMaDinhMuc.Text.ToString() == "")
+            try
             {
-                MessageBox.Show("Chưa chọn mã Định mức");
+                using (clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong())
+                {
+                    DataTable dt = cls.SelectAll();
+                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+                    DataView dv = dt.DefaultView;
+                    DataTable dxxxx = dv.ToTable();
+                    string maLuong = txtMaDinhMuc.Text.ToString();
+                    string filterExpression = "";
+                    filterExpression = "MaDinhMuc ='" + maLuong + "'";
+                    DataRow[] rows = dxxxx.Select(filterExpression);
+                    int k = rows.Length;
+
+                    if (txtMaDinhMuc.Text.ToString() == "")
+                    {
+                        MessageBox.Show("Chưa chọn mã Định mức");
+                        return false;
+                    }
+
+                    else if (txtMaDinhMuc.Text.ToString() == "DM0")
+                    {
+                        MessageBox.Show("Định mức chuẩn, bị trùng tên Định mức chuẩn");
+                        return false;
+                    }
+
+                    else if (txtDonGiaTang.Text.ToString() == "")
+                    {
+                        MessageBox.Show("Chưa chọn đơn giá tăng");
+                        return false;
+                    }
+                    else if (txtDonGiaThuong.Text.ToString() == "")
+                    {
+                        MessageBox.Show("Chưa chọn đơn giá thường");
+                        return false;
+                    }
+                    else if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == true)
+                    {
+                        if (k > 0)
+                        {
+                            MessageBox.Show("Đã có Mã định mức lương: " + maLuong + "\n Vui lòng chọn lại tên mã lương khác");
+                            return false;
+                        }
+                        else return true;
+                    }
+                    else return true;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: Dữ liệu nhập vào không hợp lệ!" + ea.Message.ToString(), "Lỗi nhập dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             
-            else if (txtMaDinhMuc.Text.ToString() == "DM0")
-            {
-                MessageBox.Show("Định mức chuẩn, bị trùng tên Định mức chuẩn");
-                return false;
-            }
-           
-            else if (txtDonGiaTang.Text.ToString() == "")
-            {
-                MessageBox.Show("Chưa chọn đơn giá tăng");
-                return false;
-            }
-            else if (txtDonGiaThuong.Text.ToString() == "")
-            {
-                MessageBox.Show("Chưa chọn đơn giá thường");
-                return false;
-            }
-            else if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == true)
-            {
-                if (k > 0)
-                {
-                    MessageBox.Show("Đã có Mã định mức lương: " + maLuong + "\n Vui lòng chọn lại tên mã lương khác");
-                    return false;
-                }
-                else return true;
-            }
-            else return true;
+            
 
         }
         public frmChiTietDinhMucLuongTheoSanLuong()
@@ -130,20 +163,31 @@ namespace CtyTinLuong
 
         private void frmChiTietDinhMucLuongTheoSanLuong_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            clsTbVatTuHangHoa clsVT = new clsTbVatTuHangHoa();
-            DataTable dtVT = clsVT.T_SelectAll(); ;
+            try
+            {
+                using (clsTbVatTuHangHoa clsVT = new clsTbVatTuHangHoa())
+                {
+                    Cursor.Current = Cursors.WaitCursor;
 
-            gridMaVTHH.Properties.DataSource = dtVT;
-            gridMaVTHH.Properties.ValueMember = "ID_VTHH";
-            gridMaVTHH.Properties.DisplayMember = "MaVT";
-            dtVT.Dispose();
-            clsVT.Dispose();
+                    DataTable dtVT = clsVT.T_SelectAll(); ;
 
-            if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == false)
-                hienthiSUaDuLieu();
+                    gridMaVTHH.Properties.DataSource = dtVT;
+                    gridMaVTHH.Properties.ValueMember = "ID_VTHH";
+                    gridMaVTHH.Properties.DisplayMember = "MaVT";
+                    dtVT.Dispose();
+                    clsVT.Dispose();
 
-            Cursor.Current = Cursors.Default;
+                    if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == false)
+                        hienthiSUaDuLieu();
+
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            catch(Exception ea)
+            {
+                MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -173,9 +217,9 @@ namespace CtyTinLuong
 
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -188,11 +232,11 @@ namespace CtyTinLuong
                 txtDonGiaThuong.Text = String.Format(culture, "{0:N0}", value);
                 txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void txtDonGiaTang_TextChanged(object sender, EventArgs e)
@@ -204,9 +248,10 @@ namespace CtyTinLuong
                 txtDonGiaTang.Text = String.Format(culture, "{0:N0}", value);
                 txtDonGiaTang.Select(txtDonGiaTang.Text.Length, 0);
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands); " 
+                    + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
         }

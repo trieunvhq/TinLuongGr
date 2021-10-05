@@ -148,82 +148,108 @@ namespace CtyTinLuong
 
         private void Load_lockUP_EDIT()
         {
-            clsHUU_DinhMucLuong_CongNhat clsvthhh = new clsHUU_DinhMucLuong_CongNhat();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
+            try
+            {
+                using(clsHUU_DinhMucLuong_CongNhat clsvthhh = new clsHUU_DinhMucLuong_CongNhat())
+                {
+                    DataTable dtvthh = clsvthhh.SelectAll();
+                    dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                    DataView dvvthh = dtvthh.DefaultView;
+                    DataTable newdtvthh = dvvthh.ToTable();
 
-            gridMaDinhMucLuong.Properties.DataSource = newdtvthh;
-            gridMaDinhMucLuong.Properties.ValueMember = "ID_DinhMucLuong_CongNhat";
-            gridMaDinhMucLuong.Properties.DisplayMember = "MaDinhMucLuongCongNhat";
-
+                    gridMaDinhMucLuong.Properties.DataSource = newdtvthh;
+                    gridMaDinhMucLuong.Properties.ValueMember = "ID_DinhMucLuong_CongNhat";
+                    gridMaDinhMucLuong.Properties.DisplayMember = "MaDinhMucLuongCongNhat";
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void HienThi_Sua()
         {
-            clsNhanSu_tbNhanSu cls1 = new CtyTinLuong.clsNhanSu_tbNhanSu();
-            cls1.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
-            DataTable dt1 = cls1.Select_hienThi_ChiTietNhanSu();
-           
-            txtMaNV.Text = dt1.Rows[0]["MaNhanVien"].ToString();
-            txtHoTen.Text= dt1.Rows[0]["TenNhanVien"].ToString();
-            txtSDT.Text= dt1.Rows[0]["SoDienThoai"].ToString();
-            cbBoPhan.Text= dt1.Rows[0]["TenBoPhan"].ToString();
-            cbChucVu.Text= dt1.Rows[0]["TenChucVu"].ToString();
-            cbLoaiHopDong.Text= dt1.Rows[0]["LoaiHopDongLaoDong"].ToString();
-            if (dt1.Rows[0]["NgayBatDau"].ToString() != "")
-                dteNgayBatDau.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayBatDau"].ToString());
-            if (dt1.Rows[0]["NgayChinhThuc"].ToString() != "")
-                dteNgayChinhThuc.EditValue= Convert.ToDateTime(dt1.Rows[0]["NgayChinhThuc"].ToString());
-            if (dt1.Rows[0]["NgayNopBHXH"].ToString() != "")
-                dteNgayNopBHXH.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayNopBHXH"].ToString());
-            else dteNgayNopBHXH.EditValue = null;
+            try
+            {
+                using (clsNhanSu_tbNhanSu cls1 = new CtyTinLuong.clsNhanSu_tbNhanSu())
+                {
+                    cls1.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
+                    DataTable dt1 = cls1.Select_hienThi_ChiTietNhanSu();
 
-            if (dt1.Rows[0]["NgayThoiViec"].ToString() != "")
-                dteNgayThoiViec.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayThoiViec"].ToString());
-            else dteNgayThoiViec.EditValue = null;
+                    txtMaNV.Text = dt1.Rows[0]["MaNhanVien"].ToString();
+                    txtHoTen.Text = dt1.Rows[0]["TenNhanVien"].ToString();
+                    txtSDT.Text = dt1.Rows[0]["SoDienThoai"].ToString();
+                    cbBoPhan.Text = dt1.Rows[0]["TenBoPhan"].ToString();
+                    cbChucVu.Text = dt1.Rows[0]["TenChucVu"].ToString();
+                    cbLoaiHopDong.Text = dt1.Rows[0]["LoaiHopDongLaoDong"].ToString();
+                    if (dt1.Rows[0]["NgayBatDau"].ToString() != "")
+                        dteNgayBatDau.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayBatDau"].ToString());
+                    if (dt1.Rows[0]["NgayChinhThuc"].ToString() != "")
+                        dteNgayChinhThuc.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayChinhThuc"].ToString());
+                    if (dt1.Rows[0]["NgayNopBHXH"].ToString() != "")
+                        dteNgayNopBHXH.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayNopBHXH"].ToString());
+                    else dteNgayNopBHXH.EditValue = null;
 
-            if (dt1.Rows[0]["NgaySinh"].ToString() != "")
-                dteNgaySinh.EditValue= Convert.ToDateTime(dt1.Rows[0]["NgaySinh"].ToString());
-            txtNoiSinh.Text= dt1.Rows[0]["NoiSinh"].ToString();
-            txtDanToc.Text= dt1.Rows[0]["DanToc"].ToString();
-            txtQuocTich.Text= dt1.Rows[0]["QuocTich"].ToString();
-            txtSoCMT.Text= dt1.Rows[0]["SoCMT"].ToString();
-            if (dt1.Rows[0]["NgayCapCMT"].ToString() != "")
-                dteNgayCapCMT.EditValue= Convert.ToDateTime(dt1.Rows[0]["NgayCapCMT"].ToString());
-            txtNoiCapCMT.Text= dt1.Rows[0]["NoiCapCMT"].ToString();
-            if (dt1.Rows[0]["GioiTinh"].ToString() != "1")
-                checkBoxNam.Checked = true;
-            if (dt1.Rows[0]["GioiTinh"].ToString() != "0")
-                checkBoxNu.Checked = true;
+                    if (dt1.Rows[0]["NgayThoiViec"].ToString() != "")
+                        dteNgayThoiViec.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayThoiViec"].ToString());
+                    else dteNgayThoiViec.EditValue = null;
 
-            cls1.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
-            DataTable dtxxx = cls1.SelectOne();
-            gridMaDinhMucLuong.EditValue = cls1.iID_DinhMucLuong_CongNhat.Value;
-           
+                    if (dt1.Rows[0]["NgaySinh"].ToString() != "")
+                        dteNgaySinh.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgaySinh"].ToString());
+                    txtNoiSinh.Text = dt1.Rows[0]["NoiSinh"].ToString();
+                    txtDanToc.Text = dt1.Rows[0]["DanToc"].ToString();
+                    txtQuocTich.Text = dt1.Rows[0]["QuocTich"].ToString();
+                    txtSoCMT.Text = dt1.Rows[0]["SoCMT"].ToString();
+                    if (dt1.Rows[0]["NgayCapCMT"].ToString() != "")
+                        dteNgayCapCMT.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayCapCMT"].ToString());
+                    txtNoiCapCMT.Text = dt1.Rows[0]["NoiCapCMT"].ToString();
+                    if (dt1.Rows[0]["GioiTinh"].ToString() != "1")
+                        checkBoxNam.Checked = true;
+                    if (dt1.Rows[0]["GioiTinh"].ToString() != "0")
+                        checkBoxNu.Checked = true;
+
+                    cls1.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
+                    DataTable dtxxx = cls1.SelectOne();
+                    gridMaDinhMucLuong.EditValue = cls1.iID_DinhMucLuong_CongNhat.Value;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
        
         private void LoadCombobox()
         {
-            clsNhanSu_tbBoPhan cls1 = new clsNhanSu_tbBoPhan();
-            DataTable dt1 = cls1.SelectAll();
-            dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv1 = dt1.DefaultView;
-            DataTable daadv1 = dv1.ToTable();
-            cbBoPhan.DataSource = daadv1;
-            cbBoPhan.DisplayMember = "TenBoPhan";
-            cbBoPhan.ValueMember = "ID_BoPhan";
+            try
+            {
+                using (clsNhanSu_tbBoPhan cls1 = new clsNhanSu_tbBoPhan())
+                {
+                    DataTable dt1 = cls1.SelectAll();
+                    dt1.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+                    DataView dv1 = dt1.DefaultView;
+                    DataTable daadv1 = dv1.ToTable();
+                    cbBoPhan.DataSource = daadv1;
+                    cbBoPhan.DisplayMember = "TenBoPhan";
+                    cbBoPhan.ValueMember = "ID_BoPhan";
 
-            clsNhanSu_tbChucVu cls2 = new clsNhanSu_tbChucVu();
-            DataTable dt2 = cls2.SelectAll();
-            dt2.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv2 = dt2.DefaultView;
-            DataTable daadv2 = dv2.ToTable();
-            cbChucVu.DataSource = daadv2;
-            cbChucVu.DisplayMember = "TenChucVu";
-            cbChucVu.ValueMember = "ID_ChucVu";
-            //TenChucVu
+                    clsNhanSu_tbChucVu cls2 = new clsNhanSu_tbChucVu();
+                    DataTable dt2 = cls2.SelectAll();
+                    dt2.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+                    DataView dv2 = dt2.DefaultView;
+                    DataTable daadv2 = dv2.ToTable();
+                    cbChucVu.DataSource = daadv2;
+                    cbChucVu.DisplayMember = "TenChucVu";
+                    cbChucVu.ValueMember = "ID_ChucVu";
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         public frmChiTietNhanSu()
         {
             InitializeComponent();
@@ -236,16 +262,23 @@ namespace CtyTinLuong
 
         private void frmChiTietNhanSu_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Load_lockUP_EDIT();
-            LoadCombobox();
-            if (frmNhanSu.mbSua == true)
-                HienThi_Sua();
-            else if (frmNhanSu.mbCopy == true)
-                HienThi_Sua();
-            else
-            {  }
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_lockUP_EDIT();
+                LoadCombobox();
+                if (frmNhanSu.mbSua == true)
+                    HienThi_Sua();
+                else if (frmNhanSu.mbCopy == true)
+                    HienThi_Sua();
+                else
+                { }
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBoxNam_CheckedChanged(object sender, EventArgs e)
