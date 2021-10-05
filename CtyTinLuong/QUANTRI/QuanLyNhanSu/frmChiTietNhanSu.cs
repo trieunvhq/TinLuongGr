@@ -44,11 +44,11 @@ namespace CtyTinLuong
                 MessageBox.Show("Chưa chọn hợp đồng lao động ");
                 return false;
             }
-            else if (gridMaDinhMucLuong.Text.ToString() == "")
-            {
-                MessageBox.Show("Chưa chọn cách tính lương ");
-                return false;
-            }
+            //else if (gridMaDinhMucLuong.Text.ToString() == "")
+            //{
+            //    MessageBox.Show("Chưa chọn cách tính lương ");
+            //    return false;
+            //}
             else return true;
 
         }
@@ -97,7 +97,7 @@ namespace CtyTinLuong
                     cls.bTonTai = true;
                     cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                     cls.sGhiChu = txtGhiChu.Text.ToString();
-                    cls.iID_DinhMucLuong_CongNhat = Convert.ToInt32(gridMaDinhMucLuong.EditValue.ToString());
+                    cls.iID_DinhMucLuong_CongNhat = 0;// Convert.ToInt32(gridMaDinhMucLuong.EditValue.ToString());
                     cls.bLuongCongNhat = true;
                     cls.bLuongSanLuong = false;
                     cls.iID_DinhMuc_Luong_SanLuong = 0;
@@ -272,10 +272,10 @@ namespace CtyTinLuong
 
         private void gridMaDinhMucLuong_EditValueChanged(object sender, EventArgs e)
         {
-            clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
-            cls.iID_DinhMucLuong_CongNhat = Convert.ToInt32(gridMaDinhMucLuong.EditValue.ToString());
-            DataTable dt = cls.SelectOne();
-            txtDienGiai.Text = cls.sDienGiai.Value;
+            //clsHUU_DinhMucLuong_CongNhat cls = new clsHUU_DinhMucLuong_CongNhat();
+            //cls.iID_DinhMucLuong_CongNhat = Convert.ToInt32(gridMaDinhMucLuong.EditValue.ToString());
+            //DataTable dt = cls.SelectOne();
+            //txtDienGiai.Text = cls.sDienGiai.Value;
         }
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
