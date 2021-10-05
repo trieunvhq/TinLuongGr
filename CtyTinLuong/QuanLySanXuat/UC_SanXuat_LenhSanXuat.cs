@@ -17,17 +17,28 @@ namespace CtyTinLuong
         private bool isload = false;
         public void LoadData(int sotrang, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
-            gridControl1.DataSource = null;
-            isload = true;
-            _SoTrang = sotrang;
-            clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-            DataTable dt = cls.SelectAll_Load_DaTa_W_NgayThang(_SoTrang, xxtungay, xxdenngay);
+            try
+            {
+                using (clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat())
+                {
+                    gridControl1.DataSource = null;
+                    isload = true;
+                    _SoTrang = sotrang;
+                    
+                    DataTable dt = cls.SelectAll_Load_DaTa_W_NgayThang(_SoTrang, xxtungay, xxdenngay);
 
-            gridControl1.DataSource = dt;
+                    gridControl1.DataSource = dt;
 
-
-            isload = false;
+                    isload = false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         private void Load_PhieuSX(bool islandau)
         {
             int sotrang_ = 1;
@@ -44,45 +55,57 @@ namespace CtyTinLuong
         }
         public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
         {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-
-            using (clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat())
+            try
             {
-                DataTable dt_ = cls.SelectAll_Tinh_SoLenh_SX(xxtungay, xxdenngay);
-                if (dt_ != null && dt_.Rows.Count > 0)
+                btnTrangSau.Visible = true;
+                btnTrangTiep.Visible = true;
+                lbTongSoTrang.Visible = true;
+                txtSoTrang.Visible = true;
+                btnTrangSau.LinkColor = Color.Black;
+                btnTrangTiep.LinkColor = Color.Blue;
+                txtSoTrang.Text = "1";
+
+                using (clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat())
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    DataTable dt_ = cls.SelectAll_Tinh_SoLenh_SX(xxtungay, xxdenngay);
+                    if (dt_ != null && dt_.Rows.Count > 0)
+                    {
+                        lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20)).ToString();
+                    }
+                    else
+                    {
+                        lbTongSoTrang.Text = "/1";
+                    }
                 }
-                else
-                {
+                if (lbTongSoTrang.Text == "0")
                     lbTongSoTrang.Text = "/1";
+                if (lbTongSoTrang.Text == "/1")
+                {
+                    btnTrangSau.LinkColor = Color.Black;
+                    btnTrangTiep.LinkColor = Color.Black;
                 }
             }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
+            catch (Exception ea)
             {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public static int mID_iD_LenhSanXuat;
         private void HienThi_Gridcontrol_2(int iiiIDiD_LenhSanXuat)
         {
-            gridControl2.DataSource = null;
-            
-            clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();         
-            DataTable dtxxxx = cls2.SA_new(iiiIDiD_LenhSanXuat);           
-            gridControl2.DataSource = dtxxxx;
+            try
+            {
+                gridControl2.DataSource = null;
 
-
+                clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new CtyTinLuong.clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
+                DataTable dtxxxx = cls2.SA_new(iiiIDiD_LenhSanXuat);
+                gridControl2.DataSource = dtxxxx;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
        
         public UC_SanXuat_LenhSanXuat()
@@ -92,14 +115,21 @@ namespace CtyTinLuong
         
         private void UC_SanXuat_LenhSanXuat_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            clCaSanXuat.Caption = "Ca\n SX";
-            clNhomMay.Caption = "Nhóm\nmáy";
-            dteTuNgay.EditValue = DateTime.Now.AddDays(-20);
-            dteDenNgay.EditValue = DateTime.Now;
-            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                clCaSanXuat.Caption = "Ca\n SX";
+                clNhomMay.Caption = "Nhóm\nmáy";
+                dteTuNgay.EditValue = DateTime.Now.AddDays(-20);
+                dteDenNgay.EditValue = DateTime.Now;
+                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }      
 
         public void btRefresh_Click(object sender, EventArgs e)
@@ -111,19 +141,26 @@ namespace CtyTinLuong
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
+            try
             {
-                e.DisplayText = (e.RowHandle + 1).ToString();
+                if (e.Column == clSTT)
+                {
+                    e.DisplayText = (e.RowHandle + 1).ToString();
+                }
+                if (e.Column == clNhomMay)
+                {
+                    //gridView4.GetRowCellValue(e.RowHandle, e.Column)
+                    if (gridView1.GetRowCellValue(e.RowHandle, "ID_LoaiMay").ToString() == "1")
+                        e.DisplayText = "IN";
+                    else if (gridView1.GetRowCellValue(e.RowHandle, "ID_LoaiMay").ToString() == "2")
+                        e.DisplayText = "CẮT";
+                    else if (gridView1.GetRowCellValue(e.RowHandle, "ID_LoaiMay").ToString() == "3")
+                        e.DisplayText = "ĐỘT";
+                }
             }
-            if (e.Column == clNhomMay)
+            catch (Exception ea)
             {
-                //gridView4.GetRowCellValue(e.RowHandle, e.Column)
-                if (gridView1.GetRowCellValue(e.RowHandle, "ID_LoaiMay").ToString() == "1") 
-                    e.DisplayText = "IN";
-              else  if (gridView1.GetRowCellValue(e.RowHandle, "ID_LoaiMay").ToString() == "2") 
-                e.DisplayText = "CẮT";
-              else  if (gridView1.GetRowCellValue(e.RowHandle, "ID_LoaiMay").ToString() == "3") 
-                e.DisplayText = "ĐỘT";
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -140,51 +177,53 @@ namespace CtyTinLuong
                     Cursor.Current = Cursors.Default;
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-
-            if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() == "")
+            try
             {
-                MessageBox.Show("Vui lòng chọn lại");
-            }
-            else
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                clsHUU_LenhSanXuat cls1 = new clsHUU_LenhSanXuat();
-                int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
-                cls1.iID_LenhSanXuat = xxID;
-                cls1.SelectOne();
-                if (cls1.bGuiDuLieu == true)
+                if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() == "")
                 {
-                    MessageBox.Show("đã gửi dữ liệu, không thể xoá");
+                    MessageBox.Show("Vui lòng chọn lại");
                 }
                 else
                 {
-                    DialogResult traloi;
-                    traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (traloi == DialogResult.Yes)
+                    Cursor.Current = Cursors.WaitCursor;
+                    clsHUU_LenhSanXuat cls1 = new clsHUU_LenhSanXuat();
+                    int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
+                    cls1.iID_LenhSanXuat = xxID;
+                    cls1.SelectOne();
+                    if (cls1.bGuiDuLieu == true)
                     {
-                        cls1.Delete();
-                        clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
-                        cls2.iID_LenhSanXuat = xxID;
-                        cls2.Delete_w_iID_LenhSanXuat();
-                        Cursor.Current = Cursors.Default;
-                        MessageBox.Show("Đã xóa");
-                        ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                        LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                        MessageBox.Show("đã gửi dữ liệu, không thể xoá");
+                    }
+                    else
+                    {
+                        DialogResult traloi;
+                        traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (traloi == DialogResult.Yes)
+                        {
+                            cls1.Delete();
+                            clsHUU_LenhSanXuat_ChiTietLenhSanXuat cls2 = new clsHUU_LenhSanXuat_ChiTietLenhSanXuat();
+                            cls2.iID_LenhSanXuat = xxID;
+                            cls2.Delete_w_iID_LenhSanXuat();
+                            Cursor.Current = Cursors.Default;
+                            MessageBox.Show("Đã xóa");
+                            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                            LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                        }
                     }
                 }
-
-                
             }
-
-
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -196,9 +235,9 @@ namespace CtyTinLuong
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                 cls.Update_NgungTheoDoi();
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
      
@@ -219,21 +258,38 @@ namespace CtyTinLuong
 
         private void btGui_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
+            try
             {
-                int xxxmclID_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
-                clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();              
-                cls.Update_W_GuiDuLieu(xxxmclID_LenhSanXuat,true);
-                MessageBox.Show("Đã gửi dữ liệu nhập xuất kho");
+                using (clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat())
+                {
+                    if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
+                    {
+                        int xxxmclID_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
+
+                        cls.Update_W_GuiDuLieu(xxxmclID_LenhSanXuat, true);
+                        MessageBox.Show("Đã gửi dữ liệu nhập xuất kho");
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
+            try
             {
-                int xxxmclID_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
-                HienThi_Gridcontrol_2(xxxmclID_LenhSanXuat);
+                if (gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString() != "")
+                {
+                    int xxxmclID_LenhSanXuat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
+                    HienThi_Gridcontrol_2(xxxmclID_LenhSanXuat);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

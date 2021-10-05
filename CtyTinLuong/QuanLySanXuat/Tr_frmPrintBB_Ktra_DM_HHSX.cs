@@ -25,47 +25,56 @@ namespace CtyTinLuong
 
         private void Tr_frmPrintBB_Ktra_DM_HHSX_Load(object sender, EventArgs e)
         {
-            Tr_PrintBB_Ktra_DM_HHSX xtr111 = new Tr_PrintBB_Ktra_DM_HHSX(_tuNgay, _denNgay);
-
-            DataSet_TinLuong ds = new DataSet_TinLuong();
-
-            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
-            DataTable dt = new DataTable();
-            dt = cls.SelectAll_BB_Ktra_DMHHSX_date(_tuNgay, _denNgay, "");
-
-
-            for (int i = 0; i < dt.Rows.Count; i++)
+            try
             {
-                DataRow _ravi = ds.tbBB_Ktra_DMHHSX.NewRow();
+                using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
+                {
+                    Tr_PrintBB_Ktra_DM_HHSX xtr111 = new Tr_PrintBB_Ktra_DM_HHSX(_tuNgay, _denNgay);
 
-                _ravi["NgayThang"] = Convert.ToDateTime(dt.Rows[i]["NgayThang"].ToString());
-                _ravi["SoHieu"] = dt.Rows[i]["SoHieu"].ToString();
-                _ravi["Ca"] = Convert.ToInt32(dt.Rows[i]["Ca"].ToString());
-                _ravi["LoaiHang"] = dt.Rows[i]["LoaiHang"].ToString().Trim();
-                _ravi["LoaiGiay"] = dt.Rows[i]["LoaiGiay"].ToString().Trim();
-                _ravi["SoLuongKtra"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuongKtra"].ToString());
-                _ravi["DonVi_first"] = dt.Rows[i]["DonVi_first"].ToString();
-                _ravi["TrongLuong"] = CheckString.ConvertToDouble_My(dt.Rows[i]["TrongLuong"].ToString());
-                _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong"].ToString());
-                _ravi["DonVi_Second"] = dt.Rows[i]["DonVi_Second"].ToString();
-                _ravi["QuyRaKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["QuyRaKien"].ToString());
-                _ravi["PhePham"] = CheckString.ConvertToDouble_My(dt.Rows[i]["PhePham"].ToString());
-                _ravi["DoCao"] = CheckString.ConvertToDouble_My(dt.Rows[i]["DoCao"].ToString());
-                _ravi["MotBao_kg"] = CheckString.ConvertToDouble_My(dt.Rows[i]["MotBao_kg"].ToString());
-                _ravi["MotBao_SoKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["MotBao_SoKien"].ToString());
-                _ravi["SauMuoi_BaoKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SauMuoi_BaoKien"].ToString());
-                _ravi["GhiChu"] = dt.Rows[i]["GhiChu"].ToString();
+                    DataSet_TinLuong ds = new DataSet_TinLuong();
+                    
+                    DataTable dt = new DataTable();
+                    dt = cls.SelectAll_BB_Ktra_DMHHSX_date(_tuNgay, _denNgay, "");
 
-                ds.tbBB_Ktra_DMHHSX.Rows.Add(_ravi);
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        DataRow _ravi = ds.tbBB_Ktra_DMHHSX.NewRow();
+
+                        _ravi["NgayThang"] = Convert.ToDateTime(dt.Rows[i]["NgayThang"].ToString());
+                        _ravi["SoHieu"] = dt.Rows[i]["SoHieu"].ToString();
+                        _ravi["Ca"] = Convert.ToInt32(dt.Rows[i]["Ca"].ToString());
+                        _ravi["LoaiHang"] = dt.Rows[i]["LoaiHang"].ToString().Trim();
+                        _ravi["LoaiGiay"] = dt.Rows[i]["LoaiGiay"].ToString().Trim();
+                        _ravi["SoLuongKtra"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuongKtra"].ToString());
+                        _ravi["DonVi_first"] = dt.Rows[i]["DonVi_first"].ToString();
+                        _ravi["TrongLuong"] = CheckString.ConvertToDouble_My(dt.Rows[i]["TrongLuong"].ToString());
+                        _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuong"].ToString());
+                        _ravi["DonVi_Second"] = dt.Rows[i]["DonVi_Second"].ToString();
+                        _ravi["QuyRaKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["QuyRaKien"].ToString());
+                        _ravi["PhePham"] = CheckString.ConvertToDouble_My(dt.Rows[i]["PhePham"].ToString());
+                        _ravi["DoCao"] = CheckString.ConvertToDouble_My(dt.Rows[i]["DoCao"].ToString());
+                        _ravi["MotBao_kg"] = CheckString.ConvertToDouble_My(dt.Rows[i]["MotBao_kg"].ToString());
+                        _ravi["MotBao_SoKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["MotBao_SoKien"].ToString());
+                        _ravi["SauMuoi_BaoKien"] = CheckString.ConvertToDouble_My(dt.Rows[i]["SauMuoi_BaoKien"].ToString());
+                        _ravi["GhiChu"] = dt.Rows[i]["GhiChu"].ToString();
+
+                        ds.tbBB_Ktra_DMHHSX.Rows.Add(_ravi);
+                    }
+
+                    xtr111.DataSource = null;
+                    xtr111.DataSource = ds.tbBB_Ktra_DMHHSX;
+                    xtr111.DataMember = "tbBB_Ktra_DMHHSX";
+
+
+                    xtr111.CreateDocument();
+                    documentViewer1.DocumentSource = xtr111;
+                }
             }
-
-            xtr111.DataSource = null;
-            xtr111.DataSource = ds.tbBB_Ktra_DMHHSX;
-            xtr111.DataMember = "tbBB_Ktra_DMHHSX";
-
-
-            xtr111.CreateDocument();
-            documentViewer1.DocumentSource = xtr111;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public static DateTime GetFistDayInMonth(int year, int month)

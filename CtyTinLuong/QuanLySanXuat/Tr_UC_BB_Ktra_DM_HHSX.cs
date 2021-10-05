@@ -51,79 +51,86 @@ namespace CtyTinLuong
 
         public void LoadData(int sotrang, bool isLoadLanDau)
         {
-            isload = true;
-            if (isLoadLanDau)
+            try
             {
-                dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
-                dteDenNgay.EditValue = DateTime.Now;
-                txtTimKiem.Text = "";
-            }
-            else { }
-            _sSearch = txtTimKiem.Text;
-            _ngay_batdau = (DateTime)dteTuNgay.EditValue;
-            _ngay_ketthuc = dteDenNgay.DateTime;
-            _SoTrang = sotrang;
-
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("STT", typeof(int));
-            dt2.Columns.Add("NgayThang", typeof(DateTime));
-            dt2.Columns.Add("SoHieu", typeof(string));
-            dt2.Columns.Add("ID_BienBan", typeof(int));
-            dt2.Columns.Add("CaSanXuat", typeof(int));
-            dt2.Columns.Add("LoaiHang", typeof(string));
-            dt2.Columns.Add("LoaiGiay", typeof(string));
-            dt2.Columns.Add("SoLuongKiemTra", typeof(Double));
-            dt2.Columns.Add("DonVi", typeof(string));
-            dt2.Columns.Add("TrongLuong", typeof(Double));
-            dt2.Columns.Add("SoLuong", typeof(Double));
-            dt2.Columns.Add("DonVi_", typeof(string));
-            dt2.Columns.Add("QuyRaKien", typeof(Double));
-            dt2.Columns.Add("PhePham", typeof(Double));
-            dt2.Columns.Add("DoCao", typeof(Double));
-            dt2.Columns.Add("MotBao_kg", typeof(Double));
-            dt2.Columns.Add("MotBao_SoKien", typeof(Double));
-            dt2.Columns.Add("SauMuoi_BaoKien", typeof(Double));
-            dt2.Columns.Add("GhiChu", typeof(string));
-
-            using (clsTr_BB_KtraDinhMuc_HHSX cls_ = new clsTr_BB_KtraDinhMuc_HHSX())
-            {
-                DataTable dt_ = cls_.SelectPage_BB_Ktra_DMHHSX(_SoTrang, _ngay_batdau, _ngay_ketthuc, _sSearch);
-
-                _RowPage_curent = dt_.Rows.Count;
-
-                if (dt_ != null && dt_.Rows.Count > 0)
+                isload = true;
+                if (isLoadLanDau)
                 {
-                    for (int i = 0; i < dt_.Rows.Count; i++)
+                    dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
+                    dteDenNgay.EditValue = DateTime.Now;
+                    txtTimKiem.Text = "";
+                }
+                else { }
+                _sSearch = txtTimKiem.Text;
+                _ngay_batdau = (DateTime)dteTuNgay.EditValue;
+                _ngay_ketthuc = dteDenNgay.DateTime;
+                _SoTrang = sotrang;
+
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("STT", typeof(int));
+                dt2.Columns.Add("NgayThang", typeof(DateTime));
+                dt2.Columns.Add("SoHieu", typeof(string));
+                dt2.Columns.Add("ID_BienBan", typeof(int));
+                dt2.Columns.Add("CaSanXuat", typeof(int));
+                dt2.Columns.Add("LoaiHang", typeof(string));
+                dt2.Columns.Add("LoaiGiay", typeof(string));
+                dt2.Columns.Add("SoLuongKiemTra", typeof(Double));
+                dt2.Columns.Add("DonVi", typeof(string));
+                dt2.Columns.Add("TrongLuong", typeof(Double));
+                dt2.Columns.Add("SoLuong", typeof(Double));
+                dt2.Columns.Add("DonVi_", typeof(string));
+                dt2.Columns.Add("QuyRaKien", typeof(Double));
+                dt2.Columns.Add("PhePham", typeof(Double));
+                dt2.Columns.Add("DoCao", typeof(Double));
+                dt2.Columns.Add("MotBao_kg", typeof(Double));
+                dt2.Columns.Add("MotBao_SoKien", typeof(Double));
+                dt2.Columns.Add("SauMuoi_BaoKien", typeof(Double));
+                dt2.Columns.Add("GhiChu", typeof(string));
+
+                using (clsTr_BB_KtraDinhMuc_HHSX cls_ = new clsTr_BB_KtraDinhMuc_HHSX())
+                {
+                    DataTable dt_ = cls_.SelectPage_BB_Ktra_DMHHSX(_SoTrang, _ngay_batdau, _ngay_ketthuc, _sSearch);
+
+                    _RowPage_curent = dt_.Rows.Count;
+
+                    if (dt_ != null && dt_.Rows.Count > 0)
                     {
-                        DataRow _ravi = dt2.NewRow();
+                        for (int i = 0; i < dt_.Rows.Count; i++)
+                        {
+                            DataRow _ravi = dt2.NewRow();
 
-                        _ravi["STT"] = _STT.ToString(); _STT++;
-                        _ravi["NgayThang"] = Convert.ToDateTime(dt_.Rows[i]["NgayThang"].ToString());
-                        _ravi["SoHieu"] = dt_.Rows[i]["SoHieu"].ToString(); 
-                        _ravi["ID_BienBan"] = Convert.ToInt32(dt_.Rows[i]["Id_BB"].ToString());
-                        _ravi["CaSanXuat"] = Convert.ToInt32(dt_.Rows[i]["Ca"].ToString());
-                        _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString().Trim();
-                        _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString().Trim();
-                        _ravi["SoLuongKiemTra"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SoLuongKtra"].ToString());
-                        _ravi["DonVi"] = dt_.Rows[i]["DonVi_first"].ToString();
-                        _ravi["TrongLuong"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["TrongLuong"].ToString());
-                        _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SoLuong"].ToString());
-                        _ravi["DonVi_"] = dt_.Rows[i]["DonVi_Second"].ToString();
-                        _ravi["QuyRaKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["QuyRaKien"].ToString());
-                        _ravi["PhePham"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["PhePham"].ToString());
-                        _ravi["DoCao"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["DoCao"].ToString());
-                        _ravi["MotBao_kg"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["MotBao_kg"].ToString());
-                        _ravi["MotBao_SoKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["MotBao_SoKien"].ToString());
-                        _ravi["SauMuoi_BaoKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SauMuoi_BaoKien"].ToString());
-                        _ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
+                            _ravi["STT"] = _STT.ToString(); _STT++;
+                            _ravi["NgayThang"] = Convert.ToDateTime(dt_.Rows[i]["NgayThang"].ToString());
+                            _ravi["SoHieu"] = dt_.Rows[i]["SoHieu"].ToString();
+                            _ravi["ID_BienBan"] = Convert.ToInt32(dt_.Rows[i]["Id_BB"].ToString());
+                            _ravi["CaSanXuat"] = Convert.ToInt32(dt_.Rows[i]["Ca"].ToString());
+                            _ravi["LoaiHang"] = dt_.Rows[i]["LoaiHang"].ToString().Trim();
+                            _ravi["LoaiGiay"] = dt_.Rows[i]["LoaiGiay"].ToString().Trim();
+                            _ravi["SoLuongKiemTra"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SoLuongKtra"].ToString());
+                            _ravi["DonVi"] = dt_.Rows[i]["DonVi_first"].ToString();
+                            _ravi["TrongLuong"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["TrongLuong"].ToString());
+                            _ravi["SoLuong"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SoLuong"].ToString());
+                            _ravi["DonVi_"] = dt_.Rows[i]["DonVi_Second"].ToString();
+                            _ravi["QuyRaKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["QuyRaKien"].ToString());
+                            _ravi["PhePham"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["PhePham"].ToString());
+                            _ravi["DoCao"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["DoCao"].ToString());
+                            _ravi["MotBao_kg"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["MotBao_kg"].ToString());
+                            _ravi["MotBao_SoKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["MotBao_SoKien"].ToString());
+                            _ravi["SauMuoi_BaoKien"] = CheckString.ConvertToDouble_My(dt_.Rows[i]["SauMuoi_BaoKien"].ToString());
+                            _ravi["GhiChu"] = dt_.Rows[i]["GhiChu"].ToString();
 
-                        dt2.Rows.Add(_ravi);
+                            dt2.Rows.Add(_ravi);
+                        }
                     }
                 }
-            }
-            gridControl1.DataSource = dt2;
+                gridControl1.DataSource = dt2;
 
-            isload = false;
+                isload = false;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
        
@@ -203,43 +210,49 @@ namespace CtyTinLuong
                     Cursor.Current = Cursors.Default;
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-
-            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
-            cls.iId_BB = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
-
-            DialogResult traloi;
-            traloi = MessageBox.Show("Xóa dữ liệu tại dòng: \n"
-                + "STT: " + gridView1.GetFocusedRowCellValue(clSTT).ToString() + " | "
-                + "Ngày: " + Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clNgayThang).ToString()).ToString("dd/MM/yyyy") + " | "
-                + "Ca: " + gridView1.GetFocusedRowCellValue(clCaLamViec).ToString() + " | "
-                + "Loại Hàng: " + gridView1.GetFocusedRowCellValue(clLoaiHang).ToString()
-                + "...", "Delete", 
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (traloi == DialogResult.Yes)
+            try
             {
-                if (cls.Delete())
+                Cursor.Current = Cursors.WaitCursor;
+
+                clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+                cls.iId_BB = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BienBan).ToString());
+
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xóa dữ liệu tại dòng: \n"
+                    + "STT: " + gridView1.GetFocusedRowCellValue(clSTT).ToString() + " | "
+                    + "Ngày: " + Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clNgayThang).ToString()).ToString("dd/MM/yyyy") + " | "
+                    + "Ca: " + gridView1.GetFocusedRowCellValue(clCaLamViec).ToString() + " | "
+                    + "Loại Hàng: " + gridView1.GetFocusedRowCellValue(clLoaiHang).ToString()
+                    + "...", "Delete",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _STT -= _RowPage_curent;
-                    LoadData(_SoTrang, false);
-                }
-                else
-                {
-                    MessageBox.Show("Xóa dữ liệu thất bại. Kiểm tra lại kết nối!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (cls.Delete())
+                    {
+                        MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _STT -= _RowPage_curent;
+                        LoadData(_SoTrang, false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại. Kiểm tra lại kết nối!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
 
+                Cursor.Current = Cursors.Default;
             }
-
-            Cursor.Current = Cursors.Default;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -295,19 +308,23 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click_1(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
 
-            mbAdd_BB_Ktra = true;
-            mbCopy_BB_Ktra = false;
-            mb_Sua_BB_Ktra = false;
+                mbAdd_BB_Ktra = true;
+                mbCopy_BB_Ktra = false;
+                mb_Sua_BB_Ktra = false;
 
-            //
-            Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
-            //_frmQLSX.Hide();
-            ff.Show();
-            //_frmQLSX.Show();
+                Tr_frmChiTietBB_Ktra_DMHH ff = new Tr_frmChiTietBB_Ktra_DMHH(this);
+                ff.Show();
 
-            Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
@@ -322,8 +339,10 @@ namespace CtyTinLuong
                 _STT = 1;
                 LoadData(1, false);
             }
-            catch
-            { }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
@@ -337,8 +356,10 @@ namespace CtyTinLuong
                 _STT = 1;
                 LoadData(1, false);
             }
-            catch
-            { }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -390,43 +411,49 @@ namespace CtyTinLuong
                     Cursor.Current = Cursors.Default;
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         //
         public void ResetSoTrang_BB()
         {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-
-            using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
+            try
             {
-                DataTable dt_ = cls.T_TongSoBB(_ngay_batdau, _ngay_ketthuc, _sSearch);
-                if (dt_ != null && dt_.Rows.Count > 0)
+                btnTrangSau.Visible = true;
+                btnTrangTiep.Visible = true;
+                lbTongSoTrang.Visible = true;
+                txtSoTrang.Visible = true;
+                btnTrangSau.LinkColor = Color.Black;
+                btnTrangTiep.LinkColor = Color.Blue;
+                txtSoTrang.Text = "1";
+
+                using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
                 {
-                    _TongSoTrang = Convert.ToInt32(Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20));
-                    lbTongSoTrang.Text = "/" + _TongSoTrang.ToString();
+                    DataTable dt_ = cls.T_TongSoBB(_ngay_batdau, _ngay_ketthuc, _sSearch);
+                    if (dt_ != null && dt_.Rows.Count > 0)
+                    {
+                        _TongSoTrang = Convert.ToInt32(Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)20));
+                        lbTongSoTrang.Text = "/" + _TongSoTrang.ToString();
+                    }
+                    else
+                    {
+                        lbTongSoTrang.Text = "/1";
+                    }
                 }
-                else
-                {
+                if (lbTongSoTrang.Text == "0")
                     lbTongSoTrang.Text = "/1";
+                if (lbTongSoTrang.Text == "/1")
+                {
+                    btnTrangSau.LinkColor = Color.Black;
+                    btnTrangTiep.LinkColor = Color.Black;
                 }
             }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
+            catch (Exception ea)
             {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

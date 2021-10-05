@@ -15,78 +15,104 @@ namespace CtyTinLuong
     {
         private bool Insert_BB_Ktra_DMHHSX()
         {
-            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
-            cls.daNgayThang = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
-            cls.sSoHieu = txtSoHieu.Text.ToString().Trim();
-            cls.iCa = Convert.ToInt32(txtCa.Text.ToString());
-            cls.sLoaiHang = txtLoaiHang.Text.ToString().Trim();
-            cls.sLoaiGiay = txtLoaiGiay.Text.ToString().Trim();
-            cls.fSoLuongKtra = CheckString.ConvertToDouble_My(txtSoLuongKtra.Text.ToString());
-            cls.sDonVi_first = txtDonVi_in.Text.ToString().Trim();
-            cls.fTrongLuong = CheckString.ConvertToDouble_My(txtTrongLuong.Text.ToString());
-            cls.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuong.Text.ToString());
-            cls.sDonVi_Second = txtDonVi_Out.Text.ToString().Trim();
-            cls.fQuyRaKien = CheckString.ConvertToDouble_My(txtQuyRaKien.Text.ToString());
-            cls.fPhePham = CheckString.ConvertToDouble_My(txtPhePham.Text.ToString());
-            cls.fDoCao = CheckString.ConvertToDouble_My(txtDoCao.Text.ToString());
-            cls.fMotBao_kg = CheckString.ConvertToDouble_My(txt1Bao_kg.Text.ToString());
-            cls.fMotBao_SoKien = CheckString.ConvertToDouble_My(txt1Bao_SoKien.Text.ToString());
-            cls.fSauMuoi_BaoKien = CheckString.ConvertToDouble_My(txt60Bao_Kien.Text.ToString());
-            cls.sGhiChu = txtGhiChu.Text.ToString().Trim();
+            try
+            {
+                using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
+                {
+                    cls.daNgayThang = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
+                    cls.sSoHieu = txtSoHieu.Text.ToString().Trim();
+                    cls.iCa = Convert.ToInt32(txtCa.Text.ToString());
+                    cls.sLoaiHang = txtLoaiHang.Text.ToString().Trim();
+                    cls.sLoaiGiay = txtLoaiGiay.Text.ToString().Trim();
+                    cls.fSoLuongKtra = CheckString.ConvertToDouble_My(txtSoLuongKtra.Text.ToString());
+                    cls.sDonVi_first = txtDonVi_in.Text.ToString().Trim();
+                    cls.fTrongLuong = CheckString.ConvertToDouble_My(txtTrongLuong.Text.ToString());
+                    cls.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuong.Text.ToString());
+                    cls.sDonVi_Second = txtDonVi_Out.Text.ToString().Trim();
+                    cls.fQuyRaKien = CheckString.ConvertToDouble_My(txtQuyRaKien.Text.ToString());
+                    cls.fPhePham = CheckString.ConvertToDouble_My(txtPhePham.Text.ToString());
+                    cls.fDoCao = CheckString.ConvertToDouble_My(txtDoCao.Text.ToString());
+                    cls.fMotBao_kg = CheckString.ConvertToDouble_My(txt1Bao_kg.Text.ToString());
+                    cls.fMotBao_SoKien = CheckString.ConvertToDouble_My(txt1Bao_SoKien.Text.ToString());
+                    cls.fSauMuoi_BaoKien = CheckString.ConvertToDouble_My(txt60Bao_Kien.Text.ToString());
+                    cls.sGhiChu = txtGhiChu.Text.ToString().Trim();
 
-            if (cls.Insert()) return true;
-            else return false;
+                    if (cls.Insert()) return true;
+                    else return false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
 
         // 
         private bool Update_BB_Ktra_DMHHSX()
         {
-            clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX();
+            try
+            {
+                using (clsTr_BB_KtraDinhMuc_HHSX cls = new clsTr_BB_KtraDinhMuc_HHSX())
+                {
+                    cls.iId_BB = Tr_UC_BB_Ktra_DM_HHSX.miID_BienBan;
+                    cls.daNgayThang = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
+                    cls.sSoHieu = txtSoHieu.Text.ToString().Trim();
+                    cls.iCa = Convert.ToInt32(txtCa.Text.ToString());
+                    cls.sLoaiHang = txtLoaiHang.Text.ToString().Trim();
+                    cls.sLoaiGiay = txtLoaiGiay.Text.ToString().Trim();
+                    cls.fSoLuongKtra = CheckString.ConvertToDouble_My(txtSoLuongKtra.Text.ToString());
+                    cls.sDonVi_first = txtDonVi_in.Text.ToString().Trim();
+                    cls.fTrongLuong = CheckString.ConvertToDouble_My(txtTrongLuong.Text.ToString());
+                    cls.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuong.Text.ToString());
+                    cls.sDonVi_Second = txtDonVi_Out.Text.ToString().Trim();
+                    cls.fQuyRaKien = CheckString.ConvertToDouble_My(txtQuyRaKien.Text.ToString());
+                    cls.fPhePham = CheckString.ConvertToDouble_My(txtPhePham.Text.ToString());
+                    cls.fDoCao = CheckString.ConvertToDouble_My(txtDoCao.Text.ToString());
+                    cls.fMotBao_kg = CheckString.ConvertToDouble_My(txt1Bao_kg.Text.ToString());
+                    cls.fMotBao_SoKien = CheckString.ConvertToDouble_My(txt1Bao_SoKien.Text.ToString());
+                    cls.fSauMuoi_BaoKien = CheckString.ConvertToDouble_My(txt60Bao_Kien.Text.ToString());
+                    cls.sGhiChu = txtGhiChu.Text.ToString().Trim();
 
-            cls.iId_BB = Tr_UC_BB_Ktra_DM_HHSX.miID_BienBan;
-            cls.daNgayThang = Convert.ToDateTime(dateNgayThang.EditValue.ToString());
-            cls.sSoHieu = txtSoHieu.Text.ToString().Trim();
-            cls.iCa = Convert.ToInt32(txtCa.Text.ToString());
-            cls.sLoaiHang = txtLoaiHang.Text.ToString().Trim();
-            cls.sLoaiGiay = txtLoaiGiay.Text.ToString().Trim();
-            cls.fSoLuongKtra = CheckString.ConvertToDouble_My(txtSoLuongKtra.Text.ToString());
-            cls.sDonVi_first = txtDonVi_in.Text.ToString().Trim();
-            cls.fTrongLuong = CheckString.ConvertToDouble_My(txtTrongLuong.Text.ToString());
-            cls.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuong.Text.ToString());
-            cls.sDonVi_Second = txtDonVi_Out.Text.ToString().Trim();
-            cls.fQuyRaKien = CheckString.ConvertToDouble_My(txtQuyRaKien.Text.ToString());
-            cls.fPhePham = CheckString.ConvertToDouble_My(txtPhePham.Text.ToString());
-            cls.fDoCao = CheckString.ConvertToDouble_My(txtDoCao.Text.ToString());
-            cls.fMotBao_kg = CheckString.ConvertToDouble_My(txt1Bao_kg.Text.ToString());
-            cls.fMotBao_SoKien = CheckString.ConvertToDouble_My(txt1Bao_SoKien.Text.ToString());
-            cls.fSauMuoi_BaoKien = CheckString.ConvertToDouble_My(txt60Bao_Kien.Text.ToString());
-            cls.sGhiChu = txtGhiChu.Text.ToString().Trim();
-
-            if (cls.Update()) return true;
-            else return false;
+                    if (cls.Update()) return true;
+                    else return false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
        
    
         private void Load_frmEdit()
         {
-            dateNgayThang.EditValue = Tr_UC_BB_Ktra_DM_HHSX.mdNgayThang;
-            txtSoHieu.Text = Tr_UC_BB_Ktra_DM_HHSX.msSoHieu;
-            txtCa.Text = Tr_UC_BB_Ktra_DM_HHSX.miCaSanXuat.ToString();
-            txtLoaiHang.Text = Tr_UC_BB_Ktra_DM_HHSX.msLoaiHang.ToString();
-            txtLoaiGiay.Text = Tr_UC_BB_Ktra_DM_HHSX.msLoaiGiay.ToString();
-            txtSoLuongKtra.Text = Tr_UC_BB_Ktra_DM_HHSX.mfSoLuongKiemTra.ToString();
-            txtDonVi_in.Text = Tr_UC_BB_Ktra_DM_HHSX.msDonVi;
-            txtTrongLuong.Text = Tr_UC_BB_Ktra_DM_HHSX.mfTrongLuong.ToString();
-            txtSoLuong.Text = Tr_UC_BB_Ktra_DM_HHSX.mfSoLuong.ToString();
-            txtDonVi_Out.Text = Tr_UC_BB_Ktra_DM_HHSX.msDonVi_;
-            txtQuyRaKien.Text = Tr_UC_BB_Ktra_DM_HHSX.mfQuyRaKien.ToString();
-            txtPhePham.Text = Tr_UC_BB_Ktra_DM_HHSX.mfPhePham.ToString();
-            txtDoCao.Text = Tr_UC_BB_Ktra_DM_HHSX.mfDoCao.ToString();
-            txt1Bao_kg.Text = Tr_UC_BB_Ktra_DM_HHSX.mfMotBao_kg.ToString();
-            txt1Bao_SoKien.Text = Tr_UC_BB_Ktra_DM_HHSX.mfMotBao_SoKien.ToString();
-            txt60Bao_Kien.Text = Tr_UC_BB_Ktra_DM_HHSX.mfSauMuoi_BaoKien.ToString();
-            txtGhiChu.Text = Tr_UC_BB_Ktra_DM_HHSX.msGhiChu;
+            try
+            {
+                dateNgayThang.EditValue = Tr_UC_BB_Ktra_DM_HHSX.mdNgayThang;
+                txtSoHieu.Text = Tr_UC_BB_Ktra_DM_HHSX.msSoHieu;
+                txtCa.Text = Tr_UC_BB_Ktra_DM_HHSX.miCaSanXuat.ToString();
+                txtLoaiHang.Text = Tr_UC_BB_Ktra_DM_HHSX.msLoaiHang.ToString();
+                txtLoaiGiay.Text = Tr_UC_BB_Ktra_DM_HHSX.msLoaiGiay.ToString();
+                txtSoLuongKtra.Text = Tr_UC_BB_Ktra_DM_HHSX.mfSoLuongKiemTra.ToString();
+                txtDonVi_in.Text = Tr_UC_BB_Ktra_DM_HHSX.msDonVi;
+                txtTrongLuong.Text = Tr_UC_BB_Ktra_DM_HHSX.mfTrongLuong.ToString();
+                txtSoLuong.Text = Tr_UC_BB_Ktra_DM_HHSX.mfSoLuong.ToString();
+                txtDonVi_Out.Text = Tr_UC_BB_Ktra_DM_HHSX.msDonVi_;
+                txtQuyRaKien.Text = Tr_UC_BB_Ktra_DM_HHSX.mfQuyRaKien.ToString();
+                txtPhePham.Text = Tr_UC_BB_Ktra_DM_HHSX.mfPhePham.ToString();
+                txtDoCao.Text = Tr_UC_BB_Ktra_DM_HHSX.mfDoCao.ToString();
+                txt1Bao_kg.Text = Tr_UC_BB_Ktra_DM_HHSX.mfMotBao_kg.ToString();
+                txt1Bao_SoKien.Text = Tr_UC_BB_Ktra_DM_HHSX.mfMotBao_SoKien.ToString();
+                txt60Bao_Kien.Text = Tr_UC_BB_Ktra_DM_HHSX.mfSauMuoi_BaoKien.ToString();
+                txtGhiChu.Text = Tr_UC_BB_Ktra_DM_HHSX.msGhiChu;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool CheckDataInput()
@@ -293,12 +319,29 @@ namespace CtyTinLuong
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            if  (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra == true 
-                && Tr_UC_BB_Ktra_DM_HHSX.mb_Sua_BB_Ktra == false)
+            try
             {
-                if (CheckDataInput())
+                if (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra == true
+               && Tr_UC_BB_Ktra_DM_HHSX.mb_Sua_BB_Ktra == false)
                 {
-                    if (Insert_BB_Ktra_DMHHSX())
+                    if (CheckDataInput())
+                    {
+                        if (Insert_BB_Ktra_DMHHSX())
+                        {
+                            this.Close();
+                            _ucBBKTDM.btRefresh_Click(null, null);
+                            MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lưu dữ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else if (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra == false
+                    && Tr_UC_BB_Ktra_DM_HHSX.mb_Sua_BB_Ktra == true)
+                {
+                    if (Update_BB_Ktra_DMHHSX())
                     {
                         this.Close();
                         _ucBBKTDM.btRefresh_Click(null, null);
@@ -310,21 +353,10 @@ namespace CtyTinLuong
                     }
                 }
             }
-            else if (Tr_UC_BB_Ktra_DM_HHSX.mbAdd_BB_Ktra == false
-                && Tr_UC_BB_Ktra_DM_HHSX.mb_Sua_BB_Ktra == true)
+            catch (Exception ea)
             {
-                if (Update_BB_Ktra_DMHHSX())
-                {
-                    this.Close();
-                    _ucBBKTDM.btRefresh_Click(null, null);
-                    MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Lưu dữ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void dateNgayThang_KeyPress(object sender, KeyPressEventArgs e)
