@@ -22,10 +22,18 @@ namespace CtyTinLuong
         public static int xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
         private void Load_DaTa(int xxxIDLoaiHang)
         {
-            clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT();
-            DataTable dt = cls.SA_W_Loaihang(xxxIDLoaiHang);
-            gridControl1.DataSource = dt;
-
+            try
+            {
+                using (clsDinhMuc_tbDinhMuc_DOT cls = new clsDinhMuc_tbDinhMuc_DOT())
+                {
+                    DataTable dt = cls.SA_W_Loaihang(xxxIDLoaiHang);
+                    gridControl1.DataSource = dt;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         SanXuat_frmQuanLySanXuat _frmQLSX;
@@ -37,57 +45,83 @@ namespace CtyTinLuong
 
         private void UCDinhMucHangNhu_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-           
-            mb_TheMoi_DinhMuc_Dot = false;
-            xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
-            checkHangNhu.Checked = true;
-            Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                mb_TheMoi_DinhMuc_Dot = false;
+                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
+                checkHangNhu.Checked = true;
+                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void btRefresh_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
      
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clKhoa).ToString()) == true)
+            try
             {
-                MessageBox.Show("Dữ liệu khoá, không thể xoá");
-                return;
-            }
-            else
-            {
-                DialogResult traloi;
-                traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (traloi == DialogResult.Yes)
+                if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clKhoa).ToString()) == true)
                 {
-                    Cursor.Current = Cursors.WaitCursor;
-                    clsDinhMuc_tbDinhMuc_DOT cls1 = new clsDinhMuc_tbDinhMuc_DOT();
-                    cls1.iID_DinhMuc_Dot = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
-                    cls1.Delete();
-                    MessageBox.Show("Đã xóa");
-                    Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
-                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("Dữ liệu khoá, không thể xoá");
+                    return;
                 }
+                else
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (traloi == DialogResult.Yes)
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        clsDinhMuc_tbDinhMuc_DOT cls1 = new clsDinhMuc_tbDinhMuc_DOT();
+                        cls1.iID_DinhMuc_Dot = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
+                        cls1.Delete();
+                        MessageBox.Show("Đã xóa");
+                        Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                        Cursor.Current = Cursors.Default;
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            mb_TheMoi_DinhMuc_Dot = true;
-            frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu(this);
-            //_frmQLSX.Hide();
-            ff.ShowDialog();
-            //_frmQLSX.Show();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                mb_TheMoi_DinhMuc_Dot = true;
+                frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu(this);
+                ff.ShowDialog();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -102,15 +136,13 @@ namespace CtyTinLuong
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu(this);
-                    //_frmQLSX.Hide();
                     ff.ShowDialog();
-                    //_frmQLSX.Show();
                     Cursor.Current = Cursors.Default;
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -123,9 +155,9 @@ namespace CtyTinLuong
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                 cls.Update_NgungTheoDoi();
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -139,47 +171,68 @@ namespace CtyTinLuong
 
         private void checkHangNhu_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkHangNhu.Checked==true)
+            try
             {
-                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
-                checkHangCuc.Checked = false;
-                checkHangSot.Checked = false;
+                if (checkHangNhu.Checked == true)
+                {
+                    xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 2;
+                    checkHangCuc.Checked = false;
+                    checkHangSot.Checked = false;
 
-                clSoKG_MotBao.Visible = true;
-                clSoKienMotBao.Caption = "Kiện/Bao";
-                clSoKG_MotBao.Caption = "Cục/Bao";
+                    clSoKG_MotBao.Visible = true;
+                    clSoKienMotBao.Caption = "Kiện/Bao";
+                    clSoKG_MotBao.Caption = "Cục/Bao";
 
-                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                    Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void checkHangCuc_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkHangCuc.Checked == true)
+            try
             {
-                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
-                checkHangNhu.Checked = false;
-                checkHangSot.Checked = false;
+                if (checkHangCuc.Checked == true)
+                {
+                    xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 3;
+                    checkHangNhu.Checked = false;
+                    checkHangSot.Checked = false;
 
-                clSoKienMotBao.Caption = "Cục/Kiện";
-                clSoKG_MotBao.Visible = false;
+                    clSoKienMotBao.Caption = "Cục/Kiện";
+                    clSoKG_MotBao.Visible = false;
 
-                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                    Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void checkHangSot_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkHangSot.Checked == true)
+            try
             {
-                clSoKG_MotBao.Visible = true;
-                clSoKienMotBao.Caption = "Kiện/Sọt";
-                clSoKG_MotBao.Caption = "Kg/Sọt";
+                if (checkHangSot.Checked == true)
+                {
+                    clSoKG_MotBao.Visible = true;
+                    clSoKienMotBao.Caption = "Kiện/Sọt";
+                    clSoKG_MotBao.Caption = "Kg/Sọt";
 
-                xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
-                checkHangNhu.Checked = false;
-                checkHangCuc.Checked = false;
-                Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                    xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0 = 4;
+                    checkHangNhu.Checked = false;
+                    checkHangCuc.Checked = false;
+                    Load_DaTa(xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
