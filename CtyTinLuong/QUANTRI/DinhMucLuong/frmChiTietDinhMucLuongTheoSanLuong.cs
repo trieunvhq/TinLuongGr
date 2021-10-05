@@ -31,21 +31,28 @@ namespace CtyTinLuong
     
         private void Luu_ThemMoi_DinhMuc()
         {
-            if (!KiemTraLuu()) return;
-            else
+            try
             {
-                clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-                cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
-                cls.sDienGiai = txtDienGiai.Text.ToString();
-                cls.iID_VTHH= Convert.ToInt16(gridMaVTHH.EditValue.ToString());
-                cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());            
-                cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());               
-                cls.bTonTai = true;
-                cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                cls.fMaxSanLuongThuong= CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
-                cls.Insert();
-                MessageBox.Show("Đã lưu");
-                this.Close();
+                if (!KiemTraLuu()) return;
+                else
+                {
+                    clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
+                    cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
+                    cls.sDienGiai = txtDienGiai.Text.ToString();
+                    cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
+                    cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
+                    cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
+                    cls.bTonTai = true;
+                    cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+                    cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
+                    cls.Insert();
+                    MessageBox.Show("Đã lưu");
+                    this.Close();
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Lỗi: Dữ liệu nhập vào không hợp lệ!" + ee.Message.ToString(), "Lỗi nhập dữ liệu!");
             }
         }
         private void Luu_Sua_DinhMuc()

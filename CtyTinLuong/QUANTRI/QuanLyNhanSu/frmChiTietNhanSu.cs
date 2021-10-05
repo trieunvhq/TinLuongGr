@@ -54,88 +54,96 @@ namespace CtyTinLuong
         }
         private void Luu_DuLieu()
         {
-            if (!KiemTraLuu()) return;
-            else
+            try
             {
-                clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
-                cls.sMaNhanVien = txtMaNV.Text.ToString();
-                cls.sLoaiHopDongLaoDong = cbLoaiHopDong.Text.ToString();
-                cls.iID_BoPhan =Convert.ToInt16(cbBoPhan.SelectedValue.ToString());
-                cls.iID_ChucVu= Convert.ToInt16(cbChucVu.SelectedValue.ToString());
-                cls.sTenNhanVien = txtHoTen.Text.ToString();
-                cls.sSoDienThoai = txtSDT.Text.ToString();
-                if (dteNgayBatDau.Text.ToString() != "")
-                    cls.daNgayBatDau = dteNgayBatDau.DateTime;
-                else cls.daNgayBatDau = DateTime.Today;
-                if (dteNgayChinhThuc.Text.ToString() != "")
-                    cls.daNgayChinhThuc = dteNgayChinhThuc.DateTime;
-                else cls.daNgayChinhThuc = DateTime.Today;
-                if (dteNgayThoiViec.Text.ToString() != "")
-                    cls.daNgayThoiViec = dteNgayThoiViec.DateTime;
-                else cls.daNgayThoiViec = DateTime.Today;
-                if (dteNgayNopBHXH.Text.ToString() != "")
-                    cls.daNgayNopBHXH = dteNgayNopBHXH.DateTime;
-                else cls.daNgayNopBHXH = DateTime.Today;
-                if (dteNgaySinh.Text.ToString() != "")
-                    cls.daNgaySinh = dteNgaySinh.DateTime;
-                else cls.daNgaySinh = DateTime.Today;
-                if (dteNgayCapCMT.Text.ToString() != "")
-                    cls.daNgayCapCMT = dteNgayCapCMT.DateTime;
-                else cls.daNgayCapCMT = DateTime.Today;
-                cls.sNoiSinh=txtNoiSinh.Text.ToString();
-                if (checkBoxNam.Checked == true)
-                    cls.bGioiTinh = true;
-                else cls.bGioiTinh = false;
-                cls.sDanToc=txtDanToc.Text.ToString();
-                cls.sTonGiao=txtTonGiao.Text.ToString();
-                cls.sQuocTich = txtQuocTich.Text.ToString();
-                cls.sSoCMT = txtSoCMT.Text.ToString();
-                cls.sNoiCapCMT = txtNoiCapCMT.Text.ToString();
-                //cls.sLoaiHinhLuong = cbLoaiHinhLuong.Text.ToString();
-                cls.bTonTai = true;
-                cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                cls.sGhiChu = txtGhiChu.Text.ToString();
-                cls.iID_DinhMucLuong_CongNhat = Convert.ToInt32(gridMaDinhMucLuong.EditValue.ToString());
-                cls.bLuongCongNhat = true;
-                cls.bLuongSanLuong = false;
-                cls.iID_DinhMuc_Luong_SanLuong = 0;
-                if (frmNhanSu.mbSua == false)
+                if (!KiemTraLuu()) return;
+                else
                 {
-                    if (!String.IsNullOrEmpty(txtMaNV.Text))
+                    clsNhanSu_tbNhanSu cls = new clsNhanSu_tbNhanSu();
+                    cls.sMaNhanVien = txtMaNV.Text.ToString();
+                    cls.sLoaiHopDongLaoDong = cbLoaiHopDong.Text.ToString();
+                    cls.iID_BoPhan = Convert.ToInt16(cbBoPhan.SelectedValue.ToString());
+                    cls.iID_ChucVu = Convert.ToInt16(cbChucVu.SelectedValue.ToString());
+                    cls.sTenNhanVien = txtHoTen.Text.ToString();
+                    cls.sSoDienThoai = txtSDT.Text.ToString();
+                    if (dteNgayBatDau.EditValue != null)
+                        cls.daNgayBatDau = dteNgayBatDau.DateTime;
+                    else cls.daNgayBatDau = DateTime.Today;
+                    if (dteNgayChinhThuc.EditValue != null)
+                        cls.daNgayChinhThuc = dteNgayChinhThuc.DateTime;
+                    else cls.daNgayChinhThuc = DateTime.Today;
+                    if (dteNgayThoiViec.EditValue != null)
+                        cls.daNgayThoiViec = dteNgayThoiViec.DateTime;
+                    else cls.daNgayThoiViec = new DateTime(1900,1,1);
+                    if (dteNgayNopBHXH.EditValue != null)
+                        cls.daNgayNopBHXH = dteNgayNopBHXH.DateTime;
+                    else cls.daNgayNopBHXH = new DateTime(1900, 1, 1);
+                    if (dteNgaySinh.EditValue != null)
+                        cls.daNgaySinh = dteNgaySinh.DateTime;
+                    else cls.daNgaySinh = DateTime.Today;
+                    if (dteNgayCapCMT.EditValue != null)
+                        cls.daNgayCapCMT = dteNgayCapCMT.DateTime;
+                    else cls.daNgayCapCMT = DateTime.Today;
+                    cls.sNoiSinh = txtNoiSinh.Text.ToString();
+                    if (checkBoxNam.Checked == true)
+                        cls.bGioiTinh = true;
+                    else cls.bGioiTinh = false;
+                    cls.sDanToc = txtDanToc.Text.ToString();
+                    cls.sTonGiao = txtTonGiao.Text.ToString();
+                    cls.sQuocTich = txtQuocTich.Text.ToString();
+                    cls.sSoCMT = txtSoCMT.Text.ToString();
+                    cls.sNoiCapCMT = txtNoiCapCMT.Text.ToString();
+                    //cls.sLoaiHinhLuong = cbLoaiHinhLuong.Text.ToString();
+                    cls.bTonTai = true;
+                    cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
+                    cls.sGhiChu = txtGhiChu.Text.ToString();
+                    cls.iID_DinhMucLuong_CongNhat = Convert.ToInt32(gridMaDinhMucLuong.EditValue.ToString());
+                    cls.bLuongCongNhat = true;
+                    cls.bLuongSanLuong = false;
+                    cls.iID_DinhMuc_Luong_SanLuong = 0;
+                    if (frmNhanSu.mbSua == false)
                     {
-                        if (cls.SelectOne_MaNhanVien(txtMaNV.Text.Trim()))
+                        if (!String.IsNullOrEmpty(txtMaNV.Text))
                         {
-                            MessageBox.Show("Mã nhân viên \"" + txtMaNV.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                            txtMaNV.Focus();
-                            return;
-                        }
-                    }
-
-                    if (!String.IsNullOrEmpty(txtHoTen.Text))
-                    {
-                        if (cls.SelectOne_TenNhanVien(txtHoTen.Text.Trim()))
-                        {
-                            if (MessageBox.Show("Tên nhân viên \"" + txtHoTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
-                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            if (cls.SelectOne_MaNhanVien(txtMaNV.Text.Trim()))
                             {
-                                txtHoTen.Focus();
+                                MessageBox.Show("Mã nhân viên \"" + txtMaNV.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                                txtMaNV.Focus();
                                 return;
                             }
                         }
+
+                        if (!String.IsNullOrEmpty(txtHoTen.Text))
+                        {
+                            if (cls.SelectOne_TenNhanVien(txtHoTen.Text.Trim()))
+                            {
+                                if (MessageBox.Show("Tên nhân viên \"" + txtHoTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                                {
+                                    txtHoTen.Focus();
+                                    return;
+                                }
+                            }
+                        }
+
+                        //
+                        cls.Insert();
+                    }
+                    else
+                    {
+                        cls.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
+                        cls.Update();
                     }
 
-                    //
-                    cls.Insert();
+                    MessageBox.Show("Đã lưu");
+                    this.Close();
                 }
-                else
-                {
-                    cls.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
-                    cls.Update();
-                }
-               
-                MessageBox.Show("Đã lưu");
-                this.Close();
             }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Kiểm tra lại các trường nhập vào! " + ee.Message.ToString(), "Lỗi nhập dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void Load_lockUP_EDIT()
@@ -168,10 +176,13 @@ namespace CtyTinLuong
             if (dt1.Rows[0]["NgayChinhThuc"].ToString() != "")
                 dteNgayChinhThuc.EditValue= Convert.ToDateTime(dt1.Rows[0]["NgayChinhThuc"].ToString());
             if (dt1.Rows[0]["NgayNopBHXH"].ToString() != "")
-                dteNgayNopBHXH.EditValue=dt1.Rows[0]["NgayNopBHXH"].ToString();
+                dteNgayNopBHXH.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayNopBHXH"].ToString());
+            else dteNgayNopBHXH.EditValue = null;
+
             if (dt1.Rows[0]["NgayThoiViec"].ToString() != "")
-                dteNgayThoiViec.EditValue= Convert.ToDateTime(dt1.Rows[0]["NgayThoiViec"].ToString());
-           
+                dteNgayThoiViec.EditValue = Convert.ToDateTime(dt1.Rows[0]["NgayThoiViec"].ToString());
+            else dteNgayThoiViec.EditValue = null;
+
             if (dt1.Rows[0]["NgaySinh"].ToString() != "")
                 dteNgaySinh.EditValue= Convert.ToDateTime(dt1.Rows[0]["NgaySinh"].ToString());
             txtNoiSinh.Text= dt1.Rows[0]["NoiSinh"].ToString();
