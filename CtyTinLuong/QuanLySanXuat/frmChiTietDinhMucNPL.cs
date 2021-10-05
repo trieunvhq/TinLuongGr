@@ -56,13 +56,12 @@ namespace CtyTinLuong
                     }
                     this.Close();
                     _ucDMNPL.btRefresh_Click(null, null);
-                    MessageBox.Show("Đã lưu");
+                    MessageBox.Show("Đã lưu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch
+                catch (Exception ea)
                 {
-
-                }
-
+                    MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
             }
         }
         private double convertToDouble(string str)

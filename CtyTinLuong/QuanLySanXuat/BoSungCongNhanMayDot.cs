@@ -70,7 +70,7 @@ namespace CtyTinLuong
                         cls2.iID_ChiTietPhieu_BoSungMayDot = ID_ChiTietPhieu_BoSungMayDotcccxxx;
                         cls2.Delete();
                     }
-                    MessageBox.Show("Đã lưu");
+                    MessageBox.Show("Đã lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
@@ -133,10 +133,11 @@ namespace CtyTinLuong
             {
                 DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
                 tennhanvien_ = row["TenNhanVien"].ToString();
-                
             }
-            catch
-            { }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại trường mã công nhân! " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -149,7 +150,6 @@ namespace CtyTinLuong
             if (e.Column == clID_CongNhan)
             {
                 gridView1.SetRowCellValue(e.RowHandle, clTenNhanVien, tennhanvien_);
-                
             }
         }
 

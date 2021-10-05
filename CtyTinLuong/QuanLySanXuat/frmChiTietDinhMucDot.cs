@@ -82,20 +82,19 @@ namespace CtyTinLuong
                     if (cls.Insert())
                     {
                         this.Close();
-                        MessageBox.Show("Đã lưu!", "Success");
+                        MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _uccDMD.btRefresh_Click(null, null);
                     }
                     else
                     {
-                        MessageBox.Show("Lưu không thành công!", "Error");
+                        MessageBox.Show("Lưu không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
-                catch
+                catch (Exception ea)
                 {
-
+                    MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -180,64 +179,85 @@ namespace CtyTinLuong
                         MessageBox.Show("Lưu không thành công!", "Error");
                     }
                 }
-                catch
+                catch (Exception ea)
                 {
-
+                    MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi lưu dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
         private void HienThi_ThemMoi_DinhMuc_DOT()
         {
-            checkCa1.Checked = true;
-            check_KhongDungCongThuc.Checked = true;
-            dteNgayThang.EditValue = DateTime.Today;
+            try
+            {
+                using (clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa())
+                {
+                    checkCa1.Checked = true;
+                    check_KhongDungCongThuc.Checked = true;
+                    dteNgayThang.EditValue = DateTime.Today;
 
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.T_SelectAll(); 
-            gridLookUpEditLoaiHang.Properties.DataSource = dt;
-            gridLookUpEditLoaiHang.Properties.ValueMember = "ID_VTHH";
-            gridLookUpEditLoaiHang.Properties.DisplayMember = "MaVT";
+                    DataTable dt = cls.T_SelectAll();
+                    gridLookUpEditLoaiHang.Properties.DataSource = dt;
+                    gridLookUpEditLoaiHang.Properties.ValueMember = "ID_VTHH";
+                    gridLookUpEditLoaiHang.Properties.DisplayMember = "MaVT";
 
-            dt.Dispose();
-            cls.Dispose();
+                    dt.Dispose();
+                    cls.Dispose();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void HienThi_Sua_DinhMuc_DOT()
         {
-            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dv = dt.DefaultView;
-            DataTable dtxx = dv.ToTable();
-            gridLookUpEditLoaiHang.Properties.DataSource = dtxx;
-            gridLookUpEditLoaiHang.Properties.ValueMember = "ID_VTHH";
-            gridLookUpEditLoaiHang.Properties.DisplayMember = "MaVT";
+            try
+            {
+                using (clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa())
+                {
+                    DataTable dt = cls.SelectAll();
+                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                    DataView dv = dt.DefaultView;
+                    DataTable dtxx = dv.ToTable();
+                    gridLookUpEditLoaiHang.Properties.DataSource = dtxx;
+                    gridLookUpEditLoaiHang.Properties.ValueMember = "ID_VTHH";
+                    gridLookUpEditLoaiHang.Properties.DisplayMember = "MaVT";
+                }
 
-            clsDinhMuc_tbDinhMuc_DOT cls2 = new CtyTinLuong.clsDinhMuc_tbDinhMuc_DOT();
-            cls2.iID_DinhMuc_Dot = UCDinhMucDot.miID_DinhMuc_Dot;
-            DataTable dt2 = cls2.SelectOne();
+                using (clsDinhMuc_tbDinhMuc_DOT cls2 = new CtyTinLuong.clsDinhMuc_tbDinhMuc_DOT())
+                {
+                    cls2.iID_DinhMuc_Dot = UCDinhMucDot.miID_DinhMuc_Dot;
+                    DataTable dt2 = cls2.SelectOne();
 
-            dteNgayThang.EditValue = Convert.ToDateTime(dt2.Rows[0]["NgayThang"].ToString());
-            txtSoHieu.Text = dt2.Rows[0]["SoHieu"].ToString();
-            if (dt2.Rows[0]["Ca"].ToString() == "Ca 1") checkCa1.Checked = true;
-            else checkCa2.Checked = true;
-            checkNgungTheoDoi.Checked =Convert.ToBoolean(dt2.Rows[0]["NgungTheoDoi"].ToString());
-            gridLookUpEditLoaiHang.EditValue = UCDinhMucDot.miDID_VTHH;
-            txtLoaiGiay.Text = dt2.Rows[0]["LoaiGiay"].ToString();
-            txtSoLuongKiemTra.Text = dt2.Rows[0]["SoLuongKiemTra"].ToString();
-            txtTrongLuongKiemTra.Text = dt2.Rows[0]["TrongLuongKiemTra"].ToString();
-            txtSoLuongQuyDoi.Text = dt2.Rows[0]["SoLuongQuyDoi"].ToString();
-            txtDonViQuyDoi.Text = dt2.Rows[0]["DonViQuyDoi"].ToString();
-            txtQuyRaKien.Text = dt2.Rows[0]["QuyRaKien"].ToString();
-            txtDoCao.Text = dt2.Rows[0]["DoCao"].ToString();
-            txtSoKienMotBao.Text = dt2.Rows[0]["SoKienMotBao"].ToString();
-            txtPhePham.Text = dt2.Rows[0]["PhePham"].ToString();
-            txtSoKGMotBao.Text = dt2.Rows[0]["SoKG_MotBao"].ToString();
-            //txtSoKien60Bao.Text = dt2.Rows[0][""].ToString();
-            txtGhiChu.Text = dt2.Rows[0]["GhiChu"].ToString();
-           
-          
+                    dteNgayThang.EditValue = Convert.ToDateTime(dt2.Rows[0]["NgayThang"].ToString());
+                    txtSoHieu.Text = dt2.Rows[0]["SoHieu"].ToString();
+                    if (dt2.Rows[0]["Ca"].ToString() == "Ca 1") checkCa1.Checked = true;
+                    else checkCa2.Checked = true;
+                    checkNgungTheoDoi.Checked = Convert.ToBoolean(dt2.Rows[0]["NgungTheoDoi"].ToString());
+                    gridLookUpEditLoaiHang.EditValue = UCDinhMucDot.miDID_VTHH;
+                    txtLoaiGiay.Text = dt2.Rows[0]["LoaiGiay"].ToString();
+                    txtSoLuongKiemTra.Text = dt2.Rows[0]["SoLuongKiemTra"].ToString();
+                    txtTrongLuongKiemTra.Text = dt2.Rows[0]["TrongLuongKiemTra"].ToString();
+                    txtSoLuongQuyDoi.Text = dt2.Rows[0]["SoLuongQuyDoi"].ToString();
+                    txtDonViQuyDoi.Text = dt2.Rows[0]["DonViQuyDoi"].ToString();
+                    txtQuyRaKien.Text = dt2.Rows[0]["QuyRaKien"].ToString();
+                    txtDoCao.Text = dt2.Rows[0]["DoCao"].ToString();
+                    txtSoKienMotBao.Text = dt2.Rows[0]["SoKienMotBao"].ToString();
+                    txtPhePham.Text = dt2.Rows[0]["PhePham"].ToString();
+                    txtSoKGMotBao.Text = dt2.Rows[0]["SoKG_MotBao"].ToString();
+                    //txtSoKien60Bao.Text = dt2.Rows[0][""].ToString();
+                    txtGhiChu.Text = dt2.Rows[0]["GhiChu"].ToString();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         private bool KiemTraLuu()
         {
 
@@ -377,24 +397,31 @@ namespace CtyTinLuong
 
         private void checkCongThuc2_CheckedChanged(object sender, EventArgs e)
         {
-            Double fsoKG_1bao, ftrongluong1;
-
-            if (txtSoKGMotBao.Text.ToString() == "")
-                fsoKG_1bao = 1;
-            else fsoKG_1bao = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString().Trim());
-
-            if (txtTrongLuongKiemTra.Text.ToString() == "")
-                ftrongluong1 = 0;
-            else ftrongluong1 = CheckString.ConvertToDouble_My(txtTrongLuongKiemTra.Text.ToString().Trim());
-
-            if (checkCongThuc2.Checked == true)
+            try
             {
-                txtSoKienMotBao.Enabled = false;
-                txtSoKien60Bao.Enabled = false;
-                checkCongThuc1.Checked = false;
-                check_KhongDungCongThuc.Checked = false;
-                txtSoKienMotBao.Text = (fsoKG_1bao/ ftrongluong1).ToString();
-                txtSoKien60Bao.Text = (fsoKG_1bao*60 / ftrongluong1).ToString();
+                Double fsoKG_1bao, ftrongluong1;
+
+                if (txtSoKGMotBao.Text.ToString() == "")
+                    fsoKG_1bao = 1;
+                else fsoKG_1bao = CheckString.ConvertToDouble_My(txtSoKGMotBao.Text.ToString().Trim());
+
+                if (txtTrongLuongKiemTra.Text.ToString() == "")
+                    ftrongluong1 = 0;
+                else ftrongluong1 = CheckString.ConvertToDouble_My(txtTrongLuongKiemTra.Text.ToString().Trim());
+
+                if (checkCongThuc2.Checked == true)
+                {
+                    txtSoKienMotBao.Enabled = false;
+                    txtSoKien60Bao.Enabled = false;
+                    checkCongThuc1.Checked = false;
+                    check_KhongDungCongThuc.Checked = false;
+                    txtSoKienMotBao.Text = (fsoKG_1bao / ftrongluong1).ToString();
+                    txtSoKien60Bao.Text = (fsoKG_1bao * 60 / ftrongluong1).ToString();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại các trường nhập vào! " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -417,7 +444,6 @@ namespace CtyTinLuong
             }
             else
             {
-
                 Luu_Sua__DM_DOT();
             }
          
@@ -425,15 +451,24 @@ namespace CtyTinLuong
 
         private void gridLookUpEditLoaiHang_EditValueChanged(object sender, EventArgs e)
         {
-            clsTbVatTuHangHoa clsncc = new clsTbVatTuHangHoa();
-            string manccc = gridLookUpEditLoaiHang.SelectedText.ToString();
-            clsncc.iID_VTHH = Convert.ToInt16(gridLookUpEditLoaiHang.EditValue.ToString());
-
-            DataTable dt = clsncc.SelectOne();
-            if (dt.Rows.Count > 0)
+            try
             {
-                txtTenVatTu.Text = dt.Rows[0]["TenVTHH"].ToString();
-                txtDVT1.Text= dt.Rows[0]["DonViTinh"].ToString();
+                using (clsTbVatTuHangHoa clsncc = new clsTbVatTuHangHoa())
+                {
+                    string manccc = gridLookUpEditLoaiHang.SelectedText.ToString();
+                    clsncc.iID_VTHH = Convert.ToInt16(gridLookUpEditLoaiHang.EditValue.ToString());
+
+                    DataTable dt = clsncc.SelectOne();
+                    if (dt.Rows.Count > 0)
+                    {
+                        txtTenVatTu.Text = dt.Rows[0]["TenVTHH"].ToString();
+                        txtDVT1.Text = dt.Rows[0]["DonViTinh"].ToString();
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
