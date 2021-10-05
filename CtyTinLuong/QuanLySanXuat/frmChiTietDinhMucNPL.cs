@@ -67,16 +67,25 @@ namespace CtyTinLuong
         private double convertToDouble(string str)
         {
             double abc_ = 0; 
-            if(str.Contains("/"))
+            try
             {
-                abc_ = (CheckString.ConvertToDouble_My(str.Split('/')[0])) / (CheckString.ConvertToDouble_My(str.Split('/')[1]));
+                if (str.Contains("/"))
+                {
+                    abc_ = (CheckString.ConvertToDouble_My(str.Split('/')[0])) / (CheckString.ConvertToDouble_My(str.Split('/')[1]));
+                }
+                else
+                {
+                    abc_ = CheckString.ConvertToDouble_My(str);
+                }
             }
-            else
+            catch (Exception ea)
             {
-                abc_ = CheckString.ConvertToDouble_My(str);
+                MessageBox.Show("Kiểm tra lại định dạng dữ liệu nhập vào! " + ea.Message.ToString(), "Lỗi ép kiểu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return abc_;
         }
+
+
         private void Luu_Sua__DM_NPL()
         {
             if (!KiemTraLuu()) return;
@@ -123,70 +132,86 @@ namespace CtyTinLuong
                     _ucDMNPL.btRefresh_Click(null, null);
                     MessageBox.Show("Đã lưu");
                 }
-                catch
+                catch (Exception ea)
                 {
-
+                    MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi lưu dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
         private void HienThi_ThemMoi_DinhMuc_NPL()
         {
             dteNgayLap.EditValue = DateTime.Today;
-           
         }
 
         DataTable dt2;
         private void HienThi_Sua_DinhMuc_NPL()
         {
-            clsDinhMuc_tbDM_NguyenPhuLieu cls1 = new clsDinhMuc_tbDM_NguyenPhuLieu();
-            cls1.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
-            DataTable dt = cls1.SelectOne();
-            gridMaTPQuyDoi.EditValue = cls1.iID_VTHH_ThanhPham.Value;
-            gridMaVTchinh1.EditValue = cls1.iID_VTHH_Chinh.Value;          
-
-            txtMaDinhMucNPL.Text = cls1.sMaDinhMuc.Value.ToString();
-            dteNgayLap.EditValue = cls1.daNgayLap.Value;
-            txtDienGiai.Text = cls1.sDienGiai.Value.ToString();
-            checkNgungTheoDoi.Checked = Convert.ToBoolean(cls1.bNgungTheoDoi.Value.ToString());
-             
-
-            clsDinhMuc_ChiTiet_DM_NPL cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DM_NPL();
-            cls2.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
-            dt2 = cls2.T_SelectAll_HienThi_LookUp();
-            for(int i=0;i<dt2.Rows.Count;++i)
+            try
             {
-                dt2.Rows[i]["MaVT"] = Convert.ToInt32(dt2.Rows[i]["ID_VTHH"].ToString());
-            }
-            gridControl1.DataSource = dt2;
+                clsDinhMuc_tbDM_NguyenPhuLieu cls1 = new clsDinhMuc_tbDM_NguyenPhuLieu();
+                cls1.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
+                DataTable dt = cls1.SelectOne();
+                gridMaTPQuyDoi.EditValue = cls1.iID_VTHH_ThanhPham.Value;
+                gridMaVTchinh1.EditValue = cls1.iID_VTHH_Chinh.Value;
 
+                txtMaDinhMucNPL.Text = cls1.sMaDinhMuc.Value.ToString();
+                dteNgayLap.EditValue = cls1.daNgayLap.Value;
+                txtDienGiai.Text = cls1.sDienGiai.Value.ToString();
+                checkNgungTheoDoi.Checked = Convert.ToBoolean(cls1.bNgungTheoDoi.Value.ToString());
+
+
+                clsDinhMuc_ChiTiet_DM_NPL cls2 = new CtyTinLuong.clsDinhMuc_ChiTiet_DM_NPL();
+                cls2.iID_DinhMuc_NPL = ucDinhMucNGuyenPhuLieu.miID_DinhMuc_NPL;
+                dt2 = cls2.T_SelectAll_HienThi_LookUp();
+                for (int i = 0; i < dt2.Rows.Count; ++i)
+                {
+                    dt2.Rows[i]["MaVT"] = Convert.ToInt32(dt2.Rows[i]["ID_VTHH"].ToString());
+                }
+                gridControl1.DataSource = dt2;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         private bool KiemTraLuu()
         {
-            string shienthi = "1";
-            DataTable dttttt2 = (DataTable)gridControl1.DataSource;
-            dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-            DataView dv = dttttt2.DefaultView;
-            DataTable dv3 = dv.ToTable();
+            try
+            {
+                string shienthi = "1";
+                DataTable dttttt2 = (DataTable)gridControl1.DataSource;
+                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                DataView dv = dttttt2.DefaultView;
+                DataTable dv3 = dv.ToTable();
 
-            if (txtMaDinhMucNPL.ToString() == "")
+                if (txtMaDinhMucNPL.ToString() == "")
+                {
+                    MessageBox.Show("Chưa có mã Thành phẩm quy đổi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaDinhMucNPL.Focus();
+                    return false;
+                }
+                else if (gridMaTPQuyDoi.EditValue == null)
+                {
+                    MessageBox.Show("Chưa chọn Bán thành phẩm quy đổi ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gridMaTPQuyDoi.Focus();
+                    return false;
+                }
+                else if (dv3.Rows.Count == 0)
+                {
+                    MessageBox.Show("Chưa chọn hàng hóa ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else return true;
+            }
+            catch (Exception ea)
             {
-                MessageBox.Show("Chưa có mã Thành phẩm quy đổi");
-                txtMaDinhMucNPL.Focus();
+                MessageBox.Show("Kiểm tra lại các trường nhập vào! " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (gridMaTPQuyDoi.EditValue == null)
-            {
-                MessageBox.Show("Chưa chọn Bán thành phẩm quy đổi ");
-                gridMaTPQuyDoi.Focus();
-                return false;
-            }
-            else if (dv3.Rows.Count == 0)
-            {
-                MessageBox.Show("Chưa chọn hàng hóa ");
-                return false;
-            }
-            else return true;
-
         }
 
         ucDinhMucNGuyenPhuLieu _ucDMNPL;
