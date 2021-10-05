@@ -18,16 +18,21 @@ namespace CtyTinLuong
         DateTime ngaydauthang, ngaycuoithang;
         private void Load_LockUp()
         {
+            try
+            {
+                using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
+                {
+                    DataTable dt = cls.SelectAll_distinct_ID_CongNhan_W_NgayThang(ngaydauthang, ngaycuoithang);
 
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            DataTable dt = cls.SelectAll_distinct_ID_CongNhan_W_NgayThang(ngaydauthang, ngaycuoithang);
-          
-
-            gridCongNhan.Properties.DataSource = dt;
-            gridCongNhan.Properties.ValueMember = "ID_CongNhan";
-            gridCongNhan.Properties.DisplayMember = "MaNhanVien";
-
-          
+                    gridCongNhan.Properties.DataSource = dt;
+                    gridCongNhan.Properties.ValueMember = "ID_CongNhan";
+                    gridCongNhan.Properties.DisplayMember = "MaNhanVien";
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private string LayThu(DateTime date)
         {
@@ -66,6 +71,8 @@ namespace CtyTinLuong
         }
         public void LoadData(int xxID_CongNhan)
         {
+            try
+            {
                 DateTime date_ = new DateTime(ngaydauthang.Year, ngaydauthang.Month, 1);
                 int ngaycuathang_ = (((new DateTime(ngaydauthang.Year, ngaydauthang.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
                 if (ngaycuathang_ == 28)
@@ -105,160 +112,182 @@ namespace CtyTinLuong
                     }
                 }
 
-             dt2 = new DataTable();
+                dt2 = new DataTable();
 
-           
-            dt2.Columns.Add("TenVTHH", typeof(string));
-            dt2.Columns.Add("NoiDung", typeof(string));
 
-            dt2.Columns.Add("Ngay1", typeof(string));
-            dt2.Columns.Add("Ngay2", typeof(string));
-            dt2.Columns.Add("Ngay3", typeof(string));
-            dt2.Columns.Add("Ngay4", typeof(string));
-            dt2.Columns.Add("Ngay5", typeof(string));
-            dt2.Columns.Add("Ngay6", typeof(string));
-            dt2.Columns.Add("Ngay7", typeof(string));
-            dt2.Columns.Add("Ngay8", typeof(string));
-            dt2.Columns.Add("Ngay9", typeof(string));
-            dt2.Columns.Add("Ngay10", typeof(string));
-            dt2.Columns.Add("Ngay11", typeof(string));
-            dt2.Columns.Add("Ngay12", typeof(string));
-            dt2.Columns.Add("Ngay13", typeof(string));
-            dt2.Columns.Add("Ngay14", typeof(string));
-            dt2.Columns.Add("Ngay15", typeof(string));
-            dt2.Columns.Add("Ngay16", typeof(string));
-            dt2.Columns.Add("Ngay17", typeof(string));
-            dt2.Columns.Add("Ngay18", typeof(string));
-            dt2.Columns.Add("Ngay19", typeof(string));
-            dt2.Columns.Add("Ngay20", typeof(string));
+                dt2.Columns.Add("TenVTHH", typeof(string));
+                dt2.Columns.Add("NoiDung", typeof(string));
 
-            dt2.Columns.Add("Ngay21", typeof(string));
-            dt2.Columns.Add("Ngay22", typeof(string));
-            dt2.Columns.Add("Ngay23", typeof(string));
-            dt2.Columns.Add("Ngay24", typeof(string));
-            dt2.Columns.Add("Ngay25", typeof(string));
-            dt2.Columns.Add("Ngay26", typeof(string));
-            dt2.Columns.Add("Ngay27", typeof(string));
-            dt2.Columns.Add("Ngay28", typeof(string));
-            dt2.Columns.Add("Ngay29", typeof(string));
-            dt2.Columns.Add("Ngay30", typeof(string));
+                dt2.Columns.Add("Ngay1", typeof(string));
+                dt2.Columns.Add("Ngay2", typeof(string));
+                dt2.Columns.Add("Ngay3", typeof(string));
+                dt2.Columns.Add("Ngay4", typeof(string));
+                dt2.Columns.Add("Ngay5", typeof(string));
+                dt2.Columns.Add("Ngay6", typeof(string));
+                dt2.Columns.Add("Ngay7", typeof(string));
+                dt2.Columns.Add("Ngay8", typeof(string));
+                dt2.Columns.Add("Ngay9", typeof(string));
+                dt2.Columns.Add("Ngay10", typeof(string));
+                dt2.Columns.Add("Ngay11", typeof(string));
+                dt2.Columns.Add("Ngay12", typeof(string));
+                dt2.Columns.Add("Ngay13", typeof(string));
+                dt2.Columns.Add("Ngay14", typeof(string));
+                dt2.Columns.Add("Ngay15", typeof(string));
+                dt2.Columns.Add("Ngay16", typeof(string));
+                dt2.Columns.Add("Ngay17", typeof(string));
+                dt2.Columns.Add("Ngay18", typeof(string));
+                dt2.Columns.Add("Ngay19", typeof(string));
+                dt2.Columns.Add("Ngay20", typeof(string));
 
-            dt2.Columns.Add("Ngay31", typeof(string));
+                dt2.Columns.Add("Ngay21", typeof(string));
+                dt2.Columns.Add("Ngay22", typeof(string));
+                dt2.Columns.Add("Ngay23", typeof(string));
+                dt2.Columns.Add("Ngay24", typeof(string));
+                dt2.Columns.Add("Ngay25", typeof(string));
+                dt2.Columns.Add("Ngay26", typeof(string));
+                dt2.Columns.Add("Ngay27", typeof(string));
+                dt2.Columns.Add("Ngay28", typeof(string));
+                dt2.Columns.Add("Ngay29", typeof(string));
+                dt2.Columns.Add("Ngay30", typeof(string));
 
-            dt2.Columns.Add("Tong", typeof(string));
+                dt2.Columns.Add("Ngay31", typeof(string));
 
-            clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-            DataTable dtxxxx = new DataTable();
-            dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(xxID_CongNhan, ngaydauthang, ngaycuoithang);
-            int days = DateTime.DaysInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                dt2.Columns.Add("Tong", typeof(string));
 
-            DataRow _ravi_1 = dt2.NewRow();
-            DataRow _ravi_2 = dt2.NewRow();
-           
-            int id_vthh_cu_ = 0;
-            double tong1 = 0, tong2 = 0;
-            for (int k = 0; k < dtxxxx.Rows.Count; k++)
-            {
-                double snluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
-                double snluong_tangca = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
-                //int xxid_vthh= Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
-                //tong1 = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxid_vthh + ""));
-           
-                int ngay_ = (Convert.ToDateTime(dtxxxx.Rows[k]["NgaySanXuat"].ToString()).Day);
-                _ravi_1["Ngay" + (ngay_)] = snluong_thuong.ToString();
-                _ravi_2["Ngay" + (ngay_)] = snluong_tangca.ToString();
-                tong1 += snluong_thuong;
-                tong2 += snluong_tangca;
-                _ravi_1["Tong"]  = tong1.ToString();
-                _ravi_2["Tong"] = tong2;
-                //
-                int id_vthh_ = 0;
-                if (k < dtxxxx.Rows.Count - 1)
+                clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                DataTable dtxxxx = new DataTable();
+                dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(xxID_CongNhan, ngaydauthang, ngaycuoithang);
+                int days = DateTime.DaysInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+
+                DataRow _ravi_1 = dt2.NewRow();
+                DataRow _ravi_2 = dt2.NewRow();
+
+                int id_vthh_cu_ = 0;
+                double tong1 = 0, tong2 = 0;
+                for (int k = 0; k < dtxxxx.Rows.Count; k++)
                 {
-                    id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k+1]["ID_VTHH_Ra"].ToString());
+                    double snluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
+                    double snluong_tangca = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
+                    //int xxid_vthh= Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
+                    //tong1 = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxid_vthh + ""));
 
-                    if (dtxxxx.Rows[k ]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
-                    { 
+                    int ngay_ = (Convert.ToDateTime(dtxxxx.Rows[k]["NgaySanXuat"].ToString()).Day);
+                    _ravi_1["Ngay" + (ngay_)] = snluong_thuong.ToString();
+                    _ravi_2["Ngay" + (ngay_)] = snluong_tangca.ToString();
+                    tong1 += snluong_thuong;
+                    tong2 += snluong_tangca;
+                    _ravi_1["Tong"] = tong1.ToString();
+                    _ravi_2["Tong"] = tong2;
+                    //
+                    int id_vthh_ = 0;
+                    if (k < dtxxxx.Rows.Count - 1)
+                    {
+                        id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
+
+                        if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
+                        {
+                            _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                            _ravi_1["NoiDung"] = "Thường";
+
+                            _ravi_2["TenVTHH"] = "";
+                            _ravi_2["NoiDung"] = "Tăng ca";
+
+
+                            dt2.Rows.Add(_ravi_1);
+                            dt2.Rows.Add(_ravi_2);
+                            tong1 = 0;
+                            tong2 = 0;
+                            _ravi_1 = dt2.NewRow();
+                            _ravi_2 = dt2.NewRow();
+                            id_vthh_cu_ = id_vthh_;
+                        }
+                        else
+                        { }
+                    }
+                    else
+                    {
                         _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
                         _ravi_1["NoiDung"] = "Thường";
-                        
+
                         _ravi_2["TenVTHH"] = "";
                         _ravi_2["NoiDung"] = "Tăng ca";
-                      
+
 
                         dt2.Rows.Add(_ravi_1);
                         dt2.Rows.Add(_ravi_2);
+
                         tong1 = 0;
                         tong2 = 0;
                         _ravi_1 = dt2.NewRow();
                         _ravi_2 = dt2.NewRow();
-                        id_vthh_cu_ = id_vthh_;
                     }
-                    else
-                    { }
                 }
-                else
-                {
-                    _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-                    _ravi_1["NoiDung"] = "Thường";
 
-                    _ravi_2["TenVTHH"] = "";
-                    _ravi_2["NoiDung"] = "Tăng ca";
-                  
-
-                    dt2.Rows.Add(_ravi_1);
-                    dt2.Rows.Add(_ravi_2);
-
-                    tong1 = 0;
-                    tong2 = 0;
-                    _ravi_1 = dt2.NewRow();
-                    _ravi_2 = dt2.NewRow();
-                }                 
-            } 
-         
-            gridControl2.DataSource = dt2;
-            
+                gridControl2.DataSource = dt2;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void HienThiGridcontrol2(int iiID_CongNhan)
         {
-
-            gridControl1.DataSource = null;
-
-            clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-
-            DataTable dtxxxx = new DataTable();
-            dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan_HUU(iiID_CongNhan, ngaydauthang, ngaycuoithang);
-
-            DataTable dt2xx = new DataTable();
-
-            dt2xx.Columns.Add("MaVT", typeof(string));
-            dt2xx.Columns.Add("TenVTHH", typeof(string));
-            dt2xx.Columns.Add("DonViTinh", typeof(string));
-            dt2xx.Columns.Add("SanLuong_Thuong", typeof(string));
-            dt2xx.Columns.Add("SanLuong_TangCa", typeof(string));
-            dt2xx.Columns.Add("DinhMuc_KhongTang", typeof(double));
-            dt2xx.Columns.Add("DinhMuc_Tang", typeof(double));
-            dt2xx.Columns.Add("ThanhTien", typeof(double));
-
-            DataRow _ravi_1 = dt2xx.NewRow();
-
-            int id_vthh_cu_ = 0;
-
-            for (int k = 0; k < dtxxxx.Rows.Count; k++)
+            try
             {
-                int xxID_VTHH = Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
-                //double snluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
-                //double snluong_tangca = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
-                double xxsanluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
-                double xxsanluong_tang = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_TangCa)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
-                double xxthanhtien = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(ThanhTien)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
-                int id_vthh_ = 0;
-                if (k < dtxxxx.Rows.Count - 1)
+                gridControl1.DataSource = null;
+
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+
+                DataTable dtxxxx = new DataTable();
+                dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan_HUU(iiID_CongNhan, ngaydauthang, ngaycuoithang);
+
+                DataTable dt2xx = new DataTable();
+
+                dt2xx.Columns.Add("MaVT", typeof(string));
+                dt2xx.Columns.Add("TenVTHH", typeof(string));
+                dt2xx.Columns.Add("DonViTinh", typeof(string));
+                dt2xx.Columns.Add("SanLuong_Thuong", typeof(string));
+                dt2xx.Columns.Add("SanLuong_TangCa", typeof(string));
+                dt2xx.Columns.Add("DinhMuc_KhongTang", typeof(double));
+                dt2xx.Columns.Add("DinhMuc_Tang", typeof(double));
+                dt2xx.Columns.Add("ThanhTien", typeof(double));
+
+                DataRow _ravi_1 = dt2xx.NewRow();
+
+                int id_vthh_cu_ = 0;
+
+                for (int k = 0; k < dtxxxx.Rows.Count; k++)
                 {
-                    id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
-                    if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
+                    int xxID_VTHH = Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
+                    //double snluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
+                    //double snluong_tangca = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
+                    double xxsanluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                    double xxsanluong_tang = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_TangCa)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                    double xxthanhtien = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(ThanhTien)", "ID_VTHH_Ra=" + xxID_VTHH + ""));
+                    int id_vthh_ = 0;
+                    if (k < dtxxxx.Rows.Count - 1)
+                    {
+                        id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
+                        if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
+                        {
+                            _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
+                            _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
+                            _ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
+                            _ravi_1["SanLuong_Thuong"] = xxsanluong_thuong;
+                            _ravi_1["SanLuong_TangCa"] = xxsanluong_tang;
+                            _ravi_1["DinhMuc_KhongTang"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
+                            _ravi_1["DinhMuc_Tang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
+                            _ravi_1["ThanhTien"] = xxthanhtien;
+                            dt2xx.Rows.Add(_ravi_1);
+                            _ravi_1 = dt2xx.NewRow();
+                            id_vthh_cu_ = id_vthh_;
+                        }
+                        else
+                        { }
+                    }
+                    else
                     {
                         _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
                         _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
@@ -268,37 +297,24 @@ namespace CtyTinLuong
                         _ravi_1["DinhMuc_KhongTang"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
                         _ravi_1["DinhMuc_Tang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
                         _ravi_1["ThanhTien"] = xxthanhtien;
+
+
                         dt2xx.Rows.Add(_ravi_1);
+
+
+
                         _ravi_1 = dt2xx.NewRow();
-                        id_vthh_cu_ = id_vthh_;
+
                     }
-                    else
-                    { }
-                }
-                else
-                {
-                    _ravi_1["MaVT"] = dtxxxx.Rows[k]["MaVT"].ToString();
-                    _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-                    _ravi_1["DonViTinh"] = dtxxxx.Rows[k]["DonViTinh"].ToString();
-                    _ravi_1["SanLuong_Thuong"] = xxsanluong_thuong;
-                    _ravi_1["SanLuong_TangCa"] = xxsanluong_tang;
-                    _ravi_1["DinhMuc_KhongTang"] = dtxxxx.Rows[k]["DinhMuc_KhongTang"].ToString();
-                    _ravi_1["DinhMuc_Tang"] = dtxxxx.Rows[k]["DinhMuc_Tang"].ToString();
-                    _ravi_1["ThanhTien"] = xxthanhtien;
-
-
-                    dt2xx.Rows.Add(_ravi_1);
-
-
-
-                    _ravi_1 = dt2xx.NewRow();
 
                 }
 
+                gridControl1.DataSource = dt2xx;
             }
-
-            gridControl1.DataSource = dt2xx;
-
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public SanLuong_ChiTiet_Luong()
@@ -335,27 +351,34 @@ namespace CtyTinLuong
                 HienThiGridcontrol2(xxID);
 
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void SanLuong_ChiTiet_Luong_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            DateTime dtnow = DateTime.Now;
-            txtNam.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year.ToString();
-            txtThang.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month.ToString();
-            ngaydauthang = GetFistDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
-            ngaycuoithang=GetLastDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
-            
-            LoadData(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
-            HienThiGridcontrol2(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
-            Load_LockUp();
-            gridCongNhan.EditValue = frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan;
-            Cursor.Current = Cursors.Default;
-            txtThang.Focus();
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                DateTime dtnow = DateTime.Now;
+                txtNam.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year.ToString();
+                txtThang.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month.ToString();
+                ngaydauthang = GetFistDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
+                ngaycuoithang = GetLastDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
+
+                LoadData(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
+                HienThiGridcontrol2(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
+                Load_LockUp();
+                gridCongNhan.EditValue = frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan;
+                Cursor.Current = Cursors.Default;
+                txtThang.Focus();
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -391,40 +414,61 @@ namespace CtyTinLuong
 
         private void txtThang_Leave(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtNam.Text.ToString()) > 0 & Convert.ToInt32(txtThang.Text.ToString()) > 0)
+            try
             {
-                ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
-                HienThiGridcontrol2(xxID);
-                Load_LockUp();
+                if (Convert.ToInt32(txtNam.Text.ToString()) > 0 & Convert.ToInt32(txtThang.Text.ToString()) > 0)
+                {
+                    ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                    ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                    int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
+                    LoadData(xxID);
+                    HienThiGridcontrol2(xxID);
+                    Load_LockUp();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtNam_Leave(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtNam.Text.ToString()) > 0 & Convert.ToInt32(txtThang.Text.ToString()) > 0)
+            try
             {
-                ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
-                HienThiGridcontrol2(xxID);
-                Load_LockUp();
+                if (Convert.ToInt32(txtNam.Text.ToString()) > 0 & Convert.ToInt32(txtThang.Text.ToString()) > 0)
+                {
+                    ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                    ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                    int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
+                    LoadData(xxID);
+                    HienThiGridcontrol2(xxID);
+                    Load_LockUp();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtThang_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-                int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
-                LoadData(xxID);
-                HienThiGridcontrol2(xxID);
-                Load_LockUp();
+                if (e.KeyCode == Keys.Enter)
+                {
+                    ngaydauthang = GetFistDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                    ngaycuoithang = GetLastDayInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
+                    int xxID = Convert.ToInt32(gridCongNhan.EditValue.ToString());
+                    LoadData(xxID);
+                    HienThiGridcontrol2(xxID);
+                    Load_LockUp();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
