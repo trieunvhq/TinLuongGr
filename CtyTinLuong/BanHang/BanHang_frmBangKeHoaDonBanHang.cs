@@ -22,24 +22,43 @@ namespace CtyTinLuong
         public static int miiiID_BanHang;
         private void HienThi_Gridcontrol_2(int xxID_banHang)
         {
-            grid_ChiTiet.DataSource = null;
-            clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang();
-            cls.iID_BanHang = xxID_banHang;
-            DataTable dt3 = cls.Select_HienThiSuaDonHang();         
-                        grid_ChiTiet.DataSource = dt3;
-
-
+            try
+            {
+                using (clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang())
+                {
+                    grid_ChiTiet.DataSource = null;
+                    cls.iID_BanHang = xxID_banHang;
+                    DataTable dt3 = cls.Select_HienThiSuaDonHang();
+                    grid_ChiTiet.DataSource = dt3;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
-            grid_banHang.DataSource = null;
-            isload = true;
-            _SoTrang = sotrang;
-            _SoDong = sodong;
-            clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-            DataTable dt = cls.Load_DaTa_NgayThang_So_Dong_Trang(sotrang, sodong, xxtungay, xxdenngay);           
-            grid_banHang.DataSource = dt;
-            isload = false;
+            try
+            {
+                using (clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang())
+                {
+                    grid_banHang.DataSource = null;
+                    isload = true;
+                    _SoTrang = sotrang;
+                    _SoDong = sodong;
+                    DataTable dt = cls.Load_DaTa_NgayThang_So_Dong_Trang(sotrang, sodong, xxtungay, xxdenngay);
+                    grid_banHang.DataSource = dt;
+                    isload = false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
         private void Load_banhang(bool islandau)
         {
@@ -61,32 +80,39 @@ namespace CtyTinLuong
         }
         public void ResetSoTrang(DateTime xxtungay, DateTime xxdenngay)
         {
-            btnTrangSau.Visible = true;
-            btnTrangTiep.Visible = true;
-            lbTongSoTrang.Visible = true;
-            txtSoTrang.Visible = true;
-            btnTrangSau.LinkColor = Color.Black;
-            btnTrangTiep.LinkColor = Color.Blue;
-            txtSoTrang.Text = "1";
-            int xxsodong = Convert.ToInt32(txtSoDong.Text);
-            using (clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang())
+            try
             {
-                DataTable dt_ = cls.Dem_tbBanHang(xxtungay, xxdenngay);
-                if (dt_ != null && dt_.Rows.Count > 0)
+                btnTrangSau.Visible = true;
+                btnTrangTiep.Visible = true;
+                lbTongSoTrang.Visible = true;
+                txtSoTrang.Visible = true;
+                btnTrangSau.LinkColor = Color.Black;
+                btnTrangTiep.LinkColor = Color.Blue;
+                txtSoTrang.Text = "1";
+                int xxsodong = Convert.ToInt32(txtSoDong.Text);
+                using (clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang())
                 {
-                    lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
+                    DataTable dt_ = cls.Dem_tbBanHang(xxtungay, xxdenngay);
+                    if (dt_ != null && dt_.Rows.Count > 0)
+                    {
+                        lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
+                    }
+                    else
+                    {
+                        lbTongSoTrang.Text = "/1";
+                    }
                 }
-                else
-                {
+                if (lbTongSoTrang.Text == "0")
                     lbTongSoTrang.Text = "/1";
+                if (lbTongSoTrang.Text == "/1")
+                {
+                    btnTrangSau.LinkColor = Color.Black;
+                    btnTrangTiep.LinkColor = Color.Black;
                 }
             }
-            if (lbTongSoTrang.Text == "0")
-                lbTongSoTrang.Text = "/1";
-            if (lbTongSoTrang.Text == "/1")
+            catch (Exception ea)
             {
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Black;
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -97,18 +123,25 @@ namespace CtyTinLuong
 
         private void BanHang_frmBangKeHoaDonBanHang_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            clsNgayThang cls = new clsNgayThang();
-            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-            dteDenNgay.EditValue = DateTime.Now;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                clsNgayThang cls = new clsNgayThang();
+                dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+                dteDenNgay.EditValue = DateTime.Now;
 
-            LoadData(1,20, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, 20, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
-            ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
-            dteTuNgay.Focus();
+                dteTuNgay.Focus();
 
-            Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridView_banhang_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -121,23 +154,37 @@ namespace CtyTinLuong
 
         private void gridView_banhang_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
+            try
             {
-                int xxidbanhang = Convert.ToInt16(gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString());
-                HienThi_Gridcontrol_2(xxidbanhang);
+                if (gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
+                {
+                    int xxidbanhang = Convert.ToInt16(gridView_banhang.GetFocusedRowCellValue(clID_BanHang).ToString());
+                    HienThi_Gridcontrol_2(xxidbanhang);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            try
             {
-                int sodongxxx = Convert.ToInt32(txtSoDong.Text);
-                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, sodongxxx, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.WaitCursor;
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    int sodongxxx = Convert.ToInt32(txtSoDong.Text);
+                    ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                    LoadData(1, sodongxxx, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                }
+                Cursor.Current = Cursors.Default;
             }
-            Cursor.Current = Cursors.Default;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnTrangTiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -225,16 +272,24 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-
-            clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang();
-            mdtPrint = cls.SelectAll_ngayThang(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            if (mdtPrint.Rows.Count > 0)
+            try
             {
-                mbPrint = true;
-                mdatungay = dteTuNgay.DateTime;
-                mdadenngay = dteDenNgay.DateTime;
-                frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
-                ff.ShowDialog();
+                using (clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang())
+                {
+                    mdtPrint = cls.SelectAll_ngayThang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                    if (mdtPrint.Rows.Count > 0)
+                    {
+                        mbPrint = true;
+                        mdatungay = dteTuNgay.DateTime;
+                        mdadenngay = dteDenNgay.DateTime;
+                        frmPrint_baoGia_BanHanag ff = new frmPrint_baoGia_BanHanag();
+                        ff.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -276,9 +331,9 @@ namespace CtyTinLuong
 
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Cursor.Current = Cursors.Default;
         }

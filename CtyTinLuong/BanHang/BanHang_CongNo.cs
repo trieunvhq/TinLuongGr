@@ -26,106 +26,122 @@ namespace CtyTinLuong
         }
         public void LoadData(int iiID_TKKeToanMe, DateTime xxtungay, DateTime xxdenngay)
         {
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
-            dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
-            dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
-            dt2.Columns.Add("NoDauKy", typeof(double));
-            dt2.Columns.Add("CoDauKy", typeof(double));
-            dt2.Columns.Add("NoTrongKy", typeof(double));
-            dt2.Columns.Add("CoTrongKy", typeof(double));
-            dt2.Columns.Add("NoCuoiKy", typeof(double));
-            dt2.Columns.Add("CoCuoiKy", typeof(double));
-
-            gridControl1.DataSource = null;
-
-            clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-            DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(iiID_TKKeToanMe, xxtungay, xxdenngay);
-
-            if (dtnganhang.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dtnganhang.Rows.Count; i++)
+                using (clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan())
                 {
-                    int iiIDID_TaiKhoanKeToanCon;
-                    string sTenTaiKhoanCon, sSoTaiKhoanCon;
-                    double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
-                    double dNo_DauKy, dCo_DauKy, dNo_TrongKy, dCo_TrongKy, dNo_CuoiKy, dCo_CuoiKy;
-                    iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
+                    DataTable dt2 = new DataTable();
+                    dt2.Columns.Add("ID_TaiKhoanKeToanCon", typeof(int));
+                    dt2.Columns.Add("TenTaiKhoanCon", typeof(string));
+                    dt2.Columns.Add("SoTaiKhoanCon", typeof(string));
+                    dt2.Columns.Add("NoDauKy", typeof(double));
+                    dt2.Columns.Add("CoDauKy", typeof(double));
+                    dt2.Columns.Add("NoTrongKy", typeof(double));
+                    dt2.Columns.Add("CoTrongKy", typeof(double));
+                    dt2.Columns.Add("NoCuoiKy", typeof(double));
+                    dt2.Columns.Add("CoCuoiKy", typeof(double));
 
-                    dNo_DauKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_DauKy"].ToString());
-                    dCo_DauKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_DauKy"].ToString());
+                    gridControl1.DataSource = null;
 
-                    dNo_TrongKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_TrongKy"].ToString());
-                    dCo_TrongKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
+                    
+                    DataTable dtnganhang = cls.Sum_Co_No_NgayThang_HUU(iiID_TKKeToanMe, xxtungay, xxdenngay);
 
-                    dNo_CuoiKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
-                    dCo_CuoiKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
-
-                    sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
-                    sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();
-                    // đầu kỳ
-                    if (dNo_DauKy <= dCo_DauKy)
+                    if (dtnganhang.Rows.Count > 0)
                     {
-                        dNoDauKy = 0;
-                        dCoDauKy = dCo_DauKy - dNo_DauKy;
-                    }
-                    else
-                    {
-                        dNoDauKy = -dCo_DauKy + dNo_DauKy;
-                        dCoDauKy = 0;
-                    }
-                    // trong kỳ
-                    if (dNo_TrongKy <= dCo_TrongKy)
-                    {
-                        dNoTrongKy = 0;
-                        dCoTrongKy = dCo_TrongKy - dNo_TrongKy;
-                    }
-                    else
-                    {
-                        dNoTrongKy = -dCo_TrongKy + dNo_TrongKy;
-                        dCoTrongKy = 0;
-                    }
-                    // cuoi ky
+                        for (int i = 0; i < dtnganhang.Rows.Count; i++)
+                        {
+                            int iiIDID_TaiKhoanKeToanCon;
+                            string sTenTaiKhoanCon, sSoTaiKhoanCon;
+                            double dNoDauKy, dCoDauKy, dNoTrongKy, dCoTrongKy, dNoCuoiKy, dCoCuoiKy;
+                            double dNo_DauKy, dCo_DauKy, dNo_TrongKy, dCo_TrongKy, dNo_CuoiKy, dCo_CuoiKy;
+                            iiIDID_TaiKhoanKeToanCon = Convert.ToInt32(dtnganhang.Rows[i]["ID_TaiKhoanKeToanCon"].ToString());
 
-                    if (dNo_CuoiKy <= dCo_CuoiKy)
-                    {
-                        dNoCuoiKy = 0;
-                        dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;
+                            dNo_DauKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_DauKy"].ToString());
+                            dCo_DauKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_DauKy"].ToString());
+
+                            dNo_TrongKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_TrongKy"].ToString());
+                            dCo_TrongKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_TrongKy"].ToString());
+
+                            dNo_CuoiKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["No_CuoiKy"].ToString());
+                            dCo_CuoiKy = CheckString.ConvertToDouble_My(dtnganhang.Rows[i]["Co_CuoiKy"].ToString());
+
+                            sTenTaiKhoanCon = dtnganhang.Rows[i]["TenTaiKhoanCon"].ToString();
+                            sSoTaiKhoanCon = dtnganhang.Rows[i]["SoTaiKhoanCon"].ToString();
+                            // đầu kỳ
+                            if (dNo_DauKy <= dCo_DauKy)
+                            {
+                                dNoDauKy = 0;
+                                dCoDauKy = dCo_DauKy - dNo_DauKy;
+                            }
+                            else
+                            {
+                                dNoDauKy = -dCo_DauKy + dNo_DauKy;
+                                dCoDauKy = 0;
+                            }
+                            // trong kỳ
+                            if (dNo_TrongKy <= dCo_TrongKy)
+                            {
+                                dNoTrongKy = 0;
+                                dCoTrongKy = dCo_TrongKy - dNo_TrongKy;
+                            }
+                            else
+                            {
+                                dNoTrongKy = -dCo_TrongKy + dNo_TrongKy;
+                                dCoTrongKy = 0;
+                            }
+                            // cuoi ky
+
+                            if (dNo_CuoiKy <= dCo_CuoiKy)
+                            {
+                                dNoCuoiKy = 0;
+                                dCoCuoiKy = dCo_CuoiKy - dNo_CuoiKy;
+                            }
+                            else
+                            {
+                                dNoCuoiKy = -dCo_CuoiKy + dNo_CuoiKy;
+                                dCoCuoiKy = 0;
+                            }
+
+                            DataRow _ravi = dt2.NewRow();
+                            _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
+
+                            _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
+                            _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
+                            _ravi["NoDauKy"] = dNoDauKy;
+                            _ravi["CoDauKy"] = dCoDauKy;
+                            _ravi["NoTrongKy"] = dNoTrongKy;
+                            _ravi["CoTrongKy"] = dCoTrongKy;
+                            _ravi["NoCuoiKy"] = dNoCuoiKy;
+                            _ravi["CoCuoiKy"] = dCoCuoiKy;
+                            dt2.Rows.Add(_ravi);
+                        }
                     }
-                    else
-                    {
-                        dNoCuoiKy = -dCo_CuoiKy + dNo_CuoiKy;
-                        dCoCuoiKy = 0;
-                    }
 
-                    DataRow _ravi = dt2.NewRow();
-                    _ravi["ID_TaiKhoanKeToanCon"] = iiIDID_TaiKhoanKeToanCon;
-
-                    _ravi["TenTaiKhoanCon"] = sTenTaiKhoanCon; ;
-                    _ravi["SoTaiKhoanCon"] = sSoTaiKhoanCon;
-                    _ravi["NoDauKy"] = dNoDauKy;
-                    _ravi["CoDauKy"] = dCoDauKy;
-                    _ravi["NoTrongKy"] = dNoTrongKy;
-                    _ravi["CoTrongKy"] = dCoTrongKy;
-                    _ravi["NoCuoiKy"] = dNoCuoiKy;
-                    _ravi["CoCuoiKy"] = dCoCuoiKy;
-                    dt2.Rows.Add(_ravi);
-
+                    gridControl1.DataSource = dt2;
                 }
             }
-
-            gridControl1.DataSource = dt2;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            try
             {
-                int xxid = 268; // // 131 Phải thu của khách hàng
-                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.WaitCursor;
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    int xxid = 268; // // 131 Phải thu của khách hàng
+                    LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                }
+                Cursor.Current = Cursors.Default;
             }
-            Cursor.Current = Cursors.Default;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -138,50 +154,60 @@ namespace CtyTinLuong
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
+            try
             {
-
-                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-                CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
-                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                DataView dv1212 = new DataView(DatatableABC);
-                dv1212.RowFilter = filterString;
-                mdt_ChiTiet_Print = dv1212.ToTable();
-
-                if (mdt_ChiTiet_Print.Rows.Count == 0)
+                if (dteTuNgay.EditValue != null & dteDenNgay.EditValue != null)
                 {
 
-                    MessageBox.Show("Không có dữ liệu");
-                }
+                    DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                    CriteriaOperator op = bandedGridView1.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                    string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                    DataView dv1212 = new DataView(DatatableABC);
+                    dv1212.RowFilter = filterString;
+                    mdt_ChiTiet_Print = dv1212.ToTable();
 
-                else
-                {
-                    mbPrint = true;
-                    mdteTuNgay = dteTuNgay.DateTime;
-                    mdteDenNgay = dteDenNgay.DateTime;
-                    mssoTK_me = "131";
-                    msTenTK_me = "Phải thu của khách hàng";
-                    msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
-                    frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                    ff.ShowDialog();
+                    if (mdt_ChiTiet_Print.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Không có dữ liệu");
+                    }
 
+                    else
+                    {
+                        mbPrint = true;
+                        mdteTuNgay = dteTuNgay.DateTime;
+                        mdteDenNgay = dteDenNgay.DateTime;
+                        mssoTK_me = "131";
+                        msTenTK_me = "Phải thu của khách hàng";
+                        msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
+                        frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
+                        ff.ShowDialog();
+                    }
                 }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void bandedGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon) != null)
+            try
             {
-                Cursor.Current = Cursors.WaitCursor;
-                mdteTuNgay = dteTuNgay.DateTime;
-                mdteDenNgay = dteDenNgay.DateTime;
-                miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
-                BanHang_ChiTietCongNo ff = new BanHang_ChiTietCongNo();
-                //this.Hide();
-                ff.Show();
-                //this.Show();
-                Cursor.Current = Cursors.Default;
+                if (bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon) != null)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    mdteTuNgay = dteTuNgay.DateTime;
+                    mdteDenNgay = dteDenNgay.DateTime;
+                    miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
+                    BanHang_ChiTietCongNo ff = new BanHang_ChiTietCongNo();
+                    ff.Show();
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -225,15 +251,22 @@ namespace CtyTinLuong
 
         private void BanHang_CongNo_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            clsNgayThang cls = new clsNgayThang();
-            dteDenNgay.EditValue = DateTime.Today;
-            DateTime ngaydauthang = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
-            dteTuNgay.EditValue = ngaydauthang;
-            int xxid = 268; // 131 Phải thu của khách hàng
-            LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
-            dteTuNgay.Focus();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                clsNgayThang cls = new clsNgayThang();
+                dteDenNgay.EditValue = DateTime.Today;
+                DateTime ngaydauthang = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
+                dteTuNgay.EditValue = ngaydauthang;
+                int xxid = 268; // 131 Phải thu của khách hàng
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                dteTuNgay.Focus();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
