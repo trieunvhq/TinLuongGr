@@ -31,17 +31,26 @@ namespace CtyTinLuong
         }
         private void Load_LockUp()
         {
-            clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat();
-            DataTable dt = cls.T_SelectAll_MaVT_Ten_DVT();
-           
-            gridKeHoach.Properties.DataSource = dt;
-            gridKeHoach.Properties.ValueMember = "ID_KeHoachSanXuat";
-            gridKeHoach.Properties.DisplayMember = "MaKeHoach";
+            try
+            {
+                using (clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat())
+                {
+                    DataTable dt = cls.T_SelectAll_MaVT_Ten_DVT();
 
-
-            dt.Dispose();
-            cls.Dispose();
+                    gridKeHoach.Properties.DataSource = dt;
+                    gridKeHoach.Properties.ValueMember = "ID_KeHoachSanXuat";
+                    gridKeHoach.Properties.DisplayMember = "MaKeHoach";
+                    //dt.Dispose();
+                    //cls.Dispose();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         public BanHang_FrmThamChieuKeHoachSanXuat()
         {
             InitializeComponent();
@@ -49,12 +58,19 @@ namespace CtyTinLuong
 
         private void BanHang_FrmThamChieuKeHoachSanXuat_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
-            dteNgayChungTu.DateTime = BanHang_FrmChiTietBanHang_Newwwwwwww.mdaNgayChungTu;
-            txtSoLuongthuc.Text = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbSoLuongXuat.ToString();
-            gridKeHoach.Focus();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_LockUp();
+                dteNgayChungTu.DateTime = BanHang_FrmChiTietBanHang_Newwwwwwww.mdaNgayChungTu;
+                txtSoLuongthuc.Text = BanHang_FrmChiTietBanHang_Newwwwwwww.mdbSoLuongXuat.ToString();
+                gridKeHoach.Focus();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridKeHoach_EditValueChanged(object sender, EventArgs e)
@@ -83,9 +99,10 @@ namespace CtyTinLuong
                 DataTable dt3 = cls3.SelectOne();
                 txtKhachHang.Text = cls3.sTenKH.Value;
             }
-            catch
-            { }
-           
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         
         private void txtChiTieu_TextChanged(object sender, EventArgs e)
@@ -105,14 +122,23 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat();
-                cls.iID_KeHoachSanXuat= Convert.ToInt32(gridKeHoach.EditValue.ToString());
-                // update ngày xuất, so luong xuat,hoan thanh
-                cls.fSoLuongThucXuat = CheckString.ConvertToDouble_My(txtSoLuongthuc.Text.ToString());
-                cls.daNgayXuatThucTe = dteNgayChungTu.DateTime;
-                cls.bDaHoanThanh = checkHoanThanh.Checked;
-                cls.Update_NgayXuatThucTe_SoLuongThucXuat_DaHoanThanh();
-                MessageBox.Show("Đã lưu");
+                try
+                {
+                    using (clsTbKeHoachSanXuat cls = new clsTbKeHoachSanXuat())
+                    {
+                        cls.iID_KeHoachSanXuat = Convert.ToInt32(gridKeHoach.EditValue.ToString());
+                        // update ngày xuất, so luong xuat,hoan thanh
+                        cls.fSoLuongThucXuat = CheckString.ConvertToDouble_My(txtSoLuongthuc.Text.ToString());
+                        cls.daNgayXuatThucTe = dteNgayChungTu.DateTime;
+                        cls.bDaHoanThanh = checkHoanThanh.Checked;
+                        cls.Update_NgayXuatThucTe_SoLuongThucXuat_DaHoanThanh();
+                        MessageBox.Show("Đã lưu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

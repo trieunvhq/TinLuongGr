@@ -18,39 +18,65 @@ namespace CtyTinLuong
 
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-
-            clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang();
-            DataTable dt = cls.SA_NgayThang_(true, xxtungay, xxdenngay);          
-            gridControl1.DataSource = dt;
-            dt.Dispose();
-            cls.Dispose();
-
+            try
+            {
+                using (clsBanHang_tbBanHang cls = new clsBanHang_tbBanHang())
+                {
+                    DataTable dt = cls.SA_NgayThang_(true, xxtungay, xxdenngay);
+                    gridControl1.DataSource = dt;
+                    //dt.Dispose();
+                    //cls.Dispose();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
       
 
         private void Load_LockUp()
         {
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
-            DataTable newdtvthh = dvvthh.ToTable();
+            try
+            {
+                using (clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa())
+                {
+                    DataTable dtvthh = clsvthhh.SelectAll();
+                    dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                    DataView dvvthh = dtvthh.DefaultView;
+                    DataTable newdtvthh = dvvthh.ToTable();
 
 
-            gridMaVT.DataSource = newdtvthh;
-            gridMaVT.ValueMember = "ID_VTHH";
-            gridMaVT.DisplayMember = "MaVT";
-
-
+                    gridMaVT.DataSource = newdtvthh;
+                    gridMaVT.ValueMember = "ID_VTHH";
+                    gridMaVT.DisplayMember = "MaVT";
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         private void HienThi_Gridcontrol_2(int xxID_banHang)
         {
-            clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang();
-            cls.iID_BanHang = xxID_banHang;
-            DataTable dt3 = cls.Select_HienThiSuaDonHang();           
-            gridControl2.DataSource = dt3;
-            dt3.Dispose();
-            cls.Dispose();
+            try
+            {
+                using (clsBanHang_ChiTietBanHang cls = new clsBanHang_ChiTietBanHang())
+                {
+                    cls.iID_BanHang = xxID_banHang;
+                    DataTable dt3 = cls.Select_HienThiSuaDonHang();
+                    gridControl2.DataSource = dt3;
+                    dt3.Dispose();
+                    cls.Dispose();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         frmQuanLyBanHang _frmQLBH;
@@ -69,12 +95,19 @@ namespace CtyTinLuong
 
         private void UCBanHang_BanHang_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
-            dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
-            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime); 
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_LockUp();
+                dteDenNgay.EditValue = DateTime.Today;
+                dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -114,12 +147,11 @@ namespace CtyTinLuong
                     BanHang_FrmChiTietBanHang_Newwwwwwww ff = new BanHang_FrmChiTietBanHang_Newwwwwwww(this, null);
                    
                     ff.Show();
-                   
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Cursor.Current = Cursors.Default;
         }
@@ -136,71 +168,90 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView View = sender as GridView;
-            if (e.RowHandle >= 0)
+            try
             {
-                bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["TrangThaiBanHang"]));
-                if (category == false)
+                GridView View = sender as GridView;
+                if (e.RowHandle >= 0)
                 {
-                    e.Appearance.BackColor = Color.Bisque;
-
+                    bool category = Convert.ToBoolean(View.GetRowCellValue(e.RowHandle, View.Columns["TrangThaiBanHang"]));
+                    if (category == false)
+                    {
+                        e.Appearance.BackColor = Color.Bisque;
+                    }
                 }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-
-            DialogResult traloi;
-            traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (traloi == DialogResult.Yes)
+            try
             {
-                int xxxxID_BanHang= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
-                clsBanHang_tbBanHang cls1moi = new clsBanHang_tbBanHang();
-                cls1moi.iID_BanHang = xxxxID_BanHang;
-                DataTable dt1moi = cls1moi.SelectOne();
-                string sochungtu = cls1moi.sSoChungTu.Value;
-                DateTime ngaychungtu = cls1moi.daNgayChungTu.Value;
-                clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
-                cls1.iID_BanHang = xxxxID_BanHang;            
-                cls1.Delete();
-                clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
-                cls2.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
-                cls2.Delete_W_iID_BanHang();
-                // xoá bien dong tai khoan
-                clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
-                clsxx.iID_ChungTu = xxxxID_BanHang;
-                clsxx.sSoChungTu = sochungtu;
-                clsxx.daNgayThang = ngaychungtu;
+                Cursor.Current = Cursors.WaitCursor;
 
-                DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
-                if (dt2_cu.Rows.Count > 0)
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
                 {
-                    for (int i = 0; i < dt2_cu.Rows.Count; i++)
+                    int xxxxID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
+                    clsBanHang_tbBanHang cls1moi = new clsBanHang_tbBanHang();
+                    cls1moi.iID_BanHang = xxxxID_BanHang;
+                    DataTable dt1moi = cls1moi.SelectOne();
+                    string sochungtu = cls1moi.sSoChungTu.Value;
+                    DateTime ngaychungtu = cls1moi.daNgayChungTu.Value;
+                    clsBanHang_tbBanHang cls1 = new clsBanHang_tbBanHang();
+                    cls1.iID_BanHang = xxxxID_BanHang;
+                    cls1.Delete();
+                    clsBanHang_ChiTietBanHang cls2 = new clsBanHang_ChiTietBanHang();
+                    cls2.iID_BanHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
+                    cls2.Delete_W_iID_BanHang();
+                    // xoá bien dong tai khoan
+                    clsNganHang_ChiTietBienDongTaiKhoanKeToan clsxx = new CtyTinLuong.clsNganHang_ChiTietBienDongTaiKhoanKeToan();
+                    clsxx.iID_ChungTu = xxxxID_BanHang;
+                    clsxx.sSoChungTu = sochungtu;
+                    clsxx.daNgayThang = ngaychungtu;
+
+                    DataTable dt2_cu = clsxx.Select_W_iID_ChungTu_sSoChungTu_daNgayThang();
+                    if (dt2_cu.Rows.Count > 0)
                     {
-                        clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
-                        clsxx.Delete();
+                        for (int i = 0; i < dt2_cu.Rows.Count; i++)
+                        {
+                            clsxx.iID_ChiTietBienDongTaiKhoan = Convert.ToInt32(dt2_cu.Rows[i]["ID_ChiTietBienDongTaiKhoan"].ToString());
+                            clsxx.Delete();
+                        }
                     }
+
+                    MessageBox.Show("Đã xóa");
+                    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 }
 
-                MessageBox.Show("Đã xóa");
-                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-
+                Cursor.Current = Cursors.Default;
             }
-
-            Cursor.Current = Cursors.Default;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
          
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
+            try
             {
-                Cursor.Current = Cursors.WaitCursor;
-                int xxxmiiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
-                HienThi_Gridcontrol_2(xxxmiiiID_BanHang);
+                if (gridView1.GetFocusedRowCellValue(clID_BanHang).ToString() != "")
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    int xxxmiiiID_BanHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_BanHang).ToString());
+                    HienThi_Gridcontrol_2(xxxmiiiID_BanHang);
 
-                Cursor.Current = Cursors.Default;
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -222,8 +273,15 @@ namespace CtyTinLuong
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT233)
-                e.DisplayText = (e.RowHandle + 1).ToString();
+            try
+            {
+                if (e.Column == clSTT233)
+                    e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

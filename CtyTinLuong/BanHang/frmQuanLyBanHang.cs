@@ -74,15 +74,23 @@ namespace CtyTinLuong
         }
         private void navBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            //UCBanHang_BanHang
-            Cursor.Current = Cursors.WaitCursor;
-            doiMauTitle(sender, e);
+            try
+            {
+                //UCBanHang_BanHang
+                Cursor.Current = Cursors.WaitCursor;
+                doiMauTitle(sender, e);
 
-            _UCBanHang_BanHang.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(_UCBanHang_BanHang);
-            _UCBanHang_BanHang.BringToFront();
+                _UCBanHang_BanHang.Dock = DockStyle.Fill;
+                panelControl1.Controls.Add(_UCBanHang_BanHang);
+                _UCBanHang_BanHang.BringToFront();
 
-            Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btThooat_Click(object sender, EventArgs e)
@@ -92,14 +100,21 @@ namespace CtyTinLuong
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            doiMauTitle(sender, e);
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                doiMauTitle(sender, e);
 
-            UCBanHang_CongNo ucc = new UCBanHang_CongNo();
-            ucc.Dock = DockStyle.Fill;
-            panelControl1.Controls.Add(ucc);
-            ucc.BringToFront();
-            Cursor.Current = Cursors.Default;
+                UCBanHang_CongNo ucc = new UCBanHang_CongNo();
+                ucc.Dock = DockStyle.Fill;
+                panelControl1.Controls.Add(ucc);
+                ucc.BringToFront();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -119,50 +134,71 @@ namespace CtyTinLuong
 
         private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            doiMauTitle(sender, e);
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                doiMauTitle(sender, e);
 
-            frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
-            //this.Hide();
-            ucc.Show();
-            //this.Show();
-
-            Cursor.Current = Cursors.Default;
+                frmCaiDatBangGia_BanHang ucc = new frmCaiDatBangGia_BanHang();
+                ucc.Show();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
 
-            frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
-            ff.Show();
-            Cursor.Current = Cursors.Default;
+                frmPrint_NguoiKy ff = new frmPrint_NguoiKy();
+                ff.Show();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void navbangKeHoaDonBanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            doiMauTitle(sender, e);
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                doiMauTitle(sender, e);
 
-            BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
-            //this.Hide();
-            ff.Show();
-            //this.Show();
+                BanHang_frmBangKeHoaDonBanHang ff = new BanHang_frmBangKeHoaDonBanHang();
+                ff.Show();
 
-            Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void navTonghopbanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            doiMauTitle(sender, e);
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                doiMauTitle(sender, e);
 
-            BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
-            //this.Hide();
-            ucc.Show();
-            //this.Show();
+                BanHang_SoTongHopbanHang ucc = new BanHang_SoTongHopbanHang();
+                ucc.Show();
 
-            Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void navCongNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

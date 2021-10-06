@@ -14,60 +14,86 @@ namespace CtyTinLuong
     {
         private void HienThi(int xxID_VTHH, DateTime xxtungay, DateTime xxdenngay)
         { 
-            clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
-            cls.iID_VTHH = xxID_VTHH;
-            DataTable dxxxx = cls.T_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH(xxtungay, xxdenngay);
-    
-            gridControl1.DataSource = dxxxx;
-            dxxxx.Dispose();
-            cls.Dispose(); 
+            try
+            {
+                using (clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang())
+                {
+                    cls.iID_VTHH = xxID_VTHH;
+                    DataTable dxxxx = cls.T_SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH(xxtungay, xxdenngay);
+
+                    gridControl1.DataSource = dxxxx;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         private void HienThi_ALL(int xxID_VTHH)
         { 
-            //TenNhaCungCap
+            try
+            {
+                using (clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang())
+                {
+                    //TenNhaCungCap
+                    cls.iID_VTHH = xxID_VTHH;
+                    DataTable dxxxx = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH();
 
-            clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
-            cls.iID_VTHH = xxID_VTHH;
-            DataTable dxxxx = cls.SelectAll_W_ID_VTHH_SoChungTu_NgayThang_DienGiai_ID_KH();
-
-            //for (int i = 0; i < dxxxx.Rows.Count; i++)
-            //{
-            //    double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
-            //    double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
-            //    int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
-            //    //clsTbKhachHang clsncc = new clsTbKhachHang();
-            //    //clsncc.iID_KhachHang = iID_KhachHangccc;
-            //    //DataTable dtncc = clsncc.SelectOne();
-            //    DataRow _ravi = dt2.NewRow();
-            //    _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
-            //    _ravi["DienGiai"] = dxxxx.Rows[i]["DienGiai"].ToString();
-            //    _ravi["SoLuong"] = SoLuong;
-            //    _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
-            //    _ravi["DonGia"] = DonGia;
-            //    _ravi["ThanhTien"] = SoLuong * DonGia;
-            //    _ravi["TenKH"] = clsncc.sTenKH.Value;
-            //    dt2.Rows.Add(_ravi);
-            //}
-            gridControl1.DataSource = dxxxx;
-            dxxxx.Dispose();
-            cls.Dispose();
-
-
+                    //for (int i = 0; i < dxxxx.Rows.Count; i++)
+                    //{
+                    //    double DonGia = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["DonGia"].ToString());
+                    //    double SoLuong = CheckString.ConvertToDouble_My(dxxxx.Rows[i]["SoLuong"].ToString());
+                    //    int iID_KhachHangccc = Convert.ToInt32(dxxxx.Rows[i]["ID_KhachHang"].ToString());
+                    //    //clsTbKhachHang clsncc = new clsTbKhachHang();
+                    //    //clsncc.iID_KhachHang = iID_KhachHangccc;
+                    //    //DataTable dtncc = clsncc.SelectOne();
+                    //    DataRow _ravi = dt2.NewRow();
+                    //    _ravi["SoChungTu"] = dxxxx.Rows[i]["SoChungTu"].ToString();
+                    //    _ravi["DienGiai"] = dxxxx.Rows[i]["DienGiai"].ToString();
+                    //    _ravi["SoLuong"] = SoLuong;
+                    //    _ravi["NgayChungTu"] = Convert.ToDateTime(dxxxx.Rows[i]["NgayChungTu"].ToString());
+                    //    _ravi["DonGia"] = DonGia;
+                    //    _ravi["ThanhTien"] = SoLuong * DonGia;
+                    //    _ravi["TenKH"] = clsncc.sTenKH.Value;
+                    //    dt2.Rows.Add(_ravi);
+                    //}
+                    gridControl1.DataSource = dxxxx;
+                    //dxxxx.Dispose();
+                    //cls.Dispose();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Load_Lockup()
         { 
-            clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang();
-            clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dt2 = cls.SelectAll_Distint_ID_VTHH();
-         
-            
-            gridMaVT.Properties.DataSource = dt2;
-            gridMaVT.Properties.ValueMember = "ID_VTHH";
-            gridMaVT.Properties.DisplayMember = "MaVT";
-            dt2.Dispose();
-            cls.Dispose();
+            try
+            {
+                using (clsBanHang_ChiTietBanHang cls = new CtyTinLuong.clsBanHang_ChiTietBanHang())
+                {
+                    //clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
+                    DataTable dt2 = cls.SelectAll_Distint_ID_VTHH();
+
+
+                    gridMaVT.Properties.DataSource = dt2;
+                    gridMaVT.Properties.ValueMember = "ID_VTHH";
+                    gridMaVT.Properties.DisplayMember = "MaVT";
+                    //dt2.Dispose();
+                    //cls.Dispose();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         public BanHang_frmChiTietMotVatTu()
         {
             InitializeComponent();
@@ -75,14 +101,21 @@ namespace CtyTinLuong
 
         private void BanHang_frmChiTietMotVatTu_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            Load_Lockup();
-            gridMaVT.EditValue = UCBanHang_ChiTiet_ALL.miID_VTHH;
-            dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL(UCBanHang_ChiTiet_ALL.miID_VTHH);
-            dteTuNgay.Focus();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_Lockup();
+                gridMaVT.EditValue = UCBanHang_ChiTiet_ALL.miID_VTHH;
+                dteDenNgay.EditValue = DateTime.Today;
+                dteTuNgay.EditValue = null;
+                HienThi_ALL(UCBanHang_ChiTiet_ALL.miID_VTHH);
+                dteTuNgay.Focus();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -107,8 +140,10 @@ namespace CtyTinLuong
                 else
                     HienThi_ALL(iiID);
             }
-            catch
-            { }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -118,18 +153,32 @@ namespace CtyTinLuong
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+            try
             {
-                int iiID = Convert.ToInt32(gridMaVT.EditValue.ToString());
-                HienThi(iiID, dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
+                {
+                    int iiID = Convert.ToInt32(gridMaVT.EditValue.ToString());
+                    HienThi(iiID, dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column == clSTT)
+            try
             {
-                e.DisplayText = (e.RowHandle + 1).ToString();
+                if (e.Column == clSTT)
+                {
+                    e.DisplayText = (e.RowHandle + 1).ToString();
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
