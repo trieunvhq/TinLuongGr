@@ -419,7 +419,7 @@ namespace CtyTinLuong
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                 DataTable dt3_cu = new DataTable();
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
-                dt3_cu = cls3.SA_NgayThang();
+                dt3_cu = cls3.SA_W_ID_XuatKhoDaiLy(iiiiID_XuatKhoDaiLy);
                 if (dt3_cu.Rows.Count > 0)
                 {
                     cls3.Update_ALL_TonTai_W_ID_XuatKhoDaiLy(iiiiID_XuatKhoDaiLy, false);

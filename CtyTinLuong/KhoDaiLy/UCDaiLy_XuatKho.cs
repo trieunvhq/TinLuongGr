@@ -107,7 +107,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("ThanhTien", typeof(double));
             clsDaiLy_ThamChieu_TinhXuatKho cls2 = new clsDaiLy_ThamChieu_TinhXuatKho();
             cls2.iID_XuatKhoDaiLy = xxxxmiID_XuatKhoDaiLyxxxxx;
-            DataTable dt222 = cls2.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT();
+            DataTable dt222 = cls2.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT(xxxxmiID_XuatKhoDaiLyxxxxx);
             for (int i = 0; i < dt222.Rows.Count; i++)
             {
 

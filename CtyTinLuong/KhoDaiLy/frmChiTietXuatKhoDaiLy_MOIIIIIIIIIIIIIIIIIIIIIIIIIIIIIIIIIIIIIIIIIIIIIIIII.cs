@@ -158,7 +158,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("ThanhTien", typeof(double));
             clsDaiLy_ThamChieu_TinhXuatKho cls2 = new clsDaiLy_ThamChieu_TinhXuatKho();
             cls2.iID_XuatKhoDaiLy = UCDaiLy_XuatKho.miID_XuatKhoDaiLy;
-            DataTable dt222 = cls2.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT();
+            DataTable dt222 = cls2.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT(UCDaiLy_XuatKho.miID_XuatKhoDaiLy);
             for (int i = 0; i < dt222.Rows.Count; i++)
             {
 
@@ -834,16 +834,10 @@ namespace CtyTinLuong
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
                 DataTable dt3_cu = new DataTable();
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
-                dt3_cu = cls3.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT();
+                dt3_cu = cls3.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT(iiiiID_XuatKhoDaiLy);
                 if (dt3_cu.Rows.Count > 0)
-                {
-                    for (int i = 0; i < dt3_cu.Rows.Count; i++)
-                    {
-
-                        cls3.iID_ThamChieu = Convert.ToInt32(dt3_cu.Rows[i]["ID_ThamChieu"].ToString());
-                        cls3.bTonTai = false;
-                        cls3.Update_W_TonTai();
-                    }
+                {                        
+                        cls3.Update_ALL_TonTai_W_ID_XuatKhoDaiLy(iiiiID_XuatKhoDaiLy,false);                   
                 }
 
                 for (int i = 0; i < dtthamchieu.Rows.Count; i++)
@@ -879,7 +873,7 @@ namespace CtyTinLuong
                 // xoa ton tai=false
                 DataTable dt3moi = new DataTable();
                 cls3.iID_XuatKhoDaiLy = iiiiID_XuatKhoDaiLy;
-                DataTable dt3hhshss = cls3.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT();
+                DataTable dt3hhshss = cls3.SelectAll_W_ID_XuatKhoDaiLy_SoChungTu_Ngay_MaVT_TenVT(iiiiID_XuatKhoDaiLy);
                 dt3hhshss.DefaultView.RowFilter = "TonTai=False";
                 DataView dvdt3jjs = dt3hhshss.DefaultView;
                 dt3moi = dvdt3jjs.ToTable();
