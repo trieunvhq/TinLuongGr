@@ -18,29 +18,38 @@ namespace CtyTinLuong
         public static int miID_DinhMuc_ToGapDan;
         private void HienThi()
         {
-            clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
-            DataTable dt = cls.SelectAll();
-            if (checked_ALL.Checked == true)
+            try
             {
+                using (clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan())
+                {
+                    DataTable dt = cls.SelectAll();
+                    if (checked_ALL.Checked == true)
+                    {
 
-                dt.DefaultView.RowFilter = "TonTai=True";
-                DataView dv = dt.DefaultView;
-                gridControl1.DataSource = dv;
+                        dt.DefaultView.RowFilter = "TonTai=True";
+                        DataView dv = dt.DefaultView;
+                        gridControl1.DataSource = dv;
+                    }
+                    else
+                    {
+                        if (checkTheoDoi.Checked == true)
+                        {
+                            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
+                            DataView dv = dt.DefaultView;
+                            gridControl1.DataSource = dv;
+                        }
+                        else
+                        {
+                            dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=True";
+                            DataView dv = dt.DefaultView;
+                            gridControl1.DataSource = dv;
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception ea)
             {
-                if (checkTheoDoi.Checked == true)
-                {
-                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=false";
-                    DataView dv = dt.DefaultView;
-                    gridControl1.DataSource = dv;
-                }
-                else
-                {
-                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=True";
-                    DataView dv = dt.DefaultView;
-                    gridControl1.DataSource = dv;
-                }
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -53,12 +62,19 @@ namespace CtyTinLuong
 
         private void UCSanXuat_DinhMuc_ToGapDan_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
-            checkTheoDoi.Checked = true;
-            clNgungTheoDoi.VisibleIndex = 4;
-            HienThi();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
+                checkTheoDoi.Checked = true;
+                clNgungTheoDoi.VisibleIndex = 4;
+                HienThi();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void checked_ALL_CheckedChanged(object sender, EventArgs e)
@@ -116,9 +132,9 @@ namespace CtyTinLuong
                 cls.bNgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                 cls.Update_NgungTheoDoi();
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,9 +153,9 @@ namespace CtyTinLuong
                     //_frmQLSX.Show();
                 }
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Cursor.Current = Cursors.Default;
         }
@@ -159,9 +175,9 @@ namespace CtyTinLuong
 
                 gridControl2.DataSource = dt3;
             }
-            catch
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -175,13 +191,18 @@ namespace CtyTinLuong
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            mb_TheMoi_DinhMuc_ToGapDan = true;
-            frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan(this);
-            //_frmQLSX.Hide();
-            ff.Show();
-            //_frmQLSX.Show();
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                mb_TheMoi_DinhMuc_ToGapDan = true;
+                frmDinhMuc_ChiTietDinhMucToGapDan ff = new frmDinhMuc_ChiTietDinhMucToGapDan(this);
+                ff.Show();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

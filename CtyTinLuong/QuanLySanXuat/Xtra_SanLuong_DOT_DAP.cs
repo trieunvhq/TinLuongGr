@@ -4,6 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
@@ -23,31 +24,36 @@ namespace CtyTinLuong
         {
             try
             {
-                clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-                cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
-                DataTable dt = cls.SelectAll_ID_DangNhap();
-                if (dt.Rows.Count > 0)
+                using (clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy())
                 {
-                    pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
-                    pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
+                    cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+                    DataTable dt = cls.SelectAll_ID_DangNhap();
+                    if (dt.Rows.Count > 0)
+                    {
+                        pNguoiLap.Value = dt.Rows[1]["HoTen"].ToString();
+                        pTruongPhong.Value = dt.Rows[4]["HoTen"].ToString();
 
+                    }
+
+                    if (SanLuong_To_DOT_DAP.mbPrint_ALL == true)
+                    {
+                        DateTime xxtungay = SanLuong_To_DOT_DAP.mdatungay;
+                        DateTime xxdenngay = SanLuong_To_DOT_DAP.mdadenngay;
+
+                        pNgayThang.Value = "Từ ngày " + xxtungay.ToString("dd/MM/yyyy") + " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
+                    }
+                    if (SanLuong_ChiTiet_SanLuong_Dot_Dap.mbPrint == true)
+                    {
+                        DateTime xxtungay = SanLuong_ChiTiet_SanLuong_Dot_Dap.mdatungay;
+                        DateTime xxdenngay = SanLuong_ChiTiet_SanLuong_Dot_Dap.mdadenngay;
+
+                        pNgayThang.Value = "Từ ngày " + xxtungay.ToString("dd/MM/yyyy") + " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
+                    }
                 }
             }
-            catch
-            { }
-            if (SanLuong_To_DOT_DAP.mbPrint_ALL == true)
+            catch (Exception ea)
             {
-                DateTime xxtungay = SanLuong_To_DOT_DAP.mdatungay;
-                DateTime xxdenngay = SanLuong_To_DOT_DAP.mdadenngay;
-
-                pNgayThang.Value = "Từ ngày " + xxtungay.ToString("dd/MM/yyyy") + " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
-            }
-            if (SanLuong_ChiTiet_SanLuong_Dot_Dap.mbPrint == true)
-            {
-                DateTime xxtungay = SanLuong_ChiTiet_SanLuong_Dot_Dap.mdatungay;
-                DateTime xxdenngay = SanLuong_ChiTiet_SanLuong_Dot_Dap.mdadenngay;
-
-                pNgayThang.Value = "Từ ngày " + xxtungay.ToString("dd/MM/yyyy") + " đến ngày " + xxdenngay.ToString("dd/MM/yyyy") + "";
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
