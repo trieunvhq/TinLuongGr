@@ -11,6 +11,32 @@ namespace CtyTinLuong
     {
 
         //
+        public static String creatMaNhanSu(int i)
+        {
+            String s = "TL00000";
+            String maNhanSu = "";
+            String sq_curent = "";
+
+            //sq_curent = LoaiPhong_db.selectMLP_max();
+
+            if (sq_curent != "")
+            {
+                sq_curent = sq_curent.Trim(); //cat bo khoang trang 2 dau
+                String tmp = sq_curent.Substring(2); //tao chuoi con khong co chu "MK"
+                int sq = Convert.ToInt32(tmp) + 1; //convert sq sang kieu int va tang 1
+                //if (sq >= 99999)
+                //{
+                //    System.out.println("Ma loai phong hien tai da lon hon MLP99999!");
+                //    System.exit(0);
+                //}
+                maNhanSu = s.Substring(0, 7 - (sq.ToString()).Length) + sq.ToString();
+            }
+            else maNhanSu = "MLP00001";
+
+            return maNhanSu;
+        }
+
+
         public static bool CheckIsNumber(string Value)
         {
             double OutVal;
