@@ -97,12 +97,6 @@ namespace CtyTinLuong
 
             using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
             {
-                DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
-                if (dt.Rows.Count > 0)
-                {
-
-                }
-                //cls.sMaDinhMucLuongCongNhat = searchLookMaDML.Text.ToString();
                 cls.iId_nhanvien = _id_NhanVien;
                 cls.daTu_ngay = dateTuNgay.DateTime;
                 cls.daDen_ngay = dateDenNgay.DateTime;
@@ -142,13 +136,26 @@ namespace CtyTinLuong
         }
         private void hienthiSUaDuLieu()
         {
+            btLUU.Enabled = true;
             clsTr_DinhMuc_Luong cls = new CtyTinLuong.clsTr_DinhMuc_Luong();
-            //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
+            cls.iId = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
             DataTable dt = cls.SelectOne();
             if (dt.Rows.Count > 0)
             {
-                searchLookMaDML.Text = dt.Rows[0]["MaDinhMucLuongCongNhat"].ToString();
+                dateTuNgay.EditValue = Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString());
+                dateDenNgay.EditValue = Convert.ToDateTime(dt.Rows[0]["den_ngay"].ToString());
+                _id_NhanVien = Convert.ToInt32(dt.Rows[0]["id_nhanvien"].ToString());
+
+                if (DateTime.Now.Month > (Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString())).Month)
+                {
+                    btLUU.Enabled = false;
+                }
+                
+                searchLookMaDML.EditValue = _id_NhanVien;
+                searchLookMaDML.ReadOnly = true;
+                txtTenNhanVien.Text = dt.Rows[0]["TenNhanVien"].ToString();
                 txtDienGiai.Text = dt.Rows[0]["DienGiai"].ToString();
+
                 if (cls.iHinhThucTinhLuong.Value == 1)
                     checCoDinh.Checked = true;
                 else if (cls.iHinhThucTinhLuong.Value == 2)
@@ -176,7 +183,7 @@ namespace CtyTinLuong
         }
         private void HienThi_ThemMoi()
         {
-            searchLookMaDML.Text = "";
+            //searchLookMaDML.Text = "";
             txtDienGiai.Text = "";
             checCongNhat.Checked = true;
             txtLuongCoDinh.Text = "0";
@@ -197,15 +204,19 @@ namespace CtyTinLuong
         {
             InitializeComponent();
             _frmQuanLyDinhMucLuong = frm;
+            btLUU.Enabled = true;
         }
 
         private void Tr_frmChiTietDML_CongNhat_Load(object sender, EventArgs e)
         {
             HinhThucTinhLuong = 0;
+            Load_lockUP_EDIT();
+            searchLookMaDML.ReadOnly = false;
+
             if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat == true)
             {
+
                 HienThi_ThemMoi();
-                Load_lockUP_EDIT();
             }
             else
                 hienthiSUaDuLieu();
@@ -516,7 +527,13 @@ namespace CtyTinLuong
             else if (dateDenNgay.EditValue == null)
             {
                 MessageBox.Show("Kiểm tra lại ngày kết thúc áp dụng định mức lương!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dateTuNgay.Focus();
+                dateDenNgay.Focus();
+                return false;
+            }
+            else if (dateDenNgay.DateTime <= dateTuNgay.DateTime)
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu áp dụng định mức lương!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dateDenNgay.Focus();
                 return false;
             }
             else if (string.IsNullOrWhiteSpace(txtLuongCoDinh.Text))
@@ -672,6 +689,23 @@ namespace CtyTinLuong
             //{
             //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+            ////================
+            try
+            {
+                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+                {
+                    DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
+                    if (dt.Rows.Count > 0)
+                    {
+                        dateTuNgay.EditValue = (Convert.ToDateTime(dt.Rows[dt.Rows.Count - 1]["den_ngay"].ToString())).AddDays(+1);
+                        dateTuNgay.ReadOnly = true;
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -685,14 +719,16 @@ namespace CtyTinLuong
             else
             {
                 _id_NhanVien = Convert.ToInt32(e.Value.ToString());
-                for(int i = 0; i < _dtNguoi.Rows.Count; i++)
+                for (int i = 0; i < _dtNguoi.Rows.Count; i++)
                 {
                     if (_id_NhanVien == Convert.ToUInt32(_dtNguoi.Rows[i]["ID_NhanSu"].ToString()))
+                    {
                         txtTenNhanVien.Text = _dtNguoi.Rows[i]["TenNhanVien"].ToString();
+                        //e.DisplayText = _dtNguoi.Rows[i]["MaNhanVien"].ToString();
+                    }
                 }
-                //MessageBox.Show(searchLookMaDML.EditValue.ToString());
+                //MessageBox.Show(searchLookMaDML.EditValue.ToString()); //string str = dt.Rows[0]["MaNhanVien"].ToString(); 
             }
-                //e.DisplayText = e.DisplayText.ToString() + ":" + e.Value.ToString();
         }
 
         private void txtDMLuongTheoGio_KeyPress(object sender, KeyPressEventArgs e)

@@ -43,11 +43,6 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtDienGiai = new System.Windows.Forms.TextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.checCoDinh = new System.Windows.Forms.CheckBox();
-            this.checSanLuong = new System.Windows.Forms.CheckBox();
-            this.checCongNhat = new System.Windows.Forms.CheckBox();
-            this.checMax_hai = new System.Windows.Forms.CheckBox();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtLuongCoBan = new System.Windows.Forms.TextBox();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -69,8 +64,14 @@
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dateTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.searchLookMaDML = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.checMax_hai = new System.Windows.Forms.CheckBox();
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.checSanLuong = new System.Windows.Forms.CheckBox();
             this.dateDenNgay = new DevExpress.XtraEditors.DateEdit();
+            this.checCongNhat = new System.Windows.Forms.CheckBox();
+            this.checCoDinh = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -84,22 +85,20 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.searchLookMaDML = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
@@ -114,6 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -126,13 +127,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btLUU
@@ -285,56 +285,6 @@
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(667, 401);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.checCoDinh;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 353);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(151, 24);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // checCoDinh
-            // 
-            this.checCoDinh.Location = new System.Drawing.Point(2, 355);
-            this.checCoDinh.Name = "checCoDinh";
-            this.checCoDinh.Size = new System.Drawing.Size(147, 20);
-            this.checCoDinh.TabIndex = 17;
-            this.checCoDinh.Text = "1. Lương cố định";
-            this.checCoDinh.UseVisualStyleBackColor = true;
-            this.checCoDinh.CheckedChanged += new System.EventHandler(this.checCoDinh_CheckedChanged);
-            // 
-            // checSanLuong
-            // 
-            this.checSanLuong.Location = new System.Drawing.Point(327, 355);
-            this.checSanLuong.Name = "checSanLuong";
-            this.checSanLuong.Size = new System.Drawing.Size(157, 20);
-            this.checSanLuong.TabIndex = 18;
-            this.checSanLuong.Text = "3. Lương sản lượng";
-            this.checSanLuong.UseVisualStyleBackColor = true;
-            this.checSanLuong.CheckedChanged += new System.EventHandler(this.checSanLuong_CheckedChanged);
-            // 
-            // checCongNhat
-            // 
-            this.checCongNhat.Location = new System.Drawing.Point(153, 355);
-            this.checCongNhat.Name = "checCongNhat";
-            this.checCongNhat.Size = new System.Drawing.Size(170, 20);
-            this.checCongNhat.TabIndex = 19;
-            this.checCongNhat.Text = "2. Lương công nhật";
-            this.checCongNhat.UseVisualStyleBackColor = true;
-            this.checCongNhat.CheckedChanged += new System.EventHandler(this.checCongNhat_CheckedChanged);
-            // 
-            // checMax_hai
-            // 
-            this.checMax_hai.Location = new System.Drawing.Point(488, 355);
-            this.checMax_hai.Name = "checMax_hai";
-            this.checMax_hai.Size = new System.Drawing.Size(177, 20);
-            this.checMax_hai.TabIndex = 20;
-            this.checMax_hai.Text = "4. Max (Lương công nhật, Lương sản lượng)";
-            this.checMax_hai.UseVisualStyleBackColor = true;
-            this.checMax_hai.CheckedChanged += new System.EventHandler(this.checMax_hai_CheckedChanged);
             // 
             // layoutControlItem8
             // 
@@ -568,6 +518,37 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // searchLookMaDML
+            // 
+            this.searchLookMaDML.EditValue = "";
+            this.searchLookMaDML.Location = new System.Drawing.Point(154, 2);
+            this.searchLookMaDML.Name = "searchLookMaDML";
+            this.searchLookMaDML.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookMaDML.Properties.PopupView = this.searchLookUpEdit1View;
+            this.searchLookMaDML.Size = new System.Drawing.Size(176, 20);
+            this.searchLookMaDML.StyleController = this.layoutControl1;
+            this.searchLookMaDML.TabIndex = 38;
+            this.searchLookMaDML.EditValueChanged += new System.EventHandler(this.searchLookMaDML_EditValueChanged);
+            this.searchLookMaDML.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookMaDML_CustomDisplayText);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // checMax_hai
+            // 
+            this.checMax_hai.Location = new System.Drawing.Point(488, 355);
+            this.checMax_hai.Name = "checMax_hai";
+            this.checMax_hai.Size = new System.Drawing.Size(177, 20);
+            this.checMax_hai.TabIndex = 20;
+            this.checMax_hai.Text = "4. Max (Lương công nhật, Lương sản lượng)";
+            this.checMax_hai.UseVisualStyleBackColor = true;
+            this.checMax_hai.CheckedChanged += new System.EventHandler(this.checMax_hai_CheckedChanged);
+            // 
             // txtTenNhanVien
             // 
             this.txtTenNhanVien.Location = new System.Drawing.Point(486, 2);
@@ -575,6 +556,16 @@
             this.txtTenNhanVien.ReadOnly = true;
             this.txtTenNhanVien.Size = new System.Drawing.Size(179, 20);
             this.txtTenNhanVien.TabIndex = 37;
+            // 
+            // checSanLuong
+            // 
+            this.checSanLuong.Location = new System.Drawing.Point(327, 355);
+            this.checSanLuong.Name = "checSanLuong";
+            this.checSanLuong.Size = new System.Drawing.Size(157, 20);
+            this.checSanLuong.TabIndex = 18;
+            this.checSanLuong.Text = "3. Lương sản lượng";
+            this.checSanLuong.UseVisualStyleBackColor = true;
+            this.checSanLuong.CheckedChanged += new System.EventHandler(this.checSanLuong_CheckedChanged);
             // 
             // dateDenNgay
             // 
@@ -593,6 +584,26 @@
             this.dateDenNgay.Size = new System.Drawing.Size(178, 20);
             this.dateDenNgay.StyleController = this.layoutControl1;
             this.dateDenNgay.TabIndex = 36;
+            // 
+            // checCongNhat
+            // 
+            this.checCongNhat.Location = new System.Drawing.Point(153, 355);
+            this.checCongNhat.Name = "checCongNhat";
+            this.checCongNhat.Size = new System.Drawing.Size(170, 20);
+            this.checCongNhat.TabIndex = 19;
+            this.checCongNhat.Text = "2. Lương công nhật";
+            this.checCongNhat.UseVisualStyleBackColor = true;
+            this.checCongNhat.CheckedChanged += new System.EventHandler(this.checCongNhat_CheckedChanged);
+            // 
+            // checCoDinh
+            // 
+            this.checCoDinh.Location = new System.Drawing.Point(2, 355);
+            this.checCoDinh.Name = "checCoDinh";
+            this.checCoDinh.Size = new System.Drawing.Size(147, 20);
+            this.checCoDinh.TabIndex = 17;
+            this.checCoDinh.Text = "1. Lương cố định";
+            this.checCoDinh.UseVisualStyleBackColor = true;
+            this.checCoDinh.CheckedChanged += new System.EventHandler(this.checCoDinh_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -716,49 +727,6 @@
             this.layoutControlItem26.Text = "Tên nhân viên";
             this.layoutControlItem26.TextSize = new System.Drawing.Size(149, 13);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.layoutControl1);
-            this.groupBox1.Location = new System.Drawing.Point(25, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(673, 420);
-            this.groupBox1.TabIndex = 68;
-            this.groupBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 435);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 13);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Không để trống dữ liệu. Nếu không có để giá trị 0";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.simpleButton1.Location = new System.Drawing.Point(343, 455);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(156, 23);
-            this.simpleButton1.TabIndex = 70;
-            this.simpleButton1.Text = "Lưu lại và Copy Tạo mới";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // searchLookMaDML
-            // 
-            this.searchLookMaDML.EditValue = "";
-            this.searchLookMaDML.Location = new System.Drawing.Point(154, 2);
-            this.searchLookMaDML.Name = "searchLookMaDML";
-            this.searchLookMaDML.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookMaDML.Properties.NullText = "";
-            this.searchLookMaDML.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchLookMaDML.Size = new System.Drawing.Size(176, 20);
-            this.searchLookMaDML.StyleController = this.layoutControl1;
-            this.searchLookMaDML.TabIndex = 38;
-            this.searchLookMaDML.EditValueChanged += new System.EventHandler(this.searchLookMaDML_EditValueChanged);
-            this.searchLookMaDML.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookMaDML_CustomDisplayText);
-            // 
             // layoutControlItem27
             // 
             this.layoutControlItem27.Control = this.searchLookMaDML;
@@ -768,12 +736,15 @@
             this.layoutControlItem27.Text = "Mã định mức lương";
             this.layoutControlItem27.TextSize = new System.Drawing.Size(149, 13);
             // 
-            // searchLookUpEdit1View
+            // layoutControlItem1
             // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.layoutControlItem1.Control = this.checCoDinh;
+            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 353);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(151, 24);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
@@ -802,6 +773,34 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.layoutControl1);
+            this.groupBox1.Location = new System.Drawing.Point(25, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(673, 420);
+            this.groupBox1.TabIndex = 68;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 435);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(242, 13);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Không để trống dữ liệu. Nếu không có để giá trị 0";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
+            this.simpleButton1.Location = new System.Drawing.Point(343, 455);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(156, 23);
+            this.simpleButton1.TabIndex = 70;
+            this.simpleButton1.Text = "Lưu lại và Copy Tạo mới";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Tr_frmChiTietDML_CongNhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,7 +824,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
@@ -840,6 +838,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -852,13 +852,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

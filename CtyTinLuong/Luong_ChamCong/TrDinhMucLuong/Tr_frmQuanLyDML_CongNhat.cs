@@ -16,7 +16,7 @@ namespace CtyTinLuong
         private int _ID_CongNhan = -1;
         private string _Type = "";
         public static bool mb_TheMoi_DinhMucLuongCongNhat;
-        public static string msTenDinhMucLuongCongNhat;
+        public static string _sMaNhanVien;
         public static int miID_Sua_DinhMucLuongCongNhat;
         public void HienThi()
         {
@@ -148,105 +148,124 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             try
-            { 
-                if (_ID_CongNhan >= 0)
+            {
+                if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(id).ToString()) != 0)
                 {
-                    switch (_Type)
-                    {
-                        case "frmChamCong_TBX":
-                            this.Close(); 
-                            ((frmChamCong_TBX)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_TrgCa":
-                            this.Close(); 
-                            ((frmChamCong_TrgCa)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_PTH":
-                            this.Close();
-                            ((frmChamCong_PTH)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_PKT":
-                            this.Close();
-                            ((frmChamCong_PKT)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_PMC":
-                            this.Close();
-                            ((frmChamCong_PMC)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_TDK":
-                            this.Close();
-                            ((frmChamCong_TDK)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_TDB":
-                            this.Close();
-                            ((frmChamCong_TDB)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_TMC":
-                            this.Close();
-                            ((frmChamCong_TMC)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_ToDot":
-                            this.Close();
-                            ((frmChamCong_ToDot)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                        case "frmChamCong_ToIn":
-                            this.Close();
-                            ((frmChamCong_ToIn)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
-                            break;
-                    } 
+                    miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString());
+                    _sMaNhanVien = gridView1.GetFocusedRowCellValue(MaNhanVien).ToString();
+                    mb_TheMoi_DinhMucLuongCongNhat = false;
+                    Tr_frmChiTietDML_CongNhat ff = new Tr_frmChiTietDML_CongNhat(this);
+                    ff.Show();
                 }
                 else
                 {
-                    if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString()) != 0)
-                    {
-                        miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString());
-                        msTenDinhMucLuongCongNhat = gridView1.GetFocusedRowCellValue(MaNhanVien).ToString();
-                        mb_TheMoi_DinhMucLuongCongNhat = false;
-                        Tr_frmChiTietDML_CongNhat ff = new Tr_frmChiTietDML_CongNhat(this);
-                        ff.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Định mức 0\n không cho sửa");
-                    }
+                    MessageBox.Show("Định mức 0\n không cho sửa");
                 }
-               
-                   
             }
-            catch (Exception ee)
+            catch(Exception ea)
             {
 
             }
+            //try
+            //{ 
+            //    if (_ID_CongNhan >= 0)
+            //    {
+            //        switch (_Type)
+            //        {
+            //            case "frmChamCong_TBX":
+            //                this.Close(); 
+            //                ((frmChamCong_TBX)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_TrgCa":
+            //                this.Close(); 
+            //                ((frmChamCong_TrgCa)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_PTH":
+            //                this.Close();
+            //                ((frmChamCong_PTH)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_PKT":
+            //                this.Close();
+            //                ((frmChamCong_PKT)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_PMC":
+            //                this.Close();
+            //                ((frmChamCong_PMC)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_TDK":
+            //                this.Close();
+            //                ((frmChamCong_TDK)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_TDB":
+            //                this.Close();
+            //                ((frmChamCong_TDB)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_TMC":
+            //                this.Close();
+            //                ((frmChamCong_TMC)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_ToDot":
+            //                this.Close();
+            //                ((frmChamCong_ToDot)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //            case "frmChamCong_ToIn":
+            //                this.Close();
+            //                ((frmChamCong_ToIn)_frm).Load_DinhMuc
+            //                    (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+            //                    , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+            //                    _ID_CongNhan);
+            //                break;
+            //        } 
+            //    }
+            //    else
+            //    {
+            //        if (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString()) != 0)
+            //        {
+            //            miID_Sua_DinhMucLuongCongNhat = Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString());
+            //            _sMaNhanVien = gridView1.GetFocusedRowCellValue(MaNhanVien).ToString();
+            //            mb_TheMoi_DinhMucLuongCongNhat = false;
+            //            Tr_frmChiTietDML_CongNhat ff = new Tr_frmChiTietDML_CongNhat(this);
+            //            ff.Show();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Định mức 0\n không cho sửa");
+            //        }
+            //    }
+               
+                   
+            //}
+            //catch (Exception ee)
+            //{
+
+            //}
             Cursor.Current = Cursors.Default;
         }
 
