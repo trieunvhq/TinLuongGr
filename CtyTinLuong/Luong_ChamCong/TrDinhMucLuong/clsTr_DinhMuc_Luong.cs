@@ -343,13 +343,49 @@ namespace CtyTinLuong
 		}
 
 
-		/// <summary>
-		/// Purpose: SelectAll method. This method will Select all rows from the table.
-		/// </summary>
-		/// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
-		/// <remarks>
-		/// </remarks>
-		public override DataTable SelectAll()
+        /// <summary>
+        /// Purpose: SelectAll method. This method will Select all rows from the table.
+        /// </summary>
+        /// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
+        /// <remarks>
+        /// </remarks>
+        /// 
+        public DataTable Tr_DinhMuc_Luong_Select_TheoIDNV(int idNhanVien)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_DinhMuc_Luong_Select_TheoIDNV]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("abc");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_nhanvien", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, idNhanVien));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Tr_DinhMuc_Luong_Select_TheoIDNV", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+
+        public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[Tr_DinhMuc_Luong_SelectAll]";

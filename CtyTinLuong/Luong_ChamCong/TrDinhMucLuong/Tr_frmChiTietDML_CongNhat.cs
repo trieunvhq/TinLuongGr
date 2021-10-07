@@ -94,8 +94,14 @@ namespace CtyTinLuong
            //if (!KiemTraLuu()) return;
            if (!CheckDataInput()) return;
 
+
             using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
             {
+                DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
+                if (dt.Rows.Count > 0)
+                {
+
+                }
                 //cls.sMaDinhMucLuongCongNhat = searchLookMaDML.Text.ToString();
                 cls.iId_nhanvien = _id_NhanVien;
                 cls.daTu_ngay = dateTuNgay.DateTime;
