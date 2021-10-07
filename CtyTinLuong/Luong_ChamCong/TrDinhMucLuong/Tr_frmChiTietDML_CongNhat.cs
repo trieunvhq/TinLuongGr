@@ -91,14 +91,17 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu(bool LuuVaDong)
         {
-           if (!KiemTraLuu()) return;
+           //if (!KiemTraLuu()) return;
            if (!CheckDataInput()) return;
 
             using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
             {
                 //cls.sMaDinhMucLuongCongNhat = searchLookMaDML.Text.ToString();
                 cls.iId_nhanvien = _id_NhanVien;
-                cls.sDienGiai = txtDienGiai.Text.ToString();
+                cls.daTu_ngay = dateTuNgay.DateTime;
+                cls.daDen_ngay = dateDenNgay.DateTime;
+                cls.bDachamcong = false;
+                cls.sDienGiai = txtDienGiai.Text.Trim();
                 cls.iHinhThucTinhLuong = HinhThucTinhLuong;
                 cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtLuongCoDinh.Text.ToString());
                 cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtPhuCapXang.Text.ToString());
@@ -494,8 +497,20 @@ namespace CtyTinLuong
             }
             else if (_id_NhanVien == 0)
             {
-                MessageBox.Show("Kiểm tra lại mã định mức!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Kiểm tra lại mã định mức!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); //
                 searchLookMaDML.Focus();
+                return false;
+            }
+            else if (dateTuNgay.EditValue == null)
+            {
+                MessageBox.Show("Kiểm tra lại ngày bắt đầu áp dụng định mức lương!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dateTuNgay.Focus();
+                return false;
+            }
+            else if (dateDenNgay.EditValue == null)
+            {
+                MessageBox.Show("Kiểm tra lại ngày kết thúc áp dụng định mức lương!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dateTuNgay.Focus();
                 return false;
             }
             else if (string.IsNullOrWhiteSpace(txtLuongCoDinh.Text))

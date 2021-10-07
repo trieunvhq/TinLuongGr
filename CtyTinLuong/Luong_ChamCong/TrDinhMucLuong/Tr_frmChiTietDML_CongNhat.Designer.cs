@@ -751,6 +751,7 @@
             this.searchLookMaDML.Name = "searchLookMaDML";
             this.searchLookMaDML.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookMaDML.Properties.NullText = "";
             this.searchLookMaDML.Properties.PopupView = this.searchLookUpEdit1View;
             this.searchLookMaDML.Size = new System.Drawing.Size(176, 20);
             this.searchLookMaDML.StyleController = this.layoutControl1;
