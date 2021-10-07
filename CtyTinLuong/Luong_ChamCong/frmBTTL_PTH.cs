@@ -144,9 +144,69 @@ namespace CtyTinLuong
                     _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
                       
                 }
-            }
+                //
+                // Cong nhat
+                _data = clsThin_.Tr_BTTL_SF(_nam, _thang, _id_bophan, false);
 
-            DataRow _ravi = _data.NewRow();
+                for (int i = 0; i < _data.Rows.Count; ++i)
+                {
+                    _data.Rows[i]["TenVTHH"] = "Công nhật";
+                    double dongia_;
+
+                    PhuCapBH_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCapBaoHiem_Value"].ToString());
+                    PhuCapBH_Tong += PhuCapBH_;
+                    if (PhuCapBH_ == 0)
+                        _data.Rows[i]["CongBaoHiem"] = "";
+                    else
+                        _data.Rows[i]["CongBaoHiem"] = PhuCapBH_.ToString("N0");
+
+                    int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+
+
+                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+
+
+                    _TruBaoHiem = CheckString.ConvertToDouble_My(_data.Rows[i]["BaoHiem_Value"].ToString());
+                    _TruBaoHiem_Tong += _TruBaoHiem;
+                    if (_TruBaoHiem == 0)
+                        _data.Rows[i]["BaoHiem"] = "";
+                    else
+                        _data.Rows[i]["BaoHiem"] = _TruBaoHiem.ToString("N0");
+
+                    //
+
+                    luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
+                    luongtrachnhiem_tong_ += luongtrachnhiem_;
+                    if (luongtrachnhiem_ == 0)
+                        _data.Rows[i]["LuongTrachNhiem"] = "";
+                    else
+                        _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
+
+                    trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
+                    trutamung_tong_ += trutamung_;
+                    if (trutamung_ == 0)
+                        _data.Rows[i]["TamUng"] = "";
+                    else
+                        _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
+
+                    double tongluong1_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TongLuong_Value"].ToString());
+                    _data.Rows[i]["TongLuong"] = tongluong1_.ToString("N0");
+
+                    tong_ = (tongluong1_ + luongtrachnhiem_ + PhuCapBH_);
+                    tong_tong_ += tong_;
+                    _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
+
+                    thuclinh_ = (tong_ - trutamung_ - _TruBaoHiem);
+                    thuclinh_tong_ += thuclinh_;
+                    _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
+
+                } 
+        }
+            
+        //
+
+        DataRow _ravi = _data.NewRow();
             _ravi["ID_CongNhan"] = 0;
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
