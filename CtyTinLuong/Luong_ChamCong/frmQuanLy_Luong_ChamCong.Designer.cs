@@ -459,6 +459,7 @@
             this.ClientSize = new System.Drawing.Size(1156, 662);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.panelControl2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmQuanLy_Luong_ChamCong";

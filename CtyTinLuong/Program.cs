@@ -17,7 +17,7 @@ namespace CtyTinLuong
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
-            //Application.Run(new PhieuSanXuat_IN_CAT_New_thang8());
+            //Application.Run(new Tr_frmQuanLyDML_CongNhat());
 
 
             //Application.Run(new frmDangNhap());
