@@ -989,6 +989,7 @@ namespace CtyTinLuong
 
             if ((int)cbNhanSu.SelectedValue == 0)
             {
+                return;
             }
             else
             {
@@ -1204,9 +1205,9 @@ namespace CtyTinLuong
                 ff.ShowDialog();
 
             }
-            catch (Exception ee)
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

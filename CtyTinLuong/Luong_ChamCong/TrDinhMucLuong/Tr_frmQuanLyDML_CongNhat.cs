@@ -77,21 +77,12 @@ namespace CtyTinLuong
                     switch (_Type)
                     {
                         case "frmChamCong_TBX":
-                            this.Close();
-                            ((frmChamCong_TBX)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_TBX)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_TrgCa":
-                            this.Close();
-                            ((frmChamCong_TrgCa)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            //txtTimKiem.Text = ((frmChamCong_TrgCa)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_PTH":
-                            //this.Close();
                             txtTimKiem.Text = ((frmChamCong_PTH)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_PKT":
