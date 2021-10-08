@@ -23,6 +23,7 @@ namespace CtyTinLuong
     {
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
+        public string _MaNhanVien = "";
         public int _nam, _thang, _id_bophan;
         private DataTable _data;
         private bool isload = true;
@@ -943,6 +944,56 @@ namespace CtyTinLuong
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if ((int)cbNhanSu.SelectedValue == 0) return;
+
+                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+                {
+                    DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV((int)cbNhanSu.SelectedValue);
+                    if (dt.Rows.Count > 0)
+                    {
+                        int nam = DateTime.Now.Year;
+                        int thang = DateTime.Now.Month;
+                        int ngaycuathang = (((new DateTime(nam, thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+
+                        DateTime date_start = new DateTime(nam, thang, 1);
+                        DateTime date_end = new DateTime(nam, thang, ngaycuathang);
+
+                        if (Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString()) > date_start)
+                        {
+                            MessageBox.Show("Định mức công nhân " + cbNhanSu.Text + " phải được tính từ ngày 01/" + thang+"/"+nam+ ". Yêu cầu kiểm tra lại!",
+                           "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else if (Convert.ToDateTime(dt.Rows[dt.Rows.Count -1]["tu_ngay"].ToString()) < date_end)
+                        {
+                            MessageBox.Show("Định mức công nhân " + cbNhanSu.Text + " phải được tính đến ngày "+ ngaycuathang + "/" + thang + "/" + nam + ". Yêu cầu kiểm tra lại!",
+                           "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        //for (int i = 0; i < dt.Rows.Count - 1; i++)
+                        //{
+                        //    cls.iId = Convert.ToInt32(dt.Rows[i + 1]["id"].ToString());
+                        //    cls.daTu_ngay = (Convert.ToDateTime(dt.Rows[i]["den_ngay"].ToString())).AddDays(+1);
+                        //    cls.Tr_DinhMuc_Luong_Update_TuNgay();
+                        //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("Công nhân " + cbNhanSu.Text + " chưa có định mức lương. Yêu cầu cài định mức cho công nhân trước!", 
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
             if ((int)cbNhanSu.SelectedValue == 0)
             {
             }
@@ -1154,6 +1205,7 @@ namespace CtyTinLuong
             try
             {
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString());
+                _MaNhanVien = gridView1.GetFocusedRowCellValue(MaNhanVien).ToString();
 
                 Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(id_congnhan_, "frmChamCong_PTH", this);
                 ff.ShowDialog();

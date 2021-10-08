@@ -120,6 +120,7 @@ namespace CtyTinLuong
             this.label5 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -290,7 +291,8 @@ namespace CtyTinLuong
             this.clGuiDuLieu,
             this.Tong,
             this.ID_ChiTietChamCong_ToGapDan,
-            this.Xoa});
+            this.Xoa,
+            this.MaNhanVien});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -1500,6 +1502,12 @@ namespace CtyTinLuong
             0});
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.Caption = "MaNhanVien";
+            this.MaNhanVien.FieldName = "MaNhanVien";
+            this.MaNhanVien.Name = "MaNhanVien";
+            // 
             // frmChamCong_PTH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1626,5 +1634,6 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn Xoa;
         private System.Windows.Forms.NumericUpDown txtNam;
         private System.Windows.Forms.NumericUpDown txtThang;
+        private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
     }
 }

@@ -69,6 +69,88 @@ namespace CtyTinLuong
             _frm = frm;
             InitializeComponent();
             PhuCapBaoHiem.Caption = "Phụ cấp\nbảo hiểm";
+
+            try
+            {
+                if (_ID_CongNhan >= 0)
+                {
+                    switch (_Type)
+                    {
+                        case "frmChamCong_TBX":
+                            this.Close();
+                            ((frmChamCong_TBX)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_TrgCa":
+                            this.Close();
+                            ((frmChamCong_TrgCa)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_PTH":
+                            //this.Close();
+                            txtTimKiem.Text = ((frmChamCong_PTH)_frm)._MaNhanVien;
+                            break;
+                        case "frmChamCong_PKT":
+                            this.Close();
+                            ((frmChamCong_PKT)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_PMC":
+                            this.Close();
+                            ((frmChamCong_PMC)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_TDK":
+                            this.Close();
+                            ((frmChamCong_TDK)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_TDB":
+                            this.Close();
+                            ((frmChamCong_TDB)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_TMC":
+                            this.Close();
+                            ((frmChamCong_TMC)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_ToDot":
+                            this.Close();
+                            ((frmChamCong_ToDot)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                        case "frmChamCong_ToIn":
+                            this.Close();
+                            ((frmChamCong_ToIn)_frm).Load_DinhMuc
+                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
+                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
+                                _ID_CongNhan);
+                            break;
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+
+            }
+                
         }
 
         private void btThoat_Click(object sender, EventArgs e)
