@@ -15,7 +15,7 @@ namespace CtyTinLuong
         public static bool mbThemMoi,mbSua, mbCopy;
         public static int miID_Sua_NhanVien;
         int i = 0;
-        private void HienThi()
+        public void HienThi()
         {
             string shocviec = "Học việc";
             string sthuviec = "Thử việc";
@@ -368,7 +368,7 @@ namespace CtyTinLuong
                     mbThemMoi = false;
                     mbSua = true;
                     mbCopy = false;
-                    frmChiTietNhanSu ff = new frmChiTietNhanSu();
+                    frmChiTietNhanSu ff = new frmChiTietNhanSu(this);
                     ff.Show();
                     Cursor.Current = Cursors.Default;
                 }
@@ -390,7 +390,7 @@ namespace CtyTinLuong
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
-            frmChiTietNhanSu ff = new frmChiTietNhanSu();
+            frmChiTietNhanSu ff = new frmChiTietNhanSu(this);
             ff.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -475,7 +475,7 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
-                frmChiTietNhanSu ff = new frmChiTietNhanSu();
+                frmChiTietNhanSu ff = new frmChiTietNhanSu(this);
                 ff.Show();
                 Cursor.Current = Cursors.Default;
             }

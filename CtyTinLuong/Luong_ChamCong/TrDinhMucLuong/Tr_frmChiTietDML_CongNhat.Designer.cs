@@ -452,6 +452,7 @@
             this.dateTuNgay.EditValue = null;
             this.dateTuNgay.Location = new System.Drawing.Point(154, 26);
             this.dateTuNgay.Name = "dateTuNgay";
+            this.dateTuNgay.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.dateTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -503,6 +504,7 @@
             this.searchLookMaDML.EditValue = "";
             this.searchLookMaDML.Location = new System.Drawing.Point(154, 2);
             this.searchLookMaDML.Name = "searchLookMaDML";
+            this.searchLookMaDML.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.searchLookMaDML.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookMaDML.Properties.NullText = "";
@@ -553,6 +555,7 @@
             this.dateDenNgay.EditValue = null;
             this.dateDenNgay.Location = new System.Drawing.Point(487, 26);
             this.dateDenNgay.Name = "dateDenNgay";
+            this.dateDenNgay.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.dateDenNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDenNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

@@ -64,7 +64,7 @@ namespace CtyTinLuong
                     cls.sLoaiHopDongLaoDong = cbLoaiHopDong.Text.ToString();
                     cls.iID_BoPhan = Convert.ToInt16(cbBoPhan.SelectedValue.ToString());
                     cls.iID_ChucVu = Convert.ToInt16(cbChucVu.SelectedValue.ToString());
-                    cls.sTenNhanVien = txtHoTen.Text.ToString();
+                    cls.sTenNhanVien = CheckString.ChuanHoaHoTen(txtHoTen.Text.Trim());
                     cls.sSoDienThoai = txtSDT.Text.ToString();
                     if (dteNgayBatDau.EditValue != null)
                         cls.daNgayBatDau = dteNgayBatDau.DateTime;
@@ -127,16 +127,23 @@ namespace CtyTinLuong
                         }
 
                         //
-                        cls.Insert();
+                        if(cls.Insert())
+                        {
+                            _frm.HienThi();
+                            this.Close();
+                            MessageBox.Show("Đã lưu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
                         cls.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
-                        cls.Update();
+                        if(cls.Update())
+                        {
+                            _frm.HienThi();
+                            this.Close();
+                            MessageBox.Show("Đã lưu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-
-                    MessageBox.Show("Đã lưu");
-                    this.Close();
                 }
             }
             catch (Exception ee)
@@ -177,8 +184,9 @@ namespace CtyTinLuong
                     cls1.iID_NhanSu = frmNhanSu.miID_Sua_NhanVien;
                     DataTable dt1 = cls1.Select_hienThi_ChiTietNhanSu();
 
-                    txtMaNV.Text = dt1.Rows[0]["MaNhanVien"].ToString();
-                    txtHoTen.Text = dt1.Rows[0]["TenNhanVien"].ToString();
+                    if (frmNhanSu.mbSua) txtMaNV.Text = dt1.Rows[0]["MaNhanVien"].ToString();
+
+                    txtHoTen.Text = CheckString.ChuanHoaHoTen(dt1.Rows[0]["TenNhanVien"].ToString());
                     txtSDT.Text = dt1.Rows[0]["SoDienThoai"].ToString();
                     cbBoPhan.Text = dt1.Rows[0]["TenBoPhan"].ToString();
                     cbChucVu.Text = dt1.Rows[0]["TenChucVu"].ToString();
@@ -250,8 +258,10 @@ namespace CtyTinLuong
             }
         }
 
-        public frmChiTietNhanSu()
+        frmNhanSu _frm;
+        public frmChiTietNhanSu(frmNhanSu frm)
         {
+            _frm = frm;
             InitializeComponent();
         }
        
@@ -270,9 +280,14 @@ namespace CtyTinLuong
                 if (frmNhanSu.mbSua == true)
                     HienThi_Sua();
                 else if (frmNhanSu.mbCopy == true)
+                {
+                    txtMaNV.Text = CheckString.creatMaNhanSu();
                     HienThi_Sua();
+                }
                 else
-                { }
+                {
+                    txtMaNV.Text = CheckString.creatMaNhanSu();
+                }
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ea)

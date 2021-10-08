@@ -5,33 +5,52 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+
 namespace CtyTinLuong
 {
     internal static class CheckString
     {
 
         //
-        public static String creatMaNhanSu(int i)
+        public static String creatMaNhanSu()
         {
-            String s = "TL00000";
+            DataTable dt;
+            String s = "TL000000";
             String maNhanSu = "";
             String sq_curent = "";
 
-            //sq_curent = LoaiPhong_db.selectMLP_max();
-
-            if (sq_curent != "")
+            try
             {
-                sq_curent = sq_curent.Trim(); //cat bo khoang trang 2 dau
-                String tmp = sq_curent.Substring(2); //tao chuoi con khong co chu "MK"
-                int sq = Convert.ToInt32(tmp) + 1; //convert sq sang kieu int va tang 1
-                //if (sq >= 99999)
-                //{
-                //    System.out.println("Ma loai phong hien tai da lon hon MLP99999!");
-                //    System.exit(0);
-                //}
-                maNhanSu = s.Substring(0, 7 - (sq.ToString()).Length) + sq.ToString();
+                using (clsThin cls = new clsThin())
+                {
+                    dt = cls.Tr_Select_CreateMaNhanSu();
+                    if (dt.Rows.Count > 0)
+                    {
+                        sq_curent = dt.Rows[0]["MaNhanVien"].ToString().Trim();
+                    }
+                }
+
+                //sq_curent = LoaiPhong_db.selectMLP_max();
+
+                if (sq_curent != "" && sq_curent.Length >= 8)
+                {
+                    String tmp = sq_curent.Substring(2);
+                    int sq = Convert.ToInt32(tmp) + 1;
+
+                    if (sq >= 999999)
+                    {
+                        MessageBox.Show("Không thể tạo mã nhân viên mới. Mã nhân viên hiện tại đã lớn hơn TL999999!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    maNhanSu = s.Substring(0, 8 - (sq.ToString()).Length) + sq.ToString();
+                }
+                else maNhanSu = "TL000001";
             }
-            else maNhanSu = "MLP00001";
+            catch(Exception ea)
+            {
+
+            }
 
             return maNhanSu;
         }

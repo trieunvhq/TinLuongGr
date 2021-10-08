@@ -201,12 +201,12 @@
             // clTenNhanVien
             // 
             this.clTenNhanVien.AppearanceCell.Options.UseTextOptions = true;
+            this.clTenNhanVien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clTenNhanVien.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clTenNhanVien.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenNhanVien.AppearanceHeader.Options.UseFont = true;
             this.clTenNhanVien.AppearanceHeader.Options.UseTextOptions = true;
             this.clTenNhanVien.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.clTenNhanVien.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clTenNhanVien.Caption = "Họ tên";
             this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit1;
             this.clTenNhanVien.FieldName = "TenNhanVien";
@@ -705,7 +705,7 @@
             this.MinimizeBox = false;
             this.Name = "frmNhanSu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Nhân Sự";
+            this.Text = "frmNhanSu-->Nhân Sự";
             this.Load += new System.EventHandler(this.frmNhanSu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

@@ -251,7 +251,7 @@ namespace CtyTinLuong
 			}
 		}
 
-        public DataTable SelectPage_BB_Ktra_DMHHSX(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc, string id_BienBan)
+        public DataTable Tr_SelecPage_BB_Ktra_HHSX(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc, string id_BienBan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[Tr_SelecPage_BB_Ktra_HHSX]";

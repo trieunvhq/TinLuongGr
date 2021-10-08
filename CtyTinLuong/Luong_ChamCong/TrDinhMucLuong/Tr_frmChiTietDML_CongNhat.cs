@@ -97,6 +97,7 @@ namespace CtyTinLuong
 
             using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
             {
+                cls.iId = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
                 cls.iId_nhanvien = _id_NhanVien;
                 cls.daTu_ngay = dateTuNgay.DateTime;
                 cls.daDen_ngay = dateDenNgay.DateTime;
@@ -125,15 +126,86 @@ namespace CtyTinLuong
                 }
                 else
                 {
+                    if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
+                    {
+                        MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + "đã thanh toán lương cho công nhân. "
+                            + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                     //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
                     if (cls.Update())
+                    {
+                        try
+                        {
+                            DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
+                            if (dt.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt.Rows.Count -1; i++)
+                                {
+                                    cls.iId = Convert.ToInt32(dt.Rows[i+1]["id"].ToString());
+                                    cls.daTu_ngay = (Convert.ToDateTime(dt.Rows[i]["den_ngay"].ToString())).AddDays(+1);
+                                    cls.Tr_DinhMuc_Luong_Update_TuNgay();
+                                }
+                            }
+                        }
+                        catch (Exception ea)
+                        {
+                            MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                         MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat = true;
 
                 if (LuuVaDong) this.Close();
             }
         }
+
+        private void TrReadonly()
+        {
+            searchLookMaDML.ReadOnly = true;
+            dateTuNgay.ReadOnly = true;
+            //dateDenNgay.ReadOnly = true;
+            txtLuongCoDinh.ReadOnly = true;
+            txtPhuCapXang.ReadOnly = true;
+            txtPhuCapDienThoai.ReadOnly = true;
+            txtPhuCapVeSinhMay.ReadOnly = true;
+            txtPhuCapTienAn.ReadOnly = true;
+            txtTrachNhiem.ReadOnly = true;
+            txtPhanTramBaoHiem.ReadOnly = true;
+            txtLuongCoBan.ReadOnly = true;
+            txtPhuCapBH.ReadOnly = true;
+            txtDMLuongTheoGio.ReadOnly = true;
+            //txtDinhMucTangCa.ReadOnly = true;
+            checCoDinh.Enabled = false;
+            checCongNhat.Enabled = false;
+            checSanLuong.Enabled = false;
+            checMax_hai.Enabled = false;
+        }
+
+        private void TrUnlockReadonly()
+        {
+            searchLookMaDML.ReadOnly = false;
+            dateTuNgay.ReadOnly = false;
+            //dateDenNgay.ReadOnly = false;
+            txtLuongCoDinh.ReadOnly = false;
+            txtPhuCapXang.ReadOnly = false;
+            txtPhuCapDienThoai.ReadOnly = false;
+            txtPhuCapVeSinhMay.ReadOnly = false;
+            txtPhuCapTienAn.ReadOnly = false;
+            txtTrachNhiem.ReadOnly = false;
+            txtPhanTramBaoHiem.ReadOnly = false;
+            txtLuongCoBan.ReadOnly = false;
+            txtPhuCapBH.ReadOnly = false;
+            txtDMLuongTheoGio.ReadOnly = false;
+            //txtDinhMucTangCa.ReadOnly = false;
+            checCoDinh.Enabled = true;
+            checCongNhat.Enabled = true;
+            checSanLuong.Enabled = true;
+            checMax_hai.Enabled = true;
+        }
+
         private void hienthiSUaDuLieu()
         {
             btLUU.Enabled = true;
@@ -142,17 +214,19 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             if (dt.Rows.Count > 0)
             {
-                dateTuNgay.EditValue = Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString());
-                dateDenNgay.EditValue = Convert.ToDateTime(dt.Rows[0]["den_ngay"].ToString());
-                _id_NhanVien = Convert.ToInt32(dt.Rows[0]["id_nhanvien"].ToString());
-
                 if (DateTime.Now.Month > (Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString())).Month)
                 {
-                    btLUU.Enabled = false;
+                    TrReadonly();
                 }
-                
+
+                _id_NhanVien = Convert.ToInt32(dt.Rows[0]["id_nhanvien"].ToString());
+
                 searchLookMaDML.EditValue = _id_NhanVien;
                 searchLookMaDML.ReadOnly = true;
+
+                dateTuNgay.EditValue = Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString());
+                dateDenNgay.EditValue = Convert.ToDateTime(dt.Rows[0]["den_ngay"].ToString());
+                
                 txtTenNhanVien.Text = dt.Rows[0]["TenNhanVien"].ToString();
                 txtDienGiai.Text = dt.Rows[0]["DienGiai"].ToString();
 
@@ -209,6 +283,7 @@ namespace CtyTinLuong
 
         private void Tr_frmChiTietDML_CongNhat_Load(object sender, EventArgs e)
         {
+            TrUnlockReadonly();
             HinhThucTinhLuong = 0;
             Load_lockUP_EDIT();
             searchLookMaDML.ReadOnly = false;
@@ -436,7 +511,6 @@ namespace CtyTinLuong
 
         private void txtBaoHiem_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
                 System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
@@ -447,8 +521,6 @@ namespace CtyTinLuong
             catch
             {
             }
-
-           
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -478,7 +550,6 @@ namespace CtyTinLuong
 
         private void btLUU_Click(object sender, EventArgs e)
         {
-
             LuuDuLieu(true);
             _frmQuanLyDinhMucLuong.HienThi();
 
@@ -674,6 +745,27 @@ namespace CtyTinLuong
 
         private void searchLookMaDML_EditValueChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat)
+                {
+                    using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+                    {
+                        DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
+                        if (dt.Rows.Count > 0)
+                        {
+                            dateTuNgay.EditValue = (Convert.ToDateTime(dt.Rows[dt.Rows.Count - 1]["den_ngay"].ToString())).AddDays(+1);
+                            dateTuNgay.ReadOnly = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
             //try
             //{
             //    clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
@@ -690,22 +782,6 @@ namespace CtyTinLuong
             //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
             ////================
-            try
-            {
-                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
-                {
-                    DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
-                    if (dt.Rows.Count > 0)
-                    {
-                        dateTuNgay.EditValue = (Convert.ToDateTime(dt.Rows[dt.Rows.Count - 1]["den_ngay"].ToString())).AddDays(+1);
-                        dateTuNgay.ReadOnly = true;
-                    }
-                }
-            }
-            catch (Exception ea)
-            {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
 
@@ -733,10 +809,6 @@ namespace CtyTinLuong
 
         private void txtDMLuongTheoGio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (e.KeyChar == (char)13)
-            //{
-            //    SendKeys.Send("{TAB}");
-            //}
             if (e.KeyChar == (char)13)
             {
                 try

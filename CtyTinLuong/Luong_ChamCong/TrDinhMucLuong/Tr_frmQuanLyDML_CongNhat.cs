@@ -18,30 +18,42 @@ namespace CtyTinLuong
         public static bool mb_TheMoi_DinhMucLuongCongNhat;
         public static string _sMaNhanVien;
         public static int miID_Sua_DinhMucLuongCongNhat;
+
         public void HienThi()
         {
-            clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong();
-            DataTable dt = cls.SelectAll();
+            try
+            {
+                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+                {
+                    DataTable dt = cls.Tr_DinhMuc_Luong_SelectAll(txtTimKiem.Text.Trim());
 
-            if (checked_ALL.Checked == true)
-            {
-                dt.DefaultView.RowFilter = " TonTai= True";
-            }
-            else
-            {
-                if (checkTheoDoi.Checked == true)
-                {
-                    dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+                    if (checked_ALL.Checked == true)
+                    {
+                        dt.DefaultView.RowFilter = " TonTai= True";
+                    }
+                    else
+                    {
+                        if (checkTheoDoi.Checked == true)
+                        {
+                            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
+                        }
+                        else
+                        {
+                            dt.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=true";
+                        }
+                    }
+                    DataView dv = dt.DefaultView;
+                    DataTable dxxxx = dv.ToTable();
+                    gridControl1.DataSource = dxxxx;
                 }
-                else
-                {
-                    dt.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=true";
-                }
             }
-            DataView dv = dt.DefaultView;           
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         public Tr_frmQuanLyDML_CongNhat()
         {
             _ID_CongNhan = -1;
@@ -326,6 +338,11 @@ namespace CtyTinLuong
                         CheckString.ChuanHoaHoTen(dt.Rows[i]["TenNhanVien"].ToString()));
                 }
             }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            HienThi();
         }
     }
 }

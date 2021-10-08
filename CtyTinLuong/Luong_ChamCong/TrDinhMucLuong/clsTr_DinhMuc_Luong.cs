@@ -205,18 +205,50 @@ namespace CtyTinLuong
 			}
 		}
 
+        public bool Tr_DinhMuc_Luong_Update_TuNgay()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_DinhMuc_Luong_Update_TuNgay]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
-		/// <summary>
-		/// Purpose: Delete method. This method will Delete one existing row in the database, based on the Primary Key.
-		/// </summary>
-		/// <returns>True if succeeded, otherwise an Exception is thrown. </returns>
-		/// <remarks>
-		/// Properties needed for this method: 
-		/// <UL>
-		///		 <LI>iId</LI>
-		/// </UL>
-		/// </remarks>
-		public override bool Delete()
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iid", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@datu_ngay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daTu_ngay));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTr_DinhMuc_Luong::Update::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+        /// <summary>
+        /// Purpose: Delete method. This method will Delete one existing row in the database, based on the Primary Key.
+        /// </summary>
+        /// <returns>True if succeeded, otherwise an Exception is thrown. </returns>
+        /// <remarks>
+        /// Properties needed for this method: 
+        /// <UL>
+        ///		 <LI>iId</LI>
+        /// </UL>
+        /// </remarks>
+        public override bool Delete()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[Tr_DinhMuc_Luong_Delete]";
@@ -385,7 +417,7 @@ namespace CtyTinLuong
         }
 
 
-        public override DataTable SelectAll()
+        public DataTable Tr_DinhMuc_Luong_SelectAll(string keySearch)
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[Tr_DinhMuc_Luong_SelectAll]";
@@ -398,12 +430,12 @@ namespace CtyTinLuong
 
 			try
 			{
-
 				// Open connection.
 				m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@KeySearch", SqlDbType.NVarChar, 200, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, keySearch));
 
-				// Execute query.
-				sdaAdapter.Fill(dtToReturn);
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
 				return dtToReturn;
 			}
 			catch(Exception ex)

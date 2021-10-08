@@ -37,6 +37,9 @@
             this.txtDienGiai = new System.Windows.Forms.TextBox();
             this.gridMaDinhMucLuong = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.cbChucVu = new System.Windows.Forms.ComboBox();
             this.cbBoPhan = new System.Windows.Forms.ComboBox();
@@ -88,9 +91,6 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ID_DinhMucLuong_CongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaDinhMucLuongCongNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -234,6 +234,30 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // ID_DinhMucLuong_CongNhat
+            // 
+            this.ID_DinhMucLuong_CongNhat.Caption = "ID_DinhMucLuong_CongNhat";
+            this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
+            this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
+            // 
+            // MaDinhMucLuongCongNhat
+            // 
+            this.MaDinhMucLuongCongNhat.Caption = "Mã lương";
+            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
+            this.MaDinhMucLuongCongNhat.Visible = true;
+            this.MaDinhMucLuongCongNhat.VisibleIndex = 0;
+            this.MaDinhMucLuongCongNhat.Width = 100;
+            // 
+            // DienGiai
+            // 
+            this.DienGiai.Caption = "Diễn giải";
+            this.DienGiai.FieldName = "DienGiai";
+            this.DienGiai.Name = "DienGiai";
+            this.DienGiai.Visible = true;
+            this.DienGiai.VisibleIndex = 1;
+            this.DienGiai.Width = 284;
             // 
             // txtGhiChu
             // 
@@ -401,6 +425,7 @@
             // 
             this.txtMaNV.Location = new System.Drawing.Point(139, 12);
             this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
             this.txtMaNV.Size = new System.Drawing.Size(382, 20);
             this.txtMaNV.TabIndex = 0;
             this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
@@ -804,30 +829,6 @@
             this.layoutControlItem20.Size = new System.Drawing.Size(646, 24);
             this.layoutControlItem20.Text = "Ngày cấp";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(92, 13);
-            // 
-            // ID_DinhMucLuong_CongNhat
-            // 
-            this.ID_DinhMucLuong_CongNhat.Caption = "ID_DinhMucLuong_CongNhat";
-            this.ID_DinhMucLuong_CongNhat.FieldName = "ID_DinhMucLuong_CongNhat";
-            this.ID_DinhMucLuong_CongNhat.Name = "ID_DinhMucLuong_CongNhat";
-            // 
-            // MaDinhMucLuongCongNhat
-            // 
-            this.MaDinhMucLuongCongNhat.Caption = "Mã lương";
-            this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.Visible = true;
-            this.MaDinhMucLuongCongNhat.VisibleIndex = 0;
-            this.MaDinhMucLuongCongNhat.Width = 100;
-            // 
-            // DienGiai
-            // 
-            this.DienGiai.Caption = "Diễn giải";
-            this.DienGiai.FieldName = "DienGiai";
-            this.DienGiai.Name = "DienGiai";
-            this.DienGiai.Visible = true;
-            this.DienGiai.VisibleIndex = 1;
-            this.DienGiai.Width = 284;
             // 
             // frmChiTietNhanSu
             // 

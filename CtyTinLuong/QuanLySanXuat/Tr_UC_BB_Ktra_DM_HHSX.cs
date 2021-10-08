@@ -89,7 +89,7 @@ namespace CtyTinLuong
 
                 using (clsTr_BB_KtraDinhMuc_HHSX cls_ = new clsTr_BB_KtraDinhMuc_HHSX())
                 {
-                    DataTable dt_ = cls_.SelectPage_BB_Ktra_DMHHSX(_SoTrang, _ngay_batdau, _ngay_ketthuc, _sSearch);
+                    DataTable dt_ = cls_.Tr_SelecPage_BB_Ktra_HHSX(_SoTrang, _ngay_batdau, _ngay_ketthuc, _sSearch);
 
                     _RowPage_curent = dt_.Rows.Count;
 
