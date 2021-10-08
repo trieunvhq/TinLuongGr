@@ -972,13 +972,6 @@ namespace CtyTinLuong
                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
-
-                        //for (int i = 0; i < dt.Rows.Count - 1; i++)
-                        //{
-                        //    cls.iId = Convert.ToInt32(dt.Rows[i + 1]["id"].ToString());
-                        //    cls.daTu_ngay = (Convert.ToDateTime(dt.Rows[i]["den_ngay"].ToString())).AddDays(+1);
-                        //    cls.Tr_DinhMuc_Luong_Update_TuNgay();
-                        //}
                     }
                     else
                     {
