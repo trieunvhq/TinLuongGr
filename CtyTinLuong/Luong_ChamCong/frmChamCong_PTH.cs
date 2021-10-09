@@ -966,7 +966,7 @@ namespace CtyTinLuong
                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
-                        else if (Convert.ToDateTime(dt.Rows[dt.Rows.Count -1]["tu_ngay"].ToString()) < date_end)
+                        else if (Convert.ToDateTime(dt.Rows[dt.Rows.Count -1]["den_ngay"].ToString()) < date_end)
                         {
                             MessageBox.Show("Định mức công nhân " + cbNhanSu.Text + " phải được tính đến ngày "+ ngaycuathang + "/" + thang + "/" + nam + ". Yêu cầu kiểm tra lại!",
                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

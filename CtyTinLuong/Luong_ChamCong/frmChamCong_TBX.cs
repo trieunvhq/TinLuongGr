@@ -951,7 +951,7 @@ namespace CtyTinLuong
                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
-                        else if (Convert.ToDateTime(dt.Rows[dt.Rows.Count - 1]["tu_ngay"].ToString()) < date_end)
+                        else if (Convert.ToDateTime(dt.Rows[dt.Rows.Count - 1]["den_ngay"].ToString()) < date_end)
                         {
                             MessageBox.Show("Định mức công nhân " + cbNhanSu.Text + " phải được tính đến ngày " + ngaycuathang + "/" + thang + "/" + nam + ". Yêu cầu kiểm tra lại!",
                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1173,7 +1173,7 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_TBX", this);
+            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "frmChamCong_TBX", this);
             ff.ShowDialog();
         }
         
