@@ -40,7 +40,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenLoaiCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSanLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -113,7 +113,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
             this.clTenNhanVien,
-            this.ColTenVTHH,
+            this.TenLoaiCong,
             this.DonGia,
             this.ColSanLuong,
             this.ColTongLuong,
@@ -174,19 +174,19 @@
             this.clTenNhanVien.VisibleIndex = 1;
             this.clTenNhanVien.Width = 120;
             // 
-            // ColTenVTHH
+            // TenLoaiCong
             // 
-            this.ColTenVTHH.AppearanceCell.Options.UseTextOptions = true;
-            this.ColTenVTHH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.ColTenVTHH.Caption = "CÔNG";
-            this.ColTenVTHH.FieldName = "TenVTHH";
-            this.ColTenVTHH.MinWidth = 50;
-            this.ColTenVTHH.Name = "ColTenVTHH";
-            this.ColTenVTHH.OptionsColumn.AllowEdit = false;
-            this.ColTenVTHH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.ColTenVTHH.Visible = true;
-            this.ColTenVTHH.VisibleIndex = 2;
-            this.ColTenVTHH.Width = 82;
+            this.TenLoaiCong.AppearanceCell.Options.UseTextOptions = true;
+            this.TenLoaiCong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TenLoaiCong.Caption = "CÔNG";
+            this.TenLoaiCong.FieldName = "TenLoaiCong";
+            this.TenLoaiCong.MinWidth = 50;
+            this.TenLoaiCong.Name = "TenLoaiCong";
+            this.TenLoaiCong.OptionsColumn.AllowEdit = false;
+            this.TenLoaiCong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.TenLoaiCong.Visible = true;
+            this.TenLoaiCong.VisibleIndex = 2;
+            this.TenLoaiCong.Width = 82;
             // 
             // DonGia
             // 
@@ -558,7 +558,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn KyNhan;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Columns.GridColumn ColLuongTrachNhiem;
-        private DevExpress.XtraGrid.Columns.GridColumn ColTenVTHH;
+        private DevExpress.XtraGrid.Columns.GridColumn TenLoaiCong;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn ColCongBaoHiem;
         private DevExpress.XtraGrid.Columns.GridColumn TruBaoHiem;

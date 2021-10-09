@@ -21,6 +21,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCong_ToIn : UserControl
     {
+        public string _MaNhanVien = "";
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
         public int _nam, _thang, _id_bophan = 25;
@@ -956,17 +957,71 @@ namespace CtyTinLuong
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
-            if ((int)cbNhanSu.SelectedValue == 0)
+            try
             {
+                if ((int)cbNhanSu.SelectedValue == 0) return;
+
+                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+                {
+                    DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV((int)cbNhanSu.SelectedValue);
+                    if (dt.Rows.Count > 0)
+                    {
+                        int nam = DateTime.Now.Year;
+                        int thang = DateTime.Now.Month;
+                        int ngaycuathang = (((new DateTime(nam, thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+
+                        DateTime date_start = new DateTime(nam, thang, 1);
+                        DateTime date_end = new DateTime(nam, thang, ngaycuathang);
+
+                        if (Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString()) > date_start)
+                        {
+                            MessageBox.Show("Định mức công nhân " + cbNhanSu.Text + " phải được tính từ ngày 01/" + thang + "/" + nam + ". Yêu cầu kiểm tra lại!",
+                           "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else if (Convert.ToDateTime(dt.Rows[dt.Rows.Count - 1]["den_ngay"].ToString()) < date_end)
+                        {
+                            MessageBox.Show("Định mức công nhân " + cbNhanSu.Text + " phải được tính đến ngày " + ngaycuathang + "/" + thang + "/" + nam + ". Yêu cầu kiểm tra lại!",
+                           "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Công nhân " + cbNhanSu.Text + " chưa có định mức lương. Yêu cầu cài định mức cho công nhân trước!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
             }
-            else
+            catch (Exception ea)
             {
-                //int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
-
-                //ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_,cbLoaiCong.Text);
-                ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true);
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            if (cbNhanSu.Text != "")
+            {
+                if ((int)cbNhanSu.SelectedValue == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true);
+                }
+            }
+
+            //if ((int)cbNhanSu.SelectedValue == 0)
+            //{
+            //}
+            //else
+            //{
+            //    //int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
+
+            //    //ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_,cbLoaiCong.Text);
+            //    ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true);
+
+            //}
         }
         private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew)
         {
@@ -1163,7 +1218,7 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_ToIn", this);
+            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "frmChamCong_ToIn", this);
             ff.ShowDialog();
         }
         
@@ -1190,8 +1245,9 @@ namespace CtyTinLuong
             try
             {
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
-                 
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_ToIn", this);
+                _MaNhanVien = gridView1.GetFocusedRowCellValue(MaNhanVien).ToString();
+
+                Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(id_congnhan_, "frmChamCong_ToIn", this);
                 ff.ShowDialog();
             }
             catch (Exception ee)

@@ -85,14 +85,14 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 /// tang ca
-                _data = clsThin_.Tr_BTTL_SF(_nam, _thang, _id_bophan, true);
+                _data = clsThin_.Tr_BTTL_SF_NoCheckTime(_nam, _thang, _id_bophan, true);
               
                 int ID_congNhanRoot = -1;
                 int stt = 0;
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    _data.Rows[i]["TenVTHH"] = "Tăng ca";
+                    //_data.Rows[i]["TenVTHH"] = "Tăng ca";
                
                     PhuCapBH_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCapBaoHiem_Value"].ToString());
                     PhuCapBH_Tong += PhuCapBH_;
@@ -148,11 +148,11 @@ namespace CtyTinLuong
                 for (int i = 0; i < data2.Rows.Count; ++i)
                 {
                     DataRow _ravi2 = _data.NewRow();
-                    _ravi2["TenVTHH"] = "Công nhật";
                     _ravi2["TenNhanVien"] = data2.Rows[i]["TenNhanVien"].ToString();
-                    
+                    //_ravi2["TenVTHH"] = data2.Rows[i]["TenLoaiCong"].ToString(); //Tên loại công
 
-                      PhuCapBH_ = CheckString.ConvertToDouble_My(data2.Rows[i]["PhuCapBaoHiem_Value"].ToString());
+
+                    PhuCapBH_ = CheckString.ConvertToDouble_My(data2.Rows[i]["PhuCapBaoHiem_Value"].ToString());
                     PhuCapBH_Tong += PhuCapBH_;
                     if (PhuCapBH_ == 0)
                         _ravi2["CongBaoHiem"] = "";
@@ -203,7 +203,7 @@ namespace CtyTinLuong
                     {
                         if (_data.Rows[zz]["ID_CongNhan"].ToString() == ID_congNhan2.ToString())
                         { 
-                            _data.Rows.InsertAt(_ravi2, zz+1);
+                            _data.Rows.InsertAt(_ravi2, zz-1);
                             break;
                         }
                     }

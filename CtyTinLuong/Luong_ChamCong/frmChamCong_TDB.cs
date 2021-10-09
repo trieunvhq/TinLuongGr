@@ -21,6 +21,7 @@ namespace CtyTinLuong
 {
     public partial class frmChamCong_TDB : UserControl
     {
+        public string _MaNhanVien = "";
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
         public int _nam, _thang, _id_bophan = 25;

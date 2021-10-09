@@ -108,7 +108,7 @@ namespace CtyTinLuong.FormMain
         private void btnMucLuongCongNhat_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong();
+            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat();
             ff.Show();
             Cursor.Current = Cursors.Default;
         }

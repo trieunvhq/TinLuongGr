@@ -80,66 +80,38 @@ namespace CtyTinLuong
                             txtTimKiem.Text = ((frmChamCong_TBX)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_TrgCa":
-                            //txtTimKiem.Text = ((frmChamCong_TrgCa)_frm)._MaNhanVien;
+                            txtTimKiem.Text = ((frmChamCong_TrgCa)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_PTH":
                             txtTimKiem.Text = ((frmChamCong_PTH)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_PKT":
-                            this.Close();
-                            ((frmChamCong_PKT)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_PKT)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_PMC":
-                            this.Close();
-                            ((frmChamCong_PMC)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_PMC)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_TDK":
-                            this.Close();
-                            ((frmChamCong_TDK)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_TDK)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_TDB":
-                            this.Close();
-                            ((frmChamCong_TDB)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_TDB)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_TMC":
-                            this.Close();
-                            ((frmChamCong_TMC)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_TMC)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_ToDot":
-                            this.Close();
-                            ((frmChamCong_ToDot)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_ToDot)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_ToIn":
-                            this.Close();
-                            ((frmChamCong_ToIn)_frm).Load_DinhMuc
-                                (Convert.ToInt16(gridView1.GetFocusedRowCellValue(id).ToString())
-                                , gridView1.GetFocusedRowCellValue(MaNhanVien).ToString(),
-                                _ID_CongNhan);
+                            txtTimKiem.Text = ((frmChamCong_ToIn)_frm)._MaNhanVien;
                             break;
                     }
                 }
             }
             catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 
         }
