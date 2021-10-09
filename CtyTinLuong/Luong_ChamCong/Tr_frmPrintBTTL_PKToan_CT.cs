@@ -33,15 +33,28 @@ namespace CtyTinLuong.Luong_ChamCong
         {
             Tr_PrintBTTL_PKToan_CT xtr111 = new Tr_PrintBTTL_PKToan_CT(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
-           
+
+            int ID_congNhanRoot = -1;
+
             for (int i = 0; i < _data.Rows.Count -1; ++i)
             {
                 DataRow _ravi = ds.tbBTTL_PKToan_CT.NewRow();
 
-                //
-                _ravi["STT"] = (i + 1).ToString();
-                _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-                _ravi["Cong"] = _data.Rows[i]["TenVTHH"].ToString();
+                int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+
+                if (ID_congNhanRoot != ID_congNhan)
+                {
+                    ID_congNhanRoot = ID_congNhan;
+                    _ravi["STT"] = _data.Rows[i]["STT"].ToString();
+                    _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                }
+                else
+                {
+                    _ravi["STT"] = "";
+                    _ravi["TenNhanVien"] = "";
+                }
+
+                _ravi["Cong"] = _data.Rows[i]["TenLoaiCong"].ToString();
 
                 _ravi["NgayCong"] = _data.Rows[i]["SanLuong"].ToString();
                 _ravi["LuongCoBan"] = _data.Rows[i]["DonGia"].ToString();

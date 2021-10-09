@@ -266,6 +266,7 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(514, 40);
             this.txtGhiChu.TabIndex = 10;
+            this.txtGhiChu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGhiChu_KeyPress);
             // 
             // cbChucVu
             // 
@@ -274,6 +275,7 @@
             this.cbChucVu.Name = "cbChucVu";
             this.cbChucVu.Size = new System.Drawing.Size(514, 21);
             this.cbChucVu.TabIndex = 11;
+            this.cbChucVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbChucVu_KeyPress);
             // 
             // cbBoPhan
             // 
@@ -283,6 +285,7 @@
             this.cbBoPhan.Size = new System.Drawing.Size(514, 21);
             this.cbBoPhan.TabIndex = 3;
             this.cbBoPhan.SelectedIndexChanged += new System.EventHandler(this.cbBoPhan2_SelectedIndexChanged);
+            this.cbBoPhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbBoPhan_KeyPress);
             // 
             // checkNgungTheoDoi
             // 
@@ -312,6 +315,7 @@
             this.dteNgayNopBHXH.Size = new System.Drawing.Size(514, 20);
             this.dteNgayNopBHXH.StyleController = this.layoutControl1;
             this.dteNgayNopBHXH.TabIndex = 7;
+            this.dteNgayNopBHXH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayNopBHXH_KeyPress);
             // 
             // dteNgayThoiViec
             // 
@@ -331,6 +335,7 @@
             this.dteNgayThoiViec.Size = new System.Drawing.Size(514, 20);
             this.dteNgayThoiViec.StyleController = this.layoutControl1;
             this.dteNgayThoiViec.TabIndex = 8;
+            this.dteNgayThoiViec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayThoiViec_KeyPress);
             // 
             // dteNgayChinhThuc
             // 
@@ -349,6 +354,7 @@
             this.dteNgayChinhThuc.Size = new System.Drawing.Size(514, 20);
             this.dteNgayChinhThuc.StyleController = this.layoutControl1;
             this.dteNgayChinhThuc.TabIndex = 6;
+            this.dteNgayChinhThuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayChinhThuc_KeyPress);
             // 
             // dteNgayBatDau
             // 
@@ -368,6 +374,7 @@
             this.dteNgayBatDau.Size = new System.Drawing.Size(514, 20);
             this.dteNgayBatDau.StyleController = this.layoutControl1;
             this.dteNgayBatDau.TabIndex = 5;
+            this.dteNgayBatDau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayBatDau_KeyPress);
             // 
             // txtSDT
             // 
@@ -375,6 +382,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(514, 20);
             this.txtSDT.TabIndex = 2;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // cbLoaiHopDong
             // 
@@ -389,6 +397,7 @@
             this.cbLoaiHopDong.Size = new System.Drawing.Size(514, 20);
             this.cbLoaiHopDong.StyleController = this.layoutControl1;
             this.cbLoaiHopDong.TabIndex = 4;
+            this.cbLoaiHopDong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbLoaiHopDong_KeyPress);
             // 
             // txtHoTen
             // 
@@ -398,6 +407,7 @@
             this.txtHoTen.StyleController = this.layoutControl1;
             this.txtHoTen.TabIndex = 1;
             this.txtHoTen.EditValueChanged += new System.EventHandler(this.txtHoTen_EditValueChanged);
+            this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // checkBoxNu
             // 
@@ -429,6 +439,7 @@
             this.txtMaNV.Size = new System.Drawing.Size(382, 20);
             this.txtMaNV.TabIndex = 0;
             this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
+            this.txtMaNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaNV_KeyPress);
             // 
             // layoutControlItem6
             // 
@@ -657,6 +668,7 @@
             this.txtNoiSinh.Name = "txtNoiSinh";
             this.txtNoiSinh.Size = new System.Drawing.Size(547, 23);
             this.txtNoiSinh.TabIndex = 25;
+            this.txtNoiSinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoiSinh_KeyPress);
             // 
             // dteNgaySinh
             // 
@@ -676,6 +688,7 @@
             this.dteNgaySinh.Size = new System.Drawing.Size(547, 20);
             this.dteNgaySinh.StyleController = this.layoutControl2;
             this.dteNgaySinh.TabIndex = 24;
+            this.dteNgaySinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgaySinh_KeyPress);
             // 
             // txtNoiCapCMT
             // 
@@ -684,6 +697,7 @@
             this.txtNoiCapCMT.Name = "txtNoiCapCMT";
             this.txtNoiCapCMT.Size = new System.Drawing.Size(547, 20);
             this.txtNoiCapCMT.TabIndex = 23;
+            this.txtNoiCapCMT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoiCapCMT_KeyPress);
             // 
             // dteNgayCapCMT
             // 
@@ -703,6 +717,7 @@
             this.dteNgayCapCMT.Size = new System.Drawing.Size(547, 20);
             this.dteNgayCapCMT.StyleController = this.layoutControl2;
             this.dteNgayCapCMT.TabIndex = 22;
+            this.dteNgayCapCMT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteNgayCapCMT_KeyPress);
             // 
             // txtSoCMT
             // 
@@ -710,6 +725,7 @@
             this.txtSoCMT.Name = "txtSoCMT";
             this.txtSoCMT.Size = new System.Drawing.Size(547, 20);
             this.txtSoCMT.TabIndex = 21;
+            this.txtSoCMT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoCMT_KeyPress);
             // 
             // txtQuocTich
             // 
@@ -717,6 +733,7 @@
             this.txtQuocTich.Name = "txtQuocTich";
             this.txtQuocTich.Size = new System.Drawing.Size(547, 20);
             this.txtQuocTich.TabIndex = 20;
+            this.txtQuocTich.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuocTich_KeyPress);
             // 
             // txtTonGiao
             // 
@@ -724,6 +741,7 @@
             this.txtTonGiao.Name = "txtTonGiao";
             this.txtTonGiao.Size = new System.Drawing.Size(547, 20);
             this.txtTonGiao.TabIndex = 19;
+            this.txtTonGiao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTonGiao_KeyPress);
             // 
             // txtDanToc
             // 
@@ -731,6 +749,7 @@
             this.txtDanToc.Name = "txtDanToc";
             this.txtDanToc.Size = new System.Drawing.Size(547, 20);
             this.txtDanToc.TabIndex = 11;
+            this.txtDanToc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDanToc_KeyPress);
             // 
             // layoutControlGroup2
             // 
@@ -832,7 +851,6 @@
             // 
             // frmChiTietNhanSu
             // 
-            this.AcceptButton = this.btLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btThoat;

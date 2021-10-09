@@ -47,10 +47,12 @@ namespace CtyTinLuong
                     //Thay caption:
                     searchLookMaDML.Properties.View.Columns.Clear();//xóa caption cũ
                     searchLookMaDML.Properties.View.Columns.AddVisible("ID_NhanSu", "ID");
-                    searchLookMaDML.Properties.View.Columns["ID_NhanSu"].Visible = false; ;
+                    searchLookMaDML.Properties.View.Columns["ID_NhanSu"].Visible = false;
+
 
                     searchLookMaDML.Properties.View.Columns.AddVisible("MaNhanVien", "Mã nhân viên");
                     searchLookMaDML.Properties.View.Columns.AddVisible("TenNhanVien", "Tên nhân viên");
+                    searchLookMaDML.Properties.View.Columns.AddVisible("NgaySinh", "Ngày sinh");
                 }
             }
             catch (Exception ea)
@@ -91,74 +93,89 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu(bool LuuVaDong)
         {
-           //if (!KiemTraLuu()) return;
-           if (!CheckDataInput()) return;
-
-
-            using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+           try
             {
-                cls.iId = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
-                cls.iId_nhanvien = _id_NhanVien;
-                cls.daTu_ngay = dateTuNgay.DateTime;
-                cls.daDen_ngay = dateDenNgay.DateTime;
-                cls.bDachamcong = false;
-                cls.sDienGiai = txtDienGiai.Text.Trim();
-                cls.iHinhThucTinhLuong = HinhThucTinhLuong;
-                cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtLuongCoDinh.Text.ToString());
-                cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtPhuCapXang.Text.ToString());
-                cls.dcPhuCapDienthoai = CheckString.ConvertToDecimal_My(txtPhuCapDienThoai.Text.ToString());
-                cls.dcPhuCapVeSinhMay = CheckString.ConvertToDecimal_My(txtPhuCapVeSinhMay.Text.ToString());
-                cls.dcPhuCapTienAn = CheckString.ConvertToDecimal_My(txtPhuCapTienAn.Text.ToString());
-                cls.dcTrachNhiem = CheckString.ConvertToDecimal_My(txtTrachNhiem.Text.ToString());
-                cls.fPhanTramBaoHiem = CheckString.ConvertToDouble_My(txtPhanTramBaoHiem.Text.ToString());
-                cls.dcLuongCoBanTinhBaoHiem = CheckString.ConvertToDecimal_My(txtLuongCoBan.Text.ToString());
-                cls.dcBaoHiem = CheckString.ConvertToDecimal_My(txtBaoHiem.Text.ToString());
-                cls.dcPhuCapBaoHiem = CheckString.ConvertToDecimal_My(txtPhuCapBH.Text.ToString());
-                cls.dcDinhMucLuongTheoGio = CheckString.ConvertToDecimal_My(txtDMLuongTheoGio.Text.ToString());
-                cls.dcDinhMucLuongTangCa = CheckString.ConvertToDecimal_My(txtDinhMucTangCa.Text.ToString());
-                cls.bNgungtheodoi = checkNgungTheoDoi.Checked;
-                cls.bTontai = true;
+                //if (!KiemTraLuu()) return;
+                if (!CheckDataInput()) return;
 
-                if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat == true)
+
+                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
                 {
-                    if (cls.Insert())
-                        MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
+                    cls.iId = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
+                    cls.iId_nhanvien = _id_NhanVien;
+                    cls.daTu_ngay = dateTuNgay.DateTime;
+                    cls.daDen_ngay = dateDenNgay.DateTime;
+                    cls.bDachamcong = false;
+                    cls.sDienGiai = txtDienGiai.Text.Trim();
+                    cls.iHinhThucTinhLuong = HinhThucTinhLuong;
+                    cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtLuongCoDinh.Text.ToString());
+                    cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtPhuCapXang.Text.ToString());
+                    cls.dcPhuCapDienthoai = CheckString.ConvertToDecimal_My(txtPhuCapDienThoai.Text.ToString());
+                    cls.dcPhuCapVeSinhMay = CheckString.ConvertToDecimal_My(txtPhuCapVeSinhMay.Text.ToString());
+                    cls.dcPhuCapTienAn = CheckString.ConvertToDecimal_My(txtPhuCapTienAn.Text.ToString());
+                    cls.dcTrachNhiem = CheckString.ConvertToDecimal_My(txtTrachNhiem.Text.ToString());
+                    cls.fPhanTramBaoHiem = CheckString.ConvertToDouble_My(txtPhanTramBaoHiem.Text.ToString());
+                    cls.dcLuongCoBanTinhBaoHiem = CheckString.ConvertToDecimal_My(txtLuongCoBan.Text.ToString());
+                    cls.dcBaoHiem = CheckString.ConvertToDecimal_My(txtBaoHiem.Text.ToString());
+                    cls.dcPhuCapBaoHiem = CheckString.ConvertToDecimal_My(txtPhuCapBH.Text.ToString());
+                    cls.dcDinhMucLuongTheoGio = CheckString.ConvertToDecimal_My(txtDMLuongTheoGio.Text.ToString());
+                    cls.dcDinhMucLuongTangCa = CheckString.ConvertToDecimal_My(txtDinhMucTangCa.Text.ToString());
+                    cls.bNgungtheodoi = checkNgungTheoDoi.Checked;
+                    cls.bTontai = true;
+
+                    if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat == true)
                     {
-                        MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + "đã thanh toán lương cho công nhân. "
-                            + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+                        if (cls.Insert())
+                            MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
-                    if (cls.Update())
+                    else
                     {
-                        try
+                        if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
                         {
-                            DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
-                            if (dt.Rows.Count > 0)
+                            MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + "đã thanh toán lương cho công nhân. "
+                                + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
+                        if (cls.Update())
+                        {
+                            try
                             {
-                                for (int i = 0; i < dt.Rows.Count -1; i++)
+                                DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
+                                if (dt.Rows.Count > 0)
                                 {
-                                    cls.iId = Convert.ToInt32(dt.Rows[i+1]["id"].ToString());
-                                    cls.daTu_ngay = (Convert.ToDateTime(dt.Rows[i]["den_ngay"].ToString())).AddDays(+1);
-                                    cls.Tr_DinhMuc_Luong_Update_TuNgay();
+                                    for (int i = 0; i < dt.Rows.Count - 1; i++)
+                                    {
+                                        cls.iId = Convert.ToInt32(dt.Rows[i + 1]["id"].ToString());
+                                        cls.daTu_ngay = (Convert.ToDateTime(dt.Rows[i]["den_ngay"].ToString())).AddDays(+1);
+                                        cls.Tr_DinhMuc_Luong_Update_TuNgay();
+                                    }
                                 }
                             }
-                        }
-                        catch (Exception ea)
-                        {
-                            MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            catch (Exception ea)
+                            {
+                                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
 
-                        MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                }
-                Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat = true;
 
-                if (LuuVaDong) this.Close();
+                    if (LuuVaDong) this.Close();
+                    else
+                    {
+                        _id_NhanVien = 0;
+                        searchLookMaDML.ResetText();
+                        txtTenNhanVien.ResetText();
+                        TrUnlockReadonly();
+                    }
+
+                }
+            }
+            catch(Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -322,10 +339,10 @@ namespace CtyTinLuong
             {
                 //decimal value = decimal.Parse(txtPhuCapXang.Text);
                 //txtPhuCapXang.Text = String.Format("{0:#,##0.00}", value);
-                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                decimal value = decimal.Parse(txtPhuCapXang.Text, System.Globalization.NumberStyles.AllowThousands);
-                txtPhuCapXang.Text = String.Format(culture, "{0:N0}", value);
-                txtPhuCapXang.Select(txtPhuCapXang.Text.Length, 0);
+                //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                //Double value = CheckString.ConvertToDouble_My(txtPhuCapXang.Text.Trim());
+                //txtPhuCapXang.Text = String.Format(culture, "{0:N0}", value);
+                //txtPhuCapXang.Select(txtPhuCapXang.Text.Length, 0);
             }
             catch
             {
@@ -425,22 +442,33 @@ namespace CtyTinLuong
 
         private void txtDMLuongTheoGio_TextChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-            //    //decimal value = decimal.Parse(txtDMLuongTheoGio.Text, System.Globalization.NumberStyles.AllowThousands);
-            //    double value = CheckString.ConvertToDouble_My(txtDMLuongTheoGio.Text.Trim());
-            //    txtDMLuongTheoGio.Text = String.Format(culture, "{0:N0}", value);
-            //    txtDMLuongTheoGio.Select(txtDMLuongTheoGio.Text.Length, 0);
+            try
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                //decimal value = decimal.Parse(txtDMLuongTheoGio.Text, System.Globalization.NumberStyles.AllowThousands);
+                double value = CheckString.ConvertToDouble_My(txtDMLuongTheoGio.Text.Trim());
+                //txtDMLuongTheoGio.Text = String.Format(culture, "{0:N0}", value);
+                //txtDMLuongTheoGio.Select(txtDMLuongTheoGio.Text.Length, 0);
 
-            //    //
-            //    txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", ((value/8)*(3/2)));
-            //    txtDinhMucTangCa.Select(txtDinhMucTangCa.Text.Length, 0);
-            //}
-            //catch
-            //{
-            //}
-           
+                //
+                txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", ((value / 8) * (3 / 2)));
+                txtDinhMucTangCa.Select(txtDinhMucTangCa.Text.Length, 0);
+            }
+            catch
+            {
+            }
+
+
+            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            ////decimal value = decimal.Parse(txtDMLuongTheoGio.Text, System.Globalization.NumberStyles.AllowThousands);
+            //double value = CheckString.ConvertToDouble_My(txtDMLuongTheoGio.Text.Trim());
+            //txtDMLuongTheoGio.Text = String.Format(culture, "{0:N0}", value);
+            //txtDMLuongTheoGio.Select(txtDMLuongTheoGio.Text.Length, 0);
+
+            ////
+            //txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", ((value / 8) * (3 / 2)));
+            //txtDinhMucTangCa.Select(txtDinhMucTangCa.Text.Length, 0);
+
         }
 
         private void txtDinhMucTangCa_TextChanged(object sender, EventArgs e)
@@ -557,8 +585,11 @@ namespace CtyTinLuong
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            LuuDuLieu(false);
-            searchLookMaDML.ResetText();        
+            Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat = true;
+            _id_NhanVien = 0;
+            searchLookMaDML.ResetText();
+            txtTenNhanVien.ResetText();
+            TrUnlockReadonly();
         }
 
         private void txtPhuCapBH_TextChanged(object sender, EventArgs e)
@@ -814,18 +845,158 @@ namespace CtyTinLuong
                 try
                 {
                     System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                    //decimal value = decimal.Parse(txtDMLuongTheoGio.Text, System.Globalization.NumberStyles.AllowThousands);
                     double value = CheckString.ConvertToDouble_My(txtDMLuongTheoGio.Text.Trim());
                     txtDMLuongTheoGio.Text = String.Format(culture, "{0:N0}", value);
                     txtDMLuongTheoGio.Select(txtDMLuongTheoGio.Text.Length, 0);
 
-                    //
-                    txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", ((value / 8) * (3 / 2)));
-                    txtDinhMucTangCa.Select(txtDinhMucTangCa.Text.Length, 0);
+                    //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                    ////decimal value = decimal.Parse(txtDMLuongTheoGio.Text, System.Globalization.NumberStyles.AllowThousands);
+                    //double value = CheckString.ConvertToDouble_My(txtDMLuongTheoGio.Text.Trim());
+                    //txtDMLuongTheoGio.Text = String.Format(culture, "{0:N0}", value);
+                    //txtDMLuongTheoGio.Select(txtDMLuongTheoGio.Text.Length, 0);
+
+                    ////
+                    //txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", ((value / 8) * (3 / 2)));
+                    //txtDinhMucTangCa.Select(txtDinhMucTangCa.Text.Length, 0);
+
+                    SendKeys.Send("{TAB}");
                 }
                 catch
                 {
                 }
+            }
+        }
+
+        private void searchLookMaDML_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenNhanVien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dateTuNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dateDenNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtLuongCoDinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhuCapXang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                Double value = CheckString.ConvertToDouble_My(txtPhuCapXang.Text.Trim());
+                txtPhuCapXang.Text = String.Format(culture, "{0:N0}", value);
+                txtPhuCapXang.Select(txtPhuCapXang.Text.Length, 0);
+
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhuCapDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhuCapVeSinhMay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhuCapTienAn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTrachNhiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhanTramBaoHiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtLuongCoBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtBaoHiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtPhuCapBH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDinhMucTangCa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
             }
         }
     }

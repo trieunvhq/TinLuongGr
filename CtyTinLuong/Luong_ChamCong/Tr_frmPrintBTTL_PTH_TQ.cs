@@ -70,11 +70,11 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
                 else _ravi["TongTien"] = 0;
 
-                if (_data.Rows[i]["PhuCap"].ToString() != "")
-                {
-                    _ravi["PhuCap"] = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCap"].ToString());
-                }
-                else _ravi["PhuCap"] = 0;
+                //if (_data.Rows[i]["PhuCap"].ToString() != "")
+                //{
+                //    _ravi["PhuCap"] = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCap"].ToString());
+                //}
+                //else _ravi["PhuCap"] = 0;
 
                 if (_data.Rows[i]["CongBaoHiem"].ToString() != "")
                 {

@@ -156,6 +156,7 @@
             this.txtDinhMucTangCa.TabIndex = 16;
             this.txtDinhMucTangCa.Text = "0";
             this.txtDinhMucTangCa.TextChanged += new System.EventHandler(this.txtDinhMucTangCa_TextChanged);
+            this.txtDinhMucTangCa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDinhMucTangCa_KeyPress);
             // 
             // layoutControlItem12
             // 
@@ -215,6 +216,7 @@
             this.txtPhanTramBaoHiem.TabIndex = 14;
             this.txtPhanTramBaoHiem.Text = "0";
             this.txtPhanTramBaoHiem.TextChanged += new System.EventHandler(this.txtPhanTramBaoHiem_TextChanged);
+            this.txtPhanTramBaoHiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhanTramBaoHiem_KeyPress);
             // 
             // layoutControlItem10
             // 
@@ -233,6 +235,7 @@
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(511, 37);
             this.txtDienGiai.TabIndex = 13;
+            this.txtDienGiai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienGiai_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -286,6 +289,7 @@
             this.txtLuongCoBan.TabIndex = 22;
             this.txtLuongCoBan.Text = "0";
             this.txtLuongCoBan.TextChanged += new System.EventHandler(this.txtLuongCoBan_TextChanged);
+            this.txtLuongCoBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongCoBan_KeyPress);
             // 
             // layoutControlItem18
             // 
@@ -305,6 +309,7 @@
             this.txtPhuCapXang.TabIndex = 25;
             this.txtPhuCapXang.Text = "0";
             this.txtPhuCapXang.TextChanged += new System.EventHandler(this.txtPhuCapXang_TextChanged);
+            this.txtPhuCapXang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapXang_KeyPress);
             // 
             // layoutControlItem19
             // 
@@ -324,6 +329,7 @@
             this.txtPhuCapDienThoai.TabIndex = 26;
             this.txtPhuCapDienThoai.Text = "0";
             this.txtPhuCapDienThoai.TextChanged += new System.EventHandler(this.txtPhuCapDienThoai_TextChanged);
+            this.txtPhuCapDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapDienThoai_KeyPress);
             // 
             // layoutControlItem20
             // 
@@ -343,6 +349,7 @@
             this.txtPhuCapVeSinhMay.TabIndex = 27;
             this.txtPhuCapVeSinhMay.Text = "0";
             this.txtPhuCapVeSinhMay.TextChanged += new System.EventHandler(this.txtPhuCapVeSinhMay_TextChanged);
+            this.txtPhuCapVeSinhMay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapVeSinhMay_KeyPress);
             // 
             // layoutControlItem21
             // 
@@ -362,6 +369,7 @@
             this.txtPhuCapTienAn.TabIndex = 28;
             this.txtPhuCapTienAn.Text = "0";
             this.txtPhuCapTienAn.TextChanged += new System.EventHandler(this.txtPhuCapTienAn_TextChanged);
+            this.txtPhuCapTienAn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapTienAn_KeyPress);
             // 
             // layoutControlItem22
             // 
@@ -381,6 +389,7 @@
             this.txtTrachNhiem.TabIndex = 29;
             this.txtTrachNhiem.Text = "0";
             this.txtTrachNhiem.TextChanged += new System.EventHandler(this.txtTrachNhiem_TextChanged);
+            this.txtTrachNhiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTrachNhiem_KeyPress);
             // 
             // layoutControlItem7
             // 
@@ -400,6 +409,7 @@
             this.txtLuongCoDinh.TabIndex = 30;
             this.txtLuongCoDinh.Text = "0";
             this.txtLuongCoDinh.TextChanged += new System.EventHandler(this.txtLuongCoDinh_TextChanged);
+            this.txtLuongCoDinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongCoDinh_KeyPress);
             // 
             // layoutControlItem9
             // 
@@ -419,6 +429,7 @@
             this.txtBaoHiem.Size = new System.Drawing.Size(511, 20);
             this.txtBaoHiem.TabIndex = 31;
             this.txtBaoHiem.TextChanged += new System.EventHandler(this.txtBaoHiem_TextChanged);
+            this.txtBaoHiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBaoHiem_KeyPress);
             // 
             // layoutControlItem23
             // 
@@ -437,6 +448,7 @@
             this.txtPhuCapBH.TabIndex = 32;
             this.txtPhuCapBH.Text = "0";
             this.txtPhuCapBH.TextChanged += new System.EventHandler(this.txtPhuCapBH_TextChanged);
+            this.txtPhuCapBH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapBH_KeyPress);
             // 
             // layoutControlItem24
             // 
@@ -465,6 +477,7 @@
             this.dateTuNgay.Size = new System.Drawing.Size(177, 20);
             this.dateTuNgay.StyleController = this.layoutControl1;
             this.dateTuNgay.TabIndex = 35;
+            this.dateTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTuNgay_KeyPress);
             // 
             // layoutControl1
             // 
@@ -514,6 +527,7 @@
             this.searchLookMaDML.TabIndex = 38;
             this.searchLookMaDML.EditValueChanged += new System.EventHandler(this.searchLookMaDML_EditValueChanged);
             this.searchLookMaDML.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookMaDML_CustomDisplayText);
+            this.searchLookMaDML.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchLookMaDML_KeyPress);
             // 
             // searchLookUpEdit1View
             // 
@@ -524,9 +538,9 @@
             // 
             // checMax_hai
             // 
-            this.checMax_hai.Location = new System.Drawing.Point(488, 355);
+            this.checMax_hai.Location = new System.Drawing.Point(429, 355);
             this.checMax_hai.Name = "checMax_hai";
-            this.checMax_hai.Size = new System.Drawing.Size(177, 20);
+            this.checMax_hai.Size = new System.Drawing.Size(236, 20);
             this.checMax_hai.TabIndex = 20;
             this.checMax_hai.Text = "4. Max (Lương công nhật, Lương sản lượng)";
             this.checMax_hai.UseVisualStyleBackColor = true;
@@ -539,12 +553,13 @@
             this.txtTenNhanVien.ReadOnly = true;
             this.txtTenNhanVien.Size = new System.Drawing.Size(179, 20);
             this.txtTenNhanVien.TabIndex = 37;
+            this.txtTenNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhanVien_KeyPress);
             // 
             // checSanLuong
             // 
-            this.checSanLuong.Location = new System.Drawing.Point(327, 355);
+            this.checSanLuong.Location = new System.Drawing.Point(290, 355);
             this.checSanLuong.Name = "checSanLuong";
-            this.checSanLuong.Size = new System.Drawing.Size(157, 20);
+            this.checSanLuong.Size = new System.Drawing.Size(135, 20);
             this.checSanLuong.TabIndex = 18;
             this.checSanLuong.Text = "3. Lương sản lượng";
             this.checSanLuong.UseVisualStyleBackColor = true;
@@ -568,12 +583,13 @@
             this.dateDenNgay.Size = new System.Drawing.Size(178, 20);
             this.dateDenNgay.StyleController = this.layoutControl1;
             this.dateDenNgay.TabIndex = 36;
+            this.dateDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateDenNgay_KeyPress);
             // 
             // checCongNhat
             // 
-            this.checCongNhat.Location = new System.Drawing.Point(153, 355);
+            this.checCongNhat.Location = new System.Drawing.Point(141, 355);
             this.checCongNhat.Name = "checCongNhat";
-            this.checCongNhat.Size = new System.Drawing.Size(170, 20);
+            this.checCongNhat.Size = new System.Drawing.Size(145, 20);
             this.checCongNhat.TabIndex = 19;
             this.checCongNhat.Text = "2. Lương công nhật";
             this.checCongNhat.UseVisualStyleBackColor = true;
@@ -583,7 +599,7 @@
             // 
             this.checCoDinh.Location = new System.Drawing.Point(2, 355);
             this.checCoDinh.Name = "checCoDinh";
-            this.checCoDinh.Size = new System.Drawing.Size(147, 20);
+            this.checCoDinh.Size = new System.Drawing.Size(135, 20);
             this.checCoDinh.TabIndex = 17;
             this.checCoDinh.Text = "1. Lương cố định";
             this.checCoDinh.UseVisualStyleBackColor = true;
@@ -622,34 +638,34 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 353);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(151, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(139, 24);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.checCongNhat;
-            this.layoutControlItem2.Location = new System.Drawing.Point(151, 353);
+            this.layoutControlItem2.Location = new System.Drawing.Point(139, 353);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(174, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(149, 24);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.checSanLuong;
-            this.layoutControlItem3.Location = new System.Drawing.Point(325, 353);
+            this.layoutControlItem3.Location = new System.Drawing.Point(288, 353);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(161, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(139, 24);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.checMax_hai;
-            this.layoutControlItem5.Location = new System.Drawing.Point(486, 353);
+            this.layoutControlItem5.Location = new System.Drawing.Point(427, 353);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(181, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(240, 24);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -673,12 +689,12 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.simpleButton1.Location = new System.Drawing.Point(343, 455);
+            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Copy;
+            this.simpleButton1.Location = new System.Drawing.Point(383, 455);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(156, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(116, 23);
             this.simpleButton1.TabIndex = 70;
-            this.simpleButton1.Text = "Lưu lại và Copy Tạo mới";
+            this.simpleButton1.Text = "Copy tạo mới";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Tr_frmChiTietDML_CongNhat
