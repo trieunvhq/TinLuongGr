@@ -56,8 +56,17 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 _ravi["Cong"] = _data.Rows[i]["TenLoaiCong"].ToString();
 
-                _ravi["NgayCong"] = _data.Rows[i]["SanLuong"].ToString();
-                _ravi["LuongCoBan"] = _data.Rows[i]["DonGia"].ToString();
+                if (_data.Rows[i]["SanLuong"].ToString() != "")
+                {
+                    _ravi["NgayCong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
+                }
+                else _ravi["NgayCong"] = 0;
+
+                if (_data.Rows[i]["DonGia"].ToString() != "")
+                {
+                    _ravi["LuongCoBan"] = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia"].ToString());
+                }
+                else _ravi["LuongCoBan"] = 0;
 
                 if (_data.Rows[i]["LuongTrachNhiem"].ToString() != "")
                 {

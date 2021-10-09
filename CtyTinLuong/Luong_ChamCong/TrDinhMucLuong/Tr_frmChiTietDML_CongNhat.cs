@@ -130,14 +130,25 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
+                        if (DateTime.Now.Year == dateDenNgay.DateTime.Year)
                         {
-                            MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + "đã thanh toán lương cho công nhân. "
-                                + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
+                            {
+                                MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + "đã thanh toán lương cho công nhân. "
+                                    + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                        }
+                        else if (DateTime.Now.Year > dateDenNgay.DateTime.Year)
+                        {
+                            MessageBox.Show("Năm " + dateDenNgay.DateTime.Year.ToString() + "đã thanh toán lương cho công nhân. "
+                                + "Nhập năm kết thúc phải >= năm hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
-                        //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
-                        if (cls.Update())
+
+
+                                //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
+                                if (cls.Update())
                         {
                             try
                             {
@@ -194,7 +205,7 @@ namespace CtyTinLuong
             txtLuongCoBan.ReadOnly = true;
             txtPhuCapBH.ReadOnly = true;
             txtDMLuongTheoGio.ReadOnly = true;
-            //txtDinhMucTangCa.ReadOnly = true;
+            txtDinhMucTangCa.ReadOnly = true;
             checCoDinh.Enabled = false;
             checCongNhat.Enabled = false;
             checSanLuong.Enabled = false;
@@ -216,7 +227,7 @@ namespace CtyTinLuong
             txtLuongCoBan.ReadOnly = false;
             txtPhuCapBH.ReadOnly = false;
             txtDMLuongTheoGio.ReadOnly = false;
-            //txtDinhMucTangCa.ReadOnly = false;
+            txtDinhMucTangCa.ReadOnly = false;
             checCoDinh.Enabled = true;
             checCongNhat.Enabled = true;
             checSanLuong.Enabled = true;
@@ -451,7 +462,9 @@ namespace CtyTinLuong
                 //txtDMLuongTheoGio.Select(txtDMLuongTheoGio.Text.Length, 0);
 
                 //
-                txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", ((value / 8) * (3 / 2)));
+                //txtDinhMucTangCa.Text = String.Format(culture, "{0:N2}", CheckString.ConvertToDouble_My("("+value.ToString() +"/8)*(3/2)"));
+                txtDinhMucTangCa.Text = String.Format(culture, "{0:N0}", CheckString.ConvertToDouble_My((value*3)/16));
+
                 txtDinhMucTangCa.Select(txtDinhMucTangCa.Text.Length, 0);
             }
             catch

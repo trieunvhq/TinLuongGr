@@ -151,7 +151,6 @@
             // 
             this.txtDinhMucTangCa.Location = new System.Drawing.Point(154, 331);
             this.txtDinhMucTangCa.Name = "txtDinhMucTangCa";
-            this.txtDinhMucTangCa.ReadOnly = true;
             this.txtDinhMucTangCa.Size = new System.Drawing.Size(511, 20);
             this.txtDinhMucTangCa.TabIndex = 16;
             this.txtDinhMucTangCa.Text = "0";

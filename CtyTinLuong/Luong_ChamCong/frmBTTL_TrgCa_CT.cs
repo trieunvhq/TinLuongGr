@@ -81,45 +81,46 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang, _id_bophan);
+                _data = clsThin_.Tr_BTTL_SF_NoCheckTime(_nam, _thang, _id_bophan);
 
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
-                    double LuongCoBan_ = 0;
+                    double LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
+                    _data.Rows[i]["DonGia"] = LuongCoBan_.ToString("N0");
+
                     PhuCapBH_ = CheckString.ConvertToDouble_My(_data.Rows[i]["PhuCapBaoHiem_Value"].ToString());
                     _data.Rows[i]["PhuCapBaoHiem"] = PhuCapBH_.ToString("N0");
                     PhuCapBH_Tong += PhuCapBH_;
 
                     double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
-                    bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
-                    int hinhThucTinhLuong = Convert.ToInt32(_data.Rows[i]["HinhThucTinhLuong"].ToString());
 
-                    switch (hinhThucTinhLuong)
-                    {
-                        case 0:
-                            if (istangca_)
-                            {
-                                LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
-                            }
-                            else
-                            {
-                                LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
-                            }
-                            break;
-                        case 1:
-                            LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                    }
+                    //bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
+                    //int hinhThucTinhLuong = Convert.ToInt32(_data.Rows[i]["HinhThucTinhLuong"].ToString());
 
-                    _data.Rows[i]["DonGia"] = LuongCoBan_.ToString("N0");
-                    _data.Rows[i]["TenVTHH"] = _data.Rows[i]["Cong"].ToString();
+                    //switch (hinhThucTinhLuong)
+                    //{
+                    //    case 0:
+                    //        if (istangca_)
+                    //        {
+                    //            LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
+                    //        }
+                    //        else
+                    //        {
+                    //            LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
+                    //        }
+                    //        break;
+                    //    case 1:
+                    //        LuongCoBan_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
+                    //        break;
+                    //    case 2:
+                    //        break;
+                    //    case 3:
+                    //        break;
+                    //    case 4:
+                    //        break;
+                    //}
+
 
                     //
                     _data.Rows[i]["STT"] = i + 1;
@@ -127,7 +128,7 @@ namespace CtyTinLuong
 
                     //Tổng:
                     //tong_ = LuongCoBan_ * sanluong_;
-                    tong_ = LuongCoBan_;
+                    tong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TongLuong_Value"].ToString());
                     tong_tong_ += tong_;
                     _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
@@ -157,7 +158,7 @@ namespace CtyTinLuong
 
                     //Tổng lương
                     //tongluong_ = (LuongCoBan_ * sanluong_ + luongtrachnhiem_);
-                    tongluong_ = (LuongCoBan_ + luongtrachnhiem_ + PhuCapBH_);
+                    tongluong_ = (tong_ + luongtrachnhiem_ + PhuCapBH_);
                     tongluong_tong_ += tongluong_;
                     _data.Rows[i]["TongLuong"] = (tongluong_).ToString("N0");
 

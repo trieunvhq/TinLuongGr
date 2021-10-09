@@ -85,30 +85,20 @@ namespace CtyTinLuong
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 {
                     double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
-                    _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
+
+                    if (dongia_ == 0) _data.Rows[i]["DonGia"] = "";
+                    else _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+                    int HinhThucLuong = Convert.ToInt32(_data.Rows[i]["HinhThucTinhLuong"].ToString());
 
                     double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
-
                     //Tổng:
                     tong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TongLuong_Value"].ToString());
                     tong_tong_ += tong_;
-                    _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
-                    //bool istangca_ = Convert.ToBoolean(_data.Rows[i]["IsTangCa"].ToString());
-
-                    //if (istangca_)
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTangCa"].ToString());
-                    //    _data.Rows[i]["TenVTHH"] = "Tăng ca";
-                    //}
-                    //else
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMucLuongTheoGio"].ToString());
-                    //    _data.Rows[i]["TenVTHH"] = "Công nhật";
-                    //}
-
+                    if (tong_ == 0) _data.Rows[i]["TongTien"] = "";
+                    else _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
 
                     //
                     if (ID_congNhanRoot != ID_congNhan)
