@@ -1646,7 +1646,7 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable Tr_BTTL_SF_NoCheckTime(int nam, int thang, int id_bophan, bool isTangCa)
+        public DataTable Tr_BTTL_SF_NoCheckTime(int nam, int thang, int id_bophan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[Tr_BTTL_SF_NoCheckTime]";
@@ -1663,7 +1663,6 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@id_bophan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@isTangCa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, isTangCa));
 
                 // Open connection.
                 m_scoMainConnection.Open();

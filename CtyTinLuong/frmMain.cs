@@ -436,10 +436,10 @@ namespace CtyTinLuong
 
         private void btnMaximum_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Maximized;
-            else
-                this.WindowState = FormWindowState.Normal;
+            //if (WindowState == FormWindowState.Normal)
+            //    this.WindowState = FormWindowState.Maximized;
+            //else
+            //    this.WindowState = FormWindowState.Normal;
         }
 
         private void btnMinimum_Click(object sender, EventArgs e)

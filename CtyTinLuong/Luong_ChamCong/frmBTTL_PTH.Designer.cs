@@ -172,7 +172,7 @@
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
-            this.clTenNhanVien.Width = 120;
+            this.clTenNhanVien.Width = 115;
             // 
             // TenLoaiCong
             // 
@@ -186,7 +186,6 @@
             this.TenLoaiCong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TenLoaiCong.Visible = true;
             this.TenLoaiCong.VisibleIndex = 2;
-            this.TenLoaiCong.Width = 82;
             // 
             // DonGia
             // 
@@ -210,6 +209,9 @@
             this.DonGia.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
+            this.DonGia.Visible = true;
+            this.DonGia.VisibleIndex = 3;
+            this.DonGia.Width = 70;
             // 
             // ColSanLuong
             // 
@@ -234,8 +236,8 @@
             this.ColSanLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColSanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColSanLuong.Visible = true;
-            this.ColSanLuong.VisibleIndex = 3;
-            this.ColSanLuong.Width = 70;
+            this.ColSanLuong.VisibleIndex = 4;
+            this.ColSanLuong.Width = 65;
             // 
             // ColTongLuong
             // 
@@ -260,8 +262,8 @@
             this.ColTongLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColTongLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongLuong.Visible = true;
-            this.ColTongLuong.VisibleIndex = 4;
-            this.ColTongLuong.Width = 82;
+            this.ColTongLuong.VisibleIndex = 5;
+            this.ColTongLuong.Width = 74;
             // 
             // ColLuongTrachNhiem
             // 
@@ -274,8 +276,8 @@
             this.ColLuongTrachNhiem.OptionsColumn.AllowEdit = false;
             this.ColLuongTrachNhiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColLuongTrachNhiem.Visible = true;
-            this.ColLuongTrachNhiem.VisibleIndex = 6;
-            this.ColLuongTrachNhiem.Width = 82;
+            this.ColLuongTrachNhiem.VisibleIndex = 7;
+            this.ColLuongTrachNhiem.Width = 74;
             // 
             // ColTongTien
             // 
@@ -300,8 +302,8 @@
             this.ColTongTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColTongTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTongTien.Visible = true;
-            this.ColTongTien.VisibleIndex = 7;
-            this.ColTongTien.Width = 82;
+            this.ColTongTien.VisibleIndex = 8;
+            this.ColTongTien.Width = 74;
             // 
             // ColTamUng
             // 
@@ -326,8 +328,8 @@
             this.ColTamUng.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ColTamUng.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColTamUng.Visible = true;
-            this.ColTamUng.VisibleIndex = 9;
-            this.ColTamUng.Width = 82;
+            this.ColTamUng.VisibleIndex = 10;
+            this.ColTamUng.Width = 74;
             // 
             // ColThucNhan
             // 
@@ -353,8 +355,8 @@
             this.ColThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ColThucNhan.Tag = "Thuc";
             this.ColThucNhan.Visible = true;
-            this.ColThucNhan.VisibleIndex = 10;
-            this.ColThucNhan.Width = 82;
+            this.ColThucNhan.VisibleIndex = 11;
+            this.ColThucNhan.Width = 74;
             // 
             // KyNhan
             // 
@@ -391,8 +393,8 @@
             this.ColCongBaoHiem.OptionsColumn.AllowEdit = false;
             this.ColCongBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ColCongBaoHiem.Visible = true;
-            this.ColCongBaoHiem.VisibleIndex = 5;
-            this.ColCongBaoHiem.Width = 82;
+            this.ColCongBaoHiem.VisibleIndex = 6;
+            this.ColCongBaoHiem.Width = 74;
             // 
             // TruBaoHiem
             // 
@@ -405,8 +407,8 @@
             this.TruBaoHiem.OptionsColumn.AllowEdit = false;
             this.TruBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TruBaoHiem.Visible = true;
-            this.TruBaoHiem.VisibleIndex = 8;
-            this.TruBaoHiem.Width = 82;
+            this.TruBaoHiem.VisibleIndex = 9;
+            this.TruBaoHiem.Width = 74;
             // 
             // gridColumn2
             // 

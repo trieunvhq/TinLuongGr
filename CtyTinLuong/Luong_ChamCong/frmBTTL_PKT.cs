@@ -77,7 +77,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.T_BTTL_TGD_SF(_nam, _thang, _id_bophan);
+                _data = clsThin_.Tr_BTTL_SF_NoCheckTime(_nam, _thang, _id_bophan);
 
                 int ID_congNhanRoot = -1;
 
