@@ -102,11 +102,11 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 //Lấy dữ liệu ca1
-                _dtCong_Ca1 = clsThin_.Tr_BTTL_PMC(_nam, _thang, _id_bophan, true);
+                _dtCong_Ca1 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, true);
                 _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 1");
 
                 //Lấy dữ liệu ca2
-                _dtCong_Ca2 = clsThin_.Tr_BTTL_PMC(_nam, _thang, _id_bophan, false);
+                _dtCong_Ca2 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, false);
                 _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 2");
 
                 int SttCa1 = 0;
@@ -529,8 +529,9 @@ namespace CtyTinLuong
             ModelCongNhat nv = new ModelCongNhat();
             double congNhat = 0;
             double congTang = 0;
-            double donGiaCong = 0;
-            double donGiaTang = 0;
+            double TongCong = 0;
+            double ThanhTien = 0;
+            double donGia = 0;
             double xangXe = 0;
             double baoHiem = 0;
 
@@ -538,32 +539,76 @@ namespace CtyTinLuong
             {
                 if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
                 {
-                    if (item["Cong"].ToString().ToLower().Contains("công nhật"))
-                    {
-                        congNhat += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
-                        donGiaCong = CheckString.ConvertToDouble_My(item["DinhMucLuongTheoGio"].ToString());
-                    }
-
-                    if (item["Cong"].ToString().ToLower().Contains("tăng"))
-                    {
-                        congTang += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
-                        donGiaTang = CheckString.ConvertToDouble_My(item["DinhMucLuongTangCa"].ToString());
-                    }
-
+                    TongCong += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
+                    ThanhTien += CheckString.ConvertToDouble_My(item["TongLuong_Value"].ToString());
                     xangXe = CheckString.ConvertToDouble_My(item["XangXe_Value"].ToString());
                     baoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+
+                    if (item["TenLoaiCong"].ToString().ToLower().Contains("công nhật"))
+                    {
+                        donGia = CheckString.ConvertToDouble_My(item["DonGia_Value"].ToString());
+                    }
+                    //if (item["Cong"].ToString().ToLower().Contains("công nhật"))
+                    //{
+                    //    congNhat += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
+                    //    donGiaCong = CheckString.ConvertToDouble_My(item["DinhMucLuongTheoGio"].ToString());
+                    //}
+
+                    //if (item["Cong"].ToString().ToLower().Contains("tăng"))
+                    //{
+                    //    congTang += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
+                    //    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMucLuongTangCa"].ToString());
+                    //}
                 }
             }
 
             nv.CongNhat = congNhat;
             nv.CongTang = congTang;
-            nv.DonGia = donGiaCong;
+            nv.DonGia = donGia;
             nv.XangXe = xangXe;
             nv.BaoHiem = baoHiem;
-            nv.CongTong = congNhat + congTang;
-            nv.ThanhTien = (congNhat * donGiaCong) + (congTang * donGiaTang);
+            nv.CongTong = TongCong;
+            nv.ThanhTien = ThanhTien;
 
             return nv;
+            //ModelCongNhat nv = new ModelCongNhat();
+            //double congNhat = 0;
+            //double congTang = 0;
+            //double donGiaCong = 0;
+            //double donGiaTang = 0;
+            //double xangXe = 0;
+            //double baoHiem = 0;
+
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+            //    {
+            //        if (item["Cong"].ToString().ToLower().Contains("công nhật"))
+            //        {
+            //            congNhat += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
+            //            donGiaCong = CheckString.ConvertToDouble_My(item["DinhMucLuongTheoGio"].ToString());
+            //        }
+
+            //        if (item["Cong"].ToString().ToLower().Contains("tăng"))
+            //        {
+            //            congTang += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
+            //            donGiaTang = CheckString.ConvertToDouble_My(item["DinhMucLuongTangCa"].ToString());
+            //        }
+
+            //        xangXe = CheckString.ConvertToDouble_My(item["XangXe_Value"].ToString());
+            //        baoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+            //    }
+            //}
+
+            //nv.CongNhat = congNhat;
+            //nv.CongTang = congTang;
+            //nv.DonGia = donGiaCong;
+            //nv.XangXe = xangXe;
+            //nv.BaoHiem = baoHiem;
+            //nv.CongTong = congNhat + congTang;
+            //nv.ThanhTien = (congNhat * donGiaCong) + (congTang * donGiaTang);
+
+            //return nv;
         }
 
         //Tính tổng sản lượng một công nhân:

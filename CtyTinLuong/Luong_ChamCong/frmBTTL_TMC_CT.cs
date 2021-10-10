@@ -540,11 +540,14 @@ namespace CtyTinLuong
                 if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
                 {
                     TongCong += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
-                    donGia += CheckString.ConvertToDouble_My(item["DonGia_Value"].ToString());
                     ThanhTien += CheckString.ConvertToDouble_My(item["TongLuong_Value"].ToString());
-                    xangXe += CheckString.ConvertToDouble_My(item["XangXe_Value"].ToString());
-                    baoHiem += CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                    xangXe = CheckString.ConvertToDouble_My(item["XangXe_Value"].ToString());
+                    baoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
 
+                    if (item["TenLoaiCong"].ToString().ToLower().Contains("công nhật"))
+                    {
+                        donGia = CheckString.ConvertToDouble_My(item["DonGia_Value"].ToString());
+                    }
                     //if (item["Cong"].ToString().ToLower().Contains("công nhật"))
                     //{
                     //    congNhat += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());

@@ -61,6 +61,8 @@ namespace CtyTinLuong
             emptyEditor.Buttons.Clear();
             emptyEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             gridControl1.RepositoryItems.Add(emptyEditor);
+
+            radioNhieuLoaiHang.Checked = true;
         }
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
