@@ -134,21 +134,21 @@ namespace CtyTinLuong
                         {
                             if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
                             {
-                                MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + "đã thanh toán lương cho công nhân. "
+                                MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
                                     + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 return;
                             }
                         }
                         else if (DateTime.Now.Year > dateDenNgay.DateTime.Year)
                         {
-                            MessageBox.Show("Năm " + dateDenNgay.DateTime.Year.ToString() + "đã thanh toán lương cho công nhân. "
+                            MessageBox.Show("Năm " + dateDenNgay.DateTime.Year.ToString() + " đã thanh toán lương cho công nhân. "
                                 + "Nhập năm kết thúc phải >= năm hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
 
 
-                                //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
-                                if (cls.Update())
+                        //cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
+                        if (cls.Update())
                         {
                             try
                             {
