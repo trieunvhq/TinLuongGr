@@ -282,7 +282,8 @@ namespace CtyTinLuong
                     DataRow _ravi_Ca2 = _data.NewRow();
 
                     int ID_congNhan = Convert.ToInt32(_data_Ca2.Rows[i]["ID_CongNhan"].ToString());
-
+                    _ravi_Ca2["ID_CongNhan"] = ID_congNhan;
+                    _ravi_Ca2["TenLoaiCong"] = _data_Ca2.Rows[i]["TenLoaiCong"].ToString();
                     _ravi_Ca2["TenNhanVien"] = _data_Ca2.Rows[i]["TenNhanVien"].ToString();
 
                     //Lương cơ bản:
@@ -384,11 +385,11 @@ namespace CtyTinLuong
 
                 if (_TongTien_Tong_Ca2 == 0)
                 {
-                    _ravi["TongTien"] = "";
+                    _ravi2["TongTien"] = "";
                 }
                 else
                 {
-                    _ravi["TongTien"] = _TongTien_Tong_Ca2.ToString("N0");
+                    _ravi2["TongTien"] = _TongTien_Tong_Ca2.ToString("N0");
                 }
 
                 // 
@@ -452,11 +453,11 @@ namespace CtyTinLuong
 
                 if (_TongTien_Tong_Ca1 + _TongTien_Tong_Ca2 == 0)
                 {
-                    _ravi["TongTien"] = "";
+                    _ravi2_Tong2Ca["TongTien"] = "";
                 }
                 else
                 {
-                    _ravi["TongTien"] = (_TongTien_Tong_Ca1 + _TongTien_Tong_Ca2).ToString("N0");
+                    _ravi2_Tong2Ca["TongTien"] = (_TongTien_Tong_Ca1 + _TongTien_Tong_Ca2).ToString("N0");
                 }
 
                 // 

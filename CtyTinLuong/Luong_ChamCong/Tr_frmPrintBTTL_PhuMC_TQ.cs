@@ -42,18 +42,22 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
 
-                if (ID_congNhanRoot != ID_congNhan)
+                _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                if (i < _data.Rows.Count -1)
                 {
-                    ID_congNhanRoot = ID_congNhan;
-                    _ravi["STT"] = _data.Rows[i]["STT"].ToString();
-                    _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                    if (ID_congNhanRoot != ID_congNhan)
+                    {
+                        ID_congNhanRoot = ID_congNhan;
+                        _ravi["STT"] = _data.Rows[i]["STT"].ToString();
+                        _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                    }
+                    else
+                    {
+                        _ravi["STT"] = "";
+                        _ravi["TenNhanVien"] = "";
+                    }
                 }
-                else
-                {
-                    _ravi["STT"] = "";
-                    _ravi["TenNhanVien"] = "";
-                }
-
+                
                 _ravi["Cong"] = _data.Rows[i]["TenLoaiCong"].ToString();
                 _ravi["NgayCong"] = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString()).ToString("N2");
                 _ravi["LuongCoBan"] = _data.Rows[i]["DonGia"].ToString();
