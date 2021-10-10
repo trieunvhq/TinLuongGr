@@ -43,6 +43,7 @@ namespace CtyTinLuong
             _data.Columns.Add("ID_CongNhan", typeof(int));
             _data.Columns.Add("STT", typeof(string));
             _data.Columns.Add("TenNhanVien", typeof(string));
+            _data.Columns.Add("Cong", typeof(string));
             _data.Columns.Add("TenLoaiCong", typeof(string));
             _data.Columns.Add("SanLuong", typeof(string));
             _data.Columns.Add("DonGia", typeof(string));
