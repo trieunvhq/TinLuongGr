@@ -42,6 +42,15 @@ namespace CtyTinLuong
             SanLuong.Caption = "SẢN\nLƯỢNG";
         }
 
+        double sanluong_tong = 0;
+        double thanhtien_tong = 0;
+        double tongluong_tong = 0;
+        double _LuongTrachNhiem_Tong = 0;
+        double trutiencom_tong = 0;
+        double tongtien_tong = 0;
+        double tamung_tong = 0;
+        double thucnhan_tong = 0;
+
         public void LoadData(bool islandau, int id_bophan_)
         {
             isload = true;
@@ -62,17 +71,40 @@ namespace CtyTinLuong
             }
 
 
-            double sanluong_tong = 0;
-            double thanhtien_tong = 0;
-            double tongluong_tong = 0;
-            double _LuongTrachNhiem_Tong = 0;
-            double trutiencom_tong = 0;
-            double tongtien_tong = 0;
-            double tamung_tong = 0;
-            double thucnhan_tong = 0;
+            sanluong_tong = 0;
+            thanhtien_tong = 0;
+            tongluong_tong = 0;
+            _LuongTrachNhiem_Tong = 0;
+            trutiencom_tong = 0;
+            tongtien_tong = 0;
+            tamung_tong = 0;
+            thucnhan_tong = 0;
+
+            txtLuongTrachNhiem.ReadOnly = false;
+            txtLuongTrachNhiem.ResetText();
+
+            if (DateTime.Now.Year == _nam)
+            {
+                if (DateTime.Now.Month > _thang)
+                {
+                    txtLuongTrachNhiem.ReadOnly = true;
+                }
+            }
+            else if (DateTime.Now.Year > _nam)
+            {
+                txtLuongTrachNhiem.ReadOnly = true;
+            }
 
             using (clsThin clsThin_ = new clsThin())
             {
+                DataTable dtl = clsThin_.Tr_LgTrNhiem_DB_DK_S(_nam, _thang, _id_bophan, true);
+                if (dtl.Rows.Count > 0)
+                {
+                    txtLuongTrachNhiem.Text = dtl.Rows[0]["LuongTrachNhiem"].ToString();
+                }
+
+                _LuongTrachNhiem_Tong = CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim());
+
                 _data = clsThin_.Tr_BTTL_TDK(_nam, _thang,_id_bophan);
                 int stt = 0;
 
@@ -369,6 +401,31 @@ namespace CtyTinLuong
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDK_TQ(_thang, _nam, _data);
             ff.Show();
+        }
+
+        private void txtLuongTrachNhiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                //decimal value = decimal.Parse(txtLuongTrachNhiem.Text, System.Globalization.NumberStyles.AllowThousands);
+                double value = CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim());
+                txtLuongTrachNhiem.Text = String.Format(culture, "{0:N0}", value);
+                txtLuongTrachNhiem.Select(txtLuongTrachNhiem.Text.Length, 0);
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi:... " + ea.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtLuongTrachNhiem_Leave(object sender, EventArgs e)
+        {
+            using (clsThin cls = new clsThin())
+            {
+                cls.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim()), _id_bophan, true, true);
+            }
+            LoadData(false, _id_bophan);
         }
 
         private float ConvertToFloat(string s)
