@@ -1521,9 +1521,10 @@ namespace CtyTinLuong
             // radioNhieuLoaiHang
             // 
             this.radioNhieuLoaiHang.AutoSize = true;
-            this.radioNhieuLoaiHang.Location = new System.Drawing.Point(333, 8);
+            this.radioNhieuLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioNhieuLoaiHang.Location = new System.Drawing.Point(317, 8);
             this.radioNhieuLoaiHang.Name = "radioNhieuLoaiHang";
-            this.radioNhieuLoaiHang.Size = new System.Drawing.Size(127, 17);
+            this.radioNhieuLoaiHang.Size = new System.Drawing.Size(147, 17);
             this.radioNhieuLoaiHang.TabIndex = 165;
             this.radioNhieuLoaiHang.TabStop = true;
             this.radioNhieuLoaiHang.Text = "Thêm nhiều loại hàng";
@@ -1532,9 +1533,10 @@ namespace CtyTinLuong
             // radioMotLoaiHang
             // 
             this.radioMotLoaiHang.AutoSize = true;
-            this.radioMotLoaiHang.Location = new System.Drawing.Point(333, 34);
+            this.radioMotLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMotLoaiHang.Location = new System.Drawing.Point(317, 34);
             this.radioMotLoaiHang.Name = "radioMotLoaiHang";
-            this.radioMotLoaiHang.Size = new System.Drawing.Size(118, 17);
+            this.radioMotLoaiHang.Size = new System.Drawing.Size(136, 17);
             this.radioMotLoaiHang.TabIndex = 166;
             this.radioMotLoaiHang.TabStop = true;
             this.radioMotLoaiHang.Text = "Thêm một loại hàng";

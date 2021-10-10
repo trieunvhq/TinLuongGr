@@ -34,10 +34,10 @@ namespace CtyTinLuong
                 return false;
             }
 
-
             else return true;
-
         }
+
+
         private void LuuDuLieu()
         {
             if (!KiemTraLuu()) return;
@@ -56,11 +56,14 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dv3.Rows.Count; i++)
                 {
-                    cls1.iID_VTHH = Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString());
-                    cls1.iThang = Convert.ToInt32(txtThang.Text.ToString());
-                    cls1.iNam = Convert.ToInt32(txtNam.Text.ToString());
-                    cls1.iID_DinhMuc_Luong_SanLuong= Convert.ToInt32(dv3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString());
-                    cls1.Insert();
+                    if (checkIDVTHH(Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString())))
+                    {
+                        cls1.iID_VTHH = Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString());
+                        cls1.iThang = Convert.ToInt32(txtThang.Text.ToString());
+                        cls1.iNam = Convert.ToInt32(txtNam.Text.ToString());
+                        cls1.iID_DinhMuc_Luong_SanLuong = Convert.ToInt32(dv3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString());
+                        cls1.Insert();
+                    }
                 }
                 MessageBox.Show("Đã lưu");
                 this.Close();
@@ -195,6 +198,8 @@ namespace CtyTinLuong
             gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
         }
 
+        private int _idVTHH = 0;
+
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column == clMaVT)
@@ -209,6 +214,7 @@ namespace CtyTinLuong
                     gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
                     gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
                     gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                    _idVTHH = Convert.ToInt32(dt.Rows[0]["ID_VTHH"].ToString());
                 }
             }
 
@@ -264,6 +270,30 @@ namespace CtyTinLuong
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
             LuuDuLieu();
+        }
+
+        //Kiểm tra idvthh trong tháng đã tồn tại chưa:
+        private bool checkIDVTHH(int IdVthh)
+        {
+            using (clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh())
+            {
+                int thang = Convert.ToInt32(txtThang.Value);
+                int nam = Convert.ToInt32(txtNam.Value);
+                cls.iThang = thang;
+                cls.iNam = nam;
+                DataTable dt3 = cls.SelectAll_WW_Thang_WW_Nam();
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    if (IdVthh == Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString())
+                        && thang == Convert.ToInt32(dt3.Rows[i]["Thang"].ToString())
+                        && nam == Convert.ToInt32(dt3.Rows[i]["Nam"].ToString()))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+                return true;
         }
     }
 }

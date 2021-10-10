@@ -426,7 +426,7 @@ namespace CtyTinLuong
                     Ngay30 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString());
                     Ngay31 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString());
                     //
-                    _data.Rows[i]["TenVTHH"] = CheckString.ChuanHoaHoTen(_data.Rows[i]["TenVTHH"].ToString());
+                    _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
                     _data.Rows[i]["Ngay1"] = String.Format("{0:0.##}", Ngay1);
                     _data.Rows[i]["Ngay2"] = String.Format("{0:0.##}", Ngay2);
                     _data.Rows[i]["Ngay3"] = String.Format("{0:0.##}", Ngay3);
@@ -969,7 +969,19 @@ namespace CtyTinLuong
                 {
                     int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
 
-                    ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_, cbLoaiCong.Text);
+                    if (radioNhieuLoaiHang.Checked)
+                    {
+                        for (int i = 0; i < _dt_LoaiHang.Rows.Count; i++)
+                        {
+                            int idVthh = Convert.ToInt32(_dt_LoaiHang.Rows[i]["ID_VTHH"].ToString());
+                            string tenVthh = _dt_LoaiHang.Rows[i]["TenVTHH"].ToString();
+                            ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, idVthh, tenVthh);
+                        }
+                    }
+                    else
+                    {
+                        ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_, cbLoaiCong.Text);
+                    }
                 }
             }
         }
@@ -1324,7 +1336,7 @@ namespace CtyTinLuong
                             ID_CongNhan_,
                             _thang,
                             _nam,
-                            0,
+                            Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()),
                             0,
                             (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()),
                             (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString()),
@@ -1401,7 +1413,7 @@ namespace CtyTinLuong
                                 ID_CongNhan_,
                                 _thang,
                                 _nam,
-                                0,
+                                Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()),
                                 0,
                                 (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()),
                                 (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString()),
@@ -1468,7 +1480,7 @@ namespace CtyTinLuong
                         ID_CongNhan_,
                         _thang,
                         _nam,
-                        0,
+                        Convert.ToInt32(dt_row["ID_VTHH"].ToString()),
                         0,
                         (float)CheckString.ConvertToDouble_My(dt_row["Ngay1"].ToString()),
                         (float)CheckString.ConvertToDouble_My(dt_row["Ngay2"].ToString()),
