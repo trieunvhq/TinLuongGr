@@ -1132,7 +1132,7 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCongTGD(_thang, _nam, _data);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1146,7 +1146,7 @@ namespace CtyTinLuong
             //this.Show();
             Cursor.Current = Cursors.Default;
             //Tr_frmDinhMucLuongSL_TGD ff = new Tr_frmDinhMucLuongSL_TGD(0, "frmChamCong_TGD", this);
-            //ff.ShowDialog();
+            //ff.Show();
         }
         
 
@@ -1271,7 +1271,7 @@ namespace CtyTinLuong
             //    int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_CongNhan).ToString()); 
 
             //    Tr_frmDinhMucLuongSL_TGD ff = new Tr_frmDinhMucLuongSL_TGD(id_congnhan_, "frmChamCong_TGD", this);
-            //    ff.ShowDialog();
+            //    ff.Show();
 
             //}
             //catch (Exception ee)

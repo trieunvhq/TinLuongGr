@@ -115,7 +115,7 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.WaitCursor;
                 mb_TheMoi_DinhMuc_Dot = true;
                 frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu(this);
-                ff.ShowDialog();
+                ff.Show();
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ea)
@@ -136,7 +136,7 @@ namespace CtyTinLuong
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
                     mb_TheMoi_DinhMuc_Dot = false;
                     frmChiTietDinhMuc_HangNhu ff = new frmChiTietDinhMuc_HangNhu(this);
-                    ff.ShowDialog();
+                    ff.Show();
                     Cursor.Current = Cursors.Default;
                 }
             }

@@ -180,7 +180,7 @@ namespace CtyTinLuong
                         msTenTK_me = "Phải thu của khách hàng";
                         msTieuDe = "ĐỐI CHIẾU CÔNG NỢ";
                         frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                        ff.ShowDialog();
+                        ff.Show();
                     }
                 }
             }

@@ -790,7 +790,7 @@ namespace CtyTinLuong
             catch { }
 
             CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan ff = new CtyTinLuong.Luong_ChamCong.T_frmPrintChamComToGapDan(_thang, _nam, _id_bophan, cbBoPhan.Text);
-            ff.ShowDialog();
+            ff.Show();
 
         }
 

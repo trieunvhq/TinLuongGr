@@ -1494,7 +1494,7 @@ namespace CtyTinLuong
                     mdcTongTienCoVAT = CheckString.ConvertToDecimal_My(txtTongTienHangCoVAT.Text.ToString());
 
                     frmPrintMuaHang ff = new frmPrintMuaHang();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
                 
             }

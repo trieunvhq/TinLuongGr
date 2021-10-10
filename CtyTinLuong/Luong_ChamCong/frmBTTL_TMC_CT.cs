@@ -539,7 +539,7 @@ namespace CtyTinLuong
             {
                 if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
                 {
-                    TongCong += CheckString.ConvertToDouble_My(item["SanLuong"].ToString());
+                    TongCong += CheckString.ConvertToDouble_My(item["SanLuong_Value"].ToString());
                     donGia += CheckString.ConvertToDouble_My(item["DonGia_Value"].ToString());
                     ThanhTien += CheckString.ConvertToDouble_My(item["TongLuong_Value"].ToString());
                     xangXe += CheckString.ConvertToDouble_My(item["XangXe_Value"].ToString());
@@ -719,7 +719,7 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TMC_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TMC_CT(_thang, _nam, _data);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -734,7 +734,7 @@ namespace CtyTinLuong
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TMC_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TMC_TQ(_thang, _nam, _data);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

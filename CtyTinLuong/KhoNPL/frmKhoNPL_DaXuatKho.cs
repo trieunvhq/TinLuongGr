@@ -476,7 +476,7 @@ namespace CtyTinLuong
                     mdbTongSotien = CheckString.ConvertToDouble_My(txtTongTienHang.Text.ToString());
                     msDienGiai = txtDienGiaiNPL.Text.ToString();
                     frmPrint_Nhap_Xuat_Kho ff = new frmPrint_Nhap_Xuat_Kho();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
             }
             catch

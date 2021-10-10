@@ -427,7 +427,7 @@ namespace CtyTinLuong
                 mdadenngay = dteDenNgay.DateTime;
                 msTenKhachHang = txtTenTK.Text;
                 frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 

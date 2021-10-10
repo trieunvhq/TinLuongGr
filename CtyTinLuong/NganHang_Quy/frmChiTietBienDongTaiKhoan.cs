@@ -191,7 +191,7 @@ namespace CtyTinLuong
                             msTieuDe = "SỔ TỔNG HỢP TIỀN MẶT";
                         else msTieuDe = "SỔ TỔNG HỢP TÀI KHOẢN";
                         frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                        ff.ShowDialog();
+                        ff.Show();
                     }
                 }
             }
@@ -210,7 +210,7 @@ namespace CtyTinLuong
                 miiiID_TaiKhoanKeToanCon = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToanCon).ToString());
                 frmChiTietBienDongTaiKhoan_Mot_TaiKhoan ff = new frmChiTietBienDongTaiKhoan_Mot_TaiKhoan();
                 this.Hide();
-                ff.ShowDialog();
+                ff.Show();
                 this.Show();
             }
         }

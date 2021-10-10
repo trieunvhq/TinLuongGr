@@ -1244,7 +1244,7 @@ namespace CtyTinLuong
                 }
 
                 frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No ff = new frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No();
-                ff.ShowDialog();
+                ff.Show();
             }
             catch { }
         }

@@ -397,7 +397,7 @@ namespace CtyTinLuong
                     mdatungay = dteTuNgay.DateTime;
                     mdadenngay = dteDenNgay.DateTime;
                     frmPrintCongNoNganHang ff = new frmPrintCongNoNganHang();
-                    ff.ShowDialog();
+                    ff.Show();
                 }
             }
             catch (Exception ea)

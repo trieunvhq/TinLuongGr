@@ -405,7 +405,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.ShowDialog();
+                ff.Show();
             }
 
         }
@@ -419,7 +419,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
@@ -432,7 +432,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 
@@ -445,7 +445,7 @@ namespace CtyTinLuong
                 byte[] pic = stremxx.ToArray();
                 stmBLOBData = new MemoryStream(pic);
                 frmAnhLon_KHSX ff = new CtyTinLuong.frmAnhLon_KHSX();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 

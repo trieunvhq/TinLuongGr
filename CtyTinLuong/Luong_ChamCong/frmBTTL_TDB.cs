@@ -331,7 +331,7 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_CT(_thang, _nam, _data, radioTo1.Checked);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -362,7 +362,7 @@ namespace CtyTinLuong
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TDB_TQ(_thang, _nam, _data, radioTo1.Checked);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void radioTo1_CheckedChanged(object sender, EventArgs e)

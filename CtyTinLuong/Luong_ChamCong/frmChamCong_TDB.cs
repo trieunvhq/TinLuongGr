@@ -1071,13 +1071,13 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDB ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDB(_thang, _nam, _data, radioTo1.Checked);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_TDB", this);
-            ff.ShowDialog();
+            ff.Show();
         }
         
 
@@ -1105,7 +1105,7 @@ namespace CtyTinLuong
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString()); 
                  
                 frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_TDB", this);
-                ff.ShowDialog();
+                ff.Show();
 
             }
             catch (Exception ee)

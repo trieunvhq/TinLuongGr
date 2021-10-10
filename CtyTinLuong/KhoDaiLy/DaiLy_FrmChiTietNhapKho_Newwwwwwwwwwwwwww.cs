@@ -825,7 +825,7 @@ namespace CtyTinLuong
                 msNguoiLap = "Phạm Thị Lành";
                 msGhiChu = txtGhiChu.Text.ToString();
                 frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
-                ff.ShowDialog();
+                ff.Show();
             }
             catch
             {

@@ -1103,7 +1103,7 @@ namespace CtyTinLuong
                 msGhiChu = txtGhiChu.Text.ToString();              
                 mbPrint = true;
                 frmPrint_nhapKho_DaiLy ff = new frmPrint_nhapKho_DaiLy();
-                ff.ShowDialog();
+                ff.Show();
             }
         }
 

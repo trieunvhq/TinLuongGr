@@ -307,7 +307,7 @@ namespace CtyTinLuong
         private void btnPrint_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_PTH_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_PTH_CT(_thang, _nam, _data);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -357,7 +357,7 @@ namespace CtyTinLuong
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_PTH_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_PTH_TQ(_thang, _nam, _data);
-            ff.ShowDialog();
+            ff.Show();
         }
 
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
