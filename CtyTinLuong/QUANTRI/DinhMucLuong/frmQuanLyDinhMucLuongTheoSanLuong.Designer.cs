@@ -91,8 +91,6 @@
             this.clXoa.ColumnEdit = this.btXoa;
             this.clXoa.Name = "clXoa";
             this.clXoa.OptionsColumn.FixedWidth = true;
-            this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 6;
             this.clXoa.Width = 50;
             // 
             // btXoa
@@ -345,7 +343,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuanLyDinhMucLuongTheoSanLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Định Mức Lương Theo Sản Lượng";
+            this.Text = "frmQuanLyDinhMucLuongTheoSanLuong-->Định Mức Lương Theo Sản Lượng";
             this.Load += new System.EventHandler(this.frmQuanLyDinhMucLuongTheoSanLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

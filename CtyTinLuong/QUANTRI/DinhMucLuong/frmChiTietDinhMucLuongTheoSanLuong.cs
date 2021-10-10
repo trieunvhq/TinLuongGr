@@ -49,14 +49,18 @@ namespace CtyTinLuong
                     {
                         cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
                         cls.sDienGiai = txtDienGiai.Text.ToString();
-                        cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
-                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
+                        if (gridMaVTHH.EditValue != null)
+                        {
+                            cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
+                        }
+                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text);
                         cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
                         cls.bTonTai = true;
                         cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
-                        cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
+                        cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text);
                         cls.Insert();
                         MessageBox.Show("Đã lưu! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _frm.HienThi();
                         this.Close();
                     }
                 }
@@ -78,7 +82,12 @@ namespace CtyTinLuong
                         cls.iID_DinhMuc_Luong_SanLuong = frmQuanLyDinhMucLuongTheoSanLuong.miID_Sua_DinhMucLuongTheoSanLuong;
                         cls.sMaDinhMuc = txtMaDinhMuc.Text.ToString();
                         cls.sDienGiai = txtDienGiai.Text.ToString();
-                        cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
+
+                        if (gridMaVTHH.EditValue != null)
+                        {
+                            cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
+                        }
+
                         cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
                         cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
                         cls.bTonTai = true;
@@ -86,6 +95,7 @@ namespace CtyTinLuong
                         cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                         cls.Update();
                         MessageBox.Show("Đã lưu! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _frm.HienThi();
                         this.Close();
                     }
                 }
@@ -156,9 +166,13 @@ namespace CtyTinLuong
             
 
         }
-        public frmChiTietDinhMucLuongTheoSanLuong()
+
+        frmQuanLyDinhMucLuongTheoSanLuong _frm;
+        public frmChiTietDinhMucLuongTheoSanLuong(frmQuanLyDinhMucLuongTheoSanLuong frm)
         {
             InitializeComponent();
+
+            _frm = frm;
         }
 
         private void frmChiTietDinhMucLuongTheoSanLuong_Load(object sender, EventArgs e)
@@ -179,6 +193,7 @@ namespace CtyTinLuong
 
                     if (frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong == false)
                         hienthiSUaDuLieu();
+                    else txtMaDinhMuc.Text = CheckString.creatMaDinhMucSL();
 
                     Cursor.Current = Cursors.Default;
                 }
@@ -260,6 +275,12 @@ namespace CtyTinLuong
         {
             gridMaVTHH.Properties.View.Columns[0].Visible = false;
             gridMaVTHH.Properties.View.Columns[3].Visible = false;
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong = true;
+            txtMaDinhMuc.Text = CheckString.creatMaDinhMucSL();
         }
     }
 }

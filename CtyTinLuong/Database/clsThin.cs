@@ -12,6 +12,38 @@ namespace CtyTinLuong
     public partial class clsThin : clsDBInteractionBase
     {
 
+        public DataTable Tr_Select_CreateMaDinhMucSL()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_Select_CreateMaDinhMucSL]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("CreateMaDinhMucSL");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Tr_Select_CreateMaDinhMucSL", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
         public DataTable Tr_Select_CreateMaNhanSu()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -1802,6 +1834,42 @@ namespace CtyTinLuong
                 m_scoMainConnection.Close();
                 scmCmdToExecute.Dispose();
                 sdaAdapter.Dispose();
+            }
+        }
+
+
+        public bool Tr_Replace_AllMaDM(int id, string maDM)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_Replace_AllMaDM]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iid", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaDinhMuc", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, maDM));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsDinhMuc_DinhMuc_Luong_TheoSanLuong::Update::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
             }
         }
 

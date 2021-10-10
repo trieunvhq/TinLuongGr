@@ -15,7 +15,7 @@ namespace CtyTinLuong
         public static bool mb_TheMoi_DinhMucLuongSanLuong;
         public static string msTenDinhMucLuongSanLuong;
         public static int miID_Sua_DinhMucLuongTheoSanLuong, miiiID_VTHH;
-        private void HienThi()
+        public void HienThi()
         {
             clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
             DataTable dt = cls.SelectAll();
@@ -151,7 +151,7 @@ namespace CtyTinLuong
                     msTenDinhMucLuongSanLuong = gridView1.GetFocusedRowCellValue(clMaDinhMuc).ToString();
                     mb_TheMoi_DinhMucLuongSanLuong = false;
                     miiiID_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
-                    frmChiTietDinhMucLuongTheoSanLuong ff = new frmChiTietDinhMucLuongTheoSanLuong();
+                    frmChiTietDinhMucLuongTheoSanLuong ff = new frmChiTietDinhMucLuongTheoSanLuong(this);
                     ff.Show();
                 }
                 else
@@ -180,7 +180,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mb_TheMoi_DinhMucLuongSanLuong = true;
-            frmChiTietDinhMucLuongTheoSanLuong ff = new frmChiTietDinhMucLuongTheoSanLuong();
+            frmChiTietDinhMucLuongTheoSanLuong ff = new frmChiTietDinhMucLuongTheoSanLuong(this);
             ff.Show();
             Cursor.Current = Cursors.Default;
         }

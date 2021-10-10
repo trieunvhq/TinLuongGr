@@ -13,6 +13,49 @@ namespace CtyTinLuong
     {
 
         //
+        public static String creatMaDinhMucSL()
+        {
+            DataTable dt;
+            String s = "DM000000";
+            String maDinhMuc = "";
+            String sq_curent = "";
+
+            try
+            {
+                using (clsThin cls = new clsThin())
+                {
+                    dt = cls.Tr_Select_CreateMaDinhMucSL();
+                    if (dt.Rows.Count > 0)
+                    {
+                        sq_curent = dt.Rows[0]["MaDinhMuc"].ToString().Trim();
+                    }
+                }
+
+                //sq_curent = LoaiPhong_db.selectMLP_max();
+
+                if (sq_curent != "" && sq_curent.Length >= 8)
+                {
+                    String tmp = sq_curent.Substring(2);
+                    int sq = Convert.ToInt32(tmp) + 1;
+
+                    if (sq >= 999999)
+                    {
+                        MessageBox.Show("Không thể tạo mã định mức sản lượng mới. Mã hiện tại đã lớn hơn DM999999!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    maDinhMuc = s.Substring(0, 8 - (sq.ToString()).Length) + sq.ToString();
+                }
+                else maDinhMuc = "DM000001";
+            }
+            catch (Exception ea)
+            {
+
+            }
+
+            return maDinhMuc;
+        }
+
+        //
         public static String creatMaNhanSu()
         {
             DataTable dt;

@@ -385,6 +385,23 @@ namespace CtyTinLuong
             }
         }
 
+        //Replace Mã định mức sản lượng:
+        private void nghichngu2()
+        {
+            using (clsDinhMuc_DinhMuc_Luong_TheoSanLuong cls1 = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong())
+            {
+                string s = "DM000000";
+                clsThin cls = new clsThin();
+                DataTable dt = cls1.SelectAll();
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string idcn = s.Substring(0, 8 - (i + 1).ToString().Length) + (i + 1).ToString();
+                    cls.Tr_Replace_AllMaDM(Convert.ToInt32(dt.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString()), idcn);
+                }
+            }
+        }
+
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             HienThi();
