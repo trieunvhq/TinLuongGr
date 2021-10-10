@@ -17,8 +17,101 @@ namespace CtyTinLuong
 			// Nothing for now.
 		}
 
+        public bool Tr_CaiMacDinhMaHang_TDK_Insert()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_CaiMacDinhMaHang_TDK_Insert]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
-		public override bool Insert()
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iThang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iThang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iNam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iNam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_Luong_SanLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_Luong_SanLuong));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MaHang", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MaHang_ToGapDan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                m_iID_MaHang_ToGapDan = (SqlInt32)scmCmdToExecute.Parameters["@iID_MaHang"].Value;
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_CaiMacDinhMaHang_TDK_Insert' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh::Insert::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+
+        public bool Tr_CaiMacDinhMaHang_TDB_Insert()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_CaiMacDinhMaHang_TDB_Insert]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iThang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iThang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iNam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iNam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_Luong_SanLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_DinhMuc_Luong_SanLuong));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MaHang", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MaHang_ToGapDan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                m_iID_MaHang_ToGapDan = (SqlInt32)scmCmdToExecute.Parameters["@iID_MaHang"].Value;
+                m_iErrorCode = (SqlInt32)scmCmdToExecute.Parameters["@iErrorCode"].Value;
+
+                if (m_iErrorCode != (int)LLBLError.AllOk)
+                {
+                    // Throw error.
+                    throw new Exception("Stored Procedure 'Tr_CaiMacDinhMaHang_TDB_Insert' reported the ErrorCode: " + m_iErrorCode);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh::Insert::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+
+        public override bool Insert()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[pr_Huu_CongNhat_MaHang_ToGapDan_CaiMacDinh_Insert]";

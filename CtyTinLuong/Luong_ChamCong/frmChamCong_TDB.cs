@@ -278,13 +278,22 @@ namespace CtyTinLuong
 
             ChangeColTitle(_thang, _nam);
 
-            using (clsThin clsThin_ = new clsThin())
+            using (clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh())
             {
-                _dt_HangHoa = clsThin_.T_LoaiHangSX_SF(0);
+                cls.iThang = _thang;
+                cls.iNam = _nam;
+                DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
                 cbHangHoa.DataSource = _dt_HangHoa;
                 cbHangHoa.DisplayMember = "TenVTHH";
                 cbHangHoa.ValueMember = "ID_VTHH";
             }
+            //using (clsThin clsThin_ = new clsThin())
+            //{
+            //    _dt_HangHoa = clsThin_.T_LoaiHangSX_SF(0);
+            //    cbHangHoa.DataSource = _dt_HangHoa;
+            //    cbHangHoa.DisplayMember = "TenVTHH";
+            //    cbHangHoa.ValueMember = "ID_VTHH";
+            //}
 
             Tong_Ngay1 = 0;
             Tong_Ngay2 = 0;
@@ -1076,7 +1085,7 @@ namespace CtyTinLuong
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(0, "frmChamCong_TDB", this);
+            Tr_frmCaiMacDinnhMaHangTDB ff = new Tr_frmCaiMacDinnhMaHangTDB();
             ff.Show();
         }
         
@@ -1102,9 +1111,9 @@ namespace CtyTinLuong
         {
             try
             {
-                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString()); 
-                 
-                frmQuanLyDinhMucLuong ff = new frmQuanLyDinhMucLuong(id_congnhan_, "frmChamCong_TDB", this);
+                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
+
+                Tr_frmCaiMacDinnhMaHangTDB ff = new Tr_frmCaiMacDinnhMaHangTDB();
                 ff.Show();
 
             }

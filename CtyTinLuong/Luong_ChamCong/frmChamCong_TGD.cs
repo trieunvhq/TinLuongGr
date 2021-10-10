@@ -960,34 +960,57 @@ namespace CtyTinLuong
 
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
-            if (cbLoaiCong.Text != "" && cbNhanSu.Text != "")
+            Cursor.Current = Cursors.WaitCursor;
+            try
             {
-                if ((int)cbNhanSu.SelectedValue == 0)
+                if (cbLoaiCong.Text != "" && cbNhanSu.Text != "")
                 {
-                }
-                else
-                {
-                    int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
-
-                    if (radioNhieuLoaiHang.Checked)
+                    if ((int)cbNhanSu.SelectedValue == 0)
                     {
-                        for (int i = 0; i < _dt_LoaiHang.Rows.Count; i++)
-                        {
-                            int idVthh = Convert.ToInt32(_dt_LoaiHang.Rows[i]["ID_VTHH"].ToString());
-                            string tenVthh = _dt_LoaiHang.Rows[i]["TenVTHH"].ToString();
-                            ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, idVthh, tenVthh);
-                        }
                     }
                     else
                     {
-                        ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_, cbLoaiCong.Text);
+                        bool flag = true;
+                        int id_loaicong_ = (int)cbLoaiCong.SelectedValue;
+
+                        if (radioNhieuLoaiHang.Checked)
+                        {
+                            string tenCN = cbNhanSu.Text;
+                            int idCN = (int)cbNhanSu.SelectedValue;
+                            for (int i = 0; i < _dt_LoaiHang.Rows.Count; i++)
+                            {
+                                int idVthh = Convert.ToInt32(_dt_LoaiHang.Rows[i]["ID_VTHH"].ToString());
+                                string tenVthh = _dt_LoaiHang.Rows[i]["TenVTHH"].ToString();
+                                if(!ThemMotCongNhanVaoBang(idCN, tenCN, true, idVthh, tenVthh))
+                                {
+                                    flag = false;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if(!ThemMotCongNhanVaoBang((int)cbNhanSu.SelectedValue, cbNhanSu.Text, true, id_loaicong_, cbLoaiCong.Text))
+                            {
+                                flag = false;
+                            }
+                        }
+
+                        if (!flag)
+                        {
+                            MessageBox.Show("Đã tồn tại công nhân và hàng hóa trong bảng này!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
+            catch(Exception ea)
+            {
+                MessageBox.Show("Lỗi:... " + ea.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
         }
 
 
-        private void ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew, int idvthh, string tenVTHH)
+        private bool ThemMotCongNhanVaoBang(int id_nhansu_, string ten_, bool isNew, int idvthh, string tenVTHH)
         {
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
@@ -995,8 +1018,7 @@ namespace CtyTinLuong
                 {
                     if(Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()) == idvthh)
                     {
-                        MessageBox.Show("Đã tồn tại công nhân và hàng hóa trong bảng này!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        return false;
                     }
                 }
             }
@@ -1109,6 +1131,7 @@ namespace CtyTinLuong
             //gridControl1.DataSource = _data;
             SaveOneCN(id_nhansu_);
             LoadData(false);
+            return true;
         }
         private float ConvertToFloat(string s)
         {

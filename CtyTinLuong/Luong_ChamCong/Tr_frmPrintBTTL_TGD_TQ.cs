@@ -40,11 +40,14 @@ namespace CtyTinLuong.Luong_ChamCong
 
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
-                int ID_CongNhan_ = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
-                if (ID_congNhanRoot != ID_CongNhan_)
+
+                int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+
+                if (ID_congNhanRoot != ID_congNhan)
                 {
-                    ID_congNhanRoot = ID_CongNhan_;
                     DataRow _ravi = ds.tbBTTL_TGD_CT.NewRow();
+
+                    ID_congNhanRoot = ID_congNhan;
                     _ravi["STT"] = _data.Rows[i]["STT"].ToString();
                     _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
                     _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
@@ -57,7 +60,6 @@ namespace CtyTinLuong.Luong_ChamCong
                     _ravi["TongTien"] = _data.Rows[i]["TongTien"].ToString();
                     _ravi["TamUng"] = _data.Rows[i]["TamUng"].ToString();
                     _ravi["ThucNhan"] = _data.Rows[i]["ThucNhan"].ToString();
-
                     ds.tbBTTL_TGD_CT.Rows.Add(_ravi);
                 }
             }

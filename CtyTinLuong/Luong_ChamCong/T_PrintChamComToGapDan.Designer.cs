@@ -2529,7 +2529,7 @@
             this.PageHeader});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dataSet_TinLuong1});
-            this.DataMember = "tbCongNhatChamCongToGapDan";
+            this.DataMember = "Tr_tbChamComTGD_CT";
             this.DataSource = this.dataSet_TinLuong1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(65, 49, 59, 49);

@@ -564,10 +564,14 @@ namespace CtyTinLuong
 
             _data.Rows.Add(_ravi2);
             //
-            gridControl1.DataSource = _data;
+            //gridControl1.DataSource = _data;
 
+            ////
+            //GuiDuLieuBangLuong();
             //
-            GuiDuLieuBangLuong();
+            //gridControl1.DataSource = _data;
+            SaveOneCN(id_nhansu_);
+            LoadData(false, _id_bophan);
         }
         private string thutrongtuanxyz(int ewwd)
         {
@@ -592,6 +596,7 @@ namespace CtyTinLuong
             if (name_.Contains("Ngay"))
             {
                 _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+                _data.Rows[index_][name_] = String.Format("{0:0.##}", CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString()));
                 if (_data.Rows.Count > index_)
                 {
                     //double temp_ = CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString());
@@ -614,7 +619,8 @@ namespace CtyTinLuong
                 }
             }
             CongTong();
-            // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+
+            if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
         }
 
         //CongTong_Row(index_);
@@ -998,6 +1004,134 @@ namespace CtyTinLuong
             }
 
             return isGuiThanhCong;
+        }
+
+        private void SaveOneCN(int idcn_)
+        {
+            string tenCongNhan_ = "";
+
+            try
+            {
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    for (int i = 0; i < _data.Rows.Count - 1; ++i)
+                    {
+                        int idCongNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+                        if (idcn_ == idCongNhan)
+                        {
+                            int ID_ChamCom_ = Convert.ToInt32(_data.Rows[i]["ID_ChamCom"].ToString());
+                            tenCongNhan_ = _data.Rows[i]["TenNhanVien"].ToString();
+
+                            if (ID_ChamCom_ == -1)
+                                continue;
+
+                            clsThin_.T_BTTL_TGD_I(ID_ChamCom_,
+                                idCongNhan,
+                                _thang,
+                                _nam,
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay3"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay4"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay5"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay6"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay7"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay8"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay9"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay10"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay11"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay12"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay13"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay14"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay15"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay16"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay17"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay18"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay19"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay20"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay21"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay22"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay23"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay24"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay25"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay26"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay27"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay28"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay29"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString()),
+                                (float)CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString()),
+                                true);
+
+                            break;
+                        }
+                    }
+                }
+            }
+            catch(Exception ea)
+            {
+                MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCongNhan_ +ea.Message
+                    + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveOneCN_Datarow(DataRow dt_row)
+        {
+            string tenCongNhan_ = "";
+
+            try
+            {
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    int idCongNhan = Convert.ToInt32(dt_row["ID_CongNhan"].ToString());
+                    int ID_ChamCom_ = Convert.ToInt32(dt_row["ID_ChamCom"].ToString());
+                    tenCongNhan_ = dt_row["TenNhanVien"].ToString();
+
+                    if (ID_ChamCom_ == -1)
+                        return;
+
+                    clsThin_.T_BTTL_TGD_I(ID_ChamCom_,
+                        idCongNhan,
+                        _thang,
+                        _nam,
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay1"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay2"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay3"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay4"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay5"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay6"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay7"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay8"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay9"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay10"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay11"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay12"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay13"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay14"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay15"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay16"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay17"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay18"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay19"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay20"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay21"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay22"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay23"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay24"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay25"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay26"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay27"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay28"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay29"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay30"].ToString()),
+                        (float)CheckString.ConvertToDouble_My(dt_row["Ngay31"].ToString()),
+                        true);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCongNhan_ + ea.Message
+                    + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
