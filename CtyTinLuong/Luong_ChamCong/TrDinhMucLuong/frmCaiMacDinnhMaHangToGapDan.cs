@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class Tr_frmCaiMacDinnhMaHangTDB : Form
+    public partial class frmCaiMacDinnhMaHangToGapDan : Form
     {
         private bool KiemTraLuu()
         {
@@ -47,7 +47,7 @@ namespace CtyTinLuong
                 cls1.iThang = Convert.ToInt32(txtThang.Text.ToString());
                 cls1.iNam = Convert.ToInt32(txtNam.Text.ToString());
                 // xoá trước
-                cls1.Tr_CaiMacDinhMaHang_TDB_delete_thang_nam();
+                cls1.Delete_ALL_WW_Thang_WW_Nam();
                 string shienthi = "1";
                 DataTable dttttt2 = (DataTable)gridControl1.DataSource;
                 dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
@@ -62,17 +62,17 @@ namespace CtyTinLuong
                         cls1.iThang = Convert.ToInt32(txtThang.Text.ToString());
                         cls1.iNam = Convert.ToInt32(txtNam.Text.ToString());
                         cls1.iID_DinhMuc_Luong_SanLuong = Convert.ToInt32(dv3.Rows[i]["ID_DinhMuc_Luong_SanLuong"].ToString());
-                        cls1.Tr_CaiMacDinhMaHang_TDB_Insert();
+                        cls1.Insert();
                     }
                 }
-                MessageBox.Show("Đã lưu");
+                MessageBox.Show("Đã lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }
         private void HienThi_themMoi()
         {
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_MaHang", typeof(int));           
+            dt2.Columns.Add("ID_MaHang_ToGapDan", typeof(int));           
             dt2.Columns.Add("Thang", typeof(int));
             dt2.Columns.Add("Nam", typeof(int));           
             dt2.Columns.Add("ID_VTHH");
@@ -90,7 +90,7 @@ namespace CtyTinLuong
         {
 
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_MaHang", typeof(int));
+            dt2.Columns.Add("ID_MaHang_ToGapDan", typeof(int));
             dt2.Columns.Add("Thang", typeof(int));
             dt2.Columns.Add("Nam", typeof(int));
             dt2.Columns.Add("ID_VTHH");
@@ -106,11 +106,11 @@ namespace CtyTinLuong
             clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh();
             cls.iThang = Convert.ToInt32(txtThang.Text.ToString());
             cls.iNam = Convert.ToInt32(txtNam.Text.ToString());
-            DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
+            DataTable dt3 = cls.SelectAll_WW_Thang_WW_Nam();
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = dt2.NewRow();
-                _ravi["ID_MaHang"] = Convert.ToInt32(dt3.Rows[i]["ID_MaHang"].ToString());
+                _ravi["ID_MaHang_ToGapDan"] = Convert.ToInt32(dt3.Rows[i]["ID_MaHang_ToGapDan"].ToString());
                 _ravi["ID_VTHH"] = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
                 _ravi["Thang"] = Convert.ToInt32(dt3.Rows[i]["Thang"].ToString());
                 _ravi["Nam"] = Convert.ToInt32(dt3.Rows[i]["Nam"].ToString());
@@ -131,12 +131,12 @@ namespace CtyTinLuong
 
         }
 
-        public Tr_frmCaiMacDinnhMaHangTDB()
+        public frmCaiMacDinnhMaHangToGapDan()
         {
             InitializeComponent();
         }
 
-        private void Tr_frmCaiMacDinnhMaHangTDB_Load(object sender, EventArgs e)
+        private void frmCaiMacDinnhMaHangToGapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
@@ -161,7 +161,7 @@ namespace CtyTinLuong
 
 
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_MaHang", typeof(int));
+            dt2.Columns.Add("ID_MaHang_ToGapDan", typeof(int));
             dt2.Columns.Add("ID_ChamCong", typeof(int));
             dt2.Columns.Add("Thang", typeof(int));
             dt2.Columns.Add("Nam", typeof(int));
@@ -259,7 +259,7 @@ namespace CtyTinLuong
                 clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh();
                 cls.iThang = Convert.ToInt32(txtThang.Text.ToString());
                 cls.iNam = Convert.ToInt32(txtNam.Text.ToString());
-                DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
+                DataTable dt3 = cls.SelectAll_WW_Thang_WW_Nam();
                 if (dt3.Rows.Count == 0)
                     HienThi_themMoi();
                 else
@@ -281,7 +281,7 @@ namespace CtyTinLuong
                 int nam = Convert.ToInt32(txtNam.Value);
                 cls.iThang = thang;
                 cls.iNam = nam;
-                DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
+                DataTable dt3 = cls.SelectAll_WW_Thang_WW_Nam();
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
                     if (IdVthh == Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString())

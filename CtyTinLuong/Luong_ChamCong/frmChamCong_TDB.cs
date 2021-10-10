@@ -282,7 +282,7 @@ namespace CtyTinLuong
             {
                 cls.iThang = _thang;
                 cls.iNam = _nam;
-                DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
+                _dt_HangHoa = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
                 cbHangHoa.DataSource = _dt_HangHoa;
                 cbHangHoa.DisplayMember = "TenVTHH";
                 cbHangHoa.ValueMember = "ID_VTHH";
@@ -1117,9 +1117,9 @@ namespace CtyTinLuong
                 ff.Show();
 
             }
-            catch (Exception ee)
+            catch (Exception ea)
             {
-
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

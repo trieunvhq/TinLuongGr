@@ -37,6 +37,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCaiMacDinnhMaHangToGapDan));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.txtNam = new System.Windows.Forms.NumericUpDown();
+            this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
@@ -76,9 +78,7 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -86,6 +86,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
@@ -102,9 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -138,6 +138,53 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(988, 490);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // txtNam
+            // 
+            this.txtNam.Location = new System.Drawing.Point(564, 2);
+            this.txtNam.Maximum = new decimal(new int[] {
+            2050,
+            0,
+            0,
+            0});
+            this.txtNam.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(146, 20);
+            this.txtNam.TabIndex = 103;
+            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNam.Value = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            // 
+            // txtThang
+            // 
+            this.txtThang.Location = new System.Drawing.Point(313, 2);
+            this.txtThang.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.txtThang.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.Name = "txtThang";
+            this.txtThang.Size = new System.Drawing.Size(133, 20);
+            this.txtThang.TabIndex = 102;
+            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtThang.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.ValueChanged += new System.EventHandler(this.txtThang_TextChanged);
             // 
             // label1
             // 
@@ -351,8 +398,6 @@
             this.clXoa.Name = "clXoa";
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 6;
             this.clXoa.Width = 40;
             // 
             // btXoa2
@@ -533,30 +578,6 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // txtThang
-            // 
-            this.txtThang.Location = new System.Drawing.Point(313, 2);
-            this.txtThang.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.txtThang.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new System.Drawing.Size(133, 20);
-            this.txtThang.TabIndex = 102;
-            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtThang.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtThang.ValueChanged += new System.EventHandler(this.txtThang_TextChanged);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtThang;
@@ -565,29 +586,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(170, 24);
             this.layoutControlItem2.Text = "Tháng";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(30, 13);
-            // 
-            // txtNam
-            // 
-            this.txtNam.Location = new System.Drawing.Point(564, 2);
-            this.txtNam.Maximum = new decimal(new int[] {
-            2050,
-            0,
-            0,
-            0});
-            this.txtNam.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(146, 20);
-            this.txtNam.TabIndex = 103;
-            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNam.Value = new decimal(new int[] {
-            2021,
-            0,
-            0,
-            0});
             // 
             // layoutControlItem3
             // 
@@ -639,6 +637,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
@@ -655,9 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();

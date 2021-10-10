@@ -536,6 +536,7 @@ namespace CtyTinLuong
                         //}
                         //
                         int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_CongNhan"].ToString());
+                        int id_vthh_ = Convert.ToInt32(dt_.Rows[i]["ID_VTHH"].ToString());
                         if (ds_id_congnhan.Contains(id_nhansu_))
                         {
 
@@ -545,6 +546,8 @@ namespace CtyTinLuong
                             DataRow _ravi = _data.NewRow();
                             _ravi["ID_ChiTietChamCong_ToGapDan"] = 0;
                             _ravi["ID_CongNhan"] = id_nhansu_;
+                            _ravi["ID_VTHH"] = id_vthh_;
+                            _ravi["TenVTHH"] = dt_.Rows[i]["TenVTHH"].ToString();
                             _ravi["Thang"] = _thang;
                             _ravi["Nam"] = _nam;
                             _ravi["Ngay1"] = 0; _ravi["Ngay2"] = 0; _ravi["Ngay3"] = 0;

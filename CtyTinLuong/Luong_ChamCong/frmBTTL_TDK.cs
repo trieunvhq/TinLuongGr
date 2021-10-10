@@ -85,14 +85,13 @@ namespace CtyTinLuong
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
-                    _LuongTrachNhiem_Tong += CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
-                    trutiencom_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom"].ToString());
-                    tamung_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
-                    //  
+                    //_LuongTrachNhiem_Tong += CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
+                    //trutiencom_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom"].ToString());
+                    //tamung_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
+                    ////  
 
                     double dongia_ = 0;
-
-                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
+                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMuc_KhongTang_Value"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     //Sản lượng:
@@ -151,19 +150,26 @@ namespace CtyTinLuong
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["TenVTHH"] = "Tổng";
-            _ravi["SanLuong"] = sanluong_tong.ToString("N0");
-            _ravi["ThucNhan"] = thucnhan_tong.ToString("N0"); 
-            _ravi["TongLuong"] = tongluong_tong.ToString("N0");
+
+            if (sanluong_tong == 0) _ravi["SanLuong"] = "";
+            else _ravi["SanLuong"] = sanluong_tong.ToString("N0");
+
+            if (thanhtien_tong == 0)
+                _ravi["ThanhTien"] = "";
+            else
+                _ravi["ThanhTien"] = thanhtien_tong.ToString("N0");
 
             if (_LuongTrachNhiem_Tong == 0) _ravi["LuongTrachNhiem"] = "";
             else _ravi["LuongTrachNhiem"] = _LuongTrachNhiem_Tong.ToString("N0");
 
-            _ravi["TongTien"] = tongtien_tong.ToString("N0");
+            if (tongtien_tong == 0) _ravi["TongTien"] = "";
+            else _ravi["TongTien"] = tongtien_tong.ToString("N0");
 
             if (tamung_tong == 0) _ravi["TamUng"] = "";
             else _ravi["TamUng"] = tamung_tong.ToString("N0");
 
-            _ravi["ThanhTien"] = thanhtien_tong.ToString("N0");
+            if (thucnhan_tong == 0) _ravi["ThucNhan"] = "";
+            else _ravi["ThucNhan"] = thucnhan_tong.ToString("N0");
 
             _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;

@@ -398,8 +398,6 @@
             this.clXoa.Name = "clXoa";
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 6;
             this.clXoa.Width = 40;
             // 
             // btXoa2
@@ -634,7 +632,7 @@
             this.MinimizeBox = false;
             this.Name = "Tr_frmCaiMacDinnhMaHangTDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tr_frmCaiMacDinnhMaHangTDB-->Cài Mặc Định Mã Hàng Tổ Gấp Dán";
+            this.Text = "Tr_frmCaiMacDinnhMaHangTDB-->Cài Mặc Định Mã Hàng Tổ Đóng Bao";
             this.Load += new System.EventHandler(this.Tr_frmCaiMacDinnhMaHangTDB_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

@@ -85,14 +85,14 @@ namespace CtyTinLuong
                     _data.Rows[i]["ID_VTHH"] = id_vthh_;
                     _data.Rows[i]["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
 
-                    _LuongTrachNhiem_Tong += CheckString.ConvertToDouble_My(_data.Rows[i]["SoNgayAn_Value"].ToString());
-                    trutiencom_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom"].ToString());
-                    tamung_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
+                    //_LuongTrachNhiem_Tong += 0;// CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
+                    //trutiencom_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TruTienCom"].ToString());
+                    //tamung_tong += CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng"].ToString());
                     //  
 
                     double dongia_ = 0;
 
-                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongCoDinh"].ToString());
+                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMuc_KhongTang_Value"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     //Sản lượng:
@@ -112,7 +112,7 @@ namespace CtyTinLuong
                         _data.Rows[i]["ThanhTien"] = thanhtien_.ToString("N0");
 
                     //Trách nhiệm:
-                    double LuongTrachNhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
+                    double LuongTrachNhiem_ = 0;// CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
                     _LuongTrachNhiem_Tong += LuongTrachNhiem_;
                     if (LuongTrachNhiem_ == 0)
                         _data.Rows[i]["LuongTrachNhiem"] = "";
@@ -151,19 +151,27 @@ namespace CtyTinLuong
             _ravi["Thang"] = _thang;
             _ravi["Nam"] = _nam;
             _ravi["TenVTHH"] = "Tổng";
-            _ravi["SanLuong"] = sanluong_tong.ToString("N0");
-            _ravi["ThucNhan"] = thucnhan_tong.ToString("N0"); 
-            _ravi["TongLuong"] = tongluong_tong.ToString("N0");
+
+            //_ravi["TongLuong"] = tongluong_tong.ToString("N0");
+
+            if (sanluong_tong == 0) _ravi["SanLuong"] = "";
+            else _ravi["SanLuong"] = sanluong_tong.ToString("N0");
+
+            if (thanhtien_tong == 0)
+                _ravi["ThanhTien"] = "";
+            else
+                _ravi["ThanhTien"] = thanhtien_tong.ToString("N0");
 
             if (_LuongTrachNhiem_Tong == 0) _ravi["LuongTrachNhiem"] = "";
             else _ravi["LuongTrachNhiem"] = _LuongTrachNhiem_Tong.ToString("N0");
 
-            _ravi["TongTien"] = tongtien_tong.ToString("N0");
+            //_ravi["TongTien"] = tongtien_tong.ToString("N0");
 
             if (tamung_tong == 0) _ravi["TamUng"] = "";
             else _ravi["TamUng"] = tamung_tong.ToString("N0");
 
-            _ravi["ThanhTien"] = thanhtien_tong.ToString("N0");
+            if (thucnhan_tong == 0) _ravi["ThucNhan"] = "";
+            else _ravi["ThucNhan"] = thucnhan_tong.ToString("N0");
 
             _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;
@@ -175,65 +183,6 @@ namespace CtyTinLuong
             //Cursor.Current = Cursors.Default;
         }
 
-        //Hàm tính tổng lương của từng công nhân theo ID_CongNhan:
-        private double TinhTongLuongMotCongNhan (DataTable dt, int ID_CongNhan)
-        {
-            double result = 0;
-            //Tổng lương:
-            if (_data != null && _data.Rows.Count > 0)
-            {
-                for (int i = 0; i < _data.Rows.Count; i++)
-                {
-                    if (ID_CongNhan == Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()))
-                    {
-                        double DonGia_Sub = 0;
-                        double SanLuong_Sub = 0;
-
-                        //Loại công:
-                        string LoaiCong = _data.Rows[i]["Cong"].ToString();
-
-                        if (LoaiCong.ToLower().Contains("gia nghĩa 2"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["GiaNgia2_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("gia nghĩa"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["GiaNghia_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("thọ kim bật 3"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["ThoKimBat3_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("nc bật 6 buộc"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["NCBat6Buoc_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("nc bật 6"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["NCBat6_Value"].ToString());
-                        }
-                        else if (LoaiCong.ToLower().Contains("cuc đột")
-                            || LoaiCong.ToLower().Contains("cục đột")
-                            || LoaiCong.ToLower().Contains("cúc đột"))
-                        {
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["CucDot_Value"].ToString());
-                        }
-                        else
-                        {
-                            //Đơn giá của các loại công còn lại:
-                            DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["MacDinh_Value"].ToString());
-                        }
-
-                        //Sản lượng:
-                        SanLuong_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong_Value"].ToString());
-
-                        result += (SanLuong_Sub * DonGia_Sub);
-                    }
-                }
-            }
-
-            return result;
-        }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
