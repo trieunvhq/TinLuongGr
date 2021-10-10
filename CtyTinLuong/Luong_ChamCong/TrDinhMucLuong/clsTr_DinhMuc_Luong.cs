@@ -16,7 +16,7 @@ namespace CtyTinLuong
 	public class clsTr_DinhMuc_Luong : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bDachamcong, m_bTontai, m_bNgungtheodoi;
+			private SqlBoolean		m_bDachamcong, m_bTontai, m_bNgungtheodoi, m_bIsXangTheoThang;
 			private SqlDateTime		m_daDen_ngay, m_daTu_ngay;
 			private SqlDecimal		m_dcPhuCapBaoHiem, m_dcLuongCoBanTinhBaoHiem, m_dcTrachNhiem, m_dcDinhMucLuongTangCa, m_dcDinhMucLuongTheoGio, m_dcBaoHiem, m_dcPhuCapDienthoai, m_dcPhuCapXangXe, m_dcLuongCoDinh, m_dcPhuCapTienAn, m_dcPhuCapVeSinhMay;
 			private SqlDouble		m_fPhanTramBaoHiem;
@@ -98,7 +98,8 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iHinhThucTinhLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iHinhThucTinhLuong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@btontai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTontai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bngungtheodoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungtheodoi));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iId));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bIsXangTheoThang", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bIsXangTheoThang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iid", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iId));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -184,9 +185,10 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iHinhThucTinhLuong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iHinhThucTinhLuong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@btontai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTontai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bngungtheodoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungtheodoi));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bIsXangTheoThang", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bIsXangTheoThang));
 
-				// Open connection.
-				m_scoMainConnection.Open();
+                // Open connection.
+                m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
@@ -357,7 +359,8 @@ namespace CtyTinLuong
 					m_iHinhThucTinhLuong = (Int32)dtToReturn.Rows[0]["HinhThucTinhLuong"];
 					m_bTontai = dtToReturn.Rows[0]["tontai"] == System.DBNull.Value ? SqlBoolean.Null : (bool)dtToReturn.Rows[0]["tontai"];
 					m_bNgungtheodoi = dtToReturn.Rows[0]["ngungtheodoi"] == System.DBNull.Value ? SqlBoolean.Null : (bool)dtToReturn.Rows[0]["ngungtheodoi"];
-				}
+                    m_bIsXangTheoThang = dtToReturn.Rows[0]["IsXangTheoThang"] == System.DBNull.Value ? SqlBoolean.Null : (bool)dtToReturn.Rows[0]["IsXangTheoThang"];
+                }
 				return dtToReturn;
 			}
 			catch(Exception ex)
@@ -813,8 +816,8 @@ namespace CtyTinLuong
 			}
 		}
 
-
-		public SqlBoolean bNgungtheodoi
+        
+        public SqlBoolean bNgungtheodoi
 		{
 			get
 			{
@@ -830,6 +833,23 @@ namespace CtyTinLuong
 				m_bNgungtheodoi = value;
 			}
 		}
-		#endregion
-	}
+
+        public SqlBoolean bIsXangTheoThang
+        {
+            get
+            {
+                return m_bIsXangTheoThang;
+            }
+            set
+            {
+                SqlBoolean bIsXangTheoThangTmp = (SqlBoolean)value;
+                if (bIsXangTheoThangTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("bIsXangTheoThang", "bIsXangTheoThang can't be NULL");
+                }
+                m_bIsXangTheoThang = value;
+            }
+        }
+        #endregion
+    }
 }

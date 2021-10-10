@@ -270,8 +270,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem14});
+            this.layoutControlItem14,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(667, 401);
@@ -709,9 +709,9 @@
             // 
             // radioXangTheoNgay
             // 
-            this.radioXangTheoNgay.Location = new System.Drawing.Point(2, 374);
+            this.radioXangTheoNgay.Location = new System.Drawing.Point(141, 374);
             this.radioXangTheoNgay.Name = "radioXangTheoNgay";
-            this.radioXangTheoNgay.Size = new System.Drawing.Size(135, 25);
+            this.radioXangTheoNgay.Size = new System.Drawing.Size(190, 25);
             this.radioXangTheoNgay.TabIndex = 39;
             this.radioXangTheoNgay.Text = "Xăng theo ngày";
             this.radioXangTheoNgay.UseVisualStyleBackColor = true;
@@ -719,17 +719,17 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.radioXangTheoNgay;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 372);
+            this.layoutControlItem6.Location = new System.Drawing.Point(139, 372);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(139, 29);
+            this.layoutControlItem6.Size = new System.Drawing.Size(194, 29);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // radioXangTheoThang
             // 
-            this.radioXangTheoThang.Location = new System.Drawing.Point(141, 374);
+            this.radioXangTheoThang.Location = new System.Drawing.Point(2, 374);
             this.radioXangTheoThang.Name = "radioXangTheoThang";
-            this.radioXangTheoThang.Size = new System.Drawing.Size(190, 25);
+            this.radioXangTheoThang.Size = new System.Drawing.Size(135, 25);
             this.radioXangTheoThang.TabIndex = 40;
             this.radioXangTheoThang.Text = "Xăng theo tháng";
             this.radioXangTheoThang.UseVisualStyleBackColor = true;
@@ -737,9 +737,9 @@
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.radioXangTheoThang;
-            this.layoutControlItem14.Location = new System.Drawing.Point(139, 372);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 372);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(194, 29);
+            this.layoutControlItem14.Size = new System.Drawing.Size(139, 29);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 

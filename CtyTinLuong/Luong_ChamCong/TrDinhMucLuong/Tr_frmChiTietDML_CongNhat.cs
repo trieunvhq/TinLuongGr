@@ -121,6 +121,7 @@ namespace CtyTinLuong
                     cls.dcDinhMucLuongTheoGio = CheckString.ConvertToDecimal_My(txtDMLuongTheoGio.Text.ToString());
                     cls.dcDinhMucLuongTangCa = CheckString.ConvertToDecimal_My(txtDinhMucTangCa.Text.ToString());
                     cls.bNgungtheodoi = checkNgungTheoDoi.Checked;
+                    cls.bIsXangTheoThang = radioXangTheoThang.Checked;
                     cls.bTontai = true;
 
                     if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat == true)
@@ -210,6 +211,8 @@ namespace CtyTinLuong
             checCongNhat.Enabled = false;
             checSanLuong.Enabled = false;
             checMax_hai.Enabled = false;
+            radioXangTheoThang.Enabled = false;
+            radioXangTheoNgay.Enabled = false;
         }
 
         private void TrUnlockReadonly()
@@ -232,6 +235,8 @@ namespace CtyTinLuong
             checCongNhat.Enabled = true;
             checSanLuong.Enabled = true;
             checMax_hai.Enabled = true;
+            radioXangTheoThang.Enabled = true;
+            radioXangTheoNgay.Enabled = true;
         }
 
         private void hienthiSUaDuLieu()
@@ -267,6 +272,7 @@ namespace CtyTinLuong
                 else if (cls.iHinhThucTinhLuong.Value == 4)
                     checMax_hai.Checked = true;
 
+                radioXangTheoThang.Checked = cls.bIsXangTheoThang.Value;
                 txtLuongCoDinh.Text = cls.dcLuongCoDinh.Value.ToString();
                 txtPhuCapXang.Text = cls.dcPhuCapXangXe.Value.ToString();
                 txtPhuCapDienThoai.Text = cls.dcPhuCapDienthoai.Value.ToString();
@@ -307,6 +313,8 @@ namespace CtyTinLuong
             InitializeComponent();
             _frmQuanLyDinhMucLuong = frm;
             btLUU.Enabled = true;
+
+            radioXangTheoThang.Checked = true;
         }
 
         private void Tr_frmChiTietDML_CongNhat_Load(object sender, EventArgs e)
