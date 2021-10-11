@@ -50,10 +50,10 @@ namespace CtyTinLuong
                             for (int imayin = 0; imayin < dtChiTietPhieu.Rows.Count; imayin++)
                             {
                                 clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-                                Decimal SanLuongThuong, SanLuongTangCa;
-                                SanLuongThuong = CheckString.ConvertToDecimal_My(dtChiTietPhieu.Rows[imayin]["SanLuong_Thuong"].ToString());
-                                SanLuongTangCa = CheckString.ConvertToDecimal_My(dtChiTietPhieu.Rows[imayin]["SanLuong_TangCa"].ToString());
-                                decimal DinhMuc_KhongTang, DinhMuc_Tang, ThanhTien;
+                                double SanLuongThuong, SanLuongTangCa;
+                                SanLuongThuong = CheckString.ConvertToDouble_My(dtChiTietPhieu.Rows[imayin]["SanLuong_Thuong"].ToString());
+                                SanLuongTangCa = CheckString.ConvertToDouble_My(dtChiTietPhieu.Rows[imayin]["SanLuong_TangCa"].ToString());
+                                double DinhMuc_KhongTang, DinhMuc_Tang, ThanhTien;
                                 int ID_DinhMuc_Luong = Convert.ToInt32(dtChiTietPhieu.Rows[imayin]["ID_DinhMuc_Luong"].ToString());
                                 clsdm.iID_DinhMuc_Luong_SanLuong = ID_DinhMuc_Luong;
                                 DataTable dtdm = clsdm.SelectOne();
