@@ -272,7 +272,15 @@ namespace CtyTinLuong
                 else if (cls.iHinhThucTinhLuong.Value == 4)
                     checMax_hai.Checked = true;
 
-                radioXangTheoThang.Checked = cls.bIsXangTheoThang.Value;
+                if (cls.bIsXangTheoThang.Value)
+                {
+                    radioXangTheoThang.Checked = true;
+                }
+                else
+                {
+                    radioXangTheoNgay.Checked = true;
+                }
+                
                 txtLuongCoDinh.Text = cls.dcLuongCoDinh.Value.ToString();
                 txtPhuCapXang.Text = cls.dcPhuCapXangXe.Value.ToString();
                 txtPhuCapDienThoai.Text = cls.dcPhuCapDienthoai.Value.ToString();
