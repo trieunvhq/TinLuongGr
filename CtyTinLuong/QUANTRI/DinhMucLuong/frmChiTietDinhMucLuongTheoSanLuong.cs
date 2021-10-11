@@ -53,8 +53,8 @@ namespace CtyTinLuong
                         {
                             cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
                         }
-                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text);
-                        cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
+                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDouble_My(txtDonGiaThuong.Text.Trim());
+                        cls.dcDinhMuc_Tang = CheckString.ConvertToDouble_My(txtDonGiaTang.Text.Trim());
                         cls.bTonTai = true;
                         cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
                         cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text);
@@ -88,8 +88,8 @@ namespace CtyTinLuong
                             cls.iID_VTHH = Convert.ToInt16(gridMaVTHH.EditValue.ToString());
                         }
 
-                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDecimal_My(txtDonGiaThuong.Text.ToString());
-                        cls.dcDinhMuc_Tang = CheckString.ConvertToDecimal_My(txtDonGiaTang.Text.ToString());
+                        cls.dcDinhMuc_KhongTang = CheckString.ConvertToDouble_My(txtDonGiaThuong.Text.Trim());
+                        cls.dcDinhMuc_Tang = CheckString.ConvertToDouble_My(txtDonGiaTang.Text.Trim());
                         cls.bTonTai = true;
                         cls.fMaxSanLuongThuong = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text.ToString());
                         cls.bNgungTheoDoi = checkNgungTheoDoi.Checked;
@@ -242,10 +242,11 @@ namespace CtyTinLuong
         {
             try
             {
-                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                decimal value = decimal.Parse(txtDonGiaThuong.Text, System.Globalization.NumberStyles.AllowThousands);
-                txtDonGiaThuong.Text = String.Format(culture, "{0:N0}", value);
-                txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
+                //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ////decimal value = decimal.Parse(txtDonGiaThuong.Text, System.Globalization.NumberStyles.AllowThousands);
+                //double value = CheckString.ConvertToDouble_My(txtDonGiaThuong.Text);
+                //txtDonGiaThuong.Text = String.Format(culture, "{0:N2}", value);
+                //txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
             }
             catch (Exception ea)
             {
@@ -258,10 +259,11 @@ namespace CtyTinLuong
         {
             try
             {
-                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                decimal value = decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands);
-                txtDonGiaTang.Text = String.Format(culture, "{0:N0}", value);
-                txtDonGiaTang.Select(txtDonGiaTang.Text.Length, 0);
+                //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ////decimal value = decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands);
+                //double value = CheckString.ConvertToDouble_My(txtDonGiaTang.Text);
+                //txtDonGiaTang.Text = String.Format(culture, "{0:N2}", value);
+                //txtDonGiaTang.Select(txtDonGiaTang.Text.Length, 0);
             }
             catch (Exception ea)
             {

@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmQuanLyDML_CongNhat));
             this.checked_ALL = new DevExpress.XtraEditors.CheckEdit();
@@ -56,6 +56,7 @@
             this.id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.TenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tu_ngay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.den_ngay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +77,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.TenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).BeginInit();
@@ -132,9 +132,9 @@
             // btCHiTiet
             // 
             this.btCHiTiet.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.notebook;
+            editorButtonImageOptions5.Image = global::CtyTinLuong.Properties.Resources.notebook;
             this.btCHiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btCHiTiet.Name = "btCHiTiet";
             // 
             // checkBoTheoDoi
@@ -157,7 +157,7 @@
             this.clNgungTheoDoi.Name = "clNgungTheoDoi";
             this.clNgungTheoDoi.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clNgungTheoDoi.Visible = true;
-            this.clNgungTheoDoi.VisibleIndex = 16;
+            this.clNgungTheoDoi.VisibleIndex = 15;
             this.clNgungTheoDoi.Width = 40;
             // 
             // checkNgungTheoDoi
@@ -172,9 +172,9 @@
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
+            editorButtonImageOptions6.Image = global::CtyTinLuong.Properties.Resources.ico_Exit;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -188,7 +188,7 @@
             this.clDienGiai.Name = "clDienGiai";
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
-            this.clDienGiai.VisibleIndex = 3;
+            this.clDienGiai.VisibleIndex = 2;
             this.clDienGiai.Width = 120;
             // 
             // repositoryItemMemoEdit3
@@ -204,8 +204,9 @@
             this.MaNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.MaNhanVien.Name = "MaNhanVien";
             this.MaNhanVien.OptionsColumn.AllowEdit = false;
+            this.MaNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.MaNhanVien.Visible = true;
-            this.MaNhanVien.VisibleIndex = 1;
+            this.MaNhanVien.VisibleIndex = 0;
             // 
             // id
             // 
@@ -228,8 +229,6 @@
             this.clSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
-            this.clSTT.Visible = true;
-            this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 43;
             // 
             // gridView1
@@ -277,6 +276,18 @@
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
+            // TenNhanVien
+            // 
+            this.TenNhanVien.Caption = "Tên nhân viên";
+            this.TenNhanVien.FieldName = "TenNhanVien";
+            this.TenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.TenNhanVien.Name = "TenNhanVien";
+            this.TenNhanVien.OptionsColumn.AllowEdit = false;
+            this.TenNhanVien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.TenNhanVien.Visible = true;
+            this.TenNhanVien.VisibleIndex = 1;
+            this.TenNhanVien.Width = 130;
+            // 
             // tu_ngay
             // 
             this.tu_ngay.AppearanceCell.Options.UseTextOptions = true;
@@ -291,7 +302,7 @@
             this.tu_ngay.Name = "tu_ngay";
             this.tu_ngay.OptionsColumn.AllowEdit = false;
             this.tu_ngay.Visible = true;
-            this.tu_ngay.VisibleIndex = 4;
+            this.tu_ngay.VisibleIndex = 3;
             this.tu_ngay.Width = 80;
             // 
             // den_ngay
@@ -308,7 +319,7 @@
             this.den_ngay.Name = "den_ngay";
             this.den_ngay.OptionsColumn.AllowEdit = false;
             this.den_ngay.Visible = true;
-            this.den_ngay.VisibleIndex = 5;
+            this.den_ngay.VisibleIndex = 4;
             this.den_ngay.Width = 80;
             // 
             // clXoa
@@ -333,7 +344,7 @@
             this.LuongCoDinh.Name = "LuongCoDinh";
             this.LuongCoDinh.OptionsColumn.AllowEdit = false;
             this.LuongCoDinh.Visible = true;
-            this.LuongCoDinh.VisibleIndex = 6;
+            this.LuongCoDinh.VisibleIndex = 5;
             this.LuongCoDinh.Width = 90;
             // 
             // PhuCapXangXe
@@ -350,7 +361,7 @@
             this.PhuCapXangXe.Name = "PhuCapXangXe";
             this.PhuCapXangXe.OptionsColumn.AllowEdit = false;
             this.PhuCapXangXe.Visible = true;
-            this.PhuCapXangXe.VisibleIndex = 7;
+            this.PhuCapXangXe.VisibleIndex = 6;
             this.PhuCapXangXe.Width = 90;
             // 
             // PhuCapDienthoai
@@ -367,7 +378,7 @@
             this.PhuCapDienthoai.Name = "PhuCapDienthoai";
             this.PhuCapDienthoai.OptionsColumn.AllowEdit = false;
             this.PhuCapDienthoai.Visible = true;
-            this.PhuCapDienthoai.VisibleIndex = 8;
+            this.PhuCapDienthoai.VisibleIndex = 7;
             this.PhuCapDienthoai.Width = 90;
             // 
             // PhuCapVeSinhMay
@@ -384,7 +395,7 @@
             this.PhuCapVeSinhMay.Name = "PhuCapVeSinhMay";
             this.PhuCapVeSinhMay.OptionsColumn.AllowEdit = false;
             this.PhuCapVeSinhMay.Visible = true;
-            this.PhuCapVeSinhMay.VisibleIndex = 9;
+            this.PhuCapVeSinhMay.VisibleIndex = 8;
             this.PhuCapVeSinhMay.Width = 90;
             // 
             // PhuCapTienAn
@@ -401,7 +412,7 @@
             this.PhuCapTienAn.Name = "PhuCapTienAn";
             this.PhuCapTienAn.OptionsColumn.AllowEdit = false;
             this.PhuCapTienAn.Visible = true;
-            this.PhuCapTienAn.VisibleIndex = 10;
+            this.PhuCapTienAn.VisibleIndex = 9;
             this.PhuCapTienAn.Width = 90;
             // 
             // TrachNhiem
@@ -418,7 +429,7 @@
             this.TrachNhiem.Name = "TrachNhiem";
             this.TrachNhiem.OptionsColumn.AllowEdit = false;
             this.TrachNhiem.Visible = true;
-            this.TrachNhiem.VisibleIndex = 11;
+            this.TrachNhiem.VisibleIndex = 10;
             this.TrachNhiem.Width = 90;
             // 
             // PhanTramBaoHiem
@@ -447,7 +458,7 @@
             this.BaoHiem.Name = "BaoHiem";
             this.BaoHiem.OptionsColumn.AllowEdit = false;
             this.BaoHiem.Visible = true;
-            this.BaoHiem.VisibleIndex = 12;
+            this.BaoHiem.VisibleIndex = 11;
             this.BaoHiem.Width = 90;
             // 
             // PhuCapBaoHiem
@@ -462,7 +473,7 @@
             this.PhuCapBaoHiem.OptionsColumn.AllowEdit = false;
             this.PhuCapBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.PhuCapBaoHiem.Visible = true;
-            this.PhuCapBaoHiem.VisibleIndex = 13;
+            this.PhuCapBaoHiem.VisibleIndex = 12;
             this.PhuCapBaoHiem.Width = 90;
             // 
             // DinhMucLuongTheoGio
@@ -481,7 +492,7 @@
             this.DinhMucLuongTheoGio.Name = "DinhMucLuongTheoGio";
             this.DinhMucLuongTheoGio.OptionsColumn.AllowEdit = false;
             this.DinhMucLuongTheoGio.Visible = true;
-            this.DinhMucLuongTheoGio.VisibleIndex = 14;
+            this.DinhMucLuongTheoGio.VisibleIndex = 13;
             this.DinhMucLuongTheoGio.Width = 90;
             // 
             // DinhMucLuongTangCa
@@ -500,7 +511,7 @@
             this.DinhMucLuongTangCa.Name = "DinhMucLuongTangCa";
             this.DinhMucLuongTangCa.OptionsColumn.AllowEdit = false;
             this.DinhMucLuongTangCa.Visible = true;
-            this.DinhMucLuongTangCa.VisibleIndex = 15;
+            this.DinhMucLuongTangCa.VisibleIndex = 14;
             this.DinhMucLuongTangCa.Width = 90;
             // 
             // HinhThucTinhLuong
@@ -558,17 +569,6 @@
             this.btRefresh.TabIndex = 87;
             this.btRefresh.ToolTip = "Refesh";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
-            // 
-            // TenNhanVien
-            // 
-            this.TenNhanVien.Caption = "Tên nhân viên";
-            this.TenNhanVien.FieldName = "TenNhanVien";
-            this.TenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.TenNhanVien.Name = "TenNhanVien";
-            this.TenNhanVien.OptionsColumn.AllowEdit = false;
-            this.TenNhanVien.Visible = true;
-            this.TenNhanVien.VisibleIndex = 2;
-            this.TenNhanVien.Width = 130;
             // 
             // txtTimKiem
             // 

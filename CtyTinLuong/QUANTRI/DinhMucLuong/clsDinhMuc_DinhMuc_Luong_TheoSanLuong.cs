@@ -17,9 +17,9 @@ namespace CtyTinLuong
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bTonTai, m_bNgungTheoDoi;
-			private SqlDecimal		m_dcDinhMuc_Tang, m_dcDinhMuc_KhongTang;
-			private SqlDouble		m_fMaxSanLuongThuong;
-			private SqlInt32		m_iID_DinhMuc_Luong_SanLuong, m_iID_VTHH;
+			//private SqlDecimal		
+			private SqlDouble		m_fMaxSanLuongThuong, m_dcDinhMuc_Tang, m_dcDinhMuc_KhongTang;
+            private SqlInt32		m_iID_DinhMuc_Luong_SanLuong, m_iID_VTHH;
 			private SqlString		m_sDienGiai, m_sMaDinhMuc;
 		#endregion
 
@@ -69,8 +69,8 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaDinhMuc", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMaDinhMuc));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiai", SqlDbType.NVarChar, 350, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_KhongTang", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_KhongTang));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_Tang", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_Tang));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_KhongTang", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_KhongTang));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_Tang", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_Tang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fMaxSanLuongThuong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fMaxSanLuongThuong));
@@ -144,8 +144,8 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sMaDinhMuc", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMaDinhMuc));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiai", SqlDbType.NVarChar, 350, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_VTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_VTHH));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_KhongTang", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_KhongTang));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_Tang", SqlDbType.Decimal, 9, ParameterDirection.Input, false, 18, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_Tang));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_KhongTang", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_KhongTang));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@dcDinhMuc_Tang", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_dcDinhMuc_Tang));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTonTai));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bNgungTheoDoi", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bNgungTheoDoi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fMaxSanLuongThuong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fMaxSanLuongThuong));
@@ -296,8 +296,8 @@ namespace CtyTinLuong
 					m_sMaDinhMuc = (string)dtToReturn.Rows[0]["MaDinhMuc"];
 					m_sDienGiai = (string)dtToReturn.Rows[0]["DienGiai"];
 					m_iID_VTHH = dtToReturn.Rows[0]["ID_VTHH"] == System.DBNull.Value ? SqlInt32.Null : (Int32)dtToReturn.Rows[0]["ID_VTHH"];
-					m_dcDinhMuc_KhongTang = (Decimal)dtToReturn.Rows[0]["DinhMuc_KhongTang"];
-					m_dcDinhMuc_Tang = (Decimal)dtToReturn.Rows[0]["DinhMuc_Tang"];
+					m_dcDinhMuc_KhongTang = (double)dtToReturn.Rows[0]["DinhMuc_KhongTang"];
+					m_dcDinhMuc_Tang = (double)dtToReturn.Rows[0]["DinhMuc_Tang"];
 					m_bTonTai = (bool)dtToReturn.Rows[0]["TonTai"];
 					m_bNgungTheoDoi = (bool)dtToReturn.Rows[0]["NgungTheoDoi"];
 					m_fMaxSanLuongThuong = (double)dtToReturn.Rows[0]["MaxSanLuongThuong"];
@@ -447,7 +447,7 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlDecimal dcDinhMuc_KhongTang
+		public SqlDouble dcDinhMuc_KhongTang
 		{
 			get
 			{
@@ -455,7 +455,7 @@ namespace CtyTinLuong
 			}
 			set
 			{
-				SqlDecimal dcDinhMuc_KhongTangTmp = (SqlDecimal)value;
+                SqlDouble dcDinhMuc_KhongTangTmp = (SqlDouble)value;
 				if(dcDinhMuc_KhongTangTmp.IsNull)
 				{
 					throw new ArgumentOutOfRangeException("dcDinhMuc_KhongTang", "dcDinhMuc_KhongTang can't be NULL");
@@ -465,7 +465,7 @@ namespace CtyTinLuong
 		}
 
 
-		public SqlDecimal dcDinhMuc_Tang
+		public SqlDouble dcDinhMuc_Tang
 		{
 			get
 			{
@@ -473,7 +473,7 @@ namespace CtyTinLuong
 			}
 			set
 			{
-				SqlDecimal dcDinhMuc_TangTmp = (SqlDecimal)value;
+                SqlDouble dcDinhMuc_TangTmp = (SqlDouble)value;
 				if(dcDinhMuc_TangTmp.IsNull)
 				{
 					throw new ArgumentOutOfRangeException("dcDinhMuc_Tang", "dcDinhMuc_Tang can't be NULL");
