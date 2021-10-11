@@ -174,9 +174,9 @@ namespace CtyTinLuong
                                 clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
                                 clsdm.iID_DinhMuc_Luong_SanLuong = Convert.ToInt32(dtgapdan.Rows[j]["ID_DinhMuc_Luong_SanLuong"].ToString());
                                 DataTable dtdm1 = clsdm.SelectOne();
-                                Decimal SanLuong;
-                                decimal DinhMuc_KhongTang, ThanhTien;
-                                SanLuong = CheckString.ConvertToDecimal_My(dtgapdan.Rows[j]["SanLuong"].ToString());
+                                double SanLuong;
+                                double DinhMuc_KhongTang, ThanhTien;
+                                SanLuong = CheckString.ConvertToDouble_My(dtgapdan.Rows[j]["SanLuong"].ToString());
                                 DinhMuc_KhongTang = clsdm.dcDinhMuc_KhongTang.Value;
                                 ThanhTien = SanLuong * DinhMuc_KhongTang;
 

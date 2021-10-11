@@ -150,7 +150,15 @@ namespace CtyTinLuong
                     miID_Sua_DinhMucLuongTheoSanLuong = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_SanLuong).ToString());
                     msTenDinhMucLuongSanLuong = gridView1.GetFocusedRowCellValue(clMaDinhMuc).ToString();
                     mb_TheMoi_DinhMucLuongSanLuong = false;
-                    miiiID_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                    try
+                    {
+                        miiiID_VTHH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                    }
+                    catch
+                    {
+
+                    }
+
                     frmChiTietDinhMucLuongTheoSanLuong ff = new frmChiTietDinhMucLuongTheoSanLuong(this);
                     ff.Show();
                 }
