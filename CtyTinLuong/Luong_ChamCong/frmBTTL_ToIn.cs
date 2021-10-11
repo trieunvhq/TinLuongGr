@@ -579,6 +579,8 @@ namespace CtyTinLuong
             ModelSanLuong nv = new ModelSanLuong();
             double slThuong =0;
             double slTang = 0;
+            double giathuong = 0;
+            double giatang = 0;
             double tienThuong = 0;
             double tienTang = 0;
 
@@ -586,17 +588,16 @@ namespace CtyTinLuong
             {
                 if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
                 {
-
                     slThuong += CheckString.ConvertToDouble_My(item["SanLuong_Thuong_Value"].ToString());
                     slTang += CheckString.ConvertToDouble_My(item["SanLuong_TangCa_Value"].ToString());
-
-                    tienThuong += CheckString.ConvertToDouble_My(item["SanLuong_Thuong_Value"].ToString()) 
-                                  * CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
-
-                    tienTang += CheckString.ConvertToDouble_My(item["SanLuong_TangCa_Value"].ToString())
-                                * CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                    giathuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                    giatang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
                 }
             }
+
+            tienThuong = slThuong * giathuong;
+
+            tienTang = slTang * giatang;
 
             nv.SlThuong = slThuong;
             nv.SlTang = slTang;

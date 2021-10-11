@@ -104,9 +104,12 @@ namespace CtyTinLuong
                     DataTable dt = cls.H_HienThi_MacDinh_PhieuSX(xloaimay_);
                     if (dt.Rows.Count > 0)
                     {
-                        gridMacDinh_VatTu_Vao.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Vao"].ToString());
-                        gridMacDinh_VatTu_Ra.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Ra"].ToString());
-                        gridMacDinh_Luong.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_DinhMucLuong"].ToString());
+                        if (gridMacDinh_VatTu_Vao.Properties.DataSource != null && gridMacDinh_VatTu_Ra.Properties.DataSource != null && gridMacDinh_Luong.Properties.DataSource != null)
+                        {
+                            gridMacDinh_VatTu_Vao.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Vao"].ToString());
+                            gridMacDinh_VatTu_Ra.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_VTHH_Ra"].ToString());
+                            gridMacDinh_Luong.EditValue = CheckString.ConvertTo_Int_My(dt.Rows[0]["ID_DinhMucLuong"].ToString());
+                        }
                     }
                     else
                     {
@@ -1080,6 +1083,41 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                //int xxid = CheckString.ConvertTo_Int_My(gridLoaiMay.EditValue);
+                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                //int xxid = CheckString.ConvertTo_Int_My(gridLoaiMay.EditValue);
+                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void PhieuSanXuat_Thang9_Load(object sender, EventArgs e)
         {
             try
@@ -1199,37 +1237,39 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                //int xxid = CheckString.ConvertTo_Int_My(gridLoaiMay.EditValue);
-                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //==============thay bằng sự kiện leave
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    //int xxid = CheckString.ConvertTo_Int_My(gridLoaiMay.EditValue);
+            //    ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
 
-                Cursor.Current = Cursors.Default;
-            }
-            catch (Exception ea)
-            {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    Cursor.Current = Cursors.Default;
+            //}
+            //catch (Exception ea)
+            //{
+            //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                //int xxid = CheckString.ConvertTo_Int_My(gridLoaiMay.EditValue);
-                ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
-                LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-                Cursor.Current = Cursors.Default;
-            }
-            catch (Exception ea)
-            {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //==============thay bằng sự kiện leave
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    //int xxid = CheckString.ConvertTo_Int_My(gridLoaiMay.EditValue);
+            //    ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    Cursor.Current = Cursors.Default;
+            //}
+            //catch (Exception ea)
+            //{
+            //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void gridLoaiMay_EditValueChanged(object sender, EventArgs e)
@@ -1352,11 +1392,14 @@ namespace CtyTinLuong
         {
             try
             {
-                iMacDinh_CaTruong = (int)cbCaTruongMacDinh.SelectedValue;
+                if (cbCaTruongMacDinh.DataSource != null && cbCaTruongMacDinh.SelectedValue != null)
+                {
+                    iMacDinh_CaTruong = (int)cbCaTruongMacDinh.SelectedValue;
+                }
             }
-            catch (Exception ea)
+            catch
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
