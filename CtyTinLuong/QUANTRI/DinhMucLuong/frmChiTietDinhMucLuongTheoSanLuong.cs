@@ -240,36 +240,37 @@ namespace CtyTinLuong
 
         private void txtDonGiaThuong_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                ////decimal value = decimal.Parse(txtDonGiaThuong.Text, System.Globalization.NumberStyles.AllowThousands);
-                //double value = CheckString.ConvertToDouble_My(txtDonGiaThuong.Text);
-                //txtDonGiaThuong.Text = String.Format(culture, "{0:N2}", value);
-                //txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
-            }
-            catch (Exception ea)
-            {
-                MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            //    //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            //    //decimal value = decimal.Parse(txtDonGiaThuong.Text, System.Globalization.NumberStyles.AllowThousands);
+            //    double value = CheckString.ConvertToDouble_My(txtDonGiaThuong.Text);
+            //    txtDonGiaThuong.Text = value.ToString("N2");
+            //    //txtDonGiaThuong.Text = String.Format(culture, "{0:N0}", value);
+            //    //txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
+            //}
+            //catch (Exception ea)
+            //{
+            //    MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 
         private void txtDonGiaTang_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-                ////decimal value = decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands);
-                //double value = CheckString.ConvertToDouble_My(txtDonGiaTang.Text);
-                //txtDonGiaTang.Text = String.Format(culture, "{0:N2}", value);
-                //txtDonGiaTang.Select(txtDonGiaTang.Text.Length, 0);
-            }
-            catch (Exception ea)
-            {
-                MessageBox.Show("Lỗi: decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands); " 
-                    + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            //    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            //    //decimal value = decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands);
+            //    double value = CheckString.ConvertToDouble_My(txtDonGiaTang.Text);
+            //    txtDonGiaTang.Text = String.Format(culture, "{0:N0}", value);
+            //    //txtDonGiaTang.Select(txtDonGiaTang.Text.Length, 0);
+            //}
+            //catch (Exception ea)
+            //{
+            //    MessageBox.Show("Lỗi: decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands); " 
+            //        + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
            
         }
 
@@ -283,6 +284,112 @@ namespace CtyTinLuong
         {
             frmQuanLyDinhMucLuongTheoSanLuong.mb_TheMoi_DinhMucLuongSanLuong = true;
             txtMaDinhMuc.Text = CheckString.creatMaDinhMucSL();
+        }
+
+        private void txtMaDinhMuc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDienGiai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void gridMaVTHH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtTenVTHH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtMaxSanLuongThuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                try
+                {
+                    //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                    //decimal value = decimal.Parse(txtDonGiaThuong.Text, System.Globalization.NumberStyles.AllowThousands);
+                    double value = CheckString.ConvertToDouble_My(txtMaxSanLuongThuong.Text);
+                    txtMaxSanLuongThuong.Text = value.ToString("N2");
+                    //txtDonGiaThuong.Text = String.Format(culture, "{0:N0}", value);
+                    //txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDonGiaThuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                try
+                {
+                    //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                    //decimal value = decimal.Parse(txtDonGiaThuong.Text, System.Globalization.NumberStyles.AllowThousands);
+                    double value = CheckString.ConvertToDouble_My(txtDonGiaThuong.Text);
+                    txtDonGiaThuong.Text = value.ToString("N2");
+                    //txtDonGiaThuong.Text = String.Format(culture, "{0:N0}", value);
+                    //txtDonGiaThuong.Select(txtDonGiaThuong.Text.Length, 0);
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDonGiaTang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                try
+                {
+                    //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                    //decimal value = decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands);
+                    double value = CheckString.ConvertToDouble_My(txtDonGiaTang.Text);
+                    txtDonGiaTang.Text = value.ToString("N2");
+                    //txtDonGiaTang.Text = String.Format(culture, "{0:N0}", value);
+                    //txtDonGiaTang.Select(txtDonGiaTang.Text.Length, 0);
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: decimal.Parse(txtDonGiaTang.Text, System.Globalization.NumberStyles.AllowThousands); "
+                        + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

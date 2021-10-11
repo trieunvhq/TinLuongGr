@@ -131,13 +131,29 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        if (DateTime.Now.Year == dateDenNgay.DateTime.Year)
+                        int nam_now = DateTime.Now.Year;
+                        int thang_now = DateTime.Now.Month;
+                        if (nam_now == dateDenNgay.DateTime.Year)
                         {
-                            if (DateTime.Now.Month > dateDenNgay.DateTime.Month)
+                            if (thang_now > dateDenNgay.DateTime.Month)
                             {
-                                MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
+                                if (dateDenNgay.DateTime.Month == thang_now - 1)
+                                {
+                                    int ngaycuoithang_ = (((new DateTime(nam_now, thang_now -1, 1)).AddMonths(1)).AddDays(-1)).Day;
+                                    DateTime date_cuoithang = new DateTime(nam_now, thang_now -1, ngaycuoithang_);
+                                    if (dateDenNgay.DateTime < date_cuoithang)
+                                    {
+                                        MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
+                                            + "Nhập ngày kết thúc phải >= " + date_cuoithang.ToString("dd/MM/yyyy"), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
                                     + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
+                                    return;
+                                }
                             }
                         }
                         else if (DateTime.Now.Year > dateDenNgay.DateTime.Year)
@@ -219,7 +235,7 @@ namespace CtyTinLuong
         {
             searchLookMaDML.ReadOnly = false;
             dateTuNgay.ReadOnly = false;
-            //dateDenNgay.ReadOnly = false;
+            dateDenNgay.ReadOnly = false;
             txtLuongCoDinh.ReadOnly = false;
             txtPhuCapXang.ReadOnly = false;
             txtPhuCapDienThoai.ReadOnly = false;
@@ -250,6 +266,11 @@ namespace CtyTinLuong
                 if (DateTime.Now.Month > (Convert.ToDateTime(dt.Rows[0]["tu_ngay"].ToString())).Month)
                 {
                     TrReadonly();
+                }
+
+                if (DateTime.Now.Month > (Convert.ToDateTime(dt.Rows[0]["den_ngay"].ToString())).Month)
+                {
+                    dateDenNgay.ReadOnly = true;
                 }
 
                 _id_NhanVien = Convert.ToInt32(dt.Rows[0]["id_nhanvien"].ToString());
@@ -293,8 +314,7 @@ namespace CtyTinLuong
                 txtPhuCapBH.Text = cls.dcPhuCapBaoHiem.Value.ToString();
                 txtDMLuongTheoGio.Text = cls.dcDinhMucLuongTheoGio.Value.ToString();
                 txtDinhMucTangCa.Text = cls.dcDinhMucLuongTangCa.Value.ToString();
-                //checkNgungTheoDoi.Checked = cls.bNgungTheoDoi.Value;
-
+                checkNgungTheoDoi.Checked = cls.bNgungtheodoi.Value;
             }
         }
         private void HienThi_ThemMoi()
