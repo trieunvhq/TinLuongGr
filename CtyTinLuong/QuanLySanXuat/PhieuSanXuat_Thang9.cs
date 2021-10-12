@@ -88,9 +88,9 @@ namespace CtyTinLuong
                     }
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -119,9 +119,9 @@ namespace CtyTinLuong
                     }
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -147,9 +147,9 @@ namespace CtyTinLuong
 
                 isload = false;
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -212,9 +212,9 @@ namespace CtyTinLuong
                     btnTrangTiep.LinkColor = Color.Black;
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -234,9 +234,9 @@ namespace CtyTinLuong
                     SearchLookUp_MaPhieu_DOT.ValueMember = "ID_SoPhieu";
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -384,9 +384,9 @@ namespace CtyTinLuong
                     cbCaSXMacDinh.SelectedIndex = 1;
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -440,9 +440,9 @@ namespace CtyTinLuong
                     }
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -466,9 +466,9 @@ namespace CtyTinLuong
                 }
                 else return true;
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
