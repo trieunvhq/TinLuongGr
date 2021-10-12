@@ -262,20 +262,9 @@ namespace CtyTinLuong
 
                 gridView8.SetRowCellValue(2, clNo, tienvat);
                 gridView8.SetRowCellValue(2, clCo, 0);
-
-                //
-                decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
-                //txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
-                txtTongTienHangChuaVAT.Text = value.ToString("N2");
-
-                ////
-                //decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
-                ////txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
-                //txtTongTienHangCoVAT.Text = value.ToString("N2");
-
-                //decimal value = decimal.Parse(txtTienVAT.Text);
-                ////txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
-                //txtTongTienHangCoVAT.Text = value.ToString("N2");
+              
+                decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);                
+                txtTongTienHangChuaVAT.Text = value.ToString("N2");             
             }
             catch
             {
@@ -1415,7 +1404,7 @@ namespace CtyTinLuong
                     }
 
                 }
-
+                HienThi_SoTien_CO_No();
 
             }
             catch
