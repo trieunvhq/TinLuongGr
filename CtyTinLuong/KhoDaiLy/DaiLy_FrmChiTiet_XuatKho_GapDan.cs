@@ -160,7 +160,7 @@ namespace CtyTinLuong
             DataTable dt3 = clsNguoi.T_SelectAll(18);
             gridCongNhan.DataSource = dt3;
             gridCongNhan.ValueMember = "ID_NhanSu";
-            gridCongNhan.DisplayMember = "TenNhanVien";
+            gridCongNhan.DisplayMember = "MaNhanVien";
 
             dt.Dispose();
             dt2.Dispose();
