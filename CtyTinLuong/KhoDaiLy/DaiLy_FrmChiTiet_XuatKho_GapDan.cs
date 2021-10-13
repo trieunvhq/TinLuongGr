@@ -653,6 +653,11 @@ namespace CtyTinLuong
             { }
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtNguoiGiaoHang_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
