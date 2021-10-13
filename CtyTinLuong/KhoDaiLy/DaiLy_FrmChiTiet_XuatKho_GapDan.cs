@@ -101,6 +101,7 @@ namespace CtyTinLuong
             clsGapDan_ChiTiet_XuatKho cls1 = new clsGapDan_ChiTiet_XuatKho();
             DataTable dt1 = cls1.SA_ID_XuatKho(iiID_xuatkho_);
             gridControl1.DataSource = dt1;
+
             cls1.Dispose();
             dt1.Dispose();
         }
@@ -160,7 +161,7 @@ namespace CtyTinLuong
             DataTable dt3 = clsNguoi.T_SelectAll(18);
             gridCongNhan.DataSource = dt3;
             gridCongNhan.ValueMember = "ID_NhanSu";
-            gridCongNhan.DisplayMember = "MaNhanVien";
+            gridCongNhan.DisplayMember = "TenNhanVien";
 
             dt.Dispose();
             dt2.Dispose();
@@ -656,6 +657,12 @@ namespace CtyTinLuong
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == STT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
         private void txtNguoiGiaoHang_KeyPress(object sender, KeyPressEventArgs e)
