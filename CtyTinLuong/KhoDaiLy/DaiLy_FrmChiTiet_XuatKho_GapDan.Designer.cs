@@ -667,7 +667,7 @@
             this.groupBox1.Controls.Add(this.layoutControl2);
             this.groupBox1.Location = new System.Drawing.Point(10, 160);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(957, 287);
+            this.groupBox1.Size = new System.Drawing.Size(957, 118);
             this.groupBox1.TabIndex = 147;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Khấu trừ NPL";
@@ -679,7 +679,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(3, 16);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(951, 268);
+            this.layoutControl2.Size = new System.Drawing.Size(951, 99);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -693,7 +693,7 @@
             this.btXoaGrid2,
             this.repositoryItemMemoEdit3,
             this.cbKho});
-            this.gridControl1.Size = new System.Drawing.Size(947, 264);
+            this.gridControl1.Size = new System.Drawing.Size(947, 95);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -941,7 +941,7 @@
             this.layoutControlItem7});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(951, 268);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(951, 99);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem7
@@ -949,20 +949,18 @@
             this.layoutControlItem7.Control = this.gridControl1;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(951, 268);
+            this.layoutControlItem7.Size = new System.Drawing.Size(951, 99);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.layoutControl3);
-            this.groupBox2.Location = new System.Drawing.Point(720, 460);
+            this.groupBox2.Location = new System.Drawing.Point(13, 281);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(62, 25);
+            this.groupBox2.Size = new System.Drawing.Size(951, 170);
             this.groupBox2.TabIndex = 148;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Khấu trừ NPL";
-            this.groupBox2.Visible = false;
             // 
             // layoutControl3
             // 
@@ -971,7 +969,7 @@
             this.layoutControl3.Location = new System.Drawing.Point(3, 16);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(56, 6);
+            this.layoutControl3.Size = new System.Drawing.Size(945, 151);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -985,7 +983,7 @@
             this.repositoryItemButtonEdit1,
             this.repositoryItemMemoEdit1,
             this.repositoryItemComboBox1});
-            this.gridControl2.Size = new System.Drawing.Size(100, 20);
+            this.gridControl2.Size = new System.Drawing.Size(941, 147);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1107,7 +1105,7 @@
             this.layoutControlItem16});
             this.layoutControlGroup3.Name = "layoutControlGroup2";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(104, 24);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(945, 151);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem16
@@ -1115,7 +1113,7 @@
             this.layoutControlItem16.Control = this.gridControl2;
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem16.Name = "layoutControlItem7";
-            this.layoutControlItem16.Size = new System.Drawing.Size(104, 24);
+            this.layoutControlItem16.Size = new System.Drawing.Size(945, 151);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
