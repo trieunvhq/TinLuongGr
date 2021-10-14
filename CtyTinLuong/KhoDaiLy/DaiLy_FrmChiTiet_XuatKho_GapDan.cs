@@ -666,6 +666,14 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+            ff.Show();
+            Cursor.Current = Cursors.Default;
+        }
+
         private void txtNguoiGiaoHang_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)

@@ -14,7 +14,9 @@ namespace CtyTinLuong
     public partial class Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ : Form
     {
         private int _thang, _nam, _id_bophan;
+        private int _idVTHH = 0;
         private bool isload = true;
+        DataTable _dtvthh;
 
         private bool KiemTraLuu()
         {
@@ -88,6 +90,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("NgungTheoDoi", typeof(bool));
             gridControl1.DataSource = dt2;
         }
+
         private void LoadData(bool islandau)
         {
             isload = true;
@@ -155,14 +158,16 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             clsTbVatTuHangHoa clsvthhh = new clsTbVatTuHangHoa();
-            DataTable dtvthh = clsvthhh.SelectAll();
-            dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
-            DataView dvvthh = dtvthh.DefaultView;
+            _dtvthh = clsvthhh.SelectAll();
+            _dtvthh.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+            DataView dvvthh = _dtvthh.DefaultView;
             DataTable newdtvthh = dvvthh.ToTable();
 
             repositoryItemGridLookUpEdit1.DataSource = newdtvthh;
             repositoryItemGridLookUpEdit1.ValueMember = "ID_VTHH";
             repositoryItemGridLookUpEdit1.DisplayMember = "MaVT";
+
+            LoadData(true);
 
             //clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
             //DataTable dtdm = clsdm.SelectAll();
@@ -175,19 +180,19 @@ namespace CtyTinLuong
             //repositoryItemGridLookUpEdit2.DisplayMember = "MaDinhMuc";
 
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_MaHangToGD_DB_DK", typeof(int));
-            dt2.Columns.Add("id_bophan");
-            dt2.Columns.Add("TenBoPhan");
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("Thang", typeof(int));
-            dt2.Columns.Add("Nam", typeof(int));
-            dt2.Columns.Add("NgungTheoDoi", typeof(bool));
-            gridControl1.DataSource = dt2;
+            //DataTable dt2 = new DataTable();
+            //dt2.Columns.Add("ID_MaHangToGD_DB_DK", typeof(int));
+            //dt2.Columns.Add("id_bophan");
+            //dt2.Columns.Add("TenBoPhan");
+            //dt2.Columns.Add("ID_VTHH");
+            //dt2.Columns.Add("MaVT");// tb VTHH
+            //dt2.Columns.Add("TenVTHH");
+            //dt2.Columns.Add("DonViTinh");
+            //dt2.Columns.Add("DonGia", typeof(double));
+            //dt2.Columns.Add("Thang", typeof(int));
+            //dt2.Columns.Add("Nam", typeof(int));
+            //dt2.Columns.Add("NgungTheoDoi", typeof(bool));
+            //gridControl1.DataSource = dt2;
 
             //DateTime ngayhomnay = DateTime.Today;
             //int thang = Convert.ToInt16(ngayhomnay.ToString("MM"));
@@ -210,40 +215,23 @@ namespace CtyTinLuong
             //gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
         }
 
-        private int _idVTHH = 0;
 
         private void gridView4_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column == clMaVT)
             {
-                clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-                cls.iID_VTHH = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
                 int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dt = cls.SelectOne();
-                if (dt != null)
-                {
-                    gridView4.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
-                    gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, dt.Rows[0]["TenVTHH"].ToString());
-                    gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, dt.Rows[0]["DonViTinh"].ToString());
-                    //gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                    _idVTHH = Convert.ToInt32(dt.Rows[0]["ID_VTHH"].ToString());
-                }
-            }
 
-            if (e.Column == DonGia)
-            {
-                clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
-                clsdm.iID_DinhMuc_Luong_SanLuong = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                DataTable dtdm = clsdm.SelectOne();
-               
-                int kkxxx = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-               
-                if (dtdm != null)
+                for(int i = 0; i < _dtvthh.Rows.Count; i++)
                 {
-                    gridView4.SetRowCellValue(e.RowHandle, id_bophan, kkxxx);
-                    gridView4.SetRowCellValue(e.RowHandle, TenBoPhan, dtdm.Rows[0]["DinhMuc_KhongTang"].ToString());
-                    //gridView4.SetRowCellValue(e.RowHandle, clDinhMuc_Tang, dtdm.Rows[0]["DinhMuc_Tang"].ToString());
-                    //gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                    if (kk == Convert.ToInt32(_dtvthh.Rows[i]["ID_VTHH"].ToString()))
+                    {
+                        gridView4.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
+                        gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, _dtvthh.Rows[i]["TenVTHH"].ToString());
+                        gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, _dtvthh.Rows[i]["DonViTinh"].ToString());
+                        _idVTHH = Convert.ToInt32(_dtvthh.Rows[i]["ID_VTHH"].ToString());
+                        break;
+                    }
                 }
             }
         }
@@ -305,7 +293,7 @@ namespace CtyTinLuong
                 }
             }
 
-                return true;
+            return true;
         }
 
         private void txtNam_Leave(object sender, EventArgs e)
@@ -340,6 +328,7 @@ namespace CtyTinLuong
             {
                 _id_bophan = KiemTraTenBoPhan("Tổ Gấp dán");
                 if (_id_bophan == 0) return;
+                LoadData(false);
             }
         }
 
@@ -349,6 +338,7 @@ namespace CtyTinLuong
             {
                 _id_bophan = KiemTraTenBoPhan("Tổ đóng bao"); 
                 if (_id_bophan == 0) return;
+                LoadData(false);
             }
         }
 
@@ -358,6 +348,7 @@ namespace CtyTinLuong
             {
                 _id_bophan = KiemTraTenBoPhan("Tổ đóng kiện");
                 if (_id_bophan == 0) return;
+                LoadData(false);
             }
         }
 
