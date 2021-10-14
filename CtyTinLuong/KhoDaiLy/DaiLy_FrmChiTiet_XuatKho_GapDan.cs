@@ -135,14 +135,6 @@ namespace CtyTinLuong
             txtSoChungTu.Text = SoCHungTu_GapDan();
             string xxx = SoCHungTu_GapDan();
             txtThamChieu.Text = xxx.Replace("XKGD", "NKĐK");
-
-           
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_NhanSu", typeof(int));
-            dt2.Columns.Add("SanLuong", typeof(string));
-            dt2.Columns.Add("DonGia", typeof(string));
-            dt2.Columns.Add("ThanhTien", typeof(string));         
-            gridControl2.DataSource = dt2;
         }
         private void Load_LockUp()
         {
@@ -463,6 +455,15 @@ namespace CtyTinLuong
         {
             _ucDLXKGD = ucDLXKGD;
             InitializeComponent();
+
+            //
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID_NhanSu", typeof(int));
+            dt2.Columns.Add("TenNhanVien", typeof(string));
+            dt2.Columns.Add("SanLuong", typeof(string));
+            dt2.Columns.Add("DonGia", typeof(string));
+            dt2.Columns.Add("ThanhTien", typeof(string));
+            gridControl2.DataSource = dt2;
         }
         private void DaiLy_FrmChiTiet_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
