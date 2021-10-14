@@ -16,7 +16,7 @@ namespace CtyTinLuong
         private int _thang, _nam, _id_bophan;
         private int _idVTHH = 0;
         private bool isload = true;
-        DataTable _dtvthh;
+        DataTable _dtvthh, _data;
 
         private bool KiemTraLuu()
         {
@@ -103,25 +103,25 @@ namespace CtyTinLuong
                 txtThang.Text = dtnow.Month.ToString();
             }
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_MaHangToGD_DB_DK", typeof(int));
-            dt2.Columns.Add("id_bophan");
-            dt2.Columns.Add("TenBoPhan");
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("DonGia", typeof(double));
-            dt2.Columns.Add("Thang", typeof(int));
-            dt2.Columns.Add("Nam", typeof(int));
-            dt2.Columns.Add("NgungTheoDoi", typeof(bool));
-
+            //DataTable dt2 = new DataTable();
+            //dt2.Columns.Add("ID_MaHangToGD_DB_DK", typeof(int));
+            //dt2.Columns.Add("id_bophan");
+            //dt2.Columns.Add("TenBoPhan");
+            //dt2.Columns.Add("ID_VTHH");
+            //dt2.Columns.Add("MaVT");// tb VTHH
+            //dt2.Columns.Add("TenVTHH");
+            //dt2.Columns.Add("DonViTinh");
+            //dt2.Columns.Add("DonGia", typeof(double));
+            //dt2.Columns.Add("Thang", typeof(int));
+            //dt2.Columns.Add("Nam", typeof(int));
+            //dt2.Columns.Add("NgungTheoDoi", typeof(bool));
+            _data.Clear();
             clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK();
             DataTable dt3 = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(_thang, _nam, _id_bophan);
 
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                DataRow _ravi = dt2.NewRow();
+                DataRow _ravi = _data.NewRow();
                 _ravi["ID_MaHangToGD_DB_DK"] = Convert.ToInt32(dt3.Rows[i]["ID_MaHangToGD_DB_DK"].ToString());
                 _ravi["id_bophan"] = Convert.ToInt32(dt3.Rows[i]["id_bophan"].ToString());
                 _ravi["TenBoPhan"] = dt3.Rows[i]["TenBoPhan"].ToString();
@@ -133,16 +133,29 @@ namespace CtyTinLuong
                 _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
                 _ravi["DonGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
                 _ravi["NgungTheoDoi"] = Convert.ToBoolean(dt3.Rows[i]["NgungTheoDoi"].ToString());
-                dt2.Rows.Add(_ravi);
+                _data.Rows.Add(_ravi);
             }
 
-            gridControl1.DataSource = dt2;
+            gridControl1.DataSource = _data;
             isload = false;
         }
 
         public Tr_frmCaiMacDinnhMaHangTGD_DB_DK_()
         {
             InitializeComponent();
+
+            _data = new DataTable();
+            _data.Columns.Add("ID_MaHangToGD_DB_DK", typeof(int));
+            _data.Columns.Add("id_bophan");
+            _data.Columns.Add("TenBoPhan");
+            _data.Columns.Add("ID_VTHH");
+            _data.Columns.Add("MaVT");// tb VTHH
+            _data.Columns.Add("TenVTHH");
+            _data.Columns.Add("DonViTinh");
+            _data.Columns.Add("DonGia", typeof(double));
+            _data.Columns.Add("Thang", typeof(int));
+            _data.Columns.Add("Nam", typeof(int));
+            _data.Columns.Add("NgungTheoDoi", typeof(bool));
 
             _thang = DateTime.Now.Month;
             _nam = DateTime.Now.Year;
@@ -221,16 +234,91 @@ namespace CtyTinLuong
             if (e.Column == clMaVT)
             {
                 int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
+                int id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
+                double dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
+                bool ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
 
-                for(int i = 0; i < _dtvthh.Rows.Count; i++)
+                for (int i = 0; i < _dtvthh.Rows.Count; i++)
                 {
                     if (kk == Convert.ToInt32(_dtvthh.Rows[i]["ID_VTHH"].ToString()))
                     {
+                        string tenVThh = _dtvthh.Rows[i]["TenVTHH"].ToString();
+                        string donVT = _dtvthh.Rows[i]["DonViTinh"].ToString();
+
                         gridView4.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
-                        gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, _dtvthh.Rows[i]["TenVTHH"].ToString());
-                        gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, _dtvthh.Rows[i]["DonViTinh"].ToString());
-                        _idVTHH = Convert.ToInt32(_dtvthh.Rows[i]["ID_VTHH"].ToString());
+                        gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, tenVThh);
+                        gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, donVT);
+                        _idVTHH = kk;
+
+                        //
+                        if (checkIDVTHH(kk))
+                        {
+                            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+                            {
+                                if (id_MaHang == 0)
+                                {
+                                    cls.iThang = _thang;
+                                    cls.iNam = _nam;
+                                    cls.iID_VTHH = kk;
+                                    cls.iId_bophan = _id_bophan;
+                                    cls.fDonGia = dongia;
+                                    cls.bNgungTheoDoi = ngungtheodoi;
+                                    cls.Tr_MaHangToGD_DB_DK_Insert();
+                                }
+                                else
+                                {
+                                    cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                                    cls.iThang = _thang;
+                                    cls.iNam = _nam;
+                                    cls.iID_VTHH = kk;
+                                    cls.iId_bophan = _id_bophan;
+                                    cls.fDonGia = dongia;
+                                    cls.bNgungTheoDoi = ngungtheodoi;
+                                    cls.Tr_MaHangToGD_DB_DK_Update();
+                                }
+
+                                LoadData(false);
+                            }
+                        }
+
                         break;
+                    }
+                }
+            }
+            else if (e.Column == DonGia)
+            {
+                int idvthh = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, clID_VTHH));
+                int id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
+                double dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
+                bool ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
+                    //
+                if (checkIDVTHH(idvthh))
+                {
+                    using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+                    {
+                        if (id_MaHang == 0)
+                        {
+                            cls.iThang = _thang;
+                            cls.iNam = _nam;
+                            cls.iID_VTHH = idvthh;
+                            cls.iId_bophan = _id_bophan;
+                            cls.fDonGia = dongia;
+                            cls.bNgungTheoDoi = ngungtheodoi;
+                            cls.Tr_MaHangToGD_DB_DK_Insert();
+                        }
+                        else
+                        {
+                            cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                            cls.iThang = _thang;
+                            cls.iNam = _nam;
+                            cls.iID_VTHH = idvthh;
+                            cls.iId_bophan = _id_bophan;
+                            cls.fDonGia = dongia;
+                            cls.bNgungTheoDoi = ngungtheodoi;
+                            cls.Tr_MaHangToGD_DB_DK_Update();
+                        }
+
+                        LoadData(false);
                     }
                 }
             }
@@ -344,7 +432,7 @@ namespace CtyTinLuong
 
         private void radioDongKien_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioDongBao.Checked)
+            if (radioDongKien.Checked)
             {
                 _id_bophan = KiemTraTenBoPhan("Tổ đóng kiện");
                 if (_id_bophan == 0) return;
@@ -358,6 +446,21 @@ namespace CtyTinLuong
             view.SetRowCellValue(e.RowHandle, view.Columns["STT"], view.RowCount.ToString());
             view.SetRowCellValue(e.RowHandle, view.Columns["ID_MaHangToGD_DB_DK"], 0);
             view.SetRowCellValue(e.RowHandle, view.Columns["DonGia"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["NgungTheoDoi"], false);
+
+            //DataRow _ravi = _data.NewRow();
+            //_ravi["ID_MaHangToGD_DB_DK"] = 0;
+            //_ravi["id_bophan"] = Convert.ToInt32(dt3.Rows[i]["id_bophan"].ToString());
+            //_ravi["TenBoPhan"] = dt3.Rows[i]["TenBoPhan"].ToString();
+            //_ravi["ID_VTHH"] = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
+            //_ravi["Thang"] = Convert.ToInt32(dt3.Rows[i]["Thang"].ToString());
+            //_ravi["Nam"] = Convert.ToInt32(dt3.Rows[i]["Nam"].ToString());
+            //_ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //_ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+            //_ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+            //_ravi["DonGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
+            //_ravi["NgungTheoDoi"] = Convert.ToBoolean(dt3.Rows[i]["NgungTheoDoi"].ToString());
+            //_data.Rows.Add(_ravi);
         }
 
         private int KiemTraTenBoPhan(string tenbophan)
