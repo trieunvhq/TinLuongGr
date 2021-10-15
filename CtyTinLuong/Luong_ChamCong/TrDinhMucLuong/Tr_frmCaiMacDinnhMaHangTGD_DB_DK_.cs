@@ -415,22 +415,12 @@ namespace CtyTinLuong
 
         private void txtThang_TextChanged(object sender, EventArgs e)
         {
-            //if (txtThang.Text.ToString() != "" & txtNam.Text.ToString() != "")
-            //{
-            //    clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh();
-            //    cls.iThang = Convert.ToInt32(txtThang.Text.ToString());
-            //    cls.iNam = Convert.ToInt32(txtNam.Text.ToString());
-            //    DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
-            //    if (dt3.Rows.Count == 0)
-            //        HienThi_themMoi();
-            //    else
-            //        LoadData();
-            //}
+
         }
 
         private void btLuu_Dong_Click(object sender, EventArgs e)
         {
-            LuuDuLieu();
+            //LuuDuLieu();
         }
 
         private bool checkIDVTHH_Update(int ID_MaHang, int idvthh)
