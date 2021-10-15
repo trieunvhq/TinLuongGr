@@ -14,6 +14,8 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_FrmChiTiet_XuatKho_GapDan : Form
     {
+        private DataTable _dtDonGiatheoVTHH;
+        private int _id_bophan;
         private void Hienthi_Lable_TonKho(int xxID_VTHH)
         {
             clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
@@ -464,7 +466,11 @@ namespace CtyTinLuong
             dt2.Columns.Add("DonGia", typeof(string));
             dt2.Columns.Add("ThanhTien", typeof(string));
             gridControl2.DataSource = dt2;
+
+            _id_bophan = KiemTraTenBoPhan("Tổ Gấp dán");
         }
+
+
         private void DaiLy_FrmChiTiet_XuatKho_GapDan_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -476,6 +482,12 @@ namespace CtyTinLuong
                 HienThi_Copy(UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
             else if (UCDaiLy_XuatKho_GapDan.mbsua == true)
                 HienThi_Sua_XuatKho(UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
+
+            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+            {
+                _dtDonGiatheoVTHH = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, _id_bophan);
+            }
+
             Cursor.Current = Cursors.Default;
         }
         
@@ -711,6 +723,39 @@ namespace CtyTinLuong
             this.Close();
         }
 
-        
+        private double getDonGiaTheoIDVHH(int idvthh)
+        {
+            double result = 0;
+
+            for (int i = 0; i < _dtDonGiatheoVTHH.Rows.Count; i++)
+            {
+                if (idvthh == Convert.ToInt32(_dtDonGiatheoVTHH.Rows[i]["ID_VTHH"].ToString()))
+                {
+                    result = CheckString.ConvertToDouble_My(_dtDonGiatheoVTHH.Rows[i]["DonGia"].ToString());
+                    break;
+                }
+            }
+            return result;
+        }
+
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+
+                }
+            }
+            return _id_bophan;
+        }
+
     }
 }
