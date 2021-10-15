@@ -16,7 +16,7 @@ namespace CtyTinLuong
 	public partial class clsGapDan_ChiTiet_XuatKho : clsDBInteractionBase
 	{
         //pr_GapDan_ChiTiet_XuatKho_SA_ID_XuatKho
-        public DataTable SA_ID_XuatKho(int ID_XuatKho___)
+        public DataTable SA_ID_XuatKho(int id_bophan, int ID_XuatKho___, int thang = 0, int nam = 0)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_GapDan_ChiTiet_XuatKho_SA_ID_XuatKho]";
@@ -30,6 +30,9 @@ namespace CtyTinLuong
             try
             {
                 m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iThang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iNam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_bophan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id_bophan));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@i_ID_XuatKho", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_XuatKho___));
 
                 sdaAdapter.Fill(dtToReturn);
