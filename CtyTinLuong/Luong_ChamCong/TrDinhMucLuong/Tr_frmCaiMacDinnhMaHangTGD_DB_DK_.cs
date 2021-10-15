@@ -61,7 +61,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dv3.Rows.Count; i++)
                 {
-                    if (checkIDVTHH(Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString())))
+                    if (checkIDVTHH_All(Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString())))
                     {
                         cls1.iID_VTHH = Convert.ToInt32(dv3.Rows[i]["ID_VTHH"].ToString());
                         cls1.iThang = Convert.ToInt32(txtThang.Text.ToString());
@@ -233,15 +233,26 @@ namespace CtyTinLuong
         {
             if (e.Column == clMaVT)
             {
+                if (e.Value == null && e.Value.ToString() == "") return;
+                int id_MaHang = 0;
+                double dongia = 0;
+                bool ngungtheodoi = false;
+
                 int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                int id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
-                double dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
-                bool ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
+                if  (!(gridView1.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK) is DBNull))
+                    id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
+
+                if (!(gridView1.GetRowCellValue(e.RowHandle, DonGia) is DBNull))
+                    dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
+
+                if (!(gridView1.GetRowCellValue(e.RowHandle, NgungTheoDoi) is DBNull))
+                    ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
 
                 for (int i = 0; i < _dtvthh.Rows.Count; i++)
                 {
                     if (kk == Convert.ToInt32(_dtvthh.Rows[i]["ID_VTHH"].ToString()))
                     {
+                        string maHang = _dtvthh.Rows[i]["MaVT"].ToString();
                         string tenVThh = _dtvthh.Rows[i]["TenVTHH"].ToString();
                         string donVT = _dtvthh.Rows[i]["DonViTinh"].ToString();
 
@@ -251,34 +262,48 @@ namespace CtyTinLuong
                         _idVTHH = kk;
 
                         //
-                        if (checkIDVTHH(kk))
+                        using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
                         {
-                            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+                            if (id_MaHang == 0)
                             {
-                                if (id_MaHang == 0)
+                                cls.iThang = _thang;
+                                cls.iNam = _nam;
+                                cls.iID_VTHH = kk;
+                                cls.iId_bophan = _id_bophan;
+                                cls.fDonGia = dongia;
+                                cls.bNgungTheoDoi = ngungtheodoi;
+
+                                if (checkIDVTHH_All(kk))
                                 {
-                                    cls.iThang = _thang;
-                                    cls.iNam = _nam;
-                                    cls.iID_VTHH = kk;
-                                    cls.iId_bophan = _id_bophan;
-                                    cls.fDonGia = dongia;
-                                    cls.bNgungTheoDoi = ngungtheodoi;
-                                    cls.Tr_MaHangToGD_DB_DK_Insert();
-                                }
-                                else
-                                {
-                                    cls.iID_MaHangToGD_DB_DK = id_MaHang;
-                                    cls.iThang = _thang;
-                                    cls.iNam = _nam;
-                                    cls.iID_VTHH = kk;
-                                    cls.iId_bophan = _id_bophan;
-                                    cls.fDonGia = dongia;
-                                    cls.bNgungTheoDoi = ngungtheodoi;
-                                    cls.Tr_MaHangToGD_DB_DK_Update();
+                                    if (checkIDVTHH_TrongBoPhan(kk))
+                                    {
+                                        MessageBox.Show("Không thể thêm mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
+                                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn thêm cho bộ phận này không?",
+                                            "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                                            return;
+                                    }
                                 }
 
-                                LoadData(false);
+                                cls.Tr_MaHangToGD_DB_DK_Insert();
                             }
+                            else
+                            {
+                                cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                                cls.iThang = _thang;
+                                cls.iNam = _nam;
+                                cls.iID_VTHH = kk;
+                                cls.iId_bophan = _id_bophan;
+                                cls.fDonGia = dongia;
+                                cls.bNgungTheoDoi = ngungtheodoi;
+                                cls.Tr_MaHangToGD_DB_DK_Update();
+                            }
+
+                            LoadData(false);
                         }
 
                         break;
@@ -287,13 +312,14 @@ namespace CtyTinLuong
             }
             else if (e.Column == DonGia)
             {
-                int idvthh = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, clID_VTHH));
-                int id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
-                double dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
-                bool ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
-                    //
-                if (checkIDVTHH(idvthh))
+                if (e.Value != null && e.Value.ToString() != "" && !(gridView4.GetRowCellValue(e.RowHandle, clMaVT) is DBNull))
                 {
+                    int idvthh = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, clMaVT));
+                    int id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
+                    double dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
+                    bool ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
+                    //string maHang = Convert.ToString(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
+                    //
                     using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
                     {
                         if (id_MaHang == 0)
@@ -361,27 +387,56 @@ namespace CtyTinLuong
         }
 
         //Kiểm tra idvthh trong tháng đã tồn tại chưa:
-        private bool checkIDVTHH(int IdVthh)
+        private bool checkIDVTHH_All(int IdVthh)
         {
-            using (clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh())
+            bool result = false;
+            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
             {
                 int thang = Convert.ToInt32(txtThang.Value);
                 int nam = Convert.ToInt32(txtNam.Value);
                 cls.iThang = thang;
                 cls.iNam = nam;
-                DataTable dt3 = cls.Tr_CaiMacDinhMaHang_TDB_SelectAll_thang_nam();
+                DataTable dt3 = cls.Tr_MaHangToGD_DB_DK_SelectAll();
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
                     if (IdVthh == Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString())
                         && thang == Convert.ToInt32(dt3.Rows[i]["Thang"].ToString())
                         && nam == Convert.ToInt32(dt3.Rows[i]["Nam"].ToString()))
                     {
-                        return false;
+                        result = true;
+                        break;
                     }
                 }
             }
 
-            return true;
+            return result;
+        }
+
+        private bool checkIDVTHH_TrongBoPhan(int IdVthh)
+        {
+            bool result = false;
+
+            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+            {
+                int thang = Convert.ToInt32(txtThang.Value);
+                int nam = Convert.ToInt32(txtNam.Value);
+                cls.iThang = thang;
+                cls.iNam = nam;
+                DataTable dt3 = cls.Tr_MaHangToGD_DB_DK_SelectAll();
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    if (IdVthh == Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString())
+                        && thang == Convert.ToInt32(dt3.Rows[i]["Thang"].ToString())
+                        && nam == Convert.ToInt32(dt3.Rows[i]["Nam"].ToString())
+                        && _id_bophan == Convert.ToInt32(dt3.Rows[i]["id_bophan"].ToString()))
+                    {
+                        result = true;
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
 
         private void txtNam_Leave(object sender, EventArgs e)
@@ -430,6 +485,14 @@ namespace CtyTinLuong
             }
         }
 
+        private void gridView4_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            //if (e.Column == clMaVT)
+            //{
+            //    string tt = gridView4.GetFocusedRowCellValue(clMaVT).ToString();
+            //}
+        }
+
         private void radioDongKien_CheckedChanged(object sender, EventArgs e)
         {
             if (radioDongKien.Checked)
@@ -442,11 +505,11 @@ namespace CtyTinLuong
 
         private void gridView4_InitNewRow(object sender, InitNewRowEventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
-            view.SetRowCellValue(e.RowHandle, view.Columns["STT"], view.RowCount.ToString());
-            view.SetRowCellValue(e.RowHandle, view.Columns["ID_MaHangToGD_DB_DK"], 0);
-            view.SetRowCellValue(e.RowHandle, view.Columns["DonGia"], 0);
-            view.SetRowCellValue(e.RowHandle, view.Columns["NgungTheoDoi"], false);
+            //DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
+            //view.SetRowCellValue(e.RowHandle, view.Columns["STT"], view.RowCount.ToString());
+            //view.SetRowCellValue(e.RowHandle, view.Columns["ID_MaHangToGD_DB_DK"], 0);
+            //view.SetRowCellValue(e.RowHandle, view.Columns["DonGia"], 0);
+            //view.SetRowCellValue(e.RowHandle, view.Columns["NgungTheoDoi"], false);
 
             //DataRow _ravi = _data.NewRow();
             //_ravi["ID_MaHangToGD_DB_DK"] = 0;
