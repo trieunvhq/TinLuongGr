@@ -350,48 +350,57 @@ namespace CtyTinLuong
                     //
                     using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
                     {
-                        if (id_MaHang == 0)
-                        {
-                            cls.iThang = _thang;
-                            cls.iNam = _nam;
-                            cls.iID_VTHH = idvthh;
-                            cls.iId_bophan = _id_bophan;
-                            cls.fDonGia = dongia;
-                            cls.bNgungTheoDoi = ngungtheodoi;
-                            cls.Tr_MaHangToGD_DB_DK_Insert();
-                            LoadData(false);
-                        }
-                        else
-                        {
-                            cls.iID_MaHangToGD_DB_DK = id_MaHang;
-                            cls.iThang = _thang;
-                            cls.iNam = _nam;
-                            cls.iID_VTHH = idvthh;
-                            cls.iId_bophan = _id_bophan;
-                            cls.fDonGia = dongia;
-                            cls.bNgungTheoDoi = ngungtheodoi;
+                        cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                        cls.iThang = _thang;
+                        cls.iNam = _nam;
+                        cls.iID_VTHH = idvthh;
+                        cls.iId_bophan = _id_bophan;
+                        cls.fDonGia = dongia;
+                        cls.bNgungTheoDoi = ngungtheodoi;
 
-                            if (!checkIDVTHH_Update(id_MaHang, idvthh))
-                            {
-                                if (checkIDVTHH_All(idvthh))
-                                {
-                                    if (checkIDVTHH_TrongBoPhan(idvthh))
-                                    {
-                                        MessageBox.Show("Không thể chọn mã hàng. Bởi vì mã hàng đã tồn tại trong bộ phận này!",
-                                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        if (MessageBox.Show("Mã hàng đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
-                                            "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                                            return;
-                                    }
-                                }
-                            }
+                        cls.Tr_MaHangToGD_DB_DK_Update();
+                        //if (id_MaHang == 0)
+                        //{
+                        //    cls.iThang = _thang;
+                        //    cls.iNam = _nam;
+                        //    cls.iID_VTHH = idvthh;
+                        //    cls.iId_bophan = _id_bophan;
+                        //    cls.fDonGia = dongia;
+                        //    cls.bNgungTheoDoi = ngungtheodoi;
+                        //    cls.Tr_MaHangToGD_DB_DK_Insert();
+                        //    LoadData(false);
+                        //}
+                        //else
+                        //{
+                        //    cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                        //    cls.iThang = _thang;
+                        //    cls.iNam = _nam;
+                        //    cls.iID_VTHH = idvthh;
+                        //    cls.iId_bophan = _id_bophan;
+                        //    cls.fDonGia = dongia;
+                        //    cls.bNgungTheoDoi = ngungtheodoi;
 
-                            cls.Tr_MaHangToGD_DB_DK_Update();
-                        }
+                        //    if (!checkIDVTHH_Update(id_MaHang, idvthh))
+                        //    {
+                        //        if (checkIDVTHH_All(idvthh))
+                        //        {
+                        //            if (checkIDVTHH_TrongBoPhan(idvthh))
+                        //            {
+                        //                MessageBox.Show("Không thể chọn mã hàng. Bởi vì mã hàng đã tồn tại trong bộ phận này!",
+                        //                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //                return;
+                        //            }
+                        //            else
+                        //            {
+                        //                if (MessageBox.Show("Mã hàng đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
+                        //                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        //                    return;
+                        //            }
+                        //        }
+                        //    }
+
+                        //    cls.Tr_MaHangToGD_DB_DK_Update();
+                        //}
                     }
                 }
             }

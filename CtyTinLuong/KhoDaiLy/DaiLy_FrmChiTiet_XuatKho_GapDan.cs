@@ -14,7 +14,7 @@ namespace CtyTinLuong
 {
     public partial class DaiLy_FrmChiTiet_XuatKho_GapDan : Form
     {
-        private DataTable _dtDonGiatheoVTHH;
+        private DataTable _dtDonGiatheoVTHH, _data, _dtCongNhan;
         private int _id_bophan, _id_vthh;
 
         private void Hienthi_Lable_TonKho(int xxID_VTHH)
@@ -142,7 +142,6 @@ namespace CtyTinLuong
             txtThamChieu.Text = xxx.Replace("XKGD", "NKĐK");
         }
 
-        DataTable _dtCongNhan;
         private void Load_LockUp()
         {
             clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
@@ -157,7 +156,10 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            _dtCongNhan = clsNguoi.T_SelectAll(_id_bophan);
+
+            clsThin clsThin_ = new clsThin();
+            _dtCongNhan = clsThin_.T_NhanSu_SF(_id_bophan + ",");
+            //_dtCongNhan = clsNguoi.T_SelectAll(_id_bophan);
             gridCongNhan.DataSource = _dtCongNhan;
             gridCongNhan.ValueMember = "ID_NhanSu";
             gridCongNhan.DisplayMember = "MaNhanVien";
@@ -880,71 +882,106 @@ namespace CtyTinLuong
                     MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
                         + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
-                //{
-                //    if (id_ChiTietChamCong == 0)
-                //    {
-                //        cls.iThang = _thang;
-                //        cls.iNam = _nam;
-                //        cls.iID_VTHH = kk;
-                //        cls.iId_bophan = _id_bophan;
-                //        cls.fDonGia = dongia;
-                //        cls.bNgungTheoDoi = ngungtheodoi;
-
-                //        if (checkIDVTHH_All(kk))
-                //        {
-                //            if (checkIDVTHH_TrongBoPhan(kk))
-                //            {
-                //                MessageBox.Show("Không thể thêm mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
-                //                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //                return;
-                //            }
-                //            else
-                //            {
-                //                if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn thêm cho bộ phận này không?",
-                //                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                //                    return;
-                //            }
-                //        }
-
-                //        cls.Tr_MaHangToGD_DB_DK_Insert();
-                //        LoadData(false);
-                //    }
-                //    else
-                //    {
-                //        cls.iID_MaHangToGD_DB_DK = id_MaHang;
-                //        cls.iThang = _thang;
-                //        cls.iNam = _nam;
-                //        cls.iID_VTHH = kk;
-                //        cls.iId_bophan = _id_bophan;
-                //        cls.fDonGia = dongia;
-                //        cls.bNgungTheoDoi = ngungtheodoi;
-
-                //        if (checkIDVTHH_Update(id_MaHang, kk)) return;
-                //        else
-                //        {
-                //            if (checkIDVTHH_All(kk))
-                //            {
-                //                if (checkIDVTHH_TrongBoPhan(kk))
-                //                {
-                //                    MessageBox.Show("Không thể chọn mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
-                //                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //                    return;
-                //                }
-                //                else
-                //                {
-                //                    if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
-                //                        "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                //                        return;
-                //                }
-                //            }
-                //        }
-                //        cls.Tr_MaHangToGD_DB_DK_Update();
-                //    }
-                //}
-
-                    
             }
+            else if (e.Column == SanLuong)
+            {
+                if (e.Value != null && e.Value.ToString() != "" && !(gridView4.GetRowCellValue(e.RowHandle, ID_NhanSu) is DBNull))
+                {
+                    int id_nhansu;
+                    try
+                    {
+                        id_nhansu = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, ID_NhanSu));
+                    }
+                    catch
+                    {
+                        return;
+                    }
+
+                    int id_ChamCong = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, ID_ChiTietChamCong_ToGapDan));
+                    double dongia = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, DonGia));
+                    double sanluong_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, SanLuong));
+
+                    //
+                    gridView1.SetRowCellValue(e.RowHandle, ThanhTien, sanluong_* dongia);
+
+                    //
+                    try
+                    {
+                        using (clsThin clsThin_ = new clsThin())
+                        {
+                            //if (!checkIDCN_Update(id_ChamCong, id_nhansu))
+                            //{
+                            //    if (checkIDCNisTonTai(id_nhansu))
+                            //    {
+                            //        MessageBox.Show("Không thể chọn công nhân " + getTenCN(id_nhansu) + ". Bởi vì " + getTenCN(id_nhansu) + " đã tồn tại trong bộ phận này!",
+                            //            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //        return;
+                            //    }
+                            //}
+
+                            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                            id_nhansu,
+                            dteNgayChungTu.DateTime.Day,
+                            dteNgayChungTu.DateTime.Month,
+                            dteNgayChungTu.DateTime.Year,
+                            _id_vthh,
+                            (float)sanluong_,
+                            0, true, false, _id_bophan, 0, 1,
+                            id_ChamCong);
+                            //if (id_ChamCong == 0)
+                            //{
+                            //    if (checkIDCNisTonTai(id_nhansu))
+                            //    {
+                            //        MessageBox.Show("Không thể thêm công nhân " + getTenCN(id_nhansu) + ". Bởi vì " + getTenCN(id_nhansu) + " đã tồn tại trong bộ phận này!",
+                            //            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //        return;
+                            //    }
+
+                            //    clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                            //    id_nhansu,
+                            //    dteNgayChungTu.DateTime.Day,
+                            //    dteNgayChungTu.DateTime.Month,
+                            //    dteNgayChungTu.DateTime.Year,
+                            //    _id_vthh,
+                            //    (float)sanluong_,
+                            //    0, true, false, _id_bophan, 0, 1);
+                            //}
+                            //else
+                            //{
+                            //    if (!checkIDCN_Update(id_ChamCong, id_nhansu))
+                            //    {
+                            //        if (checkIDCNisTonTai(id_nhansu))
+                            //        {
+                            //            MessageBox.Show("Không thể chọn công nhân " + getTenCN(id_nhansu) + ". Bởi vì " + getTenCN(id_nhansu) + " đã tồn tại trong bộ phận này!",
+                            //                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //            return;
+                            //        }
+                            //    }
+
+                            //    clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                            //    id_nhansu,
+                            //    dteNgayChungTu.DateTime.Day,
+                            //    dteNgayChungTu.DateTime.Month,
+                            //    dteNgayChungTu.DateTime.Year,
+                            //    _id_vthh,
+                            //    (float)sanluong_,
+                            //    0, true, false, _id_bophan, 0, 1,
+                            //    id_ChamCong);
+                            //}
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + getTenCN(id_nhansu)
+                            + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
@@ -955,7 +992,8 @@ namespace CtyTinLuong
             view.SetRowCellValue(e.RowHandle, view.Columns["ID_VTHH"], _id_vthh);
             view.SetRowCellValue(e.RowHandle, view.Columns["ThanhTien"], 0);
             view.SetRowCellValue(e.RowHandle, view.Columns["DonGia"], getDonGiaTheoIDVHH(_id_vthh));
-            view.SetRowCellValue(e.RowHandle, view.Columns["SanLuong"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["SanLuong"], "");
+            //view.SetRowCellValue(e.RowHandle, view.Columns["ID_NhanSu"], 0);
 
             view.SetRowCellValue(e.RowHandle, view.Columns["Ngay1"], 0);
             view.SetRowCellValue(e.RowHandle, view.Columns["Ngay2"], 0);
@@ -990,12 +1028,9 @@ namespace CtyTinLuong
             view.SetRowCellValue(e.RowHandle, view.Columns["Ngay31"], 0);
         }
 
-        DataTable _data;
 
         private void LoadDataChamCongCN(int idVTHH)
         {
-            
-
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(dteNgayChungTu.DateTime.Year, 
@@ -1003,49 +1038,6 @@ namespace CtyTinLuong
             }
 
             gridControl2.DataSource = _data;
-            //isload = false;
-            ////isload = true;
-            ////if (islandau)
-            ////{
-            ////    DateTime dtnow = DateTime.Now;
-            ////    _nam = dtnow.Year;
-            ////    _thang = dtnow.Month;
-            ////    txtNam.Text = dtnow.Year.ToString();
-            ////    txtThang.Text = dtnow.Month.ToString();
-            ////}
-            //DataTable dt3;
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add("ID_NhanSu", typeof(int));
-            //dt2.Columns.Add("TenNhanVien");
-            //dt2.Columns.Add("SanLuong", typeof(double));
-            //dt2.Columns.Add("DonGia", typeof(double));
-            //dt2.Columns.Add("ThanhTien", typeof(double));
-            //dt2.Columns.Add("ID_VTHH", typeof(int));
-
-            ////dt2.Clear();
-
-            //using (clsThin clsThin_ = new clsThin())
-            //{
-            //    dt3 = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(dteNgayChungTu.DateTime.Year, dteNgayChungTu.DateTime.Month, _id_bophan, idVTHH, "");
-            //    //dt3 = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, _id_bophan);
-
-            //    for (int i = 0; i < dt3.Rows.Count; i++)
-            //    {
-            //        DataRow _ravi = dt2.NewRow();
-            //        _ravi["ID_NhanSu"] = Convert.ToInt32(dt3.Rows[i]["ID_CongNhan"].ToString());
-            //        _ravi["ID_VTHH"] = Convert.ToInt32(dt3.Rows[i]["ID_VTHH"].ToString());
-            //        //_ravi["id_bophan"] = Convert.ToInt32(dt3.Rows[i]["id_bophan"].ToString());
-            //        _ravi["TenNhanVien"] = dt3.Rows[i]["TenNhanVien"].ToString();
-            //        _ravi["SanLuong"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["SanLuong"].ToString());
-            //        _ravi["DonGia"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
-            //        _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(dt3.Rows[i]["ThanhTien"].ToString());
-
-            //        dt2.Rows.Add(_ravi);
-            //    }
-            //}
-
-            //gridControl2.DataSource = dt2;
-            ////isload = false;
         }
 
         private bool SaveAllDataChamCong(DataTable _data)
