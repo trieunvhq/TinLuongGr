@@ -1261,7 +1261,7 @@ namespace CtyTinLuong
         }
 
 
-        public void Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(int iID_CongNhan, int iThang, int iNam, int iID_VTHH, int iNgayInput, float fSanLuongNgay,
+        public void Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(int iID_CongNhan, int iNgayInput, int iThang, int iNam, int iID_VTHH, float fSanLuongNgay,
             int iID_DinhMuc_Luong_SanLuong, bool bGuiDuLieu, bool bIsTangCa, int id_bophan, int ID_DinhMucLuong_CongNhat, int ID_LoaiCong, int ID_ChiTietChamCong_ToGapDan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

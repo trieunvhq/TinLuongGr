@@ -157,7 +157,7 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            _dtCongNhan = clsNguoi.T_SelectAll(18);
+            _dtCongNhan = clsNguoi.T_SelectAll(_id_bophan);
             gridCongNhan.DataSource = _dtCongNhan;
             gridCongNhan.ValueMember = "ID_NhanSu";
             gridCongNhan.DisplayMember = "MaNhanVien";
@@ -619,27 +619,10 @@ namespace CtyTinLuong
 
         private void gridView3_RowClick(object sender, RowClickEventArgs e)
         {
-            //if (e.Column == clID_VTHH2)
-            //{
-            //    int idvthh = Convert.ToInt16(gridView3.GetRowCellValue(e.RowHandle, e.Column));
-            //    clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            //    cls.iID_VTHH = idvthh;
-            //    int kk = Convert.ToInt16(gridView3.GetRowCellValue(e.RowHandle, e.Column));
-            //    DataTable dt = cls.SelectOne();
-            //    if (dt != null)
-            //    {
-            //        gridView3.SetRowCellValue(e.RowHandle, clTenVTHH2, dt.Rows[0]["TenVTHH"].ToString());
-            //        gridView3.SetRowCellValue(e.RowHandle, clDonViTinh2, dt.Rows[0]["DonViTinh"].ToString());
-            //        gridView3.SetRowCellValue(e.RowHandle, clHienThi2, "1");
-            //        gridView3.SetRowCellValue(e.RowHandle, clSoLuong2, 0);
-            //        gridView3.SetRowCellValue(e.RowHandle, clDonGia2, getDonGiaTheoIDVHH(idvthh));
-            //        gridView3.SetRowCellValue(e.RowHandle, clThanhTien2, 0);
-            //    }
-            //}clIDVTHH_VT
-
             if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
             {
                 int iiIDnhapKhp = Convert.ToInt32(gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString());
+                _id_vthh = iiIDnhapKhp;
                 LoadDataChamCongCN(iiIDnhapKhp);
             }
         }
@@ -790,7 +773,7 @@ namespace CtyTinLuong
 
             for (int i = 0; i < _dtCongNhan.Rows.Count; i++)
             {
-                if (idcn == Convert.ToInt32(_dtCongNhan.Rows[i]["ID_VTHH"].ToString()))
+                if (idcn == Convert.ToInt32(_dtCongNhan.Rows[i]["ID_NhanSu"].ToString()))
                 {
                     result = _dtCongNhan.Rows[i]["TenNhanVien"].ToString();
                     break;
@@ -805,161 +788,162 @@ namespace CtyTinLuong
             if (e.Column == ID_NhanSu)
             {
                 if (e.Value == null && e.Value.ToString() == "") return;
-                int id_nhansu = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_NhanSu));
-                int id_ChamCong = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_ChiTietChamCong_ToGapDan));
-                double sanluong_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, SanLuong));
-                double ngay1_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay1));
-                double ngay2_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay2));
-                double ngay3_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay3));
-                double ngay4_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay4));
-                double ngay5_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay5));
-                double ngay6_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay6));
-                double ngay7_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay7));
-                double ngay8_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay8));
-                double ngay9_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay9));
-                double ngay10_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay10));
-                double ngay11_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay11));
-                double ngay12_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay12));
-                double ngay13_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay13));
-                double ngay14_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay14));
-                double ngay15_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay15));
-                double ngay16_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay16));
-                double ngay17_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay17));
-                double ngay18_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay18));
-                double ngay19_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay19));
-                double ngay20_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay20));
-                double ngay21_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay21));
-                double ngay22_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay22));
-                double ngay23_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay23));
-                double ngay24_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay24));
-                double ngay25_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay25));
-                double ngay26_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay26));
-                double ngay27_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay27));
-                double ngay28_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay28));
-                double ngay29_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay29));
-                double ngay30_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay30));
-                double ngay31_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay31));
+                int id_nhansu = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, ID_NhanSu));
+                int id_ChamCong = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, ID_ChiTietChamCong_ToGapDan));
+                double sanluong_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, SanLuong));
+                //double ngay1_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay1));
+                //double ngay2_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay2));
+                //double ngay3_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay3));
+                //double ngay4_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay4));
+                //double ngay5_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay5));
+                //double ngay6_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay6));
+                //double ngay7_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay7));
+                //double ngay8_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay8));
+                //double ngay9_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay9));
+                //double ngay10_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay10));
+                //double ngay11_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay11));
+                //double ngay12_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay12));
+                //double ngay13_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay13));
+                //double ngay14_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay14));
+                //double ngay15_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay15));
+                //double ngay16_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay16));
+                //double ngay17_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay17));
+                //double ngay18_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay18));
+                //double ngay19_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay19));
+                //double ngay20_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay20));
+                //double ngay21_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay21));
+                //double ngay22_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay22));
+                //double ngay23_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay23));
+                //double ngay24_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay24));
+                //double ngay25_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay25));
+                //double ngay26_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay26));
+                //double ngay27_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay27));
+                //double ngay28_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay28));
+                //double ngay29_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay29));
+                //double ngay30_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay30));
+                //double ngay31_ = CheckString.ConvertToDouble_My(gridView1.GetRowCellValue(e.RowHandle, Ngay31));
 
+                string tenCN = getTenCN(id_nhansu);
+                //gridView1.SetRowCellValue(e.RowHandle, ID_NhanSu, id_nhansu);
+                gridView1.SetRowCellValue(e.RowHandle, TenNhanVien, tenCN);
 
-                for (int i = 0; i < _dtCongNhan.Rows.Count; i++)
+                //
+                try
                 {
-                    if (id_nhansu == Convert.ToInt32(_dtCongNhan.Rows[i]["ID_VTHH"].ToString()))
+                    using (clsThin clsThin_ = new clsThin())
                     {
-                        string maCN = _dtCongNhan.Rows[i]["MaNhanVien"].ToString();
-                        string tenCN = _dtCongNhan.Rows[i]["TenNhanVien"].ToString();
-
-                        //gridView4.SetRowCellValue(e.RowHandle, ID_NhanSu, id_nhansu);
-                        gridView4.SetRowCellValue(e.RowHandle, TenNhanVien, tenCN);
-
-                        //
-                        try
+                        if (id_ChamCong == 0)
                         {
-                            using (clsThin clsThin_ = new clsThin())
+                            if (checkIDCNisTonTai(id_nhansu))
                             {
-                                clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                                    id_nhansu,
-                                    dteNgayChungTu.DateTime.Day,
-                                    dteNgayChungTu.DateTime.Month,
-                                    dteNgayChungTu.DateTime.Year,
-                                    _id_vthh,
-                                    (float)sanluong_,
-                                    0, true, false, _id_bophan, 0, 1);
+                                MessageBox.Show("Không thể thêm công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
                             }
+
+                            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                            id_nhansu,
+                            dteNgayChungTu.DateTime.Day,
+                            dteNgayChungTu.DateTime.Month,
+                            dteNgayChungTu.DateTime.Year,
+                            _id_vthh,
+                            (float)sanluong_,
+                            0, true, false, _id_bophan, 0, 1);
                         }
-                        catch
+                        else
                         {
-                            MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
-                                + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        //using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
-                        //{
-                        //    if (id_ChiTietChamCong == 0)
-                        //    {
-                        //        cls.iThang = _thang;
-                        //        cls.iNam = _nam;
-                        //        cls.iID_VTHH = kk;
-                        //        cls.iId_bophan = _id_bophan;
-                        //        cls.fDonGia = dongia;
-                        //        cls.bNgungTheoDoi = ngungtheodoi;
-
-                        //        if (checkIDVTHH_All(kk))
-                        //        {
-                        //            if (checkIDVTHH_TrongBoPhan(kk))
-                        //            {
-                        //                MessageBox.Show("Không thể thêm mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
-                        //                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //                return;
-                        //            }
-                        //            else
-                        //            {
-                        //                if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn thêm cho bộ phận này không?",
-                        //                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                        //                    return;
-                        //            }
-                        //        }
-
-                        //        cls.Tr_MaHangToGD_DB_DK_Insert();
-                        //        LoadData(false);
-                        //    }
-                        //    else
-                        //    {
-                        //        cls.iID_MaHangToGD_DB_DK = id_MaHang;
-                        //        cls.iThang = _thang;
-                        //        cls.iNam = _nam;
-                        //        cls.iID_VTHH = kk;
-                        //        cls.iId_bophan = _id_bophan;
-                        //        cls.fDonGia = dongia;
-                        //        cls.bNgungTheoDoi = ngungtheodoi;
-
-                        //        if (checkIDVTHH_Update(id_MaHang, kk)) return;
-                        //        else
-                        //        {
-                        //            if (checkIDVTHH_All(kk))
-                        //            {
-                        //                if (checkIDVTHH_TrongBoPhan(kk))
-                        //                {
-                        //                    MessageBox.Show("Không thể chọn mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
-                        //                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //                    return;
-                        //                }
-                        //                else
-                        //                {
-                        //                    if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
-                        //                        "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                        //                        return;
-                        //                }
-                        //            }
-                        //        }
-                        //        cls.Tr_MaHangToGD_DB_DK_Update();
-                        //    }
-                        //}
-
-                        break;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            using (clsThin clsThin_ = new clsThin())
+                            if (checkIDCN_Update(id_ChamCong, id_nhansu)) return;
+                            else
                             {
-                                clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
-                                    id_nhansu,
-                                    dteNgayChungTu.DateTime.Day,
-                                    dteNgayChungTu.DateTime.Month,
-                                    dteNgayChungTu.DateTime.Year,
-                                    _id_vthh,
-                                    (float)sanluong_,
-                                    0, true, false, _id_bophan, 0, 1,
-                                    id_ChamCong);
+                                if (checkIDCNisTonTai(id_nhansu))
+                                {
+                                    MessageBox.Show("Không thể chọn công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
+                                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
                             }
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
-                                + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                            id_nhansu,
+                            dteNgayChungTu.DateTime.Day,
+                            dteNgayChungTu.DateTime.Month,
+                            dteNgayChungTu.DateTime.Year,
+                            _id_vthh,
+                            (float)sanluong_,
+                            0, true, false, _id_bophan, 0, 1,
+                            id_ChamCong);
                         }
                     }
                 }
+                catch
+                {
+                    MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
+                        + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+                //{
+                //    if (id_ChiTietChamCong == 0)
+                //    {
+                //        cls.iThang = _thang;
+                //        cls.iNam = _nam;
+                //        cls.iID_VTHH = kk;
+                //        cls.iId_bophan = _id_bophan;
+                //        cls.fDonGia = dongia;
+                //        cls.bNgungTheoDoi = ngungtheodoi;
+
+                //        if (checkIDVTHH_All(kk))
+                //        {
+                //            if (checkIDVTHH_TrongBoPhan(kk))
+                //            {
+                //                MessageBox.Show("Không thể thêm mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
+                //                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                return;
+                //            }
+                //            else
+                //            {
+                //                if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn thêm cho bộ phận này không?",
+                //                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                //                    return;
+                //            }
+                //        }
+
+                //        cls.Tr_MaHangToGD_DB_DK_Insert();
+                //        LoadData(false);
+                //    }
+                //    else
+                //    {
+                //        cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                //        cls.iThang = _thang;
+                //        cls.iNam = _nam;
+                //        cls.iID_VTHH = kk;
+                //        cls.iId_bophan = _id_bophan;
+                //        cls.fDonGia = dongia;
+                //        cls.bNgungTheoDoi = ngungtheodoi;
+
+                //        if (checkIDVTHH_Update(id_MaHang, kk)) return;
+                //        else
+                //        {
+                //            if (checkIDVTHH_All(kk))
+                //            {
+                //                if (checkIDVTHH_TrongBoPhan(kk))
+                //                {
+                //                    MessageBox.Show("Không thể chọn mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
+                //                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                    return;
+                //                }
+                //                else
+                //                {
+                //                    if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
+                //                        "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                //                        return;
+                //                }
+                //            }
+                //        }
+                //        cls.Tr_MaHangToGD_DB_DK_Update();
+                //    }
+                //}
+
+                    
             }
         }
 
@@ -1283,6 +1267,51 @@ namespace CtyTinLuong
                 MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCongNhan_
                     + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool checkIDCNisTonTai(int idcn)
+        {
+            bool result = false;
+
+
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt3 = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(dteNgayChungTu.DateTime.Year,
+                        dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Day, _id_bophan, _id_vthh, "");
+
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    if (idcn == Convert.ToInt32(dt3.Rows[i]["ID_NhanSu"].ToString()))
+                    {
+                        result = true;
+                        break;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private bool checkIDCN_Update(int ID_ChamCong, int idcn)
+        {
+            bool result = false;
+
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt3 = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(dteNgayChungTu.DateTime.Year,
+                        dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Day, _id_bophan, _id_vthh, "");
+
+                for (int i = 0; i < dt3.Rows.Count; i++)
+                {
+                    if (ID_ChamCong == Convert.ToInt32(dt3.Rows[i]["ID_ChiTietChamCong_ToGapDan"].ToString()) && idcn == Convert.ToInt32(dt3.Rows[i]["ID_NhanSu"].ToString()))
+                    {
+                        result = true;
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
 
     }

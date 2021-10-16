@@ -306,7 +306,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(_nam, _thang, _id_bophan, 0, "");
+                _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(_nam, _thang, 0, _id_bophan, 0, "");
                 ds_id_congnhan = new List<int>();
 
                 double Ngay1 = 0;
