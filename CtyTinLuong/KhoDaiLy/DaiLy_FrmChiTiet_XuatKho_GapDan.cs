@@ -141,6 +141,8 @@ namespace CtyTinLuong
             string xxx = SoCHungTu_GapDan();
             txtThamChieu.Text = xxx.Replace("XKGD", "NKĐK");
         }
+
+        DataTable _dtCongNhan;
         private void Load_LockUp()
         {
             clsDinhMuc_DinhMuc_ToGapDan cls = new clsDinhMuc_DinhMuc_ToGapDan();
@@ -155,8 +157,8 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
 
-            DataTable dt3 = clsNguoi.T_SelectAll(18);
-            gridCongNhan.DataSource = dt3;
+            _dtCongNhan = clsNguoi.T_SelectAll(18);
+            gridCongNhan.DataSource = _dtCongNhan;
             gridCongNhan.ValueMember = "ID_NhanSu";
             gridCongNhan.DisplayMember = "MaNhanVien";
 
@@ -782,106 +784,226 @@ namespace CtyTinLuong
             return _id_bophan;
         }
 
+        private string getTenCN(int idcn)
+        {
+            string result = "";
+
+            for (int i = 0; i < _dtCongNhan.Rows.Count; i++)
+            {
+                if (idcn == Convert.ToInt32(_dtCongNhan.Rows[i]["ID_VTHH"].ToString()))
+                {
+                    result = _dtCongNhan.Rows[i]["TenNhanVien"].ToString();
+                    break;
+                }
+            }
+            return result;
+        }
+
+
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column == ID_NhanSu)
             {
                 if (e.Value == null && e.Value.ToString() == "") return;
-                int id_nhansu = 0;
-                double dongia = 0;
-                bool ngungtheodoi = false;
+                int id_nhansu = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_NhanSu));
+                int id_ChamCong = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_ChiTietChamCong_ToGapDan));
+                double sanluong_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, SanLuong));
+                double ngay1_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay1));
+                double ngay2_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay2));
+                double ngay3_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay3));
+                double ngay4_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay4));
+                double ngay5_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay5));
+                double ngay6_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay6));
+                double ngay7_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay7));
+                double ngay8_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay8));
+                double ngay9_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay9));
+                double ngay10_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay10));
+                double ngay11_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay11));
+                double ngay12_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay12));
+                double ngay13_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay13));
+                double ngay14_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay14));
+                double ngay15_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay15));
+                double ngay16_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay16));
+                double ngay17_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay17));
+                double ngay18_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay18));
+                double ngay19_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay19));
+                double ngay20_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay20));
+                double ngay21_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay21));
+                double ngay22_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay22));
+                double ngay23_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay23));
+                double ngay24_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay24));
+                double ngay25_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay25));
+                double ngay26_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay26));
+                double ngay27_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay27));
+                double ngay28_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay28));
+                double ngay29_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay29));
+                double ngay30_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay30));
+                double ngay31_ = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, Ngay31));
 
-                int kk = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, e.Column));
-                if (!(gridView1.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK) is DBNull))
-                    id_MaHang = Convert.ToInt32(gridView4.GetRowCellValue(e.RowHandle, ID_MaHangToGD_DB_DK));
 
-                if (!(gridView1.GetRowCellValue(e.RowHandle, DonGia) is DBNull))
-                    dongia = CheckString.ConvertToDouble_My(gridView4.GetRowCellValue(e.RowHandle, DonGia));
-
-                if (!(gridView1.GetRowCellValue(e.RowHandle, NgungTheoDoi) is DBNull))
-                    ngungtheodoi = Convert.ToBoolean(gridView4.GetRowCellValue(e.RowHandle, NgungTheoDoi));
-
-                for (int i = 0; i < _dtvthh.Rows.Count; i++)
+                for (int i = 0; i < _dtCongNhan.Rows.Count; i++)
                 {
-                    if (kk == Convert.ToInt32(_dtvthh.Rows[i]["ID_VTHH"].ToString()))
+                    if (id_nhansu == Convert.ToInt32(_dtCongNhan.Rows[i]["ID_VTHH"].ToString()))
                     {
-                        string maHang = _dtvthh.Rows[i]["MaVT"].ToString();
-                        string tenVThh = _dtvthh.Rows[i]["TenVTHH"].ToString();
-                        string donVT = _dtvthh.Rows[i]["DonViTinh"].ToString();
+                        string maCN = _dtCongNhan.Rows[i]["MaNhanVien"].ToString();
+                        string tenCN = _dtCongNhan.Rows[i]["TenNhanVien"].ToString();
 
-                        gridView4.SetRowCellValue(e.RowHandle, clID_VTHH, kk);
-                        gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, tenVThh);
-                        gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, donVT);
-                        _idVTHH = kk;
+                        //gridView4.SetRowCellValue(e.RowHandle, ID_NhanSu, id_nhansu);
+                        gridView4.SetRowCellValue(e.RowHandle, TenNhanVien, tenCN);
 
                         //
-                        using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+                        try
                         {
-                            if (id_MaHang == 0)
+                            using (clsThin clsThin_ = new clsThin())
                             {
-                                cls.iThang = _thang;
-                                cls.iNam = _nam;
-                                cls.iID_VTHH = kk;
-                                cls.iId_bophan = _id_bophan;
-                                cls.fDonGia = dongia;
-                                cls.bNgungTheoDoi = ngungtheodoi;
-
-                                if (checkIDVTHH_All(kk))
-                                {
-                                    if (checkIDVTHH_TrongBoPhan(kk))
-                                    {
-                                        MessageBox.Show("Không thể thêm mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
-                                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn thêm cho bộ phận này không?",
-                                            "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                                            return;
-                                    }
-                                }
-
-                                cls.Tr_MaHangToGD_DB_DK_Insert();
-                                LoadData(false);
-                            }
-                            else
-                            {
-                                cls.iID_MaHangToGD_DB_DK = id_MaHang;
-                                cls.iThang = _thang;
-                                cls.iNam = _nam;
-                                cls.iID_VTHH = kk;
-                                cls.iId_bophan = _id_bophan;
-                                cls.fDonGia = dongia;
-                                cls.bNgungTheoDoi = ngungtheodoi;
-
-                                if (checkIDVTHH_Update(id_MaHang, kk)) return;
-                                else
-                                {
-                                    if (checkIDVTHH_All(kk))
-                                    {
-                                        if (checkIDVTHH_TrongBoPhan(kk))
-                                        {
-                                            MessageBox.Show("Không thể chọn mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
-                                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                            return;
-                                        }
-                                        else
-                                        {
-                                            if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
-                                                "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                                                return;
-                                        }
-                                    }
-                                }
-                                cls.Tr_MaHangToGD_DB_DK_Update();
+                                clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                                    id_nhansu,
+                                    dteNgayChungTu.DateTime.Day,
+                                    dteNgayChungTu.DateTime.Month,
+                                    dteNgayChungTu.DateTime.Year,
+                                    _id_vthh,
+                                    (float)sanluong_,
+                                    0, true, false, _id_bophan, 0, 1);
                             }
                         }
+                        catch
+                        {
+                            MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
+                                + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        //using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+                        //{
+                        //    if (id_ChiTietChamCong == 0)
+                        //    {
+                        //        cls.iThang = _thang;
+                        //        cls.iNam = _nam;
+                        //        cls.iID_VTHH = kk;
+                        //        cls.iId_bophan = _id_bophan;
+                        //        cls.fDonGia = dongia;
+                        //        cls.bNgungTheoDoi = ngungtheodoi;
+
+                        //        if (checkIDVTHH_All(kk))
+                        //        {
+                        //            if (checkIDVTHH_TrongBoPhan(kk))
+                        //            {
+                        //                MessageBox.Show("Không thể thêm mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
+                        //                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //                return;
+                        //            }
+                        //            else
+                        //            {
+                        //                if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn thêm cho bộ phận này không?",
+                        //                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        //                    return;
+                        //            }
+                        //        }
+
+                        //        cls.Tr_MaHangToGD_DB_DK_Insert();
+                        //        LoadData(false);
+                        //    }
+                        //    else
+                        //    {
+                        //        cls.iID_MaHangToGD_DB_DK = id_MaHang;
+                        //        cls.iThang = _thang;
+                        //        cls.iNam = _nam;
+                        //        cls.iID_VTHH = kk;
+                        //        cls.iId_bophan = _id_bophan;
+                        //        cls.fDonGia = dongia;
+                        //        cls.bNgungTheoDoi = ngungtheodoi;
+
+                        //        if (checkIDVTHH_Update(id_MaHang, kk)) return;
+                        //        else
+                        //        {
+                        //            if (checkIDVTHH_All(kk))
+                        //            {
+                        //                if (checkIDVTHH_TrongBoPhan(kk))
+                        //                {
+                        //                    MessageBox.Show("Không thể chọn mã hàng " + maHang + ". Bởi vì mã hàng " + maHang + " đã tồn tại trong bộ phận này!",
+                        //                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //                    return;
+                        //                }
+                        //                else
+                        //                {
+                        //                    if (MessageBox.Show("Mã hàng " + maHang + " đã được thêm cho bộ phận khác. Bạn có muốn chọn cho bộ phận này không?",
+                        //                        "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        //                        return;
+                        //                }
+                        //            }
+                        //        }
+                        //        cls.Tr_MaHangToGD_DB_DK_Update();
+                        //    }
+                        //}
 
                         break;
                     }
+                    else
+                    {
+                        try
+                        {
+                            using (clsThin clsThin_ = new clsThin())
+                            {
+                                clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                                    id_nhansu,
+                                    dteNgayChungTu.DateTime.Day,
+                                    dteNgayChungTu.DateTime.Month,
+                                    dteNgayChungTu.DateTime.Year,
+                                    _id_vthh,
+                                    (float)sanluong_,
+                                    0, true, false, _id_bophan, 0, 1,
+                                    id_ChamCong);
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
+                                + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
+        }
+
+        private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+            view.SetRowCellValue(e.RowHandle, view.Columns["STT"], view.RowCount.ToString());
+            view.SetRowCellValue(e.RowHandle, view.Columns["ID_ChiTietChamCong_ToGapDan"], 0); 
+            view.SetRowCellValue(e.RowHandle, view.Columns["ID_VTHH"], _id_vthh);
+            view.SetRowCellValue(e.RowHandle, view.Columns["ThanhTien"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["DonGia"], getDonGiaTheoIDVHH(_id_vthh));
+            view.SetRowCellValue(e.RowHandle, view.Columns["SanLuong"], 0);
+
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay1"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay2"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay3"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay4"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay5"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay6"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay7"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay8"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay9"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay10"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay11"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay12"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay13"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay14"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay15"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay16"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay17"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay18"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay19"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay20"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay21"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay22"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay23"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay24"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay25"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay26"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay27"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay28"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay29"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay30"], 0);
+            view.SetRowCellValue(e.RowHandle, view.Columns["Ngay31"], 0);
         }
 
         DataTable _data;
@@ -892,7 +1014,8 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(dteNgayChungTu.DateTime.Year, dteNgayChungTu.DateTime.Month, _id_bophan, idVTHH, "");
+                _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectTGD(dteNgayChungTu.DateTime.Year, 
+                        dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Day, _id_bophan, idVTHH, "");
             }
 
             gridControl2.DataSource = _data;
