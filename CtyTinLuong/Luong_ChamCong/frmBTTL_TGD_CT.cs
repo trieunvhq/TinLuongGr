@@ -71,15 +71,6 @@ namespace CtyTinLuong
             double tamung_tong = 0;
             double thucnhan_tong = 0;
 
-            //double Tong_sanluong_tong = 0;
-            //double Tong_thanhtien_tong = 0;
-            //double Tong_tongluong_tong = 0;
-            //double Tong_songayan_tong = 0;
-            //double Tong_trutiencom_tong = 0;
-            //double Tong_tongtien_tong = 0;
-            //double Tong_tamung_tong = 0;
-            //double Tong_thucnhan_tong = 0;
-
             using (clsThin clsThin_ = new clsThin())
             {
                 _data = clsThin_.Tr_BTTL_TGD_new(_nam, _thang,_id_bophan);
@@ -102,42 +93,7 @@ namespace CtyTinLuong
                     //  
 
                     double dongia_ = 0;
-                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMuc_KhongTang_Value"].ToString());
-
-                    //Loại công:
-                    //string LoaiCong = _data.Rows[i]["Cong"].ToString();
-
-                    //if (LoaiCong.ToLower().Contains("gia nghĩa 2"))
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["GiaNgia2_Value"].ToString());
-                    //}
-                    //else if (LoaiCong.ToLower().Contains("gia nghĩa"))
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["GiaNghia_Value"].ToString());
-                    //}
-                    //else if (LoaiCong.ToLower().Contains("thọ kim bật 3"))
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["ThoKimBat3_Value"].ToString());
-                    //}
-                    //else if (LoaiCong.ToLower().Contains("nc bật 6 buộc"))
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["NCBat6Buoc_Value"].ToString());
-                    //}
-                    //else if (LoaiCong.ToLower().Contains("nc bật 6"))
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["NCBat6_Value"].ToString());
-                    //}
-                    //else if (LoaiCong.ToLower().Contains("cuc đột")
-                    //    || LoaiCong.ToLower().Contains("cục đột")
-                    //    || LoaiCong.ToLower().Contains("cúc đột"))
-                    //{
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["CucDot_Value"].ToString());
-                    //}
-                    //else
-                    //{
-                    //    //Đơn giá của các loại công còn lại:
-                    //    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["MacDinh_Value"].ToString());
-                    //}
+                    dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
                     _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
 
                     //Sản lượng:
@@ -262,7 +218,7 @@ namespace CtyTinLuong
                         double DonGia_Sub = 0;
                         double SanLuong_Sub = 0;
 
-                        DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["DinhMuc_KhongTang_Value"].ToString());
+                        DonGia_Sub = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
                         ////Loại công:
                         //string LoaiCong = _data.Rows[i]["Cong"].ToString();
 

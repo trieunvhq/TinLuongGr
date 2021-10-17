@@ -990,7 +990,8 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                if (gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan).ToString() == "" 
+                if (gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan) == null
+                    ||gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan).ToString() == "" 
                     || gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan).ToString() == "0")
                 {
                     return;
