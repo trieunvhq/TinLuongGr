@@ -234,7 +234,41 @@ namespace CtyTinLuong
 
         private void btXoa2_Click(object sender, EventArgs e)
         {
-            //gridView4.SetRowCellValue(gridView4.FocusedRowHandle, clHienThi, "0");
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                if (gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK) == null
+                    || gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == ""
+                    || gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == "0")
+                {
+                    return;
+                }
+
+                //int id_cn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_NhanSu).ToString());
+                int ID_ChiTietChamCong_TGD = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString());
+
+                DialogResult traloi;
+                traloi = MessageBox.Show("Xác nhận xóa hàng hóa: " + gridView1.GetFocusedRowCellValue(clTenVTHH).ToString(), "Delete",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (traloi == DialogResult.Yes)
+                {
+                    using (clsTr_MaHangToGD_DB_DK clsThin_ = new clsTr_MaHangToGD_DB_DK())
+                    {
+                        if (clsThin_.Tr_MaHangToGD_DB_DK_Delete(ID_ChiTietChamCong_TGD))
+                        {
+                            LoadData(false);
+                        }
+                    }
+
+                }
+
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Lỗi xóa hàng hóa khỏi bảng..." + ee.ToString(), "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

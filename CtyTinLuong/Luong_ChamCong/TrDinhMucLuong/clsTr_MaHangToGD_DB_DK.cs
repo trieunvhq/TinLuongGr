@@ -157,7 +157,7 @@ namespace CtyTinLuong
 		///		 <LI>iID_MaHangToGD_DB_DK</LI>
 		/// </UL>
 		/// </remarks>
-		public bool Tr_MaHangToGD_DB_DK_Delete()
+		public bool Tr_MaHangToGD_DB_DK_Delete(int ID_MaHangToGD_DB_DK)
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[Tr_MaHangToGD_DB_DK_Delete]";
@@ -168,7 +168,7 @@ namespace CtyTinLuong
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MaHangToGD_DB_DK", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_MaHangToGD_DB_DK));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_MaHangToGD_DB_DK", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, ID_MaHangToGD_DB_DK));
 
 				// Open connection.
 				m_scoMainConnection.Open();

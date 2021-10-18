@@ -18,21 +18,80 @@ namespace CtyTinLuong
 
         private void Load_DaTa(bool bMe_True_COn_False)
         {
-            if(bMe_True_COn_False==true)
-            {
-                clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
-                DataTable dt = cls.SA_new();
-                gridControl1.DataSource = dt;
-            }
-            else
-            {
-                clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-                DataTable dt = cls.SA();              
-                gridControl1.DataSource = dt;
-            }
-            
+            DataTable data_ = new DataTable();
+            DataTable dtMe = new DataTable();
+            DataTable dtCon = new DataTable();
+            DataTable dtChau = new DataTable();
 
+
+            data_.Columns.Add("ID_TaiKhoanKeToan", typeof(int));
+            data_.Columns.Add("NgungTheoDoi");
+            data_.Columns.Add("SoTaiKhoan");
+            data_.Columns.Add("TenTaiKhoan");
+            data_.Columns.Add("Khoa", typeof(bool));
+
+
+            clsNganHang_tbHeThongTaiKhoanKeToanMe clsm = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+            dtMe = clsm.SA_new();
+
+            using (clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon())
+            {
+                dtCon = cls.Tr_NganHang_SoTaiKhoanCon_S();
+                dtChau = cls.Tr_NganHang_SoTaiKhoanChau_S();
+            }
+
+            //if (bMe_True_COn_False==true)
+            //{
+            //    clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
+            //    dtMe = cls.SA_new();
+            //    gridControl1.DataSource = dtMe;
+            //}
+            //else
+            //{
+            //    clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
+            //    dtCon = cls.SA();              
+            //    gridControl1.DataSource = dtCon;
+            //}
+
+            for (int i = 0; i < dtMe.Rows.Count; i++)
+            {
+                DataRow r = data_.NewRow();
+                r["ID_TaiKhoanKeToan"] = dtMe.Rows[i]["ID_TaiKhoanKeToan"];
+                //r["NgungTheoDoi"] = dtMe.Rows[i]["NgungTheoDoi"];
+                r["SoTaiKhoan"] = dtMe.Rows[i]["SoTaiKhoan"];
+                r["TenTaiKhoan"] = dtMe.Rows[i]["TenTaiKhoan"];
+                r["Khoa"] = dtMe.Rows[i]["Khoa"];
+
+                data_.Rows.Add(r);
+                for (int k = 0; k< dtCon.Rows.Count; k ++)
+                {
+                    DataRow rcon = data_.NewRow();
+                    rcon["ID_TaiKhoanKeToan"] = dtCon.Rows[i]["ID_TaiKhoanKeToan"];
+                    //rcon["NgungTheoDoi"] = dtCon.Rows[i]["NgungTheoDoi"];
+                    rcon["SoTaiKhoan"] = dtCon.Rows[i]["SoTaiKhoan"];
+                    rcon["TenTaiKhoan"] = dtCon.Rows[i]["TenTaiKhoan"];
+                    rcon["Khoa"] = dtCon.Rows[i]["Khoa"];
+                    data_.Rows.Add(rcon);
+
+                    for (int m = 0; m < dtChau.Rows.Count; m++)
+                    {
+                        DataRow rchau = data_.NewRow();
+                        rchau["ID_TaiKhoanKeToan"] = dtChau.Rows[i]["ID_TaiKhoanKeToan"];
+                        //rchau["NgungTheoDoi"] = dtChau.Rows[i]["NgungTheoDoi"];
+                        rchau["SoTaiKhoan"] = dtChau.Rows[i]["SoTaiKhoan"];
+                        rchau["TenTaiKhoan"] = dtChau.Rows[i]["TenTaiKhoan"];
+                        rchau["Khoa"] = dtChau.Rows[i]["Khoa"];
+                        data_.Rows.Add(rchau);
+                    }
+                }
+
+            }
+
+            gridControl1.DataSource = data_;
         }
+
+
+
         public frmQuanLyTaiKhoanKeToan()
         {
             InitializeComponent();
