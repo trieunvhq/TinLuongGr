@@ -169,10 +169,10 @@ namespace CtyTinLuong
             cls.Dispose();
             clsNguoi.Dispose();
 
-            //clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-            //DataTable dtvt = clsvt.SelectAll();
-            clsTr_MaHangToGD_DB_DK clsvt = new clsTr_MaHangToGD_DB_DK();
-            DataTable dtvt = clsvt.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, _id_bophan);
+            clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
+            DataTable dtvt = clsvt.SelectAll();
+            //clsTr_MaHangToGD_DB_DK clsvt = new clsTr_MaHangToGD_DB_DK();
+            //DataTable dtvt = clsvt.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, _id_bophan);
 
             gridMaVT.DataSource = dtvt;
             gridMaVT.ValueMember = "ID_VTHH";

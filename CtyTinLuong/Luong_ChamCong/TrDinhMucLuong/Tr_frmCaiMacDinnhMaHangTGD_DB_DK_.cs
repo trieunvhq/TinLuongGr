@@ -81,7 +81,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("id_bophan");
             dt2.Columns.Add("TenBoPhan");
             dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("MaVT");// tb VTHH
+            dt2.Columns.Add("MaVT");//  
             dt2.Columns.Add("TenVTHH");
             dt2.Columns.Add("DonViTinh");
             dt2.Columns.Add("DonGia", typeof(double));

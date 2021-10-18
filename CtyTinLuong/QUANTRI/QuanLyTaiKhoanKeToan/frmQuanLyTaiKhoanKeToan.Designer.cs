@@ -43,7 +43,7 @@
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
+            this.btThemMoiCon = new DevExpress.XtraEditors.SimpleButton();
             this.checkCon = new System.Windows.Forms.CheckBox();
             this.checkMe = new System.Windows.Forms.CheckBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -73,6 +73,10 @@
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LoaiTK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.btnThemMoiTKme = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -93,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // btRefresh
@@ -110,12 +116,16 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.btThemMoi);
+            this.layoutControl1.Controls.Add(this.btnThemMoiTKme);
+            this.layoutControl1.Controls.Add(this.btThemMoiCon);
             this.layoutControl1.Controls.Add(this.checkCon);
             this.layoutControl1.Controls.Add(this.checkMe);
             this.layoutControl1.Controls.Add(this.btRefresh);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3,
+            this.layoutControlItem2});
             this.layoutControl1.Location = new System.Drawing.Point(3, 16);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
@@ -135,23 +145,24 @@
             this.simpleButton1.Text = "Thoát";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // btThemMoi
+            // btThemMoiCon
             // 
-            this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
-            this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btThemMoi.Location = new System.Drawing.Point(697, 7);
-            this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(24, 22);
-            this.btThemMoi.StyleController = this.layoutControl1;
-            this.btThemMoi.TabIndex = 104;
-            this.btThemMoi.ToolTip = "Refesh";
-            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
+            this.btThemMoiCon.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.btThemMoiCon.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btThemMoiCon.Location = new System.Drawing.Point(571, 7);
+            this.btThemMoiCon.Name = "btThemMoiCon";
+            this.btThemMoiCon.Size = new System.Drawing.Size(150, 22);
+            this.btThemMoiCon.StyleController = this.layoutControl1;
+            this.btThemMoiCon.TabIndex = 104;
+            this.btThemMoiCon.Text = "Thêm mới tài khoản con";
+            this.btThemMoiCon.ToolTip = "Refesh";
+            this.btThemMoiCon.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // checkCon
             // 
             this.checkCon.Location = new System.Drawing.Point(140, 7);
             this.checkCon.Name = "checkCon";
-            this.checkCon.Size = new System.Drawing.Size(553, 20);
+            this.checkCon.Size = new System.Drawing.Size(437, 20);
             this.checkCon.TabIndex = 102;
             this.checkCon.Text = "Tài khoản con";
             this.checkCon.UseVisualStyleBackColor = true;
@@ -201,7 +212,8 @@
             this.clNgungTheoDoi,
             this.clSoTaiKhoan,
             this.clTenTaiKhoan,
-            this.clKhoa});
+            this.clKhoa,
+            this.LoaiTK});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "TenTaiKhoan", null, "(Tên Tài khoản: Count={0})")});
@@ -209,7 +221,10 @@
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -290,10 +305,8 @@
             // 
             // clSoTaiKhoan
             // 
-            this.clSoTaiKhoan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clSoTaiKhoan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clSoTaiKhoan.AppearanceCell.Options.UseFont = true;
-            this.clSoTaiKhoan.AppearanceCell.Options.UseTextOptions = true;
-            this.clSoTaiKhoan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoTaiKhoan.Caption = "Số TK";
             this.clSoTaiKhoan.FieldName = "SoTaiKhoan";
             this.clSoTaiKhoan.Name = "clSoTaiKhoan";
@@ -301,7 +314,7 @@
             this.clSoTaiKhoan.OptionsColumn.FixedWidth = true;
             this.clSoTaiKhoan.Visible = true;
             this.clSoTaiKhoan.VisibleIndex = 1;
-            this.clSoTaiKhoan.Width = 100;
+            this.clSoTaiKhoan.Width = 82;
             // 
             // clTenTaiKhoan
             // 
@@ -315,7 +328,7 @@
             this.clTenTaiKhoan.OptionsColumn.AllowEdit = false;
             this.clTenTaiKhoan.Visible = true;
             this.clTenTaiKhoan.VisibleIndex = 2;
-            this.clTenTaiKhoan.Width = 536;
+            this.clTenTaiKhoan.Width = 535;
             // 
             // repositoryItemMemoEdit3
             // 
@@ -354,12 +367,12 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem7,
+            this.emptySpaceItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlGroup1.Size = new System.Drawing.Size(759, 643);
@@ -388,7 +401,7 @@
             this.layoutControlItem3.Control = this.checkCon;
             this.layoutControlItem3.Location = new System.Drawing.Point(133, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(557, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(441, 26);
             this.layoutControlItem3.Text = "Tài khoản con";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -404,10 +417,10 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.btThemMoi;
-            this.layoutControlItem5.Location = new System.Drawing.Point(690, 0);
+            this.layoutControlItem5.Control = this.btThemMoiCon;
+            this.layoutControlItem5.Location = new System.Drawing.Point(564, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(28, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(154, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -458,6 +471,42 @@
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             // 
+            // LoaiTK
+            // 
+            this.LoaiTK.Caption = "Loại TK";
+            this.LoaiTK.FieldName = "LoaiTK";
+            this.LoaiTK.Name = "LoaiTK";
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(399, 26);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // btnThemMoiTKme
+            // 
+            this.btnThemMoiTKme.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.btnThemMoiTKme.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnThemMoiTKme.Location = new System.Drawing.Point(406, 7);
+            this.btnThemMoiTKme.Name = "btnThemMoiTKme";
+            this.btnThemMoiTKme.Size = new System.Drawing.Size(161, 22);
+            this.btnThemMoiTKme.StyleController = this.layoutControl1;
+            this.btnThemMoiTKme.TabIndex = 104;
+            this.btnThemMoiTKme.Text = "Thêm mới tài khoản mẹ";
+            this.btnThemMoiTKme.ToolTip = "Refesh";
+            this.btnThemMoiTKme.Click += new System.EventHandler(this.btnThemMoiTKme_Click);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.btnThemMoiTKme;
+            this.layoutControlItem7.Location = new System.Drawing.Point(399, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(165, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
             // frmQuanLyTaiKhoanKeToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,7 +518,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmQuanLyTaiKhoanKeToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuanLyTaiKhoanKeToan-->Quản Lý Tài Khoản Kế Toán";
@@ -494,6 +542,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,11 +578,15 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SimpleButton btThemMoi;
+        private DevExpress.XtraEditors.SimpleButton btThemMoiCon;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.Columns.GridColumn clKhoa;
+        private DevExpress.XtraGrid.Columns.GridColumn LoaiTK;
+        private DevExpress.XtraEditors.SimpleButton btnThemMoiTKme;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
     }
 }

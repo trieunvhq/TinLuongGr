@@ -46,13 +46,13 @@
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarDMGD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.navBarDMGD = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
@@ -206,6 +206,12 @@
             this.navBarItem13.Name = "navBarItem13";
             this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
             // 
+            // navBarDMGD
+            // 
+            this.navBarDMGD.Caption = "Định mức Gấp dán";
+            this.navBarDMGD.Name = "navBarDMGD";
+            this.navBarDMGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDMGD_LinkClicked);
+            // 
             // navBarItem4
             // 
             this.navBarItem4.Caption = "4. Học việc";
@@ -247,12 +253,6 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // navBarDMGD
-            // 
-            this.navBarDMGD.Caption = "Định mức Gấp dán";
-            this.navBarDMGD.Name = "navBarDMGD";
-            this.navBarDMGD.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDMGD_LinkClicked);
-            // 
             // KhoNPL_frmNPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,7 +266,7 @@
             this.MaximizeBox = false;
             this.Name = "KhoNPL_frmNPL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Kho Nguyên Phụ Liệu";
+            this.Text = "KhoNPL_frmNPL-->Kho Nguyên Phụ Liệu";
             this.Load += new System.EventHandler(this.KhoNPL_frmNPL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

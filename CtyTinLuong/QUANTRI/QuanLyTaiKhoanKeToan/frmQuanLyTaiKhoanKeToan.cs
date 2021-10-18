@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,20 +16,22 @@ namespace CtyTinLuong
 
         public static bool mbTheMoi;
         public static int miID_TaiKhoan;
+        DataTable _data;
 
         private void Load_DaTa(bool bMe_True_COn_False)
         {
-            DataTable data_ = new DataTable();
+            _data = new DataTable();
             DataTable dtMe = new DataTable();
             DataTable dtCon = new DataTable();
             DataTable dtChau = new DataTable();
 
 
-            data_.Columns.Add("ID_TaiKhoanKeToan", typeof(int));
-            data_.Columns.Add("NgungTheoDoi");
-            data_.Columns.Add("SoTaiKhoan");
-            data_.Columns.Add("TenTaiKhoan");
-            data_.Columns.Add("Khoa", typeof(bool));
+            _data.Columns.Add("ID_TaiKhoanKeToan", typeof(int));
+            _data.Columns.Add("NgungTheoDoi");
+            _data.Columns.Add("SoTaiKhoan");
+            _data.Columns.Add("TenTaiKhoan");
+            _data.Columns.Add("LoaiTK");
+            _data.Columns.Add("Khoa", typeof(bool));
 
 
             clsNganHang_tbHeThongTaiKhoanKeToanMe clsm = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
@@ -39,6 +42,58 @@ namespace CtyTinLuong
                 dtCon = cls.Tr_NganHang_SoTaiKhoanCon_S();
                 dtChau = cls.Tr_NganHang_SoTaiKhoanChau_S();
             }
+
+           
+
+            for (int i = 0; i < dtMe.Rows.Count; i++)
+            {
+                DataRow r = _data.NewRow();
+                int idme = Convert.ToInt32(dtMe.Rows[i]["ID_TaiKhoanKeToan"].ToString());
+                r["ID_TaiKhoanKeToan"] = dtMe.Rows[i]["ID_TaiKhoanKeToan"];
+                //r["NgungTheoDoi"] = dtMe.Rows[i]["NgungTheoDoi"];
+                r["SoTaiKhoan"] = dtMe.Rows[i]["SoTaiKhoan"];
+                r["TenTaiKhoan"] = dtMe.Rows[i]["TenTaiKhoan"];
+                r["Khoa"] = dtMe.Rows[i]["Khoa"];
+                r["LoaiTK"] = "LaMe";
+
+
+                _data.Rows.Add(r);
+                for (int k = 0; k< dtCon.Rows.Count; k ++)
+                {
+                    int idcon = Convert.ToInt32(dtCon.Rows[k]["ID_TaiKhoanKeToan"].ToString());
+
+                    if (idme == Convert.ToInt32(dtCon.Rows[k]["ID_TaiKhoanKeToanMe"].ToString()))
+                    {
+                        DataRow rcon = _data.NewRow();
+                        rcon["ID_TaiKhoanKeToan"] = dtCon.Rows[k]["ID_TaiKhoanKeToan"];
+                        //rcon["NgungTheoDoi"] = dtCon.Rows[k]["NgungTheoDoi"];
+                        rcon["SoTaiKhoan"] = dtCon.Rows[k]["SoTaiKhoan"];
+                        rcon["TenTaiKhoan"] = "    " + dtCon.Rows[k]["TenTaiKhoan"].ToString();
+                        rcon["Khoa"] = dtCon.Rows[k]["Khoa"];
+                        rcon["LoaiTK"] = "LaCon";
+                        _data.Rows.Add(rcon);
+                        dtCon.Rows.RemoveAt(k);
+
+                        for (int m = 0; m < dtChau.Rows.Count; m++)
+                        {
+                            if (idme == Convert.ToInt32(dtChau.Rows[m]["ID_TaiKhoanKeToanMe"].ToString()))
+                            {
+                                DataRow rchau = _data.NewRow();
+                                rchau["ID_TaiKhoanKeToan"] = dtChau.Rows[m]["ID_TaiKhoanKeToan"];
+                                //rchau["NgungTheoDoi"] = dtChau.Rows[m]["NgungTheoDoi"];
+                                rchau["SoTaiKhoan"] = dtChau.Rows[m]["SoTaiKhoan"];
+                                rchau["TenTaiKhoan"] = "        " + dtChau.Rows[m]["TenTaiKhoan"].ToString();
+                                rchau["Khoa"] = dtChau.Rows[m]["Khoa"];
+                                rchau["LoaiTK"] = "LaChau";
+                                _data.Rows.Add(rchau);
+                                dtChau.Rows.RemoveAt(m);
+                            }
+                        }
+                    }
+                }
+            }
+
+            gridControl1.DataSource = _data;
 
             //if (bMe_True_COn_False==true)
             //{
@@ -52,42 +107,6 @@ namespace CtyTinLuong
             //    dtCon = cls.SA();              
             //    gridControl1.DataSource = dtCon;
             //}
-
-            for (int i = 0; i < dtMe.Rows.Count; i++)
-            {
-                DataRow r = data_.NewRow();
-                r["ID_TaiKhoanKeToan"] = dtMe.Rows[i]["ID_TaiKhoanKeToan"];
-                //r["NgungTheoDoi"] = dtMe.Rows[i]["NgungTheoDoi"];
-                r["SoTaiKhoan"] = dtMe.Rows[i]["SoTaiKhoan"];
-                r["TenTaiKhoan"] = dtMe.Rows[i]["TenTaiKhoan"];
-                r["Khoa"] = dtMe.Rows[i]["Khoa"];
-
-                data_.Rows.Add(r);
-                for (int k = 0; k< dtCon.Rows.Count; k ++)
-                {
-                    DataRow rcon = data_.NewRow();
-                    rcon["ID_TaiKhoanKeToan"] = dtCon.Rows[i]["ID_TaiKhoanKeToan"];
-                    //rcon["NgungTheoDoi"] = dtCon.Rows[i]["NgungTheoDoi"];
-                    rcon["SoTaiKhoan"] = dtCon.Rows[i]["SoTaiKhoan"];
-                    rcon["TenTaiKhoan"] = dtCon.Rows[i]["TenTaiKhoan"];
-                    rcon["Khoa"] = dtCon.Rows[i]["Khoa"];
-                    data_.Rows.Add(rcon);
-
-                    for (int m = 0; m < dtChau.Rows.Count; m++)
-                    {
-                        DataRow rchau = data_.NewRow();
-                        rchau["ID_TaiKhoanKeToan"] = dtChau.Rows[i]["ID_TaiKhoanKeToan"];
-                        //rchau["NgungTheoDoi"] = dtChau.Rows[i]["NgungTheoDoi"];
-                        rchau["SoTaiKhoan"] = dtChau.Rows[i]["SoTaiKhoan"];
-                        rchau["TenTaiKhoan"] = dtChau.Rows[i]["TenTaiKhoan"];
-                        rchau["Khoa"] = dtChau.Rows[i]["Khoa"];
-                        data_.Rows.Add(rchau);
-                    }
-                }
-
-            }
-
-            gridControl1.DataSource = data_;
         }
 
 
@@ -156,7 +175,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    if (checkMe.Checked == true)
+                    if (gridView1.GetFocusedRowCellValue(LoaiTK).ToString() == "LaMe")//(checkMe.Checked == true)
                     {
                         clsNganHang_tbHeThongTaiKhoanKeToanMe cls1 = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
                         cls1.iID_TaiKhoanKeToanMe = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());
@@ -242,16 +261,89 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             mbTheMoi = true;
-            if (checkCon.Checked == true)
+            frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
+            ff.Show();
+            //if (checkCon.Checked == true)
+            //{
+            //    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
+            //    ff.Show();
+            //}
+            //else
+            //{
+            //    frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
+            //    ff.Show();
+            //}
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            //int index_ = e.RowHandle;
+            //string name_ = e.Column.FieldName;
+            //if (name_.Contains("LoaiTK"))
+            //{
+            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            //}
+            //else if (name_.Contains("TenVTHH"))
+            //{
+            //    if (gridView1.GetFocusedRowCellValue(name_) == null)
+            //    {
+            //        _data.Rows[index_][name_] = "";
+            //    }
+            //    else
+            //    {
+            //        _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
+            //    }
+            //}
+            //CongTong();
+            //if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
+        }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
             {
-                frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
-                ff.Show();
+                string loaiTK = View.GetRowCellValue(e.RowHandle, View.Columns["LoaiTK"]).ToString();
+                if (loaiTK == "LaMe")
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                    //e.Appearance.BackColor = Color.Bisque;
+                }
+                else if (loaiTK == "LaCon")
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold| System.Drawing.FontStyle.Italic);
+                    //e.Appearance.BackColor = Color.Bisque;
+                }
+                else
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+                }
             }
-            else
-            {
-                frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
-                ff.Show();
-            }
+
+            //GridView view = sender as GridView;
+            //if (e. == _data.Rows.Count - 1)
+            //{
+            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            //}
+        }
+
+        private void btnThemMoiTKme_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            mbTheMoi = true;
+            frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
+            ff.Show();
+            //if (checkCon.Checked == true)
+            //{
+            //    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
+            //    ff.Show();
+            //}
+            //else
+            //{
+            //    frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
+            //    ff.Show();
+            //}
             Cursor.Current = Cursors.Default;
         }
     }
