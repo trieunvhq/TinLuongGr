@@ -84,7 +84,9 @@ namespace CtyTinLuong.FormMain
         private void btnQuanTriDVT_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            frmQuanLyDonViTinh ff = new frmQuanLyDonViTinh();
+            //frmQuanLyDonViTinh ff = new frmQuanLyDonViTinh();
+            //ff.Show();
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
             ff.Show();
             Cursor.Current = Cursors.Default;
         }

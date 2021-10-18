@@ -1166,7 +1166,7 @@
             this.SanLuong.Name = "SanLuong";
             this.SanLuong.Visible = true;
             this.SanLuong.VisibleIndex = 3;
-            this.SanLuong.Width = 120;
+            this.SanLuong.Width = 125;
             // 
             // DonGia
             // 
@@ -1182,7 +1182,7 @@
             this.DonGia.OptionsColumn.AllowEdit = false;
             this.DonGia.Visible = true;
             this.DonGia.VisibleIndex = 4;
-            this.DonGia.Width = 110;
+            this.DonGia.Width = 107;
             // 
             // ThanhTien
             // 
@@ -1198,7 +1198,7 @@
             this.ThanhTien.OptionsColumn.AllowEdit = false;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 113;
+            this.ThanhTien.Width = 116;
             // 
             // ID_VTHH
             // 
@@ -1406,7 +1406,7 @@
             this.Xoa.Name = "Xoa";
             this.Xoa.Visible = true;
             this.Xoa.VisibleIndex = 6;
-            this.Xoa.Width = 46;
+            this.Xoa.Width = 42;
             // 
             // btnXoaGridv1
             // 

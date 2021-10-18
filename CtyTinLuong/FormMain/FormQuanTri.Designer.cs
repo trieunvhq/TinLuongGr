@@ -136,7 +136,7 @@
             this.btnQuanTriDVT.Name = "btnQuanTriDVT";
             this.btnQuanTriDVT.Size = new System.Drawing.Size(210, 145);
             this.btnQuanTriDVT.TabIndex = 0;
-            this.btnQuanTriDVT.Text = "Đơn vị tính";
+            this.btnQuanTriDVT.Text = "Mã hàng tổ gấp dán, đóng bao, đóng kiện";
             this.btnQuanTriDVT.UseVisualStyleBackColor = false;
             this.btnQuanTriDVT.Click += new System.EventHandler(this.btnQuanTriDVT_Click);
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.btnQuanTriNhanSu);
             this.Controls.Add(this.btnQuanTriTaiKhoan);
             this.Name = "FormQuanTri";
-            this.Text = this.Name+"-->        QUẢN TRỊ";
+            this.Text = "FormQuanTri-->        QUẢN TRỊ";
             this.Load += new System.EventHandler(this.FormQuanTri_Load);
             this.ResumeLayout(false);
 
