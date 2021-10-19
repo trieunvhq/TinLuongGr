@@ -120,7 +120,7 @@ namespace CtyTinLuong
                 DateTime dateStart = new DateTime(_nam, _thang, 1);
                 DateTime dateEnd = new DateTime(_nam, _thang, ngaycuathang_);
 
-                _data = clsThin_.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd, 0);
+                _data = clsThin_.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd, 0, _TenKhachHang);
                 ds_id_congnhan = new List<int>();
 
                 gridThin.EditValueChanged += (o, e) =>
