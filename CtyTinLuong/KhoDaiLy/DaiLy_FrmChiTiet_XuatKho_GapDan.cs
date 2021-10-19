@@ -621,7 +621,11 @@ namespace CtyTinLuong
 
         private void gridView3_RowClick(object sender, RowClickEventArgs e)
         {
-            if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
+            //if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
+            if (gridView3.GetFocusedRowCellValue(clID_VTHH2) == null
+                || gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() == "")
+                return;
+            else
             {
                 int iiIDnhapKhp = Convert.ToInt32(gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString());
                 _id_vthh = iiIDnhapKhp;
