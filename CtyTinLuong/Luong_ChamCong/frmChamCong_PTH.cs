@@ -288,6 +288,18 @@ namespace CtyTinLuong
                 //
 
                 _dt_DinhMuc = clsThin_.T_LoaiCong_SA();
+
+                for (int i = _dt_DinhMuc.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataRow dr = _dt_DinhMuc.Rows[i];
+                    if (dr["Ten"].ToString().ToLower().Contains("phiên dịch")
+                        || dr["Ten"].ToString().ToLower().Contains("công thiếu tháng trước")
+                        || dr["Ten"].ToString().ToLower().Contains("công 7 giờ")
+                        || dr["Ten"].ToString().ToLower().Contains("công phụ máy"))
+                        dr.Delete();
+                }
+                _dt_DinhMuc.AcceptChanges();
+
                 cbLoaiCong.DataSource = _dt_DinhMuc;
                 cbLoaiCong.DisplayMember = "Ten";
                 cbLoaiCong.ValueMember = "ID_LoaiCong";

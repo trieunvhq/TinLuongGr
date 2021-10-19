@@ -80,13 +80,13 @@ namespace CtyTinLuong
             }
 
 
-            using (clsThin clsThin_ = new clsThin())
-            {
-                _dt_DinhMuc = clsThin_.T_NhanSu_SF("0");    
-                cbNhanSu.DataSource = _dt_DinhMuc;
-                cbNhanSu.DisplayMember = "TenNhanVien";
-                cbNhanSu.ValueMember = "ID_NhanSu"; 
-            }
+            //using (clsThin clsThin_ = new clsThin())
+            //{
+            //    _dt_DinhMuc = clsThin_.T_NhanSu_SF("0");    
+            //    cbNhanSu.DataSource = _dt_DinhMuc;
+            //    cbNhanSu.DisplayMember = "TenNhanVien";
+            //    cbNhanSu.ValueMember = "ID_NhanSu"; 
+            //}
 
             using (clsTr_ChamCongPhienDich clsThin_ = new clsTr_ChamCongPhienDich())
             {

@@ -39,7 +39,8 @@ namespace CtyTinLuong
             _id_bophan = id_bophan;
             InitializeComponent();
 
-            ColSanLuong.Caption = "NGÀY\nCÔNG";
+            //ColSanLuong.Caption = "NGÀY\nCÔNG";
+            ColSanLuong.Caption = "CÔNG\n/SL";
             ColCongBaoHiem.Caption = "PHỤ CẤP\nBẢO HIỂM";
             ColLuongTrachNhiem.Caption = "L.TRÁCH\nNHIỆM";
             ColTongTien.Caption = "TỔNG\nLƯƠNG";

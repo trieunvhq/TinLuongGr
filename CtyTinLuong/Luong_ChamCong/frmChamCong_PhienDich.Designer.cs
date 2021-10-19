@@ -309,6 +309,7 @@ namespace CtyTinLuong
             this.TenKhachHang.Caption = "KHÁCH HÀNG";
             this.TenKhachHang.FieldName = "TenKhachHang";
             this.TenKhachHang.Name = "TenKhachHang";
+            this.TenKhachHang.OptionsColumn.AllowEdit = false;
             this.TenKhachHang.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.TenKhachHang.Visible = true;
             this.TenKhachHang.VisibleIndex = 2;

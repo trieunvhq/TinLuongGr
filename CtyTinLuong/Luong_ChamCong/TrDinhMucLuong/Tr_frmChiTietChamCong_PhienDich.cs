@@ -94,6 +94,69 @@ namespace CtyTinLuong
                     }
                     _frm.LoadData(false);
 
+                    //lưu vào bảng chấm công để tính lương:
+                    int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
+                    if (id_bophan_ == 0) return;
+
+                    int ngaycuathang_ = (((new DateTime(frmChamCong_PhienDich._nam, frmChamCong_PhienDich._thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+                    DateTime dateStart = new DateTime(frmChamCong_PhienDich._nam, frmChamCong_PhienDich._thang, 1);
+                    DateTime dateEnd = new DateTime(frmChamCong_PhienDich._nam, frmChamCong_PhienDich._thang, ngaycuathang_);
+
+                    DataTable dt = cls.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd, Convert.ToInt32(searchLookMaDML.EditValue), "");
+
+                    try
+                    {
+                        using (clsThin clsThin_ = new clsThin())
+                        {
+                            clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                                Convert.ToInt32(searchLookMaDML.EditValue),
+                                frmChamCong_PhienDich._thang,
+                                frmChamCong_PhienDich._nam,
+                                0,
+                                0,
+                                dt.Rows.Count,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0, true, false, id_bophan_,
+                                0,
+                                1017);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không thể đồng bộ dữ liệu. Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+
                     if (LuuVaDong) this.Close();
                     else
                     {
@@ -154,7 +217,8 @@ namespace CtyTinLuong
             _frm = frm;
             btLUU.Enabled = true;
 
-            //radioXangTheoThang.Checked = true;
+            int ngaycuathang_ = (((new DateTime(frmChamCong_PhienDich._nam, frmChamCong_PhienDich._thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+            txtNgay.Maximum = ngaycuathang_;
         }
 
         private void Tr_frmChiTietChamCong_PhienDich_Load(object sender, EventArgs e)
@@ -304,6 +368,25 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+
+                }
+            }
+            return _id_bophan;
         }
     }
 }
