@@ -517,6 +517,11 @@ namespace CtyTinLuong
             }
         }
 
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
            

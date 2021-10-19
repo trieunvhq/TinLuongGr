@@ -928,6 +928,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(570, 20);
             this.txtHoTen.TabIndex = 17;
+            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // layoutControlGroup1
