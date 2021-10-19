@@ -130,7 +130,7 @@ namespace CtyTinLuong
         {
             try
             {
-                if (xxtungay.Year < 2000 || xxdenngay.Year < 2000)
+                if (xxtungay.Year < 2000 || xxdenngay.Year < 2000 || sodong<=0)
                 {
                     return;
                 }
@@ -1407,7 +1407,7 @@ namespace CtyTinLuong
             }
             catch (Exception ea)
             {
-               MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -2202,11 +2202,13 @@ namespace CtyTinLuong
         {
             try
             {
-                DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
-                iID_VTHH_Vao_IN = CheckString.ConvertTo_Int_My(row["ID_VTHH"].ToString());
-                sTenVTHH_vao_IN = row["TenVTHH"].ToString();
-                sDonViTinh_vao_IN = row["DonViTinh"].ToString();
-
+                if((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()!=null)
+                {
+                    DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+                    iID_VTHH_Vao_IN = CheckString.ConvertTo_Int_My(row["ID_VTHH"].ToString());
+                    sTenVTHH_vao_IN = row["TenVTHH"].ToString();
+                    sDonViTinh_vao_IN = row["DonViTinh"].ToString();
+                } 
             }
             catch (Exception ea)
             {
