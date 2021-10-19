@@ -1,7 +1,7 @@
 ﻿
 namespace CtyTinLuong
 {
-    partial class frmChamCong_PTH
+    partial class frmChamCong_PhienDich
     {
         /// <summary>
         /// Required designer variable.
@@ -97,8 +97,8 @@ namespace CtyTinLuong
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGuiDuLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -113,16 +113,12 @@ namespace CtyTinLuong
             this.btnThemNhanVien = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.cbLoaiCong = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
-            this.radioCongTang = new System.Windows.Forms.RadioButton();
-            this.radioMotLoaiCong = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -153,7 +149,7 @@ namespace CtyTinLuong
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 22);
+            this.label3.Location = new System.Drawing.Point(67, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -163,7 +159,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(163, 23);
+            this.label4.Location = new System.Drawing.Point(223, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -292,8 +288,8 @@ namespace CtyTinLuong
             this.Ngay31,
             this.clGuiDuLieu,
             this.Tong,
-            this.ID_ChiTietChamCong_ToGapDan,
             this.Xoa,
+            this.ID_ChiTietChamCong_ToGapDan,
             this.MaNhanVien});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
@@ -314,7 +310,7 @@ namespace CtyTinLuong
             // 
             // clTenNhanVien
             // 
-            this.clTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTenNhanVien.AppearanceCell.Options.UseFont = true;
             this.clTenNhanVien.Caption = "HỌ TÊN";
             this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit3;
@@ -335,7 +331,6 @@ namespace CtyTinLuong
             this.MaDinhMucLuongCongNhat.FieldName = "MaDinhMucLuongCongNhat";
             this.MaDinhMucLuongCongNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.MaDinhMucLuongCongNhat.Name = "MaDinhMucLuongCongNhat";
-            this.MaDinhMucLuongCongNhat.OptionsColumn.AllowEdit = false;
             this.MaDinhMucLuongCongNhat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.MaDinhMucLuongCongNhat.Width = 71;
             // 
@@ -347,7 +342,6 @@ namespace CtyTinLuong
             this.Cong.FieldName = "Cong";
             this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Cong.Name = "Cong";
-            this.Cong.OptionsColumn.AllowEdit = false;
             this.Cong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Cong.Visible = true;
             this.Cong.VisibleIndex = 1;
@@ -1237,13 +1231,6 @@ namespace CtyTinLuong
             this.Tong.VisibleIndex = 34;
             this.Tong.Width = 45;
             // 
-            // ID_ChiTietChamCong_ToGapDan
-            // 
-            this.ID_ChiTietChamCong_ToGapDan.Caption = "ID_ChiTietChamCong_ToGapDan";
-            this.ID_ChiTietChamCong_ToGapDan.FieldName = "ID_ChiTietChamCong_ToGapDan";
-            this.ID_ChiTietChamCong_ToGapDan.Name = "ID_ChiTietChamCong_ToGapDan";
-            this.ID_ChiTietChamCong_ToGapDan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            // 
             // Xoa
             // 
             this.Xoa.Caption = "XÓA";
@@ -1254,6 +1241,12 @@ namespace CtyTinLuong
             this.Xoa.Visible = true;
             this.Xoa.VisibleIndex = 33;
             this.Xoa.Width = 35;
+            // 
+            // ID_ChiTietChamCong_ToGapDan
+            // 
+            this.ID_ChiTietChamCong_ToGapDan.Caption = "[ID_ChiTietChamCong_ToGapDan]";
+            this.ID_ChiTietChamCong_ToGapDan.FieldName = "ID_ChiTietChamCong_ToGapDan";
+            this.ID_ChiTietChamCong_ToGapDan.Name = "ID_ChiTietChamCong_ToGapDan";
             // 
             // MaNhanVien
             // 
@@ -1354,16 +1347,16 @@ namespace CtyTinLuong
             // 
             this.cbNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNhanSu.FormattingEnabled = true;
-            this.cbNhanSu.Location = new System.Drawing.Point(600, 33);
+            this.cbNhanSu.Location = new System.Drawing.Point(511, 22);
             this.cbNhanSu.Name = "cbNhanSu";
-            this.cbNhanSu.Size = new System.Drawing.Size(175, 21);
+            this.cbNhanSu.Size = new System.Drawing.Size(204, 21);
             this.cbNhanSu.TabIndex = 138;
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(783, 7);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(730, 21);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
-            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 48);
+            this.btnThemNhanVien.Size = new System.Drawing.Size(112, 23);
             this.btnThemNhanVien.TabIndex = 137;
             this.btnThemNhanVien.Text = "Thêm nhân viên";
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
@@ -1373,11 +1366,11 @@ namespace CtyTinLuong
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(497, 36);
+            this.label7.Location = new System.Drawing.Point(406, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.Size = new System.Drawing.Size(102, 13);
             this.label7.TabIndex = 136;
-            this.label7.Text = "Tên nhân viên:";
+            this.label7.Text = "Thêm nhân viên:";
             // 
             // linkLabel2
             // 
@@ -1390,32 +1383,13 @@ namespace CtyTinLuong
             this.linkLabel2.Text = "Cài định mức  toàn danh sách";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // cbLoaiCong
-            // 
-            this.cbLoaiCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLoaiCong.FormattingEnabled = true;
-            this.cbLoaiCong.Location = new System.Drawing.Point(600, 7);
-            this.cbLoaiCong.Name = "cbLoaiCong";
-            this.cbLoaiCong.Size = new System.Drawing.Size(175, 21);
-            this.cbLoaiCong.TabIndex = 149;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(500, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 148;
-            this.label1.Text = "Chọn loại công:";
-            // 
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btnPrint.Location = new System.Drawing.Point(742, 595);
+            this.btnPrint.Location = new System.Drawing.Point(743, 595);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(82, 25);
             this.btnPrint.TabIndex = 161;
@@ -1430,7 +1404,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu.Appearance.Options.UseFont = true;
             this.btGuiDuLieu.Appearance.Options.UseForeColor = true;
             this.btGuiDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btGuiDuLieu.Location = new System.Drawing.Point(657, 595);
+            this.btGuiDuLieu.Location = new System.Drawing.Point(658, 595);
             this.btGuiDuLieu.Name = "btGuiDuLieu";
             this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
             this.btGuiDuLieu.TabIndex = 160;
@@ -1444,7 +1418,7 @@ namespace CtyTinLuong
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(826, 595);
+            this.btThoat.Location = new System.Drawing.Point(827, 595);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(82, 25);
             this.btThoat.TabIndex = 159;
@@ -1456,7 +1430,7 @@ namespace CtyTinLuong
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(271, 602);
+            this.label5.Location = new System.Drawing.Point(275, 603);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(262, 13);
             this.label5.TabIndex = 162;
@@ -1464,7 +1438,7 @@ namespace CtyTinLuong
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(204, 20);
+            this.txtNam.Location = new System.Drawing.Point(263, 23);
             this.txtNam.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -1488,7 +1462,7 @@ namespace CtyTinLuong
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(71, 20);
+            this.txtThang.Location = new System.Drawing.Point(119, 23);
             this.txtThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -1510,43 +1484,17 @@ namespace CtyTinLuong
             0});
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
-            // radioCongTang
-            // 
-            this.radioCongTang.AutoSize = true;
-            this.radioCongTang.Location = new System.Drawing.Point(329, 9);
-            this.radioCongTang.Name = "radioCongTang";
-            this.radioCongTang.Size = new System.Drawing.Size(126, 17);
-            this.radioCongTang.TabIndex = 165;
-            this.radioCongTang.TabStop = true;
-            this.radioCongTang.Text = "Công nhật + Tăng ca";
-            this.radioCongTang.UseVisualStyleBackColor = true;
-            // 
-            // radioMotLoaiCong
-            // 
-            this.radioMotLoaiCong.AutoSize = true;
-            this.radioMotLoaiCong.Location = new System.Drawing.Point(329, 35);
-            this.radioMotLoaiCong.Name = "radioMotLoaiCong";
-            this.radioMotLoaiCong.Size = new System.Drawing.Size(89, 17);
-            this.radioMotLoaiCong.TabIndex = 166;
-            this.radioMotLoaiCong.TabStop = true;
-            this.radioMotLoaiCong.Text = "Một loại công";
-            this.radioMotLoaiCong.UseVisualStyleBackColor = true;
-            // 
-            // frmChamCong_PTH
+            // frmChamCong_PhienDich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.radioMotLoaiCong);
-            this.Controls.Add(this.radioCongTang);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.cbLoaiCong);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.cbNhanSu);
             this.Controls.Add(this.btnThemNhanVien);
@@ -1554,9 +1502,9 @@ namespace CtyTinLuong
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmChamCong_PTH";
+            this.Name = "frmChamCong_PhienDich";
             this.Size = new System.Drawing.Size(913, 635);
-            this.Load += new System.EventHandler(this.frmChamCong_PTH_Load);
+            this.Load += new System.EventHandler(this.frmChamCong_PhienDich_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
@@ -1649,19 +1597,15 @@ namespace CtyTinLuong
         private System.Windows.Forms.Button btnThemNhanVien;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.Columns.GridColumn Cong;
-        private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietChamCong_ToGapDan;
+        private DevExpress.XtraGrid.Columns.GridColumn Xoa;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.ComboBox cbLoaiCong;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraGrid.Columns.GridColumn Xoa;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietChamCong_ToGapDan;
         private System.Windows.Forms.NumericUpDown txtNam;
         private System.Windows.Forms.NumericUpDown txtThang;
         private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
-        private System.Windows.Forms.RadioButton radioCongTang;
-        private System.Windows.Forms.RadioButton radioMotLoaiCong;
     }
 }
