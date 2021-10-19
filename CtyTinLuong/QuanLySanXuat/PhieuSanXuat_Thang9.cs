@@ -125,7 +125,7 @@ namespace CtyTinLuong
             }
         }
 
-
+        DataTable _data;
         public void LoadData(int sotrang, int sodong, bool isLoadLanDau, DateTime xxtungay, DateTime xxdenngay)
         {
             try
@@ -139,16 +139,16 @@ namespace CtyTinLuong
                 isload = true;
                 _SoTrang = sotrang;
                 _SoDong = sodong;
-                DataTable dt2 = new DataTable();
+                _data = new DataTable();
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
                 if (_Loaimay == 1)
-                    dt2 = cls.H_Load_Phieu_IN_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+                    _data = cls.H_Load_Phieu_IN_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
                 else if (_Loaimay == 2)
-                    dt2 = cls.H_Load_Phieu_CAT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+                    _data = cls.H_Load_Phieu_CAT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
                 else if (_Loaimay == 3)
-                    dt2 = cls.H_Load_Phieu_DOT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+                    _data = cls.H_Load_Phieu_DOT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
 
-                gridControl1.DataSource = dt2;
+                gridControl1.DataSource = _data;
 
                 isload = false;
             }
@@ -985,25 +985,45 @@ namespace CtyTinLuong
                     dddsanluongtong_IN_copy = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_IN).ToString());
                     dddphepham_IN_copy = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clPhePham_IN).ToString());
 
-                    bandedGridView1.AddNewRow();
+                   //
+                   // bandedGridView1.AddNewRow();
+                    DataRow row = _data.NewRow();
+                    row["MaPhieu"] = sssmaphieu_copy;
+                    row["ID_VTHH_Vao_IN"] = iID_VTHH_Vao_IN;
+                    row["TenVTHH_Vao_IN"] = sTenVTHH_vao_IN;
+                    row["DonViTinh_Vao_IN"] = sDonViTinh_vao_IN;
+                    row["SoLuong_Vao_IN"] = dddsoluongvao_IN_copy;
+                    row["NgaySanXuat_IN"] = ngaysx_IN_copy;
+                    row["CaSanXuat_IN"] = ssscasx_IN_copy;
+                    row["ID_May_IN"] = iimaysx_IN_copy;
+                    row["ID_CaTruong_IN"] = iiiID_catruong_IN_copy;
+                    row["ID_VTHH_Ra_IN"] = iID_VTHH_Ra_IN;
+                    row["TenVTHH_Ra_IN"] = sTenVTHH_ra_IN;
+                    row["DonViTinh_Ra_IN"] = sDonViTinh_ra_IN;
 
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clMaPhieu, sssmaphieu_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_VTHH_Vao_IN, iID_VTHH_Vao_IN);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clTenVTHH_Vao_IN, sTenVTHH_vao_IN);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDonViTinh_Vao_IN, sDonViTinh_vao_IN);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSoLuong_Vao_IN, dddsoluongvao_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clNgaySanXuat_IN, ngaysx_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clCaSanXuat_IN, ssscasx_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_May_IN, iimaysx_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_CaTruong_IN, iiiID_catruong_IN_copy);
+                    row["ID_CongNhan_IN"] = iiiidID_CongNhan_IN_copy;
+                    row["ID_DinhMuc_Luong_IN"] = iiiD_dmluong_IN_copy;
+                    row["SanLuong_Tong_IN"] = dddsanluongtong_IN_copy;
+                    row["PhePham_IN"] = dddphepham_IN_copy;
+                    _data.Rows.InsertAt(row, 0);
 
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_VTHH_Ra_IN, iID_VTHH_Ra_IN);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clTenVTHH_Ra_IN, sTenVTHH_ra_IN);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDonViTinh_Ra_IN, sDonViTinh_ra_IN);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_CongNhan_IN, iiiidID_CongNhan_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_DinhMuc_Luong_IN, iiiD_dmluong_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSanLuong_Tong_IN, dddsanluongtong_IN_copy);
-                    bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clPhePham_IN, dddphepham_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clMaPhieu, sssmaphieu_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_VTHH_Vao_IN, iID_VTHH_Vao_IN);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clTenVTHH_Vao_IN, sTenVTHH_vao_IN);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDonViTinh_Vao_IN, sDonViTinh_vao_IN);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSoLuong_Vao_IN, dddsoluongvao_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clNgaySanXuat_IN, ngaysx_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clCaSanXuat_IN, ssscasx_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_May_IN, iimaysx_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_CaTruong_IN, iiiID_catruong_IN_copy);
+
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_VTHH_Ra_IN, iID_VTHH_Ra_IN);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clTenVTHH_Ra_IN, sTenVTHH_ra_IN);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDonViTinh_Ra_IN, sDonViTinh_ra_IN);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_CongNhan_IN, iiiidID_CongNhan_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clID_DinhMuc_Luong_IN, iiiD_dmluong_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSanLuong_Tong_IN, dddsanluongtong_IN_copy);
+                    //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clPhePham_IN, dddphepham_IN_copy);
 
                 }
                 else if (_Loaimay == 2)
