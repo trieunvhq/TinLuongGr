@@ -37,31 +37,31 @@
             this.txtSoCont = new System.Windows.Forms.TextBox();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtSoToKhai = new System.Windows.Forms.TextBox();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.searchLookMaDML = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
-            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cbKhachHang = new System.Windows.Forms.ComboBox();
             this.txtNgay = new System.Windows.Forms.NumericUpDown();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbKhachHang = new System.Windows.Forms.ComboBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btLUU
@@ -118,7 +118,7 @@
             this.txtSoCont.Name = "txtSoCont";
             this.txtSoCont.Size = new System.Drawing.Size(599, 20);
             this.txtSoCont.TabIndex = 25;
-            this.txtSoCont.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapXang_KeyPress);
+            this.txtSoCont.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoCont_KeyPress);
             // 
             // layoutControlItem7
             // 
@@ -136,24 +136,34 @@
             this.txtSoToKhai.Name = "txtSoToKhai";
             this.txtSoToKhai.Size = new System.Drawing.Size(599, 20);
             this.txtSoToKhai.TabIndex = 30;
-            this.txtSoToKhai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongCoDinh_KeyPress);
+            this.txtSoToKhai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoToKhai_KeyPress);
             // 
-            // layoutControl1
+            // layoutControlItem26
             // 
-            this.layoutControl1.Controls.Add(this.cbKhachHang);
-            this.layoutControl1.Controls.Add(this.txtNgay);
-            this.layoutControl1.Controls.Add(this.searchLookMaDML);
-            this.layoutControl1.Controls.Add(this.txtTenNhanVien);
-            this.layoutControl1.Controls.Add(this.txtSoToKhai);
-            this.layoutControl1.Controls.Add(this.txtSoCont);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(3, 16);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(777, 87, 250, 350);
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(674, 133);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
+            this.layoutControlItem26.Control = this.txtTenNhanVien;
+            this.layoutControlItem26.Location = new System.Drawing.Point(336, 0);
+            this.layoutControlItem26.Name = "layoutControlItem26";
+            this.layoutControlItem26.Size = new System.Drawing.Size(338, 24);
+            this.layoutControlItem26.Text = "Tên nhân viên";
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(68, 13);
+            // 
+            // txtTenNhanVien
+            // 
+            this.txtTenNhanVien.Location = new System.Drawing.Point(409, 2);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.ReadOnly = true;
+            this.txtTenNhanVien.Size = new System.Drawing.Size(263, 20);
+            this.txtTenNhanVien.TabIndex = 37;
+            this.txtTenNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhanVien_KeyPress);
+            // 
+            // layoutControlItem27
+            // 
+            this.layoutControlItem27.Control = this.searchLookMaDML;
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem27.Name = "layoutControlItem27";
+            this.layoutControlItem27.Size = new System.Drawing.Size(336, 24);
+            this.layoutControlItem27.Text = "Mã công nhân";
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(68, 13);
             // 
             // searchLookMaDML
             // 
@@ -179,51 +189,31 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // txtTenNhanVien
+            // layoutControl1
             // 
-            this.txtTenNhanVien.Location = new System.Drawing.Point(409, 2);
-            this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.ReadOnly = true;
-            this.txtTenNhanVien.Size = new System.Drawing.Size(263, 20);
-            this.txtTenNhanVien.TabIndex = 37;
-            this.txtTenNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhanVien_KeyPress);
+            this.layoutControl1.Controls.Add(this.cbKhachHang);
+            this.layoutControl1.Controls.Add(this.txtNgay);
+            this.layoutControl1.Controls.Add(this.searchLookMaDML);
+            this.layoutControl1.Controls.Add(this.txtTenNhanVien);
+            this.layoutControl1.Controls.Add(this.txtSoToKhai);
+            this.layoutControl1.Controls.Add(this.txtSoCont);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(3, 16);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(777, 87, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(674, 133);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // layoutControlItem26
+            // cbKhachHang
             // 
-            this.layoutControlItem26.Control = this.txtTenNhanVien;
-            this.layoutControlItem26.Location = new System.Drawing.Point(336, 0);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(338, 24);
-            this.layoutControlItem26.Text = "Tên nhân viên";
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(68, 13);
-            // 
-            // layoutControlItem27
-            // 
-            this.layoutControlItem27.Control = this.searchLookMaDML;
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(336, 24);
-            this.layoutControlItem27.Text = "Mã công nhân";
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(68, 13);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.layoutControl1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 33);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(680, 152);
-            this.groupBox1.TabIndex = 68;
-            this.groupBox1.TabStop = false;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Copy;
-            this.simpleButton1.Location = new System.Drawing.Point(379, 211);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(116, 23);
-            this.simpleButton1.TabIndex = 70;
-            this.simpleButton1.Text = "Copy tạo mới";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.cbKhachHang.FormattingEnabled = true;
+            this.cbKhachHang.Location = new System.Drawing.Point(73, 50);
+            this.cbKhachHang.Name = "cbKhachHang";
+            this.cbKhachHang.Size = new System.Drawing.Size(599, 21);
+            this.cbKhachHang.TabIndex = 40;
+            this.cbKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbKhachHang_KeyPress);
             // 
             // txtNgay
             // 
@@ -246,6 +236,7 @@
             0,
             0,
             0});
+            this.txtNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNgay_KeyPress);
             // 
             // layoutControlItem1
             // 
@@ -256,14 +247,6 @@
             this.layoutControlItem1.Text = "Ngày";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(68, 13);
             // 
-            // cbKhachHang
-            // 
-            this.cbKhachHang.FormattingEnabled = true;
-            this.cbKhachHang.Location = new System.Drawing.Point(73, 50);
-            this.cbKhachHang.Name = "cbKhachHang";
-            this.cbKhachHang.Size = new System.Drawing.Size(599, 21);
-            this.cbKhachHang.TabIndex = 40;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cbKhachHang;
@@ -272,6 +255,25 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(674, 25);
             this.layoutControlItem2.Text = "Khách hàng";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(68, 13);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.layoutControl1);
+            this.groupBox1.Location = new System.Drawing.Point(16, 33);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(680, 152);
+            this.groupBox1.TabIndex = 68;
+            this.groupBox1.TabStop = false;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Copy;
+            this.simpleButton1.Location = new System.Drawing.Point(379, 211);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(116, 23);
+            this.simpleButton1.TabIndex = 70;
+            this.simpleButton1.Text = "Copy tạo mới";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // Tr_frmChiTietChamCong_PhienDich
             // 
@@ -291,16 +293,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookMaDML.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
