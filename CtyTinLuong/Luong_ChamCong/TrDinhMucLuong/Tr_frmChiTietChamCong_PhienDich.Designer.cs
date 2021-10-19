@@ -118,7 +118,6 @@
             this.txtSoCont.Name = "txtSoCont";
             this.txtSoCont.Size = new System.Drawing.Size(599, 20);
             this.txtSoCont.TabIndex = 25;
-            this.txtSoCont.TextChanged += new System.EventHandler(this.txtPhuCapXang_TextChanged);
             this.txtSoCont.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuCapXang_KeyPress);
             // 
             // layoutControlItem7
@@ -137,7 +136,6 @@
             this.txtSoToKhai.Name = "txtSoToKhai";
             this.txtSoToKhai.Size = new System.Drawing.Size(599, 20);
             this.txtSoToKhai.TabIndex = 30;
-            this.txtSoToKhai.TextChanged += new System.EventHandler(this.txtLuongCoDinh_TextChanged);
             this.txtSoToKhai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongCoDinh_KeyPress);
             // 
             // layoutControl1

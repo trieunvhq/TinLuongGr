@@ -26,6 +26,7 @@ namespace CtyTinLuong
         public static bool _mb_TheMoi;
         public static int _iID_ChamCongPD = 0;
         public static int _iID_CongNhan = 0;
+        public static int _iNgay = 0;
         public static string _sTenCongNhan = "";
         public static string _sTenKhachHang = "";
         public static string _sSoToKhai = "";
@@ -46,8 +47,6 @@ namespace CtyTinLuong
         {
 
             _frmQLLCC = frmQLLCC;
-            _ID_DinhMucLuong_CongNhat = 0;
-            _MaDinhMucLuongCongNhat = "";
             _id_bophan = id_bophan;
             InitializeComponent();
 
@@ -195,8 +194,6 @@ namespace CtyTinLuong
                     {
                         //if (_ID_DinhMucLuong_CongNhat == 0)
                         //{
-                        _ID_DinhMucLuong_CongNhat = Convert.ToInt32(dt_.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString());
-                        _MaDinhMucLuongCongNhat = dt_.Rows[i]["MaDinhMucLuongCongNhat"].ToString();
                         //}
                         //
                         int id_nhansu_ = Convert.ToInt32(dt_.Rows[i]["ID_CongNhan"].ToString());
@@ -237,8 +234,6 @@ namespace CtyTinLuong
 
                             ++stt_;
                             _ravi["STT"] = (stt_);
-                            _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                            _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
                             _data.Rows.Add(_ravi);
                         }
                     }
@@ -570,8 +565,6 @@ namespace CtyTinLuong
 
                 _ravi["Cong"] = "Công nhật";
                 _ravi["ID_LoaiCong"] = 1;
-                _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
 
                 _data.Rows.Add(_ravi);
 
@@ -599,8 +592,6 @@ namespace CtyTinLuong
 
                 _ravi["Cong"] = "Tăng ca";
                 _ravi["ID_LoaiCong"] = 2;
-                _ravi["ID_DinhMucLuong_CongNhat"] = _ID_DinhMucLuong_CongNhat;
-                _ravi["MaDinhMucLuongCongNhat"] = _MaDinhMucLuongCongNhat;
 
                 _data.Rows.Add(_ravi);
                 ds_id_congnhan.Add(id_nhansu_);
