@@ -7,6 +7,39 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
+        public DataTable Huu_TinhTongSanLuong_lable_t9(int _xid_congnhan, int _xid_vthhra)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Huu_TinhTongSanLuong_lable_t9]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("Huu_TinhTongSanLuong_lable_t9");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_ID_CongNhan_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _xid_congnhan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_id_vthh_ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _xid_vthhra));
+               
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Huu_TinhTongSanLuong_lable_t9", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable H_Load_Phieu_IN_Thang_10(int sotrang, int sodong, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
