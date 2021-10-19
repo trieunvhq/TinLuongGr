@@ -130,6 +130,11 @@ namespace CtyTinLuong
         {
             try
             {
+                if (xxtungay.Year < 2000 || xxdenngay.Year < 2000)
+                {
+                    return;
+                }
+
                 gridControl1.DataSource = null;
                 isload = true;
                 _SoTrang = sotrang;
@@ -178,38 +183,41 @@ namespace CtyTinLuong
         {
             try
             {
-                btnTrangSau.Visible = true;
-                btnTrangTiep.Visible = true;
-                lbTongSoTrang.Visible = true;
-                txtSoTrang.Visible = true;
-                btnTrangSau.LinkColor = Color.Black;
-                btnTrangTiep.LinkColor = Color.Blue;
-                //txtSoTrang.Text = "1";
-
-                using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
+                if (xxtungay.Year>2000 && xxdenngay.Year>2000)
                 {
-                    DataTable dt_ = new DataTable();
-                    if (_Loaimay == 1)
-                        dt_ = cls.H_Tinh_SoPhieu_T8_IN(xxtungay, xxdenngay);
-                    else if (_Loaimay == 1)
-                        dt_ = cls.H_Tinh_SoPhieu_T8_CAT(xxtungay, xxdenngay);
-                    else if (_Loaimay == 1)
-                        dt_ = cls.H_Tinh_SoPhieu_T8_DOT(xxtungay, xxdenngay);
-                    if (dt_ != null && dt_.Rows.Count > 0)
-                    {
-                        lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
-                    }
-                    else
-                    {
-                        lbTongSoTrang.Text = "/1";
-                    }
-                }
-                if (lbTongSoTrang.Text == "0")
-                    lbTongSoTrang.Text = "/1";
-                if (lbTongSoTrang.Text == "/1")
-                {
+                    btnTrangSau.Visible = true;
+                    btnTrangTiep.Visible = true;
+                    lbTongSoTrang.Visible = true;
+                    txtSoTrang.Visible = true;
                     btnTrangSau.LinkColor = Color.Black;
-                    btnTrangTiep.LinkColor = Color.Black;
+                    btnTrangTiep.LinkColor = Color.Blue;
+                    //txtSoTrang.Text = "1";
+
+                    using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
+                    {
+                        DataTable dt_ = new DataTable();
+                        if (_Loaimay == 1)
+                            dt_ = cls.H_Tinh_SoPhieu_T8_IN(xxtungay, xxdenngay);
+                        else if (_Loaimay == 1)
+                            dt_ = cls.H_Tinh_SoPhieu_T8_CAT(xxtungay, xxdenngay);
+                        else if (_Loaimay == 1)
+                            dt_ = cls.H_Tinh_SoPhieu_T8_DOT(xxtungay, xxdenngay);
+                        if (dt_ != null && dt_.Rows.Count > 0)
+                        {
+                            lbTongSoTrang.Text = "/" + (Math.Ceiling(CheckString.ConvertToDouble_My(dt_.Rows[0]["tongso"].ToString()) / (double)xxsodong)).ToString();
+                        }
+                        else
+                        {
+                            lbTongSoTrang.Text = "/1";
+                        }
+                    }
+                    if (lbTongSoTrang.Text == "0")
+                        lbTongSoTrang.Text = "/1";
+                    if (lbTongSoTrang.Text == "/1")
+                    {
+                        btnTrangSau.LinkColor = Color.Black;
+                        btnTrangTiep.LinkColor = Color.Black;
+                    }
                 }
             }
             catch (Exception ea)
