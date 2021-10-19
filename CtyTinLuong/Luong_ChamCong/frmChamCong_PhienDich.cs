@@ -116,6 +116,9 @@ namespace CtyTinLuong
 
             using (clsTr_ChamCongPhienDich clsThin_ = new clsTr_ChamCongPhienDich())
             {
+                if (_nam < 1900) _nam = 1900;
+                if (_thang == 0) _thang = 1;
+
                 int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
                 DateTime dateStart = new DateTime(_nam, _thang, 1);
                 DateTime dateEnd = new DateTime(_nam, _thang, ngaycuathang_);
@@ -953,6 +956,12 @@ namespace CtyTinLuong
         {
             _TenKhachHang = "TIEN";
             LoadData(false);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Tr_frmChiTietChamCong_PhienDich ff = new Tr_frmChiTietChamCong_PhienDich(this);
+            ff.Show();
         }
 
         private void SaveOneCN(int idcn_)

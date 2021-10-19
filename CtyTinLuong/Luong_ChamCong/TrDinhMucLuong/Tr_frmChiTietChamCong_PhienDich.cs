@@ -15,7 +15,7 @@ namespace CtyTinLuong
         private int _idDinhMucLuong = 0;
         private int _id_NhanVien = 0;
 
-        Tr_frmQuanLyDML_CongNhat _frmQuanLyDinhMucLuong;
+        frmChamCong_PhienDich _frm;
         DataTable _dtNguoi;
         public static decimal Evaluate(string expression)
         {
@@ -311,10 +311,10 @@ namespace CtyTinLuong
             //txtDinhMucTangCa.Text = "0";
             //checkNgungTheoDoi.Checked = false;
         }
-        public Tr_frmChiTietChamCong_PhienDich(Tr_frmQuanLyDML_CongNhat frm)
+        public Tr_frmChiTietChamCong_PhienDich(frmChamCong_PhienDich frm)
         {
             InitializeComponent();
-            _frmQuanLyDinhMucLuong = frm;
+            _frm = frm;
             btLUU.Enabled = true;
 
             //radioXangTheoThang.Checked = true;
@@ -577,7 +577,7 @@ namespace CtyTinLuong
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            _frmQuanLyDinhMucLuong.HienThi();
+            _frm.LoadData(false);
             this.Close();
         }
 
@@ -603,7 +603,7 @@ namespace CtyTinLuong
         private void btLUU_Click(object sender, EventArgs e)
         {
             LuuDuLieu(true);
-            _frmQuanLyDinhMucLuong.HienThi();
+            _frm.LoadData(false);
 
         }
 
