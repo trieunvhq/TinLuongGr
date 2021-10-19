@@ -192,8 +192,8 @@ namespace CtyTinLuong
         {
             frmChamCong_PhienDich._mb_TheMoi = true;
             _id_NhanVien = 0;
-            searchLookMaDML.ResetText();
-            txtTenNhanVien.ResetText();
+            //searchLookMaDML.ResetText();
+            //txtTenNhanVien.ResetText();
             TrUnlockReadonly();
         }
 
