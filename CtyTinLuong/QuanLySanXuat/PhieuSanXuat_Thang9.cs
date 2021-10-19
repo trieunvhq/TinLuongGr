@@ -94,7 +94,29 @@ namespace CtyTinLuong
             }
         }
 
-
+        private void HienThi_sanLuong_label(int id___congnhan, int id_vthhh_ra, DateTime ngaythangsanxuat____)
+        {
+            try
+            {
+                using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
+                {
+                    DataTable dt = cls.Huu_TinhTongSanLuong_lable_t9(id___congnhan, id_vthhh_ra, ngaythangsanxuat____);
+                    if (dt.Rows.Count > 0)
+                    {
+                        string tencongnhan = dt.Rows[0]["TenNhanVien"].ToString();
+                        string mahang = dt.Rows[0]["TenVTHH"].ToString();
+                        string sanluong____ = dt.Rows[0]["SanLuong_Tong"].ToString();
+                        label_sanluongtong.Text = ""+tencongnhan+" || Mã hàng: "+ mahang + " || Sản lượng Tổng trong ngày: "+ sanluong____ + "";
+                    }
+                    else
+                        label_sanluongtong.Text = "";
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void HienThi_MacDinhSanXuat(int xloaimay_)
         {
             try
@@ -1257,6 +1279,49 @@ namespace CtyTinLuong
             //{
             //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+        }
+
+        private void bandedGridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+            try
+            {
+                if(_Loaimay==1)
+                {
+                    if (bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString() != "" & bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_IN).ToString() != "" & bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString() != "")
+                    {
+                        int id_x_congnhan = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString());
+                        int id_x_vthh = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_IN).ToString());
+                        DateTime _x_ngay = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString());
+                        HienThi_sanLuong_label(id_x_congnhan, id_x_vthh, _x_ngay);
+                    }
+                }
+                else if (_Loaimay == 2)
+                {
+                    if (bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_CAT).ToString() != "" & bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_CAT).ToString() != "" & bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString() != "")
+                    {
+                        int id_x_congnhan = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_CAT).ToString());
+                        int id_x_vthh = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_CAT).ToString());
+                        DateTime _x_ngay = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString());
+                        HienThi_sanLuong_label(id_x_congnhan, id_x_vthh, _x_ngay);
+                    }
+                }
+                else if (_Loaimay == 3)
+                {
+                    if (bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_DOT).ToString() != "" & bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_DOT).ToString() != "" & bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString() != "")
+                    {
+                        int id_x_congnhan = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_DOT).ToString());
+                        int id_x_vthh = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_DOT).ToString());
+                        DateTime _x_ngay = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString());
+                        HienThi_sanLuong_label(id_x_congnhan, id_x_vthh, _x_ngay);
+                    }
+                }
+                
+              
+            }
+            catch
+            {
+
+            }
         }
 
         private void PhieuSanXuat_Thang9_Load(object sender, EventArgs e)

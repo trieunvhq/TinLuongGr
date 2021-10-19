@@ -7,7 +7,7 @@ namespace CtyTinLuong
 {
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
-        public DataTable Huu_TinhTongSanLuong_lable_t9(int _xid_congnhan, int _xid_vthhra)
+        public DataTable Huu_TinhTongSanLuong_lable_t9(int _xid_congnhan, int _xid_vthhra, DateTime x_ngaysx___)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[Huu_TinhTongSanLuong_lable_t9]";
@@ -23,7 +23,7 @@ namespace CtyTinLuong
                 m_scoMainConnection.Open();
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@_ID_CongNhan_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _xid_congnhan));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@_id_vthh_ra", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _xid_vthhra));
-               
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@__ngaysax_", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, x_ngaysx___));
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;
             }
