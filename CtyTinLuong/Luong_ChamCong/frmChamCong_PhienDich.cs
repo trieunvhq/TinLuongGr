@@ -113,9 +113,13 @@ namespace CtyTinLuong
                 cbNhanSu.ValueMember = "ID_NhanSu"; 
             }
 
-            using (clsThin clsThin_ = new clsThin())
+            using (clsTr_ChamCongPhienDich clsThin_ = new clsTr_ChamCongPhienDich())
             {
-                _data = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_SO(_nam, _thang, _id_bophan, 0, "");
+                int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+                DateTime dateStart = new DateTime(_nam, _thang, 1);
+                DateTime dateEnd = new DateTime(_nam, _thang, ngaycuathang_);
+
+                _data = clsThin_.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd);
                 ds_id_congnhan = new List<int>();
 
                 double Ngay1 = 0;
@@ -219,9 +223,10 @@ namespace CtyTinLuong
                     Tong_Ngay31 += Ngay31;
                 }
             }
-            LoadCongNhanVaoBang(_id_bophan);
+            //LoadCongNhanVaoBang(_id_bophan);
 
             isload = false;
+            gridControl1.DataSource = _data;
         }
         private List<int> ds_id_congnhan = new List<int>();
         private void LoadCongNhanVaoBang(int id_bophan)
@@ -795,11 +800,11 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1)
-            {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            }
+            //GridView view = sender as GridView;
+            //if (e.RowHandle == _data.Rows.Count - 1)
+            //{
+            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            //}
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
