@@ -119,108 +119,29 @@ namespace CtyTinLuong
                 DateTime dateStart = new DateTime(_nam, _thang, 1);
                 DateTime dateEnd = new DateTime(_nam, _thang, ngaycuathang_);
 
-                _data = clsThin_.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd);
+                _data = clsThin_.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd, 0);
                 ds_id_congnhan = new List<int>();
 
-                double Ngay1 = 0;
-                double Ngay2 = 0;
-                double Ngay3 = 0;
-                double Ngay4 = 0;
-                double Ngay5 = 0;
-                double Ngay6 = 0;
-                double Ngay7 = 0;
-                double Ngay8 = 0;
-                double Ngay9 = 0;
-                double Ngay10 = 0;
-                double Ngay11 = 0;
-                double Ngay12 = 0;
-                double Ngay13 = 0;
-                double Ngay14 = 0;
-                double Ngay15 = 0;
-                double Ngay16 = 0;
-                double Ngay17 = 0;
-                double Ngay18 = 0;
-                double Ngay19 = 0;
-                double Ngay20 = 0;
-                double Ngay21 = 0;
-                double Ngay22 = 0;
-                double Ngay23 = 0;
-                double Ngay24 = 0;
-                double Ngay25 = 0;
-                double Ngay26 = 0;
-                double Ngay27 = 0;
-                double Ngay28 = 0;
-                double Ngay29 = 0;
-                double Ngay30 = 0;
-                double Ngay31 = 0;
+                gridThin.EditValueChanged += (o, e) =>
+                {
 
-                Tong_Ngay1 = 0;
-                Tong_Ngay2 = 0;
-                Tong_Ngay3 = 0;
-                Tong_Ngay4 = 0;
-                Tong_Ngay5 = 0;
-                Tong_Ngay6 = 0;
-                Tong_Ngay7 = 0;
-                Tong_Ngay8 = 0;
-                Tong_Ngay9 = 0;
-                Tong_Ngay10 = 0;
-                Tong_Ngay11 = 0;
-                Tong_Ngay12 = 0;
-                Tong_Ngay13 = 0;
-                Tong_Ngay14 = 0;
-                Tong_Ngay15 = 0;
-                Tong_Ngay16 = 0;
-                Tong_Ngay17 = 0;
-                Tong_Ngay18 = 0;
-                Tong_Ngay19 = 0;
-                Tong_Ngay20 = 0;
-                Tong_Ngay21 = 0;
-                Tong_Ngay22 = 0;
-                Tong_Ngay23 = 0;
-                Tong_Ngay24 = 0;
-                Tong_Ngay25 = 0;
-                Tong_Ngay26 = 0;
-                Tong_Ngay27 = 0;
-                Tong_Ngay28 = 0;
-                Tong_Ngay29 = 0;
-                Tong_Ngay30 = 0;
-                Tong_Ngay31 = 0;
+                };
+                // dat doan cuoi nay đi
+
+
+                DataRow _ravi2 = _data.NewRow();
+                _ravi2["ID_ChamConPhienDich"] = 0;
+                _ravi2["ID_CongNhan"] = 0;
+                _ravi2["ID_KhachHang"] = 0;
+                _ravi2["TenNhanVien"] = "TỔNG";
+                _ravi2["TenKhachHang"] = "";
+                _ravi2["SoToKhai"] = _data.Rows.Count;
+                _ravi2["SoCont"] = "";
+                _data.Rows.Add(_ravi2);
 
                 for (int i = 0; i < _data.Rows.Count; ++i)
                 { 
-                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString()));
-
-                    Tong_Ngay1 += Ngay1;
-                    Tong_Ngay2 += Ngay2;
-                    Tong_Ngay3 += Ngay3;
-                    Tong_Ngay4 += Ngay4;
-                    Tong_Ngay5 += Ngay5;
-                    Tong_Ngay6 += Ngay6;
-                    Tong_Ngay7 += Ngay7;
-                    Tong_Ngay8 += Ngay8;
-                    Tong_Ngay9 += Ngay9;
-                    Tong_Ngay10 += Ngay10;
-                    Tong_Ngay11 += Ngay11;
-                    Tong_Ngay12 += Ngay12;
-                    Tong_Ngay13 += Ngay13;
-                    Tong_Ngay14 += Ngay14;
-                    Tong_Ngay15 += Ngay15;
-                    Tong_Ngay16 += Ngay16;
-                    Tong_Ngay17 += Ngay17;
-                    Tong_Ngay18 += Ngay18;
-                    Tong_Ngay19 += Ngay19;
-                    Tong_Ngay20 += Ngay20;
-                    Tong_Ngay21 += Ngay21;
-                    Tong_Ngay22 += Ngay22;
-                    Tong_Ngay23 += Ngay23;
-                    Tong_Ngay24 += Ngay24;
-                    Tong_Ngay25 += Ngay25;
-                    Tong_Ngay26 += Ngay26;
-                    Tong_Ngay27 += Ngay27;
-                    Tong_Ngay28 += Ngay28;
-                    Tong_Ngay29 += Ngay29;
-                    Tong_Ngay30 += Ngay30;
-                    Tong_Ngay31 += Ngay31;
+                    ds_id_congnhan.Add(Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString())); 
                 }
             }
             //LoadCongNhanVaoBang(_id_bophan);
@@ -800,11 +721,11 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            //GridView view = sender as GridView;
-            //if (e.RowHandle == _data.Rows.Count - 1)
-            //{
-            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            //}
+            GridView view = sender as GridView;
+            if (e.RowHandle == _data.Rows.Count - 1)
+            {
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
