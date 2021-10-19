@@ -29,16 +29,16 @@ namespace CtyTinLuong
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -81,6 +81,11 @@ namespace CtyTinLuong
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.ID_KhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.radioAll = new System.Windows.Forms.RadioButton();
+            this.radioIF = new System.Windows.Forms.RadioButton();
+            this.radioYC = new System.Windows.Forms.RadioButton();
+            this.radioTien = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -102,16 +107,16 @@ namespace CtyTinLuong
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions9.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(313, 25);
+            this.label3.Location = new System.Drawing.Point(260, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -121,7 +126,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(469, 26);
+            this.label4.Location = new System.Drawing.Point(416, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -130,9 +135,9 @@ namespace CtyTinLuong
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions10.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -523,7 +528,7 @@ namespace CtyTinLuong
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(509, 23);
+            this.txtNam.Location = new System.Drawing.Point(456, 22);
             this.txtNam.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -547,7 +552,7 @@ namespace CtyTinLuong
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(365, 23);
+            this.txtThang.Location = new System.Drawing.Point(312, 22);
             this.txtThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -575,11 +580,77 @@ namespace CtyTinLuong
             this.ID_KhachHang.FieldName = "ID_KhachHang";
             this.ID_KhachHang.Name = "ID_KhachHang";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.simpleButton1.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(877, 21);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(30, 25);
+            this.simpleButton1.TabIndex = 165;
+            // 
+            // radioAll
+            // 
+            this.radioAll.AutoSize = true;
+            this.radioAll.Location = new System.Drawing.Point(586, 23);
+            this.radioAll.Name = "radioAll";
+            this.radioAll.Size = new System.Drawing.Size(56, 17);
+            this.radioAll.TabIndex = 166;
+            this.radioAll.TabStop = true;
+            this.radioAll.Text = "Tất cả";
+            this.radioAll.UseVisualStyleBackColor = true;
+            this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
+            // 
+            // radioIF
+            // 
+            this.radioIF.AutoSize = true;
+            this.radioIF.Location = new System.Drawing.Point(653, 24);
+            this.radioIF.Name = "radioIF";
+            this.radioIF.Size = new System.Drawing.Size(34, 17);
+            this.radioIF.TabIndex = 167;
+            this.radioIF.TabStop = true;
+            this.radioIF.Text = "IF";
+            this.radioIF.UseVisualStyleBackColor = true;
+            this.radioIF.CheckedChanged += new System.EventHandler(this.radioIF_CheckedChanged);
+            // 
+            // radioYC
+            // 
+            this.radioYC.AutoSize = true;
+            this.radioYC.Location = new System.Drawing.Point(707, 24);
+            this.radioYC.Name = "radioYC";
+            this.radioYC.Size = new System.Drawing.Size(39, 17);
+            this.radioYC.TabIndex = 168;
+            this.radioYC.TabStop = true;
+            this.radioYC.Text = "YC";
+            this.radioYC.UseVisualStyleBackColor = true;
+            this.radioYC.CheckedChanged += new System.EventHandler(this.radioYC_CheckedChanged);
+            // 
+            // radioTien
+            // 
+            this.radioTien.AutoSize = true;
+            this.radioTien.Location = new System.Drawing.Point(764, 24);
+            this.radioTien.Name = "radioTien";
+            this.radioTien.Size = new System.Drawing.Size(91, 17);
+            this.radioTien.TabIndex = 169;
+            this.radioTien.TabStop = true;
+            this.radioTien.Text = "TIEN (A KUA)";
+            this.radioTien.UseVisualStyleBackColor = true;
+            this.radioTien.CheckedChanged += new System.EventHandler(this.radioTien_CheckedChanged);
+            // 
             // frmChamCong_PhienDich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.radioTien);
+            this.Controls.Add(this.radioYC);
+            this.Controls.Add(this.radioIF);
+            this.Controls.Add(this.radioAll);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label5);
@@ -660,5 +731,10 @@ namespace CtyTinLuong
         private System.Windows.Forms.NumericUpDown txtThang;
         private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn ID_KhachHang;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.RadioButton radioAll;
+        private System.Windows.Forms.RadioButton radioIF;
+        private System.Windows.Forms.RadioButton radioYC;
+        private System.Windows.Forms.RadioButton radioTien;
     }
 }

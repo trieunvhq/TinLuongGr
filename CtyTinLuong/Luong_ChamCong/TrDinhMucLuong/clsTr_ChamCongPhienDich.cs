@@ -262,7 +262,7 @@ namespace CtyTinLuong
 		/// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
 		/// <remarks>
 		/// </remarks>
-		public DataTable Tr_ChamCongPhienDich_SelectAll(DateTime ngay_batdau, DateTime ngay_ketthuc, int idcn)
+		public DataTable Tr_ChamCongPhienDich_SelectAll(DateTime ngay_batdau, DateTime ngay_ketthuc, int idcn, string tenKhachHang)
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[Tr_ChamCongPhienDich_SelectAll]";
@@ -281,6 +281,7 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_CongNhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, idcn));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sTenKhachHang", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, tenKhachHang));
 
                 // Execute query.
                 sdaAdapter.Fill(dtToReturn);

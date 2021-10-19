@@ -53,6 +53,7 @@ namespace CtyTinLuong
             emptyEditor.Buttons.Clear();
             emptyEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             gridControl1.RepositoryItems.Add(emptyEditor);
+            radioAll.Checked = true;
         }
 
 
@@ -927,6 +928,31 @@ namespace CtyTinLuong
             }
 
             return isGuiThanhCong;
+        }
+
+        private string _TenKhachHang = "";
+        private void radioAll_CheckedChanged(object sender, EventArgs e)
+        {
+            _TenKhachHang = "";
+            LoadData(false);
+        }
+
+        private void radioIF_CheckedChanged(object sender, EventArgs e)
+        {
+            _TenKhachHang = "IF";
+            LoadData(false);
+        }
+
+        private void radioYC_CheckedChanged(object sender, EventArgs e)
+        {
+            _TenKhachHang = "YC";
+            LoadData(false);
+        }
+
+        private void radioTien_CheckedChanged(object sender, EventArgs e)
+        {
+            _TenKhachHang = "TIEN";
+            LoadData(false);
         }
 
         private void SaveOneCN(int idcn_)
