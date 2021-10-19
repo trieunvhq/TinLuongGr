@@ -275,6 +275,12 @@
       <DependentUpon>frmChamCong_TMC.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_DinhMuc_Luong.cs" />
+    <Compile Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmChiTietChamCong_PhienDich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmChiTietChamCong_PhienDich.Designer.cs">
+      <DependentUpon>Tr_frmChiTietChamCong_PhienDich.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmChiTietDML_CongNhat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2593,6 +2599,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_TMC.resx">
       <DependentUpon>frmChamCong_TMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmChiTietChamCong_PhienDich.resx">
+      <DependentUpon>Tr_frmChiTietChamCong_PhienDich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmChiTietDML_CongNhat.resx">
       <DependentUpon>Tr_frmChiTietDML_CongNhat.cs</DependentUpon>
