@@ -106,7 +106,8 @@ namespace CtyTinLuong
                         string tencongnhan = dt.Rows[0]["TenNhanVien"].ToString();
                         string mahang = dt.Rows[0]["TenVTHH"].ToString();
                         string sanluong____ = dt.Rows[0]["SanLuong_Tong"].ToString();
-                        label_sanluongtong.Text = ""+tencongnhan+" || Mã hàng: "+ mahang + " || Sản lượng Tổng trong ngày: "+ sanluong____ + "";
+                        string dovitinh = dt.Rows[0]["DonViTinh"].ToString();
+                        label_sanluongtong.Text = "" + tencongnhan + " || Mã hàng: " + mahang + " || Sản lượng Tổng: " + sanluong____ + " "+ dovitinh + "";
                     }
                     else
                         label_sanluongtong.Text = "";
