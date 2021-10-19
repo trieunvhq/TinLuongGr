@@ -204,6 +204,12 @@
     <Compile Include="Luong_ChamCong\frmBTTL_ToDot.Designer.cs">
       <DependentUpon>frmBTTL_ToDot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PhienDich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\frmChamCong_PhienDich.Designer.cs">
+      <DependentUpon>frmChamCong_PhienDich.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_MaHangToGD_DB_DK.cs" />
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmCaiMacDinnhMaHangTGD_DB_DK_.cs">
       <SubType>Form</SubType>
@@ -2554,6 +2560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_ToDot.resx">
       <DependentUpon>frmBTTL_ToDot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PhienDich.resx">
+      <DependentUpon>frmChamCong_PhienDich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmCaiMacDinnhMaHangTGD_DB_DK_.resx">
       <DependentUpon>Tr_frmCaiMacDinnhMaHangTGD_DB_DK_.cs</DependentUpon>
