@@ -567,7 +567,7 @@
             this.gridBand2.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 486;
+            this.gridBand2.Width = 434;
             // 
             // clID_VTHH_Vao
             // 
@@ -595,7 +595,6 @@
             this.clLoaiMay.Caption = "Loại máy";
             this.clLoaiMay.FieldName = "ID_LoaiMay";
             this.clLoaiMay.Name = "clLoaiMay";
-            this.clLoaiMay.Visible = true;
             this.clLoaiMay.Width = 52;
             // 
             // clMaPhieu
