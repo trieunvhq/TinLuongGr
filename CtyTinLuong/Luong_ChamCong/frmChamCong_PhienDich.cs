@@ -295,6 +295,7 @@ namespace CtyTinLuong
                 }
 
                 int ID_ChamConPhienDich_ = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChamConPhienDich).ToString());
+                int idcn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_CongNhan).ToString());
 
                 DialogResult traloi;
                 traloi = MessageBox.Show("Xác nhận xóa tờ khai: " + gridView1.GetFocusedRowCellValue(SoToKhai).ToString(), "Delete",
@@ -307,6 +308,68 @@ namespace CtyTinLuong
                         if (cls.Tr_ChamCongPhienDich_Delete())
                         {
                             LoadData(false);
+
+                            //lưu vào bảng chấm công để tính lương:
+                            int id_bophan_ = KiemTraTenBoPhan("Phòng Tổng hợp");
+                            if (id_bophan_ == 0) return;
+
+                            int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+                            DateTime dateStart = new DateTime(_nam, _thang, 1);
+                            DateTime dateEnd = new DateTime(_nam, _thang, ngaycuathang_);
+
+                            DataTable dt = cls.Tr_ChamCongPhienDich_SelectAll(dateStart, dateEnd, idcn, "");
+
+                            try
+                            {
+                                using (clsThin clsThin_ = new clsThin())
+                                {
+                                    clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                                        idcn,
+                                        _thang,
+                                        _nam,
+                                        0,
+                                        0,
+                                        dt.Rows.Count,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0, true, false, id_bophan_,
+                                        0,
+                                        1017);
+                                }
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Không thể đồng bộ dữ liệu. Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
                             MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -366,6 +429,25 @@ namespace CtyTinLuong
             _mb_TheMoi = true;
             Tr_frmChiTietChamCong_PhienDich ff = new Tr_frmChiTietChamCong_PhienDich(this);
             ff.Show();
+        }
+
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+
+                }
+            }
+            return _id_bophan;
         }
 
     }

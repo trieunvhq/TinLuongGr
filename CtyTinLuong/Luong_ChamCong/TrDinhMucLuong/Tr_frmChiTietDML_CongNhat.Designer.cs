@@ -64,6 +64,8 @@
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dateTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.radioXangTheoThang = new System.Windows.Forms.RadioButton();
+            this.radioXangTheoNgay = new System.Windows.Forms.RadioButton();
             this.searchLookMaDML = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.checMax_hai = new System.Windows.Forms.CheckBox();
@@ -79,13 +81,11 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.radioXangTheoNgay = new System.Windows.Forms.RadioButton();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.radioXangTheoThang = new System.Windows.Forms.RadioButton();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -117,9 +117,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btLUU
@@ -150,7 +150,7 @@
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 324);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(667, 24);
-            this.layoutControlItem13.Text = "Lương/ngày tăng ca (đ)";
+            this.layoutControlItem13.Text = "Lương/ngày | SL tăng (đ)";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(149, 13);
             // 
             // txtDinhMucTangCa
@@ -190,7 +190,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 300);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(667, 24);
-            this.layoutControlItem4.Text = "Lương/ngày thường (đ)";
+            this.layoutControlItem4.Text = "Lương/ngày | SL thường (đ)";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(149, 13);
             // 
             // txtDMLuongTheoGio
@@ -521,6 +521,24 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // radioXangTheoThang
+            // 
+            this.radioXangTheoThang.Location = new System.Drawing.Point(2, 374);
+            this.radioXangTheoThang.Name = "radioXangTheoThang";
+            this.radioXangTheoThang.Size = new System.Drawing.Size(135, 25);
+            this.radioXangTheoThang.TabIndex = 40;
+            this.radioXangTheoThang.Text = "Xăng theo tháng";
+            this.radioXangTheoThang.UseVisualStyleBackColor = true;
+            // 
+            // radioXangTheoNgay
+            // 
+            this.radioXangTheoNgay.Location = new System.Drawing.Point(141, 374);
+            this.radioXangTheoNgay.Name = "radioXangTheoNgay";
+            this.radioXangTheoNgay.Size = new System.Drawing.Size(190, 25);
+            this.radioXangTheoNgay.TabIndex = 39;
+            this.radioXangTheoNgay.Text = "Xăng theo ngày";
+            this.radioXangTheoNgay.UseVisualStyleBackColor = true;
+            // 
             // searchLookMaDML
             // 
             this.searchLookMaDML.EditValue = "";
@@ -678,6 +696,24 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.radioXangTheoThang;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 372);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(139, 29);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.radioXangTheoNgay;
+            this.layoutControlItem6.Location = new System.Drawing.Point(139, 372);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(194, 29);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.layoutControl1);
@@ -706,42 +742,6 @@
             this.simpleButton1.TabIndex = 70;
             this.simpleButton1.Text = "Copy tạo mới";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // radioXangTheoNgay
-            // 
-            this.radioXangTheoNgay.Location = new System.Drawing.Point(141, 374);
-            this.radioXangTheoNgay.Name = "radioXangTheoNgay";
-            this.radioXangTheoNgay.Size = new System.Drawing.Size(190, 25);
-            this.radioXangTheoNgay.TabIndex = 39;
-            this.radioXangTheoNgay.Text = "Xăng theo ngày";
-            this.radioXangTheoNgay.UseVisualStyleBackColor = true;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.radioXangTheoNgay;
-            this.layoutControlItem6.Location = new System.Drawing.Point(139, 372);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(194, 29);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // radioXangTheoThang
-            // 
-            this.radioXangTheoThang.Location = new System.Drawing.Point(2, 374);
-            this.radioXangTheoThang.Name = "radioXangTheoThang";
-            this.radioXangTheoThang.Size = new System.Drawing.Size(135, 25);
-            this.radioXangTheoThang.TabIndex = 40;
-            this.radioXangTheoThang.Text = "Xăng theo tháng";
-            this.radioXangTheoThang.UseVisualStyleBackColor = true;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.radioXangTheoThang;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 372);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(139, 29);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
             // 
             // Tr_frmChiTietDML_CongNhat
             // 
@@ -791,9 +791,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
