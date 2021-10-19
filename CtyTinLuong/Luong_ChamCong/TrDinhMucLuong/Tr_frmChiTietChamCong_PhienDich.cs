@@ -58,137 +58,31 @@ namespace CtyTinLuong
             }
         }
 
-        private bool KiemTraLuu()
-        {
-            clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong();
-            DataTable dt = cls.SelectAll();
-            dt.DefaultView.RowFilter = " TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt.DefaultView;
-            DataTable dxxxx = dv.ToTable();
-            string maLuong = searchLookMaDML.Text.ToString();
-            string filterExpression = "";
-            filterExpression = "MaDinhMucLuongCongNhat ='" + maLuong + "'";
-            DataRow[] rows = dxxxx.Select(filterExpression);
-            int k = rows.Length;
-            if (searchLookMaDML.Text.ToString() == "")
-            {
-                MessageBox.Show("Chưa chọn mã Định mức");
-                return false;
-            }
-            else if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat == true)
-            {
-                if (k > 0)
-                {
-                    MessageBox.Show("Đã có Mã định mức lương: " + maLuong + "\n Vui lòng chọn lại tên mã lương khác");
-                    return false;
-                }
-                else return true;
-            }
-
-            else return true;
-
-        }
         private void LuuDuLieu(bool LuuVaDong)
         {
            try
             {
-                //if (!KiemTraLuu()) return;
                 if (!CheckDataInput()) return;
 
-
-                using (clsTr_DinhMuc_Luong cls = new clsTr_DinhMuc_Luong())
+                using (clsTr_ChamCongPhienDich cls = new clsTr_ChamCongPhienDich())
                 {
-                    cls.iId = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
-                    cls.iId_nhanvien = _id_NhanVien;
-                    cls.bDachamcong = false;
-                    cls.dcLuongCoDinh = CheckString.ConvertToDecimal_My(txtSoToKhai.Text.ToString());
-                    cls.dcPhuCapXangXe = CheckString.ConvertToDecimal_My(txtSoCont.Text.ToString());
-                    cls.bTontai = true;
+                    cls.iID_ChamConPhienDich = frmChamCong_PhienDich._iID_ChamCongPD;
+                    cls.iID_CongNhan = Convert.ToInt32(searchLookMaDML.EditValue);
+                    cls.iID_KhachHang = Convert.ToInt32(cbKhachHang.ValueMember);
+                    cls.sSoToKhai = txtSoToKhai.Text.ToString().Trim();
+                    cls.sSoCont = txtSoCont.Text.ToString().Trim();
 
-                    if (Tr_frmQuanLyDML_CongNhat.mb_TheMoi_DinhMucLuongCongNhat == true)
+                    if (frmChamCong_PhienDich._mb_TheMoi)
                     {
-                        if (cls.Insert())
+                        if (cls.Tr_ChamCongPhienDich_Insert())
                             MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        //int nam_now = DateTime.Now.Year;
-                        //int thang_now = DateTime.Now.Month;
-                        //if (nam_now == dateDenNgay.DateTime.Year)
-                        //{
-                        //    if (thang_now > dateDenNgay.DateTime.Month)
-                        //    {
-                        //        if (dateDenNgay.DateTime.Month == thang_now - 1)
-                        //        {
-                        //            int ngaycuoithang_ = (((new DateTime(nam_now, thang_now -1, 1)).AddMonths(1)).AddDays(-1)).Day;
-                        //            DateTime date_cuoithang = new DateTime(nam_now, thang_now -1, ngaycuoithang_);
-                        //            if (dateDenNgay.DateTime < date_cuoithang)
-                        //            {
-                        //                MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
-                        //                    + "Nhập ngày kết thúc phải >= " + date_cuoithang.ToString("dd/MM/yyyy"), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //                return;
-                        //            }
-                        //        }
-                        //        else
-                        //        {
-                        //            MessageBox.Show("Tháng " + dateDenNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
-                        //            + "Nhập tháng kết thúc phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //            return;
-                        //        }
-                        //    }
-                        //}
-                        //else if (DateTime.Now.Year > dateDenNgay.DateTime.Year)
-                        //{
-                        //    MessageBox.Show("Năm " + dateDenNgay.DateTime.Year.ToString() + " đã thanh toán lương cho công nhân. "
-                        //        + "Nhập năm kết thúc phải >= năm hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //    return;
-                        //}
-
-                        //if (_checkTuNgay)
-                        //{
-                        //    if (nam_now == dateTuNgay.DateTime.Year)
-                        //    {
-                        //        if (dateTuNgay.DateTime.Month < thang_now)
-                        //        {
-                        //            MessageBox.Show("Tháng " + dateTuNgay.DateTime.Month.ToString() + " đã thanh toán lương cho công nhân. "
-                        //            + "Nhập tháng bắt đầu phải >= tháng hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //            return;
-                        //        }
-
-                        //    }
-                        //    else if (DateTime.Now.Year > dateTuNgay.DateTime.Year)
-                        //    {
-                        //        MessageBox.Show("Năm " + dateTuNgay.DateTime.Year.ToString() + " đã thanh toán lương cho công nhân. "
-                        //            + "Nhập năm bắt đầu phải >= năm hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //        return;
-                        //    }
-                        //}
-                           
-
-                        ////cls.iID_DinhMucLuong_CongNhat = Tr_frmQuanLyDML_CongNhat.miID_Sua_DinhMucLuongCongNhat;
-                        //if (cls.Update())
-                        //{
-                        //    try
-                        //    {
-                        //        DataTable dt = cls.Tr_DinhMuc_Luong_Select_TheoIDNV(_id_NhanVien);
-                        //        if (dt.Rows.Count > 0)
-                        //        {
-                        //            for (int i = 0; i < dt.Rows.Count - 1; i++)
-                        //            {
-                        //                cls.iId = Convert.ToInt32(dt.Rows[i + 1]["id"].ToString());
-                        //                cls.daTu_ngay = (Convert.ToDateTime(dt.Rows[i]["den_ngay"].ToString())).AddDays(+1);
-                        //                cls.Tr_DinhMuc_Luong_Update_TuNgay();
-                        //            }
-                        //        }
-                        //    }
-                        //    catch (Exception ea)
-                        //    {
-                        //        MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //        return;
-                        //    }
-
-                        //    MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
+                        if (cls.Tr_ChamCongPhienDich_Update())
+                        {
+                            MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
 
                     if (LuuVaDong) this.Close();
