@@ -1927,7 +1927,7 @@ namespace CtyTinLuong
             }
             catch (Exception ea)
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -2194,7 +2194,7 @@ namespace CtyTinLuong
             }
             catch (Exception ea)
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
