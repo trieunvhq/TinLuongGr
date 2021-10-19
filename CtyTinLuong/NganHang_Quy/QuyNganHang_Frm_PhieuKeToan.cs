@@ -584,6 +584,18 @@ namespace CtyTinLuong
             }
         }
 
+        private void checkVNĐ_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkVNĐ.Checked == true)
+                checkUSD.Checked = false;
+        }
+
+        private void checkUSD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkUSD.Checked == true)
+                checkVNĐ.Checked = false;
+        }
+
         private bool KiemTraLuu()
         {
             DataTable dttttt2 = (DataTable)gridControl1.DataSource;
