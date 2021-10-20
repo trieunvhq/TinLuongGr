@@ -16,5 +16,10 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void KhoThanhPham_XuatKho_DongKien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

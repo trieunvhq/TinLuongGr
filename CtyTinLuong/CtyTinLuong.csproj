@@ -2575,6 +2575,9 @@
     <EmbeddedResource Include="KhoDaiLy\UC_DongKien_NhapKho.resx">
       <DependentUpon>UC_DongKien_NhapKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.resx">
+      <DependentUpon>KhoThanhPham_XuatKho_DongKien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TDB.resx">
       <DependentUpon>frmBTTL_TDB.cs</DependentUpon>
     </EmbeddedResource>

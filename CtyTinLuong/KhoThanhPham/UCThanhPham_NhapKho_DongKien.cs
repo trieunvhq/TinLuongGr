@@ -110,6 +110,21 @@ namespace CtyTinLuong
             }
         }
 
+        private void btCoopy_Click(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
+            {
+                mbThemMoi = false;
+                mbSua = false;
+                mbCopy = true;
+                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
+                KhoThanhPham_XuatKho_DongKien ff = new KhoThanhPham_XuatKho_DongKien();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
+            }
+        }
+
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT2)
