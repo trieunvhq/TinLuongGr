@@ -282,6 +282,7 @@
             this.txtThanhTien.Size = new System.Drawing.Size(138, 20);
             this.txtThanhTien.TabIndex = 151;
             this.txtThanhTien.Text = "0";
+            this.txtThanhTien.TextChanged += new System.EventHandler(this.txtThanhTien_TextChanged);
             // 
             // txtDonGiaTP
             // 

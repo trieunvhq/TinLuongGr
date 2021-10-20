@@ -1064,7 +1064,31 @@ namespace CtyTinLuong
 
         private void txtDonGiaTP_TextChanged(object sender, EventArgs e)
         {
-            Hienthi_thanhTien_thanhpham();
+          
+            try
+            {
+                Hienthi_thanhTien_thanhpham();
+                decimal value = decimal.Parse(txtDonGiaTP.Text);
+                txtDonGiaTP.Text = String.Format("{0:#,##0.00}", value);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txtThanhTien_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                decimal value = decimal.Parse(txtThanhTien.Text);
+                txtThanhTien.Text = String.Format("{0:#,##0.00}", value);
+            }
+            catch
+            {
+
+            }
         }
 
         private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)

@@ -56,21 +56,10 @@ namespace CtyTinLuong
 
             }
         }
-
-        private void HienThiGridControl_2(int xxIID_NhapKho)
-        {
-            clsDongKien_TbNhapKho_ChiTietNhapKho cls2 = new clsDongKien_TbNhapKho_ChiTietNhapKho();
-            cls2.iID_NhapKho_DongKien = xxIID_NhapKho;
-            DataTable dt2 = cls2.H_DongKien_ChiTiet_SO_ID(xxIID_NhapKho);
-            gridControl3.DataSource = dt2;
-        }
+               
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKhoDongKien).ToString() != "")
-            {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoDongKien).ToString());
-                HienThiGridControl_2(iiIDnhapKhp);
-            }
+           
         }
     }
 }
