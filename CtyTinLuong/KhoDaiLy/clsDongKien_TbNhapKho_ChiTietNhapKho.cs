@@ -13,7 +13,7 @@ namespace CtyTinLuong
 	/// <summary>
 	/// Purpose: Data Access class for the table 'DongKien_TbNhapKho_ChiTietNhapKho'.
 	/// </summary>
-	public class clsDongKien_TbNhapKho_ChiTietNhapKho : clsDBInteractionBase
+	public partial class clsDongKien_TbNhapKho_ChiTietNhapKho : clsDBInteractionBase
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bNgungTheoDoi, m_bTonTai, m_bBoolTonDauKy, m_bDaNhapKho;

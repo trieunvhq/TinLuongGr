@@ -181,6 +181,7 @@
       <DependentUpon>frmtestcopy.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho.cs" />
+    <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho_ChiTietNhapKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho_ChiTietNhapKho.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_ChiTietXuatKho.cs" />
