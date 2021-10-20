@@ -2298,6 +2298,18 @@
     <Compile Include="KhoThanhPham\UCThanhPham_NhapKho_DongKien.Designer.cs">
       <DependentUpon>UCThanhPham_NhapKho_DongKien.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\UC_DongKien_NhapKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\UC_DongKien_NhapKho.Designer.cs">
+      <DependentUpon>UC_DongKien_NhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhoDaiLy\UC_DongKien_XuatKho_BenDaiLy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\UC_DongKien_XuatKho_BenDaiLy.Designer.cs">
+      <DependentUpon>UC_DongKien_XuatKho_BenDaiLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraDaiLy_ChiTietLuong.cs">
       <SubType>Component</SubType>
     </Compile>
