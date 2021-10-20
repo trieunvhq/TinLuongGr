@@ -8,12 +8,12 @@ namespace CtyTinLuong
 	public partial class clsDongKien_TbNhapKho : clsDBInteractionBase
 	{
         //H_DongKien_SO_ID
-        public DataTable SO_ID(int xxid_nhapkho___)
+        public DataTable H_DongKien_SO_ID_XKGD(int xxid_xuatkho_GD)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[H_DongKien_SO_ID]";
+            scmCmdToExecute.CommandText = "dbo.[H_DongKien_SO_ID_XKGD]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("H_DongKien_SO_ID");
+            DataTable dtToReturn = new DataTable("H_DongKien_SO_ID_XKGD");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -22,7 +22,7 @@ namespace CtyTinLuong
             try
             {
                 m_scoMainConnection.Open();
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_nhapkho_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxid_nhapkho___));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_xuatkho_Gapdan_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xxid_xuatkho_GD));
 
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;
@@ -30,7 +30,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("H_DongKien_SO_ID", ex);
+                throw new Exception("H_DongKien_SO_ID_XKGD", ex);
             }
             finally
             {

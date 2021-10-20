@@ -290,6 +290,7 @@
             this.txtDonGiaTP.Size = new System.Drawing.Size(356, 20);
             this.txtDonGiaTP.TabIndex = 150;
             this.txtDonGiaTP.Text = "0";
+            this.txtDonGiaTP.TextChanged += new System.EventHandler(this.txtDonGiaTP_TextChanged);
             // 
             // DVT_ThanhPham
             // 
