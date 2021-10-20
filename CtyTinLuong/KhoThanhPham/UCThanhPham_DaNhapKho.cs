@@ -148,8 +148,8 @@ namespace CtyTinLuong
                     cls2.iID_NhapKho_ThanhPham = xxID_nhapkhothanhpham;
                     cls2.Delete_ALL_W_ID_NhapKho_ThanhPham();
 
-                    clsDongKien_ThamChieu_TinhNhapKho cls3 = new clsDongKien_ThamChieu_TinhNhapKho();
-                    cls3.Delete_ALL_ID_NhapKhoTP(xxID_nhapkhothanhpham);
+                    //clsDongKien_ThamChieu_TinhNhapKho cls3 = new clsDongKien_ThamChieu_TinhNhapKho();
+                    //cls3.Delete_ALL_ID_NhapKhoTP(xxID_nhapkhothanhpham);
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("Đã xóa");
                     Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);

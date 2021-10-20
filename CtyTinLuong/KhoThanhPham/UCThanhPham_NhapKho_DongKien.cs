@@ -76,25 +76,25 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
             {
-                mbThemMoi = false;
-                mbSua = true;
-                mbCopy = false;
-                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
-                KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
-                //_frmQLKTP.Hide();
-                ff.Show();
-                //_frmQLKTP.Show();
+                //mbThemMoi = false;
+                //mbSua = true;
+                //mbCopy = false;
+                //miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
+                //KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
+                ////_frmQLKTP.Hide();
+                //ff.Show();
+                ////_frmQLKTP.Show();
             }
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            mbThemMoi = true;
-            mbSua = false;
-            mbCopy = false;
-            KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
-            //_frmQLKTP.Hide();
-            ff.Show();
+            //mbThemMoi = true;
+            //mbSua = false;
+            //mbCopy = false;
+            //KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
+            ////_frmQLKTP.Hide();
+            //ff.Show();
             //_frmQLKTP.Show();
         }
 

@@ -16,5 +16,14 @@ namespace CtyTinLuong
         {
             InitializeComponent();
         }
+
+        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
+        {
+
+        }
+        private void UC_DongKien_NhapKho_Load(object sender, EventArgs e)
+        {
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
     }
 }
