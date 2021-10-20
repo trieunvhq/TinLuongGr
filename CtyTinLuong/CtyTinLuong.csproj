@@ -183,8 +183,16 @@
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho_ChiTietNhapKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho_ChiTietNhapKho.cs" />
-    <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho.cs" />
-    <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_ChiTietXuatKho.cs" />
+    <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho - Copy.cs" />
+    <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho.cs" />
+    <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho_ChiTietXuatKho - Copy.cs" />
+    <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho_ChiTietXuatKho.cs" />
+    <Compile Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.Designer.cs">
+      <DependentUpon>KhoThanhPham_XuatKho_DongKien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TDB.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -15,23 +15,19 @@ namespace CtyTinLuong
         public static int miID_NhapKho;
         public static bool mbThemMoi, mbSua, mbCopy;
 
-        private void HienThiGridControl_2(int xxIID_NhapKho)
+        private void HienThiGridControl_2(int xxIID_xuatKho)
         {
 
-            clsKhoThanhPham_tbChiTietNhapKho cls2 = new clsKhoThanhPham_tbChiTietNhapKho();
-            cls2.iID_NhapKho_ThanhPham = xxIID_NhapKho;
-            DataTable dt2 = cls2.SA_ID_Nhapkho(xxIID_NhapKho);
-
+            clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();          
+            DataTable dt2 = cls2.H_DongKien_ChiTiet_XK_SA_IDXK(xxIID_xuatKho);
             gridControl2.DataSource = dt2;
         }
         private void Load_Data(DateTime xxtungay, DateTime xxdenngay)
         {
 
-            clsKhoThanhPham_tbNhapKho cls = new CtyTinLuong.clsKhoThanhPham_tbNhapKho();
-            DataTable dt2 = cls.SA_DongKien(xxtungay, xxdenngay);
+            clsDongKien_TbXuatKho cls = new CtyTinLuong.clsDongKien_TbXuatKho();
+            DataTable dt2 = cls.H_DongKien_XK_SA_NgayThang(xxtungay, xxdenngay);
             gridControl1.DataSource = dt2;
-
-
         }
 
         public UCThanhPham_NhapKho_DongKien()
@@ -76,25 +72,25 @@ namespace CtyTinLuong
         {
             if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
             {
-                //mbThemMoi = false;
-                //mbSua = true;
-                //mbCopy = false;
-                //miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
-                //KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
-                ////_frmQLKTP.Hide();
-                //ff.Show();
-                ////_frmQLKTP.Show();
+                mbThemMoi = false;
+                mbSua = true;
+                mbCopy = false;
+                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
+                KhoThanhPham_XuatKho_DongKien ff = new KhoThanhPham_XuatKho_DongKien();
+                //_frmQLKTP.Hide();
+                ff.Show();
+                //_frmQLKTP.Show();
             }
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
         {
-            //mbThemMoi = true;
-            //mbSua = false;
-            //mbCopy = false;
-            //KhoThanhPham_ChiTiet_NhapKho_DongKien ff = new KhoThanhPham_ChiTiet_NhapKho_DongKien();
-            ////_frmQLKTP.Hide();
-            //ff.Show();
+            mbThemMoi = true;
+            mbSua = false;
+            mbCopy = false;
+            KhoThanhPham_XuatKho_DongKien ff = new KhoThanhPham_XuatKho_DongKien();
+            //_frmQLKTP.Hide();
+            ff.Show();
             //_frmQLKTP.Show();
         }
 
