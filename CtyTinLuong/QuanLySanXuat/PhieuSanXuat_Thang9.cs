@@ -507,15 +507,18 @@ namespace CtyTinLuong
             }
         }
 
-
+        private string _MaPhieu = "";
         private bool KiemTra_Hang(int xxloaimay)
         {
            try
             {
+                _MaPhieu = "";
                 if (xxloaimay == 1)
                 {
                     int xID_CaTruong_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_IN).ToString());
                     string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                    _MaPhieu = sMaphieu____IN;
+
                     int xIDmay_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_May_IN).ToString());
                     int xID_CongNhan_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString());
                     int xID_DinhMuc_Luong_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_IN).ToString());
@@ -658,16 +661,19 @@ namespace CtyTinLuong
                 cls.bTrangThaiTaoLenhSanXuat = false;
                 cls.fSoKG_MotBao_May_Dot = 0;
                 cls.fDoCao_Dot = 0;
-                if (themmoi_phieu == true)
-                {
-                    cls.Insert();
-                }
-                else
-                {
-                    cls.iID_ChiTietPhieu = idchietphieu_in_;
-                    cls.Update();
-                }
+                //if (themmoi_phieu == true)
+                //{
+                //    cls.Insert();
+                //}
+                //else
+                //{
+                //    cls.iID_ChiTietPhieu = idchietphieu_in_;
+                //    cls.Update();
+                //}
 
+                cls.iID_ChiTietPhieu = idchietphieu_in_;
+                cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
+                    , cls.bBMay_DOT.Value, sssmaphieu_copy);
                 int iiiDID_ChiTietPhieuxxx;
                 iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
                 TaoLenhSanXuat(_Loaimay, xxID_Sophieu_, iiiDID_ChiTietPhieuxxx, idcatruong_, idcongnhan_, ngaylapphieu_,
@@ -717,15 +723,20 @@ namespace CtyTinLuong
                     cls.bTrangThaiTaoLenhSanXuat = false;
                     cls.fSoKG_MotBao_May_Dot = 0;
                     cls.fDoCao_Dot = 0;
-                    if (themmoi_cat == true)
-                    {
-                        cls.Insert();
-                    }
-                    else
-                    {
-                        cls.iID_ChiTietPhieu = idchietphieu_cat_;
-                        cls.Update();
-                    }
+
+                    //if (themmoi_cat == true)
+                    //{
+                    //    cls.Insert();
+                    //}
+                    //else
+                    //{
+                    //    cls.iID_ChiTietPhieu = idchietphieu_cat_;
+                    //    cls.Update();
+                    //}
+
+                    cls.iID_ChiTietPhieu = idchietphieu_cat_;
+                    cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
+                        , cls.bBMay_DOT.Value, sssmaphieu_copy);
 
                     int iiiDID_ChiTietPhieuxxx;
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
@@ -776,15 +787,18 @@ namespace CtyTinLuong
                     cls.bTrangThaiTaoLenhSanXuat = false;
                     cls.fSoKG_MotBao_May_Dot = sokgmotbao_;
                     cls.fDoCao_Dot = docaodot_;
-                    if (themmoi_DOT == true)
-                    {
-                        cls.Insert();
-                    }
-                    else
-                    {
-                        cls.iID_ChiTietPhieu = idchietphieu_DOT_;
-                        cls.Update();
-                    }
+                    //if (themmoi_DOT == true)
+                    //{
+                    //    cls.Insert();
+                    //}
+                    //else
+                    //{
+                    //    cls.iID_ChiTietPhieu = idchietphieu_DOT_;
+                    //    cls.Update();
+                    //}
+                    cls.iID_ChiTietPhieu = idchietphieu_DOT_;
+                    cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
+                        , cls.bBMay_DOT.Value, sssmaphieu_copy);
 
                     int iiiDID_ChiTietPhieuxxx;
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
