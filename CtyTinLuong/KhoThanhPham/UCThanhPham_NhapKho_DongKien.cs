@@ -40,7 +40,8 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
 
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
@@ -49,17 +50,7 @@ namespace CtyTinLuong
         {
             UCThanhPham_NhapKho_DongKien_Load( sender,  e);
         }
-
-        private void btLayDuLieu_Click(object sender, EventArgs e)
-        {
-            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                Cursor.Current = Cursors.Default;
-            }
-        }
-
+       
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column == clSTT)
@@ -92,6 +83,31 @@ namespace CtyTinLuong
             //_frmQLKTP.Hide();
             ff.Show();
             //_frmQLKTP.Show();
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+           
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
