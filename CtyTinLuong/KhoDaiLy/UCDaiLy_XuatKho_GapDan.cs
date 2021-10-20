@@ -203,6 +203,8 @@ namespace CtyTinLuong
                 clsDongKien_TbNhapKho cls3 = new clsDongKien_TbNhapKho();
                 //cls3.iID_XuatKhoGapDan = xxID;
                 cls3.H_DongKien_Delete_ID_XKGD(xxID);
+                clsDongKien_TbNhapKho_ChiTietNhapKho cls4 = new clsDongKien_TbNhapKho_ChiTietNhapKho();
+                cls4.H_DongKienChiTiet_Delete_ALL_ID_NKDK(xxID);
                 MessageBox.Show("Đã xóa");
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 

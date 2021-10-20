@@ -15,6 +15,39 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsDongKien_TbNhapKho_ChiTietNhapKho : clsDBInteractionBase
 	{
+        public void H_DongKienChiTiet_Delete_ALL_ID_NKDK(int xid_XKDG)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_DongKienChiTiet_Delete_ALL_ID_NKDK]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_nhapkhoDK_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_XKDG));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@_bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, xtontai));
+
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_DongKienChiTiet_Delete_ALL_ID_NKDK::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         public void H_DongKienChiTiet_U_TonTai(int xid_XKDG, bool xtontai)
         {
 
@@ -48,6 +81,7 @@ namespace CtyTinLuong
                 scmCmdToExecute.Dispose();
             }
         }
+
         public DataTable H_DongKienChiTiet_SA_ID_NKDK(int id_nhapkho_)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
