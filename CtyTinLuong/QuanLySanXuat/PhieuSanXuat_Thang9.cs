@@ -670,10 +670,10 @@ namespace CtyTinLuong
                 //    cls.iID_ChiTietPhieu = idchietphieu_in_;
                 //    cls.Update();
                 //}
-
+                
                 cls.iID_ChiTietPhieu = idchietphieu_in_;
                 cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
-                    , cls.bBMay_DOT.Value, sssmaphieu_copy);
+                    , cls.bBMay_DOT.Value, _MaPhieu);
                 int iiiDID_ChiTietPhieuxxx;
                 iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
                 TaoLenhSanXuat(_Loaimay, xxID_Sophieu_, iiiDID_ChiTietPhieuxxx, idcatruong_, idcongnhan_, ngaylapphieu_,
@@ -736,7 +736,7 @@ namespace CtyTinLuong
 
                     cls.iID_ChiTietPhieu = idchietphieu_cat_;
                     cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
-                        , cls.bBMay_DOT.Value, sssmaphieu_copy);
+                        , cls.bBMay_DOT.Value, _MaPhieu);
 
                     int iiiDID_ChiTietPhieuxxx;
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
@@ -798,7 +798,7 @@ namespace CtyTinLuong
                     //}
                     cls.iID_ChiTietPhieu = idchietphieu_DOT_;
                     cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
-                        , cls.bBMay_DOT.Value, sssmaphieu_copy);
+                        , cls.bBMay_DOT.Value, _MaPhieu);
 
                     int iiiDID_ChiTietPhieuxxx;
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
