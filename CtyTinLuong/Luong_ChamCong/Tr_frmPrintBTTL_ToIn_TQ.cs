@@ -29,13 +29,36 @@ namespace CtyTinLuong.Luong_ChamCong
             Tr_PrintBTTL_ToIn_TQ xtr111 = new Tr_PrintBTTL_ToIn_TQ(_thang, _nam);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
+            int ID_congNhanRoot = -1;
             for (int i = 0; i < _data.Rows.Count; ++i)
             {
                 DataRow _ravi = ds.tbBTTL_TMC_CT.NewRow();
 
-                _ravi["STT"] = _data.Rows[i]["STT"].ToString();
-                _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
-                _ravi["Cong"] = _data.Rows[i]["Cong"].ToString();
+                int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
+
+                if (ID_congNhan != 0)
+                {
+                    if (ID_congNhanRoot != ID_congNhan)
+                    {
+                        ID_congNhanRoot = ID_congNhan;
+                        _ravi["STT"] = _data.Rows[i]["STT"].ToString();
+                        _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                    }
+                    else
+                    {
+                        _ravi["STT"] = "";
+                        _ravi["TenNhanVien"] = "";
+                    }
+                }
+                else
+                {
+                    _ravi["STT"] = _data.Rows[i]["STT"].ToString();
+                    _ravi["TenNhanVien"] = _data.Rows[i]["TenNhanVien"].ToString();
+                }
+
+
+                _ravi["Cong"] = _data.Rows[i]["HinhThuc"].ToString();
+                _ravi["PhuCapBaoHiem"] = _data.Rows[i]["PhuCapBaoHiem"].ToString();
                 _ravi["SanLuong"] = _data.Rows[i]["SanLuong"].ToString();
                 _ravi["DonGia"] = _data.Rows[i]["DonGia"].ToString();
                 _ravi["ThanhTien"] = _data.Rows[i]["ThanhTien"].ToString();
