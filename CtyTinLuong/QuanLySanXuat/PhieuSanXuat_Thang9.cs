@@ -1000,7 +1000,7 @@ namespace CtyTinLuong
         {
             try
             {
-                if (bandedGridView1.FocusedRowHandle == bandedGridView1.RowCount - 1)
+                if (bandedGridView1.FocusedRowHandle == bandedGridView1.RowCount )
                     return;
                 else if (_Loaimay == 1)
                 {
@@ -2353,6 +2353,8 @@ namespace CtyTinLuong
             xxSoLuong_Vao_CAT, xxSanLuong_Thuong_CAT, xxSanLuong_TangCa_CAT, sSanLuong_Tong_CAT, xxphepham_CAT,
             xxid_sophieu_CAT, xxid_chitietphieu_CAT, xxthemmoiphieu_cat);
                             Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                            LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
                         }
 
                     }
@@ -2401,6 +2403,8 @@ namespace CtyTinLuong
                 xxSoLuong_Vao_DOT, sSanLuong_Tong_DOT, xxphepham_DOT, xxsokgmmotbao, xxdocaodot,
                 xxid_sophieu_DOT, xxid_chitietphieu_DOT, xxthemmoiphieu_DOT);
                             Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                            LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime);
+
                         }
                     }
                 }
