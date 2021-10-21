@@ -42,6 +42,7 @@ namespace CtyTinLuong
             ds_grid.Add(Ngay31);
 
             _data = new DataTable();
+            _data.Columns.Add("STT", typeof(string));
             _data.Columns.Add("ID_CongNhan", typeof(string)); 
             _data.Columns.Add("TenNhanVien", typeof(string)); 
             _data.Columns.Add("HinhThuc", typeof(string));
@@ -166,7 +167,7 @@ namespace CtyTinLuong
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
-                                ravi_["HinhThuc"] = "SL thường";
+                                ravi_["HinhThuc"] = "SL nhũ";
 
                                 for (int k = 0; k < 31; k++)
                                 {
@@ -189,7 +190,7 @@ namespace CtyTinLuong
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
-                                ravi_["HinhThuc"] = "SL thường";
+                                ravi_["HinhThuc"] = "SL TB";
 
                                 for (int k = 0; k < 31; k++)
                                 {
@@ -211,7 +212,7 @@ namespace CtyTinLuong
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
-                                ravi_["HinhThuc"] = "SL thường";
+                                ravi_["HinhThuc"] = "SL mác";
 
                                 for (int k = 0; k < 31; k++)
                                 {

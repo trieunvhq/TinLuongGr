@@ -242,6 +242,7 @@
             this.ID_CongNhan});
             this.gridView3.GridControl = this.gridControl2;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.AllowCellMerge = true;
             this.gridView3.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
@@ -288,6 +289,7 @@
             this.HinhThuc.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.HinhThuc.Name = "HinhThuc";
             this.HinhThuc.OptionsColumn.AllowEdit = false;
+            this.HinhThuc.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.HinhThuc.OptionsColumn.FixedWidth = true;
             this.HinhThuc.Visible = true;
             this.HinhThuc.VisibleIndex = 2;
@@ -301,6 +303,7 @@
             this.Ngay1.FieldName = "Ngay1";
             this.Ngay1.Name = "Ngay1";
             this.Ngay1.OptionsColumn.AllowEdit = false;
+            this.Ngay1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay1.OptionsColumn.FixedWidth = true;
             this.Ngay1.Visible = true;
             this.Ngay1.VisibleIndex = 3;
@@ -314,6 +317,7 @@
             this.Ngay2.FieldName = "Ngay2";
             this.Ngay2.Name = "Ngay2";
             this.Ngay2.OptionsColumn.AllowEdit = false;
+            this.Ngay2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay2.OptionsColumn.FixedWidth = true;
             this.Ngay2.Visible = true;
             this.Ngay2.VisibleIndex = 4;
@@ -327,6 +331,7 @@
             this.Ngay3.FieldName = "Ngay3";
             this.Ngay3.Name = "Ngay3";
             this.Ngay3.OptionsColumn.AllowEdit = false;
+            this.Ngay3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay3.OptionsColumn.FixedWidth = true;
             this.Ngay3.Visible = true;
             this.Ngay3.VisibleIndex = 5;
@@ -340,6 +345,7 @@
             this.Ngay4.FieldName = "Ngay4";
             this.Ngay4.Name = "Ngay4";
             this.Ngay4.OptionsColumn.AllowEdit = false;
+            this.Ngay4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay4.OptionsColumn.FixedWidth = true;
             this.Ngay4.Visible = true;
             this.Ngay4.VisibleIndex = 6;
@@ -353,6 +359,7 @@
             this.Ngay5.FieldName = "Ngay5";
             this.Ngay5.Name = "Ngay5";
             this.Ngay5.OptionsColumn.AllowEdit = false;
+            this.Ngay5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay5.OptionsColumn.FixedWidth = true;
             this.Ngay5.Visible = true;
             this.Ngay5.VisibleIndex = 7;
@@ -366,6 +373,7 @@
             this.Ngay6.FieldName = "Ngay6";
             this.Ngay6.Name = "Ngay6";
             this.Ngay6.OptionsColumn.AllowEdit = false;
+            this.Ngay6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay6.OptionsColumn.FixedWidth = true;
             this.Ngay6.Visible = true;
             this.Ngay6.VisibleIndex = 8;
@@ -379,6 +387,7 @@
             this.Ngay7.FieldName = "Ngay7";
             this.Ngay7.Name = "Ngay7";
             this.Ngay7.OptionsColumn.AllowEdit = false;
+            this.Ngay7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay7.OptionsColumn.FixedWidth = true;
             this.Ngay7.Visible = true;
             this.Ngay7.VisibleIndex = 9;
@@ -392,6 +401,7 @@
             this.Ngay8.FieldName = "Ngay8";
             this.Ngay8.Name = "Ngay8";
             this.Ngay8.OptionsColumn.AllowEdit = false;
+            this.Ngay8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay8.OptionsColumn.FixedWidth = true;
             this.Ngay8.Visible = true;
             this.Ngay8.VisibleIndex = 10;
@@ -405,6 +415,7 @@
             this.Ngay9.FieldName = "Ngay9";
             this.Ngay9.Name = "Ngay9";
             this.Ngay9.OptionsColumn.AllowEdit = false;
+            this.Ngay9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay9.OptionsColumn.FixedWidth = true;
             this.Ngay9.Visible = true;
             this.Ngay9.VisibleIndex = 11;
@@ -418,6 +429,7 @@
             this.Ngay10.FieldName = "Ngay10";
             this.Ngay10.Name = "Ngay10";
             this.Ngay10.OptionsColumn.AllowEdit = false;
+            this.Ngay10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay10.OptionsColumn.FixedWidth = true;
             this.Ngay10.Visible = true;
             this.Ngay10.VisibleIndex = 12;
@@ -431,6 +443,7 @@
             this.Ngay11.FieldName = "Ngay11";
             this.Ngay11.Name = "Ngay11";
             this.Ngay11.OptionsColumn.AllowEdit = false;
+            this.Ngay11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay11.OptionsColumn.FixedWidth = true;
             this.Ngay11.Visible = true;
             this.Ngay11.VisibleIndex = 13;
@@ -444,6 +457,7 @@
             this.Ngay12.FieldName = "Ngay12";
             this.Ngay12.Name = "Ngay12";
             this.Ngay12.OptionsColumn.AllowEdit = false;
+            this.Ngay12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay12.OptionsColumn.FixedWidth = true;
             this.Ngay12.Visible = true;
             this.Ngay12.VisibleIndex = 14;
@@ -457,6 +471,7 @@
             this.Ngay13.FieldName = "Ngay13";
             this.Ngay13.Name = "Ngay13";
             this.Ngay13.OptionsColumn.AllowEdit = false;
+            this.Ngay13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay13.OptionsColumn.FixedWidth = true;
             this.Ngay13.Visible = true;
             this.Ngay13.VisibleIndex = 15;
@@ -470,6 +485,7 @@
             this.Ngay14.FieldName = "Ngay14";
             this.Ngay14.Name = "Ngay14";
             this.Ngay14.OptionsColumn.AllowEdit = false;
+            this.Ngay14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay14.OptionsColumn.FixedWidth = true;
             this.Ngay14.Visible = true;
             this.Ngay14.VisibleIndex = 16;
@@ -483,6 +499,7 @@
             this.Ngay15.FieldName = "Ngay15";
             this.Ngay15.Name = "Ngay15";
             this.Ngay15.OptionsColumn.AllowEdit = false;
+            this.Ngay15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay15.OptionsColumn.FixedWidth = true;
             this.Ngay15.Visible = true;
             this.Ngay15.VisibleIndex = 17;
@@ -496,6 +513,7 @@
             this.Ngay16.FieldName = "Ngay16";
             this.Ngay16.Name = "Ngay16";
             this.Ngay16.OptionsColumn.AllowEdit = false;
+            this.Ngay16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay16.OptionsColumn.FixedWidth = true;
             this.Ngay16.Visible = true;
             this.Ngay16.VisibleIndex = 18;
@@ -509,6 +527,7 @@
             this.Ngay17.FieldName = "Ngay17";
             this.Ngay17.Name = "Ngay17";
             this.Ngay17.OptionsColumn.AllowEdit = false;
+            this.Ngay17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay17.OptionsColumn.FixedWidth = true;
             this.Ngay17.Visible = true;
             this.Ngay17.VisibleIndex = 19;
@@ -522,6 +541,7 @@
             this.Ngay18.FieldName = "Ngay18";
             this.Ngay18.Name = "Ngay18";
             this.Ngay18.OptionsColumn.AllowEdit = false;
+            this.Ngay18.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay18.OptionsColumn.FixedWidth = true;
             this.Ngay18.Visible = true;
             this.Ngay18.VisibleIndex = 20;
@@ -535,6 +555,7 @@
             this.Ngay19.FieldName = "Ngay19";
             this.Ngay19.Name = "Ngay19";
             this.Ngay19.OptionsColumn.AllowEdit = false;
+            this.Ngay19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay19.OptionsColumn.FixedWidth = true;
             this.Ngay19.Visible = true;
             this.Ngay19.VisibleIndex = 21;
@@ -548,6 +569,7 @@
             this.Ngay20.FieldName = "Ngay20";
             this.Ngay20.Name = "Ngay20";
             this.Ngay20.OptionsColumn.AllowEdit = false;
+            this.Ngay20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay20.OptionsColumn.FixedWidth = true;
             this.Ngay20.Visible = true;
             this.Ngay20.VisibleIndex = 22;
@@ -561,6 +583,7 @@
             this.Ngay21.FieldName = "Ngay21";
             this.Ngay21.Name = "Ngay21";
             this.Ngay21.OptionsColumn.AllowEdit = false;
+            this.Ngay21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay21.OptionsColumn.FixedWidth = true;
             this.Ngay21.Visible = true;
             this.Ngay21.VisibleIndex = 23;
@@ -574,6 +597,7 @@
             this.Ngay22.FieldName = "Ngay22";
             this.Ngay22.Name = "Ngay22";
             this.Ngay22.OptionsColumn.AllowEdit = false;
+            this.Ngay22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay22.OptionsColumn.FixedWidth = true;
             this.Ngay22.Visible = true;
             this.Ngay22.VisibleIndex = 24;
@@ -587,6 +611,7 @@
             this.Ngay23.FieldName = "Ngay23";
             this.Ngay23.Name = "Ngay23";
             this.Ngay23.OptionsColumn.AllowEdit = false;
+            this.Ngay23.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay23.OptionsColumn.FixedWidth = true;
             this.Ngay23.Visible = true;
             this.Ngay23.VisibleIndex = 25;
@@ -600,6 +625,7 @@
             this.Ngay24.FieldName = "Ngay24";
             this.Ngay24.Name = "Ngay24";
             this.Ngay24.OptionsColumn.AllowEdit = false;
+            this.Ngay24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay24.OptionsColumn.FixedWidth = true;
             this.Ngay24.Visible = true;
             this.Ngay24.VisibleIndex = 26;
@@ -613,6 +639,7 @@
             this.Ngay25.FieldName = "Ngay25";
             this.Ngay25.Name = "Ngay25";
             this.Ngay25.OptionsColumn.AllowEdit = false;
+            this.Ngay25.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay25.OptionsColumn.FixedWidth = true;
             this.Ngay25.Visible = true;
             this.Ngay25.VisibleIndex = 27;
@@ -626,6 +653,7 @@
             this.Ngay26.FieldName = "Ngay26";
             this.Ngay26.Name = "Ngay26";
             this.Ngay26.OptionsColumn.AllowEdit = false;
+            this.Ngay26.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay26.OptionsColumn.FixedWidth = true;
             this.Ngay26.Visible = true;
             this.Ngay26.VisibleIndex = 28;
@@ -639,6 +667,7 @@
             this.Ngay27.FieldName = "Ngay27";
             this.Ngay27.Name = "Ngay27";
             this.Ngay27.OptionsColumn.AllowEdit = false;
+            this.Ngay27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay27.OptionsColumn.FixedWidth = true;
             this.Ngay27.Visible = true;
             this.Ngay27.VisibleIndex = 29;
@@ -652,6 +681,7 @@
             this.Ngay28.FieldName = "Ngay28";
             this.Ngay28.Name = "Ngay28";
             this.Ngay28.OptionsColumn.AllowEdit = false;
+            this.Ngay28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay28.OptionsColumn.FixedWidth = true;
             this.Ngay28.Visible = true;
             this.Ngay28.VisibleIndex = 30;
@@ -665,6 +695,7 @@
             this.Ngay29.FieldName = "Ngay29";
             this.Ngay29.Name = "Ngay29";
             this.Ngay29.OptionsColumn.AllowEdit = false;
+            this.Ngay29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay29.OptionsColumn.FixedWidth = true;
             this.Ngay29.Visible = true;
             this.Ngay29.VisibleIndex = 31;
@@ -678,6 +709,7 @@
             this.Ngay30.FieldName = "Ngay30";
             this.Ngay30.Name = "Ngay30";
             this.Ngay30.OptionsColumn.AllowEdit = false;
+            this.Ngay30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay30.OptionsColumn.FixedWidth = true;
             this.Ngay30.Visible = true;
             this.Ngay30.VisibleIndex = 32;
@@ -691,6 +723,7 @@
             this.Ngay31.FieldName = "Ngay31";
             this.Ngay31.Name = "Ngay31";
             this.Ngay31.OptionsColumn.AllowEdit = false;
+            this.Ngay31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Ngay31.OptionsColumn.FixedWidth = true;
             this.Ngay31.Visible = true;
             this.Ngay31.VisibleIndex = 33;
@@ -705,6 +738,7 @@
             this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
+            this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.OptionsColumn.FixedWidth = true;
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 35;
@@ -824,6 +858,7 @@
             this.SLGiayCuon.FieldName = "SLGiayCuon";
             this.SLGiayCuon.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.SLGiayCuon.Name = "SLGiayCuon";
+            this.SLGiayCuon.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SLGiayCuon.Visible = true;
             this.SLGiayCuon.VisibleIndex = 36;
             // 
@@ -833,6 +868,7 @@
             this.VuotSL.FieldName = "VuotSL";
             this.VuotSL.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.VuotSL.Name = "VuotSL";
+            this.VuotSL.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.VuotSL.Visible = true;
             this.VuotSL.VisibleIndex = 37;
             // 
@@ -841,6 +877,7 @@
             this.SoNgayCong.Caption = "NGÀY CÔNG";
             this.SoNgayCong.FieldName = "SoNgayCong";
             this.SoNgayCong.Name = "SoNgayCong";
+            this.SoNgayCong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SoNgayCong.Visible = true;
             this.SoNgayCong.VisibleIndex = 34;
             this.SoNgayCong.Width = 50;

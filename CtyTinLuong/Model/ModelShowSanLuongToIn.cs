@@ -8,7 +8,7 @@ namespace CtyTinLuong
 {
     class ModelShowSanLuongToIn
     {
-        public List<double> DsSLNgay = new List<double>(31);
+        public double[] DsSLNgay = new double[31];
         public double Ngay1 { get; set; }
         public double Ngay2 { get; set; }
         public double Ngay3 { get; set; }
