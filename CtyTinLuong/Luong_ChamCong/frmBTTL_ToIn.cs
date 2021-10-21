@@ -690,8 +690,6 @@ namespace CtyTinLuong
         //}
 
 
-        ////Tính tổng công nhật 1 công nhân:
-
         ////Tính tổng sản lượng một công nhân:
         //private ModelSanLuong getNV_SanLuong(int idcn, int idvthh, DataTable dt)
         //{
@@ -708,7 +706,7 @@ namespace CtyTinLuong
         //    double phuCapBaoHiem = 0;
         //    double truBaoHiem = 0;
         //    string LoaiHangHoa = "";
-
+        //    List<int> dsNgayCong = new List<int>();
 
         //    foreach (DataRow item in dt.Rows)
         //    {
@@ -723,13 +721,19 @@ namespace CtyTinLuong
         //            truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
         //            LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
 
+        //            int NgaySX = Convert.ToDateTime(item["BaoHiem_Value"].ToString()).Day;
+
         //            if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
         //            {
-        //                soNgayCong += 1;
+        //                if (!dsNgayCong.Contains(NgaySX))
+        //                {
+        //                    dsNgayCong.Add(NgaySX);
+        //                }
         //            }
         //        }
         //    }
 
+        //    soNgayCong = dsNgayCong.Count;
         //    if (LoaiHangHoa.Contains("in mác"))
         //    {
         //        slThuong = slTong;
@@ -890,14 +894,14 @@ namespace CtyTinLuong
                 int SttCa1 = 0;
                 int ID_congNhanRoot = -1;
                 int ID_VthhRoot = -1;
-                int ID_congNhanAddPCBH = Convert.ToInt32(_dtSL_Ca1.Rows[0]["ID_CongNhan"].ToString());
+                //int ID_congNhanAddPCBH = Convert.ToInt32(_dtSL_Ca1.Rows[0]["ID_CongNhan"].ToString());
 
                 for (int i = 0; i < _dtSL_Ca1.Rows.Count; ++i)
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_CongNhan"].ToString());
                     int ID_Vthh = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_VTHH_Ra"].ToString());
 
-                    ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, ID_Vthh, _dtSL_Ca1);
+                    ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, "", _dtSL_Ca1);
                     tinhTongCN t = tongTien(ID_congNhan, _dtSL_Ca1);
 
                     //
@@ -1150,7 +1154,7 @@ namespace CtyTinLuong
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_CongNhan"].ToString());
                     int ID_Vthh = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_VTHH_Ra"].ToString());
 
-                    ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, ID_Vthh, _dtSL_Ca2);
+                    ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, "", _dtSL_Ca2);
                     tinhTongCN t = tongTien(ID_congNhan, _dtSL_Ca2);
 
                     //
@@ -1510,7 +1514,7 @@ namespace CtyTinLuong
         }
 
         //Tính tổng sản lượng một công nhân:
-        private ModelSanLuong getNV_SanLuong(int idcn, int idvthh, DataTable dt)
+        private ModelSanLuong getNV_SanLuong(int idcn, string loaiVthh, DataTable dt)
         {
             ModelSanLuong nv = new ModelSanLuong();
             string hoTen = "";
@@ -1525,27 +1529,117 @@ namespace CtyTinLuong
             double phuCapBaoHiem = 0;
             double truBaoHiem = 0;
             string LoaiHangHoa = "";
-
+            List<int> dsNgayCong = new List<int>();
 
             foreach (DataRow item in dt.Rows)
             {
-                if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString())
-                    && idvthh == Convert.ToInt32(item["ID_VTHH_Ra"].ToString()))
+                LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
+                switch (loaiVthh)
                 {
-                    hoTen = item["TenVTHH"].ToString();
-                    slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
-                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
-                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
-                    phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
-                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
-                    LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
+                    case "thường":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (!LoaiHangHoa.Contains("in mác") && !LoaiHangHoa.Contains("in trúc bách") && !LoaiHangHoa.Contains("in nhũ"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    //phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                                    int NgaySX = Convert.ToDateTime(item["BaoHiem_Value"].ToString()).Day;
 
-                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
-                    {
-                        soNgayCong += 1;
-                    }
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if(!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case "nhũ":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (LoaiHangHoa.Contains("in nhũ"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    //phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                                    int NgaySX = Convert.ToDateTime(item["BaoHiem_Value"].ToString()).Day;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case "in mác":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (LoaiHangHoa.Contains("in mác"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    //phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                                    int NgaySX = Convert.ToDateTime(item["BaoHiem_Value"].ToString()).Day;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case "in trúc bách":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (LoaiHangHoa.Contains("in trúc bách"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    //phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                                    int NgaySX = Convert.ToDateTime(item["BaoHiem_Value"].ToString()).Day;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
                 }
             }
+
+            soNgayCong = dsNgayCong.Count;
 
             if (LoaiHangHoa.Contains("in mác"))
             {
@@ -1624,7 +1718,7 @@ namespace CtyTinLuong
                     if (ID_VthhRoot != ID_Vthh_)
                     {
                         ID_VthhRoot = ID_Vthh_;
-                        ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan_, ID_Vthh_, dt);
+                        ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan_, "", dt);
                         result += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
 
                         PhuCapBH += nvSL.PhuCapBaoHiem;
