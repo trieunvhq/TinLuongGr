@@ -9,12 +9,19 @@ namespace CtyTinLuong
     class ModelSanLuong
     {
         private string hoTen;
-        private double slThuong;
+        private string tenVthhThuong;
+        private string tenVthhTang;
         private double slTong;
-
+        private double slThuong;
         private double slTang;
-        private double donGia;
-        private double thanhTien;
+        private double donGiaThuong;
+        private double donGiaTang;
+        private int soNgayCong;
+        private double thanhTienThuong;
+        private double thanhTienTang;
+        private double tienTong;
+        private double phuCapBaoHiem;
+        private double truBaoHiem;
 
         public string HoTen
         {
@@ -26,6 +33,19 @@ namespace CtyTinLuong
             set
             {
                 hoTen = value;
+            }
+        }
+
+        public double SlTong
+        {
+            get
+            {
+                return slTong;
+            }
+
+            set
+            {
+                slTong = value;
             }
         }
 
@@ -55,42 +75,133 @@ namespace CtyTinLuong
             }
         }
 
-        public double DonGia
+        public double DonGiaThuong
         {
             get
             {
-                return donGia;
+                return donGiaThuong;
             }
 
             set
             {
-                donGia = value;
+                donGiaThuong = value;
             }
         }
 
-        public double ThanhTien
+        public double DonGiaTang
         {
             get
             {
-                return thanhTien;
+                return donGiaTang;
             }
 
             set
             {
-                thanhTien = value;
+                donGiaTang = value;
             }
         }
 
-        public double SlTong
+        public int SoNgayCong
         {
             get
             {
-                return slTong;
+                return soNgayCong;
             }
 
             set
             {
-                slTong = value;
+                soNgayCong = value;
+            }
+        }
+
+        public double ThanhTienThuong
+        {
+            get
+            {
+                return thanhTienThuong;
+            }
+
+            set
+            {
+                thanhTienThuong = value;
+            }
+        }
+
+        public double ThanhTienTang
+        {
+            get
+            {
+                return thanhTienTang;
+            }
+
+            set
+            {
+                thanhTienTang = value;
+            }
+        }
+
+        public double PhuCapBaoHiem
+        {
+            get
+            {
+                return phuCapBaoHiem;
+            }
+
+            set
+            {
+                phuCapBaoHiem = value;
+            }
+        }
+
+        public double TruBaoHiem
+        {
+            get
+            {
+                return truBaoHiem;
+            }
+
+            set
+            {
+                truBaoHiem = value;
+            }
+        }
+
+        public string TenVthhThuong
+        {
+            get
+            {
+                return tenVthhThuong;
+            }
+
+            set
+            {
+                tenVthhThuong = value;
+            }
+        }
+
+        public string TenVthhTang
+        {
+            get
+            {
+                return tenVthhTang;
+            }
+
+            set
+            {
+                tenVthhTang = value;
+            }
+        }
+
+        public double TienTong
+        {
+            get
+            {
+                return tienTong;
+            }
+
+            set
+            {
+                tienTong = value;
             }
         }
     }

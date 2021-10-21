@@ -55,10 +55,11 @@
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Cong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HinhThuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SanLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PhuCapBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.XangXe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,6 +81,7 @@
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.NgayCong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -217,10 +219,12 @@
             this.clSTT,
             this.clTenNhanVien,
             this.clTongLuong,
-            this.Cong,
+            this.HinhThuc,
+            this.NgayCong,
             this.SanLuong,
             this.DonGia,
             this.ThanhTien,
+            this.PhuCapBaoHiem,
             this.Tong,
             this.XangXe,
             this.colBaoHiem,
@@ -232,6 +236,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
+            this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
@@ -254,7 +259,6 @@
             this.clSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clSTT.Caption = "STT";
             this.clSTT.FieldName = "STT";
-            this.clSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
             this.clSTT.OptionsColumn.FixedWidth = true;
@@ -269,12 +273,11 @@
             this.clTenNhanVien.Caption = "HỌ TÊN";
             this.clTenNhanVien.ColumnEdit = this.repositoryItemMemoEdit3;
             this.clTenNhanVien.FieldName = "TenNhanVien";
-            this.clTenNhanVien.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.clTenNhanVien.Name = "clTenNhanVien";
             this.clTenNhanVien.OptionsColumn.AllowEdit = false;
             this.clTenNhanVien.Visible = true;
             this.clTenNhanVien.VisibleIndex = 1;
-            this.clTenNhanVien.Width = 130;
+            this.clTenNhanVien.Width = 110;
             // 
             // clTongLuong
             // 
@@ -295,19 +298,18 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
             this.clTongLuong.Width = 80;
             // 
-            // Cong
+            // HinhThuc
             // 
-            this.Cong.AppearanceCell.Options.UseTextOptions = true;
-            this.Cong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Cong.Caption = "CÔNG";
-            this.Cong.FieldName = "Cong";
-            this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.Cong.MinWidth = 50;
-            this.Cong.Name = "Cong";
-            this.Cong.OptionsColumn.AllowEdit = false;
-            this.Cong.Visible = true;
-            this.Cong.VisibleIndex = 2;
-            this.Cong.Width = 90;
+            this.HinhThuc.AppearanceCell.Options.UseFont = true;
+            this.HinhThuc.Caption = "HÌNH THỨC";
+            this.HinhThuc.FieldName = "HinhThuc";
+            this.HinhThuc.MinWidth = 50;
+            this.HinhThuc.Name = "HinhThuc";
+            this.HinhThuc.OptionsColumn.AllowEdit = false;
+            this.HinhThuc.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.HinhThuc.Visible = true;
+            this.HinhThuc.VisibleIndex = 2;
+            this.HinhThuc.Width = 100;
             // 
             // SanLuong
             // 
@@ -319,6 +321,7 @@
             this.SanLuong.MinWidth = 10;
             this.SanLuong.Name = "SanLuong";
             this.SanLuong.OptionsColumn.AllowEdit = false;
+            this.SanLuong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsColumn.FixedWidth = true;
             this.SanLuong.OptionsFilter.AllowAutoFilter = false;
             this.SanLuong.OptionsFilter.AllowFilter = false;
@@ -331,8 +334,8 @@
             this.SanLuong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.SanLuong.OptionsFilter.ShowEmptyDateFilter = false;
             this.SanLuong.Visible = true;
-            this.SanLuong.VisibleIndex = 3;
-            this.SanLuong.Width = 88;
+            this.SanLuong.VisibleIndex = 4;
+            this.SanLuong.Width = 78;
             // 
             // DonGia
             // 
@@ -344,6 +347,7 @@
             this.DonGia.MinWidth = 10;
             this.DonGia.Name = "DonGia";
             this.DonGia.OptionsColumn.AllowEdit = false;
+            this.DonGia.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsColumn.FixedWidth = true;
             this.DonGia.OptionsFilter.AllowAutoFilter = false;
             this.DonGia.OptionsFilter.AllowFilter = false;
@@ -356,8 +360,8 @@
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 4;
-            this.DonGia.Width = 88;
+            this.DonGia.VisibleIndex = 5;
+            this.DonGia.Width = 78;
             // 
             // ThanhTien
             // 
@@ -369,6 +373,7 @@
             this.ThanhTien.MinWidth = 10;
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.OptionsColumn.AllowEdit = false;
+            this.ThanhTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.OptionsColumn.FixedWidth = true;
             this.ThanhTien.OptionsFilter.AllowAutoFilter = false;
             this.ThanhTien.OptionsFilter.AllowFilter = false;
@@ -381,8 +386,20 @@
             this.ThanhTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThanhTien.Visible = true;
-            this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 88;
+            this.ThanhTien.VisibleIndex = 6;
+            this.ThanhTien.Width = 78;
+            // 
+            // PhuCapBaoHiem
+            // 
+            this.PhuCapBaoHiem.AppearanceCell.Options.UseTextOptions = true;
+            this.PhuCapBaoHiem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.PhuCapBaoHiem.Caption = "PHỤ CẤP BẢO HIỂM";
+            this.PhuCapBaoHiem.FieldName = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.Name = "PhuCapBaoHiem";
+            this.PhuCapBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.PhuCapBaoHiem.Visible = true;
+            this.PhuCapBaoHiem.VisibleIndex = 7;
+            this.PhuCapBaoHiem.Width = 78;
             // 
             // Tong
             // 
@@ -394,6 +411,7 @@
             this.Tong.MinWidth = 10;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
+            this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.OptionsColumn.FixedWidth = true;
             this.Tong.OptionsFilter.AllowAutoFilter = false;
             this.Tong.OptionsFilter.AllowFilter = false;
@@ -406,8 +424,8 @@
             this.Tong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.OptionsFilter.ShowEmptyDateFilter = false;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 7;
-            this.Tong.Width = 88;
+            this.Tong.VisibleIndex = 8;
+            this.Tong.Width = 78;
             // 
             // XangXe
             // 
@@ -430,8 +448,6 @@
             this.XangXe.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.XangXe.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.XangXe.OptionsFilter.ShowEmptyDateFilter = false;
-            this.XangXe.Visible = true;
-            this.XangXe.VisibleIndex = 6;
             this.XangXe.Width = 88;
             // 
             // colBaoHiem
@@ -444,6 +460,7 @@
             this.colBaoHiem.MinWidth = 10;
             this.colBaoHiem.Name = "colBaoHiem";
             this.colBaoHiem.OptionsColumn.AllowEdit = false;
+            this.colBaoHiem.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colBaoHiem.OptionsColumn.FixedWidth = true;
             this.colBaoHiem.OptionsFilter.AllowAutoFilter = false;
             this.colBaoHiem.OptionsFilter.AllowFilter = false;
@@ -456,8 +473,8 @@
             this.colBaoHiem.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.colBaoHiem.OptionsFilter.ShowEmptyDateFilter = false;
             this.colBaoHiem.Visible = true;
-            this.colBaoHiem.VisibleIndex = 8;
-            this.colBaoHiem.Width = 88;
+            this.colBaoHiem.VisibleIndex = 9;
+            this.colBaoHiem.Width = 78;
             // 
             // TamUng
             // 
@@ -492,6 +509,7 @@
             this.ThucNhan.MinWidth = 10;
             this.ThucNhan.Name = "ThucNhan";
             this.ThucNhan.OptionsColumn.AllowEdit = false;
+            this.ThucNhan.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThucNhan.OptionsColumn.FixedWidth = true;
             this.ThucNhan.OptionsFilter.AllowAutoFilter = false;
             this.ThucNhan.OptionsFilter.AllowFilter = false;
@@ -505,8 +523,8 @@
             this.ThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
-            this.ThucNhan.VisibleIndex = 9;
-            this.ThucNhan.Width = 88;
+            this.ThucNhan.VisibleIndex = 10;
+            this.ThucNhan.Width = 78;
             // 
             // KyNhan
             // 
@@ -717,6 +735,18 @@
             0});
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
+            // NgayCong
+            // 
+            this.NgayCong.AppearanceCell.Options.UseTextOptions = true;
+            this.NgayCong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.NgayCong.Caption = "NGÀY CÔNG";
+            this.NgayCong.FieldName = "NgayCong";
+            this.NgayCong.Name = "NgayCong";
+            this.NgayCong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.NgayCong.Visible = true;
+            this.NgayCong.VisibleIndex = 3;
+            this.NgayCong.Width = 60;
+            // 
             // frmBTTL_ToIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -773,7 +803,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn clTongLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn Cong;
+        private DevExpress.XtraGrid.Columns.GridColumn HinhThuc;
         private DevExpress.XtraGrid.Columns.GridColumn SanLuong;
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn ThanhTien;
@@ -798,5 +828,7 @@
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.NumericUpDown txtNam;
         private System.Windows.Forms.NumericUpDown txtThang;
+        private DevExpress.XtraGrid.Columns.GridColumn PhuCapBaoHiem;
+        private DevExpress.XtraGrid.Columns.GridColumn NgayCong;
     }
 }

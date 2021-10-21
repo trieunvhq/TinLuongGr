@@ -100,392 +100,393 @@ namespace CtyTinLuong
 
 
             using (clsThin clsThin_ = new clsThin())
-            {
-                //Lấy dữ liệu ca1
-                _dtCong_Ca1 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, true);
-                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 1");
+            { }
+            //{
+            //    //Lấy dữ liệu ca1
+            //    _dtCong_Ca1 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, true);
+            //    _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 1");
 
-                //Lấy dữ liệu ca2
-                _dtCong_Ca2 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, false);
-                _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 2");
+            //    //Lấy dữ liệu ca2
+            //    _dtCong_Ca2 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, false);
+            //    _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 2");
 
-                int SttCa1 = 0;
-                int ID_congNhanRoot = -1;
+            //    int SttCa1 = 0;
+            //    int ID_congNhanRoot = -1;
 
-                for (int i = 0; i < _dtCong_Ca1.Rows.Count; ++i)
-                {
-                    int ID_congNhan = Convert.ToInt32(_dtCong_Ca1.Rows[i]["ID_CongNhan"].ToString());
+            //    for (int i = 0; i < _dtCong_Ca1.Rows.Count; ++i)
+            //    {
+            //        int ID_congNhan = Convert.ToInt32(_dtCong_Ca1.Rows[i]["ID_CongNhan"].ToString());
 
-                    //
-                    if (ID_congNhanRoot != ID_congNhan)
-                    {
-                        DataRow ravi_ = _data.NewRow();
-                        ID_congNhanRoot = ID_congNhan;
+            //        //
+            //        if (ID_congNhanRoot != ID_congNhan)
+            //        {
+            //            DataRow ravi_ = _data.NewRow();
+            //            ID_congNhanRoot = ID_congNhan;
 
-                        ModelCongNhat nvCN = getNV_CongNhat(ID_congNhan, _dtCong_Ca1);
-                        ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, _dtSL_Ca1);
+            //            ModelCongNhat nvCN = getNV_CongNhat(ID_congNhan, _dtCong_Ca1);
+            //            ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, _dtSL_Ca1);
 
-                        //STT
-                        SttCa1++;
-                        ravi_["STT"] = SttCa1;
-                        ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtCong_Ca1.Rows[i]["TenNhanVien"].ToString());
+            //            //STT
+            //            SttCa1++;
+            //            ravi_["STT"] = SttCa1;
+            //            ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtCong_Ca1.Rows[i]["TenNhanVien"].ToString());
 
-                        if (nvCN.CongTong == 0) ravi_["Cong"] = "";
-                        else ravi_["Cong"] = nvCN.CongTong.ToString("N0");
+            //            if (nvCN.CongTong == 0) ravi_["Cong"] = "";
+            //            else ravi_["Cong"] = nvCN.CongTong.ToString("N0");
 
-                        if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
-                        else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
+            //            if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
+            //            else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
 
-                        if (nvCN.DonGia == 0) ravi_["DonGia"] = "";
-                        else ravi_["DonGia"] = nvCN.DonGia.ToString("N0");
+            //            if (nvCN.DonGia == 0) ravi_["DonGia"] = "";
+            //            else ravi_["DonGia"] = nvCN.DonGia.ToString("N0");
 
-                        if (nvCN.ThanhTien > nvSL.ThanhTien)
-                        {
-                            ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N0");
-                            ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N0");
-                            ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+            //            if (nvCN.ThanhTien > nvSL.ThanhTien)
+            //            {
+            //                ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N0");
+            //                ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N0");
+            //                ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
 
-                            _ThanhTien_Tong_Ca1 += nvCN.ThanhTien;
-                            _Tong_Ca1 += nvCN.ThanhTien + nvCN.XangXe;
-                            _ThucNhan_Tong_Ca1 += nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
-                        }
-                        else
-                        {
-                            ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N0");
-                            ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N0");
-                            ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+            //                _ThanhTien_Tong_Ca1 += nvCN.ThanhTien;
+            //                _Tong_Ca1 += nvCN.ThanhTien + nvCN.XangXe;
+            //                _ThucNhan_Tong_Ca1 += nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
+            //            }
+            //            else
+            //            {
+            //                ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N0");
+            //                ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N0");
+            //                ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
 
-                            _ThanhTien_Tong_Ca1 += nvSL.ThanhTien;
-                            _Tong_Ca1 += nvSL.ThanhTien + nvCN.XangXe;
-                            _ThucNhan_Tong_Ca1 += nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
-                        }
+            //                _ThanhTien_Tong_Ca1 += nvSL.ThanhTien;
+            //                _Tong_Ca1 += nvSL.ThanhTien + nvCN.XangXe;
+            //                _ThucNhan_Tong_Ca1 += nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
+            //            }
 
-                        if (nvCN.XangXe == 0) ravi_["XangXe"] = "";
-                        else ravi_["XangXe"] = nvCN.XangXe.ToString("N0");
+            //            if (nvCN.XangXe == 0) ravi_["XangXe"] = "";
+            //            else ravi_["XangXe"] = nvCN.XangXe.ToString("N0");
 
-                        if (nvCN.BaoHiem == 0) ravi_["BaoHiem"] = "";
-                        else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N0");
+            //            if (nvCN.BaoHiem == 0) ravi_["BaoHiem"] = "";
+            //            else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N0");
 
-                        _NgayCong_Tong_Ca1 += nvCN.CongTong;
-                        _SanLuong_Tong_Ca1 += nvSL.SlTong;
-                        _XangXe_Tong_Ca1 += nvCN.XangXe;
-                        _BaoHiem_Tong_Ca1 += nvCN.BaoHiem;
+            //            _NgayCong_Tong_Ca1 += nvCN.CongTong;
+            //            _SanLuong_Tong_Ca1 += nvSL.SlTong;
+            //            _XangXe_Tong_Ca1 += nvCN.XangXe;
+            //            _BaoHiem_Tong_Ca1 += nvCN.BaoHiem;
 
-                        _data.Rows.Add(ravi_);
-                    }
-                }
+            //            _data.Rows.Add(ravi_);
+            //        }
+            //    }
 
-                //Add thêm row tổng ca 1:
-                DataRow _ravi = _data.NewRow();
-                _ravi["ID_CongNhan"] = 0;
-                _ravi["Thang"] = _thang;
-                _ravi["Nam"] = _nam;
-                _ravi["TenNhanVien"] = "CA 1:";
+            //    //Add thêm row tổng ca 1:
+            //    DataRow _ravi = _data.NewRow();
+            //    _ravi["ID_CongNhan"] = 0;
+            //    _ravi["Thang"] = _thang;
+            //    _ravi["Nam"] = _nam;
+            //    _ravi["TenNhanVien"] = "CA 1:";
 
-                //
-                if (_NgayCong_Tong_Ca1 == 0)
-                {
-                    _ravi["Cong"] = "";
-                }
-                else
-                {
-                    _ravi["Cong"] = _NgayCong_Tong_Ca1.ToString("N0");
-                }
+            //    //
+            //    if (_NgayCong_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["Cong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["Cong"] = _NgayCong_Tong_Ca1.ToString("N0");
+            //    }
 
-                //
-                if (_SanLuong_Tong_Ca1 == 0)
-                {
-                    _ravi["SanLuong"] = "";
-                }
-                else
-                {
-                    _ravi["SanLuong"] = _SanLuong_Tong_Ca1.ToString("N0");
-                }
+            //    //
+            //    if (_SanLuong_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["SanLuong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["SanLuong"] = _SanLuong_Tong_Ca1.ToString("N0");
+            //    }
 
-                //
-                if (_ThanhTien_Tong_Ca1 == 0)
-                {
-                    _ravi["ThanhTien"] = "";
-                }
-                else
-                {
-                    _ravi["ThanhTien"] = _ThanhTien_Tong_Ca1.ToString("N0");
-                }
+            //    //
+            //    if (_ThanhTien_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["ThanhTien"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["ThanhTien"] = _ThanhTien_Tong_Ca1.ToString("N0");
+            //    }
 
-                //
-                if (_XangXe_Tong_Ca1 == 0)
-                {
-                    _ravi["XangXe"] = "";
-                }
-                else
-                {
-                    _ravi["XangXe"] = _XangXe_Tong_Ca1.ToString("N0");
-                }
+            //    //
+            //    if (_XangXe_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["XangXe"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["XangXe"] = _XangXe_Tong_Ca1.ToString("N0");
+            //    }
 
-                //
-                if (_Tong_Ca1 == 0)
-                {
-                    _ravi["Tong"] = "";
-                }
-                else
-                {
-                    _ravi["Tong"] = _Tong_Ca1.ToString("N0");
-                }
+            //    //
+            //    if (_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["Tong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["Tong"] = _Tong_Ca1.ToString("N0");
+            //    }
 
-                //
-                if (_BaoHiem_Tong_Ca1 == 0)
-                {
-                    _ravi["BaoHiem"] = "";
-                }
-                else
-                {
-                    _ravi["BaoHiem"] = _BaoHiem_Tong_Ca1.ToString("N0");
-                }
+            //    //
+            //    if (_BaoHiem_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["BaoHiem"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["BaoHiem"] = _BaoHiem_Tong_Ca1.ToString("N0");
+            //    }
 
-                // 
-                if (_ThucNhan_Tong_Ca1 == 0)
-                {
-                    _ravi["ThucNhan"] = "";
-                }
-                else
-                {
-                    _ravi["ThucNhan"] = _ThucNhan_Tong_Ca1.ToString("N0");
-                }
+            //    // 
+            //    if (_ThucNhan_Tong_Ca1 == 0)
+            //    {
+            //        _ravi["ThucNhan"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi["ThucNhan"] = _ThucNhan_Tong_Ca1.ToString("N0");
+            //    }
 
-                _data.Rows.Add(_ravi);
-                _indexTongCa1 = _data.Rows.Count -1;
+            //    _data.Rows.Add(_ravi);
+            //    _indexTongCa1 = _data.Rows.Count -1;
 
 
-                //Ca 2:
-                int SttCa2 = 0;
-                ID_congNhanRoot = -1;
+            //    //Ca 2:
+            //    int SttCa2 = 0;
+            //    ID_congNhanRoot = -1;
 
-                for (int i = 0; i < _dtCong_Ca2.Rows.Count; ++i)
-                {
-                    int ID_congNhan = Convert.ToInt32(_dtCong_Ca2.Rows[i]["ID_CongNhan"].ToString());
+            //    for (int i = 0; i < _dtCong_Ca2.Rows.Count; ++i)
+            //    {
+            //        int ID_congNhan = Convert.ToInt32(_dtCong_Ca2.Rows[i]["ID_CongNhan"].ToString());
 
-                    //
-                    if (ID_congNhanRoot != ID_congNhan)
-                    {
-                        DataRow ravi_ = _data.NewRow();
-                        ID_congNhanRoot = ID_congNhan;
+            //        //
+            //        if (ID_congNhanRoot != ID_congNhan)
+            //        {
+            //            DataRow ravi_ = _data.NewRow();
+            //            ID_congNhanRoot = ID_congNhan;
 
-                        ModelCongNhat nvCN = getNV_CongNhat(ID_congNhan, _dtCong_Ca2);
-                        ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, _dtSL_Ca2);
+            //            ModelCongNhat nvCN = getNV_CongNhat(ID_congNhan, _dtCong_Ca2);
+            //            ModelSanLuong nvSL = getNV_SanLuong(ID_congNhan, _dtSL_Ca2);
 
-                        //STT
-                        SttCa2++;
-                        ravi_["STT"] = SttCa2;
-                        ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtCong_Ca2.Rows[i]["TenNhanVien"].ToString());
+            //            //STT
+            //            SttCa2++;
+            //            ravi_["STT"] = SttCa2;
+            //            ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtCong_Ca2.Rows[i]["TenNhanVien"].ToString());
 
-                        if (nvCN.CongTong == 0) ravi_["Cong"] = "";
-                        else ravi_["Cong"] = nvCN.CongTong.ToString("N0");
+            //            if (nvCN.CongTong == 0) ravi_["Cong"] = "";
+            //            else ravi_["Cong"] = nvCN.CongTong.ToString("N0");
 
-                        if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
-                        else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
+            //            if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
+            //            else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
 
-                        if (nvCN.DonGia == 0) ravi_["DonGia"] = "";
-                        else ravi_["DonGia"] = nvCN.DonGia.ToString("N0");
+            //            if (nvCN.DonGia == 0) ravi_["DonGia"] = "";
+            //            else ravi_["DonGia"] = nvCN.DonGia.ToString("N0");
 
-                        if (nvCN.ThanhTien > nvSL.ThanhTien)
-                        {
-                            ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N0");
-                            ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N0");
-                            ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+            //            if (nvCN.ThanhTien > nvSL.ThanhTien)
+            //            {
+            //                ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N0");
+            //                ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N0");
+            //                ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
 
-                            _ThanhTien_Tong_Ca2 += nvCN.ThanhTien;
-                            _Tong_Ca2 += nvCN.ThanhTien + nvCN.XangXe;
-                            _ThucNhan_Tong_Ca2 += nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
-                        }
-                        else
-                        {
-                            ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N0");
-                            ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N0");
-                            ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+            //                _ThanhTien_Tong_Ca2 += nvCN.ThanhTien;
+            //                _Tong_Ca2 += nvCN.ThanhTien + nvCN.XangXe;
+            //                _ThucNhan_Tong_Ca2 += nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
+            //            }
+            //            else
+            //            {
+            //                ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N0");
+            //                ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N0");
+            //                ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
 
-                            _ThanhTien_Tong_Ca2 += nvSL.ThanhTien;
-                            _Tong_Ca2 += nvSL.ThanhTien + nvCN.XangXe;
-                            _ThucNhan_Tong_Ca2 += nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
-                        }
+            //                _ThanhTien_Tong_Ca2 += nvSL.ThanhTien;
+            //                _Tong_Ca2 += nvSL.ThanhTien + nvCN.XangXe;
+            //                _ThucNhan_Tong_Ca2 += nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem;
+            //            }
 
-                        if (nvCN.XangXe == 0) ravi_["XangXe"] = "";
-                        else ravi_["XangXe"] = nvCN.XangXe.ToString("N0");
+            //            if (nvCN.XangXe == 0) ravi_["XangXe"] = "";
+            //            else ravi_["XangXe"] = nvCN.XangXe.ToString("N0");
 
-                        if (nvCN.BaoHiem == 0) ravi_["BaoHiem"] = "";
-                        else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N0");
+            //            if (nvCN.BaoHiem == 0) ravi_["BaoHiem"] = "";
+            //            else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N0");
 
-                        _NgayCong_Tong_Ca2 += nvCN.CongTong;
-                        _SanLuong_Tong_Ca2 += nvSL.SlTong;
-                        _XangXe_Tong_Ca2 += nvCN.XangXe;
-                        _BaoHiem_Tong_Ca2 += nvCN.BaoHiem;
+            //            _NgayCong_Tong_Ca2 += nvCN.CongTong;
+            //            _SanLuong_Tong_Ca2 += nvSL.SlTong;
+            //            _XangXe_Tong_Ca2 += nvCN.XangXe;
+            //            _BaoHiem_Tong_Ca2 += nvCN.BaoHiem;
 
-                        _data.Rows.Add(ravi_);
-                    }
-                }
+            //            _data.Rows.Add(ravi_);
+            //        }
+            //    }
 
-                //Add thêm row tổng ca 2:
-                DataRow _ravi_ca2 = _data.NewRow();
-                _ravi_ca2["ID_CongNhan"] = 0;
-                _ravi_ca2["Thang"] = _thang;
-                _ravi_ca2["Nam"] = _nam;
-                _ravi_ca2["TenNhanVien"] = "CA 2:";
+            //    //Add thêm row tổng ca 2:
+            //    DataRow _ravi_ca2 = _data.NewRow();
+            //    _ravi_ca2["ID_CongNhan"] = 0;
+            //    _ravi_ca2["Thang"] = _thang;
+            //    _ravi_ca2["Nam"] = _nam;
+            //    _ravi_ca2["TenNhanVien"] = "CA 2:";
 
-                //
-                if (_NgayCong_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["Cong"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["Cong"] = _NgayCong_Tong_Ca2.ToString("N0");
-                }
+            //    //
+            //    if (_NgayCong_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["Cong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["Cong"] = _NgayCong_Tong_Ca2.ToString("N0");
+            //    }
 
-                //
-                if (_SanLuong_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["SanLuong"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["SanLuong"] = _SanLuong_Tong_Ca2.ToString("N0");
-                }
+            //    //
+            //    if (_SanLuong_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["SanLuong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["SanLuong"] = _SanLuong_Tong_Ca2.ToString("N0");
+            //    }
 
-                //
-                if (_ThanhTien_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["ThanhTien"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["ThanhTien"] = _ThanhTien_Tong_Ca2.ToString("N0");
-                }
+            //    //
+            //    if (_ThanhTien_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["ThanhTien"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["ThanhTien"] = _ThanhTien_Tong_Ca2.ToString("N0");
+            //    }
 
-                //
-                if (_XangXe_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["XangXe"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["XangXe"] = _XangXe_Tong_Ca2.ToString("N0");
-                }
+            //    //
+            //    if (_XangXe_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["XangXe"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["XangXe"] = _XangXe_Tong_Ca2.ToString("N0");
+            //    }
 
-                //
-                if (_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["Tong"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["Tong"] = _Tong_Ca2.ToString("N0");
-                }
+            //    //
+            //    if (_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["Tong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["Tong"] = _Tong_Ca2.ToString("N0");
+            //    }
 
-                //
-                if (_BaoHiem_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["BaoHiem"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["BaoHiem"] = _BaoHiem_Tong_Ca2.ToString("N0");
-                }
+            //    //
+            //    if (_BaoHiem_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["BaoHiem"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["BaoHiem"] = _BaoHiem_Tong_Ca2.ToString("N0");
+            //    }
 
-                // 
-                if (_ThucNhan_Tong_Ca2 == 0)
-                {
-                    _ravi_ca2["ThucNhan"] = "";
-                }
-                else
-                {
-                    _ravi_ca2["ThucNhan"] = _ThucNhan_Tong_Ca2.ToString("N0");
-                }
+            //    // 
+            //    if (_ThucNhan_Tong_Ca2 == 0)
+            //    {
+            //        _ravi_ca2["ThucNhan"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_ca2["ThucNhan"] = _ThucNhan_Tong_Ca2.ToString("N0");
+            //    }
 
-                _data.Rows.Add(_ravi_ca2);
+            //    _data.Rows.Add(_ravi_ca2);
 
-                //Add Tổng 2 ca:
-                //Add thêm row tổng ca 2:
-                DataRow _ravi_2ca = _data.NewRow();
-                _ravi_2ca["ID_CongNhan"] = 0;
-                _ravi_2ca["Thang"] = _thang;
-                _ravi_2ca["Nam"] = _nam;
-                _ravi_2ca["TenNhanVien"] = "Tổng";
+            //    //Add Tổng 2 ca:
+            //    //Add thêm row tổng ca 2:
+            //    DataRow _ravi_2ca = _data.NewRow();
+            //    _ravi_2ca["ID_CongNhan"] = 0;
+            //    _ravi_2ca["Thang"] = _thang;
+            //    _ravi_2ca["Nam"] = _nam;
+            //    _ravi_2ca["TenNhanVien"] = "Tổng";
 
-                //
-                if (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["Cong"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["Cong"] = (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1).ToString("N0");
-                }
+            //    //
+            //    if (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["Cong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["Cong"] = (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1).ToString("N0");
+            //    }
 
-                //
-                if (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["SanLuong"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["SanLuong"] = (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1).ToString("N0");
-                }
+            //    //
+            //    if (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["SanLuong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["SanLuong"] = (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1).ToString("N0");
+            //    }
 
-                //
-                if (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["ThanhTien"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["ThanhTien"] = (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1).ToString("N0");
-                }
+            //    //
+            //    if (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["ThanhTien"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["ThanhTien"] = (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1).ToString("N0");
+            //    }
 
-                //
-                if (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["XangXe"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["XangXe"] = (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1).ToString("N0");
-                }
+            //    //
+            //    if (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["XangXe"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["XangXe"] = (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1).ToString("N0");
+            //    }
 
-                //
-                if (_Tong_Ca2 + _Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["Tong"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["Tong"] = (_Tong_Ca2 + _Tong_Ca1).ToString("N0");
-                }
+            //    //
+            //    if (_Tong_Ca2 + _Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["Tong"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["Tong"] = (_Tong_Ca2 + _Tong_Ca1).ToString("N0");
+            //    }
 
-                //
-                if (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["BaoHiem"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["BaoHiem"] = (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1).ToString("N0");
-                }
+            //    //
+            //    if (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["BaoHiem"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["BaoHiem"] = (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1).ToString("N0");
+            //    }
 
-                // 
-                if (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1 == 0)
-                {
-                    _ravi_2ca["ThucNhan"] = "";
-                }
-                else
-                {
-                    _ravi_2ca["ThucNhan"] = (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1).ToString("N0");
-                }
+            //    // 
+            //    if (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1 == 0)
+            //    {
+            //        _ravi_2ca["ThucNhan"] = "";
+            //    }
+            //    else
+            //    {
+            //        _ravi_2ca["ThucNhan"] = (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1).ToString("N0");
+            //    }
 
-                _data.Rows.Add(_ravi_2ca);
+            //    _data.Rows.Add(_ravi_2ca);
 
-                gridControl1.DataSource = _data;
-                //  
-                isload = false;
-            }
+            //    gridControl1.DataSource = _data;
+            //    //  
+            //    isload = false;
+            //}
         }
 
         //Tính tổng công nhật:
@@ -639,7 +640,7 @@ namespace CtyTinLuong
             nv.SlThuong = slThuong;
             nv.SlTang = slTang;
             nv.SlTong = slThuong + slTang;
-            nv.ThanhTien = tienThuong + tienTang;
+            //nv.ThanhTien = tienThuong + tienTang;
 
             return nv;
         }
