@@ -87,6 +87,11 @@
             this.SLGiayCuon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VuotSL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoNgayCong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtNam = new System.Windows.Forms.NumericUpDown();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -101,6 +106,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,6 +127,8 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.txtNam);
+            this.dataLayoutControl1.Controls.Add(this.txtThang);
             this.dataLayoutControl1.Controls.Add(this.label3);
             this.dataLayoutControl1.Controls.Add(this.label2);
             this.dataLayoutControl1.Controls.Add(this.label1);
@@ -157,7 +168,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1152, 20);
+            this.label1.Size = new System.Drawing.Size(941, 20);
             this.label1.TabIndex = 111;
             this.label1.Text = "         CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI SẢN XUẤT TÍN LƯỢNG";
             // 
@@ -227,7 +238,8 @@
             this.SoNgayCong,
             this.Tong,
             this.SLGiayCuon,
-            this.VuotSL});
+            this.VuotSL,
+            this.ID_CongNhan});
             this.gridView3.GridControl = this.gridControl2;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.AllowHtmlDrawHeaders = true;
@@ -736,7 +748,9 @@
             this.emptySpaceItem1,
             this.layoutControlItem1,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem2,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1156, 648);
@@ -782,7 +796,7 @@
             this.layoutControlItem1.Control = this.label1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1156, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(945, 24);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -831,6 +845,76 @@
             this.SoNgayCong.VisibleIndex = 34;
             this.SoNgayCong.Width = 50;
             // 
+            // txtThang
+            // 
+            this.txtThang.Location = new System.Drawing.Point(980, 2);
+            this.txtThang.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.txtThang.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.Name = "txtThang";
+            this.txtThang.Size = new System.Drawing.Size(68, 20);
+            this.txtThang.TabIndex = 114;
+            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtThang.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txtThang;
+            this.layoutControlItem2.Location = new System.Drawing.Point(945, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(105, 24);
+            this.layoutControlItem2.Text = "Tháng";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(30, 13);
+            // 
+            // txtNam
+            // 
+            this.txtNam.Location = new System.Drawing.Point(1085, 2);
+            this.txtNam.Maximum = new decimal(new int[] {
+            2900,
+            0,
+            0,
+            0});
+            this.txtNam.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(69, 20);
+            this.txtNam.TabIndex = 115;
+            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNam.Value = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtNam;
+            this.layoutControlItem5.Location = new System.Drawing.Point(1050, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(106, 24);
+            this.layoutControlItem5.Text = "Năm";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(30, 13);
+            // 
+            // ID_CongNhan
+            // 
+            this.ID_CongNhan.Caption = "ID_CongNhan";
+            this.ID_CongNhan.FieldName = "ID_CongNhan";
+            this.ID_CongNhan.Name = "ID_CongNhan";
+            // 
             // Tr_frmBangSanLuongToIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -857,6 +941,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -919,5 +1007,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn SoNgayCong;
         private DevExpress.XtraGrid.Columns.GridColumn SLGiayCuon;
         private DevExpress.XtraGrid.Columns.GridColumn VuotSL;
+        private System.Windows.Forms.NumericUpDown txtNam;
+        private System.Windows.Forms.NumericUpDown txtThang;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_CongNhan;
     }
 }

@@ -899,16 +899,16 @@ namespace CtyTinLuong
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_CongNhan"].ToString());
 
-                    ModelSanLuong nvSL_thuong = getNV_SanLuong(ID_congNhan, "thường", _dtSL_Ca1);
-                    ModelSanLuong nvSL_nhu = getNV_SanLuong(ID_congNhan, "in nhũ", _dtSL_Ca1);
-                    ModelSanLuong nvSL_mac = getNV_SanLuong(ID_congNhan, "in mác", _dtSL_Ca1);
-                    ModelSanLuong nvSL_tb = getNV_SanLuong(ID_congNhan, "in trúc bách", _dtSL_Ca1);
-
-                    tinhTongCN t = tongTien(nvSL_thuong, nvSL_nhu, nvSL_mac, nvSL_tb);
-
                     //
                     if (ID_congNhanRoot != ID_congNhan)
                     {
+                        ModelSanLuong nvSL_thuong = getNV_SanLuong(ID_congNhan, "thường", _dtSL_Ca1);
+                        ModelSanLuong nvSL_nhu = getNV_SanLuong(ID_congNhan, "in nhũ", _dtSL_Ca1);
+                        ModelSanLuong nvSL_mac = getNV_SanLuong(ID_congNhan, "in mác", _dtSL_Ca1);
+                        ModelSanLuong nvSL_tb = getNV_SanLuong(ID_congNhan, "in trúc bách", _dtSL_Ca1);
+
+                        tinhTongCN t = tongTien(nvSL_thuong, nvSL_nhu, nvSL_mac, nvSL_tb);
+
                         ID_congNhanRoot = ID_congNhan;
                         SttCa1++;
                         if (nvSL_thuong.SlTong > 0)
