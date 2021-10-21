@@ -1527,6 +1527,7 @@ namespace CtyTinLuong
                 HienThi_Pannel(_Loaimay);
                 txtSoTrang.Text = "1";
                 ResetSoTrang(_SoDong, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 LoadData(1, _SoDong, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
             
                 Cursor.Current = Cursors.Default;
