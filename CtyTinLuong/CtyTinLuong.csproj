@@ -193,6 +193,12 @@
     <Compile Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.Designer.cs">
       <DependentUpon>KhoThanhPham_XuatKho_DongKien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.Designer.cs">
+      <DependentUpon>Tr_frmBangSanLuongToIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2583,6 +2589,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.resx">
       <DependentUpon>KhoThanhPham_XuatKho_DongKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.resx">
+      <DependentUpon>Tr_frmBangSanLuongToIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN.resx">
       <DependentUpon>Tr_frmChiTiet_LuongSanLuongCN.cs</DependentUpon>
