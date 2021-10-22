@@ -118,6 +118,7 @@
             this.linkLabel1.TabIndex = 123;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Thêm công nhân";
+            this.linkLabel1.Visible = false;
             // 
             // label3
             // 

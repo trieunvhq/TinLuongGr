@@ -16,8 +16,8 @@ namespace CtyTinLuong
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMain());
-            Application.Run(new Tr_frmBangSanLuongToIn());
+            Application.Run(new frmMain());
+            //Application.Run(new Tr_frmBangSanLuongToIn());
 
 
             //Application.Run(new frmDangNhap());

@@ -331,6 +331,12 @@
     <Compile Include="Luong_ChamCong\TrPrintChamCong_PhuMC_Old.Designer.cs">
       <DependentUpon>TrPrintChamCong_PhuMC_Old.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCong_PKToan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\TrPrintChamCong_PKToan.Designer.cs">
+      <DependentUpon>TrPrintChamCong_PKToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCong_TMC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -788,11 +794,11 @@
     <Compile Include="Luong_ChamCong\TrPrintChamCongPTH.Designer.cs">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\TrPrintChamCong_PKToan.cs">
+    <Compile Include="Luong_ChamCong\TrPrintBangSanLuongToIN.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\TrPrintChamCong_PKToan.Designer.cs">
-      <DependentUpon>TrPrintChamCong_PKToan.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\TrPrintBangSanLuongToIN.Designer.cs">
+      <DependentUpon>TrPrintBangSanLuongToIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\TrPrintChamCong_PhuMC.cs">
       <SubType>Component</SubType>
@@ -2657,6 +2663,9 @@
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_PhuMC_Old.resx">
       <DependentUpon>TrPrintChamCong_PhuMC_Old.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_PKToan.resx">
+      <DependentUpon>TrPrintChamCong_PKToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_TMC.resx">
       <DependentUpon>TrPrintChamCong_TMC.cs</DependentUpon>
     </EmbeddedResource>
@@ -2877,8 +2886,8 @@
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCongPTH.resx">
       <DependentUpon>TrPrintChamCongPTH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_PKToan.resx">
-      <DependentUpon>TrPrintChamCong_PKToan.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\TrPrintBangSanLuongToIN.resx">
+      <DependentUpon>TrPrintBangSanLuongToIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrPrintChamCong_PhuMC.resx">
       <DependentUpon>TrPrintChamCong_PhuMC.cs</DependentUpon>

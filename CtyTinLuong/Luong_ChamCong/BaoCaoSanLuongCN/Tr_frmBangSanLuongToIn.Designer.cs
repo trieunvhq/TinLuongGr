@@ -33,6 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmBangSanLuongToIn));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.txtNam = new System.Windows.Forms.NumericUpDown();
+            this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,7 +75,11 @@
             this.Ngay29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ngay31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SoNgayCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SLGiayCuon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VuotSL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -84,17 +90,13 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.SLGiayCuon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.VuotSL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SoNgayCong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ID_CongNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
@@ -106,9 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +142,56 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(1156, 648);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // txtNam
+            // 
+            this.txtNam.Location = new System.Drawing.Point(1085, 2);
+            this.txtNam.Maximum = new decimal(new int[] {
+            2900,
+            0,
+            0,
+            0});
+            this.txtNam.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(69, 20);
+            this.txtNam.TabIndex = 115;
+            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNam.Value = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
+            this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
+            // 
+            // txtThang
+            // 
+            this.txtThang.Location = new System.Drawing.Point(980, 2);
+            this.txtThang.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.txtThang.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.Name = "txtThang";
+            this.txtThang.Size = new System.Drawing.Size(68, 20);
+            this.txtThang.TabIndex = 114;
+            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtThang.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
+            this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
             // label3
             // 
@@ -248,6 +298,7 @@
             this.gridView3.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.gridView3.OptionsView.RowAutoHeight = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView3_RowCellStyle);
             // 
             // STT
             // 
@@ -729,6 +780,18 @@
             this.Ngay31.VisibleIndex = 33;
             this.Ngay31.Width = 50;
             // 
+            // SoNgayCong
+            // 
+            this.SoNgayCong.AppearanceCell.Options.UseTextOptions = true;
+            this.SoNgayCong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SoNgayCong.Caption = "NGÀY CÔNG";
+            this.SoNgayCong.FieldName = "SoNgayCong";
+            this.SoNgayCong.Name = "SoNgayCong";
+            this.SoNgayCong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.SoNgayCong.Visible = true;
+            this.SoNgayCong.VisibleIndex = 34;
+            this.SoNgayCong.Width = 50;
+            // 
             // Tong
             // 
             this.Tong.AppearanceCell.Options.UseTextOptions = true;
@@ -743,6 +806,36 @@
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 35;
             this.Tong.Width = 70;
+            // 
+            // SLGiayCuon
+            // 
+            this.SLGiayCuon.AppearanceCell.Options.UseTextOptions = true;
+            this.SLGiayCuon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SLGiayCuon.Caption = "SL GIẤY CUỘN";
+            this.SLGiayCuon.FieldName = "SLGiayCuon";
+            this.SLGiayCuon.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.SLGiayCuon.Name = "SLGiayCuon";
+            this.SLGiayCuon.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.SLGiayCuon.Visible = true;
+            this.SLGiayCuon.VisibleIndex = 36;
+            // 
+            // VuotSL
+            // 
+            this.VuotSL.AppearanceCell.Options.UseTextOptions = true;
+            this.VuotSL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.VuotSL.Caption = "VƯỢT SL";
+            this.VuotSL.FieldName = "VuotSL";
+            this.VuotSL.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.VuotSL.Name = "VuotSL";
+            this.VuotSL.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.VuotSL.Visible = true;
+            this.VuotSL.VisibleIndex = 37;
+            // 
+            // ID_CongNhan
+            // 
+            this.ID_CongNhan.Caption = "ID_CongNhan";
+            this.ID_CongNhan.FieldName = "ID_CongNhan";
+            this.ID_CongNhan.Name = "ID_CongNhan";
             // 
             // btThoat
             // 
@@ -852,59 +945,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // SLGiayCuon
-            // 
-            this.SLGiayCuon.Caption = "SL GIẤY CUỘN";
-            this.SLGiayCuon.FieldName = "SLGiayCuon";
-            this.SLGiayCuon.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.SLGiayCuon.Name = "SLGiayCuon";
-            this.SLGiayCuon.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.SLGiayCuon.Visible = true;
-            this.SLGiayCuon.VisibleIndex = 36;
-            // 
-            // VuotSL
-            // 
-            this.VuotSL.Caption = "VƯỢT SL";
-            this.VuotSL.FieldName = "VuotSL";
-            this.VuotSL.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.VuotSL.Name = "VuotSL";
-            this.VuotSL.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.VuotSL.Visible = true;
-            this.VuotSL.VisibleIndex = 37;
-            // 
-            // SoNgayCong
-            // 
-            this.SoNgayCong.Caption = "NGÀY CÔNG";
-            this.SoNgayCong.FieldName = "SoNgayCong";
-            this.SoNgayCong.Name = "SoNgayCong";
-            this.SoNgayCong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.SoNgayCong.Visible = true;
-            this.SoNgayCong.VisibleIndex = 34;
-            this.SoNgayCong.Width = 50;
-            // 
-            // txtThang
-            // 
-            this.txtThang.Location = new System.Drawing.Point(980, 2);
-            this.txtThang.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.txtThang.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new System.Drawing.Size(68, 20);
-            this.txtThang.TabIndex = 114;
-            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtThang.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtThang;
@@ -914,29 +954,6 @@
             this.layoutControlItem2.Text = "Tháng";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(30, 13);
             // 
-            // txtNam
-            // 
-            this.txtNam.Location = new System.Drawing.Point(1085, 2);
-            this.txtNam.Maximum = new decimal(new int[] {
-            2900,
-            0,
-            0,
-            0});
-            this.txtNam.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(69, 20);
-            this.txtNam.TabIndex = 115;
-            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNam.Value = new decimal(new int[] {
-            2021,
-            0,
-            0,
-            0});
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtNam;
@@ -945,12 +962,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(106, 24);
             this.layoutControlItem5.Text = "Năm";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(30, 13);
-            // 
-            // ID_CongNhan
-            // 
-            this.ID_CongNhan.Caption = "ID_CongNhan";
-            this.ID_CongNhan.FieldName = "ID_CongNhan";
-            this.ID_CongNhan.Name = "ID_CongNhan";
             // 
             // Tr_frmBangSanLuongToIn
             // 
@@ -967,6 +978,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
@@ -978,9 +991,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 

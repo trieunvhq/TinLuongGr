@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,17 @@ namespace CtyTinLuong
         private DataTable _data;
         private List<GridColumn> ds_grid = new List<GridColumn>();
         private int _thang, _nam;
+        private bool isload = true;
+
         DateTime ngaydauthang, ngaycuoithang;
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
 
+       
+
+
+        private bool _deleted_29 = false;
+        private bool _deleted_30 = false;
+        private bool _deleted_31 = false;
 
         public Tr_frmBangSanLuongToIn()
         {
@@ -102,6 +111,12 @@ namespace CtyTinLuong
 
         public void LoadData(bool islandau)
         {
+            isload = true;
+            double Tong_SLGiayCuon = 0;
+            double Tong_VuotSanLuong = 0;
+            double[] DsTongNgay = new double[31];
+            for (int i = 0; i < 31; i++) DsTongNgay[i] = 0;
+
             if (islandau)
             {
                 DateTime dtnow = DateTime.Now;
@@ -150,11 +165,15 @@ namespace CtyTinLuong
                                 for (int k = 0; k < 31; k++)
                                 {
                                     ravi_["Ngay" + (k + 1)] = nvSL_thuong.DsSLNgay[k];
+                                    DsTongNgay[k] += nvSL_thuong.DsSLNgay[k];
                                 }
                                 ravi_["Tong"] = nvSL_thuong.SlTong;
                                 ravi_["SLGiayCuon"] = nvSL_thuong.SoNgayCong * 40;
                                 ravi_["VuotSL"] = nvSL_thuong.SlTong - (nvSL_thuong.SoNgayCong * 40);
                                 ravi_["SoNgayCong"] = nvSL_thuong.SoNgayCong;
+
+                                Tong_SLGiayCuon += nvSL_thuong.SoNgayCong * 40;
+                                Tong_VuotSanLuong += nvSL_thuong.SlTong - (nvSL_thuong.SoNgayCong * 40);
 
                                 _data.Rows.Add(ravi_);
                             }
@@ -171,12 +190,15 @@ namespace CtyTinLuong
 
                                 for (int k = 0; k < 31; k++)
                                 {
-                                    ravi_["Ngay" + (k + 1)] = nvSL_thuong.DsSLNgay[k];
+                                    ravi_["Ngay" + (k + 1)] = nvSL_nhu.DsSLNgay[k];
+                                    DsTongNgay[k] += nvSL_nhu.DsSLNgay[k];
                                 }
                                 ravi_["Tong"] = nvSL_nhu.SlTong;
-                                ravi_["SLGiayCuon"] = nvSL_nhu.SoNgayCong * 40;
-                                ravi_["VuotSL"] = nvSL_nhu.SlTong - (nvSL_nhu.SoNgayCong * 40);
+                                ravi_["SLGiayCuon"] = nvSL_nhu.SlTong;
+                                ravi_["VuotSL"] = "";
                                 ravi_["SoNgayCong"] = nvSL_nhu.SoNgayCong;
+
+                                Tong_SLGiayCuon += nvSL_nhu.SlTong;
 
                                 _data.Rows.Add(ravi_);
                             }
@@ -194,12 +216,15 @@ namespace CtyTinLuong
 
                                 for (int k = 0; k < 31; k++)
                                 {
-                                    ravi_["Ngay" + (k + 1)] = nvSL_thuong.DsSLNgay[k];
+                                    ravi_["Ngay" + (k + 1)] = nvSL_tb.DsSLNgay[k];
+                                    DsTongNgay[k] += nvSL_tb.DsSLNgay[k];
                                 }
-                                ravi_["Tong"] = nvSL_nhu.SlTong;
-                                ravi_["SLGiayCuon"] = nvSL_nhu.SoNgayCong * 40;
-                                ravi_["VuotSL"] = nvSL_nhu.SlTong - (nvSL_nhu.SoNgayCong * 40);
-                                ravi_["SoNgayCong"] = nvSL_nhu.SoNgayCong;
+                                ravi_["Tong"] = nvSL_tb.SlTong;
+                                ravi_["SLGiayCuon"] = nvSL_tb.SlTong;
+                                ravi_["VuotSL"] = "";
+                                ravi_["SoNgayCong"] = nvSL_tb.SoNgayCong;
+
+                                Tong_SLGiayCuon += nvSL_tb.SlTong;
 
                                 _data.Rows.Add(ravi_);
                             }
@@ -216,12 +241,15 @@ namespace CtyTinLuong
 
                                 for (int k = 0; k < 31; k++)
                                 {
-                                    ravi_["Ngay" + (k + 1)] = nvSL_thuong.DsSLNgay[k];
+                                    ravi_["Ngay" + (k + 1)] = nvSL_mac.DsSLNgay[k];
+                                    DsTongNgay[k] += nvSL_mac.DsSLNgay[k];
                                 }
                                 ravi_["Tong"] = nvSL_mac.SlTong;
-                                ravi_["SLGiayCuon"] = nvSL_mac.SoNgayCong * 40;
-                                ravi_["VuotSL"] = nvSL_mac.SlTong - (nvSL_mac.SoNgayCong * 40);
+                                ravi_["SLGiayCuon"] = nvSL_mac.SlTong;
+                                ravi_["VuotSL"] = "";
                                 ravi_["SoNgayCong"] = nvSL_mac.SoNgayCong;
+
+                                Tong_SLGiayCuon += nvSL_mac.SlTong;
 
                                 _data.Rows.Add(ravi_);
                             }
@@ -232,6 +260,24 @@ namespace CtyTinLuong
                         }
                     }
 
+                    DataRow _ravi2 = _data.NewRow();
+                    _ravi2["ID_CongNhan"] = 0;
+                    _ravi2["TenNhanVien"] = "";
+                    _ravi2["HinhThuc"] = "Sản lượng";
+
+
+                    double tong_tong = 0;
+                    for (int i = 0; i < 31; i++)
+                    {
+                        _ravi2["Ngay" + (i+1)] = String.Format("{0:0.##}", DsTongNgay[i]);
+                        tong_tong += DsTongNgay[i];
+                    }
+                    _ravi2["Tong"] = String.Format("{0:0.##}", tong_tong);
+                    _ravi2["SLGiayCuon"] = String.Format("{0:0.##}", Tong_SLGiayCuon);
+                    _ravi2["VuotSL"] = String.Format("{0:0.##}", Tong_VuotSanLuong);
+                    _ravi2["SoNgayCong"] = "";
+
+                    _data.Rows.Add(_ravi2);
                 }
 
                 gridControl2.DataSource = _data;
@@ -240,6 +286,7 @@ namespace CtyTinLuong
             {
                 MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            isload = false;
         }
 
         private ModelShowSanLuongToIn getNV_SanLuong(int idcn, string loaiVthh, DataTable dt)
@@ -450,42 +497,52 @@ namespace CtyTinLuong
             return "";
         }
 
-        double Tong_Ngay1 = 0;
-        double Tong_Ngay2 = 0;
-        double Tong_Ngay3 = 0;
-        double Tong_Ngay4 = 0;
-        double Tong_Ngay5 = 0;
-        double Tong_Ngay6 = 0;
-        double Tong_Ngay7 = 0;
-        double Tong_Ngay8 = 0;
-        double Tong_Ngay9 = 0;
-        double Tong_Ngay10 = 0;
-        double Tong_Ngay11 = 0;
-        double Tong_Ngay12 = 0;
-        double Tong_Ngay13 = 0;
-        double Tong_Ngay14 = 0;
-        double Tong_Ngay15 = 0;
-        double Tong_Ngay16 = 0;
-        double Tong_Ngay17 = 0;
-        double Tong_Ngay18 = 0;
-        double Tong_Ngay19 = 0;
-        double Tong_Ngay20 = 0;
-        double Tong_Ngay21 = 0;
-        double Tong_Ngay22 = 0;
-        double Tong_Ngay23 = 0;
-        double Tong_Ngay24 = 0;
-        double Tong_Ngay25 = 0;
-        double Tong_Ngay26 = 0;
-        double Tong_Ngay27 = 0;
-        double Tong_Ngay28 = 0;
-        double Tong_Ngay29 = 0;
-        double Tong_Ngay30 = 0;
-        double Tong_Ngay31 = 0;
-        DataTable _dt_DinhMuc;
+        private void gridView3_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.RowHandle == _data.Rows.Count - 1)
+            {
+                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            }
+        }
 
-        private bool _deleted_29 = false;
-        private bool _deleted_30 = false;
-        private bool _deleted_31 = false;
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (isload)
+                return;
+            if (e.KeyChar == (char)13)
+            {
+                _thang = Convert.ToInt32(txtThang.Text);
+                LoadData(false);
+            }
+        }
+
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (isload)
+                return;
+            if (e.KeyChar == (char)13)
+            {
+                _nam = Convert.ToInt32(txtNam.Text);
+                LoadData(false);
+            }
+        }
+
+        private void txtThang_Leave(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            _thang = Convert.ToInt32(txtThang.Text);
+            LoadData(false);
+        }
+
+        private void txtNam_Leave(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            _nam = Convert.ToInt32(txtNam.Text);
+            LoadData(false);
+        }
 
         private void ChangeColTitle(int thang, int nam)
         {
