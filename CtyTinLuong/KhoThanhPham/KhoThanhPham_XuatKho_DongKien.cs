@@ -122,7 +122,7 @@ namespace CtyTinLuong
             DataTable dt = cls1.SelectOne();          
             if (cls1.bNhapThanhPham_True == true)
             {
-                btLuu_Dong.Enabled = false;
+                //btLuu_Dong.Enabled = false;
                 btLuu_Gui_Dong.Enabled = false;
             }
             mbtrangthainhapkhothanhpham = cls1.bNhapThanhPham_True.Value;
@@ -356,15 +356,15 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                //try
-                //{
+                try
+                {
                     Luu_XuatKho_DongKien(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
                     MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private void Luu_Va_GuiDuLieu()
@@ -372,16 +372,17 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                //try
-                //{
+                try
+                {
+                    mbtrangthainhapkhothanhpham = true;
                     Luu_XuatKho_DongKien(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
                     Luu_NhapKhoThanhPham();
                     MessageBox.Show("Đã lưu và gửi dữ liệu");
-                //}
-                //catch
-                //{
-
-                //}
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private void KhoThanhPham_XuatKho_DongKien_Load(object sender, EventArgs e)
