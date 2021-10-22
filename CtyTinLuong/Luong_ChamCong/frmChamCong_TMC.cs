@@ -1283,6 +1283,8 @@ namespace CtyTinLuong
 
         private void radioCa1_CheckedChanged(object sender, EventArgs e)
         {
+            if (isload)
+                return;
             LoadData(false, radioCa1.Checked);
         }
 

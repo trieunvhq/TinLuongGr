@@ -168,13 +168,20 @@ namespace CtyTinLuong
                                     ravi_["Ngay" + (k + 1)] = nvSL_thuong.DsSLNgay[k];
                                     DsTongNgay[k] += nvSL_thuong.DsSLNgay[k];
                                 }
+
+                                double vuotsl = 0;
+                                if (nvSL_thuong.SlTong - (nvSL_thuong.SoNgayCong * 40) > 0)
+                                {
+                                    vuotsl = nvSL_thuong.SlTong - (nvSL_thuong.SoNgayCong * 40);
+                                }
+                                    
                                 ravi_["Tong"] = nvSL_thuong.SlTong;
                                 ravi_["SLGiayCuon"] = nvSL_thuong.SoNgayCong * 40;
-                                ravi_["VuotSL"] = nvSL_thuong.SlTong - (nvSL_thuong.SoNgayCong * 40);
+                                ravi_["VuotSL"] = vuotsl;
                                 ravi_["SoNgayCong"] = nvSL_thuong.SoNgayCong;
 
                                 Tong_SLGiayCuon += nvSL_thuong.SoNgayCong * 40;
-                                Tong_VuotSanLuong += nvSL_thuong.SlTong - (nvSL_thuong.SoNgayCong * 40);
+                                Tong_VuotSanLuong += vuotsl;
 
                                 _data.Rows.Add(ravi_);
                             }
@@ -194,6 +201,7 @@ namespace CtyTinLuong
                                     ravi_["Ngay" + (k + 1)] = nvSL_nhu.DsSLNgay[k];
                                     DsTongNgay[k] += nvSL_nhu.DsSLNgay[k];
                                 }
+
                                 ravi_["Tong"] = nvSL_nhu.SlTong;
                                 ravi_["SLGiayCuon"] = nvSL_nhu.SlTong;
                                 ravi_["VuotSL"] = "";
@@ -264,7 +272,7 @@ namespace CtyTinLuong
                     DataRow _ravi2 = _data.NewRow();
                     _ravi2["ID_CongNhan"] = 0;
                     _ravi2["TenNhanVien"] = "";
-                    _ravi2["HinhThuc"] = "Sản lượng";
+                    _ravi2["HinhThuc"] = "Sản lượng tổng";
 
 
                     double tong_tong = 0;
@@ -327,7 +335,7 @@ namespace CtyTinLuong
                                     slTong += sl;
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
-                                    nv.DsSLNgay[NgaySX] += sl;
+                                    nv.DsSLNgay[NgaySX -1] += sl;
 
                                     if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
                                     {
@@ -351,7 +359,7 @@ namespace CtyTinLuong
                                     slTong += sl;
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
-                                    nv.DsSLNgay[NgaySX] += sl;
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
 
                                     if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
                                     {
@@ -375,7 +383,7 @@ namespace CtyTinLuong
                                     slTong += sl;
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
-                                    nv.DsSLNgay[NgaySX] += sl;
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
 
                                     if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
                                     {
@@ -399,7 +407,7 @@ namespace CtyTinLuong
                                     slTong += sl;
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
-                                    nv.DsSLNgay[NgaySX] += sl;
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
 
                                     if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
                                     {
