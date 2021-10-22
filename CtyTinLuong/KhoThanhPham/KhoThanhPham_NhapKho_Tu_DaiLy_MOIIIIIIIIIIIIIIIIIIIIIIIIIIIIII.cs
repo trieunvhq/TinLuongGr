@@ -33,14 +33,16 @@ namespace CtyTinLuong
             double soluongton = 0;
             clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
             clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
-            double soluongnhap;
-            DataTable dt_NhapTruoc = new DataTable();
-           
+          
+            DataTable dt_NhapTruoc = new DataTable();           
             dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH,id_daily_, DateTime.Today);
-           
-           
-                soluongnhap = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
-            soluongton = soluongnhap - soluongxuat_moi;
+            DataTable dt_XuatTruoc = new DataTable();
+            dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH, id_daily_, DateTime.Today);
+
+            double soluongnhap = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
+            double soluongxuat_cu = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+
+            soluongton = soluongnhap - soluongxuat_moi- soluongxuat_cu;
             if (soluongton < 0)
                 MessageBox.Show(""+madaily+"-"+ stendaily + " || " + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "");
             //label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";

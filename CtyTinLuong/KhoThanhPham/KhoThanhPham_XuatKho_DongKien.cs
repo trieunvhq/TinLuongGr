@@ -18,26 +18,28 @@ namespace CtyTinLuong
             InitializeComponent();
         }
 
-        private void Hienthi_Lable_TonKho(int xxID_VTHH, int id_daily_, double soluongxuat_moi)
+        private void Hienthi_Lable_TonKho(int xxID_VTHH, double soluongxuat_moi)
         {
+
+            clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
+            cls.iID_VTHH = xxID_VTHH;
+            DataTable dt = cls.SelectOne();
+
+            clsDongKien_TbNhapKho_ChiTietNhapKho cls1 = new CtyTinLuong.clsDongKien_TbNhapKho_ChiTietNhapKho();
+            clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
             
-            //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            //cls.iID_VTHH = xxID_VTHH;
-            //DataTable dt = cls.SelectOne();
-            //double soluongton = 0;
-            //clsDaiLy_tbChiTietNhapKho cls1 = new CtyTinLuong.clsDaiLy_tbChiTietNhapKho();
-            //clsDaiLy_tbChiTietXuatKho cls2 = new clsDaiLy_tbChiTietXuatKho();
-            //double soluongnhap;
-            //DataTable dt_NhapTruoc = new DataTable();
+            DataTable dt_NhapTruoc = new DataTable();
+            DataTable dt_xuatTruoc = new DataTable();
 
-            //dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH, id_daily_, DateTime.Today);
+            dt_NhapTruoc = cls1.H_DK_SA_NhapTruocKy_ID_VTHH(DateTime.Today, xxID_VTHH);
+            dt_xuatTruoc = cls2.H_DK_SA_XuatTruocKy_ID_VTHH(DateTime.Today, xxID_VTHH);
+            double soluongnhap = Convert.ToDouble(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
+            double soluongxuat_cu = Convert.ToDouble(dt_NhapTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
 
-
-            //soluongnhap = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
-            //soluongton = soluongnhap - soluongxuat_moi;
-            //if (soluongton < 0)
-            //    MessageBox.Show("" + madaily + "-" + stendaily + " || " + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "");
-            ////label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
+            double soluongton = soluongnhap - soluongxuat_moi- soluongxuat_cu;
+            if (soluongton < 0)
+                MessageBox.Show("" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "");
+            //label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
 
 
         }
@@ -280,7 +282,15 @@ namespace CtyTinLuong
             {
                 gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, tenvthh);
                 gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, donvitinhvthh);
-                //gridView4.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                gridView4.SetRowCellValue(e.RowHandle, clSoLuong, "1");
+                gridView4.SetRowCellValue(e.RowHandle, clDonGia, "0");
+                gridView4.SetRowCellValue(e.RowHandle, clThanhTien, "0");
+            }
+            if (e.Column == clSoLuong)
+            {
+                int xid = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString());
+                double soluongxid = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clSoLuong).ToString());
+                Hienthi_Lable_TonKho(xid, soluongxid);
             }
         }
 
