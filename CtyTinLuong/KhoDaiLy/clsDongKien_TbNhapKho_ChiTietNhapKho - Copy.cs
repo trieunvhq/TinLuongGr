@@ -15,6 +15,37 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsDongKien_TbNhapKho_ChiTietNhapKho : clsDBInteractionBase
 	{
+        public DataTable H_DongKien_S_D_IDVTHH_XKDK()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_DongKien_S_D_IDVTHH_XKDK]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_DongKien_S_D_IDVTHH_XKDK");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                
+                m_scoMainConnection.Open();
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_DongKien_S_D_IDVTHH_XKDK", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public void H_DongKienChiTiet_Delete_ALL_ID_NKDK(int xid_XKDG)
         {
 
