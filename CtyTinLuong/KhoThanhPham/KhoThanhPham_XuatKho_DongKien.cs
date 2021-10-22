@@ -233,11 +233,12 @@ namespace CtyTinLuong
                 cls2.iID_XuatKho_DongKien = xxid_xuatkho;               
                 int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                 cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                cls2.fSoLuongXuat = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuong"].ToString());
+                cls2.fSoLuongXuat = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongXuat"].ToString());
                 if (dttttt2.Rows[i]["DonGia"].ToString() == "")
                     cls2.fDonGia = 0;
                 else cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
                 cls2.sGhiChu = dttttt2.Rows[i]["GhiChu"].ToString();
+                cls2.fThanhTien= CheckString.ConvertToDouble_My(dttttt2.Rows[i]["ThanhTien"].ToString());
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
                 cls2.bDaXuatKho = true;                
@@ -334,8 +335,8 @@ namespace CtyTinLuong
                 {
                     cls5.iID_NhapKho_ThanhPham = iiDI_nhapkhothanhpham;
                     cls5.iID_VTHH = Convert.ToInt32(dtaaaaa.Rows[i]["ID_VTHH"].ToString());
-                    cls5.fSoLuongNhap = CheckString.ConvertToDouble_My(dtaaaaa.Rows[i]["SoLuongNhap"].ToString());
-                    cls5.fSoLuongTon = CheckString.ConvertToDouble_My(dtaaaaa.Rows[i]["SoLuongNhap"].ToString());
+                    cls5.fSoLuongNhap = CheckString.ConvertToDouble_My(dtaaaaa.Rows[i]["SoLuongXuat"].ToString());
+                    cls5.fSoLuongTon = CheckString.ConvertToDouble_My(dtaaaaa.Rows[i]["SoLuongXuat"].ToString());
                     cls5.fDonGia = CheckString.ConvertToDouble_My(dtaaaaa.Rows[i]["DonGia"].ToString());
                     cls5.bTonTai = true;
                     cls5.bNgungTheoDoi = false;
@@ -355,15 +356,15 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                try
-                {
+                //try
+                //{
                     Luu_XuatKho_DongKien(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
                     MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch
-                {
-                    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
         private void Luu_Va_GuiDuLieu()
@@ -371,16 +372,16 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                try
-                {
+                //try
+                //{
                     Luu_XuatKho_DongKien(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
                     Luu_NhapKhoThanhPham();
                     MessageBox.Show("Đã lưu và gửi dữ liệu");
-                }
-                catch
-                {
+                //}
+                //catch
+                //{
 
-                }
+                //}
             }
         }
         private void KhoThanhPham_XuatKho_DongKien_Load(object sender, EventArgs e)

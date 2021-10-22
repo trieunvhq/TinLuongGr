@@ -61,12 +61,12 @@ namespace CtyTinLuong
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString() != "")
             {
                 mbThemMoi = false;
                 mbSua = true;
                 mbCopy = false;
-                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
+                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString());
                 KhoThanhPham_XuatKho_DongKien ff = new KhoThanhPham_XuatKho_DongKien();
                 //_frmQLKTP.Hide();
                 ff.Show();
@@ -112,12 +112,12 @@ namespace CtyTinLuong
 
         private void btCoopy_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString() != "")
             {
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
-                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
+                miID_NhapKho = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString());
                 KhoThanhPham_XuatKho_DongKien ff = new KhoThanhPham_XuatKho_DongKien();
                 //_frmQLKTP.Hide();
                 ff.Show();
@@ -135,9 +135,9 @@ namespace CtyTinLuong
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString() != "")
             {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKho_ThanhPham).ToString());
+                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString());
                 HienThiGridControl_2(iiIDnhapKhp);
             }
         }
