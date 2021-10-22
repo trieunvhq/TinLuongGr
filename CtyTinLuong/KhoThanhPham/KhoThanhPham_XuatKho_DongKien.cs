@@ -135,7 +135,7 @@ namespace CtyTinLuong
 
             clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
             DataTable dt2 = cls2.H_DongKien_ChiTiet_XK_SA_IDXK(xxid_Xuatkho_);
-            gridControl1.DataSource = dt;
+            gridControl1.DataSource = dt2;
 
         }
         private void HienThi_Copy_XuatKho(int xxid_Xuatkho_)
@@ -154,7 +154,7 @@ namespace CtyTinLuong
 
             clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
             DataTable dt2 = cls2.H_DongKien_ChiTiet_XK_SA_IDXK(xxid_Xuatkho_);
-            gridControl1.DataSource = dt;
+            gridControl1.DataSource = dt2;
 
         }
         private void Load_LockUp()
