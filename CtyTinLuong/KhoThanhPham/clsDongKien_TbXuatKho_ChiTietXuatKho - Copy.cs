@@ -15,6 +15,40 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsDongKien_TbXuatKho_ChiTietXuatKho : clsDBInteractionBase
 	{
+        public void H_DongKien_CT_XK_U_TonTai(int xid_XKDG, bool xtontai)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_DongKien_CT_XK_U_TonTai]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_iID_xuatkhoDK_", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_XKDG));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_bTonTai", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, xtontai));
+
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_DongKien_CT_XK_U_TonTai::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+
         public DataTable H_DK_SA_XuatTruocKy_ID_VTHH(DateTime ngay_batdau, int xidvthh)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
