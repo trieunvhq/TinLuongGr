@@ -401,6 +401,7 @@
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView4_CustomDrawCell);
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView4_CellValueChanged);
             // 
             // clSTT
@@ -420,7 +421,7 @@
             this.clSoLuong.Name = "clSoLuong";
             this.clSoLuong.OptionsColumn.FixedWidth = true;
             this.clSoLuong.Visible = true;
-            this.clSoLuong.VisibleIndex = 3;
+            this.clSoLuong.VisibleIndex = 4;
             this.clSoLuong.Width = 80;
             // 
             // clDonGia
@@ -461,7 +462,7 @@
             this.clDonViTinh.OptionsColumn.AllowEdit = false;
             this.clDonViTinh.OptionsColumn.FixedWidth = true;
             this.clDonViTinh.Visible = true;
-            this.clDonViTinh.VisibleIndex = 4;
+            this.clDonViTinh.VisibleIndex = 3;
             this.clDonViTinh.Width = 60;
             // 
             // clHienThi
@@ -497,7 +498,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 8;
+            this.clXoa.VisibleIndex = 7;
             this.clXoa.Width = 40;
             // 
             // btXoa2
@@ -585,8 +586,6 @@
             this.clGhiChu.Caption = "Ghi chú";
             this.clGhiChu.FieldName = "GhiChu";
             this.clGhiChu.Name = "clGhiChu";
-            this.clGhiChu.Visible = true;
-            this.clGhiChu.VisibleIndex = 7;
             this.clGhiChu.Width = 116;
             // 
             // repositoryItemMemoEdit1

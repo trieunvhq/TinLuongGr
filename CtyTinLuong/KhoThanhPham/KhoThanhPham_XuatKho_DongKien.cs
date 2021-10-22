@@ -86,10 +86,24 @@ namespace CtyTinLuong
         }
         private void HienThi_ThemMoi_XuatKho()
         {
-            gridNguoiLap.EditValue = 14;           
+            gridNguoiLap.EditValue = 15;           
             dteNgayChungTu.EditValue = DateTime.Today;
             txtSoChungTu.Text = Load_soChungTu_XuatKhoDongKien();
             txtThamChieu.Text = Load_soChungTu_KhoThanhPham();
+            
+            DataTable dt2 = new DataTable();
+            
+            dt2.Columns.Add("ID_VTHH", typeof(int));          
+            dt2.Columns.Add("TenVTHH", typeof(string));
+            dt2.Columns.Add("DonViTinh", typeof(string));
+            dt2.Columns.Add("MaVT", typeof(string));
+            dt2.Columns.Add("SoLuong", typeof(double));          
+            dt2.Columns.Add("DonGia", typeof(double));          
+            dt2.Columns.Add("ThanhTien", typeof(double));
+            dt2.Columns.Add("GhiChu", typeof(string));
+            //dt2.Columns.Add("HienThi", typeof(string));
+
+            gridControl1.DataSource = dt2;
         }
         private void HienThi_Sua_XuatKho(int xxid_Xuatkho_)
         {
@@ -280,6 +294,12 @@ namespace CtyTinLuong
         private void btXoa2_Click(object sender, EventArgs e)
         {
             gridView4.DeleteRow(gridView4.FocusedRowHandle);
+        }
+
+        private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT)
+                e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
         private void Search_MaVT_EditValueChanged(object sender, EventArgs e)
