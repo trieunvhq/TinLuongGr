@@ -111,6 +111,7 @@ namespace CtyTinLuong
 
         public void LoadData(bool islandau)
         {
+            _data.Clear();
             isload = true;
             double Tong_SLGiayCuon = 0;
             double Tong_VuotSanLuong = 0;
@@ -542,6 +543,12 @@ namespace CtyTinLuong
                 return;
             _nam = Convert.ToInt32(txtNam.Text);
             LoadData(false);
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangSanLuongToIN ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangSanLuongToIN(_thang, _nam, _data);
+            ff.Show();
         }
 
         private void ChangeColTitle(int thang, int nam)

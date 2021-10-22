@@ -391,6 +391,12 @@
     <Compile Include="Luong_ChamCong\Tr_frmPrintBTTL_ToDot_CT.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_ToDot_CT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBangSanLuongToIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\Tr_frmPrintBangSanLuongToIN.Designer.cs">
+      <DependentUpon>Tr_frmPrintBangSanLuongToIN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\Tr_frmPrintChamCong_ToDot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2692,6 +2698,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBTTL_ToDot_CT.resx">
       <DependentUpon>Tr_frmPrintBTTL_ToDot_CT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintBangSanLuongToIN.resx">
+      <DependentUpon>Tr_frmPrintBangSanLuongToIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\Tr_frmPrintChamCong_ToDot.resx">
       <DependentUpon>Tr_frmPrintChamCong_ToDot.cs</DependentUpon>

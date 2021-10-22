@@ -16493,7 +16493,6 @@ namespace CtyTinLuong {
                 base.Columns.Add(this.columnVuotSL);
                 this.columnSTT = new global::System.Data.DataColumn("STT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTT);
-                this.columnVuotSL.Caption = "ID_DinhMuc_Luong_SanLuong";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
