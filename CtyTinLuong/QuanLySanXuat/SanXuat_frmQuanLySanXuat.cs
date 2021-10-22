@@ -216,11 +216,14 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
 
             Cursor.Current = Cursors.WaitCursor;
-            imay_in_1_Cat_2_dot_3 = 1;
-            SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
-            //this.Hide();
-            ucc.Show();
-            //this.Show();
+            //imay_in_1_Cat_2_dot_3 = 1;
+            //SanLuong_To_May_IN ucc = new SanLuong_To_May_IN();
+            ////this.Hide();
+            //ucc.Show();
+            ////this.Show();
+
+            Tr_frmBangSanLuongToIn ff = new Tr_frmBangSanLuongToIn();
+            ff.Show();
             Cursor.Current = Cursors.Default;
         }
 
