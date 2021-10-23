@@ -15,6 +15,38 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsDongKien_TbXuatKho_ChiTietXuatKho : clsDBInteractionBase
 	{
+        public void H_DongKien_XK_Delete_ID_XK(int xid_XKDG)
+        {
+
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_DongKien_XK_Delete_ID_XK]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_i_id_xk", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_XKDG));
+
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+                //return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_DongKien_XK_Delete_ID_XK::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
         public void H_DongKien_CT_XK_U_TonTai(int xid_XKDG, bool xtontai)
         {
 

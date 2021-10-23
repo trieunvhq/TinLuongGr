@@ -571,7 +571,7 @@
             this.clSoLuongThanhPham_QuyDoi.OptionsColumn.AllowEdit = false;
             this.clSoLuongThanhPham_QuyDoi.OptionsColumn.FixedWidth = true;
             this.clSoLuongThanhPham_QuyDoi.Visible = true;
-            this.clSoLuongThanhPham_QuyDoi.VisibleIndex = 7;
+            this.clSoLuongThanhPham_QuyDoi.VisibleIndex = 6;
             this.clSoLuongThanhPham_QuyDoi.Width = 80;
             // 
             // clTongTienHang
@@ -610,7 +610,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 8;
+            this.clXoa.VisibleIndex = 7;
             this.clXoa.Width = 40;
             // 
             // btXoa
@@ -676,8 +676,6 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.FixedWidth = true;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
             this.gridColumn3.Width = 140;
             // 
             // repositoryItemMemoEdit3

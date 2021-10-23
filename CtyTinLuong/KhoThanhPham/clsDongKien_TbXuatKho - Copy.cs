@@ -15,6 +15,7 @@ namespace CtyTinLuong
 	/// </summary>
 	public partial class clsDongKien_TbXuatKho : clsDBInteractionBase
 	{
+     
         public DataTable H_DongKien_XK_SA_NgayThang(DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
