@@ -316,7 +316,7 @@
             // 
             // navToDot
             // 
-            this.navToDot.Caption = "Sản Lượng Tổ Đột";
+            this.navToDot.Caption = "Tổ Đột";
             this.navToDot.Name = "navToDot";
             this.navToDot.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navToDot_LinkClicked);
             // 
