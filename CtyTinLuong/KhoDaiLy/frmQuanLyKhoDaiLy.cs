@@ -299,5 +299,18 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
             Cursor.Current = Cursors.Default;
         }
+
+        private void navNXT_dongkien_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            DongKien_BaoCaoNhapXuatTon uccc_NhapKho = new DongKien_BaoCaoNhapXuatTon();
+            //this.Hide();
+            uccc_NhapKho.Show();
+            //this.Show();
+
+            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
+             
+        }
     }
 }

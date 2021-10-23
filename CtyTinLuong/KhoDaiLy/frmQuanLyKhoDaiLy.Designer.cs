@@ -273,6 +273,7 @@
             // 
             this.navNXT_dongkien.Caption = "Báo cáo NXT";
             this.navNXT_dongkien.Name = "navNXT_dongkien";
+            this.navNXT_dongkien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNXT_dongkien_LinkClicked);
             // 
             // navBarItem14
             // 

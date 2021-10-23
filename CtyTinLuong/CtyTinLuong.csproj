@@ -174,6 +174,12 @@
     <Compile Include="BanHang\Tr_Xtra_DoiChieuCongNo_NCC.Designer.cs">
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDaiLy\DongKien_BaoCaoNhapXuatTon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\DongKien_BaoCaoNhapXuatTon.Designer.cs">
+      <DependentUpon>DongKien_BaoCaoNhapXuatTon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmtestcopy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2596,6 +2602,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmtestcopy.resx">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\DongKien_BaoCaoNhapXuatTon.resx">
+      <DependentUpon>DongKien_BaoCaoNhapXuatTon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UC_DongKien_NhapKho.resx">
       <DependentUpon>UC_DongKien_NhapKho.cs</DependentUpon>
