@@ -46,7 +46,7 @@ namespace CtyTinLuong
             gridNhomVTHH.Properties.DisplayMember = "TenNhomVTHH";
 
         }
-        private DataTable LoadDaTa_TonDauKy( DateTime xxtungay)
+        private DataTable LoadDaTa_TonDauKy(DateTime xxtungay)
         {
             DataTable dt_NhapTruoc = new DataTable();
             DataTable dt_XuatTruoc = new DataTable();
@@ -597,7 +597,7 @@ namespace CtyTinLuong
 
         private void bandedGridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-          
+          //if(e.Column==clSTT)
         }
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
