@@ -517,12 +517,15 @@ namespace CtyTinLuong
         {
            try
             {
-                _MaPhieu = "";
+                //_MaPhieu = "";
+                string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                _MaPhieu = sMaphieu____IN;
+
                 if (xxloaimay == 1)
                 {
                     int xID_CaTruong_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_IN).ToString());
-                    string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
-                    _MaPhieu = sMaphieu____IN;
+                    //string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                    //_MaPhieu = sMaphieu____IN;
 
                     int xIDmay_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_May_IN).ToString());
                     int xID_CongNhan_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString());
@@ -2196,9 +2199,9 @@ namespace CtyTinLuong
                         e.Appearance.BackColor = Color.PaleTurquoise;
                 }
             }
-            catch (Exception ea)
+            catch 
             {
-                MessageBox.Show("Lỗi bandedGridView1_RowCellStyle: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Lỗi bandedGridView1_RowCellStyle: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
