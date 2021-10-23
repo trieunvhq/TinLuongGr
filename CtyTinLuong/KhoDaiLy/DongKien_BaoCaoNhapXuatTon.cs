@@ -676,11 +676,15 @@ namespace CtyTinLuong
 
         private void DongKien_BaoCaoNhapXuatTon_Load(object sender, EventArgs e)
         {
-            dteDenNgay.EditValue = DateTime.Today;
+          
+            Cursor.Current = Cursors.WaitCursor;
+            Load_lockup();
             clsNgayThang cls = new clsNgayThang();
-            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
+            dteDenNgay.EditValue = DateTime.Now;
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             gridNhomVTHH.EditValue = 0;
-            //LoadDaTa(xidnhom, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //LoadDaTa(0,dteTuNgay.DateTime, dteDenNgay.DateTime);
+            Cursor.Current = Cursors.Default;
         }
     }
 }
