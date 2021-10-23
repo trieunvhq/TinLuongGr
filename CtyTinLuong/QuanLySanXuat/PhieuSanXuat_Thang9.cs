@@ -433,7 +433,9 @@ namespace CtyTinLuong
                 {
                     cls1.iID_DinhMuc_Luong_SanLuong = iiID_DinhmucLuong;
                     DataTable dt2222 = cls1.SelectOne();
-                    double maxSanluongDinhMuc = cls1.fMaxSanLuongThuong.Value;
+                    double maxSanluongDinhMuc = 0;
+                    if (dt2222.Rows.Count > 0)
+                        maxSanluongDinhMuc = cls1.fMaxSanLuongThuong.Value;
 
                     clsNhanSu_tbNhanSu clsncc = new clsNhanSu_tbNhanSu();
                     clsncc.iID_NhanSu = iiID_CongNhan;
@@ -442,7 +444,10 @@ namespace CtyTinLuong
                     clsPhieu_ChiTietPhieu_New cls2 = new clsPhieu_ChiTietPhieu_New();
 
                     DataTable dtin = cls2.H_PhieuX_SUM_TinhSanLuong_Thang8(iiID_CongNhan, ngaysanxuat__, casanxxutaxx_, iiID_VTHH_Ra__);
-                    double SanluongHienCo = CheckString.ConvertToDouble_My(dtin.Rows[0]["SanLuong_Thuong"].ToString());
+
+                    double SanluongHienCo = 0;
+                    if (dtin.Rows.Count > 0)
+                        SanluongHienCo = CheckString.ConvertToDouble_My(dtin.Rows[0]["SanLuong_Thuong"].ToString());
 
 
                     if (maxSanluongDinhMuc == 0)
@@ -2020,56 +2025,64 @@ namespace CtyTinLuong
             try
             { 
                 if (_Loaimay == 1)
+                {
+
+                    #region in
+                    if (e.Column == clMaPhieu)
                     {
-
-                        #region in
-                        if (e.Column == clMaPhieu)
+                        if (bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_IN).ToString() != "")
                         {
-                            if (bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_IN).ToString() != "")
-                            {
-                                string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
+                            string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
                             _MaPhieu = smaphieu;
-                                DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_IN).ToString());
-                                if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat) == false)
-                                {
-                                    bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
-                                    return;
-                                }
-                                else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                            DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_IN).ToString());
+                            if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat) == false)
+                            {
+                                bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
+                                return;
                             }
+                            else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
                         }
-                        if (e.Column == clID_VTHH_Vao_IN)
-                        {
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_IN, sTenVTHH_vao_IN);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Vao_IN, sDonViTinh_vao_IN);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
-                        }
+                    }
 
-                        if (e.Column == clID_VTHH_Ra_IN)
-                        {
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Ra_IN, sTenVTHH_ra_IN);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Ra_IN, sDonViTinh_ra_IN);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
-                        }
-                        if (e.Column == clNgaySanXuat_IN || e.Column == clCaSanXuat_IN || e.Column == clID_May_IN || e.Column == clSoLuong_Vao_IN || e.Column == clID_CongNhan_IN || e.Column == clID_DinhMuc_Luong_IN || e.Column == clID_CaTruong_IN)
-                        {
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
-                        }
-                        if (e.Column == clSanLuong_Tong_IN)
-                        {
-                            double xsanluongtong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_IN).ToString());
-                            int xiD_dinhMucluong = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_IN).ToString());
-                            int xidcongnhan = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString());
-                            int xidvthhra = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_IN).ToString());
-                            DateTime xngaysanxuat = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString());
-                            string xcasanxuat = bandedGridView1.GetFocusedRowCellValue(clCaSanXuat_IN).ToString();
+                    if (e.Column == clID_VTHH_Vao_IN) 
+                    {
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Vao_IN, sTenVTHH_vao_IN);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Vao_IN, sDonViTinh_vao_IN);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                    }
 
-                            Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Thuong_IN, sanluongthuong_tinhsanluong);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_TangCa_IN, sanluongtangca_tinhsanluong);
-                            bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
-                        }
-                        #endregion
+                    if (e.Column == clSoLuong_Vao_IN)
+                    {
+                        double slvao = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_IN).ToString());
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Tong_IN, slvao);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                    }
+
+                    if (e.Column == clID_VTHH_Ra_IN)
+                    {
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clTenVTHH_Ra_IN, sTenVTHH_ra_IN);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clDonViTinh_Ra_IN, sDonViTinh_ra_IN);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                    }
+                    if (e.Column == clNgaySanXuat_IN || e.Column == clCaSanXuat_IN || e.Column == clID_May_IN || e.Column == clSoLuong_Vao_IN || e.Column == clID_CongNhan_IN || e.Column == clID_DinhMuc_Luong_IN || e.Column == clID_CaTruong_IN)
+                    {
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                    }
+                    if (e.Column == clSanLuong_Tong_IN)
+                    {
+                        double xsanluongtong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_IN).ToString());
+                        int xiD_dinhMucluong = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_IN).ToString());
+                        int xidcongnhan = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString());
+                        int xidvthhra = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_IN).ToString());
+                        DateTime xngaysanxuat = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString());
+                        string xcasanxuat = bandedGridView1.GetFocusedRowCellValue(clCaSanXuat_IN).ToString();
+
+                        Tinh_SanLuong(xsanluongtong, xiD_dinhMucluong, xidcongnhan, xidvthhra, xngaysanxuat, xcasanxuat);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Thuong_IN, sanluongthuong_tinhsanluong);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_TangCa_IN, sanluongtangca_tinhsanluong);
+                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                    }
+                    #endregion
                     }
                     else if (_Loaimay == 2)
                     {
@@ -2198,7 +2211,7 @@ namespace CtyTinLuong
                         #endregion
                     }
 
-              //  unfocus();
+              //  SaveWhenCopy();
             }
             catch (Exception ea)
             {
@@ -2217,12 +2230,6 @@ namespace CtyTinLuong
         {
             try
             {
-                //if (_isCopy)
-                //{
-                //    unfocus();
-                //    _isCopy = false;
-                //}
-
                 GridView View = sender as GridView;
                 if (e.RowHandle >= 0)
                 {
@@ -2248,16 +2255,16 @@ namespace CtyTinLuong
             }
             catch (Exception ea)
             {
-               // MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
-        private void unfocus()
+        private void SaveWhenCopy()
         {
             try
             {
-                int row_focus = bandedGridView1.FocusedRowHandle ;
+                int row_focus = bandedGridView1.FocusedRowHandle;
                 if (row_focus < 0)
                     return;
                 if (_Loaimay == 1)
@@ -2417,14 +2424,167 @@ namespace CtyTinLuong
         }
         private void bandedGridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            try
+            if (bandedGridView1.FocusedRowHandle >= 0)
             {
-                unfocus();
+                SaveWhenCopy();
             }
-            catch (Exception ea)
+            else
             {
-                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    if (_Loaimay == 1)
+                    {
+                        if (bandedGridView1.GetFocusedRowCellValue(clChange_IN).ToString() == "1")
+                        {
+                            if (KiemTra_Hang(1) == false)
+                                bandedGridView1.SetFocusedRowCellValue(clTest_IN, "1");
+                            else if (KiemTra_Hang(1) == true)
+                            {
+                                bandedGridView1.SetFocusedRowCellValue(clTest_IN, "0");
+                                int xxid_sophieu_; int xxid_chitietphieu_in;
+                                bool xxthemmoiphieu;
+                                int xID_CaTruong_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_IN).ToString());
+                                string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                                DateTime xxngaylap = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString());
+                                int xIDmay_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_May_IN).ToString());
+                                int xID_CongNhan_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_IN).ToString());
+                                int xID_DinhMuc_Luong_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_IN).ToString());
+                                int xID_VTHH_Vao_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Vao_IN).ToString());
+                                int xID_VTHH_Ra_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_IN).ToString());
+                                double xxSoLuong_Vao_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_IN).ToString());
+                                double xxSanLuong_Thuong_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Thuong_IN).ToString());
+                                double xxSanLuong_TangCa_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_TangCa_IN).ToString());
+
+                                string scasaanxuat_IN = bandedGridView1.GetFocusedRowCellDisplayText(clCaSanXuat_IN).ToString();
+                                double sSanLuong_Tong_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_IN).ToString());
+                                double xxphepham_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clPhePham_IN).ToString());
+                                if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+                                {
+                                    xxthemmoiphieu = true;
+                                    xxid_sophieu_ = 0;
+                                    xxid_chitietphieu_in = 0;
+                                }
+                                else
+                                {
+                                    xxthemmoiphieu = false;
+                                    xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
+                                    xxid_chitietphieu_in = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString());
+                                }
+                                LuuDuLieu_Phieu_Va_May_IN(sMaphieu____IN, xxngaylap, scasaanxuat_IN, xID_CaTruong_IN,
+                   xID_CongNhan_IN, xIDmay_IN, xID_DinhMuc_Luong_IN, xID_VTHH_Vao_IN, xID_VTHH_Ra_IN,
+                  xxSoLuong_Vao_IN, xxSanLuong_Thuong_IN, xxSanLuong_TangCa_IN, sSanLuong_Tong_IN, xxphepham_IN,
+                  xxid_sophieu_, xxid_chitietphieu_in, xxthemmoiphieu);
+                                LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                            }
+                        }
+
+                    }
+                    else if (_Loaimay == 2)
+                    {
+                        if (bandedGridView1.GetFocusedRowCellValue(clChange_CAT).ToString() == "1")
+                        {
+                            if (KiemTra_Hang(2) == false)
+                                bandedGridView1.SetFocusedRowCellValue(clTest_CAT, "1");
+                            else if (KiemTra_Hang(2) == true)
+                            {
+                                bandedGridView1.SetFocusedRowCellValue(clTest_CAT, "0");
+                                int xxid_sophieu_CAT; int xxid_chitietphieu_CAT;
+                                bool xxthemmoiphieu_cat;
+                                int xID_CaTruong_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_CAT).ToString());
+                                //string sMaphieu____CAT = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                                DateTime xxngaylap = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString());
+                                int xIDmay_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_May_CAT).ToString());
+                                int xID_CongNhan_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_CAT).ToString());
+                                int xID_DinhMuc_Luong_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_CAT).ToString());
+                                int xID_VTHH_Vao_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Vao_CAT).ToString());
+                                int xID_VTHH_Ra_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_CAT).ToString());
+                                double xxSoLuong_Vao_CAT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_CAT).ToString());
+                                double xxSanLuong_Thuong_CAT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Thuong_CAT).ToString());
+                                double xxSanLuong_TangCa_CAT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_TangCa_CAT).ToString());
+
+                                string scasaanxuat_CAT = bandedGridView1.GetFocusedRowCellDisplayText(clCaSanXuat_CAT).ToString();
+                                double sSanLuong_Tong_CAT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_CAT).ToString());
+                                double xxphepham_CAT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clPhePham_CAT).ToString());
+                                xxid_sophieu_CAT = Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu_CAT).ToString());
+                                if (bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_CAT).ToString() == "")
+                                {
+                                    xxthemmoiphieu_cat = true;
+                                    xxid_chitietphieu_CAT = 0;
+                                }
+                                else
+                                {
+                                    xxthemmoiphieu_cat = false;
+
+                                    xxid_chitietphieu_CAT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_CAT).ToString());
+                                }
+                                Luu_DuLieu_May_CAT(xxngaylap, scasaanxuat_CAT, xID_CaTruong_CAT,
+                 xID_CongNhan_CAT, xIDmay_CAT, xID_DinhMuc_Luong_CAT, xID_VTHH_Vao_CAT, xID_VTHH_Ra_CAT,
+                xxSoLuong_Vao_CAT, xxSanLuong_Thuong_CAT, xxSanLuong_TangCa_CAT, sSanLuong_Tong_CAT, xxphepham_CAT,
+                xxid_sophieu_CAT, xxid_chitietphieu_CAT, xxthemmoiphieu_cat);
+                                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                            }
+
+                        }
+                    }
+                    else if (_Loaimay == 3)
+                    {
+                        if (bandedGridView1.GetFocusedRowCellValue(clChange_DOT).ToString() == "1")
+                        {
+                            if (KiemTra_Hang(3) == false)
+                                bandedGridView1.SetFocusedRowCellValue(clTest_DOT, "1");
+                            else if (KiemTra_Hang(3) == true)
+                            {
+                                bandedGridView1.SetFocusedRowCellValue(clTest_DOT, "0");
+                                int xxid_sophieu_DOT; int xxid_chitietphieu_DOT;
+                                bool xxthemmoiphieu_DOT;
+                                int xID_DOTruong_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CaTruong_DOT).ToString());
+
+                                DateTime xxngaylap = Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString());
+                                int xIDmay_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_May_DOT).ToString());
+                                int xID_CongNhan_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_DOT).ToString());
+                                int xID_DinhMuc_Luong_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_DOT).ToString());
+                                int xID_VTHH_Vao_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Vao_DOT).ToString());
+                                int xID_VTHH_Ra_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Ra_DOT).ToString());
+                                double xxSoLuong_Vao_DOT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_DOT).ToString());
+
+                                string scasaanxuat_DOT = bandedGridView1.GetFocusedRowCellDisplayText(clCaSanXuat_DOT).ToString();
+                                double sSanLuong_Tong_DOT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_DOT).ToString());
+                                double xxphepham_DOT = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clPhePham_DOT).ToString());
+                                double xxsokgmmotbao = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoKG_MotBao_May_Dot).ToString());
+                                double xxdocaodot = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clDoCao_Dot).ToString());
+                                xxid_sophieu_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu_DOT).ToString());
+                                if (bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_DOT).ToString() == "")
+                                {
+                                    xxthemmoiphieu_DOT = true;
+                                    xxid_chitietphieu_DOT = 0;
+                                }
+                                else
+                                {
+                                    xxthemmoiphieu_DOT = false;
+                                    xxid_chitietphieu_DOT = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_DOT).ToString());
+                                }
+                                Luu_DuLieu_May_DOT(xxngaylap, scasaanxuat_DOT, xID_DOTruong_DOT,
+                     xID_CongNhan_DOT, xIDmay_DOT, xID_DinhMuc_Luong_DOT, xID_VTHH_Vao_DOT, xID_VTHH_Ra_DOT,
+                    xxSoLuong_Vao_DOT, sSanLuong_Tong_DOT, xxphepham_DOT, xxsokgmmotbao, xxdocaodot,
+                    xxid_sophieu_DOT, xxid_chitietphieu_DOT, xxthemmoiphieu_DOT);
+                                Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            //try
+            //{
+            //    SaveWhenCopy();
+            //}
+            //catch (Exception ea)
+            //{
+            //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btXoa_Click(object sender, EventArgs e)
