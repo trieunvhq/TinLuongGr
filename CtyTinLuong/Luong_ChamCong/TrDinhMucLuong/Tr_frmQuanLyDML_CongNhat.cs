@@ -104,7 +104,13 @@ namespace CtyTinLuong
                             txtTimKiem.Text = ((frmChamCong_ToDot)_frm)._MaNhanVien;
                             break;
                         case "frmChamCong_ToIn":
-                            txtTimKiem.Text = ((frmChamCong_ToIn)_frm)._MaNhanVien;
+                            txtTimKiem.Text = ((frmChamCong_ToIn)_frm)._MaNhanVien; 
+                            break;
+                        case "frmBTTL_ToIn":
+                            txtTimKiem.Text = ((frmBTTL_ToIn)_frm)._MaNhanVien; 
+                            break;
+                        case "Tr_frmBangSanLuongToIn":
+                            txtTimKiem.Text = ((Tr_frmBangSanLuongToIn)_frm)._MaNhanVien; 
                             break;
                     }
                 }

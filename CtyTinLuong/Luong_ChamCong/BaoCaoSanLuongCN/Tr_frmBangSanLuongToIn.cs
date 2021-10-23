@@ -18,6 +18,7 @@ namespace CtyTinLuong
         private List<GridColumn> ds_grid = new List<GridColumn>();
         private int _thang, _nam;
         private bool isload = true;
+        public string _MaNhanVien = "";
 
         DateTime ngaydauthang, ngaycuoithang;
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
@@ -52,7 +53,8 @@ namespace CtyTinLuong
 
             _data = new DataTable();
             _data.Columns.Add("STT", typeof(string));
-            _data.Columns.Add("ID_CongNhan", typeof(string)); 
+            _data.Columns.Add("ID_CongNhan", typeof(string));
+            _data.Columns.Add("MaNhanVien", typeof(string));
             _data.Columns.Add("TenNhanVien", typeof(string)); 
             _data.Columns.Add("HinhThuc", typeof(string));
             _data.Columns.Add("Ngay1", typeof(string));
@@ -131,6 +133,7 @@ namespace CtyTinLuong
             }
 
             ChangeColTitle(_thang, _nam);
+            lbThangNamTitle.Text = "Tháng " + _thang + " năm " + _nam;
 
             try
             {
@@ -143,6 +146,7 @@ namespace CtyTinLuong
                     for (int i = 0; i < dt.Rows.Count; ++i)
                     {
                         int ID_congNhan = Convert.ToInt32(dt.Rows[i]["ID_CongNhan"].ToString());
+                        string MaNV_ = dt.Rows[i]["MaNhanVien"].ToString();
 
                         ModelShowSanLuongToIn nvSL_thuong = getNV_SanLuong(ID_congNhan, "thường", dt);
                         ModelShowSanLuongToIn nvSL_nhu = getNV_SanLuong(ID_congNhan, "in nhũ", dt);
@@ -158,6 +162,8 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
+
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
@@ -191,6 +197,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
@@ -218,6 +225,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
@@ -243,6 +251,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = dt.Rows[i]["TenNhanVien"].ToString();
 
@@ -271,6 +280,7 @@ namespace CtyTinLuong
 
                     DataRow _ravi2 = _data.NewRow();
                     _ravi2["ID_CongNhan"] = 0;
+                    _ravi2["MaNhanVien"] = "";
                     _ravi2["TenNhanVien"] = "";
                     _ravi2["HinhThuc"] = "Sản lượng tổng";
 
@@ -557,6 +567,31 @@ namespace CtyTinLuong
         {
             CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangSanLuongToIN ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangSanLuongToIN(_thang, _nam, _data);
             ff.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "Tr_frmBangSanLuongToIn", this);
+            ff.Show();
+        }
+
+        private void gridControl2_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int id_congnhan_ = Convert.ToInt16(gridView3.GetFocusedRowCellValue(ID_CongNhan).ToString());
+                _MaNhanVien = gridView3.GetFocusedRowCellValue(MaNhanVien).ToString();
+
+                if(_MaNhanVien != "")
+                {
+                    Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(id_congnhan_, "Tr_frmBangSanLuongToIn", this);
+                    ff.Show();
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ChangeColTitle(int thang, int nam)

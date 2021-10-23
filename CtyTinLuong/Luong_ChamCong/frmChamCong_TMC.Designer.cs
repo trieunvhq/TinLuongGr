@@ -100,6 +100,7 @@ namespace CtyTinLuong
             this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IsTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -121,7 +122,6 @@ namespace CtyTinLuong
             this.radioCa2 = new System.Windows.Forms.RadioButton();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
-            this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -1233,7 +1233,7 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 35;
+            this.Tong.VisibleIndex = 34;
             this.Tong.Width = 45;
             // 
             // ID_ChiTietChamCong_ToGapDan
@@ -1259,6 +1259,12 @@ namespace CtyTinLuong
             this.Xoa.Visible = true;
             this.Xoa.VisibleIndex = 33;
             this.Xoa.Width = 35;
+            // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.Caption = "MaNhanVien";
+            this.MaNhanVien.FieldName = "MaNhanVien";
+            this.MaNhanVien.Name = "MaNhanVien";
             // 
             // gridControl1
             // 
@@ -1512,14 +1518,6 @@ namespace CtyTinLuong
             0,
             0});
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
-            // 
-            // MaNhanVien
-            // 
-            this.MaNhanVien.Caption = "MaNhanVien";
-            this.MaNhanVien.FieldName = "MaNhanVien";
-            this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.Visible = true;
-            this.MaNhanVien.VisibleIndex = 34;
             // 
             // frmChamCong_TMC
             // 

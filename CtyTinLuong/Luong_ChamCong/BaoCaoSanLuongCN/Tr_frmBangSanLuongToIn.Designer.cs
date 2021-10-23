@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmBangSanLuongToIn));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,7 +35,7 @@
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbThangNamTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -92,6 +91,9 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -110,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -127,10 +130,11 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.linkLabel1);
             this.dataLayoutControl1.Controls.Add(this.txtNam);
             this.dataLayoutControl1.Controls.Add(this.txtThang);
             this.dataLayoutControl1.Controls.Add(this.label3);
-            this.dataLayoutControl1.Controls.Add(this.label2);
+            this.dataLayoutControl1.Controls.Add(this.lbThangNamTitle);
             this.dataLayoutControl1.Controls.Add(this.label1);
             this.dataLayoutControl1.Controls.Add(this.gridControl2);
             this.dataLayoutControl1.Controls.Add(this.btThoat);
@@ -203,15 +207,15 @@
             this.label3.Text = "BẢNG SẢN LƯỢNG TỔ IN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbThangNamTitle
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1152, 20);
-            this.label2.TabIndex = 112;
-            this.label2.Text = "Tháng     năm    ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbThangNamTitle.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThangNamTitle.Location = new System.Drawing.Point(2, 50);
+            this.lbThangNamTitle.Name = "lbThangNamTitle";
+            this.lbThangNamTitle.Size = new System.Drawing.Size(1152, 20);
+            this.lbThangNamTitle.TabIndex = 112;
+            this.lbThangNamTitle.Text = "Tháng     năm    ";
+            this.lbThangNamTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
@@ -239,6 +243,7 @@
             this.gridControl2.TabIndex = 11;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gridControl2.DoubleClick += new System.EventHandler(this.gridControl2_DoubleClick);
             // 
             // gridView3
             // 
@@ -289,7 +294,8 @@
             this.Tong,
             this.SLGiayCuon,
             this.VuotSL,
-            this.ID_CongNhan});
+            this.ID_CongNhan,
+            this.MaNhanVien});
             this.gridView3.GridControl = this.gridControl2;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.AllowCellMerge = true;
@@ -878,7 +884,8 @@
             this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem2,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1156, 648);
@@ -914,9 +921,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 622);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(481, 622);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(962, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(481, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -930,7 +937,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.label2;
+            this.layoutControlItem3.Control = this.lbThangNamTitle;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(1156, 24);
@@ -964,6 +971,31 @@
             this.layoutControlItem5.Text = "Năm";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(30, 13);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Location = new System.Drawing.Point(35, 624);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(444, 20);
+            this.linkLabel1.TabIndex = 116;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Trừ bảo hiểm công nhân";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.linkLabel1;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 622);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(481, 26);
+            this.layoutControlItem8.Text = " ";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(30, 13);
+            // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.Caption = "MaNhanVien";
+            this.MaNhanVien.FieldName = "MaNhanVien";
+            this.MaNhanVien.Name = "MaNhanVien";
+            // 
             // Tr_frmBangSanLuongToIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -994,6 +1026,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1048,7 +1081,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Tong;
         private DevExpress.XtraGrid.Columns.GridColumn HinhThuc;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbThangNamTitle;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -1061,5 +1094,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraGrid.Columns.GridColumn ID_CongNhan;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
     }
 }

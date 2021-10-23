@@ -26,7 +26,7 @@ namespace CtyTinLuong
         public string msTenNhanVien;
 
         public int _nam, _thang, _id_bophan, _indexTongCa1 = 0;
-        public string _ten_vthh;
+        public string _ten_vthh, _MaNhanVien = "";
         private DataTable _data, _dtSL_Ca1, _dtSL_Ca2;
         //private DataTable _data, _dtCong_Ca1, _dtCong_Ca2, _dtSL_Ca1, _dtSL_Ca2;
 
@@ -42,7 +42,8 @@ namespace CtyTinLuong
             _data = new DataTable();
             _data.Columns.Add("Thang", typeof(int));
             _data.Columns.Add("Nam", typeof(int));
-            _data.Columns.Add("ID_CongNhan", typeof(int));
+            _data.Columns.Add("ID_CongNhan", typeof(int)); 
+            _data.Columns.Add("MaNhanVien", typeof(string)); 
             _data.Columns.Add("STT", typeof(string));
             _data.Columns.Add("TenNhanVien", typeof(string));
             _data.Columns.Add("HinhThuc", typeof(string));
@@ -898,7 +899,7 @@ namespace CtyTinLuong
                 for (int i = 0; i < _dtSL_Ca1.Rows.Count; ++i)
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_CongNhan"].ToString());
-
+                    string MaNV_ = _dtSL_Ca1.Rows[i]["MaNhanVien"].ToString();
                     //
                     if (ID_congNhanRoot != ID_congNhan)
                     {
@@ -915,7 +916,9 @@ namespace CtyTinLuong
                         {
                             DataRow ravi_ = _data.NewRow();
                             ravi_["ID_CongNhan"] = ID_congNhan;
-                            ravi_["STT"] = SttCa1;
+                            ravi_["MaNhanVien"] = MaNV_;
+
+                             ravi_["STT"] = SttCa1;
                             ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
 
                             ravi_["HinhThuc"] = nvSL_thuong.TenVthhThuong;
@@ -960,6 +963,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_tang = _data.NewRow();
                                 ravi_tang["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_tang["STT"] = SttCa1;
                                 ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
@@ -987,6 +991,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
 
@@ -1031,6 +1036,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
@@ -1059,10 +1065,11 @@ namespace CtyTinLuong
                         //Hàng trúc bách
                         if (nvSL_tb.SlTong > 0)
                         {
-                            if (nvSL_nhu.SlTong == 0)
+                            if (nvSL_nhu.SlTong == 0 && nvSL_thuong.SlTong == 0)
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
 
@@ -1107,6 +1114,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
@@ -1134,10 +1142,11 @@ namespace CtyTinLuong
                         //Hàng in mác
                         if (nvSL_mac.SlTong > 0)
                         {
-                            if (nvSL_tb.SlTong == 0)
+                            if (nvSL_tb.SlTong == 0 && nvSL_thuong.SlTong == 0 && nvSL_nhu.SlTong == 0)
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
 
@@ -1182,6 +1191,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_["STT"] = SttCa1;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
@@ -1215,6 +1225,7 @@ namespace CtyTinLuong
                 //Add thêm row tổng ca 1:
                 DataRow _ravi = _data.NewRow();
                 _ravi["ID_CongNhan"] = 0;
+                _ravi["MaNhanVien"] = "";
                 _ravi["Thang"] = _thang;
                 _ravi["Nam"] = _nam;
                 _ravi["TenNhanVien"] = "CA 1:";
@@ -1302,6 +1313,7 @@ namespace CtyTinLuong
                 for (int i = 0; i < _dtSL_Ca2.Rows.Count; ++i)
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_CongNhan"].ToString());
+                    string MaNV_ = _dtSL_Ca2.Rows[i]["MaNhanVien"].ToString();
                     //
                     if (ID_congNhanRoot != ID_congNhan)
                     {
@@ -1318,6 +1330,8 @@ namespace CtyTinLuong
                         {
                             DataRow ravi_ = _data.NewRow();
                             ravi_["ID_CongNhan"] = ID_congNhan;
+                            ravi_["MaNhanVien"] = MaNV_;
+
                             ravi_["STT"] = SttCa2;
                             ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
 
@@ -1363,6 +1377,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_tang = _data.NewRow();
                                 ravi_tang["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_tang["STT"] = SttCa2;
                                 ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
@@ -1390,6 +1405,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa2;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
 
@@ -1434,6 +1450,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_["STT"] = SttCa2;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
@@ -1462,10 +1479,11 @@ namespace CtyTinLuong
                         //Hàng trúc bách
                         if (nvSL_tb.SlTong > 0)
                         {
-                            if (nvSL_nhu.SlTong == 0)
+                            if (nvSL_nhu.SlTong == 0 && nvSL_thuong.SlTong == 0)
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa2;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
 
@@ -1510,6 +1528,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_["STT"] = SttCa2;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
@@ -1537,10 +1556,11 @@ namespace CtyTinLuong
                         //Hàng in mác
                         if (nvSL_mac.SlTong > 0)
                         {
-                            if (nvSL_tb.SlTong == 0)
+                            if (nvSL_tb.SlTong == 0 && nvSL_thuong.SlTong == 0 && nvSL_nhu.SlTong == 0)
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 ravi_["STT"] = SttCa2;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
 
@@ -1585,6 +1605,7 @@ namespace CtyTinLuong
                             {
                                 DataRow ravi_ = _data.NewRow();
                                 ravi_["ID_CongNhan"] = ID_congNhan;
+                                ravi_["MaNhanVien"] = MaNV_;
                                 //STT
                                 ravi_["STT"] = SttCa2;
                                 ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
@@ -1618,6 +1639,7 @@ namespace CtyTinLuong
                 //Add thêm row tổng ca 2:
                 DataRow _ravi_ca2 = _data.NewRow();
                 _ravi_ca2["ID_CongNhan"] = 0;
+                _ravi_ca2["MaNhanVien"] = "";
                 _ravi_ca2["Thang"] = _thang;
                 _ravi_ca2["Nam"] = _nam;
                 _ravi_ca2["TenNhanVien"] = "CA 2:";
@@ -1699,6 +1721,7 @@ namespace CtyTinLuong
                 //Add thêm row tổng ca 2:
                 DataRow _ravi_2ca = _data.NewRow();
                 _ravi_2ca["ID_CongNhan"] = 0;
+                _ravi_2ca["MaNhanVien"] = "";
                 _ravi_2ca["Thang"] = _thang;
                 _ravi_2ca["Nam"] = _nam;
                 _ravi_2ca["TenNhanVien"] = "Tổng";
@@ -2108,6 +2131,31 @@ namespace CtyTinLuong
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_CongNhan).ToString());
+                _MaNhanVien = gridView1.GetFocusedRowCellValue(MaNhanVien).ToString();
+
+                if (_MaNhanVien != "")
+                {
+                    Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(id_congnhan_, "frmBTTL_ToIn", this);
+                    ff.Show();
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "frmBTTL_ToIn", this);
+            ff.Show();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

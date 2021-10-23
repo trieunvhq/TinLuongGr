@@ -342,10 +342,18 @@ namespace CtyTinLuong
 
             ChangeColTitle(_thang, _nam);
 
-            //Load combobox nhân sự:
-            cbNhanSu.DataSource = getNhanSu();
-            cbNhanSu.DisplayMember = "TenNhanVien";
-            cbNhanSu.ValueMember = "ID_CongNhan";
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt = clsThin_.T_NhanSu_SF("10");    //T_NhanSu_SF(_id_bophan + ","); 
+                cbNhanSu.DataSource = dt;
+                cbNhanSu.DisplayMember = "TenNhanVien";
+                cbNhanSu.ValueMember = "ID_NhanSu";
+            }
+
+            ////Load combobox nhân sự:
+            //cbNhanSu.DataSource = getNhanSu();
+            //cbNhanSu.DisplayMember = "TenNhanVien";
+            //cbNhanSu.ValueMember = "ID_CongNhan";
 
 
             Tong_Ngay1 = 0;

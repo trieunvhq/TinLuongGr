@@ -310,7 +310,7 @@
             // 
             // navToMayCat
             // 
-            this.navToMayCat.Caption = "Sản Lượng Tổ Máy Cắt";
+            this.navToMayCat.Caption = "Tổ Máy Cắt";
             this.navToMayCat.Name = "navToMayCat";
             this.navToMayCat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navToMayCat_LinkClicked);
             // 
