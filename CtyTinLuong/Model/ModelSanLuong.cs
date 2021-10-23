@@ -16,7 +16,7 @@ namespace CtyTinLuong
         private double slTang;
         private double donGiaThuong;
         private double donGiaTang;
-        private int soNgayCong;
+        private double soNgayCong;
         private double thanhTienThuong;
         private double thanhTienTang;
         private double tienTong;
@@ -101,7 +101,7 @@ namespace CtyTinLuong
             }
         }
 
-        public int SoNgayCong
+        public double SoNgayCong
         {
             get
             {

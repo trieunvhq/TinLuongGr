@@ -24,7 +24,7 @@ namespace CtyTinLuong
         public string _MaNhanVien = "";
         public int  _ID_DinhMucLuong_CongNhat = 0;
         private string _MaDinhMucLuongCongNhat;
-        public int _nam, _thang, _id_bophan = 25;
+        public int _nam, _thang, _id_bophan;
         private DataTable _data;
         private bool isload = true;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -220,7 +220,7 @@ namespace CtyTinLuong
                 if (radioCa1.Checked) CaLamViec_ = "Ca 1";
                 else CaLamViec_ = "Ca 2";
 
-                DataTable dt_ = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 1, 0, CaLamViec_);
+                DataTable dt_ = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 1, 0, CaLamViec_, _id_bophan);
 
                 foreach (DataRow item in dt_.Rows)
                 {

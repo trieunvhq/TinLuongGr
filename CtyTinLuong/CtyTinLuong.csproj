@@ -297,8 +297,8 @@
     <Compile Include="Luong_ChamCong\frmChamCong_ToIn.Designer.cs">
       <DependentUpon>frmChamCong_ToIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\ModelCongNhat.cs" />
-    <Compile Include="Luong_ChamCong\ModelSanLuong.cs" />
+    <Compile Include="Model\ModelCongNhat.cs" />
+    <Compile Include="Model\ModelSanLuong.cs" />
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_DinhMucLuongSL_TGD.cs" />
     <Compile Include="Luong_ChamCong\frmChamCong_TMC.cs">
       <SubType>UserControl</SubType>

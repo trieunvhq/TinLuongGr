@@ -477,7 +477,7 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(int nam, int thang, int May_IN, int May_CAT, int May_DOT, string CaLamViec)
+        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(int nam, int thang, int May_IN, int May_CAT, int May_DOT, string CaLamViec, int iID_BoPhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect]";
@@ -497,6 +497,8 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ibMay_CAT", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, May_CAT));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ibMay_DOT", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, May_DOT));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@bCaLamViec", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, CaLamViec));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_BoPhan));
+
 
                 // Open connection.
                 m_scoMainConnection.Open();

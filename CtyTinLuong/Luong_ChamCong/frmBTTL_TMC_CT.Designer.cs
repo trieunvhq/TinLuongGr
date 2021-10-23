@@ -55,7 +55,7 @@
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clTongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Cong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NgayCong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SanLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -116,6 +116,7 @@
             this.linkLabel1.TabIndex = 123;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Thêm công nhân";
+            this.linkLabel1.Visible = false;
             // 
             // label3
             // 
@@ -217,7 +218,7 @@
             this.clSTT,
             this.clTenNhanVien,
             this.clTongLuong,
-            this.Cong,
+            this.NgayCong,
             this.SanLuong,
             this.DonGia,
             this.ThanhTien,
@@ -295,19 +296,19 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TongLuong", "{0:#,##0.00}")});
             this.clTongLuong.Width = 80;
             // 
-            // Cong
+            // NgayCong
             // 
-            this.Cong.AppearanceCell.Options.UseTextOptions = true;
-            this.Cong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Cong.Caption = "CÔNG";
-            this.Cong.FieldName = "Cong";
-            this.Cong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.Cong.MinWidth = 50;
-            this.Cong.Name = "Cong";
-            this.Cong.OptionsColumn.AllowEdit = false;
-            this.Cong.Visible = true;
-            this.Cong.VisibleIndex = 2;
-            this.Cong.Width = 90;
+            this.NgayCong.AppearanceCell.Options.UseTextOptions = true;
+            this.NgayCong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.NgayCong.Caption = "CÔNG";
+            this.NgayCong.FieldName = "NgayCong";
+            this.NgayCong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.NgayCong.MinWidth = 50;
+            this.NgayCong.Name = "NgayCong";
+            this.NgayCong.OptionsColumn.AllowEdit = false;
+            this.NgayCong.Visible = true;
+            this.NgayCong.VisibleIndex = 2;
+            this.NgayCong.Width = 70;
             // 
             // SanLuong
             // 
@@ -355,8 +356,6 @@
             this.DonGia.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia.OptionsFilter.ShowEmptyDateFilter = false;
-            this.DonGia.Visible = true;
-            this.DonGia.VisibleIndex = 4;
             this.DonGia.Width = 88;
             // 
             // ThanhTien
@@ -381,8 +380,8 @@
             this.ThanhTien.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThanhTien.Visible = true;
-            this.ThanhTien.VisibleIndex = 5;
-            this.ThanhTien.Width = 88;
+            this.ThanhTien.VisibleIndex = 4;
+            this.ThanhTien.Width = 106;
             // 
             // Tong
             // 
@@ -406,8 +405,8 @@
             this.Tong.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.OptionsFilter.ShowEmptyDateFilter = false;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 7;
-            this.Tong.Width = 88;
+            this.Tong.VisibleIndex = 6;
+            this.Tong.Width = 106;
             // 
             // XangXe
             // 
@@ -431,8 +430,8 @@
             this.XangXe.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.XangXe.OptionsFilter.ShowEmptyDateFilter = false;
             this.XangXe.Visible = true;
-            this.XangXe.VisibleIndex = 6;
-            this.XangXe.Width = 88;
+            this.XangXe.VisibleIndex = 5;
+            this.XangXe.Width = 106;
             // 
             // colBaoHiem
             // 
@@ -456,8 +455,8 @@
             this.colBaoHiem.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.colBaoHiem.OptionsFilter.ShowEmptyDateFilter = false;
             this.colBaoHiem.Visible = true;
-            this.colBaoHiem.VisibleIndex = 8;
-            this.colBaoHiem.Width = 88;
+            this.colBaoHiem.VisibleIndex = 7;
+            this.colBaoHiem.Width = 106;
             // 
             // TamUng
             // 
@@ -505,8 +504,8 @@
             this.ThucNhan.OptionsFilter.ShowEmptyDateFilter = false;
             this.ThucNhan.Tag = "Thuc";
             this.ThucNhan.Visible = true;
-            this.ThucNhan.VisibleIndex = 9;
-            this.ThucNhan.Width = 88;
+            this.ThucNhan.VisibleIndex = 8;
+            this.ThucNhan.Width = 106;
             // 
             // KyNhan
             // 
@@ -773,7 +772,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clSTT;
         private DevExpress.XtraGrid.Columns.GridColumn clTenNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn clTongLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn Cong;
+        private DevExpress.XtraGrid.Columns.GridColumn NgayCong;
         private DevExpress.XtraGrid.Columns.GridColumn SanLuong;
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn ThanhTien;

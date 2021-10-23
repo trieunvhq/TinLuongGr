@@ -16,7 +16,7 @@ namespace CtyTinLuong
     {
         private DataTable _data;
         private List<GridColumn> ds_grid = new List<GridColumn>();
-        private int _thang, _nam;
+        private int _thang, _nam, _id_bophan;
         private bool isload = true;
         public string _MaNhanVien = "";
 
@@ -32,6 +32,9 @@ namespace CtyTinLuong
 
         public Tr_frmBangSanLuongToIn()
         {
+            _id_bophan = KiemTraTenBoPhan("Máy in");
+            if (_id_bophan == 0) return;
+
             InitializeComponent();
             ds_grid = new List<GridColumn>();
             ds_grid.Add(Ngay1); ds_grid.Add(Ngay2); ds_grid.Add(Ngay3); ds_grid.Add(Ngay4); ds_grid.Add(Ngay5);
@@ -139,7 +142,7 @@ namespace CtyTinLuong
             {
                 using (clsThin clsth = new clsThin())
                 {
-                    DataTable dt = clsth.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "");
+                    DataTable dt = clsth.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "", _id_bophan);
                     int ID_congNhanRoot = -1;
                     int SttCa1 = 0;
 
@@ -319,7 +322,7 @@ namespace CtyTinLuong
             double slTang = 0;
             double donGiaThuong = 0;
             double donGiaTang = 0;
-            int soNgayCong = 0;
+            double soNgayCong = 0;
             double phuCapBaoHiem = 0;
             double truBaoHiem = 0;
             List<int> dsNgayCong = new List<int>();
@@ -684,5 +687,23 @@ namespace CtyTinLuong
             return xxx;
         }
 
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+
+                }
+            }
+            return _id_bophan;
+        }
     }
 }

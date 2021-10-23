@@ -9,35 +9,9 @@ namespace CtyTinLuong
     class ModelShowSanLuongToIn
     {
         public double[] DsSLNgay = new double[31];
-        public double Ngay1 { get; set; }
-        public double Ngay2 { get; set; }
-        public double Ngay3 { get; set; }
-        public double Ngay4 { get; set; }
-        public double Ngay5 { get; set; }
-        public double Ngay6 { get; set; }
-        public double Ngay7 { get; set; }
-        public double Ngay8 { get; set; }
-        public double Ngay9 { get; set; }
-        public double Ngay10 { get; set; }
-        public double Ngay11 { get; set; }
-        public double Ngay12 { get; set; }
-        public double Ngay13 { get; set; }
-        public double Ngay14 { get; set; }
-        public double Ngay15 { get; set; }
-        public double Ngay18 { get; set; }
-        public double Ngay19 { get; set; }
-        public double Ngay20 { get; set; }
-        public double Ngay21 { get; set; }
-        public double Ngay22 { get; set; }
-        public double Ngay23 { get; set; }
-        public double Ngay24 { get; set; }
-        public double Ngay25 { get; set; }
-        public double Ngay26 { get; set; }
-        public double Ngay27 { get; set; }
-        public double Ngay28 { get; set; }
-        public double Ngay29 { get; set; }
-        public double Ngay30 { get; set; }
-        public double Ngay31 { get; set; }
+        public double[] DsSLNgay_Tang = new double[31];
+        public double[] DsCong = new double[31];
+
 
         private string hoTen;
         private string tenVthhThuong;
@@ -47,7 +21,7 @@ namespace CtyTinLuong
         private double slTang;
         private double donGiaThuong;
         private double donGiaTang;
-        private int soNgayCong;
+        private double soNgayCong;
         private double thanhTienThuong;
         private double thanhTienTang;
         private double tienTong;
@@ -132,7 +106,7 @@ namespace CtyTinLuong
             }
         }
 
-        public int SoNgayCong
+        public double SoNgayCong
         {
             get
             {

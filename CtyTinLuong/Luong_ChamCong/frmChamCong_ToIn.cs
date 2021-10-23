@@ -220,7 +220,7 @@ namespace CtyTinLuong
                 if (radioCa1.Checked) CaLamViec_ = "Ca 1";
                 else CaLamViec_ = "Ca 2";
 
-                DataTable dt_ = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, CaLamViec_);
+                DataTable dt_ = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, CaLamViec_, _id_bophan);
 
                 foreach (DataRow item in dt_.Rows)
                 {

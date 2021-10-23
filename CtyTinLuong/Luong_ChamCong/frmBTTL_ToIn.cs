@@ -886,11 +886,11 @@ namespace CtyTinLuong
             {
                 //Lấy dữ liệu ca1
                 //_dtCong_Ca1 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, true);
-                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 1");
+                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 1", _id_bophan);
 
                 //Lấy dữ liệu ca2
                 //_dtCong_Ca2 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, false);
-                _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 2");
+                _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 2", _id_bophan);
 
                 int SttCa1 = 0;
                 int ID_congNhanRoot = -1;
@@ -1816,7 +1816,7 @@ namespace CtyTinLuong
             double slTang = 0;
             double donGiaThuong = 0;
             double donGiaTang = 0;
-            int soNgayCong = 0;
+            double soNgayCong = 0;
             double phuCapBaoHiem = 0;
             double truBaoHiem = 0;
             List<int> dsNgayCong = new List<int>();
