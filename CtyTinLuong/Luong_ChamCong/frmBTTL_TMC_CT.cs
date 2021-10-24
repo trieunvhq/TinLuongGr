@@ -120,6 +120,7 @@ namespace CtyTinLuong
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_CongNhan"].ToString());
                     int ID_Vthh = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_VTHH_Ra"].ToString());
+                    string MaNV_ = _dtSL_Ca1.Rows[i]["MaNhanVien"].ToString();
 
                     ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan, ID_Vthh, _dtSL_Ca1);
                     tinhTongCN t = tongTien(ID_congNhan, _dtSL_Ca1);
@@ -138,14 +139,15 @@ namespace CtyTinLuong
                             SttCa1++;
                             ravi_["STT"] = SttCa1;
                             ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
-
+                            ravi_["ID_CongNhan"] = ID_congNhan;
+                            ravi_["MaNhanVien"] = MaNV_;
                             ravi_["HinhThuc"] = nvSL.TenVthhThuong;
 
                             if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
                             else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
 
-                            if (nvSL.SlThuong == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = nvSL.SlThuong.ToString("N0");
+                            if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
+                            else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
 
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
@@ -154,14 +156,14 @@ namespace CtyTinLuong
 
 
                             double tongtien = t.TongTien;
-                            ravi_["Tong"] = (nvSL.PhuCapBaoHiem + tongtien).ToString("N0");
+                            ravi_["Tong"] = tongtien.ToString("N0");
 
-                            ravi_["ThucNhan"] = (nvSL.PhuCapBaoHiem + tongtien - nvSL.TruBaoHiem).ToString("N0");
+                            ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N0");
 
                             _SanLuong_Tong_Ca1 += nvSL.SlTong;
                             _ThanhTien_Tong_Ca1 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
-                            _Tong_Ca1 += (nvSL.PhuCapBaoHiem + tongtien);
-                            _ThucNhan_Tong_Ca1 += (nvSL.PhuCapBaoHiem + tongtien - nvSL.TruBaoHiem);
+                            _Tong_Ca1 += tongtien;
+                            _ThucNhan_Tong_Ca1 += (tongtien - nvSL.TruBaoHiem);
 
 
                             if (nvSL.TruBaoHiem == 0) ravi_["BaoHiem"] = "";
@@ -175,111 +177,12 @@ namespace CtyTinLuong
                             _BaoHiem_Tong_Ca1 += nvSL.TruBaoHiem;
 
                             _data.Rows.Add(ravi_);
-
-                            //
-                            if (nvSL.SlTang > 0)
-                            {
-                                DataRow ravi_tang = _data.NewRow();
-
-                                //STT
-                                ravi_tang["STT"] = SttCa1;
-                                ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
-
-                                ravi_tang["HinhThuc"] = nvSL.TenVthhTang;
-
-                                ravi_tang["NgayCong"] = "";
-
-                                if (nvSL.SlTang == 0) ravi_tang["SanLuong"] = "";
-                                else ravi_tang["SanLuong"] = nvSL.SlTang.ToString("N0");
-
-                                if (nvSL.DonGiaTang == 0) ravi_tang["DonGia"] = "";
-                                else ravi_tang["DonGia"] = nvSL.DonGiaTang.ToString("N2");
-
-                                ravi_tang["ThanhTien"] = nvSL.ThanhTienTang.ToString("N0");
-
-                                _data.Rows.Add(ravi_tang);
-                            }
                         }
                         else
                         {
 
                         }
                     }
-                    else
-                    {
-                        if (ID_VthhRoot != ID_Vthh)
-                        {
-                            DataRow ravi_ = _data.NewRow();
-                            ID_VthhRoot = ID_Vthh;
-
-                            //STT
-                            ravi_["STT"] = SttCa1;
-                            ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
-
-                            ravi_["HinhThuc"] = nvSL.TenVthhThuong;
-
-                            if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
-                            else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
-
-                            if (nvSL.SlThuong == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = nvSL.SlThuong.ToString("N0");
-
-                            if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
-                            else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
-
-                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N0");
-
-                            _SanLuong_Tong_Ca1 += nvSL.SlTong;
-                            _ThanhTien_Tong_Ca1 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
-
-                            _data.Rows.Add(ravi_);
-
-                            //
-                            if (nvSL.SlTang > 0)
-                            {
-                                DataRow ravi_tang = _data.NewRow();
-
-                                //STT
-                                ravi_tang["STT"] = SttCa1;
-                                ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
-
-                                ravi_tang["HinhThuc"] = nvSL.TenVthhTang;
-
-                                ravi_tang["NgayCong"] = "";
-
-                                if (nvSL.SlTang == 0) ravi_tang["SanLuong"] = "";
-                                else ravi_tang["SanLuong"] = nvSL.SlTang.ToString("N0");
-
-                                if (nvSL.DonGiaTang == 0) ravi_tang["DonGia"] = "";
-                                else ravi_tang["DonGia"] = nvSL.DonGiaTang.ToString("N2");
-
-                                ravi_tang["ThanhTien"] = nvSL.ThanhTienTang.ToString("N0");
-
-                                _data.Rows.Add(ravi_tang);
-                            }
-                        }
-                        else
-                        {
-
-                        }
-                    }
-
-                    //if (ID_congNhanAddPCBH != ID_congNhan)
-                    //{
-                    //    if (t.PhuCapBaoHiem > 0)
-                    //    {
-                    //        DataRow ravi_tang = _data.NewRow();
-                    //        ravi_tang["STT"] = SttCa1;
-                    //        ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca1.Rows[i]["TenNhanVien"].ToString());
-                    //        ravi_tang["HinhThuc"] = "Phụ cấp bảo hiểm";
-                    //        ravi_tang["NgayCong"] = "";
-                    //        ravi_tang["SanLuong"] = "";
-                    //        ravi_tang["DonGia"] = "";
-                    //        ravi_tang["PhuCapBaoHiem"] = t.PhuCapBaoHiem.ToString("N0");
-                    //        ravi_tang["ThanhTien"] = "";
-                    //        _data.Rows.Add(ravi_tang);
-                    //    }
-                    //}
                 }
 
                 //Add thêm row tổng ca 1:
@@ -373,6 +276,7 @@ namespace CtyTinLuong
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_CongNhan"].ToString());
                     int ID_Vthh = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_VTHH_Ra"].ToString());
+                    string MaNV_ = _dtSL_Ca2.Rows[i]["MaNhanVien"].ToString();
 
                     ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan, ID_Vthh, _dtSL_Ca2);
                     tinhTongCN t = tongTien(ID_congNhan, _dtSL_Ca2);
@@ -382,7 +286,6 @@ namespace CtyTinLuong
                     {
                         ID_congNhanRoot = ID_congNhan;
                         ID_VthhRoot = -1;
-
                         if (ID_VthhRoot != ID_Vthh)
                         {
                             DataRow ravi_ = _data.NewRow();
@@ -392,14 +295,15 @@ namespace CtyTinLuong
                             SttCa2++;
                             ravi_["STT"] = SttCa2;
                             ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
-
+                            ravi_["ID_CongNhan"] = ID_congNhan;
+                            ravi_["MaNhanVien"] = MaNV_;
                             ravi_["HinhThuc"] = nvSL.TenVthhThuong;
 
                             if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
                             else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
 
-                            if (nvSL.SlThuong == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = nvSL.SlThuong.ToString("N0");
+                            if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
+                            else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
 
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
@@ -408,14 +312,14 @@ namespace CtyTinLuong
 
 
                             double tongtien = t.TongTien;
-                            ravi_["Tong"] = (nvSL.PhuCapBaoHiem + tongtien).ToString("N0");
+                            ravi_["Tong"] = tongtien.ToString("N0");
 
-                            ravi_["ThucNhan"] = (nvSL.PhuCapBaoHiem + tongtien - nvSL.TruBaoHiem).ToString("N0");
+                            ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N0");
 
                             _SanLuong_Tong_Ca2 += nvSL.SlTong;
                             _ThanhTien_Tong_Ca2 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
-                            _Tong_Ca2 += (nvSL.PhuCapBaoHiem + tongtien);
-                            _ThucNhan_Tong_Ca2 += (nvSL.PhuCapBaoHiem + tongtien - nvSL.TruBaoHiem);
+                            _Tong_Ca2 += tongtien;
+                            _ThucNhan_Tong_Ca2 += (tongtien - nvSL.TruBaoHiem);
 
 
                             if (nvSL.TruBaoHiem == 0) ravi_["BaoHiem"] = "";
@@ -429,88 +333,6 @@ namespace CtyTinLuong
                             _BaoHiem_Tong_Ca2 += nvSL.TruBaoHiem;
 
                             _data.Rows.Add(ravi_);
-
-                            //
-                            if (nvSL.SlTang > 0)
-                            {
-                                DataRow ravi_tang = _data.NewRow();
-
-                                //STT
-                                ravi_tang["STT"] = SttCa2;
-                                ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
-
-                                ravi_tang["HinhThuc"] = nvSL.TenVthhTang;
-
-                                ravi_tang["NgayCong"] = "";
-
-                                if (nvSL.SlTang == 0) ravi_tang["SanLuong"] = "";
-                                else ravi_tang["SanLuong"] = nvSL.SlTang.ToString("N0");
-
-                                if (nvSL.DonGiaTang == 0) ravi_tang["DonGia"] = "";
-                                else ravi_tang["DonGia"] = nvSL.DonGiaTang.ToString("N2");
-
-                                ravi_tang["ThanhTien"] = nvSL.ThanhTienTang.ToString("N0");
-
-                                _data.Rows.Add(ravi_tang);
-                            }
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                    else
-                    {
-                        if (ID_VthhRoot != ID_Vthh)
-                        {
-                            DataRow ravi_ = _data.NewRow();
-                            ID_VthhRoot = ID_Vthh;
-
-                            //STT
-                            ravi_["STT"] = SttCa2;
-                            ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
-
-                            ravi_["HinhThuc"] = nvSL.TenVthhThuong;
-
-                            if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
-                            else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
-
-                            if (nvSL.SlThuong == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = nvSL.SlThuong.ToString("N0");
-
-                            if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
-                            else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
-
-                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N0");
-
-                            _SanLuong_Tong_Ca2 += nvSL.SlTong;
-                            _ThanhTien_Tong_Ca2 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
-
-                            _data.Rows.Add(ravi_);
-
-                            //
-                            if (nvSL.SlTang > 0)
-                            {
-                                DataRow ravi_tang = _data.NewRow();
-
-                                //STT
-                                ravi_tang["STT"] = SttCa2;
-                                ravi_tang["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtSL_Ca2.Rows[i]["TenNhanVien"].ToString());
-
-                                ravi_tang["HinhThuc"] = nvSL.TenVthhTang;
-
-                                ravi_tang["NgayCong"] = "";
-
-                                if (nvSL.SlTang == 0) ravi_tang["SanLuong"] = "";
-                                else ravi_tang["SanLuong"] = nvSL.SlTang.ToString("N0");
-
-                                if (nvSL.DonGiaTang == 0) ravi_tang["DonGia"] = "";
-                                else ravi_tang["DonGia"] = nvSL.DonGiaTang.ToString("N2");
-
-                                ravi_tang["ThanhTien"] = nvSL.ThanhTienTang.ToString("N0");
-
-                                _data.Rows.Add(ravi_tang);
-                            }
                         }
                         else
                         {
@@ -522,6 +344,7 @@ namespace CtyTinLuong
                 //Add thêm row tổng ca 2:
                 DataRow _ravi_ca2 = _data.NewRow();
                 _ravi_ca2["ID_CongNhan"] = 0;
+                _ravi_ca2["MaNhanVien"] = "";
                 _ravi_ca2["Thang"] = _thang;
                 _ravi_ca2["Nam"] = _nam;
                 _ravi_ca2["TenNhanVien"] = "CA 2:";
@@ -603,6 +426,7 @@ namespace CtyTinLuong
                 //Add thêm row tổng ca 2:
                 DataRow _ravi_2ca = _data.NewRow();
                 _ravi_2ca["ID_CongNhan"] = 0;
+                _ravi_2ca["MaNhanVien"] = "";
                 _ravi_2ca["Thang"] = _thang;
                 _ravi_2ca["Nam"] = _nam;
                 _ravi_2ca["TenNhanVien"] = "Tổng";
@@ -779,6 +603,7 @@ namespace CtyTinLuong
             nv.SoNgayCong = soNgayCong;
             nv.ThanhTienThuong = slThuong * donGiaThuong;
             nv.ThanhTienTang = slTang * donGiaTang;
+            nv.TienTong = slThuong * donGiaThuong + slTang * donGiaTang;
             nv.PhuCapBaoHiem = phuCapBaoHiem;
             nv.TruBaoHiem = truBaoHiem;
 
@@ -807,23 +632,9 @@ namespace CtyTinLuong
                         ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan_, ID_Vthh_, dt);
                         result += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
 
-                        PhuCapBH += nvSL.PhuCapBaoHiem;
-
-                        if (nvSL.TenVthhThuong.ToLower().Contains("in mác") || nvSL.TenVthhThuong.ToLower().Contains("in tb"))
-                        {
-                            isInMac_TB = true;
-                        }
+                        PhuCapBH = nvSL.PhuCapBaoHiem;
                     }
                 }
-            }
-
-            if (isInMac_TB)
-            {
-                PhuCapBH = 0;
-            }
-            else
-            {
-                if (PhuCapBH >= 900000) PhuCapBH = 900000;
             }
 
             t.TongTien = result;
@@ -1682,6 +1493,23 @@ namespace CtyTinLuong
             catch
             {
                 MessageBox.Show("Năm không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_CongNhan).ToString());
+                if (id_congnhan_ != 0)
+                {
+                    Tr_frmChiTiet_LuongSanLuongCN ff = new Tr_frmChiTiet_LuongSanLuongCN();
+                    ff.Show();
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

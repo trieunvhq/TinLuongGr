@@ -522,6 +522,11 @@ namespace CtyTinLuong
 
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
            
