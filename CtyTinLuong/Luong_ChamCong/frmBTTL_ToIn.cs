@@ -2246,6 +2246,8 @@ namespace CtyTinLuong
     {
         public double TongTien { get; set; }
         public double PhuCapBaoHiem { get; set; }
+        public double TongSL_All { get; set; }
+
     }
 }
 

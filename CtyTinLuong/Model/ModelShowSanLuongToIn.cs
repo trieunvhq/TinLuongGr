@@ -8,9 +8,11 @@ namespace CtyTinLuong
 {
     class ModelShowSanLuongToIn
     {
+        public double[] DsSLNgay_Tong = new double[31];
         public double[] DsSLNgay = new double[31];
         public double[] DsSLNgay_Tang = new double[31];
         public double[] DsCong = new double[31];
+        public string MaVT { get; set; }
 
 
         private string hoTen;

@@ -146,8 +146,8 @@ namespace CtyTinLuong
                             if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
                             else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
 
-                            if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
+                            if (t.TongSL_All == 0) ravi_["SanLuong"] = "";
+                            else ravi_["SanLuong"] = t.TongSL_All.ToString("N0");
 
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
@@ -160,7 +160,7 @@ namespace CtyTinLuong
 
                             ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N0");
 
-                            _SanLuong_Tong_Ca1 += nvSL.SlTong;
+                            _SanLuong_Tong_Ca1 += t.TongSL_All;
                             _ThanhTien_Tong_Ca1 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
                             _Tong_Ca1 += tongtien;
                             _ThucNhan_Tong_Ca1 += (tongtien - nvSL.TruBaoHiem);
@@ -302,8 +302,8 @@ namespace CtyTinLuong
                             if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
                             else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
 
-                            if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
+                            if (t.TongSL_All == 0) ravi_["SanLuong"] = "";
+                            else ravi_["SanLuong"] = t.TongSL_All.ToString("N0");
 
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
@@ -316,7 +316,7 @@ namespace CtyTinLuong
 
                             ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N0");
 
-                            _SanLuong_Tong_Ca2 += nvSL.SlTong;
+                            _SanLuong_Tong_Ca2 += t.TongSL_All;
                             _ThanhTien_Tong_Ca2 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
                             _Tong_Ca2 += tongtien;
                             _ThucNhan_Tong_Ca2 += (tongtien - nvSL.TruBaoHiem);
@@ -615,6 +615,7 @@ namespace CtyTinLuong
             tinhTongCN t = new tinhTongCN();
             double result = 0;
             double PhuCapBH = 0;
+            double TongSL_All_ = 0;
             int ID_VthhRoot = -1;
             bool isInMac_TB = false;
 
@@ -631,7 +632,7 @@ namespace CtyTinLuong
                         ID_VthhRoot = ID_Vthh_;
                         ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan_, ID_Vthh_, dt);
                         result += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
-
+                        TongSL_All_ += nvSL.SlTong;
                         PhuCapBH = nvSL.PhuCapBaoHiem;
                     }
                 }
@@ -639,6 +640,7 @@ namespace CtyTinLuong
 
             t.TongTien = result;
             t.PhuCapBaoHiem = PhuCapBH;
+            t.TongSL_All = TongSL_All_;
 
             return t;
         }
@@ -1503,7 +1505,7 @@ namespace CtyTinLuong
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_CongNhan).ToString());
                 if (id_congnhan_ != 0)
                 {
-                    Tr_frmChiTiet_LuongSanLuongCN ff = new Tr_frmChiTiet_LuongSanLuongCN();
+                    Tr_frmChiTiet_LuongSanLuongCN ff = new Tr_frmChiTiet_LuongSanLuongCN(_thang, _nam, _id_bophan, id_congnhan_);
                     ff.Show();
                 }
             }
