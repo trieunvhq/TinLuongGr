@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,8 +63,16 @@ namespace CtyTinLuong
             _dataLuong.Clear();
 
             isload = true;
-            double Tong_SLGiayCuon = 0;
-            double Tong_VuotSanLuong = 0;
+
+            double _ThanhTien_Tong_BL = 0;  //Thành tiền
+            double _ThucNhan_Tong_BL = 0;
+            double _NgayCong_Tong_BL = 0;
+            double _SanLuong_Tong_BL = 0;
+            double _XangXe_Tong_BL = 0;
+            double _BaoHiem_Tong_BL = 0;
+            double _PCBaoHiem_Tong_BL = 0;
+            double _Tong_BL = 0;
+
             double[] DsTongNgay = new double[31];
             for (int i = 0; i < 31; i++) DsTongNgay[i] = 0;
 
@@ -92,23 +101,29 @@ namespace CtyTinLuong
                     DataTable dtTang = clsth.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectOneCN_TMC(_nam, _thang, _id_bophan, _ID_CongNhan, 2);
 
                     int ID_VTHHRoot = -1;
-                    int SttCa1 = 0;
+                    int SttSL = 0;
+                    int SttBL = 0;
+
                     double[] DsNgayCong = new double[31];
                     double SoNgayCong = 0;
 
                     for (int i = 0; i < dt.Rows.Count; ++i)
                     {
                         int ID_VTHH = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra"].ToString());
+                        int ID_congNhan = Convert.ToInt32(dt.Rows[i]["ID_CongNhan"].ToString());
+                        string MaNV_ = dt.Rows[i]["MaNhanVien"].ToString();
 
                         ModelShowSanLuongToIn vt = getNV_SanLuong(ID_VTHH, dt);
+                        tinhTongCN t = tongTien(ID_congNhan, dt);
+
                         SoNgayCong = vt.SoNgayCong;
                         //
                         if (ID_VTHH != ID_VTHHRoot)
                         {
                             ID_VTHHRoot = ID_VTHH;
                             DataRow ravi_ = _dataSL.NewRow();
-                            SttCa1++;
-                            ravi_["STT"] = SttCa1;
+                            SttSL++;
+                            ravi_["STT"] = SttSL;
                             ravi_["ID_CongNhan"] = _ID_CongNhan;
                             ravi_["MaVT"] = vt.MaVT;
                             ravi_["TenVTHH"] = vt.TenVthhThuong;
@@ -126,8 +141,8 @@ namespace CtyTinLuong
                                 _dataSL.Rows.InsertAt(ravi_, 0);
 
                                 DataRow ravi_tang = _dataSL.NewRow();
-                                SttCa1++;
-                                ravi_tang["STT"] = SttCa1;
+                                SttSL++;
+                                ravi_tang["STT"] = SttSL;
                                 ravi_tang["ID_CongNhan"] = _ID_CongNhan;
                                 ravi_tang["MaVT"] = vt.MaVT;
                                 ravi_tang["TenVTHH"] = vt.TenVthhTang;
@@ -144,13 +159,79 @@ namespace CtyTinLuong
                             {
                                 _dataSL.Rows.Add(ravi_);
                             }
+
+                            //================================================================================
+                            //Tạo bảng lương công nhân:
+                            DataRow ravi_BL = _dataLuong.NewRow();
+                            SttBL++;
+                            ravi_BL["STT"] = SttBL;
+                            ravi_BL["ID_CongNhan"] = ID_congNhan;
+                            ravi_BL["MaVT"] = vt.MaVT;
+                            ravi_BL["TenVTHH"] = vt.TenVthhThuong;
+
+                            if (t.TongSL_All == 0) ravi_BL["SanLuong"] = "";
+                            else ravi_BL["SanLuong"] = t.TongSL_All.ToString("N0");
+
+                            if (vt.DonGiaThuong == 0) ravi_BL["DonGia"] = "";
+                            else ravi_BL["DonGia"] = vt.DonGiaThuong.ToString("N2");
+
+                            if (vt.DonGiaTang == 0) ravi_BL["DonGiaTang"] = "";
+                            else ravi_BL["DonGiaTang"] = vt.DonGiaTang.ToString("N2");
+
+                            ravi_BL["ThanhTien"] = vt.ThanhTienThuong.ToString("N0");
+
+
+                            //double tongtien = t.TongTien;
+                            //ravi_BL["Tong"] = tongtien.ToString("N0");
+
+                            //ravi_BL["ThucNhan"] = (tongtien - vt.TruBaoHiem).ToString("N0");
+
+
+                            if (_dataLuong.Rows.Count == 0)
+                            {
+                                if (vt.TruBaoHiem == 0) ravi_BL["BaoHiem"] = "";
+                                else ravi_BL["BaoHiem"] = vt.TruBaoHiem.ToString("N0");
+                            }
+
+                            _SanLuong_Tong_BL = t.TongSL_All;
+                            _BaoHiem_Tong_BL = vt.TruBaoHiem;
+                            _ThanhTien_Tong_BL = t.TongTien;
+                            _ThucNhan_Tong_BL = t.TongTien - vt.TruBaoHiem;
+
+                            if (vt.SlTang > 0)
+                            {
+                                _dataLuong.Rows.InsertAt(ravi_BL, 0);
+
+                                DataRow ravi_BL_tang = _dataLuong.NewRow();
+                                SttBL++;
+                                ravi_BL_tang["STT"] = SttBL;
+                                ravi_BL_tang["ID_CongNhan"] = ID_congNhan;
+                                ravi_BL_tang["MaVT"] = vt.MaVT;
+                                ravi_BL_tang["TenVTHH"] = vt.TenVthhTang;
+
+                                if (vt.SlTang == 0) ravi_BL_tang["SanLuong"] = "";
+                                else ravi_BL_tang["SanLuong"] = vt.SlTang.ToString("N0");
+
+                                ravi_BL_tang["DonGia"] = "";
+
+                                if (vt.DonGiaTang == 0) ravi_BL_tang["DonGiaTang"] = "";
+                                else ravi_BL_tang["DonGiaTang"] = vt.DonGiaTang.ToString("N2");
+
+                                ravi_BL_tang["ThanhTien"] = vt.ThanhTienTang.ToString("N0");
+
+                                _dataLuong.Rows.InsertAt(ravi_BL_tang, 1);
+                            }
+                            else
+                            {
+                                _dataLuong.Rows.Add(ravi_BL);
+                            }
                         }
                     }
 
 
                     //Thêm Ngày công đi làm:
                     DataRow ravi_CongThg = _dataSL.NewRow();
-                    SttCa1++;
+                    SttBL++;
                     ravi_CongThg["STT"] = "";
                     ravi_CongThg["ID_CongNhan"] = 0;
                     ravi_CongThg["MaVT"] = "";
@@ -168,7 +249,7 @@ namespace CtyTinLuong
                     {
                         //Thêm Ngày tăng ca đi làm:
                         DataRow ravi_Tang = _dataSL.NewRow();
-                        SttCa1++;
+                        SttBL++;
                         ravi_Tang["STT"] = "";
                         ravi_Tang["ID_CongNhan"] = 0;
                         ravi_Tang["MaVT"] = "";
@@ -185,9 +266,30 @@ namespace CtyTinLuong
                         ravi_Tang["Tong"] = String.Format("{0:0.##}", tg);
                         _dataSL.Rows.Add(ravi_Tang);
                     }
+
+                    //==========Thêm row tổng lương:
+                    DataRow ravi_BL_tong = _dataLuong.NewRow();
+                    ravi_BL_tong["STT"] = "";
+                    ravi_BL_tong["ID_CongNhan"] = 0;
+                    ravi_BL_tong["MaVT"] = "";
+                    ravi_BL_tong["TenVTHH"] = "Cộng";
+
+                    if (_SanLuong_Tong_BL == 0) ravi_BL_tong["SanLuong"] = "";
+                    else ravi_BL_tong["SanLuong"] = _SanLuong_Tong_BL.ToString("N0");
+
+                    if (_ThanhTien_Tong_BL == 0) ravi_BL_tong["ThanhTien"] = "";
+                    else ravi_BL_tong["ThanhTien"] = _ThanhTien_Tong_BL.ToString("N0");
+
+                    if (_BaoHiem_Tong_BL == 0) ravi_BL_tong["BaoHiem"] = "";
+                    else ravi_BL_tong["BaoHiem"] = _BaoHiem_Tong_BL.ToString("N0");
+
+                    if (_ThucNhan_Tong_BL == 0) ravi_BL_tong["ThucNhan"] = "";
+                    else ravi_BL_tong["ThucNhan"] = _ThucNhan_Tong_BL.ToString("N0");
+                    _dataLuong.Rows.Add(ravi_BL_tong);
                 }
 
                 gridControl2.DataSource = _dataSL;
+                gridControl1.DataSource = _dataLuong;
             }
             catch (Exception ea)
             {
@@ -311,8 +413,8 @@ namespace CtyTinLuong
             tinhTongCN t = new tinhTongCN();
             double result = 0;
             double PhuCapBH = 0;
+            double TongSL_All_ = 0;
             int ID_VthhRoot = -1;
-            bool isInMac_TB = false;
 
             foreach (DataRow item in dt.Rows)
             {
@@ -320,21 +422,19 @@ namespace CtyTinLuong
                 int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
 
                 //
-                if (idcn == ID_congNhan_)
+                if (ID_VthhRoot != ID_Vthh_)
                 {
-                    if (ID_VthhRoot != ID_Vthh_)
-                    {
-                        ID_VthhRoot = ID_Vthh_;
-                        //ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan_, ID_Vthh_, dt);
-                        //result += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
-
-                        //PhuCapBH = nvSL.PhuCapBaoHiem;
-                    }
+                    ID_VthhRoot = ID_Vthh_;
+                    ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_Vthh_, dt);
+                    result += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
+                    TongSL_All_ += nvSL.SlTong;
+                    PhuCapBH = nvSL.PhuCapBaoHiem;
                 }
             }
 
             t.TongTien = result;
             t.PhuCapBaoHiem = PhuCapBH;
+            t.TongSL_All = TongSL_All_;
 
             return t;
         }
@@ -657,6 +757,7 @@ namespace CtyTinLuong
             _dataLuong.Columns.Add("TenVTHH", typeof(string));
             _dataLuong.Columns.Add("SanLuong", typeof(string));
             _dataLuong.Columns.Add("DonGia", typeof(string));
+            _dataLuong.Columns.Add("DonGiaTang", typeof(string));
             _dataLuong.Columns.Add("ThanhTien", typeof(string));
             _dataLuong.Columns.Add("XangXe", typeof(string));
             _dataLuong.Columns.Add("Tong", typeof(string));
@@ -825,7 +926,19 @@ namespace CtyTinLuong
             }
         }
 
-      
+        private void gridView2_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string ten = View.GetRowCellValue(e.RowHandle, View.Columns["TenVTHH"]).ToString();
+                if (ten == "Công")
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                }
+            }
+        }
+
         private void btPrint_Click(object sender, EventArgs e)
         {
             _nam = Convert.ToInt32(txtNam.Text.ToString());

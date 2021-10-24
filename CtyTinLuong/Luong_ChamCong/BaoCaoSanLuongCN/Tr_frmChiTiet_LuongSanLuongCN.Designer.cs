@@ -96,7 +96,7 @@
             this.TongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BaoHiem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.AnCa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ThucNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TamUng = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -860,11 +860,11 @@
             this.TongLuong,
             this.BaoHiem,
             this.AnCa,
-            this.clThanhTien,
+            this.ThucNhan,
             this.TamUng});
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.clThanhTien, "{0:N2}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.ThucNhan, "{0:N2}")});
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView2.OptionsView.AllowHtmlDrawHeaders = true;
@@ -873,6 +873,7 @@
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView2_RowCellStyle);
             // 
             // clSTT
             // 
@@ -1046,24 +1047,24 @@
             this.AnCa.Name = "AnCa";
             this.AnCa.Width = 107;
             // 
-            // clThanhTien
+            // ThucNhan
             // 
-            this.clThanhTien.AppearanceCell.Options.UseTextOptions = true;
-            this.clThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.clThanhTien.Caption = "THÀNH TIỀN";
-            this.clThanhTien.DisplayFormat.FormatString = "{0:#,##0.00}";
-            this.clThanhTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clThanhTien.FieldName = "ThanhTien";
-            this.clThanhTien.GroupFormat.FormatString = "{0:#,##0.00}";
-            this.clThanhTien.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.clThanhTien.Name = "clThanhTien";
-            this.clThanhTien.OptionsColumn.AllowEdit = false;
-            this.clThanhTien.OptionsColumn.FixedWidth = true;
-            this.clThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.ThucNhan.AppearanceCell.Options.UseTextOptions = true;
+            this.ThucNhan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.ThucNhan.Caption = "THỰC NHẬN";
+            this.ThucNhan.DisplayFormat.FormatString = "{0:#,##0.00}";
+            this.ThucNhan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.ThucNhan.FieldName = "ThucNhan";
+            this.ThucNhan.GroupFormat.FormatString = "{0:#,##0.00}";
+            this.ThucNhan.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.ThucNhan.Name = "ThucNhan";
+            this.ThucNhan.OptionsColumn.AllowEdit = false;
+            this.ThucNhan.OptionsColumn.FixedWidth = true;
+            this.ThucNhan.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "{0:#,##0.00}")});
-            this.clThanhTien.Visible = true;
-            this.clThanhTien.VisibleIndex = 7;
-            this.clThanhTien.Width = 120;
+            this.ThucNhan.Visible = true;
+            this.ThucNhan.VisibleIndex = 7;
+            this.ThucNhan.Width = 120;
             // 
             // TamUng
             // 
@@ -1257,7 +1258,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clID_DinhMuc_Luong;
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn DonGiaTang;
-        private DevExpress.XtraGrid.Columns.GridColumn clThanhTien;
+        private DevExpress.XtraGrid.Columns.GridColumn ThucNhan;
         private DevExpress.XtraGrid.Columns.GridColumn clMaVT;
         private DevExpress.XtraGrid.Columns.GridColumn TongLuong;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
