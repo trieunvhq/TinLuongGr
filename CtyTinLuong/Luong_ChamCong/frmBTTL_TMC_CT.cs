@@ -1503,9 +1503,10 @@ namespace CtyTinLuong
             try
             {
                 int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_CongNhan).ToString());
+                string tencn_ = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
                 if (id_congnhan_ != 0)
                 {
-                    Tr_frmChiTiet_LuongSanLuongCN ff = new Tr_frmChiTiet_LuongSanLuongCN(_thang, _nam, _id_bophan, id_congnhan_);
+                    Tr_frmChiTiet_LuongSanLuongCN ff = new Tr_frmChiTiet_LuongSanLuongCN(_thang, _nam, _id_bophan, id_congnhan_, tencn_);
                     ff.Show();
                 }
             }

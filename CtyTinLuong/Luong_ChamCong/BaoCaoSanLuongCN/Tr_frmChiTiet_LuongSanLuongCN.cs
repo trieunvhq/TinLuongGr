@@ -16,6 +16,7 @@ namespace CtyTinLuong
     {
         private List<GridColumn> ds_grid = new List<GridColumn>();
         private int _thang, _nam, _ID_CongNhan, _id_bophan;
+        private string _tenNV;
         private bool isload = true;
         private bool _deleted_29 = false;
         private bool _deleted_30 = false;
@@ -90,13 +91,18 @@ namespace CtyTinLuong
 
             ChangeColTitle(_thang, _nam);
             lbThangNamTitle.Text = "BẢNG KẾT QUẢ THÁNG " + _thang + " NĂM " + _nam;
+            lbTenCN.Text = "(Họ tên: " + _tenNV + " - Bộ phận: Máy cắt)";
 
             try
             {
                 using (clsThin clsth = new clsThin())
                 {
                     DataTable dt = clsth.Tr_Phieu_ChiTietPhieu_New_ToInCatDot_SelectOne(_nam, _thang, 0, 1, 0, "", _id_bophan, _ID_CongNhan);
-                    if (dt.Rows.Count == 0) return;
+                    if (dt.Rows.Count == 0)
+                    {
+                        isload = false;
+                        return;
+                    }
 
                     DataTable dtTang = clsth.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectOneCN_TMC(_nam, _thang, _id_bophan, _ID_CongNhan, 2);
 
@@ -169,23 +175,15 @@ namespace CtyTinLuong
                             ravi_BL["MaVT"] = vt.MaVT;
                             ravi_BL["TenVTHH"] = vt.TenVthhThuong;
 
-                            if (t.TongSL_All == 0) ravi_BL["SanLuong"] = "";
-                            else ravi_BL["SanLuong"] = t.TongSL_All.ToString("N0");
+                            if (vt.SlThuong == 0) ravi_BL["SanLuong"] = "";
+                            else ravi_BL["SanLuong"] = vt.SlThuong.ToString("N0");
 
                             if (vt.DonGiaThuong == 0) ravi_BL["DonGia"] = "";
                             else ravi_BL["DonGia"] = vt.DonGiaThuong.ToString("N2");
 
-                            if (vt.DonGiaTang == 0) ravi_BL["DonGiaTang"] = "";
-                            else ravi_BL["DonGiaTang"] = vt.DonGiaTang.ToString("N2");
+                            ravi_BL["DonGiaTang"] = "";
 
                             ravi_BL["ThanhTien"] = vt.ThanhTienThuong.ToString("N0");
-
-
-                            //double tongtien = t.TongTien;
-                            //ravi_BL["Tong"] = tongtien.ToString("N0");
-
-                            //ravi_BL["ThucNhan"] = (tongtien - vt.TruBaoHiem).ToString("N0");
-
 
                             if (_dataLuong.Rows.Count == 0)
                             {
@@ -225,6 +223,7 @@ namespace CtyTinLuong
                             {
                                 _dataLuong.Rows.Add(ravi_BL);
                             }
+                            //================================end===========================
                         }
                     }
 
@@ -689,8 +688,9 @@ namespace CtyTinLuong
 
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
 
-        public Tr_frmChiTiet_LuongSanLuongCN(int thang, int nam, int idbophan, int idcn)
+        public Tr_frmChiTiet_LuongSanLuongCN(int thang, int nam, int idbophan, int idcn, string tenNV)
         {
+            _tenNV = tenNV;
             _thang = thang;
             _nam = nam;
             _ID_CongNhan = idcn;
@@ -852,7 +852,7 @@ namespace CtyTinLuong
             {
                 if (isload)
                     return;
-                _nam = Convert.ToInt32(txtNam.Text);
+                _thang = Convert.ToInt32(txtThang.Text);
                 LoadData(false);
             }
             catch (Exception ea)
@@ -932,7 +932,7 @@ namespace CtyTinLuong
             if (e.RowHandle >= 0)
             {
                 string ten = View.GetRowCellValue(e.RowHandle, View.Columns["TenVTHH"]).ToString();
-                if (ten == "Công")
+                if (ten == "Cộng")
                 {
                     e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
                 }
