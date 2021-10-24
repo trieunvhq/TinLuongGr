@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class Tr_frmChiTiet_LuongSanLuongCN : Form
+    public partial class Tr_frmChiTiet_LuongSanLuongCN_TMC : Form
     {
         private List<GridColumn> ds_grid = new List<GridColumn>();
         private int _thang, _nam, _ID_CongNhan, _id_bophan;
@@ -74,6 +74,7 @@ namespace CtyTinLuong
             double _PCBaoHiem_Tong_BL = 0;
             double _Tong_BL = 0;
 
+            List<int> DsID_Vthh_ = new List<int>();
             double[] DsTongNgay = new double[31];
             for (int i = 0; i < 31; i++) DsTongNgay[i] = 0;
 
@@ -113,6 +114,111 @@ namespace CtyTinLuong
                     double[] DsNgayCong = new double[31];
                     double SoNgayCong = 0;
 
+                    ModelShowSanLuongToIn dotTang = getNV_SanLuong_DotTang(dt);
+                    if (dotTang.DsIdVthh_DotTang.Count > 0)
+                    {
+                        DataRow ravi_ = _dataSL.NewRow();
+                        SttSL++;
+                        ravi_["STT"] = SttSL;
+                        ravi_["ID_CongNhan"] = _ID_CongNhan;
+                        ravi_["MaVT"] = dotTang.MaVT;
+                        ravi_["TenVTHH"] = dotTang.TenVthhThuong;
+
+                        for (int k = 0; k < 31; k++)
+                        {
+                            ravi_["Ngay" + (k + 1)] = String.Format("{0:0.##}", dotTang.DsSLNgay_Tong[k]);
+                            DsNgayCong[k] = dotTang.DsCong[k];
+                        }
+
+                        ravi_["Tong"] = dotTang.SlThuong;
+
+                        if (dotTang.SlTang > 0)
+                        {
+                            _dataSL.Rows.InsertAt(ravi_, 0);
+
+                            DataRow ravi_tang = _dataSL.NewRow();
+                            SttSL++;
+                            ravi_tang["STT"] = SttSL;
+                            ravi_tang["ID_CongNhan"] = _ID_CongNhan;
+                            ravi_tang["MaVT"] = dotTang.MaVT;
+                            ravi_tang["TenVTHH"] = dotTang.TenVthhTang;
+
+                            for (int k = 0; k < 31; k++)
+                            {
+                                ravi_tang["Ngay" + (k + 1)] = String.Format("{0:0.##}", dotTang.DsSLNgay_Tang[k]);
+                            }
+
+                            ravi_tang["Tong"] = String.Format("{0:0.##}", dotTang.SlTang);
+                            _dataSL.Rows.InsertAt(ravi_tang, 1);
+                        }
+                        else
+                        {
+                            _dataSL.Rows.Add(ravi_);
+                        }
+
+                        //
+                        //================================================================================
+                        //Tạo bảng lương công nhân:
+                        tinhTongCN t = tongTien(dotTang.DsIdVthh_DotTang[0], dt);
+
+                        DataRow ravi_BL = _dataLuong.NewRow();
+                        SttBL++;
+                        ravi_BL["STT"] = SttBL;
+                        ravi_BL["ID_CongNhan"] = _ID_CongNhan;
+                        ravi_BL["MaVT"] = dotTang.MaVT;
+                        ravi_BL["TenVTHH"] = dotTang.TenVthhThuong;
+
+                        if (dotTang.SlThuong == 0) ravi_BL["SanLuong"] = "";
+                        else ravi_BL["SanLuong"] = dotTang.SlThuong.ToString("N2");
+
+                        if (dotTang.DonGiaThuong == 0) ravi_BL["DonGia"] = "";
+                        else ravi_BL["DonGia"] = dotTang.DonGiaThuong.ToString("N2");
+
+                        ravi_BL["DonGiaTang"] = "";
+
+                        ravi_BL["ThanhTien"] = dotTang.ThanhTienThuong.ToString("N2");
+
+                        if (_dataLuong.Rows.Count == 0)
+                        {
+                            if (dotTang.TruBaoHiem == 0) ravi_BL["BaoHiem"] = "";
+                            else ravi_BL["BaoHiem"] = dotTang.TruBaoHiem.ToString("N2");
+                        }
+
+                        _SanLuong_Tong_BL = t.TongSL_All;
+                        _BaoHiem_Tong_BL = dotTang.TruBaoHiem;
+                        _ThanhTien_Tong_BL = t.TongTien;
+                        _ThucNhan_Tong_BL = t.TongTien - dotTang.TruBaoHiem;
+
+                        if (dotTang.SlTang > 0)
+                        {
+                            _dataLuong.Rows.InsertAt(ravi_BL, 0);
+
+                            DataRow ravi_BL_tang = _dataLuong.NewRow();
+                            SttBL++;
+                            ravi_BL_tang["STT"] = SttBL;
+                            ravi_BL_tang["ID_CongNhan"] = _ID_CongNhan;
+                            ravi_BL_tang["MaVT"] = dotTang.MaVT;
+                            ravi_BL_tang["TenVTHH"] = dotTang.TenVthhTang;
+
+                            if (dotTang.SlTang == 0) ravi_BL_tang["SanLuong"] = "";
+                            else ravi_BL_tang["SanLuong"] = dotTang.SlTang.ToString("N2");
+
+                            ravi_BL_tang["DonGia"] = "";
+
+                            if (dotTang.DonGiaTang == 0) ravi_BL_tang["DonGiaTang"] = "";
+                            else ravi_BL_tang["DonGiaTang"] = dotTang.DonGiaTang.ToString("N2");
+
+                            ravi_BL_tang["ThanhTien"] = dotTang.ThanhTienTang.ToString("N2");
+
+                            _dataLuong.Rows.InsertAt(ravi_BL_tang, 1);
+                        }
+                        else
+                        {
+                            _dataLuong.Rows.Add(ravi_BL);
+                        }
+                    }
+
+
                     for (int i = 0; i < dt.Rows.Count; ++i)
                     {
                         int ID_VTHH = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra"].ToString());
@@ -124,8 +230,10 @@ namespace CtyTinLuong
 
                         SoNgayCong = vt.SoNgayCong;
                         //
-                        if (ID_VTHH != ID_VTHHRoot)
+                        if (ID_VTHH != ID_VTHHRoot && !DsID_Vthh_.Contains(ID_VTHH) && !dotTang.DsIdVthh_DotTang.Contains(ID_VTHH))
                         {
+                            DsID_Vthh_.Add(ID_VTHH);
+
                             ID_VTHHRoot = ID_VTHH;
                             DataRow ravi_ = _dataSL.NewRow();
                             SttSL++;
@@ -176,19 +284,19 @@ namespace CtyTinLuong
                             ravi_BL["TenVTHH"] = vt.TenVthhThuong;
 
                             if (vt.SlThuong == 0) ravi_BL["SanLuong"] = "";
-                            else ravi_BL["SanLuong"] = vt.SlThuong.ToString("N0");
+                            else ravi_BL["SanLuong"] = vt.SlThuong.ToString("N2");
 
                             if (vt.DonGiaThuong == 0) ravi_BL["DonGia"] = "";
                             else ravi_BL["DonGia"] = vt.DonGiaThuong.ToString("N2");
 
                             ravi_BL["DonGiaTang"] = "";
 
-                            ravi_BL["ThanhTien"] = vt.ThanhTienThuong.ToString("N0");
+                            ravi_BL["ThanhTien"] = vt.ThanhTienThuong.ToString("N2");
 
                             if (_dataLuong.Rows.Count == 0)
                             {
                                 if (vt.TruBaoHiem == 0) ravi_BL["BaoHiem"] = "";
-                                else ravi_BL["BaoHiem"] = vt.TruBaoHiem.ToString("N0");
+                                else ravi_BL["BaoHiem"] = vt.TruBaoHiem.ToString("N2");
                             }
 
                             _SanLuong_Tong_BL = t.TongSL_All;
@@ -208,14 +316,14 @@ namespace CtyTinLuong
                                 ravi_BL_tang["TenVTHH"] = vt.TenVthhTang;
 
                                 if (vt.SlTang == 0) ravi_BL_tang["SanLuong"] = "";
-                                else ravi_BL_tang["SanLuong"] = vt.SlTang.ToString("N0");
+                                else ravi_BL_tang["SanLuong"] = vt.SlTang.ToString("N2");
 
                                 ravi_BL_tang["DonGia"] = "";
 
                                 if (vt.DonGiaTang == 0) ravi_BL_tang["DonGiaTang"] = "";
                                 else ravi_BL_tang["DonGiaTang"] = vt.DonGiaTang.ToString("N2");
 
-                                ravi_BL_tang["ThanhTien"] = vt.ThanhTienTang.ToString("N0");
+                                ravi_BL_tang["ThanhTien"] = vt.ThanhTienTang.ToString("N2");
 
                                 _dataLuong.Rows.InsertAt(ravi_BL_tang, 1);
                             }
@@ -274,16 +382,16 @@ namespace CtyTinLuong
                     ravi_BL_tong["TenVTHH"] = "Cộng";
 
                     if (_SanLuong_Tong_BL == 0) ravi_BL_tong["SanLuong"] = "";
-                    else ravi_BL_tong["SanLuong"] = _SanLuong_Tong_BL.ToString("N0");
+                    else ravi_BL_tong["SanLuong"] = _SanLuong_Tong_BL.ToString("N2");
 
                     if (_ThanhTien_Tong_BL == 0) ravi_BL_tong["ThanhTien"] = "";
-                    else ravi_BL_tong["ThanhTien"] = _ThanhTien_Tong_BL.ToString("N0");
+                    else ravi_BL_tong["ThanhTien"] = _ThanhTien_Tong_BL.ToString("N2");
 
                     if (_BaoHiem_Tong_BL == 0) ravi_BL_tong["BaoHiem"] = "";
-                    else ravi_BL_tong["BaoHiem"] = _BaoHiem_Tong_BL.ToString("N0");
+                    else ravi_BL_tong["BaoHiem"] = _BaoHiem_Tong_BL.ToString("N2");
 
                     if (_ThucNhan_Tong_BL == 0) ravi_BL_tong["ThucNhan"] = "";
-                    else ravi_BL_tong["ThucNhan"] = _ThucNhan_Tong_BL.ToString("N0");
+                    else ravi_BL_tong["ThucNhan"] = _ThucNhan_Tong_BL.ToString("N2");
                     _dataLuong.Rows.Add(ravi_BL_tong);
                 }
 
@@ -298,6 +406,8 @@ namespace CtyTinLuong
         }
 
         //Tính tổng sản lượng một công nhân:
+        //List<int> _iDsVthh_DotTang = new List<int>();
+
         private ModelShowSanLuongToIn getNV_SanLuong(int idvthh, DataTable dt)
         {
             ModelShowSanLuongToIn nv = new ModelShowSanLuongToIn();
@@ -314,7 +424,6 @@ namespace CtyTinLuong
             double phuCapBaoHiem = 0;
             double truBaoHiem = 0;
             string LoaiHangHoa = "";
-            List<int> dsNgayCong = new List<int>();
 
             for (int i = 0; i < 31; i++)
             {
@@ -329,8 +438,6 @@ namespace CtyTinLuong
                 if (idvthh == Convert.ToInt32(item["ID_VTHH_Ra"].ToString()))
                 {
                     double SL_Tog_ = 0;
-                    double SL_Thg_ = 0;
-                    double SL_Tang_ = 0;
                     double Cong_ = 0;
 
                     hoTen = item["TenNhanVien"].ToString();
@@ -341,7 +448,6 @@ namespace CtyTinLuong
                     phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
                     truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
                     LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
-
                     soNgayCong = CheckString.ConvertToDouble_My(item["SoNgayCong"].ToString());
 
                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
@@ -350,36 +456,8 @@ namespace CtyTinLuong
 
                     SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                     slTong += SL_Tog_;
-                    SL_Thg_ = SL_Tog_;
-                    if (Cong_ > 0)
-                    {
-                        if (LoaiHangHoa.Contains("cắt đột tăng"))
-                        {
-                            if (SL_Tog_ > 10)
-                            {
-                                SL_Thg_ = 10;
-                                SL_Tang_ = SL_Tog_ - 10;
-                            }
-                            tenVthhThuong = "Đột " + maVT;
-                            tenVthhTang = "SL tăng " + maVT;
-                        }
-                    }
-
+                   
                     nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
-
-                    if (!dsNgayCong.Contains(NgaySX))
-                    {
-                        dsNgayCong.Add(NgaySX);
-                        nv.DsSLNgay[NgaySX - 1] += SL_Thg_;
-                        nv.DsSLNgay_Tang[NgaySX - 1] += SL_Tang_;
-                        slThuong += SL_Thg_;
-                        slTang += SL_Tang_;
-                    }
-                    else
-                    {
-                        nv.DsSLNgay_Tang[NgaySX - 1] += SL_Tog_;
-                        slTang += SL_Tog_;
-                    }
 
                     for (int i = 0; i < 31; i++)
                     {
@@ -387,6 +465,114 @@ namespace CtyTinLuong
                     }
                 }
             }
+
+            for (int i = 0; i < 31; i++)
+            {
+                nv.DsSLNgay[i] = nv.DsSLNgay_Tong[i];
+                slThuong += nv.DsSLNgay[i];
+            }
+
+
+            nv.HoTen = hoTen;
+            nv.MaVT = maVT;
+            nv.TenVthhThuong = tenVthhThuong;
+            nv.TenVthhTang = tenVthhTang;
+            nv.SlTong = slTong;
+            nv.SlThuong = slThuong;
+            nv.SlTang = slTang;
+            nv.DonGiaThuong = donGiaThuong;
+            nv.DonGiaTang = donGiaTang;
+            nv.SoNgayCong = soNgayCong;
+            nv.ThanhTienThuong = slThuong * donGiaThuong;
+            nv.ThanhTienTang = slTang * donGiaTang;
+            nv.TienTong = slThuong * donGiaThuong + slTang * donGiaTang;
+            nv.PhuCapBaoHiem = phuCapBaoHiem;
+            nv.TruBaoHiem = truBaoHiem;
+
+            return nv;
+        }
+
+        private ModelShowSanLuongToIn getNV_SanLuong_DotTang(DataTable dt)
+        {
+            ModelShowSanLuongToIn nv = new ModelShowSanLuongToIn();
+            string hoTen = "";
+            string maVT = "";
+            string tenVthhThuong = "";
+            string tenVthhTang = "";
+            double slTong = 0;
+            double slThuong = 0;
+            double slTang = 0;
+            double donGiaThuong = 0;
+            double donGiaTang = 0;
+            double soNgayCong = 0;
+            double phuCapBaoHiem = 0;
+            double truBaoHiem = 0;
+            string LoaiHangHoa = "";
+
+            for (int i = 0; i < 31; i++)
+            {
+                nv.DsSLNgay[i] = 0;
+                nv.DsSLNgay_Tang[i] = 0;
+                nv.DsSLNgay_Tong[i] = 0;
+                nv.DsCong[i] = 0;
+            }
+
+            foreach (DataRow item in dt.Rows)
+            {
+                int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
+
+                if (LoaiHangHoa.Contains("cắt đột tăng"))
+                {
+                    nv.DsIdVthh_DotTang.Add(idvthh);
+                    double SL_Tog_ = 0;
+                    double Cong_ = 0;
+
+                    hoTen = item["TenNhanVien"].ToString();
+                    tenVthhThuong = item["TenVTHH"].ToString();
+                    maVT = item["MaVT"].ToString();
+                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                    phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                    soNgayCong = CheckString.ConvertToDouble_My(item["SoNgayCong"].ToString());
+
+                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                    Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
+
+                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    slTong += SL_Tog_;
+                    if (Cong_ > 0)
+                    {
+                        tenVthhThuong = "Đột";
+                        tenVthhTang = "Đột tăng ";
+                    }
+
+                    nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
+
+                    for (int i = 0; i < 31; i++)
+                    {
+                        nv.DsCong[i] = CheckString.ConvertToDouble_My(item["Ngay" + (i + 1)].ToString());
+                    }
+                }
+            }
+
+            for (int i = 0; i < 31; i++)
+            {
+                if (nv.DsCong[i] > 0 && nv.DsSLNgay_Tong[i] > 10)
+                {
+                    nv.DsSLNgay_Tang[i] = nv.DsSLNgay_Tong[i] - 10;
+                    slTang += nv.DsSLNgay_Tong[i] - 10;
+                    nv.DsSLNgay[i] = 10;
+                }
+                else
+                {
+                    nv.DsSLNgay[i] = nv.DsSLNgay_Tong[i];
+                }
+            }
+
+            slThuong = slTong - slTang;
 
             nv.HoTen = hoTen;
             nv.MaVT = maVT;
@@ -415,13 +601,21 @@ namespace CtyTinLuong
             double TongSL_All_ = 0;
             int ID_VthhRoot = -1;
 
+            ModelShowSanLuongToIn dotTang = getNV_SanLuong_DotTang(dt);
+            if(dotTang.DsIdVthh_DotTang.Count > 0)
+            {
+                result += (dotTang.ThanhTienThuong + dotTang.ThanhTienTang);
+                TongSL_All_ += dotTang.SlTong;
+                PhuCapBH = dotTang.PhuCapBaoHiem;
+            }
+
             foreach (DataRow item in dt.Rows)
             {
                 int ID_congNhan_ = Convert.ToInt32(item["ID_CongNhan"].ToString());
                 int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
 
                 //
-                if (ID_VthhRoot != ID_Vthh_)
+                if (ID_VthhRoot != ID_Vthh_ && !dotTang.DsIdVthh_DotTang.Contains(ID_Vthh_))
                 {
                     ID_VthhRoot = ID_Vthh_;
                     ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_Vthh_, dt);
@@ -688,7 +882,7 @@ namespace CtyTinLuong
 
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
 
-        public Tr_frmChiTiet_LuongSanLuongCN(int thang, int nam, int idbophan, int idcn, string tenNV)
+        public Tr_frmChiTiet_LuongSanLuongCN_TMC(int thang, int nam, int idbophan, int idcn, string tenNV)
         {
             _tenNV = tenNV;
             _thang = thang;
@@ -801,24 +995,12 @@ namespace CtyTinLuong
             }
         }
 
-        private void Tr_frmChiTiet_LuongSanLuongCN_Load(object sender, EventArgs e)
+        private void Tr_frmChiTiet_LuongSanLuongCN_TMC_Load(object sender, EventArgs e)
         {
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
                 LoadData(false);
-                //DateTime dtnow = DateTime.Now;
-                //txtNam.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year.ToString();
-                //txtThang.Text = frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month.ToString();
-                //ngaydauthang = GetFistDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
-                //ngaycuoithang = GetLastDayInMonth(frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Year, frmBaoCaoSanLuong_Theo_CongNhan.mdatungay.Month);
-
-                //LoadData(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
-                //HienThiGridcontrol2(frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan);
-                //Load_LockUp();
-                //gridCongNhan.EditValue = frmBaoCaoSanLuong_Theo_CongNhan.miID_CongNhan;
-                //Cursor.Current = Cursors.Default;
-                //txtThang.Focus();
             }
             catch (Exception ea)
             {
@@ -830,7 +1012,7 @@ namespace CtyTinLuong
         private void btRefesh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Tr_frmChiTiet_LuongSanLuongCN_Load( sender,  e);
+            Tr_frmChiTiet_LuongSanLuongCN_TMC_Load( sender,  e);
             Cursor.Current = Cursors.Default;
         }
 
@@ -943,10 +1125,8 @@ namespace CtyTinLuong
         {
             _nam = Convert.ToInt32(txtNam.Text.ToString());
             _thang = Convert.ToInt32(txtThang.Text.ToString());
-            Tr_frmPrintSanLuong_CT_Luong ff = new Tr_frmPrintSanLuong_CT_Luong(_thang, _nam, xxID, "tên");
+            Tr_frmPrintSanLuong_CT_Luong_TMC ff = new Tr_frmPrintSanLuong_CT_Luong_TMC(_thang, _nam, _ID_CongNhan, _tenNV, _dataSL, _dataLuong);
             ff.Show();
-
-           
         }
 
         private void ChangeColTitle(int thang, int nam)

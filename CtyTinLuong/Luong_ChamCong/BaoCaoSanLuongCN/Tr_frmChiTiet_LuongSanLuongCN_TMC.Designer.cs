@@ -1,6 +1,6 @@
 ﻿namespace CtyTinLuong
 {
-    partial class Tr_frmChiTiet_LuongSanLuongCN
+    partial class Tr_frmChiTiet_LuongSanLuongCN_TMC
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmChiTiet_LuongSanLuongCN));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmChiTiet_LuongSanLuongCN_TMC));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -1221,17 +1221,17 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
-            // Tr_frmChiTiet_LuongSanLuongCN
+            // Tr_frmChiTiet_LuongSanLuongCN_TMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 661);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Tr_frmChiTiet_LuongSanLuongCN";
+            this.Name = "Tr_frmChiTiet_LuongSanLuongCN_TMC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tr_frmChiTiet_LuongSanLuongCN-->Chi Tiết Lương Sản Lượng Tổ Máy Cắt";
-            this.Load += new System.EventHandler(this.Tr_frmChiTiet_LuongSanLuongCN_Load);
+            this.Text = "Tr_frmChiTiet_LuongSanLuongCN_TMC-->Chi Tiết Lương Sản Lượng Tổ Máy Cắt";
+            this.Load += new System.EventHandler(this.Tr_frmChiTiet_LuongSanLuongCN_TMC_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);

@@ -144,21 +144,21 @@ namespace CtyTinLuong
                             ravi_["HinhThuc"] = nvSL.TenVthhThuong;
 
                             if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
-                            else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
+                            else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N2");
 
                             if (t.TongSL_All == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = t.TongSL_All.ToString("N0");
+                            else ravi_["SanLuong"] = t.TongSL_All.ToString("N2");
 
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
 
-                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N0");
+                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N2");
 
 
                             double tongtien = t.TongTien;
-                            ravi_["Tong"] = tongtien.ToString("N0");
+                            ravi_["Tong"] = tongtien.ToString("N2");
 
-                            ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N0");
+                            ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N2");
 
                             _SanLuong_Tong_Ca1 += t.TongSL_All;
                             _ThanhTien_Tong_Ca1 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
@@ -167,10 +167,10 @@ namespace CtyTinLuong
 
 
                             if (nvSL.TruBaoHiem == 0) ravi_["BaoHiem"] = "";
-                            else ravi_["BaoHiem"] = nvSL.TruBaoHiem.ToString("N0");
+                            else ravi_["BaoHiem"] = nvSL.TruBaoHiem.ToString("N2");
 
                             if (t.PhuCapBaoHiem == 0) ravi_["PhuCapBaoHiem"] = "";
-                            else ravi_["PhuCapBaoHiem"] = t.PhuCapBaoHiem.ToString("N0");
+                            else ravi_["PhuCapBaoHiem"] = t.PhuCapBaoHiem.ToString("N2");
 
                             _PCBaoHiem_Tong_Ca1 += t.PhuCapBaoHiem;
 
@@ -199,7 +199,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["HinhThuc"] = _NgayCong_Tong_Ca1.ToString("N0");
+                    _ravi["HinhThuc"] = _NgayCong_Tong_Ca1.ToString("N2");
                 }
 
                 //
@@ -209,7 +209,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["SanLuong"] = _SanLuong_Tong_Ca1.ToString("N0");
+                    _ravi["SanLuong"] = _SanLuong_Tong_Ca1.ToString("N2");
                 }
 
                 //
@@ -219,7 +219,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["ThanhTien"] = _ThanhTien_Tong_Ca1.ToString("N0");
+                    _ravi["ThanhTien"] = _ThanhTien_Tong_Ca1.ToString("N2");
                 }
 
                 //
@@ -229,7 +229,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["XangXe"] = _XangXe_Tong_Ca1.ToString("N0");
+                    _ravi["XangXe"] = _XangXe_Tong_Ca1.ToString("N2");
                 }
 
                 //
@@ -239,7 +239,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["Tong"] = _Tong_Ca1.ToString("N0");
+                    _ravi["Tong"] = _Tong_Ca1.ToString("N2");
                 }
 
                 //
@@ -249,7 +249,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["BaoHiem"] = _BaoHiem_Tong_Ca1.ToString("N0");
+                    _ravi["BaoHiem"] = _BaoHiem_Tong_Ca1.ToString("N2");
                 }
 
                 // 
@@ -259,7 +259,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi["ThucNhan"] = _ThucNhan_Tong_Ca1.ToString("N0");
+                    _ravi["ThucNhan"] = _ThucNhan_Tong_Ca1.ToString("N2");
                 }
 
                 //_data.Rows.Add(_ravi);
@@ -300,21 +300,21 @@ namespace CtyTinLuong
                             ravi_["HinhThuc"] = nvSL.TenVthhThuong;
 
                             if (nvSL.SoNgayCong == 0) ravi_["NgayCong"] = "";
-                            else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N0");
+                            else ravi_["NgayCong"] = nvSL.SoNgayCong.ToString("N2");
 
                             if (t.TongSL_All == 0) ravi_["SanLuong"] = "";
-                            else ravi_["SanLuong"] = t.TongSL_All.ToString("N0");
+                            else ravi_["SanLuong"] = t.TongSL_All.ToString("N2");
 
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
 
-                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N0");
+                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N2");
 
 
                             double tongtien = t.TongTien;
-                            ravi_["Tong"] = tongtien.ToString("N0");
+                            ravi_["Tong"] = tongtien.ToString("N2");
 
-                            ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N0");
+                            ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N2");
 
                             _SanLuong_Tong_Ca2 += t.TongSL_All;
                             _ThanhTien_Tong_Ca2 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
@@ -323,10 +323,10 @@ namespace CtyTinLuong
 
 
                             if (nvSL.TruBaoHiem == 0) ravi_["BaoHiem"] = "";
-                            else ravi_["BaoHiem"] = nvSL.TruBaoHiem.ToString("N0");
+                            else ravi_["BaoHiem"] = nvSL.TruBaoHiem.ToString("N2");
 
                             if (t.PhuCapBaoHiem == 0) ravi_["PhuCapBaoHiem"] = "";
-                            else ravi_["PhuCapBaoHiem"] = t.PhuCapBaoHiem.ToString("N0");
+                            else ravi_["PhuCapBaoHiem"] = t.PhuCapBaoHiem.ToString("N2");
 
                             _PCBaoHiem_Tong_Ca2 += t.PhuCapBaoHiem;
 
@@ -356,7 +356,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["HinhThuc"] = _NgayCong_Tong_Ca2.ToString("N0");
+                    _ravi_ca2["HinhThuc"] = _NgayCong_Tong_Ca2.ToString("N2");
                 }
 
                 //
@@ -366,7 +366,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["SanLuong"] = _SanLuong_Tong_Ca2.ToString("N0");
+                    _ravi_ca2["SanLuong"] = _SanLuong_Tong_Ca2.ToString("N2");
                 }
 
                 //
@@ -376,7 +376,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["ThanhTien"] = _ThanhTien_Tong_Ca2.ToString("N0");
+                    _ravi_ca2["ThanhTien"] = _ThanhTien_Tong_Ca2.ToString("N2");
                 }
 
                 //
@@ -386,7 +386,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["XangXe"] = _XangXe_Tong_Ca2.ToString("N0");
+                    _ravi_ca2["XangXe"] = _XangXe_Tong_Ca2.ToString("N2");
                 }
 
                 //
@@ -396,7 +396,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["Tong"] = _Tong_Ca2.ToString("N0");
+                    _ravi_ca2["Tong"] = _Tong_Ca2.ToString("N2");
                 }
 
                 //
@@ -406,7 +406,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["BaoHiem"] = _BaoHiem_Tong_Ca2.ToString("N0");
+                    _ravi_ca2["BaoHiem"] = _BaoHiem_Tong_Ca2.ToString("N2");
                 }
 
                 // 
@@ -416,7 +416,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_ca2["ThucNhan"] = _ThucNhan_Tong_Ca2.ToString("N0");
+                    _ravi_ca2["ThucNhan"] = _ThucNhan_Tong_Ca2.ToString("N2");
                 }
 
                 //_data.Rows.Add(_ravi_ca2);
@@ -438,7 +438,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["HinhThuc"] = (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1).ToString("N0");
+                    _ravi_2ca["HinhThuc"] = (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1).ToString("N2");
                 }
 
                 //
@@ -448,7 +448,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["SanLuong"] = (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1).ToString("N0");
+                    _ravi_2ca["SanLuong"] = (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1).ToString("N2");
                 }
 
                 //
@@ -458,7 +458,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["ThanhTien"] = (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1).ToString("N0");
+                    _ravi_2ca["ThanhTien"] = (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1).ToString("N2");
                 }
 
                 //
@@ -468,7 +468,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["XangXe"] = (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1).ToString("N0");
+                    _ravi_2ca["XangXe"] = (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1).ToString("N2");
                 }
 
                 //
@@ -478,7 +478,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["Tong"] = (_Tong_Ca2 + _Tong_Ca1).ToString("N0");
+                    _ravi_2ca["Tong"] = (_Tong_Ca2 + _Tong_Ca1).ToString("N2");
                 }
 
                 //
@@ -488,7 +488,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["BaoHiem"] = (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1).ToString("N0");
+                    _ravi_2ca["BaoHiem"] = (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1).ToString("N2");
                 }
 
                 // 
@@ -498,7 +498,7 @@ namespace CtyTinLuong
                 }
                 else
                 {
-                    _ravi_2ca["ThucNhan"] = (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1).ToString("N0");
+                    _ravi_2ca["ThucNhan"] = (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1).ToString("N2");
                 }
 
                 _data.Rows.Add(_ravi_2ca);
@@ -610,6 +610,107 @@ namespace CtyTinLuong
             return nv;
         }
 
+        private ModelShowSanLuongToIn getNV_SanLuong_DotTang(int idcn, DataTable dt)
+        {
+            ModelShowSanLuongToIn nv = new ModelShowSanLuongToIn();
+            string hoTen = "";
+            string maVT = "";
+            string tenVthhThuong = "";
+            string tenVthhTang = "";
+            double slTong = 0;
+            double slThuong = 0;
+            double slTang = 0;
+            double donGiaThuong = 0;
+            double donGiaTang = 0;
+            double soNgayCong = 0;
+            double phuCapBaoHiem = 0;
+            double truBaoHiem = 0;
+            string LoaiHangHoa = "";
+
+            for (int i = 0; i < 31; i++)
+            {
+                nv.DsSLNgay[i] = 0;
+                nv.DsSLNgay_Tang[i] = 0;
+                nv.DsSLNgay_Tong[i] = 0;
+                nv.DsCong[i] = 0;
+            }
+
+            foreach (DataRow item in dt.Rows)
+            {
+                int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
+
+                if (LoaiHangHoa.Contains("cắt đột tăng") && idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                {
+                    nv.DsIdVthh_DotTang.Add(idvthh);
+                    double SL_Tog_ = 0;
+                    double Cong_ = 0;
+
+                    hoTen = item["TenNhanVien"].ToString();
+                    tenVthhThuong = item["TenVTHH"].ToString();
+                    maVT = item["MaVT"].ToString();
+                    donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                    donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                    phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                    truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+                    soNgayCong = CheckString.ConvertToDouble_My(item["SoNgayCong"].ToString());
+
+                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                    Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
+
+                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    slTong += SL_Tog_;
+                    if (Cong_ > 0)
+                    {
+                        tenVthhThuong = "Đột";
+                        tenVthhTang = "Đột tăng ";
+                    }
+
+                    nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
+
+                    for (int i = 0; i < 31; i++)
+                    {
+                        nv.DsCong[i] = CheckString.ConvertToDouble_My(item["Ngay" + (i + 1)].ToString());
+                    }
+                }
+            }
+
+            for (int i = 0; i < 31; i++)
+            {
+                if (nv.DsCong[i] > 0 && nv.DsSLNgay_Tong[i] > 10)
+                {
+                    nv.DsSLNgay_Tang[i] = nv.DsSLNgay_Tong[i] - 10;
+                    slTang += nv.DsSLNgay_Tong[i] - 10;
+                    nv.DsSLNgay[i] = 10;
+                }
+                else
+                {
+                    nv.DsSLNgay[i] = nv.DsSLNgay_Tong[i];
+                }
+            }
+
+            slThuong = slTong - slTang;
+
+            nv.HoTen = hoTen;
+            nv.MaVT = maVT;
+            nv.TenVthhThuong = tenVthhThuong;
+            nv.TenVthhTang = tenVthhTang;
+            nv.SlTong = slTong;
+            nv.SlThuong = slThuong;
+            nv.SlTang = slTang;
+            nv.DonGiaThuong = donGiaThuong;
+            nv.DonGiaTang = donGiaTang;
+            nv.SoNgayCong = soNgayCong;
+            nv.ThanhTienThuong = slThuong * donGiaThuong;
+            nv.ThanhTienTang = slTang * donGiaTang;
+            nv.TienTong = slThuong * donGiaThuong + slTang * donGiaTang;
+            nv.PhuCapBaoHiem = phuCapBaoHiem;
+            nv.TruBaoHiem = truBaoHiem;
+
+            return nv;
+        }
+
         private tinhTongCN tongTien(int idcn, DataTable dt)
         {
             tinhTongCN t = new tinhTongCN();
@@ -617,7 +718,14 @@ namespace CtyTinLuong
             double PhuCapBH = 0;
             double TongSL_All_ = 0;
             int ID_VthhRoot = -1;
-            bool isInMac_TB = false;
+
+            ModelShowSanLuongToIn dotTang = getNV_SanLuong_DotTang(idcn, dt);
+            if (dotTang.DsIdVthh_DotTang.Count > 0)
+            {
+                result += (dotTang.ThanhTienThuong + dotTang.ThanhTienTang);
+                TongSL_All_ += dotTang.SlTong;
+                PhuCapBH = dotTang.PhuCapBaoHiem;
+            }
 
             foreach (DataRow item in dt.Rows)
             {
@@ -627,7 +735,7 @@ namespace CtyTinLuong
                 //
                 if (idcn == ID_congNhan_)
                 {
-                    if (ID_VthhRoot != ID_Vthh_)
+                    if (ID_VthhRoot != ID_Vthh_ && !dotTang.DsIdVthh_DotTang.Contains(ID_Vthh_))
                     {
                         ID_VthhRoot = ID_Vthh_;
                         ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan_, ID_Vthh_, dt);
@@ -928,19 +1036,19 @@ namespace CtyTinLuong
         //                ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtCong_Ca1.Rows[i]["TenNhanVien"].ToString());
 
         //                if (nvCN.CongTong == 0) ravi_["Cong"] = "";
-        //                else ravi_["Cong"] = nvCN.CongTong.ToString("N0");
+        //                else ravi_["Cong"] = nvCN.CongTong.ToString("N2");
 
         //                if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
-        //                else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
+        //                else ravi_["SanLuong"] = nvSL.SlTong.ToString("N2");
 
         //                if (nvCN.DonGia == 0) ravi_["DonGia"] = "";
-        //                else ravi_["DonGia"] = nvCN.DonGia.ToString("N0");
+        //                else ravi_["DonGia"] = nvCN.DonGia.ToString("N2");
 
         //                if (nvCN.ThanhTien > nvSL.ThanhTien)
         //                {
-        //                    ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N0");
-        //                    ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N0");
-        //                    ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+        //                    ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N2");
+        //                    ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N2");
+        //                    ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N2");
 
         //                    _ThanhTien_Tong_Ca1 += nvCN.ThanhTien;
         //                    _Tong_Ca1 += nvCN.ThanhTien + nvCN.XangXe;
@@ -948,9 +1056,9 @@ namespace CtyTinLuong
         //                }
         //                else
         //                {
-        //                    ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N0");
-        //                    ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N0");
-        //                    ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+        //                    ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N2");
+        //                    ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N2");
+        //                    ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N2");
 
         //                    _ThanhTien_Tong_Ca1 += nvSL.ThanhTien;
         //                    _Tong_Ca1 += nvSL.ThanhTien + nvCN.XangXe;
@@ -958,10 +1066,10 @@ namespace CtyTinLuong
         //                }
 
         //                if (nvCN.XangXe == 0) ravi_["XangXe"] = "";
-        //                else ravi_["XangXe"] = nvCN.XangXe.ToString("N0");
+        //                else ravi_["XangXe"] = nvCN.XangXe.ToString("N2");
 
         //                if (nvCN.BaoHiem == 0) ravi_["BaoHiem"] = "";
-        //                else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N0");
+        //                else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N2");
 
         //                _NgayCong_Tong_Ca1 += nvCN.CongTong;
         //                _SanLuong_Tong_Ca1 += nvSL.SlTong;
@@ -986,7 +1094,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["Cong"] = _NgayCong_Tong_Ca1.ToString("N0");
+        //            _ravi["Cong"] = _NgayCong_Tong_Ca1.ToString("N2");
         //        }
 
         //        //
@@ -996,7 +1104,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["SanLuong"] = _SanLuong_Tong_Ca1.ToString("N0");
+        //            _ravi["SanLuong"] = _SanLuong_Tong_Ca1.ToString("N2");
         //        }
 
         //        //
@@ -1006,7 +1114,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["ThanhTien"] = _ThanhTien_Tong_Ca1.ToString("N0");
+        //            _ravi["ThanhTien"] = _ThanhTien_Tong_Ca1.ToString("N2");
         //        }
 
         //        //
@@ -1016,7 +1124,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["XangXe"] = _XangXe_Tong_Ca1.ToString("N0");
+        //            _ravi["XangXe"] = _XangXe_Tong_Ca1.ToString("N2");
         //        }
 
         //        //
@@ -1026,7 +1134,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["Tong"] = _Tong_Ca1.ToString("N0");
+        //            _ravi["Tong"] = _Tong_Ca1.ToString("N2");
         //        }
 
         //        //
@@ -1036,7 +1144,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["BaoHiem"] = _BaoHiem_Tong_Ca1.ToString("N0");
+        //            _ravi["BaoHiem"] = _BaoHiem_Tong_Ca1.ToString("N2");
         //        }
 
         //        // 
@@ -1046,7 +1154,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi["ThucNhan"] = _ThucNhan_Tong_Ca1.ToString("N0");
+        //            _ravi["ThucNhan"] = _ThucNhan_Tong_Ca1.ToString("N2");
         //        }
 
         //        _data.Rows.Add(_ravi);
@@ -1076,19 +1184,19 @@ namespace CtyTinLuong
         //                ravi_["TenNhanVien"] = CheckString.ChuanHoaHoTen(_dtCong_Ca2.Rows[i]["TenNhanVien"].ToString());
 
         //                if (nvCN.CongTong == 0) ravi_["Cong"] = "";
-        //                else ravi_["Cong"] = nvCN.CongTong.ToString("N0");
+        //                else ravi_["Cong"] = nvCN.CongTong.ToString("N2");
 
         //                if (nvSL.SlTong == 0) ravi_["SanLuong"] = "";
-        //                else ravi_["SanLuong"] = nvSL.SlTong.ToString("N0");
+        //                else ravi_["SanLuong"] = nvSL.SlTong.ToString("N2");
 
         //                if (nvCN.DonGia == 0) ravi_["DonGia"] = "";
-        //                else ravi_["DonGia"] = nvCN.DonGia.ToString("N0");
+        //                else ravi_["DonGia"] = nvCN.DonGia.ToString("N2");
 
         //                if (nvCN.ThanhTien > nvSL.ThanhTien)
         //                {
-        //                    ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N0");
-        //                    ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N0");
-        //                    ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+        //                    ravi_["ThanhTien"] = nvCN.ThanhTien.ToString("N2");
+        //                    ravi_["Tong"] = (nvCN.ThanhTien + nvCN.XangXe).ToString("N2");
+        //                    ravi_["ThucNhan"] = (nvCN.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N2");
 
         //                    _ThanhTien_Tong_Ca2 += nvCN.ThanhTien;
         //                    _Tong_Ca2 += nvCN.ThanhTien + nvCN.XangXe;
@@ -1096,9 +1204,9 @@ namespace CtyTinLuong
         //                }
         //                else
         //                {
-        //                    ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N0");
-        //                    ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N0");
-        //                    ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N0");
+        //                    ravi_["ThanhTien"] = nvSL.ThanhTien.ToString("N2");
+        //                    ravi_["Tong"] = (nvSL.ThanhTien + nvCN.XangXe).ToString("N2");
+        //                    ravi_["ThucNhan"] = (nvSL.ThanhTien + nvCN.XangXe - nvCN.BaoHiem).ToString("N2");
 
         //                    _ThanhTien_Tong_Ca2 += nvSL.ThanhTien;
         //                    _Tong_Ca2 += nvSL.ThanhTien + nvCN.XangXe;
@@ -1106,10 +1214,10 @@ namespace CtyTinLuong
         //                }
 
         //                if (nvCN.XangXe == 0) ravi_["XangXe"] = "";
-        //                else ravi_["XangXe"] = nvCN.XangXe.ToString("N0");
+        //                else ravi_["XangXe"] = nvCN.XangXe.ToString("N2");
 
         //                if (nvCN.BaoHiem == 0) ravi_["BaoHiem"] = "";
-        //                else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N0");
+        //                else ravi_["BaoHiem"] = nvCN.BaoHiem.ToString("N2");
 
         //                _NgayCong_Tong_Ca2 += nvCN.CongTong;
         //                _SanLuong_Tong_Ca2 += nvSL.SlTong;
@@ -1134,7 +1242,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["Cong"] = _NgayCong_Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["Cong"] = _NgayCong_Tong_Ca2.ToString("N2");
         //        }
 
         //        //
@@ -1144,7 +1252,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["SanLuong"] = _SanLuong_Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["SanLuong"] = _SanLuong_Tong_Ca2.ToString("N2");
         //        }
 
         //        //
@@ -1154,7 +1262,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["ThanhTien"] = _ThanhTien_Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["ThanhTien"] = _ThanhTien_Tong_Ca2.ToString("N2");
         //        }
 
         //        //
@@ -1164,7 +1272,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["XangXe"] = _XangXe_Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["XangXe"] = _XangXe_Tong_Ca2.ToString("N2");
         //        }
 
         //        //
@@ -1174,7 +1282,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["Tong"] = _Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["Tong"] = _Tong_Ca2.ToString("N2");
         //        }
 
         //        //
@@ -1184,7 +1292,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["BaoHiem"] = _BaoHiem_Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["BaoHiem"] = _BaoHiem_Tong_Ca2.ToString("N2");
         //        }
 
         //        // 
@@ -1194,7 +1302,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_ca2["ThucNhan"] = _ThucNhan_Tong_Ca2.ToString("N0");
+        //            _ravi_ca2["ThucNhan"] = _ThucNhan_Tong_Ca2.ToString("N2");
         //        }
 
         //        _data.Rows.Add(_ravi_ca2);
@@ -1214,7 +1322,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["Cong"] = (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["Cong"] = (_NgayCong_Tong_Ca2 + _NgayCong_Tong_Ca1).ToString("N2");
         //        }
 
         //        //
@@ -1224,7 +1332,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["SanLuong"] = (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["SanLuong"] = (_SanLuong_Tong_Ca2 + _SanLuong_Tong_Ca1).ToString("N2");
         //        }
 
         //        //
@@ -1234,7 +1342,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["ThanhTien"] = (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["ThanhTien"] = (_ThanhTien_Tong_Ca2 + _ThanhTien_Tong_Ca1).ToString("N2");
         //        }
 
         //        //
@@ -1244,7 +1352,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["XangXe"] = (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["XangXe"] = (_XangXe_Tong_Ca2 + _XangXe_Tong_Ca1).ToString("N2");
         //        }
 
         //        //
@@ -1254,7 +1362,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["Tong"] = (_Tong_Ca2 + _Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["Tong"] = (_Tong_Ca2 + _Tong_Ca1).ToString("N2");
         //        }
 
         //        //
@@ -1264,7 +1372,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["BaoHiem"] = (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["BaoHiem"] = (_BaoHiem_Tong_Ca2 + _BaoHiem_Tong_Ca1).ToString("N2");
         //        }
 
         //        // 
@@ -1274,7 +1382,7 @@ namespace CtyTinLuong
         //        }
         //        else
         //        {
-        //            _ravi_2ca["ThucNhan"] = (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1).ToString("N0");
+        //            _ravi_2ca["ThucNhan"] = (_ThucNhan_Tong_Ca2 + _ThucNhan_Tong_Ca1).ToString("N2");
         //        }
 
         //        _data.Rows.Add(_ravi_2ca);
@@ -1506,7 +1614,7 @@ namespace CtyTinLuong
                 string tencn_ = gridView1.GetFocusedRowCellValue(clTenNhanVien).ToString();
                 if (id_congnhan_ != 0)
                 {
-                    Tr_frmChiTiet_LuongSanLuongCN ff = new Tr_frmChiTiet_LuongSanLuongCN(_thang, _nam, _id_bophan, id_congnhan_, tencn_);
+                    Tr_frmChiTiet_LuongSanLuongCN_TMC ff = new Tr_frmChiTiet_LuongSanLuongCN_TMC(_thang, _nam, _id_bophan, id_congnhan_, tencn_);
                     ff.Show();
                 }
             }

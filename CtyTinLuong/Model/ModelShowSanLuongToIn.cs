@@ -12,6 +12,7 @@ namespace CtyTinLuong
         public double[] DsSLNgay = new double[31];
         public double[] DsSLNgay_Tang = new double[31];
         public double[] DsCong = new double[31];
+        public List<int> DsIdVthh_DotTang = new List<int>();
         public string MaVT { get; set; }
 
 

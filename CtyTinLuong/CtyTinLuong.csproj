@@ -205,11 +205,29 @@
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.Designer.cs">
       <DependentUpon>Tr_frmBangSanLuongToIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN.cs">
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN_TMC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN.Designer.cs">
-      <DependentUpon>Tr_frmChiTiet_LuongSanLuongCN.cs</DependentUpon>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN_TMC.Designer.cs">
+      <DependentUpon>Tr_frmChiTiet_LuongSanLuongCN_TMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintSanLuong_CT_Luong_TMC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintSanLuong_CT_Luong_TMC.Designer.cs">
+      <DependentUpon>Tr_frmPrintSanLuong_CT_Luong_TMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintSanLuong_CT_Luong_TMC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintSanLuong_CT_Luong_TMC.Designer.cs">
+      <DependentUpon>Tr_PrintSanLuong_CT_Luong_TMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintSanLuong_CT_Luong_Sub_TMC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintSanLuong_CT_Luong_Sub_TMC.Designer.cs">
+      <DependentUpon>Tr_PrintSanLuong_CT_Luong_Sub_TMC.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\frmBTTL_TDB.cs">
       <SubType>UserControl</SubType>
@@ -2618,8 +2636,17 @@
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.resx">
       <DependentUpon>Tr_frmBangSanLuongToIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN.resx">
-      <DependentUpon>Tr_frmChiTiet_LuongSanLuongCN.cs</DependentUpon>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmChiTiet_LuongSanLuongCN_TMC.resx">
+      <DependentUpon>Tr_frmChiTiet_LuongSanLuongCN_TMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintSanLuong_CT_Luong_TMC.resx">
+      <DependentUpon>Tr_frmPrintSanLuong_CT_Luong_TMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintSanLuong_CT_Luong_TMC.resx">
+      <DependentUpon>Tr_PrintSanLuong_CT_Luong_TMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintSanLuong_CT_Luong_Sub_TMC.resx">
+      <DependentUpon>Tr_PrintSanLuong_CT_Luong_Sub_TMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmBTTL_TDB.resx">
       <DependentUpon>frmBTTL_TDB.cs</DependentUpon>

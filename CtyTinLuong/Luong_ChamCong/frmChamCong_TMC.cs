@@ -576,7 +576,7 @@ namespace CtyTinLuong
             //Add công nhân tháng trước tự động nếu tháng mới chưa có dữ liệu:
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt_ = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectCNtheoThang_CaLV(_thang, _nam, _id_bophan, radioCa1.Checked);
+                DataTable dt_ = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_PMC(_nam, _thang, _id_bophan, 0, "", radioCa1.Checked);
                 if (dt_.Rows.Count == 0)
                 {
                     int thangTruoc = 1;
@@ -593,7 +593,7 @@ namespace CtyTinLuong
                             break;
                     }
 
-                    dt_ = clsThin_.T_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_SelectCNtheoThang_CaLV(thangTruoc, namTruoc, _id_bophan, radioCa1.Checked);
+                    dt_ = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_PMC(namTruoc, thangTruoc, _id_bophan, 0, "", radioCa1.Checked);
                     for (int i = 0; i < dt_.Rows.Count; ++i)
                     {
                         _ID_DinhMucLuong_CongNhat = Convert.ToInt32(dt_.Rows[i]["ID_DinhMucLuong_CongNhat"].ToString());
