@@ -619,7 +619,7 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Máy đột");
             if (id_bophan_ == 0) return;
 
-            frmBTTL_ToDot frm = new frmBTTL_ToDot(id_bophan_, this);
+            Tr_frmBTTL_ToDot frm = new Tr_frmBTTL_ToDot(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();

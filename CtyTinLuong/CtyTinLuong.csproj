@@ -199,6 +199,12 @@
     <Compile Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.Designer.cs">
       <DependentUpon>KhoThanhPham_XuatKho_DongKien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBTTL_ToDot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBTTL_ToDot.Designer.cs">
+      <DependentUpon>Tr_frmBTTL_ToDot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2632,6 +2638,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoThanhPham\KhoThanhPham_XuatKho_DongKien.resx">
       <DependentUpon>KhoThanhPham_XuatKho_DongKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBTTL_ToDot.resx">
+      <DependentUpon>Tr_frmBTTL_ToDot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBangSanLuongToIn.resx">
       <DependentUpon>Tr_frmBangSanLuongToIn.cs</DependentUpon>
