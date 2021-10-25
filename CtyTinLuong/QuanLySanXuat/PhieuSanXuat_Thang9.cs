@@ -1107,8 +1107,14 @@ namespace CtyTinLuong
                     row["ID_DinhMuc_Luong_CAT"] = iiiD_dmluong_CAT_copy;
                     row["SanLuong_Tong_CAT"] = dddsanluongtong_CAT_copy;
                     row["PhePham_CAT"] = dddphepham_CAT_copy;
+
+                    string sMaPhieu_ = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+
+                    row["MaPhieu"] = sMaPhieu_;
                     _data.Rows.InsertAt(row, 0);
                     abc(0);
+
+
                     double xsanluongtong = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_CAT).ToString());
                     int xiD_dinhMucluong = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_DinhMuc_Luong_CAT).ToString());
                     int xidcongnhan = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_CongNhan_CAT).ToString());
@@ -1184,6 +1190,10 @@ namespace CtyTinLuong
                     row["ID_DinhMuc_Luong_DOT"] = iiiD_dmluong_DOT_copy;
                     row["SanLuong_Tong_DOT"] = dddsanluongtong_DOT_copy;
                     row["PhePham_DOT"] = dddphepham_DOT_copy;
+                    string sMaPhieu_ = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+
+                    row["MaPhieu"] = sMaPhieu_;
+
                     _data.Rows.InsertAt(row, 0);
 
                     abc(0);
@@ -2305,7 +2315,9 @@ namespace CtyTinLuong
                 {
                     if (bandedGridView1.GetFocusedRowCellValue(clChange_CAT).ToString() == "1")
                     {
-                        string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                        string sMaphieu_CAT = _data.Rows[row_focus]["MaPhieu"].ToString();
+
+                       // string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                         if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
                         Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
                             return;
