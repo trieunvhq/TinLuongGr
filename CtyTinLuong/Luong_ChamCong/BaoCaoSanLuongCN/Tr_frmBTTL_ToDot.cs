@@ -98,137 +98,295 @@ namespace CtyTinLuong
                 _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 1", _id_bophan);
                 _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, "Ca 2", _id_bophan);
 
-            }  
+                int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
+                for (int i = 1; i <= ngaycuathang_; i++)
+                {
+                    ModelBTTL_ToDot ng = getSanLuong_Ngay(i, _dtSL_Ca1);
+                    DataRow row = _data.NewRow();
+                    row["NgayThang"] = ng.NgayThang;
+                    row["DonViTinh"] = ng.DonViTinh;
+                    row["Dot4_8_Bao"] = ng.Dot4_8_Bao;
+                    row["Dot4_8_Kg"] = ng.Dot4_8_Kg;
+                    row["Dot36_72_Bao"] = ng.Dot36_72_Bao;
+                    row["Dot36_72_Kg"] = ng.Dot36_72_Kg;
+                    row["Dot45_90_Bao"] = ng.Dot45_90_Bao;
+                    row["Dot45_90_Kg"] = ng.Dot45_90_Kg;
+                    row["Dot48_96_Bao"] = ng.Dot48_96_Bao;
+                    row["Dot48_96_Kg"] = ng.Dot48_96_Kg;
+                    row["Dot56_112_Bao"] = ng.Dot56_112_Bao;
+                    row["Dot56_112_Kg"] = ng.Dot56_112_Kg;
+                    row["Dot42_84_Bao"] = ng.Dot42_84_Bao;
+                    row["Dot42_84_Kg"] = ng.Dot42_84_Kg;
+                    row["Dot51_103_Bao"] = ng.Dot51_103_Bao;
+                    row["Dot51_103_Kg"] = ng.Dot51_103_Kg;
+                    row["Dot53_106tb_Bao"] = ng.Dot53_106tb_Bao;
+                    row["Dot53_106tb_Kg"] = ng.Dot53_106tb_Kg;
+                    row["Dot51_103tb_Bao"] = ng.Dot51_103tb_Bao;
+                    row["Dot51_103tb_Kg"] = ng.Dot51_103tb_Kg;
+                    row["Dot11_17tb_Bao"] = ng.Dot11_17tb_Bao;
+                    row["Dot11_17tb_Kg"] = ng.Dot11_17tb_Kg;
+                    row["Dot45_90tb_Bao"] = ng.Dot45_90tb_Bao;
+                    row["Dot45_90tb_Kg"] = ng.Dot45_90tb_Kg;
+                    row["Dot42_84tb_Bao"] = ng.Dot42_84tb_Bao;
+                    row["Dot42_84tb_Kg"] = ng.Dot42_84tb_Kg;
+                    row["TongBao"] = ng.TongBao;
+                    row["TongKg"] = ng.TongKg;
+                    row["DonGia_Tan"] = ng.DonGia_Tan;
+                    row["TongBaotb"] = ng.TongBaotb;
+                    row["TongKgtb"] = ng.TongKgtb;
+                    row["DonGiatb_Tan"] = ng.DonGiatb_Tan;
+                    row["ThanhTien"] = ng.ThanhTien;
+                    _data.Rows.Add(row);
+                }
+            }
 
+            gridControl1.DataSource = _data;
             isload = false;
         }
 
         private ModelBTTL_ToDot getSanLuong_Ngay(int Ngay, DataTable dt)
         {
             ModelBTTL_ToDot nv = new ModelBTTL_ToDot();
-            int NgayThang;
-            string DonViTinh;
-            double Dot4_8_Bao;
-            double Dot4_8_Kg;
-            double Dot36_72_Bao;
-            double Dot36_72_Kg;
-            double Dot45_90_Bao;
-            double Dot45_90_Kg;
-            double Dot48_96_Bao;
-            double Dot48_96_Kg;
-            double Dot56_112_Bao;
-            double Dot56_112_Kg;
-            double Dot42_84_Bao;
-            double Dot42_84_Kg;
-            double Dot51_103_Bao;
-            double Dot51_103_Kg;
-            double Dot53_106tb_Bao;
-            double Dot53_106tb_Kg;
-            double Dot51_103tb_Bao;
-            double Dot51_103tb_Kg;
-            double Dot11_17tb_Bao;
-            double Dot11_17tb_Kg;
-            double Dot45_90tb_Bao;
-            double Dot45_90tb_Kg;
-            double Dot42_84tb_Bao;
-            double Dot42_84tb_Kg;
-            double TongBao;
-            double TongKg;
-            double DonGia_Tan;
-            double TongBaotb;
-            double TongKgtb;
-            double DonGiatb_Tan;
-            double ThanhTien;
+            string DonViTinh = "";
+            double Dot4_8_Bao = 0;
+            double Dot4_8_Kg = 0;
+            double Dot36_72_Bao = 0;
+            double Dot36_72_Kg = 0;
+            double Dot45_90_Bao = 0;
+            double Dot45_90_Kg = 0;
+            double Dot48_96_Bao = 0;
+            double Dot48_96_Kg = 0;
+            double Dot56_112_Bao = 0;
+            double Dot56_112_Kg = 0;
+            double Dot42_84_Bao = 0;
+            double Dot42_84_Kg = 0;
+            double Dot51_103_Bao = 0;
+            double Dot51_103_Kg = 0;
+            double Dot53_106tb_Bao = 0;
+            double Dot53_106tb_Kg = 0;
+            double Dot51_103tb_Bao = 0;
+            double Dot51_103tb_Kg = 0;
+            double Dot11_17tb_Bao = 0;
+            double Dot11_17tb_Kg = 0;
+            double Dot45_90tb_Bao = 0;
+            double Dot45_90tb_Kg = 0;
+            double Dot42_84tb_Bao = 0;
+            double Dot42_84tb_Kg = 0;
+            double TongBao = 0;
+            double TongKg = 0;
+            double DonGia_Tan = 0;
+            double TongBaotb = 0;
+            double TongKgtb = 0;
+            double DonGiatb_Tan = 0;
             List<int> dsNgayCong = new List<int>();
 
-            for (int i = 0; i < 31; i++)
+            foreach (DataRow item in dt.Rows)
             {
-                //nv.DsSLNgay[i] = 0;
-                //nv.DsSLNgay_Tang[i] = 0;
-                //nv.DsSLNgay_Tong[i] = 0;
-                //nv.DsCong[i] = 0;
+                int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+                
+
+                if (NgaySX == Ngay)
+                {
+                    double SoKG_MotBao_May_Dot = CheckString.ConvertToDouble_My(item["SoKG_MotBao_May_Dot"].ToString());
+                    double SanLuong_Tong = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                    string tenVTHH = (CheckString.ChuanHoaHoTen(item["TenVTHH"].ToString())).ToLower().Replace(" ", "");
+                    string loaiVthh = getLoaiVthh(tenVTHH);
+                    DonViTinh = item["DonViTinh"].ToString();
+
+                    switch (loaiVthh)
+                    {
+                        case "Dot53_106tb":
+                            Dot53_106tb_Bao += SanLuong_Tong;
+                            Dot53_106tb_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGiatb_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBaotb += SanLuong_Tong;
+                            TongKgtb += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot51_103tb":
+                            Dot51_103tb_Bao += SanLuong_Tong;
+                            Dot51_103tb_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGiatb_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBaotb += SanLuong_Tong;
+                            TongKgtb += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot11_17tb":
+                            Dot11_17tb_Bao += SanLuong_Tong;
+                            Dot11_17tb_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGiatb_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBaotb += SanLuong_Tong;
+                            TongKgtb += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot45_90tb":
+                            Dot45_90tb_Bao += SanLuong_Tong;
+                            Dot45_90tb_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGiatb_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBaotb += SanLuong_Tong;
+                            TongKgtb += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot42_84tb":
+                            Dot42_84tb_Bao += SanLuong_Tong;
+                            Dot42_84tb_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGiatb_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBaotb += SanLuong_Tong;
+                            TongKgtb += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot51_103":
+                            Dot51_103_Bao += SanLuong_Tong;
+                            Dot51_103_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot56_112":
+                            Dot56_112_Bao += SanLuong_Tong;
+                            Dot56_112_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot42_84":
+                            Dot42_84_Bao += SanLuong_Tong;
+                            Dot42_84_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot48_96":
+                            Dot48_96_Bao += SanLuong_Tong;
+                            Dot48_96_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot45_90":
+                            Dot45_90_Bao += SanLuong_Tong;
+                            Dot45_90_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot36_72":
+                            Dot36_72_Bao += SanLuong_Tong;
+                            Dot36_72_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+
+                        case "Dot4_8":
+                            Dot4_8_Bao += SanLuong_Tong;
+                            Dot4_8_Kg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            DonGia_Tan = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+                            TongBao += SanLuong_Tong;
+                            TongKg += (SanLuong_Tong * SoKG_MotBao_May_Dot);
+                            break;
+                    }
+                }
             }
 
-            //foreach (DataRow item in dt.Rows)
-            //{
-            //    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
-            //    int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
-            //    string tenVTHH = CheckString.ChuanHoaHoTen(item["TenVTHH"].ToString());
-
-            //    if (NgaySX == Ngay)
-            //    {
-            //        nv.DsIdVthh_DotTang.Add(idvthh);
-            //        double SL_Tog_ = 0;
-            //        double Cong_ = 0;
-
-            //        hoTen = item["TenNhanVien"].ToString();
-            //        tenVthhThuong = item["TenVTHH"].ToString();
-            //        maVT = item["MaVT"].ToString();
-            //        donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
-            //        donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
-            //        phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
-            //        truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
-            //        soNgayCong = CheckString.ConvertToDouble_My(item["SoNgayCong"].ToString());
-
-            //        int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
-
-            //        Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
-
-            //        SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
-            //        slTong += SL_Tog_;
-            //        if (Cong_ > 0)
-            //        {
-            //            tenVthhThuong = "Đột";
-            //            tenVthhTang = "Đột tăng ";
-            //        }
-
-            //        nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
-
-            //        for (int i = 0; i < 31; i++)
-            //        {
-            //            nv.DsCong[i] = CheckString.ConvertToDouble_My(item["Ngay" + (i + 1)].ToString());
-            //        }
-            //    }
-            //}
-
-            //for (int i = 0; i < 31; i++)
-            //{
-            //    if (nv.DsCong[i] > 0 && nv.DsSLNgay_Tong[i] > 10)
-            //    {
-            //        nv.DsSLNgay_Tang[i] = nv.DsSLNgay_Tong[i] - 10;
-            //        slTang += nv.DsSLNgay_Tong[i] - 10;
-            //        nv.DsSLNgay[i] = 10;
-            //    }
-            //    else
-            //    {
-            //        nv.DsSLNgay[i] = nv.DsSLNgay_Tong[i];
-            //    }
-            //}
-
-            //slThuong = slTong - slTang;
-
-            //nv.HoTen = hoTen;
-            //nv.MaVT = maVT;
-            //nv.TenVthhThuong = tenVthhThuong;
-            //nv.TenVthhTang = tenVthhTang;
-            //nv.SlTong = slTong;
-            //nv.SlThuong = slThuong;
-            //nv.SlTang = slTang;
-            //nv.DonGiaThuong = donGiaThuong;
-            //nv.DonGiaTang = donGiaTang;
-            //nv.SoNgayCong = soNgayCong;
-            //nv.ThanhTienThuong = slThuong * donGiaThuong;
-            //nv.ThanhTienTang = slTang * donGiaTang;
-            //nv.TienTong = slThuong * donGiaThuong + slTang * donGiaTang;
-            //nv.PhuCapBaoHiem = phuCapBaoHiem;
-            //nv.TruBaoHiem = truBaoHiem;
-
-            //return nv;
-
-
+            nv.NgayThang = Ngay;
+            nv.DonViTinh = DonViTinh;
+            nv.Dot4_8_Bao = Dot4_8_Bao;
+            nv.Dot4_8_Kg = Dot4_8_Kg;
+            nv.Dot36_72_Bao = Dot36_72_Bao;
+            nv.Dot36_72_Kg = Dot36_72_Kg;
+            nv.Dot45_90_Bao = Dot45_90_Bao;
+            nv.Dot45_90_Kg = Dot45_90_Kg;
+            nv.Dot48_96_Bao = Dot48_96_Bao;
+            nv.Dot48_96_Kg = Dot48_96_Kg;
+            nv.Dot56_112_Bao = Dot56_112_Bao;
+            nv.Dot56_112_Kg = Dot56_112_Kg;
+            nv.Dot42_84_Bao = Dot42_84_Bao;
+            nv.Dot42_84_Kg = Dot42_84_Kg;
+            nv.Dot51_103_Bao = Dot51_103_Bao;
+            nv.Dot51_103_Kg = Dot51_103_Kg;
+            nv.Dot53_106tb_Bao = Dot53_106tb_Bao;
+            nv.Dot53_106tb_Kg = Dot53_106tb_Kg;
+            nv.Dot51_103tb_Bao = Dot51_103tb_Bao;
+            nv.Dot51_103tb_Kg = Dot51_103tb_Kg;
+            nv.Dot11_17tb_Bao = Dot11_17tb_Bao;
+            nv.Dot11_17tb_Kg = Dot11_17tb_Kg;
+            nv.Dot45_90tb_Bao = Dot45_90tb_Bao;
+            nv.Dot45_90tb_Kg = Dot45_90tb_Kg;
+            nv.Dot42_84tb_Bao = Dot42_84tb_Bao;
+            nv.Dot42_84tb_Kg = Dot42_84tb_Kg;
+            nv.TongBao = TongBao;
+            nv.TongKg = TongKg;
+            nv.DonGia_Tan = DonGia_Tan * 1000;
+            nv.TongBaotb = TongBaotb;
+            nv.TongKgtb = TongKgtb;
+            nv.DonGiatb_Tan = DonGiatb_Tan * 1000;
+            nv.ThanhTien = (TongKg * DonGia_Tan) + (TongKgtb * DonGiatb_Tan);
 
             return nv;
         }
+
+        private string getLoaiVthh(string tenVthh)
+        {
+            string result = "";
+            if (tenVthh.Contains("53*106tb") || tenVthh.Contains("53x106tb") || tenVthh.Contains("53-106tb"))
+            {
+                result = "Dot53_106tb";
+            }
+            else if (tenVthh.Contains("51*103tb") || tenVthh.Contains("51x103tb") || tenVthh.Contains("51-103tb"))
+            {
+                result = "Dot51_103tb";
+            }
+            else if (tenVthh.Contains("11*17tb") || tenVthh.Contains("11x17tb") || tenVthh.Contains("11-17tb"))
+            {
+                result = "Dot11_17tb";
+            }
+            else if (tenVthh.Contains("45*90tb") || tenVthh.Contains("45x90tb") || tenVthh.Contains("45-90tb"))
+            {
+                result = "Dot45_90tb";
+            }
+            else if (tenVthh.Contains("42*84tb") || tenVthh.Contains("42x84tb") || tenVthh.Contains("42-84tb"))
+            {
+                result = "Dot42_84tb";
+            }
+            else if (tenVthh.Contains("51*103") || tenVthh.Contains("51x103") || tenVthh.Contains("51-103"))
+            {
+                result = "Dot51_103";
+            }
+            else if (tenVthh.Contains("56*112") || tenVthh.Contains("56x112") || tenVthh.Contains("56-112"))
+            {
+                result = "Dot56_112";
+            }
+            else if (tenVthh.Contains("42*84") || tenVthh.Contains("42x84") || tenVthh.Contains("42-84"))
+            {
+                result = "Dot42_84";
+            }
+            else if (tenVthh.Contains("48*96") || tenVthh.Contains("48x96") || tenVthh.Contains("48-96"))
+            {
+                result = "Dot48_96";
+            }
+            else if (tenVthh.Contains("45*90") || tenVthh.Contains("45x90") || tenVthh.Contains("45-90"))
+            {
+                result = "Dot45_90";
+            }
+            else if (tenVthh.Contains("36*72") || tenVthh.Contains("36x72") || tenVthh.Contains("36-72"))
+            {
+                result = "Dot36_72";
+            }
+            else if (tenVthh.Contains("4*8") || tenVthh.Contains("4x8") || tenVthh.Contains("4-8"))
+            {
+                result = "Dot4_8";
+            }
+            return result;
+        }
+
+
         private void Tr_frmBTTL_ToDot_Load(object sender, EventArgs e)
         {
         }

@@ -179,6 +179,7 @@ namespace CtyTinLuong
             {
                 MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            isCopy = false;
         }
 
 
@@ -687,7 +688,7 @@ namespace CtyTinLuong
                 iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
                 TaoLenhSanXuat(_Loaimay, xxID_Sophieu_, iiiDID_ChiTietPhieuxxx, idcatruong_, idcongnhan_, ngaylapphieu_,
                     casx_, idvthh_vao_, idvthh_ra_, soluongvao_,
-                    sanluongthuong_, sanluongtangca_, phepham_);
+                    sanluongthuong_, sanluongtangca_, phepham_); 
             }
             catch (Exception ea)
             {
@@ -751,7 +752,7 @@ namespace CtyTinLuong
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
                     TaoLenhSanXuat(_Loaimay, id_sophieu, iiiDID_ChiTietPhieuxxx, idcatruong_, idcongnhan_, ngaylapphieu_,
                         casx_, idvthh_vao_, idvthh_ra_, soluongvao_,
-                        sanluongthuong_, sanluongtangca_, phepham_);
+                        sanluongthuong_, sanluongtangca_, phepham_); 
                 }
             }
             catch (Exception ea)
@@ -813,7 +814,7 @@ namespace CtyTinLuong
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
                     TaoLenhSanXuat(_Loaimay, id_sophieu, iiiDID_ChiTietPhieuxxx, idcatruong_, idcongnhan_, ngaylapphieu_,
                         casx_, idvthh_vao_, idvthh_ra_, soluongvao_,
-                        sanluongtong_, 0, phepham_);
+                        sanluongtong_, 0, phepham_); 
                 }
             }
             catch (Exception ea)
@@ -1217,6 +1218,7 @@ namespace CtyTinLuong
                     //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clSoKG_MotBao_May_Dot, xxsokgmotbao_dot_copy);
                     //bandedGridView1.SetRowCellValue(GridControl.NewItemRowHandle, clDoCao_Dot, xxdocao_dot_copy);
                 }
+                isCopy = true;
             }
             catch (Exception ea)
             {
@@ -2257,7 +2259,6 @@ namespace CtyTinLuong
                 int row_focus = bandedGridView1.FocusedRowHandle;
                 if (row_focus < 0)
                     return;
-                string sMaphieulon= bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                 if (_Loaimay == 1)
                 {
                     if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
@@ -2317,10 +2318,10 @@ namespace CtyTinLuong
                     {
                         string sMaphieu_CAT = _data.Rows[row_focus]["MaPhieu"].ToString();
 
-                       // string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
-                        if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
-                        Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
-                            return;
+                       //// string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
+                       // if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
+                       // Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
+                       //     return;
 
                         if (KiemTra_Hang(2) == false)
                             _data.Rows[row_focus]["Test_CAT"] = "1";
@@ -2425,9 +2426,11 @@ namespace CtyTinLuong
                 MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private bool isCopy = false;
         private void bandedGridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            if (bandedGridView1.FocusedRowHandle >= 0)
+            if (bandedGridView1.FocusedRowHandle >= 0 && isCopy)
             {
                 SaveWhenCopy();
             }
