@@ -102,8 +102,49 @@ namespace CtyTinLuong
 
             isload = false;
         }
-       
-      
+
+        private ModelBTTL_ToDot getSanLuong_Ngay(int Ngay, DataTable dt)
+        {
+            ModelBTTL_ToDot nv = new ModelBTTL_ToDot();
+            public int NgayThang;
+            public string DonViTinh;
+            public double Dot4_8_Bao;
+            public double Dot4_8_Kg;
+            public double Dot36_72_Bao;
+            public double Dot36_72_Kg;
+            public double Dot45_90_Bao;
+            public double Dot45_90_Kg;
+            public double Dot48_96_Bao;
+            public double Dot48_96_Kg;
+            public double Dot56_112_Bao;
+            public double Dot56_112_Kg;
+            public double Dot42_84_Bao;
+            public double Dot42_84_Kg;
+            public double Dot51_103_Bao;
+            public double Dot51_103_Kg;
+            public double Dot53_106tb_Bao;
+            public double Dot53_106tb_Kg;
+            public double Dot51_103tb_Bao;
+            public double Dot51_103tb_Kg;
+            public double Dot11_17tb_Bao;
+            public double Dot11_17tb_Kg;
+            public double Dot45_90tb_Bao;
+            public double Dot45_90tb_Kg;
+            public double Dot42_84tb_Bao;
+            public double Dot42_84tb_Kg;
+            public double TongBao;
+            public double TongKg;
+            public double DonGia_Tan;
+            public double TongBaotb;
+            public double TongKgtb;
+            public double DonGiatb_Tan;
+            public double ThanhTien;
+            List<int> dsNgayCong = new List<int>();
+
+          
+
+            return nv;
+        }
         private void Tr_frmBTTL_ToDot_Load(object sender, EventArgs e)
         {
         }

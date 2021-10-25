@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CtyTinLuong
 {
-    class ModelBTTL_TMC
+    class ModelBTTL_ToDot
     {
         public int NgayThang { get; set; }
         public string DonViTinh { get; set; }
