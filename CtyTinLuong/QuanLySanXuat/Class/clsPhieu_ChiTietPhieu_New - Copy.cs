@@ -72,7 +72,7 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable H_KiemTra_Trung_Phieu_SX_T8(string smaphiei_, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        public DataTable H_KiemTra_Trung_Phieu_SX_T8(string smaphiei_, DateTime ngay_batdau, DateTime ngay_ketthuc, bool bMay_IN, bool bMay_CAT, bool bMay_DOT)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[H_KiemTra_Trung_Phieu_SX_T8]";
@@ -89,7 +89,9 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@maphieu_", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, smaphiei_));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
-                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ma_phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ma_phieu));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_IN", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_IN));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_CAT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_CAT));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_DOT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_DOT));
                 sdaAdapter.Fill(dtToReturn);
                 return dtToReturn;
             }

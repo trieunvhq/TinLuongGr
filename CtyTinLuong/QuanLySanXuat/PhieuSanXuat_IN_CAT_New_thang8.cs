@@ -409,7 +409,7 @@ namespace CtyTinLuong
             }
         }
 
-        private bool KiemTra_TrungMaPhieu(string xsmaphieu, DateTime ngaykethuc)
+        private bool KiemTra_TrungMaPhieu(string xsmaphieu, DateTime ngaykethuc, bool MayIn, bool MayCat, bool MayDot)
         {
             try
             {
@@ -417,7 +417,7 @@ namespace CtyTinLuong
                 DataTable dt = new DataTable();
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
                 ngaybatdau = ngaykethuc.AddDays(-30);
-                dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc);
+                dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc, MayIn, MayCat, MayDot);
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Đã có Mã phiếu: " + xsmaphieu + "\nVui lòng thử lại", "Kiểm tra");
@@ -1187,7 +1187,7 @@ namespace CtyTinLuong
                         {
                             string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
                             DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgayLapPhieu).ToString());
-                            if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat) == false)
+                            if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat, true, false, false) == false)
                             {
                                 bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
                                 return;
