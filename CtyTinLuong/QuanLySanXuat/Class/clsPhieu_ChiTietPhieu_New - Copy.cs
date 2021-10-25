@@ -44,9 +44,9 @@ namespace CtyTinLuong
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@fDoCao_Dot", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fDoCao_Dot));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@bTrangThaiTaoLenhSanXuat", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bTrangThaiTaoLenhSanXuat));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_ChiTietPhieu", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_ChiTietPhieu));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_IN", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_IN));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_CAT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_CAT));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_DOT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_DOT));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_IN", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_IN));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_CAT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_CAT));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_DOT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_DOT));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@Ma_Phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, Ma_Phieu));
 
                 // Open connection.
