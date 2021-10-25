@@ -106,42 +106,126 @@ namespace CtyTinLuong
         private ModelBTTL_ToDot getSanLuong_Ngay(int Ngay, DataTable dt)
         {
             ModelBTTL_ToDot nv = new ModelBTTL_ToDot();
-            public int NgayThang;
-            public string DonViTinh;
-            public double Dot4_8_Bao;
-            public double Dot4_8_Kg;
-            public double Dot36_72_Bao;
-            public double Dot36_72_Kg;
-            public double Dot45_90_Bao;
-            public double Dot45_90_Kg;
-            public double Dot48_96_Bao;
-            public double Dot48_96_Kg;
-            public double Dot56_112_Bao;
-            public double Dot56_112_Kg;
-            public double Dot42_84_Bao;
-            public double Dot42_84_Kg;
-            public double Dot51_103_Bao;
-            public double Dot51_103_Kg;
-            public double Dot53_106tb_Bao;
-            public double Dot53_106tb_Kg;
-            public double Dot51_103tb_Bao;
-            public double Dot51_103tb_Kg;
-            public double Dot11_17tb_Bao;
-            public double Dot11_17tb_Kg;
-            public double Dot45_90tb_Bao;
-            public double Dot45_90tb_Kg;
-            public double Dot42_84tb_Bao;
-            public double Dot42_84tb_Kg;
-            public double TongBao;
-            public double TongKg;
-            public double DonGia_Tan;
-            public double TongBaotb;
-            public double TongKgtb;
-            public double DonGiatb_Tan;
-            public double ThanhTien;
+            int NgayThang;
+            string DonViTinh;
+            double Dot4_8_Bao;
+            double Dot4_8_Kg;
+            double Dot36_72_Bao;
+            double Dot36_72_Kg;
+            double Dot45_90_Bao;
+            double Dot45_90_Kg;
+            double Dot48_96_Bao;
+            double Dot48_96_Kg;
+            double Dot56_112_Bao;
+            double Dot56_112_Kg;
+            double Dot42_84_Bao;
+            double Dot42_84_Kg;
+            double Dot51_103_Bao;
+            double Dot51_103_Kg;
+            double Dot53_106tb_Bao;
+            double Dot53_106tb_Kg;
+            double Dot51_103tb_Bao;
+            double Dot51_103tb_Kg;
+            double Dot11_17tb_Bao;
+            double Dot11_17tb_Kg;
+            double Dot45_90tb_Bao;
+            double Dot45_90tb_Kg;
+            double Dot42_84tb_Bao;
+            double Dot42_84tb_Kg;
+            double TongBao;
+            double TongKg;
+            double DonGia_Tan;
+            double TongBaotb;
+            double TongKgtb;
+            double DonGiatb_Tan;
+            double ThanhTien;
             List<int> dsNgayCong = new List<int>();
 
-          
+            for (int i = 0; i < 31; i++)
+            {
+                //nv.DsSLNgay[i] = 0;
+                //nv.DsSLNgay_Tang[i] = 0;
+                //nv.DsSLNgay_Tong[i] = 0;
+                //nv.DsCong[i] = 0;
+            }
+
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+            //    int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+            //    string tenVTHH = CheckString.ChuanHoaHoTen(item["TenVTHH"].ToString());
+
+            //    if (NgaySX == Ngay)
+            //    {
+            //        nv.DsIdVthh_DotTang.Add(idvthh);
+            //        double SL_Tog_ = 0;
+            //        double Cong_ = 0;
+
+            //        hoTen = item["TenNhanVien"].ToString();
+            //        tenVthhThuong = item["TenVTHH"].ToString();
+            //        maVT = item["MaVT"].ToString();
+            //        donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
+            //        donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+            //        phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+            //        truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+            //        soNgayCong = CheckString.ConvertToDouble_My(item["SoNgayCong"].ToString());
+
+            //        int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+            //        Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
+
+            //        SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+            //        slTong += SL_Tog_;
+            //        if (Cong_ > 0)
+            //        {
+            //            tenVthhThuong = "Đột";
+            //            tenVthhTang = "Đột tăng ";
+            //        }
+
+            //        nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
+
+            //        for (int i = 0; i < 31; i++)
+            //        {
+            //            nv.DsCong[i] = CheckString.ConvertToDouble_My(item["Ngay" + (i + 1)].ToString());
+            //        }
+            //    }
+            //}
+
+            //for (int i = 0; i < 31; i++)
+            //{
+            //    if (nv.DsCong[i] > 0 && nv.DsSLNgay_Tong[i] > 10)
+            //    {
+            //        nv.DsSLNgay_Tang[i] = nv.DsSLNgay_Tong[i] - 10;
+            //        slTang += nv.DsSLNgay_Tong[i] - 10;
+            //        nv.DsSLNgay[i] = 10;
+            //    }
+            //    else
+            //    {
+            //        nv.DsSLNgay[i] = nv.DsSLNgay_Tong[i];
+            //    }
+            //}
+
+            //slThuong = slTong - slTang;
+
+            //nv.HoTen = hoTen;
+            //nv.MaVT = maVT;
+            //nv.TenVthhThuong = tenVthhThuong;
+            //nv.TenVthhTang = tenVthhTang;
+            //nv.SlTong = slTong;
+            //nv.SlThuong = slThuong;
+            //nv.SlTang = slTang;
+            //nv.DonGiaThuong = donGiaThuong;
+            //nv.DonGiaTang = donGiaTang;
+            //nv.SoNgayCong = soNgayCong;
+            //nv.ThanhTienThuong = slThuong * donGiaThuong;
+            //nv.ThanhTienTang = slTang * donGiaTang;
+            //nv.TienTong = slThuong * donGiaThuong + slTang * donGiaTang;
+            //nv.PhuCapBaoHiem = phuCapBaoHiem;
+            //nv.TruBaoHiem = truBaoHiem;
+
+            //return nv;
+
+
 
             return nv;
         }
