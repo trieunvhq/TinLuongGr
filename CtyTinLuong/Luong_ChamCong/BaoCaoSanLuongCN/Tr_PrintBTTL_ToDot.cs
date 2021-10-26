@@ -6,15 +6,14 @@ using DevExpress.XtraReports.UI;
 using System.Collections.Generic;
 
 
-namespace CtyTinLuong.Luong_ChamCong
+namespace CtyTinLuong
 {
     public partial class Tr_PrintBTTL_ToDot : DevExpress.XtraReports.UI.XtraReport
     {
 
-        List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
-        List<XRTableCell> Ds_Ngay_Footer = new List<XRTableCell>();
+        List<XRTableCell> _DsVthhTitle = new List<XRTableCell>();
+        List<XRTableCell> _DsValue = new List<XRTableCell>();
+        List<XRTableCell> _DsValue_Footer = new List<XRTableCell>();
 
         private int _nam, _thang;
 
@@ -26,135 +25,107 @@ namespace CtyTinLuong.Luong_ChamCong
             InitializeComponent();
 
             //
-            Ds_NgayTitle.Add(xrTableCell37);
-            Ds_NgayTitle.Add(xrTableCell38);
-            Ds_NgayTitle.Add(xrTableCell39);
-            Ds_NgayTitle.Add(xrTableCell40);
-            Ds_NgayTitle.Add(xrTableCell41);
-            Ds_NgayTitle.Add(xrTableCell42);
-            Ds_NgayTitle.Add(xrTableCell43);
-            Ds_NgayTitle.Add(xrTableCell44);
-            Ds_NgayTitle.Add(xrTableCell45);
-            Ds_NgayTitle.Add(xrTableCell46);
-            Ds_NgayTitle.Add(xrTableCell47);
-            Ds_NgayTitle.Add(xrTableCell48);
-            Ds_NgayTitle.Add(xrTableCell49);
-            Ds_NgayTitle.Add(xrTableCell50);
-            Ds_NgayTitle.Add(xrTableCell51);
-            Ds_NgayTitle.Add(xrTableCell52);
-            Ds_NgayTitle.Add(xrTableCell53);
-            Ds_NgayTitle.Add(xrTableCell54);
-            Ds_NgayTitle.Add(xrTableCell55);
-            Ds_NgayTitle.Add(xrTableCell56);
-            Ds_NgayTitle.Add(xrTableCell57);
-            Ds_NgayTitle.Add(xrTableCell58);
-            Ds_NgayTitle.Add(xrTableCell59);
-            Ds_NgayTitle.Add(xrTableCell60);
-            Ds_NgayTitle.Add(xrTableCell61);
-            Ds_NgayTitle.Add(xrTableCell62);
-            Ds_NgayTitle.Add(xrTableCell63);
-            Ds_NgayTitle.Add(xrTableCell64);
-            Ds_NgayTitle.Add(xrTableCell65);
-            Ds_NgayTitle.Add(xrTableCell66);
-            Ds_NgayTitle.Add(xrTableCell67);
+            _DsVthhTitle.Add(h1);
+            _DsVthhTitle.Add(h2);
+            _DsVthhTitle.Add(h3);
+            _DsVthhTitle.Add(h4);
+            _DsVthhTitle.Add(h5);
+            _DsVthhTitle.Add(h6);
+            _DsVthhTitle.Add(h7);
+            _DsVthhTitle.Add(h8);
+            _DsVthhTitle.Add(h9);
+            _DsVthhTitle.Add(h10);
+            _DsVthhTitle.Add(h11);
+            _DsVthhTitle.Add(h12);
+            _DsVthhTitle.Add(h13);
+            _DsVthhTitle.Add(h14);
+            _DsVthhTitle.Add(h15);
+            _DsVthhTitle.Add(h16);
+            _DsVthhTitle.Add(h17);
+            _DsVthhTitle.Add(h18); 
+            _DsVthhTitle.Add(h19); 
+            _DsVthhTitle.Add(h20);
+            _DsVthhTitle.Add(h21);
+            _DsVthhTitle.Add(h22);
+            _DsVthhTitle.Add(h23);
+            _DsVthhTitle.Add(h24);
+            _DsVthhTitle.Add(h25);
+            _DsVthhTitle.Add(h26);
+            _DsVthhTitle.Add(h27);
+            _DsVthhTitle.Add(h28);
+            _DsVthhTitle.Add(h29);
+            _DsVthhTitle.Add(h30);
+            _DsVthhTitle.Add(h31);
+            _DsVthhTitle.Add(h32);
 
             //
-            Ds_Ngay.Add(Ngay1);
-            Ds_Ngay.Add(Ngay2);
-            Ds_Ngay.Add(Ngay3);
-            Ds_Ngay.Add(Ngay4);
-            Ds_Ngay.Add(Ngay5);
-            Ds_Ngay.Add(Ngay6);
-            Ds_Ngay.Add(Ngay7);
-            Ds_Ngay.Add(Ngay8);
-            Ds_Ngay.Add(Ngay9);
-            Ds_Ngay.Add(Ngay10);
-            Ds_Ngay.Add(Ngay11);
-            Ds_Ngay.Add(Ngay12);
-            Ds_Ngay.Add(Ngay13);
-            Ds_Ngay.Add(Ngay14);
-            Ds_Ngay.Add(Ngay15);
-            Ds_Ngay.Add(Ngay16);
-            Ds_Ngay.Add(Ngay17);
-            Ds_Ngay.Add(Ngay18);
-            Ds_Ngay.Add(Ngay19);
-            Ds_Ngay.Add(Ngay20);
-            Ds_Ngay.Add(Ngay21);
-            Ds_Ngay.Add(Ngay22);
-            Ds_Ngay.Add(Ngay23);
-            Ds_Ngay.Add(Ngay24);
-            Ds_Ngay.Add(Ngay25);
-            Ds_Ngay.Add(Ngay26);
-            Ds_Ngay.Add(Ngay27);
-            Ds_Ngay.Add(Ngay28);
-            Ds_Ngay.Add(Ngay29);
-            Ds_Ngay.Add(Ngay30);
-            Ds_Ngay.Add(Ngay31);
-            //
-            Ds_Ngay_Header.Add(ng1);
-            Ds_Ngay_Header.Add(ng2);
-            Ds_Ngay_Header.Add(ng3);
-            Ds_Ngay_Header.Add(ng4);
-            Ds_Ngay_Header.Add(ng5);
-            Ds_Ngay_Header.Add(ng6);
-            Ds_Ngay_Header.Add(ng7);
-            Ds_Ngay_Header.Add(ng8);
-            Ds_Ngay_Header.Add(ng9);
-            Ds_Ngay_Header.Add(ng10);
-            Ds_Ngay_Header.Add(ng11);
-            Ds_Ngay_Header.Add(ng12);
-            Ds_Ngay_Header.Add(ng13);
-            Ds_Ngay_Header.Add(ng14);
-            Ds_Ngay_Header.Add(ng15);
-            Ds_Ngay_Header.Add(ng16);
-            Ds_Ngay_Header.Add(ng17);
-            Ds_Ngay_Header.Add(ng18);
-            Ds_Ngay_Header.Add(ng19);
-            Ds_Ngay_Header.Add(ng20);
-            Ds_Ngay_Header.Add(ng21);
-            Ds_Ngay_Header.Add(ng22);
-            Ds_Ngay_Header.Add(ng23);
-            Ds_Ngay_Header.Add(ng24);
-            Ds_Ngay_Header.Add(ng25);
-            Ds_Ngay_Header.Add(ng26);
-            Ds_Ngay_Header.Add(ng27);
-            Ds_Ngay_Header.Add(ng28);
-            Ds_Ngay_Header.Add(ng29);
-            Ds_Ngay_Header.Add(ng30);
-            Ds_Ngay_Header.Add(ng31);
+            _DsValue.Add(c1);
+            _DsValue.Add(c2);
+            _DsValue.Add(c3);
+            _DsValue.Add(c4);
+            _DsValue.Add(c5);
+            _DsValue.Add(c6);
+            _DsValue.Add(c7);
+            _DsValue.Add(c8);
+            _DsValue.Add(c9);
+            _DsValue.Add(c10);
+            _DsValue.Add(c11);
+            _DsValue.Add(c12);
+            _DsValue.Add(c13);
+            _DsValue.Add(c14);
+            _DsValue.Add(c15);
+            _DsValue.Add(c16);
+            _DsValue.Add(c17);
+            _DsValue.Add(c18);
+            _DsValue.Add(c19);
+            _DsValue.Add(c20);
+            _DsValue.Add(c21);
+            _DsValue.Add(c22);
+            _DsValue.Add(c23);
+            _DsValue.Add(c24);
+            _DsValue.Add(c25);
+            _DsValue.Add(c26);
+            _DsValue.Add(c27);
+            _DsValue.Add(c28);
+            _DsValue.Add(c29);
+            _DsValue.Add(c30);
+            _DsValue.Add(c31);
+            _DsValue.Add(c32);
 
             //
-            Ds_Ngay_Footer.Add(tg1);
-            Ds_Ngay_Footer.Add(tg2);
-            Ds_Ngay_Footer.Add(tg3);
-            Ds_Ngay_Footer.Add(tg4);
-            Ds_Ngay_Footer.Add(tg5);
-            Ds_Ngay_Footer.Add(tg6);
-            Ds_Ngay_Footer.Add(tg7);
-            Ds_Ngay_Footer.Add(tg8);
-            Ds_Ngay_Footer.Add(tg9);
-            Ds_Ngay_Footer.Add(tg10);
-            Ds_Ngay_Footer.Add(tg11);
-            Ds_Ngay_Footer.Add(tg12);
-            Ds_Ngay_Footer.Add(tg13);
-            Ds_Ngay_Footer.Add(tg14);
-            Ds_Ngay_Footer.Add(tg15);
-            Ds_Ngay_Footer.Add(tg16);
-            Ds_Ngay_Footer.Add(tg17);
-            Ds_Ngay_Footer.Add(tg18);
-            Ds_Ngay_Footer.Add(tg19);
-            Ds_Ngay_Footer.Add(tg20);
-            Ds_Ngay_Footer.Add(tg21);
-            Ds_Ngay_Footer.Add(tg22);
-            Ds_Ngay_Footer.Add(tg23);
-            Ds_Ngay_Footer.Add(tg24);
-            Ds_Ngay_Footer.Add(tg25);
-            Ds_Ngay_Footer.Add(tg26);
-            Ds_Ngay_Footer.Add(tg27);
-            Ds_Ngay_Footer.Add(tg28);
-            Ds_Ngay_Footer.Add(tg29);
-            Ds_Ngay_Footer.Add(tg30);
-            Ds_Ngay_Footer.Add(tg31);
+            _DsValue_Footer.Add(tg1);
+            _DsValue_Footer.Add(tg2);
+            _DsValue_Footer.Add(tg3);
+            _DsValue_Footer.Add(tg4);
+            _DsValue_Footer.Add(tg5);
+            _DsValue_Footer.Add(tg6);
+            _DsValue_Footer.Add(tg7);
+            _DsValue_Footer.Add(tg8);
+            _DsValue_Footer.Add(tg9);
+            _DsValue_Footer.Add(tg10);
+            _DsValue_Footer.Add(tg11);
+            _DsValue_Footer.Add(tg12);
+            _DsValue_Footer.Add(tg13);
+            _DsValue_Footer.Add(tg14);
+            _DsValue_Footer.Add(tg15);
+            _DsValue_Footer.Add(tg16);
+            _DsValue_Footer.Add(tg17);
+            _DsValue_Footer.Add(tg18);
+            _DsValue_Footer.Add(tg19);
+            _DsValue_Footer.Add(tg20);
+            _DsValue_Footer.Add(tg21);
+            _DsValue_Footer.Add(tg22);
+            _DsValue_Footer.Add(tg23);
+            _DsValue_Footer.Add(tg24);
+            _DsValue_Footer.Add(tg25);
+            _DsValue_Footer.Add(tg26);
+            _DsValue_Footer.Add(tg27);
+            _DsValue_Footer.Add(tg28);
+            _DsValue_Footer.Add(tg29);
+            _DsValue_Footer.Add(tg30);
+            _DsValue_Footer.Add(tg31);
+            _DsValue_Footer.Add(tg32);
+
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -202,180 +173,49 @@ namespace CtyTinLuong.Luong_ChamCong
             }
         }
 
-        //
-        private string LayThu(DateTime date)
-        {
-            switch (date.DayOfWeek)
-            {
-                case DayOfWeek.Monday:
-                    return "T2";
-                case DayOfWeek.Tuesday:
-                    return "T3";
-                case DayOfWeek.Wednesday:
-                    return "T4";
-                case DayOfWeek.Thursday:
-                    return "T5";
-                case DayOfWeek.Friday:
-                    return "T6";
-                case DayOfWeek.Saturday:
-                    return "T7";
-                case DayOfWeek.Sunday:
-                    return "CN";
-            }
-            return "";
-        }
-
-        private string _flag_29 = "undelete";
-        private string _flag_30 = "undelete";
-        private string _flag_31 = "undelete";
 
         //
         public void setThu()
         {
-            //DateTime dtnow = DateTime.Now;
+            int[] colDelete = new int[32];
+            for (int i = 0; i < 32; i++)
+            {
+                if (i%2 == 0)
+                    colDelete[i] = 0;
+                else
+                    colDelete[i] = 1;
+            }
+
+            int count = 0;
+            for (int i = 0; i < 32; i++)
+            {
+                if (colDelete[i] == 1)
+                {
+                    xrTable2.DeleteColumn(_DsVthhTitle[i]);
+                    xrTable1.DeleteColumn(_DsValue[i]);
+                    xrTable3.DeleteColumn(_DsValue_Footer[i]);
+                }
+                else
+                    count++;
+            }
+
+            TongName.WidthF = Ngay.WidthF = hNgay.WidthF = xrTableCell4.WidthF = (float)42.84;
+            congFooter.WidthF = DVT.WidthF = hDVT.WidthF = xrTableCell2.WidthF = (float)32.8;
             //
-
-            int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
-
-            //
-            if (ngaycuathang_ == 28)
+            float tmp = 0;
+            float colw = (float)((30.82 * 32) / count);
+            for (int i = 0; i < 32; ++i)
             {
-                if (_flag_31 == "undelete")
+                if (colDelete[i] == 0)
                 {
-                    xrTable2.DeleteColumn(ng31);
-                    xrTable1.DeleteColumn(Ngay31);
-                    xrTable3.DeleteColumn(tg31);
-                    _flag_31 = "deleted";
-                }
-
-                //
-                if (_flag_30 == "undelete")
-                {
-                    xrTable2.DeleteColumn(ng30);
-                    xrTable1.DeleteColumn(Ngay30);
-                    xrTable3.DeleteColumn(tg30);
-                    _flag_30 = "deleted";
-                }
-
-                //
-                if (_flag_29 == "undelete")
-                {
-                    xrTable2.DeleteColumn(ng29);
-                    xrTable1.DeleteColumn(Ngay29);
-                    xrTable3.DeleteColumn(tg29);
-                    _flag_29 = "deleted";
-                }
-
-                //
-                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)134.74;
-                //nameTong.WidthF = hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)100.4;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.54;
-                //
-                float tmp = 0;
-                float colw = (float)((26.79 * 31) / 28);
-                for (int i = 0; i < ngaycuathang_; ++i)
-                {
-
-                    Ds_NgayTitle[i].WidthF = colw;
-                    Ds_Ngay_Header[i].WidthF = colw;
-                    Ds_Ngay[i].WidthF = colw;
-                    Ds_Ngay_Footer[i].WidthF = colw;
+                    _DsVthhTitle[i].WidthF = colw;
+                    _DsValue[i].WidthF = colw;
+                    _DsValue_Footer[i].WidthF = colw;
                     tmp += colw;
                 }
-                xrTableCell3.WidthF = tmp;
-                tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.15;
             }
-            else if (ngaycuathang_ == 29)
-            {
-                if (_flag_31 == "undelete")
-                {
-                    xrTable2.DeleteColumn(ng31);
-                    xrTable1.DeleteColumn(Ngay31);
-                    xrTable3.DeleteColumn(tg31);
-                    _flag_31 = "deleted";
-                }
-
-                //
-                if (_flag_30 == "undelete")
-                {
-                    xrTable2.DeleteColumn(ng30);
-                    xrTable1.DeleteColumn(Ngay30);
-                    xrTable3.DeleteColumn(tg30);
-                    _flag_30 = "deleted";
-                }
-
-                //
-                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)134.74;
-                //nameTong.WidthF = hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)100.4;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.54;
-                //
-                float tmp = 0;
-                float colw = (float)((26.79 * 31) / 29);
-                for (int i = 0; i < ngaycuathang_; ++i)
-                {
-
-                    Ds_NgayTitle[i].WidthF = colw;
-                    Ds_Ngay_Header[i].WidthF = colw;
-                    Ds_Ngay[i].WidthF = colw;
-                    Ds_Ngay_Footer[i].WidthF = colw;
-                    tmp += colw;
-                }
-                xrTableCell3.WidthF = tmp;
-                tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.15;
-            }
-            else if (ngaycuathang_ == 30)
-            {
-                if (_flag_31 == "undelete")
-                {
-                    xrTable2.DeleteColumn(ng31);
-                    xrTable1.DeleteColumn(Ngay31);
-                    xrTable3.DeleteColumn(tg31);
-
-                    _flag_31 = "deleted";
-                }
-
-                //
-                xrTableCell13.WidthF = xrTableCell10.WidthF = xrTableCell6.WidthF = xrTableCell5.WidthF = xrTableCell4.WidthF = (float)134.74;
-                //nameTong.WidthF = hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)100.4;
-                congFooter.WidthF = cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)71.54;
-                //
-                float tmp = 0;
-                float colw = (float)((26.79 * 31) / 30);
-                for (int i = 0; i < ngaycuathang_; ++i)
-                {
-
-                    Ds_NgayTitle[i].WidthF = colw;
-                    Ds_Ngay_Header[i].WidthF = colw;
-                    Ds_Ngay[i].WidthF = colw;
-                    Ds_Ngay_Footer[i].WidthF = colw;
-                    tmp += colw;
-                }
-                xrTableCell3.WidthF = tmp;
-                tgSum.WidthF = TongCel.WidthF = xrTableCell102.WidthF = xrTableCell68.WidthF = xrTableCell34.WidthF = (float)53.15;
-            }
-            else if (ngaycuathang_ == 31)
-            {
-                //nothing
-            }
-
-            //Tô màu Chủ nhật:
-            for (int i = 0; i < ngaycuathang_; ++i)
-            {
-                Ds_Ngay_Header[i].Text = LayThu(new DateTime(_nam, _thang, (i + 1)));
-                if (Ds_Ngay_Header[i].Text.Contains("CN"))
-                {
-                    Ds_Ngay_Header[i].BackColor = Color.LightGray;
-                    Ds_Ngay_Header[i].ForeColor = Color.Red;
-
-                    //detail
-                    Ds_Ngay[i].BackColor = Color.LightGray;
-                    Ds_Ngay[i].ForeColor = Color.Red;
-
-                    //footer
-                    Ds_Ngay_Footer[i].BackColor = Color.LightGray;
-                    Ds_Ngay_Footer[i].ForeColor = Color.Red;
-                }
-            }
+            hLoaiHang.WidthF = tmp;
+            ThanhTienSum.WidthF = ThanhTienRow.WidthF = htt.WidthF = xrTableCell34.WidthF = (float)52.88;
         }
     }
 }
