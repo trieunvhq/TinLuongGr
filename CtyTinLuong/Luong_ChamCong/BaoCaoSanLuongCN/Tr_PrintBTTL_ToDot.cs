@@ -126,7 +126,6 @@ namespace CtyTinLuong
             _DsValue_Footer.Add(tg30);
             _DsValue_Footer.Add(tg31);
             _DsValue_Footer.Add(tg32);
-
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -204,7 +203,7 @@ namespace CtyTinLuong
             congFooter.WidthF = DVT.WidthF = hDVT.WidthF = xrTableCell2.WidthF = (float)32.8;
             //
             float tmp = 0;
-            float colw = (float)((30.82 * 32) / count);
+            float colw = (float)((52.88 + 30.82 * 32) / (count +1));
             for (int i = 0; i < 32; ++i)
             {
                 if (_colDelete[i] == 0)
@@ -216,7 +215,7 @@ namespace CtyTinLuong
                 }
             }
             hLoaiHang.WidthF = (float)tmp;
-            ThanhTienSum.WidthF = ThanhTienRow.WidthF = htt.WidthF = xrTableCell34.WidthF = (float)52.88;
+            ThanhTienSum.WidthF = ThanhTienRow.WidthF = htt.WidthF = xrTableCell34.WidthF = (float)colw;
         }
     }
 }
