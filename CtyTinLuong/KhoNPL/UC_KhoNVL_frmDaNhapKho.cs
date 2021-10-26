@@ -33,65 +33,65 @@ namespace CtyTinLuong
         {
             
             clsKhoNPL_tbChiTietNhapKho cls2 = new clsKhoNPL_tbChiTietNhapKho();
-            cls2.iID_NhapKho = xxIID_NhapKho;
-            DataTable dt3 = cls2.Select_W_ID_NhapKho_HienThi_SuaDonHang();
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_ChiTietNhapKho"); // ID của tbChi tiet don hàng
-            dt2.Columns.Add("ID_NhapKho");
-            dt2.Columns.Add("ID_VTHH");
-            dt2.Columns.Add("SoLuong", typeof(float));
-            dt2.Columns.Add("DonGia", typeof(decimal));
+            //cls2.iID_NhapKho = xxIID_NhapKho;
+            DataTable dt3 = cls2.H_NPL_CTNK_SO_ID_NK(xxIID_NhapKho);
+            //DataTable dt2 = new DataTable();
+            //dt2.Columns.Add("ID_ChiTietNhapKho"); // ID của tbChi tiet don hàng
+            //dt2.Columns.Add("ID_NhapKho");
+            //dt2.Columns.Add("ID_VTHH");
+            //dt2.Columns.Add("SoLuong", typeof(float));
+            //dt2.Columns.Add("DonGia", typeof(decimal));
 
-            dt2.Columns.Add("MaVT");// tb VTHH
-            dt2.Columns.Add("TenVTHH");
-            dt2.Columns.Add("DonViTinh");
-            dt2.Columns.Add("GhiChu");
+            //dt2.Columns.Add("MaVT");// tb VTHH
+            //dt2.Columns.Add("TenVTHH");
+            //dt2.Columns.Add("DonViTinh");
+            //dt2.Columns.Add("GhiChu");
 
-            dt2.Columns.Add("ThanhTien", typeof(decimal));
-            dt2.Columns.Add("HienThi", typeof(string));
+            //dt2.Columns.Add("ThanhTien", typeof(decimal));
+            //dt2.Columns.Add("HienThi", typeof(string));
 
-            for (int i = 0; i < dt3.Rows.Count; i++)
-            {
-                Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[i]["SoLuongNhap"].ToString());
-                Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[i]["DonGia"].ToString());
-                DataRow _ravi = dt2.NewRow();
-                _ravi["ID_ChiTietNhapKho"] = dt3.Rows[i]["ID_ChiTietNhapKho"].ToString();
-                _ravi["ID_NhapKho"] = dt3.Rows[i]["ID_NhapKho"].ToString();
-                _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //for (int i = 0; i < dt3.Rows.Count; i++)
+            //{
+            //    Decimal xxsoluong = CheckString.ConvertToDecimal_My(dt3.Rows[i]["SoLuongNhap"].ToString());
+            //    Decimal xxdongia = CheckString.ConvertToDecimal_My(dt3.Rows[i]["DonGia"].ToString());
+            //    DataRow _ravi = dt2.NewRow();
+            //    _ravi["ID_ChiTietNhapKho"] = dt3.Rows[i]["ID_ChiTietNhapKho"].ToString();
+            //    _ravi["ID_NhapKho"] = dt3.Rows[i]["ID_NhapKho"].ToString();
+            //    _ravi["ID_VTHH"] = dt3.Rows[i]["ID_VTHH"].ToString();
 
-                _ravi["SoLuong"] = xxsoluong;
-                _ravi["DonGia"] = xxdongia;
-                _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
-                _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
-                _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
-                _ravi["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
-                _ravi["HienThi"] = "1";
-                _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
-                dt2.Rows.Add(_ravi);
-            }
+            //    _ravi["SoLuong"] = xxsoluong;
+            //    _ravi["DonGia"] = xxdongia;
+            //    _ravi["MaVT"] = dt3.Rows[i]["ID_VTHH"].ToString();
+            //    _ravi["TenVTHH"] = dt3.Rows[i]["TenVTHH"].ToString();
+            //    _ravi["DonViTinh"] = dt3.Rows[i]["DonViTinh"].ToString();
+            //    _ravi["ThanhTien"] = CheckString.ConvertToDecimal_My(xxsoluong * xxdongia);
+            //    _ravi["HienThi"] = "1";
+            //    _ravi["GhiChu"] = dt3.Rows[i]["GhiChu"].ToString();
+            //    dt2.Rows.Add(_ravi);
+            //}
            
-            gridControl2.DataSource = dt2;
+            gridControl2.DataSource = dt3;
         }
-        private void HienThi(DateTime xxtungay, DateTime xxdenngay)
+        private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
            
 
                 clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
-                DataTable dt2xx = cls.SelectAll();
-                dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-                DataView dv22xxx = dt2xx.DefaultView;
-                dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
-                DataTable dt = dv22xxx.ToTable();            
+                DataTable dt2xx = cls.H_NPL_NhapKho_SA_NgayThang(xxtungay,xxdenngay);
+                //dt2xx.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
+                //DataView dv22xxx = dt2xx.DefaultView;
+                //dv22xxx.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
+                //DataTable dt = dv22xxx.ToTable();            
 
-                dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
-                DataView dvxxx = dt.DefaultView;
-                DataTable dt22 = dvxxx.ToTable();
-                dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
-                DataView dv2 = dt22.DefaultView;
-                dv2.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
-                DataTable dxxxx = dv2.ToTable();
+                //dt.DefaultView.RowFilter = " NgayChungTu<='" + xxdenngay + "'";
+                //DataView dvxxx = dt.DefaultView;
+                //DataTable dt22 = dvxxx.ToTable();
+                //dt22.DefaultView.RowFilter = " NgayChungTu>='" + xxtungay + "'";
+                //DataView dv2 = dt22.DefaultView;
+                //dv2.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
+                //DataTable dxxxx = dv2.ToTable();
 
-                gridControl1.DataSource = dxxxx;
+                gridControl1.DataSource = dt2xx;
           
         }
         private void HienThi_ALL()
@@ -147,10 +147,9 @@ namespace CtyTinLuong
         public void UC_KhoNVL_frmDaNhapKho_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
-            dteDenNgay.EditValue = null;
-            dteTuNgay.EditValue = null;
-            HienThi_ALL();
+            dteDenNgay.EditValue = DateTime.Today;
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Cursor.Current = Cursors.Default;
         }
 
@@ -166,7 +165,7 @@ namespace CtyTinLuong
             if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                HienThi(dteTuNgay.DateTime,dteDenNgay.DateTime.AddDays(1));
+                Load_DaTa(dteTuNgay.DateTime,dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -208,7 +207,7 @@ namespace CtyTinLuong
                     MessageBox.Show("Đã xóa");
                     if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
                     {
-                        HienThi(dteTuNgay.DateTime, dteDenNgay.DateTime.AddDays(1));
+                        Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                     }
                     else HienThi_ALL();
                 }
@@ -244,6 +243,26 @@ namespace CtyTinLuong
                 btLayDuLieu_Click(null, null);
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            { }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            { }
         }
     }
 }
