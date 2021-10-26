@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuSanXuat_Thang9));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -1163,6 +1162,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.SearchLookUp_MaPhieu_DOT.Name = "SearchLookUp_MaPhieu_DOT";
             this.SearchLookUp_MaPhieu_DOT.PopupView = this.gridView7;
+            this.SearchLookUp_MaPhieu_DOT.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.SearchLookUp_MaPhieu_DOT_EditValueChanging);
             // 
             // gridView7
             // 
