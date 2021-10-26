@@ -100,7 +100,8 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.WaitCursor;
                 Load_LockUp();
                 dteDenNgay.EditValue = DateTime.Today;
-                dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+                clsNgayThang cls = new clsNgayThang();
+                dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
             }
