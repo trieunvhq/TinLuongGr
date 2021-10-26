@@ -132,7 +132,8 @@ namespace CtyTinLuong
         public void UCChoNhapKho_DaiLy_new_Load(object sender, EventArgs e)
         {
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-60);
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
 

@@ -94,9 +94,10 @@ namespace CtyTinLuong
         private void UC_DaiLy_NhapKho_Load(object sender, EventArgs e)
         {
             isLoad = true;
-            Load_LockUp();            
+            Load_LockUp();
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-60); 
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
             mbThemMoi_nhapKhoDaiLy = false;

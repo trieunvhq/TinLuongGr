@@ -26,11 +26,9 @@ namespace CtyTinLuong
         private void UC_DongKien_NhapKho_Load(object sender, EventArgs e)
         {
             dteDenNgay.EditValue = DateTime.Today;
-            int thang = Convert.ToInt32(DateTime.Today.ToString("MM"));
-            int nam = Convert.ToInt32(DateTime.Today.ToString("yyyy"));
             clsNgayThang cls = new clsNgayThang();
-            dteTuNgay.EditValue = cls.GetFistDayInMonth(nam, thang);
-           
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
+
         }
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
