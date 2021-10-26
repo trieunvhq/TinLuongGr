@@ -142,10 +142,10 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
-            dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
-            dteDenNgay.EditValue = DateTime.Now;
+            dteDenNgay.EditValue = DateTime.Today;
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
-
             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
