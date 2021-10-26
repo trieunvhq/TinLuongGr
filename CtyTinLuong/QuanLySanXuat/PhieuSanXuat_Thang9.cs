@@ -1482,8 +1482,20 @@ namespace CtyTinLuong
             try
             {
                 DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row; 
-                sMaPhieu = row["MaPhieu"].ToString();  
-              
+                _MaPhieu = row["MaPhieu"].ToString();  
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SearchLookUp_MaPhieu_DOT_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            try
+            {
+                DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+                _MaPhieu = row["MaPhieu"].ToString();
             }
             catch (Exception ea)
             {
@@ -2032,24 +2044,6 @@ namespace CtyTinLuong
                 {
                     #region cat
 
-                    if (e.Column == clMaPhieu)
-                    {
-                        if (bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_CAT).ToString() != "")
-                        {
-                            string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
-                            smaphieu = _data.Rows[e.RowHandle]["MaPhieu"].ToString();
-                            _MaPhieu = smaphieu;
-                            DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_CAT).ToString());
-                            if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat, false, true, false) == false)
-                            {
-                                _data.Rows[e.RowHandle]["MaPhieu"] = "";
-                                bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
-                                return;
-                            }
-                            else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_CAT, "1");
-                        }
-                    }
-
                     if (e.Column == clID_SoPhieu_CAT)
                     {
                         if (bandedGridView1.GetRowCellValue(e.RowHandle, clID_ChiTietPhieu_CAT).ToString() == "")
@@ -2113,24 +2107,7 @@ namespace CtyTinLuong
                 else if (_Loaimay == 3)
                 {
                     #region dot
-                    if (e.Column == clMaPhieu)
-                    {
-                        if (bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_DOT).ToString() != "")
-                        {
-                            string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
-                            smaphieu = _data.Rows[e.RowHandle]["MaPhieu"].ToString();
-                            _MaPhieu = smaphieu;
-                            DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_DOT).ToString());
-                            if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat, false, false, true) == false)
-                            {
-                                _data.Rows[e.RowHandle]["MaPhieu"] = "";
-                                bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
-                                return;
-                            }
-                            else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_DOT, "1");
-                        }
-                    }
-
+                   
                     if (e.Column == clID_SoPhieu_DOT)
                     {
                         if (bandedGridView1.GetRowCellValue(e.RowHandle, clID_ChiTietPhieu_DOT).ToString() == "")
@@ -2341,12 +2318,17 @@ namespace CtyTinLuong
                 {
                     if (bandedGridView1.GetFocusedRowCellValue(clChange_CAT).ToString() == "1")
                     {
+                        string maCutChuot_ = "";
                         string sMaphieu_CAT = _data.Rows[row_focus]["MaPhieu"].ToString();
-
-                       //// string sMaphieu____IN = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
-                       // if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
-                       // Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
-                       //     return;
+                        if (_MaPhieu == "") maCutChuot_ = sMaphieu_CAT;
+                        else
+                        {
+                            if (sMaphieu_CAT == _MaPhieu) maCutChuot_ = sMaphieu_CAT;
+                            else maCutChuot_ = _MaPhieu;
+                        }
+                        if (!KiemTra_TrungMaPhieu(maCutChuot_,
+                        Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
+                            return;
 
                         if (KiemTra_Hang(2) == false)
                             _data.Rows[row_focus]["Test_CAT"] = "1";
