@@ -88,6 +88,8 @@ namespace CtyTinLuong {
         
         private tbChiTiet_LuongSL_sub1DataTable tabletbChiTiet_LuongSL_sub1;
         
+        private Tr_BTTL_ToDotDataTable tableTr_BTTL_ToDot;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -211,6 +213,9 @@ namespace CtyTinLuong {
                 }
                 if ((ds.Tables["tbChiTiet_LuongSL_sub1"] != null)) {
                     base.Tables.Add(new tbChiTiet_LuongSL_sub1DataTable(ds.Tables["tbChiTiet_LuongSL_sub1"]));
+                }
+                if ((ds.Tables["Tr_BTTL_ToDot"] != null)) {
+                    base.Tables.Add(new Tr_BTTL_ToDotDataTable(ds.Tables["Tr_BTTL_ToDot"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -552,6 +557,16 @@ namespace CtyTinLuong {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Tr_BTTL_ToDotDataTable Tr_BTTL_ToDot {
+            get {
+                return this.tableTr_BTTL_ToDot;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -712,6 +727,9 @@ namespace CtyTinLuong {
                 }
                 if ((ds.Tables["tbChiTiet_LuongSL_sub1"] != null)) {
                     base.Tables.Add(new tbChiTiet_LuongSL_sub1DataTable(ds.Tables["tbChiTiet_LuongSL_sub1"]));
+                }
+                if ((ds.Tables["Tr_BTTL_ToDot"] != null)) {
+                    base.Tables.Add(new Tr_BTTL_ToDotDataTable(ds.Tables["Tr_BTTL_ToDot"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -938,6 +956,12 @@ namespace CtyTinLuong {
                     this.tabletbChiTiet_LuongSL_sub1.InitVars();
                 }
             }
+            this.tableTr_BTTL_ToDot = ((Tr_BTTL_ToDotDataTable)(base.Tables["Tr_BTTL_ToDot"]));
+            if ((initTable == true)) {
+                if ((this.tableTr_BTTL_ToDot != null)) {
+                    this.tableTr_BTTL_ToDot.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1012,6 +1036,8 @@ namespace CtyTinLuong {
             base.Tables.Add(this.tableTr_BangSanLuongToIN);
             this.tabletbChiTiet_LuongSL_sub1 = new tbChiTiet_LuongSL_sub1DataTable();
             base.Tables.Add(this.tabletbChiTiet_LuongSL_sub1);
+            this.tableTr_BTTL_ToDot = new Tr_BTTL_ToDotDataTable();
+            base.Tables.Add(this.tableTr_BTTL_ToDot);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1208,6 +1234,12 @@ namespace CtyTinLuong {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTr_BTTL_ToDot() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1356,6 +1388,9 @@ namespace CtyTinLuong {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tbChiTiet_LuongSL_sub1RowChangeEventHandler(object sender, tbChiTiet_LuongSL_sub1RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Tr_BTTL_ToDotRowChangeEventHandler(object sender, Tr_BTTL_ToDotRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -17029,6 +17064,764 @@ namespace CtyTinLuong {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "tbChiTiet_LuongSL_sub1DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Tr_BTTL_ToDotDataTable : global::System.Data.TypedTableBase<Tr_BTTL_ToDotRow> {
+            
+            private global::System.Data.DataColumn columnNgayThang;
+            
+            private global::System.Data.DataColumn columnDonViTinh;
+            
+            private global::System.Data.DataColumn columnDot4_8_Bao;
+            
+            private global::System.Data.DataColumn columnDot4_8_Kg;
+            
+            private global::System.Data.DataColumn columnDot36_72_Bao;
+            
+            private global::System.Data.DataColumn columnDot36_72_Kg;
+            
+            private global::System.Data.DataColumn columnDot45_90_Bao;
+            
+            private global::System.Data.DataColumn columnDot45_90_Kg;
+            
+            private global::System.Data.DataColumn columnDot48_96_Bao;
+            
+            private global::System.Data.DataColumn columnDot48_96_Kg;
+            
+            private global::System.Data.DataColumn columnDot56_112_Bao;
+            
+            private global::System.Data.DataColumn columnDot56_112_Kg;
+            
+            private global::System.Data.DataColumn columnDot42_84_Bao;
+            
+            private global::System.Data.DataColumn columnDot42_84_Kg;
+            
+            private global::System.Data.DataColumn columnDot51_103_Bao;
+            
+            private global::System.Data.DataColumn columnDot51_103_Kg;
+            
+            private global::System.Data.DataColumn columnDot51_103tb_Bao;
+            
+            private global::System.Data.DataColumn columnDot51_103tb_Kg;
+            
+            private global::System.Data.DataColumn columnDot53_106tb_Bao;
+            
+            private global::System.Data.DataColumn columnDot53_106tb_Kg;
+            
+            private global::System.Data.DataColumn columnDot50_100tb_Bao;
+            
+            private global::System.Data.DataColumn columnDot50_100tb_Kg;
+            
+            private global::System.Data.DataColumn columnDot11_17tb_Bao;
+            
+            private global::System.Data.DataColumn columnDot11_17tb_Kg;
+            
+            private global::System.Data.DataColumn columnDot45_90tb_Bao;
+            
+            private global::System.Data.DataColumn columnDot45_90tb_Kg;
+            
+            private global::System.Data.DataColumn columnDot42_84tb_Bao;
+            
+            private global::System.Data.DataColumn columnDot42_84tb_Kg;
+            
+            private global::System.Data.DataColumn columnTongBao;
+            
+            private global::System.Data.DataColumn columnTongKg;
+            
+            private global::System.Data.DataColumn columnDonGia_Tan;
+            
+            private global::System.Data.DataColumn columnTongBaotb;
+            
+            private global::System.Data.DataColumn columnTongKgtb;
+            
+            private global::System.Data.DataColumn columnDonGiatb_Tan;
+            
+            private global::System.Data.DataColumn columnThanhTien;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Tr_BTTL_ToDotDataTable() {
+                this.TableName = "Tr_BTTL_ToDot";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Tr_BTTL_ToDotDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Tr_BTTL_ToDotDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NgayThangColumn {
+                get {
+                    return this.columnNgayThang;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DonViTinhColumn {
+                get {
+                    return this.columnDonViTinh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot4_8_BaoColumn {
+                get {
+                    return this.columnDot4_8_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot4_8_KgColumn {
+                get {
+                    return this.columnDot4_8_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot36_72_BaoColumn {
+                get {
+                    return this.columnDot36_72_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot36_72_KgColumn {
+                get {
+                    return this.columnDot36_72_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot45_90_BaoColumn {
+                get {
+                    return this.columnDot45_90_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot45_90_KgColumn {
+                get {
+                    return this.columnDot45_90_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot48_96_BaoColumn {
+                get {
+                    return this.columnDot48_96_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot48_96_KgColumn {
+                get {
+                    return this.columnDot48_96_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot56_112_BaoColumn {
+                get {
+                    return this.columnDot56_112_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot56_112_KgColumn {
+                get {
+                    return this.columnDot56_112_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot42_84_BaoColumn {
+                get {
+                    return this.columnDot42_84_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot42_84_KgColumn {
+                get {
+                    return this.columnDot42_84_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot51_103_BaoColumn {
+                get {
+                    return this.columnDot51_103_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot51_103_KgColumn {
+                get {
+                    return this.columnDot51_103_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot51_103tb_BaoColumn {
+                get {
+                    return this.columnDot51_103tb_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot51_103tb_KgColumn {
+                get {
+                    return this.columnDot51_103tb_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot53_106tb_BaoColumn {
+                get {
+                    return this.columnDot53_106tb_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot53_106tb_KgColumn {
+                get {
+                    return this.columnDot53_106tb_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot50_100tb_BaoColumn {
+                get {
+                    return this.columnDot50_100tb_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot50_100tb_KgColumn {
+                get {
+                    return this.columnDot50_100tb_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot11_17tb_BaoColumn {
+                get {
+                    return this.columnDot11_17tb_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot11_17tb_KgColumn {
+                get {
+                    return this.columnDot11_17tb_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot45_90tb_BaoColumn {
+                get {
+                    return this.columnDot45_90tb_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot45_90tb_KgColumn {
+                get {
+                    return this.columnDot45_90tb_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot42_84tb_BaoColumn {
+                get {
+                    return this.columnDot42_84tb_Bao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dot42_84tb_KgColumn {
+                get {
+                    return this.columnDot42_84tb_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongBaoColumn {
+                get {
+                    return this.columnTongBao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongKgColumn {
+                get {
+                    return this.columnTongKg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DonGia_TanColumn {
+                get {
+                    return this.columnDonGia_Tan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongBaotbColumn {
+                get {
+                    return this.columnTongBaotb;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TongKgtbColumn {
+                get {
+                    return this.columnTongKgtb;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DonGiatb_TanColumn {
+                get {
+                    return this.columnDonGiatb_Tan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ThanhTienColumn {
+                get {
+                    return this.columnThanhTien;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Tr_BTTL_ToDotRow this[int index] {
+                get {
+                    return ((Tr_BTTL_ToDotRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Tr_BTTL_ToDotRowChangeEventHandler Tr_BTTL_ToDotRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Tr_BTTL_ToDotRowChangeEventHandler Tr_BTTL_ToDotRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Tr_BTTL_ToDotRowChangeEventHandler Tr_BTTL_ToDotRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Tr_BTTL_ToDotRowChangeEventHandler Tr_BTTL_ToDotRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTr_BTTL_ToDotRow(Tr_BTTL_ToDotRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Tr_BTTL_ToDotRow AddTr_BTTL_ToDotRow(
+                        string NgayThang, 
+                        string DonViTinh, 
+                        double Dot4_8_Bao, 
+                        double Dot4_8_Kg, 
+                        double Dot36_72_Bao, 
+                        double Dot36_72_Kg, 
+                        double Dot45_90_Bao, 
+                        double Dot45_90_Kg, 
+                        double Dot48_96_Bao, 
+                        double Dot48_96_Kg, 
+                        double Dot56_112_Bao, 
+                        double Dot56_112_Kg, 
+                        double Dot42_84_Bao, 
+                        double Dot42_84_Kg, 
+                        double Dot51_103_Bao, 
+                        double Dot51_103_Kg, 
+                        double Dot51_103tb_Bao, 
+                        double Dot51_103tb_Kg, 
+                        double Dot53_106tb_Bao, 
+                        double Dot53_106tb_Kg, 
+                        double Dot50_100tb_Bao, 
+                        double Dot50_100tb_Kg, 
+                        double Dot11_17tb_Bao, 
+                        double Dot11_17tb_Kg, 
+                        double Dot45_90tb_Bao, 
+                        double Dot45_90tb_Kg, 
+                        double Dot42_84tb_Bao, 
+                        double Dot42_84tb_Kg, 
+                        double TongBao, 
+                        double TongKg, 
+                        double DonGia_Tan, 
+                        double TongBaotb, 
+                        double TongKgtb, 
+                        double DonGiatb_Tan, 
+                        double ThanhTien) {
+                Tr_BTTL_ToDotRow rowTr_BTTL_ToDotRow = ((Tr_BTTL_ToDotRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        NgayThang,
+                        DonViTinh,
+                        Dot4_8_Bao,
+                        Dot4_8_Kg,
+                        Dot36_72_Bao,
+                        Dot36_72_Kg,
+                        Dot45_90_Bao,
+                        Dot45_90_Kg,
+                        Dot48_96_Bao,
+                        Dot48_96_Kg,
+                        Dot56_112_Bao,
+                        Dot56_112_Kg,
+                        Dot42_84_Bao,
+                        Dot42_84_Kg,
+                        Dot51_103_Bao,
+                        Dot51_103_Kg,
+                        Dot51_103tb_Bao,
+                        Dot51_103tb_Kg,
+                        Dot53_106tb_Bao,
+                        Dot53_106tb_Kg,
+                        Dot50_100tb_Bao,
+                        Dot50_100tb_Kg,
+                        Dot11_17tb_Bao,
+                        Dot11_17tb_Kg,
+                        Dot45_90tb_Bao,
+                        Dot45_90tb_Kg,
+                        Dot42_84tb_Bao,
+                        Dot42_84tb_Kg,
+                        TongBao,
+                        TongKg,
+                        DonGia_Tan,
+                        TongBaotb,
+                        TongKgtb,
+                        DonGiatb_Tan,
+                        ThanhTien};
+                rowTr_BTTL_ToDotRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTr_BTTL_ToDotRow);
+                return rowTr_BTTL_ToDotRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Tr_BTTL_ToDotDataTable cln = ((Tr_BTTL_ToDotDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Tr_BTTL_ToDotDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnNgayThang = base.Columns["NgayThang"];
+                this.columnDonViTinh = base.Columns["DonViTinh"];
+                this.columnDot4_8_Bao = base.Columns["Dot4_8_Bao"];
+                this.columnDot4_8_Kg = base.Columns["Dot4_8_Kg"];
+                this.columnDot36_72_Bao = base.Columns["Dot36_72_Bao"];
+                this.columnDot36_72_Kg = base.Columns["Dot36_72_Kg"];
+                this.columnDot45_90_Bao = base.Columns["Dot45_90_Bao"];
+                this.columnDot45_90_Kg = base.Columns["Dot45_90_Kg"];
+                this.columnDot48_96_Bao = base.Columns["Dot48_96_Bao"];
+                this.columnDot48_96_Kg = base.Columns["Dot48_96_Kg"];
+                this.columnDot56_112_Bao = base.Columns["Dot56_112_Bao"];
+                this.columnDot56_112_Kg = base.Columns["Dot56_112_Kg"];
+                this.columnDot42_84_Bao = base.Columns["Dot42_84_Bao"];
+                this.columnDot42_84_Kg = base.Columns["Dot42_84_Kg"];
+                this.columnDot51_103_Bao = base.Columns["Dot51_103_Bao"];
+                this.columnDot51_103_Kg = base.Columns["Dot51_103_Kg"];
+                this.columnDot51_103tb_Bao = base.Columns["Dot51_103tb_Bao"];
+                this.columnDot51_103tb_Kg = base.Columns["Dot51_103tb_Kg"];
+                this.columnDot53_106tb_Bao = base.Columns["Dot53_106tb_Bao"];
+                this.columnDot53_106tb_Kg = base.Columns["Dot53_106tb_Kg"];
+                this.columnDot50_100tb_Bao = base.Columns["Dot50_100tb_Bao"];
+                this.columnDot50_100tb_Kg = base.Columns["Dot50_100tb_Kg"];
+                this.columnDot11_17tb_Bao = base.Columns["Dot11_17tb_Bao"];
+                this.columnDot11_17tb_Kg = base.Columns["Dot11_17tb_Kg"];
+                this.columnDot45_90tb_Bao = base.Columns["Dot45_90tb_Bao"];
+                this.columnDot45_90tb_Kg = base.Columns["Dot45_90tb_Kg"];
+                this.columnDot42_84tb_Bao = base.Columns["Dot42_84tb_Bao"];
+                this.columnDot42_84tb_Kg = base.Columns["Dot42_84tb_Kg"];
+                this.columnTongBao = base.Columns["TongBao"];
+                this.columnTongKg = base.Columns["TongKg"];
+                this.columnDonGia_Tan = base.Columns["DonGia_Tan"];
+                this.columnTongBaotb = base.Columns["TongBaotb"];
+                this.columnTongKgtb = base.Columns["TongKgtb"];
+                this.columnDonGiatb_Tan = base.Columns["DonGiatb_Tan"];
+                this.columnThanhTien = base.Columns["ThanhTien"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnNgayThang = new global::System.Data.DataColumn("NgayThang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNgayThang);
+                this.columnDonViTinh = new global::System.Data.DataColumn("DonViTinh", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDonViTinh);
+                this.columnDot4_8_Bao = new global::System.Data.DataColumn("Dot4_8_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot4_8_Bao);
+                this.columnDot4_8_Kg = new global::System.Data.DataColumn("Dot4_8_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot4_8_Kg);
+                this.columnDot36_72_Bao = new global::System.Data.DataColumn("Dot36_72_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot36_72_Bao);
+                this.columnDot36_72_Kg = new global::System.Data.DataColumn("Dot36_72_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot36_72_Kg);
+                this.columnDot45_90_Bao = new global::System.Data.DataColumn("Dot45_90_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot45_90_Bao);
+                this.columnDot45_90_Kg = new global::System.Data.DataColumn("Dot45_90_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot45_90_Kg);
+                this.columnDot48_96_Bao = new global::System.Data.DataColumn("Dot48_96_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot48_96_Bao);
+                this.columnDot48_96_Kg = new global::System.Data.DataColumn("Dot48_96_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot48_96_Kg);
+                this.columnDot56_112_Bao = new global::System.Data.DataColumn("Dot56_112_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot56_112_Bao);
+                this.columnDot56_112_Kg = new global::System.Data.DataColumn("Dot56_112_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot56_112_Kg);
+                this.columnDot42_84_Bao = new global::System.Data.DataColumn("Dot42_84_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot42_84_Bao);
+                this.columnDot42_84_Kg = new global::System.Data.DataColumn("Dot42_84_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot42_84_Kg);
+                this.columnDot51_103_Bao = new global::System.Data.DataColumn("Dot51_103_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot51_103_Bao);
+                this.columnDot51_103_Kg = new global::System.Data.DataColumn("Dot51_103_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot51_103_Kg);
+                this.columnDot51_103tb_Bao = new global::System.Data.DataColumn("Dot51_103tb_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot51_103tb_Bao);
+                this.columnDot51_103tb_Kg = new global::System.Data.DataColumn("Dot51_103tb_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot51_103tb_Kg);
+                this.columnDot53_106tb_Bao = new global::System.Data.DataColumn("Dot53_106tb_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot53_106tb_Bao);
+                this.columnDot53_106tb_Kg = new global::System.Data.DataColumn("Dot53_106tb_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot53_106tb_Kg);
+                this.columnDot50_100tb_Bao = new global::System.Data.DataColumn("Dot50_100tb_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot50_100tb_Bao);
+                this.columnDot50_100tb_Kg = new global::System.Data.DataColumn("Dot50_100tb_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot50_100tb_Kg);
+                this.columnDot11_17tb_Bao = new global::System.Data.DataColumn("Dot11_17tb_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot11_17tb_Bao);
+                this.columnDot11_17tb_Kg = new global::System.Data.DataColumn("Dot11_17tb_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot11_17tb_Kg);
+                this.columnDot45_90tb_Bao = new global::System.Data.DataColumn("Dot45_90tb_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot45_90tb_Bao);
+                this.columnDot45_90tb_Kg = new global::System.Data.DataColumn("Dot45_90tb_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot45_90tb_Kg);
+                this.columnDot42_84tb_Bao = new global::System.Data.DataColumn("Dot42_84tb_Bao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot42_84tb_Bao);
+                this.columnDot42_84tb_Kg = new global::System.Data.DataColumn("Dot42_84tb_Kg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDot42_84tb_Kg);
+                this.columnTongBao = new global::System.Data.DataColumn("TongBao", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongBao);
+                this.columnTongKg = new global::System.Data.DataColumn("TongKg", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongKg);
+                this.columnDonGia_Tan = new global::System.Data.DataColumn("DonGia_Tan", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDonGia_Tan);
+                this.columnTongBaotb = new global::System.Data.DataColumn("TongBaotb", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongBaotb);
+                this.columnTongKgtb = new global::System.Data.DataColumn("TongKgtb", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongKgtb);
+                this.columnDonGiatb_Tan = new global::System.Data.DataColumn("DonGiatb_Tan", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDonGiatb_Tan);
+                this.columnThanhTien = new global::System.Data.DataColumn("ThanhTien", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThanhTien);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Tr_BTTL_ToDotRow NewTr_BTTL_ToDotRow() {
+                return ((Tr_BTTL_ToDotRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Tr_BTTL_ToDotRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Tr_BTTL_ToDotRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Tr_BTTL_ToDotRowChanged != null)) {
+                    this.Tr_BTTL_ToDotRowChanged(this, new Tr_BTTL_ToDotRowChangeEvent(((Tr_BTTL_ToDotRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Tr_BTTL_ToDotRowChanging != null)) {
+                    this.Tr_BTTL_ToDotRowChanging(this, new Tr_BTTL_ToDotRowChangeEvent(((Tr_BTTL_ToDotRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Tr_BTTL_ToDotRowDeleted != null)) {
+                    this.Tr_BTTL_ToDotRowDeleted(this, new Tr_BTTL_ToDotRowChangeEvent(((Tr_BTTL_ToDotRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Tr_BTTL_ToDotRowDeleting != null)) {
+                    this.Tr_BTTL_ToDotRowDeleting(this, new Tr_BTTL_ToDotRowChangeEvent(((Tr_BTTL_ToDotRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTr_BTTL_ToDotRow(Tr_BTTL_ToDotRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet_TinLuong ds = new DataSet_TinLuong();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Tr_BTTL_ToDotDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -33554,6 +34347,1001 @@ namespace CtyTinLuong {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Tr_BTTL_ToDotRow : global::System.Data.DataRow {
+            
+            private Tr_BTTL_ToDotDataTable tableTr_BTTL_ToDot;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Tr_BTTL_ToDotRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTr_BTTL_ToDot = ((Tr_BTTL_ToDotDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NgayThang {
+                get {
+                    try {
+                        return ((string)(this[this.tableTr_BTTL_ToDot.NgayThangColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NgayThang\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.NgayThangColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DonViTinh {
+                get {
+                    try {
+                        return ((string)(this[this.tableTr_BTTL_ToDot.DonViTinhColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DonViTinh\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.DonViTinhColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot4_8_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot4_8_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot4_8_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot4_8_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot4_8_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot4_8_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot4_8_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot4_8_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot36_72_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot36_72_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot36_72_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot36_72_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot36_72_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot36_72_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot36_72_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot36_72_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot45_90_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot45_90_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot45_90_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot45_90_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot45_90_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot45_90_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot45_90_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot45_90_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot48_96_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot48_96_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot48_96_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot48_96_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot48_96_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot48_96_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot48_96_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot48_96_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot56_112_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot56_112_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot56_112_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot56_112_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot56_112_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot56_112_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot56_112_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot56_112_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot42_84_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot42_84_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot42_84_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot42_84_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot42_84_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot42_84_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot42_84_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot42_84_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot51_103_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot51_103_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot51_103_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot51_103_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot51_103_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot51_103_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot51_103_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot51_103_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot51_103tb_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot51_103tb_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot51_103tb_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot51_103tb_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot51_103tb_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot51_103tb_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot51_103tb_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot51_103tb_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot53_106tb_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot53_106tb_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot53_106tb_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot53_106tb_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot53_106tb_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot53_106tb_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot53_106tb_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot53_106tb_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot50_100tb_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot50_100tb_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot50_100tb_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot50_100tb_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot50_100tb_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot50_100tb_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot50_100tb_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot50_100tb_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot11_17tb_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot11_17tb_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot11_17tb_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot11_17tb_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot11_17tb_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot11_17tb_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot11_17tb_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot11_17tb_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot45_90tb_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot45_90tb_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot45_90tb_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot45_90tb_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot45_90tb_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot45_90tb_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot45_90tb_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot45_90tb_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot42_84tb_Bao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot42_84tb_BaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot42_84tb_Bao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot42_84tb_BaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Dot42_84tb_Kg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.Dot42_84tb_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dot42_84tb_Kg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.Dot42_84tb_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TongBao {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.TongBaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongBao\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.TongBaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TongKg {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.TongKgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongKg\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.TongKgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double DonGia_Tan {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.DonGia_TanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DonGia_Tan\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.DonGia_TanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TongBaotb {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.TongBaotbColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongBaotb\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.TongBaotbColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TongKgtb {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.TongKgtbColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongKgtb\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.TongKgtbColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double DonGiatb_Tan {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.DonGiatb_TanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DonGiatb_Tan\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.DonGiatb_TanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ThanhTien {
+                get {
+                    try {
+                        return ((double)(this[this.tableTr_BTTL_ToDot.ThanhTienColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThanhTien\' in table \'Tr_BTTL_ToDot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTr_BTTL_ToDot.ThanhTienColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNgayThangNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.NgayThangColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNgayThangNull() {
+                this[this.tableTr_BTTL_ToDot.NgayThangColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDonViTinhNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.DonViTinhColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDonViTinhNull() {
+                this[this.tableTr_BTTL_ToDot.DonViTinhColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot4_8_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot4_8_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot4_8_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot4_8_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot4_8_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot4_8_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot4_8_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot4_8_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot36_72_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot36_72_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot36_72_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot36_72_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot36_72_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot36_72_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot36_72_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot36_72_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot45_90_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot45_90_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot45_90_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot45_90_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot45_90_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot45_90_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot45_90_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot45_90_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot48_96_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot48_96_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot48_96_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot48_96_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot48_96_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot48_96_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot48_96_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot48_96_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot56_112_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot56_112_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot56_112_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot56_112_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot56_112_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot56_112_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot56_112_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot56_112_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot42_84_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot42_84_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot42_84_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot42_84_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot42_84_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot42_84_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot42_84_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot42_84_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot51_103_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot51_103_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot51_103_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot51_103_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot51_103_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot51_103_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot51_103_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot51_103_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot51_103tb_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot51_103tb_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot51_103tb_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot51_103tb_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot51_103tb_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot51_103tb_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot51_103tb_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot51_103tb_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot53_106tb_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot53_106tb_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot53_106tb_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot53_106tb_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot53_106tb_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot53_106tb_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot53_106tb_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot53_106tb_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot50_100tb_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot50_100tb_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot50_100tb_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot50_100tb_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot50_100tb_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot50_100tb_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot50_100tb_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot50_100tb_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot11_17tb_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot11_17tb_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot11_17tb_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot11_17tb_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot11_17tb_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot11_17tb_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot11_17tb_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot11_17tb_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot45_90tb_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot45_90tb_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot45_90tb_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot45_90tb_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot45_90tb_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot45_90tb_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot45_90tb_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot45_90tb_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot42_84tb_BaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot42_84tb_BaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot42_84tb_BaoNull() {
+                this[this.tableTr_BTTL_ToDot.Dot42_84tb_BaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDot42_84tb_KgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.Dot42_84tb_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDot42_84tb_KgNull() {
+                this[this.tableTr_BTTL_ToDot.Dot42_84tb_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongBaoNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.TongBaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongBaoNull() {
+                this[this.tableTr_BTTL_ToDot.TongBaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongKgNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.TongKgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongKgNull() {
+                this[this.tableTr_BTTL_ToDot.TongKgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDonGia_TanNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.DonGia_TanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDonGia_TanNull() {
+                this[this.tableTr_BTTL_ToDot.DonGia_TanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongBaotbNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.TongBaotbColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongBaotbNull() {
+                this[this.tableTr_BTTL_ToDot.TongBaotbColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTongKgtbNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.TongKgtbColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTongKgtbNull() {
+                this[this.tableTr_BTTL_ToDot.TongKgtbColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDonGiatb_TanNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.DonGiatb_TanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDonGiatb_TanNull() {
+                this[this.tableTr_BTTL_ToDot.DonGiatb_TanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsThanhTienNull() {
+                return this.IsNull(this.tableTr_BTTL_ToDot.ThanhTienColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetThanhTienNull() {
+                this[this.tableTr_BTTL_ToDot.ThanhTienColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -34627,6 +36415,40 @@ namespace CtyTinLuong {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbChiTiet_LuongSL_sub1Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Tr_BTTL_ToDotRowChangeEvent : global::System.EventArgs {
+            
+            private Tr_BTTL_ToDotRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Tr_BTTL_ToDotRowChangeEvent(Tr_BTTL_ToDotRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Tr_BTTL_ToDotRow Row {
                 get {
                     return this.eventRow;
                 }

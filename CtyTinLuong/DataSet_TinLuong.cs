@@ -4,6 +4,11 @@
 
     public partial class DataSet_TinLuong
     {
+        partial class Tr_BTTL_ToDotDataTable
+        {
+
+        }
+
         partial class tbBTTL_TMC_CTDataTable
         {
         }

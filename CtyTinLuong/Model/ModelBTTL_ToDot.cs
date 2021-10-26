@@ -24,10 +24,12 @@ namespace CtyTinLuong
         public double Dot42_84_Kg { get; set; }
         public double Dot51_103_Bao { get; set; }
         public double Dot51_103_Kg { get; set; }
-        public double Dot53_106tb_Bao { get; set; }
-        public double Dot53_106tb_Kg { get; set; }
         public double Dot51_103tb_Bao { get; set; }
         public double Dot51_103tb_Kg { get; set; }
+        public double Dot53_106tb_Bao { get; set; }
+        public double Dot53_106tb_Kg { get; set; }
+        public double Dot50_100tb_Bao { get; set; }
+        public double Dot50_100tb_Kg { get; set; }
         public double Dot11_17tb_Bao { get; set; }
         public double Dot11_17tb_Kg { get; set; }
         public double Dot45_90tb_Bao { get; set; }

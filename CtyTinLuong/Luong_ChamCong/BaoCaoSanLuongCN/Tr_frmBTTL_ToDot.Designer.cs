@@ -108,6 +108,8 @@ namespace CtyTinLuong
             this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.radioTo2 = new System.Windows.Forms.RadioButton();
             this.radioTo1 = new System.Windows.Forms.RadioButton();
+            this.Dot50_100tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dot50_100tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -248,10 +250,12 @@ namespace CtyTinLuong
             this.Dot42_84_Kg,
             this.Dot51_103_Bao,
             this.Dot51_103_Kg,
-            this.Dot53_106tb_Bao,
-            this.Dot53_106tb_Kg,
             this.Dot51_103tb_Bao,
             this.Dot51_103tb_Kg,
+            this.Dot53_106tb_Bao,
+            this.Dot53_106tb_Kg,
+            this.Dot50_100tb_Bao,
+            this.Dot50_100tb_Kg,
             this.Dot11_17tb_Bao,
             this.Dot11_17tb_Kg,
             this.Dot45_90tb_Bao,
@@ -668,7 +672,7 @@ namespace CtyTinLuong
             this.Dot53_106tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot53_106tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot53_106tb_Bao.Visible = true;
-            this.Dot53_106tb_Bao.VisibleIndex = 16;
+            this.Dot53_106tb_Bao.VisibleIndex = 18;
             this.Dot53_106tb_Bao.Width = 70;
             // 
             // Dot53_106tb_Kg
@@ -693,7 +697,7 @@ namespace CtyTinLuong
             this.Dot53_106tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot53_106tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot53_106tb_Kg.Visible = true;
-            this.Dot53_106tb_Kg.VisibleIndex = 17;
+            this.Dot53_106tb_Kg.VisibleIndex = 19;
             this.Dot53_106tb_Kg.Width = 70;
             // 
             // Dot51_103tb_Bao
@@ -718,7 +722,7 @@ namespace CtyTinLuong
             this.Dot51_103tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot51_103tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot51_103tb_Bao.Visible = true;
-            this.Dot51_103tb_Bao.VisibleIndex = 18;
+            this.Dot51_103tb_Bao.VisibleIndex = 16;
             this.Dot51_103tb_Bao.Width = 70;
             // 
             // Dot51_103tb_Kg
@@ -743,7 +747,7 @@ namespace CtyTinLuong
             this.Dot51_103tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot51_103tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot51_103tb_Kg.Visible = true;
-            this.Dot51_103tb_Kg.VisibleIndex = 19;
+            this.Dot51_103tb_Kg.VisibleIndex = 17;
             this.Dot51_103tb_Kg.Width = 70;
             // 
             // Dot11_17tb_Bao
@@ -768,7 +772,7 @@ namespace CtyTinLuong
             this.Dot11_17tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot11_17tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot11_17tb_Bao.Visible = true;
-            this.Dot11_17tb_Bao.VisibleIndex = 20;
+            this.Dot11_17tb_Bao.VisibleIndex = 22;
             this.Dot11_17tb_Bao.Width = 70;
             // 
             // Dot11_17tb_Kg
@@ -793,7 +797,7 @@ namespace CtyTinLuong
             this.Dot11_17tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot11_17tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot11_17tb_Kg.Visible = true;
-            this.Dot11_17tb_Kg.VisibleIndex = 21;
+            this.Dot11_17tb_Kg.VisibleIndex = 23;
             this.Dot11_17tb_Kg.Width = 70;
             // 
             // Dot45_90tb_Bao
@@ -818,7 +822,7 @@ namespace CtyTinLuong
             this.Dot45_90tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot45_90tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot45_90tb_Bao.Visible = true;
-            this.Dot45_90tb_Bao.VisibleIndex = 22;
+            this.Dot45_90tb_Bao.VisibleIndex = 24;
             this.Dot45_90tb_Bao.Width = 70;
             // 
             // Dot45_90tb_Kg
@@ -843,7 +847,7 @@ namespace CtyTinLuong
             this.Dot45_90tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot45_90tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot45_90tb_Kg.Visible = true;
-            this.Dot45_90tb_Kg.VisibleIndex = 23;
+            this.Dot45_90tb_Kg.VisibleIndex = 25;
             this.Dot45_90tb_Kg.Width = 70;
             // 
             // Dot42_84tb_Bao
@@ -868,7 +872,7 @@ namespace CtyTinLuong
             this.Dot42_84tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot42_84tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot42_84tb_Bao.Visible = true;
-            this.Dot42_84tb_Bao.VisibleIndex = 24;
+            this.Dot42_84tb_Bao.VisibleIndex = 26;
             this.Dot42_84tb_Bao.Width = 70;
             // 
             // Dot42_84tb_Kg
@@ -893,7 +897,7 @@ namespace CtyTinLuong
             this.Dot42_84tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.Dot42_84tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
             this.Dot42_84tb_Kg.Visible = true;
-            this.Dot42_84tb_Kg.VisibleIndex = 25;
+            this.Dot42_84tb_Kg.VisibleIndex = 27;
             this.Dot42_84tb_Kg.Width = 70;
             // 
             // TongBao
@@ -918,7 +922,7 @@ namespace CtyTinLuong
             this.TongBao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongBao.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongBao.Visible = true;
-            this.TongBao.VisibleIndex = 26;
+            this.TongBao.VisibleIndex = 28;
             this.TongBao.Width = 70;
             // 
             // TongKg
@@ -943,7 +947,7 @@ namespace CtyTinLuong
             this.TongKg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongKg.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongKg.Visible = true;
-            this.TongKg.VisibleIndex = 27;
+            this.TongKg.VisibleIndex = 29;
             this.TongKg.Width = 70;
             // 
             // DonGia_Tan
@@ -968,7 +972,7 @@ namespace CtyTinLuong
             this.DonGia_Tan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGia_Tan.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGia_Tan.Visible = true;
-            this.DonGia_Tan.VisibleIndex = 28;
+            this.DonGia_Tan.VisibleIndex = 30;
             this.DonGia_Tan.Width = 70;
             // 
             // TongBaotb
@@ -993,7 +997,7 @@ namespace CtyTinLuong
             this.TongBaotb.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongBaotb.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongBaotb.Visible = true;
-            this.TongBaotb.VisibleIndex = 29;
+            this.TongBaotb.VisibleIndex = 31;
             this.TongBaotb.Width = 70;
             // 
             // TongKgtb
@@ -1018,7 +1022,7 @@ namespace CtyTinLuong
             this.TongKgtb.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.TongKgtb.OptionsFilter.ShowEmptyDateFilter = false;
             this.TongKgtb.Visible = true;
-            this.TongKgtb.VisibleIndex = 30;
+            this.TongKgtb.VisibleIndex = 32;
             this.TongKgtb.Width = 70;
             // 
             // DonGiatb_Tan
@@ -1043,7 +1047,7 @@ namespace CtyTinLuong
             this.DonGiatb_Tan.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
             this.DonGiatb_Tan.OptionsFilter.ShowEmptyDateFilter = false;
             this.DonGiatb_Tan.Visible = true;
-            this.DonGiatb_Tan.VisibleIndex = 31;
+            this.DonGiatb_Tan.VisibleIndex = 33;
             this.DonGiatb_Tan.Width = 70;
             // 
             // ThanhTien
@@ -1063,7 +1067,7 @@ namespace CtyTinLuong
             this.ThanhTien.OptionsColumn.AllowEdit = false;
             this.ThanhTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.Visible = true;
-            this.ThanhTien.VisibleIndex = 32;
+            this.ThanhTien.VisibleIndex = 34;
             this.ThanhTien.Width = 70;
             // 
             // Xoa
@@ -1342,6 +1346,24 @@ namespace CtyTinLuong
             this.radioTo1.UseVisualStyleBackColor = true;
             this.radioTo1.CheckedChanged += new System.EventHandler(this.radioTo1_CheckedChanged);
             // 
+            // Dot50_100tb_Bao
+            // 
+            this.Dot50_100tb_Bao.Caption = "Đột 50*100tb";
+            this.Dot50_100tb_Bao.FieldName = "Dot50_100tb_Bao";
+            this.Dot50_100tb_Bao.Name = "Dot50_100tb_Bao";
+            this.Dot50_100tb_Bao.Visible = true;
+            this.Dot50_100tb_Bao.VisibleIndex = 20;
+            this.Dot50_100tb_Bao.Width = 70;
+            // 
+            // Dot50_100tb_Kg
+            // 
+            this.Dot50_100tb_Kg.Caption = "Đột 50*100tb";
+            this.Dot50_100tb_Kg.FieldName = "Dot50_100tb_Kg";
+            this.Dot50_100tb_Kg.Name = "Dot50_100tb_Kg";
+            this.Dot50_100tb_Kg.Visible = true;
+            this.Dot50_100tb_Kg.VisibleIndex = 21;
+            this.Dot50_100tb_Kg.Width = 70;
+            // 
             // Tr_frmBTTL_ToDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1456,5 +1478,7 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn Dot4_8_Kg;
         private System.Windows.Forms.RadioButton radioTo2;
         private System.Windows.Forms.RadioButton radioTo1;
+        private DevExpress.XtraGrid.Columns.GridColumn Dot50_100tb_Bao;
+        private DevExpress.XtraGrid.Columns.GridColumn Dot50_100tb_Kg;
     }
 }
