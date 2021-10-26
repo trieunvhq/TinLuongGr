@@ -712,6 +712,8 @@ namespace CtyTinLuong
                     }
                     else _colDelete[i - 2] = 1; //Xóa
                 }
+                _colDelete[28] = 0; //col Đơn giá Bao
+                _colDelete[31] = 0; //col Đơn giá tb
 
                 CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data, _colDelete);
                 ff.Show();

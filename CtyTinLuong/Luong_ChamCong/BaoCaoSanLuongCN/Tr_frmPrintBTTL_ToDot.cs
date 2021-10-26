@@ -76,7 +76,7 @@ namespace CtyTinLuong
                 _ravi["TongKgtb"] = CheckString.ConvertToDouble_My(_data.Rows[i]["TongKgtb"].ToString());
                 _ravi["DonGiatb_Tan"] = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGiatb_Tan"].ToString());
                 _ravi["ThanhTien"] = CheckString.ConvertToDouble_My(_data.Rows[i]["ThanhTien"].ToString());
-                ds.tbCongNhatChamCongToGapDan.Rows.Add(_ravi);
+                ds.Tr_BTTL_ToDot.Rows.Add(_ravi);
             }
 
             xtr111.DataSource = null;

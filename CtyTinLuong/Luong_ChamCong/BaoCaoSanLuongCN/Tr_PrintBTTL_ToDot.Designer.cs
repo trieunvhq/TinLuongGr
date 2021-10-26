@@ -699,9 +699,11 @@
             // 
             this.ThanhTienRow.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ThanhTien]")});
+            this.ThanhTienRow.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
             this.ThanhTienRow.Multiline = true;
             this.ThanhTienRow.Name = "ThanhTienRow";
             this.ThanhTienRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.ThanhTienRow.StylePriority.UseFont = false;
             this.ThanhTienRow.StylePriority.UsePadding = false;
             this.ThanhTienRow.TextFormatString = "{0:n1}";
             this.ThanhTienRow.Weight = 0.67577769736897064D;
@@ -1874,7 +1876,7 @@
             // ThanhTienSum
             // 
             this.ThanhTienSum.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([Tong])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([ThanhTien])")});
             this.ThanhTienSum.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
             this.ThanhTienSum.Multiline = true;
             this.ThanhTienSum.Name = "ThanhTienSum";
