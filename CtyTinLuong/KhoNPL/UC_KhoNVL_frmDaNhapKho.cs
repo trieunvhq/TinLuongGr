@@ -94,20 +94,7 @@ namespace CtyTinLuong
                 gridControl1.DataSource = dt2xx;
           
         }
-        private void HienThi_ALL()
-        {            
-
-            clsKhoNPL_tbNhapKho cls = new CtyTinLuong.clsKhoNPL_tbNhapKho();
-            DataTable dt2 = cls.SelectAll();
-            dt2.DefaultView.RowFilter = "TonTai= True and NgungTheoDoi=false";
-            DataView dv = dt2.DefaultView;
-            dv.Sort = "NgayChungTu DESC, ID_NhapKho DESC";
-            DataTable dxxxx = dv.ToTable();
-            gridControl1.DataSource = dxxxx;
-
-
-        }
-
+      
         KhoNPL_frmNPL _frmKNPL;
         public UC_KhoNVL_frmDaNhapKho(KhoNPL_frmNPL frmKNPL)
         {
@@ -205,11 +192,9 @@ namespace CtyTinLuong
                     cls2.iID_NhapKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_NhapKhoNPL).ToString());
                     cls2.Delete_ALL_W_ID_NhapKho();
                     MessageBox.Show("Đã xóa");
-                    if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null)
-                    {
+                    
                         Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-                    }
-                    else HienThi_ALL();
+                  
                 }
 
 

@@ -85,7 +85,7 @@ namespace CtyTinLuong
         public void UC_KhoNVL_frmChoNhapKho_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Load_LockUp();
+           // Load_LockUp();
             dteNgay.EditValue = DateTime.Today;
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);            
