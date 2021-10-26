@@ -114,7 +114,6 @@ namespace CtyTinLuong
                 int SttCa1 = 0;
                 int ID_congNhanRoot = -1;
                 int ID_VthhRoot = -1;
-                int ID_congNhanAddPCBH = Convert.ToInt32(_dtSL_Ca1.Rows[0]["ID_CongNhan"].ToString());
 
                 for (int i = 0; i < _dtSL_Ca1.Rows.Count; ++i)
                 {

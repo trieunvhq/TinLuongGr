@@ -747,7 +747,7 @@
             this.txtSoDong.Name = "txtSoDong";
             this.txtSoDong.Size = new System.Drawing.Size(44, 20);
             this.txtSoDong.TabIndex = 119;
-            this.txtSoDong.Text = "15";
+            this.txtSoDong.Text = "25";
             this.txtSoDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSoDong.Visible = false;
             this.txtSoDong.TextChanged += new System.EventHandler(this.txtSoDong_TextChanged);
@@ -1162,7 +1162,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.SearchLookUp_MaPhieu_DOT.Name = "SearchLookUp_MaPhieu_DOT";
             this.SearchLookUp_MaPhieu_DOT.PopupView = this.gridView7;
-            this.SearchLookUp_MaPhieu_DOT.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.SearchLookUp_MaPhieu_DOT_EditValueChanging);
             // 
             // gridView7
             // 

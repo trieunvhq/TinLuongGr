@@ -624,7 +624,7 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
 
-            frm.LoadData(true);
+            frm.LoadData(true, "Ca 1");
 
             Cursor.Current = Cursors.Default;
         }

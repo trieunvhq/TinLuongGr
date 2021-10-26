@@ -106,6 +106,8 @@ namespace CtyTinLuong
             this.label5 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.radioTo2 = new System.Windows.Forms.RadioButton();
+            this.radioTo1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -136,7 +138,7 @@ namespace CtyTinLuong
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(311, 24);
+            this.label3.Location = new System.Drawing.Point(328, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -146,7 +148,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(467, 25);
+            this.label4.Location = new System.Drawing.Point(484, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -1051,7 +1053,7 @@ namespace CtyTinLuong
             this.ThanhTien.AppearanceCell.Options.UseFont = true;
             this.ThanhTien.AppearanceCell.Options.UseForeColor = true;
             this.ThanhTien.AppearanceCell.Options.UseTextOptions = true;
-            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ThanhTien.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThanhTien.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ThanhTien.Caption = "Thành tiền";
             this.ThanhTien.FieldName = "ThanhTien";
@@ -1208,6 +1210,7 @@ namespace CtyTinLuong
             this.linkLabel2.TabIndex = 146;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Cài định mức  toàn danh sách";
+            this.linkLabel2.Visible = false;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // btnPrint
@@ -1236,6 +1239,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
             this.btGuiDuLieu.TabIndex = 160;
             this.btGuiDuLieu.Text = "Lưu lại";
+            this.btGuiDuLieu.Visible = false;
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
             // 
             // btThoat
@@ -1262,10 +1266,11 @@ namespace CtyTinLuong
             this.label5.Size = new System.Drawing.Size(262, 13);
             this.label5.TabIndex = 162;
             this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
+            this.label5.Visible = false;
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(507, 22);
+            this.txtNam.Location = new System.Drawing.Point(524, 22);
             this.txtNam.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -1285,11 +1290,12 @@ namespace CtyTinLuong
             0,
             0,
             0});
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(363, 22);
+            this.txtThang.Location = new System.Drawing.Point(380, 22);
             this.txtThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -1309,13 +1315,40 @@ namespace CtyTinLuong
             0,
             0,
             0});
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
+            // 
+            // radioTo2
+            // 
+            this.radioTo2.AutoSize = true;
+            this.radioTo2.Location = new System.Drawing.Point(237, 22);
+            this.radioTo2.Name = "radioTo2";
+            this.radioTo2.Size = new System.Drawing.Size(47, 17);
+            this.radioTo2.TabIndex = 165;
+            this.radioTo2.TabStop = true;
+            this.radioTo2.Text = "Tổ 2";
+            this.radioTo2.UseVisualStyleBackColor = true;
+            this.radioTo2.CheckedChanged += new System.EventHandler(this.radioTo2_CheckedChanged);
+            // 
+            // radioTo1
+            // 
+            this.radioTo1.AutoSize = true;
+            this.radioTo1.Location = new System.Drawing.Point(152, 22);
+            this.radioTo1.Name = "radioTo1";
+            this.radioTo1.Size = new System.Drawing.Size(47, 17);
+            this.radioTo1.TabIndex = 166;
+            this.radioTo1.TabStop = true;
+            this.radioTo1.Text = "Tổ 1";
+            this.radioTo1.UseVisualStyleBackColor = true;
+            this.radioTo1.CheckedChanged += new System.EventHandler(this.radioTo1_CheckedChanged);
             // 
             // Tr_frmBTTL_ToDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.radioTo2);
+            this.Controls.Add(this.radioTo1);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.label5);
@@ -1421,5 +1454,7 @@ namespace CtyTinLuong
         private System.Windows.Forms.NumericUpDown txtThang;
         private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
         private DevExpress.XtraGrid.Columns.GridColumn Dot4_8_Kg;
+        private System.Windows.Forms.RadioButton radioTo2;
+        private System.Windows.Forms.RadioButton radioTo1;
     }
 }
