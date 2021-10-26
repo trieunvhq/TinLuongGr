@@ -89,9 +89,10 @@ namespace CtyTinLuong
         private void UCBTP_XuatKho_LSX_I_C_D_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-          
-            dteTuNgay.EditValue = DateTime.Now.AddDays(-30);
-            dteDenNgay.EditValue = DateTime.Now;
+
+            dteDenNgay.EditValue = DateTime.Today;
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
           
             Cursor.Current = Cursors.Default;

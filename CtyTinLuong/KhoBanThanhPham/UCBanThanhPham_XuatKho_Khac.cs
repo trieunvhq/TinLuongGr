@@ -60,9 +60,10 @@ namespace CtyTinLuong
 
         private void UCBanThanhPham_XuatKho_Khac_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;         
+            Cursor.Current = Cursors.WaitCursor;
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             if (frmQuanLyKhoBanThanhPham.mbXuatkhoKhac == false)
                 clXoa1.Visible = false;
             else clXoa1.Visible = true;
