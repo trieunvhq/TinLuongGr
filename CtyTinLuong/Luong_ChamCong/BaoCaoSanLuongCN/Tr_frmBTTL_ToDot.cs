@@ -25,6 +25,7 @@ namespace CtyTinLuong
         public int _nam, _thang, _id_bophan;
         private DataTable _data, _dtSL_Ca1;
         private bool isload = true;
+        private int[] _colDelete = new int[32];
 
         private ObservableCollection<VTHH_DinhMuc_Model> _VTHH_DinhMuc_Models = new ObservableCollection<VTHH_DinhMuc_Model>();
 
@@ -700,9 +701,25 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data);
-            ff.Show();
+            int count_ = _data.Rows.Count;
+            if (count_ > 1)
+            {
+                for(int i = 2; i < 34; i++)
+                {
+                    if(CheckString.ConvertToDouble_My(_data.Rows[count_ - 1][i].ToString()) > 0)
+                    {
+                        _colDelete[i - 2] = 0; //Không xóa
+                    }
+                    else _colDelete[i - 2] = 1; //Xóa
+                }
 
+                CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data, _colDelete);
+                ff.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

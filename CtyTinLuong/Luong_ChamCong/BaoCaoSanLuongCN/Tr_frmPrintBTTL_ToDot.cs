@@ -15,13 +15,15 @@ namespace CtyTinLuong
 
         public int _nam, _thang;
         private DataTable _data;
+        private int[] _colDelete;
 
 
-        public Tr_frmPrintBTTL_ToDot(int thang, int nam, DataTable data)
+        public Tr_frmPrintBTTL_ToDot(int thang, int nam, DataTable data, int[] colDelete)
         {
             _data = data;
             _thang = thang;
             _nam = nam;
+            _colDelete = colDelete;
 
             InitializeComponent();
         }
@@ -31,7 +33,7 @@ namespace CtyTinLuong
 
         private void Tr_frmBangChamCong_TBX_Load(object sender, EventArgs e)
         {
-            Tr_PrintBTTL_ToDot xtr111 = new Tr_PrintBTTL_ToDot(_thang, _nam);
+            Tr_PrintBTTL_ToDot xtr111 = new Tr_PrintBTTL_ToDot(_thang, _nam, _colDelete);
             DataSet_TinLuong ds = new DataSet_TinLuong();
            
             for (int i = 0; i < _data.Rows.Count -1; ++i)

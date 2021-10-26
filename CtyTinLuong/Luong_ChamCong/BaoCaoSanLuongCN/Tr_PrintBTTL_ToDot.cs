@@ -14,13 +14,14 @@ namespace CtyTinLuong
         List<XRTableCell> _DsVthhTitle = new List<XRTableCell>();
         List<XRTableCell> _DsValue = new List<XRTableCell>();
         List<XRTableCell> _DsValue_Footer = new List<XRTableCell>();
-
+        private int[] _colDelete;
         private int _nam, _thang;
 
-        public Tr_PrintBTTL_ToDot(int thang, int nam)
+        public Tr_PrintBTTL_ToDot(int thang, int nam, int[] colDelete)
         {
             _thang = thang;
             _nam = nam;
+            _colDelete = colDelete;
 
             InitializeComponent();
 
@@ -177,19 +178,19 @@ namespace CtyTinLuong
         //
         public void setThu()
         {
-            int[] colDelete = new int[32];
-            for (int i = 0; i < 32; i++)
-            {
-                if (i%2 == 0)
-                    colDelete[i] = 0;
-                else
-                    colDelete[i] = 1;
-            }
+            //int[] colDelete = new int[32];
+            //for (int i = 0; i < 32; i++)
+            //{
+            //    if (i%2 == 0)
+            //        colDelete[i] = 0;
+            //    else
+            //        colDelete[i] = 1;
+            //}
 
             int count = 0;
-            for (int i = 0; i < 32; i++)
+            for (int i = 31; i >=0; i--)
             {
-                if (colDelete[i] == 1)
+                if (_colDelete[i] == 1)
                 {
                     xrTable2.DeleteColumn(_DsVthhTitle[i]);
                     xrTable1.DeleteColumn(_DsValue[i]);
@@ -206,7 +207,7 @@ namespace CtyTinLuong
             float colw = (float)((30.82 * 32) / count);
             for (int i = 0; i < 32; ++i)
             {
-                if (colDelete[i] == 0)
+                if (_colDelete[i] == 0)
                 {
                     _DsVthhTitle[i].WidthF = colw;
                     _DsValue[i].WidthF = colw;
@@ -214,7 +215,7 @@ namespace CtyTinLuong
                     tmp += colw;
                 }
             }
-            hLoaiHang.WidthF = tmp;
+            hLoaiHang.WidthF = (float)tmp;
             ThanhTienSum.WidthF = ThanhTienRow.WidthF = htt.WidthF = xrTableCell34.WidthF = (float)52.88;
         }
     }
