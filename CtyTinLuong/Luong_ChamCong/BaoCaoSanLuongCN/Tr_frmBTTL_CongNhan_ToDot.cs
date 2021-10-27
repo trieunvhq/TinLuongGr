@@ -23,7 +23,7 @@ namespace CtyTinLuong
     {
         public string _MaNhanVien = "", _CaLamViec = "Ca 1";
         public int _nam, _thang, _id_bophan;
-        private DataTable _data, _dtSL_Ca1;
+        private DataTable _data, _dtSL_Ca1_Ca2, _dtCong_Ca1Ca2;
         private bool isload = true;
         private int[] _colDelete = new int[32];
 
@@ -48,18 +48,18 @@ namespace CtyTinLuong
             _data.Columns.Add("TenNhanVien", typeof(string));
             _data.Columns.Add("GioLV", typeof(string));
             _data.Columns.Add("DonGia", typeof(string));
-            _data.Columns.Add("ThahTien", typeof(string));
+            _data.Columns.Add("ThanhTien", typeof(string));
             _data.Columns.Add("TongTien", typeof(string));
 
             radioTo1.Checked = true;
         }
-       
-        public void LoadData(bool islandau, string CaLamViec)
+
+        public void LoadData(bool islandau, bool toDot_type)
         {
             _data.Clear();
             isload = true;
             if (islandau)
-            { 
+            {
                 DateTime dtnow = DateTime.Now;
                 _nam = dtnow.Year;
                 _thang = dtnow.Month;
@@ -69,6 +69,66 @@ namespace CtyTinLuong
             else
             {
             }
+            
+            double TongTien_ToDot = 0;
+            double TongGioLV_ToDot = 0;
+            double DonGia_ToDot = 0;
+
+
+            using (clsThin clsThin_ = new clsThin())
+            {
+                _dtCong_Ca1Ca2 = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_PMC(_nam, _thang, _id_bophan, 0, "", toDot_type);
+                TongTien_ToDot = TinhTongTien(_CaLamViec);
+
+                if (TongTien_ToDot <= 0 || _dtCong_Ca1Ca2.Rows.Count <= 0)
+                {
+                    isload = false;
+                    return;
+                }
+
+                for (int i = 0; i < _dtCong_Ca1Ca2.Rows.Count; i++)
+                    TongGioLV_ToDot += CheckString.ConvertToDouble_My(_dtCong_Ca1Ca2.Rows[i]["Tong"].ToString());
+
+                DonGia_ToDot = TongTien_ToDot / TongGioLV_ToDot;
+
+                //Row Tổng tiền:
+                DataRow row_tg = _data.NewRow();
+                row_tg["STT"] = "";
+                row_tg["TenNhanVien"] = "Tổng tiền";
+                row_tg["GioLV"] = "";
+                row_tg["DonGia"] = "";
+                row_tg["ThanhTien"] = TongTien_ToDot.ToString("N1");
+                _data.Rows.Add(row_tg);
+
+                int stt = 0;
+                for (int i = 0; i < _dtCong_Ca1Ca2.Rows.Count; i++)
+                {
+                    DataRow row = _data.NewRow();
+                    stt++;
+                    row["STT"] = stt;
+                    row["TenNhanVien"] = _dtCong_Ca1Ca2.Rows[i]["TenNhanVien"].ToString();
+                    row["GioLV"] = CheckString.ConvertToDouble_My(_dtCong_Ca1Ca2.Rows[i]["Tong"].ToString());
+                    row["DonGia"] = DonGia_ToDot.ToString("N1");
+                    row["ThanhTien"] = ((CheckString.ConvertToDouble_My(_dtCong_Ca1Ca2.Rows[i]["Tong"].ToString())) * DonGia_ToDot).ToString("N1");
+                    _data.Rows.Add(row);
+                }
+
+                //
+                DataRow row_tong = _data.NewRow();
+                row_tong["STT"] = "";
+                row_tong["TenNhanVien"] = "Tổng";
+                row_tong["GioLV"] = TongGioLV_ToDot.ToString("N1");
+                row_tong["DonGia"] = "";
+                row_tong["ThanhTien"] = TongTien_ToDot.ToString("N1");
+                _data.Rows.Add(row_tong);
+            }
+
+            gridControl1.DataSource = _data;
+            isload = false;
+        }
+
+        public double TinhTongTien(string CaLamViec)
+        {
             double Dot4_8_Bao_Tong = 0;
             double Dot4_8_Kg_Tong = 0;
             double Dot36_72_Bao_Tong = 0;
@@ -103,51 +163,12 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec, _id_bophan);
+                _dtSL_Ca1_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec, _id_bophan);
 
                 int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
                 for (int i = 1; i <= ngaycuathang_; i++)
                 {
-                    ModelBTTL_ToDot ng = getSanLuong_Ngay(i, _dtSL_Ca1);
-                    DataRow row = _data.NewRow();
-                    row["NgayThang"] = ng.NgayThang;
-                    row["DonViTinh"] = ng.DonViTinh;
-                    row["Dot4_8_Bao"] = ng.Dot4_8_Bao.ToString("N1");
-                    row["Dot4_8_Kg"] = ng.Dot4_8_Kg.ToString("N1");
-                    row["Dot36_72_Bao"] = ng.Dot36_72_Bao.ToString("N1");
-                    row["Dot36_72_Kg"] = ng.Dot36_72_Kg.ToString("N1");
-                    row["Dot45_90_Bao"] = ng.Dot45_90_Bao.ToString("N1");
-                    row["Dot45_90_Kg"] = ng.Dot45_90_Kg.ToString("N1");
-                    row["Dot48_96_Bao"] = ng.Dot48_96_Bao.ToString("N1");
-                    row["Dot48_96_Kg"] = ng.Dot48_96_Kg.ToString("N1");
-                    row["Dot56_112_Bao"] = ng.Dot56_112_Bao.ToString("N1");
-                    row["Dot56_112_Kg"] = ng.Dot56_112_Kg.ToString("N1");
-                    row["Dot42_84_Bao"] = ng.Dot42_84_Bao.ToString("N1");
-                    row["Dot42_84_Kg"] = ng.Dot42_84_Kg.ToString("N1");
-                    row["Dot51_103_Bao"] = ng.Dot51_103_Bao.ToString("N1");
-                    row["Dot51_103_Kg"] = ng.Dot51_103_Kg.ToString("N1");
-                    row["Dot51_103tb_Bao"] = ng.Dot51_103tb_Bao.ToString("N1");
-                    row["Dot51_103tb_Kg"] = ng.Dot51_103tb_Kg.ToString("N1");
-                    row["Dot53_106tb_Bao"] = ng.Dot53_106tb_Bao.ToString("N1");
-                    row["Dot53_106tb_Kg"] = ng.Dot53_106tb_Kg.ToString("N1");
-                    row["Dot50_100tb_Bao"] = ng.Dot50_100tb_Bao.ToString("N1");
-                    row["Dot50_100tb_Kg"] = ng.Dot50_100tb_Kg.ToString("N1");
-                    row["Dot11_17tb_Bao"] = ng.Dot11_17tb_Bao.ToString("N1");
-                    row["Dot11_17tb_Kg"] = ng.Dot11_17tb_Kg.ToString("N1");
-                    row["Dot45_90tb_Bao"] = ng.Dot45_90tb_Bao.ToString("N1");
-                    row["Dot45_90tb_Kg"] = ng.Dot45_90tb_Kg.ToString("N1");
-                    row["Dot42_84tb_Bao"] = ng.Dot42_84tb_Bao.ToString("N1");
-                    row["Dot42_84tb_Kg"] = ng.Dot42_84tb_Kg.ToString("N1");
-                    row["TongBao"] = ng.TongBao.ToString("N1");
-                    row["TongKg"] = ng.TongKg.ToString("N1");
-                    row["DonGia_Tan"] = ng.DonGia_Tan.ToString("N1");
-                    row["TongBaotb"] = ng.TongBaotb.ToString("N1");
-                    row["TongKgtb"] = ng.TongKgtb.ToString("N1");
-                    row["DonGiatb_Tan"] = ng.DonGiatb_Tan.ToString("N1");
-                    row["ThanhTien"] = ng.ThanhTien.ToString("N1");
-                    if (ng.TongBaotb > 0 || ng.TongBao > 0)
-                        _data.Rows.Add(row);
-
+                    ModelBTTL_ToDot ng = getSanLuong_Ngay(i, _dtSL_Ca1_Ca2);
                     //Cộng tổng:
                     Dot4_8_Bao_Tong  += ng.Dot4_8_Bao;
                     Dot4_8_Kg_Tong  += ng.Dot4_8_Kg;
@@ -181,49 +202,9 @@ namespace CtyTinLuong
                     TongKgtb_Tong  += ng.TongKgtb;
                     ThanhTien_Tong  += ng.ThanhTien;
                 }
-
-                //
-                DataRow row_tong = _data.NewRow();
-                row_tong["NgayThang"] = "Tổng";
-                row_tong["DonViTinh"] = "";
-                row_tong["Dot4_8_Bao"] = Dot4_8_Bao_Tong.ToString("N1");
-                row_tong["Dot4_8_Kg"] = Dot4_8_Kg_Tong.ToString("N1");
-                row_tong["Dot36_72_Bao"] = Dot36_72_Bao_Tong.ToString("N1");
-                row_tong["Dot36_72_Kg"] = Dot36_72_Kg_Tong.ToString("N1");
-                row_tong["Dot45_90_Bao"] = Dot45_90_Bao_Tong.ToString("N1");
-                row_tong["Dot45_90_Kg"] = Dot45_90_Kg_Tong.ToString("N1");
-                row_tong["Dot48_96_Bao"] = Dot48_96_Bao_Tong.ToString("N1");
-                row_tong["Dot48_96_Kg"] = Dot48_96_Kg_Tong.ToString("N1");
-                row_tong["Dot56_112_Bao"] = Dot56_112_Bao_Tong.ToString("N1");
-                row_tong["Dot56_112_Kg"] = Dot56_112_Kg_Tong.ToString("N1");
-                row_tong["Dot42_84_Bao"] = Dot42_84_Bao_Tong.ToString("N1");
-                row_tong["Dot42_84_Kg"] = Dot42_84_Kg_Tong.ToString("N1");
-                row_tong["Dot51_103_Bao"] = Dot51_103_Bao_Tong.ToString("N1");
-                row_tong["Dot51_103_Kg"] = Dot51_103_Kg_Tong.ToString("N1");
-                row_tong["Dot51_103tb_Bao"] = Dot51_103tb_Bao_Tong.ToString("N1");
-                row_tong["Dot51_103tb_Kg"] = Dot51_103tb_Kg_Tong.ToString("N1");
-                row_tong["Dot53_106tb_Bao"] = Dot53_106tb_Bao_Tong.ToString("N1");
-                row_tong["Dot53_106tb_Kg"] = Dot53_106tb_Kg_Tong.ToString("N1");
-                row_tong["Dot50_100tb_Bao"] = Dot50_100tb_Bao_Tong.ToString("N1");
-                row_tong["Dot50_100tb_Kg"] = Dot50_100tb_Kg_Tong.ToString("N1");
-                row_tong["Dot11_17tb_Bao"] = Dot11_17tb_Bao_Tong.ToString("N1");
-                row_tong["Dot11_17tb_Kg"] = Dot11_17tb_Kg_Tong.ToString("N1");
-                row_tong["Dot45_90tb_Bao"] = Dot45_90tb_Bao_Tong.ToString("N1");
-                row_tong["Dot45_90tb_Kg"] = Dot45_90tb_Kg_Tong.ToString("N1");
-                row_tong["Dot42_84tb_Bao"] = Dot42_84tb_Bao_Tong.ToString("N1");
-                row_tong["Dot42_84tb_Kg"] = Dot42_84tb_Kg_Tong.ToString("N1");
-                row_tong["TongBao"] = TongBao_Tong.ToString("N1");
-                row_tong["TongKg"] = TongKg_Tong.ToString("N1");
-                row_tong["DonGia_Tan"] = "";
-                row_tong["TongBaotb"] = TongBaotb_Tong.ToString("N1");
-                row_tong["TongKgtb"] = TongKgtb_Tong.ToString("N1");
-                row_tong["DonGiatb_Tan"] = "";
-                row_tong["ThanhTien"] = ThanhTien_Tong.ToString("N1");
-                _data.Rows.Add(row_tong);
             }
 
-            gridControl1.DataSource = _data;
-            isload = false;
+            return ThanhTien_Tong;
         }
 
         private ModelBTTL_ToDot getSanLuong_Ngay(int Ngay, DataTable dt)
@@ -503,66 +484,8 @@ namespace CtyTinLuong
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //int index_ = e.RowHandle;
-            //string name_ = e.Column.FieldName;
-            //if (name_.Contains("Ngay"))
-            //{
-            //    _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
-            //    _data.Rows[index_][name_] = String.Format("{0:0.##}", CheckString.ConvertToDouble_My(_data.Rows[index_][name_].ToString()));
-            //    if (_data.Rows.Count > index_)
-            //    {
-            //        CongTong_Row(index_);
-            //    }
-            //    //SendKeys.Send("{DOWN}");
-            //}
-            //else if (name_.Contains("TenVTHH"))
-            //{
-            //    if (gridView1.GetFocusedRowCellValue(name_) == null)
-            //    {
-            //        _data.Rows[index_][name_] = "";
-            //    }
-            //    else
-            //    {
-            //        _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
-            //    }
-            //}
-            //CongTong();
-
-            //if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
         }
 
-        //CongTong_Row(index_);
-        private void CongTong_Row (int index)
-        {
-            double tong_row = 0;
-
-            for (int j = 0; j < 31; ++j)
-            {
-                tong_row += CheckString.ConvertToDouble_My(_data.Rows[index]["Ngay" + (j + 1)].ToString());
-            }
-
-            _data.Rows[index]["Tong"] = String.Format("{0:0.##}", tong_row);
-        }
-
-        private void CongTong()
-        {
-            double[] _ds_ngay_tong_ = new double[31];
-            double tong_tong_ = 0;
-            for (int i = 0; i < _data.Rows.Count - 1; ++i)
-            {
-                for (int j = 0; j < 31; ++j)
-                {
-                    _ds_ngay_tong_[j] += CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay" + (j + 1)].ToString());
-                }
-                tong_tong_ += CheckString.ConvertToDouble_My(_data.Rows[i]["Tong"].ToString());
-            }
-            for (int j = 0; j < 31; ++j)
-            {
-                _data.Rows[_data.Rows.Count - 1]["Ngay" + (j + 1)] = String.Format("{0:0.##}", _ds_ngay_tong_[j]);
-            }
-            _data.Rows[_data.Rows.Count - 1]["Tong"] = String.Format("{0:0.##}",tong_tong_);
-            gridControl1.DataSource = _data;
-        }
 
         private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -587,7 +510,7 @@ namespace CtyTinLuong
             {
                 _thang = Convert.ToInt32(txtThang.Text);
 
-                LoadData(false, _CaLamViec);
+                LoadData(false, radioTo1.Checked);
             }
             catch
             {
@@ -600,7 +523,7 @@ namespace CtyTinLuong
             {
                 _nam = Convert.ToInt32(txtNam.Text);
 
-                LoadData(false, _CaLamViec);
+                LoadData(false, radioTo1.Checked);
             }
             catch
             {
@@ -679,10 +602,14 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1)
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
             {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                string ten = View.GetRowCellValue(e.RowHandle, View.Columns["TenNhanVien"]).ToString();
+                if (ten == "Tổng" || ten == "Tổng tiền" || ten == "Tổng")
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                }
             }
         }
 
@@ -706,7 +633,7 @@ namespace CtyTinLuong
             _CaLamViec = "Ca 1";
             if (isload)
                 return;
-            LoadData(false, _CaLamViec);
+            LoadData(false, radioTo1.Checked);
         }
 
         private void radioTo2_CheckedChanged(object sender, EventArgs e)
@@ -714,7 +641,7 @@ namespace CtyTinLuong
             _CaLamViec = "Ca 2";
             if (isload)
                 return;
-            LoadData(false, _CaLamViec);
+            LoadData(false, radioTo1.Checked);
         }
 
 

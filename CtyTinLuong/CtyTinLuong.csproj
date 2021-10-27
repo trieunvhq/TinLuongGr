@@ -283,6 +283,19 @@
     <Compile Include="Luong_ChamCong\frmChamCong_PhienDich.Designer.cs">
       <DependentUpon>frmChamCong_PhienDich.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\PhiPhatSinh\clsTr_PhiPhatSinh.cs" />
+    <Compile Include="Luong_ChamCong\PhiPhatSinh\Tr_frmPhiPhatSinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\PhiPhatSinh\Tr_frmPhiPhatSinh.Designer.cs">
+      <DependentUpon>Tr_frmPhiPhatSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\PhiPhatSinh\Tr_frmChiTiet_PhiPhatSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\PhiPhatSinh\Tr_frmChiTiet_PhiPhatSinh.Designer.cs">
+      <DependentUpon>Tr_frmChiTiet_PhiPhatSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_ChamCongPhienDich.cs" />
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_MaHangToGD_DB_DK.cs" />
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmCaiMacDinnhMaHangTGD_DB_DK_.cs">
@@ -2699,6 +2712,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\frmChamCong_PhienDich.resx">
       <DependentUpon>frmChamCong_PhienDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\PhiPhatSinh\Tr_frmPhiPhatSinh.resx">
+      <DependentUpon>Tr_frmPhiPhatSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\PhiPhatSinh\Tr_frmChiTiet_PhiPhatSinh.resx">
+      <DependentUpon>Tr_frmChiTiet_PhiPhatSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\TrDinhMucLuong\Tr_frmCaiMacDinnhMaHangTGD_DB_DK_.resx">
       <DependentUpon>Tr_frmCaiMacDinnhMaHangTGD_DB_DK_.cs</DependentUpon>

@@ -68,10 +68,12 @@ namespace CtyTinLuong
             this.Dot42_84_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot51_103_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot51_103_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Dot53_106tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Dot53_106tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot51_103tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot51_103tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dot53_106tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dot53_106tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dot50_100tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dot50_100tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot11_17tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot11_17tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dot45_90tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -108,8 +110,6 @@ namespace CtyTinLuong
             this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.radioTo2 = new System.Windows.Forms.RadioButton();
             this.radioTo1 = new System.Windows.Forms.RadioButton();
-            this.Dot50_100tb_Bao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Dot50_100tb_Kg = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -650,6 +650,56 @@ namespace CtyTinLuong
             this.Dot51_103_Kg.VisibleIndex = 15;
             this.Dot51_103_Kg.Width = 70;
             // 
+            // Dot51_103tb_Bao
+            // 
+            this.Dot51_103tb_Bao.AppearanceCell.Options.UseTextOptions = true;
+            this.Dot51_103tb_Bao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Dot51_103tb_Bao.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Dot51_103tb_Bao.Caption = "Đột 51*103 tb";
+            this.Dot51_103tb_Bao.FieldName = "Dot51_103tb_Bao";
+            this.Dot51_103tb_Bao.MinWidth = 27;
+            this.Dot51_103tb_Bao.Name = "Dot51_103tb_Bao";
+            this.Dot51_103tb_Bao.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsColumn.FixedWidth = true;
+            this.Dot51_103tb_Bao.OptionsFilter.AllowAutoFilter = false;
+            this.Dot51_103tb_Bao.OptionsFilter.AllowFilter = false;
+            this.Dot51_103tb_Bao.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
+            this.Dot51_103tb_Bao.Visible = true;
+            this.Dot51_103tb_Bao.VisibleIndex = 16;
+            this.Dot51_103tb_Bao.Width = 70;
+            // 
+            // Dot51_103tb_Kg
+            // 
+            this.Dot51_103tb_Kg.AppearanceCell.Options.UseTextOptions = true;
+            this.Dot51_103tb_Kg.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Dot51_103tb_Kg.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.Dot51_103tb_Kg.Caption = "Đột 51*103 tb";
+            this.Dot51_103tb_Kg.FieldName = "Dot51_103tb_Kg";
+            this.Dot51_103tb_Kg.MinWidth = 27;
+            this.Dot51_103tb_Kg.Name = "Dot51_103tb_Kg";
+            this.Dot51_103tb_Kg.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsColumn.FixedWidth = true;
+            this.Dot51_103tb_Kg.OptionsFilter.AllowAutoFilter = false;
+            this.Dot51_103tb_Kg.OptionsFilter.AllowFilter = false;
+            this.Dot51_103tb_Kg.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.Dot51_103tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
+            this.Dot51_103tb_Kg.Visible = true;
+            this.Dot51_103tb_Kg.VisibleIndex = 17;
+            this.Dot51_103tb_Kg.Width = 70;
+            // 
             // Dot53_106tb_Bao
             // 
             this.Dot53_106tb_Bao.AppearanceCell.Options.UseTextOptions = true;
@@ -700,55 +750,23 @@ namespace CtyTinLuong
             this.Dot53_106tb_Kg.VisibleIndex = 19;
             this.Dot53_106tb_Kg.Width = 70;
             // 
-            // Dot51_103tb_Bao
+            // Dot50_100tb_Bao
             // 
-            this.Dot51_103tb_Bao.AppearanceCell.Options.UseTextOptions = true;
-            this.Dot51_103tb_Bao.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.Dot51_103tb_Bao.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Dot51_103tb_Bao.Caption = "Đột 51*103 tb";
-            this.Dot51_103tb_Bao.FieldName = "Dot51_103tb_Bao";
-            this.Dot51_103tb_Bao.MinWidth = 27;
-            this.Dot51_103tb_Bao.Name = "Dot51_103tb_Bao";
-            this.Dot51_103tb_Bao.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsColumn.FixedWidth = true;
-            this.Dot51_103tb_Bao.OptionsFilter.AllowAutoFilter = false;
-            this.Dot51_103tb_Bao.OptionsFilter.AllowFilter = false;
-            this.Dot51_103tb_Bao.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Bao.OptionsFilter.ShowEmptyDateFilter = false;
-            this.Dot51_103tb_Bao.Visible = true;
-            this.Dot51_103tb_Bao.VisibleIndex = 16;
-            this.Dot51_103tb_Bao.Width = 70;
+            this.Dot50_100tb_Bao.Caption = "Đột 50*100tb";
+            this.Dot50_100tb_Bao.FieldName = "Dot50_100tb_Bao";
+            this.Dot50_100tb_Bao.Name = "Dot50_100tb_Bao";
+            this.Dot50_100tb_Bao.Visible = true;
+            this.Dot50_100tb_Bao.VisibleIndex = 20;
+            this.Dot50_100tb_Bao.Width = 70;
             // 
-            // Dot51_103tb_Kg
+            // Dot50_100tb_Kg
             // 
-            this.Dot51_103tb_Kg.AppearanceCell.Options.UseTextOptions = true;
-            this.Dot51_103tb_Kg.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.Dot51_103tb_Kg.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Dot51_103tb_Kg.Caption = "Đột 51*103 tb";
-            this.Dot51_103tb_Kg.FieldName = "Dot51_103tb_Kg";
-            this.Dot51_103tb_Kg.MinWidth = 27;
-            this.Dot51_103tb_Kg.Name = "Dot51_103tb_Kg";
-            this.Dot51_103tb_Kg.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsColumn.FixedWidth = true;
-            this.Dot51_103tb_Kg.OptionsFilter.AllowAutoFilter = false;
-            this.Dot51_103tb_Kg.OptionsFilter.AllowFilter = false;
-            this.Dot51_103tb_Kg.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.Dot51_103tb_Kg.OptionsFilter.ShowEmptyDateFilter = false;
-            this.Dot51_103tb_Kg.Visible = true;
-            this.Dot51_103tb_Kg.VisibleIndex = 17;
-            this.Dot51_103tb_Kg.Width = 70;
+            this.Dot50_100tb_Kg.Caption = "Đột 50*100tb";
+            this.Dot50_100tb_Kg.FieldName = "Dot50_100tb_Kg";
+            this.Dot50_100tb_Kg.Name = "Dot50_100tb_Kg";
+            this.Dot50_100tb_Kg.Visible = true;
+            this.Dot50_100tb_Kg.VisibleIndex = 21;
+            this.Dot50_100tb_Kg.Width = 70;
             // 
             // Dot11_17tb_Bao
             // 
@@ -1068,7 +1086,7 @@ namespace CtyTinLuong
             this.ThanhTien.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ThanhTien.Visible = true;
             this.ThanhTien.VisibleIndex = 34;
-            this.ThanhTien.Width = 70;
+            this.ThanhTien.Width = 80;
             // 
             // Xoa
             // 
@@ -1345,24 +1363,6 @@ namespace CtyTinLuong
             this.radioTo1.Text = "Tổ 1";
             this.radioTo1.UseVisualStyleBackColor = true;
             this.radioTo1.CheckedChanged += new System.EventHandler(this.radioTo1_CheckedChanged);
-            // 
-            // Dot50_100tb_Bao
-            // 
-            this.Dot50_100tb_Bao.Caption = "Đột 50*100tb";
-            this.Dot50_100tb_Bao.FieldName = "Dot50_100tb_Bao";
-            this.Dot50_100tb_Bao.Name = "Dot50_100tb_Bao";
-            this.Dot50_100tb_Bao.Visible = true;
-            this.Dot50_100tb_Bao.VisibleIndex = 20;
-            this.Dot50_100tb_Bao.Width = 70;
-            // 
-            // Dot50_100tb_Kg
-            // 
-            this.Dot50_100tb_Kg.Caption = "Đột 50*100tb";
-            this.Dot50_100tb_Kg.FieldName = "Dot50_100tb_Kg";
-            this.Dot50_100tb_Kg.Name = "Dot50_100tb_Kg";
-            this.Dot50_100tb_Kg.Visible = true;
-            this.Dot50_100tb_Kg.VisibleIndex = 21;
-            this.Dot50_100tb_Kg.Width = 70;
             // 
             // Tr_frmBTTL_ToDot
             // 

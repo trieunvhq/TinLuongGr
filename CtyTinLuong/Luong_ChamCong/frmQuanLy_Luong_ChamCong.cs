@@ -601,12 +601,12 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Máy đột");
             if (id_bophan_ == 0) return;
 
-            frmChamCong_ToDot frm = new frmChamCong_ToDot(id_bophan_, this);
+            Tr_frmBTTL_ToDot frm = new Tr_frmBTTL_ToDot(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
 
-            frm.LoadData(true, true);
+            frm.LoadData(true, "Ca 1");
 
             Cursor.Current = Cursors.Default;
         }
@@ -619,12 +619,12 @@ namespace CtyTinLuong
             int id_bophan_ = KiemTraTenBoPhan("Máy đột");
             if (id_bophan_ == 0) return;
 
-            Tr_frmBTTL_ToDot frm = new Tr_frmBTTL_ToDot(id_bophan_, this);
+            Tr_frmBTTL_CongNhan_ToDot frm = new Tr_frmBTTL_CongNhan_ToDot(id_bophan_, this);
             frm.Dock = DockStyle.Fill;
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
 
-            frm.LoadData(true, "Ca 1");
+            frm.LoadData(true, true);
 
             Cursor.Current = Cursors.Default;
         }
@@ -643,6 +643,42 @@ namespace CtyTinLuong
             frm.BringToFront();
 
             frm.LoadData(true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navBChamCongToDot_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy đột");
+            if (id_bophan_ == 0) return;
+
+            frmChamCong_ToDot frm = new frmChamCong_ToDot(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true, true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void navChiPhiKhac_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy đột");
+            if (id_bophan_ == 0) return;
+
+            Tr_frmPhiPhatSinh frm = new Tr_frmPhiPhatSinh(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true, true);
 
             Cursor.Current = Cursors.Default;
         }

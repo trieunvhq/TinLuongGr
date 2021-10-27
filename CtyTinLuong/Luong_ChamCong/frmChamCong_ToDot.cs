@@ -693,7 +693,7 @@ namespace CtyTinLuong
                 }
             }
             CongTong();
-            // gridView1.SetRowCellValue(e.RowHandle, clSLThuong, tongcong); 
+            if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
         }
 
 
