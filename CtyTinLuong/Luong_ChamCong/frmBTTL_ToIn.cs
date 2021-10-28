@@ -885,11 +885,9 @@ namespace CtyTinLuong
             using (clsThin clsThin_ = new clsThin())
             {
                 //Lấy dữ liệu ca1
-                //_dtCong_Ca1 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, true);
                 _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 1", _id_bophan);
 
                 //Lấy dữ liệu ca2
-                //_dtCong_Ca2 = clsThin_.Tr_BTTL_SF_CheckIsTangCa(_nam, _thang, _id_bophan, false);
                 _dtSL_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "Ca 2", _id_bophan);
 
                 int SttCa1 = 0;
@@ -1818,6 +1816,7 @@ namespace CtyTinLuong
             double donGiaTang = 0;
             double soNgayCong = 0;
             double phuCapBaoHiem = 0;
+            double PCBH_tmp = 0;
             double truBaoHiem = 0;
             List<int> dsNgayCong = new List<int>();
 
@@ -1836,7 +1835,7 @@ namespace CtyTinLuong
                                     slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
-                                    //phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                                    PCBH_tmp = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
                                     truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
@@ -1861,6 +1860,7 @@ namespace CtyTinLuong
                                     slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    PCBH_tmp = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString()); 
                                     truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
@@ -1885,6 +1885,7 @@ namespace CtyTinLuong
                                     slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    PCBH_tmp = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString()); 
                                     truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
@@ -1909,6 +1910,7 @@ namespace CtyTinLuong
                                     slTong += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
+                                    PCBH_tmp = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString()); 
                                     truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
                                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
 
@@ -1942,12 +1944,6 @@ namespace CtyTinLuong
             }
             else if (loaiVthh.Contains("in nhũ"))
             {
-                //if ((slTong - (soNgayCong * 35)) > 0)
-                //{
-                //    slThuong = soNgayCong * 35;
-                //    slTang = slTong - (soNgayCong * 40);
-                //}
-                //else slThuong = slTong;
                 slThuong = slTong;
 
                 phuCapBaoHiem = slTong * 900000 / 910;
@@ -1968,6 +1964,15 @@ namespace CtyTinLuong
 
                 tenVthhThuong = "Sản lượng giấy cuộn";
                 tenVthhTang = "Sản lượng vượt 40q/ca/tháng";
+            }
+
+            //Những người không đóng bảo hiểm sẽ tính cộng bảo hiểm (khi chọn giá trị cộng bh trong bảng DML > 0)
+            //những người chạy máy in mác, trúc bách thì không tính cộng bảo hiểm
+            //công nhân chạy máy in mác, trúc bách họ không được cộng bảo hiểm vì bảo hiểm tính vào đơn giá rồi
+            //những người đóng bảo hiểm thì công ty đã chi hơn triệu nộp lên cơ quan bảo hiểm rồi nên không được cộng BH
+            if (truBaoHiem > 0 || PCBH_tmp == 0)
+            {
+                phuCapBaoHiem = 0;
             }
 
             nv.HoTen = hoTen;
