@@ -84,6 +84,7 @@ namespace CtyTinLuong
             this.radioTo2 = new System.Windows.Forms.RadioButton();
             this.radioTo1 = new System.Windows.Forms.RadioButton();
             this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
+            this.cbBoPhan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -227,6 +228,7 @@ namespace CtyTinLuong
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
@@ -239,6 +241,7 @@ namespace CtyTinLuong
             this.STT.AppearanceCell.Options.UseFont = true;
             this.STT.AppearanceCell.Options.UseTextOptions = true;
             this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.STT.Caption = "STT";
             this.STT.ColumnEdit = this.repositoryItemMemoEdit3;
             this.STT.FieldName = "STT";
@@ -638,11 +641,22 @@ namespace CtyTinLuong
             this.btnThemMoi.TabIndex = 167;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
+            // cbBoPhan
+            // 
+            this.cbBoPhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBoPhan.FormattingEnabled = true;
+            this.cbBoPhan.Location = new System.Drawing.Point(638, 21);
+            this.cbBoPhan.Name = "cbBoPhan";
+            this.cbBoPhan.Size = new System.Drawing.Size(204, 21);
+            this.cbBoPhan.TabIndex = 168;
+            this.cbBoPhan.SelectedIndexChanged += new System.EventHandler(this.cbBoPhan_SelectedIndexChanged);
+            // 
             // Tr_frmPhiPhatSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.cbBoPhan);
             this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.radioTo2);
             this.Controls.Add(this.radioTo1);
@@ -729,5 +743,6 @@ namespace CtyTinLuong
         private DevExpress.XtraGrid.Columns.GridColumn ID_BoPhan;
         private DevExpress.XtraGrid.Columns.GridColumn CaLamViec;
         private DevExpress.XtraEditors.SimpleButton btnThemMoi;
+        private System.Windows.Forms.ComboBox cbBoPhan;
     }
 }

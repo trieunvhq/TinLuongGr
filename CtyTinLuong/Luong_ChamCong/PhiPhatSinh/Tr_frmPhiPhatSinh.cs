@@ -57,14 +57,32 @@ namespace CtyTinLuong
                 _thang = dtnow.Month;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
+
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SA();
+
+                    cbBoPhan.DataSource = dt_;
+                    cbBoPhan.DisplayMember = "TenBoPhan";
+                    cbBoPhan.ValueMember = "ID_BoPhan";
+                    cbBoPhan.SelectedValue = 0;
+                    cbBoPhan.Enabled = true;
+                    try
+                    {
+                        _ID_BoPhan = (int)cbBoPhan.SelectedValue;
+                    }
+                    catch { }
+                }
             }
             else
             {
             }
-            
+
+           
+
             using (clsTr_PhiPhatSinh cls = new clsTr_PhiPhatSinh())
             {
-                _data = cls.Tr_PhiPhatSinh_SelectAll();
+                _data = cls.Tr_PhiPhatSinh_S(_thang, _nam, _ID_BoPhan, toDot_type);
             }
 
             gridControl1.DataSource = _data;
@@ -212,6 +230,34 @@ namespace CtyTinLuong
             _mb_TheMoi = true;
             Tr_frmChiTiet_PhiPhatSinh ff = new Tr_frmChiTiet_PhiPhatSinh(this);
             ff.Show();
+        }
+
+        private void cbBoPhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isload)
+                return;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                if (cbBoPhan.SelectedValue != null)
+                {
+                    _ID_BoPhan = (int)cbBoPhan.SelectedValue;
+                    LoadData(false, radioTo1.Checked);
+                }
+            }
+            catch (Exception tr)
+            {
+                MessageBox.Show("Error: " + tr.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == STT)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
         }
 
         private void radioTo1_CheckedChanged(object sender, EventArgs e)

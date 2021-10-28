@@ -75,7 +75,7 @@ namespace CtyTinLuong
                     cls.sDienGiai = txtDienGiai.Text;
                     cls.bCaLamViec = radioCa1.Checked;
                     cls.iThang = Tr_frmPhiPhatSinh._thang;
-                    cls.iThang = Tr_frmPhiPhatSinh._nam;
+                    cls.iNam = Tr_frmPhiPhatSinh._nam;
 
 
                     if (Tr_frmPhiPhatSinh._mb_TheMoi)
@@ -170,7 +170,6 @@ namespace CtyTinLuong
             }
             else
                 hienthiSUaDuLieu();
-
         }
 
        

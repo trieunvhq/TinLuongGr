@@ -269,13 +269,52 @@ namespace CtyTinLuong
 		}
 
 
-		/// <summary>
-		/// Purpose: SelectAll method. This method will Select all rows from the table.
-		/// </summary>
-		/// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
-		/// <remarks>
-		/// </remarks>
-		public DataTable Tr_PhiPhatSinh_SelectAll()
+        /// <summary>
+        /// Purpose: SelectAll method. This method will Select all rows from the table.
+        /// </summary>
+        /// <returns>DataTable object if succeeded, otherwise an Exception is thrown. </returns>
+        /// <remarks>
+        /// </remarks>
+        public DataTable Tr_PhiPhatSinh_S(int thang, int nam, int idbophan, bool calamviec)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_PhiPhatSinh_S]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("Tr_PhiPhatSinh");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                // Open connection.
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, idbophan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bCaLamViec", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, calamviec));
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsTr_PhiPhatSinh::SelectAll::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+
+        public DataTable Tr_PhiPhatSinh_SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
 			scmCmdToExecute.CommandText = "dbo.[Tr_PhiPhatSinh_SelectAll]";
