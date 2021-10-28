@@ -2069,12 +2069,12 @@ namespace CtyTinLuong
                         bandedGridView1.SetRowCellValue(e.RowHandle, clChange_CAT, "1");
                     }
 
-                    if (e.Column == clSoLuong_Vao_CAT)
-                    {
-                        double slvao = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_CAT).ToString());
-                        bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Tong_CAT, slvao);
-                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_CAT, "1");
-                    }
+                    //if (e.Column == clSoLuong_Vao_CAT)
+                    //{
+                    //    double slvao = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_CAT).ToString());
+                    //    bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Tong_CAT, slvao);
+                    //    bandedGridView1.SetRowCellValue(e.RowHandle, clChange_CAT, "1");
+                    //}
 
                     if (e.Column == clID_VTHH_Ra_CAT)
                     {
@@ -2132,12 +2132,12 @@ namespace CtyTinLuong
                         bandedGridView1.SetRowCellValue(e.RowHandle, clChange_DOT, "1");
                     }
 
-                    if (e.Column == clSoLuong_Vao_DOT)
-                    {
-                        double slvao = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_DOT).ToString());
-                        bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Tong_DOT, slvao);
-                        bandedGridView1.SetRowCellValue(e.RowHandle, clChange_DOT, "1");
-                    }
+                    //if (e.Column == clSoLuong_Vao_DOT)
+                    //{
+                    //    double slvao = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSoLuong_Vao_DOT).ToString());
+                    //    bandedGridView1.SetRowCellValue(e.RowHandle, clSanLuong_Tong_DOT, slvao);
+                    //    bandedGridView1.SetRowCellValue(e.RowHandle, clChange_DOT, "1");
+                    //}
 
                     if (e.Column == clID_VTHH_Ra_DOT)
                     {
