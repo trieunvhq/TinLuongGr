@@ -23,7 +23,7 @@ namespace CtyTinLuong
     {
         public string _MaNhanVien = "", _CaLamViec = "Ca 1";
         public int _nam, _thang, _id_bophan;
-        private DataTable _data, _dtSL_Ca1_Ca2, _dtCong_Ca1Ca2;
+        private DataTable _data, _dtSL_Ca1_Ca2, _dtCong_Ca1Ca2, _dtPhiPhatSinh;
         private bool isload = true;
         private int[] _colDelete = new int[32];
 
@@ -73,6 +73,7 @@ namespace CtyTinLuong
             double TongTien_ToDot = 0;
             double TongGioLV_ToDot = 0;
             double DonGia_ToDot = 0;
+            double PhiPhatSinh = 0;
 
 
             using (clsThin clsThin_ = new clsThin())
@@ -84,6 +85,11 @@ namespace CtyTinLuong
                 {
                     isload = false;
                     return;
+                }
+
+                using (clsTr_PhiPhatSinh cls = new clsTr_PhiPhatSinh())
+                {
+                    _dtPhiPhatSinh = cls.Tr_PhiPhatSinh_S(_thang, _nam, _id_bophan, toDot_type);
                 }
 
                 for (int i = 0; i < _dtCong_Ca1Ca2.Rows.Count; i++)
@@ -113,13 +119,30 @@ namespace CtyTinLuong
                     _data.Rows.Add(row);
                 }
 
+                //Phí phát sinh:
+                for (int i = 0; i < _dtPhiPhatSinh.Rows.Count; i++)
+                {
+                    double tienCong_ = CheckString.ConvertToDouble_My(_dtPhiPhatSinh.Rows[i]["TienCong"].ToString());
+                    double tienTru_ = CheckString.ConvertToDouble_My(_dtPhiPhatSinh.Rows[i]["TienTru"].ToString());
+                    double tienTg_ = tienCong_ - tienTru_;
+                    PhiPhatSinh += tienTg_;
+                    DataRow row_phi = _data.NewRow();
+                    stt++;
+                    row_phi["STT"] = stt;
+                    row_phi["TenNhanVien"] = _dtPhiPhatSinh.Rows[i]["TenPhi"].ToString();
+                    row_phi["GioLV"] = "";
+                    row_phi["DonGia"] = tienTg_.ToString("N1");
+                    row_phi["ThanhTien"] = tienTg_.ToString("N1");
+                    _data.Rows.Add(row_phi);
+                }
+
                 //
                 DataRow row_tong = _data.NewRow();
                 row_tong["STT"] = "";
                 row_tong["TenNhanVien"] = "Tổng";
                 row_tong["GioLV"] = TongGioLV_ToDot.ToString("N1");
                 row_tong["DonGia"] = "";
-                row_tong["ThanhTien"] = TongTien_ToDot.ToString("N1");
+                row_tong["ThanhTien"] = (TongTien_ToDot + PhiPhatSinh).ToString("N1");
                 _data.Rows.Add(row_tong);
             }
 

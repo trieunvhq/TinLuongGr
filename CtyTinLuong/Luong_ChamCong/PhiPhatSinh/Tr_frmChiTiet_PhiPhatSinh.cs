@@ -134,8 +134,8 @@ namespace CtyTinLuong
         {
             searchLookBoPhan.EditValue = Tr_frmPhiPhatSinh._ID_BoPhan;
             searchLookBoPhan.ReadOnly = true;
-            txtTienCong.Text = Tr_frmPhiPhatSinh._TienCong.ToString();
-            txtTienTru.Text = Tr_frmPhiPhatSinh._TienTru.ToString();
+            txtTienCong.Text = Tr_frmPhiPhatSinh._TienCong.ToString("N2");
+            txtTienTru.Text = Tr_frmPhiPhatSinh._TienTru.ToString("N2");
             txtTenPhi.Text = Tr_frmPhiPhatSinh._TenPhi;
             txtDienGiai.Text = Tr_frmPhiPhatSinh._DienGiai;
             if (Tr_frmPhiPhatSinh._CaLamViec) radioCa1.Checked = true;
@@ -149,7 +149,8 @@ namespace CtyTinLuong
             txtTienTru.Text = "";
             txtTenPhi.Text = "";
             txtDienGiai.Text = "";
-            radioCa1.Checked = true;
+            if (Tr_frmPhiPhatSinh._CaLamViec) radioCa1.Checked = true;
+            else radioCa2.Checked = true;
         }
         public Tr_frmChiTiet_PhiPhatSinh(Tr_frmPhiPhatSinh frm = null)
         {
@@ -243,6 +244,16 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
+                try
+                {
+                    double value = CheckString.ConvertToDouble_My(txtTienCong.Text);
+                    txtTienCong.Text = value.ToString("N2");
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 SendKeys.Send("{TAB}");
             }
         }
@@ -251,6 +262,16 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
+                try
+                {
+                    double value = CheckString.ConvertToDouble_My(txtTienTru.Text);
+                    txtTienTru.Text = value.ToString("N2");
+                }
+                catch (Exception ea)
+                {
+                    MessageBox.Show("Lỗi: Kiểm tra lại kết nối!" + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 SendKeys.Send("{TAB}");
             }
         }
