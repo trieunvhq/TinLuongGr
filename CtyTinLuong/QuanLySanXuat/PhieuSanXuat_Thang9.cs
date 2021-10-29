@@ -1189,9 +1189,12 @@ namespace CtyTinLuong
                     row["TenVTHH_Ra_DOT"] = sTenVTHH_ra_DOT;
                     row["DonViTinh_Ra_DOT"] = sDonViTinh_ra_DOT;
 
-                    row["ID_CongNhan_DOT"] = iiiidID_CongNhan_CAT_copy;
+                    row["ID_CongNhan_DOT"] = iiiidID_CongNhan_DOT_copy;
                     row["ID_DinhMuc_Luong_DOT"] = iiiD_dmluong_DOT_copy;
                     row["SanLuong_Tong_DOT"] = dddsanluongtong_DOT_copy;
+                    row["SoKG_MotBao_May_Dot"] = xxsokgmotbao_dot_copy;
+                    row["DoCao_Dot"] = xxdocao_dot_copy;
+
                     row["PhePham_DOT"] = dddphepham_DOT_copy;
                     //string sMaPhieu_ = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
 
