@@ -1333,6 +1333,7 @@ namespace CtyTinLuong
                 clID_CaTruong_IN.Caption = "Ca\ntrưởng";
                 clID_CaTruong_CAT.Caption = "Ca\ntrưởng";
                 clID_CaTruong_DOT.Caption = "Ca\ntrưởng";
+                DongBao_Cat.Caption = "Đóng\nbao";
 
                 clID_VTHH_Ra_CAT.Width = clID_VTHH_Ra_DOT.Width = clID_VTHH_Ra_IN.Width = clID_VTHH_Vao_CAT.Width = clID_VTHH_Vao_DOT.Width = clID_VTHH_Vao_IN.Width = 65;
                 clDonViTinh_Ra_DOT.Width = clDonViTinh_Ra_IN.Width = clDonViTinh_Vao_CAT.Width = clDonViTinh_Vao_DOT.Width = clDonViTinh_Vao_IN.Width = 45;
@@ -1551,7 +1552,7 @@ namespace CtyTinLuong
                     bandedGridView1.SetRowCellValue(row, clTenVTHH_Ra_CAT, sMacDinh_TenVTHH_Ra);
                     bandedGridView1.SetRowCellValue(row, clDonViTinh_Ra_CAT, sMacDinh_DVT_Ra);
                     bandedGridView1.SetRowCellValue(row, clMaPhieu, sMaPhieu);
-
+                    
                 }
                 else if (_Loaimay == 3)
                 {
