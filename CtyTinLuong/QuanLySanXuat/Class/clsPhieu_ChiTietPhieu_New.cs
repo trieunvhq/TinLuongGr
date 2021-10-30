@@ -8,7 +8,7 @@ namespace CtyTinLuong
 	public partial class clsPhieu_ChiTietPhieu_New : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bBMay_DOT, m_bTrangThaiXuatNhap, m_bBMay_CAT, m_bBMay_IN, m_bTrangThaiTaoLenhSanXuat, m_bGuiDuLieu, b_DongBao_Type;
+			private SqlBoolean		m_bBMay_DOT, m_bTrangThaiXuatNhap, m_bBMay_CAT, m_bBMay_IN, m_bTrangThaiTaoLenhSanXuat, m_bGuiDuLieu, b_DongBao1_Type, b_DongBao2_Type;
 			private SqlDateTime		m_daNgaySanXuat;
 			private SqlDouble		m_fSanLuong_Tong, m_fSanLuong_Thuong, m_fSanLuong_TangCa, m_fSoKG_MotBao_May_Dot, m_fDoCao_Dot, m_fDonGia_Xuat, m_fPhePham, m_fDonGia_Vao, m_fSoLuong_Vao;
 			private SqlInt32		m_iID_CongNhan, m_iID_CaTruong, m_iID_SoPhieu, m_iID_May, m_iID_VTHH_Ra, m_iID_VTHH_Vao, m_iID_DinhMuc_Luong, m_iID_ChiTietPhieu;
@@ -467,11 +467,11 @@ namespace CtyTinLuong
 		}
 
         
-        public SqlBoolean bDongBao_Type
+        public SqlBoolean bDongBao1_Type
         {
             get
             {
-                return b_DongBao_Type;
+                return b_DongBao1_Type;
             }
             set
             {
@@ -480,7 +480,24 @@ namespace CtyTinLuong
                 {
                     throw new ArgumentOutOfRangeException("b_DongBao_Type", "b_DongBao_Type can't be NULL");
                 }
-                b_DongBao_Type = value;
+                b_DongBao1_Type = value;
+            }
+        }
+
+        public SqlBoolean bDongBao2_Type
+        {
+            get
+            {
+                return b_DongBao2_Type;
+            }
+            set
+            {
+                SqlBoolean bDongBao_TypeTmp = (SqlBoolean)value;
+                if (bDongBao_TypeTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("b_DongBao_Type", "b_DongBao_Type can't be NULL");
+                }
+                b_DongBao2_Type = value;
             }
         }
 

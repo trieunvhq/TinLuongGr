@@ -518,6 +518,50 @@ namespace CtyTinLuong
             }
         }
 
+        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCatDot_DongBao(int nam, int thang, int May_IN, int May_CAT, int May_DOT, int iID_BoPhan, bool DongBao1_type, bool DongBao2_type)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_Phieu_ChiTietPhieu_New_ToInCatDot_DongBao]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("cpn_bp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ibMay_IN", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, May_IN));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ibMay_CAT", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, May_CAT));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ibMay_DOT", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, May_DOT));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_BoPhan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDongBao1_Type", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, DongBao1_type));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDongBao2_Type", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, DongBao2_type));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsCpn_bp::Tr_Phieu_ChiTietPhieu_New_ToInCatDot_SelectOne::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
         public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCatDot_SelectOne(int nam, int thang, int May_IN, int May_CAT, int May_DOT, string CaLamViec, int iID_BoPhan, int iID_CongNhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

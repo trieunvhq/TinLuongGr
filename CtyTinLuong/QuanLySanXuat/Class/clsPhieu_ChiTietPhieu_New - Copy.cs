@@ -48,7 +48,9 @@ namespace CtyTinLuong
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_CAT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_CAT));
                 //scmCmdToExecute.Parameters.Add(new SqlParameter("@bMay_DOT", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, bMay_DOT));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@Ma_Phieu", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, Ma_Phieu));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDongBao_Type", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, b_DongBao_Type));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDongBao1_Type", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, b_DongBao1_Type));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDongBao2_Type", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, b_DongBao2_Type));
+
 
 
                 // Open connection.

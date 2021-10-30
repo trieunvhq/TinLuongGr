@@ -534,7 +534,7 @@ namespace CtyTinLuong
             panelControl1.Controls.Add(frm);
             frm.BringToFront();
 
-            frm.LoadData(true, true);
+            frm.LoadData(true);
 
             Cursor.Current = Cursors.Default;
         }

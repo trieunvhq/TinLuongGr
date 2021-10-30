@@ -101,6 +101,7 @@ namespace CtyTinLuong
             this.IsTangCa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -122,6 +123,7 @@ namespace CtyTinLuong
             this.radioTo2 = new System.Windows.Forms.RadioButton();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.radioCN = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -152,7 +154,7 @@ namespace CtyTinLuong
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 24);
+            this.label3.Location = new System.Drawing.Point(342, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -162,7 +164,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(156, 25);
+            this.label4.Location = new System.Drawing.Point(485, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -294,7 +296,8 @@ namespace CtyTinLuong
             this.ID_ChiTietChamCong_ToGapDan,
             this.IsTangCa,
             this.Xoa,
-            this.MaNhanVien});
+            this.MaNhanVien,
+            this.DonViTinh});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -308,7 +311,6 @@ namespace CtyTinLuong
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEdit);
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -316,15 +318,15 @@ namespace CtyTinLuong
             // 
             this.TenVTHH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenVTHH.AppearanceCell.Options.UseFont = true;
-            this.TenVTHH.Caption = "TÊN HÀNG";
+            this.TenVTHH.Caption = "LOẠI HÀNG";
             this.TenVTHH.ColumnEdit = this.repositoryItemMemoEdit3;
             this.TenVTHH.FieldName = "TenVTHH";
             this.TenVTHH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.TenVTHH.Name = "TenVTHH";
             this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.Visible = true;
-            this.TenVTHH.VisibleIndex = 0;
-            this.TenVTHH.Width = 300;
+            this.TenVTHH.VisibleIndex = 1;
+            this.TenVTHH.Width = 220;
             // 
             // ID_VTHH
             // 
@@ -433,7 +435,7 @@ namespace CtyTinLuong
             // Ngay1
             // 
             this.Ngay1.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay1.Caption = "01";
             this.Ngay1.FieldName = "Ngay1";
@@ -453,12 +455,12 @@ namespace CtyTinLuong
             this.Ngay1.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay1.Visible = true;
             this.Ngay1.VisibleIndex = 2;
-            this.Ngay1.Width = 45;
+            this.Ngay1.Width = 60;
             // 
             // Ngay2
             // 
             this.Ngay2.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay2.Caption = "02";
             this.Ngay2.FieldName = "Ngay2";
@@ -478,12 +480,12 @@ namespace CtyTinLuong
             this.Ngay2.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay2.Visible = true;
             this.Ngay2.VisibleIndex = 3;
-            this.Ngay2.Width = 45;
+            this.Ngay2.Width = 60;
             // 
             // Ngay3
             // 
             this.Ngay3.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay3.Caption = "03";
             this.Ngay3.FieldName = "Ngay3";
@@ -503,12 +505,12 @@ namespace CtyTinLuong
             this.Ngay3.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay3.Visible = true;
             this.Ngay3.VisibleIndex = 4;
-            this.Ngay3.Width = 45;
+            this.Ngay3.Width = 60;
             // 
             // Ngay4
             // 
             this.Ngay4.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay4.Caption = "04";
             this.Ngay4.FieldName = "Ngay4";
@@ -528,12 +530,12 @@ namespace CtyTinLuong
             this.Ngay4.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay4.Visible = true;
             this.Ngay4.VisibleIndex = 5;
-            this.Ngay4.Width = 45;
+            this.Ngay4.Width = 60;
             // 
             // Ngay5
             // 
             this.Ngay5.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay5.Caption = "05";
             this.Ngay5.FieldName = "Ngay5";
@@ -553,12 +555,12 @@ namespace CtyTinLuong
             this.Ngay5.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay5.Visible = true;
             this.Ngay5.VisibleIndex = 6;
-            this.Ngay5.Width = 45;
+            this.Ngay5.Width = 60;
             // 
             // Ngay6
             // 
             this.Ngay6.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay6.Caption = "06";
             this.Ngay6.FieldName = "Ngay6";
@@ -578,12 +580,12 @@ namespace CtyTinLuong
             this.Ngay6.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay6.Visible = true;
             this.Ngay6.VisibleIndex = 7;
-            this.Ngay6.Width = 45;
+            this.Ngay6.Width = 60;
             // 
             // Ngay7
             // 
             this.Ngay7.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay7.Caption = "07";
             this.Ngay7.FieldName = "Ngay7";
@@ -603,12 +605,12 @@ namespace CtyTinLuong
             this.Ngay7.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay7.Visible = true;
             this.Ngay7.VisibleIndex = 8;
-            this.Ngay7.Width = 45;
+            this.Ngay7.Width = 60;
             // 
             // Ngay8
             // 
             this.Ngay8.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay8.Caption = "08";
             this.Ngay8.FieldName = "Ngay8";
@@ -628,12 +630,12 @@ namespace CtyTinLuong
             this.Ngay8.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay8.Visible = true;
             this.Ngay8.VisibleIndex = 9;
-            this.Ngay8.Width = 45;
+            this.Ngay8.Width = 60;
             // 
             // Ngay9
             // 
             this.Ngay9.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay9.Caption = "09";
             this.Ngay9.FieldName = "Ngay9";
@@ -653,12 +655,12 @@ namespace CtyTinLuong
             this.Ngay9.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay9.Visible = true;
             this.Ngay9.VisibleIndex = 10;
-            this.Ngay9.Width = 45;
+            this.Ngay9.Width = 60;
             // 
             // Ngay10
             // 
             this.Ngay10.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay10.Caption = "10";
             this.Ngay10.FieldName = "Ngay10";
@@ -679,12 +681,12 @@ namespace CtyTinLuong
             this.Ngay10.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay10.Visible = true;
             this.Ngay10.VisibleIndex = 11;
-            this.Ngay10.Width = 45;
+            this.Ngay10.Width = 60;
             // 
             // Ngay11
             // 
             this.Ngay11.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay11.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay11.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay11.Caption = "11";
             this.Ngay11.FieldName = "Ngay11";
@@ -704,12 +706,12 @@ namespace CtyTinLuong
             this.Ngay11.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay11.Visible = true;
             this.Ngay11.VisibleIndex = 12;
-            this.Ngay11.Width = 45;
+            this.Ngay11.Width = 60;
             // 
             // Ngay12
             // 
             this.Ngay12.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay12.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay12.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay12.Caption = "12";
             this.Ngay12.FieldName = "Ngay12";
@@ -729,12 +731,12 @@ namespace CtyTinLuong
             this.Ngay12.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay12.Visible = true;
             this.Ngay12.VisibleIndex = 13;
-            this.Ngay12.Width = 45;
+            this.Ngay12.Width = 60;
             // 
             // Ngay13
             // 
             this.Ngay13.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay13.Caption = "13";
             this.Ngay13.FieldName = "Ngay13";
@@ -754,12 +756,12 @@ namespace CtyTinLuong
             this.Ngay13.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay13.Visible = true;
             this.Ngay13.VisibleIndex = 14;
-            this.Ngay13.Width = 45;
+            this.Ngay13.Width = 60;
             // 
             // Ngay14
             // 
             this.Ngay14.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay14.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay14.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay14.Caption = "14";
             this.Ngay14.FieldName = "Ngay14";
@@ -779,12 +781,12 @@ namespace CtyTinLuong
             this.Ngay14.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay14.Visible = true;
             this.Ngay14.VisibleIndex = 15;
-            this.Ngay14.Width = 45;
+            this.Ngay14.Width = 60;
             // 
             // Ngay15
             // 
             this.Ngay15.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay15.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay15.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay15.Caption = "15";
             this.Ngay15.FieldName = "Ngay15";
@@ -804,12 +806,12 @@ namespace CtyTinLuong
             this.Ngay15.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay15.Visible = true;
             this.Ngay15.VisibleIndex = 16;
-            this.Ngay15.Width = 45;
+            this.Ngay15.Width = 60;
             // 
             // Ngay16
             // 
             this.Ngay16.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay16.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay16.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay16.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay16.Caption = "16";
             this.Ngay16.FieldName = "Ngay16";
@@ -829,12 +831,12 @@ namespace CtyTinLuong
             this.Ngay16.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay16.Visible = true;
             this.Ngay16.VisibleIndex = 17;
-            this.Ngay16.Width = 45;
+            this.Ngay16.Width = 60;
             // 
             // Ngay17
             // 
             this.Ngay17.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay17.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay17.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay17.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay17.Caption = "17";
             this.Ngay17.FieldName = "Ngay17";
@@ -854,12 +856,12 @@ namespace CtyTinLuong
             this.Ngay17.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay17.Visible = true;
             this.Ngay17.VisibleIndex = 18;
-            this.Ngay17.Width = 45;
+            this.Ngay17.Width = 60;
             // 
             // Ngay18
             // 
             this.Ngay18.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay18.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay18.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay18.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay18.Caption = "18";
             this.Ngay18.FieldName = "Ngay18";
@@ -879,12 +881,12 @@ namespace CtyTinLuong
             this.Ngay18.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay18.Visible = true;
             this.Ngay18.VisibleIndex = 19;
-            this.Ngay18.Width = 45;
+            this.Ngay18.Width = 60;
             // 
             // Ngay19
             // 
             this.Ngay19.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay19.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay19.Caption = "19";
             this.Ngay19.FieldName = "Ngay19";
@@ -904,12 +906,12 @@ namespace CtyTinLuong
             this.Ngay19.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay19.Visible = true;
             this.Ngay19.VisibleIndex = 20;
-            this.Ngay19.Width = 45;
+            this.Ngay19.Width = 60;
             // 
             // Ngay20
             // 
             this.Ngay20.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay20.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay20.Caption = "20";
             this.Ngay20.FieldName = "Ngay20";
@@ -929,12 +931,12 @@ namespace CtyTinLuong
             this.Ngay20.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay20.Visible = true;
             this.Ngay20.VisibleIndex = 21;
-            this.Ngay20.Width = 45;
+            this.Ngay20.Width = 60;
             // 
             // Ngay21
             // 
             this.Ngay21.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay21.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay21.Caption = "21";
             this.Ngay21.FieldName = "Ngay21";
@@ -954,12 +956,12 @@ namespace CtyTinLuong
             this.Ngay21.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay21.Visible = true;
             this.Ngay21.VisibleIndex = 22;
-            this.Ngay21.Width = 45;
+            this.Ngay21.Width = 60;
             // 
             // Ngay22
             // 
             this.Ngay22.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay22.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay22.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay22.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay22.Caption = "22";
             this.Ngay22.FieldName = "Ngay22";
@@ -979,12 +981,12 @@ namespace CtyTinLuong
             this.Ngay22.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay22.Visible = true;
             this.Ngay22.VisibleIndex = 23;
-            this.Ngay22.Width = 45;
+            this.Ngay22.Width = 60;
             // 
             // Ngay23
             // 
             this.Ngay23.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay23.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay23.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay23.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay23.Caption = "23";
             this.Ngay23.FieldName = "Ngay23";
@@ -1004,12 +1006,12 @@ namespace CtyTinLuong
             this.Ngay23.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay23.Visible = true;
             this.Ngay23.VisibleIndex = 24;
-            this.Ngay23.Width = 45;
+            this.Ngay23.Width = 60;
             // 
             // Ngay24
             // 
             this.Ngay24.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay24.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay24.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay24.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay24.Caption = "24";
             this.Ngay24.FieldName = "Ngay24";
@@ -1029,12 +1031,12 @@ namespace CtyTinLuong
             this.Ngay24.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay24.Visible = true;
             this.Ngay24.VisibleIndex = 25;
-            this.Ngay24.Width = 45;
+            this.Ngay24.Width = 60;
             // 
             // Ngay25
             // 
             this.Ngay25.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay25.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay25.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay25.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay25.Caption = "25";
             this.Ngay25.FieldName = "Ngay25";
@@ -1054,12 +1056,12 @@ namespace CtyTinLuong
             this.Ngay25.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay25.Visible = true;
             this.Ngay25.VisibleIndex = 26;
-            this.Ngay25.Width = 45;
+            this.Ngay25.Width = 60;
             // 
             // Ngay26
             // 
             this.Ngay26.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay26.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay26.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay26.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay26.Caption = "26";
             this.Ngay26.FieldName = "Ngay26";
@@ -1079,12 +1081,12 @@ namespace CtyTinLuong
             this.Ngay26.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay26.Visible = true;
             this.Ngay26.VisibleIndex = 27;
-            this.Ngay26.Width = 45;
+            this.Ngay26.Width = 60;
             // 
             // Ngay27
             // 
             this.Ngay27.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay27.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay27.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay27.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay27.Caption = "27";
             this.Ngay27.FieldName = "Ngay27";
@@ -1104,12 +1106,12 @@ namespace CtyTinLuong
             this.Ngay27.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay27.Visible = true;
             this.Ngay27.VisibleIndex = 28;
-            this.Ngay27.Width = 45;
+            this.Ngay27.Width = 60;
             // 
             // Ngay28
             // 
             this.Ngay28.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay28.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay28.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay28.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay28.Caption = "28";
             this.Ngay28.FieldName = "Ngay28";
@@ -1129,12 +1131,12 @@ namespace CtyTinLuong
             this.Ngay28.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay28.Visible = true;
             this.Ngay28.VisibleIndex = 29;
-            this.Ngay28.Width = 45;
+            this.Ngay28.Width = 60;
             // 
             // Ngay29
             // 
             this.Ngay29.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay29.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay29.Caption = "29";
             this.Ngay29.FieldName = "Ngay29";
@@ -1154,12 +1156,12 @@ namespace CtyTinLuong
             this.Ngay29.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay29.Visible = true;
             this.Ngay29.VisibleIndex = 30;
-            this.Ngay29.Width = 45;
+            this.Ngay29.Width = 60;
             // 
             // Ngay30
             // 
             this.Ngay30.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay30.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay30.Caption = "30";
             this.Ngay30.FieldName = "Ngay30";
@@ -1179,12 +1181,12 @@ namespace CtyTinLuong
             this.Ngay30.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay30.Visible = true;
             this.Ngay30.VisibleIndex = 31;
-            this.Ngay30.Width = 45;
+            this.Ngay30.Width = 60;
             // 
             // Ngay31
             // 
             this.Ngay31.AppearanceCell.Options.UseTextOptions = true;
-            this.Ngay31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Ngay31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Ngay31.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay31.Caption = "31";
             this.Ngay31.FieldName = "Ngay31";
@@ -1204,7 +1206,7 @@ namespace CtyTinLuong
             this.Ngay31.OptionsFilter.ShowEmptyDateFilter = false;
             this.Ngay31.Visible = true;
             this.Ngay31.VisibleIndex = 32;
-            this.Ngay31.Width = 45;
+            this.Ngay31.Width = 60;
             // 
             // clGuiDuLieu
             // 
@@ -1219,7 +1221,7 @@ namespace CtyTinLuong
             this.Tong.AppearanceCell.Options.UseFont = true;
             this.Tong.AppearanceCell.Options.UseForeColor = true;
             this.Tong.AppearanceCell.Options.UseTextOptions = true;
-            this.Tong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Tong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Tong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Tong.Caption = "TỔNG";
             this.Tong.FieldName = "Tong";
@@ -1230,7 +1232,7 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
             this.Tong.VisibleIndex = 34;
-            this.Tong.Width = 45;
+            this.Tong.Width = 70;
             // 
             // ID_ChiTietChamCong_ToGapDan
             // 
@@ -1253,7 +1255,7 @@ namespace CtyTinLuong
             this.Xoa.Name = "Xoa";
             this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Xoa.Visible = true;
-            this.Xoa.VisibleIndex = 32;
+            this.Xoa.VisibleIndex = 33;
             this.Xoa.Width = 35;
             // 
             // MaNhanVien
@@ -1261,6 +1263,18 @@ namespace CtyTinLuong
             this.MaNhanVien.Caption = "MaNhanVien";
             this.MaNhanVien.FieldName = "MaNhanVien";
             this.MaNhanVien.Name = "MaNhanVien";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.AppearanceCell.Options.UseTextOptions = true;
+            this.DonViTinh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DonViTinh.Caption = "ĐVT";
+            this.DonViTinh.FieldName = "DonViTinh";
+            this.DonViTinh.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.Visible = true;
+            this.DonViTinh.VisibleIndex = 0;
+            this.DonViTinh.Width = 45;
             // 
             // gridControl1
             // 
@@ -1355,30 +1369,32 @@ namespace CtyTinLuong
             // 
             this.cbHangHoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHangHoa.FormattingEnabled = true;
-            this.cbHangHoa.Location = new System.Drawing.Point(502, 22);
+            this.cbHangHoa.Location = new System.Drawing.Point(516, -13);
             this.cbHangHoa.Name = "cbHangHoa";
             this.cbHangHoa.Size = new System.Drawing.Size(277, 21);
             this.cbHangHoa.TabIndex = 138;
+            this.cbHangHoa.Visible = false;
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(783, 21);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(797, -14);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(112, 23);
             this.btnThemNhanVien.TabIndex = 137;
             this.btnThemNhanVien.Text = "Thêm hàng hóa";
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
-            this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
+            this.btnThemNhanVien.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(434, 26);
+            this.label7.Location = new System.Drawing.Point(448, -9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 136;
             this.label7.Text = "Tên hàng:";
+            this.label7.Visible = false;
             // 
             // linkLabel2
             // 
@@ -1389,6 +1405,7 @@ namespace CtyTinLuong
             this.linkLabel2.TabIndex = 146;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Cài mặc định mã hàng tổ đóng bao";
+            this.linkLabel2.Visible = false;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // btnPrint
@@ -1417,6 +1434,7 @@ namespace CtyTinLuong
             this.btGuiDuLieu.Size = new System.Drawing.Size(82, 25);
             this.btGuiDuLieu.TabIndex = 160;
             this.btGuiDuLieu.Text = "Lưu lại";
+            this.btGuiDuLieu.Visible = false;
             this.btGuiDuLieu.Click += new System.EventHandler(this.btGuiDuLieu_Click);
             // 
             // btThoat
@@ -1443,11 +1461,12 @@ namespace CtyTinLuong
             this.label5.Size = new System.Drawing.Size(262, 13);
             this.label5.TabIndex = 162;
             this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
+            this.label5.Visible = false;
             // 
             // radioTo1
             // 
             this.radioTo1.AutoSize = true;
-            this.radioTo1.Location = new System.Drawing.Point(297, 23);
+            this.radioTo1.Location = new System.Drawing.Point(101, 23);
             this.radioTo1.Name = "radioTo1";
             this.radioTo1.Size = new System.Drawing.Size(47, 17);
             this.radioTo1.TabIndex = 163;
@@ -1459,17 +1478,18 @@ namespace CtyTinLuong
             // radioTo2
             // 
             this.radioTo2.AutoSize = true;
-            this.radioTo2.Location = new System.Drawing.Point(358, 24);
+            this.radioTo2.Location = new System.Drawing.Point(162, 23);
             this.radioTo2.Name = "radioTo2";
             this.radioTo2.Size = new System.Drawing.Size(47, 17);
             this.radioTo2.TabIndex = 164;
             this.radioTo2.TabStop = true;
             this.radioTo2.Text = "Tổ 2";
             this.radioTo2.UseVisualStyleBackColor = true;
+            this.radioTo2.CheckedChanged += new System.EventHandler(this.radioTo2_CheckedChanged);
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(196, 22);
+            this.txtNam.Location = new System.Drawing.Point(525, 22);
             this.txtNam.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -1493,7 +1513,7 @@ namespace CtyTinLuong
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(63, 22);
+            this.txtThang.Location = new System.Drawing.Point(392, 22);
             this.txtThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -1515,11 +1535,24 @@ namespace CtyTinLuong
             0});
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
+            // radioCN
+            // 
+            this.radioCN.AutoSize = true;
+            this.radioCN.Location = new System.Drawing.Point(219, 23);
+            this.radioCN.Name = "radioCN";
+            this.radioCN.Size = new System.Drawing.Size(74, 17);
+            this.radioCN.TabIndex = 167;
+            this.radioCN.TabStop = true;
+            this.radioCN.Text = "Công nhật";
+            this.radioCN.UseVisualStyleBackColor = true;
+            this.radioCN.CheckedChanged += new System.EventHandler(this.radioCN_CheckedChanged);
+            // 
             // frmChamCong_TDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.radioCN);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.radioTo2);
@@ -1643,5 +1676,7 @@ namespace CtyTinLuong
         private System.Windows.Forms.NumericUpDown txtNam;
         private System.Windows.Forms.NumericUpDown txtThang;
         private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn DonViTinh;
+        private System.Windows.Forms.RadioButton radioCN;
     }
 }
