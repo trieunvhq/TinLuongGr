@@ -68,7 +68,7 @@ namespace CtyTinLuong
                         rcon["ID_TaiKhoanKeToan"] = dtCon.Rows[k]["ID_TaiKhoanKeToan"];
                         //rcon["NgungTheoDoi"] = dtCon.Rows[k]["NgungTheoDoi"];
                         rcon["SoTaiKhoan"] = dtCon.Rows[k]["SoTaiKhoan"];
-                        rcon["TenTaiKhoan"] = "    " + dtCon.Rows[k]["TenTaiKhoan"].ToString();
+                        rcon["TenTaiKhoan"] = "        " + dtCon.Rows[k]["TenTaiKhoan"].ToString();
                         rcon["Khoa"] = dtCon.Rows[k]["Khoa"];
                         rcon["LoaiTK"] = "LaCon";
                         _data.Rows.Add(rcon);
@@ -82,7 +82,7 @@ namespace CtyTinLuong
                                 rchau["ID_TaiKhoanKeToan"] = dtChau.Rows[m]["ID_TaiKhoanKeToan"];
                                 //rchau["NgungTheoDoi"] = dtChau.Rows[m]["NgungTheoDoi"];
                                 rchau["SoTaiKhoan"] = dtChau.Rows[m]["SoTaiKhoan"];
-                                rchau["TenTaiKhoan"] = "        " + dtChau.Rows[m]["TenTaiKhoan"].ToString();
+                                rchau["TenTaiKhoan"] = "                " + dtChau.Rows[m]["TenTaiKhoan"].ToString();
                                 rchau["Khoa"] = dtChau.Rows[m]["Khoa"];
                                 rchau["LoaiTK"] = "LaChau";
                                 _data.Rows.Add(rchau);
@@ -94,19 +94,6 @@ namespace CtyTinLuong
             }
 
             gridControl1.DataSource = _data;
-
-            //if (bMe_True_COn_False==true)
-            //{
-            //    clsNganHang_tbHeThongTaiKhoanKeToanMe cls = new clsNganHang_tbHeThongTaiKhoanKeToanMe();
-            //    dtMe = cls.SA_new();
-            //    gridControl1.DataSource = dtMe;
-            //}
-            //else
-            //{
-            //    clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
-            //    dtCon = cls.SA();              
-            //    gridControl1.DataSource = dtCon;
-            //}
         }
 
 
@@ -204,17 +191,19 @@ namespace CtyTinLuong
                 Cursor.Current = Cursors.WaitCursor;
                 miID_TaiKhoan = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_TaiKhoanKeToan).ToString());             
                 mbTheMoi = false;
-                if(checkCon.Checked==true)
-                {
-                    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
-                    ff.Show();
-                }
-                else
+
+                string loaiTK = gridView1.GetFocusedRowCellValue(LoaiTK).ToString();
+                if (loaiTK == "LaMe")
                 {
                     frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
                     ff.Show();
                 }
-               
+                else
+                {
+                    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
+                    ff.Show();
+                }
+
                 Cursor.Current = Cursors.Default;
             }
             catch
@@ -263,40 +252,12 @@ namespace CtyTinLuong
             mbTheMoi = true;
             frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
             ff.Show();
-            //if (checkCon.Checked == true)
-            //{
-            //    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
-            //    ff.Show();
-            //}
-            //else
-            //{
-            //    frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
-            //    ff.Show();
-            //}
             Cursor.Current = Cursors.Default;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //int index_ = e.RowHandle;
-            //string name_ = e.Column.FieldName;
-            //if (name_.Contains("LoaiTK"))
-            //{
-            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            //}
-            //else if (name_.Contains("TenVTHH"))
-            //{
-            //    if (gridView1.GetFocusedRowCellValue(name_) == null)
-            //    {
-            //        _data.Rows[index_][name_] = "";
-            //    }
-            //    else
-            //    {
-            //        _data.Rows[index_][name_] = gridView1.GetFocusedRowCellValue(name_);
-            //    }
-            //}
-            //CongTong();
-            //if (!_data.Rows[index_]["TenNhanVien"].ToString().ToLower().Contains("tổng")) SaveOneCN_Datarow(_data.Rows[index_]);
+            
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -307,7 +268,7 @@ namespace CtyTinLuong
                 string loaiTK = View.GetRowCellValue(e.RowHandle, View.Columns["LoaiTK"]).ToString();
                 if (loaiTK == "LaMe")
                 {
-                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
                     //e.Appearance.BackColor = Color.Bisque;
                 }
                 else if (loaiTK == "LaCon")
@@ -334,16 +295,6 @@ namespace CtyTinLuong
             mbTheMoi = true;
             frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
             ff.Show();
-            //if (checkCon.Checked == true)
-            //{
-            //    frmChiTietTaiKhoanKeToanCon ff = new frmChiTietTaiKhoanKeToanCon(this, null, null);
-            //    ff.Show();
-            //}
-            //else
-            //{
-            //    frmChiTietTaiKhoanKeToan ff = new CtyTinLuong.frmChiTietTaiKhoanKeToan();
-            //    ff.Show();
-            //}
             Cursor.Current = Cursors.Default;
         }
     }
