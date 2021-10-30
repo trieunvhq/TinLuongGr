@@ -268,7 +268,7 @@ namespace CtyTinLuong
                 string loaiTK = View.GetRowCellValue(e.RowHandle, View.Columns["LoaiTK"]).ToString();
                 if (loaiTK == "LaMe")
                 {
-                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
                     //e.Appearance.BackColor = Color.Bisque;
                 }
                 else if (loaiTK == "LaCon")
