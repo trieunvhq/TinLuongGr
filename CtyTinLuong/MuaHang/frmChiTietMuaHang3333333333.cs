@@ -150,13 +150,23 @@ namespace CtyTinLuong
             clsTbNhaCungCap clsncc = new clsTbNhaCungCap();
             clsncc.iID_NhaCungCap = Convert.ToInt16(gridNCC.EditValue.ToString());
             DataTable dt = clsncc.SelectOne();
+
             int ID_TaiKhoanKeToanCon = clsncc.iID_TaiKhoanKeToan.Value;
             double tongtienhangcoVAT = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
             double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
             double tongtienhang_ChuaCoVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
             clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
+
             clscon.iID_TaiKhoanKeToanCon = ID_TaiKhoanKeToanCon;
             DataTable dtcon = clscon.SelectOne();
+
+            if (dtcon.Rows.Count == 0)
+            {
+                MessageBox.Show("Nhà cung cấp chưa có tài khoản kế toán. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                gridNCC.ResetText();
+                return;
+            }
+
             DataRow _ravi = dt2xx.NewRow();
             _ravi["ID_ChiTietBienDongTaiKhoan"] = 0;
             _ravi["ID_ChungTu"] = 0;
@@ -824,7 +834,7 @@ namespace CtyTinLuong
                     MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch
+            catch (Exception ea)
             {
                 MessageBox.Show("Lưu dữ liệu không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1007,6 +1017,7 @@ namespace CtyTinLuong
 
            
         }
+
         private void Load_LockUp()
         {
             clsThin clsThin_ = new clsThin();
@@ -1027,7 +1038,6 @@ namespace CtyTinLuong
             gridNCC.Properties.DataSource = dtSet_.Tables[3];
             gridNCC.Properties.ValueMember = "ID_NhaCungCap";
             gridNCC.Properties.DisplayMember = "MaNhaCungCap";
-
             dtSet_.Dispose();
             clsThin_.Dispose();
         }

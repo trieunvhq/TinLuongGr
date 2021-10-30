@@ -8,7 +8,7 @@ namespace CtyTinLuong
 	public partial class clsNganHang_TaiKhoanKeToanCon : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlBoolean		m_bNgungTheoDoi, m_bTonTai, m_bKhoa;
+			private SqlBoolean		m_bNgungTheoDoi, m_bTonTai, m_bKhoa, m_bDaSuDung;
 			private SqlInt32		m_iID_TaiKhoanKeToanCon, m_iID_TaiKhoanKeToanMe;
 			private SqlString		m_sGhiChuCon, m_sSoTaiKhoanCon, m_sTenTaiKhoanCon, m_sDienGiaiCon;
 		#endregion
@@ -39,11 +39,12 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiaiCon", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiaiCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChuCon", SqlDbType.NVarChar, 250, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChuCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bKhoa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bKhoa));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanCon", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TaiKhoanKeToanCon));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaSuDung", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaSuDung));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanCon", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TaiKhoanKeToanCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
-				// Open connection.
-				m_scoMainConnection.Open();
+                // Open connection.
+                m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
@@ -92,7 +93,8 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiaiCon", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiaiCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChuCon", SqlDbType.NVarChar, 250, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChuCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bKhoa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bKhoa));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaSuDung", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaSuDung));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -206,8 +208,9 @@ namespace CtyTinLuong
 					m_sDienGiaiCon = (string)dtToReturn.Rows[0]["DienGiaiCon"];
 					m_sGhiChuCon = (string)dtToReturn.Rows[0]["GhiChuCon"];
 					m_bKhoa = (bool)dtToReturn.Rows[0]["Khoa"];
-				}
-				return dtToReturn;
+                    m_bDaSuDung = (bool)dtToReturn.Rows[0]["DaSuDung"];
+                }
+                return dtToReturn;
 			}
 			catch(Exception ex)
 			{
@@ -430,6 +433,23 @@ namespace CtyTinLuong
 				m_bKhoa = value;
 			}
 		}
-		#endregion
-	}
+
+        public SqlBoolean bDaSuDung
+        {
+            get
+            {
+                return m_bDaSuDung;
+            }
+            set
+            {
+                SqlBoolean bDaSuDungTmp = (SqlBoolean)value;
+                if (bDaSuDungTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("bDaSuDung", "bDaSuDung can't be NULL");
+                }
+                m_bDaSuDung = value;
+            }
+        }
+        #endregion
+    }
 }

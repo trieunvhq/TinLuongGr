@@ -12,6 +12,41 @@ namespace CtyTinLuong
     public partial class clsThin : clsDBInteractionBase
     {
 
+        public bool Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung(int id, bool DaSuDung)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanCon", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, id));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaSuDung", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, DaSuDung));
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                scmCmdToExecute.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsDinhMuc_DinhMuc_Luong_TheoSanLuong::Update::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+            }
+        }
+
         public DataTable Tr_Select_CreateMaDinhMucSL()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
