@@ -327,11 +327,17 @@ namespace CtyTinLuong
 
                             for (int k = 0; k < 31; k++)
                             {
-                                ravi_["Ngay" + (k + 1)] = String.Format("{0:0.##}", vt.DsSLNgay_Tong[k]);
+                                if (vt.DsSLNgay_Tong[k] == 0)
+                                    ravi_["Ngay" + (k + 1)] = "";
+                                else
+                                    ravi_["Ngay" + (k + 1)] = vt.DsSLNgay_Tong[k].ToString("N0");
                                 DsTong_Col[k] += vt.DsSLNgay_Tong[k];
                             }
 
-                            ravi_["Tong"] = vt.SlTong;
+                            if (vt.SlTong == 0)
+                                ravi_["Tong"] = "";
+                            else
+                                ravi_["Tong"] = vt.SlTong.ToString("N0");
                             SanLuong_Tong_Tong += vt.SlTong;
 
                             _data.Rows.Add(ravi_);
@@ -349,10 +355,13 @@ namespace CtyTinLuong
 
                     for (int k = 0; k < 31; k++)
                     {
-                        ravi_Tong_Col["Ngay" + (k + 1)] = String.Format("{0:0.##}", DsTong_Col[k]);
+                        if (DsTong_Col[k] == 0)
+                            ravi_Tong_Col["Ngay" + (k + 1)] = "";
+                        else
+                            ravi_Tong_Col["Ngay" + (k + 1)] = DsTong_Col[k].ToString("N0");
                     }
 
-                    ravi_Tong_Col["Tong"] = String.Format("{0:0.##}", SanLuong_Tong_Tong);
+                    ravi_Tong_Col["Tong"] = SanLuong_Tong_Tong.ToString("N0");
                     _data.Rows.Add(ravi_Tong_Col);
                 }
                 gridControl1.DataSource = _data;
@@ -547,7 +556,7 @@ namespace CtyTinLuong
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDB ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDB(_thang, _nam, _data, radioTo1.Checked);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDB ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintChamCong_TDB(_thang, _nam, _data, radioTo1.Checked, radioTo2.Checked);
             ff.Show();
         }
 

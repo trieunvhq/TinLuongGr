@@ -17,12 +17,13 @@ namespace CtyTinLuong.Luong_ChamCong
         public int _id_bophan;
         public string _TenVTHH;
         private DataTable _data;
-        private bool _isTo1;
+        private bool _isTo1, _isTo2;
         private List<GridColumn> ds_grid = new List<GridColumn>();
 
-        public Tr_frmPrintChamCong_TDB(int thang, int nam, DataTable data, bool isTo1)
+        public Tr_frmPrintChamCong_TDB(int thang, int nam, DataTable data, bool isTo1, bool isTo2)
         {
             _isTo1 = isTo1;
+            _isTo2 = isTo2;
             _data = data;
             _thang = thang;
             _nam = nam;
@@ -31,7 +32,7 @@ namespace CtyTinLuong.Luong_ChamCong
 
         private void Tr_frmPrintChamCong_TDB_Load(object sender, EventArgs e)
         {
-            Tr_PrintChamCong_TDB xtr111 = new Tr_PrintChamCong_TDB(_thang, _nam, _isTo1);
+            Tr_PrintChamCong_TDB xtr111 = new Tr_PrintChamCong_TDB(_thang, _nam, _isTo1, _isTo2);
             DataSet_TinLuong ds = new DataSet_TinLuong();
 
             DateTime date_ = new DateTime(_nam, _thang, 1);
@@ -43,9 +44,8 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 if (i != _data.Rows.Count - 1) _ravi["STT"] = (i + 1).ToString();
                 else _ravi["STT"] = "";
-
+                _ravi["DonViTinh"] = _data.Rows[i]["DonViTinh"].ToString();
                 _ravi["TenVTHH"] = _data.Rows[i]["TenVTHH"].ToString();
-
                 _ravi["Ngay1"] = _data.Rows[i]["Ngay1"].ToString();
                 _ravi["Ngay2"] = _data.Rows[i]["Ngay2"].ToString();
                 _ravi["Ngay3"] = _data.Rows[i]["Ngay3"].ToString();

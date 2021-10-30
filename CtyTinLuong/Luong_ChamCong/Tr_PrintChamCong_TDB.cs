@@ -11,15 +11,16 @@ namespace CtyTinLuong.Luong_ChamCong
     {
         private int _thang;
         private int _nam;
-        private bool _isTo1;
+        private bool _isTo1, _isTo2;
 
         List<XRTableCell> Ds_NgayTitle = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay = new List<XRTableCell>();
         List<XRTableCell> Ds_Ngay_Header = new List<XRTableCell>();
 
-        public Tr_PrintChamCong_TDB(int thang, int nam, bool isTo1)
+        public Tr_PrintChamCong_TDB(int thang, int nam, bool isTo1, bool isTo2)
         {
             _isTo1 = isTo1;
+            _isTo2 = isTo2;
             _thang = thang;
             _nam = nam;
             InitializeComponent();
@@ -128,13 +129,16 @@ namespace CtyTinLuong.Luong_ChamCong
         {
             setThu();
 
-            if (_isTo1) lbTitle.Text = "BẢNG CHẤM CÔNG TỔ 1 ĐÓNG BAO";
-            else lbTitle.Text = "BẢNG CHẤM CÔNG TỔ 2 ĐÓNG BAO";
+            if (_isTo1 && !_isTo2)
+                lbTitle.Text = "BẢNG CHẤM CÔNG TỔ 1 ĐÓNG BAO";
+            else if (!_isTo1 && _isTo2)
+                lbTitle.Text = "BẢNG CHẤM CÔNG TỔ 2 ĐÓNG BAO";
+            else
+                lbTitle.Text = "BẢNG CHẤM CÔNG TỔ ĐÓNG BAO CÔNG NHẬT";
 
             //Load label ngay thang nam header:
-            if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();
-            else xrlbThang.Text = _thang.ToString();
-            xrlbNam.Text = _nam.ToString();
+            if (_thang <= 9) xrlbBoPhan.Text = "Tháng 0" + _thang.ToString() + " năm " + _nam.ToString();
+            else xrlbBoPhan.Text = "Tháng " + _thang.ToString() + " năm " + _nam.ToString();
 
             //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgay.Value);
@@ -233,16 +237,17 @@ namespace CtyTinLuong.Luong_ChamCong
 
                 //
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
-                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)39.08;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)115.05;
                 //
                 float tmp = 0;
+                float W_thu = (float)(1112.12 - 39.08 - 115.05 - 51.22) / 28;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-                    Ds_NgayTitle[i].WidthF = (float)28.23;
-                    Ds_Ngay_Header[i].WidthF = (float)28.23;
-                    Ds_Ngay[i].WidthF = (float)28.23;
-                    tmp += (float)28.23;
+                    Ds_NgayTitle[i].WidthF = W_thu;
+                    Ds_Ngay_Header[i].WidthF = W_thu;
+                    Ds_Ngay[i].WidthF = W_thu;
+                    tmp += W_thu;
                 }
                 xrTableCell3.WidthF = tmp;
             }
@@ -264,16 +269,17 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
-                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)39.08;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)115.05;
                 //
                 float tmp = 0;
+                float W_thu = (float)(1112.12 - 39.08 - 115.05 - 51.22) / 29;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-                    Ds_NgayTitle[i].WidthF = (float)27.3101111;
-                    Ds_Ngay_Header[i].WidthF = (float)27.3101111;
-                    Ds_Ngay[i].WidthF = (float)27.3101111;
-                    tmp += (float)27.3101111;
+                    Ds_NgayTitle[i].WidthF = W_thu;
+                    Ds_Ngay_Header[i].WidthF = W_thu;
+                    Ds_Ngay[i].WidthF = W_thu;
+                    tmp += W_thu;
                 }
                 xrTableCell3.WidthF = tmp;
             }
@@ -287,34 +293,34 @@ namespace CtyTinLuong.Luong_ChamCong
                 }
 
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
-                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)39.08;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)115.05;
                 //
                 float tmp = 0;
+                float W_thu = (float)(1112.12 - 39.08 - 115.05 - 51.22) / 30;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-
-                    Ds_NgayTitle[i].WidthF = (float)26.260899;
-                    Ds_Ngay_Header[i].WidthF = (float)26.260899;
-                    Ds_Ngay[i].WidthF = (float)26.260899;
-                    tmp += (float)26.260899;
+                    Ds_NgayTitle[i].WidthF = W_thu;
+                    Ds_Ngay_Header[i].WidthF = W_thu;
+                    Ds_Ngay[i].WidthF = W_thu;
+                    tmp += W_thu;
                 }
                 xrTableCell3.WidthF = tmp;
             }
             else if (ngaycuathang_ == 31)
             {
                 //
-                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)40.23;
-                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)190.11;
+                hoTen.WidthF = hoTenHeader.WidthF = xrTableCell35.WidthF = xrTableCell1.WidthF = (float)39.08;
+                cong.WidthF = congHeader.WidthF = xrTableCell36.WidthF = xrTableCell2.WidthF = (float)115.05;
                 //
                 float tmp = 0;
+                float W_thu = (float)(1112.12 - 39.08 - 115.05 - 51.22) / 31;
                 for (int i = 0; i < ngaycuathang_; ++i)
                 {
-
-                    Ds_NgayTitle[i].WidthF = (float)25.8;
-                    Ds_Ngay_Header[i].WidthF = (float)25.8;
-                    Ds_Ngay[i].WidthF = (float)25.8;
-                    tmp += (float)25.8;
+                    Ds_NgayTitle[i].WidthF = W_thu;
+                    Ds_Ngay_Header[i].WidthF = W_thu;
+                    Ds_Ngay[i].WidthF = W_thu;
+                    tmp += W_thu;
                 }
                 xrTableCell3.WidthF = tmp;
             }
