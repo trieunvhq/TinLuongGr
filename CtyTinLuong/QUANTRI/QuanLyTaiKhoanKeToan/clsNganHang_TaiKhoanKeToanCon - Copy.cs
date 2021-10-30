@@ -49,6 +49,8 @@ namespace CtyTinLuong
                 scmCmdToExecute.Dispose();
             }
         }
+
+
         public DataTable SA_Khoa_False()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

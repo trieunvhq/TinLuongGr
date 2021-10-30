@@ -196,6 +196,7 @@
             // clTen
             // 
             this.clTen.AppearanceCell.Options.UseTextOptions = true;
+            this.clTen.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.clTen.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clTen.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clTen.AppearanceHeader.Options.UseFont = true;
@@ -406,7 +407,7 @@
             this.MinimizeBox = false;
             this.Name = "frmKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = this.Name+"-->Khách Hàng";
+            this.Text = "frmKhachHang-->Khách Hàng";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checked_ALL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkNgungTheoDoi.Properties)).EndInit();
