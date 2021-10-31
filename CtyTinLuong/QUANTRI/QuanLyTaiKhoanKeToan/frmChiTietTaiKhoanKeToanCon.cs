@@ -140,13 +140,14 @@ namespace CtyTinLuong
                         cls.Update();
                         Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        _frmCTNCC.GetTKngamDinh(txtSoTKCon.Text.Trim(), _ID_TKme);
+                        if (_frmCTNCC != null)
+                            _frmCTNCC.GetTKngamDinh(txtSoTKCon.Text.Trim(), _ID_TKme);
                     }
 
-                    this.Close();
                     if (_frmQLTKKT != null) _frmQLTKKT.btRefresh_Click(null, null);
                     if (_frmCTKH != null) _frmCTKH.frmChiTietKhachHang_Load(null, null);
                     if (_frmCTNCC != null) _frmCTNCC.frmChiTietNhaCungCap_Load(null, null);
+                    this.Close();
                 }
                 else
                 {

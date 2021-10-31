@@ -66,29 +66,46 @@ namespace CtyTinLuong
                     {
                         DataRow rcon = _data.NewRow();
                         rcon["ID_TaiKhoanKeToan"] = dtCon.Rows[k]["ID_TaiKhoanKeToan"];
-                        //rcon["NgungTheoDoi"] = dtCon.Rows[k]["NgungTheoDoi"];
                         rcon["SoTaiKhoan"] = dtCon.Rows[k]["SoTaiKhoan"];
                         rcon["TenTaiKhoan"] = "        " + dtCon.Rows[k]["TenTaiKhoan"].ToString();
                         rcon["Khoa"] = dtCon.Rows[k]["Khoa"];
                         rcon["LoaiTK"] = "LaCon";
                         _data.Rows.Add(rcon);
-                        dtCon.Rows.RemoveAt(k);
+                        dtCon.Rows.RemoveAt(k);k--;
 
                         for (int m = 0; m < dtChau.Rows.Count; m++)
                         {
-                            if (idme == Convert.ToInt32(dtChau.Rows[m]["ID_TaiKhoanKeToanMe"].ToString()))
+                            string sotkchau = dtChau.Rows[m]["SoTaiKhoan"].ToString().Trim();
+                            string sotkcon = dtCon.Rows[k]["SoTaiKhoan"].ToString().Trim();
+                            if (idme == Convert.ToInt32(dtChau.Rows[m]["ID_TaiKhoanKeToanMe"].ToString())
+                                && (sotkchau.Contains(sotkcon)))
                             {
                                 DataRow rchau = _data.NewRow();
                                 rchau["ID_TaiKhoanKeToan"] = dtChau.Rows[m]["ID_TaiKhoanKeToan"];
-                                //rchau["NgungTheoDoi"] = dtChau.Rows[m]["NgungTheoDoi"];
                                 rchau["SoTaiKhoan"] = dtChau.Rows[m]["SoTaiKhoan"];
                                 rchau["TenTaiKhoan"] = "                " + dtChau.Rows[m]["TenTaiKhoan"].ToString();
                                 rchau["Khoa"] = dtChau.Rows[m]["Khoa"];
                                 rchau["LoaiTK"] = "LaChau";
                                 _data.Rows.Add(rchau);
-                                dtChau.Rows.RemoveAt(m);
+                                dtChau.Rows.RemoveAt(m);m--;
                             }
                         }
+                    } 
+                }
+
+                for (int m = 0; m < dtChau.Rows.Count; m++)
+                {
+                    if (idme == Convert.ToInt32(dtChau.Rows[m]["ID_TaiKhoanKeToanMe"].ToString()))
+                    {
+                        DataRow rchau = _data.NewRow();
+                        rchau["ID_TaiKhoanKeToan"] = dtChau.Rows[m]["ID_TaiKhoanKeToan"];
+                        //rchau["NgungTheoDoi"] = dtChau.Rows[m]["NgungTheoDoi"];
+                        rchau["SoTaiKhoan"] = dtChau.Rows[m]["SoTaiKhoan"];
+                        rchau["TenTaiKhoan"] = "                " + dtChau.Rows[m]["TenTaiKhoan"].ToString();
+                        rchau["Khoa"] = dtChau.Rows[m]["Khoa"];
+                        rchau["LoaiTK"] = "LaChau";
+                        _data.Rows.Add(rchau);
+                        dtChau.Rows.RemoveAt(m); m--;
                     }
                 }
             }
@@ -268,17 +285,17 @@ namespace CtyTinLuong
                 string loaiTK = View.GetRowCellValue(e.RowHandle, View.Columns["LoaiTK"]).ToString();
                 if (loaiTK == "LaMe")
                 {
-                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+                    e.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold);
                     //e.Appearance.BackColor = Color.Bisque;
                 }
                 else if (loaiTK == "LaCon")
                 {
-                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold| System.Drawing.FontStyle.Italic);
+                    e.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold| System.Drawing.FontStyle.Italic);
                     //e.Appearance.BackColor = Color.Bisque;
                 }
                 else
                 {
-                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+                    e.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular);
                 }
             }
 
