@@ -180,8 +180,7 @@ namespace CtyTinLuong
                     {
                         if (tkkt == Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()))
                         {
-                            if (Convert.ToBoolean(kt.Rows[i]["DaSuDung"].ToString())
-                            || Convert.ToBoolean(kt.Rows[i]["Khoa"].ToString()))
+                            if (Convert.ToBoolean(kt.Rows[i]["Khoa"].ToString()))
                             {
                                 tmp = true;
                                 break;
@@ -250,7 +249,8 @@ namespace CtyTinLuong
                             {
                                 using (clsThin clt = new clsThin())
                                 {
-                                    clt.Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung(frmKhachHang._iID_TaiKhoanKeToan, false);
+                                    clt.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(frmKhachHang._iID_TaiKhoanKeToan, false);
+                                    clt.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(Convert.ToInt32(gridTKKeToan.EditValue), true);
                                 }
                             }
                             _frmKH.btRefresh_Click(null, null);
@@ -286,13 +286,12 @@ namespace CtyTinLuong
                         if (!KiemTraLuuThemMoi())
                             return;
 
-                        cls.sMaKH = CheckString.creatMaKhachHang();
                         cls.bKhoa = false;
                         if (cls.Insert())
                         {
                             using (clsThin clt = new clsThin())
                             {
-                                clt.Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung(Convert.ToInt32(gridTKKeToan.EditValue.ToString()), true);
+                                clt.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(Convert.ToInt32(gridTKKeToan.EditValue.ToString()), true);
                                 _frmKH.btRefresh_Click(null, null);
                             }
                         }
@@ -348,8 +347,6 @@ namespace CtyTinLuong
         public void frmChiTietKhachHang_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            if (frmKhachHang.mbCopy)
-                
 
             if (frmKhachHang.mbSua == true)
             {
@@ -368,7 +365,8 @@ namespace CtyTinLuong
 
             if (frmKhachHang.mbCopy || frmKhachHang.mbThemMoi)
             {
-                txtMaKH.Text = CheckString.creatMaKhachHang();
+                //txtMaKH.Text = CheckString.creatMaKhachHang();
+                txtMaKH.Text = gridTKKeToan.Text;
             }
 
             Cursor.Current = Cursors.Default;
@@ -397,6 +395,7 @@ namespace CtyTinLuong
             DataTable dt = cls.SelectOne();
             txtTenTaiKhoan.Text = cls.sTenTaiKhoanCon.Value;
             txtTen.Text = cls.sTenTaiKhoanCon.Value;
+            txtMaKH.Text = gridTKKeToan.Text;
             //if(cls.bKhoa==true)
             //{
             //    if (frmKhachHang.mbSua == false)

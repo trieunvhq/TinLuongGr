@@ -39,7 +39,6 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiaiCon", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiaiCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChuCon", SqlDbType.NVarChar, 250, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChuCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bKhoa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bKhoa));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaSuDung", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaSuDung));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_TaiKhoanKeToanCon", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iID_TaiKhoanKeToanCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
@@ -93,7 +92,6 @@ namespace CtyTinLuong
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sDienGiaiCon", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDienGiaiCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sGhiChuCon", SqlDbType.NVarChar, 250, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhiChuCon));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bKhoa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bKhoa));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bDaSuDung", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bDaSuDung));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iErrorCode", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iErrorCode));
 
 				// Open connection.
@@ -208,7 +206,6 @@ namespace CtyTinLuong
 					m_sDienGiaiCon = (string)dtToReturn.Rows[0]["DienGiaiCon"];
 					m_sGhiChuCon = (string)dtToReturn.Rows[0]["GhiChuCon"];
 					m_bKhoa = (bool)dtToReturn.Rows[0]["Khoa"];
-                    m_bDaSuDung = (bool)dtToReturn.Rows[0]["DaSuDung"];
                 }
                 return dtToReturn;
 			}

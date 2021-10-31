@@ -13,12 +13,73 @@ namespace CtyTinLuong
     public partial class frmNhaCungCap : Form
     {
        
-        public static int miID_Sua_NCC;
+        public static int miID_Sua_NCC, _iID_TaiKhoanKeToan;
         public static bool mbThemMoi, mbSua, mbCopy;
         private void HienThi()
         {
             clsTbNhaCungCap cls = new clsTbNhaCungCap();
             DataTable dt = cls.SelectAll_W_SoTaiKhoanKeToan();
+            //for(int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    if (dt.Rows[i]["TenTaiKhoanCon"] == null || dt.Rows[i]["TenTaiKhoanCon"].ToString() == "")
+            //    {
+            //        cls.iID_NhaCungCap = Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString());
+            //        cls.Delete();
+            //    }
+            //    else
+            //    {
+            //        using (clsThin cl = new clsThin())
+            //        {
+            //            cl.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()), true);
+            //        }
+            //    }
+            //}
+
+            //for (int i = 0; i < dt.Rows.Count -1; i++)
+            //{
+            //    if (Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToan"].ToString()) == Convert.ToInt32(dt.Rows[i+1]["ID_TaiKhoanKeToan"].ToString()))
+            //    {
+            //        cls.iID_NhaCungCap = Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString());
+            //        DataTable dtt = cls.SelectOne();
+            //        string ten1 = dt.Rows[i]["TenNhaCungCap"].ToString();
+            //        string ten2 = dt.Rows[i+1]["TenNhaCungCap"].ToString();
+            //        int id1 = Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString());
+            //        int id2 = Convert.ToInt32(dt.Rows[i+1]["ID_NhaCungCap"].ToString());
+
+
+            //        if (dtt.Rows.Count > 0)
+            //        {
+            //            string ten = dtt.Rows[0]["TenNhaCungCap"].ToString();
+
+            //            if (ten != ten1)
+            //            {
+            //                cls.iID_NhaCungCap = id1;
+            //                cls.Delete();
+            //            }
+            //            if (ten != ten2)
+            //            {
+            //                cls.iID_NhaCungCap = id2;
+            //                cls.Delete();
+            //            }
+
+            //        }
+
+
+            //    }
+            //}
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                for (int j = i+1; j<dt.Rows.Count - 2; j++)
+                {
+                    if (Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToan"].ToString()) == Convert.ToInt32(dt.Rows[j]["ID_TaiKhoanKeToan"].ToString()))
+                    {
+                        int id1 = Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString());
+                        cls.iID_NhaCungCap = id1;
+                        cls.Delete();
+                    }
+                }
+            }
 
             if (checked_ALL.Checked == true)
             {
@@ -144,7 +205,7 @@ namespace CtyTinLuong
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
-            frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap();
+            frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap(this);
             ff.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -158,7 +219,7 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
-                frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap();
+                frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap(this);
                 ff.Show();
                 Cursor.Current = Cursors.Default;
             }
@@ -171,10 +232,11 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 miID_Sua_NCC = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID).ToString());
+                _iID_TaiKhoanKeToan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_TaiKhoanKeToan).ToString());
                 mbThemMoi = false;
                 mbSua = true;
                 mbCopy = false;
-                frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap();
+                frmChiTietNhaCungCap ff = new frmChiTietNhaCungCap(this);
                 ff.Show();
                 Cursor.Current = Cursors.Default;
             }
@@ -182,7 +244,7 @@ namespace CtyTinLuong
            
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             frmNhaCungCap_Load(sender, e);

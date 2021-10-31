@@ -12,10 +12,10 @@ namespace CtyTinLuong
     public partial class clsThin : clsDBInteractionBase
     {
 
-        public bool Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung(int id, bool DaSuDung)
+        public bool Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(int id, bool DaSuDung)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung]";
+            scmCmdToExecute.CommandText = "dbo.[Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
             // Use base class' connection object

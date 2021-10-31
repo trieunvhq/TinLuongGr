@@ -13,6 +13,188 @@ namespace CtyTinLuong
     public partial class frmChiTietNhaCungCap : Form
     {
 
+        private bool KiemTraLuuThemMoi()
+        {
+            clsTbNhaCungCap cls = new clsTbNhaCungCap();
+            DataTable dt = cls.SelectAll();
+            string tenNCC = txtTen.Text;
+            string MaNhaCungCap = txtMaNCC.Text;
+            string expression;
+            expression = "TenNhaCungCap='" + tenNCC + "'";
+            DataRow[] foundRows;
+            foundRows = dt.Select(expression);
+
+            string expression22;
+            expression22 = "MaNhaCungCap='" + MaNhaCungCap + "'";
+            DataRow[] foundRows222;
+            foundRows222 = dt.Select(expression22);
+
+            if (String.IsNullOrEmpty(txtMaNCC.Text))
+            {
+                MessageBox.Show("Chưa chọn nhập mã nhà cung cấp");
+                txtMaNCC.Focus();
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtTen.Text))
+            {
+                MessageBox.Show("Chưa nhập tên nhà cung cấp!");
+                txtTen.Focus();
+                return false;
+            }
+            else if (foundRows222.Length > 0)
+            {
+                MessageBox.Show("Đã có mã nhà cung cấp tồn tại trong hệ thống ");
+                txtMaNCC.Focus();
+                return false;
+            }
+            else if (foundRows.Length > 0)
+            {
+                MessageBox.Show("Đã có tên nhà cung cấp tồn tại trong hệ thống ");
+                txtTen.Focus();
+                return false;
+            }
+            else if (gridTKKeToan.Text == "")
+            {
+                MessageBox.Show("Chưa có tài khoản kế toán ");
+                return false;
+            }
+            else if (gridTKKeToan.EditValue == null)
+            {
+                MessageBox.Show("Chưa có tài khoản kế toán ");
+                return false;
+            }
+            else return true;
+        }
+
+        private bool KiemTraSua(int idkh)
+        {
+            clsTbNhaCungCap cls = new clsTbNhaCungCap();
+            DataTable dt = cls.SelectAll();
+            string tenNCC = txtTen.Text.Trim();
+            string MaNhaCungCap = txtMaNCC.Text;
+
+            if (String.IsNullOrEmpty(txtMaNCC.Text))
+            {
+                MessageBox.Show("Chưa chọn nhập mã nhà cung cấp");
+                txtMaNCC.Focus();
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtTen.Text))
+            {
+                MessageBox.Show("Chưa nhập tên nhà cung cấp!");
+                txtTen.Focus();
+                return false;
+            }
+            else if (gridTKKeToan.EditValue == null)
+            {
+                MessageBox.Show("Chưa có tài khoản kế toán ");
+                return false;
+            }
+            else if (checkMaNCCUpdate(dt, MaNhaCungCap, idkh))
+            {
+                MessageBox.Show("Đã có mã nhà cung cấp tồn tại trong hệ thống ");
+                txtMaNCC.Focus();
+                return false;
+            }
+            else if (checkTenUpdate(dt, tenNCC, idkh))
+            {
+                MessageBox.Show("Đã có tên nhà cung cấp tồn tại trong hệ thống ");
+                txtTen.Focus();
+                return false;
+            }
+            else if (checkTKKTUpdate(dt, idkh, Convert.ToInt32(gridTKKeToan.EditValue)))
+            {
+                MessageBox.Show("Tài khoản kế toán " + gridTKKeToan.Text + " đã được sử dụng. Vui lòng chọn tài khoản khác",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaNCC.Focus();
+                return false;
+            }
+            else return true;
+        }
+
+        private bool checkMaNCCUpdate(DataTable dt, string maNCC, int idkh)
+        {
+            bool tmp = false;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (idkh != Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString()))
+                {
+                    if (maNCC == dt.Rows[i]["MaNhaCungCap"].ToString())
+                    {
+                        tmp = true;
+                        break;
+                    }
+                }
+            }
+            return tmp;
+        }
+
+        private bool checkTenUpdate(DataTable dt, string tenNCC, int idkh)
+        {
+            bool tmp = false;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int idncc_ = Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString());
+                if (idkh != idncc_)
+                {
+                    string tenNCC_ = dt.Rows[i]["TenNhaCungCap"].ToString();
+                    if (tenNCC == tenNCC_)
+                    {
+                        tmp = true;
+                        break;
+                    }
+
+                }
+            }
+            return tmp;
+        }
+
+        private bool checkTKKTUpdate(DataTable dt, int idkh, int tkkt)
+        {
+            bool tmp = false;
+            int idtmp = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (idkh != Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString()))
+                {
+                    if (tkkt == Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToan"].ToString()))
+                    {
+                        tmp = true;
+                        break;
+                    }
+                }
+            }
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (idkh == Convert.ToInt32(dt.Rows[i]["ID_NhaCungCap"].ToString()))
+                {
+                    idtmp = Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToan"].ToString());
+                    break;
+                }
+            }
+
+            using (clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon())
+            {
+                DataTable kt = cls.SelectAll();
+                for (int i = 0; i < kt.Rows.Count; i++)
+                {
+                    if (idtmp != Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()))
+                    {
+                        if (tkkt == Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()))
+                        {
+                            if (Convert.ToBoolean(kt.Rows[i]["Khoa"].ToString()))
+                            {
+                                tmp = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return tmp;
+        }
+
         private void Load_lockUp(bool themmoi)
         {
             DataTable dt = new DataTable();
@@ -24,26 +206,28 @@ namespace CtyTinLuong
             gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
             gridTKKeToan.Properties.DisplayMember = "SoTaiKhoanCon";
         }
-        private bool KiemTraLuu()
-        {
-            if (txtMaNCC.Text.ToString() == "")
-            {
-                MessageBox.Show("Chưa chọn Mã Nhân viên ");
-                return false;
-            }
-            else if (txtTen.Text.ToString() == "")
-            {
-                MessageBox.Show("Chưa có tên ");
-                return false;
-            }
-            else if (gridTKKeToan.EditValue==null)
-            {
-                MessageBox.Show("Chưa có tài khoản kế toán ");
-                return false;
-            }
-            else return true;
 
-        }
+
+        //private bool KiemTraLuu()
+        //{
+        //    if (txtMaNCC.Text.ToString() == "")
+        //    {
+        //        MessageBox.Show("Chưa chọn Mã Nhân viên ");
+        //        return false;
+        //    }
+        //    else if (txtTen.Text.ToString() == "")
+        //    {
+        //        MessageBox.Show("Chưa có tên ");
+        //        return false;
+        //    }
+        //    else if (gridTKKeToan.EditValue==null)
+        //    {
+        //        MessageBox.Show("Chưa có tài khoản kế toán ");
+        //        return false;
+        //    }
+        //    else return true;
+
+        //}
         private void Luu_Khoa_TaiKhoanNganHang(int xxID_TK____)
         {
             clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
@@ -51,8 +235,7 @@ namespace CtyTinLuong
         }
         private void LuuDuLieu()
         {
-            if (!KiemTraLuu()) return;
-            else
+            try
             {
                 Luu_Khoa_TaiKhoanNganHang(Convert.ToInt32(gridTKKeToan.EditValue.ToString()));
                 clsTbNhaCungCap cls = new clsTbNhaCungCap();
@@ -74,49 +257,74 @@ namespace CtyTinLuong
                     cls.iID_TaiKhoanKeToan = Convert.ToInt16(gridTKKeToan.EditValue.ToString());
                 if(frmNhaCungCap.mbSua==true)
                 {
+                    if (!KiemTraSua(frmNhaCungCap.miID_Sua_NCC))
+                        return;
                     clsTbNhaCungCap clsxx = new clsTbNhaCungCap();
                     clsxx.iID_NhaCungCap = frmNhaCungCap.miID_Sua_NCC;
                     DataTable dt = clsxx.SelectOne();
                     cls.bKhoa = clsxx.bKhoa.Value;
 
                     cls.iID_NhaCungCap = frmNhaCungCap.miID_Sua_NCC;
-                    cls.Update();
-                    MessageBox.Show("Đã lưu");
+                    if (cls.Update())
+                    {
+                        if (frmNhaCungCap._iID_TaiKhoanKeToan != Convert.ToInt32(gridTKKeToan.EditValue))
+                        {
+                            using (clsThin clt = new clsThin())
+                            {
+                                clt.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(frmNhaCungCap._iID_TaiKhoanKeToan, false);
+                                clt.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(Convert.ToInt32(gridTKKeToan.EditValue), true);
+                            }
+                        }
+                        _frm.btRefresh_Click(null, null);
+                    }
+                    //MessageBox.Show("Đã lưu");
                     this.Close();
                 }
                 else
                 {
-                    if (!String.IsNullOrEmpty(txtMaNCC.Text))
-                    {
-                        if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
-                        {
-                            MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
-                            txtMaNCC.Focus();
-                            return;
-                        }
-                    }
+                    //if (!String.IsNullOrEmpty(txtMaNCC.Text))
+                    //{
+                    //    if (cls.SelectOne_MaNhaCungCap(txtMaNCC.Text.Trim()))
+                    //    {
+                    //        MessageBox.Show("Mã nhà cung cấp \"" + txtMaNCC.Text.Trim() + "\" đã tồn tại", "Thông báo");
+                    //        txtMaNCC.Focus();
+                    //        return;
+                    //    }
+                    //}
 
-                    //
-                    if (!String.IsNullOrEmpty(txtTen.Text))
-                    {
-                        if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
-                        {
-                            if (MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
-                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                            {
-                                txtTen.Focus();
-                                return;
-                            }
-                        }
-                    }
+                    ////
+                    //if (!String.IsNullOrEmpty(txtTen.Text))
+                    //{
+                    //    if (cls.SelectOne_TenNhaCungCap(txtTen.Text.Trim()))
+                    //    {
+                    //        if (MessageBox.Show("Tên nhà cung cấp \"" + txtTen.Text.Trim() + "\" đã tồn tại", "Thông báo",
+                    //                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                    //        {
+                    //            txtTen.Focus();
+                    //            return;
+                    //        }
+                    //    }
+                    //}
+
+                    if (!KiemTraLuuThemMoi())
+                        return;
 
                     cls.bKhoa = false;
-                    cls.Insert();
-                    MessageBox.Show("Đã thêm mới"); 
+                    if (cls.Insert())
+                    {
+                        using (clsThin clt = new clsThin())
+                        {
+                            clt.Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(Convert.ToInt32(gridTKKeToan.EditValue.ToString()), true);
+                            _frm.btRefresh_Click(null, null);
+                        }
+                    }
+                    //MessageBox.Show("Đã thêm mới"); 
                     this.Close();
                 }
-                
-                
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi:... " + ea.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -146,8 +354,11 @@ namespace CtyTinLuong
             }
 
         }
-        public frmChiTietNhaCungCap()
+
+        frmNhaCungCap _frm;
+        public frmChiTietNhaCungCap(frmNhaCungCap frm)
         {
+            _frm = frm;
             InitializeComponent();
         }
 
@@ -181,7 +392,16 @@ namespace CtyTinLuong
                 Load_lockUp(true);
                 HienThi_SuaThongTin_NCC();
             }
+            else
+            {
+                Load_lockUp(true);
+            }
 
+            if (frmNhaCungCap.mbCopy || frmNhaCungCap.mbThemMoi)
+            {
+                //txtMaKH.Text = CheckString.creatMaKhachHang();
+                txtMaNCC.Text = gridTKKeToan.Text;
+            }
             Cursor.Current = Cursors.Default;
         }
 
@@ -207,6 +427,8 @@ namespace CtyTinLuong
             cls.iID_TaiKhoanKeToanCon = xxid;
             DataTable dt = cls.SelectOne();
             txtTenTaiKhoan.Text = cls.sTenTaiKhoanCon.Value;
+            txtTen.Text = cls.sTenTaiKhoanCon.Value;
+            txtMaNCC.Text = gridTKKeToan.Text;
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)

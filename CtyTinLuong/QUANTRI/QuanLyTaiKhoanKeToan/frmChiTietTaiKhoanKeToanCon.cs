@@ -114,7 +114,6 @@ namespace CtyTinLuong
                             cls.sTenTaiKhoanCon = txtTenTKCon.Text.ToString();
                             cls.sDienGiaiCon = txtDienGiaiCon.Text.ToString();
                             cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
-                            cls.bDaSuDung = false;
                             cls.bKhoa = false;
                             cls.Insert();
                             Cursor.Current = Cursors.Default;
@@ -138,7 +137,6 @@ namespace CtyTinLuong
                         cls.sGhiChuCon = txtGhiChuCon.Text.ToString();
                         cls.iID_TaiKhoanKeToanCon = frmQuanLyTaiKhoanKeToan.miID_TaiKhoan;
                         cls.bKhoa = clsxxx.bKhoa.Value;
-                        cls.bDaSuDung = clsxxx.bDaSuDung.Value;
                         cls.Update();
                         Cursor.Current = Cursors.Default;
                         MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
