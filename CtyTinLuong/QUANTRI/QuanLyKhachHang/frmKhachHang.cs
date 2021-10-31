@@ -13,7 +13,7 @@ namespace CtyTinLuong
     public partial class frmKhachHang : Form
     {
         public static bool mbThemMoi, mbSua, mbCopy;
-        public static int miID_Sua_KH;
+        public static int miID_Sua_KH, _iID_TaiKhoanKeToan;
 
         private void HienThi()
         {
@@ -142,18 +142,20 @@ namespace CtyTinLuong
             if (gridView1.GetFocusedRowCellValue(clID).ToString() != "")
             {
                 Cursor.Current = Cursors.WaitCursor;
-                miID_Sua_KH = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID).ToString());
+                miID_Sua_KH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID).ToString());
+                _iID_TaiKhoanKeToan = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_TaiKhoanKeToan).ToString()); 
+
                 mbThemMoi = false;
                 mbSua = true;
                 mbCopy = false;
-                frmChiTietKhachHang ff = new frmChiTietKhachHang();
+                frmChiTietKhachHang ff = new frmChiTietKhachHang(this);
                 ff.Show();
                 Cursor.Current = Cursors.Default;
             }
             
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
+        public void btRefresh_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             frmKhachHang_Load(sender, e);
@@ -166,7 +168,7 @@ namespace CtyTinLuong
             mbThemMoi = true;
             mbSua = false;
             mbCopy = false;
-            frmChiTietKhachHang ff = new frmChiTietKhachHang();
+            frmChiTietKhachHang ff = new frmChiTietKhachHang(this);
             ff.Show();
             Cursor.Current = Cursors.Default;
         }
@@ -180,7 +182,7 @@ namespace CtyTinLuong
                 mbThemMoi = false;
                 mbSua = false;
                 mbCopy = true;
-                frmChiTietKhachHang ff = new frmChiTietKhachHang();
+                frmChiTietKhachHang ff = new frmChiTietKhachHang(this);
                 ff.Show();
                 Cursor.Current = Cursors.Default;
             }

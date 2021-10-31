@@ -148,7 +148,7 @@ namespace CtyTinLuong
 
         private bool checkTKKTUpdate(DataTable dt, int idkh, int tkkt)
         {
-            bool tmp = true;
+            bool tmp = false;
             int idtmp = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -156,7 +156,7 @@ namespace CtyTinLuong
                 {
                     if (tkkt == Convert.ToInt32(dt.Rows[i]["ID_TaiKhoanKeToan"].ToString()))
                     {
-                        tmp = false;
+                        tmp = true;
                         break;
                     }
                 }
@@ -176,14 +176,16 @@ namespace CtyTinLuong
                 DataTable kt = cls.SelectAll();
                 for (int i = 0; i < kt.Rows.Count; i++)
                 {
-                    if (idtmp != Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()) 
-                        && tkkt == Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()))
+                    if (idtmp != Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()))
                     {
-                        if (Convert.ToBoolean(kt.Rows[i]["DaSuDung"].ToString()) 
-                            || Convert.ToBoolean(kt.Rows[i]["Khoa"].ToString()))
+                        if (tkkt == Convert.ToInt32(kt.Rows[i]["ID_TaiKhoanKeToanCon"].ToString()))
                         {
-                            tmp = false;
-                            break;
+                            if (Convert.ToBoolean(kt.Rows[i]["DaSuDung"].ToString())
+                            || Convert.ToBoolean(kt.Rows[i]["Khoa"].ToString()))
+                            {
+                                tmp = true;
+                                break;
+                            }
                         }
                     }
                 }
@@ -201,7 +203,9 @@ namespace CtyTinLuong
             DataTable dt = new DataTable();
             clsNganHang_TaiKhoanKeToanCon cls = new clsNganHang_TaiKhoanKeToanCon();
             if (themmoi == true)
-                dt = cls.SA_Khoa_False();
+            {
+                dt = cls.SA_Khoa_False(); 
+            }
             else dt = cls.SelectAll();
             gridTKKeToan.Properties.DataSource = dt;
             gridTKKeToan.Properties.ValueMember = "ID_TaiKhoanKeToanCon";
@@ -213,22 +217,22 @@ namespace CtyTinLuong
             try
             {
                 using (clsTbKhachHang cls = new clsTbKhachHang())
-                {
-                    cls.sMaKH = txtMaKH.Text.ToString();
-                    cls.sMaSoThue = txtMaSoThue.Text.ToString();
-                    cls.sTenKH = txtTen.Text.ToString();
-                    cls.sDiaChi = txtDiaChi.Text.ToString();
-                    cls.sDienGiai = txtDienGiai.Text.ToString();
-                    cls.sSoDienThoai = txtSDT.Text.ToString();
-                    cls.sEmail = txtEmail.Text.ToString();
-                    cls.sSoTaiKhoan = txtSoTaiKhoan.Text.ToString();
-                    cls.sTenNganHang = txtNganHang.Text.ToString();
-                    cls.sTinh_ThanhPho = txtTinh_ThanhPho.Text.ToString();
-                    cls.sChiNhanh = txtChiNhanh.Text.ToString();
+                { 
+                    cls.sMaKH = txtMaKH.Text;
+                    cls.sMaSoThue = txtMaSoThue.Text;
+                    cls.sTenKH = txtTen.Text;
+                    cls.sDiaChi = txtDiaChi.Text;
+                    cls.sDienGiai = txtDienGiai.Text;
+                    cls.sSoDienThoai = txtSDT.Text;
+                    cls.sEmail = txtEmail.Text;
+                    cls.sSoTaiKhoan = txtSoTaiKhoan.Text;
+                    cls.sTenNganHang = txtNganHang.Text;
+                    cls.sTinh_ThanhPho = txtTinh_ThanhPho.Text;
+                    cls.sChiNhanh = txtChiNhanh.Text;
                     cls.bNgungTheoDoi = checNgungTheoDoi.Checked; ;
                     cls.bTonTai = true;
-                    cls.sDaiDien = txtDaiDien.Text.ToString();
-                    cls.iID_TaiKhoanKeToan = Convert.ToInt16(gridTKKeToan.EditValue.ToString());
+                    cls.sDaiDien = txtDaiDien.Text;
+                    cls.iID_TaiKhoanKeToan = Convert.ToInt32(gridTKKeToan.EditValue.ToString());
 
                     if (frmKhachHang.mbSua == true)
                     {
@@ -240,8 +244,18 @@ namespace CtyTinLuong
                         cls.bKhoa = clsxx.bKhoa.Value;
                         cls.iID_KhachHang = frmKhachHang.miID_Sua_KH;
 
-                        cls.Update();
-                        MessageBox.Show("Đã lưu");
+                        if (cls.Update())
+                        {
+                            if (frmKhachHang._iID_TaiKhoanKeToan != Convert.ToInt32(gridTKKeToan.EditValue))
+                            {
+                                using (clsThin clt = new clsThin())
+                                {
+                                    clt.Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung(frmKhachHang._iID_TaiKhoanKeToan, false);
+                                }
+                            }
+                            _frmKH.btRefresh_Click(null, null);
+                        }
+                        //MessageBox.Show("Đã lưu");
                         this.Close();
                     }
                     else
@@ -272,15 +286,17 @@ namespace CtyTinLuong
                         if (!KiemTraLuuThemMoi())
                             return;
 
+                        cls.sMaKH = CheckString.creatMaKhachHang();
                         cls.bKhoa = false;
                         if (cls.Insert())
                         {
                             using (clsThin clt = new clsThin())
                             {
                                 clt.Tr_NganHang_TaiKhoanKeToanCon_Update_DaSuDung(Convert.ToInt32(gridTKKeToan.EditValue.ToString()), true);
+                                _frmKH.btRefresh_Click(null, null);
                             }
                         }
-                        MessageBox.Show("Đã thêm mới");
+                        //MessageBox.Show("Đã thêm mới");
                         this.Close();
                     }
                 }
@@ -297,8 +313,8 @@ namespace CtyTinLuong
             clsTbKhachHang cls = new clsTbKhachHang();
             cls.iID_KhachHang = frmKhachHang.miID_Sua_KH;
             DataTable dt = cls.SelectOne();
-            //if (dt.Rows.Count > 0)
-            //{
+            if (dt.Rows.Count > 0)
+            {
                 txtMaKH.Text = dt.Rows[0]["MaKH"].ToString();
                 txtMaSoThue.Text = dt.Rows[0]["MaSoThue"].ToString();
                 txtTen.Text = dt.Rows[0]["TenKH"].ToString();
@@ -314,12 +330,13 @@ namespace CtyTinLuong
                 checNgungTheoDoi.Checked = Convert.ToBoolean(dt.Rows[0]["NgungTheoDoi"].ToString());
                 if (dt.Rows[0]["ID_TaiKhoanKeToan"].ToString() != "")
                     gridTKKeToan.EditValue = cls.iID_TaiKhoanKeToan.Value;
-            //}
-
+            }
         }
 
-        public frmChiTietKhachHang()
+        frmKhachHang _frmKH;
+        public frmChiTietKhachHang(frmKhachHang frmKH)
         {
+            _frmKH = frmKH;
             InitializeComponent();
         }
 
@@ -331,8 +348,9 @@ namespace CtyTinLuong
         public void frmChiTietKhachHang_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            if (frmKhachHang.mbCopy)
+                
 
-            
             if (frmKhachHang.mbSua == true)
             {
                 Load_lockUp(false);
@@ -347,6 +365,12 @@ namespace CtyTinLuong
             {
                 Load_lockUp(true);
             }
+
+            if (frmKhachHang.mbCopy || frmKhachHang.mbThemMoi)
+            {
+                txtMaKH.Text = CheckString.creatMaKhachHang();
+            }
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -372,6 +396,7 @@ namespace CtyTinLuong
             cls.iID_TaiKhoanKeToanCon = xxid;
             DataTable dt = cls.SelectOne();
             txtTenTaiKhoan.Text = cls.sTenTaiKhoanCon.Value;
+            txtTen.Text = cls.sTenTaiKhoanCon.Value;
             //if(cls.bKhoa==true)
             //{
             //    if (frmKhachHang.mbSua == false)
@@ -379,7 +404,7 @@ namespace CtyTinLuong
 
             //    }
             //}
-            
+
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
