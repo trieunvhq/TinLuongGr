@@ -115,8 +115,16 @@ namespace CtyTinLuong
                     }
                     else
                     {
-                        clsth.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, 200000, _id_bophan, radioTo1.Checked, true);
-                        txtLuongTrachNhiem.Text = "200000";
+                        if(DateTime.Now.Year == _nam && DateTime.Now.Month <= _thang)
+                        {
+                            clsth.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, 200000, _id_bophan, radioTo1.Checked, true);
+                            txtLuongTrachNhiem.Text = "200000";
+                        }
+                        else if (DateTime.Now.Year < _nam)
+                        {
+                            clsth.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, 200000, _id_bophan, radioTo1.Checked, true);
+                            txtLuongTrachNhiem.Text = "200000";
+                        }
                     }
 
                     LuongTrachNhiem_Tong = CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim());
