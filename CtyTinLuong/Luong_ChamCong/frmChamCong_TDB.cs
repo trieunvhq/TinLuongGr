@@ -589,7 +589,7 @@ namespace CtyTinLuong
         {
             try
             {
-                int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
+                //int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
                 Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
                 //Tr_frmCaiMacDinnhMaHangTDB ff = new Tr_frmCaiMacDinnhMaHangTDB();
                 ff.Show();

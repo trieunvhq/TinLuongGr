@@ -255,7 +255,7 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Italic);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(371.4757F, 40.90277F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -276,7 +276,7 @@
             this.lbTitle.SizeF = new System.Drawing.SizeF(734.4323F, 22.99998F);
             this.lbTitle.StylePriority.UseFont = false;
             this.lbTitle.StylePriority.UseTextAlignment = false;
-            this.lbTitle.Text = "BẢNG THANH TOÁN LƯƠNG TỔ ĐÓNG KIỆN";
+            this.lbTitle.Text = "BẢNG THANH TOÁN LƯƠNG TỔ ĐÓNG BAO";
             this.lbTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel1

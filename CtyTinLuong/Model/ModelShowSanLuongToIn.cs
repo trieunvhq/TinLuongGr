@@ -14,6 +14,7 @@ namespace CtyTinLuong
         public double[] DsCong = new double[31];
         public List<int> DsIdVthh_DotTang = new List<int>();
         public string MaVT { get; set; }
+        public string DonViTinh { get; set; }
 
 
         private string hoTen;

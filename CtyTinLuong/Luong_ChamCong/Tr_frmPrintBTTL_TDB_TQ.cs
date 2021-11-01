@@ -41,7 +41,7 @@ namespace CtyTinLuong.Luong_ChamCong
                 _ravi["DonGia"] = _data.Rows[i]["DonGia"].ToString();
                 _ravi["ThanhTien"] = _data.Rows[i]["ThanhTien"].ToString();
                 _ravi["LuongTrachNhiem"] = _data.Rows[i]["LuongTrachNhiem"].ToString();
-                _ravi["TongTien"] = _data.Rows[i]["TongTien"].ToString();
+                //_ravi["TongTien"] = _data.Rows[i]["TongTien"].ToString();
                 _ravi["TamUng"] = _data.Rows[i]["TamUng"].ToString();
                 _ravi["ThucNhan"] = _data.Rows[i]["ThucNhan"].ToString();
 

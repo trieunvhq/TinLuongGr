@@ -239,12 +239,29 @@ namespace CtyTinLuong
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+                string ii = gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString();
 
                 if (gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK) == null
                     || gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == ""
                     || gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == "0")
                 {
                     return;
+                }
+
+                if (_nam < DateTime.Now.Year)
+                {
+                    MessageBox.Show("Không thể xóa xóa hàng hóa: " + gridView1.GetFocusedRowCellValue(clTenVTHH).ToString() + ", nếu xóa sẽ làm mất dữ liệu hệ thống!", "Delete",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (_nam == DateTime.Now.Year)
+                {
+                    if (_thang < DateTime.Now.Month)
+                    {
+                        MessageBox.Show("Không thể xóa xóa hàng hóa: " + gridView1.GetFocusedRowCellValue(clTenVTHH).ToString() + ", nếu xóa sẽ làm mất dữ liệu hệ thống!", "Delete",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
 
                 //int id_cn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_NhanSu).ToString());
