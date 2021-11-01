@@ -119,7 +119,6 @@ namespace CtyTinLuong
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.radioNhieuLoaiHang = new System.Windows.Forms.RadioButton();
@@ -154,7 +153,7 @@ namespace CtyTinLuong
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 22);
+            this.label3.Location = new System.Drawing.Point(328, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -164,7 +163,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(179, 23);
+            this.label4.Location = new System.Drawing.Point(472, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -1243,7 +1242,7 @@ namespace CtyTinLuong
             this.Tong.OptionsColumn.AllowEdit = false;
             this.Tong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Tong.Visible = true;
-            this.Tong.VisibleIndex = 34;
+            this.Tong.VisibleIndex = 33;
             this.Tong.Width = 45;
             // 
             // Xoa
@@ -1253,8 +1252,6 @@ namespace CtyTinLuong
             this.Xoa.FieldName = "Xoa";
             this.Xoa.Name = "Xoa";
             this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.Xoa.Visible = true;
-            this.Xoa.VisibleIndex = 33;
             this.Xoa.Width = 35;
             // 
             // ID_ChiTietChamCong_ToGapDan
@@ -1362,30 +1359,33 @@ namespace CtyTinLuong
             // 
             this.cbNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNhanSu.FormattingEnabled = true;
-            this.cbNhanSu.Location = new System.Drawing.Point(580, 34);
+            this.cbNhanSu.Location = new System.Drawing.Point(578, -11);
             this.cbNhanSu.Name = "cbNhanSu";
             this.cbNhanSu.Size = new System.Drawing.Size(171, 21);
             this.cbNhanSu.TabIndex = 138;
+            this.cbNhanSu.Visible = false;
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(766, 7);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(766, -29);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(112, 48);
             this.btnThemNhanVien.TabIndex = 137;
             this.btnThemNhanVien.Text = "Thêm nhân viên";
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
+            this.btnThemNhanVien.Visible = false;
             this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(474, 37);
+            this.label7.Location = new System.Drawing.Point(472, -8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 136;
             this.label7.Text = "Tên nhân viên:";
+            this.label7.Visible = false;
             // 
             // linkLabel2
             // 
@@ -1402,20 +1402,22 @@ namespace CtyTinLuong
             // 
             this.cbLoaiCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiCong.FormattingEnabled = true;
-            this.cbLoaiCong.Location = new System.Drawing.Point(580, 7);
+            this.cbLoaiCong.Location = new System.Drawing.Point(580, -3);
             this.cbLoaiCong.Name = "cbLoaiCong";
             this.cbLoaiCong.Size = new System.Drawing.Size(171, 21);
             this.cbLoaiCong.TabIndex = 149;
+            this.cbLoaiCong.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(476, 10);
+            this.label1.Location = new System.Drawing.Point(476, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 148;
             this.label1.Text = "Chọn loại hàng:";
+            this.label1.Visible = false;
             // 
             // btnPrint
             // 
@@ -1459,20 +1461,9 @@ namespace CtyTinLuong
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(271, 602);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 13);
-            this.label5.TabIndex = 162;
-            this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
-            // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(218, 20);
+            this.txtNam.Location = new System.Drawing.Point(511, 22);
             this.txtNam.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -1496,7 +1487,7 @@ namespace CtyTinLuong
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(85, 20);
+            this.txtThang.Location = new System.Drawing.Point(378, 22);
             this.txtThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -1522,25 +1513,27 @@ namespace CtyTinLuong
             // 
             this.radioNhieuLoaiHang.AutoSize = true;
             this.radioNhieuLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNhieuLoaiHang.Location = new System.Drawing.Point(317, 8);
+            this.radioNhieuLoaiHang.Location = new System.Drawing.Point(317, -2);
             this.radioNhieuLoaiHang.Name = "radioNhieuLoaiHang";
             this.radioNhieuLoaiHang.Size = new System.Drawing.Size(147, 17);
             this.radioNhieuLoaiHang.TabIndex = 165;
             this.radioNhieuLoaiHang.TabStop = true;
             this.radioNhieuLoaiHang.Text = "Thêm nhiều loại hàng";
             this.radioNhieuLoaiHang.UseVisualStyleBackColor = true;
+            this.radioNhieuLoaiHang.Visible = false;
             // 
             // radioMotLoaiHang
             // 
             this.radioMotLoaiHang.AutoSize = true;
             this.radioMotLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMotLoaiHang.Location = new System.Drawing.Point(317, 34);
+            this.radioMotLoaiHang.Location = new System.Drawing.Point(315, -11);
             this.radioMotLoaiHang.Name = "radioMotLoaiHang";
             this.radioMotLoaiHang.Size = new System.Drawing.Size(136, 17);
             this.radioMotLoaiHang.TabIndex = 166;
             this.radioMotLoaiHang.TabStop = true;
             this.radioMotLoaiHang.Text = "Thêm một loại hàng";
             this.radioMotLoaiHang.UseVisualStyleBackColor = true;
+            this.radioMotLoaiHang.Visible = false;
             // 
             // frmChamCong_TGD
             // 
@@ -1551,7 +1544,6 @@ namespace CtyTinLuong
             this.Controls.Add(this.radioNhieuLoaiHang);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
@@ -1666,7 +1658,6 @@ namespace CtyTinLuong
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
-        private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietChamCong_ToGapDan;
         private DevExpress.XtraGrid.Columns.GridColumn ID_VTHH;
