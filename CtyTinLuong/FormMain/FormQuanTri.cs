@@ -86,7 +86,7 @@ namespace CtyTinLuong.FormMain
             Cursor.Current = Cursors.WaitCursor;
             //frmQuanLyDonViTinh ff = new frmQuanLyDonViTinh();
             //ff.Show();
-            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(DateTime.Now.Month, DateTime.Now.Year);
             ff.Show();
             Cursor.Current = Cursors.Default;
         }

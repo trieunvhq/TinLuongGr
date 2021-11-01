@@ -784,7 +784,7 @@ namespace CtyTinLuong
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, "GapDan");
             ff.Show();
             Cursor.Current = Cursors.Default;
         }

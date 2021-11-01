@@ -143,8 +143,10 @@ namespace CtyTinLuong
             isload = false;
         }
 
-        public Tr_frmCaiMacDinnhMaHangTGD_DB_DK_()
+        public Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(int thang, int nam, string loaiTo = null)
         {
+            _thang = thang;
+            _nam = nam;
             InitializeComponent();
 
             _data = new DataTable();
@@ -167,7 +169,13 @@ namespace CtyTinLuong
 
             _id_bophan = KiemTraTenBoPhan("Tổ Gấp dán");
             if (_id_bophan == 0) return;
-            radioGapDan.Checked = true;
+
+            if (loaiTo == "DongBao")
+                radioDongBao.Checked = true;
+            else if (loaiTo == "DongKien")
+                radioDongKien.Checked = true;
+            else
+                radioGapDan.Checked = true;
         }
 
         private void Tr_frmCaiMacDinnhMaHangTGD_DB_DK__Load(object sender, EventArgs e)
@@ -192,7 +200,7 @@ namespace CtyTinLuong
 
             repositoryItemSearchLookUpEdit1.View.Columns["ID_VTHH"].Visible = false;
 
-            LoadData(true);
+            LoadData(false);
 
             //clsDinhMuc_DinhMuc_Luong_TheoSanLuong clsdm = new clsDinhMuc_DinhMuc_Luong_TheoSanLuong();
             //DataTable dtdm = clsdm.SelectAll();

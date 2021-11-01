@@ -563,7 +563,7 @@ namespace CtyTinLuong
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //Tr_frmCaiMacDinnhMaHangTDB ff = new Tr_frmCaiMacDinnhMaHangTDB();
-            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(_thang, _nam, "DongBao");
             ff.Show();
         }
         
@@ -590,7 +590,7 @@ namespace CtyTinLuong
             try
             {
                 //int id_congnhan_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
-                Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+                Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(_thang, _nam, "DongBao");
                 //Tr_frmCaiMacDinnhMaHangTDB ff = new Tr_frmCaiMacDinnhMaHangTDB();
                 ff.Show();
 

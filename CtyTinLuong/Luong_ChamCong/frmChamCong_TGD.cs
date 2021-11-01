@@ -1179,7 +1179,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             //doiMauTitle(sender, e);
-            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(_thang, _nam, "GapDan");
             //frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
             //this.Hide();
             ff.Show();
@@ -1301,7 +1301,7 @@ namespace CtyTinLuong
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_();
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(_thang, _nam, "GapDan");
             //frmCaiMacDinnhMaHangToGapDan ff = new frmCaiMacDinnhMaHangToGapDan();
             ff.Show();
             Cursor.Current = Cursors.Default;
