@@ -250,7 +250,7 @@
             this.Ngay.StylePriority.UseFont = false;
             this.Ngay.StylePriority.UsePadding = false;
             this.Ngay.StylePriority.UseTextAlignment = false;
-            this.Ngay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.Ngay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.Ngay.Weight = 0.54751826831516359D;
             // 
             // DVT
@@ -751,7 +751,9 @@
             this.lbThangNamTitle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lbThangNamTitle.SizeF = new System.Drawing.SizeF(1109.875F, 17.27082F);
             this.lbThangNamTitle.StylePriority.UseFont = false;
+            this.lbThangNamTitle.StylePriority.UseTextAlignment = false;
             this.lbThangNamTitle.Text = "Tháng";
+            this.lbThangNamTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel1
             // 

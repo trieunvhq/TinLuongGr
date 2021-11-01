@@ -76,7 +76,6 @@ namespace CtyTinLuong
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
             this.radioTo2 = new System.Windows.Forms.RadioButton();
@@ -523,18 +522,6 @@ namespace CtyTinLuong
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(275, 603);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 13);
-            this.label5.TabIndex = 162;
-            this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
-            this.label5.Visible = false;
-            // 
             // txtNam
             // 
             this.txtNam.Location = new System.Drawing.Point(524, 22);
@@ -618,7 +605,6 @@ namespace CtyTinLuong
             this.Controls.Add(this.radioTo1);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtThang);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btGuiDuLieu);
             this.Controls.Add(this.btThoat);
@@ -689,7 +675,6 @@ namespace CtyTinLuong
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown txtNam;
         private System.Windows.Forms.NumericUpDown txtThang;
         private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;

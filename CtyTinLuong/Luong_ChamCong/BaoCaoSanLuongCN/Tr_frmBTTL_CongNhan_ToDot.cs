@@ -588,18 +588,7 @@ namespace CtyTinLuong
             int count_ = _data.Rows.Count;
             if (count_ > 1)
             {
-                for(int i = 2; i < 34; i++)
-                {
-                    if(CheckString.ConvertToDouble_My(_data.Rows[count_ - 1][i].ToString()) > 0)
-                    {
-                        _colDelete[i - 2] = 0; //Không xóa
-                    }
-                    else _colDelete[i - 2] = 1; //Xóa
-                }
-                _colDelete[28] = 0; //col Đơn giá Bao
-                _colDelete[31] = 0; //col Đơn giá tb
-
-                CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data, _colDelete);
+                CtyTinLuong.Tr_frmPrintBTTL_CongNhan_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_CongNhan_ToDot(_thang, _nam, _data, radioTo1.Checked);
                 ff.Show();
             }
             else

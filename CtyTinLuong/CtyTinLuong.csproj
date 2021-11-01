@@ -205,11 +205,23 @@
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBTTL_CongNhan_ToDot.Designer.cs">
       <DependentUpon>Tr_frmBTTL_CongNhan_ToDot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintBTTL_CongNhan_ToDot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintBTTL_CongNhan_ToDot.designer.cs">
+      <DependentUpon>Tr_frmPrintBTTL_CongNhan_ToDot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintBTTL_ToDot.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintBTTL_ToDot.Designer.cs">
       <DependentUpon>Tr_frmPrintBTTL_ToDot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_CongNhan_ToDot.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_CongNhan_ToDot.designer.cs">
+      <DependentUpon>Tr_PrintBTTL_CongNhan_ToDot.cs</DependentUpon>
     </Compile>
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot.cs">
       <SubType>Component</SubType>
@@ -2674,8 +2686,14 @@
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmBTTL_CongNhan_ToDot.resx">
       <DependentUpon>Tr_frmBTTL_CongNhan_ToDot.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintBTTL_CongNhan_ToDot.resx">
+      <DependentUpon>Tr_frmPrintBTTL_CongNhan_ToDot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_frmPrintBTTL_ToDot.resx">
       <DependentUpon>Tr_frmPrintBTTL_ToDot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_CongNhan_ToDot.resx">
+      <DependentUpon>Tr_PrintBTTL_CongNhan_ToDot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot.resx">
       <DependentUpon>Tr_PrintBTTL_ToDot.cs</DependentUpon>
