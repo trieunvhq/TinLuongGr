@@ -74,6 +74,8 @@ namespace CtyTinLuong
                 this.Close();
             }
         }
+
+
         private void HienThi_themMoi()
         {
             DataTable dt2 = new DataTable();
