@@ -124,6 +124,7 @@ namespace CtyTinLuong
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
                 DataRow _ravi = _data.NewRow();
+                int idd = Convert.ToInt32(dt3.Rows[i]["ID_MaHangToGD_DB_DK"].ToString());
                 _ravi["ID_MaHangToGD_DB_DK"] = Convert.ToInt32(dt3.Rows[i]["ID_MaHangToGD_DB_DK"].ToString());
                 _ravi["id_bophan"] = Convert.ToInt32(dt3.Rows[i]["id_bophan"].ToString());
                 _ravi["TenBoPhan"] = dt3.Rows[i]["TenBoPhan"].ToString();
@@ -239,18 +240,17 @@ namespace CtyTinLuong
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                string ii = gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString();
 
-                if (gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK) == null
-                    || gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == ""
-                    || gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == "0")
+                if (gridView4.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK) == null
+                    || gridView4.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == ""
+                    || gridView4.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString() == "0")
                 {
                     return;
                 }
 
                 if (_nam < DateTime.Now.Year)
                 {
-                    MessageBox.Show("Không thể xóa xóa hàng hóa: " + gridView1.GetFocusedRowCellValue(clTenVTHH).ToString() + ", nếu xóa sẽ làm mất dữ liệu hệ thống!", "Delete",
+                    MessageBox.Show("Không thể xóa xóa hàng hóa: " + gridView4.GetFocusedRowCellValue(clTenVTHH).ToString() + ", nếu xóa sẽ làm mất dữ liệu hệ thống!", "Delete",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -258,17 +258,17 @@ namespace CtyTinLuong
                 {
                     if (_thang < DateTime.Now.Month)
                     {
-                        MessageBox.Show("Không thể xóa xóa hàng hóa: " + gridView1.GetFocusedRowCellValue(clTenVTHH).ToString() + ", nếu xóa sẽ làm mất dữ liệu hệ thống!", "Delete",
+                        MessageBox.Show("Không thể xóa xóa hàng hóa: " + gridView4.GetFocusedRowCellValue(clTenVTHH).ToString() + ", nếu xóa sẽ làm mất dữ liệu hệ thống!", "Delete",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
 
-                //int id_cn = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_NhanSu).ToString());
-                int ID_ChiTietChamCong_TGD = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString());
+                //int id_cn = Convert.ToInt32(gridView4.GetFocusedRowCellValue(ID_NhanSu).ToString());
+                int ID_ChiTietChamCong_TGD = Convert.ToInt32(gridView4.GetFocusedRowCellValue(ID_MaHangToGD_DB_DK).ToString());
 
                 DialogResult traloi;
-                traloi = MessageBox.Show("Xác nhận xóa hàng hóa: " + gridView1.GetFocusedRowCellValue(clTenVTHH).ToString(), "Delete",
+                traloi = MessageBox.Show("Xác nhận xóa hàng hóa: " + gridView4.GetFocusedRowCellValue(clTenVTHH).ToString(), "Delete",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (traloi == DialogResult.Yes)
                 {

@@ -59,11 +59,11 @@
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clDonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.NgungTheoDoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Thang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clID_VTHH2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -340,6 +340,8 @@
             this.ID_MaHangToGD_DB_DK.Caption = "ID_MaHangToGD_DB_DK";
             this.ID_MaHangToGD_DB_DK.FieldName = "ID_MaHangToGD_DB_DK";
             this.ID_MaHangToGD_DB_DK.Name = "ID_MaHangToGD_DB_DK";
+            this.ID_MaHangToGD_DB_DK.Visible = true;
+            this.ID_MaHangToGD_DB_DK.VisibleIndex = 6;
             // 
             // id_bophan
             // 
@@ -435,6 +437,24 @@
             this.DonGia.VisibleIndex = 4;
             this.DonGia.Width = 143;
             // 
+            // NgungTheoDoi
+            // 
+            this.NgungTheoDoi.Caption = "NgungTheoDoi";
+            this.NgungTheoDoi.FieldName = "NgungTheoDoi";
+            this.NgungTheoDoi.Name = "NgungTheoDoi";
+            // 
+            // Thang
+            // 
+            this.Thang.Caption = "Tháng";
+            this.Thang.FieldName = "Thang";
+            this.Thang.Name = "Thang";
+            // 
+            // Nam
+            // 
+            this.Nam.Caption = "Năm";
+            this.Nam.FieldName = "Nam";
+            this.Nam.Name = "Nam";
+            // 
             // clXoa
             // 
             this.clXoa.Caption = "Xóa";
@@ -455,24 +475,6 @@
             this.btXoa2.Name = "btXoa2";
             this.btXoa2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa2.Click += new System.EventHandler(this.btXoa2_Click);
-            // 
-            // NgungTheoDoi
-            // 
-            this.NgungTheoDoi.Caption = "NgungTheoDoi";
-            this.NgungTheoDoi.FieldName = "NgungTheoDoi";
-            this.NgungTheoDoi.Name = "NgungTheoDoi";
-            // 
-            // Thang
-            // 
-            this.Thang.Caption = "Tháng";
-            this.Thang.FieldName = "Thang";
-            this.Thang.Name = "Thang";
-            // 
-            // Nam
-            // 
-            this.Nam.Caption = "Năm";
-            this.Nam.FieldName = "Nam";
-            this.Nam.Name = "Nam";
             // 
             // repositoryItemGridLookUpEdit1
             // 

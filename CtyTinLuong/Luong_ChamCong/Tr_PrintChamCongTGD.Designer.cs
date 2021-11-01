@@ -243,7 +243,7 @@
             this.hoTen.StylePriority.UseFont = false;
             this.hoTen.StylePriority.UsePadding = false;
             this.hoTen.StylePriority.UseTextAlignment = false;
-            this.hoTen.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.hoTen.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.hoTen.Weight = 1.3371128873674139D;
             // 
             // cong
