@@ -340,8 +340,6 @@
             this.ID_MaHangToGD_DB_DK.Caption = "ID_MaHangToGD_DB_DK";
             this.ID_MaHangToGD_DB_DK.FieldName = "ID_MaHangToGD_DB_DK";
             this.ID_MaHangToGD_DB_DK.Name = "ID_MaHangToGD_DB_DK";
-            this.ID_MaHangToGD_DB_DK.Visible = true;
-            this.ID_MaHangToGD_DB_DK.VisibleIndex = 6;
             // 
             // id_bophan
             // 
