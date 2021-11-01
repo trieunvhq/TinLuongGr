@@ -908,21 +908,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 604);
+            this.label1.Location = new System.Drawing.Point(3, 604);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 172;
             this.label1.Text = "Nhập lương trách nhiệm";
-            this.label1.Visible = false;
             // 
             // txtLuongTrachNhiem
             // 
-            this.txtLuongTrachNhiem.Location = new System.Drawing.Point(353, 601);
+            this.txtLuongTrachNhiem.Location = new System.Drawing.Point(129, 601);
             this.txtLuongTrachNhiem.Name = "txtLuongTrachNhiem";
             this.txtLuongTrachNhiem.Size = new System.Drawing.Size(100, 20);
             this.txtLuongTrachNhiem.TabIndex = 173;
             this.txtLuongTrachNhiem.Text = "0";
-            this.txtLuongTrachNhiem.Visible = false;
+            this.txtLuongTrachNhiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLuongTrachNhiem.TextChanged += new System.EventHandler(this.txtLuongTrachNhiem_TextChanged);
             this.txtLuongTrachNhiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongTrachNhiem_KeyPress);
             this.txtLuongTrachNhiem.Leave += new System.EventHandler(this.txtLuongTrachNhiem_Leave);

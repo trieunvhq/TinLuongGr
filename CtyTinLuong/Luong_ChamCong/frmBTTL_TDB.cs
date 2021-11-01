@@ -66,12 +66,14 @@ namespace CtyTinLuong
 
         public void LoadData(bool islandau)
         {
+            txtLuongTrachNhiem.Text = "0";
             _data.Clear();
 
             isload = true;
 
             double sanluong_tong = 0;
             double thanhtien_tong = 0;
+            double LuongTrachNhiem_Tong = 0;
 
             List<int> DsID_Vthh_ = new List<int>();
 
@@ -89,8 +91,36 @@ namespace CtyTinLuong
 
             try
             {
+                txtLuongTrachNhiem.ReadOnly = false;
+                txtLuongTrachNhiem.ResetText();
+
+                if (DateTime.Now.Year == _nam)
+                {
+                    if (DateTime.Now.Month > _thang)
+                    {
+                        txtLuongTrachNhiem.ReadOnly = true;
+                    }
+                }
+                else if (DateTime.Now.Year > _nam)
+                {
+                    txtLuongTrachNhiem.ReadOnly = true;
+                }
+
                 using (clsThin clsth = new clsThin())
                 {
+                    DataTable dtl = clsth.Tr_LgTrNhiem_DB_DK_S(_nam, _thang, _id_bophan, radioTo1.Checked);
+                    if (dtl.Rows.Count > 0)
+                    {
+                        txtLuongTrachNhiem.Text = dtl.Rows[0]["LuongTrachNhiem"].ToString();
+                    }
+                    else
+                    {
+                        clsth.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, 200000, _id_bophan, radioTo1.Checked, true);
+                        txtLuongTrachNhiem.Text = "200000";
+                    }
+
+                    LuongTrachNhiem_Tong = CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim());
+
                     DataTable dt = clsth.Tr_Phieu_ChiTietPhieu_New_ToInCatDot_DongBao(_nam, _thang, 0, 1, 0, _id_bophan, radioTo1.Checked, radioTo2.Checked);
                     if (dt.Rows.Count == 0)
                     {
@@ -120,11 +150,11 @@ namespace CtyTinLuong
                             ravi_["ID_VTHH_Ra"] = ID_VTHH;
                             ravi_["TenVTHH"] = vt.TenVthhThuong;
                             ravi_["MaVT"] = vt.MaVT;
-                            ravi_["SanLuong"] = vt.SlTong;
+                            ravi_["SanLuong"] = vt.SlTong.ToString("N2");
                             sanluong_tong += vt.SlTong;
                             ravi_["DonViTinh"] = vt.DonViTinh;
-                            ravi_["DonGia"] = vt.DonGiaThuong;
-                            ravi_["ThanhTien"] = vt.TienTong;
+                            ravi_["DonGia"] = vt.DonGiaThuong.ToString("N2");
+                            ravi_["ThanhTien"] = vt.TienTong.ToString("N2");
                             thanhtien_tong += vt.TienTong;
                             ravi_["LuongTrachNhiem"] = "";
                             ravi_["XangXe"] = "";
@@ -146,15 +176,15 @@ namespace CtyTinLuong
                     ravi_tg["ID_VTHH_Ra"] = "";
                     ravi_tg["TenVTHH"] = "Tổng";
                     ravi_tg["MaVT"] = "";
-                    ravi_tg["SanLuong"] = sanluong_tong;
+                    ravi_tg["SanLuong"] = sanluong_tong.ToString("N2");
                     ravi_tg["DonViTinh"] = "";
                     ravi_tg["DonGia"] = "";
-                    ravi_tg["ThanhTien"] = thanhtien_tong;
-                    ravi_tg["LuongTrachNhiem"] = "";
+                    ravi_tg["ThanhTien"] = thanhtien_tong.ToString("N2");
+                    ravi_tg["LuongTrachNhiem"] = LuongTrachNhiem_Tong.ToString("N2");
                     ravi_tg["XangXe"] = "";
                     ravi_tg["TamUng"] = "";
                     ravi_tg["BaoHiem"] = "";
-                    ravi_tg["ThucNhan"] = thanhtien_tong;
+                    ravi_tg["ThucNhan"] = (thanhtien_tong + LuongTrachNhiem_Tong).ToString("N2");
                     ravi_tg["PhuCapBaoHiem"] = "";
 
                     _data.Rows.Add(ravi_tg);
@@ -419,7 +449,14 @@ namespace CtyTinLuong
         {
             if (e.KeyChar == (char)13)
             {
-               
+                if (isload)
+                    return;
+
+                using (clsThin cls = new clsThin())
+                {
+                    cls.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim()), _id_bophan, radioTo1.Checked, true);
+                }
+                LoadData(false);
             }
         }
 

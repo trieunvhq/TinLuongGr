@@ -134,9 +134,8 @@ namespace CtyTinLuong
 
             //
             //Load label ngay thang nam header:
-            if (_thang <= 9) xrlbThang.Text = "0" + _thang.ToString();
-            else xrlbThang.Text = _thang.ToString();
-            xrlbNam.Text = _nam.ToString();
+            if (_thang <= 9) lbThangNamTitle.Text = "Tháng 0" + _thang + " năm " + _nam;
+            else lbThangNamTitle.Text = "Tháng " + _thang + " năm " + _nam;
 
             //Load label ngay ky footer:
             DateTime d = Convert.ToDateTime(pNgay.Value);
