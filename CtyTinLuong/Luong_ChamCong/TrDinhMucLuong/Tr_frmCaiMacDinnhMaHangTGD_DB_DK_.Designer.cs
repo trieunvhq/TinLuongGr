@@ -243,7 +243,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(662, 22);
             this.label1.TabIndex = 101;
-            this.label1.Text = "Cột mã vật tư không để trống!";
+            this.label1.Text = "Nếu tháng sau chưa có dữ liệu thì sẽ được tự động update theo dữ liệu tháng trước" +
+    "!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btLuu_Dong
@@ -255,6 +256,7 @@
             this.btLuu_Dong.StyleController = this.dataLayoutControl1;
             this.btLuu_Dong.TabIndex = 97;
             this.btLuu_Dong.Text = "Lưu lại";
+            this.btLuu_Dong.Visible = false;
             this.btLuu_Dong.Click += new System.EventHandler(this.btLuu_Dong_Click);
             // 
             // btThoat

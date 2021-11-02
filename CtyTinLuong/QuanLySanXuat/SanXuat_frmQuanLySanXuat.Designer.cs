@@ -58,6 +58,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.navBCNXT = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -161,7 +162,8 @@
             this.navSanLuongMayIn,
             this.navSanLuongMayCAT,
             this.navSanLuongMayDOT,
-            this.navLuongSanLuong});
+            this.navLuongSanLuong,
+            this.navBCNXT});
             this.navBarControl1.Location = new System.Drawing.Point(6, 19);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 211;
@@ -221,7 +223,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayIn),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayCAT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayDOT),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongSanLuong)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongSanLuong),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBCNXT)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem8
@@ -234,24 +237,28 @@
             // 
             this.navSanLuongMayIn.Caption = "Sản Lượng Tổ Máy In";
             this.navSanLuongMayIn.Name = "navSanLuongMayIn";
+            this.navSanLuongMayIn.Visible = false;
             this.navSanLuongMayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayIn_LinkClicked);
             // 
             // navSanLuongMayCAT
             // 
             this.navSanLuongMayCAT.Caption = "Sản Lượng Tổ Máy Cắt";
             this.navSanLuongMayCAT.Name = "navSanLuongMayCAT";
+            this.navSanLuongMayCAT.Visible = false;
             this.navSanLuongMayCAT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayCAT_LinkClicked);
             // 
             // navSanLuongMayDOT
             // 
             this.navSanLuongMayDOT.Caption = "Sản Lượng Tổ Đột Dập";
             this.navSanLuongMayDOT.Name = "navSanLuongMayDOT";
+            this.navSanLuongMayDOT.Visible = false;
             this.navSanLuongMayDOT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navSanLuongMayDOT_LinkClicked);
             // 
             // navLuongSanLuong
             // 
             this.navLuongSanLuong.Caption = "Báo Cáo Lương Sản Lượng";
             this.navLuongSanLuong.Name = "navLuongSanLuong";
+            this.navLuongSanLuong.Visible = false;
             this.navLuongSanLuong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongSanLuong_LinkClicked);
             // 
             // navBarItem25
@@ -285,6 +292,12 @@
             this.groupBox1.Size = new System.Drawing.Size(219, 618);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
+            // 
+            // navBCNXT
+            // 
+            this.navBCNXT.Caption = "Báo cáo nhập xuất tồn";
+            this.navBCNXT.Name = "navBCNXT";
+            this.navBCNXT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBCNXT_LinkClicked);
             // 
             // SanXuat_frmQuanLySanXuat
             // 
@@ -339,5 +352,6 @@
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayDOT;
         private DevExpress.XtraNavBar.NavBarItem navLuongSanLuong;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraNavBar.NavBarItem navBCNXT;
     }
 }

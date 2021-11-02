@@ -118,7 +118,7 @@ namespace CtyTinLuong
                 for (int i = 0; i < _dtSL_Ca1.Rows.Count; ++i)
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_CongNhan"].ToString());
-                    int ID_Vthh = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_VTHH_Ra"].ToString());
+                    int ID_Vthh = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_VTHH_Vao"].ToString());
                     string MaNV_ = _dtSL_Ca1.Rows[i]["MaNhanVien"].ToString();
 
                     ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan, ID_Vthh, _dtSL_Ca1);
@@ -274,7 +274,7 @@ namespace CtyTinLuong
                 for (int i = 0; i < _dtSL_Ca2.Rows.Count; ++i)
                 {
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_CongNhan"].ToString());
-                    int ID_Vthh = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_VTHH_Ra"].ToString());
+                    int ID_Vthh = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_VTHH_Vao"].ToString());
                     string MaNV_ = _dtSL_Ca2.Rows[i]["MaNhanVien"].ToString();
 
                     ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan, ID_Vthh, _dtSL_Ca2);
@@ -537,7 +537,7 @@ namespace CtyTinLuong
             foreach (DataRow item in dt.Rows)
             {
                 if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString())
-                    && idvthh == Convert.ToInt32(item["ID_VTHH_Ra"].ToString()))
+                    && idvthh == Convert.ToInt32(item["ID_VTHH_Vao"].ToString()))
                 {
                     double SL_Tog_ = 0;
                     double SL_Thg_ = 0;
@@ -545,7 +545,7 @@ namespace CtyTinLuong
                     double Cong_ = 0;
 
                     hoTen = item["TenNhanVien"].ToString();
-                    tenVthhThuong = item["TenVTHH"].ToString();
+                    tenVthhThuong = item["TenVTHH_Vao"].ToString();
                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
                     phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
@@ -557,7 +557,7 @@ namespace CtyTinLuong
                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
                     Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
 
-                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString())/5;
                     slTong += SL_Tog_;
                     SL_Thg_ = SL_Tog_;
                     if (Cong_ > 0)
@@ -636,7 +636,7 @@ namespace CtyTinLuong
 
             foreach (DataRow item in dt.Rows)
             {
-                int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                int idvthh = Convert.ToInt32(item["ID_VTHH_Vao"].ToString());
                 LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
 
                 if (LoaiHangHoa.Contains("cắt đột tăng") && idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
@@ -646,8 +646,8 @@ namespace CtyTinLuong
                     double Cong_ = 0;
 
                     hoTen = item["TenNhanVien"].ToString();
-                    tenVthhThuong = item["TenVTHH"].ToString();
-                    maVT = item["MaVT"].ToString();
+                    tenVthhThuong = item["TenVTHH_Vao"].ToString();
+                    maVT = item["MaVT_Vao"].ToString();
                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
                     phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
@@ -658,7 +658,7 @@ namespace CtyTinLuong
 
                     Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
 
-                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) /5;
                     slTong += SL_Tog_;
                     if (Cong_ > 0)
                     {
@@ -729,7 +729,7 @@ namespace CtyTinLuong
             foreach (DataRow item in dt.Rows)
             {
                 int ID_congNhan_ = Convert.ToInt32(item["ID_CongNhan"].ToString());
-                int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Vao"].ToString());
 
                 //
                 if (idcn == ID_congNhan_)

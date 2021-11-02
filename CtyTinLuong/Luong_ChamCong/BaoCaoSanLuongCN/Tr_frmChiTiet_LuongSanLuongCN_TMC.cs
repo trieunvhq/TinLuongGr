@@ -221,7 +221,7 @@ namespace CtyTinLuong
 
                     for (int i = 0; i < dt.Rows.Count; ++i)
                     {
-                        int ID_VTHH = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra"].ToString());
+                        int ID_VTHH = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Vao"].ToString());
                         int ID_congNhan = Convert.ToInt32(dt.Rows[i]["ID_CongNhan"].ToString());
                         string MaNV_ = dt.Rows[i]["MaNhanVien"].ToString();
 
@@ -435,14 +435,14 @@ namespace CtyTinLuong
 
             foreach (DataRow item in dt.Rows)
             {
-                if (idvthh == Convert.ToInt32(item["ID_VTHH_Ra"].ToString()))
+                if (idvthh == Convert.ToInt32(item["ID_VTHH_Vao"].ToString()))
                 {
                     double SL_Tog_ = 0;
                     double Cong_ = 0;
 
                     hoTen = item["TenNhanVien"].ToString();
-                    tenVthhThuong = item["TenVTHH"].ToString();
-                    maVT = item["MaVT"].ToString();
+                    tenVthhThuong = item["TenVTHH_Vao"].ToString();
+                    maVT = item["MaVT_Vao"].ToString();
                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
                     phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
@@ -454,7 +454,8 @@ namespace CtyTinLuong
                     
                     Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
 
-                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    //Máy cắt tính theo lết: 1 lết = 5 cuộn:
+                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) /5;
                     slTong += SL_Tog_;
                    
                     nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
@@ -519,7 +520,7 @@ namespace CtyTinLuong
 
             foreach (DataRow item in dt.Rows)
             {
-                int idvthh = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                int idvthh = Convert.ToInt32(item["ID_VTHH_Vao"].ToString()); //cũ:ID_VTHH_Ra
                 LoaiHangHoa = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
 
                 if (LoaiHangHoa.Contains("cắt đột tăng"))
@@ -529,8 +530,8 @@ namespace CtyTinLuong
                     double Cong_ = 0;
 
                     hoTen = item["TenNhanVien"].ToString();
-                    tenVthhThuong = item["TenVTHH"].ToString();
-                    maVT = item["MaVT"].ToString();
+                    tenVthhThuong = item["TenVTHH_Vao"].ToString();
+                    maVT = item["MaVT_Vao"].ToString();
                     donGiaThuong = CheckString.ConvertToDouble_My(item["DinhMuc_KhongTang_Value"].ToString());
                     donGiaTang = CheckString.ConvertToDouble_My(item["DinhMuc_Tang_Value"].ToString());
                     phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
@@ -541,7 +542,8 @@ namespace CtyTinLuong
 
                     Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
 
-                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                    //Máy cắt tính theo lết: 1 lết = 5 cuộn:
+                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) /5; //cũ:SanLuong_Tong_Value
                     slTong += SL_Tog_;
                     if (Cong_ > 0)
                     {
@@ -557,6 +559,7 @@ namespace CtyTinLuong
                     }
                 }
             }
+
 
             for (int i = 0; i < 31; i++)
             {
@@ -612,7 +615,7 @@ namespace CtyTinLuong
             foreach (DataRow item in dt.Rows)
             {
                 int ID_congNhan_ = Convert.ToInt32(item["ID_CongNhan"].ToString());
-                int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Ra"].ToString());
+                int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Vao"].ToString());
 
                 //
                 if (ID_VthhRoot != ID_Vthh_ && !dotTang.DsIdVthh_DotTang.Contains(ID_Vthh_))
@@ -632,168 +635,6 @@ namespace CtyTinLuong
             return t;
         }
 
-        //public void LoadData(int xxID_CongNhan)
-        //{
-        //    try
-        //    {
-        //        DateTime date_ = new DateTime(ngaydauthang.Year, ngaydauthang.Month, 1);
-        //        int ngaycuathang_ = (((new DateTime(ngaydauthang.Year, ngaydauthang.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
-        //        if (ngaycuathang_ == 28)
-        //        {
-        //            Ngay31.Visible = false;
-        //            Ngay30.Visible = false;
-        //            Ngay29.Visible = false;
-        //        }
-        //        else if (ngaycuathang_ == 29)
-        //        {
-        //            Ngay31.Visible = false;
-        //            Ngay30.Visible = false;
-        //            Ngay29.Visible = true;
-        //        }
-        //        else if (ngaycuathang_ == 30)
-        //        {
-        //            Ngay31.Visible = false;
-        //            Ngay30.Visible = true;
-        //            Ngay29.Visible = true;
-        //        }
-        //        else if (ngaycuathang_ == 31)
-        //        {
-        //            Ngay31.Visible = true;
-        //            Ngay30.Visible = true;
-        //            Ngay29.Visible = true;
-        //        }
-        //        string thu_ = LayThu(date_);
-        //        for (int i = 0; i < ngaycuathang_; ++i)
-        //        {
-        //            ds_grid[i].Caption = (i + 1) + "\n" + LayThu(new DateTime(ngaydauthang.Year, ngaydauthang.Month, (i + 1)));
-        //            if (ds_grid[i].Caption.Contains("CN"))
-        //            {
-        //                ds_grid[i].AppearanceCell.BackColor = Color.LightGray;
-        //                ds_grid[i].AppearanceHeader.BackColor = Color.LightGray;
-        //                ds_grid[i].AppearanceHeader.ForeColor = Color.Red;
-        //                ds_grid[i].AppearanceCell.ForeColor = Color.Red;
-        //            }
-        //        }
-
-        //        dt2 = new DataTable();
-
-
-        //        dt2.Columns.Add("TenVTHH", typeof(string));
-        //        dt2.Columns.Add("NoiDung", typeof(string));
-
-        //        dt2.Columns.Add("Ngay1", typeof(string));
-        //        dt2.Columns.Add("Ngay2", typeof(string));
-        //        dt2.Columns.Add("Ngay3", typeof(string));
-        //        dt2.Columns.Add("Ngay4", typeof(string));
-        //        dt2.Columns.Add("Ngay5", typeof(string));
-        //        dt2.Columns.Add("Ngay6", typeof(string));
-        //        dt2.Columns.Add("Ngay7", typeof(string));
-        //        dt2.Columns.Add("Ngay8", typeof(string));
-        //        dt2.Columns.Add("Ngay9", typeof(string));
-        //        dt2.Columns.Add("Ngay10", typeof(string));
-        //        dt2.Columns.Add("Ngay11", typeof(string));
-        //        dt2.Columns.Add("Ngay12", typeof(string));
-        //        dt2.Columns.Add("Ngay13", typeof(string));
-        //        dt2.Columns.Add("Ngay14", typeof(string));
-        //        dt2.Columns.Add("Ngay15", typeof(string));
-        //        dt2.Columns.Add("Ngay16", typeof(string));
-        //        dt2.Columns.Add("Ngay17", typeof(string));
-        //        dt2.Columns.Add("Ngay18", typeof(string));
-        //        dt2.Columns.Add("Ngay19", typeof(string));
-        //        dt2.Columns.Add("Ngay20", typeof(string));
-
-        //        dt2.Columns.Add("Ngay21", typeof(string));
-        //        dt2.Columns.Add("Ngay22", typeof(string));
-        //        dt2.Columns.Add("Ngay23", typeof(string));
-        //        dt2.Columns.Add("Ngay24", typeof(string));
-        //        dt2.Columns.Add("Ngay25", typeof(string));
-        //        dt2.Columns.Add("Ngay26", typeof(string));
-        //        dt2.Columns.Add("Ngay27", typeof(string));
-        //        dt2.Columns.Add("Ngay28", typeof(string));
-        //        dt2.Columns.Add("Ngay29", typeof(string));
-        //        dt2.Columns.Add("Ngay30", typeof(string));
-
-        //        dt2.Columns.Add("Ngay31", typeof(string));
-
-        //        dt2.Columns.Add("Tong", typeof(string));
-
-        //        clsTbVatTuHangHoa clsvt = new clsTbVatTuHangHoa();
-        //        clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-        //        DataTable dtxxxx = new DataTable();
-        //        dtxxxx = cls.SelectAll_distinct_ID_VTHH_Ra_W_NgayThang_CongNhan(xxID_CongNhan, ngaydauthang, ngaycuoithang);
-        //        int days = DateTime.DaysInMonth(Convert.ToInt32(txtNam.Text.ToString()), Convert.ToInt32(txtThang.Text.ToString()));
-
-        //        DataRow _ravi_1 = dt2.NewRow();
-        //        DataRow _ravi_2 = dt2.NewRow();
-
-        //        int id_vthh_cu_ = 0;
-        //        double tong1 = 0, tong2 = 0;
-        //        for (int k = 0; k < dtxxxx.Rows.Count; k++)
-        //        {
-        //            double snluong_thuong = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_Thuong"].ToString());
-        //            double snluong_tangca = CheckString.ConvertToDouble_My(dtxxxx.Rows[k]["SanLuong_TangCa"].ToString());
-        //            //int xxid_vthh= Convert.ToInt32(dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString());
-        //            //tong1 = CheckString.ConvertToDouble_My(dtxxxx.Compute("sum(SanLuong_Thuong)", "ID_VTHH_Ra=" + xxid_vthh + ""));
-
-        //            int ngay_ = (Convert.ToDateTime(dtxxxx.Rows[k]["NgaySanXuat"].ToString()).Day);
-        //            _ravi_1["Ngay" + (ngay_)] = snluong_thuong.ToString();
-        //            _ravi_2["Ngay" + (ngay_)] = snluong_tangca.ToString();
-        //            tong1 += snluong_thuong;
-        //            tong2 += snluong_tangca;
-        //            _ravi_1["Tong"] = tong1.ToString();
-        //            _ravi_2["Tong"] = tong2;
-        //            //
-        //            int id_vthh_ = 0;
-        //            if (k < dtxxxx.Rows.Count - 1)
-        //            {
-        //                id_vthh_ = Convert.ToInt32(dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString());
-
-        //                if (dtxxxx.Rows[k]["ID_VTHH_Ra"].ToString() != dtxxxx.Rows[k + 1]["ID_VTHH_Ra"].ToString())
-        //                {
-        //                    _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-        //                    _ravi_1["NoiDung"] = "Thường";
-
-        //                    _ravi_2["TenVTHH"] = "";
-        //                    _ravi_2["NoiDung"] = "Tăng ca";
-
-
-        //                    dt2.Rows.Add(_ravi_1);
-        //                    dt2.Rows.Add(_ravi_2);
-        //                    tong1 = 0;
-        //                    tong2 = 0;
-        //                    _ravi_1 = dt2.NewRow();
-        //                    _ravi_2 = dt2.NewRow();
-        //                    id_vthh_cu_ = id_vthh_;
-        //                }
-        //                else
-        //                { }
-        //            }
-        //            else
-        //            {
-        //                _ravi_1["TenVTHH"] = dtxxxx.Rows[k]["TenVTHH"].ToString();
-        //                _ravi_1["NoiDung"] = "Thường";
-
-        //                _ravi_2["TenVTHH"] = "";
-        //                _ravi_2["NoiDung"] = "Tăng ca";
-
-
-        //                dt2.Rows.Add(_ravi_1);
-        //                dt2.Rows.Add(_ravi_2);
-
-        //                tong1 = 0;
-        //                tong2 = 0;
-        //                _ravi_1 = dt2.NewRow();
-        //                _ravi_2 = dt2.NewRow();
-        //            }
-        //        }
-
-        //        gridControl2.DataSource = dt2;
-        //    }
-        //    catch (Exception ea)
-        //    {
-        //        MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
         public void HienThiGridcontrol2(int iiID_CongNhan)
         {

@@ -167,13 +167,33 @@ namespace CtyTinLuong
                 _data = new DataTable();
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
                 if (_Loaimay == 1)
+                {
                     _data = cls.H_Load_Phieu_IN_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+                    gridControl1.DataSource = _data;
+                }
                 else if (_Loaimay == 2)
+                {
                     _data = cls.H_Load_Phieu_CAT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+                    gridControl1.DataSource = _data;
+                    //for (int i = _data.Rows.Count - 1; i >= 0; i--)
+                    //{
+                    //    int idSoPhieu = Convert.ToInt32(_data.Rows[i]["ID_SoPhieu"].ToString());
+                    //    for (int k = 0; k < _dtMaPhieu_Cat.Rows.Count; k++)
+                    //    {
+                    //        DataRow dr = _dtMaPhieu_Cat.Rows[k];
+                    //        if (Convert.ToInt32(dr["ID_SoPhieu"].ToString()) == idSoPhieu)
+                    //            dr.Delete();
+                    //    }
+                    //    _dtMaPhieu_Cat.AcceptChanges();
+                    //}
+                }
                 else if (_Loaimay == 3)
+                {
                     _data = cls.H_Load_Phieu_DOT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
+                    gridControl1.DataSource = _data;
+                }
 
-                gridControl1.DataSource = _data;
+                
 
                 isload = false;
             }
@@ -253,6 +273,7 @@ namespace CtyTinLuong
             }
         }
 
+        private DataTable _dtMaPhieu_Cat;
         private void Load_LockUp_MaPhieu(DateTime xxtungay, DateTime xxdenngay)
         {
             try
@@ -261,12 +282,12 @@ namespace CtyTinLuong
                 {
                     if(xxtungay.Year>2000 && xxdenngay.Year>2000)
                     {
-                        DataTable dt = cls.H_Load_lockup_Phieu_T10(xxtungay, xxdenngay);
-                        SearchLookUp_MaPhieu_CAT.DataSource = dt;
+                        _dtMaPhieu_Cat = cls.H_Load_lockup_Phieu_T10(xxtungay, xxdenngay);
+                        SearchLookUp_MaPhieu_CAT.DataSource = _dtMaPhieu_Cat;
                         SearchLookUp_MaPhieu_CAT.DisplayMember = "MaPhieu";
                         SearchLookUp_MaPhieu_CAT.ValueMember = "ID_SoPhieu";
 
-                        SearchLookUp_MaPhieu_DOT.DataSource = dt;
+                        SearchLookUp_MaPhieu_DOT.DataSource = _dtMaPhieu_Cat;
                         SearchLookUp_MaPhieu_DOT.DisplayMember = "MaPhieu";
                         SearchLookUp_MaPhieu_DOT.ValueMember = "ID_SoPhieu";
                     }
