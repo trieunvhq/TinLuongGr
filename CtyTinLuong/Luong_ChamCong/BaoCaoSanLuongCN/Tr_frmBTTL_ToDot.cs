@@ -765,7 +765,11 @@ namespace CtyTinLuong
 
         private void radioTo1_CheckedChanged(object sender, EventArgs e)
         {
-            _CaLamViec = "Ca 1";
+            if (radioTo1.Checked)
+                _CaLamViec = "Ca 1";
+            else
+                _CaLamViec = "Ca 2";
+
             if (isload)
                 return;
             LoadData(false, _CaLamViec);
@@ -773,7 +777,11 @@ namespace CtyTinLuong
 
         private void radioTo2_CheckedChanged(object sender, EventArgs e)
         {
-            _CaLamViec = "Ca 2";
+            if (radioTo2.Checked)
+                _CaLamViec = "Ca 2";
+            else
+                _CaLamViec = "Ca 1";
+
             if (isload)
                 return;
             LoadData(false, _CaLamViec);

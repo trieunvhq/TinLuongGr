@@ -517,7 +517,8 @@ namespace CtyTinLuong
                 DateTime ngaybatdau;
                 DataTable dt = new DataTable();
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-                ngaybatdau = ngaykethuc.AddDays(-30);
+                ngaybatdau = ngaykethuc.AddDays(-31);
+                //ngaybatdau = new DateTime(ngaykethuc.Year, ngaykethuc.Month, 1);
                 dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc, MayIn, MayCat, MayDot);
                 if (dt.Rows.Count > 0)
                 {
@@ -536,6 +537,126 @@ namespace CtyTinLuong
                 MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        private bool Tr_KiemTra_TrungMaPhieu_MayCat(int idSoPhieu, DateTime ngaykethuc)
+        {
+            bool resutl = true;
+            try
+            {
+                DateTime ngaybatdau;
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                ngaybatdau = ngaykethuc.AddDays(-60);
+                DataTable dtMC = cls.Tr_SelectTheoIDSoPhieu_MayInCatDot(idSoPhieu, ngaybatdau, ngaykethuc, false, true, false);
+                DataTable dtMI = cls.Tr_SelectTheoIDSoPhieu_MayInCatDot(idSoPhieu, ngaybatdau, ngaykethuc, true, false, false);
+
+                string maphieu = "";
+                string strThongBao = "";
+                double soLuongRaIn = 0;
+                double soLuongVaoCat = 0;
+
+
+                for(int i = 0; i < dtMI.Rows.Count; i++)
+                {
+                    soLuongRaIn += CheckString.ConvertToDouble_My(dtMI.Rows[i]["SanLuong_Tong"].ToString());
+                }
+
+                for (int i = 0; i < dtMC.Rows.Count; i++)
+                {
+                    maphieu = dtMC.Rows[i]["MaPhieu"].ToString();
+                    double soLuongVao = CheckString.ConvertToDouble_My(dtMC.Rows[i]["SoLuong_Vao"].ToString());
+                    soLuongVaoCat += soLuongVao;
+                    strThongBao += "\n\t=> Phiếu " + maphieu + " thứ " + (i+1) + ": đã cắt " + soLuongVao + "/" + soLuongRaIn + " quả;";
+                }
+
+                if (dtMC.Rows.Count == 1)
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Mã phiếu " + maphieu + " đã tồn tại, đã cắt " + soLuongVaoCat + "/" + soLuongRaIn + " quả! \nBạn có muốn tiếp tục không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (traloi == DialogResult.Yes)
+                        resutl = true;
+                    else
+                        resutl = false;
+                }
+                else if (dtMC.Rows.Count > 1)
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Mã phiếu " + maphieu + " đã tồn tại, đã cắt " + soLuongVaoCat + "/" + soLuongRaIn + " quả:" + strThongBao + "\nBạn có muốn tiếp tục không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (traloi == DialogResult.Yes)
+                        resutl = true;
+                    else
+                        resutl = false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resutl = false;
+            }
+
+            return resutl;
+        }
+
+        private bool Tr_KiemTra_TrungMaPhieu_MayDot(int idSoPhieu, DateTime ngaykethuc)
+        {
+            bool resutl = true;
+            try
+            {
+                DateTime ngaybatdau;
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                ngaybatdau = ngaykethuc.AddDays(-60);
+                DataTable dtMD = cls.Tr_SelectTheoIDSoPhieu_MayInCatDot(idSoPhieu, ngaybatdau, ngaykethuc, false, false, true);
+                DataTable dtMC = cls.Tr_SelectTheoIDSoPhieu_MayInCatDot(idSoPhieu, ngaybatdau, ngaykethuc, false, true, false);
+
+                string maphieu = "";
+                string strThongBao = "";
+                double soLuongRaCat = 0;
+                double soLuongVaoDot = 0;
+
+
+                for (int i = 0; i < dtMC.Rows.Count; i++)
+                {
+                    soLuongRaCat += CheckString.ConvertToDouble_My(dtMC.Rows[i]["SanLuong_Tong"].ToString());
+                }
+
+                for (int i = 0; i < dtMD.Rows.Count; i++)
+                {
+                    maphieu = dtMD.Rows[i]["MaPhieu"].ToString();
+                    double soLuongVao = CheckString.ConvertToDouble_My(dtMD.Rows[i]["SoLuong_Vao"].ToString());
+                    soLuongVaoDot += soLuongVao;
+                    strThongBao += "\n\t=> Phiếu " + maphieu + " thứ " + (i + 1) + ": đã đột " + soLuongVao + "/" + soLuongRaCat + ";";
+                }
+
+                if (dtMD.Rows.Count == 1)
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Mã phiếu " + maphieu + " đã tồn tại, đã đột " + soLuongVaoDot + "/" + soLuongRaCat + "! \nBạn có muốn tiếp tục không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (traloi == DialogResult.Yes)
+                        resutl = true;
+                    else
+                        resutl = false;
+                }
+                else if (dtMD.Rows.Count > 1)
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Mã phiếu " + maphieu + " đã tồn tại, đã đột " + soLuongVaoDot + "/" + soLuongRaCat + ":" + strThongBao + "\nBạn có muốn tiếp tục không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (traloi == DialogResult.Yes)
+                        resutl = true;
+                    else
+                        resutl = false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resutl = false;
+            }
+
+            return resutl;
         }
 
         private string _MaPhieu = "";
@@ -762,20 +883,19 @@ namespace CtyTinLuong
                     cls.bTrangThaiTaoLenhSanXuat = false;
                     cls.fSoKG_MotBao_May_Dot = 0;
                     cls.fDoCao_Dot = 0;
-
-                    //if (themmoi_cat == true)
-                    //{
-                    //    cls.Insert();
-                    //}
-                    //else
-                    //{
-                    //    cls.iID_ChiTietPhieu = idchietphieu_cat_;
-                    //    cls.Update();
-                    //}
-
                     cls.iID_ChiTietPhieu = idchietphieu_cat_;
-                    cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
-                        , cls.bBMay_DOT.Value, _MaPhieu);
+
+                    if (idchietphieu_cat_ == 0)
+                    {
+                        cls.Tr_Phieu_ChiTietPhieu_New_Insert(_MaPhieu);
+                    }
+                    else
+                    {
+                        cls.Tr_Phieu_ChiTietPhieu_New_Update(_MaPhieu);
+                    }
+
+                    //cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
+                    //    , cls.bBMay_DOT.Value, _MaPhieu);
 
                     int iiiDID_ChiTietPhieuxxx;
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
@@ -828,19 +948,19 @@ namespace CtyTinLuong
                     cls.fDoCao_Dot = docaodot_;
                     cls.bDongBao1_Type = false;
                     cls.bDongBao2_Type = false;
-
-                    //if (themmoi_DOT == true)
-                    //{
-                    //    cls.Insert();
-                    //}
-                    //else
-                    //{
-                    //    cls.iID_ChiTietPhieu = idchietphieu_DOT_;
-                    //    cls.Update();
-                    //}
                     cls.iID_ChiTietPhieu = idchietphieu_DOT_;
-                    cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
-                        , cls.bBMay_DOT.Value, _MaPhieu);
+
+                    if (idchietphieu_DOT_ == 0)
+                    {
+                        cls.Tr_Phieu_ChiTietPhieu_New_Insert(_MaPhieu);
+                    }
+                    else
+                    {
+                        cls.Tr_Phieu_ChiTietPhieu_New_Update(_MaPhieu);
+                    }
+
+                    //cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
+                    //    , cls.bBMay_DOT.Value, _MaPhieu);
 
                     int iiiDID_ChiTietPhieuxxx;
                     iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
@@ -2370,9 +2490,10 @@ namespace CtyTinLuong
                 {
                     if (bandedGridView1.GetFocusedRowCellValue(clChange_CAT).ToString() == "1")
                     {
-                        if (!KiemTra_TrungMaPhieu(_MaPhieu,
-                        Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
-                            return;
+                        //if (!KiemTra_TrungMaPhieu(_MaPhieu,
+                        //Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
+                        //    return;
+                     
 
                         if (KiemTra_Hang(2) == false)
                             _data.Rows[row_focus]["Test_CAT"] = "1";
@@ -2413,14 +2534,18 @@ namespace CtyTinLuong
                                 }
                             }
 
-                            if (!KiemTra_TrungMaPhieu(_MaPhieu,
-                                Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
-                                return;
+                            //if (!KiemTra_TrungMaPhieu(_MaPhieu,
+                            //    Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString()), false, true, false))
+                            //    return;
 
                             if (bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_CAT).ToString() == "")
                             {
                                 xxthemmoiphieu_cat = true;
                                 xxid_chitietphieu_CAT = 0;
+
+                                if (!Tr_KiemTra_TrungMaPhieu_MayCat(Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu_CAT).ToString()),
+                                    Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString())))
+                                    return;
                             }
                             else
                             {
@@ -2482,14 +2607,18 @@ namespace CtyTinLuong
                                 }
                             }
 
-                            if (!KiemTra_TrungMaPhieu(_MaPhieu,
-                                Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString()), false, false, true))
-                                return;
+                            //if (!KiemTra_TrungMaPhieu(_MaPhieu,
+                            //    Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString()), false, false, true))
+                            //    return;
 
                             if (bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_DOT).ToString() == "")
                             {
                                 xxthemmoiphieu_DOT = true;
                                 xxid_chitietphieu_DOT = 0;
+
+                                if (!Tr_KiemTra_TrungMaPhieu_MayDot(Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu_DOT).ToString()),
+                                    Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString())))
+                                    return;
                             }
                             else
                             {
@@ -2600,7 +2729,6 @@ namespace CtyTinLuong
                                 bool bDongBao1_Cat_ = Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(DongBao1_Cat).ToString());
                                 bool bDongBao2_Cat_ = Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(DongBao2_Cat).ToString());
 
-
                                 using (clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New())
                                 {
                                     DataTable dt = cls.H_Load_lockup_Phieu_T10(dteTuNgay.DateTime, dteDenNgay.DateTime);
@@ -2616,6 +2744,10 @@ namespace CtyTinLuong
                                 {
                                     xxthemmoiphieu_cat = true;
                                     xxid_chitietphieu_CAT = 0;
+
+                                    if (!Tr_KiemTra_TrungMaPhieu_MayCat(Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu_CAT).ToString()),
+                                                                        Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_CAT).ToString())))
+                                        return;
                                 }
                                 else
                                 {
@@ -2675,6 +2807,10 @@ namespace CtyTinLuong
                                 {
                                     xxthemmoiphieu_DOT = true;
                                     xxid_chitietphieu_DOT = 0;
+
+                                    if (!Tr_KiemTra_TrungMaPhieu_MayDot(Convert.ToInt32(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu_DOT).ToString()),
+                                                                        Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_DOT).ToString())))
+                                        return;
                                 }
                                 else
                                 {
