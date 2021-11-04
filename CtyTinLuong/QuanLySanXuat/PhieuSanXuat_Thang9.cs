@@ -175,22 +175,41 @@ namespace CtyTinLuong
                 {
                     _data = cls.H_Load_Phieu_CAT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
                     gridControl1.DataSource = _data;
-                    //for (int i = _data.Rows.Count - 1; i >= 0; i--)
-                    //{
-                    //    int idSoPhieu = Convert.ToInt32(_data.Rows[i]["ID_SoPhieu"].ToString());
-                    //    for (int k = 0; k < _dtMaPhieu_Cat.Rows.Count; k++)
-                    //    {
-                    //        DataRow dr = _dtMaPhieu_Cat.Rows[k];
-                    //        if (Convert.ToInt32(dr["ID_SoPhieu"].ToString()) == idSoPhieu)
-                    //            dr.Delete();
-                    //    }
-                    //    _dtMaPhieu_Cat.AcceptChanges();
-                    //}
+                    
+                    if (checkHiden.Checked)
+                    {
+                        for (int i = _data.Rows.Count - 1; i >= 0; i--)
+                        {
+                            int idSoPhieu = Convert.ToInt32(_data.Rows[i]["ID_SoPhieu"].ToString());
+                            for (int k = 0; k < _dtMaPhieu_Cat.Rows.Count; k++)
+                            {
+                                DataRow dr = _dtMaPhieu_Cat.Rows[k];
+                                if (Convert.ToInt32(dr["ID_SoPhieu"].ToString()) == idSoPhieu)
+                                    dr.Delete();
+                            }
+                            _dtMaPhieu_Cat.AcceptChanges();
+                        }
+                    }
                 }
                 else if (_Loaimay == 3)
                 {
                     _data = cls.H_Load_Phieu_DOT_Thang_10(sotrang, sodong, xxtungay, xxdenngay);
                     gridControl1.DataSource = _data;
+
+                    if (checkHiden.Checked)
+                    {
+                        for (int i = _data.Rows.Count - 1; i >= 0; i--)
+                        {
+                            int idSoPhieu = Convert.ToInt32(_data.Rows[i]["ID_SoPhieu"].ToString());
+                            for (int k = 0; k < _dtMaPhieu_Cat.Rows.Count; k++)
+                            {
+                                DataRow dr = _dtMaPhieu_Cat.Rows[k];
+                                if (Convert.ToInt32(dr["ID_SoPhieu"].ToString()) == idSoPhieu)
+                                    dr.Delete();
+                            }
+                            _dtMaPhieu_Cat.AcceptChanges();
+                        }
+                    }
                 }
 
                 
