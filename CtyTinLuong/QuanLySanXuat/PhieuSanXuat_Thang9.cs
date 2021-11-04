@@ -44,7 +44,7 @@ namespace CtyTinLuong
         string sTenVTHH_vao_DOT, sDonViTinh_vao_DOT;
         string sTenVTHH_ra_DOT, sDonViTinh_ra_DOT;
 
-        int iimaysx_IN_copy = 0, iiiID_catruong_IN_copy = 0, iiiidID_CongNhan_IN_copy = 0, iiiD_dmluong_IN_copy = 0;
+        int iid_sophieu_Copy = 0, iimaysx_IN_copy = 0, iiiID_catruong_IN_copy = 0, iiiidID_CongNhan_IN_copy = 0, iiiD_dmluong_IN_copy = 0;
         string sssmaphieu_copy = "";
         DateTime ngaysx_IN_copy = DateTime.Today;
         string ssscasx_IN_copy = "";
@@ -517,12 +517,12 @@ namespace CtyTinLuong
                 DateTime ngaybatdau;
                 DataTable dt = new DataTable();
                 clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
-                ngaybatdau = ngaykethuc.AddDays(-31);
+                ngaybatdau = ngaykethuc.AddDays(-60);
                 //ngaybatdau = new DateTime(ngaykethuc.Year, ngaykethuc.Month, 1);
                 dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc, MayIn, MayCat, MayDot);
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Đã có Mã phiếu: " + xsmaphieu + "\nVui lòng chọn mã phiếu khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("Đã có Mã phiếu: " + xsmaphieu + "\nVui lòng chọn mã phiếu khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 else return true;
@@ -538,6 +538,89 @@ namespace CtyTinLuong
                 return false;
             }
         }
+
+        private int getID_SoPhieu(string xsmaphieu, DateTime ngaykethuc, bool MayIn, bool MayCat, bool MayDot)
+        {
+            int result = 0;
+            try
+            {
+                DateTime ngaybatdau;
+                DataTable dt = new DataTable();
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                ngaybatdau = ngaykethuc.AddDays(-60);
+                //ngaybatdau = new DateTime(ngaykethuc.Year, ngaykethuc.Month, 1);
+                dt = cls.H_KiemTra_Trung_Phieu_SX_T8(xsmaphieu, ngaybatdau, ngaykethuc, MayIn, MayCat, MayDot);
+                if (dt.Rows.Count > 0)
+                {
+                    result = Convert.ToInt32(dt.Rows[0]["ID_SoPhieu"].ToString());
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
+        }
+
+        private bool Tr_KiemTra_TrungMaPhieu_MayIn(int idSoPhieu, DateTime ngaykethuc)
+        {
+            bool resutl = true;
+            try
+            {
+                DateTime ngaybatdau;
+                clsPhieu_ChiTietPhieu_New cls = new clsPhieu_ChiTietPhieu_New();
+                ngaybatdau = ngaykethuc.AddDays(-60);
+                DataTable dtMI = cls.Tr_SelectTheoIDSoPhieu_MayInCatDot(idSoPhieu, ngaybatdau, ngaykethuc, true, false, false);
+
+                string maphieu = "";
+                string strThongBao = "";
+                double soLuongVaoIn = 0;
+                double soLuongVaoCat = 0;
+
+
+                for (int i = 0; i < dtMI.Rows.Count; i++)
+                {
+                    soLuongVaoIn += CheckString.ConvertToDouble_My(dtMI.Rows[i]["SoLuong_Vao"].ToString());
+                }
+
+                for (int i = 0; i < dtMI.Rows.Count; i++)
+                {
+                    maphieu = dtMI.Rows[i]["MaPhieu"].ToString();
+                    double soLuongVao = CheckString.ConvertToDouble_My(dtMI.Rows[i]["SoLuong_Vao"].ToString());
+                    soLuongVaoCat += soLuongVao;
+                    strThongBao += "\n\t=> Phiếu " + maphieu + " thứ " + (i + 1) + ": đã in " + soLuongVao + "/" + soLuongVaoIn + " cuộn;";
+                }
+
+                if (dtMI.Rows.Count == 1)
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Mã phiếu " + maphieu + " đã tồn tại, đã in " + soLuongVaoCat + "/" + soLuongVaoIn + " cuộn! \nBạn có muốn tiếp tục không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (traloi == DialogResult.Yes)
+                        resutl = true;
+                    else
+                        resutl = false;
+                }
+                else if (dtMI.Rows.Count > 1)
+                {
+                    DialogResult traloi;
+                    traloi = MessageBox.Show("Mã phiếu " + maphieu + " đã tồn tại, đã in " + soLuongVaoCat + "/" + soLuongVaoIn + " cuộn:" + strThongBao + "\nBạn có muốn tiếp tục không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (traloi == DialogResult.Yes)
+                        resutl = true;
+                    else
+                        resutl = false;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resutl = false;
+            }
+
+            return resutl;
+        }
+
 
         private bool Tr_KiemTra_TrungMaPhieu_MayCat(int idSoPhieu, DateTime ngaykethuc)
         {
@@ -775,7 +858,7 @@ namespace CtyTinLuong
                 cls1.iBienTrangThai = 0;
                 cls1.bDaKetThuc = false;
                 int xxID_Sophieu_;
-                if (themmoi_phieu == true)
+                if (themmoi_phieu && KiemTra_TrungMaPhieu(xmaphieu_, ngaylapphieu_, true, false, false))
                 {
                     cls1.Insert();
                     xxID_Sophieu_ = cls1.iID_SoPhieu.Value;
@@ -818,20 +901,19 @@ namespace CtyTinLuong
                 cls.fDoCao_Dot = 0;
                 cls.bDongBao1_Type = false;
                 cls.bDongBao2_Type = false;
-
-                //if (themmoi_phieu == true)
-                //{
-                //    cls.Insert();
-                //}
-                //else
-                //{
-                //    cls.iID_ChiTietPhieu = idchietphieu_in_;
-                //    cls.Update();
-                //}
-
                 cls.iID_ChiTietPhieu = idchietphieu_in_;
-                cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
-                    , cls.bBMay_DOT.Value, _MaPhieu);
+
+                if (idchietphieu_in_ == 0)
+                {
+                    cls.Tr_Phieu_ChiTietPhieu_New_Insert(_MaPhieu);
+                }
+                else
+                {
+                    cls.Tr_Phieu_ChiTietPhieu_New_Update(_MaPhieu);
+                }
+
+                //cls.Insert_Update(cls.bBMay_IN.Value, cls.bBMay_CAT.Value
+                //    , cls.bBMay_DOT.Value, _MaPhieu);
                 int iiiDID_ChiTietPhieuxxx;
                 iiiDID_ChiTietPhieuxxx = cls.iID_ChiTietPhieu.Value;
                 TaoLenhSanXuat(_Loaimay, xxID_Sophieu_, iiiDID_ChiTietPhieuxxx, idcatruong_, idcongnhan_, ngaylapphieu_,
@@ -1166,6 +1248,7 @@ namespace CtyTinLuong
                     return;
                 else if (_Loaimay == 1)
                 {
+                    iid_sophieu_Copy = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
                     sssmaphieu_copy = bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString();
                     iID_VTHH_Vao_IN = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_VTHH_Vao_IN).ToString());
                     sTenVTHH_vao_IN = bandedGridView1.GetFocusedRowCellValue(clTenVTHH_Vao_IN).ToString();
@@ -1187,6 +1270,7 @@ namespace CtyTinLuong
                    //
                    // bandedGridView1.AddNewRow();
                     DataRow row = _data.NewRow();
+                    row["ID_SoPhieu"] = iid_sophieu_Copy;
                     row["MaPhieu"] = sssmaphieu_copy;
                     row["ID_VTHH_Vao_IN"] = iID_VTHH_Vao_IN;
                     row["TenVTHH_Vao_IN"] = sTenVTHH_vao_IN;
@@ -2157,13 +2241,13 @@ namespace CtyTinLuong
                             string smaphieu = bandedGridView1.GetRowCellValue(e.RowHandle, clMaPhieu).ToString();
                             _MaPhieu = smaphieu;
                             DateTime ngaysanxuat = Convert.ToDateTime(bandedGridView1.GetRowCellValue(e.RowHandle, clNgaySanXuat_IN).ToString());
-                            if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat, true, false, false) == false)
-                            {
-                                _data.Rows[e.RowHandle]["MaPhieu"] = "";
-                                bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
-                                return;
-                            }
-                            else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
+                            //if (KiemTra_TrungMaPhieu(smaphieu, ngaysanxuat, true, false, false) == false)
+                            //{
+                            //    _data.Rows[e.RowHandle]["MaPhieu"] = "";
+                            //    bandedGridView1.SetRowCellValue(e.RowHandle, clMaPhieu, "");
+                            //    return;
+                            //}
+                            //else bandedGridView1.SetRowCellValue(e.RowHandle, clChange_IN, "1");
                         }
                     }
 
@@ -2435,9 +2519,9 @@ namespace CtyTinLuong
                     return;
                 if (_Loaimay == 1)
                 {
-                    if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
-                        Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString()), true, false, false))
-                        return;
+                    //if (!KiemTra_TrungMaPhieu(bandedGridView1.GetFocusedRowCellValue(clMaPhieu).ToString(),
+                    //    Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString()), true, false, false))
+                    //    return;
 
                     if (bandedGridView1.GetFocusedRowCellValue(clChange_IN).ToString() == "1")
                     {
@@ -2465,11 +2549,22 @@ namespace CtyTinLuong
                             string scasaanxuat_IN = bandedGridView1.GetFocusedRowCellDisplayText(clCaSanXuat_IN).ToString();
                             double sSanLuong_Tong_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_IN).ToString());
                             double xxphepham_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clPhePham_IN).ToString());
-                            if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+
+                            if (bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString() == "")
                             {
                                 xxthemmoiphieu = true;
-                                xxid_sophieu_ = 0;
                                 xxid_chitietphieu_in = 0;
+
+                                if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+                                {
+                                    xxid_sophieu_ = getID_SoPhieu(sMaphieu____IN, xxngaylap, true, false, false);
+                                }
+                                else
+                                {
+                                    xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
+                                }
+                                if (!Tr_KiemTra_TrungMaPhieu_MayIn(xxid_sophieu_, Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString())))
+                                    return;
                             }
                             else
                             {
@@ -2477,6 +2572,18 @@ namespace CtyTinLuong
                                 xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
                                 xxid_chitietphieu_in = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString());
                             }
+                            //if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+                            //{
+                            //    xxthemmoiphieu = true;
+                            //    xxid_sophieu_ = 0;
+                            //    xxid_chitietphieu_in = 0;
+                            //}
+                            //else
+                            //{
+                            //    xxthemmoiphieu = false;
+                            //    xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
+                            //    xxid_chitietphieu_in = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString());
+                            //}
                             LuuDuLieu_Phieu_Va_May_IN(sMaphieu____IN, xxngaylap, scasaanxuat_IN, xID_CaTruong_IN,
                xID_CongNhan_IN, xIDmay_IN, xID_DinhMuc_Luong_IN, xID_VTHH_Vao_IN, xID_VTHH_Ra_IN,
               xxSoLuong_Vao_IN, xxSanLuong_Thuong_IN, xxSanLuong_TangCa_IN, sSanLuong_Tong_IN, xxphepham_IN,
@@ -2678,11 +2785,22 @@ namespace CtyTinLuong
                                 string scasaanxuat_IN = bandedGridView1.GetFocusedRowCellDisplayText(clCaSanXuat_IN).ToString();
                                 double sSanLuong_Tong_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clSanLuong_Tong_IN).ToString());
                                 double xxphepham_IN = CheckString.ConvertToDouble_My(bandedGridView1.GetFocusedRowCellValue(clPhePham_IN).ToString());
-                                if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+
+                                if (bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString() == "")
                                 {
                                     xxthemmoiphieu = true;
-                                    xxid_sophieu_ = 0;
                                     xxid_chitietphieu_in = 0;
+
+                                    if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+                                {
+                                    xxid_sophieu_ = getID_SoPhieu(sMaphieu____IN, xxngaylap, true, false, false);
+                                }
+                                else
+                                {
+                                    xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
+                                }
+                                if (!Tr_KiemTra_TrungMaPhieu_MayIn(xxid_sophieu_, Convert.ToDateTime(bandedGridView1.GetFocusedRowCellValue(clNgaySanXuat_IN).ToString())))
+                                    return;
                                 }
                                 else
                                 {
@@ -2690,6 +2808,19 @@ namespace CtyTinLuong
                                     xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
                                     xxid_chitietphieu_in = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString());
                                 }
+
+                                //if (bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString() == "")
+                                //{
+                                //    xxthemmoiphieu = true;
+                                //    xxid_sophieu_ = 0;
+                                //    xxid_chitietphieu_in = 0;
+                                //}
+                                //else
+                                //{
+                                //    xxthemmoiphieu = false;
+                                //    xxid_sophieu_ = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_SoPhieu).ToString());
+                                //    xxid_chitietphieu_in = CheckString.ConvertTo_Int_My(bandedGridView1.GetFocusedRowCellValue(clID_ChiTietPhieu_IN).ToString());
+                                //}
                                 LuuDuLieu_Phieu_Va_May_IN(sMaphieu____IN, xxngaylap, scasaanxuat_IN, xID_CaTruong_IN,
                    xID_CongNhan_IN, xIDmay_IN, xID_DinhMuc_Luong_IN, xID_VTHH_Vao_IN, xID_VTHH_Ra_IN,
                   xxSoLuong_Vao_IN, xxSanLuong_Thuong_IN, xxSanLuong_TangCa_IN, sSanLuong_Tong_IN, xxphepham_IN,
