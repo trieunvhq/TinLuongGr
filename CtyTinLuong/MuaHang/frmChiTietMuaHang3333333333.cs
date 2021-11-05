@@ -1245,10 +1245,10 @@ namespace CtyTinLuong
 
             if (e.Column == clDonGia || e.Column == clSoLuong)
             {
-                string shienthi = "1";
-                double deTOngTienChuaVAT = CheckString.ConvertToDouble_My(_dataVthh.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "").ToString());
-                txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
-                txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
+                //string shienthi = "1";
+                //double deTOngTienChuaVAT = CheckString.ConvertToDouble_My(_dataVthh.Compute("sum(ThanhTien)", "").ToString());
+                //txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
+                //txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
             }
 
             //try
@@ -1392,18 +1392,20 @@ namespace CtyTinLuong
 
             }
         }
+
+
         private void gridView4_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             try
             {
-                double deTOngtien;
-                DataTable dataTable = (DataTable)gridControl1.DataSource;
-                string shienthi = "1";
-                object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-                if (xxxx.ToString() != "")
-                    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
-                else deTOngtien = 0;
-                txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
+                //double deTOngtien;
+                //DataTable dataTable = (DataTable)gridControl1.DataSource;
+                //string shienthi = "1";
+                //object xxxx = dataTable.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
+                //if (xxxx.ToString() != "")
+                //    deTOngtien = CheckString.ConvertToDouble_My(xxxx);
+                //else deTOngtien = 0;
+                //txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
             }
             catch
             {
@@ -1671,6 +1673,27 @@ namespace CtyTinLuong
 
         int iID_VTHH;
         string sMaVT, sTenVTHH, sDonViTinh;
+
+        private void gridView4_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            //DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
+            //view.SetRowCellValue(e.RowHandle, view.Columns["sTT"], view.RowCount.ToString());
+            //view.SetRowCellValue(e.RowHandle, view.Columns["soLuong"], 1);
+            //view.SetRowCellValue(e.RowHandle, view.Columns["donGia"], 0);
+            //view.SetRowCellValue(e.RowHandle, view.Columns["thanhTien"], 0);
+        }
+
+        private void gridView4_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
+        {
+            double deTOngTienChuaVAT = 0;
+            for (int i = 0; i < this.gridView4.RowCount; i++)
+            {
+                deTOngTienChuaVAT += CheckString.ConvertToDouble_My(this.gridView4.GetRowCellValue(i, "ThanhTien"));
+            }
+
+            txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
+            txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
+        }
 
         private void btLuu_NhapKho_Click(object sender, EventArgs e)
         {
