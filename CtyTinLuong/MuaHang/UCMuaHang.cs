@@ -143,7 +143,7 @@ namespace CtyTinLuong
                     mbCopY = false;
                     mbThemMoi = false;
                     mbSua = true;
-                    miiiID_Sua_DonHang = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
+                    miiiID_Sua_DonHang = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_MuaHang).ToString());                  
                     frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333(this);
                     //_frmMH.Hide();
                     ff.Show();

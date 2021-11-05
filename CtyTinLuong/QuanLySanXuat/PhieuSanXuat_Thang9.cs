@@ -1720,6 +1720,22 @@ namespace CtyTinLuong
             }
         }
 
+        private void checkHiden_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_Loaimay == 2 || _Loaimay == 3)
+                {
+                    Load_LockUp_MaPhieu(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                    LoadData(_SoTrang, _SoDong, false, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void gridLoaiMay_EditValueChanged(object sender, EventArgs e)
         {
             try
