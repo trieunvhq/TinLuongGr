@@ -1150,9 +1150,7 @@ namespace CtyTinLuong
                 if (dt.Rows.Count > 0)
                 {
                     txtNguoiMuaHang.Text = dt.Rows[0]["TenNhanVien"].ToString();
-
                 }
-
             }
             catch
             {
@@ -1163,20 +1161,20 @@ namespace CtyTinLuong
         {
             try
             {
-                decimal value = decimal.Parse(txtTienVAT.Text);
-                //txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
-                txtTienVAT.Text = value.ToString("N2");
+                //decimal value = decimal.Parse(txtTienVAT.Text);
+                ////txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
+                //txtTienVAT.Text = value.ToString("N2");
 
 
-                double  tienvat;
-                //tienno = CheckString.ConvertToDouble_My(txtTienNo.Text.ToString());
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                //txtTienCo.Text = (tienno + tienvat).ToString();
+                //double  tienvat;
+                ////tienno = CheckString.ConvertToDouble_My(txtTienNo.Text.ToString());
+                //tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                ////txtTienCo.Text = (tienno + tienvat).ToString();
 
-                double tongtienchuaVAT;
-                tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+                //double tongtienchuaVAT;
+                //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                //tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
             }
             catch
             {
@@ -1242,32 +1240,33 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
             }
-            double deTOngtien;
+            
             //DataTable dataTable = (DataTable)gridControl1.DataSource;
 
-            string shienthi = "1";
-            object xxxx = _dataVthh.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "");
-            if (xxxx.ToString() != "")
-                deTOngtien = CheckString.ConvertToDouble_My(xxxx);
-            else deTOngtien = 0;
-            txtTongTienHangChuaVAT.Text = deTOngtien.ToString();
-
-            try
+            if (e.Column == clDonGia || e.Column == clSoLuong)
             {
-                decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
-                //txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
-                txtTongTienHangChuaVAT.Text = value.ToString("N2");
+                string shienthi = "1";
+                double deTOngTienChuaVAT = CheckString.ConvertToDouble_My(_dataVthh.Compute("sum(ThanhTien)", "HienThi=" + shienthi + "").ToString());
+                txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
+                txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
+            }
 
-                double tongtienchuaVAT, tienvat;
-                tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+            //try
+            //{
+            //    decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
+            //    //txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
+            //    txtTongTienHangChuaVAT.Text = value.ToString("N2");
+
+            //    double tongtienchuaVAT, tienvat;
+            //    tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+            //    tienvat = ;
+                
                
-            }
-            catch
-            {
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
         private void txtPhanTramVAT_TextChanged(object sender, EventArgs e)
         {
@@ -1293,18 +1292,18 @@ namespace CtyTinLuong
             try
             {
                
-                //double tongtienchuaVAT, tienVAT;
-                //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                //tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
+                ////double tongtienchuaVAT, tienVAT;
+                ////tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                ////tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                ////txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienVAT).ToString();
 
              
 
-                HienThi_SoTien_CO_No();
+                //HienThi_SoTien_CO_No();
 
-                //decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
-                ////txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
-                //txtTongTienHangChuaVAT.Text = value.ToString("N2");
+                ////decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
+                //////txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
+                ////txtTongTienHangChuaVAT.Text = value.ToString("N2");
             }
             catch
             {
@@ -1761,20 +1760,20 @@ namespace CtyTinLuong
             try
             {
                
-                //double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
+                ////double PhanTramVAT, tongtienhang, tienvat, tongtienchuaVAT;
 
-                //tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                //PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
-                //txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
-                //tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-                //tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
-                //txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
+                ////tongtienhang = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                ////PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text.ToString());
+                ////txtTienVAT.Text = (tongtienhang * PhanTramVAT / 100).ToString();
+                ////tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
+                ////tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                ////txtTongTienHangCoVAT.Text = (tongtienchuaVAT + tienvat).ToString();
 
-                HienThi_SoTien_CO_No();
+                //HienThi_SoTien_CO_No();
 
-                //decimal value = decimal.Parse(txtTienVAT.Text);
-                ////txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
-                //txtTongTienHangCoVAT.Text = value.ToString("N2");
+                ////decimal value = decimal.Parse(txtTienVAT.Text);
+                //////txtTienVAT.Text = String.Format("{0:#,##0.00}", value);
+                ////txtTongTienHangCoVAT.Text = value.ToString("N2");
             }
             catch
             {
