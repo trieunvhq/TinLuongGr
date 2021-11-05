@@ -1198,9 +1198,9 @@ namespace CtyTinLuong
             {
                 gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, sTenVTHH);
                 gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, sDonViTinh);
-                gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                gridView4.SetRowCellValue(e.RowHandle, clSoLuong, 0);
-                gridView4.SetRowCellValue(e.RowHandle, clDonGia, 0);
+                //gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
+                //gridView4.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+                //gridView4.SetRowCellValue(e.RowHandle, clDonGia, 0);
 
                 if (gridView4.GetFocusedRowCellValue(clDonGia).ToString() == "")
                     ffdongia = 0;
@@ -1356,7 +1356,7 @@ namespace CtyTinLuong
         {
             try
             {
-                
+
                 HienThi_SoTien_CO_No();
                 //decimal value = decimal.Parse(txtTongTienHangCoVAT.Text);
                 ////txtTongTienHangCoVAT.Text = String.Format("{0:#,##0.00}", value);
@@ -1422,11 +1422,16 @@ namespace CtyTinLuong
                 DataTable dt = clsncc.SelectOne();
                 if (dt.Rows.Count > 0)
                 {
+                    txtTienVAT.Text = 0.ToString("N2");
+                    txtTongTienHangChuaVAT.Text = 0.ToString("N2");
+                    txtTongTienHangCoVAT.Text = 0.ToString("N2");
                     txtTenNhaCungCap.Text = dt.Rows[0]["TenNhaCungCap"].ToString();
                     if (UCMuaHang.mbSua == false)
                     {
+                        gridNCC.ReadOnly = true;
                         HienThi_GridConTrol_SauKhiChon();
                     }
+                    gridNCC.ReadOnly = false;
 
                 }
                 HienThi_SoTien_CO_No();
@@ -1510,10 +1515,7 @@ namespace CtyTinLuong
                     frmPrintMuaHang ff = new frmPrintMuaHang();
                     ff.Show();
                 }
-                
             }
-            
-        
         }
 
      
@@ -1676,11 +1678,10 @@ namespace CtyTinLuong
 
         private void gridView4_InitNewRow(object sender, InitNewRowEventArgs e)
         {
-            //DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
-            //view.SetRowCellValue(e.RowHandle, view.Columns["sTT"], view.RowCount.ToString());
-            //view.SetRowCellValue(e.RowHandle, view.Columns["soLuong"], 1);
-            //view.SetRowCellValue(e.RowHandle, view.Columns["donGia"], 0);
-            //view.SetRowCellValue(e.RowHandle, view.Columns["thanhTien"], 0);
+            GridView view = sender as GridView;
+            view.SetRowCellValue(e.RowHandle, clHienThi, "1");
+            view.SetRowCellValue(e.RowHandle, clSoLuong, 0);
+            view.SetRowCellValue(e.RowHandle, clDonGia, 0);
         }
 
         private void gridView4_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
