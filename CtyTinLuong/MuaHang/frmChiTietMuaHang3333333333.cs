@@ -1022,6 +1022,15 @@ namespace CtyTinLuong
             gridNCC.Properties.DataSource = dtSet_.Tables[3];
             gridNCC.Properties.ValueMember = "ID_NhaCungCap";
             gridNCC.Properties.DisplayMember = "MaNhaCungCap";
+
+            //Thay caption:
+            gridNCC.Properties.View.Columns.Clear();//xóa caption cũ
+            gridNCC.Properties.View.Columns.AddVisible("ID_NhaCungCap", "ID");
+            gridNCC.Properties.View.Columns.AddVisible("MaNhaCungCap", "Mã");
+            gridNCC.Properties.View.Columns.AddVisible("TenNhaCungCap", "Tên");
+
+            gridNCC.Properties.View.Columns["ID_NhaCungCap"].Visible = false;
+
             dtSet_.Dispose();
             clsThin_.Dispose();
         }

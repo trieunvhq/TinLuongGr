@@ -326,12 +326,23 @@ namespace CtyTinLuong
                     txtSoChungTu.Text = "PC 1";
                 else if (xxbientrangthai == 4)
                     txtSoChungTu.Text = "PT 1";
+                else if (xxbientrangthai == 6)
+                    txtSoChungTu.Text = "PKT 1";
 
             }
             else
             {
                 string xxx = dt.Rows[k - 1]["SoChungTu"].ToString();
-                int xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                int xxx2 = 0;
+                try
+                {
+                    xxx2 = Convert.ToInt32(xxx.Substring(2).Trim()) + 1;
+                }
+                catch
+                {
+                    xxx2 = Convert.ToInt32(xxx.Substring(3).Trim()) + 1;
+                }
+
                 if (xxbientrangthai == 1)
                     txtSoChungTu.Text = "BC " + xxx2 + "";
                 else if (xxbientrangthai == 2)
@@ -340,6 +351,8 @@ namespace CtyTinLuong
                     txtSoChungTu.Text = "PC " + xxx2 + "";
                 else if (xxbientrangthai == 4)
                     txtSoChungTu.Text = "PT " + xxx2 + "";
+                else if (xxbientrangthai == 6)
+                    txtSoChungTu.Text = "PKT " + xxx2 + "";
             }
             if (xxbientrangthai == 1)
                 txtThamChieu.Text = "Báo Có";
