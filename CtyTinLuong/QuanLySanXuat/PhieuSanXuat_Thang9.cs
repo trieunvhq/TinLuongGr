@@ -1289,7 +1289,7 @@ namespace CtyTinLuong
                    //
                    // bandedGridView1.AddNewRow();
                     DataRow row = _data.NewRow();
-                    row["ID_SoPhieu"] = iid_sophieu_Copy;
+                    //row["ID_SoPhieu"] = iid_sophieu_Copy;
                     row["MaPhieu"] = sssmaphieu_copy;
                     row["ID_VTHH_Vao_IN"] = iID_VTHH_Vao_IN;
                     row["TenVTHH_Vao_IN"] = sTenVTHH_vao_IN;

@@ -1226,6 +1226,8 @@ namespace CtyTinLuong
                     fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+
+                tinhTongTien(fffthanhtien);
             }
             if (e.Column == clDonGia)
             {
@@ -1239,35 +1241,23 @@ namespace CtyTinLuong
                     fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuong));
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
+
+                tinhTongTien(fffthanhtien);
             }
-            
-            //DataTable dataTable = (DataTable)gridControl1.DataSource;
-
-            if (e.Column == clDonGia || e.Column == clSoLuong)
-            {
-                //string shienthi = "1";
-                //double deTOngTienChuaVAT = CheckString.ConvertToDouble_My(_dataVthh.Compute("sum(ThanhTien)", "").ToString());
-                //txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
-                //txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
-            }
-
-            //try
-            //{
-            //    decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);
-            //    //txtTongTienHangChuaVAT.Text = String.Format("{0:#,##0.00}", value);
-            //    txtTongTienHangChuaVAT.Text = value.ToString("N2");
-
-            //    double tongtienchuaVAT, tienvat;
-            //    tongtienchuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
-            //    tienvat = ;
-                
-               
-            //}
-            //catch
-            //{
-
-            //}
         }
+
+        private void tinhTongTien(double tongIn)
+        {
+            double deTOngTienChuaVAT = tongIn;
+            for (int i = 0; i < this.gridView4.RowCount; i++)
+            {
+                deTOngTienChuaVAT += CheckString.ConvertToDouble_My(this.gridView4.GetRowCellValue(i, "ThanhTien"));
+            }
+
+            txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
+            txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
+        }
+
         private void txtPhanTramVAT_TextChanged(object sender, EventArgs e)
         {
             try
@@ -1398,6 +1388,7 @@ namespace CtyTinLuong
         {
             try
             {
+                
                 //double deTOngtien;
                 //DataTable dataTable = (DataTable)gridControl1.DataSource;
                 //string shienthi = "1";
@@ -1686,14 +1677,14 @@ namespace CtyTinLuong
 
         private void gridView4_BeforeLeaveRow(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
         {
-            double deTOngTienChuaVAT = 0;
-            for (int i = 0; i < this.gridView4.RowCount; i++)
-            {
-                deTOngTienChuaVAT += CheckString.ConvertToDouble_My(this.gridView4.GetRowCellValue(i, "ThanhTien"));
-            }
+            //double deTOngTienChuaVAT = 0;
+            //for (int i = 0; i < this.gridView4.RowCount; i++)
+            //{
+            //    deTOngTienChuaVAT += CheckString.ConvertToDouble_My(this.gridView4.GetRowCellValue(i, "ThanhTien"));
+            //}
 
-            txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
-            txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
+            //txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
+            //txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
         }
 
         private void btLuu_NhapKho_Click(object sender, EventArgs e)
