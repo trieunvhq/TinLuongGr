@@ -1736,6 +1736,34 @@ namespace CtyTinLuong
             }
         }
 
+        private void bandedGridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            //double total = bandedGridView1.SelectRows
+            //    //Cast<DataGridViewRow>().Sum(row => (int)row.Cells[1].Value);
+
+            //if (dtData.DataRowCount > 0)
+            //{
+            //    foreach (int i in dtData.GetSelectedRows())
+            //    {
+            //        DataRow row = dtData.GetDataRow(i);
+            //        MessageBox.Show(row[0].ToString());
+            //    }
+            //}
+            //RowsSelected();
+        }
+
+        private void RowsSelected()
+        {
+            //int[] rows = bandedGridView1.GetSelectedRows();
+            //int tt = rows.Length;
+        }
+
+        private void bandedGridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            //if (!bandedGridView1.IsMultiSelect)
+            //    RowsSelected();
+        }
+
         private void gridLoaiMay_EditValueChanged(object sender, EventArgs e)
         {
             try

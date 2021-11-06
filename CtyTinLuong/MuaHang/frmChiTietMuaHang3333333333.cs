@@ -1018,7 +1018,7 @@ namespace CtyTinLuong
             gridNguoiLap.Properties.DataSource = dtSet_.Tables[2];
             gridNguoiLap.Properties.ValueMember = "ID_NhanSu";
             gridNguoiLap.Properties.DisplayMember = "MaNhanVien";
-             
+
             gridNCC.Properties.DataSource = dtSet_.Tables[3];
             gridNCC.Properties.ValueMember = "ID_NhaCungCap";
             gridNCC.Properties.DisplayMember = "MaNhaCungCap";
