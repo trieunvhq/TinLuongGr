@@ -935,7 +935,7 @@ namespace CtyTinLuong
 
             gridControl2.DataSource = _dataVAT;
             gridNCC.EditValue = cls.iIDNhaCungCap.Value;
-            
+
         }
         private void HienThi_Copy(int xxID_MuaHang)
         {
@@ -1413,19 +1413,30 @@ namespace CtyTinLuong
                 DataTable dt = clsncc.SelectOne();
                 if (dt.Rows.Count > 0)
                 {
-                    txtTienVAT.Text = 0.ToString("N2");
-                    txtTongTienHangChuaVAT.Text = 0.ToString("N2");
-                    txtTongTienHangCoVAT.Text = 0.ToString("N2");
+                    gridNCC.ReadOnly = false;
+                    
                     txtTenNhaCungCap.Text = dt.Rows[0]["TenNhaCungCap"].ToString();
                     if (UCMuaHang.mbSua == false)
                     {
-                        gridNCC.ReadOnly = true;
                         HienThi_GridConTrol_SauKhiChon();
                     }
-                    gridNCC.ReadOnly = false;
+                    else
+                        gridNCC.ReadOnly = true;
+
+                    if (UCMuaHang.mbCopY)
+                    {
+                        tinhTongTien(0);
+                    }
+
+                    if (UCMuaHang.mbThemMoi)
+                    {
+                        //txtTienVAT.Text = 0.ToString("N2");
+                        //txtTongTienHangChuaVAT.Text = 0.ToString("N2");
+                        //txtTongTienHangCoVAT.Text = 0.ToString("N2");
+                        ////HienThi_SoTien_CO_No();
+                    }
 
                 }
-                HienThi_SoTien_CO_No();
 
             }
             catch
@@ -1623,11 +1634,13 @@ namespace CtyTinLuong
 
             clsMH_tbMuaHang cls2 = new clsMH_tbMuaHang();
             DataTable dt2xxx = cls2.SelectAll();
+
             dt2xxx.DefaultView.RowFilter = "TonTai=True";
             DataView dv2 = dt2xxx.DefaultView;
 
             DataTable newdt2 = dv2.ToTable();
             int k = newdt2.Rows.Count;
+
             if (k == 0)
             {
                 txtSoChungTu.Text = "MH 1";
