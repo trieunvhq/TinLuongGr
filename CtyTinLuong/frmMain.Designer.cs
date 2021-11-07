@@ -505,9 +505,11 @@
             // lbXinChao
             // 
             this.lbXinChao.AutoSize = true;
-            this.lbXinChao.Location = new System.Drawing.Point(569, 6);
+            this.lbXinChao.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbXinChao.ForeColor = System.Drawing.Color.White;
+            this.lbXinChao.Location = new System.Drawing.Point(638, 57);
             this.lbXinChao.Name = "lbXinChao";
-            this.lbXinChao.Size = new System.Drawing.Size(35, 13);
+            this.lbXinChao.Size = new System.Drawing.Size(36, 14);
             this.lbXinChao.TabIndex = 3;
             this.lbXinChao.Text = "label2";
             // 

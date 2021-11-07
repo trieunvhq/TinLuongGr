@@ -230,26 +230,29 @@ namespace CtyTinLuong
 
         private void TrReadonly()
         {
-            //searchLookMaDML.ReadOnly = true;
-            //dateTuNgay.ReadOnly = true;
-            ////dateDenNgay.ReadOnly = true;
-            //txtLuongCoDinh.ReadOnly = true;
-            //txtPhuCapXang.ReadOnly = true;
-            //txtPhuCapDienThoai.ReadOnly = true;
-            //txtPhuCapVeSinhMay.ReadOnly = true;
-            //txtPhuCapTienAn.ReadOnly = true;
-            //txtTrachNhiem.ReadOnly = true;
-            //txtPhanTramBaoHiem.ReadOnly = true;
-            //txtLuongCoBan.ReadOnly = true;
-            //txtPhuCapBH.ReadOnly = true;
-            //txtDMLuongTheoGio.ReadOnly = true;
-            //txtDinhMucTangCa.ReadOnly = true;
-            //checCoDinh.Enabled = false;
-            //checCongNhat.Enabled = false;
-            //checSanLuong.Enabled = false;
-            //checMax_hai.Enabled = false;
-            //radioXangTheoThang.Enabled = false;
-            //radioXangTheoNgay.Enabled = false;
+            if (!frmDangNhap._bIsAdmin)
+            {
+                searchLookMaDML.ReadOnly = true;
+                dateTuNgay.ReadOnly = true;
+                //dateDenNgay.ReadOnly = true;
+                txtLuongCoDinh.ReadOnly = true;
+                txtPhuCapXang.ReadOnly = true;
+                txtPhuCapDienThoai.ReadOnly = true;
+                txtPhuCapVeSinhMay.ReadOnly = true;
+                txtPhuCapTienAn.ReadOnly = true;
+                txtTrachNhiem.ReadOnly = true;
+                txtPhanTramBaoHiem.ReadOnly = true;
+                txtLuongCoBan.ReadOnly = true;
+                txtPhuCapBH.ReadOnly = true;
+                txtDMLuongTheoGio.ReadOnly = true;
+                txtDinhMucTangCa.ReadOnly = true;
+                checCoDinh.Enabled = false;
+                checCongNhat.Enabled = false;
+                checSanLuong.Enabled = false;
+                checMax_hai.Enabled = false;
+                radioXangTheoThang.Enabled = false;
+                radioXangTheoNgay.Enabled = false;
+            }
         }
 
         private void TrUnlockReadonly()

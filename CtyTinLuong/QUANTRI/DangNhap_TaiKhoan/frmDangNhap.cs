@@ -19,6 +19,8 @@ namespace CtyTinLuong
         public static bool _bIsQuanTri;
         public static bool _bIsAdmin;
         public static string _TenNhanVien;
+        public static string _ChucVu;
+
 
         private void KiemTraDangNhap()
         {
@@ -63,6 +65,8 @@ namespace CtyTinLuong
                 _bIsQuanTri = Convert.ToBoolean(dt.Rows[0]["bQuanTri"].ToString());
                 _bIsAdmin = Convert.ToBoolean(dt.Rows[0]["bAdmin"].ToString());
                 _TenNhanVien = dt.Rows[0]["TenNhanVien"].ToString();
+                _ChucVu = dt.Rows[0]["TenChucVu"].ToString();
+
 
                 this.Hide();
                 frmMain ff = new frmMain();

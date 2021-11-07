@@ -70,7 +70,7 @@ namespace CtyTinLuong
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            this.Te
+            lbXinChao.Text = "Xin chào " + frmDangNhap._TenNhanVien + " - " + frmDangNhap._ChucVu;
         }
 
         //Drag form:
