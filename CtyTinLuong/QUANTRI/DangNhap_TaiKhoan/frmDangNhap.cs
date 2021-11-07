@@ -14,7 +14,12 @@ namespace CtyTinLuong
   
     public partial class frmDangNhap : Form
     {
-        public static int miID_DangNhap;
+        public static int _miID_DangNhap;
+        public static int _iID_NhanSu;
+        public static bool _bIsQuanTri;
+        public static bool _bIsAdmin;
+        public static string _TenNhanVien;
+
         private void KiemTraDangNhap()
         {
             clsTbDangNhap cls = new clsTbDangNhap();
@@ -27,7 +32,7 @@ namespace CtyTinLuong
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            miID_DangNhap = 1;
+            _miID_DangNhap = 1;
             txtTen.Focus();
         }
 
@@ -41,7 +46,6 @@ namespace CtyTinLuong
             else
             {
                 txtMatKhau.UseSystemPasswordChar = true;
-
             }
         }
 
@@ -54,7 +58,12 @@ namespace CtyTinLuong
             DataTable dt = cls.pr_tbDangNhap_KiemTraDangNhap();
             if (dt.Rows.Count > 0)
             {
-                miID_DangNhap = Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
+                _miID_DangNhap = Convert.ToInt16(dt.Rows[0]["ID_DangNhap"].ToString());
+                _iID_NhanSu = Convert.ToInt16(dt.Rows[0]["ID_NhanSu"].ToString());
+                _bIsQuanTri = Convert.ToBoolean(dt.Rows[0]["bQuanTri"].ToString());
+                _bIsAdmin = Convert.ToBoolean(dt.Rows[0]["bAdmin"].ToString());
+                _TenNhanVien = dt.Rows[0]["TenNhanVien"].ToString();
+
                 this.Hide();
                 frmMain ff = new frmMain();
                 ff.Show();

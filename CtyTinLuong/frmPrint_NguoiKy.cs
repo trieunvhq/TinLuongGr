@@ -55,7 +55,7 @@ namespace CtyTinLuong
             DataTable dtmoi = dvmoi.ToTable();
             for(int i=0; i<dtmoi.Rows.Count; i++)
             {
-                cls.iID_DangNhap= frmDangNhap.miID_DangNhap;
+                cls.iID_DangNhap= frmDangNhap._miID_DangNhap;
                 cls.iID_NhanSu= Convert.ToInt32(dtmoi.Rows[i]["ID_NhanSu"].ToString());
                 cls.sMaNhanVien = dtmoi.Rows[i]["MaNhanVien"].ToString();
                 cls.sHoTen = dtmoi.Rows[i]["HoTen"].ToString();
@@ -84,7 +84,7 @@ namespace CtyTinLuong
         {
 
             clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = cls.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
@@ -123,7 +123,7 @@ namespace CtyTinLuong
                 dt2.Columns.Add("HienThi", typeof(string));
                 DataRow _ravi1 = dt2.NewRow();
                 _ravi1["ID"] = "";
-                _ravi1["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi1["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi1["ID_NhanSu"] = "0";
                 _ravi1["MaNhanVien"] = "0";
                 _ravi1["ChucVu"] = "Người giao";
@@ -133,7 +133,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi2 = dt2.NewRow();
                 _ravi2["ID"] = "";
-                _ravi2["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi2["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi2["ID_NhanSu"] = "0";
                 _ravi2["MaNhanVien"] = "0";
                 _ravi2["ChucVu"] = "Người lập";
@@ -143,7 +143,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi3 = dt2.NewRow();
                 _ravi3["ID"] = "";
-                _ravi3["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi3["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi3["ID_NhanSu"] = "0";
                 _ravi3["MaNhanVien"] = "0";
                 _ravi3["ChucVu"] = "Người nhận";
@@ -153,7 +153,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi4 = dt2.NewRow();
                 _ravi4["ID"] = "";
-                _ravi4["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi4["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi4["ID_NhanSu"] = "0";
                 _ravi4["MaNhanVien"] = "0";
                 _ravi4["ChucVu"] = "Thủ kho";
@@ -163,7 +163,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi5 = dt2.NewRow();
                 _ravi5["ID"] = "";
-                _ravi5["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi5["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi5["ID_NhanSu"] = "0";
                 _ravi5["MaNhanVien"] = "0";
                 _ravi5["ChucVu"] = "Trưởng phòng KH";
@@ -173,7 +173,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi6 = dt2.NewRow();
                 _ravi6["ID"] = "";
-                _ravi6["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi6["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi6["ID_NhanSu"] = "0";
                 _ravi6["MaNhanVien"] = "0";
                 _ravi6["ChucVu"] = "Kế toán trưởng";
@@ -185,7 +185,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi8 = dt2.NewRow();
                 _ravi8["ID"] = "";
-                _ravi8["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi8["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi8["ID_NhanSu"] = "0";
                 _ravi8["MaNhanVien"] = "0";
                 _ravi8["ChucVu"] = "Giám đốc";
@@ -196,7 +196,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi10 = dt2.NewRow();
                 _ravi10["ID"] = "";
-                _ravi10["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi10["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi10["ID_NhanSu"] = "0";
                 _ravi10["MaNhanVien"] = "0";
                 _ravi10["ChucVu"] = "Ca trưởng";
@@ -206,7 +206,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi11 = dt2.NewRow();
                 _ravi11["ID"] = "";
-                _ravi11["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi11["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi11["ID_NhanSu"] = "0";
                 _ravi11["MaNhanVien"] = "0";
                 _ravi11["ChucVu"] = "Thủ quỹ";
@@ -216,7 +216,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi12 = dt2.NewRow();
                 _ravi12["ID"] = "";
-                _ravi12["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi12["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi12["ID_NhanSu"] = "0";
                 _ravi12["MaNhanVien"] = "0";
                 _ravi12["ChucVu"] = "Người nộp tiền";
@@ -226,7 +226,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi13 = dt2.NewRow();
                 _ravi13["ID"] = "";
-                _ravi13["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi13["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi13["ID_NhanSu"] = "0";
                 _ravi13["MaNhanVien"] = "0";
                 _ravi13["ChucVu"] = "Bảo vệ";
@@ -237,7 +237,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi7 = dt2.NewRow();
                 _ravi7["ID"] = "";
-                _ravi7["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi7["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi7["ID_NhanSu"] = "0";
                 _ravi7["MaNhanVien"] = "0";
                 _ravi7["ChucVu"] = "Kế toán";
@@ -248,7 +248,7 @@ namespace CtyTinLuong
 
                 DataRow _ravi9 = dt2.NewRow();
                 _ravi9["ID"] = "";
-                _ravi9["ID_DangNhap"] = frmDangNhap.miID_DangNhap.ToString();
+                _ravi9["ID_DangNhap"] = frmDangNhap._miID_DangNhap.ToString();
                 _ravi9["ID_NhanSu"] = "0";
                 _ravi9["MaNhanVien"] = "0";
                 _ravi9["ChucVu"] = "Phó Giám đốc";

@@ -22,7 +22,7 @@ namespace CtyTinLuong
             //{
 
                 clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-                cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+                cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
                 DataTable dt = cls.SelectAll_ID_DangNhap();
                 if (dt.Rows.Count > 0)
                 {
@@ -58,7 +58,7 @@ namespace CtyTinLuong
             pNgayThang.Value = "Từ ngày " + tungay.ToString("dd/MM/yyyy") + " đến ngày " + denngay.ToString("dd/MM/yyyy") + "  ";
 
             clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = cls.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {

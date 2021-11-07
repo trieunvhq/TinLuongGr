@@ -70,6 +70,9 @@ namespace CtyTinLuong
             }
             dt2xxxx.Rows.Add(_ravi_Khong);
 
+            double Nophatsinh = dNoDauKy_0;
+            double Cophatsinh = dCoDauKy_0;
+
             if (dtphatsinh.Rows.Count > 0)
             {
 
@@ -88,9 +91,22 @@ namespace CtyTinLuong
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
                     double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
+                    bool isTraHang = Convert.ToBoolean(dtphatsinh.Rows[i]["CheckTraLaiNhaCungCap"].ToString());
 
                     _ravi["No"] = Noxx_hang;
                     _ravi["Co"] = Coxx_hang;
+
+                    if (isTraHang)
+                    {
+                        Nophatsinh -= Noxx_hang;
+                        Cophatsinh -= Coxx_hang;
+                    }
+                    else
+                    {
+                        Nophatsinh += Noxx_hang;
+                        Cophatsinh += Coxx_hang;
+                    }
+
 
                     dt2xxxx.Rows.Add(_ravi);
 
@@ -120,8 +136,8 @@ namespace CtyTinLuong
 
                 }
             }
-            double Nophatsinh = CheckString.ConvertToDouble_My(dtphatsinh.Compute("sum(No)", "TonTai=True"));
-            double Cophatsinh = CheckString.ConvertToDouble_My(dtphatsinh.Compute("sum(Co)", "TonTai=True"));
+            //double Nophatsinh = CheckString.ConvertToDouble_My(dtphatsinh.Compute("sum(No)", "TonTai=True"));
+            //double Cophatsinh = CheckString.ConvertToDouble_My(dtphatsinh.Compute("sum(Co)", "TonTai=True"));
             DataRow _ravi_2 = dt2xxxx.NewRow();
             _ravi_2["DienGiai"] = "Cộng phát sinh trong kỳ";
             _ravi_2["HienThi"] = false;

@@ -13,7 +13,7 @@ namespace CtyTinLuong
         private void NXT_Kho_NPL()
         {
             clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            clsxxx.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
@@ -40,7 +40,7 @@ namespace CtyTinLuong
         {
             pKho.Value = "Kho Bán Thành phẩm";
             clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            clsxxx.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
@@ -69,7 +69,7 @@ namespace CtyTinLuong
         {
             pKho.Value = "Kho Thành phẩm";
             clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            clsxxx.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
@@ -97,7 +97,7 @@ namespace CtyTinLuong
         {
             pKho.Value = "Kho Gấp dán";
             clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            clsxxx.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {

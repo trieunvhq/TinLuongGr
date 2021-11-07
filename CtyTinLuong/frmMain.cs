@@ -22,7 +22,7 @@ namespace CtyTinLuong
         {
            // thiếtLậpBanĐầuToolStripMenuItem.Enabled = false;
             clsTbDangNhap cls = new CtyTinLuong.clsTbDangNhap();
-            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = cls.SelectOne();
             
             if(dt.Rows.Count>0)
@@ -69,6 +69,8 @@ namespace CtyTinLuong
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            this.Te
         }
 
         //Drag form:

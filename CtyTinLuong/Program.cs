@@ -16,11 +16,11 @@ namespace CtyTinLuong
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            //Application.Run(new frmMain());
             //Application.Run(new Tr_frmChiTiet_PhiPhatSinh());
 
 
-            //Application.Run(new frmDangNhap());
+            Application.Run(new frmDangNhap());
 
             //Application.Run(new PhieuSanXuat_IN_CAT_New_thang8());
             //Application.Run(new frmtestcopy());

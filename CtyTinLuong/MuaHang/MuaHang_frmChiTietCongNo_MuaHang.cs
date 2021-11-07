@@ -92,6 +92,7 @@ namespace CtyTinLuong
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
                     double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
+                    bool isTraHang = Convert.ToBoolean(dtphatsinh.Rows[i]["CheckTraLaiNhaCungCap"].ToString());
 
                     if (Noxx_hang <= Coxx_hang)
                     {
@@ -104,8 +105,17 @@ namespace CtyTinLuong
                         _ravi["CoTrongKy"] = 0;
                     }
 
-                    Noxx = Noxx + Noxx_hang;
-                    Coxx = Coxx + Coxx_hang;
+                    if (isTraHang)
+                    {
+                        Noxx -= Noxx_hang;
+                        Coxx -= Coxx_hang;
+                    }
+                    else
+                    {
+                        Noxx += Noxx_hang;
+                        Coxx += Coxx_hang;
+                    }
+                    
                     if (Noxx <= Coxx)
                     {
                         _ravi["NoCuoiKy"] = 0;

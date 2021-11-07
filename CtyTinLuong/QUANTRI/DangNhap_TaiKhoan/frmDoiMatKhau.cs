@@ -18,7 +18,7 @@ namespace CtyTinLuong
             else
             {
                 clsTbDangNhap cls = new clsTbDangNhap();
-                cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+                cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
                 cls.sTen = txtTen.Text.ToString();
                 cls.sMatKhau = txtXacNhanMK.Text.ToString();
                 cls.bTonTai = true;
@@ -43,7 +43,7 @@ namespace CtyTinLuong
                 return false;
             }
             clsTbDangNhap cls = new clsTbDangNhap();
-            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = cls.SelectOne();
             if(dt.Rows[0]["MatKhau"].ToString().Trim() != txtMKCu.Text.ToString().Trim())
             {

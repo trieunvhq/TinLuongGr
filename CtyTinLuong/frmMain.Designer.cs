@@ -58,6 +58,7 @@
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnMuaHang = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lbXinChao = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -236,6 +237,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.lbXinChao);
             this.panelTitleBar.Controls.Add(this.btnMinimum);
             this.panelTitleBar.Controls.Add(this.btnMaximum);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -500,6 +502,15 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // lbXinChao
+            // 
+            this.lbXinChao.AutoSize = true;
+            this.lbXinChao.Location = new System.Drawing.Point(569, 6);
+            this.lbXinChao.Name = "lbXinChao";
+            this.lbXinChao.Size = new System.Drawing.Size(35, 13);
+            this.lbXinChao.TabIndex = 3;
+            this.lbXinChao.Text = "label2";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,5 +570,6 @@
         private System.Windows.Forms.Button btnMaximum;
         private System.Windows.Forms.Button btnClose;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label lbXinChao;
     }
 }

@@ -18,7 +18,7 @@ namespace CtyTinLuong
         {
             //pNguoiLap.Value = SanXuat_frmChiTietSoPhieu_RutGon.ms
             clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            cls.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = cls.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {

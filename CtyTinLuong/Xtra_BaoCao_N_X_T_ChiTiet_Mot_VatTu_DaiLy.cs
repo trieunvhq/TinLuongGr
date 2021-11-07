@@ -39,7 +39,7 @@ namespace CtyTinLuong
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             clsAaatbMacDinhNguoiKy clsxxx = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
-            clsxxx.iID_DangNhap = frmDangNhap.miID_DangNhap;
+            clsxxx.iID_DangNhap = frmDangNhap._miID_DangNhap;
             DataTable dt = clsxxx.SelectAll_ID_DangNhap();
             if (dt.Rows.Count > 0)
             {
