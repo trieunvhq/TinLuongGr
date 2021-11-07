@@ -1975,7 +1975,6 @@ namespace CtyTinLuong
             double phuCapBaoHiem = 0;
             double PCBH_tmp = 0;
             double truBaoHiem = 0;
-            double HV_DonGiaCongNhat = 0;
 
             List<int> dsNgayCong = new List<int>();
 

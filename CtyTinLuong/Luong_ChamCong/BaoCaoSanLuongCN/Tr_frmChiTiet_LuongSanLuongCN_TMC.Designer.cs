@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmChiTiet_LuongSanLuongCN_TMC));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.lbTenCN = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
@@ -110,7 +112,6 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lbTenCN = new System.Windows.Forms.Label();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -172,6 +173,16 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(1156, 648);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // lbTenCN
+            // 
+            this.lbTenCN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenCN.Location = new System.Drawing.Point(2, 50);
+            this.lbTenCN.Name = "lbTenCN";
+            this.lbTenCN.Size = new System.Drawing.Size(1152, 20);
+            this.lbTenCN.TabIndex = 120;
+            this.lbTenCN.Text = "(Họ tên: Nguyễn Văn A - Bộ phận: Máy cắt)";
+            this.lbTenCN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -1201,16 +1212,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(1156, 24);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // lbTenCN
-            // 
-            this.lbTenCN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenCN.Location = new System.Drawing.Point(2, 50);
-            this.lbTenCN.Name = "lbTenCN";
-            this.lbTenCN.Size = new System.Drawing.Size(1152, 20);
-            this.lbTenCN.TabIndex = 120;
-            this.lbTenCN.Text = "(Họ tên: Nguyễn Văn A - Bộ phận: Máy cắt)";
-            this.lbTenCN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // layoutControlItem11
             // 
