@@ -734,6 +734,7 @@ namespace CtyTinLuong
             if (hocViec.SoNgayCong > 0)
             {
                 result += hocViec.ThanhTienThuong;
+                TongSL_All_ += hocViec.SoNgayCong;
                 PhuCapBH = hocViec.PhuCapBaoHiem;
             }
 

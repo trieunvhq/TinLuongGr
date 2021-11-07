@@ -151,7 +151,7 @@ namespace CtyTinLuong
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
 
-                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N2");
+                            ravi_["ThanhTien"] = t.TongTien.ToString("N2");
 
 
                             double tongtien = t.TongTien;
@@ -160,7 +160,7 @@ namespace CtyTinLuong
                             ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N2");
 
                             _SanLuong_Tong_Ca1 += t.TongSL_All;
-                            _ThanhTien_Tong_Ca1 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
+                            //_ThanhTien_Tong_Ca1 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
                             _Tong_Ca1 += tongtien;
                             _ThucNhan_Tong_Ca1 += (tongtien - nvSL.TruBaoHiem);
 
@@ -307,7 +307,7 @@ namespace CtyTinLuong
                             if (nvSL.DonGiaThuong == 0) ravi_["DonGia"] = "";
                             else ravi_["DonGia"] = nvSL.DonGiaThuong.ToString("N2");
 
-                            ravi_["ThanhTien"] = nvSL.ThanhTienThuong.ToString("N2");
+                            ravi_["ThanhTien"] = t.TongTien.ToString("N2");
 
 
                             double tongtien = t.TongTien;
@@ -316,7 +316,7 @@ namespace CtyTinLuong
                             ravi_["ThucNhan"] = (tongtien - nvSL.TruBaoHiem).ToString("N2");
 
                             _SanLuong_Tong_Ca2 += t.TongSL_All;
-                            _ThanhTien_Tong_Ca2 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
+                            //_ThanhTien_Tong_Ca2 += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);
                             _Tong_Ca2 += tongtien;
                             _ThucNhan_Tong_Ca2 += (tongtien - nvSL.TruBaoHiem);
 
@@ -543,6 +543,7 @@ namespace CtyTinLuong
                     double SL_Thg_ = 0;
                     double SL_Tang_ = 0;
                     double Cong_ = 0;
+                    string HocViec = (CheckString.ChuanHoaHoTen(item["HV_DienGiai"].ToString())).ToLower();
 
                     hoTen = item["TenNhanVien"].ToString();
                     tenVthhThuong = item["TenVTHH_Vao"].ToString();
@@ -557,38 +558,50 @@ namespace CtyTinLuong
                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
                     Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
 
-                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString())/5;
-                    slTong += SL_Tog_;
-                    SL_Thg_ = SL_Tog_;
-                    if (Cong_ > 0)
+                    //Máy cắt tính theo lết: 1 lết = 5 cuộn:
+                    if (!HocViec.Contains("học việc") && !HocViec.Contains("thử việc"))
                     {
-                        if (LoaiHangHoa.Contains("cắt đột tăng"))
-                        {
-                            if (SL_Tog_ > 10)
-                            {
-                                SL_Thg_ = 10;
-                                SL_Tang_ = SL_Tog_ - 10;
-                            }
-                            tenVthhThuong = "Đột";
-                            tenVthhTang = "SL tăng";
-                        }
+                        SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) / 5;
+                        slTong += SL_Tog_;
+                        SL_Thg_ = SL_Tog_;
+                        nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
+                    }
+                    else
+                    {
+                        donGiaThuong = CheckString.ConvertToDouble_My(item["HV_DonGiaCongNhat_Thuong"].ToString());
                     }
 
-                    slThuong += SL_Thg_;
-                    slTang += SL_Tang_;
-                    nv.DsSLNgay[NgaySX - 1] += SL_Thg_;
-                    nv.DsSLNgay_Tang[NgaySX - 1] += SL_Tang_;
-                    nv.DsCong[NgaySX - 1] += Cong_;
+                    for (int i = 0; i < 31; i++)
+                    {
+                        nv.DsCong[i] = CheckString.ConvertToDouble_My(item["Ngay" + (i + 1)].ToString());
+                    }
 
-                    //if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                    //if (Cong_ > 0)
                     //{
-                    //    if (!dsNgayCong.Contains(NgaySX))
+                    //    if (LoaiHangHoa.Contains("cắt đột tăng"))
                     //    {
-                    //        dsNgayCong.Add(NgaySX);
+                    //        if (SL_Tog_ > 10)
+                    //        {
+                    //            SL_Thg_ = 10;
+                    //            SL_Tang_ = SL_Tog_ - 10;
+                    //        }
+                    //        tenVthhThuong = "Đột";
+                    //        tenVthhTang = "SL tăng";
                     //    }
                     //}
 
+                    //slThuong += SL_Thg_;
+                    //slTang += SL_Tang_;
+                    //nv.DsSLNgay[NgaySX - 1] += SL_Thg_;
+                    //nv.DsSLNgay_Tang[NgaySX - 1] += SL_Tang_;
+                    //nv.DsCong[NgaySX - 1] += Cong_;
                 }
+            }
+
+            for (int i = 0; i < 31; i++)
+            {
+                nv.DsSLNgay[i] = nv.DsSLNgay_Tong[i];
+                slThuong += nv.DsSLNgay[i];
             }
 
             nv.HoTen = hoTen;
@@ -644,6 +657,7 @@ namespace CtyTinLuong
                     nv.DsIdVthh_DotTang.Add(idvthh);
                     double SL_Tog_ = 0;
                     double Cong_ = 0;
+                    string HocViec = (CheckString.ChuanHoaHoTen(item["HV_DienGiai"].ToString())).ToLower();
 
                     hoTen = item["TenNhanVien"].ToString();
                     tenVthhThuong = item["TenVTHH_Vao"].ToString();
@@ -658,15 +672,19 @@ namespace CtyTinLuong
 
                     Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
 
-                    SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) /5;
-                    slTong += SL_Tog_;
+                    //Máy cắt tính theo lết: 1 lết = 5 cuộn:
+                    if (!HocViec.Contains("học việc") && !HocViec.Contains("thử việc"))
+                    {
+                        SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) / 5;
+                        slTong += SL_Tog_;
+                        nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
+                    }
+                    
                     if (Cong_ > 0)
                     {
                         tenVthhThuong = "Đột";
                         tenVthhTang = "Đột tăng ";
                     }
-
-                    nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
 
                     for (int i = 0; i < 31; i++)
                     {
@@ -710,6 +728,92 @@ namespace CtyTinLuong
             return nv;
         }
 
+        private ModelShowSanLuongToIn getNV_HocViec(int idcn, DataTable dt)
+        {
+            ModelShowSanLuongToIn nv = new ModelShowSanLuongToIn();
+            string hoTen = "";
+            string maVT = "";
+            string tenVthhThuong = "";
+            string tenVthhTang = "";
+            double slTong = 0;
+            double slThuong = 0;
+            double slTang = 0;
+            double donGiaThuong = 0;
+            double donGiaTang = 0;
+            double soNgayCong = 0;
+            double phuCapBaoHiem = 0;
+            double truBaoHiem = 0;
+            int ID_VthhRoot = -1;
+            List<int> DsID_Vthh_ = new List<int>();
+            List<int> dsNgayCong = new List<int>();
+
+            for (int i = 0; i < 31; i++)
+            {
+                nv.DsSLNgay[i] = 0;
+                nv.DsSLNgay_Tang[i] = 0;
+                nv.DsSLNgay_Tong[i] = 0;
+                nv.DsCong[i] = 0;
+            }
+
+            foreach (DataRow item in dt.Rows)
+            {
+                int ID_Vthh_ = Convert.ToInt32(item["ID_VTHH_Vao"].ToString());
+
+                //
+                if (ID_VthhRoot != ID_Vthh_ && !DsID_Vthh_.Contains(ID_Vthh_) && idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                {
+                    string HocViec = (CheckString.ChuanHoaHoTen(item["HV_DienGiai"].ToString())).ToLower();
+
+                    if (HocViec.Contains("học việc") || HocViec.Contains("thử việc"))
+                    {
+                        double Cong_ = 0;
+
+                        hoTen = item["TenNhanVien"].ToString();
+                        donGiaThuong = CheckString.ConvertToDouble_My(item["HV_DonGiaCongNhat_Thuong"].ToString());
+                        donGiaTang = CheckString.ConvertToDouble_My(item["HV_DonGiaCongNhat_Tang"].ToString());
+                        phuCapBaoHiem = CheckString.ConvertToDouble_My(item["PhuCapBaoHiem_Value"].ToString());
+                        truBaoHiem = CheckString.ConvertToDouble_My(item["BaoHiem_Value"].ToString());
+
+                        int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                        Cong_ = CheckString.ConvertToDouble_My(item["Ngay" + NgaySX].ToString());
+
+                        if (Cong_ > 0)
+                        {
+                            if (!dsNgayCong.Contains(NgaySX))
+                            {
+                                dsNgayCong.Add(NgaySX);
+                            }
+                        }
+
+                        if (HocViec.Contains("học việc"))
+                            tenVthhThuong = "Học việc";
+                        else
+                            tenVthhThuong = "Thử việc";
+                    }
+                }
+            }
+            soNgayCong = dsNgayCong.Count;
+
+            nv.HoTen = hoTen;
+            nv.MaVT = maVT;
+            nv.TenVthhThuong = tenVthhThuong;
+            nv.TenVthhTang = tenVthhTang;
+            nv.SlTong = slTong;
+            nv.SlThuong = slThuong;
+            nv.SlTang = slTang;
+            nv.DonGiaThuong = donGiaThuong;
+            nv.DonGiaTang = donGiaTang;
+            nv.SoNgayCong = soNgayCong;
+            nv.ThanhTienThuong = soNgayCong * donGiaThuong;
+            nv.ThanhTienTang = 0;
+            nv.TienTong = soNgayCong * donGiaThuong;
+            nv.PhuCapBaoHiem = phuCapBaoHiem;
+            nv.TruBaoHiem = truBaoHiem;
+
+            return nv;
+        }
+
         private tinhTongCN tongTien(int idcn, DataTable dt)
         {
             tinhTongCN t = new tinhTongCN();
@@ -719,11 +823,20 @@ namespace CtyTinLuong
             int ID_VthhRoot = -1;
 
             ModelShowSanLuongToIn dotTang = getNV_SanLuong_DotTang(idcn, dt);
+            ModelShowSanLuongToIn hocViec = getNV_HocViec(idcn, dt);
+
             if (dotTang.DsIdVthh_DotTang.Count > 0)
             {
                 result += (dotTang.ThanhTienThuong + dotTang.ThanhTienTang);
                 TongSL_All_ += dotTang.SlTong;
                 PhuCapBH = dotTang.PhuCapBaoHiem;
+            }
+
+            if (hocViec.SoNgayCong > 0)
+            {
+                result += hocViec.ThanhTienThuong;
+                TongSL_All_ += hocViec.SoNgayCong;
+                PhuCapBH = hocViec.PhuCapBaoHiem;
             }
 
             foreach (DataRow item in dt.Rows)
