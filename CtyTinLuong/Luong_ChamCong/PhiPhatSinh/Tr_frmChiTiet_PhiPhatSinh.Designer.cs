@@ -198,7 +198,7 @@
             this.radioCa2.Size = new System.Drawing.Size(619, 25);
             this.radioCa2.TabIndex = 42;
             this.radioCa2.TabStop = true;
-            this.radioCa2.Text = "Ca 2";
+            this.radioCa2.Text = "Tổ 2";
             this.radioCa2.UseVisualStyleBackColor = true;
             // 
             // radioCa1
@@ -208,7 +208,7 @@
             this.radioCa1.Size = new System.Drawing.Size(47, 25);
             this.radioCa1.TabIndex = 41;
             this.radioCa1.TabStop = true;
-            this.radioCa1.Text = "Ca 1";
+            this.radioCa1.Text = "Tổ 1";
             this.radioCa1.UseVisualStyleBackColor = true;
             // 
             // txtDienGiai

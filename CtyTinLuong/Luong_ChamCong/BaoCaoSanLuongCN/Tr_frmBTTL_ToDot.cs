@@ -116,7 +116,7 @@ namespace CtyTinLuong
             ThanhTien.Caption = "Thành\ntiền";
         }
        
-        public void LoadData(bool islandau, string CaLamViec)
+        public void LoadData(bool islandau)
         {
             _data.Clear();
             isload = true;
@@ -165,7 +165,8 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec, _id_bophan);
+                _dtSL_Ca1 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDot_DongBao(_nam, _thang, 0, 0, 1, _id_bophan, radioTo1.Checked, radioTo2.Checked);
+                //Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec, _id_bophan);
 
                 int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
                 for (int i = 1; i <= ngaycuathang_; i++)
@@ -649,7 +650,7 @@ namespace CtyTinLuong
             {
                 _thang = Convert.ToInt32(txtThang.Text);
 
-                LoadData(false, _CaLamViec);
+                LoadData(false);
             }
             catch
             {
@@ -662,7 +663,7 @@ namespace CtyTinLuong
             {
                 _nam = Convert.ToInt32(txtNam.Text);
 
-                LoadData(false, _CaLamViec);
+                LoadData(false);
             }
             catch
             {
@@ -715,7 +716,7 @@ namespace CtyTinLuong
                 _colDelete[28] = 0; //col Đơn giá Bao
                 _colDelete[31] = 0; //col Đơn giá tb
 
-                CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data, _colDelete);
+                CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data, _colDelete, radioTo1.Checked);
                 ff.Show();
             }
             else
@@ -772,19 +773,19 @@ namespace CtyTinLuong
 
             if (isload)
                 return;
-            LoadData(false, _CaLamViec);
+            LoadData(false);
         }
 
         private void radioTo2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioTo2.Checked)
-                _CaLamViec = "Ca 2";
-            else
-                _CaLamViec = "Ca 1";
+            //if (radioTo2.Checked)
+            //    _CaLamViec = "Ca 2";
+            //else
+            //    _CaLamViec = "Ca 1";
 
-            if (isload)
-                return;
-            LoadData(false, _CaLamViec);
+            //if (isload)
+            //    return;
+            //LoadData(false);
         }
 
 

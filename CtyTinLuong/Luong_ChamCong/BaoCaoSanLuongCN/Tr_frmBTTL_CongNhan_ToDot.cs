@@ -186,7 +186,8 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _dtSL_Ca1_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec, _id_bophan);
+                _dtSL_Ca1_Ca2 = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDot_DongBao(_nam, _thang, 0, 0, 1, _id_bophan, radioTo1.Checked, radioTo2.Checked);
+                //Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 0, 0, 1, CaLamViec, _id_bophan);
 
                 int ngaycuathang_ = (((new DateTime(_nam, _thang, 1)).AddMonths(1)).AddDays(-1)).Day;
                 for (int i = 1; i <= ngaycuathang_; i++)
@@ -654,14 +655,14 @@ namespace CtyTinLuong
 
         private void radioTo2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioTo1.Checked)
-                _CaLamViec = "Ca 1";
-            else
-                _CaLamViec = "Ca 2";
+            //if (radioTo1.Checked)
+            //    _CaLamViec = "Ca 1";
+            //else
+            //    _CaLamViec = "Ca 2";
 
-            if (isload)
-                return;
-            LoadData(false, radioTo1.Checked);
+            //if (isload)
+            //    return;
+            //LoadData(false, radioTo1.Checked);
         }
 
 

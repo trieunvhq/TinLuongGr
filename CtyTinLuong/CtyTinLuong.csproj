@@ -223,6 +223,12 @@
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_CongNhan_ToDot.designer.cs">
       <DependentUpon>Tr_PrintBTTL_CongNhan_ToDot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot_FullColum.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot_FullColum.Designer.cs">
+      <DependentUpon>Tr_PrintBTTL_ToDot_FullColum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2700,6 +2706,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_CongNhan_ToDot.resx">
       <DependentUpon>Tr_PrintBTTL_CongNhan_ToDot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot_FullColum.resx">
+      <DependentUpon>Tr_PrintBTTL_ToDot_FullColum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Luong_ChamCong\BaoCaoSanLuongCN\Tr_PrintBTTL_ToDot.resx">
       <DependentUpon>Tr_PrintBTTL_ToDot.cs</DependentUpon>
