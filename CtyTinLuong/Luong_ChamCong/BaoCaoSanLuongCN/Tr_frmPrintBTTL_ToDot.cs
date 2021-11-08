@@ -35,7 +35,7 @@ namespace CtyTinLuong
 
         private void Tr_frmBangChamCong_TBX_Load(object sender, EventArgs e)
         {
-            Tr_PrintBTTL_ToDot_FullColum xtr111 = new Tr_PrintBTTL_ToDot_FullColum(_thang, _nam, _colDelete, _isTo1);
+            Tr_PrintBTTL_ToDot xtr111 = new Tr_PrintBTTL_ToDot(_thang, _nam, _colDelete, _isTo1);
             DataSet_TinLuong ds = new DataSet_TinLuong();
            
             for (int i = 0; i < _data.Rows.Count -1; ++i)

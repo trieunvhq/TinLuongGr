@@ -16,9 +16,11 @@ namespace CtyTinLuong
         List<XRTableCell> _DsValue_Footer = new List<XRTableCell>();
         private int[] _colDelete;
         private int _nam, _thang;
+        private bool _isTo1;
 
-        public Tr_PrintBTTL_ToDot(int thang, int nam, int[] colDelete)
+        public Tr_PrintBTTL_ToDot(int thang, int nam, int[] colDelete, bool isTo1)
         {
+            _isTo1 = isTo1;
             _thang = thang;
             _nam = nam;
             _colDelete = colDelete;
@@ -126,12 +128,22 @@ namespace CtyTinLuong
             _DsValue_Footer.Add(tg30);
             _DsValue_Footer.Add(tg31);
             _DsValue_Footer.Add(tg32);
+
+            pNgay.Value = DateTime.Now;
         }
 
         private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             setThu();
 
+            if (_isTo1)
+            {
+                lbHeaderTitle.Text = "BẢNG SẢN LƯỢNG TỔ ĐỘT 1";
+            }
+            else
+            {
+                lbHeaderTitle.Text = "BẢNG SẢN LƯỢNG TỔ ĐỘT 2";
+            }
             //
             //Load label ngay thang nam header:
             if (_thang <= 9) lbThangNamTitle.Text = "Tháng 0" + _thang + " năm " + _nam;
@@ -186,7 +198,7 @@ namespace CtyTinLuong
             //}
 
             int count = 0;
-            for (int i = 31; i >=0; i--)
+            for (int i = _colDelete.Length - 1; i >=0; i--)
             {
                 if (_colDelete[i] == 1)
                 {
@@ -202,8 +214,8 @@ namespace CtyTinLuong
             congFooter.WidthF = DVT.WidthF = hDVT.WidthF = xrTableCell2.WidthF = (float)32.8;
             //
             float tmp = 0;
-            float colw = (float)((52.88 + 30.82 * 32) / (count +1));
-            for (int i = 0; i < 32; ++i)
+            float colw = (float)((52.88 + 30.82 * _colDelete.Length) / (count +1));
+            for (int i = 0; i < _colDelete.Length; ++i)
             {
                 if (_colDelete[i] == 0)
                 {

@@ -713,8 +713,36 @@ namespace CtyTinLuong
                     }
                     else _colDelete[i - 2] = 1; //Xóa
                 }
-                _colDelete[28] = 0; //col Đơn giá Bao
+
+                //Kiểm tra col đơn giá Bao, tb (không có dữ liệu ở hàng tổng):
+                double tongDonGia = 0;
+                double tongDonGiatb = 0;
+                _colDelete[28] = 0; 
                 _colDelete[31] = 0; //col Đơn giá tb
+                for (int i = 0; i < this.gridView1.RowCount; i++)
+                {
+                    tongDonGiatb += CheckString.ConvertToDouble_My(this.gridView1.GetRowCellValue(i, "DonGiatb_Tan"));
+                    tongDonGia += CheckString.ConvertToDouble_My(this.gridView1.GetRowCellValue(i, "DonGia_Tan"));
+                }
+                if (tongDonGia == 0)
+                    _colDelete[28] = 1; //col Đơn giá Bao
+                else
+                    _colDelete[28] = 0;
+
+                if (tongDonGiatb == 0)
+                    _colDelete[31] = 1; //col Đơn giá tb
+                else
+                    _colDelete[31] = 0;
+
+                //Xóa các cột là bao, để cột là kg (kể cả có dữ liệu):
+                for (int i = 0; i < 26; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        _colDelete[i] = 1; //Xóa
+                    }
+                }
+
 
                 CtyTinLuong.Tr_frmPrintBTTL_ToDot ff = new CtyTinLuong.Tr_frmPrintBTTL_ToDot(_thang, _nam, _data, _colDelete, radioTo1.Checked);
                 ff.Show();
