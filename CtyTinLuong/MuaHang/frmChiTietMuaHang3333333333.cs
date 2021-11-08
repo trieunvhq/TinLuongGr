@@ -156,7 +156,7 @@ namespace CtyTinLuong
 
             int ID_TaiKhoanKeToanCon = clsncc.iID_TaiKhoanKeToan.Value;
             double tongtienhangcoVAT = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
-            double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+            double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text);
             double tongtienhang_ChuaCoVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
             clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
 
@@ -258,9 +258,9 @@ namespace CtyTinLuong
                 double PhanTramVAT, tienvat, TongTien_ChuaVAT, TongTien_Co_VAT;
                 TongTien_ChuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text);
                 PhanTramVAT = CheckString.ConvertToDouble_My(txtPhanTramVAT.Text);
-                txtTienVAT.Text = (TongTien_ChuaVAT * PhanTramVAT / 100).ToString();
-               
-                tienvat = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString());
+                tienvat = (TongTien_ChuaVAT * PhanTramVAT / 100);
+
+                txtTienVAT.Text = tienvat.ToString("N2");
                 txtTongTienHangCoVAT.Text = (TongTien_ChuaVAT + tienvat).ToString("N2");
 
                 //double tienVAT = CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString()); 
@@ -1287,7 +1287,7 @@ namespace CtyTinLuong
 
             txtTienVAT.Text = tienVAT.ToString("N2");
             txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
-            txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
+            txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text)).ToString("N2");
         }
 
         private void txtPhanTramVAT_TextChanged(object sender, EventArgs e)
@@ -1543,7 +1543,7 @@ namespace CtyTinLuong
                         mdcSoTienNo = 0;
                         mdcSoTienCo = 0;
                     }
-                    mdcSoTienVAT = CheckString.ConvertToDecimal_My(txtTienVAT.Text.ToString());
+                    mdcSoTienVAT = CheckString.ConvertToDecimal_My(txtTienVAT.Text);
                     mdcTongTienCoVAT = CheckString.ConvertToDecimal_My(txtTongTienHangCoVAT.Text.ToString());
 
                     frmPrintMuaHang ff = new frmPrintMuaHang();
