@@ -105,17 +105,20 @@ namespace CtyTinLuong
                         _ravi["CoTrongKy"] = 0;
                     }
 
-                    if (isTraHang)
-                    {
-                        Noxx -= Noxx_hang;
-                        Coxx -= Coxx_hang;
-                    }
-                    else
-                    {
-                        Noxx += Noxx_hang;
-                        Coxx += Coxx_hang;
-                    }
-                    
+                    //if (isTraHang)
+                    //{
+                    //    Noxx -= Noxx_hang;
+                    //    Coxx -= Coxx_hang;
+                    //}
+                    //else
+                    //{
+                    //    Noxx += Noxx_hang;
+                    //    Coxx += Coxx_hang;
+                    //}
+
+                    Noxx += Noxx_hang;
+                    Coxx += Coxx_hang;
+
                     if (Noxx <= Coxx)
                     {
                         _ravi["NoCuoiKy"] = 0;

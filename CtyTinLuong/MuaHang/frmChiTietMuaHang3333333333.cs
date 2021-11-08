@@ -267,15 +267,29 @@ namespace CtyTinLuong
                 //double TongTien_ChuaVAT = CheckString.ConvertToDouble_My(txtTongTienHangChuaVAT.Text.ToString());
                 TongTien_Co_VAT = CheckString.ConvertToDouble_My(txtTongTienHangCoVAT.Text.ToString());
 
-                gridView8.SetRowCellValue(0, clNo, 0);
-                gridView8.SetRowCellValue(0, clCo, TongTien_Co_VAT);
+                if (frmMuaHang2222.mbTraLaiHangMua)
+                {
+                    gridView8.SetRowCellValue(0, clNo, TongTien_Co_VAT);
+                    gridView8.SetRowCellValue(0, clCo, 0);
 
-                gridView8.SetRowCellValue(1, clNo, TongTien_ChuaVAT);
-                gridView8.SetRowCellValue(1, clCo, 0);
+                    gridView8.SetRowCellValue(1, clNo, 0);
+                    gridView8.SetRowCellValue(1, clCo, TongTien_ChuaVAT);
 
-                gridView8.SetRowCellValue(2, clNo, tienvat);
-                gridView8.SetRowCellValue(2, clCo, 0);
-              
+                    gridView8.SetRowCellValue(2, clNo, 0);
+                    gridView8.SetRowCellValue(2, clCo, tienvat);
+                }
+                else
+                {
+                    gridView8.SetRowCellValue(0, clNo, 0);
+                    gridView8.SetRowCellValue(0, clCo, TongTien_Co_VAT);
+
+                    gridView8.SetRowCellValue(1, clNo, TongTien_ChuaVAT);
+                    gridView8.SetRowCellValue(1, clCo, 0);
+
+                    gridView8.SetRowCellValue(2, clNo, tienvat);
+                    gridView8.SetRowCellValue(2, clCo, 0);
+                }
+
                 decimal value = decimal.Parse(txtTongTienHangChuaVAT.Text);                
                 txtTongTienHangChuaVAT.Text = value.ToString("N2");             
             }
@@ -1236,7 +1250,10 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
-                tinhTongTien(fffthanhtien);
+                if (UCMuaHang.mbSua == false)
+                    tinhTongTien(fffthanhtien);
+                else
+                    tinhTongTien(0);
             }
             if (e.Column == clDonGia)
             {
@@ -1251,18 +1268,24 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
-                tinhTongTien(fffthanhtien);
+                if (UCMuaHang.mbSua == false)
+                    tinhTongTien(fffthanhtien);
+                else
+                    tinhTongTien(0);
             }
         }
 
         private void tinhTongTien(double tongIn)
         {
-            double deTOngTienChuaVAT = tongIn;
+            double tienVAT, deTOngTienChuaVAT = tongIn;
             for (int i = 0; i < this.gridView4.RowCount; i++)
             {
                 deTOngTienChuaVAT += CheckString.ConvertToDouble_My(this.gridView4.GetRowCellValue(i, "ThanhTien"));
             }
 
+            tienVAT = deTOngTienChuaVAT * (CheckString.ConvertToDouble_My(txtPhanTramVAT.Text)) /100;
+
+            txtTienVAT.Text = tienVAT.ToString("N2");
             txtTongTienHangChuaVAT.Text = deTOngTienChuaVAT.ToString("N2");
             txtTongTienHangCoVAT.Text = (deTOngTienChuaVAT + CheckString.ConvertToDouble_My(txtTienVAT.Text.ToString())).ToString("N2");
         }
