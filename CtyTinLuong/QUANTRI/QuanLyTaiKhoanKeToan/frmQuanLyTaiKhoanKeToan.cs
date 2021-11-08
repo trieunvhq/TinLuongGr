@@ -43,8 +43,6 @@ namespace CtyTinLuong
                 dtChau = cls.Tr_NganHang_SoTaiKhoanChau_S();
             }
 
-           
-
             for (int i = 0; i < dtMe.Rows.Count; i++)
             {
                 DataRow r = _data.NewRow();
@@ -71,12 +69,12 @@ namespace CtyTinLuong
                         rcon["Khoa"] = dtCon.Rows[k]["Khoa"];
                         rcon["LoaiTK"] = "LaCon";
                         _data.Rows.Add(rcon);
-                        dtCon.Rows.RemoveAt(k);k--;
 
+                        string sotkcon = dtCon.Rows[k]["SoTaiKhoan"].ToString().Trim();
                         for (int m = 0; m < dtChau.Rows.Count; m++)
                         {
                             string sotkchau = dtChau.Rows[m]["SoTaiKhoan"].ToString().Trim();
-                            string sotkcon = dtCon.Rows[k]["SoTaiKhoan"].ToString().Trim();
+                            
                             if (idme == Convert.ToInt32(dtChau.Rows[m]["ID_TaiKhoanKeToanMe"].ToString())
                                 && (sotkchau.Contains(sotkcon)))
                             {
@@ -90,7 +88,8 @@ namespace CtyTinLuong
                                 dtChau.Rows.RemoveAt(m);m--;
                             }
                         }
-                    } 
+                        dtCon.Rows.RemoveAt(k); k--;
+                    }
                 }
 
                 for (int m = 0; m < dtChau.Rows.Count; m++)
