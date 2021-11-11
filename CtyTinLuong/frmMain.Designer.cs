@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lbXinChao = new System.Windows.Forms.Label();
             this.btnMinimum = new System.Windows.Forms.Button();
             this.btnMaximum = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnMuaHang = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.lbXinChao = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -249,6 +249,17 @@
             this.panelTitleBar.Size = new System.Drawing.Size(884, 80);
             this.panelTitleBar.TabIndex = 67;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // lbXinChao
+            // 
+            this.lbXinChao.AutoSize = true;
+            this.lbXinChao.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbXinChao.ForeColor = System.Drawing.Color.White;
+            this.lbXinChao.Location = new System.Drawing.Point(3, 4);
+            this.lbXinChao.Name = "lbXinChao";
+            this.lbXinChao.Size = new System.Drawing.Size(36, 14);
+            this.lbXinChao.TabIndex = 3;
+            this.lbXinChao.Text = "label2";
             // 
             // btnMinimum
             // 
@@ -501,17 +512,6 @@
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // lbXinChao
-            // 
-            this.lbXinChao.AutoSize = true;
-            this.lbXinChao.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbXinChao.ForeColor = System.Drawing.Color.White;
-            this.lbXinChao.Location = new System.Drawing.Point(638, 57);
-            this.lbXinChao.Name = "lbXinChao";
-            this.lbXinChao.Size = new System.Drawing.Size(36, 14);
-            this.lbXinChao.TabIndex = 3;
-            this.lbXinChao.Text = "label2";
             // 
             // frmMain
             // 
