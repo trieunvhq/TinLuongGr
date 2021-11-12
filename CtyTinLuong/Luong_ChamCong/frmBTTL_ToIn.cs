@@ -879,6 +879,8 @@ namespace CtyTinLuong
             double _BaoHiem_Tong_Ca2 = 0;
             double _PCBaoHiem_Tong_Ca2 = 0;
             double _Tong_Ca2 = 0;
+            List<int> DsID_CongNhan_Ca1 = new List<int>();
+            List<int> DsID_CongNhan_Ca2 = new List<int>();
 
 
 
@@ -899,8 +901,9 @@ namespace CtyTinLuong
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca1.Rows[i]["ID_CongNhan"].ToString());
                     string MaNV_ = _dtSL_Ca1.Rows[i]["MaNhanVien"].ToString();
                     //
-                    if (ID_congNhanRoot != ID_congNhan)
+                    if (ID_congNhanRoot != ID_congNhan && !DsID_CongNhan_Ca1.Contains(ID_congNhan))
                     {
+                        DsID_CongNhan_Ca1.Add(ID_congNhan);
                         ModelSanLuong nvSL_thuong = getNV_SanLuong(ID_congNhan, "thường", _dtSL_Ca1);
                         ModelSanLuong nvSL_nhu = getNV_SanLuong(ID_congNhan, "in nhũ", _dtSL_Ca1);
                         ModelSanLuong nvSL_mac = getNV_SanLuong(ID_congNhan, "in mác", _dtSL_Ca1);
@@ -1392,8 +1395,9 @@ namespace CtyTinLuong
                     int ID_congNhan = Convert.ToInt32(_dtSL_Ca2.Rows[i]["ID_CongNhan"].ToString());
                     string MaNV_ = _dtSL_Ca2.Rows[i]["MaNhanVien"].ToString();
                     //
-                    if (ID_congNhanRoot != ID_congNhan)
+                    if (ID_congNhanRoot != ID_congNhan && !DsID_CongNhan_Ca2.Contains(ID_congNhan))
                     {
+                        DsID_CongNhan_Ca2.Add(ID_congNhan);
                         ModelSanLuong nvSL_thuong = getNV_SanLuong(ID_congNhan, "thường", _dtSL_Ca2);
                         ModelSanLuong nvSL_nhu = getNV_SanLuong(ID_congNhan, "in nhũ", _dtSL_Ca2);
                         ModelSanLuong nvSL_mac = getNV_SanLuong(ID_congNhan, "in mác", _dtSL_Ca2);

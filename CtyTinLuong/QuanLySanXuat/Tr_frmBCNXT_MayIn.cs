@@ -46,18 +46,12 @@ namespace CtyTinLuong
             if (islandau)
             {
                 DateTime dtnow = DateTime.Now;
+                _nam = dtnow.Year;
+                _thang = dtnow.Month;
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
-                DateTime date_ = new DateTime(dtnow.Year, dtnow.Month, 1);
-                int ngaycuathang_ = (((new DateTime(dtnow.Year, dtnow.Month, 1)).AddMonths(1)).AddDays(-1)).Day;
+            }
 
-                _nam = DateTime.Now.Year;
-                _thang = DateTime.Now.Month;
-                 
-            }
-            else
-            {
-            }
             double tongluong_tong_ = 0;
             double luongtrachnhiem_tong_ = 0;
             double tong_tong_ = 0;
@@ -73,7 +67,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.Tr_BTTL_SF_NoCheckTime(_nam, _thang, _id_bophan);
+                _data = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "", _id_bophan);
 
                 int ID_congNhanRoot = -1;
                 int stt = 0;
@@ -202,6 +196,191 @@ namespace CtyTinLuong
             isload = false;
         }
 
+        private ModelShowSanLuongToIn getNV_SanLuong(int idcn, string loaiVthh, DataTable dt)
+        {
+            ModelShowSanLuongToIn nv = new ModelShowSanLuongToIn();
+            string hoTen = "";
+            string tenVthhThuong = "";
+            string tenVthhTang = "";
+            double slTong = 0;
+            double slThuong = 0;
+            double slTang = 0;
+            double donGiaThuong = 0;
+            double donGiaTang = 0;
+            double soNgayCong = 0;
+            double phuCapBaoHiem = 0;
+            double truBaoHiem = 0;
+            List<int> dsNgayCong = new List<int>();
+
+            for (int i = 0; i < 31; i++)
+            {
+                nv.DsSLNgay[i] = 0;
+            }
+
+            foreach (DataRow item in dt.Rows)
+            {
+                string loaiHH = (CheckString.ChuanHoaHoTen(item["DienGiai"].ToString())).ToLower();
+                switch (loaiVthh)
+                {
+                    case "thường":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (!loaiHH.Contains("in mác") && !loaiHH.Contains("in trúc bách") && !loaiHH.Contains("in nhũ"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    double sl = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    slTong += sl;
+                                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case "in nhũ":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (loaiHH.Contains("in nhũ"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    double sl = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    slTong += sl;
+                                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case "in mác":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (loaiHH.Contains("in mác"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    double sl = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    slTong += sl;
+                                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case "in trúc bách":
+                        {
+                            if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
+                            {
+                                if (loaiHH.Contains("in trúc bách"))
+                                {
+                                    hoTen = item["TenVTHH"].ToString();
+                                    double sl = CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+                                    slTong += sl;
+                                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
+
+                                    nv.DsSLNgay[NgaySX - 1] += sl;
+
+                                    if (CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString()) > 0)
+                                    {
+                                        if (!dsNgayCong.Contains(NgaySX))
+                                        {
+                                            dsNgayCong.Add(NgaySX);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+
+            soNgayCong = dsNgayCong.Count;
+
+            if (loaiVthh.Contains("in mác"))
+            {
+                slThuong = slTong;
+                tenVthhThuong = "Sản lượng máy in mác";
+                tenVthhTang = "";
+            }
+            else if (loaiVthh.Contains("in trúc bách"))
+            {
+                slThuong = slTong;
+                tenVthhThuong = "Sản lượng máy in TB";
+                tenVthhTang = "";
+            }
+            else if (loaiVthh.Contains("in nhũ"))
+            {
+                //if ((slTong - (soNgayCong * 35)) > 0)
+                //{
+                //    slThuong = soNgayCong * 35;
+                //    slTang = slTong - (soNgayCong * 40);
+                //}
+                //else slThuong = slTong;
+                slThuong = slTong;
+
+                phuCapBaoHiem = slTong * 900000 / 910;
+
+                tenVthhThuong = "Sản lượng giấy cuộn nhũ";
+                tenVthhTang = "Sản lượng vượt 40q/ca/tháng";
+            }
+            else
+            {
+                if ((slTong - (soNgayCong * 40)) > 0)
+                {
+                    slThuong = soNgayCong * 40;
+                    slTang = slTong - (soNgayCong * 40);
+                }
+                else slThuong = slTong;
+
+                phuCapBaoHiem = slTong * 900000 / 1040;
+
+                tenVthhThuong = "Sản lượng giấy cuộn";
+                tenVthhTang = "Sản lượng vượt 40q/ca/tháng";
+            }
+
+            nv.HoTen = hoTen;
+            nv.TenVthhThuong = tenVthhThuong;
+            nv.TenVthhTang = tenVthhTang;
+            nv.SlTong = slTong;
+            nv.SlThuong = slThuong;
+            nv.SlTang = slTang;
+            nv.DonGiaThuong = donGiaThuong;
+            nv.DonGiaTang = donGiaTang;
+            nv.SoNgayCong = soNgayCong;
+            nv.ThanhTienThuong = slThuong * donGiaThuong;
+            nv.ThanhTienTang = slTang * donGiaTang;
+            nv.PhuCapBaoHiem = phuCapBaoHiem;
+            nv.TruBaoHiem = truBaoHiem;
+
+            return nv;
+        }
         //Tính tổng:
         private double TongMotNV(int idcn, DataTable dt)
         {

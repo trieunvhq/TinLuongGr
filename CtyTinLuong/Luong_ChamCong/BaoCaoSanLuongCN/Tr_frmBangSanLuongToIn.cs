@@ -114,6 +114,7 @@ namespace CtyTinLuong
             double Tong_VuotSanLuong = 0;
             double[] DsTongNgay = new double[31];
             for (int i = 0; i < 31; i++) DsTongNgay[i] = 0;
+            List<int> DsID_CongNhan_ = new List<int>();
 
             if (islandau)
             {
@@ -149,9 +150,10 @@ namespace CtyTinLuong
                         ModelShowSanLuongToIn nvSL_tb = getNV_SanLuong(ID_congNhan, "in trúc bách", dt);
 
                         //
-                        if (ID_congNhanRoot != ID_congNhan)
+                        if (ID_congNhanRoot != ID_congNhan && !DsID_CongNhan_.Contains(ID_congNhan))
                         {
                             ID_congNhanRoot = ID_congNhan;
+                            DsID_CongNhan_.Add(ID_congNhan);
                             SttCa1++;
                             if (nvSL_thuong.SlTong > 0)
                             {
