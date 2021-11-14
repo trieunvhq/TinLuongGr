@@ -370,6 +370,7 @@
     <Compile Include="Luong_ChamCong\frmChamCong_ToIn.Designer.cs">
       <DependentUpon>frmChamCong_ToIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ModelNXT_MayInCat.cs" />
     <Compile Include="Model\ModelCongNhat.cs" />
     <Compile Include="Model\ModelSanLuong.cs" />
     <Compile Include="Luong_ChamCong\TrDinhMucLuong\clsTr_DinhMucLuongSL_TGD.cs" />
@@ -582,6 +583,7 @@
     </Compile>
     <Compile Include="QuanLySanXuat\Class\clsHUU_CaiMacDinh_DinhMuc_SanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New - Copy %282%29.cs" />
+    <Compile Include="QuanLySanXuat\Class\clsTr_NXT_GiayInCat.cs" />
     <Compile Include="QuanLySanXuat\Tr_frmBCNXT_MayIn.cs">
       <SubType>UserControl</SubType>
     </Compile>

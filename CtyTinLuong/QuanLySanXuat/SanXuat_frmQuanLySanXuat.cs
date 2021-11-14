@@ -264,6 +264,50 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
+        private void navBCNXT_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            frmBaoCaoNhapXuatTon_BanThanhPham uccc_DaNhapKho = new frmBaoCaoNhapXuatTon_BanThanhPham();
+            uccc_DaNhapKho.Show();
+            doiMauTitle(sender, e);
+        }
+
+        private void navNXTGiayIn_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy in");
+            if (id_bophan_ == 0) return;
+
+            Tr_frmBCNXT_MayIn frm = new Tr_frmBCNXT_MayIn(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            Cursor.Current = Cursors.Default;
+        }
+
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+
+                }
+            }
+            return _id_bophan;
+        }
+
         private void doiMauTitle(object sender, NavBarLinkEventArgs e)
         {
             foreach (NavBarItem navItem in navBarControl1.Items)
@@ -276,11 +320,5 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
 
-        private void navBCNXT_LinkClicked(object sender, NavBarLinkEventArgs e)
-        {
-            frmBaoCaoNhapXuatTon_BanThanhPham uccc_DaNhapKho = new frmBaoCaoNhapXuatTon_BanThanhPham();
-            uccc_DaNhapKho.Show();
-            doiMauTitle(sender, e);
-        }
     }
 }

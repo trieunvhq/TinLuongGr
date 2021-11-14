@@ -672,6 +672,48 @@ namespace CtyTinLuong
             }
         }
 
+        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(int nam, int thang, string CaLamViec, int iID_BoPhan)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("cpn_bp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@bCaLamViec", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, CaLamViec));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_BoPhan));
+
+
+                // Open connection.
+                m_scoMainConnection.Open();
+
+                // Execute query.
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("clsCpn_bp::Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT::Error occured.", ex);
+            }
+            finally
+            {
+                // Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+
         public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(int nam, int thang, int May_IN, int May_CAT, int May_DOT, string CaLamViec, int iID_BoPhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
