@@ -672,7 +672,7 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(int nam, int thang, string CaLamViec, int iID_BoPhan)
+        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(int nam, int thang, int iID_BoPhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT]";
@@ -688,7 +688,6 @@ namespace CtyTinLuong
             {
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@bCaLamViec", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, CaLamViec));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_BoPhan));
 
 

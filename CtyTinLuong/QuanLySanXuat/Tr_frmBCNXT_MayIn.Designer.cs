@@ -39,13 +39,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TonDau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Xuat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ton = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TonCuoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Let = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
@@ -113,7 +113,7 @@
             this.TonDau,
             this.Nhap,
             this.Xuat,
-            this.Ton,
+            this.TonCuoi,
             this.Let});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
@@ -149,6 +149,31 @@
             this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 30;
             // 
+            // MaVT
+            // 
+            this.MaVT.AppearanceCell.Options.UseTextOptions = true;
+            this.MaVT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MaVT.Caption = "Mã hàng";
+            this.MaVT.FieldName = "MaVT";
+            this.MaVT.MinWidth = 10;
+            this.MaVT.Name = "MaVT";
+            this.MaVT.OptionsColumn.AllowEdit = false;
+            this.MaVT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsColumn.FixedWidth = true;
+            this.MaVT.OptionsFilter.AllowAutoFilter = false;
+            this.MaVT.OptionsFilter.AllowFilter = false;
+            this.MaVT.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.MaVT.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.MaVT.OptionsFilter.ShowEmptyDateFilter = false;
+            this.MaVT.Visible = true;
+            this.MaVT.VisibleIndex = 1;
+            this.MaVT.Width = 70;
+            // 
             // TenVTHH
             // 
             this.TenVTHH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,31 +199,6 @@
             this.DonViTinh.Visible = true;
             this.DonViTinh.VisibleIndex = 3;
             this.DonViTinh.Width = 70;
-            // 
-            // MaVT
-            // 
-            this.MaVT.AppearanceCell.Options.UseTextOptions = true;
-            this.MaVT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MaVT.Caption = "Mã hàng";
-            this.MaVT.FieldName = "MaVT";
-            this.MaVT.MinWidth = 10;
-            this.MaVT.Name = "MaVT";
-            this.MaVT.OptionsColumn.AllowEdit = false;
-            this.MaVT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsColumn.FixedWidth = true;
-            this.MaVT.OptionsFilter.AllowAutoFilter = false;
-            this.MaVT.OptionsFilter.AllowFilter = false;
-            this.MaVT.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.MaVT.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.MaVT.OptionsFilter.ShowEmptyDateFilter = false;
-            this.MaVT.Visible = true;
-            this.MaVT.VisibleIndex = 1;
-            this.MaVT.Width = 70;
             // 
             // TonDau
             // 
@@ -265,31 +265,31 @@
             this.Xuat.VisibleIndex = 6;
             this.Xuat.Width = 91;
             // 
-            // Ton
+            // TonCuoi
             // 
-            this.Ton.AppearanceCell.Options.UseTextOptions = true;
-            this.Ton.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.Ton.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Ton.Caption = "Tồn";
-            this.Ton.FieldName = "Ton";
-            this.Ton.MinWidth = 10;
-            this.Ton.Name = "Ton";
-            this.Ton.OptionsColumn.AllowEdit = false;
-            this.Ton.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsColumn.FixedWidth = true;
-            this.Ton.OptionsFilter.AllowAutoFilter = false;
-            this.Ton.OptionsFilter.AllowFilter = false;
-            this.Ton.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsFilter.ImmediateUpdateAutoFilter = false;
-            this.Ton.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
-            this.Ton.OptionsFilter.ShowEmptyDateFilter = false;
-            this.Ton.Visible = true;
-            this.Ton.VisibleIndex = 7;
-            this.Ton.Width = 91;
+            this.TonCuoi.AppearanceCell.Options.UseTextOptions = true;
+            this.TonCuoi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.TonCuoi.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.TonCuoi.Caption = "Tồn";
+            this.TonCuoi.FieldName = "TonCuoi";
+            this.TonCuoi.MinWidth = 10;
+            this.TonCuoi.Name = "TonCuoi";
+            this.TonCuoi.OptionsColumn.AllowEdit = false;
+            this.TonCuoi.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsColumn.FixedWidth = true;
+            this.TonCuoi.OptionsFilter.AllowAutoFilter = false;
+            this.TonCuoi.OptionsFilter.AllowFilter = false;
+            this.TonCuoi.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsFilter.ImmediateUpdateAutoFilter = false;
+            this.TonCuoi.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsFilter.ImmediateUpdatePopupExcelFilter = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsFilter.ShowBlanksFilterItems = DevExpress.Utils.DefaultBoolean.False;
+            this.TonCuoi.OptionsFilter.ShowEmptyDateFilter = false;
+            this.TonCuoi.Visible = true;
+            this.TonCuoi.VisibleIndex = 7;
+            this.TonCuoi.Width = 91;
             // 
             // Let
             // 
@@ -455,7 +455,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn MaVT;
         private DevExpress.XtraGrid.Columns.GridColumn TonDau;
         private DevExpress.XtraGrid.Columns.GridColumn Nhap;
-        private DevExpress.XtraGrid.Columns.GridColumn Ton;
+        private DevExpress.XtraGrid.Columns.GridColumn TonCuoi;
         private DevExpress.XtraGrid.Columns.GridColumn Let;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Columns.GridColumn Xuat;

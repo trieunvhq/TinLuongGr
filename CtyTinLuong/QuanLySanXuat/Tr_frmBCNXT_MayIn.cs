@@ -38,6 +38,17 @@ namespace CtyTinLuong
             _frmQLLCC = frmQLLCC;
             _id_bophan = id_bophan;
             InitializeComponent();
+
+            _data = new DataTable();
+            _data.Columns.Add("STT", typeof(string));
+            _data.Columns.Add("MaVT", typeof(string));
+            _data.Columns.Add("TenVTHH", typeof(string));
+            _data.Columns.Add("DonViTinh", typeof(string));
+            _data.Columns.Add("TonDau", typeof(string));
+            _data.Columns.Add("TonCuoi", typeof(string));
+            _data.Columns.Add("Nhap", typeof(string));
+            _data.Columns.Add("Xuat", typeof(string));
+            _data.Columns.Add("Let", typeof(string));
         }
 
         public void LoadData(bool islandau)
@@ -64,144 +75,55 @@ namespace CtyTinLuong
             double tong_ = 0;
             double trutamung_ = 0;
             double thuclinh_ = 0;
+            List<int> dsIDVTHH = new List<int>();
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCatDotSelect(_nam, _thang, 1, 0, 0, "", _id_bophan);
+                DataTable dt = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(_nam, _thang, _id_bophan);
 
-                int ID_congNhanRoot = -1;
+                int ID_Vthh_Root = -1;
                 int stt = 0;
 
-                for (int i = 0; i < _data.Rows.Count; ++i)
+                for (int i = 0; i < dt.Rows.Count; ++i)
                 {
-                    double dongia_ = CheckString.ConvertToDouble_My(_data.Rows[i]["DonGia_Value"].ToString());
-                    _data.Rows[i]["DonGia"] = dongia_.ToString("N0");
-
-                    int ID_congNhan = Convert.ToInt32(_data.Rows[i]["ID_CongNhan"].ToString());
-
-                    double sanluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["SanLuong"].ToString());
-
-                    //Tổng lương (đơn giá * sản lượng):
-                    tongluong_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TongLuong_Value"].ToString());
-                    tongluong_tong_ += tongluong_;
-                    _data.Rows[i]["TongLuong"] = tongluong_.ToString("N0");
+                    int ID_Vthh = Convert.ToInt32(_data.Rows[i]["ID_VTHH_Ra"].ToString());
 
                     //
-                    if (ID_congNhanRoot != ID_congNhan)
+                    if (ID_Vthh_Root != ID_Vthh && !dsIDVTHH.Contains(ID_Vthh))
                     {
+                        ModelNXT_MayInCat nxt = getNXT(ID_Vthh, dt);
                         //
-                        ID_congNhanRoot = ID_congNhan;
+                        ID_Vthh_Root = ID_Vthh;
+                        dsIDVTHH.Add(ID_Vthh);
                         stt++;
-                        _data.Rows[i]["STT"] = stt;
 
-                        //Lương trách nhiệm:
-                        luongtrachnhiem_ = CheckString.ConvertToDouble_My(_data.Rows[i]["LuongTrachNhiem_Value"].ToString());
-                        luongtrachnhiem_tong_ += luongtrachnhiem_;
-                        if (luongtrachnhiem_ == 0)
-                            _data.Rows[i]["LuongTrachNhiem"] = "";
-                        else
-                            _data.Rows[i]["LuongTrachNhiem"] = luongtrachnhiem_.ToString("N0");
+                        DataRow _ravi = _data.NewRow();
+                        _ravi["STT"] = stt;
+                        _ravi["MaVT"] = nxt.MaHang;
+                        _ravi["TenVTHH"] = nxt.TenVTHH;
+                        _ravi["DonViTinh"] = nxt.DonViTinh;
+                        _ravi["TonDau"] = nxt.TonDau.ToString("N0");
+                        _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N0");
+                        _ravi["Nhap"] = nxt.Nhap.ToString("N0");
+                        _ravi["Xuat"] = nxt.Xuat.ToString("N0");
+                        _ravi["Let"] = nxt.Let.ToString("N0");
 
-                        //tạm ứng
-                        trutamung_ = CheckString.ConvertToDouble_My(_data.Rows[i]["TamUng_Value"].ToString());
-                        trutamung_tong_ += trutamung_;
-                        if (trutamung_ == 0)
-                            _data.Rows[i]["TamUng"] = "";
-                        else
-                            _data.Rows[i]["TamUng"] = trutamung_.ToString("N0");
-
-
-                        //Tổng tiền
-                        tong_ = TongMotNV(ID_congNhan, _data);
-                        tong_tong_ += tong_;
-                        _data.Rows[i]["TongTien"] = (tong_).ToString("N0");
-
-                        //thực nhận
-                        thuclinh_ = (tong_ - trutamung_);
-                        thuclinh_tong_ += thuclinh_;
-                        _data.Rows[i]["ThucNhan"] = (thuclinh_).ToString("N0");
-                    }
-                    else
-                    {
-                        _data.Rows[i]["STT"] = stt;
-
-                        //Lương trách nhiệm:
-                        _data.Rows[i]["LuongTrachNhiem"] = "";
-
-                        //tạm ứng
-                        _data.Rows[i]["TamUng"] = "";
-
-                        //Tổng tiền
-                        _data.Rows[i]["TongTien"] = "";
-
-                        //thực nhận
-                        _data.Rows[i]["ThucNhan"] = "";
+                        _data.Rows.Add(_ravi);
                     }
                 }
             }
 
-            DataRow _ravi = _data.NewRow();
-            _ravi["ID_CongNhan"] = 0;
-            _ravi["Thang"] = _thang;
-            _ravi["Nam"] = _nam;
-            _ravi["TenNhanVien"] = "Tổng";
-            if (tongluong_tong_ == 0)
-            {
-                _ravi["TongLuong"] = "";
-            }
-            else
-            {
-                _ravi["TongLuong"] = tongluong_tong_.ToString("N0");
-            }
-            // 
-            if (trutamung_tong_ == 0)
-            {
-                _ravi["TamUng"] = "";
-            }
-            else
-            {
-                _ravi["TamUng"] = trutamung_tong_.ToString("N0");
-            }
-            // 
-            if (tong_tong_ == 0)
-            {
-                _ravi["TongTien"] = "";
-            }
-            else
-            {
-                _ravi["TongTien"] = tong_tong_.ToString("N0");
-            }
-            // 
-            if (trutamung_tong_ == 0)
-            {
-                _ravi["TamUng"] = "";
-            }
-            else
-            {
-                _ravi["TamUng"] = trutamung_tong_.ToString("N0");
-            }
-            // 
-            if (thuclinh_tong_ == 0)
-            {
-                _ravi["ThucNhan"] = "";
-            }
-            else
-            {
-                _ravi["ThucNhan"] = thuclinh_tong_.ToString("N0");
-            }
-
-            _data.Rows.Add(_ravi);
             gridControl1.DataSource = _data;
             //  
             isload = false;
         }
 
-        private ModelNXT_MayInCat getNV_SanLuong(int idVthh, DataTable dt)
+        private ModelNXT_MayInCat getNXT(int idVthh, DataTable dt)
         {
             ModelNXT_MayInCat nv = new ModelNXT_MayInCat();
-            int NgayThang = 0;
             string DonViTinh = "";
             string MaHang = "";
+            string TenHang = "";
             double TonDau = 0;
             double TonCuoi = 0;
             double Nhap = 0;
@@ -218,6 +140,7 @@ namespace CtyTinLuong
                 {
                     DonViTinh = item["DonViTinh"].ToString();
                     MaHang = item["MaVT"].ToString();
+                    TenHang = item["TenVTHH"].ToString();
 
                     Nhap += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                     Xuat = CheckString.ConvertToDouble_My(item["Xuat"].ToString());
@@ -232,17 +155,21 @@ namespace CtyTinLuong
                 }
             }
 
+            TonCuoi = Nhap + TonDau - Xuat;
 
-            nv.NgayThang = 0;
-            nv.DonViTinh = "";
-            nv.MaHang = "";
-            nv.TonDau = 0;
-            nv.TonCuoi = 0;
-            nv.Nhap = 0;
-            nv.Xuat = 0;
+            nv.DonViTinh = DonViTinh;
+            nv.MaHang = MaHang;
+            nv.TenVTHH = TenHang;
+            nv.TonDau = TonDau;
+            nv.TonCuoi = TonCuoi;
+            nv.Nhap = Nhap;
+            nv.Xuat = Xuat;
+            nv.Let = TonCuoi / 5;
 
             return nv;
         }
+
+
         //Tính tổng:
         private double TongMotNV(int idcn, DataTable dt)
         {
