@@ -672,7 +672,7 @@ namespace CtyTinLuong
             }
         }
 
-        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(int nam, int thang, int iID_BoPhan)
+        public DataTable Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(DateTime ngay_batdau, DateTime ngay_ketthuc, int iID_BoPhan)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT]";
@@ -686,8 +686,8 @@ namespace CtyTinLuong
 
             try
             {
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
-                scmCmdToExecute.Parameters.Add(new SqlParameter("@thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_BoPhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iID_BoPhan));
 
 

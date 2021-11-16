@@ -24,7 +24,8 @@ namespace CtyTinLuong
         public int miiID_ChamCong;
         public string msTenNhanVien;
 
-        public int _nam, _thang, _id_bophan;
+        public int _id_bophan;
+        private DateTime _NgayBatDau, _NgayKetThuc;
         public string _ten_vthh;
         private DataTable _data;
         private bool isload = true; 
@@ -53,14 +54,15 @@ namespace CtyTinLuong
 
         public void LoadData(bool islandau)
         {
+            _data.Clear();
             isload = true;
             if (islandau)
             {
                 DateTime dtnow = DateTime.Now;
-                _nam = dtnow.Year;
-                _thang = dtnow.Month;
-                txtNam.Text = dtnow.Year.ToString();
-                txtThang.Text = dtnow.Month.ToString();
+                _NgayBatDau = new DateTime(dtnow.Year, dtnow.Month, 1);
+                _NgayKetThuc = dtnow;
+                dateBatDau.DateTime = _NgayBatDau;
+                dateKetThuc.DateTime = _NgayKetThuc;
             }
 
             double tongluong_tong_ = 0;
@@ -79,14 +81,14 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(_nam, _thang, _id_bophan);
+                DataTable dt = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(_NgayBatDau, _NgayKetThuc, _id_bophan);
 
                 int ID_Vthh_Root = -1;
                 int stt = 0;
 
                 for (int i = 0; i < dt.Rows.Count; ++i)
                 {
-                    int ID_Vthh = Convert.ToInt32(_data.Rows[i]["ID_VTHH_Ra"].ToString());
+                    int ID_Vthh = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra"].ToString());
 
                     //
                     if (ID_Vthh_Root != ID_Vthh && !dsIDVTHH.Contains(ID_Vthh))
@@ -203,7 +205,10 @@ namespace CtyTinLuong
                 return;
             if (e.KeyChar == (char)13)
             {
-                HoanThanhThang();
+                _NgayBatDau = dateBatDau.DateTime;
+                _NgayKetThuc = dateKetThuc.DateTime;
+
+                LoadData(false);
             }
         }
 
@@ -212,54 +217,37 @@ namespace CtyTinLuong
             if (isload)
                 return;
 
-            HoanThanhThang();
+            _NgayBatDau = dateBatDau.DateTime;
+            _NgayKetThuc = dateKetThuc.DateTime;
+
+            LoadData(false);
         }
-        private void HoanThanhThang()
-        {
-            try
-            {
-                _thang = Convert.ToInt32(txtThang.Text);
-                LoadData(false);
-            }
-            catch
-            {
-                MessageBox.Show("Tháng không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        private void HoanThanhNam()
-        {
-            try
-            {
-                _nam = Convert.ToInt32(txtNam.Text);
-                LoadData(false);
-            }
-            catch
-            {
-                MessageBox.Show("Năm không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+       
 
         private void txtNam_Leave(object sender, EventArgs e)
         {
             if (isload)
                 return;
 
-            HoanThanhNam();
+            _NgayBatDau = dateBatDau.DateTime;
+            _NgayKetThuc = dateKetThuc.DateTime;
+
+            LoadData(false);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_CT(_NgayKetThuc.Month, _NgayKetThuc.Year, _data);
             ff.Show();
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1)
-            {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            }
+            //GridView view = sender as GridView;
+            //if (e.RowHandle == _data.Rows.Count - 1)
+            //{
+            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            //}
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -272,13 +260,16 @@ namespace CtyTinLuong
                 return;
             if (e.KeyChar == (char)13)
             {
-                HoanThanhNam();
+                _NgayBatDau = dateBatDau.DateTime;
+                _NgayKetThuc = dateKetThuc.DateTime;
+
+                LoadData(false);
             }
         }
 
         private void btnPrintTQ_Click(object sender, EventArgs e)
         {
-            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_TQ(_thang, _nam, _data);
+            CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_TQ ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBTTL_TBX_TQ(_NgayKetThuc.Month, _NgayKetThuc.Year, _data);
             ff.Show();
         }
 

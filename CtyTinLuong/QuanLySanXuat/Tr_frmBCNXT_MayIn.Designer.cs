@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,14 +51,16 @@
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.txtNam = new System.Windows.Forms.NumericUpDown();
-            this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.dateBatDau = new DevExpress.XtraEditors.DateEdit();
+            this.dateKetThuc = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBatDau.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBatDau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemMemoEdit3
@@ -68,9 +70,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
@@ -79,19 +81,19 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(308, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 126;
-            this.label3.Text = "Tháng:";
+            this.label3.Text = "Từ ngày";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(477, 15);
+            this.label4.Location = new System.Drawing.Point(463, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 127;
-            this.label4.Text = "Năm:";
+            this.label4.Text = "Đến ngày";
             // 
             // gridView1
             // 
@@ -124,7 +126,6 @@
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             // 
@@ -370,61 +371,49 @@
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // txtNam
+            // dateBatDau
             // 
-            this.txtNam.Location = new System.Drawing.Point(519, 12);
-            this.txtNam.Maximum = new decimal(new int[] {
-            2100,
-            0,
-            0,
-            0});
-            this.txtNam.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(70, 20);
-            this.txtNam.TabIndex = 170;
-            this.txtNam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNam.Value = new decimal(new int[] {
-            2021,
-            0,
-            0,
-            0});
-            this.txtNam.Leave += new System.EventHandler(this.txtNam_Leave);
+            this.dateBatDau.EditValue = null;
+            this.dateBatDau.Location = new System.Drawing.Point(360, 12);
+            this.dateBatDau.Name = "dateBatDau";
+            this.dateBatDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBatDau.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateBatDau.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateBatDau.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateBatDau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateBatDau.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateBatDau.Size = new System.Drawing.Size(82, 20);
+            this.dateBatDau.TabIndex = 171;
+            this.dateBatDau.Leave += new System.EventHandler(this.txtThang_Leave);
             // 
-            // txtThang
+            // dateKetThuc
             // 
-            this.txtThang.Location = new System.Drawing.Point(361, 12);
-            this.txtThang.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.txtThang.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new System.Drawing.Size(66, 20);
-            this.txtThang.TabIndex = 169;
-            this.txtThang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtThang.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
+            this.dateKetThuc.EditValue = null;
+            this.dateKetThuc.Location = new System.Drawing.Point(525, 12);
+            this.dateKetThuc.Name = "dateKetThuc";
+            this.dateKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateKetThuc.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateKetThuc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateKetThuc.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateKetThuc.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateKetThuc.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateKetThuc.Size = new System.Drawing.Size(83, 20);
+            this.dateKetThuc.TabIndex = 172;
+            this.dateKetThuc.Leave += new System.EventHandler(this.txtNam_Leave);
             // 
             // Tr_frmBCNXT_MayIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.Controls.Add(this.txtNam);
-            this.Controls.Add(this.txtThang);
+            this.Controls.Add(this.dateKetThuc);
+            this.Controls.Add(this.dateBatDau);
             this.Controls.Add(this.btnPrintTQ);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btThoat);
@@ -438,8 +427,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBatDau.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBatDau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,7 +455,7 @@
         private DevExpress.XtraEditors.SimpleButton btnPrintTQ;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btThoat;
-        private System.Windows.Forms.NumericUpDown txtNam;
-        private System.Windows.Forms.NumericUpDown txtThang;
+        private DevExpress.XtraEditors.DateEdit dateBatDau;
+        private DevExpress.XtraEditors.DateEdit dateKetThuc;
     }
 }
