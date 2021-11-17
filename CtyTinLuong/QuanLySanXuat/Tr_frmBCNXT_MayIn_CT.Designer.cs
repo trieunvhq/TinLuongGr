@@ -130,6 +130,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateKetThuc.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateKetThuc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateKetThuc.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateKetThuc.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateKetThuc.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dateKetThuc.Size = new System.Drawing.Size(157, 20);
             this.dateKetThuc.StyleController = this.dataLayoutControl1;
             this.dateKetThuc.TabIndex = 119;
@@ -144,6 +149,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBatDau.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateBatDau.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateBatDau.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateBatDau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dateBatDau.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dateBatDau.Size = new System.Drawing.Size(160, 20);
             this.dateBatDau.StyleController = this.dataLayoutControl1;
             this.dateBatDau.TabIndex = 118;
@@ -258,7 +268,7 @@
             // NgaySanXuat
             // 
             this.NgaySanXuat.AppearanceCell.Options.UseTextOptions = true;
-            this.NgaySanXuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.NgaySanXuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NgaySanXuat.Caption = "Ngày";
             this.NgaySanXuat.FieldName = "NgaySanXuat";
             this.NgaySanXuat.Name = "NgaySanXuat";
@@ -271,8 +281,6 @@
             // 
             // DienGiai
             // 
-            this.DienGiai.AppearanceCell.Options.UseTextOptions = true;
-            this.DienGiai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DienGiai.Caption = "Diễn giải";
             this.DienGiai.FieldName = "DienGiai";
             this.DienGiai.Name = "DienGiai";

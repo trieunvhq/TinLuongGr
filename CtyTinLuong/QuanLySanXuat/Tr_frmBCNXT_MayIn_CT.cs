@@ -35,6 +35,8 @@ namespace CtyTinLuong
 
             txtMaVT.Text = MaHang;
             lbTenVthh.Text = TenHang;
+            dateBatDau.DateTime = dateStart;
+            dateKetThuc.DateTime = dateEnd;
 
             _data = new DataTable();
             _data.Columns.Add("STT", typeof(string));
@@ -54,7 +56,7 @@ namespace CtyTinLuong
         {
             try
             {
-                LoadData(true);
+                LoadData(false);
             }
             catch (Exception ea)
             {
@@ -86,7 +88,6 @@ namespace CtyTinLuong
                 {
                     DataTable dtMayIn = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayIn_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _id_bophan, _idvthh);
                     DataTable dtMayCat = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayCat_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _id_bophan, _idvthh);
-                    int ID_congNhanRoot = -1;
                     int SttCa1 = 0;
 
                     foreach (DataRow item in dtMayIn.Rows)
@@ -106,32 +107,58 @@ namespace CtyTinLuong
                             DsNgaySX.Add(NgaySX);
                         }
                     }
-
+                    
                     if (DsNgaySX.Count > 0)
                     {
+                        //Row tồn đầu:
+                        ModelNXT_InCat_ChiTiet tondau = getNXT(DsNgaySX[0], dtMayIn, dtMayCat);
+                        DataRow ravi_ = _data.NewRow();
+                        ravi_["STT"] = "";
+                        ravi_["NgaySanXuat"] = "";
+                        ravi_["DienGiai"] = "Số dư đầu kỳ (" + tondau.MaHang + ")";
+                        ravi_["Nhap"] = "";
+                        ravi_["Xuat"] = "";
+                        ravi_["TonCuoi"] = tondau.TonDau.ToString("N0");
+                        _data.Rows.Add(ravi_);
 
-                    }
-
-                    foreach (DateTime item in DsNgaySX)
-                    {
-                        string MaNV_ = dt.Rows[i]["MaNhanVien"].ToString();
-
-                        ModelShowSanLuongToIn nvSL_tb = getNV_SanLuong(ID_congNhan, "in trúc bách", dt);
-
-                        //
-                        if (ID_congNhanRoot != ID_congNhan && !DsID_CongNhan_.Contains(ID_congNhan))
+                        double nhaptrongky = 0, xuattrongky = 0;
+                        //Row tồn theo ngày sx:
+                        foreach (DateTime item in DsNgaySX)
                         {
-                            ID_congNhanRoot = ID_congNhan;
-                            DsID_CongNhan_.Add(ID_congNhan);
+                            ModelNXT_InCat_ChiTiet ng = getNXT(item, dtMayIn, dtMayCat);
                             SttCa1++;
-                            DataRow ravi_ = _data.NewRow();
-                            ravi_["ID_CongNhan"] = 0;
-                            ravi_["MaNhanVien"] = "";
-                            ravi_["TenNhanVien"] = "";
-                            ravi_["HinhThuc"] = "Sản lượng tổng";
+                            DataRow ravi_1 = _data.NewRow();
+                            ravi_1["STT"] = SttCa1;
+                            ravi_1["NgaySanXuat"] = item.ToString("dd/MM/yyyy");
+                            ravi_1["DienGiai"] = ng.DienGiai;
+                            ravi_1["Nhap"] = ng.Nhap.ToString("N0");
+                            ravi_1["Xuat"] = ng.Xuat.ToString("N0");
+                            ravi_1["TonCuoi"] = tondau.TonDau.ToString("N0");
+                            _data.Rows.Add(ravi_1);
 
-                            _data.Rows.Add(ravi_);
+                            nhaptrongky += ng.Nhap;
+                            xuattrongky += ng.Xuat;
                         }
+
+                        //Row nhập xuất trong kỳ:
+                        DataRow ravi_2 = _data.NewRow();
+                        ravi_2["STT"] = "";
+                        ravi_2["NgaySanXuat"] = "";
+                        ravi_2["DienGiai"] = "Nhập xuất trong kỳ";
+                        ravi_2["Nhap"] = nhaptrongky.ToString("N0");
+                        ravi_2["Xuat"] = xuattrongky.ToString("N0");
+                        ravi_2["TonCuoi"] = tondau.TonCuoi.ToString("N0");
+                        _data.Rows.Add(ravi_2);
+
+                        //Row tồn cuối:
+                        DataRow ravi_3 = _data.NewRow();
+                        ravi_3["STT"] = "";
+                        ravi_3["NgaySanXuat"] = "";
+                        ravi_3["DienGiai"] = "Số dư cuối kỳ (" + tondau.MaHang + ")";
+                        ravi_3["Nhap"] = "";
+                        ravi_3["Xuat"] = "";
+                        ravi_3["TonCuoi"] = tondau.TonCuoi.ToString("N0");
+                        _data.Rows.Add(ravi_3);
                     }
                 }
 
@@ -170,6 +197,7 @@ namespace CtyTinLuong
                     dienGiai = item["DienGiai"].ToString();
                     Nhap += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                     TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
+                    TonCuoi = CheckString.ConvertToDouble_My(item["TonCuoi"].ToString());
                 }
             }
 
@@ -182,7 +210,12 @@ namespace CtyTinLuong
                     TenHang = item["TenVTHH"].ToString();
                     dienGiai = item["DienGiai"].ToString();
                     Xuat += CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString());
-                    TonCuoi = CheckString.ConvertToDouble_My(item["TonCuoi"].ToString());
+
+                    if (TonDau == 0)
+                        TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
+
+                    if (TonCuoi == 0)
+                        TonCuoi = CheckString.ConvertToDouble_My(item["TonCuoi"].ToString());
                 }
             }
 
@@ -209,6 +242,17 @@ namespace CtyTinLuong
 
         private void gridView3_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string dieGiai = View.GetRowCellValue(e.RowHandle, View.Columns["DienGiai"]).ToString();
+                if (dieGiai.Contains("Số dư đầu kỳ") || dieGiai.Contains("Nhập xuất trong kỳ") || dieGiai.Contains("Số dư cuối kỳ"))
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+                    //e.Appearance.BackColor = Color.Bisque;
+                }
+            }
+
             //GridView view = sender as GridView;
             //if (e.RowHandle == _data.Rows.Count - 1)
             //{
