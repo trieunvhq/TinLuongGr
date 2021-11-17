@@ -65,18 +65,7 @@ namespace CtyTinLuong
                 dateKetThuc.DateTime = _NgayKetThuc;
             }
 
-            double tongluong_tong_ = 0;
-            double luongtrachnhiem_tong_ = 0;
-            double tong_tong_ = 0;
-            double trutamung_tong_ = 0;
-            double thuclinh_tong_ = 0;
-
-
-            double tongluong_ = 0;
-            double luongtrachnhiem_ = 0;
-            double tong_ = 0;
-            double trutamung_ = 0;
-            double thuclinh_ = 0;
+            
             List<int> dsIDVTHH = new List<int>();
 
             using (clsThin clsThin_ = new clsThin())
@@ -170,24 +159,6 @@ namespace CtyTinLuong
 
             return nv;
         }
-
-
-        //Tính tổng:
-        private double TongMotNV(int idcn, DataTable dt)
-        {
-            double Result = 0;
-
-            foreach (DataRow item in dt.Rows)
-            {
-                if (idcn == Convert.ToInt32(item["ID_CongNhan"].ToString()))
-                {
-                    Result += CheckString.ConvertToDouble_My(item["TongLuong_Value"].ToString());
-                }
-            }
-
-            return Result;
-        }
-
 
         private void Tr_frmBCNXT_MayIn_Load(object sender, EventArgs e)
         {
