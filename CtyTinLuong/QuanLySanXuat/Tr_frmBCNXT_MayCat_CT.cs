@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CtyTinLuong
 {
-    public partial class Tr_frmBCNXT_MayIn_CT : Form
+    public partial class Tr_frmBCNXT_MayCat_CT : Form
     {
         private DataTable _data;
         private List<GridColumn> ds_grid = new List<GridColumn>();
@@ -23,7 +23,7 @@ namespace CtyTinLuong
 
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
 
-        public Tr_frmBCNXT_MayIn_CT(DateTime dateStart, DateTime dateEnd, int Idvthh, string MaHang, string TenHang)
+        public Tr_frmBCNXT_MayCat_CT(DateTime dateStart, DateTime dateEnd, int Idvthh, string MaHang, string TenHang)
         {
             _NgayBatDau = dateStart;
             _NgayKetThuc = dateEnd;
@@ -52,7 +52,7 @@ namespace CtyTinLuong
             gridControl2.RepositoryItems.Add(emptyEditor);
         }
 
-        private void Tr_frmBCNXT_MayIn_CT_Load(object sender, EventArgs e)
+        private void Tr_frmBCNXT_MayCat_CT_Load(object sender, EventArgs e)
         {
             try
             {
@@ -310,7 +310,7 @@ namespace CtyTinLuong
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "Tr_frmBCNXT_MayIn_CT", this);
+            Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "Tr_frmBCNXT_MayCat_CT", this);
             ff.Show();
         }
 
@@ -323,7 +323,7 @@ namespace CtyTinLuong
 
             //    if(_MaNhanVien != "")
             //    {
-            //        Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(id_congnhan_, "Tr_frmBCNXT_MayIn_CT", this);
+            //        Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(id_congnhan_, "Tr_frmBCNXT_MayCat_CT", this);
             //        ff.Show();
             //    }
             //}
