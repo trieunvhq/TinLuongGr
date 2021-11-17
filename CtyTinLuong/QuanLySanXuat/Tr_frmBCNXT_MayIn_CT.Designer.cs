@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tr_frmBCNXT_MayIn_CT));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -200,9 +200,9 @@
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl2.Location = new System.Drawing.Point(2, 74);
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.Name = "gridControl2";
@@ -235,7 +235,6 @@
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.AllowCellMerge = true;
             this.gridView3.OptionsView.AllowHtmlDrawHeaders = true;
-            this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.gridView3.OptionsView.RowAutoHeight = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
@@ -279,7 +278,6 @@
             this.DienGiai.Name = "DienGiai";
             this.DienGiai.OptionsColumn.AllowEdit = false;
             this.DienGiai.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.DienGiai.OptionsColumn.FixedWidth = true;
             this.DienGiai.Visible = true;
             this.DienGiai.VisibleIndex = 2;
             this.DienGiai.Width = 500;

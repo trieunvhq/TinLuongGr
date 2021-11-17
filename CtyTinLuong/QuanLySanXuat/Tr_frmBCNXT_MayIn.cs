@@ -49,7 +49,8 @@ namespace CtyTinLuong
             _data.Columns.Add("TonCuoi", typeof(string));
             _data.Columns.Add("Nhap", typeof(string));
             _data.Columns.Add("Xuat", typeof(string));
-            _data.Columns.Add("Let", typeof(string));
+            _data.Columns.Add("Let", typeof(string)); 
+            _data.Columns.Add("ID_VTHH", typeof(string)); 
         }
 
         public void LoadData(bool islandau)
@@ -97,7 +98,8 @@ namespace CtyTinLuong
                         _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N0");
                         _ravi["Nhap"] = nxt.Nhap.ToString("N0");
                         _ravi["Xuat"] = nxt.Xuat.ToString("N0");
-                        _ravi["Let"] = nxt.Let.ToString("N0");
+                        _ravi["Let"] = nxt.Let.ToString("N0"); 
+                        _ravi["ID_VTHH"] = ID_Vthh; 
 
                         _data.Rows.Add(_ravi);
                     }
@@ -244,6 +246,26 @@ namespace CtyTinLuong
             ff.Show();
         }
 
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.GetFocusedRowCellValue(ID_VTHH) != null)
+                {
+                    int idvthh = Convert.ToInt16(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
+                    string maHang = gridView1.GetFocusedRowCellValue(MaVT).ToString();
+                    string tenHang = gridView1.GetFocusedRowCellValue(TenVTHH).ToString();
+
+                    Tr_frmBCNXT_MayIn_CT ff = new Tr_frmBCNXT_MayIn_CT(dateBatDau.DateTime, dateKetThuc.DateTime, idvthh, maHang, tenHang);
+                    ff.Show();
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         private void lbChinhSua_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

@@ -21,15 +21,20 @@ namespace CtyTinLuong
         private bool isload = true;
         public string _MaNhanVien = "";
 
-        DateTime ngaydauthang, ngaycuoithang;
         DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit emptyEditor;
 
-        public Tr_frmBCNXT_MayIn_CT()
+        public Tr_frmBCNXT_MayIn_CT(DateTime dateStart, DateTime dateEnd, int Idvthh, string MaHang, string TenHang)
         {
+            _NgayBatDau = dateStart;
+            _NgayKetThuc = dateEnd;
+            _idvthh = Idvthh;
             _id_bophan = KiemTraTenBoPhan("Máy in");
             if (_id_bophan == 0) return;
 
             InitializeComponent();
+
+            txtMaVT.Text = MaHang;
+            lbTenVthh.Text = TenHang;
 
             _data = new DataTable();
             _data.Columns.Add("STT", typeof(string));
@@ -61,14 +66,10 @@ namespace CtyTinLuong
         {
             _data.Clear();
             isload = true;
-            double Tong_SLGiayCuon = 0;
-            double Tong_VuotSanLuong = 0;
             double[] DsTongNgay = new double[31];
             for (int i = 0; i < 31; i++) DsTongNgay[i] = 0;
-            List<int> DsID_CongNhan_ = new List<int>();
-
-            _data.Clear();
-            isload = true;
+            List<DateTime> DsNgaySX = new List<DateTime>();
+            
             if (islandau)
             {
                 DateTime dtnow = DateTime.Now;
@@ -85,31 +86,53 @@ namespace CtyTinLuong
                 {
                     DataTable dtMayIn = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayIn_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _id_bophan, _idvthh);
                     DataTable dtMayCat = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayCat_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _id_bophan, _idvthh);
-                    //int ID_congNhanRoot = -1;
-                    //int SttCa1 = 0;
+                    int ID_congNhanRoot = -1;
+                    int SttCa1 = 0;
 
-                    //for (int i = 0; i < dt.Rows.Count; ++i)
-                    //{
-                    //    int ID_congNhan = Convert.ToInt32(dt.Rows[i]["ID_CongNhan"].ToString());
-                    //    string MaNV_ = dt.Rows[i]["MaNhanVien"].ToString();
+                    foreach (DataRow item in dtMayIn.Rows)
+                    {
+                        DateTime NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString());
+                        if (!DsNgaySX.Contains(NgaySX))
+                        {
+                            DsNgaySX.Add(NgaySX);
+                        }
+                    }
 
-                    //    ModelShowSanLuongToIn nvSL_tb = getNV_SanLuong(ID_congNhan, "in trúc bách", dt);
+                    foreach (DataRow item in dtMayCat.Rows)
+                    {
+                        DateTime NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString());
+                        if (!DsNgaySX.Contains(NgaySX))
+                        {
+                            DsNgaySX.Add(NgaySX);
+                        }
+                    }
 
-                    //    //
-                    //    if (ID_congNhanRoot != ID_congNhan && !DsID_CongNhan_.Contains(ID_congNhan))
-                    //    {
-                    //        ID_congNhanRoot = ID_congNhan;
-                    //        DsID_CongNhan_.Add(ID_congNhan);
-                    //        SttCa1++;
-                    //        DataRow ravi_ = _data.NewRow();
-                    //        ravi_["ID_CongNhan"] = 0;
-                    //        ravi_["MaNhanVien"] = "";
-                    //        ravi_["TenNhanVien"] = "";
-                    //        ravi_["HinhThuc"] = "Sản lượng tổng";
+                    if (DsNgaySX.Count > 0)
+                    {
 
-                    //        _data.Rows.Add(ravi_);
-                    //    }
-                    //}
+                    }
+
+                    foreach (DateTime item in DsNgaySX)
+                    {
+                        string MaNV_ = dt.Rows[i]["MaNhanVien"].ToString();
+
+                        ModelShowSanLuongToIn nvSL_tb = getNV_SanLuong(ID_congNhan, "in trúc bách", dt);
+
+                        //
+                        if (ID_congNhanRoot != ID_congNhan && !DsID_CongNhan_.Contains(ID_congNhan))
+                        {
+                            ID_congNhanRoot = ID_congNhan;
+                            DsID_CongNhan_.Add(ID_congNhan);
+                            SttCa1++;
+                            DataRow ravi_ = _data.NewRow();
+                            ravi_["ID_CongNhan"] = 0;
+                            ravi_["MaNhanVien"] = "";
+                            ravi_["TenNhanVien"] = "";
+                            ravi_["HinhThuc"] = "Sản lượng tổng";
+
+                            _data.Rows.Add(ravi_);
+                        }
+                    }
                 }
 
                 gridControl2.DataSource = _data;
@@ -127,11 +150,11 @@ namespace CtyTinLuong
             string DonViTinh = "";
             string MaHang = "";
             string TenHang = "";
+            string dienGiai = "";
             double TonDau = 0;
             double TonCuoi = 0;
             double Nhap = 0;
             double Xuat = 0;
-            List<int> dsNgayCong = new List<int>();
 
             for (int i = 0; i < 31; i++)
             {
@@ -144,7 +167,7 @@ namespace CtyTinLuong
                     DonViTinh = item["DonViTinh"].ToString();
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
-
+                    dienGiai = item["DienGiai"].ToString();
                     Nhap += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
                     TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
                 }
@@ -157,13 +180,18 @@ namespace CtyTinLuong
                     DonViTinh = item["DonViTinh"].ToString();
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
-
+                    dienGiai = item["DienGiai"].ToString();
                     Xuat += CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString());
                     TonCuoi = CheckString.ConvertToDouble_My(item["TonCuoi"].ToString());
                 }
             }
 
             //TonCuoi = Nhap + TonDau - Xuat;
+
+            if (dienGiai == "")
+                nv.DienGiai = TenHang;
+            else
+                nv.DienGiai = dienGiai;
 
             nv.DonViTinh = DonViTinh;
             nv.MaHang = MaHang;
@@ -178,35 +206,14 @@ namespace CtyTinLuong
         }
 
 
-        private string LayThu(DateTime date)
-        {
-            switch (date.DayOfWeek)
-            {
-                case DayOfWeek.Monday:
-                    return "T2";
-                case DayOfWeek.Tuesday:
-                    return "T3";
-                case DayOfWeek.Wednesday:
-                    return "T4";
-                case DayOfWeek.Thursday:
-                    return "T5";
-                case DayOfWeek.Friday:
-                    return "T6";
-                case DayOfWeek.Saturday:
-                    return "T7";
-                case DayOfWeek.Sunday:
-                    return "CN";
-            }
-            return "";
-        }
 
         private void gridView3_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1)
-            {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            }
+            //GridView view = sender as GridView;
+            //if (e.RowHandle == _data.Rows.Count - 1)
+            //{
+            //    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            //}
         }
 
         private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
