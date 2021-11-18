@@ -47,13 +47,13 @@
             this.Xuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TonCuoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Let = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.btnPrintTQ = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.dateBatDau = new DevExpress.XtraEditors.DateEdit();
             this.dateKetThuc = new DevExpress.XtraEditors.DateEdit();
-            this.ID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -321,6 +321,12 @@
             this.Let.VisibleIndex = 8;
             this.Let.Width = 91;
             // 
+            // ID_VTHH
+            // 
+            this.ID_VTHH.Caption = "ID_VTHH";
+            this.ID_VTHH.FieldName = "ID_VTHH";
+            this.ID_VTHH.Name = "ID_VTHH";
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -409,12 +415,6 @@
             this.dateKetThuc.Size = new System.Drawing.Size(83, 20);
             this.dateKetThuc.TabIndex = 172;
             this.dateKetThuc.Leave += new System.EventHandler(this.txtNam_Leave);
-            // 
-            // ID_VTHH
-            // 
-            this.ID_VTHH.Caption = "ID_VTHH";
-            this.ID_VTHH.FieldName = "ID_VTHH";
-            this.ID_VTHH.Name = "ID_VTHH";
             // 
             // Tr_frmBCNXT_MayCat
             // 
