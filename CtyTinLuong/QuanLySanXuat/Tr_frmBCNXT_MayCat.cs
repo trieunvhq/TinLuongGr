@@ -71,7 +71,7 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt = clsThin_.Tr_Phieu_ChiTietPhieu_New_ToInCat_NXT(_NgayBatDau, _NgayKetThuc, _id_bophan);
+                DataTable dt = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayCat_NXT(_NgayBatDau, _NgayKetThuc);
 
                 int ID_Vthh_Root = -1;
                 int stt = 0;
@@ -136,7 +136,7 @@ namespace CtyTinLuong
                     TenHang = item["TenVTHH"].ToString();
 
                     Nhap += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
-                    Xuat = CheckString.ConvertToDouble_My(item["Xuat"].ToString());
+                    Xuat = CheckString.ConvertToDouble_My(item["TongXuat"].ToString());
                     TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
 
                     int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;

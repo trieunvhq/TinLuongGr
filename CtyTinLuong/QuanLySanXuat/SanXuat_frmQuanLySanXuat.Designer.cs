@@ -55,12 +55,12 @@
             this.navSanLuongMayDOT = new DevExpress.XtraNavBar.NavBarItem();
             this.navLuongSanLuong = new DevExpress.XtraNavBar.NavBarItem();
             this.navBCNXT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navNXTGiayIn = new DevExpress.XtraNavBar.NavBarItem();
+            this.navNXTGiayCat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.navNXTGiayIn = new DevExpress.XtraNavBar.NavBarItem();
-            this.navNXTGiayCat = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -273,6 +273,18 @@
             this.navBCNXT.Name = "navBCNXT";
             this.navBCNXT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBCNXT_LinkClicked);
             // 
+            // navNXTGiayIn
+            // 
+            this.navNXTGiayIn.Caption = "Nhập xuất tồn giấy in";
+            this.navNXTGiayIn.Name = "navNXTGiayIn";
+            this.navNXTGiayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNXTGiayIn_LinkClicked);
+            // 
+            // navNXTGiayCat
+            // 
+            this.navNXTGiayCat.Caption = "Nhập xuất tồn giấy cắt";
+            this.navNXTGiayCat.Name = "navNXTGiayCat";
+            this.navNXTGiayCat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNXTGiayCat_LinkClicked);
+            // 
             // navBarItem25
             // 
             this.navBarItem25.Caption = "* Tất cả";
@@ -304,17 +316,6 @@
             this.groupBox1.Size = new System.Drawing.Size(219, 618);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
-            // 
-            // navNXTGiayIn
-            // 
-            this.navNXTGiayIn.Caption = "Nhập xuất tồn giấy in";
-            this.navNXTGiayIn.Name = "navNXTGiayIn";
-            this.navNXTGiayIn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNXTGiayIn_LinkClicked);
-            // 
-            // navNXTGiayCat
-            // 
-            this.navNXTGiayCat.Caption = "Nhập xuất tồn giấy cắt";
-            this.navNXTGiayCat.Name = "navNXTGiayCat";
             // 
             // SanXuat_frmQuanLySanXuat
             // 

@@ -312,5 +312,22 @@ namespace CtyTinLuong
             ((NavBarItem)sender).Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold);
         }
 
+        private void navNXTGiayCat_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            int id_bophan_ = KiemTraTenBoPhan("Máy cắt");
+            if (id_bophan_ == 0) return;
+
+            Tr_frmBCNXT_MayCat frm = new Tr_frmBCNXT_MayCat(id_bophan_, this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            Cursor.Current = Cursors.Default;
+        }
     }
 }
