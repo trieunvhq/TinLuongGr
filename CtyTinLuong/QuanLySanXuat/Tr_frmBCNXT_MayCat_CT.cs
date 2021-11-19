@@ -86,11 +86,11 @@ namespace CtyTinLuong
             {
                 using (clsThin clsThin_ = new clsThin())
                 {
-                    DataTable dtMayIn = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayIn_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _id_bophan, _idvthh);
-                    DataTable dtMayCat = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayCat_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _id_bophan, _idvthh);
+                    DataTable dtNhap = clsThin_.Tr_Phieu_ChiTietPhieu_New_NhapGiayCat_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _idvthh);
+                    DataTable dtXuat = clsThin_.Tr_Phieu_ChiTietPhieu_New_XuatGiayCat_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _idvthh);
                     int SttCa1 = 0;
 
-                    foreach (DataRow item in dtMayIn.Rows)
+                    foreach (DataRow item in dtNhap.Rows)
                     {
                         DateTime NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString());
                         if (!DsNgaySX.Contains(NgaySX))
@@ -99,7 +99,7 @@ namespace CtyTinLuong
                         }
                     }
 
-                    foreach (DataRow item in dtMayCat.Rows)
+                    foreach (DataRow item in dtXuat.Rows)
                     {
                         DateTime NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString());
                         if (!DsNgaySX.Contains(NgaySX))
@@ -111,21 +111,21 @@ namespace CtyTinLuong
                     if (DsNgaySX.Count > 0)
                     {
                         //Row tồn đầu:
-                        ModelNXT_InCat_ChiTiet tondau = getNXT(DsNgaySX[0], dtMayIn, dtMayCat);
+                        ModelNXT_InCat_ChiTiet tondau = getNXT(DsNgaySX[0], dtNhap, dtXuat);
                         DataRow ravi_ = _data.NewRow();
                         ravi_["STT"] = "";
                         ravi_["NgaySanXuat"] = "";
                         ravi_["DienGiai"] = "Số dư đầu kỳ (" + tondau.MaHang + ")";
                         ravi_["Nhap"] = "";
                         ravi_["Xuat"] = "";
-                        ravi_["TonCuoi"] = tondau.TonDau.ToString("N0");
+                        ravi_["TonCuoi"] = tondau.TonDau.ToString("N2");
                         _data.Rows.Add(ravi_);
 
                         double nhaptrongky = 0, xuattrongky = 0, tonTheoNgay = tondau.TonDau;
                         //Row tồn theo ngày sx:
                         foreach (DateTime item in DsNgaySX)
                         {
-                            ModelNXT_InCat_ChiTiet ng = getNXT(item, dtMayIn, dtMayCat);
+                            ModelNXT_InCat_ChiTiet ng = getNXT(item, dtNhap, dtXuat);
                             SttCa1++;
 
                             tonTheoNgay += (ng.Nhap - ng.Xuat);
@@ -133,9 +133,9 @@ namespace CtyTinLuong
                             ravi_1["STT"] = SttCa1;
                             ravi_1["NgaySanXuat"] = item.ToString("dd/MM/yyyy");
                             ravi_1["DienGiai"] = ng.DienGiai;
-                            ravi_1["Nhap"] = ng.Nhap.ToString("N0");
-                            ravi_1["Xuat"] = ng.Xuat.ToString("N0");
-                            ravi_1["TonCuoi"] = tonTheoNgay.ToString("N0");
+                            ravi_1["Nhap"] = ng.Nhap.ToString("N2");
+                            ravi_1["Xuat"] = ng.Xuat.ToString("N2");
+                            ravi_1["TonCuoi"] = tonTheoNgay.ToString("N2");
                             _data.Rows.Add(ravi_1);
 
                             nhaptrongky += ng.Nhap;
@@ -147,9 +147,9 @@ namespace CtyTinLuong
                         ravi_2["STT"] = "";
                         ravi_2["NgaySanXuat"] = "";
                         ravi_2["DienGiai"] = "Nhập xuất trong kỳ";
-                        ravi_2["Nhap"] = nhaptrongky.ToString("N0");
-                        ravi_2["Xuat"] = xuattrongky.ToString("N0");
-                        ravi_2["TonCuoi"] = tondau.TonCuoi.ToString("N0");
+                        ravi_2["Nhap"] = nhaptrongky.ToString("N2");
+                        ravi_2["Xuat"] = xuattrongky.ToString("N2");
+                        ravi_2["TonCuoi"] = "";
                         _data.Rows.Add(ravi_2);
 
                         //Row tồn cuối:
@@ -159,7 +159,7 @@ namespace CtyTinLuong
                         ravi_3["DienGiai"] = "Số dư cuối kỳ (" + tondau.MaHang + ")";
                         ravi_3["Nhap"] = "";
                         ravi_3["Xuat"] = "";
-                        ravi_3["TonCuoi"] = tondau.TonCuoi.ToString("N0");
+                        ravi_3["TonCuoi"] = tonTheoNgay.ToString("N2");
                         _data.Rows.Add(ravi_3);
                     }
                 }
@@ -173,7 +173,7 @@ namespace CtyTinLuong
             isload = false;
         }
 
-        private ModelNXT_InCat_ChiTiet getNXT(DateTime NgaySX, DataTable dtMI, DataTable dtMC)
+        private ModelNXT_InCat_ChiTiet getNXT(DateTime NgaySX, DataTable dtNhap, DataTable dtXuat)
         {
             ModelNXT_InCat_ChiTiet nv = new ModelNXT_InCat_ChiTiet();
             string DonViTinh = "";
@@ -184,12 +184,14 @@ namespace CtyTinLuong
             double TonCuoi = 0;
             double Nhap = 0;
             double Xuat = 0;
+            double NhapRa = 0;
+            double XuatRa = 0;
 
             for (int i = 0; i < 31; i++)
             {
             }
 
-            foreach (DataRow item in dtMI.Rows)
+            foreach (DataRow item in dtNhap.Rows)
             {
                 if (NgaySX == Convert.ToDateTime(item["NgaySanXuat"].ToString()))
                 {
@@ -197,13 +199,14 @@ namespace CtyTinLuong
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
                     dienGiai = item["DienGiai"].ToString();
-                    Nhap += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
-                    TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
-                    TonCuoi = CheckString.ConvertToDouble_My(item["TonCuoi"].ToString());
+                    Nhap += CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString());
+                    NhapRa += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
+
+                    TonDau = CheckString.ConvertToDouble_My(item["TonDauKy"].ToString());
                 }
             }
 
-            foreach (DataRow item in dtMC.Rows)
+            foreach (DataRow item in dtXuat.Rows)
             {
                 if (NgaySX == Convert.ToDateTime(item["NgaySanXuat"].ToString()))
                 {
@@ -211,17 +214,17 @@ namespace CtyTinLuong
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
                     dienGiai = item["DienGiai"].ToString();
-                    Xuat += CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString());
+                    XuatRa += CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString());
 
                     if (TonDau == 0)
-                        TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
-
-                    if (TonCuoi == 0)
-                        TonCuoi = CheckString.ConvertToDouble_My(item["TonCuoi"].ToString());
+                        TonDau = CheckString.ConvertToDouble_My(item["TonDauKy"].ToString());
                 }
             }
 
-            //TonCuoi = Nhap + TonDau - Xuat;
+            if (NhapRa > 0)
+                Xuat = (XuatRa * Nhap) / NhapRa;
+
+            TonCuoi = Nhap + TonDau - Xuat;
 
             if (dienGiai == "")
                 nv.DienGiai = TenHang;

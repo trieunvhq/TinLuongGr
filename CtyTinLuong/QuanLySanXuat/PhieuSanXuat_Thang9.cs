@@ -1879,6 +1879,8 @@ namespace CtyTinLuong
                     bandedGridView1.SetRowCellValue(row, clTenVTHH_Ra_DOT, sMacDinh_TenVTHH_Ra);
                     bandedGridView1.SetRowCellValue(row, clDonViTinh_Ra_DOT, sMacDinh_DVT_Ra);
                     bandedGridView1.SetRowCellValue(row, clMaPhieu, sMaPhieu);
+                    bandedGridView1.SetRowCellValue(row, bIsToDot1, false);
+                    bandedGridView1.SetRowCellValue(row, bIsToDot1, false);
                 }
             }
         }

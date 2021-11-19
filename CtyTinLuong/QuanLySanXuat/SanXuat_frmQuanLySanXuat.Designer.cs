@@ -54,7 +54,6 @@
             this.navSanLuongMayCAT = new DevExpress.XtraNavBar.NavBarItem();
             this.navSanLuongMayDOT = new DevExpress.XtraNavBar.NavBarItem();
             this.navLuongSanLuong = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBCNXT = new DevExpress.XtraNavBar.NavBarItem();
             this.navNXTGiayIn = new DevExpress.XtraNavBar.NavBarItem();
             this.navNXTGiayCat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
@@ -165,7 +164,6 @@
             this.navSanLuongMayCAT,
             this.navSanLuongMayDOT,
             this.navLuongSanLuong,
-            this.navBCNXT,
             this.navNXTGiayIn,
             this.navNXTGiayCat});
             this.navBarControl1.Location = new System.Drawing.Point(6, 19);
@@ -228,7 +226,6 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayCAT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayDOT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongSanLuong),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBCNXT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNXTGiayIn),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNXTGiayCat)});
             this.navBarGroup3.Name = "navBarGroup3";
@@ -266,12 +263,6 @@
             this.navLuongSanLuong.Name = "navLuongSanLuong";
             this.navLuongSanLuong.Visible = false;
             this.navLuongSanLuong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navLuongSanLuong_LinkClicked);
-            // 
-            // navBCNXT
-            // 
-            this.navBCNXT.Caption = "Báo cáo nhập xuất tồn";
-            this.navBCNXT.Name = "navBCNXT";
-            this.navBCNXT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBCNXT_LinkClicked);
             // 
             // navNXTGiayIn
             // 
@@ -370,7 +361,6 @@
         private DevExpress.XtraNavBar.NavBarItem navSanLuongMayDOT;
         private DevExpress.XtraNavBar.NavBarItem navLuongSanLuong;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraNavBar.NavBarItem navBCNXT;
         private DevExpress.XtraNavBar.NavBarItem navNXTGiayIn;
         private DevExpress.XtraNavBar.NavBarItem navNXTGiayCat;
     }

@@ -256,12 +256,6 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
         }
 
-        private void navBCNXT_LinkClicked(object sender, NavBarLinkEventArgs e)
-        {
-            frmBaoCaoNhapXuatTon_BanThanhPham uccc_DaNhapKho = new frmBaoCaoNhapXuatTon_BanThanhPham();
-            uccc_DaNhapKho.Show();
-            doiMauTitle(sender, e);
-        }
 
         private void navNXTGiayIn_LinkClicked(object sender, NavBarLinkEventArgs e)
         {

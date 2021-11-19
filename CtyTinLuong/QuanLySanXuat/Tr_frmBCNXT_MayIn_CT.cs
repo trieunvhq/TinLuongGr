@@ -118,7 +118,7 @@ namespace CtyTinLuong
                         ravi_["DienGiai"] = "Số dư đầu kỳ (" + tondau.MaHang + ")";
                         ravi_["Nhap"] = "";
                         ravi_["Xuat"] = "";
-                        ravi_["TonCuoi"] = tondau.TonDau.ToString("N0");
+                        ravi_["TonCuoi"] = tondau.TonDau.ToString("N2");
                         _data.Rows.Add(ravi_);
 
                         double nhaptrongky = 0, xuattrongky = 0, tonTheoNgay = tondau.TonDau;
@@ -133,9 +133,9 @@ namespace CtyTinLuong
                             ravi_1["STT"] = SttCa1;
                             ravi_1["NgaySanXuat"] = item.ToString("dd/MM/yyyy");
                             ravi_1["DienGiai"] = ng.DienGiai;
-                            ravi_1["Nhap"] = ng.Nhap.ToString("N0");
-                            ravi_1["Xuat"] = ng.Xuat.ToString("N0");
-                            ravi_1["TonCuoi"] = tonTheoNgay.ToString("N0");
+                            ravi_1["Nhap"] = ng.Nhap.ToString("N2");
+                            ravi_1["Xuat"] = ng.Xuat.ToString("N2");
+                            ravi_1["TonCuoi"] = tonTheoNgay.ToString("N2");
                             _data.Rows.Add(ravi_1);
 
                             nhaptrongky += ng.Nhap;
@@ -147,9 +147,9 @@ namespace CtyTinLuong
                         ravi_2["STT"] = "";
                         ravi_2["NgaySanXuat"] = "";
                         ravi_2["DienGiai"] = "Nhập xuất trong kỳ";
-                        ravi_2["Nhap"] = nhaptrongky.ToString("N0");
-                        ravi_2["Xuat"] = xuattrongky.ToString("N0");
-                        ravi_2["TonCuoi"] = tondau.TonCuoi.ToString("N0");
+                        ravi_2["Nhap"] = nhaptrongky.ToString("N2");
+                        ravi_2["Xuat"] = xuattrongky.ToString("N2");
+                        ravi_2["TonCuoi"] = "";// tondau.TonCuoi.ToString("N2");
                         _data.Rows.Add(ravi_2);
 
                         //Row tồn cuối:
@@ -159,7 +159,7 @@ namespace CtyTinLuong
                         ravi_3["DienGiai"] = "Số dư cuối kỳ (" + tondau.MaHang + ")";
                         ravi_3["Nhap"] = "";
                         ravi_3["Xuat"] = "";
-                        ravi_3["TonCuoi"] = tondau.TonCuoi.ToString("N0");
+                        ravi_3["TonCuoi"] = tondau.TonCuoi.ToString("N2");
                         _data.Rows.Add(ravi_3);
                     }
                 }

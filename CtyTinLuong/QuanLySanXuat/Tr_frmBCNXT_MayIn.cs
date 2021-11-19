@@ -94,11 +94,11 @@ namespace CtyTinLuong
                         _ravi["MaVT"] = nxt.MaHang;
                         _ravi["TenVTHH"] = nxt.TenVTHH;
                         _ravi["DonViTinh"] = nxt.DonViTinh;
-                        _ravi["TonDau"] = nxt.TonDau.ToString("N0");
-                        _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N0");
-                        _ravi["Nhap"] = nxt.Nhap.ToString("N0");
-                        _ravi["Xuat"] = nxt.Xuat.ToString("N0");
-                        _ravi["Let"] = nxt.Let.ToString("N0"); 
+                        _ravi["TonDau"] = nxt.TonDau.ToString("N2");
+                        _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N2");
+                        _ravi["Nhap"] = nxt.Nhap.ToString("N2");
+                        _ravi["Xuat"] = nxt.Xuat.ToString("N2");
+                        _ravi["Let"] = nxt.Let.ToString("N2"); 
                         _ravi["ID_VTHH"] = ID_Vthh; 
 
                         _data.Rows.Add(_ravi);

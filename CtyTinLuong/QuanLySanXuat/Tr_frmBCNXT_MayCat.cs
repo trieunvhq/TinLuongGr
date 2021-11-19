@@ -79,9 +79,11 @@ namespace CtyTinLuong
                 for (int i = 0; i < dt.Rows.Count; ++i)
                 {
                     int ID_Vthh = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra"].ToString());
+                    string tenvthh = CheckString.ChuanHoaHoTen(dt.Rows[i]["TenVTHH"].ToString()).ToLower();
 
                     //
-                    if (ID_Vthh_Root != ID_Vthh && !dsIDVTHH.Contains(ID_Vthh))
+                    if (ID_Vthh_Root != ID_Vthh && !dsIDVTHH.Contains(ID_Vthh) 
+                        && (tenvthh.Contains("giấy cắt đột") || tenvthh.Contains("giay cắt đột") || tenvthh.Contains("giấy cắt đot")))
                     {
                         ModelNXT_MayInCat nxt = getNXT(ID_Vthh, dt);
                         //
@@ -93,12 +95,12 @@ namespace CtyTinLuong
                         _ravi["STT"] = stt;
                         _ravi["MaVT"] = nxt.MaHang;
                         _ravi["TenVTHH"] = nxt.TenVTHH;
-                        _ravi["DonViTinh"] = nxt.DonViTinh;
-                        _ravi["TonDau"] = nxt.TonDau.ToString("N0");
-                        _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N0");
-                        _ravi["Nhap"] = nxt.Nhap.ToString("N0");
-                        _ravi["Xuat"] = nxt.Xuat.ToString("N0");
-                        _ravi["Let"] = nxt.Let.ToString("N0"); 
+                        _ravi["DonViTinh"] = "Cuộn";//nxt.DonViTinh;
+                        _ravi["TonDau"] = nxt.TonDau.ToString("N2");
+                        _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N2");
+                        _ravi["Nhap"] = nxt.Nhap.ToString("N2");
+                        _ravi["Xuat"] = nxt.Xuat.ToString("N2");
+                        _ravi["Let"] = nxt.Let.ToString("N2"); 
                         _ravi["ID_VTHH"] = ID_Vthh; 
 
                         _data.Rows.Add(_ravi);
@@ -121,6 +123,10 @@ namespace CtyTinLuong
             double TonCuoi = 0;
             double Nhap = 0;
             double Xuat = 0;
+            double TongNhapTrongKy = 0;
+            double TongXuatTrongKy = 0;
+
+
             List<int> dsNgayCong = new List<int>();
 
             for (int i = 0; i < 31; i++)
@@ -135,18 +141,16 @@ namespace CtyTinLuong
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
 
-                    Nhap += CheckString.ConvertToDouble_My(item["SanLuong_Tong_Value"].ToString());
-                    Xuat = CheckString.ConvertToDouble_My(item["TongXuat"].ToString());
-                    TonDau = CheckString.ConvertToDouble_My(item["TonDau"].ToString());
+                    Nhap = CheckString.ConvertToDouble_My(item["TongSoCuonNhapTrongKy"].ToString());
+                    TongNhapTrongKy = CheckString.ConvertToDouble_My(item["TongNhapTrongKy"].ToString());
+                    TongXuatTrongKy = CheckString.ConvertToDouble_My(item["TongXuatTrongKy"].ToString());
 
-                    int NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString()).Day;
-
-                    if (!dsNgayCong.Contains(NgaySX))
-                    {
-                        dsNgayCong.Add(NgaySX);
-                    }
+                    TonDau = CheckString.ConvertToDouble_My(item["TonDauKy"].ToString());
+                    break;
                 }
             }
+            if (TongNhapTrongKy > 0)
+                Xuat = (TongXuatTrongKy * Nhap) / TongNhapTrongKy;
 
             TonCuoi = Nhap + TonDau - Xuat;
 
