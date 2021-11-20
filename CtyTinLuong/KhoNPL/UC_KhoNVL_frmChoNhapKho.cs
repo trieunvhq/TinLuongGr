@@ -88,10 +88,11 @@ namespace CtyTinLuong
            // Load_LockUp();
             dteNgay.EditValue = DateTime.Today;
             clsNgayThang cls = new clsNgayThang();
-            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);            
-            Cursor.Current = Cursors.Default;
-
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);     
+            
             Load_DaTa(dteTuNgay.DateTime, dteNgay.DateTime);
+
+            Cursor.Current = Cursors.Default;
         }
         
         private void gridView1_DoubleClick(object sender, EventArgs e)
