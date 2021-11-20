@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,9 +71,9 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
@@ -156,6 +156,7 @@
             // MaVT
             // 
             this.MaVT.AppearanceCell.Options.UseTextOptions = true;
+            this.MaVT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MaVT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.MaVT.Caption = "Mã hàng";
             this.MaVT.FieldName = "MaVT";
@@ -176,7 +177,7 @@
             this.MaVT.OptionsFilter.ShowEmptyDateFilter = false;
             this.MaVT.Visible = true;
             this.MaVT.VisibleIndex = 1;
-            this.MaVT.Width = 70;
+            this.MaVT.Width = 110;
             // 
             // TenVTHH
             // 
@@ -202,7 +203,7 @@
             this.DonViTinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.DonViTinh.Visible = true;
             this.DonViTinh.VisibleIndex = 3;
-            this.DonViTinh.Width = 70;
+            this.DonViTinh.Width = 60;
             // 
             // TonDau
             // 
@@ -228,7 +229,7 @@
             this.TonDau.OptionsFilter.ShowEmptyDateFilter = false;
             this.TonDau.Visible = true;
             this.TonDau.VisibleIndex = 4;
-            this.TonDau.Width = 91;
+            this.TonDau.Width = 84;
             // 
             // Nhap
             // 
@@ -254,7 +255,7 @@
             this.Nhap.OptionsFilter.ShowEmptyDateFilter = false;
             this.Nhap.Visible = true;
             this.Nhap.VisibleIndex = 5;
-            this.Nhap.Width = 91;
+            this.Nhap.Width = 84;
             // 
             // Xuat
             // 
@@ -267,7 +268,7 @@
             this.Xuat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Xuat.Visible = true;
             this.Xuat.VisibleIndex = 6;
-            this.Xuat.Width = 91;
+            this.Xuat.Width = 84;
             // 
             // TonCuoi
             // 
@@ -293,7 +294,7 @@
             this.TonCuoi.OptionsFilter.ShowEmptyDateFilter = false;
             this.TonCuoi.Visible = true;
             this.TonCuoi.VisibleIndex = 7;
-            this.TonCuoi.Width = 91;
+            this.TonCuoi.Width = 84;
             // 
             // Let
             // 
@@ -319,7 +320,7 @@
             this.Let.OptionsFilter.ShowEmptyDateFilter = false;
             this.Let.Visible = true;
             this.Let.VisibleIndex = 8;
-            this.Let.Width = 91;
+            this.Let.Width = 84;
             // 
             // ID_VTHH
             // 
@@ -335,7 +336,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 39);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(908, 538);
+            this.gridControl1.Size = new System.Drawing.Size(908, 561);
             this.gridControl1.TabIndex = 115;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -346,11 +347,12 @@
             this.btnPrintTQ.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintTQ.Appearance.Options.UseFont = true;
             this.btnPrintTQ.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btnPrintTQ.Location = new System.Drawing.Point(741, 592);
+            this.btnPrintTQ.Location = new System.Drawing.Point(741, 606);
             this.btnPrintTQ.Name = "btnPrintTQ";
             this.btnPrintTQ.Size = new System.Drawing.Size(82, 25);
             this.btnPrintTQ.TabIndex = 149;
             this.btnPrintTQ.Text = "Tổng quát";
+            this.btnPrintTQ.Visible = false;
             this.btnPrintTQ.Click += new System.EventHandler(this.btnPrintTQ_Click);
             // 
             // btnPrint
@@ -359,11 +361,12 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
-            this.btnPrint.Location = new System.Drawing.Point(656, 592);
+            this.btnPrint.Location = new System.Drawing.Point(656, 606);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(82, 25);
             this.btnPrint.TabIndex = 148;
             this.btnPrint.Text = "Chi tiết";
+            this.btnPrint.Visible = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btThoat
@@ -373,7 +376,7 @@
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(826, 592);
+            this.btThoat.Location = new System.Drawing.Point(826, 606);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(82, 25);
             this.btThoat.TabIndex = 146;

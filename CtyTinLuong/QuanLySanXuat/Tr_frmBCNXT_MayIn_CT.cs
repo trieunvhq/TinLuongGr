@@ -302,12 +302,6 @@ namespace CtyTinLuong
             LoadData(false);
         }
 
-        private void btPrint_Click(object sender, EventArgs e)
-        {
-            //CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangSanLuongToIN ff = new CtyTinLuong.Luong_ChamCong.Tr_frmPrintBangSanLuongToIN(_NgayBatDau, _NgayKetThuc, _data);
-            //ff.Show();
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "Tr_frmBCNXT_MayIn_CT", this);

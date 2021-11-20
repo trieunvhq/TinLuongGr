@@ -1881,6 +1881,11 @@ namespace CtyTinLuong
                     bandedGridView1.SetRowCellValue(row, clMaPhieu, sMaPhieu);
                     bandedGridView1.SetRowCellValue(row, bIsToDot1, false);
                     bandedGridView1.SetRowCellValue(row, bIsToDot2, false);
+                    bandedGridView1.SetRowCellValue(row, clPhePham_DOT, 0);
+                    bandedGridView1.SetRowCellValue(row, clSanLuong_Tong_DOT, 0);
+                    bandedGridView1.SetRowCellValue(row, clSoKG_MotBao_May_Dot, 0);
+                    bandedGridView1.SetRowCellValue(row, clDoCao_Dot, 0);
+
                 }
             }
         }
