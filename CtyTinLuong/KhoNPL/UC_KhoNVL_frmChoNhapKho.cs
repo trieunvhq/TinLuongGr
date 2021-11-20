@@ -90,6 +90,8 @@ namespace CtyTinLuong
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);            
             Cursor.Current = Cursors.Default;
+
+            Load_DaTa(dteTuNgay.DateTime, dteNgay.DateTime);
         }
         
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -181,18 +183,58 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    if (dteTuNgay.DateTime.Year < 1900)
+            //        dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            //    if (dteNgay.DateTime.Year < 1900)
+            //        dteNgay.DateTime = DateTime.Now;
+
+            //    Load_DaTa(dteTuNgay.DateTime, dteNgay.DateTime);
+            //}
+            //catch
+            //{ }
+        }
+
+        private void dteNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (dteTuNgay.DateTime.Year < 1900)
+            //        dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            //    if (dteNgay.DateTime.Year < 1900)
+            //        dteNgay.DateTime = DateTime.Now;
+
+            //    Load_DaTa(dteTuNgay.DateTime, dteNgay.DateTime);
+            //}
+            //catch
+            //{ }
+        }
+
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
             try
             {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteNgay.DateTime.Year < 1900)
+                    dteNgay.DateTime = DateTime.Now;
+
                 Load_DaTa(dteTuNgay.DateTime, dteNgay.DateTime);
             }
             catch
             { }
         }
 
-        private void dteNgay_EditValueChanged(object sender, EventArgs e)
+        private void dteNgay_Leave(object sender, EventArgs e)
         {
             try
             {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteNgay.DateTime.Year < 1900)
+                    dteNgay.DateTime = DateTime.Now;
+
                 Load_DaTa(dteTuNgay.DateTime, dteNgay.DateTime);
             }
             catch
