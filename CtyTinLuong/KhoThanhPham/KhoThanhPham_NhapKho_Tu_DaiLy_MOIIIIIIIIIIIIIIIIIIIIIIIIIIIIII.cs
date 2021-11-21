@@ -38,9 +38,11 @@ namespace CtyTinLuong
             dt_NhapTruoc = cls1.SA_NhapTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH,id_daily_, DateTime.Today);
             DataTable dt_XuatTruoc = new DataTable();
             dt_XuatTruoc = cls2.SA_XuatTruocKy_ID_VTHH_ID_DaiLy(xxID_VTHH, id_daily_, DateTime.Today);
-
-            double soluongnhap = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
-            double soluongxuat_cu = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
+            double soluongnhap = 0; double soluongxuat_cu = 0;
+            if (dt_NhapTruoc.Rows.Count>0)
+                soluongnhap = CheckString.ConvertToDouble_My(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
+            if (dt_XuatTruoc.Rows.Count > 0)
+                soluongxuat_cu = CheckString.ConvertToDouble_My(dt_XuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
 
             soluongton = soluongnhap - soluongxuat_moi- soluongxuat_cu;
             if (soluongton < 0)
@@ -1309,10 +1311,11 @@ namespace CtyTinLuong
                 gridView4.SetRowCellValue(e.RowHandle, clMaVT2221, clsvt.sMaVT.Value);
                 gridView4.SetRowCellValue(e.RowHandle, clHienThi1, "1");
                 gridView4.SetRowCellValue(e.RowHandle, clSoLuongThanhPhamQuyDoi1, dt.Rows[0]["SoLuongThanhPhamQuyDoi"].ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clID_VTHH1, iiiID_ThanhPham);
                 gridView4.SetRowCellValue(e.RowHandle, clSoLuongNhap1, 0);
                 gridView4.SetRowCellValue(e.RowHandle, clDonGia1, 0);
                 gridView4.SetRowCellValue(e.RowHandle, clThanhTien1, 0);
-                gridView4.SetRowCellValue(e.RowHandle, clID_VTHH1, iiiID_ThanhPham);
+                
 
 
             }
@@ -1343,6 +1346,11 @@ namespace CtyTinLuong
                         fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
                     fffthanhtien = fffsoluong * ffdongia;
                     gridView4.SetFocusedRowCellValue(clThanhTien1, fffthanhtien);
+
+                    int id_vthh_ = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString());
+                    int iid_Daily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                    Hienthi_Lable_TonKho(id_vthh_, iid_Daily, soluongnhapthucte);
+
                 }
                 if (e.Column == clDonGia1)
                 {
@@ -1363,19 +1371,7 @@ namespace CtyTinLuong
             {
 
             }
-            try
-            {
-                if (e.Column == clID_VTHH1)
-                {
-                    int id_vthh_ = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString());
-                    int iid_Daily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                    soluongnhapthucte = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
-                    Hienthi_Lable_TonKho(id_vthh_, iid_Daily, soluongnhapthucte);
-                }
-                    
-            }
-            catch
-            { }
+        
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -1455,11 +1451,11 @@ namespace CtyTinLuong
                     _ravi2["DonGia"] = CheckString.ConvertToDouble_My(dtmnoi.Rows[j]["DonGia"].ToString());
                     _ravi2["HienThi"] = "1";
                     _ravi2["ThanhTien"] = tile * CheckString.ConvertToDouble_My(dtmnoi.Rows[j]["SoLuongNhap"].ToString()) * CheckString.ConvertToDouble_My(dtmnoi.Rows[j]["DonGia"].ToString());
-                 
+
                     dt2.Rows.Add(_ravi2);
-                    
+
                 }
-               
+
             }
 
             txtDienGiai.Text = string.Concat(sssDienGiai);
