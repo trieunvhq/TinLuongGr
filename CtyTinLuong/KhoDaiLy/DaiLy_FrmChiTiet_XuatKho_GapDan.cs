@@ -921,6 +921,7 @@ namespace CtyTinLuong
                             _id_vthh,
                             (float)sanluong_,
                             0, true, false, _id_bophan, 0, 1);
+                            LoadDataChamCongCN(_id_vthh);
                         }
                         else
                         {
