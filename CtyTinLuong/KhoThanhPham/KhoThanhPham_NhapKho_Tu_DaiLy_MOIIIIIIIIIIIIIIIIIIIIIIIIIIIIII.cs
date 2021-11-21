@@ -1289,7 +1289,7 @@ namespace CtyTinLuong
             double fffsoluong = 0;
             double ffdongia = 0;
             double fffthanhtien = 0;
-            int iiiID_ThanhPham=0;
+            int iiiID_ThanhPham = 0;
             double soluongnhapthucte = 0;
             if (e.Column == clSoChungTu1)
             {
@@ -1313,15 +1313,15 @@ namespace CtyTinLuong
                 gridView4.SetRowCellValue(e.RowHandle, clDonGia1, 0);
                 gridView4.SetRowCellValue(e.RowHandle, clThanhTien1, 0);
                 gridView4.SetRowCellValue(e.RowHandle, clID_VTHH1, iiiID_ThanhPham);
-              
-                
+
+
             }
             try
             {
                 if (e.Column == clSoLuongNhap1)
                 {
                     double soluongthanhphamquydoi = 0;
-                    
+
                     if (gridView4.GetFocusedRowCellValue(clSoLuongThanhPhamQuyDoi1).ToString() == "")
                         soluongthanhphamquydoi = 1;
                     else
@@ -1331,12 +1331,6 @@ namespace CtyTinLuong
                     else
                         soluongnhapthucte = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
                     double tile = soluongnhapthucte / soluongthanhphamquydoi;
-
-                    int id_vthh_ = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString());
-                    int iid_Daily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
-                    Hienthi_Lable_TonKho(id_vthh_, iid_Daily, soluongnhapthucte);
-
-                    //  gridView4.SetRowCellValue(e.RowHandle, clTiLe, tile);
                     gridView4.SetFocusedRowCellValue(clTiLe1, tile);
 
                     if (gridView4.GetFocusedRowCellValue(clDonGia1).ToString() == "")
@@ -1362,18 +1356,26 @@ namespace CtyTinLuong
                         fffsoluong = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
                     fffthanhtien = fffsoluong * ffdongia;
                     gridView4.SetFocusedRowCellValue(clThanhTien1, fffthanhtien);
-                    
+
                 }
-               
             }
             catch
             {
 
             }
-            
-                
-           
-           
+            try
+            {
+                if (e.Column == clID_VTHH1)
+                {
+                    int id_vthh_ = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH1).ToString());
+                    int iid_Daily = Convert.ToInt32(gridMaDaiLy.EditValue.ToString());
+                    soluongnhapthucte = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongNhap1));
+                    Hienthi_Lable_TonKho(id_vthh_, iid_Daily, soluongnhapthucte);
+                }
+                    
+            }
+            catch
+            { }
         }
 
         private void gridView4_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
