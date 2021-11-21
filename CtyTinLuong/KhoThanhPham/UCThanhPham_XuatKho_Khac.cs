@@ -45,7 +45,8 @@ namespace CtyTinLuong
 
             Cursor.Current = Cursors.WaitCursor;
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
             Cursor.Current = Cursors.Default;
         }
@@ -148,6 +149,39 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
+                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
+                Load_Data(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+        }
 
         private void btXoa1_Click(object sender, EventArgs e)
         {
