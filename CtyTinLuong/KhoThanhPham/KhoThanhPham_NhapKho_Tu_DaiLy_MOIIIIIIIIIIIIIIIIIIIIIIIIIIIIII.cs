@@ -1230,6 +1230,17 @@ namespace CtyTinLuong
             }
         }
 
+        private void checkNhapKhoThanhPham_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkNhapKhoThanhPham.Checked == true)
+                checkNhapKhoBTP.Checked = false;
+        }
+
+        private void checkNhapKhoBTP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkNhapKhoBTP.Checked == true)
+                checkNhapKhoThanhPham.Checked = false;
+        }
 
         private void KhoThanhPham_NhapKho_Tu_DaiLy_MOIIIIIIIIIIIIIIIIIIIIIIIIIIIIII_Load(object sender, EventArgs e)
         {

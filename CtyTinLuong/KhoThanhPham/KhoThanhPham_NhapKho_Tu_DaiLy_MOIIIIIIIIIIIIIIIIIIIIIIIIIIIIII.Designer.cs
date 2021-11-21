@@ -217,6 +217,7 @@
             this.checkNhapKhoBTP.TabIndex = 0;
             this.checkNhapKhoBTP.Text = "Nhập kho BTP";
             this.checkNhapKhoBTP.UseVisualStyleBackColor = true;
+            this.checkNhapKhoBTP.CheckedChanged += new System.EventHandler(this.checkNhapKhoBTP_CheckedChanged);
             this.checkNhapKhoBTP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkNhapKhoBTP_KeyPress);
             // 
             // checkNhapKhoThanhPham
@@ -227,6 +228,7 @@
             this.checkNhapKhoThanhPham.TabIndex = 2;
             this.checkNhapKhoThanhPham.Text = "Nhập kho TP";
             this.checkNhapKhoThanhPham.UseVisualStyleBackColor = true;
+            this.checkNhapKhoThanhPham.CheckedChanged += new System.EventHandler(this.checkNhapKhoThanhPham_CheckedChanged);
             this.checkNhapKhoThanhPham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkNhapKhoThanhPham_KeyPress);
             // 
             // txtGhiChu
@@ -790,8 +792,6 @@
             this.clID_VTHH1.Caption = "ID_VTHH";
             this.clID_VTHH1.FieldName = "ID_VTHH";
             this.clID_VTHH1.Name = "clID_VTHH1";
-            this.clID_VTHH1.Visible = true;
-            this.clID_VTHH1.VisibleIndex = 10;
             // 
             // clMaVT2221
             // 
