@@ -25,7 +25,8 @@ namespace CtyTinLuong
                     isload = true;
                     _SoTrang = sotrang;
                     
-                    DataTable dt = cls.SelectAll_Load_DaTa_W_NgayThang(_SoTrang, xxtungay, xxdenngay);
+                    //DataTable dt = cls.SelectAll_Load_DaTa_W_NgayThang(_SoTrang, xxtungay, xxdenngay);
+                    DataTable dt = cls.SA_t111(_SoTrang, xxtungay, xxdenngay);
 
                     gridControl1.DataSource = dt;
 
