@@ -48,7 +48,8 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.WaitCursor;
             clNgungTheoDoi.Caption = "Ngừng\ntheo dõi";
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);           
             mbThemMoi_XuatKhohoDaiLy = mbCopy = mbSua = false;
             Cursor.Current = Cursors.Default;
@@ -150,6 +151,39 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+        }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
