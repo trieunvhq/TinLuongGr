@@ -271,7 +271,7 @@ namespace CtyTinLuong
                     gridView4.SetRowCellValue(e.RowHandle, clID_TaiKhoanKeToanCon, kk);
                     gridView4.SetRowCellValue(e.RowHandle, clTenTaiKhoanCon, dt.Rows[0]["TenTaiKhoanCon"].ToString());
                     gridView4.SetRowCellValue(e.RowHandle, clHienThi, "1");
-                    gridView4.SetRowCellValue(e.RowHandle, clTienUSD, true);
+                    gridView4.SetRowCellValue(e.RowHandle, clTienUSD, checkUSD.Checked);
                     gridView4.SetFocusedRowCellValue(clTiGia, tigiaxx);
 
                 }
