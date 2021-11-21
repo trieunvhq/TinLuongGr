@@ -200,12 +200,12 @@ namespace CtyTinLuong
                     int xxID = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_LenhSanXuat).ToString());
                     cls1.iID_LenhSanXuat = xxID;
                     cls1.SelectOne();
-                    if (cls1.bGuiDuLieu == true)
-                    {
-                        MessageBox.Show("đã gửi dữ liệu, không thể xoá");
-                    }
-                    else
-                    {
+                    //if (cls1.bGuiDuLieu == true)
+                    //{
+                    //    MessageBox.Show("đã gửi dữ liệu, không thể xoá");
+                    //}
+                    //else
+                    //{
                         DialogResult traloi;
                         traloi = MessageBox.Show("Xóa dữ liệu này?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (traloi == DialogResult.Yes)
@@ -219,7 +219,7 @@ namespace CtyTinLuong
                             ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
                             LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
                         }
-                    }
+                    //}
                 }
             }
             catch (Exception ea)
@@ -416,6 +416,32 @@ namespace CtyTinLuong
                 btLayDuLieu.Focus();
                 btLayDuLieu_Click(null, null);
             }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                ResetSoTrang(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                LoadData(1, true, dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
         }
     }
 }

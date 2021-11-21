@@ -21,8 +21,8 @@ namespace CtyTinLuong
             gridControl1.DataSource = null;
           
             clsHUU_LenhSanXuat cls = new clsHUU_LenhSanXuat();
-            DataTable dt = cls.SA_NhapKho_BTP(xxtungay, xxdenngay);
-
+            //DataTable dt = cls.SA_NhapKho_BTP(xxtungay, xxdenngay);
+            DataTable dt = cls.HUU_LenhSanXuat_SA_NhapKho_BTP_t11(xxtungay, xxdenngay);            
             gridControl1.DataSource = dt;
             cls.Dispose();
             dt.Dispose();          
@@ -38,8 +38,8 @@ namespace CtyTinLuong
             cls.iID_LenhSanXuat = xxID_lenhsanxuat;
             DataTable dt = cls.SA_ID_LSX(xxID_lenhsanxuat);
             gridControl2.DataSource = dt;
-            cls.Dispose();
-            dt.Dispose();
+            //cls.Dispose();
+            //dt.Dispose();
             //dt2.Columns.Add("ID_VTHH", typeof(int));
             //dt2.Columns.Add("MaVT", typeof(string));
             //dt2.Columns.Add("DonViTinh", typeof(string));
@@ -88,9 +88,7 @@ namespace CtyTinLuong
             dteDenNgay.EditValue = DateTime.Today;
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
-            LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
-
-           
+            LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);           
             Cursor.Current = Cursors.Default;
         }
 
@@ -158,6 +156,30 @@ namespace CtyTinLuong
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+                Cursor.Current = Cursors.Default;
+            }
+            catch
+            { }
         }
 
         private void dteDenNgay_KeyPress(object sender, KeyPressEventArgs e)
