@@ -822,9 +822,17 @@ namespace CtyTinLuong
             DataView dvcon = dtcon.DefaultView;
             DataTable newdtcon = dvcon.ToTable();
 
-            repositoryItemGridLookUpEdit2.DataSource = newdtcon;
-            repositoryItemGridLookUpEdit2.ValueMember = "ID_TaiKhoanKeToanCon";
-            repositoryItemGridLookUpEdit2.DisplayMember = "SoTaiKhoanCon";
+            repositoryItemSearchLookUpEdit1.DataSource = newdtcon;
+            repositoryItemSearchLookUpEdit1.ValueMember = "ID_TaiKhoanKeToanCon";
+            repositoryItemSearchLookUpEdit1.DisplayMember = "SoTaiKhoanCon";
+
+            //Thay caption:
+            repositoryItemSearchLookUpEdit1.View.Columns.Clear();//xóa caption cũ
+            repositoryItemSearchLookUpEdit1.View.Columns.AddVisible("ID_TaiKhoanKeToanCon", "ID");
+            repositoryItemSearchLookUpEdit1.View.Columns.AddVisible("SoTaiKhoanCon", "Mã");
+            repositoryItemSearchLookUpEdit1.View.Columns.AddVisible("TenTaiKhoanCon", "Tên");
+
+            repositoryItemSearchLookUpEdit1.View.Columns["ID_TaiKhoanKeToanCon"].Visible = false;
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
@@ -850,6 +858,14 @@ namespace CtyTinLuong
             gridDoiTuong.Properties.DataSource = dtdoituong;
             gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
             gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
+
+            //Thay caption:
+            gridDoiTuong.Properties.View.Columns.Clear();//xóa caption cũ
+            gridDoiTuong.Properties.View.Columns.AddVisible("ID_DoiTuong", "ID");
+            gridDoiTuong.Properties.View.Columns.AddVisible("MaDoiTuong", "Mã");
+            gridDoiTuong.Properties.View.Columns.AddVisible("TenDoiTuong", "Tên");
+
+            gridDoiTuong.Properties.View.Columns["ID_DoiTuong"].Visible = false;
         }
 
         public void HienThiSoChungTu(int xxbientrangthai)
