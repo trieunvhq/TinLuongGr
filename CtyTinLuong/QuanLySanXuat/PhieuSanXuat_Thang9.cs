@@ -1119,7 +1119,8 @@ namespace CtyTinLuong
                     clsLSX.bTonTai = true;
                     clsLSX.bNgungTheoDoi = false;
                     clsLSX.sMaLenhSanXuat = MaLenhSanXuat;
-                    clsLSX.bGuiDuLieu = false;
+                    //clsLSX.bGuiDuLieu = false;
+                    clsLSX.bGuiDuLieu = true;
                     if (xxID_LoaiMay == 1)
                     {
                         clsLSX.bBoolMayIn = true;
