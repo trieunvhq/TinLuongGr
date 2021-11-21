@@ -92,7 +92,7 @@ namespace CtyTinLuong
         {
             Cursor.Current = Cursors.WaitCursor;
             Load_LockUp();
-            ddteDenNgay.EditValue = DateTime.Today;
+            dteDenNgay.EditValue = DateTime.Today;
             clsNgayThang cls = new clsNgayThang();
             dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
