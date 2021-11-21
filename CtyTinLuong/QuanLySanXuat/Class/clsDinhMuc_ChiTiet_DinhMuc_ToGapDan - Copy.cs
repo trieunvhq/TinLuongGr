@@ -138,7 +138,7 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
-        public DataTable SA_IDDM_W_SoLuong(double xsoluongxuat_, int iiID_Dinhmuc)
+        public DataTable SA_IDDM_W_SoLuong(double xsoluongxuat_, int iiID_Dinhmuc, int thang, int nam)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
             scmCmdToExecute.CommandText = "dbo.[pr_DinhMuc_ChiTiet_DinhMuc_ToGapDan_SA_IDDM_W_SoLuong]";
@@ -152,6 +152,8 @@ namespace CtyTinLuong
             try
             {
                 m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@Nam", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, nam));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@Thang", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, thang));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_DinhMuc_ToGapDan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, iiID_Dinhmuc));
                 scmCmdToExecute.Parameters.Add(new SqlParameter("@SoLuongXuat_", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, xsoluongxuat_));
                 sdaAdapter.Fill(dtToReturn);

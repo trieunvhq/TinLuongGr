@@ -72,7 +72,7 @@ namespace CtyTinLuong
         private void HienThi_Grid_ConTrol_Themmoi(double soluongxuat, int xxID_DMgapdan)
         {
             clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            DataTable dt = cls.SA_IDDM_W_SoLuong(soluongxuat,xxID_DMgapdan);
+            DataTable dt = cls.SA_IDDM_W_SoLuong(soluongxuat,xxID_DMgapdan, dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year);
             gridControl1.DataSource = dt;          
             cls.Dispose();
             dt.Dispose();

@@ -137,7 +137,7 @@ namespace CtyTinLuong
                     cls.bNgungTheoDoi = Convert.ToBoolean(dt3.Rows[i]["NgungTheoDoi"].ToString());
                     cls.Tr_MaHangToGD_DB_DK_Insert();
                 }
-                LoadData(false);
+                //LoadData(false);
             }
             else
             {
