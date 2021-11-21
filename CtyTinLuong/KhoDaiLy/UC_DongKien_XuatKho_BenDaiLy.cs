@@ -47,26 +47,26 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-            catch
-            {
+            //try
+            //{
+            //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
-            catch
-            {
+            //try
+            //{
+            //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -99,6 +99,40 @@ namespace CtyTinLuong
                 cls2.H_DongKien_XK_Delete_ID_XK(iiidnhapkho);
                 MessageBox.Show("Đã xoá");
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+            catch
+            {
+
             }
         }
     }
