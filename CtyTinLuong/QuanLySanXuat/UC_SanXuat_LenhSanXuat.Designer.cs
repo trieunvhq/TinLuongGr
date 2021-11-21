@@ -334,7 +334,7 @@
             this.clXoa.Name = "clXoa";
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 8;
+            this.clXoa.VisibleIndex = 7;
             this.clXoa.Width = 50;
             // 
             // btXoa
@@ -466,8 +466,6 @@
             this.clGui.Name = "clGui";
             this.clGui.OptionsColumn.FixedWidth = true;
             this.clGui.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.clGui.Visible = true;
-            this.clGui.VisibleIndex = 7;
             this.clGui.Width = 38;
             // 
             // btGui

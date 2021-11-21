@@ -1087,7 +1087,7 @@ namespace CtyTinLuong
                 clsLSX.iID_CongNhan = xxid_congnhan;
                 clsLSX.daNgayThangSanXuat = xxngaysanxuat;
                 clsLSX.sCaSanXuat = xxcasanxuat;
-                DataTable dxLSX1 = clsLSX.SelectAll_TaoLenhSX_May_CaTruong_CongNhan_Ngay_CaSX_May_IN();
+                DataTable dxLSX1 = clsLSX.H_TaoLenhSX_May_CaTruong_CongNhan_Ngay_CaSX_t11();
                 int ID_LenhSanXuatxx;
                 if (dxLSX1.Rows.Count > 0)
                 {
@@ -1145,7 +1145,17 @@ namespace CtyTinLuong
                     clsLSX.bTrangThai_XuatKho_May_CAT = false;
                     clsLSX.bTrangThai_NhapKho_May_DOT = false;
                     clsLSX.bTrangThai_XuatKho_May_DOT = false;
-                    clsLSX.Insert();
+                    if (dxLSX1.Rows.Count > 0)
+                    {
+                        ID_LenhSanXuatxx = CheckString.ConvertTo_Int_My(dxLSX1.Rows[0]["ID_LenhSanXuat"].ToString());
+                        clsLSX.iID_LenhSanXuat = ID_LenhSanXuatxx;
+                        clsLSX.Update();
+                    }
+                    else
+                    {
+                        clsLSX.Insert();
+                    }
+                    
                     ID_LenhSanXuatxx = clsLSX.iID_LenhSanXuat.Value;
 
                 }

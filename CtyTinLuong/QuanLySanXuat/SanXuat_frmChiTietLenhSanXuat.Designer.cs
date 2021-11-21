@@ -867,7 +867,7 @@
             // btPrint
             // 
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(779, 627);
+            this.btPrint.Location = new System.Drawing.Point(948, 627);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(115, 23);
             this.btPrint.TabIndex = 89;
@@ -881,11 +881,12 @@
             this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
             this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
             this.btLuu_Gui_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Forward;
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(900, 627);
+            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(779, 627);
             this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
             this.btLuu_Gui_Dong.Size = new System.Drawing.Size(163, 23);
             this.btLuu_Gui_Dong.TabIndex = 91;
             this.btLuu_Gui_Dong.Text = "Gửi dữ liệu Xuất - Nhập";
+            this.btLuu_Gui_Dong.Visible = false;
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
             // 
             // SanXuat_frmChiTietLenhSanXuat

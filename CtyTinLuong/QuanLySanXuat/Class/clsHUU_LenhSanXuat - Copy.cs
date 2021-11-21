@@ -17,12 +17,12 @@ namespace CtyTinLuong
 	{
         //r_HUU_LenhSanXuat_SelectAll_Load_DaTa_W_NgayThang
 
-        public DataTable SA_t111(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc)
+        public DataTable HUU_LenhSanXuat_SA_t111(int sotrang, DateTime ngay_batdau, DateTime ngay_ketthuc)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[r_HUU_LenhSanXuat_SelectAll_Load_DaTa_W_NgayThang]";
+            scmCmdToExecute.CommandText = "dbo.[HUU_LenhSanXuat_SA_t111]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("r_HUU_LenhSanXuat_SelectAll_Load_DaTa_W_NgayThang");
+            DataTable dtToReturn = new DataTable("HUU_LenhSanXuat_SA_t111");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -41,7 +41,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("r_HUU_LenhSanXuat_SelectAll_Load_DaTa_W_NgayThang", ex);
+                throw new Exception("HUU_LenhSanXuat_SA_t111", ex);
             }
             finally
             {
@@ -364,7 +364,42 @@ namespace CtyTinLuong
                 sdaAdapter.Dispose();
             }
         }
+        public DataTable H_TaoLenhSX_May_CaTruong_CongNhan_Ngay_CaSX_t11()
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[H_TaoLenhSX_May_CaTruong_CongNhan_Ngay_CaSX_t11]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("H_TaoLenhSX_May_CaTruong_CongNhan_Ngay_CaSX_t11");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_LoaiMay", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_LoaiMay));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@sCaSanXuat", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sCaSanXuat));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@daNgayThangSanXuat", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daNgayThangSanXuat));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_CongNhan", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_CongNhan));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_CaTruong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iID_CaTruong));
+
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("H_TaoLenhSX_May_CaTruong_CongNhan_Ngay_CaSX_t11", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable SelectAll_Xuat_Kho_KhoBanThanhPham_Tat_CA()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
