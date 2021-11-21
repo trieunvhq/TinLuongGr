@@ -160,8 +160,37 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    Cursor.Current = Cursors.Default;
+            //}
+            //catch
+            //{ }
+        }
+
+        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //    Cursor.Current = Cursors.Default;
+            //}
+            //catch
+            //{ }
+        }
+
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
             try
             {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
                 Cursor.Current = Cursors.WaitCursor;
                 LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;
@@ -170,10 +199,15 @@ namespace CtyTinLuong
             { }
         }
 
-        private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
+        private void dteDenNgay_Leave(object sender, EventArgs e)
         {
             try
             {
+                if (dteTuNgay.DateTime.Year < 1900)
+                    dteTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                if (dteDenNgay.DateTime.Year < 1900)
+                    dteDenNgay.DateTime = DateTime.Now;
+
                 Cursor.Current = Cursors.WaitCursor;
                 LoadData(dteTuNgay.DateTime, dteDenNgay.DateTime);
                 Cursor.Current = Cursors.Default;

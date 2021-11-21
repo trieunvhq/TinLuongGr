@@ -396,6 +396,7 @@
             this.dteDenNgay.TabIndex = 98;
             this.dteDenNgay.EditValueChanged += new System.EventHandler(this.dteDenNgay_EditValueChanged);
             this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
+            this.dteDenNgay.Leave += new System.EventHandler(this.dteDenNgay_Leave);
             // 
             // dteTuNgay
             // 
@@ -417,6 +418,7 @@
             this.dteTuNgay.TabIndex = 100;
             this.dteTuNgay.EditValueChanged += new System.EventHandler(this.dteTuNgay_EditValueChanged);
             this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
+            this.dteTuNgay.Leave += new System.EventHandler(this.dteTuNgay_Leave);
             // 
             // btLayDuLieu
             // 
