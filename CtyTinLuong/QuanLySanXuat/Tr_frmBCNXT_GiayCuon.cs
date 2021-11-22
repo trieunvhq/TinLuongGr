@@ -260,8 +260,8 @@ namespace CtyTinLuong
                     string maHang = gridView1.GetFocusedRowCellValue(MaVT).ToString();
                     string tenHang = gridView1.GetFocusedRowCellValue(TenVTHH).ToString();
 
-                    Tr_frmBCNXT_GiayCuon_CT ff = new Tr_frmBCNXT_GiayCuon_CT(dateBatDau.DateTime, dateKetThuc.DateTime, idvthh, maHang, tenHang);
-                    ff.Show();
+                    //Tr_frmBCNXT_GiayCuon_CT ff = new Tr_frmBCNXT_GiayCuon_CT(dateBatDau.DateTime, dateKetThuc.DateTime, idvthh, maHang, tenHang);
+                    //ff.Show();
                 }
             }
             catch (Exception ee)
