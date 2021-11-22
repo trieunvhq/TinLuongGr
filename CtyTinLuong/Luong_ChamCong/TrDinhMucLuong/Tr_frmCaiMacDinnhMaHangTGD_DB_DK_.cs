@@ -127,6 +127,7 @@ namespace CtyTinLuong
 
                 dt3 = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(thangTruoc, namTruoc, _id_bophan);
 
+                bool isInsertDone = false;
                 for (int i = 0; i < dt3.Rows.Count; i++)
                 {
                     cls.iThang = _thang;
@@ -135,9 +136,12 @@ namespace CtyTinLuong
                     cls.iId_bophan = _id_bophan;
                     cls.fDonGia = CheckString.ConvertToDouble_My(dt3.Rows[i]["DonGia"].ToString());
                     cls.bNgungTheoDoi = Convert.ToBoolean(dt3.Rows[i]["NgungTheoDoi"].ToString());
-                    cls.Tr_MaHangToGD_DB_DK_Insert();
+                    if (cls.Tr_MaHangToGD_DB_DK_Insert())
+                        isInsertDone = true;
                 }
-                //LoadData(false);
+                
+                if (isInsertDone)
+                    LoadData(false);
             }
             else
             {
@@ -158,7 +162,6 @@ namespace CtyTinLuong
                     _data.Rows.Add(_ravi);
                 }
             }
-            
 
             gridControl1.DataSource = _data;
             isload = false;

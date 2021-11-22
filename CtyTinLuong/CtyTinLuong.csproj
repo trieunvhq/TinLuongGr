@@ -585,6 +585,12 @@
     <Compile Include="QuanLySanXuat\Class\clsHUU_CaiMacDinh_DinhMuc_SanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New - Copy %282%29.cs" />
     <Compile Include="QuanLySanXuat\Class\clsTr_NXT_GiayInCat.cs" />
+    <Compile Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon.Designer.cs">
+      <DependentUpon>Tr_frmBCNXT_GiayCuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Tr_frmBCNXT_MayCat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2909,6 +2915,9 @@
       <DependentUpon>frmChiTietMuaHang3333333333Copy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon.resx">
+      <DependentUpon>Tr_frmBCNXT_GiayCuon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Tr_frmBCNXT_MayCat.resx">
       <DependentUpon>Tr_frmBCNXT_MayCat.cs</DependentUpon>
     </EmbeddedResource>
