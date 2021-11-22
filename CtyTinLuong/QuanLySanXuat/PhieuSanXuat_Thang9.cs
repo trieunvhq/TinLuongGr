@@ -2092,6 +2092,9 @@ namespace CtyTinLuong
 
                         xxsokgmotbao_dot_copy = CheckString.ConvertToDouble_My(row["SoKG_MotBao_May_Dot"].ToString());
                         xxdocao_dot_copy = CheckString.ConvertToDouble_My(row["DoCao_Dot"].ToString());
+                        _bIsToDot1_Copy = Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(bIsToDot1).ToString());
+                        _bIsToDot2_Copy = Convert.ToBoolean(bandedGridView1.GetFocusedRowCellValue(bIsToDot2).ToString());
+                        
                         e.Handled = true;
                     }
                 }
@@ -2209,6 +2212,8 @@ namespace CtyTinLuong
                             row2["ID_DinhMuc_Luong_DOT"] = iiiD_dmluong_DOT_copy;
                             row2["SanLuong_Tong_DOT"] = dddsanluongtong_DOT_copy;
                             row2["PhePham_DOT"] = dddphepham_DOT_copy;
+                            row["bIsToDot1"] = _bIsToDot1_Copy;
+                            row["bIsToDot2"] = _bIsToDot2_Copy;
                             _data.Rows.InsertAt(row2, 0);
 
                             abc(0);
@@ -2302,6 +2307,8 @@ namespace CtyTinLuong
                             bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clPhePham_DOT, dddphepham_DOT_copy);
                             bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clSoKG_MotBao_May_Dot, xxsokgmotbao_dot_copy);
                             bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, clDoCao_Dot, xxdocao_dot_copy);
+                            bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, bIsToDot1, _bIsToDot1_Copy);
+                            bandedGridView1.SetRowCellValue(bandedGridView1.FocusedRowHandle, bIsToDot2, _bIsToDot2_Copy);
                             e.Handled = true;
                         }
                     }
