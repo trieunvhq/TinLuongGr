@@ -312,5 +312,13 @@ namespace CtyTinLuong
             Cursor.Current = Cursors.Default;
              
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(DateTime.Now.Month, DateTime.Now.Year, "GapDan");
+            ff.Show();
+            Cursor.Current = Cursors.Default;
+        }
     }
 }

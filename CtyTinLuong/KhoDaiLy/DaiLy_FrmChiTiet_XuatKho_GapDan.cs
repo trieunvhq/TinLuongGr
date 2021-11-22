@@ -899,60 +899,60 @@ namespace CtyTinLuong
                 //gridView1.SetRowCellValue(e.RowHandle, ID_NhanSu, id_nhansu);
                 gridView1.SetRowCellValue(e.RowHandle, TenNhanVien, tenCN);
 
-                //
-                try
-                {
-                    using (clsThin clsThin_ = new clsThin())
-                    {
-                        if (id_ChamCong == 0)
-                        {
-                            if (checkIDCNisTonTai(id_nhansu))
-                            {
-                                MessageBox.Show("Không thể thêm công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
-                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
+                ////
+                //try
+                //{
+                //    using (clsThin clsThin_ = new clsThin())
+                //    {
+                //        if (id_ChamCong == 0)
+                //        {
+                //            if (checkIDCNisTonTai(id_nhansu))
+                //            {
+                //                MessageBox.Show("Không thể thêm công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
+                //                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                return;
+                //            }
 
-                            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
-                            id_nhansu,
-                            dteNgayChungTu.DateTime.Day,
-                            dteNgayChungTu.DateTime.Month,
-                            dteNgayChungTu.DateTime.Year,
-                            _id_vthh,
-                            (float)sanluong_,
-                            0, true, false, _id_bophan, 0, 1);
-                            LoadDataChamCongCN(_id_vthh);
-                        }
-                        else
-                        {
-                            if (checkIDCN_Update(id_ChamCong, id_nhansu)) return;
-                            else
-                            {
-                                if (checkIDCNisTonTai(id_nhansu))
-                                {
-                                    MessageBox.Show("Không thể chọn công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
-                                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    return;
-                                }
-                            }
+                //            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                //            id_nhansu,
+                //            dteNgayChungTu.DateTime.Day,
+                //            dteNgayChungTu.DateTime.Month,
+                //            dteNgayChungTu.DateTime.Year,
+                //            _id_vthh,
+                //            (float)sanluong_,
+                //            0, true, false, _id_bophan, 0, 1);
+                //            LoadDataChamCongCN(_id_vthh);
+                //        }
+                //        else
+                //        {
+                //            if (checkIDCN_Update(id_ChamCong, id_nhansu)) return;
+                //            else
+                //            {
+                //                if (checkIDCNisTonTai(id_nhansu))
+                //                {
+                //                    MessageBox.Show("Không thể chọn công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
+                //                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                    return;
+                //                }
+                //            }
 
-                            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
-                            id_nhansu,
-                            dteNgayChungTu.DateTime.Day,
-                            dteNgayChungTu.DateTime.Month,
-                            dteNgayChungTu.DateTime.Year,
-                            _id_vthh,
-                            (float)sanluong_,
-                            0, true, false, _id_bophan, 0, 1,
-                            id_ChamCong);
-                        }
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
-                        + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                //            id_nhansu,
+                //            dteNgayChungTu.DateTime.Day,
+                //            dteNgayChungTu.DateTime.Month,
+                //            dteNgayChungTu.DateTime.Year,
+                //            _id_vthh,
+                //            (float)sanluong_,
+                //            0, true, false, _id_bophan, 0, 1,
+                //            id_ChamCong);
+                //        }
+                //    }
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
+                //        + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
             else if (e.Column == SanLuong)
             {
@@ -964,6 +964,7 @@ namespace CtyTinLuong
 
                 if (e.Value != null && e.Value.ToString() != "" && !(gridView4.GetRowCellValue(e.RowHandle, ID_NhanSu) is DBNull))
                 {
+                    int ID_ChiTietChamCong_ToGapDan_ = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, ID_ChiTietChamCong_ToGapDan));
                     int id_nhansu;
                     try
                     {
@@ -980,29 +981,33 @@ namespace CtyTinLuong
 
                     //
                     gridView1.SetRowCellValue(e.RowHandle, ThanhTien, sanluong_* dongia);
-                    tinhTongSL(0);
 
-                    //
-                    try
-                    {
-                        using (clsThin clsThin_ = new clsThin())
-                        {
-                            clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
-                            id_nhansu,
-                            dteNgayChungTu.DateTime.Day,
-                            dteNgayChungTu.DateTime.Month,
-                            dteNgayChungTu.DateTime.Year,
-                            _id_vthh,
-                            (float)sanluong_,
-                            0, true, false, _id_bophan, 0, 1,
-                            id_ChamCong);
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + getTenCN(id_nhansu)
-                            + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    if (ID_ChiTietChamCong_ToGapDan_ == 0)
+                        tinhTongSL(sanluong_);
+                    else
+                        tinhTongSL(0);
+
+                    ////
+                    //try
+                    //{
+                    //    using (clsThin clsThin_ = new clsThin())
+                    //    {
+                    //        clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                    //        id_nhansu,
+                    //        dteNgayChungTu.DateTime.Day,
+                    //        dteNgayChungTu.DateTime.Month,
+                    //        dteNgayChungTu.DateTime.Year,
+                    //        _id_vthh,
+                    //        (float)sanluong_,
+                    //        0, true, false, _id_bophan, 0, 1,
+                    //        id_ChamCong);
+                    //    }
+                    //}
+                    //catch
+                    //{
+                    //    MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + getTenCN(id_nhansu)
+                    //        + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
                 }
             }
         }
@@ -1081,13 +1086,82 @@ namespace CtyTinLuong
         {
             try
             {
-                
                 decimal value = decimal.Parse(txtThanhTien.Text);
                 txtThanhTien.Text = String.Format("{0:#,##0.00}", value);
             }
             catch
             {
 
+            }
+        }
+
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            if (_id_vthh == 0)
+            {
+                MessageBox.Show("Vui lòng chọn hàng hóa trước! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id_nhansu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_NhanSu));
+            int id_ChamCong = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietChamCong_ToGapDan));
+            double sanluong_ = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(SanLuong));
+
+            string tenCN = getTenCN(id_nhansu);
+
+            //
+            try
+            {
+                using (clsThin clsThin_ = new clsThin())
+                {
+                    if (id_ChamCong == 0)
+                    {
+                        if (checkIDCNisTonTai(id_nhansu))
+                        {
+                            MessageBox.Show("Không thể thêm công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_I(
+                        id_nhansu,
+                        dteNgayChungTu.DateTime.Day,
+                        dteNgayChungTu.DateTime.Month,
+                        dteNgayChungTu.DateTime.Year,
+                        _id_vthh,
+                        (float)sanluong_,
+                        0, true, false, _id_bophan, 0, 1);
+                        LoadDataChamCongCN(_id_vthh);
+                    }
+                    else
+                    {
+                        if (checkIDCN_Update(id_ChamCong, id_nhansu)) return;
+                        else
+                        {
+                            if (checkIDCNisTonTai(id_nhansu))
+                            {
+                                MessageBox.Show("Không thể chọn công nhân " + tenCN + ". Bởi vì " + tenCN + " đã tồn tại trong bộ phận này!",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+
+                        clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_CaTruong_U(
+                        id_nhansu,
+                        dteNgayChungTu.DateTime.Day,
+                        dteNgayChungTu.DateTime.Month,
+                        dteNgayChungTu.DateTime.Year,
+                        _id_vthh,
+                        (float)sanluong_,
+                        0, true, false, _id_bophan, 0, 1,
+                        id_ChamCong);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể đồng bộ dữ liệu công nhân " + tenCN
+                    + ". Kiểm tra lại kết nối!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

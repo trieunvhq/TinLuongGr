@@ -59,6 +59,7 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -290,7 +291,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 639);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 623);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(112, 13);
             this.linkLabel1.TabIndex = 71;
@@ -298,11 +299,23 @@
             this.linkLabel1.Text = "Cài mặc định người ký";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(12, 642);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(296, 13);
+            this.linkLabel2.TabIndex = 151;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Cài đặt mặc định mã hàng Tổ gấp dán, đóng bao, đóng kiện";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // frmQuanLyKhoDaiLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 662);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
@@ -352,5 +365,6 @@
         private DevExpress.XtraNavBar.NavBarItem navNhapKhoDongKien;
         private DevExpress.XtraNavBar.NavBarItem navXuatKhoDongKien;
         private DevExpress.XtraNavBar.NavBarItem navNXT_dongkien;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
