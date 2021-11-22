@@ -86,13 +86,13 @@ namespace CtyTinLuong
             {
                 using (clsThin clsThin_ = new clsThin())
                 {
-                    DataTable dtNhap = clsThin_.Tr_Phieu_ChiTietPhieu_New_GiayCuon_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _idvthh);
-                    DataTable dtXuat = clsThin_.Tr_MH_tbChiTietMuaHang_GiayCuon_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _idvthh);
+                    DataTable dtNhap = clsThin_.Tr_MH_tbChiTietMuaHang_GiayCuon_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _idvthh); 
+                     DataTable dtXuat = clsThin_.Tr_Phieu_ChiTietPhieu_New_GiayCuon_NXT_ChiTiet(_NgayBatDau, _NgayKetThuc, _idvthh);
                     int SttCa1 = 0;
 
                     foreach (DataRow item in dtNhap.Rows)
                     {
-                        DateTime NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString());
+                        DateTime NgaySX = Convert.ToDateTime(item["NgayThang"].ToString());
                         if (!DsNgaySX.Contains(NgaySX))
                         {
                             DsNgaySX.Add(NgaySX);
@@ -101,13 +101,15 @@ namespace CtyTinLuong
 
                     foreach (DataRow item in dtXuat.Rows)
                     {
-                        DateTime NgaySX = Convert.ToDateTime(item["NgaySanXuat"].ToString());
+                        DateTime NgaySX = Convert.ToDateTime(item["NgayThang"].ToString());
                         if (!DsNgaySX.Contains(NgaySX))
                         {
                             DsNgaySX.Add(NgaySX);
                         }
                     }
-                    
+
+                    DsNgaySX.Sort();
+
                     if (DsNgaySX.Count > 0)
                     {
                         //Row tồn đầu:

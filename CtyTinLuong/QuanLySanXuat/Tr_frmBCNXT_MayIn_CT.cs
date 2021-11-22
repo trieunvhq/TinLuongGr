@@ -107,7 +107,9 @@ namespace CtyTinLuong
                             DsNgaySX.Add(NgaySX);
                         }
                     }
-                    
+
+                    DsNgaySX.Sort();
+
                     if (DsNgaySX.Count > 0)
                     {
                         //Row tồn đầu:
