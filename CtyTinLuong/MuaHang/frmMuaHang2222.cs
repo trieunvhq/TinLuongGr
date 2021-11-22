@@ -27,7 +27,6 @@ namespace CtyTinLuong
             //    navMuaHang.Caption = "Mua hàng (" + k1.ToString() + ")";
             //    navMuaHang.Appearance.Font = new Font(navMuaHang.Appearance.Font, FontStyle.Bold);
             //}
-           
         }
 
         public frmMuaHang2222()

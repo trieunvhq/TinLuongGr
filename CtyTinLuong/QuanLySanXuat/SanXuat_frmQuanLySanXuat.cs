@@ -323,5 +323,20 @@ namespace CtyTinLuong
 
             Cursor.Current = Cursors.Default;
         }
+
+        private void navNXTgiayCuon_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            doiMauTitle(sender, e);
+
+            Tr_frmBCNXT_GiayCuon frm = new Tr_frmBCNXT_GiayCuon(this);
+            frm.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(frm);
+            frm.BringToFront();
+
+            frm.LoadData(true);
+
+            Cursor.Current = Cursors.Default;
+        }
     }
 }

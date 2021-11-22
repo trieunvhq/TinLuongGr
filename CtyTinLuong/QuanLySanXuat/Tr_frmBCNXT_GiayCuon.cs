@@ -24,7 +24,6 @@ namespace CtyTinLuong
         public int miiID_ChamCong;
         public string msTenNhanVien;
 
-        public int _id_bophan;
         private DateTime _NgayBatDau, _NgayKetThuc;
         public string _ten_vthh;
         private DataTable _data;
@@ -34,10 +33,9 @@ namespace CtyTinLuong
 
         SanXuat_frmQuanLySanXuat _frmQLLCC;
 
-        public Tr_frmBCNXT_GiayCuon(int id_bophan, SanXuat_frmQuanLySanXuat frmQLLCC)
+        public Tr_frmBCNXT_GiayCuon(SanXuat_frmQuanLySanXuat frmQLLCC)
         {
             _frmQLLCC = frmQLLCC;
-            _id_bophan = id_bophan;
             InitializeComponent();
 
             _data = new DataTable();
@@ -71,40 +69,45 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                DataTable dt = clsThin_.Tr_Phieu_ChiTietPhieu_New_MayCat_NXT(_NgayBatDau, _NgayKetThuc);
+                DataTable dtPSX = clsThin_.Tr_Phieu_ChiTietPhieu_New_GiayCuon_NXT(_NgayBatDau, _NgayKetThuc);
+                DataTable dtMH = clsThin_.Tr_MH_tbChiTietMuaHang_GiayCuon_NXT(_NgayBatDau, _NgayKetThuc);
 
-                int ID_Vthh_Root = -1;
                 int stt = 0;
 
-                for (int i = 0; i < dt.Rows.Count; ++i)
+                foreach (DataRow item in dtPSX.Rows)
                 {
-                    int ID_Vthh = Convert.ToInt32(dt.Rows[i]["ID_VTHH_Ra"].ToString());
-                    string tenvthh = CheckString.ChuanHoaHoTen(dt.Rows[i]["TenVTHH"].ToString()).ToLower();
-
-                    //
-                    if (ID_Vthh_Root != ID_Vthh && !dsIDVTHH.Contains(ID_Vthh) 
-                        && (tenvthh.Contains("giấy cắt đột") || tenvthh.Contains("giay cắt đột") || tenvthh.Contains("giấy cắt đot")))
+                    if (!dsIDVTHH.Contains(Convert.ToInt32(item["ID_VTHH"].ToString())))
                     {
-                        ModelNXT_MayInCat nxt = getNXT(ID_Vthh, dt);
-                        //
-                        ID_Vthh_Root = ID_Vthh;
-                        dsIDVTHH.Add(ID_Vthh);
-                        stt++;
-
-                        DataRow _ravi = _data.NewRow();
-                        _ravi["STT"] = stt;
-                        _ravi["MaVT"] = nxt.MaHang;
-                        _ravi["TenVTHH"] = nxt.TenVTHH;
-                        _ravi["DonViTinh"] = "Cuộn";//nxt.DonViTinh;
-                        _ravi["TonDau"] = nxt.TonDau.ToString("N0");
-                        _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N0");
-                        _ravi["Nhap"] = nxt.Nhap.ToString("N0");
-                        _ravi["Xuat"] = nxt.Xuat.ToString("N0");
-                        _ravi["Let"] = nxt.Let.ToString("N0"); 
-                        _ravi["ID_VTHH"] = ID_Vthh; 
-
-                        _data.Rows.Add(_ravi);
+                        dsIDVTHH.Add(Convert.ToInt32(item["ID_VTHH"].ToString()));
                     }
+                }
+
+                foreach (DataRow item in dtMH.Rows)
+                {
+                    if (!dsIDVTHH.Contains(Convert.ToInt32(item["ID_VTHH"].ToString())))
+                    {
+                        dsIDVTHH.Add(Convert.ToInt32(item["ID_VTHH"].ToString()));
+                    }
+                }
+
+                foreach (int item in dsIDVTHH)
+                {
+                    ModelNXT_MayInCat nxt = getNXT(item, dtMH, dtPSX);
+                    stt++;
+
+                    DataRow _ravi = _data.NewRow();
+                    _ravi["STT"] = stt;
+                    _ravi["MaVT"] = nxt.MaHang;
+                    _ravi["TenVTHH"] = nxt.TenVTHH;
+                    _ravi["DonViTinh"] = "Cuộn";//nxt.DonViTinh;
+                    _ravi["TonDau"] = nxt.TonDau.ToString("N0");
+                    _ravi["TonCuoi"] = nxt.TonCuoi.ToString("N0");
+                    _ravi["Nhap"] = nxt.Nhap.ToString("N0");
+                    _ravi["Xuat"] = nxt.Xuat.ToString("N0");
+                    _ravi["Let"] = nxt.Let.ToString("N0");
+                    _ravi["ID_VTHH"] = item;
+
+                    _data.Rows.Add(_ravi);
                 }
             }
 
@@ -113,7 +116,7 @@ namespace CtyTinLuong
             isload = false;
         }
 
-        private ModelNXT_MayInCat getNXT(int idVthh, DataTable dt)
+        private ModelNXT_MayInCat getNXT(int idVthh, DataTable dtmh, DataTable dtpsx)
         {
             ModelNXT_MayInCat nv = new ModelNXT_MayInCat();
             string DonViTinh = "";
@@ -121,46 +124,70 @@ namespace CtyTinLuong
             string TenHang = "";
             double TonDau = 0;
             double TonCuoi = 0;
-            double Nhap = 0;
-            double Xuat = 0;
+            double TongNhapDauKy = 0;
             double TongNhapTrongKy = 0;
+            double TongNhapCuoiKy = 0;
+            double TongXuatDauKy = 0;
             double TongXuatTrongKy = 0;
+            double TongXuatCuoiKy = 0;
 
-
-            List<int> dsNgayCong = new List<int>();
-
-            for (int i = 0; i < 31; i++)
+            foreach (DataRow item in dtmh.Rows)
             {
-            }
-
-            foreach (DataRow item in dt.Rows)
-            {
-                if (idVthh == Convert.ToInt32(item["ID_VTHH_Ra"].ToString()))
+                if (idVthh == Convert.ToInt32(item["ID_VTHH"].ToString()))
                 {
                     DonViTinh = item["DonViTinh"].ToString();
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
 
-                    Nhap = CheckString.ConvertToDouble_My(item["TongSoCuonNhapTrongKy"].ToString());
+                    TongNhapDauKy = CheckString.ConvertToDouble_My(item["TongNhapDauKy"].ToString());
                     TongNhapTrongKy = CheckString.ConvertToDouble_My(item["TongNhapTrongKy"].ToString());
+                    TongNhapCuoiKy = CheckString.ConvertToDouble_My(item["TongNhapCuoiKy"].ToString());
+                    TongXuatDauKy = CheckString.ConvertToDouble_My(item["TongXuatDauKy"].ToString());
                     TongXuatTrongKy = CheckString.ConvertToDouble_My(item["TongXuatTrongKy"].ToString());
-
-                    TonDau = CheckString.ConvertToDouble_My(item["TonDauKy"].ToString());
+                    TongXuatCuoiKy = CheckString.ConvertToDouble_My(item["TongXuatCuoiKy"].ToString());
                     break;
                 }
             }
-            if (TongNhapTrongKy > 0)
-                Xuat = (TongXuatTrongKy * Nhap) / TongNhapTrongKy;
 
-            TonCuoi = Nhap + TonDau - Xuat;
+            foreach (DataRow item in dtpsx.Rows)
+            {
+                if (idVthh == Convert.ToInt32(item["ID_VTHH"].ToString()))
+                {
+                    DonViTinh = item["DonViTinh"].ToString();
+                    MaHang = item["MaVT"].ToString();
+                    TenHang = item["TenVTHH"].ToString();
+                    if (TongNhapDauKy == 0)
+                        TongNhapDauKy = CheckString.ConvertToDouble_My(item["TongNhapDauKy"].ToString());
+
+                    if (TongNhapTrongKy == 0)
+                        TongNhapTrongKy = CheckString.ConvertToDouble_My(item["TongNhapTrongKy"].ToString());
+
+                    if (TongNhapCuoiKy ==0)
+                        TongNhapCuoiKy = CheckString.ConvertToDouble_My(item["TongNhapCuoiKy"].ToString());
+
+                    if (TongXuatDauKy == 0)
+                        TongXuatDauKy = CheckString.ConvertToDouble_My(item["TongXuatDauKy"].ToString());
+
+                    if (TongXuatTrongKy == 0)
+                        TongXuatTrongKy = CheckString.ConvertToDouble_My(item["TongXuatTrongKy"].ToString());
+
+                    if (TongXuatCuoiKy == 0)
+                        TongXuatCuoiKy = CheckString.ConvertToDouble_My(item["TongXuatCuoiKy"].ToString());
+                    break;
+                }
+            }
+
+            TonDau = TongNhapDauKy - TongXuatDauKy;
+
+            TonCuoi = TongNhapCuoiKy - TongXuatCuoiKy;
 
             nv.DonViTinh = DonViTinh;
             nv.MaHang = MaHang;
             nv.TenVTHH = TenHang;
             nv.TonDau = TonDau;
             nv.TonCuoi = TonCuoi;
-            nv.Nhap = Nhap;
-            nv.Xuat = Xuat;
+            nv.Nhap = TongNhapTrongKy;
+            nv.Xuat = TongXuatTrongKy;
             nv.Let = TonCuoi / 5;
 
             return nv;
@@ -260,8 +287,8 @@ namespace CtyTinLuong
                     string maHang = gridView1.GetFocusedRowCellValue(MaVT).ToString();
                     string tenHang = gridView1.GetFocusedRowCellValue(TenVTHH).ToString();
 
-                    //Tr_frmBCNXT_GiayCuon_CT ff = new Tr_frmBCNXT_GiayCuon_CT(dateBatDau.DateTime, dateKetThuc.DateTime, idvthh, maHang, tenHang);
-                    //ff.Show();
+                    Tr_frmBCNXT_GiayCuon_CT ff = new Tr_frmBCNXT_GiayCuon_CT(dateBatDau.DateTime, dateKetThuc.DateTime, idvthh, maHang, tenHang);
+                    ff.Show();
                 }
             }
             catch (Exception ee)

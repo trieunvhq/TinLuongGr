@@ -60,6 +60,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.navNXTgiayCuon = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -165,7 +166,8 @@
             this.navSanLuongMayDOT,
             this.navLuongSanLuong,
             this.navNXTGiayIn,
-            this.navNXTGiayCat});
+            this.navNXTGiayCat,
+            this.navNXTgiayCuon});
             this.navBarControl1.Location = new System.Drawing.Point(6, 19);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 211;
@@ -227,7 +229,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navSanLuongMayDOT),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navLuongSanLuong),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNXTGiayIn),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navNXTGiayCat)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navNXTGiayCat),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navNXTgiayCuon)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem8
@@ -308,6 +311,12 @@
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             // 
+            // navNXTgiayCuon
+            // 
+            this.navNXTgiayCuon.Caption = "Nhập xuất tồn giấy cuộn";
+            this.navNXTgiayCuon.Name = "navNXTgiayCuon";
+            this.navNXTgiayCuon.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navNXTgiayCuon_LinkClicked);
+            // 
             // SanXuat_frmQuanLySanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,5 +372,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraNavBar.NavBarItem navNXTGiayIn;
         private DevExpress.XtraNavBar.NavBarItem navNXTGiayCat;
+        private DevExpress.XtraNavBar.NavBarItem navNXTgiayCuon;
     }
 }

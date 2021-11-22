@@ -597,6 +597,12 @@
     <Compile Include="QuanLySanXuat\Tr_frmBCNXT_MayCat.Designer.cs">
       <DependentUpon>Tr_frmBCNXT_MayCat.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon_CT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon_CT.Designer.cs">
+      <DependentUpon>Tr_frmBCNXT_GiayCuon_CT.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Tr_frmBCNXT_MayCat_CT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2920,6 +2926,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Tr_frmBCNXT_MayCat.resx">
       <DependentUpon>Tr_frmBCNXT_MayCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon_CT.resx">
+      <DependentUpon>Tr_frmBCNXT_GiayCuon_CT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanXuat\Tr_frmBCNXT_MayCat_CT.resx">
       <DependentUpon>Tr_frmBCNXT_MayCat_CT.cs</DependentUpon>
