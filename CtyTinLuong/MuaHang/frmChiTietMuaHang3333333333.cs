@@ -1250,7 +1250,7 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
-                if (UCMuaHang.mbSua == false)
+                if (UCMuaHang.mbSua == false && UCMuaHang.mbCopY == false)
                     tinhTongTien(fffthanhtien);
                 else
                     tinhTongTien(0);
@@ -1268,7 +1268,7 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
-                if (UCMuaHang.mbSua == false)
+                if (UCMuaHang.mbSua == false && UCMuaHang.mbCopY == false)
                     tinhTongTien(fffthanhtien);
                 else
                     tinhTongTien(0);
