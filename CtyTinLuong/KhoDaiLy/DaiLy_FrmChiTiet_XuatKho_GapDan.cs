@@ -465,7 +465,7 @@ namespace CtyTinLuong
             {
                 clsDongKien_TbNhapKho cls1 = new clsDongKien_TbNhapKho();
                 clsDongKien_TbNhapKho cls2 = new clsDongKien_TbNhapKho();
-                cls1.iID_XuatKhoGapDan = iiID_Xuatkho_Gapdan;               
+                cls1.iID_XuatKho_ThamChieu = iiID_Xuatkho_Gapdan;               
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtThamChieu.Text.ToString();
                 cls1.sDienGiai = txtDienGiai.Text.ToString();
@@ -480,6 +480,7 @@ namespace CtyTinLuong
                 cls1.sNguoiGiaoHang = "";
                 cls1.bDaNhapKho = true;
                 cls1.bBoolTonDauKy = false;
+                cls1.iGapDan_1_DaiLy_2 = 1;
                 DataTable dt2 = cls2.H_DongKien_SO_ID_XKGD(iiID_Xuatkho_Gapdan);
                 if (dt2.Rows.Count > 0)
                 {
