@@ -50,8 +50,10 @@
             this.clTenVTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.clSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clGD_DL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btNhapKho = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.dteDenNgay = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -68,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btNhapKho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -125,7 +128,8 @@
             this.repositoryItemCheckEdit1,
             this.btNhapKho,
             this.repositoryItemMemoEdit1,
-            this.repositoryItemMemoEdit2});
+            this.repositoryItemMemoEdit2,
+            this.repositoryItemCheckEdit2});
             this.gridControl1.Size = new System.Drawing.Size(896, 563);
             this.gridControl1.TabIndex = 69;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -146,7 +150,8 @@
             this.clDienGiai,
             this.clMaVT,
             this.clTenVTHH,
-            this.clSoLuong});
+            this.clSoLuong,
+            this.clGD_DL});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -237,7 +242,7 @@
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
             this.clDienGiai.VisibleIndex = 3;
-            this.clDienGiai.Width = 252;
+            this.clDienGiai.Width = 241;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -251,7 +256,7 @@
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.Visible = true;
             this.clMaVT.VisibleIndex = 4;
-            this.clMaVT.Width = 87;
+            this.clMaVT.Width = 77;
             // 
             // clTenVTHH
             // 
@@ -262,7 +267,7 @@
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
             this.clTenVTHH.VisibleIndex = 5;
-            this.clTenVTHH.Width = 252;
+            this.clTenVTHH.Width = 241;
             // 
             // repositoryItemMemoEdit2
             // 
@@ -278,7 +283,18 @@
             this.clSoLuong.OptionsColumn.AllowEdit = false;
             this.clSoLuong.Visible = true;
             this.clSoLuong.VisibleIndex = 6;
-            this.clSoLuong.Width = 94;
+            this.clSoLuong.Width = 85;
+            // 
+            // clGD_DL
+            // 
+            this.clGD_DL.Caption = "Nguồn";
+            this.clGD_DL.FieldName = "GD_DL";
+            this.clGD_DL.Name = "clGD_DL";
+            this.clGD_DL.OptionsColumn.AllowEdit = false;
+            this.clGD_DL.OptionsColumn.FixedWidth = true;
+            this.clGD_DL.Visible = true;
+            this.clGD_DL.VisibleIndex = 7;
+            this.clGD_DL.Width = 70;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -294,6 +310,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btNhapKho.Name = "btNhapKho";
             this.btNhapKho.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
             // dteTuNgay
             // 
@@ -409,6 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btNhapKho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteDenNgay.Properties.CalendarTimeProperties)).EndInit();
@@ -448,5 +470,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clTenVTHH;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn clSoLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn clGD_DL;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
     }
 }

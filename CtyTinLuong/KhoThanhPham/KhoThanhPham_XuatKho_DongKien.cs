@@ -37,8 +37,11 @@ namespace CtyTinLuong
             if (dt_xuatTruoc.Rows.Count>0)
                 soluongxuat_cu = Convert.ToDouble(dt_xuatTruoc.Rows[0]["SoLuong_XuatTruocKy"].ToString());
             else soluongxuat_cu = 0;
-            double soluongnhap = Convert.ToDouble(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
-           
+            double soluongnhap = 0;
+            if (dt_NhapTruoc.Rows.Count > 0)
+                soluongnhap = Convert.ToDouble(dt_NhapTruoc.Rows[0]["SoLuong_NhapTruocKy"].ToString());
+            else
+                soluongnhap = 0;
 
             double soluongton = soluongnhap - soluongxuat_moi- soluongxuat_cu;
             if (soluongton < 0)
