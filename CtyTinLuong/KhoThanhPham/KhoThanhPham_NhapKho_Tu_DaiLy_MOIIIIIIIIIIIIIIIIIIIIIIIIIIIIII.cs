@@ -805,7 +805,7 @@ namespace CtyTinLuong
                 cls2.iID_NhapKho_DongKien = iiiid_nhapkhodongkien;
                 cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
                 int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuong"].ToString());
+                cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongNhap"].ToString());
                 cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
                 cls2.fThanhTien = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["ThanhTien"].ToString());
                 cls2.sGhiChu = "";
@@ -985,8 +985,8 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                try
-                {
+                //try
+                //{
                     int iiiiID_XuatKhoDaiLy;
                     string ahienthi = "1";
 
@@ -1059,11 +1059,11 @@ namespace CtyTinLuong
                     Luu_ChiTiet_XuatKho_DaiLy(iiiiID_XuatKhoDaiLy);
                     Luu_ThamCHieuTinhXuatKho(iiiiID_XuatKhoDaiLy);
                     MessageBox.Show("Đã lưu và gửi dữ liệu");
-                }
-                catch
-                {
+                //}
+                //catch
+                //{
 
-                }
+                //}
             }
         }
 
