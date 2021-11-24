@@ -763,7 +763,7 @@ namespace CtyTinLuong
             cls1.daNgayChungTu = dteNgayChungTu.DateTime;
             cls1.sSoChungTu = Load_soChungTu_DongKien();
             cls1.sDienGiai = txtDienGiai.Text.ToString();           
-            cls1.iID_VTHH = 0;
+            cls1.iID_VTHH = Convert.ToInt32(dtaaaaa.Rows[0]["ID_VTHH"].ToString());
             cls1.fDonGia = 0;
             cls1.fSoLuong = dexxTongSoLuong;
             cls1.fThanhTien = dexxTongtienhang;
