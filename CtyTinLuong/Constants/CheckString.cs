@@ -100,7 +100,7 @@ namespace CtyTinLuong
         public static String creatMaNhanSu()
         {
             DataTable dt;
-            String s = "TL000000";
+            String s = "000000";
             String maNhanSu = "";
             String sq_curent = "";
 
@@ -117,19 +117,24 @@ namespace CtyTinLuong
 
                 //sq_curent = LoaiPhong_db.selectMLP_max();
 
-                if (sq_curent != "" && sq_curent.Length >= 8)
-                {
-                    String tmp = sq_curent.Substring(2);
-                    int sq = Convert.ToInt32(tmp) + 1;
+                //if (sq_curent != "" && sq_curent.Length >= 8)
+                //{
+                //    String tmp = sq_curent.Substring(2);
+                //    int sq = Convert.ToInt32(tmp) + 1;
 
-                    if (sq >= 999999)
-                    {
-                        MessageBox.Show("Không thể tạo mã nhân viên mới. Mã nhân viên hiện tại đã lớn hơn TL999999!",
-                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    maNhanSu = s.Substring(0, 8 - (sq.ToString()).Length) + sq.ToString();
+                //    if (sq >= 99999)
+                //    {
+                //        MessageBox.Show("Không thể tạo mã nhân viên mới. Mã nhân viên hiện tại đã lớn hơn 99999!",
+                //            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    }
+                //    //maNhanSu = s.Substring(0, 8 - (sq.ToString()).Length) + sq.ToString();
+                //}
+                if (sq_curent != "" && sq_curent.Length >= 5)
+                {
+                    int sq = Convert.ToInt32(sq_curent) + 1;
+                    maNhanSu = sq.ToString();
                 }
-                else maNhanSu = "TL000001";
+                else maNhanSu = "100001";
             }
             catch(Exception ea)
             {

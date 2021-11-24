@@ -60,6 +60,7 @@ namespace CtyTinLuong
             _Type = "";
             InitializeComponent();
             PhuCapBaoHiem.Caption = "Phụ cấp\nbảo hiểm";
+            //nghichngu();
         }
         private object _frm;
         public Tr_frmQuanLyDML_CongNhat(int id_nhanvien, string type, object frm)
@@ -376,14 +377,14 @@ namespace CtyTinLuong
         {
             using (clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu())
             {
-                string s = "TL000000";
+                string s = "310000";
                 clsThin cls = new clsThin();
                 DataTable dt = clsNguoi.T_SelectAll(8);
 
                 dt = clsNguoi.T_SelectAll(0);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string idcn = s.Substring(0, 8 - (i+1).ToString().Length) + (i+1).ToString();
+                    string idcn = s.Substring(0, 6 - (i+1).ToString().Length) + (i+1).ToString();
                     cls.Tr_Replace_All(Convert.ToInt32(dt.Rows[i]["ID_NhanSu"].ToString()),
                         idcn,
                         CheckString.ChuanHoaHoTen(dt.Rows[i]["TenNhanVien"].ToString()));

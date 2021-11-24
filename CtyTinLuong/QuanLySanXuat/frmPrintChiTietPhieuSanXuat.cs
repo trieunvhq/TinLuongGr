@@ -91,6 +91,7 @@ namespace CtyTinLuong
                     _ravi["PhePham_IN"] = PhePham_IN;
                     _ravi["NgaySanXuat_IN"] = dt3.Rows[i]["NgaySanXuat_IN"].ToString();
                     _ravi["CaSanXuat_IN"] = dt3.Rows[i]["CaSanXuat_IN"].ToString();
+                    _ravi["MaCongNhan_IN"] = dt3.Rows[i]["MaCongNhan_IN"].ToString();
                     _ravi["CongNhan_IN"] = dt3.Rows[i]["CongNhan_IN"].ToString();
                     _ravi["MaMay_IN"] = dt3.Rows[i]["MaMay_IN"].ToString();
 
@@ -105,6 +106,7 @@ namespace CtyTinLuong
                     _ravi["PhePham_CAT"] = PhePham_CAT;
                     _ravi["NgaySanXuat_CAT"] = dt3.Rows[i]["NgaySanXuat_CAT"].ToString();
                     _ravi["CaSanXuat_CAT"] = dt3.Rows[i]["CaSanXuat_CAT"].ToString();
+                    _ravi["MaCongNhan_CAT"] = dt3.Rows[i]["MaCongNhan_CAT"].ToString();
                     _ravi["CongNhan_CAT"] = dt3.Rows[i]["CongNhan_CAT"].ToString();
                     _ravi["MaMay_CAT"] = dt3.Rows[i]["MaMay_CAT"].ToString();
 
@@ -119,6 +121,7 @@ namespace CtyTinLuong
                     _ravi["PhePham_DOT"] = PhePham_DOT;
                     _ravi["NgaySanXuat_DOT"] = dt3.Rows[i]["NgaySanXuat_DOT"].ToString();
                     _ravi["CaSanXuat_DOT"] = dt3.Rows[i]["CaSanXuat_DOT"].ToString();
+                    _ravi["MaCongNhan_DOT"] = dt3.Rows[i]["MaCongNhan_DOT"].ToString();
                     _ravi["CongNhan_DOT"] = dt3.Rows[i]["CongNhan_DOT"].ToString();
                     _ravi["MaMay_DOT"] = dt3.Rows[i]["MaMay_DOT"].ToString();
 
