@@ -48,8 +48,7 @@ namespace CtyTinLuong
             if (soluongton < 0)
                 MessageBox.Show(""+madaily+"-"+ stendaily + " || " + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "");
             //label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
-
-          
+            
         }
         private string Load_soChungTu_KhoThanhPham()
         {
@@ -973,6 +972,7 @@ namespace CtyTinLuong
                     this.Close();
                     _ucNKTDL.btLayDuLieu_Click(null, null);
                     MessageBox.Show("Đã lưu", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch
                 {
@@ -985,8 +985,8 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                //try
-                //{
+                try
+                {
                     int iiiiID_XuatKhoDaiLy;
                     string ahienthi = "1";
 
@@ -1059,12 +1059,13 @@ namespace CtyTinLuong
                     Luu_ChiTiet_XuatKho_DaiLy(iiiiID_XuatKhoDaiLy);
                     Luu_ThamCHieuTinhXuatKho(iiiiID_XuatKhoDaiLy);
                     MessageBox.Show("Đã lưu và gửi dữ liệu");
-                //}
-                //catch
-                //{
-
-                //}
+                this.Close();
             }
+                catch
+            {
+
+            }
+        }
         }
 
         UCThanhPham_NhapKhoTuDaiLy_Newwwwwwwwwwwwwww _ucNKTDL;
