@@ -90,9 +90,11 @@ namespace CtyTinLuong
             isload = true;
 
             Cursor.Current = Cursors.WaitCursor;
-           
+
             dteDenNgay.EditValue = DateTime.Today;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
+            clsNgayThang cl = new clsNgayThang();
+            dteTuNgay.EditValue = cl.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
+
             clsNganHang_ChiTietBienDongTaiKhoanKeToan cls = new clsNganHang_ChiTietBienDongTaiKhoanKeToan();
             dtnganhang = cls.Sum_Co_No_NgayThang_HUU(287, dteTuNgay.DateTime, DateTime.Now);
 
@@ -292,6 +294,16 @@ namespace CtyTinLuong
                 return;
             DateTime date1 = (DateTime)e.OldValue;
             DateTime date2 = (DateTime)e.NewValue;
+        }
+
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteTuNgay.DateTime, dteDenNgay.DateTime);
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            Load_DaTa(frmMuaHang2222.mbTraLaiHangMua, dteTuNgay.DateTime, dteDenNgay.DateTime);
         }
 
         private void btLayDuLieu_KeyPress(object sender, KeyPressEventArgs e)
