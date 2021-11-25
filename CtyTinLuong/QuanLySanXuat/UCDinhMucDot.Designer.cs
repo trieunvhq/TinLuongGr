@@ -70,6 +70,7 @@
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clTonTai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -132,7 +133,8 @@
             this.clGhiChu,
             this.clID_VTHH,
             this.clKhoa,
-            this.btCopy});
+            this.btCopy,
+            this.clTonTai});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -430,6 +432,12 @@
             this.panel1.Size = new System.Drawing.Size(900, 30);
             this.panel1.TabIndex = 76;
             // 
+            // clTonTai
+            // 
+            this.clTonTai.Caption = "TonTai";
+            this.clTonTai.FieldName = "TonTai";
+            this.clTonTai.Name = "clTonTai";
+            // 
             // UCDinhMucDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,5 +491,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.Columns.GridColumn btCopy;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonCopy;
+        private DevExpress.XtraGrid.Columns.GridColumn clTonTai;
     }
 }

@@ -257,6 +257,49 @@ namespace CtyTinLuong
             }
         }
 
+        private void HienThi_Copy_DinhMuc_DOT()
+        {
+            try
+            {
+                using (clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa())
+                {
+                    DataTable dt = cls.SelectAll();
+                    dt.DefaultView.RowFilter = "TonTai=True and NgungTheoDoi=False";
+                    DataView dv = dt.DefaultView;
+                    DataTable dtxx = dv.ToTable();
+                    gridLookUpEditLoaiHang.Properties.DataSource = dtxx;
+                    gridLookUpEditLoaiHang.Properties.ValueMember = "ID_VTHH";
+                    gridLookUpEditLoaiHang.Properties.DisplayMember = "MaVT";
+                }
+
+                using (clsDinhMuc_tbDinhMuc_DOT cls2 = new CtyTinLuong.clsDinhMuc_tbDinhMuc_DOT())
+                {
+                    dteNgayThang.EditValue = UCDinhMucDot._NgayThang;
+                    txtSoHieu.Text = UCDinhMucDot._SoHieu;
+                    if (UCDinhMucDot._Ca == "Ca 1") checkCa1.Checked = true;
+                    else checkCa2.Checked = true;
+                    checkNgungTheoDoi.Checked = UCDinhMucDot._NgungTheoDoi;
+                    gridLookUpEditLoaiHang.EditValue = UCDinhMucDot._ID_VTHH;
+                    txtLoaiGiay.Text = UCDinhMucDot._LoaiGiay;
+                    txtSoLuongKiemTra.Text = UCDinhMucDot._SoLuongKiemTra.ToString();
+                    txtTrongLuongKiemTra.Text = UCDinhMucDot._TrongLuongKiemTra.ToString();
+                    txtSoLuongQuyDoi.Text = UCDinhMucDot._SoLuongQuyDoi.ToString();
+                    txtDonViQuyDoi.Text = UCDinhMucDot._DonViQuyDoi;
+                    txtQuyRaKien.Text = UCDinhMucDot._QuyRaKien.ToString();
+                    txtDoCao.Text = UCDinhMucDot._DoCao.ToString();
+                    txtSoKienMotBao.Text = UCDinhMucDot._SoKienMotBao.ToString();
+                    txtPhePham.Text = UCDinhMucDot._PhePham.ToString();
+                    txtSoKGMotBao.Text = UCDinhMucDot._SoKG_MotBao.ToString();
+                    //txtSoKien60Bao.Text = dt2.Rows[0][""].ToString();
+                    txtGhiChu.Text = UCDinhMucDot._GhiChu;
+                }
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("Kiểm tra lại kết nối! " + ea.Message.ToString(), "Lỗi đọc dữ liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private bool KiemTraLuu()
         {
@@ -362,8 +405,10 @@ namespace CtyTinLuong
             }
             else
             {
-              
-                HienThi_Sua_DinhMuc_DOT();
+                if (UCDinhMucDot._bCopyDinhMucDot)
+                    HienThi_Copy_DinhMuc_DOT();
+                else
+                    HienThi_Sua_DinhMuc_DOT();
             }
 
             Cursor.Current = Cursors.Default;
@@ -438,7 +483,7 @@ namespace CtyTinLuong
 
         private void btLuu_va_Dong_Click(object sender, EventArgs e)
         {
-            if (UCDinhMucDot.mb_TheMoi_DinhMuc_Dot == true)
+            if (UCDinhMucDot.mb_TheMoi_DinhMuc_Dot || UCDinhMucDot._bCopyDinhMucDot)
             {
                 Luu_ThemMoi_DM_DOT();
             }
@@ -446,7 +491,6 @@ namespace CtyTinLuong
             {
                 Luu_Sua__DM_DOT();
             }
-         
         }
 
         private void gridLookUpEditLoaiHang_EditValueChanged(object sender, EventArgs e)

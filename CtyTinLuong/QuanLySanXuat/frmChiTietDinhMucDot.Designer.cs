@@ -265,6 +265,7 @@
             this.dteNgayThang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteNgayThang.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dteNgayThang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dteNgayThang.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dteNgayThang.Size = new System.Drawing.Size(131, 20);
             this.dteNgayThang.StyleController = this.layoutControl1;
             this.dteNgayThang.TabIndex = 1;

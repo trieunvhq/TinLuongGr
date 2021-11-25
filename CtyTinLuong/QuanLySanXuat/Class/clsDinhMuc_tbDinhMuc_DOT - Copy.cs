@@ -15,7 +15,7 @@ namespace CtyTinLuong
 	/// Purpose: Data Access class for the table 'DinhMuc_tbDinhMuc_DOT'.
 	/// </summary>
 	public partial class clsDinhMuc_tbDinhMuc_DOT : clsDBInteractionBase
-	{
+    {
         //pr_DinhMuc_tbDinhMuc_DOT_SA_W_Loaihang
         public DataTable SA_W_Loaihang(int ___HangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0_)
         {

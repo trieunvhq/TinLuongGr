@@ -13,12 +13,37 @@ namespace CtyTinLuong
     public partial class UCDinhMucDot : UserControl
     {
         public static bool mb_TheMoi_DinhMuc_Dot;
-       
+        public static bool _bCopyDinhMucDot = false;
+
         public static int miDID_VTHH;
         public static bool mb_bool_NgungTheoDoi;
        
         public static int miID_DinhMuc_Dot;
         int xxiiHangDot_1_HangNhu_2_HangCuc_3_HangSot_4_ConLai_0;
+
+        public static int _ID_DinhMuc_Dot = 0;
+        public static DateTime _NgayThang;
+        public static string _Ca = "";
+        public static string _SoHieu = "";
+        public static int _ID_VTHH = 0;
+        public static string _LoaiGiay = "";
+        public static Double _SoLuongKiemTra = 0;
+        public static Double _TrongLuongKiemTra = 0;
+        public static Double _SoLuongQuyDoi = 0;
+        public static string _DonViQuyDoi = "";
+        public static Double _QuyRaKien = 0;
+        public static Double _PhePham = 0;
+        public static Double _DoCao = 0;
+        public static Double _SoKG_MotBao = 0;
+        public static Double _SoKienMotBao = 0;
+        public static bool _TonTai = false;
+        public static bool _NgungTheoDoi = false;
+        public static string _GhiChu = "";
+        public static bool _Khoa = false;
+        public static string _TenVTHH = "";
+        public static string _MaVT = "";
+        public static string _DonViTinh = "";
+
         private void btXoa_Click(object sender, EventArgs e)
         {
             try
@@ -77,6 +102,7 @@ namespace CtyTinLuong
                     miDID_VTHH= Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
                     mb_bool_NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());                 
                     mb_TheMoi_DinhMuc_Dot = false;
+                    _bCopyDinhMucDot = false;
                     frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot(this);
                     //_frmQLSX.Hide();
                     ff.Show();
@@ -168,7 +194,37 @@ namespace CtyTinLuong
 
         private void ButtonCopy_Click(object sender, EventArgs e)
         {
-
+            if (gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString() != "")
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                _bCopyDinhMucDot = true;
+                mb_TheMoi_DinhMuc_Dot = false;
+                _ID_DinhMuc_Dot = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_DinhMuc_Dot).ToString());
+                _NgayThang = Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clNgayThang).ToString());
+                _Ca = gridView1.GetFocusedRowCellValue(clCa).ToString();
+                _SoHieu = gridView1.GetFocusedRowCellValue(clSoHieu).ToString();
+                _ID_VTHH = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH).ToString());
+                _LoaiGiay = gridView1.GetFocusedRowCellValue(clLoaiGiay).ToString();
+                _SoLuongKiemTra = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuongKiemTra).ToString());
+                _TrongLuongKiemTra = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clTrongLuongKiemTra).ToString());
+                _SoLuongQuyDoi = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoLuongQuyDoi).ToString());
+                _DonViQuyDoi = gridView1.GetFocusedRowCellValue(clDonViQuyDoi).ToString();
+                _QuyRaKien = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clQuyRaKien).ToString());
+                _PhePham = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clPhePham).ToString());
+                _DoCao = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clDoCao).ToString());
+                _SoKG_MotBao = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoKG_MotBao).ToString());
+                _SoKienMotBao = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(clSoKienMotBao).ToString());
+                _TonTai = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clTonTai).ToString());
+                _NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clNgungTheoDoi).ToString());
+                _GhiChu = gridView1.GetFocusedRowCellValue(clGhiChu).ToString();
+                _Khoa = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clKhoa).ToString());
+                _TenVTHH = gridView1.GetFocusedRowCellValue(clTenVT).ToString();
+                _MaVT = gridView1.GetFocusedRowCellValue(clMaVT).ToString();
+                _DonViTinh = gridView1.GetFocusedRowCellValue(clDonViTinh1).ToString();
+                frmChiTietDinhMucDot ff = new frmChiTietDinhMucDot(this);
+                ff.Show();
+                Cursor.Current = Cursors.Default;
+            }
         }
     }
 }
