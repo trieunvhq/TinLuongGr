@@ -325,22 +325,29 @@ namespace CtyTinLuong
                     _ravi["ID_SoPhieu"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_SoPhieu"].ToString());
                     clsphieu.iID_SoPhieu = Convert.ToInt16(dtxxxx.Rows[i]["ID_SoPhieu"].ToString());
                     DataTable dtphieu = clsphieu.SelectOne();
-                    _ravi["MaPhieu"] = dtphieu.Rows[0]["MaPhieu"].ToString();
+                    if (dtphieu.Rows.Count > 0)
+                        _ravi["MaPhieu"] = dtphieu.Rows[0]["MaPhieu"].ToString();
                     //_ravi["ID_VTHH_Vao"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
                     int iiDI_Vthh_vao = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
                     _ravi["ID_VTHH_Vao"] = iiDI_Vthh_vao;
                     clsVT_Vao.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHVao"].ToString());
                     DataTable dtVT_vao = clsVT_Vao.SelectOne();
-                    _ravi["MaVT_Vao"] = dtVT_vao.Rows[0]["MaVT"].ToString();
-                    _ravi["DonViTinh_Vao"] = dtVT_vao.Rows[0]["DonViTinh"].ToString();
-                    _ravi["TenVatTu_Vao"] = dtVT_vao.Rows[0]["TenVTHH"].ToString();
+                    if (dtVT_vao.Rows.Count > 0)
+                    { 
+                        _ravi["MaVT_Vao"] = dtVT_vao.Rows[0]["MaVT"].ToString();
+                        _ravi["DonViTinh_Vao"] = dtVT_vao.Rows[0]["DonViTinh"].ToString();
+                        _ravi["TenVatTu_Vao"] = dtVT_vao.Rows[0]["TenVTHH"].ToString();
+                    }
 
                     _ravi["ID_VTHH_Ra"] = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHRa"].ToString());
                     clsVT_Ra.iID_VTHH = Convert.ToInt16(dtxxxx.Rows[i]["ID_VTHHRa"].ToString());
                     DataTable dtVT_Ra = clsVT_Ra.SelectOne();
-                    _ravi["MaVT_Ra"] = dtVT_Ra.Rows[0]["MaVT"].ToString();
-                    _ravi["DonViTinh_Ra"] = dtVT_Ra.Rows[0]["DonViTinh"].ToString();
-                    _ravi["TenVatTu_Ra"] = dtVT_Ra.Rows[0]["TenVTHH"].ToString();
+                    if (dtVT_vao.Rows.Count > 0)
+                    {
+                        _ravi["MaVT_Ra"] = dtVT_Ra.Rows[0]["MaVT"].ToString();
+                        _ravi["DonViTinh_Ra"] = dtVT_Ra.Rows[0]["DonViTinh"].ToString();
+                        _ravi["TenVatTu_Ra"] = dtVT_Ra.Rows[0]["TenVTHH"].ToString();
+                    }
 
                     _ravi["SoLuongNhap_May"] = CheckString.ConvertToDouble_My(dtxxxx.Rows[i]["SoLuongVao"].ToString());
 
