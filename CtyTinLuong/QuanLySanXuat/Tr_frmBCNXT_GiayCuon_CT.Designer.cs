@@ -245,6 +245,7 @@
             this.gridView3.OptionsView.RowAutoHeight = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView3_RowCellStyle);
+            this.gridView3.DoubleClick += new System.EventHandler(this.gridView3_DoubleClick);
             // 
             // STT
             // 
@@ -267,7 +268,11 @@
             this.NgaySanXuat.AppearanceCell.Options.UseTextOptions = true;
             this.NgaySanXuat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NgaySanXuat.Caption = "Ngày";
+            this.NgaySanXuat.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.NgaySanXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.NgaySanXuat.FieldName = "NgaySanXuat";
+            this.NgaySanXuat.GroupFormat.FormatString = "dd/MM/yyyy";
+            this.NgaySanXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.NgaySanXuat.Name = "NgaySanXuat";
             this.NgaySanXuat.OptionsColumn.AllowEdit = false;
             this.NgaySanXuat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;

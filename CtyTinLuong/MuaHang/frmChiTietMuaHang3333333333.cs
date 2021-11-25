@@ -788,7 +788,8 @@ namespace CtyTinLuong
                     //  Luu_TbThuChi(iiiID_MuaHang);         
 
                     this.Close();
-                    _ucMH.btRefresh_Click(null, null);
+                    if (_ucMH != null)
+                        _ucMH.btRefresh_Click(null, null);
                     MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -847,7 +848,8 @@ namespace CtyTinLuong
                     //  Luu_TbThuChi(iiiID_MuaHang);         
 
                     this.Close();
-                    _ucMH.btRefresh_Click(null, null);
+                    if (_ucMH != null)
+                        _ucMH.btRefresh_Click(null, null);
                     MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -1050,7 +1052,7 @@ namespace CtyTinLuong
         }
 
         UCMuaHang _ucMH;
-        public frmChiTietMuaHang3333333333(UCMuaHang ucMH)
+        public frmChiTietMuaHang3333333333(UCMuaHang ucMH = null)
         {
             _ucMH = ucMH;
             InitializeComponent();

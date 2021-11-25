@@ -114,6 +114,10 @@ namespace CtyTinLuong
                 int SttCa1 = 0;
                 int ID_congNhanRoot = -1;
                 int ID_VthhRoot = -1;
+                List<int> DsID_Vthh_Ca1 = new List<int>();
+                List<int> DsID_Vthh_Ca2 = new List<int>();
+                List<int> DsID_CN_Ca1_ = new List<int>();
+                List<int> DsID_CN_Ca2_ = new List<int>();
 
                 for (int i = 0; i < _dtSL_Ca1.Rows.Count; ++i)
                 {
@@ -125,14 +129,13 @@ namespace CtyTinLuong
                     tinhTongCN t = tongTien(ID_congNhan, _dtSL_Ca1);
 
                     //
-                    if (ID_congNhanRoot != ID_congNhan)
+                    if (!DsID_CN_Ca1_.Contains(ID_congNhan))
                     {
-                        ID_congNhanRoot = ID_congNhan;
-                        ID_VthhRoot = -1;
-                        if (ID_VthhRoot != ID_Vthh)
+                        DsID_CN_Ca1_.Add(ID_congNhan);
+                        if (!DsID_Vthh_Ca1.Contains(ID_Vthh))
                         {
                             DataRow ravi_ = _data.NewRow();
-                            ID_VthhRoot = ID_Vthh;
+                            DsID_Vthh_Ca1.Add(ID_Vthh);
 
                             //STT
                             SttCa1++;
@@ -281,14 +284,13 @@ namespace CtyTinLuong
                     tinhTongCN t = tongTien(ID_congNhan, _dtSL_Ca2);
 
                     //
-                    if (ID_congNhanRoot != ID_congNhan)
+                    if (!DsID_CN_Ca2_.Contains(ID_congNhan))
                     {
-                        ID_congNhanRoot = ID_congNhan;
-                        ID_VthhRoot = -1;
-                        if (ID_VthhRoot != ID_Vthh)
+                        DsID_CN_Ca2_.Add(ID_congNhan);
+                        if (!DsID_Vthh_Ca2.Contains(ID_Vthh))
                         {
                             DataRow ravi_ = _data.NewRow();
-                            ID_VthhRoot = ID_Vthh;
+                            DsID_Vthh_Ca2.Add(ID_Vthh);
 
                             //STT
                             SttCa2++;
@@ -540,8 +542,8 @@ namespace CtyTinLuong
                     && idvthh == Convert.ToInt32(item["ID_VTHH_Vao"].ToString()))
                 {
                     double SL_Tog_ = 0;
-                    double SL_Thg_ = 0;
-                    double SL_Tang_ = 0;
+                    //double SL_Thg_ = 0;
+                    //double SL_Tang_ = 0;
                     double Cong_ = 0;
                     string HocViec = (CheckString.ChuanHoaHoTen(item["HV_DienGiai"].ToString())).ToLower();
 
@@ -563,7 +565,7 @@ namespace CtyTinLuong
                     {
                         SL_Tog_ = CheckString.ConvertToDouble_My(item["SoLuong_Vao"].ToString()) / 5;
                         slTong += SL_Tog_;
-                        SL_Thg_ = SL_Tog_;
+                        //SL_Thg_ = SL_Tog_;
                         nv.DsSLNgay_Tong[NgaySX - 1] += SL_Tog_;
                     }
                     else
@@ -693,6 +695,13 @@ namespace CtyTinLuong
                 }
             }
 
+
+            //Điều kiện tính sản lượng đột tăng:
+            //Trong ngày có phát sinh công => Chấm công trong bảng chấm công tổ máy cắt
+            // Sản lượng phải > 10; vượt 10 sẽ được ăn theo đơn giá cắt đột tăng
+            // Định mức phần diễn giải ghi rõ "cắt đột tăng", nếu không sẽ tính theo sản lượng và đơn giá thường
+
+
             for (int i = 0; i < 31; i++)
             {
                 if (nv.DsCong[i] > 0 && nv.DsSLNgay_Tong[i] > 10)
@@ -821,6 +830,7 @@ namespace CtyTinLuong
             double PhuCapBH = 0;
             double TongSL_All_ = 0;
             int ID_VthhRoot = -1;
+            List<int> DsID_Vthh_ = new List<int>();
 
             ModelShowSanLuongToIn dotTang = getNV_SanLuong_DotTang(idcn, dt);
             ModelShowSanLuongToIn hocViec = getNV_HocViec(idcn, dt);
@@ -847,8 +857,9 @@ namespace CtyTinLuong
                 //
                 if (idcn == ID_congNhan_)
                 {
-                    if (ID_VthhRoot != ID_Vthh_ && !dotTang.DsIdVthh_DotTang.Contains(ID_Vthh_))
+                    if (ID_VthhRoot != ID_Vthh_ && !DsID_Vthh_.Contains(ID_Vthh_) && !dotTang.DsIdVthh_DotTang.Contains(ID_Vthh_))
                     {
+                        DsID_Vthh_.Add(ID_Vthh_);
                         ID_VthhRoot = ID_Vthh_;
                         ModelShowSanLuongToIn nvSL = getNV_SanLuong(ID_congNhan_, ID_Vthh_, dt);
                         result += (nvSL.ThanhTienThuong + nvSL.ThanhTienTang);

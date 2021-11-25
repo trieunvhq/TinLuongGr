@@ -11,6 +11,39 @@ namespace CtyTinLuong
     /// </summary>
     public partial class clsThin : clsDBInteractionBase
     {
+        public DataTable Tr_Select_IDMuaHang_from_IDVTHH_Date(int idvthh, DateTime NgayThang)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_Select_IDMuaHang_from_IDVTHH_Date]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("cpn_bp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@iID_Vthh", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, idvthh));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@NgayThang", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, NgayThang));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Tr_Select_IDMuaHang_from_IDVTHH_Date", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
 
         public bool Tr_NganHang_TaiKhoanKeToanCon_Update_Khoa(int id, bool DaSuDung)
         {

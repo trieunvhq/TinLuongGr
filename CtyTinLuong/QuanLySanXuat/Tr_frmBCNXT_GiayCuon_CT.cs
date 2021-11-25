@@ -191,11 +191,15 @@ namespace CtyTinLuong
             {
                 if (NgaySX == Convert.ToDateTime(item["NgayThang"].ToString()))
                 {
+                    bool isTraHangNCC = Convert.ToBoolean(item["CheckTraLaiNhaCungCap"].ToString());
                     DonViTinh = item["DonViTinh"].ToString();
                     MaHang = item["MaVT"].ToString();
                     TenHang = item["TenVTHH"].ToString();
                     dienGiai = item["DienGiai"].ToString();
-                    Nhap += CheckString.ConvertToDouble_My(item["SoLuong"].ToString());
+                    if (isTraHangNCC)
+                        Nhap -= CheckString.ConvertToDouble_My(item["SoLuong"].ToString());
+                    else
+                        Nhap += CheckString.ConvertToDouble_My(item["SoLuong"].ToString());
 
                     TonDau = CheckString.ConvertToDouble_My(item["TonDauKy"].ToString());
                 }
@@ -301,6 +305,41 @@ namespace CtyTinLuong
         {
             Tr_frmQuanLyDML_CongNhat ff = new Tr_frmQuanLyDML_CongNhat(0, "Tr_frmBCNXT_GiayCuon_CT", this);
             ff.Show();
+        }
+
+        private void gridView3_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(gridView3.GetFocusedRowCellValue(NgaySanXuat).ToString()))
+                {
+                    using (clsThin cls = new clsThin())
+                    {
+                        string nt = gridView3.GetFocusedRowCellValue(NgaySanXuat).ToString();
+                        DateTime NgayThang = new DateTime(Convert.ToInt16(nt.Split('/')[2]), Convert.ToInt16(nt.Split('/')[1]), Convert.ToInt16(nt.Split('/')[0]));
+                        DataTable dt = cls.Tr_Select_IDMuaHang_from_IDVTHH_Date(_idvthh, NgayThang);
+                        int idMuaHang = 0;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            idMuaHang = Convert.ToInt32(dt.Rows[i]["ID_MuaHang"].ToString());
+                            if (idMuaHang != 0)
+                            {
+                                UCMuaHang.mbCopY = false;
+                                UCMuaHang.mbThemMoi = false;
+                                UCMuaHang.mbSua = true;
+                                UCMuaHang.miiiID_Sua_DonHang = idMuaHang;
+                                frmChiTietMuaHang3333333333 ff = new frmChiTietMuaHang3333333333();
+                                ff.Show();
+                            }
+                        }
+                            
+                    }
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridControl2_DoubleClick(object sender, EventArgs e)
