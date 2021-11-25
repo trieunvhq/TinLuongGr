@@ -101,9 +101,9 @@ namespace CtyTinLuong
                         cls.iID_SoPhieu = ID_SoPhieu;
 
 
-                        DataTable dtmaycat = cls.SelectAll_W_iID_SoPhieu_May_CAT();
-                        DataTable dtmaydot = cls.SelectAll_W_iID_SoPhieu_May_DOT();
-                        DataTable dtmayin = cls.SelectAll_W_iID_SoPhieu_May_IN();
+                        DataTable dtmaycat = cls.SelectAll_W_iID_SoPhieu_May_CAT(xxtungay, xxdenngay);
+                        DataTable dtmaydot = cls.SelectAll_W_iID_SoPhieu_May_DOT(xxtungay, xxdenngay);
+                        DataTable dtmayin = cls.SelectAll_W_iID_SoPhieu_May_IN(xxtungay, xxdenngay);
 
                         int SoPhieuMax = (new List<int> { dtmayin.Rows.Count, dtmaycat.Rows.Count, dtmaydot.Rows.Count }).Max();
 

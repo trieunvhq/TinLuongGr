@@ -101,6 +101,9 @@
             this.CLID_VTHH_Vao_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CLID_VTHH_Ra_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CLID_SoPhieu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.MaCongNhan_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.MaCongNhan_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.MaCongNhan_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.btXoa2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemLookUpEdit_maPhieu = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -128,9 +131,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaCongNhan_DOT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.MaCongNhan_CAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.MaCongNhan_IN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -161,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -1089,6 +1091,24 @@
             this.CLID_SoPhieu.OptionsColumn.FixedWidth = true;
             this.CLID_SoPhieu.Width = 60;
             // 
+            // MaCongNhan_DOT
+            // 
+            this.MaCongNhan_DOT.Caption = "MaCongNhan_DOT";
+            this.MaCongNhan_DOT.FieldName = "MaCongNhan_DOT";
+            this.MaCongNhan_DOT.Name = "MaCongNhan_DOT";
+            // 
+            // MaCongNhan_CAT
+            // 
+            this.MaCongNhan_CAT.Caption = "MaCongNhan_CAT";
+            this.MaCongNhan_CAT.FieldName = "MaCongNhan_CAT";
+            this.MaCongNhan_CAT.Name = "MaCongNhan_CAT";
+            // 
+            // MaCongNhan_IN
+            // 
+            this.MaCongNhan_IN.Caption = "MaCongNhan_IN";
+            this.MaCongNhan_IN.FieldName = "MaCongNhan_IN";
+            this.MaCongNhan_IN.Name = "MaCongNhan_IN";
+            // 
             // btXoa2
             // 
             this.btXoa2.AutoHeight = false;
@@ -1131,6 +1151,11 @@
             this.dataLayoutControl1.Controls.Add(this.gridControl1);
             this.dataLayoutControl1.Controls.Add(this.dteTuNgay);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem11,
+            this.layoutControlItem10,
+            this.layoutControlItem9,
+            this.layoutControlItem8});
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 13);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
@@ -1197,9 +1222,9 @@
             this.btPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint.Appearance.Options.UseFont = true;
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(1012, 485);
+            this.btPrint.Location = new System.Drawing.Point(1014, 485);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(74, 22);
+            this.btPrint.Size = new System.Drawing.Size(72, 22);
             this.btPrint.StyleController = this.dataLayoutControl1;
             this.btPrint.TabIndex = 108;
             this.btPrint.Text = "Print";
@@ -1281,16 +1306,13 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
             this.layoutControlItem1,
             this.layoutControlItem5,
             this.layoutControlItem4,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1156, 512);
@@ -1356,9 +1378,9 @@
             // 
             this.layoutControlItem5.Control = this.btPrint;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(1007, 480);
+            this.layoutControlItem5.Location = new System.Drawing.Point(1009, 480);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(78, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(76, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -1418,23 +1440,13 @@
             this.groupBox1.TabIndex = 107;
             this.groupBox1.TabStop = false;
             // 
-            // MaCongNhan_DOT
+            // emptySpaceItem1
             // 
-            this.MaCongNhan_DOT.Caption = "MaCongNhan_DOT";
-            this.MaCongNhan_DOT.FieldName = "MaCongNhan_DOT";
-            this.MaCongNhan_DOT.Name = "MaCongNhan_DOT";
-            // 
-            // MaCongNhan_CAT
-            // 
-            this.MaCongNhan_CAT.Caption = "MaCongNhan_CAT";
-            this.MaCongNhan_CAT.FieldName = "MaCongNhan_CAT";
-            this.MaCongNhan_CAT.Name = "MaCongNhan_CAT";
-            // 
-            // MaCongNhan_IN
-            // 
-            this.MaCongNhan_IN.Caption = "MaCongNhan_IN";
-            this.MaCongNhan_IN.FieldName = "MaCongNhan_IN";
-            this.MaCongNhan_IN.Name = "MaCongNhan_IN";
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 480);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // SanXuat_frmChiTietSoPhieu_RutGon
             // 
@@ -1477,6 +1489,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1579,5 +1592,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn MaCongNhan_DOT;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn MaCongNhan_CAT;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn MaCongNhan_IN;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }
