@@ -165,5 +165,10 @@ namespace CtyTinLuong
                 MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ButtonCopy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

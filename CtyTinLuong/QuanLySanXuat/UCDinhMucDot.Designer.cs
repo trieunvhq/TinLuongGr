@@ -33,6 +33,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,6 +65,8 @@
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_VTHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btCopy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ButtonCopy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btThemMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonCopy)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +86,8 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btXoa,
-            this.repositoryItemMemoEdit1});
+            this.repositoryItemMemoEdit1,
+            this.ButtonCopy});
             this.gridControl1.Size = new System.Drawing.Size(900, 571);
             this.gridControl1.TabIndex = 66;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -122,7 +131,8 @@
             this.clXoa,
             this.clGhiChu,
             this.clID_VTHH,
-            this.clKhoa});
+            this.clKhoa,
+            this.btCopy});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm mới tại đây";
@@ -170,7 +180,7 @@
             this.clNgayThang.OptionsColumn.AllowEdit = false;
             this.clNgayThang.Visible = true;
             this.clNgayThang.VisibleIndex = 2;
-            this.clNgayThang.Width = 102;
+            this.clNgayThang.Width = 123;
             // 
             // clCa
             // 
@@ -188,7 +198,7 @@
             this.clSoHieu.OptionsColumn.AllowEdit = false;
             this.clSoHieu.Visible = true;
             this.clSoHieu.VisibleIndex = 1;
-            this.clSoHieu.Width = 68;
+            this.clSoHieu.Width = 82;
             // 
             // clMaVT
             // 
@@ -198,7 +208,7 @@
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.Visible = true;
             this.clMaVT.VisibleIndex = 3;
-            this.clMaVT.Width = 79;
+            this.clMaVT.Width = 95;
             // 
             // clTenVT
             // 
@@ -211,7 +221,7 @@
             this.clTenVT.OptionsColumn.AllowEdit = false;
             this.clTenVT.Visible = true;
             this.clTenVT.VisibleIndex = 4;
-            this.clTenVT.Width = 155;
+            this.clTenVT.Width = 189;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -287,7 +297,7 @@
             this.clSoKG_MotBao.OptionsColumn.AllowEdit = false;
             this.clSoKG_MotBao.Visible = true;
             this.clSoKG_MotBao.VisibleIndex = 6;
-            this.clSoKG_MotBao.Width = 82;
+            this.clSoKG_MotBao.Width = 99;
             // 
             // clSoKienMotBao
             // 
@@ -299,7 +309,7 @@
             this.clSoKienMotBao.OptionsColumn.AllowEdit = false;
             this.clSoKienMotBao.Visible = true;
             this.clSoKienMotBao.VisibleIndex = 5;
-            this.clSoKienMotBao.Width = 104;
+            this.clSoKienMotBao.Width = 125;
             // 
             // clNgungTheoDoi
             // 
@@ -336,7 +346,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 8;
+            this.clXoa.VisibleIndex = 9;
             this.clXoa.Width = 35;
             // 
             // btXoa
@@ -367,6 +377,26 @@
             this.clKhoa.Caption = "Khoá";
             this.clKhoa.FieldName = "Khoa";
             this.clKhoa.Name = "clKhoa";
+            // 
+            // btCopy
+            // 
+            this.btCopy.Caption = "Copy";
+            this.btCopy.ColumnEdit = this.ButtonCopy;
+            this.btCopy.FieldName = "btCopy";
+            this.btCopy.Name = "btCopy";
+            this.btCopy.Visible = true;
+            this.btCopy.VisibleIndex = 8;
+            this.btCopy.Width = 35;
+            // 
+            // ButtonCopy
+            // 
+            this.ButtonCopy.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Copy;
+            this.ButtonCopy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.ButtonCopy.Name = "ButtonCopy";
+            this.ButtonCopy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.ButtonCopy.Click += new System.EventHandler(this.ButtonCopy_Click);
             // 
             // btThemMoi
             // 
@@ -413,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonCopy)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -450,5 +481,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn clKhoa;
         private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraGrid.Columns.GridColumn btCopy;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonCopy;
     }
 }
