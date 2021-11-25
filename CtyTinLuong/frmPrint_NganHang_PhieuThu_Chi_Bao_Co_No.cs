@@ -82,6 +82,8 @@ namespace CtyTinLuong
                 Print_NganHang_PhieuThu_Chi_Bao_Co_No(Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww.mdtCHiTietTaKhoan_print);            
             if (QuyNganHang_Frm_DoiTienUSD.mbPrint == true)
                 Print_QuyNganHang_Frm_DoiTienUSD(QuyNganHang_Frm_DoiTienUSD.mdtPrint);
+            if (QuyNganHang_Frm_PhieuKeToan.mbPrint)
+                Print_NganHang_PhieuThu_Chi_Bao_Co_No(QuyNganHang_Frm_PhieuKeToan.mdtPrint);
         }
 
         private void frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No_FormClosed(object sender, FormClosedEventArgs e)
