@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHang_DoiChieu_CongNo_new));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -37,6 +37,7 @@
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clSoChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clNgayChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clDoiTuong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,7 +70,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.clSoChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -147,9 +147,9 @@
             // 
             // gridControl2
             // 
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(3, 53);
             this.gridControl2.MainView = this.gridView1;
             this.gridControl2.Name = "gridControl2";
@@ -196,6 +196,17 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            // 
+            // clSoChungTu
+            // 
+            this.clSoChungTu.Caption = "Số CT";
+            this.clSoChungTu.FieldName = "SoChungTu";
+            this.clSoChungTu.Name = "clSoChungTu";
+            this.clSoChungTu.OptionsColumn.AllowEdit = false;
+            this.clSoChungTu.OptionsColumn.FixedWidth = true;
+            this.clSoChungTu.Visible = true;
+            this.clSoChungTu.VisibleIndex = 2;
+            this.clSoChungTu.Width = 70;
             // 
             // clSTT
             // 
@@ -413,6 +424,7 @@
             this.dteDenNgay.Size = new System.Drawing.Size(497, 20);
             this.dteDenNgay.StyleController = this.layoutControl1;
             this.dteDenNgay.TabIndex = 106;
+            this.dteDenNgay.Leave += new System.EventHandler(this.dteDenNgay_Leave);
             // 
             // dteTuNgay
             // 
@@ -432,6 +444,7 @@
             this.dteTuNgay.Size = new System.Drawing.Size(269, 20);
             this.dteTuNgay.StyleController = this.layoutControl1;
             this.dteTuNgay.TabIndex = 107;
+            this.dteTuNgay.Leave += new System.EventHandler(this.dteTuNgay_Leave);
             // 
             // btPrint
             // 
@@ -569,17 +582,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(343, 24);
             this.layoutControlItem11.Text = "Mã đối tượng";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(67, 13);
-            // 
-            // clSoChungTu
-            // 
-            this.clSoChungTu.Caption = "Số CT";
-            this.clSoChungTu.FieldName = "SoChungTu";
-            this.clSoChungTu.Name = "clSoChungTu";
-            this.clSoChungTu.OptionsColumn.AllowEdit = false;
-            this.clSoChungTu.OptionsColumn.FixedWidth = true;
-            this.clSoChungTu.Visible = true;
-            this.clSoChungTu.VisibleIndex = 2;
-            this.clSoChungTu.Width = 70;
             // 
             // BanHang_DoiChieu_CongNo_new
             // 

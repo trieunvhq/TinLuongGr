@@ -36,8 +36,9 @@ namespace CtyTinLuong
         private void UCQuy_NganHang_BaoCo_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
             dteDenNgay.EditValue = DateTime.Today;
+            clsNgayThang cls = new clsNgayThang();
+            dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
             Cursor.Current = Cursors.Default;
         }
@@ -202,6 +203,16 @@ namespace CtyTinLuong
             {
                 btLayDuLieu.Focus();
             }
+        }
+
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

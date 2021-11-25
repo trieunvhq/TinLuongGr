@@ -270,6 +270,24 @@ namespace CtyTinLuong
             }
         }
 
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null & gridNhomDoiTuong.EditValue != null)
+            {
+                int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            if (dteDenNgay.EditValue != null & dteTuNgay.EditValue != null & gridNhomDoiTuong.EditValue != null)
+            {
+                int xxid = Convert.ToInt32(gridNhomDoiTuong.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
         private void txtTenTKMe_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)

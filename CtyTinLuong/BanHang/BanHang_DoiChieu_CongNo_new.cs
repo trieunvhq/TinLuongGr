@@ -224,8 +224,9 @@ namespace CtyTinLuong
             {
                 Cursor.Current = Cursors.WaitCursor;
                 Load_lockUp();
-                dteTuNgay.EditValue = DateTime.Today.AddDays(-30);
                 dteDenNgay.EditValue = DateTime.Today;
+                clsNgayThang cls = new clsNgayThang();
+                dteTuNgay.EditValue = cls.GetFistDayInMonth(DateTime.Today.Year, DateTime.Today.Month);
                 dteTuNgay.Focus();
                 Cursor.Current = Cursors.Default;
             }
@@ -302,6 +303,24 @@ namespace CtyTinLuong
             catch (Exception ea)
             {
                 MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dteTuNgay_Leave(object sender, EventArgs e)
+        {
+            if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
+            {
+                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
+            }
+        }
+
+        private void dteDenNgay_Leave(object sender, EventArgs e)
+        {
+            if (dteTuNgay.DateTime != null & dteDenNgay.DateTime != null & GridSoTaiKhoan.EditValue != null)
+            {
+                int xxid = Convert.ToInt32(GridSoTaiKhoan.EditValue.ToString());
+                LoadData(xxid, dteTuNgay.DateTime, dteDenNgay.DateTime);
             }
         }
 
