@@ -23,6 +23,7 @@ namespace CtyTinLuong
         public static DateTime mdaNgayThang;
         public static string msDiaChi, msLoaiChungTu, msSoChungTu, msNguoiNopTen, msTaiKhoan_No, ms_TaiKhoanCo, msDienGiai;
         public static double mdbSoTien_Co_USD, mdbSoTien_No_VND, mdbTiGia;
+        private int _ID_ThuChixxx = 0;
 
         private void Luu_BienDongTaiKhoanKeToan(int xxxID_ThuChi)
         {
@@ -196,7 +197,6 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                int ID_ThuChixxx;
                 clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
                 cls1.daNgayChungTu = dteNgayChungTu.DateTime;
                 cls1.sSoChungTu = txtSoChungTu.Text.ToString();
@@ -217,17 +217,17 @@ namespace CtyTinLuong
                 if (UCQuy_NganHang_BaoCo.mbSua == false)
                 {
                     cls1.Insert();
-                    ID_ThuChixxx = cls1.iID_ThuChi.Value;
+                    _ID_ThuChixxx = cls1.iID_ThuChi.Value;
 
                 }
                 else
                 {
-                    ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
-                    cls1.iID_ThuChi = ID_ThuChixxx;
+                    _ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+                    cls1.iID_ThuChi = _ID_ThuChixxx;
                     cls1.Update();
                 }
-                Luu_ChiTiet_ThuChi(ID_ThuChixxx);
-                Luu_BienDongTaiKhoanKeToan(ID_ThuChixxx);
+                Luu_ChiTiet_ThuChi(_ID_ThuChixxx);
+                Luu_BienDongTaiKhoanKeToan(_ID_ThuChixxx);
 
                 MessageBox.Show("Đã lưu");
             }
@@ -402,59 +402,74 @@ namespace CtyTinLuong
         {
             try
             {
-                mbPrint = true;
-                DataTable DatatableABC = (DataTable)gridControl1.DataSource;
-                CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
-                string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
-                DataView dv1212 = new DataView(DatatableABC);
-                dv1212.RowFilter = filterString;
-                DataTable dttttt2 = dv1212.ToTable();
-                string shienthi = "1";
-                dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
-                DataView dv = dttttt2.DefaultView;
-                mdtPrint = dv.ToTable();
-
-                //mbTienUSD = checkUSD.Checked;
-                mdaNgayThang = dteNgayChungTu.DateTime;
-                msNguoiNopTen = txtDoiTuong.Text.ToString();
-                msDiaChi = txtDoiTuong.Text.ToString();
-                msDienGiai = txtDienGiai.Text.ToString();
-                msSoChungTu = txtSoChungTu.Text.ToString();
-                string Str1 = msSoChungTu.Substring(0, 2);//Cắt chuỗi từ vị trí đầu tiên(vị trí 0) đến vị trí số 2
-                if (Str1 == "BC")
-                    msLoaiChungTu = "BÁO CÓ";
-                if (Str1 == "BN")
-                    msLoaiChungTu = "BÁO NỢ";
-                if (Str1 == "PT")
-                    msLoaiChungTu = "PHIẾU THU";
-                if (Str1 == "PC")
-                    msLoaiChungTu = "PHIẾU CHI";
-                if (Str1 == "DT")
-                    msLoaiChungTu = "BÁO CÓ";
-                if (Str1 == "PKT")
-                    msLoaiChungTu = "PHIẾU KẾ TOÁN";
-                mdbSoTien_Co_USD = CheckString.ConvertToDouble_My(txtSoTien.Text.ToString());
-                //mdbSoTien_No_VND = CheckString.ConvertToDouble_My(txtTienVND.Text.ToString());
-                mdbTiGia = CheckString.ConvertToDouble_My(txtTiGia.Text.ToString());
-                for (int i = 0; i < mdtPrint.Rows.Count; i++)
+                if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.isPrintPhieuKeToan)
                 {
-                    clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                    if (CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["No"].ToString()) == 0 & CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["Co"].ToString()) > 0)
+                    if (_ID_ThuChixxx == 0)
                     {
-                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
-                        DataTable dtcon = clscon.SelectOne();
-                        ms_TaiKhoanCo = clscon.sSoTaiKhoanCon.Value;
+                        MessageBox.Show("Không có dữ liệu để in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    if (CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["No"].ToString()) > 0 & CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["Co"].ToString()) == 0)
+                    else
                     {
-                        clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
-                        DataTable dtcon = clscon.SelectOne();
-                        msTaiKhoan_No = clscon.sSoTaiKhoanCon.Value;
+                        Tr_frmPrintPhieuKeToanVAT ff = new Tr_frmPrintPhieuKeToanVAT(_ID_ThuChixxx);
+                        ff.Show();
                     }
                 }
+                else
+                {
+                    mbPrint = true;
+                    DataTable DatatableABC = (DataTable)gridControl1.DataSource;
+                    CriteriaOperator op = gridView4.ActiveFilterCriteria; // filterControl1.FilterCriteria
+                    string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op);
+                    DataView dv1212 = new DataView(DatatableABC);
+                    dv1212.RowFilter = filterString;
+                    DataTable dttttt2 = dv1212.ToTable();
+                    string shienthi = "1";
+                    dttttt2.DefaultView.RowFilter = "HienThi=" + shienthi + "";
+                    DataView dv = dttttt2.DefaultView;
+                    mdtPrint = dv.ToTable();
 
-                frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No ff = new frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No();
-                ff.Show();
+                    //mbTienUSD = checkUSD.Checked;
+                    mdaNgayThang = dteNgayChungTu.DateTime;
+                    msNguoiNopTen = txtDoiTuong.Text.ToString();
+                    msDiaChi = txtDoiTuong.Text.ToString();
+                    msDienGiai = txtDienGiai.Text.ToString();
+                    msSoChungTu = txtSoChungTu.Text.ToString();
+                    string Str1 = msSoChungTu.Substring(0, 2);//Cắt chuỗi từ vị trí đầu tiên(vị trí 0) đến vị trí số 2
+                    if (Str1 == "BC")
+                        msLoaiChungTu = "BÁO CÓ";
+                    if (Str1 == "BN")
+                        msLoaiChungTu = "BÁO NỢ";
+                    if (Str1 == "PT")
+                        msLoaiChungTu = "PHIẾU THU";
+                    if (Str1 == "PC")
+                        msLoaiChungTu = "PHIẾU CHI";
+                    if (Str1 == "DT")
+                        msLoaiChungTu = "BÁO CÓ";
+                    if (Str1 == "PKT")
+                        msLoaiChungTu = "PHIẾU KẾ TOÁN";
+                    mdbSoTien_Co_USD = CheckString.ConvertToDouble_My(txtSoTien.Text.ToString());
+                    //mdbSoTien_No_VND = CheckString.ConvertToDouble_My(txtTienVND.Text.ToString());
+                    mdbTiGia = CheckString.ConvertToDouble_My(txtTiGia.Text.ToString());
+                    for (int i = 0; i < mdtPrint.Rows.Count; i++)
+                    {
+                        clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
+                        if (CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["No"].ToString()) == 0 & CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["Co"].ToString()) > 0)
+                        {
+                            clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
+                            DataTable dtcon = clscon.SelectOne();
+                            ms_TaiKhoanCo = clscon.sSoTaiKhoanCon.Value;
+                        }
+                        if (CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["No"].ToString()) > 0 & CheckString.ConvertToDouble_My(mdtPrint.Rows[i]["Co"].ToString()) == 0)
+                        {
+                            clscon.iID_TaiKhoanKeToanCon = Convert.ToInt32(mdtPrint.Rows[i]["SoTaiKhoanCon"].ToString());
+                            DataTable dtcon = clscon.SelectOne();
+                            msTaiKhoan_No = clscon.sSoTaiKhoanCon.Value;
+                        }
+                    }
+
+                    frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No ff = new frmPrint_NganHang_PhieuThu_Chi_Bao_Co_No();
+                    ff.Show();
+                }
             }
             catch { }
         }
@@ -685,9 +700,9 @@ namespace CtyTinLuong
         }
         private void HienThi_Sua()
         {
-
+            _ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
-            cls1.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls1.iID_ThuChi = _ID_ThuChixxx;
             DataTable dt = cls1.SelectOne();
             txtSoChungTu.Text = cls1.sSoChungTu.Value;
             dteNgayChungTu.EditValue = cls1.daNgayChungTu.Value;
@@ -703,7 +718,7 @@ namespace CtyTinLuong
                 gridDoiTuong.EditValue = cls1.iID_DoiTuong.Value;
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
-            cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls2.iID_ThuChi = _ID_ThuChixxx;
             DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
             DataTable dt2 = new DataTable();
 
@@ -749,9 +764,9 @@ namespace CtyTinLuong
 
         private void HienThi_CoPy(int bientrangthia)
         {
-
+            _ID_ThuChixxx = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
             clsNganHang_tbThuChi cls1 = new clsNganHang_tbThuChi();
-            cls1.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls1.iID_ThuChi = _ID_ThuChixxx;
             DataTable dt = cls1.SelectOne();
 
 
@@ -770,7 +785,7 @@ namespace CtyTinLuong
 
 
             clsNganHang_tbThuChi_ChiTietThuChi cls2 = new clsNganHang_tbThuChi_ChiTietThuChi();
-            cls2.iID_ThuChi = UCQuy_NganHang_BaoCo.miID_ThuChi_Sua;
+            cls2.iID_ThuChi = _ID_ThuChixxx;
             DataTable dt3 = cls2.SelectAll_W_ID_ThuChi();
             DataTable dt2 = new DataTable();
 

@@ -582,6 +582,18 @@
     <Compile Include="MuaHang\frmChiTietMuaHang3333333333Copy.Designer.cs">
       <DependentUpon>frmChiTietMuaHang3333333333Copy.cs</DependentUpon>
     </Compile>
+    <Compile Include="NganHang_Quy\Tr_frmPrintPhieuKeToanVAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\Tr_frmPrintPhieuKeToanVAT.Designer.cs">
+      <DependentUpon>Tr_frmPrintPhieuKeToanVAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NganHang_Quy\Tr_PrintPhieuKeToanVAT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NganHang_Quy\Tr_PrintPhieuKeToanVAT.Designer.cs">
+      <DependentUpon>Tr_PrintPhieuKeToanVAT.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanXuat\Class\clsHUU_CaiMacDinh_DinhMuc_SanXuat - Copy.cs" />
     <Compile Include="QuanLySanXuat\Class\clsPhieu_ChiTietPhieu_New - Copy %282%29.cs" />
     <Compile Include="QuanLySanXuat\Class\clsTr_NXT_GiayInCat.cs" />
@@ -2919,6 +2931,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuaHang\frmChiTietMuaHang3333333333Copy.resx">
       <DependentUpon>frmChiTietMuaHang3333333333Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\Tr_frmPrintPhieuKeToanVAT.resx">
+      <DependentUpon>Tr_frmPrintPhieuKeToanVAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NganHang_Quy\Tr_PrintPhieuKeToanVAT.resx">
+      <DependentUpon>Tr_PrintPhieuKeToanVAT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLySanXuat\Tr_frmBCNXT_GiayCuon.resx">

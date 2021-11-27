@@ -69,6 +69,7 @@ namespace CtyTinLuong
 
         private void navBaoCo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            isPrintPhieuKeToan = false;
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 1;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
@@ -85,6 +86,7 @@ namespace CtyTinLuong
 
         private void navBaoNo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            isPrintPhieuKeToan = false;
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 2;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
@@ -96,6 +98,7 @@ namespace CtyTinLuong
 
         private void navPhieuThu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            isPrintPhieuKeToan = false;
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 4;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
@@ -107,6 +110,7 @@ namespace CtyTinLuong
 
         private void navPhieuChi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            isPrintPhieuKeToan = false;
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 3;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
@@ -159,6 +163,7 @@ namespace CtyTinLuong
 
         private void navBarItem2_LinkClicked_1(object sender, NavBarLinkEventArgs e)
         {
+            isPrintPhieuKeToan = false;
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 5;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;
@@ -168,8 +173,10 @@ namespace CtyTinLuong
             doiMauTitle(sender, e);
         }
 
+        public static bool isPrintPhieuKeToan = false;
         private void navBarItem8_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+            isPrintPhieuKeToan = true;
             miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 = 6;
             UCQuy_NganHang_BaoCo ucc = new UCQuy_NganHang_BaoCo(this);
             ucc.Dock = DockStyle.Fill;

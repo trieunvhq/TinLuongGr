@@ -83,6 +83,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit5)).BeginInit();
@@ -112,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // clSoTien
@@ -210,7 +213,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1000, 587);
@@ -370,7 +374,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 6;
+            this.clXoa.VisibleIndex = 7;
             this.clXoa.Width = 40;
             // 
             // btXoa
@@ -391,7 +395,7 @@
             this.clCopy.OptionsColumn.FixedWidth = true;
             this.clCopy.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clCopy.Visible = true;
-            this.clCopy.VisibleIndex = 7;
+            this.clCopy.VisibleIndex = 6;
             this.clCopy.Width = 50;
             // 
             // btCopY
@@ -443,9 +447,9 @@
             // 
             this.layoutControlItem1.Control = this.btThemMoi;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(970, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(962, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(30, 26);
+            this.layoutControlItem1.Size = new System.Drawing.Size(38, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -453,9 +457,9 @@
             // 
             this.btThemMoi.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Add;
             this.btThemMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btThemMoi.Location = new System.Drawing.Point(972, 2);
+            this.btThemMoi.Location = new System.Drawing.Point(964, 2);
             this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(26, 22);
+            this.btThemMoi.Size = new System.Drawing.Size(34, 22);
             this.btThemMoi.StyleController = this.dataLayoutControl1;
             this.btThemMoi.TabIndex = 107;
             this.btThemMoi.ToolTip = "Refesh";
@@ -463,6 +467,7 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.btnPrint);
             this.dataLayoutControl1.Controls.Add(this.btLayDuLieu);
             this.dataLayoutControl1.Controls.Add(this.dteDenNgay);
             this.dataLayoutControl1.Controls.Add(this.dteTuNgay);
@@ -480,9 +485,9 @@
             // btLayDuLieu
             // 
             this.btLayDuLieu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.button_yellow;
-            this.btLayDuLieu.Location = new System.Drawing.Point(856, 2);
+            this.btLayDuLieu.Location = new System.Drawing.Point(788, 2);
             this.btLayDuLieu.Name = "btLayDuLieu";
-            this.btLayDuLieu.Size = new System.Drawing.Size(82, 22);
+            this.btLayDuLieu.Size = new System.Drawing.Size(96, 22);
             this.btLayDuLieu.StyleController = this.dataLayoutControl1;
             this.btLayDuLieu.TabIndex = 96;
             this.btLayDuLieu.Text = "Lấy dữ liệu";
@@ -491,7 +496,7 @@
             // dteDenNgay
             // 
             this.dteDenNgay.EditValue = null;
-            this.dteDenNgay.Location = new System.Drawing.Point(493, 2);
+            this.dteDenNgay.Location = new System.Drawing.Point(460, 2);
             this.dteDenNgay.Name = "dteDenNgay";
             this.dteDenNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -503,7 +508,7 @@
             this.dteDenNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dteDenNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.dteDenNgay.Size = new System.Drawing.Size(359, 20);
+            this.dteDenNgay.Size = new System.Drawing.Size(324, 20);
             this.dteDenNgay.StyleController = this.dataLayoutControl1;
             this.dteDenNgay.TabIndex = 96;
             this.dteDenNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteDenNgay_KeyPress);
@@ -524,7 +529,7 @@
             this.dteTuNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dteTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dteTuNgay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.dteTuNgay.Size = new System.Drawing.Size(387, 20);
+            this.dteTuNgay.Size = new System.Drawing.Size(354, 20);
             this.dteTuNgay.StyleController = this.dataLayoutControl1;
             this.dteTuNgay.TabIndex = 97;
             this.dteTuNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dteTuNgay_KeyPress);
@@ -534,9 +539,9 @@
             // 
             this.btRefresh.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Update;
             this.btRefresh.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btRefresh.Location = new System.Drawing.Point(942, 2);
+            this.btRefresh.Location = new System.Drawing.Point(888, 2);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(26, 22);
+            this.btRefresh.Size = new System.Drawing.Size(34, 22);
             this.btRefresh.StyleController = this.dataLayoutControl1;
             this.btRefresh.TabIndex = 106;
             this.btRefresh.ToolTip = "Refesh";
@@ -546,9 +551,9 @@
             // 
             this.layoutControlItem2.Control = this.btRefresh;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(940, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(886, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(30, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(38, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -558,7 +563,7 @@
             this.layoutControlItem3.CustomizationFormText = "Từ ngày";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(441, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(408, 26);
             this.layoutControlItem3.Text = "Từ ngày";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(47, 13);
             // 
@@ -566,9 +571,9 @@
             // 
             this.layoutControlItem5.Control = this.dteDenNgay;
             this.layoutControlItem5.CustomizationFormText = "Đến ngày";
-            this.layoutControlItem5.Location = new System.Drawing.Point(441, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(408, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(413, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(378, 26);
             this.layoutControlItem5.Text = "Đến ngày";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(47, 13);
             // 
@@ -576,9 +581,9 @@
             // 
             this.layoutControlItem6.Control = this.btLayDuLieu;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(854, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(786, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(86, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(100, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -593,6 +598,27 @@
             this.groupBox1.Size = new System.Drawing.Size(1000, 600);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Print;
+            this.btnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnPrint.Location = new System.Drawing.Point(926, 2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(34, 22);
+            this.btnPrint.StyleController = this.dataLayoutControl1;
+            this.btnPrint.TabIndex = 108;
+            this.btnPrint.Text = " ";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.btnPrint;
+            this.layoutControlItem7.Location = new System.Drawing.Point(924, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(38, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // UCQuy_NganHang_BaoCo
             // 
@@ -631,6 +657,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -679,5 +706,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn clXoa;
         private DevExpress.XtraGrid.Columns.GridColumn clCopy;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btCopY;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

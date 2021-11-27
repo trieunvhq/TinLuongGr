@@ -110,7 +110,6 @@ namespace CtyTinLuong
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     QuyNganHang_Frm_DoiTienUSD ff = new CtyTinLuong.QuyNganHang_Frm_DoiTienUSD();                  
                     ff.Show();
-                    
                 }
                 else if (frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5 == 6)
                 {
@@ -118,14 +117,12 @@ namespace CtyTinLuong
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     QuyNganHang_Frm_PhieuKeToan ff = new CtyTinLuong.QuyNganHang_Frm_PhieuKeToan();
                     ff.Show();
-
                 }
                 else
                 {                  
                     miID_ThuChi_Sua = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
                     Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww ff = new CtyTinLuong.Quy_nganHang_frmThemMoi_ThuChi_CoNo_Newwwwww();
                     ff.Show();
-
                 }
                
             }
@@ -213,6 +210,27 @@ namespace CtyTinLuong
         private void dteDenNgay_Leave(object sender, EventArgs e)
         {
             Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime, frmQuy_NganHang_Newwwwwwwwwwwwwwwww.miTrangThai_BaoCo1_BaoNo_2_PhieuChi3_PhieuThu4_DoiTien5);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString() != "")
+            {
+                int ID_ThuChi_ = Convert.ToInt16(gridView1.GetFocusedRowCellValue(clID_ThuChi).ToString());
+                if (ID_ThuChi_ == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Tr_frmPrintPhieuKeToanVAT ff = new Tr_frmPrintPhieuKeToanVAT(ID_ThuChi_);
+                    ff.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng click chọn phiếu kế toán để in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
