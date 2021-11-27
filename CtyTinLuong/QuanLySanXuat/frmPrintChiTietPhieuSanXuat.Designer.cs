@@ -914,7 +914,8 @@
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrintChiTietPhieuSanXuat";
-            this.Text = this.Name+"-->frmPrintChiTietPhieuSanXuat";
+            this.Text = "frmPrintChiTietPhieuSanXuat-->frmPrintChiTietPhieuSanXuat";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrintChiTietPhieuSanXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
