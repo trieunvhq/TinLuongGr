@@ -13,6 +13,9 @@ namespace CtyTinLuong
 {
     public partial class KhoThanhPham_XuatKho_DongKien : Form
     {
+        private int id_vthh;
+        private string tenvthh, donvitinhvthh, _Nguon;
+
         public KhoThanhPham_XuatKho_DongKien()
         {
             InitializeComponent();
@@ -176,7 +179,12 @@ namespace CtyTinLuong
             Search_MaVT.ValueMember = "ID_VTHH";
             Search_MaVT.DisplayMember = "MaVT";
 
-
+            //Thay caption:
+            Search_MaVT.View.Columns.Clear();//xóa caption cũ
+            Search_MaVT.View.Columns.AddVisible("MaVT", "Mã");
+            Search_MaVT.View.Columns.AddVisible("TenVTHH", "Tên");
+            Search_MaVT.View.Columns.AddVisible("DonViTinh", "ĐVT");
+            Search_MaVT.View.Columns.AddVisible("Nguon", "Nguồn");
         }
 
         private bool KiemTraLuu()
@@ -244,7 +252,15 @@ namespace CtyTinLuong
                 cls2.fThanhTien= CheckString.ConvertToDouble_My(dttttt2.Rows[i]["ThanhTien"].ToString());
                 cls2.bTonTai = true;
                 cls2.bNgungTheoDoi = false;
-                cls2.bDaXuatKho = true;                
+                cls2.bDaXuatKho = true;
+
+                if (dttttt2.Rows[i]["GhiChu"].ToString() == "Đại lý")
+                    cls2.iGapDan_1_DaiLy_2 = 2;
+                else if (dttttt2.Rows[i]["GhiChu"].ToString() == "Gấp dán")
+                    cls2.iGapDan_1_DaiLy_2 = 1;
+                else
+                    cls2.iGapDan_1_DaiLy_2 = 0;
+                               
                 string expressionnhapkho;
                 expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
                 DataRow[] foundRows;
@@ -423,6 +439,7 @@ namespace CtyTinLuong
             {
                 gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, tenvthh);
                 gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, donvitinhvthh);
+                gridView4.SetRowCellValue(e.RowHandle, Nguon, _Nguon);
                 gridView4.SetRowCellValue(e.RowHandle, clSoLuongXuat, "1");
                 gridView4.SetRowCellValue(e.RowHandle, clDonGia, "0");
                 gridView4.SetRowCellValue(e.RowHandle, clThanhTien, "0");
@@ -443,7 +460,6 @@ namespace CtyTinLuong
             
         }
 
-        int id_vthh; string tenvthh, donvitinhvthh;
 
         private void txtTongTienHang_TextChanged(object sender, EventArgs e)
         {
@@ -484,6 +500,7 @@ namespace CtyTinLuong
                 id_vthh = Convert.ToInt32(row["ID_VTHH"].ToString());
                 tenvthh = row["TenVTHH"].ToString();
                 donvitinhvthh = row["DonViTinh"].ToString();
+                _Nguon = row["Nguon"].ToString();
             }
             catch (Exception ea)
             {

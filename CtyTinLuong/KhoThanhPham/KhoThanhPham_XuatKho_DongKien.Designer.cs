@@ -85,6 +85,7 @@
             this.btThoat2 = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
+            this.Nguon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -392,7 +393,8 @@
             this.clXoa,
             this.clID_VTHH,
             this.clGhiChu,
-            this.clID_ChiTietXuatKho});
+            this.clID_ChiTietXuatKho,
+            this.Nguon});
             this.gridView4.GridControl = this.gridControl1;
             this.gridView4.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.clThanhTien, "")});
@@ -500,7 +502,7 @@
             this.clXoa.OptionsColumn.FixedWidth = true;
             this.clXoa.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clXoa.Visible = true;
-            this.clXoa.VisibleIndex = 7;
+            this.clXoa.VisibleIndex = 8;
             this.clXoa.Width = 40;
             // 
             // btXoa2
@@ -603,7 +605,7 @@
             // btPrint
             // 
             this.btPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint.ImageOptions.Image")));
-            this.btPrint.Location = new System.Drawing.Point(538, 552);
+            this.btPrint.Location = new System.Drawing.Point(502, 552);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(98, 23);
             this.btPrint.TabIndex = 108;
@@ -636,12 +638,20 @@
             this.btLuu_Gui_Dong.Appearance.Options.UseFont = true;
             this.btLuu_Gui_Dong.Appearance.Options.UseForeColor = true;
             this.btLuu_Gui_Dong.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Back;
-            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(642, 552);
+            this.btLuu_Gui_Dong.Location = new System.Drawing.Point(606, 552);
             this.btLuu_Gui_Dong.Name = "btLuu_Gui_Dong";
-            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(128, 23);
+            this.btLuu_Gui_Dong.Size = new System.Drawing.Size(164, 23);
             this.btLuu_Gui_Dong.TabIndex = 129;
-            this.btLuu_Gui_Dong.Text = "Lưu + Gửi";
+            this.btLuu_Gui_Dong.Text = "Lưu + Nhập thành phẩm";
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
+            // 
+            // Nguon
+            // 
+            this.Nguon.Caption = "Nguồn";
+            this.Nguon.FieldName = "Nguon";
+            this.Nguon.Name = "Nguon";
+            this.Nguon.Visible = true;
+            this.Nguon.VisibleIndex = 7;
             // 
             // KhoThanhPham_XuatKho_DongKien
             // 
@@ -738,5 +748,6 @@
         private DevExpress.XtraEditors.SimpleButton btLuu_Dong;
         private DevExpress.XtraEditors.SimpleButton btLuu_Gui_Dong;
         private DevExpress.XtraGrid.Columns.GridColumn clID_ChiTietXuatKho;
+        private DevExpress.XtraGrid.Columns.GridColumn Nguon;
     }
 }
