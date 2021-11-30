@@ -175,6 +175,7 @@
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoBanThanhPham\clsDongKien_TbXuatKho_ChiTietXuatKho.cs" />
+    <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_XuatContHangDL.cs" />
     <Compile Include="KhoDaiLy\DongKien_BaoCaoNhapXuatTon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +191,12 @@
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho_ChiTietNhapKho - Copy.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbNhapKho_ChiTietNhapKho.cs" />
+    <Compile Include="KhoDaiLy\UC_DongKien_XuatCont_BenDaiLy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\UC_DongKien_XuatCont_BenDaiLy.Designer.cs">
+      <DependentUpon>UC_DongKien_XuatCont_BenDaiLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho - Copy.cs" />
     <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho.cs" />
     <Compile Include="KhoThanhPham\clsDongKien_TbXuatKho_ChiTietXuatKho - Copy.cs" />
@@ -2739,6 +2746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UC_DongKien_NhapKho.resx">
       <DependentUpon>UC_DongKien_NhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\UC_DongKien_XuatCont_BenDaiLy.resx">
+      <DependentUpon>UC_DongKien_XuatCont_BenDaiLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\UC_DongKien_XuatKho_BenDaiLy.resx">
       <DependentUpon>UC_DongKien_XuatKho_BenDaiLy.cs</DependentUpon>

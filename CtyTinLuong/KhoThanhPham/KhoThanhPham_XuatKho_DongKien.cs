@@ -114,6 +114,7 @@ namespace CtyTinLuong
             dt2.Columns.Add("SoLuongXuat", typeof(double));          
             dt2.Columns.Add("DonGia", typeof(double));          
             dt2.Columns.Add("ThanhTien", typeof(double));
+            dt2.Columns.Add("Nguon", typeof(string));
             dt2.Columns.Add("GhiChu", typeof(string));
 
 
@@ -254,9 +255,9 @@ namespace CtyTinLuong
                 cls2.bNgungTheoDoi = false;
                 cls2.bDaXuatKho = true;
 
-                if (dttttt2.Rows[i]["GhiChu"].ToString() == "Đại lý")
+                if (dttttt2.Rows[i]["Nguon"].ToString() == "Đại lý")
                     cls2.iGapDan_1_DaiLy_2 = 2;
-                else if (dttttt2.Rows[i]["GhiChu"].ToString() == "Gấp dán")
+                else if (dttttt2.Rows[i]["Nguon"].ToString() == "Gấp dán")
                     cls2.iGapDan_1_DaiLy_2 = 1;
                 else
                     cls2.iGapDan_1_DaiLy_2 = 0;
