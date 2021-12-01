@@ -175,7 +175,8 @@
       <DependentUpon>Tr_Xtra_DoiChieuCongNo_NCC.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoBanThanhPham\clsDongKien_TbXuatKho_ChiTietXuatKho.cs" />
-    <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_XuatContHangDL.cs" />
+    <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_XuatContDL.cs" />
+    <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_XuatContDL_ChiTiet.cs" />
     <Compile Include="KhoDaiLy\Tr_frmChiTietXuatContDongKien.cs">
       <SubType>Form</SubType>
     </Compile>
