@@ -179,7 +179,6 @@
             this.txtSoLuongTP.Size = new System.Drawing.Size(199, 20);
             this.txtSoLuongTP.TabIndex = 148;
             this.txtSoLuongTP.Text = "0";
-            this.txtSoLuongTP.TextChanged += new System.EventHandler(this.txtSoLuongTP_TextChanged);
             // 
             // txtTenNguoiLap
             // 
@@ -473,7 +472,6 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 

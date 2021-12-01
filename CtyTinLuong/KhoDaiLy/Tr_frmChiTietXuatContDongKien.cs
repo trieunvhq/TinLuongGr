@@ -265,23 +265,15 @@ namespace CtyTinLuong
                 //    try
                 //    {            
 
-                clsGapDan_tbXuatKho cls1 = new clsGapDan_tbXuatKho();
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = txtSoChungTu.Text.ToString();
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                cls1.iID_VTHH_ThanhPham_QuyDoi = Convert.ToInt32(txtID_ThanhPham.Text);
-                cls1.fDonGia_ThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtDonGiaTP.Text);
-                cls1.fSoLuongThanhPham_QuyDoi = CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
-                cls1.fTongTienHang = CheckString.ConvertToDouble_My(txtThanhTien.Text);
-                cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.sThamChieu = txtThamChieu.Text;
+                clsDongKien_TbXuatKho_XuatContDL cls1 = new clsDongKien_TbXuatKho_XuatContDL();
+                cls1.daNgayThang = dteNgayChungTu.DateTime;
+                cls1.sSoChungTu = txtSoChungTu.Text;
+                cls1.sDienGiai = txtDienGiai.Text;
+                cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
                 cls1.bTonTai = true;
                 cls1.bNgungTheoDoi = false;
-                cls1.sNguoiGiaoHang = "";
-                cls1.bTrangThaiNhapKhoBTP_ThanhPham = true;
                 cls1.bDaXuatKho = true;
-                cls1.bCheckNhapKhoThanhPham = true;
+                cls1.sGhiChu = "";
                 int iiID_Nhapkho_GapDan;
 
                 if (UCDaiLy_XuatKho_GapDan.mbsua == false)
