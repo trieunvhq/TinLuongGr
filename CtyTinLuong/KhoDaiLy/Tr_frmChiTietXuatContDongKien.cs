@@ -215,152 +215,49 @@ namespace CtyTinLuong
 
         }
 
-        private void Luu_ChiTiet_XuatContDongKien(int id_)
+        private void Luu_ChiTiet_XuatContDongKien(int id_XuatCont)
         {
             if (!KiemTraLuu()) return;
             else
             {
-                DataTable dttttt2 = (DataTable)gridControl1.DataSource;
+                DataTable dt = (DataTable)gridControl1.DataSource;
 
                 clsDongKien_TbXuatKho_XuatContDL_ChiTiet cls2 = new clsDongKien_TbXuatKho_XuatContDL_ChiTiet();
 
-                for (int i = 0; i < dttttt2.Rows.Count; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    cls2.iID_ChiTietXuatKho = id_;
-                    cls2.iID_VTHH = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                    int ID_VTHHxxx = Convert.ToInt32(dttttt2.Rows[i]["ID_VTHH"].ToString());
-                    cls2.fSoLuongXuat = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["SoLuongXuat"].ToString());
-                    cls2.fDonGia = CheckString.ConvertToDouble_My(dttttt2.Rows[i]["DonGia"].ToString());
-                    cls2.sGhiChu = dttttt2.Rows[i]["GhiChu"].ToString();
-                    cls2.bTonTai = true;
-                    cls2.bNgungTheoDoi = false;
-                    cls2.bDaXuatKho = true;
-                  
-                    cls2.iNhapKho_TP_1_BTP_2_NPL_3 = 0;
-                    string expressionnhapkho;
-                    expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
-                    DataRow[] foundRows;
-                    foundRows = dt2_cu.Select(expressionnhapkho);
-                    if (foundRows.Length > 0)
+                    cls2.iID_ChiTietXuatKho = Convert.ToInt32(dt.Rows[i]["ID_ChiTietXuatKho"].ToString());
+                    cls2.iID_XuatContDongKien = id_XuatCont;
+                    cls2.iID_VTHH = Convert.ToInt32(dt.Rows[i]["ID_VTHH"].ToString());
+
+                    int ID_VTHH_ = Convert.ToInt32(dt.Rows[i]["ID_VTHH"].ToString());
+                    cls2.fSoLuongXuat = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuongXuat"].ToString());
+                    cls2.fDonGia = CheckString.ConvertToDouble_My(dt.Rows[i]["DonGia"].ToString());
+                    cls2.fThanhTien = CheckString.ConvertToDouble_My(dt.Rows[i]["ThanhTien"].ToString());
+                    cls2.sDienGiai = dt.Rows[i]["ThanhTien"].ToString();
+
+                    clsThin cls = new clsThin();
+                    DataTable foundRows = cls.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_ID_XuatCont_S(id_XuatCont, ID_VTHH_);
+                    if (foundRows.Rows.Count > 0)
                     {
-                        cls2.iID_ChiTietXuatKho = Convert.ToInt32(foundRows[0]["ID_ChiTietXuatKho"].ToString());
+                        cls2.iID_ChiTietXuatKho = Convert.ToInt32(foundRows.Rows[0]["ID_ChiTietXuatKho"].ToString());
                         cls2.Update();
                     }
                     else
                     {
                         cls2.Insert();
                     }
+
+                    cls.Dispose();
                 }
 
-                // xoa ton tai=false
-                DataTable dt2_moi11111 = new DataTable();
-                cls2.iID_XuatKho = id_;
-                dt2_moi11111 = cls2.SelectAll_ID_XuatKho();
-                dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
-                DataView dvdt2_moi = dt2_moi11111.DefaultView;
-                DataTable dt2_moi = dvdt2_moi.ToTable();
-                for (int i = 0; i < dt2_moi.Rows.Count; i++)
-                {
-                    int IID_ChiTietNhapKho_DaiLyxxxx = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietXuatKho"].ToString());
-                    cls2.iID_ChiTietXuatKho = IID_ChiTietNhapKho_DaiLyxxxx;
-                    cls2.Delete();
-                }
                 cls2.Dispose();
             }
         }
 
-        private void Luu_ChiTiet_NhapKho_DongKien(int iiiid_nhapkhodongkien)
-        {
-            if (!KiemTraLuu()) return;
-            else
-            {
 
-                clsDongKien_TbNhapKho_ChiTietNhapKho cls2 = new clsDongKien_TbNhapKho_ChiTietNhapKho();
-                DataTable dt2_cu = new DataTable();
-                dt2_cu = cls2.H_DongKienChiTiet_SA_ID_NKDK(iiiid_nhapkhodongkien);
-                if (dt2_cu.Rows.Count > 0)
-                {
-                    cls2.H_DongKienChiTiet_U_TonTai(iiiid_nhapkhodongkien, false);
-                }
-
-                cls2.iID_NhapKho_DongKien = iiiid_nhapkhodongkien;
-                cls2.iID_VTHH = Convert.ToInt32(txtID_ThanhPham.Text);
-                int ID_VTHHxxx = Convert.ToInt32(txtID_ThanhPham.Text);
-                cls2.fSoLuongNhap = CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
-                cls2.fDonGia = CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
-                cls2.fThanhTien = CheckString.ConvertToDouble_My(txtThanhTien.Text);
-                cls2.sGhiChu = "";
-                cls2.bTonTai = true;
-                cls2.bNgungTheoDoi = false;
-                cls2.bDaNhapKho = true;
-                cls2.bBoolTonDauKy = false;
-                string expressionnhapkho;
-                expressionnhapkho = "ID_VTHH=" + ID_VTHHxxx + "";
-                DataRow[] foundRows;
-                foundRows = dt2_cu.Select(expressionnhapkho);
-                if (foundRows.Length > 0)
-                {
-                    cls2.iID_ChiTietNhapKho = Convert.ToInt32(foundRows[0]["ID_ChiTietNhapKho"].ToString());
-                    cls2.Update();
-                }
-                else
-                {
-                    cls2.Insert();
-                }
-
-
-                // xoa ton tai=false
-                cls2 = new clsDongKien_TbNhapKho_ChiTietNhapKho();
-                cls2.iID_NhapKho_DongKien = iiiid_nhapkhodongkien;
-                DataTable dt2_moi11111 = cls2.H_DongKienChiTiet_SA_ID_NKDK(iiiid_nhapkhodongkien);
-                dt2_moi11111.DefaultView.RowFilter = "TonTai = False";
-                DataView dvdt2_moi = dt2_moi11111.DefaultView;
-                DataTable dt2_moi = dvdt2_moi.ToTable();
-                for (int i = 0; i < dt2_moi.Rows.Count; i++)
-                {
-                    int iiID_ChiTietNhapKhoxxx = Convert.ToInt32(dt2_moi.Rows[i]["ID_ChiTietNhapKho"].ToString());
-                    cls2.iID_ChiTietNhapKho = iiID_ChiTietNhapKhoxxx;
-                    cls2.Delete();
-                }
-                cls2.Dispose();
-            }
-        }
-
-        private void Luu_NhapKhoDongKien(int iiID_Xuatkho_Gapdan)
-        {
-            if (!KiemTraLuu()) return;
-            else
-            {
-                clsDongKien_TbNhapKho cls1 = new clsDongKien_TbNhapKho();
-                clsDongKien_TbNhapKho cls2 = new clsDongKien_TbNhapKho();
-                cls1.iID_XuatKho_ThamChieu = iiID_Xuatkho_Gapdan;               
-                cls1.daNgayChungTu = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = txtThamChieu.Text.ToString();
-                cls1.sDienGiai = txtDienGiai.Text.ToString();
-                //cls1.iID_DinhMuc_ToGapDan = Convert.ToInt32(gridDinhMucGapDan.EditValue.ToString());
-                cls1.iID_VTHH = Convert.ToInt32(txtID_ThanhPham.Text);
-                cls1.fDonGia = CheckString.ConvertToDouble_My(txtDonGiaTP.Text);
-                cls1.fSoLuong = CheckString.ConvertToDouble_My(txtSoLuongTP.Text);
-                cls1.fThanhTien = CheckString.ConvertToDouble_My(txtThanhTien.Text);
-                cls1.iID_NguoiNhap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());           
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
-                cls1.sNguoiGiaoHang = "";
-                cls1.bDaNhapKho = true;
-                cls1.bBoolTonDauKy = false;
-                cls1.iGapDan_1_DaiLy_2 = 1;
-                DataTable dt2 = cls2.H_DongKien_SO_ID_XKGD(iiID_Xuatkho_Gapdan);
-                if (dt2.Rows.Count > 0)
-                {
-                    cls1.iID_NhapKhoDongKien = Convert.ToInt32(dt2.Rows[0]["ID_NhapKhoDongKien"].ToString());
-                    cls1.Update();
-                }
-                else cls1.Insert();
-                int xxid = cls1.iID_NhapKhoDongKien.Value;
-                Luu_ChiTiet_NhapKho_DongKien(xxid);
-            }
-        }
-        private void Luu_XuatKho_GapDan()
+      
+        private void Luu_XuatCont_DongKien()
         {
             if (!KiemTraLuu()) return;
             else
