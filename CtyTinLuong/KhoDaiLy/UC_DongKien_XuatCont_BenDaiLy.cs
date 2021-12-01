@@ -12,6 +12,8 @@ namespace CtyTinLuong
 {
     public partial class UC_DongKien_XuatCont_BenDaiLy : UserControl
     {
+        public static bool _mbSua = false, _mbThemMoi = false, _mbCopy = false;
+        public static int _iID_XuatContDongKien = 0;
         public UC_DongKien_XuatCont_BenDaiLy()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace CtyTinLuong
             gridControl1.DataSource = dt;
         }
        
-        private void UC_DongKien_XuatCont_BenDaiLy_Load(object sender, EventArgs e)
+        public void UC_DongKien_XuatCont_BenDaiLy_Load(object sender, EventArgs e)
         {
             dteDenNgay.EditValue = DateTime.Today;
             clsNgayThang cls = new clsNgayThang();
@@ -76,6 +78,11 @@ namespace CtyTinLuong
             //    MessageBox.Show("Đã xoá");
             //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
             //}
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dteTuNgay_Leave(object sender, EventArgs e)

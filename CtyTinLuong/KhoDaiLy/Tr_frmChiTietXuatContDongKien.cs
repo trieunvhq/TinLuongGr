@@ -274,31 +274,27 @@ namespace CtyTinLuong
                 cls1.bNgungTheoDoi = false;
                 cls1.bDaXuatKho = true;
                 cls1.sGhiChu = "";
-                int iiID_Nhapkho_GapDan;
+                int iID_XuatContDongKien_;
 
-                if (UCDaiLy_XuatKho_GapDan.mbsua == false)
+                if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi || UC_DongKien_XuatCont_BenDaiLy._mbCopy)
                 {
                     cls1.Insert();
-                    iiID_Nhapkho_GapDan = cls1.iID_XuatKho.Value;
-
+                    iID_XuatContDongKien_ = cls1.iID_XuatContDongKien.Value;
                 }
                 else
                 {
-
-                    cls1.iID_XuatKho = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
-                    iiID_Nhapkho_GapDan = UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan;
+                    cls1.iID_XuatContDongKien = UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien;
+                    iID_XuatContDongKien_ = UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien;
                     cls1.Update();
                 }
 
 
-                Luu_ChiTiet_XuatKho_GapDan(iiID_Nhapkho_GapDan);
-                Luu_NhapKhoDongKien(iiID_Nhapkho_GapDan);
-                //Luu_ThamCHieuTinhXuatKho(iiID_Nhapkho_GapDan);
+                Luu_ChiTiet_XuatContDongKien(iID_XuatContDongKien_);
                 cls1.Dispose();
 
                 //
                 this.Close();
-                _ucDLXKGD.UCDaiLy_XuatKho_GapDan_Load(null, null);
+                _ucDLXKGD.UC_DongKien_XuatCont_BenDaiLy_Load(null, null);
                 MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //}
                 //catch
@@ -308,21 +304,22 @@ namespace CtyTinLuong
             }
         }
 
-        UCDaiLy_XuatKho_GapDan _ucDLXKGD;
-        public Tr_frmChiTietXuatContDongKien(UCDaiLy_XuatKho_GapDan ucDLXKGD)
+        UC_DongKien_XuatCont_BenDaiLy _ucDLXKGD;
+        public Tr_frmChiTietXuatContDongKien(UC_DongKien_XuatCont_BenDaiLy ucDLXKGD)
         {
             _ucDLXKGD = ucDLXKGD;
             InitializeComponent();
 
             //
             DataTable dt2 = new DataTable();
-            dt2.Columns.Add("ID_NhanSu", typeof(int));
-            dt2.Columns.Add("TenNhanVien", typeof(string));
-            dt2.Columns.Add("SanLuong", typeof(string));
+            dt2.Columns.Add("ID_ChiTietXuatKho", typeof(int));
+            dt2.Columns.Add("ID_XuatContDongKien", typeof(int));
+            dt2.Columns.Add("ID_VTHH", typeof(int));
+            dt2.Columns.Add("SoLuongXuat", typeof(string));
             dt2.Columns.Add("DonGia", typeof(string));
             dt2.Columns.Add("ThanhTien", typeof(string));
-
-            _id_bophan = KiemTraTenBoPhan("Tổ Gấp dán");
+            dt2.Columns.Add("DienGiai", typeof(string));
+            gridControl1.DataSource = dt2;
         }
 
 
