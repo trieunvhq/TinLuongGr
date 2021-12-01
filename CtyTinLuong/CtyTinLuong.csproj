@@ -176,6 +176,12 @@
     </Compile>
     <Compile Include="KhoBanThanhPham\clsDongKien_TbXuatKho_ChiTietXuatKho.cs" />
     <Compile Include="KhoDaiLy\clsDongKien_TbXuatKho_XuatContHangDL.cs" />
+    <Compile Include="KhoDaiLy\Tr_frmChiTietXuatContDongKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoDaiLy\Tr_frmChiTietXuatContDongKien.Designer.cs">
+      <DependentUpon>Tr_frmChiTietXuatContDongKien.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhoDaiLy\DongKien_BaoCaoNhapXuatTon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2740,6 +2746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmtestcopy.resx">
       <DependentUpon>frmtestcopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoDaiLy\Tr_frmChiTietXuatContDongKien.resx">
+      <DependentUpon>Tr_frmChiTietXuatContDongKien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoDaiLy\DongKien_BaoCaoNhapXuatTon.resx">
       <DependentUpon>DongKien_BaoCaoNhapXuatTon.cs</DependentUpon>

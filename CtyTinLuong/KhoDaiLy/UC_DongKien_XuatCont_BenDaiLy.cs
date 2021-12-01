@@ -19,19 +19,11 @@ namespace CtyTinLuong
 
         private void Load_DaTa(DateTime xxtungay, DateTime xxdenngay)
         {
-            clsDongKien_TbXuatKho cls = new CtyTinLuong.clsDongKien_TbXuatKho();
-            DataTable dt = cls.H_DongKien_XK_SA_NgayThang(xxtungay, xxdenngay);
+            clsDongKien_TbXuatKho cls = new clsDongKien_TbXuatKho();
+            DataTable dt = cls.Tr_DongKien_XuatCont_NgayThang_S(xxtungay, xxdenngay);
             gridControl1.DataSource = dt;
         }
-        private void HienThiGridControl_2(int xxID_xuatkho)
-        {
-            clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
-            DataTable dt = cls2.H_DongKien_ChiTiet_XK_SA_IDXK(xxID_xuatkho);
-            gridControl3.DataSource = dt;
-            cls2.Dispose();
-            dt.Dispose();
-
-        }
+       
         private void UC_DongKien_XuatCont_BenDaiLy_Load(object sender, EventArgs e)
         {
             dteDenNgay.EditValue = DateTime.Today;
@@ -47,37 +39,21 @@ namespace CtyTinLuong
 
         private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //}
-            //catch
-            //{
-
-            //}
+            
         }
 
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //}
-            //catch
-            //{
-
-            //}
+           
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
 
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString() != "")
-            {
-                int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString());
-                //DateTime dte = Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clNgayChungTu).ToString());
-                HienThiGridControl_2(iiIDnhapKhp);
-            }
+            //if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
+            //{
+
+            //}
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -88,18 +64,18 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString() != "")
-            {
-                int iiidnhapkho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_XuatKhoDongKien).ToString());
-                clsDongKien_TbXuatKho cls1 = new clsDongKien_TbXuatKho();
-                cls1.iID_XuatKhoDongKien = iiidnhapkho;
-                cls1.Delete();
+            //if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
+            //{
+            //    int iiidnhapkho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
+            //    clsDongKien_TbXuatKho cls1 = new clsDongKien_TbXuatKho();
+            //    cls1.iID_XuatKhoDongKien = iiidnhapkho;
+            //    cls1.Delete();
 
-                clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
-                cls2.H_DongKien_XK_Delete_ID_XK(iiidnhapkho);
-                MessageBox.Show("Đã xoá");
-                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            }
+            //    clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
+            //    cls2.H_DongKien_XK_Delete_ID_XK(iiidnhapkho);
+            //    MessageBox.Show("Đã xoá");
+            //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+            //}
         }
 
         private void dteTuNgay_Leave(object sender, EventArgs e)
