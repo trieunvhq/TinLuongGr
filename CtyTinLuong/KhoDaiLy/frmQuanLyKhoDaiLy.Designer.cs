@@ -60,6 +60,7 @@
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.navXuatContDK = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -212,7 +213,8 @@
             this.navBarItem11,
             this.navNhapKhoDongKien,
             this.navXuatKhoDongKien,
-            this.navNXT_dongkien});
+            this.navNXT_dongkien,
+            this.navXuatContDK});
             this.navBarControl1.Location = new System.Drawing.Point(6, 13);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 216;
@@ -255,6 +257,7 @@
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNhapKhoDongKien),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatKhoDongKien),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navXuatContDK),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navNXT_dongkien)});
             this.navBarGroup4.Name = "navBarGroup4";
             // 
@@ -309,6 +312,12 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Cài đặt mặc định mã hàng Tổ gấp dán, đóng bao, đóng kiện";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // navXuatContDK
+            // 
+            this.navXuatContDK.Caption = "Xuất Cont";
+            this.navXuatContDK.Name = "navXuatContDK";
+            this.navXuatContDK.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navXuatContDK_LinkClicked);
             // 
             // frmQuanLyKhoDaiLy
             // 
@@ -366,5 +375,6 @@
         private DevExpress.XtraNavBar.NavBarItem navXuatKhoDongKien;
         private DevExpress.XtraNavBar.NavBarItem navNXT_dongkien;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private DevExpress.XtraNavBar.NavBarItem navXuatContDK;
     }
 }

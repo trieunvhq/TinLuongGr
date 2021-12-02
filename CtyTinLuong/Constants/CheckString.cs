@@ -11,6 +11,42 @@ namespace CtyTinLuong
 {
     internal static class CheckString
     {
+        public static String creatSoChungTuXuatContDK()
+        {
+            DataTable dt;
+            String SoCT = "XC1";
+            String sq_curent = "";
+
+            try
+            {
+                using (clsThin cls = new clsThin())
+                {
+                    dt = cls.Tr_Select_SoChungTuXuatContDK();
+                    if (dt.Rows.Count > 0)
+                    {
+                        sq_curent = dt.Rows[0]["SoChungTu"].ToString().Trim();
+                    }
+
+                    if (sq_curent != "" && sq_curent.Length >= 3)
+                    {
+                        String tmp = sq_curent.Substring(2);
+                        int sq = Convert.ToInt32(tmp) + 1;
+
+                        SoCT = "XC" + sq.ToString();
+                    }
+                    else SoCT = "XC1";
+                }
+
+                
+            }
+            catch (Exception ea)
+            {
+
+            }
+
+            return SoCT;
+        }
+
 
         //
         public static String creatMaDinhMucSL()

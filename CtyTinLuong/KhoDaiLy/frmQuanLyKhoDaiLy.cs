@@ -320,5 +320,16 @@ namespace CtyTinLuong
             ff.Show();
             Cursor.Current = Cursors.Default;
         }
+
+        private void navXuatContDK_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            UC_DongKien_XuatCont_BenDaiLy ucXuatCont = new UC_DongKien_XuatCont_BenDaiLy();
+            ucXuatCont.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucXuatCont);
+            ucXuatCont.BringToFront();
+            doiMauTitle(sender, e);
+            Cursor.Current = Cursors.Default;
+        }
     }
 }

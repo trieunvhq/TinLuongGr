@@ -82,7 +82,11 @@ namespace CtyTinLuong
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            _mbThemMoi = true;
+            _mbSua = false;
+            _mbCopy = false;
+            Tr_frmChiTietXuatContDongKien ff = new Tr_frmChiTietXuatContDongKien(this);
+            ff.Show();
         }
 
         private void dteTuNgay_Leave(object sender, EventArgs e)
