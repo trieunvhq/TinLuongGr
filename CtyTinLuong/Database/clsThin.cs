@@ -11,6 +11,39 @@ namespace CtyTinLuong
     /// </summary>
     public partial class clsThin : clsDBInteractionBase
     {
+        public DataTable Tr_DongKien_TbXuatKho_ChiTietXuatKho_TonKho_S(int idvthh, DateTime NgayThang)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[Tr_DongKien_TbXuatKho_ChiTietXuatKho_TonKho_S]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("cpn_bp");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@IDVTHH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, idvthh));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, NgayThang));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("Tr_DongKien_TbXuatKho_ChiTietXuatKho_TonKho_S", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
         public bool Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_DeleteIdXuatCont(int IdXuatCont)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

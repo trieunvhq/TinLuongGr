@@ -508,6 +508,7 @@
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick_1);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
@@ -725,11 +726,11 @@
             // 
             this.label_TonKho.AutoSize = true;
             this.label_TonKho.ForeColor = System.Drawing.Color.Red;
-            this.label_TonKho.Location = new System.Drawing.Point(509, 638);
+            this.label_TonKho.Location = new System.Drawing.Point(325, 638);
             this.label_TonKho.Name = "label_TonKho";
-            this.label_TonKho.Size = new System.Drawing.Size(35, 13);
+            this.label_TonKho.Size = new System.Drawing.Size(62, 13);
             this.label_TonKho.TabIndex = 149;
-            this.label_TonKho.Text = "label1";
+            this.label_TonKho.Text = "Tồn kho: ...";
             // 
             // linkLabel1
             // 

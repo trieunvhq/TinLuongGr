@@ -14,40 +14,23 @@ namespace CtyTinLuong
 {
     public partial class Tr_frmChiTietXuatContDongKien : Form
     {
-        private DataTable _dtDonGiatheoVTHH;
-        private void Hienthi_Lable_TonKho(int xxID_VTHH)
+        private DataTable _dtDonGiatheoVTHH, _dtHangHoa;
+        private void Hienthi_Lable_TonKho(int xxID_VTHH, double SLxuat)
         {
-            //clsTbVatTuHangHoa cls = new clsTbVatTuHangHoa();
-            //cls.iID_VTHH = xxID_VTHH;
-            //DataTable dt = cls.SelectOne();
-            //double soluongton = 0;
-            //clsGapDan_ChiTiet_NhapKho cls1 = new CtyTinLuong.clsGapDan_ChiTiet_NhapKho();
-            //clsGapDan_ChiTiet_XuatKho cls2 = new clsGapDan_ChiTiet_XuatKho();
-            //double soluongxuat, soluongnhap;
-            //DataTable dt_NhapTruoc = new DataTable();
-            //DataTable dt_XuatTruoc = new DataTable();
-            //dt_NhapTruoc = cls1.SA_distinct_NhapTruocKy(DateTime.Now);
-            //dt_XuatTruoc = cls2.SA_distinct_XuatTruocKy(DateTime.Now);
-            //string filterExpression = "ID_VTHH=" + xxID_VTHH + "";
-            //DataRow[] rows_Xuat = dt_XuatTruoc.Select(filterExpression);
-            //DataRow[] rows_Nhap = dt_NhapTruoc.Select(filterExpression);
-            //if (rows_Xuat.Length == 0)
-            //    soluongxuat = 0;
-            //else
-            //    soluongxuat = CheckString.ConvertToDouble_My(rows_Xuat[0]["SoLuong_XuatTruocKy"].ToString());
-            //if (rows_Nhap.Length == 0)
-            //    soluongnhap = 0;
-            //else
-            //    soluongnhap = CheckString.ConvertToDouble_My(rows_Nhap[0]["SoLuong_NhapTruocKy"].ToString());
-            //soluongton = soluongnhap - soluongxuat;
+            clsThin cls = new clsThin();
+            DataTable dt = cls.Tr_DongKien_TbXuatKho_ChiTietXuatKho_TonKho_S(xxID_VTHH, dteNgayChungTu.DateTime);
 
-            //label_TonKho.Text = "" + cls.sMaVT.Value + " - " + cls.sTenVTHH.Value + " || Tồn kho: " + soluongton.ToString() + "";
-            //cls1.Dispose();
-            //cls2.Dispose();
-            //cls.Dispose();
-            //dt_NhapTruoc.Dispose();
-            //dt_XuatTruoc.Dispose();
-            //dt.Dispose();
+            if (dt.Rows.Count > 0)
+            {
+                double tonKho = CheckString.ConvertToDouble_My(dt.Rows[0]["SoLuongCon"].ToString());
+                string maVT = dt.Rows[0]["MaVT"].ToString();
+                string tenVT = dt.Rows[0]["TenVTHH"].ToString();
+
+                label_TonKho.Text = "" + maVT + " - " + tenVT + " || Tồn kho: " + (tonKho - SLxuat).ToString("N0");
+            }
+
+            cls.Dispose();
+            dt.Dispose();
         }
 
         public static DateTime mdaPrintNgayXuatKho;
@@ -128,9 +111,9 @@ namespace CtyTinLuong
             clsNguoi.Dispose();
 
             clsThin clsvt = new clsThin();
-            DataTable dtvt = clsvt.Tr_DongKien_TbXuatKho_ChiTietXuatKho_SDL();
+            _dtHangHoa = clsvt.Tr_DongKien_TbXuatKho_ChiTietXuatKho_SDL();
 
-            searchMaVT.DataSource = dtvt;
+            searchMaVT.DataSource = _dtHangHoa;
             searchMaVT.ValueMember = "ID_VTHH";
             searchMaVT.DisplayMember = "MaVT";
             //Thay caption:
@@ -141,7 +124,6 @@ namespace CtyTinLuong
 
             searchMaVT.View.Columns["ID_VTHH"].Visible = false;
 
-            dtvt.Dispose();
             clsvt.Dispose();
         }
       
@@ -289,6 +271,7 @@ namespace CtyTinLuong
         private void Tr_frmChiTietXuatContDongKien_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            Load_LockUp();
 
             if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
                 HienThiThemMoi();
@@ -296,8 +279,6 @@ namespace CtyTinLuong
                 HienThi_Copy(UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien);
             else if (UC_DongKien_XuatCont_BenDaiLy._mbSua)
                 HienThi_Sua_XuatKho(UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien);
-
-            Load_LockUp();
 
             using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
             {
@@ -347,20 +328,6 @@ namespace CtyTinLuong
             }
         }
        
-
-
-        private void gridView1_RowClick(object sender, RowClickEventArgs e)
-        {
-            ////if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
-            //if (gridView1.GetFocusedRowCellValue(clID_VTHH2) == null
-            //    || gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString() == "")
-            //    return;
-            //else
-            //{
-            //    int iiIDnhapKhp = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clID_VTHH2).ToString());
-            //    _id_vthh = iiIDnhapKhp;
-            //}
-        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -662,6 +629,8 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, SoLuongXuat, 0);
                     gridView1.SetRowCellValue(e.RowHandle, DonGia, getDonGiaTheoIDVHH(idvthh).ToString("N0"));
                     gridView1.SetRowCellValue(e.RowHandle, ThanhTien, 0);
+
+                    Hienthi_Lable_TonKho(idvthh, 0);
                 }
             }
 
@@ -672,6 +641,8 @@ namespace CtyTinLuong
                 double fffthanhtien = 0;
                 if (e.Column == SoLuongXuat)
                 {
+                    int idvthh = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_VTHH));
+
                     if (gridView1.GetFocusedRowCellValue(DonGia).ToString() == "")
                         ffdongia = 0;
                     else
@@ -686,6 +657,9 @@ namespace CtyTinLuong
                         tinhTongSL(fffsoluong, fffthanhtien);
                     else
                         tinhTongSL(0, 0);
+
+                    if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
+                        Hienthi_Lable_TonKho(idvthh, fffsoluong);
 
                 }
                 if (e.Column == DonGia)
@@ -712,6 +686,26 @@ namespace CtyTinLuong
         {
             if (e.Column == clSTT2)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gridView1_RowClick_1(object sender, RowClickEventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(ID_VTHH) == null
+                || gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() == ""
+                || gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() == "0")
+            {
+                return;
+            }
+
+            if (gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() != "")
+            {
+                int idvthh = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
+                double fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(SoLuongXuat));
+                if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
+                    Hienthi_Lable_TonKho(idvthh, fffsoluong);
+                else
+                    Hienthi_Lable_TonKho(idvthh, 0);
+            }
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
