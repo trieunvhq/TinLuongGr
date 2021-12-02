@@ -89,7 +89,7 @@
             this.btXoaGrid2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongXuat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clIDVTHH_VT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_XuatContDongKien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridMaVT = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.cbKho = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -97,6 +97,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.label_TonKho = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.ID_ChiTietXuatKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -494,7 +495,8 @@
             this.clXoa2,
             this.GhiChu,
             this.SoLuongXuat,
-            this.clIDVTHH_VT});
+            this.ID_XuatContDongKien,
+            this.ID_ChiTietXuatKho});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", this.ThanhTien, "")});
@@ -659,11 +661,11 @@
             this.SoLuongXuat.VisibleIndex = 4;
             this.SoLuongXuat.Width = 66;
             // 
-            // clIDVTHH_VT
+            // ID_XuatContDongKien
             // 
-            this.clIDVTHH_VT.Caption = "ID_VTHH";
-            this.clIDVTHH_VT.FieldName = "ID_VTHH";
-            this.clIDVTHH_VT.Name = "clIDVTHH_VT";
+            this.ID_XuatContDongKien.Caption = "ID_XuatContDongKien";
+            this.ID_XuatContDongKien.FieldName = "ID_XuatContDongKien";
+            this.ID_XuatContDongKien.Name = "ID_XuatContDongKien";
             // 
             // gridMaVT
             // 
@@ -732,6 +734,12 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cài đặt mặc định mã hàng Tổ gấp dán, đóng bao, đóng kiện";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // ID_ChiTietXuatKho
+            // 
+            this.ID_ChiTietXuatKho.Caption = "ID_ChiTietXuatKho";
+            this.ID_ChiTietXuatKho.FieldName = "ID_ChiTietXuatKho";
+            this.ID_ChiTietXuatKho.Name = "ID_ChiTietXuatKho";
             // 
             // Tr_frmChiTietXuatContDongKien
             // 
@@ -843,8 +851,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private System.Windows.Forms.Label label_TonKho;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private DevExpress.XtraGrid.Columns.GridColumn clIDVTHH_VT;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_XuatContDongKien;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit searchMaVT;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietXuatKho;
     }
 }
