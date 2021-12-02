@@ -15,7 +15,7 @@ namespace CtyTinLuong
     public partial class Tr_frmChiTietXuatContDongKien : Form
     {
         private DataTable _dtDonGiatheoVTHH, _dtHangHoa;
-        private void Hienthi_Lable_TonKho(int xxID_VTHH, double SLxuat)
+        private void Hienthi_Lable_TonKho(int xxID_VTHH, double SLxuat, double SLrowOld)
         {
             clsThin cls = new clsThin();
             DataTable dt = cls.Tr_DongKien_TbXuatKho_ChiTietXuatKho_TonKho_S(xxID_VTHH, dteNgayChungTu.DateTime);
@@ -26,7 +26,7 @@ namespace CtyTinLuong
                 string maVT = dt.Rows[0]["MaVT"].ToString();
                 string tenVT = dt.Rows[0]["TenVTHH"].ToString();
 
-                label_TonKho.Text = "" + maVT + " - " + tenVT + " || Tồn kho: " + (tonKho - SLxuat).ToString("N0");
+                label_TonKho.Text = maVT + " - " + tenVT + " || Tồn kho: " + (tonKho - SLxuat + SLrowOld).ToString("N0");
             }
 
             cls.Dispose();
@@ -630,7 +630,7 @@ namespace CtyTinLuong
                     gridView1.SetRowCellValue(e.RowHandle, DonGia, getDonGiaTheoIDVHH(idvthh).ToString("N0"));
                     gridView1.SetRowCellValue(e.RowHandle, ThanhTien, 0);
 
-                    Hienthi_Lable_TonKho(idvthh, 0);
+                    Hienthi_Lable_TonKho(idvthh, 0, 0);
                 }
             }
 
@@ -658,8 +658,22 @@ namespace CtyTinLuong
                     else
                         tinhTongSL(0, 0);
 
-                    if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
-                        Hienthi_Lable_TonKho(idvthh, fffsoluong);
+                    double SLrow_old = 0;
+
+                    if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho)) > 0)
+                    {
+                        clsDongKien_TbXuatKho_XuatContDL_ChiTiet cl = new clsDongKien_TbXuatKho_XuatContDL_ChiTiet();
+                        cl.iID_ChiTietXuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho));
+                        DataTable dt = cl.SelectOne();
+
+                        if (dt.Rows.Count > 0)
+                            SLrow_old = CheckString.ConvertToDouble_My(dt.Rows[0]["SoLuongXuat"].ToString());
+                    }
+
+                    if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho)) == 0)
+                        Hienthi_Lable_TonKho(idvthh, fffsoluong, 0);
+                    else
+                        Hienthi_Lable_TonKho(idvthh, fffsoluong, SLrow_old);
 
                 }
                 if (e.Column == DonGia)
@@ -702,9 +716,9 @@ namespace CtyTinLuong
                 int idvthh = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
                 double fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(SoLuongXuat));
                 if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
-                    Hienthi_Lable_TonKho(idvthh, fffsoluong);
+                    Hienthi_Lable_TonKho(idvthh, fffsoluong, 0);
                 else
-                    Hienthi_Lable_TonKho(idvthh, 0);
+                    Hienthi_Lable_TonKho(idvthh, 0, 0);
             }
         }
 
