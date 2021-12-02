@@ -528,6 +528,7 @@
             this.ID_VTHH.ColumnEdit = this.searchMaVT;
             this.ID_VTHH.FieldName = "ID_VTHH";
             this.ID_VTHH.Name = "ID_VTHH";
+            this.ID_VTHH.OptionsColumn.AllowEdit = false;
             this.ID_VTHH.OptionsColumn.FixedWidth = true;
             this.ID_VTHH.Visible = true;
             this.ID_VTHH.VisibleIndex = 1;
@@ -656,6 +657,7 @@
             this.SoLuongXuat.GroupFormat.FormatString = "{0:0.###}";
             this.SoLuongXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.SoLuongXuat.Name = "SoLuongXuat";
+            this.SoLuongXuat.OptionsColumn.AllowEdit = false;
             this.SoLuongXuat.OptionsColumn.FixedWidth = true;
             this.SoLuongXuat.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:0.##}")});

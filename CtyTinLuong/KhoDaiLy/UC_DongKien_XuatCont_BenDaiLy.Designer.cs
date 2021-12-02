@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -51,6 +51,8 @@
             this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DienGiai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Copy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnCopy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.clXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.ID_XuatContDongKien = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,13 +76,12 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Copy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnCopy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCopy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoDienGiai)).BeginInit();
@@ -98,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCopy)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -276,6 +276,7 @@
             this.TenNhanVien.Caption = "Tên người lập";
             this.TenNhanVien.FieldName = "TenNhanVien";
             this.TenNhanVien.Name = "TenNhanVien";
+            this.TenNhanVien.OptionsColumn.AllowEdit = false;
             this.TenNhanVien.OptionsColumn.FixedWidth = true;
             this.TenNhanVien.Visible = true;
             this.TenNhanVien.VisibleIndex = 3;
@@ -288,9 +289,30 @@
             this.DienGiai.Caption = "Diễn giải";
             this.DienGiai.FieldName = "DienGiai";
             this.DienGiai.Name = "DienGiai";
+            this.DienGiai.OptionsColumn.AllowEdit = false;
             this.DienGiai.Visible = true;
             this.DienGiai.VisibleIndex = 4;
             this.DienGiai.Width = 407;
+            // 
+            // Copy
+            // 
+            this.Copy.Caption = "Copy";
+            this.Copy.ColumnEdit = this.btnCopy;
+            this.Copy.FieldName = "Copy";
+            this.Copy.Name = "Copy";
+            this.Copy.Visible = true;
+            this.Copy.VisibleIndex = 5;
+            this.Copy.Width = 35;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Copy;
+            this.btnCopy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // clXoa
             // 
@@ -505,26 +527,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // Copy
-            // 
-            this.Copy.Caption = "Copy";
-            this.Copy.ColumnEdit = this.btnCopy;
-            this.Copy.FieldName = "Copy";
-            this.Copy.Name = "Copy";
-            this.Copy.Visible = true;
-            this.Copy.VisibleIndex = 5;
-            this.Copy.Width = 35;
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Copy;
-            this.btnCopy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
             // UC_DongKien_XuatCont_BenDaiLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +540,7 @@
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCopy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoDienGiai)).EndInit();
@@ -555,7 +558,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCopy)).EndInit();
             this.ResumeLayout(false);
 
         }
