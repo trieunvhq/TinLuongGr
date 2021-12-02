@@ -54,57 +54,59 @@ namespace CtyTinLuong
         public static DataTable mdtPrint_ChiTietXuatKho;
         public static string msPrintSoChungTu, msPrintDienGiaig, msPrintThuKho, msPrintNguoiNhan, msPrintNguoiLap;
         
-        private void HienThi_Grid_ConTrol_Themmoi(double soluongxuat, int xxID_DMgapdan)
-        {
-            clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-            DataTable dt = cls.SA_IDDM_W_SoLuong(soluongxuat,xxID_DMgapdan, dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year);
-            gridControl1.DataSource = dt;          
-            cls.Dispose();
-            dt.Dispose();
-        }
+        //private void HienThi_Grid_ConTrol_Themmoi(double soluongxuat, int xxID_DMgapdan)
+        //{
+        //    clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
+        //    DataTable dt = cls.SA_IDDM_W_SoLuong(soluongxuat,xxID_DMgapdan, dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year);
+        //    gridControl1.DataSource = dt;          
+        //    cls.Dispose();
+        //    dt.Dispose();
+        //}
        
         private void HienThi_Sua_XuatKho(int iiID_xuatkho_)
         {
-            //    clsGapDan_tbXuatKho cls = new clsGapDan_tbXuatKho();
-            //    cls.iID_XuatKho = iiID_xuatkho_;
-            //    DataTable dt = cls.SelectOne();
-            //    txtSoChungTu.Text = cls.sSoChungTu.Value;
-            //    dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
-            //    gridNguoiLap.EditValue = cls.iID_NguoiNhap.Value;
-            //    txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();
-            //    txtDienGiai.Text = cls.sDienGiai.Value;
-            //    txtThanhTien.Text = cls.fTongTienHang.Value.ToString();
-            //    cls.Dispose();
-            //    dt.Dispose();
+            txtSoChungTu.Text = UC_DongKien_XuatCont_BenDaiLy._SoChungTu;
+            dteNgayChungTu.EditValue = UC_DongKien_XuatCont_BenDaiLy._NgayThang;
+            gridNguoiLap.EditValue = UC_DongKien_XuatCont_BenDaiLy._idNguoiLap;
+            txtTenNguoiLap.Text =  UC_DongKien_XuatCont_BenDaiLy._TenNguoiLap;
+            txtDienGiai.Text = UC_DongKien_XuatCont_BenDaiLy._DienGiai;
 
-            //    clsGapDan_ChiTiet_XuatKho cls1 = new clsGapDan_ChiTiet_XuatKho();
-            //    DataTable dt1 = cls1.SA_ID_XuatKho(_id_bophan, iiID_xuatkho_, dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year);
-            //    gridControl1.DataSource = dt1;
 
-            //    cls1.Dispose();
-            //    dt1.Dispose();
+            clsThin cls1 = new clsThin();
+            DataTable dt = cls1.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_S(UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien);
+            gridControl1.DataSource = dt;
+
+            if (dt.Rows.Count > 0)
+            {
+                txtSoLuongTP.Text = (Convert.ToDecimal(dt.Compute("SUM(SoLuongXuat)", string.Empty))).ToString("N0");
+                txtThanhTien.Text = (Convert.ToDecimal(dt.Compute("SUM(ThanhTien)", string.Empty))).ToString("N0");
+            }
+
+            cls1.Dispose();
+            dt.Dispose();
         }
 
         private void HienThi_Copy(int iiID_xuatkho_)
         {
-            //clsGapDan_tbXuatKho cls = new clsGapDan_tbXuatKho();
-            //cls.iID_XuatKho = iiID_xuatkho_;
-            //DataTable dt = cls.SelectOne();
-            //txtSoChungTu.Text = SoCHungTu_GapDan();
-            //dteNgayChungTu.EditValue = cls.daNgayChungTu.Value;
-            //gridNguoiLap.EditValue = cls.iID_NguoiNhap.Value;
-            //txtSoLuongTP.Text = cls.fSoLuongThanhPham_QuyDoi.Value.ToString();
-            //txtDienGiai.Text = cls.sDienGiai.Value;
-            //txtThanhTien.Text= cls.fTongTienHang.Value.ToString();
-            //cls.Dispose();
-            //dt.Dispose();
+            txtSoChungTu.Text = CheckString.creatSoChungTuXuatContDK();
+            dteNgayChungTu.EditValue = UC_DongKien_XuatCont_BenDaiLy._NgayThang;
+            gridNguoiLap.EditValue = UC_DongKien_XuatCont_BenDaiLy._idNguoiLap;
+            txtTenNguoiLap.Text = UC_DongKien_XuatCont_BenDaiLy._TenNguoiLap;
+            txtDienGiai.Text = UC_DongKien_XuatCont_BenDaiLy._DienGiai;
 
-            //clsGapDan_ChiTiet_XuatKho cls1 = new clsGapDan_ChiTiet_XuatKho();
-          
-            //DataTable dt1 = cls1.SA_ID_XuatKho(_id_bophan, iiID_xuatkho_, dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year);
-            //gridControl1.DataSource = dt1;
-            //cls1.Dispose();
-            //dt1.Dispose();
+
+            clsThin cls1 = new clsThin();
+            DataTable dt = cls1.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_S(UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien);
+            gridControl1.DataSource = dt;
+
+            if (dt.Rows.Count > 0)
+            {
+                txtSoLuongTP.Text = (Convert.ToDecimal(dt.Compute("SUM(SoLuongXuat)", string.Empty))).ToString("N0");
+                txtThanhTien.Text = (Convert.ToDecimal(dt.Compute("SUM(ThanhTien)", string.Empty))).ToString("N0");
+            }
+
+            cls1.Dispose();
+            dt.Dispose();
         }
         private void HienThiThemMoi()
         {
@@ -290,10 +292,10 @@ namespace CtyTinLuong
 
             if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
                 HienThiThemMoi();
-            //else if (UCDaiLy_XuatKho_GapDan.mbcopy == true)
-            //    HienThi_Copy(UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
-            //else if (UCDaiLy_XuatKho_GapDan.mbsua == true)
-            //    HienThi_Sua_XuatKho(UCDaiLy_XuatKho_GapDan.miID_XuatKho_GapDan);
+            else if (UC_DongKien_XuatCont_BenDaiLy._mbCopy)
+                HienThi_Copy(UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien);
+            else if (UC_DongKien_XuatCont_BenDaiLy._mbSua)
+                HienThi_Sua_XuatKho(UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien);
 
             Load_LockUp();
 
@@ -663,7 +665,6 @@ namespace CtyTinLuong
                 }
             }
 
-
             try
             {
                 double fffsoluong = 0;
@@ -713,6 +714,10 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void txtDonGiaTP_TextChanged(object sender, EventArgs e)
         {

@@ -13,7 +13,10 @@ namespace CtyTinLuong
     public partial class UC_DongKien_XuatCont_BenDaiLy : UserControl
     {
         public static bool _mbSua = false, _mbThemMoi = false, _mbCopy = false;
-        public static int _iID_XuatContDongKien = 0;
+        public static int _iID_XuatContDongKien = 0, _idNguoiLap = 0;
+        public static bool _tonTai, _NgungTheoDoi, _DaXuatKho;
+        public static DateTime _NgayThang;
+        public static string _SoChungTu, _DienGiai, _GhiChu, _TenNguoiLap;
         public UC_DongKien_XuatCont_BenDaiLy()
         {
             InitializeComponent();
@@ -44,6 +47,28 @@ namespace CtyTinLuong
             
         }
 
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
+            {
+                _mbThemMoi = false;
+                _mbSua = false;
+                _mbCopy = true;
+                _iID_XuatContDongKien = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
+                _idNguoiLap = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_NguoiLap).ToString());
+                _tonTai = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(TonTai).ToString());
+                _NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(NgungTheoDoi).ToString());
+                _DaXuatKho = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(DaXuatKho).ToString());
+                _NgayThang = Convert.ToDateTime(gridView1.GetFocusedRowCellValue(NgayThang).ToString());
+                _SoChungTu = gridView1.GetFocusedRowCellValue(SoChungTu).ToString();
+                _DienGiai = gridView1.GetFocusedRowCellValue(DienGiai).ToString();
+                _GhiChu = gridView1.GetFocusedRowCellValue(GhiChu).ToString();
+                _TenNguoiLap = gridView1.GetFocusedRowCellValue(TenNhanVien).ToString();
+                Tr_frmChiTietXuatContDongKien ff = new Tr_frmChiTietXuatContDongKien(this);
+                ff.Show();
+            }
+        }
+
         private void dteDenNgay_EditValueChanged(object sender, EventArgs e)
         {
            
@@ -66,18 +91,21 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            //if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
-            //{
-            //    int iiidnhapkho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
-            //    clsDongKien_TbXuatKho cls1 = new clsDongKien_TbXuatKho();
-            //    cls1.iID_XuatKhoDongKien = iiidnhapkho;
-            //    cls1.Delete();
+            if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
+            {
+                int ID_XuatContDongKien_ = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
+                clsDongKien_TbXuatKho_XuatContDL cls1 = new clsDongKien_TbXuatKho_XuatContDL();
+                cls1.iID_XuatContDongKien = ID_XuatContDongKien_;
+                cls1.Delete();
 
-            //    clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
-            //    cls2.H_DongKien_XK_Delete_ID_XK(iiidnhapkho);
-            //    MessageBox.Show("Đã xoá");
-            //    Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
-            //}
+                clsThin cls2 = new clsThin();
+                cls2.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_DeleteIdXuatCont(ID_XuatContDongKien_);
+                MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
+
+                cls1.Dispose();
+                cls2.Dispose();
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -87,6 +115,28 @@ namespace CtyTinLuong
             _mbCopy = false;
             Tr_frmChiTietXuatContDongKien ff = new Tr_frmChiTietXuatContDongKien(this);
             ff.Show();
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
+            {
+                _mbThemMoi = false;
+                _mbSua = true;
+                _mbCopy = false;
+                _iID_XuatContDongKien = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
+                _idNguoiLap = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_NguoiLap).ToString());
+                _tonTai = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(TonTai).ToString());
+                _NgungTheoDoi = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(NgungTheoDoi).ToString());
+                _DaXuatKho = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(DaXuatKho).ToString());
+                _NgayThang = Convert.ToDateTime(gridView1.GetFocusedRowCellValue(NgayThang).ToString());
+                _SoChungTu = gridView1.GetFocusedRowCellValue(SoChungTu).ToString();
+                _DienGiai = gridView1.GetFocusedRowCellValue(DienGiai).ToString();
+                _GhiChu = gridView1.GetFocusedRowCellValue(GhiChu).ToString(); 
+                _TenNguoiLap = gridView1.GetFocusedRowCellValue(TenNhanVien).ToString(); 
+                 Tr_frmChiTietXuatContDongKien ff = new Tr_frmChiTietXuatContDongKien(this);
+                ff.Show();
+            }
         }
 
         private void dteTuNgay_Leave(object sender, EventArgs e)
