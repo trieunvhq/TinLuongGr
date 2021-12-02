@@ -195,7 +195,7 @@ namespace CtyTinLuong
                     cls2.fSoLuongXuat = CheckString.ConvertToDouble_My(dt.Rows[i]["SoLuongXuat"].ToString());
                     cls2.fDonGia = CheckString.ConvertToDouble_My(dt.Rows[i]["DonGia"].ToString());
                     cls2.fThanhTien = CheckString.ConvertToDouble_My(dt.Rows[i]["ThanhTien"].ToString());
-                    cls2.sDienGiai = dt.Rows[i]["ThanhTien"].ToString();
+                    cls2.sDienGiai = dt.Rows[i]["DienGiai"].ToString();
 
                     clsThin cls = new clsThin();
                     DataTable foundRows = cls.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_ID_XuatCont_S(id_XuatCont, ID_VTHH_);
@@ -223,45 +223,43 @@ namespace CtyTinLuong
             if (!KiemTraLuu()) return;
             else
             {
-                //    try
-                //    {            
-
-                clsDongKien_TbXuatKho_XuatContDL cls1 = new clsDongKien_TbXuatKho_XuatContDL();
-                cls1.daNgayThang = dteNgayChungTu.DateTime;
-                cls1.sSoChungTu = txtSoChungTu.Text;
-                cls1.sDienGiai = txtDienGiai.Text;
-                cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
-                cls1.bTonTai = true;
-                cls1.bNgungTheoDoi = false;
-                cls1.bDaXuatKho = true;
-                cls1.sGhiChu = "";
-                int iID_XuatContDongKien_;
-
-                if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi || UC_DongKien_XuatCont_BenDaiLy._mbCopy)
+                try
                 {
-                    cls1.Insert();
-                    iID_XuatContDongKien_ = cls1.iID_XuatContDongKien.Value;
+                    clsDongKien_TbXuatKho_XuatContDL cls1 = new clsDongKien_TbXuatKho_XuatContDL();
+                    cls1.daNgayThang = dteNgayChungTu.DateTime;
+                    cls1.sSoChungTu = txtSoChungTu.Text;
+                    cls1.sDienGiai = txtDienGiai.Text;
+                    cls1.iID_NguoiLap = Convert.ToInt32(gridNguoiLap.EditValue.ToString());
+                    cls1.bTonTai = true;
+                    cls1.bNgungTheoDoi = false;
+                    cls1.bDaXuatKho = true;
+                    cls1.sGhiChu = "";
+                    int iID_XuatContDongKien_;
+
+                    if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi || UC_DongKien_XuatCont_BenDaiLy._mbCopy)
+                    {
+                        cls1.Insert();
+                        iID_XuatContDongKien_ = cls1.iID_XuatContDongKien.Value;
+                    }
+                    else
+                    {
+                        cls1.iID_XuatContDongKien = UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien;
+                        iID_XuatContDongKien_ = UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien;
+                        cls1.Update();
+                    }
+
+                    Luu_ChiTiet_XuatContDongKien(iID_XuatContDongKien_);
+                    cls1.Dispose();
+
+                    //
+                    this.Close();
+                    _ucDLXKGD.UC_DongKien_XuatCont_BenDaiLy_Load(null, null);
+                    MessageBox.Show("Đã lưu dữ liệ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
+                catch
                 {
-                    cls1.iID_XuatContDongKien = UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien;
-                    iID_XuatContDongKien_ = UC_DongKien_XuatCont_BenDaiLy._iID_XuatContDongKien;
-                    cls1.Update();
+                    MessageBox.Show("Không thể lưu dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
-                Luu_ChiTiet_XuatContDongKien(iID_XuatContDongKien_);
-                cls1.Dispose();
-
-                //
-                this.Close();
-                _ucDLXKGD.UC_DongKien_XuatCont_BenDaiLy_Load(null, null);
-                MessageBox.Show("Đã lưu!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Không thể lưu dữ liệu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
             }
         }
 
@@ -346,12 +344,7 @@ namespace CtyTinLuong
                 ///*txtNguoiGiaoHang*/.Focus();
             }
         }
-        
-        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column == clSTT2)
-                e.DisplayText = (e.RowHandle + 1).ToString();
-        }
+       
 
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
@@ -660,6 +653,7 @@ namespace CtyTinLuong
                 DataTable dt = cls.SelectOne();
                 if (dt != null)
                 {
+                    gridView1.SetRowCellValue(e.RowHandle, ID_ChiTietXuatKho, 0);
                     string ss = dt.Rows[0]["TenVTHH"].ToString();
                     gridView1.SetRowCellValue(e.RowHandle, TenVTHH, dt.Rows[0]["TenVTHH"].ToString());
                     gridView1.SetRowCellValue(e.RowHandle, DonViTinh, dt.Rows[0]["DonViTinh"].ToString());
@@ -712,6 +706,13 @@ namespace CtyTinLuong
 
             }
         }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
 
         private void txtDonGiaTP_TextChanged(object sender, EventArgs e)
         {
