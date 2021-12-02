@@ -186,9 +186,9 @@ namespace CtyTinLuong
         public DataTable Tr_Select_SoChungTuXuatContDK()
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
-            scmCmdToExecute.CommandText = "dbo.[Tr_Select_CreateMaKhachHang]";
+            scmCmdToExecute.CommandText = "dbo.[Tr_Select_SoChungTuXuatContDK]";
             scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-            DataTable dtToReturn = new DataTable("CreateMaKH");
+            DataTable dtToReturn = new DataTable("CreateSoCT");
             SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
             // Use base class' connection object
@@ -204,7 +204,7 @@ namespace CtyTinLuong
             catch (Exception ex)
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
-                throw new Exception("Tr_Select_CreateMaKhachHang", ex);
+                throw new Exception("Tr_Select_SoChungTuXuatContDK", ex);
             }
             finally
             {
