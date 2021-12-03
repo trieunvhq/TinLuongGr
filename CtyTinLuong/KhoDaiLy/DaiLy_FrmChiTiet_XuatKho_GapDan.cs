@@ -737,7 +737,8 @@ namespace CtyTinLuong
             cls.Dispose();
             dt.Dispose();
 
-            LoadDataChamCongCN(Convert.ToInt32(dt.Rows[0]["ID_VTHH"].ToString()));
+            _id_vthh = Convert.ToInt32(dt.Rows[0]["ID_VTHH"].ToString());
+            LoadDataChamCongCN(_id_vthh);
 
             clsDinhMuc_DinhMuc_ToGapDan cls2 = new clsDinhMuc_DinhMuc_ToGapDan();
             cls2.iID_DinhMuc_ToGapDan = xxxID;
