@@ -37,18 +37,6 @@ namespace CtyTinLuong
             dt.Dispose();
         }
 
-        public static DateTime mdaPrintNgayXuatKho;
-        public static DataTable mdtPrint_ChiTietXuatKho;
-        public static string msPrintSoChungTu, msPrintDienGiaig, msPrintThuKho, msPrintNguoiNhan, msPrintNguoiLap;
-        
-        //private void HienThi_Grid_ConTrol_Themmoi(double soluongxuat, int xxID_DMgapdan)
-        //{
-        //    clsDinhMuc_ChiTiet_DinhMuc_ToGapDan cls = new CtyTinLuong.clsDinhMuc_ChiTiet_DinhMuc_ToGapDan();
-        //    DataTable dt = cls.SA_IDDM_W_SoLuong(soluongxuat,xxID_DMgapdan, dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year);
-        //    gridControl1.DataSource = dt;          
-        //    cls.Dispose();
-        //    dt.Dispose();
-        //}
        
         private void HienThi_Sua_XuatKho(int iiID_xuatkho_)
         {
@@ -706,40 +694,40 @@ namespace CtyTinLuong
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
-        private void gridView1_RowClick_1(object sender, RowClickEventArgs e)
+     
+        private void btXoaGrid2_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(ID_VTHH) == null
-                || gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() == ""
-                || gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() == "0")
+            if (gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho) == null
+                || gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho).ToString() == "")
             {
                 return;
             }
 
-            if (gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() != "")
+            try
             {
-                double SLrow_old = 0;
+                DialogResult ff = MessageBox.Show("Bạn có muốn xóa dữ liệu " + gridView1.GetFocusedRowCellValue(TenVTHH).ToString() + "?", 
+                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (ff == DialogResult.No)
+                    return;
 
-                int idvthh = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
-                double fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(SoLuongXuat));
-                if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho)) > 0)
+                int ID_ChiTietXuatKho_ = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho).ToString());
+                clsDongKien_TbXuatKho_XuatContDL_ChiTiet cls1 = new clsDongKien_TbXuatKho_XuatContDL_ChiTiet();
+
+                cls1.iID_ChiTietXuatKho = ID_ChiTietXuatKho_;
+                cls1.Delete();
+                cls1.Dispose();
+
+                DataTable dt = (DataTable)gridControl1.DataSource;
+                DataRow[] rows;
+                rows = dt.Select("ID_ChiTietXuatKho=' " + ID_ChiTietXuatKho_ + " ' ");
+                foreach (DataRow row in rows)
                 {
-                    clsDongKien_TbXuatKho_XuatContDL_ChiTiet cl = new clsDongKien_TbXuatKho_XuatContDL_ChiTiet();
-                    cl.iID_ChiTietXuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho));
-                    DataTable dt = cl.SelectOne();
-
-                    if (dt.Rows.Count > 0)
-                        SLrow_old = CheckString.ConvertToDouble_My(dt.Rows[0]["SoLuongXuat"].ToString());
+                    dt.Rows.Remove(row);
                 }
-
-                if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho)) == 0)
-                    Hienthi_Lable_TonKho(idvthh, fffsoluong, 0);
-                else
-                    Hienthi_Lable_TonKho(idvthh, fffsoluong, SLrow_old);
-
-                //if (UC_DongKien_XuatCont_BenDaiLy._mbThemMoi)
-                //    Hienthi_Lable_TonKho(idvthh, fffsoluong, 0);
-                //else
-                //    Hienthi_Lable_TonKho(idvthh, 0, 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xóa hàng hóa khỏi bảng..." + ex.ToString(), "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -798,6 +786,38 @@ namespace CtyTinLuong
             //}
 
             return result;
+        }
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (gridView1.GetFocusedRowCellValue(ID_VTHH) == null
+                || gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() == ""
+                || gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() == "0")
+            {
+                return;
+            }
+
+            if (gridView1.GetFocusedRowCellValue(ID_VTHH).ToString() != "")
+            {
+                double SLrow_old = 0;
+
+                int idvthh = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_VTHH).ToString());
+                double fffsoluong = CheckString.ConvertToDouble_My(gridView1.GetFocusedRowCellValue(SoLuongXuat));
+                if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho)) > 0)
+                {
+                    clsDongKien_TbXuatKho_XuatContDL_ChiTiet cl = new clsDongKien_TbXuatKho_XuatContDL_ChiTiet();
+                    cl.iID_ChiTietXuatKho = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho));
+                    DataTable dt = cl.SelectOne();
+
+                    if (dt.Rows.Count > 0)
+                        SLrow_old = CheckString.ConvertToDouble_My(dt.Rows[0]["SoLuongXuat"].ToString());
+                }
+
+                if (Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_ChiTietXuatKho)) == 0)
+                    Hienthi_Lable_TonKho(idvthh, fffsoluong, 0);
+                else
+                    Hienthi_Lable_TonKho(idvthh, fffsoluong, SLrow_old);
+            }
         }
 
         private bool checkIDCN_Update(int ID_ChamCong, int idcn)

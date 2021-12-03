@@ -95,11 +95,13 @@ namespace CtyTinLuong
             {
                 int ID_XuatContDongKien_ = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
                 clsDongKien_TbXuatKho_XuatContDL cls1 = new clsDongKien_TbXuatKho_XuatContDL();
+                clsThin cls2 = new clsThin();
+
+                cls2.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_DeleteIdXuatCont(ID_XuatContDongKien_);
+
                 cls1.iID_XuatContDongKien = ID_XuatContDongKien_;
                 cls1.Delete();
 
-                clsThin cls2 = new clsThin();
-                cls2.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_DeleteIdXuatCont(ID_XuatContDongKien_);
                 MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 

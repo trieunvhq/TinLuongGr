@@ -508,7 +508,7 @@
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick_1);
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
@@ -528,7 +528,6 @@
             this.ID_VTHH.ColumnEdit = this.searchMaVT;
             this.ID_VTHH.FieldName = "ID_VTHH";
             this.ID_VTHH.Name = "ID_VTHH";
-            this.ID_VTHH.OptionsColumn.AllowEdit = false;
             this.ID_VTHH.OptionsColumn.FixedWidth = true;
             this.ID_VTHH.Visible = true;
             this.ID_VTHH.VisibleIndex = 1;
@@ -586,7 +585,6 @@
             this.DonViTinh.Caption = "ĐVT";
             this.DonViTinh.FieldName = "DonViTinh";
             this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.OptionsColumn.AllowEdit = false;
             this.DonViTinh.OptionsColumn.FixedWidth = true;
             this.DonViTinh.Visible = true;
             this.DonViTinh.VisibleIndex = 3;
@@ -631,6 +629,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoaGrid2.Name = "btXoaGrid2";
             this.btXoaGrid2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btXoaGrid2.Click += new System.EventHandler(this.btXoaGrid2_Click);
             // 
             // GhiChu
             // 
@@ -657,7 +656,6 @@
             this.SoLuongXuat.GroupFormat.FormatString = "{0:0.###}";
             this.SoLuongXuat.GroupFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.SoLuongXuat.Name = "SoLuongXuat";
-            this.SoLuongXuat.OptionsColumn.AllowEdit = false;
             this.SoLuongXuat.OptionsColumn.FixedWidth = true;
             this.SoLuongXuat.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SoLuong", "{0:0.##}")});
