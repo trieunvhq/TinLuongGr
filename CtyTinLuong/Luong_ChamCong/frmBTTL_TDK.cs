@@ -404,6 +404,21 @@ namespace CtyTinLuong
             LoadData(false, _id_bophan);
         }
 
+        private void txtLuongTrachNhiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (isload)
+                    return;
+
+                using (clsThin cls = new clsThin())
+                {
+                    cls.Tr_LgTrNhiem_DB_DK_I(_thang, _nam, CheckString.ConvertToDouble_My(txtLuongTrachNhiem.Text.Trim()), _id_bophan, true, true);
+                }
+                LoadData(false, _id_bophan);
+            }
+        }
+
         private float ConvertToFloat(string s)
         {
             char systemSeparator = Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
