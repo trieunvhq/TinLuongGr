@@ -29,16 +29,16 @@ namespace CtyTinLuong
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -99,7 +99,7 @@ namespace CtyTinLuong
             this.Tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID_ChiTietChamCong_ToGapDan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.comboThin = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -112,13 +112,13 @@ namespace CtyTinLuong
             this.cbHangHoa = new System.Windows.Forms.ComboBox();
             this.btnThemNhanVien = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btGuiDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.NumericUpDown();
             this.txtThang = new System.Windows.Forms.NumericUpDown();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -140,16 +140,16 @@ namespace CtyTinLuong
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions3.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 25);
+            this.label3.Location = new System.Drawing.Point(340, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 126;
@@ -159,7 +159,7 @@ namespace CtyTinLuong
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(223, 26);
+            this.label4.Location = new System.Drawing.Point(496, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 127;
@@ -168,9 +168,9 @@ namespace CtyTinLuong
             // btXoa
             // 
             this.btXoa.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
+            editorButtonImageOptions4.Image = global::CtyTinLuong.Properties.Resources.ico_Delete;
             this.btXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btXoa.Name = "btXoa";
             this.btXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -290,7 +290,7 @@ namespace CtyTinLuong
             this.Tong,
             this.ID_ChiTietChamCong_ToGapDan,
             this.Xoa,
-            this.MaNhanVien});
+            this.MaVT});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1106, 496, 260, 232);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -319,7 +319,7 @@ namespace CtyTinLuong
             this.TenVTHH.OptionsColumn.AllowEdit = false;
             this.TenVTHH.Visible = true;
             this.TenVTHH.VisibleIndex = 0;
-            this.TenVTHH.Width = 300;
+            this.TenVTHH.Width = 250;
             // 
             // MaDinhMucLuongCongNhat
             // 
@@ -433,7 +433,9 @@ namespace CtyTinLuong
             this.Ngay1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay1.Caption = "01";
+            this.Ngay1.DisplayFormat.FormatString = "N0";
             this.Ngay1.FieldName = "Ngay1";
+            this.Ngay1.GroupFormat.FormatString = "N0";
             this.Ngay1.MinWidth = 27;
             this.Ngay1.Name = "Ngay1";
             this.Ngay1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -458,7 +460,9 @@ namespace CtyTinLuong
             this.Ngay2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay2.Caption = "02";
+            this.Ngay2.DisplayFormat.FormatString = "N0";
             this.Ngay2.FieldName = "Ngay2";
+            this.Ngay2.GroupFormat.FormatString = "N0";
             this.Ngay2.MinWidth = 27;
             this.Ngay2.Name = "Ngay2";
             this.Ngay2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -483,7 +487,9 @@ namespace CtyTinLuong
             this.Ngay3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay3.Caption = "03";
+            this.Ngay3.DisplayFormat.FormatString = "N0";
             this.Ngay3.FieldName = "Ngay3";
+            this.Ngay3.GroupFormat.FormatString = "N0";
             this.Ngay3.MinWidth = 27;
             this.Ngay3.Name = "Ngay3";
             this.Ngay3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -508,7 +514,9 @@ namespace CtyTinLuong
             this.Ngay4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay4.Caption = "04";
+            this.Ngay4.DisplayFormat.FormatString = "N0";
             this.Ngay4.FieldName = "Ngay4";
+            this.Ngay4.GroupFormat.FormatString = "N0";
             this.Ngay4.MinWidth = 27;
             this.Ngay4.Name = "Ngay4";
             this.Ngay4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -533,7 +541,9 @@ namespace CtyTinLuong
             this.Ngay5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay5.Caption = "05";
+            this.Ngay5.DisplayFormat.FormatString = "N0";
             this.Ngay5.FieldName = "Ngay5";
+            this.Ngay5.GroupFormat.FormatString = "N0";
             this.Ngay5.MinWidth = 27;
             this.Ngay5.Name = "Ngay5";
             this.Ngay5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -558,7 +568,9 @@ namespace CtyTinLuong
             this.Ngay6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay6.Caption = "06";
+            this.Ngay6.DisplayFormat.FormatString = "N0";
             this.Ngay6.FieldName = "Ngay6";
+            this.Ngay6.GroupFormat.FormatString = "N0";
             this.Ngay6.MinWidth = 27;
             this.Ngay6.Name = "Ngay6";
             this.Ngay6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -583,7 +595,9 @@ namespace CtyTinLuong
             this.Ngay7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay7.Caption = "07";
+            this.Ngay7.DisplayFormat.FormatString = "N0";
             this.Ngay7.FieldName = "Ngay7";
+            this.Ngay7.GroupFormat.FormatString = "N0";
             this.Ngay7.MinWidth = 27;
             this.Ngay7.Name = "Ngay7";
             this.Ngay7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -608,7 +622,9 @@ namespace CtyTinLuong
             this.Ngay8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay8.Caption = "08";
+            this.Ngay8.DisplayFormat.FormatString = "N0";
             this.Ngay8.FieldName = "Ngay8";
+            this.Ngay8.GroupFormat.FormatString = "N0";
             this.Ngay8.MinWidth = 27;
             this.Ngay8.Name = "Ngay8";
             this.Ngay8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -633,7 +649,9 @@ namespace CtyTinLuong
             this.Ngay9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay9.Caption = "09";
+            this.Ngay9.DisplayFormat.FormatString = "N0";
             this.Ngay9.FieldName = "Ngay9";
+            this.Ngay9.GroupFormat.FormatString = "N0";
             this.Ngay9.MinWidth = 27;
             this.Ngay9.Name = "Ngay9";
             this.Ngay9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -658,7 +676,9 @@ namespace CtyTinLuong
             this.Ngay10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay10.Caption = "10";
+            this.Ngay10.DisplayFormat.FormatString = "N0";
             this.Ngay10.FieldName = "Ngay10";
+            this.Ngay10.GroupFormat.FormatString = "N0";
             this.Ngay10.MinWidth = 27;
             this.Ngay10.Name = "Ngay10";
             this.Ngay10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -684,7 +704,9 @@ namespace CtyTinLuong
             this.Ngay11.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay11.Caption = "11";
+            this.Ngay11.DisplayFormat.FormatString = "N0";
             this.Ngay11.FieldName = "Ngay11";
+            this.Ngay11.GroupFormat.FormatString = "N0";
             this.Ngay11.MinWidth = 27;
             this.Ngay11.Name = "Ngay11";
             this.Ngay11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -709,7 +731,9 @@ namespace CtyTinLuong
             this.Ngay12.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay12.Caption = "12";
+            this.Ngay12.DisplayFormat.FormatString = "N0";
             this.Ngay12.FieldName = "Ngay12";
+            this.Ngay12.GroupFormat.FormatString = "N0";
             this.Ngay12.MinWidth = 27;
             this.Ngay12.Name = "Ngay12";
             this.Ngay12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -734,7 +758,9 @@ namespace CtyTinLuong
             this.Ngay13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay13.Caption = "13";
+            this.Ngay13.DisplayFormat.FormatString = "N0";
             this.Ngay13.FieldName = "Ngay13";
+            this.Ngay13.GroupFormat.FormatString = "N0";
             this.Ngay13.MinWidth = 27;
             this.Ngay13.Name = "Ngay13";
             this.Ngay13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -759,7 +785,9 @@ namespace CtyTinLuong
             this.Ngay14.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay14.Caption = "14";
+            this.Ngay14.DisplayFormat.FormatString = "N0";
             this.Ngay14.FieldName = "Ngay14";
+            this.Ngay14.GroupFormat.FormatString = "N0";
             this.Ngay14.MinWidth = 27;
             this.Ngay14.Name = "Ngay14";
             this.Ngay14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -784,7 +812,9 @@ namespace CtyTinLuong
             this.Ngay15.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay15.Caption = "15";
+            this.Ngay15.DisplayFormat.FormatString = "N0";
             this.Ngay15.FieldName = "Ngay15";
+            this.Ngay15.GroupFormat.FormatString = "N0";
             this.Ngay15.MinWidth = 27;
             this.Ngay15.Name = "Ngay15";
             this.Ngay15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -809,7 +839,9 @@ namespace CtyTinLuong
             this.Ngay16.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay16.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay16.Caption = "16";
+            this.Ngay16.DisplayFormat.FormatString = "N0";
             this.Ngay16.FieldName = "Ngay16";
+            this.Ngay16.GroupFormat.FormatString = "N0";
             this.Ngay16.MinWidth = 27;
             this.Ngay16.Name = "Ngay16";
             this.Ngay16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -834,7 +866,9 @@ namespace CtyTinLuong
             this.Ngay17.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay17.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay17.Caption = "17";
+            this.Ngay17.DisplayFormat.FormatString = "N0";
             this.Ngay17.FieldName = "Ngay17";
+            this.Ngay17.GroupFormat.FormatString = "N0";
             this.Ngay17.MinWidth = 27;
             this.Ngay17.Name = "Ngay17";
             this.Ngay17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -859,7 +893,9 @@ namespace CtyTinLuong
             this.Ngay18.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay18.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay18.Caption = "18";
+            this.Ngay18.DisplayFormat.FormatString = "N0";
             this.Ngay18.FieldName = "Ngay18";
+            this.Ngay18.GroupFormat.FormatString = "N0";
             this.Ngay18.MinWidth = 27;
             this.Ngay18.Name = "Ngay18";
             this.Ngay18.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -884,7 +920,9 @@ namespace CtyTinLuong
             this.Ngay19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay19.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay19.Caption = "19";
+            this.Ngay19.DisplayFormat.FormatString = "N0";
             this.Ngay19.FieldName = "Ngay19";
+            this.Ngay19.GroupFormat.FormatString = "N0";
             this.Ngay19.MinWidth = 27;
             this.Ngay19.Name = "Ngay19";
             this.Ngay19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -909,7 +947,9 @@ namespace CtyTinLuong
             this.Ngay20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay20.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay20.Caption = "20";
+            this.Ngay20.DisplayFormat.FormatString = "N0";
             this.Ngay20.FieldName = "Ngay20";
+            this.Ngay20.GroupFormat.FormatString = "N0";
             this.Ngay20.MinWidth = 27;
             this.Ngay20.Name = "Ngay20";
             this.Ngay20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -934,7 +974,9 @@ namespace CtyTinLuong
             this.Ngay21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay21.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay21.Caption = "21";
+            this.Ngay21.DisplayFormat.FormatString = "N0";
             this.Ngay21.FieldName = "Ngay21";
+            this.Ngay21.GroupFormat.FormatString = "N0";
             this.Ngay21.MinWidth = 27;
             this.Ngay21.Name = "Ngay21";
             this.Ngay21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -959,7 +1001,9 @@ namespace CtyTinLuong
             this.Ngay22.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay22.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay22.Caption = "22";
+            this.Ngay22.DisplayFormat.FormatString = "N0";
             this.Ngay22.FieldName = "Ngay22";
+            this.Ngay22.GroupFormat.FormatString = "N0";
             this.Ngay22.MinWidth = 27;
             this.Ngay22.Name = "Ngay22";
             this.Ngay22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -984,7 +1028,9 @@ namespace CtyTinLuong
             this.Ngay23.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay23.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay23.Caption = "23";
+            this.Ngay23.DisplayFormat.FormatString = "N0";
             this.Ngay23.FieldName = "Ngay23";
+            this.Ngay23.GroupFormat.FormatString = "N0";
             this.Ngay23.MinWidth = 27;
             this.Ngay23.Name = "Ngay23";
             this.Ngay23.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1009,7 +1055,9 @@ namespace CtyTinLuong
             this.Ngay24.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay24.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay24.Caption = "24";
+            this.Ngay24.DisplayFormat.FormatString = "N0";
             this.Ngay24.FieldName = "Ngay24";
+            this.Ngay24.GroupFormat.FormatString = "N0";
             this.Ngay24.MinWidth = 27;
             this.Ngay24.Name = "Ngay24";
             this.Ngay24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1034,7 +1082,9 @@ namespace CtyTinLuong
             this.Ngay25.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay25.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay25.Caption = "25";
+            this.Ngay25.DisplayFormat.FormatString = "N0";
             this.Ngay25.FieldName = "Ngay25";
+            this.Ngay25.GroupFormat.FormatString = "N0";
             this.Ngay25.MinWidth = 27;
             this.Ngay25.Name = "Ngay25";
             this.Ngay25.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1059,7 +1109,9 @@ namespace CtyTinLuong
             this.Ngay26.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay26.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay26.Caption = "26";
+            this.Ngay26.DisplayFormat.FormatString = "N0";
             this.Ngay26.FieldName = "Ngay26";
+            this.Ngay26.GroupFormat.FormatString = "N0";
             this.Ngay26.MinWidth = 27;
             this.Ngay26.Name = "Ngay26";
             this.Ngay26.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1084,7 +1136,9 @@ namespace CtyTinLuong
             this.Ngay27.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay27.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay27.Caption = "27";
+            this.Ngay27.DisplayFormat.FormatString = "N0";
             this.Ngay27.FieldName = "Ngay27";
+            this.Ngay27.GroupFormat.FormatString = "N0";
             this.Ngay27.MinWidth = 27;
             this.Ngay27.Name = "Ngay27";
             this.Ngay27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1109,7 +1163,9 @@ namespace CtyTinLuong
             this.Ngay28.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay28.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay28.Caption = "28";
+            this.Ngay28.DisplayFormat.FormatString = "N0";
             this.Ngay28.FieldName = "Ngay28";
+            this.Ngay28.GroupFormat.FormatString = "N0";
             this.Ngay28.MinWidth = 27;
             this.Ngay28.Name = "Ngay28";
             this.Ngay28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1134,7 +1190,9 @@ namespace CtyTinLuong
             this.Ngay29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay29.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay29.Caption = "29";
+            this.Ngay29.DisplayFormat.FormatString = "N0";
             this.Ngay29.FieldName = "Ngay29";
+            this.Ngay29.GroupFormat.FormatString = "N0";
             this.Ngay29.MinWidth = 27;
             this.Ngay29.Name = "Ngay29";
             this.Ngay29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1159,7 +1217,9 @@ namespace CtyTinLuong
             this.Ngay30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay30.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay30.Caption = "30";
+            this.Ngay30.DisplayFormat.FormatString = "N0";
             this.Ngay30.FieldName = "Ngay30";
+            this.Ngay30.GroupFormat.FormatString = "N0";
             this.Ngay30.MinWidth = 27;
             this.Ngay30.Name = "Ngay30";
             this.Ngay30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1184,7 +1244,9 @@ namespace CtyTinLuong
             this.Ngay31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Ngay31.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Ngay31.Caption = "31";
+            this.Ngay31.DisplayFormat.FormatString = "N0";
             this.Ngay31.FieldName = "Ngay31";
+            this.Ngay31.GroupFormat.FormatString = "N0";
             this.Ngay31.MinWidth = 27;
             this.Ngay31.Name = "Ngay31";
             this.Ngay31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1219,8 +1281,10 @@ namespace CtyTinLuong
             this.Tong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Tong.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Tong.Caption = "TỔNG";
+            this.Tong.DisplayFormat.FormatString = "N0";
             this.Tong.FieldName = "Tong";
             this.Tong.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.Tong.GroupFormat.FormatString = "N0";
             this.Tong.MinWidth = 44;
             this.Tong.Name = "Tong";
             this.Tong.OptionsColumn.AllowEdit = false;
@@ -1243,15 +1307,13 @@ namespace CtyTinLuong
             this.Xoa.FieldName = "Xoa";
             this.Xoa.Name = "Xoa";
             this.Xoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.Xoa.Visible = true;
-            this.Xoa.VisibleIndex = 32;
             this.Xoa.Width = 35;
             // 
-            // MaNhanVien
+            // MaVT
             // 
-            this.MaNhanVien.Caption = "MaNhanVien";
-            this.MaNhanVien.FieldName = "MaNhanVien";
-            this.MaNhanVien.Name = "MaNhanVien";
+            this.MaVT.Caption = "MaVT";
+            this.MaVT.FieldName = "MaVT";
+            this.MaVT.Name = "MaVT";
             // 
             // gridControl1
             // 
@@ -1346,41 +1408,33 @@ namespace CtyTinLuong
             // 
             this.cbHangHoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHangHoa.FormattingEnabled = true;
-            this.cbHangHoa.Location = new System.Drawing.Point(482, 22);
+            this.cbHangHoa.Location = new System.Drawing.Point(539, -9);
             this.cbHangHoa.Name = "cbHangHoa";
             this.cbHangHoa.Size = new System.Drawing.Size(242, 21);
             this.cbHangHoa.TabIndex = 138;
+            this.cbHangHoa.Visible = false;
             // 
             // btnThemNhanVien
             // 
-            this.btnThemNhanVien.Location = new System.Drawing.Point(730, 21);
+            this.btnThemNhanVien.Location = new System.Drawing.Point(787, -10);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(112, 23);
             this.btnThemNhanVien.TabIndex = 137;
             this.btnThemNhanVien.Text = "Thêm hàng hóa";
             this.btnThemNhanVien.UseVisualStyleBackColor = true;
+            this.btnThemNhanVien.Visible = false;
             this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(386, 25);
+            this.label7.Location = new System.Drawing.Point(443, -6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 13);
             this.label7.TabIndex = 136;
             this.label7.Text = "Tên hàng hóa:";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(2, 601);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(176, 13);
-            this.linkLabel2.TabIndex = 146;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Cài mặc định mã hàng tổ đóng kiện";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.label7.Visible = false;
             // 
             // btnPrint
             // 
@@ -1424,20 +1478,9 @@ namespace CtyTinLuong
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(275, 603);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 13);
-            this.label5.TabIndex = 162;
-            this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
-            // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(262, 23);
+            this.txtNam.Location = new System.Drawing.Point(535, 23);
             this.txtNam.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -1461,7 +1504,7 @@ namespace CtyTinLuong
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(117, 23);
+            this.txtThang.Location = new System.Drawing.Point(390, 23);
             this.txtThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -1482,6 +1525,30 @@ namespace CtyTinLuong
             0,
             0});
             this.txtThang.Leave += new System.EventHandler(this.txtThang_Leave);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(2, 601);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(176, 13);
+            this.linkLabel2.TabIndex = 146;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Cài mặc định mã hàng tổ đóng kiện";
+            this.linkLabel2.Visible = false;
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(275, 603);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(262, 13);
+            this.label5.TabIndex = 162;
+            this.label5.Text = "(Double click vào \"họ tên\" để sửa định mức)";
+            this.label5.Visible = false;
             // 
             // frmChamCong_TDK
             // 
@@ -1597,14 +1664,14 @@ namespace CtyTinLuong
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.Columns.GridColumn Cong;
         private DevExpress.XtraGrid.Columns.GridColumn ID_ChiTietChamCong_ToGapDan;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btGuiDuLieu;
         private DevExpress.XtraEditors.SimpleButton btThoat;
-        private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.Columns.GridColumn Xoa;
         private System.Windows.Forms.NumericUpDown txtNam;
         private System.Windows.Forms.NumericUpDown txtThang;
-        private DevExpress.XtraGrid.Columns.GridColumn MaNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn MaVT;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label label5;
     }
 }

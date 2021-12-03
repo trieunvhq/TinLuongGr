@@ -384,6 +384,7 @@
     <Compile Include="Luong_ChamCong\frmChamCong_ToIn.Designer.cs">
       <DependentUpon>frmChamCong_ToIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ModelDongKien.cs" />
     <Compile Include="Model\ModelNXT_InCat_ChiTiet.cs" />
     <Compile Include="Model\ModelNXT_MayInCat.cs" />
     <Compile Include="Model\ModelCongNhat.cs" />

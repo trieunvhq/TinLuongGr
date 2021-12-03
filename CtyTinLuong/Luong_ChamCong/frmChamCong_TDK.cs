@@ -60,6 +60,43 @@ namespace CtyTinLuong
             emptyEditor.Buttons.Clear();
             emptyEditor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             gridControl1.RepositoryItems.Add(emptyEditor);
+
+            _data = new DataTable();
+            _data.Columns.Add("STT", typeof(string));
+            _data.Columns.Add("MaVT", typeof(string));
+            _data.Columns.Add("TenVTHH", typeof(string));
+            _data.Columns.Add("Ngay1", typeof(double));
+            _data.Columns.Add("Ngay2", typeof(double));
+            _data.Columns.Add("Ngay3", typeof(double));
+            _data.Columns.Add("Ngay4", typeof(double));
+            _data.Columns.Add("Ngay5", typeof(double));
+            _data.Columns.Add("Ngay6", typeof(double));
+            _data.Columns.Add("Ngay7", typeof(double));
+            _data.Columns.Add("Ngay8", typeof(double));
+            _data.Columns.Add("Ngay9", typeof(double));
+            _data.Columns.Add("Ngay10", typeof(double));
+            _data.Columns.Add("Ngay11", typeof(double));
+            _data.Columns.Add("Ngay12", typeof(double));
+            _data.Columns.Add("Ngay13", typeof(double));
+            _data.Columns.Add("Ngay14", typeof(double));
+            _data.Columns.Add("Ngay15", typeof(double));
+            _data.Columns.Add("Ngay16", typeof(double));
+            _data.Columns.Add("Ngay17", typeof(double));
+            _data.Columns.Add("Ngay18", typeof(double));
+            _data.Columns.Add("Ngay19", typeof(double));
+            _data.Columns.Add("Ngay20", typeof(double));
+            _data.Columns.Add("Ngay21", typeof(double));
+            _data.Columns.Add("Ngay22", typeof(double));
+            _data.Columns.Add("Ngay23", typeof(double));
+            _data.Columns.Add("Ngay24", typeof(double));
+            _data.Columns.Add("Ngay25", typeof(double));
+            _data.Columns.Add("Ngay26", typeof(double));
+            _data.Columns.Add("Ngay27", typeof(double));
+            _data.Columns.Add("Ngay28", typeof(double));
+            _data.Columns.Add("Ngay29", typeof(double));
+            _data.Columns.Add("Ngay30", typeof(double));
+            _data.Columns.Add("Ngay31", typeof(double));
+            _data.Columns.Add("Tong", typeof(double));
         }
         public void Load_DinhMuc(int id_dinhmuc,string ma,int id_congnhan)
         {
@@ -259,6 +296,7 @@ namespace CtyTinLuong
 
         public void LoadData(bool islandau)
         {
+            _data.Clear();
             isload = true;
             if (islandau)
             { 
@@ -268,21 +306,20 @@ namespace CtyTinLuong
                 txtNam.Text = dtnow.Year.ToString();
                 txtThang.Text = dtnow.Month.ToString();
             }
-            else
-            {
-            }
+
+            List<int> dsIDVTHH = new List<int>();
 
             ChangeColTitle(_thang, _nam);
 
-            using (clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh())
-            {
-                cls.iThang = _thang;
-                cls.iNam = _nam;
-                _dt_HangHoa = cls.Tr_CaiMacDinhMaHang_TDK_SelectAll_thang_nam();
-                cbHangHoa.DataSource = _dt_HangHoa;
-                cbHangHoa.DisplayMember = "TenVTHH";
-                cbHangHoa.ValueMember = "ID_VTHH";
-            }
+            //using (clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh cls = new clsHuu_CongNhat_MaHang_ToGapDan_CaiMacDinh())
+            //{
+            //    cls.iThang = _thang;
+            //    cls.iNam = _nam;
+            //    _dt_HangHoa = cls.Tr_CaiMacDinhMaHang_TDK_SelectAll_thang_nam();
+            //    cbHangHoa.DataSource = _dt_HangHoa;
+            //    cbHangHoa.DisplayMember = "TenVTHH";
+            //    cbHangHoa.ValueMember = "ID_VTHH";
+            //}
 
             //using (clsThin clsThin_ = new clsThin())
             //{
@@ -294,179 +331,130 @@ namespace CtyTinLuong
 
             using (clsThin clsThin_ = new clsThin())
             {
-                _data = clsThin_.Tr_Huu_CongNhat_ChiTiet_ChamCong_ToGapDan_TDK_Select(_nam, _thang, _id_bophan, 0, "");
-                _ListID_HangHoa = new List<int>();
+                int stt = 0;
+                double tongTong = 0;
 
-                double Ngay1 = 0;
-                double Ngay2 = 0;
-                double Ngay3 = 0;
-                double Ngay4 = 0;
-                double Ngay5 = 0;
-                double Ngay6 = 0;
-                double Ngay7 = 0;
-                double Ngay8 = 0;
-                double Ngay9 = 0;
-                double Ngay10 = 0;
-                double Ngay11 = 0;
-                double Ngay12 = 0;
-                double Ngay13 = 0;
-                double Ngay14 = 0;
-                double Ngay15 = 0;
-                double Ngay16 = 0;
-                double Ngay17 = 0;
-                double Ngay18 = 0;
-                double Ngay19 = 0;
-                double Ngay20 = 0;
-                double Ngay21 = 0;
-                double Ngay22 = 0;
-                double Ngay23 = 0;
-                double Ngay24 = 0;
-                double Ngay25 = 0;
-                double Ngay26 = 0;
-                double Ngay27 = 0;
-                double Ngay28 = 0;
-                double Ngay29 = 0;
-                double Ngay30 = 0;
-                double Ngay31 = 0;
+                DataTable dtGD = clsThin_.Tr_DongKien_TbXuatKho_ChiTietXuatKho_ChamCong(_thang, _nam);
+                DataTable dtDL = clsThin_.Tr_DongKien_TbXuatKho_XuatContDL_ChiTiet_ChamCong(_thang, _nam);
+                foreach (DataRow item in dtGD.Rows)
+                {
+                    if (!dsIDVTHH.Contains(Convert.ToInt32(item["ID_VTHH"].ToString())))
+                    {
+                        dsIDVTHH.Add(Convert.ToInt32(item["ID_VTHH"].ToString()));
+                    }
+                }
 
-                Tong_Ngay1 = 0;
-                Tong_Ngay2 = 0;
-                Tong_Ngay3 = 0;
-                Tong_Ngay4 = 0;
-                Tong_Ngay5 = 0;
-                Tong_Ngay6 = 0;
-                Tong_Ngay7 = 0;
-                Tong_Ngay8 = 0;
-                Tong_Ngay9 = 0;
-                Tong_Ngay10 = 0;
-                Tong_Ngay11 = 0;
-                Tong_Ngay12 = 0;
-                Tong_Ngay13 = 0;
-                Tong_Ngay14 = 0;
-                Tong_Ngay15 = 0;
-                Tong_Ngay16 = 0;
-                Tong_Ngay17 = 0;
-                Tong_Ngay18 = 0;
-                Tong_Ngay19 = 0;
-                Tong_Ngay20 = 0;
-                Tong_Ngay21 = 0;
-                Tong_Ngay22 = 0;
-                Tong_Ngay23 = 0;
-                Tong_Ngay24 = 0;
-                Tong_Ngay25 = 0;
-                Tong_Ngay26 = 0;
-                Tong_Ngay27 = 0;
-                Tong_Ngay28 = 0;
-                Tong_Ngay29 = 0;
-                Tong_Ngay30 = 0;
-                Tong_Ngay31 = 0;
+                foreach (DataRow item in dtDL.Rows)
+                {
+                    if (!dsIDVTHH.Contains(Convert.ToInt32(item["ID_VTHH"].ToString())))
+                    {
+                        dsIDVTHH.Add(Convert.ToInt32(item["ID_VTHH"].ToString()));
+                    }
+                }
 
-                for (int i = 0; i < _data.Rows.Count; ++i)
-                { 
-                    _ListID_HangHoa.Add(Convert.ToInt32(_data.Rows[i]["ID_VTHH"].ToString()));
+                foreach (int item in dsIDVTHH)
+                {
+                    ModelDongKien dk = getSLDK(item, dtGD, dtDL);
+                    stt++;
 
-                    Ngay1 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay1"].ToString());
-                    Ngay2 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay2"].ToString());
-                    Ngay3 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay3"].ToString());
-                    Ngay4 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay4"].ToString());
-                    Ngay5 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay5"].ToString());
-                    Ngay6 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay6"].ToString());
-                    Ngay7 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay7"].ToString());
-                    Ngay8 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay8"].ToString());
-                    Ngay9 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay9"].ToString());
-                    Ngay10 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay10"].ToString());
-                    Ngay11 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay11"].ToString());
-                    Ngay12 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay12"].ToString());
-                    Ngay13 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay13"].ToString());
-                    Ngay14 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay14"].ToString());
-                    Ngay15 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay15"].ToString());
-                    Ngay16 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay16"].ToString());
-                    Ngay17 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay17"].ToString());
-                    Ngay18 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay18"].ToString());
-                    Ngay19 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay19"].ToString());
-                    Ngay20 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay20"].ToString());
-                    Ngay21 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay21"].ToString());
-                    Ngay22 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay22"].ToString());
-                    Ngay23 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay23"].ToString());
-                    Ngay24 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay24"].ToString());
-                    Ngay25 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay25"].ToString());
-                    Ngay26 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay26"].ToString());
-                    Ngay27 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay27"].ToString());
-                    Ngay28 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay28"].ToString());
-                    Ngay29 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay29"].ToString());
-                    Ngay30 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay30"].ToString());
-                    Ngay31 = CheckString.ConvertToDouble_My(_data.Rows[i]["Ngay31"].ToString());
-                    //
-                    _data.Rows[i]["Ngay1"] = String.Format("{0:0.##}", Ngay1);
-                    _data.Rows[i]["Ngay2"] = String.Format("{0:0.##}", Ngay2);
-                    _data.Rows[i]["Ngay3"] = String.Format("{0:0.##}", Ngay3);
-                    _data.Rows[i]["Ngay4"] = String.Format("{0:0.##}", Ngay4);
-                    _data.Rows[i]["Ngay5"] = String.Format("{0:0.##}", Ngay5);
-                    _data.Rows[i]["Ngay6"] = String.Format("{0:0.##}", Ngay6);
-                    _data.Rows[i]["Ngay7"] = String.Format("{0:0.##}", Ngay7);
-                    _data.Rows[i]["Ngay8"] = String.Format("{0:0.##}", Ngay8);
-                    _data.Rows[i]["Ngay9"] = String.Format("{0:0.##}", Ngay9);
-                    _data.Rows[i]["Ngay10"] = String.Format("{0:0.##}", Ngay10);
-                    _data.Rows[i]["Ngay11"] = String.Format("{0:0.##}", Ngay11);
-                    _data.Rows[i]["Ngay12"] = String.Format("{0:0.##}", Ngay12);
-                    _data.Rows[i]["Ngay13"] = String.Format("{0:0.##}", Ngay13);
-                    _data.Rows[i]["Ngay14"] = String.Format("{0:0.##}", Ngay14);
-                    _data.Rows[i]["Ngay15"] = String.Format("{0:0.##}", Ngay15);
-                    _data.Rows[i]["Ngay16"] = String.Format("{0:0.##}", Ngay16);
-                    _data.Rows[i]["Ngay17"] = String.Format("{0:0.##}", Ngay17);
-                    _data.Rows[i]["Ngay18"] = String.Format("{0:0.##}", Ngay18);
-                    _data.Rows[i]["Ngay19"] = String.Format("{0:0.##}", Ngay19);
-                    _data.Rows[i]["Ngay20"] = String.Format("{0:0.##}", Ngay20);
-                    _data.Rows[i]["Ngay21"] = String.Format("{0:0.##}", Ngay21);
-                    _data.Rows[i]["Ngay22"] = String.Format("{0:0.##}", Ngay22);
-                    _data.Rows[i]["Ngay23"] = String.Format("{0:0.##}", Ngay23);
-                    _data.Rows[i]["Ngay24"] = String.Format("{0:0.##}", Ngay24);
-                    _data.Rows[i]["Ngay25"] = String.Format("{0:0.##}", Ngay25);
-                    _data.Rows[i]["Ngay26"] = String.Format("{0:0.##}", Ngay26);
-                    _data.Rows[i]["Ngay27"] = String.Format("{0:0.##}", Ngay27);
-                    _data.Rows[i]["Ngay28"] = String.Format("{0:0.##}", Ngay28);
-                    _data.Rows[i]["Ngay29"] = String.Format("{0:0.##}", Ngay29);
-                    _data.Rows[i]["Ngay30"] = String.Format("{0:0.##}", Ngay30);
-                    _data.Rows[i]["Ngay31"] = String.Format("{0:0.##}", Ngay31);
+                    DataRow _ravi = _data.NewRow();
+                    _ravi["STT"] = stt;
+                    _ravi["MaVT"] = dk.MaVT;
+                    _ravi["TenVTHH"] = dk.TenHangHoa;
+                    _ravi["Tong"] = dk.SanLuongTong.ToString("N0");
 
-                    Tong_Ngay1 += Ngay1;
-                    Tong_Ngay2 += Ngay2;
-                    Tong_Ngay3 += Ngay3;
-                    Tong_Ngay4 += Ngay4;
-                    Tong_Ngay5 += Ngay5;
-                    Tong_Ngay6 += Ngay6;
-                    Tong_Ngay7 += Ngay7;
-                    Tong_Ngay8 += Ngay8;
-                    Tong_Ngay9 += Ngay9;
-                    Tong_Ngay10 += Ngay10;
-                    Tong_Ngay11 += Ngay11;
-                    Tong_Ngay12 += Ngay12;
-                    Tong_Ngay13 += Ngay13;
-                    Tong_Ngay14 += Ngay14;
-                    Tong_Ngay15 += Ngay15;
-                    Tong_Ngay16 += Ngay16;
-                    Tong_Ngay17 += Ngay17;
-                    Tong_Ngay18 += Ngay18;
-                    Tong_Ngay19 += Ngay19;
-                    Tong_Ngay20 += Ngay20;
-                    Tong_Ngay21 += Ngay21;
-                    Tong_Ngay22 += Ngay22;
-                    Tong_Ngay23 += Ngay23;
-                    Tong_Ngay24 += Ngay24;
-                    Tong_Ngay25 += Ngay25;
-                    Tong_Ngay26 += Ngay26;
-                    Tong_Ngay27 += Ngay27;
-                    Tong_Ngay28 += Ngay28;
-                    Tong_Ngay29 += Ngay29;
-                    Tong_Ngay30 += Ngay30;
-                    Tong_Ngay31 += Ngay31;
-                    
+                    for (int i = 0; i < 31; i++)
+                    {
+                        _ravi["Ngay" + (i +1)] = dk.DsSLNgay[i];
+                    }
+
+                    _data.Rows.Add(_ravi);
+                    tongTong += dk.SanLuongTong;
+                }
+
+                //Add row tổng:
+                if (dsIDVTHH.Count > 0)
+                {
+                    DataRow _ravi = _data.NewRow();
+                    _ravi["STT"] = "";
+                    _ravi["MaVT"] = "";
+                    _ravi["TenVTHH"] = "Tổng";
+                    _ravi["Tong"] = tongTong.ToString("N0");
+
+                    for (int i = 0; i < 31; i++)
+                    {
+                        string calc = "SUM(Ngay" + (i + 1) + ")";
+                        _ravi["Ngay" + (i + 1)] = CheckString.ConvertToDouble_My(_data.Compute(calc, string.Empty)).ToString("N0");
+                    }
+
+                    _data.Rows.Add(_ravi);
                 }
             }
-            LoadHangHoaVaoBang(_id_bophan);
-
+            gridControl1.DataSource = _data;
             isload = false;
         }
+
+        private ModelDongKien getSLDK(int idvthh, DataTable dtGD, DataTable dtDL)
+        {
+            ModelDongKien dk = new ModelDongKien();
+            string maVT_ = "";
+            string tenVTHH_ = "";
+            double donGia_ = 0;
+            double SanLuongTong_ = 0;
+
+
+            for (int i = 0; i < 31; i++)
+            {
+                dk.DsSLNgay[i] = 0;
+            }
+
+            // Gấp dán:
+            foreach (DataRow item in dtGD.Rows)
+            {
+                if (idvthh == Convert.ToInt32(item["ID_VTHH"].ToString()))
+                {
+                    tenVTHH_ = item["TenVTHH"].ToString();
+                    maVT_ = item["MaVT"].ToString();
+                    donGia_ = CheckString.ConvertToDouble_My(item["DonGia"].ToString());
+                    int NgaySX = Convert.ToDateTime(item["NgayChungTu"].ToString()).Day;
+                    dk.DsSLNgay[NgaySX - 1] += CheckString.ConvertToDouble_My(item["SoLuongXuat"].ToString());
+                }
+            }
+
+            // Gấp dán:
+            foreach (DataRow item in dtDL.Rows)
+            {
+                if (idvthh == Convert.ToInt32(item["ID_VTHH"].ToString()))
+                {
+                    if (tenVTHH_ == "")
+                        tenVTHH_ = item["TenVTHH"].ToString();
+
+                    if (maVT_ == "")
+                        maVT_ = item["MaVT"].ToString();
+
+                    if (donGia_ == 0)
+                        donGia_ = CheckString.ConvertToDouble_My(item["DonGia"].ToString());
+
+                    int NgaySX = Convert.ToDateTime(item["NgayThang"].ToString()).Day;
+                    dk.DsSLNgay[NgaySX - 1] += CheckString.ConvertToDouble_My(item["SoLuongXuat"].ToString());
+                }
+            }
+
+            for (int i = 0; i < 31; i++)
+            {
+                SanLuongTong_ += dk.DsSLNgay[i];
+            }
+
+            dk.DonGia = donGia_;
+            dk.MaVT = maVT_;
+            dk.TenHangHoa = tenVTHH_;
+            dk.SanLuongTong = SanLuongTong_;
+            dk.ThanhTienTong = SanLuongTong_ * donGia_;
+
+            return dk;
+        }
+
+
         private List<int> _ListID_HangHoa = new List<int>();
 
         private void LoadHangHoaVaoBang(int id_bophan)
@@ -1028,10 +1016,14 @@ namespace CtyTinLuong
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            GridView view = sender as GridView;
-            if (e.RowHandle == _data.Rows.Count - 1)
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
             {
-                e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                string ten = View.GetRowCellValue(e.RowHandle, View.Columns["TenVTHH"]).ToString();
+                if (ten == "Tổng")
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                }
             }
         }
 
