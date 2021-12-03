@@ -229,6 +229,22 @@ namespace CtyTinLuong
 
         }
 
+        private DataTable _dtDonGiatheoVTHH;
+        private double getDonGiaTheoIDVHH(int idvthh)
+        {
+            double result = 0;
+
+            for (int i = 0; i < _dtDonGiatheoVTHH.Rows.Count; i++)
+            {
+                if (idvthh == Convert.ToInt32(_dtDonGiatheoVTHH.Rows[i]["ID_VTHH"].ToString()))
+                {
+                    result = CheckString.ConvertToDouble_My(_dtDonGiatheoVTHH.Rows[i]["DonGia"].ToString());
+                    break;
+                }
+            }
+            return result;
+        }
+
         private void Luu_ChiTiet_XuatKho_dongKien(int xxid_xuatkho)
         {
             clsDongKien_TbXuatKho_ChiTietXuatKho cls2 = new clsDongKien_TbXuatKho_ChiTietXuatKho();
@@ -407,6 +423,11 @@ namespace CtyTinLuong
         }
         private void KhoThanhPham_XuatKho_DongKien_Load(object sender, EventArgs e)
         {
+            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+            {
+                _dtDonGiatheoVTHH = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, KiemTraTenBoPhan("Đóng kiện"));
+            }
+
             Load_LockUp();
             if (UCThanhPham_NhapKho_DongKien.mbThemMoi == true)
                 HienThi_ThemMoi_XuatKho();
@@ -414,6 +435,25 @@ namespace CtyTinLuong
                 HienThi_Sua_XuatKho(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
             else HienThi_Copy_XuatKho(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
         }
+
+        private int KiemTraTenBoPhan(string tenbophan)
+        {
+            int _id_bophan = 0;
+            using (clsThin clsThin_ = new clsThin())
+            {
+                DataTable dt_ = clsThin_.T_NhanSu_tbBoPhan_SO(tenbophan);
+                if (dt_ != null && dt_.Rows.Count == 1)
+                {
+                    _id_bophan = Convert.ToInt32(dt_.Rows[0]["ID_BoPhan"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Bộ phận " + tenbophan + " chưa được tạo. Hãy tạo bộ phận ở mục quản trị!");
+                }
+            }
+            return _id_bophan;
+        }
+
 
         private void gridNguoiLap_EditValueChanged(object sender, EventArgs e)
         {
@@ -438,11 +478,13 @@ namespace CtyTinLuong
         {
             if (e.Column == clID_VTHH)
             {
+                int idvthh = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString());
+
                 gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, tenvthh);
                 gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, donvitinhvthh);
                 gridView4.SetRowCellValue(e.RowHandle, Nguon, _Nguon);
                 gridView4.SetRowCellValue(e.RowHandle, clSoLuongXuat, "1");
-                gridView4.SetRowCellValue(e.RowHandle, clDonGia, "0");
+                gridView4.SetRowCellValue(e.RowHandle, clDonGia, getDonGiaTheoIDVHH(idvthh));
                 gridView4.SetRowCellValue(e.RowHandle, clThanhTien, "0");
             }
             //try
