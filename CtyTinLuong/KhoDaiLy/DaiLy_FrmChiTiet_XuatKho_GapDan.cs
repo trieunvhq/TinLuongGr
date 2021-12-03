@@ -712,16 +712,16 @@ namespace CtyTinLuong
 
         private void gridView3_RowClick(object sender, RowClickEventArgs e)
         {
-            //if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
-            if (gridView3.GetFocusedRowCellValue(clID_VTHH2) == null
-                || gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() == "")
-                return;
-            else
-            {
-                int iiIDnhapKhp = Convert.ToInt32(gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString());
-                _id_vthh = iiIDnhapKhp;
-                LoadDataChamCongCN(iiIDnhapKhp);
-            }
+            ////if (gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() != "")
+            //if (gridView3.GetFocusedRowCellValue(clID_VTHH2) == null
+            //    || gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString() == "")
+            //    return;
+            //else
+            //{
+            //    int iiIDnhapKhp = Convert.ToInt32(gridView3.GetFocusedRowCellValue(clID_VTHH2).ToString());
+            //    _id_vthh = iiIDnhapKhp;
+            //    LoadDataChamCongCN(iiIDnhapKhp);
+            //}
         }
 
         private void gridDinhMucGapDan_EditValueChanged(object sender, EventArgs e)
@@ -737,6 +737,7 @@ namespace CtyTinLuong
             cls.Dispose();
             dt.Dispose();
 
+            LoadDataChamCongCN(Convert.ToInt32(dt.Rows[0]["ID_VTHH"].ToString()));
 
             clsDinhMuc_DinhMuc_ToGapDan cls2 = new clsDinhMuc_DinhMuc_ToGapDan();
             cls2.iID_DinhMuc_ToGapDan = xxxID;
