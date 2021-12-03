@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DongKien_NhapKho));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
@@ -145,11 +145,11 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.clSTT,
             this.clID_NhapKhoDongKien,
-            this.clNgayChungTu,
             this.clSoChungTu,
-            this.clDienGiai,
+            this.clNgayChungTu,
             this.clMaVT,
             this.clTenVTHH,
+            this.clDienGiai,
             this.clSoLuong,
             this.clGD_DL});
             this.gridView1.GridControl = this.gridControl1;
@@ -190,6 +190,7 @@
             // clNgayChungTu
             // 
             this.clNgayChungTu.AppearanceCell.Options.UseTextOptions = true;
+            this.clNgayChungTu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clNgayChungTu.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.clNgayChungTu.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clNgayChungTu.AppearanceHeader.Options.UseFont = true;
@@ -211,6 +212,8 @@
             // 
             // clSoChungTu
             // 
+            this.clSoChungTu.AppearanceCell.Options.UseTextOptions = true;
+            this.clSoChungTu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clSoChungTu.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clSoChungTu.AppearanceHeader.Options.UseFont = true;
             this.clSoChungTu.AppearanceHeader.Options.UseTextOptions = true;
@@ -241,7 +244,7 @@
             this.clDienGiai.Name = "clDienGiai";
             this.clDienGiai.OptionsColumn.AllowEdit = false;
             this.clDienGiai.Visible = true;
-            this.clDienGiai.VisibleIndex = 3;
+            this.clDienGiai.VisibleIndex = 6;
             this.clDienGiai.Width = 241;
             // 
             // repositoryItemMemoEdit1
@@ -255,7 +258,7 @@
             this.clMaVT.Name = "clMaVT";
             this.clMaVT.OptionsColumn.AllowEdit = false;
             this.clMaVT.Visible = true;
-            this.clMaVT.VisibleIndex = 4;
+            this.clMaVT.VisibleIndex = 3;
             this.clMaVT.Width = 77;
             // 
             // clTenVTHH
@@ -266,7 +269,7 @@
             this.clTenVTHH.Name = "clTenVTHH";
             this.clTenVTHH.OptionsColumn.AllowEdit = false;
             this.clTenVTHH.Visible = true;
-            this.clTenVTHH.VisibleIndex = 5;
+            this.clTenVTHH.VisibleIndex = 4;
             this.clTenVTHH.Width = 241;
             // 
             // repositoryItemMemoEdit2
@@ -282,11 +285,13 @@
             this.clSoLuong.Name = "clSoLuong";
             this.clSoLuong.OptionsColumn.AllowEdit = false;
             this.clSoLuong.Visible = true;
-            this.clSoLuong.VisibleIndex = 6;
+            this.clSoLuong.VisibleIndex = 5;
             this.clSoLuong.Width = 85;
             // 
             // clGD_DL
             // 
+            this.clGD_DL.AppearanceCell.Options.UseTextOptions = true;
+            this.clGD_DL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.clGD_DL.Caption = "Nguồn";
             this.clGD_DL.FieldName = "GD_DL";
             this.clGD_DL.Name = "clGD_DL";
@@ -305,9 +310,9 @@
             // btNhapKho
             // 
             this.btNhapKho.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btNhapKho.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btNhapKho.Name = "btNhapKho";
             this.btNhapKho.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
