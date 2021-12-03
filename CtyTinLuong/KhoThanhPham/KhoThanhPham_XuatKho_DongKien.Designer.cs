@@ -80,12 +80,12 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clID_ChiTietXuatKho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nguon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.btPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat2 = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu_Gui_Dong = new DevExpress.XtraEditors.SimpleButton();
-            this.Nguon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -351,7 +351,7 @@
             this.groupBox2.Controls.Add(this.gridControl1);
             this.groupBox2.Location = new System.Drawing.Point(12, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(963, 198);
+            this.groupBox2.Size = new System.Drawing.Size(963, 403);
             this.groupBox2.TabIndex = 105;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết";
@@ -366,7 +366,7 @@
             this.btXoa2,
             this.repositoryItemMemoEdit1,
             this.Search_MaVT});
-            this.gridControl1.Size = new System.Drawing.Size(957, 179);
+            this.gridControl1.Size = new System.Drawing.Size(957, 384);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -598,6 +598,14 @@
             this.clID_ChiTietXuatKho.FieldName = "ID_ChiTietXuatKho";
             this.clID_ChiTietXuatKho.Name = "clID_ChiTietXuatKho";
             // 
+            // Nguon
+            // 
+            this.Nguon.Caption = "Nguồn";
+            this.Nguon.FieldName = "Nguon";
+            this.Nguon.Name = "Nguon";
+            this.Nguon.Visible = true;
+            this.Nguon.VisibleIndex = 7;
+            // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
@@ -644,14 +652,6 @@
             this.btLuu_Gui_Dong.TabIndex = 129;
             this.btLuu_Gui_Dong.Text = "Lưu + Nhập thành phẩm";
             this.btLuu_Gui_Dong.Click += new System.EventHandler(this.btLuu_Gui_Dong_Click);
-            // 
-            // Nguon
-            // 
-            this.Nguon.Caption = "Nguồn";
-            this.Nguon.FieldName = "Nguon";
-            this.Nguon.Name = "Nguon";
-            this.Nguon.Visible = true;
-            this.Nguon.VisibleIndex = 7;
             // 
             // KhoThanhPham_XuatKho_DongKien
             // 
