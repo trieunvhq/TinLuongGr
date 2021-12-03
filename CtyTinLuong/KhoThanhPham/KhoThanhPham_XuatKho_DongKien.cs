@@ -423,17 +423,17 @@ namespace CtyTinLuong
         }
         private void KhoThanhPham_XuatKho_DongKien_Load(object sender, EventArgs e)
         {
-            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
-            {
-                _dtDonGiatheoVTHH = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, KiemTraTenBoPhan("Đóng kiện"));
-            }
-
             Load_LockUp();
             if (UCThanhPham_NhapKho_DongKien.mbThemMoi == true)
                 HienThi_ThemMoi_XuatKho();
             else if (UCThanhPham_NhapKho_DongKien.mbSua == true)
                 HienThi_Sua_XuatKho(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
             else HienThi_Copy_XuatKho(UCThanhPham_NhapKho_DongKien.miID_NhapKho);
+
+            using (clsTr_MaHangToGD_DB_DK cls = new clsTr_MaHangToGD_DB_DK())
+            {
+                _dtDonGiatheoVTHH = cls.Tr_MaHangToGD_DB_DK_SelectBoPhan(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, KiemTraTenBoPhan("Đóng kiện"));
+            }
         }
 
         private int KiemTraTenBoPhan(string tenbophan)
@@ -479,28 +479,30 @@ namespace CtyTinLuong
             if (e.Column == clID_VTHH)
             {
                 int idvthh = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString());
-
+                double donGia = getDonGiaTheoIDVHH(idvthh);
                 gridView4.SetRowCellValue(e.RowHandle, clTenVTHH, tenvthh);
                 gridView4.SetRowCellValue(e.RowHandle, clDonViTinh, donvitinhvthh);
                 gridView4.SetRowCellValue(e.RowHandle, Nguon, _Nguon);
+                gridView4.SetRowCellValue(e.RowHandle, clDonGia, donGia.ToString("N0"));
                 gridView4.SetRowCellValue(e.RowHandle, clSoLuongXuat, "1");
-                gridView4.SetRowCellValue(e.RowHandle, clDonGia, getDonGiaTheoIDVHH(idvthh));
-                gridView4.SetRowCellValue(e.RowHandle, clThanhTien, "0");
+                gridView4.SetRowCellValue(e.RowHandle, clThanhTien, donGia.ToString("N0"));
             }
-            //try
-            //{
-                if (e.Column == clSoLuongXuat)
-                {
-                    int xid = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString());
-                    double soluongxid = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clSoLuongXuat).ToString());
-                    Hienthi_Lable_TonKho(xid, soluongxid);
-                }
-            //}
-            //catch
-            //{
 
-            //}
-            
+            if (e.Column == clSoLuongXuat)
+            {
+                int xid = Convert.ToInt32(gridView4.GetFocusedRowCellValue(clID_VTHH).ToString());
+                double soluongxid = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongXuat).ToString());
+                double donGiaxid = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia).ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clThanhTien, (soluongxid * donGiaxid).ToString("N0"));
+                Hienthi_Lable_TonKho(xid, soluongxid);
+            }
+
+            if (e.Column == clDonGia)
+            {
+                double soluongxid = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clSoLuongXuat).ToString());
+                double donGiaxid = CheckString.ConvertToDouble_My(gridView4.GetFocusedRowCellValue(clDonGia).ToString());
+                gridView4.SetRowCellValue(e.RowHandle, clThanhTien, (soluongxid * donGiaxid).ToString("N0"));
+            }
         }
 
 
@@ -529,6 +531,15 @@ namespace CtyTinLuong
         {
             Luu_ChiLuu();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            Tr_frmCaiMacDinnhMaHangTGD_DB_DK_ ff = new Tr_frmCaiMacDinnhMaHangTGD_DB_DK_(dteNgayChungTu.DateTime.Month, dteNgayChungTu.DateTime.Year, "DongKien");
+            ff.Show();
+            Cursor.Current = Cursors.Default;
+        }
+
 
         private void btLuu_Gui_Dong_Click(object sender, EventArgs e)
         {
