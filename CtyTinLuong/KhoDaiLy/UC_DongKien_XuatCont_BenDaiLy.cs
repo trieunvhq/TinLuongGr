@@ -91,8 +91,19 @@ namespace CtyTinLuong
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() != "")
+            if (gridView1.GetFocusedRowCellValue(ID_XuatContDongKien) == null
+                || gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString() == "")
             {
+                return;
+            }
+
+            try
+            {
+                DialogResult ff = MessageBox.Show("Bạn có muốn xóa dữ liệu " + gridView1.GetFocusedRowCellValue(SoChungTu).ToString().Trim() + "?",
+                "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (ff == DialogResult.No)
+                    return;
+
                 int ID_XuatContDongKien_ = Convert.ToInt32(gridView1.GetFocusedRowCellValue(ID_XuatContDongKien).ToString());
                 clsDongKien_TbXuatKho_XuatContDL cls1 = new clsDongKien_TbXuatKho_XuatContDL();
                 clsThin cls2 = new clsThin();
@@ -102,11 +113,14 @@ namespace CtyTinLuong
                 cls1.iID_XuatContDongKien = ID_XuatContDongKien_;
                 cls1.Delete();
 
-                MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Load_DaTa(dteTuNgay.DateTime, dteDenNgay.DateTime);
 
                 cls1.Dispose();
                 cls2.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xóa hàng hóa khỏi bảng..." + ex.ToString(), "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
