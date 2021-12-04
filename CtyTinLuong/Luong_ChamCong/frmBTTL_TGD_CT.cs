@@ -395,6 +395,11 @@ namespace CtyTinLuong
             ff.Show();
         }
 
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private float ConvertToFloat(string s)
         {
             char systemSeparator = Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
