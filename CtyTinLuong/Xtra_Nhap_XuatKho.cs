@@ -12,6 +12,7 @@ namespace CtyTinLuong
         public Xtra_Nhap_XuatKho()
         {
             InitializeComponent();
+            pNgay.Value = DateTime.Now;
         }
 
         private void Print_KhoThanhPham_ChiTietBanHang_Moiiiiiiiiiiiiiiiiiio()
@@ -252,6 +253,40 @@ namespace CtyTinLuong
         {
             try
             {
+                //Load label ngay ky footer:
+                DateTime d = Convert.ToDateTime(pNgay.Value);
+                if (d.Day > 9)
+                {
+                    if (d.Month > 9)
+                    {
+                        lbNayKy.Text = "Ngày " + d.Day
+                                            + " tháng " + d.Month
+                                            + " năm " + d.Year;
+                    }
+                    else
+                    {
+                        lbNayKy.Text = "Ngày " + d.Day
+                                            + " tháng 0" + d.Month
+                                            + " năm " + d.Year;
+                    }
+
+                }
+                else
+                {
+                    if (d.Month > 9)
+                    {
+                        lbNayKy.Text = "Ngày 0" + d.Day
+                                            + " tháng " + d.Month
+                                            + " năm " + d.Year;
+                    }
+                    else
+                    {
+                        lbNayKy.Text = "Ngày 0" + d.Day
+                                            + " tháng 0" + d.Month
+                                            + " năm " + d.Year;
+                    }
+                }
+
                 clsAaatbMacDinhNguoiKy cls = new CtyTinLuong.clsAaatbMacDinhNguoiKy();
                 cls.iID_DangNhap = frmDangNhap._miID_DangNhap;
                 DataTable dt = cls.SelectAll_ID_DangNhap();

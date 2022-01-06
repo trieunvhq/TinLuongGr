@@ -1147,26 +1147,26 @@
             // 
             // pSoTienBangChu
             // 
-            this.pSoTienBangChu.Description = "bằng chữ";
+            this.pSoTienBangChu.Description = "Số tiền bằng chữ";
             this.pSoTienBangChu.Name = "pSoTienBangChu";
             // 
             // pTienChuaVAT
             // 
-            this.pTienChuaVAT.Description = "pTienChuaVAT";
+            this.pTienChuaVAT.Description = "Tiền chưa VAT";
             this.pTienChuaVAT.Name = "pTienChuaVAT";
             this.pTienChuaVAT.Type = typeof(int);
             this.pTienChuaVAT.ValueInfo = "0";
             // 
             // pTienVAT
             // 
-            this.pTienVAT.Description = "pTienVAT";
+            this.pTienVAT.Description = "Tiền VAT";
             this.pTienVAT.Name = "pTienVAT";
             this.pTienVAT.Type = typeof(int);
             this.pTienVAT.ValueInfo = "0";
             // 
             // pTongTienCoVAT
             // 
-            this.pTongTienCoVAT.Description = "pTongTienCoVAT";
+            this.pTongTienCoVAT.Description = "Tiền có VAT";
             this.pTongTienCoVAT.Name = "pTongTienCoVAT";
             this.pTongTienCoVAT.Type = typeof(int);
             this.pTongTienCoVAT.ValueInfo = "0";
