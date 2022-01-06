@@ -1044,9 +1044,9 @@ namespace CtyTinLuong
                         try
                         {
                             clsNganHang_TaiKhoanKeToanCon clscon = new clsNganHang_TaiKhoanKeToanCon();
-                            int id_131 = Convert.ToInt32(dttaikhoan.Rows[0]["SoTaiKhoanCon"].ToString());
-                            int id_VAT = Convert.ToInt32(dttaikhoan.Rows[1]["SoTaiKhoanCon"].ToString());
-                            int id_511 = Convert.ToInt32(dttaikhoan.Rows[2]["SoTaiKhoanCon"].ToString());
+                            int id_131 = Convert.ToInt32(dttaikhoan.Rows[0]["ID_TaiKhoanKeToanCon"].ToString());
+                            int id_VAT = Convert.ToInt32(dttaikhoan.Rows[1]["ID_TaiKhoanKeToanCon"].ToString());
+                            int id_511 = Convert.ToInt32(dttaikhoan.Rows[2]["ID_TaiKhoanKeToanCon"].ToString());
                             clscon.iID_TaiKhoanKeToanCon = id_131;
                             DataTable dtcon1 = clscon.SelectOne();
                             msSoTKNo = clscon.sSoTaiKhoanCon.Value;

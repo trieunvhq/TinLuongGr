@@ -1252,7 +1252,8 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
-                if (UCMuaHang.mbSua == false && UCMuaHang.mbCopY == false)
+                //if (UCMuaHang.mbSua == false && UCMuaHang.mbCopY == false)
+                if (_NewRow)
                     tinhTongTien(fffthanhtien);
                 else
                     tinhTongTien(0);
@@ -1270,7 +1271,8 @@ namespace CtyTinLuong
                 fffthanhtien = fffsoluong * ffdongia;
                 gridView4.SetFocusedRowCellValue(clThanhTien, fffthanhtien);
 
-                if (UCMuaHang.mbSua == false && UCMuaHang.mbCopY == false)
+                //if (UCMuaHang.mbSua == false && UCMuaHang.mbCopY == false)
+                if (_NewRow)
                     tinhTongTien(fffthanhtien);
                 else
                     tinhTongTien(0);
@@ -1422,7 +1424,7 @@ namespace CtyTinLuong
         {
             try
             {
-                
+                _NewRow = false;
                 //double deTOngtien;
                 //DataTable dataTable = (DataTable)gridControl1.DataSource;
                 //string shienthi = "1";
@@ -1713,9 +1715,11 @@ namespace CtyTinLuong
 
         int iID_VTHH;
         string sMaVT, sTenVTHH, sDonViTinh;
+        private bool _NewRow = false;
 
         private void gridView4_InitNewRow(object sender, InitNewRowEventArgs e)
         {
+            _NewRow = true;
             GridView view = sender as GridView;
             view.SetRowCellValue(e.RowHandle, clHienThi, "1");
             view.SetRowCellValue(e.RowHandle, clSoLuong, 0);
