@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -490,7 +491,7 @@
             // btLuu
             // 
             this.btLuu.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Save;
-            this.btLuu.Location = new System.Drawing.Point(778, 629);
+            this.btLuu.Location = new System.Drawing.Point(778, 630);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(107, 23);
             this.btLuu.TabIndex = 91;
@@ -500,7 +501,7 @@
             // btPrint_XuatKho
             // 
             this.btPrint_XuatKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPrint_XuatKho.ImageOptions.Image")));
-            this.btPrint_XuatKho.Location = new System.Drawing.Point(659, 629);
+            this.btPrint_XuatKho.Location = new System.Drawing.Point(659, 630);
             this.btPrint_XuatKho.Name = "btPrint_XuatKho";
             this.btPrint_XuatKho.Size = new System.Drawing.Size(113, 23);
             this.btPrint_XuatKho.TabIndex = 90;
@@ -511,9 +512,9 @@
             // 
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = global::CtyTinLuong.Properties.Resources.ico_Abort;
-            this.btThoat.Location = new System.Drawing.Point(897, 629);
+            this.btThoat.Location = new System.Drawing.Point(888, 630);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 23);
+            this.btThoat.Size = new System.Drawing.Size(84, 23);
             this.btThoat.TabIndex = 89;
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -1280,6 +1281,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BanHang_FrmChiTietBanHang_Newwwwwwww";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BanHang_FrmChiTietBanHang_Newwwwwwww-->Chi tiết bán hàng";
             this.Load += new System.EventHandler(this.BanHang_FrmChiTietBanHang_Newwwwwwww_Load);
             this.groupBox1.ResumeLayout(false);
