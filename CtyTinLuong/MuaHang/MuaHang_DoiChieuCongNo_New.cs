@@ -78,6 +78,7 @@ namespace CtyTinLuong
 
                 for (int i = 0; i < dtphatsinh.Rows.Count; i++)
                 {
+                    bool isTraHang;
                     DataRow _ravi = dt2xxxx.NewRow();
                     if (Convert.ToBoolean(dtphatsinh.Rows[i]["Check_PhanNganHang"].ToString()) == true)
                     {
@@ -91,7 +92,10 @@ namespace CtyTinLuong
                     _ravi["SoChungTu"] = dtphatsinh.Rows[i]["SoChungTu"].ToString();
                     double Noxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["No"].ToString());
                     double Coxx_hang = CheckString.ConvertToDouble_My(dtphatsinh.Rows[i]["Co"].ToString());
-                    bool isTraHang = Convert.ToBoolean(dtphatsinh.Rows[i]["CheckTraLaiNhaCungCap"].ToString());
+                    if (string.IsNullOrEmpty(dtphatsinh.Rows[i]["CheckTraLaiNhaCungCap"].ToString()))
+                        isTraHang = false;
+                    else
+                        isTraHang = Convert.ToBoolean(dtphatsinh.Rows[i]["CheckTraLaiNhaCungCap"].ToString());
 
                     _ravi["No"] = Noxx_hang;
                     _ravi["Co"] = Coxx_hang;

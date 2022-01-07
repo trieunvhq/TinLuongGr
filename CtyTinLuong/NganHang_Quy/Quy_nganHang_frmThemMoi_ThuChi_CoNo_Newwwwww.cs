@@ -573,6 +573,12 @@ namespace CtyTinLuong
                 gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
                 gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
 
+                gridDoiTuong.Properties.View.Columns.Clear();//xóa caption cũ
+                gridDoiTuong.Properties.View.Columns.AddVisible("ID_DoiTuong", "ID");
+                gridDoiTuong.Properties.View.Columns.AddVisible("MaDoiTuong", "Mã");
+                gridDoiTuong.Properties.View.Columns.AddVisible("TenDoiTuong", "Tên");
+
+                gridDoiTuong.Properties.View.Columns["ID_DoiTuong"].Visible = false;
             }
             if (DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 == 2) // NCC
             {
@@ -596,6 +602,12 @@ namespace CtyTinLuong
                 gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
                 gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
 
+                gridDoiTuong.Properties.View.Columns.Clear();//xóa caption cũ
+                gridDoiTuong.Properties.View.Columns.AddVisible("ID_DoiTuong", "ID");
+                gridDoiTuong.Properties.View.Columns.AddVisible("MaDoiTuong", "Mã");
+                gridDoiTuong.Properties.View.Columns.AddVisible("TenDoiTuong", "Tên");
+
+                gridDoiTuong.Properties.View.Columns["ID_DoiTuong"].Visible = false;
             }
             if (DoiTuong_Khac_1_NhaCungCap_2_KhachHang3 == 3) //  Khách hàng
             {
@@ -620,6 +632,12 @@ namespace CtyTinLuong
                 gridDoiTuong.Properties.ValueMember = "ID_DoiTuong";
                 gridDoiTuong.Properties.DisplayMember = "MaDoiTuong";
 
+                gridDoiTuong.Properties.View.Columns.Clear();//xóa caption cũ
+                gridDoiTuong.Properties.View.Columns.AddVisible("ID_DoiTuong", "ID");
+                gridDoiTuong.Properties.View.Columns.AddVisible("MaDoiTuong", "Mã");
+                gridDoiTuong.Properties.View.Columns.AddVisible("TenDoiTuong", "Tên");
+
+                gridDoiTuong.Properties.View.Columns["ID_DoiTuong"].Visible = false;
             }
            
         }
@@ -631,9 +649,16 @@ namespace CtyTinLuong
             DataView dvcon = dtcon.DefaultView;
             DataTable newdtcon = dvcon.ToTable();
 
-            repositoryItemGridLookUpEdit2.DataSource = newdtcon;
-            repositoryItemGridLookUpEdit2.ValueMember = "ID_TaiKhoanKeToanCon";
-            repositoryItemGridLookUpEdit2.DisplayMember = "SoTaiKhoanCon";
+            repositoryItemSearchLookUpEdit1.DataSource = newdtcon;
+            repositoryItemSearchLookUpEdit1.ValueMember = "ID_TaiKhoanKeToanCon";
+            repositoryItemSearchLookUpEdit1.DisplayMember = "SoTaiKhoanCon";
+
+            repositoryItemSearchLookUpEdit1.View.Columns.Clear();//xóa caption cũ
+            repositoryItemSearchLookUpEdit1.View.Columns.AddVisible("ID_TaiKhoanKeToanCon", "ID");
+            repositoryItemSearchLookUpEdit1.View.Columns.AddVisible("SoTaiKhoanCon", "Số TK");
+            repositoryItemSearchLookUpEdit1.View.Columns.AddVisible("TenTaiKhoanCon", "Tên");
+
+            repositoryItemSearchLookUpEdit1.View.Columns["ID_TaiKhoanKeToanCon"].Visible = false;
 
             clsNhanSu_tbNhanSu clsNguoi = new clsNhanSu_tbNhanSu();
             DataTable dtNguoi = clsNguoi.SelectAll();
