@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,7 +55,6 @@ namespace CtyTinLuong
                 {
                     SoLuong_XuatTruocKy = CheckString.ConvertToDouble_My(rows[0]["SoLuong_XuatTruocKy"].ToString());
                     GiaTri_XuatTruocKy = CheckString.ConvertToDouble_My(rows[0]["GiaTri_XuatTruocKy"].ToString());
-
                 }
                 SoLuong_TonDauKy = SoLuong_NhapTruocKy - SoLuong_XuatTruocKy;
                 GiaTri_TonDauKy = GiaTri_NhapTruocKy - GiaTri_XuatTruocKy;
@@ -67,7 +67,6 @@ namespace CtyTinLuong
                 _ravi["GiaTri_TonDauKy"] = GiaTri_TonDauKy;
 
                 dt2.Rows.Add(_ravi);
-
             }
 
             for (int i = 0; i < dt_XuatTruoc.Rows.Count; i++)
@@ -92,7 +91,6 @@ namespace CtyTinLuong
                     _ravi["GiaTri_TonDauKy"] = GiaTri_TonDauKy;
                     dt2.Rows.Add(_ravi);
                 }
-
             }
 
             return dt2;
@@ -135,7 +133,6 @@ namespace CtyTinLuong
                 {
                     SoLuongXuat_TrongKy = CheckString.ConvertToDouble_My(rows[0]["SoLuongXuat_TrongKy"].ToString());
                     GiaTriXuat_TrongKy = CheckString.ConvertToDouble_My(rows[0]["GiaTriXuat_TrongKy"].ToString());
-
                 }
 
                 DataRow _ravi = dt2.NewRow();
@@ -177,13 +174,19 @@ namespace CtyTinLuong
                     _ravi["GiaTriXuat_TrongKy"] = GiaTriXuat_TrongKy;
                     dt2.Rows.Add(_ravi);
                 }
-
-
             }
             return dt2;
         }
         private void LoadDaTa(DateTime xxtungay, DateTime xxdenngay)
         {
+            double Tong_TonDauKy = 0;
+            double Tong_TonCuoiKy = 0;
+            double Tong_NhapTrongKy = 0;
+            double Tong_XuatTrongKy = 0;
+            double TongGT_TonDauKy = 0;
+            double TongGT_TonCuoiKy = 0;
+            double TongGT_NhapTrongKy = 0;
+            double TongGT_XuatTrongKy = 0;
 
             DataTable dt_TonDayKy = LoadDaTa_TonDauKy(xxtungay);
             DataTable dt_Nhap_Xuat_TrongKy = LoadDaTa_Nhap_Xuat_TrongKy(xxtungay, xxdenngay);
@@ -253,7 +256,16 @@ namespace CtyTinLuong
 
                 dt2.Rows.Add(_ravi);
 
+                Tong_TonDauKy += SoLuong_TonDauKy;
+                Tong_TonCuoiKy += SoLuongTon_CuoiKy;
+                Tong_NhapTrongKy += SoLuongNhap_TrongKy;
+                Tong_XuatTrongKy += SoLuongXuat_TrongKy;
+                TongGT_TonDauKy += GiaTri_TonDauKy;
+                TongGT_TonCuoiKy += GiaTriTon_CuoiKy;
+                TongGT_NhapTrongKy += GiaTriNhap_TrongKy;
+                TongGT_XuatTrongKy += GiaTriXuat_TrongKy;
             }
+
             for (int i = 0; i < dt_TonDayKy.Rows.Count; i++)
             {
                 int iiiiiID_VTHH;
@@ -292,7 +304,34 @@ namespace CtyTinLuong
                     _ravi["GiaTriTon_CuoiKy"] = GiaTriTon_CuoiKy;
                     dt2.Rows.Add(_ravi);
 
+                    Tong_TonDauKy += SoLuong_TonDauKy;
+                    Tong_TonCuoiKy += SoLuongTon_CuoiKy;
+                    TongGT_TonDauKy += GiaTri_TonDauKy;
+                    TongGT_TonCuoiKy += GiaTriTon_CuoiKy;
                 }
+            }
+
+            if (dt2.Rows.Count > 0)
+            {
+                DataRow _ravi_Tong = dt2.NewRow();
+                _ravi_Tong["ID_VTHH"] = 0;
+
+                _ravi_Tong["MaVT"] = "";
+                _ravi_Tong["TenVTHH"] = "Tổng";
+                _ravi_Tong["DonViTinh"] = "";
+
+                _ravi_Tong["SoLuong_TonDauKy"] = Tong_TonDauKy;
+                _ravi_Tong["GiaTri_TonDauKy"] = TongGT_TonDauKy;
+
+                _ravi_Tong["SoLuongNhap_TrongKy"] = Tong_NhapTrongKy;
+                _ravi_Tong["GiaTriNhap_TrongKy"] = TongGT_NhapTrongKy;
+
+                _ravi_Tong["SoLuongXuat_TrongKy"] = Tong_XuatTrongKy;
+                _ravi_Tong["GiaTriXuat_TrongKy"] = TongGT_XuatTrongKy;
+
+                _ravi_Tong["SoLuongTon_CuoiKy"] = Tong_TonCuoiKy;
+                _ravi_Tong["GiaTriTon_CuoiKy"] = TongGT_TonCuoiKy;
+                dt2.Rows.Add(_ravi_Tong);
             }
             gridControl1.DataSource = dt2;
         }
@@ -388,6 +427,98 @@ namespace CtyTinLuong
             if (e.KeyChar == (char)13)
             {
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void bandedGridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            //GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string ten = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["TenVTHH"]).ToString();
+                if (ten.Contains("Tổng"))
+                {
+                    e.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+                }
+            }
+
+            if (e.Column.FieldName == "GiaTriTon_CuoiKy")
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["GiaTriTon_CuoiKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+
+            if (e.Column.FieldName == "SoLuongTon_CuoiKy") 
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["SoLuongTon_CuoiKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+
+            if (e.Column.FieldName == "GiaTriXuat_TrongKy") 
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["GiaTriXuat_TrongKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+            if (e.Column.FieldName == "SoLuongXuat_TrongKy") 
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["SoLuongXuat_TrongKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+
+            if (e.Column.FieldName == "GiaTriNhap_TrongKy") 
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["GiaTriNhap_TrongKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+
+            if (e.Column.FieldName == "SoLuongNhap_TrongKy") 
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["SoLuongNhap_TrongKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+
+            if (e.Column.FieldName == "GiaTri_TonDauKy")
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["GiaTri_TonDauKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
+            }
+
+            if (e.Column.FieldName == "SoLuong_TonDauKy")
+            {
+                string xx = bandedGridView1.GetRowCellValue(e.RowHandle, bandedGridView1.Columns["SoLuong_TonDauKy"]).ToString();
+                if (xx.Contains("-"))
+                {
+                    e.Appearance.ForeColor = Color.FromArgb(150, Color.Red);
+                    //e.Appearance.ForeColor = Color.FromArgb(150, Color.Salmon);
+                }
             }
         }
 
